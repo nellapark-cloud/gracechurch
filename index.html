@@ -51,7 +51,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 2.4rem;
+    gap: 1.5rem;
     z-index: 50;
   }
   .rail__mark{
@@ -60,19 +60,19 @@
     text-decoration: none;
     color: rgba(246,242,233,0.42);
     font-family: 'Noto Serif KR', serif;
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    padding: 0.35rem 0;
+    padding: 0.3rem 0;
     position: relative;
     transition: color .35s ease;
     writing-mode: vertical-rl;
   }
   .rail__mark span{
     display:block;
-    margin-top: 0.6rem;
+    margin-top: 0.5rem;
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.62rem;
-    letter-spacing: 0.28em;
+    font-size: 0.6rem;
+    letter-spacing: 0.24em;
     font-weight: 300;
   }
   .rail__mark.is-active{ color: var(--gold-light); }
@@ -85,9 +85,9 @@
   }
   .rail__foot{
     position:absolute;
-    bottom: 1.6rem;
+    bottom: 1.4rem;
     color: rgba(246,242,233,0.3);
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     letter-spacing: 0.15em;
     writing-mode: vertical-rl;
   }
@@ -139,14 +139,14 @@
   .hero__index{
     display: flex;
     flex-wrap: wrap;
-    gap: 0.6rem 0;
+    gap: 0.5rem 0;
   }
   .hero__index a{
     text-decoration:none;
     display:flex;
     align-items:baseline;
     gap:0.6rem;
-    padding: 0.55rem 1.4rem 0.55rem 0;
+    padding: 0.5rem 1.4rem 0.5rem 0;
     border-bottom: 1px solid var(--rule);
     width: 100%;
     max-width: 30rem;
@@ -174,7 +174,7 @@
 
   /* ---------- rooms ---------- */
   .room{
-    padding: 8vh 8vw;
+    padding: 7vh 8vw;
     border-top: 1px solid var(--rule);
     scroll-margin-top: 2rem;
   }
@@ -184,18 +184,18 @@
     display:flex;
     align-items:flex-end;
     gap: 1.6rem;
-    margin-bottom: 3rem;
+    margin-bottom: 2.6rem;
     flex-wrap: wrap;
   }
   .room__num{
     font-family:'Noto Serif KR', serif;
-    font-size: 3.4rem;
+    font-size: 3rem;
     font-weight: 700;
     color: var(--gold);
     line-height: 1;
   }
   .room__title{
-    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-size: clamp(1.4rem, 3vw, 1.9rem);
     font-weight: 700;
     color: var(--navy);
     margin: 0 0 0.4rem;
@@ -203,9 +203,19 @@
   .room__desc{
     color: var(--muted);
     max-width: 40rem;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
     margin: 0;
   }
+
+  .subhead{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 700;
+    margin: 1.8rem 0 0.4rem;
+  }
+  .subhead:first-of-type{ margin-top: 0; }
 
   .doclist{
     list-style:none;
@@ -220,7 +230,7 @@
     grid-template-columns: 5.5rem 1fr auto;
     align-items:center;
     gap: 1.2rem;
-    padding: 1.15rem 0.4rem;
+    padding: 1.1rem 0.4rem;
     text-decoration:none;
     transition: background .25s ease, padding-left .25s ease;
   }
@@ -246,7 +256,7 @@
     white-space:nowrap;
   }
   .doclist__empty{
-    padding: 1.15rem 0.4rem;
+    padding: 1.1rem 0.4rem;
     color: var(--muted);
     font-size: 0.9rem;
   }
@@ -267,9 +277,9 @@
   footer .fgold{ color: var(--gold-light); }
 
   @media (max-width: 720px){
-    :root{ --rail-w: 46px; }
-    .rail{ gap: 1.6rem; }
-    .rail__mark{ font-size: 0.85rem; }
+    :root{ --rail-w: 40px; }
+    .rail{ gap: 1rem; }
+    .rail__mark{ font-size: 0.72rem; }
     .rail__mark span{ display:none; }
     .hero, .room, footer{ padding-left: 6vw; padding-right: 6vw; }
     .doclist a{ grid-template-columns: 4rem 1fr; }
@@ -285,11 +295,12 @@
 <body>
 
 <nav class="rail" aria-label="자료실 관 이동">
-  <a class="rail__mark" data-room="room-1" href="#room-1">I<span>설교</span></a>
-  <a class="rail__mark" data-room="room-2" href="#room-2">II<span>성경공부</span></a>
-  <a class="rail__mark" data-room="room-3" href="#room-3">III<span>목자훈련</span></a>
-  <a class="rail__mark" data-room="room-4" href="#room-4">IV<span>방송</span></a>
-  <span class="rail__foot">은혜교회</span>
+  <a class="rail__mark" data-room="room-1" href="#room-1">I<span>책별성경공부</span></a>
+  <a class="rail__mark" data-room="room-2" href="#room-2">II<span>새가족</span></a>
+  <a class="rail__mark" data-room="room-3" href="#room-3">III<span>목장</span></a>
+  <a class="rail__mark" data-room="room-4" href="#room-4">IV<span>주보</span></a>
+  <a class="rail__mark" data-room="room-5" href="#room-5">V<span>나눔지</span></a>
+  <a class="rail__mark" data-room="room-6" href="#room-6">VI<span>행정양식</span></a>
 </nav>
 
 <main>
@@ -297,14 +308,16 @@
   <section class="hero">
     <p class="hero__eyebrow">GRACE CHURCH · 문헌 자료실</p>
     <h1>은혜교회<br>자료실</h1>
-    <p>말씀 위에 세워진 것들을 한자리에 모았습니다. 강해 설교와 성경공부, 목자훈련, 그리고 방송까지 —
-      은혜교회가 걸어온 가르침의 발자취를 이곳에서 찾아보실 수 있습니다.</p>
+    <p>말씀 위에 세워진 것들을 한자리에 모았습니다. 책별 성경공부부터 새가족 자료, 목장 사역,
+      주보와 나눔지, 행정 서식까지 — 은혜교회의 사역 자료를 이곳에서 찾아보실 수 있습니다.</p>
 
     <div class="hero__index">
-      <a href="#room-1"><span class="num">I</span><span class="lbl">설교의 방 · 레위기 강해</span><span class="cnt">보기</span></a>
-      <a href="#room-2"><span class="num">II</span><span class="lbl">성경공부의 방</span><span class="cnt">보기</span></a>
-      <a href="#room-3"><span class="num">III</span><span class="lbl">목자훈련의 방</span><span class="cnt">보기</span></a>
-      <a href="#room-4"><span class="num">IV</span><span class="lbl">방송의 방 · 더 그레이스</span><span class="cnt">보기</span></a>
+      <a href="#room-1"><span class="num">I</span><span class="lbl">책별성경공부 · 구약·신약</span><span class="cnt">보기</span></a>
+      <a href="#room-2"><span class="num">II</span><span class="lbl">새가족 자료</span><span class="cnt">보기</span></a>
+      <a href="#room-3"><span class="num">III</span><span class="lbl">목장 자료</span><span class="cnt">보기</span></a>
+      <a href="#room-4"><span class="num">IV</span><span class="lbl">주보</span><span class="cnt">보기</span></a>
+      <a href="#room-5"><span class="num">V</span><span class="lbl">목장 나눔지</span><span class="cnt">보기</span></a>
+      <a href="#room-6"><span class="num">VI</span><span class="lbl">목회행정양식</span><span class="cnt">보기</span></a>
     </div>
   </section>
 
@@ -312,46 +325,69 @@
     <div class="room__head">
       <span class="room__num">I</span>
       <div>
-        <h2 class="room__title">설교의 방</h2>
-        <p class="room__desc">레위기 강해 시리즈. 본문의 역사적 배경과 원어의 결을 따라가며,
-          거룩함으로 부르시는 하나님의 음성을 오늘의 언어로 풀어낸 설교 원고입니다.</p>
+        <h2 class="room__title">책별성경공부</h2>
+        <p class="room__desc">구약과 신약, 성경 각 권을 따라가며 함께 공부하는 자료입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-sermons"><li class="doclist__empty">불러오는 중...</li></ul>
+    <p class="subhead">구약</p>
+    <ul class="doclist" id="list-bible_by_book-old"><li class="doclist__empty">불러오는 중...</li></ul>
+    <p class="subhead">신약</p>
+    <ul class="doclist" id="list-bible_by_book-new"><li class="doclist__empty">불러오는 중...</li></ul>
   </section>
 
   <section class="room" id="room-2">
     <div class="room__head">
       <span class="room__num">II</span>
       <div>
-        <h2 class="room__title">성경공부의 방</h2>
-        <p class="room__desc">스스로 본문을 펴고 질문하며 걸어갈 수 있도록 만든 인터랙티브 성경공부 자료입니다.</p>
+        <h2 class="room__title">새가족 자료</h2>
+        <p class="room__desc">처음 오신 분들을 위한 안내와 새가족 정착을 돕는 자료입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-bible_study"><li class="doclist__empty">불러오는 중...</li></ul>
+    <ul class="doclist" id="list-newcomers"><li class="doclist__empty">불러오는 중...</li></ul>
   </section>
 
   <section class="room" id="room-3">
     <div class="room__head">
       <span class="room__num">III</span>
       <div>
-        <h2 class="room__title">목자훈련의 방</h2>
-        <p class="room__desc">목장을 섬기는 목자들을 위한 훈련 자료입니다. 부부·남자·형자 목장을 이끌 때 필요한
-          실제적인 지침과 원리를 담았습니다.</p>
+        <h2 class="room__title">목장 자료</h2>
+        <p class="room__desc">목장을 세우고 섬기는 데 필요한 운영 자료입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-shepherd_training"><li class="doclist__empty">불러오는 중...</li></ul>
+    <ul class="doclist" id="list-mokjang"><li class="doclist__empty">불러오는 중...</li></ul>
   </section>
 
   <section class="room" id="room-4">
     <div class="room__head">
       <span class="room__num">IV</span>
       <div>
-        <h2 class="room__title">방송의 방</h2>
-        <p class="room__desc">화요일 밤, 전파를 타고 전해지는 &lsquo;더 그레이스&rsquo; 방송 대본과 다시듣기 자료입니다.</p>
+        <h2 class="room__title">주보</h2>
+        <p class="room__desc">주일마다 나누는 예배 순서와 교회 소식지입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-radio"><li class="doclist__empty">불러오는 중...</li></ul>
+    <ul class="doclist" id="list-bulletin"><li class="doclist__empty">불러오는 중...</li></ul>
+  </section>
+
+  <section class="room" id="room-5">
+    <div class="room__head">
+      <span class="room__num">V</span>
+      <div>
+        <h2 class="room__title">목장 나눔지</h2>
+        <p class="room__desc">목장 모임에서 함께 나누는 나눔지입니다.</p>
+      </div>
+    </div>
+    <ul class="doclist" id="list-mokjang_sharing"><li class="doclist__empty">불러오는 중...</li></ul>
+  </section>
+
+  <section class="room" id="room-6">
+    <div class="room__head">
+      <span class="room__num">VI</span>
+      <div>
+        <h2 class="room__title">목회행정양식</h2>
+        <p class="room__desc">교회 행정 업무에 쓰이는 각종 서식입니다.</p>
+      </div>
+    </div>
+    <ul class="doclist" id="list-admin_forms"><li class="doclist__empty">불러오는 중...</li></ul>
   </section>
 
 </main>
@@ -376,7 +412,7 @@
     rooms.forEach(r => io.observe(r));
   }
 
-  // CMS에서 올린 자료 목록(data/manifest.json)을 불러와 각 관에 렌더링
+  // 자료 목록(data/manifest.json)을 불러와 각 관에 렌더링
   fetch('./data/manifest.json')
     .then((res) => res.json())
     .then((manifest) => {

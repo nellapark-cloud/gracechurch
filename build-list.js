@@ -6,10 +6,13 @@ const fs = require('fs');
 const path = require('path');
 
 const categories = [
-  { key: 'sermons', dir: 'content/sermons' },
-  { key: 'bible_study', dir: 'content/bible-study' },
-  { key: 'shepherd_training', dir: 'content/shepherd-training' },
-  { key: 'radio', dir: 'content/radio' },
+  { key: 'bible_by_book-old', dir: 'content/bible-by-book/old-testament' },
+  { key: 'bible_by_book-new', dir: 'content/bible-by-book/new-testament' },
+  { key: 'newcomers', dir: 'content/newcomers' },
+  { key: 'mokjang', dir: 'content/mokjang' },
+  { key: 'bulletin', dir: 'content/bulletin' },
+  { key: 'mokjang_sharing', dir: 'content/mokjang-sharing' },
+  { key: 'admin_forms', dir: 'content/admin-forms' },
 ];
 
 function parseFrontmatter(raw) {
