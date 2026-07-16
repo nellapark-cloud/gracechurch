@@ -1,0 +1,59 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "sermons"
+    label: "설교 (레위기 강해)"
+    folder: "content/sermons"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "제목", name: "title", widget: "string"}
+      - {label: "표시 태그", name: "tag", widget: "string", hint: "예: 1강, 전체"}
+      - {label: "짧은 설명", name: "meta", widget: "string", required: false, hint: "예: 번제"}
+      - {label: "날짜", name: "date", widget: "datetime"}
+      - {label: "첨부 파일", name: "file", widget: "file", hint: "PDF 또는 문서 파일을 업로드하세요"}
+      - {label: "본문 (선택)", name: "body", widget: "markdown", required: false}
+
+  - name: "bible_study"
+    label: "성경공부"
+    folder: "content/bible-study"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "제목", name: "title", widget: "string"}
+      - {label: "표시 태그", name: "tag", widget: "string", hint: "예: 소그룹, 전체"}
+      - {label: "짧은 설명", name: "meta", widget: "string", required: false}
+      - {label: "날짜", name: "date", widget: "datetime"}
+      - {label: "첨부 파일", name: "file", widget: "file", hint: "PDF 또는 문서 파일을 업로드하세요"}
+      - {label: "본문 (선택)", name: "body", widget: "markdown", required: false}
+
+  - name: "shepherd_training"
+    label: "목자훈련"
+    folder: "content/shepherd-training"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "제목", name: "title", widget: "string"}
+      - {label: "표시 태그", name: "tag", widget: "string", hint: "예: 1과, 전체"}
+      - {label: "짧은 설명", name: "meta", widget: "string", required: false}
+      - {label: "날짜", name: "date", widget: "datetime"}
+      - {label: "첨부 파일", name: "file", widget: "file", hint: "PDF 또는 문서 파일을 업로드하세요"}
+      - {label: "본문 (선택)", name: "body", widget: "markdown", required: false}
+
+  - name: "radio"
+    label: "방송 (더 그레이스)"
+    folder: "content/radio"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "제목", name: "title", widget: "string"}
+      - {label: "표시 태그", name: "tag", widget: "string", hint: "예: 최신, 전체"}
+      - {label: "짧은 설명", name: "meta", widget: "string", required: false, hint: "예: 화요일"}
+      - {label: "날짜", name: "date", widget: "datetime"}
+      - {label: "첨부 파일", name: "file", widget: "file", hint: "오디오 파일 또는 원고를 업로드하세요"}
+      - {label: "본문 (선택)", name: "body", widget: "markdown", required: false}

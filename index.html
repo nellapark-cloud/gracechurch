@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>은혜교회 자료실</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+<style>
+  :root{
+    --navy: #1c2b4a;
+    --navy-deep: #101a30;
+    --cream: #f6f2e9;
+    --cream-warm: #efe8d7;
+    --gold: #b8935a;
+    --gold-light: #d9bd8d;
+    --ink: #262622;
+    --muted: #6f7266;
+    --rule: rgba(28,43,74,0.14);
+    --rail-w: 84px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+  body{
+    margin:0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  h1,h2,h3,.serif{
+    font-family: 'Noto Serif KR', serif;
+    letter-spacing: -0.01em;
+  }
+  a{ color: inherit; }
+  :focus-visible{
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+  }
+
+  /* ---------- left directory rail ---------- */
+  .rail{
+    position: fixed;
+    left: 0; top: 0; bottom: 0;
+    width: var(--rail-w);
+    background: var(--navy);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    z-index: 50;
+  }
+  .rail__mark{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: rgba(246,242,233,0.42);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    padding: 0.35rem 0;
+    position: relative;
+    transition: color .35s ease;
+    writing-mode: vertical-rl;
+  }
+  .rail__mark span{
+    display:block;
+    margin-top: 0.6rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    font-weight: 300;
+  }
+  .rail__mark.is-active{ color: var(--gold-light); }
+  .rail__mark.is-active::before{
+    content:"";
+    position:absolute;
+    left: -18px; top:0; bottom:0;
+    width: 2px;
+    background: var(--gold);
+  }
+  .rail__foot{
+    position:absolute;
+    bottom: 1.6rem;
+    color: rgba(246,242,233,0.3);
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    writing-mode: vertical-rl;
+  }
+
+  main, footer{ margin-left: var(--rail-w); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    min-height: 88vh;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6vh 8vw 8vh;
+    position: relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    right: -10%;
+    top: -20%;
+    width: 60vw;
+    height: 60vw;
+    max-width: 640px;
+    max-height: 640px;
+    border: 1px solid var(--rule);
+    border-radius: 50%;
+  }
+  .hero__eyebrow{
+    font-size: 0.72rem;
+    letter-spacing: 0.32em;
+    color: var(--gold);
+    font-weight: 500;
+    margin-bottom: 1.4rem;
+  }
+  .hero h1{
+    font-size: clamp(2.6rem, 7vw, 5.2rem);
+    font-weight: 900;
+    color: var(--navy);
+    margin: 0 0 1.6rem;
+    line-height: 1.12;
+  }
+  .hero p{
+    max-width: 34rem;
+    color: var(--muted);
+    font-size: 1.05rem;
+    margin: 0 0 2.6rem;
+  }
+  .hero__index{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem 0;
+  }
+  .hero__index a{
+    text-decoration:none;
+    display:flex;
+    align-items:baseline;
+    gap:0.6rem;
+    padding: 0.55rem 1.4rem 0.55rem 0;
+    border-bottom: 1px solid var(--rule);
+    width: 100%;
+    max-width: 30rem;
+    color: var(--navy);
+    transition: padding-left .3s ease, color .3s ease;
+  }
+  .hero__index a:hover{
+    padding-left: 0.6rem;
+    color: var(--gold);
+  }
+  .hero__index .num{
+    font-family: 'Noto Serif KR', serif;
+    color: var(--gold);
+    font-weight: 600;
+    width: 2.4rem;
+    flex-shrink:0;
+  }
+  .hero__index .lbl{ font-weight: 500; }
+  .hero__index .cnt{
+    margin-left:auto;
+    font-size: 0.75rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ---------- rooms ---------- */
+  .room{
+    padding: 8vh 8vw;
+    border-top: 1px solid var(--rule);
+    scroll-margin-top: 2rem;
+  }
+  .room:nth-of-type(even){ background: var(--cream-warm); }
+
+  .room__head{
+    display:flex;
+    align-items:flex-end;
+    gap: 1.6rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+  }
+  .room__num{
+    font-family:'Noto Serif KR', serif;
+    font-size: 3.4rem;
+    font-weight: 700;
+    color: var(--gold);
+    line-height: 1;
+  }
+  .room__title{
+    font-size: clamp(1.5rem, 3vw, 2.1rem);
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 0.4rem;
+  }
+  .room__desc{
+    color: var(--muted);
+    max-width: 40rem;
+    font-size: 0.95rem;
+    margin: 0;
+  }
+
+  .doclist{
+    list-style:none;
+    margin:0; padding:0;
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--rule);
+  }
+  .doclist li{ border-bottom: 1px solid var(--rule); }
+  .doclist a{
+    display:grid;
+    grid-template-columns: 5.5rem 1fr auto;
+    align-items:center;
+    gap: 1.2rem;
+    padding: 1.15rem 0.4rem;
+    text-decoration:none;
+    transition: background .25s ease, padding-left .25s ease;
+  }
+  .doclist a:hover{
+    background: rgba(184,147,90,0.08);
+    padding-left: 0.9rem;
+  }
+  .doclist .tag{
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    font-weight: 500;
+  }
+  .doclist .title{
+    font-family:'Noto Serif KR', serif;
+    font-size: 1.02rem;
+    color: var(--ink);
+    font-weight: 500;
+  }
+  .doclist .meta{
+    font-size: 0.78rem;
+    color: var(--muted);
+    white-space:nowrap;
+  }
+  .doclist__empty{
+    padding: 1.15rem 0.4rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  /* ---------- footer ---------- */
+  footer{
+    padding: 6vh 8vw 5vh;
+    background: var(--navy-deep);
+    color: rgba(246,242,233,0.72);
+  }
+  footer .fname{
+    font-family:'Noto Serif KR', serif;
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin: 0 0 0.5rem;
+  }
+  footer p{ margin: 0.25rem 0; font-size: 0.85rem; color: rgba(246,242,233,0.5); }
+  footer .fgold{ color: var(--gold-light); }
+
+  @media (max-width: 720px){
+    :root{ --rail-w: 46px; }
+    .rail{ gap: 1.6rem; }
+    .rail__mark{ font-size: 0.85rem; }
+    .rail__mark span{ display:none; }
+    .hero, .room, footer{ padding-left: 6vw; padding-right: 6vw; }
+    .doclist a{ grid-template-columns: 4rem 1fr; }
+    .doclist .meta{ display:none; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    *{ transition:none !important; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="rail" aria-label="자료실 관 이동">
+  <a class="rail__mark" data-room="room-1" href="#room-1">I<span>설교</span></a>
+  <a class="rail__mark" data-room="room-2" href="#room-2">II<span>성경공부</span></a>
+  <a class="rail__mark" data-room="room-3" href="#room-3">III<span>목자훈련</span></a>
+  <a class="rail__mark" data-room="room-4" href="#room-4">IV<span>방송</span></a>
+  <span class="rail__foot">은혜교회</span>
+</nav>
+
+<main>
+
+  <section class="hero">
+    <p class="hero__eyebrow">GRACE CHURCH · 문헌 자료실</p>
+    <h1>은혜교회<br>자료실</h1>
+    <p>말씀 위에 세워진 것들을 한자리에 모았습니다. 강해 설교와 성경공부, 목자훈련, 그리고 방송까지 —
+      은혜교회가 걸어온 가르침의 발자취를 이곳에서 찾아보실 수 있습니다.</p>
+
+    <div class="hero__index">
+      <a href="#room-1"><span class="num">I</span><span class="lbl">설교의 방 · 레위기 강해</span><span class="cnt">보기</span></a>
+      <a href="#room-2"><span class="num">II</span><span class="lbl">성경공부의 방</span><span class="cnt">보기</span></a>
+      <a href="#room-3"><span class="num">III</span><span class="lbl">목자훈련의 방</span><span class="cnt">보기</span></a>
+      <a href="#room-4"><span class="num">IV</span><span class="lbl">방송의 방 · 더 그레이스</span><span class="cnt">보기</span></a>
+    </div>
+  </section>
+
+  <section class="room" id="room-1">
+    <div class="room__head">
+      <span class="room__num">I</span>
+      <div>
+        <h2 class="room__title">설교의 방</h2>
+        <p class="room__desc">레위기 강해 시리즈. 본문의 역사적 배경과 원어의 결을 따라가며,
+          거룩함으로 부르시는 하나님의 음성을 오늘의 언어로 풀어낸 설교 원고입니다.</p>
+      </div>
+    </div>
+    <ul class="doclist" id="list-sermons"><li class="doclist__empty">불러오는 중...</li></ul>
+  </section>
+
+  <section class="room" id="room-2">
+    <div class="room__head">
+      <span class="room__num">II</span>
+      <div>
+        <h2 class="room__title">성경공부의 방</h2>
+        <p class="room__desc">스스로 본문을 펴고 질문하며 걸어갈 수 있도록 만든 인터랙티브 성경공부 자료입니다.</p>
+      </div>
+    </div>
+    <ul class="doclist" id="list-bible_study"><li class="doclist__empty">불러오는 중...</li></ul>
+  </section>
+
+  <section class="room" id="room-3">
+    <div class="room__head">
+      <span class="room__num">III</span>
+      <div>
+        <h2 class="room__title">목자훈련의 방</h2>
+        <p class="room__desc">목장을 섬기는 목자들을 위한 훈련 자료입니다. 부부·남자·형자 목장을 이끌 때 필요한
+          실제적인 지침과 원리를 담았습니다.</p>
+      </div>
+    </div>
+    <ul class="doclist" id="list-shepherd_training"><li class="doclist__empty">불러오는 중...</li></ul>
+  </section>
+
+  <section class="room" id="room-4">
+    <div class="room__head">
+      <span class="room__num">IV</span>
+      <div>
+        <h2 class="room__title">방송의 방</h2>
+        <p class="room__desc">화요일 밤, 전파를 타고 전해지는 &lsquo;더 그레이스&rsquo; 방송 대본과 다시듣기 자료입니다.</p>
+      </div>
+    </div>
+    <ul class="doclist" id="list-radio"><li class="doclist__empty">불러오는 중...</li></ul>
+  </section>
+
+</main>
+
+<footer>
+  <p class="fname">은혜교회</p>
+  <p><span class="fgold">기독교한국침례회</span></p>
+  <p>이 자료실의 모든 문헌은 은혜교회 성도와 이웃을 위해 열려 있습니다.</p>
+  <p><a href="/admin/" style="color:inherit; text-decoration:underline;">관리자 로그인</a></p>
+</footer>
+
+<script>
+  // 스크롤에 따라 좌측 관(館) 표시등을 갱신
+  const rooms = document.querySelectorAll('.room');
+  const marks = document.querySelectorAll('.rail__mark');
+  const setActive = (id) => {
+    marks.forEach(m => m.classList.toggle('is-active', m.dataset.room === id));
+  };
+  if ('IntersectionObserver' in window){
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
+    }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
+    rooms.forEach(r => io.observe(r));
+  }
+
+  // 관리자 로그인(Netlify Identity) 연동 — /admin 접속 시 로그인 흐름을 정상 작동시킴
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", (user) => {
+      if (!user) {
+        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
+      }
+    });
+  }
+
+  // CMS에서 올린 자료 목록(data/manifest.json)을 불러와 각 관에 렌더링
+  fetch('./data/manifest.json')
+    .then((res) => res.json())
+    .then((manifest) => {
+      Object.keys(manifest).forEach((key) => {
+        const list = document.getElementById('list-' + key);
+        if (!list) return;
+        const items = manifest[key];
+        if (!items || items.length === 0) {
+          list.innerHTML = '<li class="doclist__empty">아직 등록된 자료가 없습니다.</li>';
+          return;
+        }
+        list.innerHTML = items.map((it) => `
+          <li><a href="${it.file || '#'}" ${it.file ? 'download' : ''}>
+            <span class="tag">${it.tag || ''}</span>
+            <span class="title">${it.title || ''}</span>
+            <span class="meta">${it.meta || ''}</span>
+          </a></li>`).join('');
+      });
+    })
+    .catch(() => {
+      document.querySelectorAll('.doclist').forEach((list) => {
+        list.innerHTML = '<li class="doclist__empty">자료 목록을 불러오지 못했습니다.</li>';
+      });
+    });
+</script>
+
+</body>
+</html>
