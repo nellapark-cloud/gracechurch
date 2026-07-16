@@ -1,0 +1,3977 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>마태복음 연구 — 전권 합본</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* clickable (has a glossary tip) — screen only, print keeps it static */
+.print-only-static b.has-tip{ cursor: default; }
+@media screen{
+  b.has-tip{ cursor: pointer; }
+  b.has-tip:after{
+    content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+    opacity: 0.75;
+  }
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--navy);
+  color: #e8ecf4;
+  font-size: 13px;
+  line-height: 1.6;
+  padding: 10px 13px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -6px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--navy);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 4px; right: 8px;
+  color: var(--gold-soft); font-size: 14px; cursor: pointer; opacity: 0.8;
+}
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+@media screen {
+  html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+}
+@media screen and (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 마태복음 연구</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+
+<div class="cover">
+  <div class="eyebrow">BIBLE STUDY · GOSPEL OF MATTHEW</div>
+  <h1>마태복음 연구</h1>
+  <div class="cover-sub">임마누엘에서 지상명령까지 — 전체 28장 성경 연구</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">마 1:1 – 28:20</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 28장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+</div>
+
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>마태복음 전체 서론</h1>
+  <p class="intro-lead">유대인의 왕, 다윗의 자손, 임마누엘이신 그리스도.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>마태복음은 초대교회 전통에서 열두 사도 중 한 사람이자 세리였던 <b class="hl-term">마태(레위)</b>의 기록으로 받아들여져 왔다(파피아스, 이레니우스의 증언). 구약 인용이 다른 어떤 복음서보다 압도적으로 많고 정교하다는 점은 유대 배경에 정통한 저자를 시사한다. 기록 시기는 대체로 <b class="hl-term">AD 70년을 전후한 시기</b>로 추정되며, 마가복음을 자료로 활용했다는 것이 현대 신약학의 다수 견해다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>수신자와 정황</h3>
+    <p>구약 성취 인용의 반복적 사용, 유대 관습에 대한 설명 없는 언급, "천국"이라는 완곡어법(하나님의 이름을 직접 부르기를 꺼리는 유대 관습 반영) 등은 마태복음이 <b class="hl-term has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">유대 배경의 그리스도인 공동체</b>, 특히 회당과의 결별을 겪고 있던 초기 유대-그리스도인들을 향해 기록되었을 가능성을 시사한다. 예수가 율법과 예언의 완성자이며 참 이스라엘이심을 논증하려는 목적이 본문 전반에 짙게 배어 있다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문체적 특징</h3>
+    <p>네 복음서 중 가장 <b class="hl-term">체계적으로 정돈된</b> 구조를 지닌다. 예수의 가르침을 다섯 개의 큰 강화(산상수훈 5–7장, 파송 설교 10장, 천국 비유 13장, 공동체 강화 18장, 감람산 강화 24–25장)로 묶어 배치한 것은 모세오경(율법서 다섯 권)을 연상시키는 의도적 구성으로 널리 해석된다. "이는 ~함을 이루려 하심이라"는 성취 인용구가 반복되며 예수의 생애를 구약의 성취로 촘촘히 엮어낸다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p><b class="hl-term has-tip" data-tip="마태복음에 반복적으로 등장하는 메시아 칭호. 예수가 다윗 언약(삼하 7장)의 성취자임을 강조하는, 유대인 독자를 향한 마태 특유의 기독론적 표현.">다윗의 자손이자 참 이스라엘로서의 그리스도</b>와 <b class="hl-term has-tip" data-tip="예수께서 구약의 율법을 폐하러 오신 것이 아니라 그 본래 의도를 심화·성취하러 오셨다는 마태복음 5:17의 선언.">율법의 완성으로서의 하나님 나라 윤리</b>가 마태복음 전체를 관통하는 두 축이다. 예수의 정체는 구약 예언의 성취 속에서 계시되며, 산상수훈으로 대표되는 그 가르침은 옛 율법을 폐하지 않고 그 본래 의도를 심화시킨다. 이 신학적 구조는 <b class="hl-term has-tip" data-tip="&#x27;하나님이 우리와 함께 계시다&#x27;는 뜻의 히브리어. 이사야 7:14의 성취로 예수의 탄생과 함께 선포되며, 마태복음 마지막 구절(28:20)과 수미상관을 이룬다.">임마누엘</b>(1:23)로 시작해 "내가 너희와 항상 함께 있으리라"(28:20)는 약속으로 마치는 수미상관 안에서 완결된다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1 – 4장</div>
+        <div class="oi-title">그리스도의 등장</div>
+        <div class="oi-body">계보, 탄생, 세례, 시험을 거쳐 갈릴리 사역이 시작된다.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">5 – 25장</div>
+        <div class="oi-title">다섯 강화와 사역</div>
+        <div class="oi-body">산상수훈부터 감람산 강화까지, 가르침과 이적과 논쟁이 교차하며 전개된다.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">26 – 28장</div>
+        <div class="oi-title">수난, 부활, 지상명령</div>
+        <div class="oi-body">최후의 만찬과 십자가, 부활을 거쳐 모든 민족을 향한 파송으로 마무리된다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 원어 배경, 본문비평, 해석사적 논쟁 등 확정적 답보다 함께 씨름할 가치가 있는 지점들을 다룬다. 개인 묵상은 물론 소그룹·설교 준비 자료로도 사용할 수 있도록 구성하였다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">그리스도의 계보와 탄생</span>
+      <span class="toc-sub">아브라함부터 그리스도까지, 임마누엘의 탄생</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch1"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-title">동방박사와 피난</span>
+      <span class="toc-sub">별을 따라온 경배자들과 헤롯의 폭력</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch2"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-title">세례 요한과 예수의 세례</span>
+      <span class="toc-sub">회개의 선포와 모든 의를 이루심</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch3"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-title">광야의 시험과 사역의 시작</span>
+      <span class="toc-sub">말씀으로 이기신 시험과 첫 제자들</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch4"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-title">산상수훈 (1) — 팔복과 율법의 완성</span>
+      <span class="toc-sub">뒤집힌 복과 심화된 의</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch5"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-title">산상수훈 (2) — 은밀한 경건</span>
+      <span class="toc-sub">구제·기도·금식과 하나님 나라의 우선순위</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch6"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch7')" onkeydown="if(event.key==='Enter')goTo(event,'ch7')">
+      <span class="toc-num">07</span>
+      <span class="toc-title">산상수훈 (3) — 결단의 촉구</span>
+      <span class="toc-sub">두 가지 길, 두 가지 집</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch7"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch8')" onkeydown="if(event.key==='Enter')goTo(event,'ch8')">
+      <span class="toc-num">08</span>
+      <span class="toc-title">권능의 표적들 (1)</span>
+      <span class="toc-sub">나병환자에서 풍랑까지</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch8"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch9')" onkeydown="if(event.key==='Enter')goTo(event,'ch9')">
+      <span class="toc-num">09</span>
+      <span class="toc-title">권능의 표적들 (2)와 부르심</span>
+      <span class="toc-sub">죄 사함, 마태를 부르심, 추수의 마음</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch9"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch10')" onkeydown="if(event.key==='Enter')goTo(event,'ch10')">
+      <span class="toc-num">10</span>
+      <span class="toc-title">열두 제자 파송</span>
+      <span class="toc-sub">거저 받았으니 거저 주라</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch10"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch11')" onkeydown="if(event.key==='Enter')goTo(event,'ch11')">
+      <span class="toc-num">11</span>
+      <span class="toc-title">세례 요한과 안식의 초청</span>
+      <span class="toc-sub">수고하고 무거운 짐 진 자들아</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch11"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch12')" onkeydown="if(event.key==='Enter')goTo(event,'ch12')">
+      <span class="toc-num">12</span>
+      <span class="toc-title">안식일의 주인과 표적 논쟁</span>
+      <span class="toc-sub">상한 갈대를 꺾지 않으시는 메시아</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch12"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch13')" onkeydown="if(event.key==='Enter')goTo(event,'ch13')">
+      <span class="toc-num">13</span>
+      <span class="toc-title">천국 비유</span>
+      <span class="toc-sub">씨와 보화와 그물</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch13"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch14')" onkeydown="if(event.key==='Enter')goTo(event,'ch14')">
+      <span class="toc-num">14</span>
+      <span class="toc-title">세례 요한의 죽음과 오병이어</span>
+      <span class="toc-sub">물 위를 걸으신 밤</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch14"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch15')" onkeydown="if(event.key==='Enter')goTo(event,'ch15')">
+      <span class="toc-num">15</span>
+      <span class="toc-title">전통과 믿음의 경계</span>
+      <span class="toc-sub">가나안 여인의 크신 믿음</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch15"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch16')" onkeydown="if(event.key==='Enter')goTo(event,'ch16')">
+      <span class="toc-num">16</span>
+      <span class="toc-title">베드로의 고백과 첫 수난 예고</span>
+      <span class="toc-sub">이 반석 위에 내 교회를 세우리니</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch16"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch17')" onkeydown="if(event.key==='Enter')goTo(event,'ch17')">
+      <span class="toc-num">17</span>
+      <span class="toc-title">변화산과 성전세</span>
+      <span class="toc-sub">겨자씨 한 알만한 믿음</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch17"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch18')" onkeydown="if(event.key==='Enter')goTo(event,'ch18')">
+      <span class="toc-num">18</span>
+      <span class="toc-title">공동체의 삶</span>
+      <span class="toc-sub">일흔 번씩 일곱 번이라도</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch18"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch19')" onkeydown="if(event.key==='Enter')goTo(event,'ch19')">
+      <span class="toc-num">19</span>
+      <span class="toc-title">이혼, 어린아이, 부자 청년</span>
+      <span class="toc-sub">사람으로는 할 수 없으나 하나님으로서는</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch19"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch20')" onkeydown="if(event.key==='Enter')goTo(event,'ch20')">
+      <span class="toc-num">20</span>
+      <span class="toc-title">포도원 품꾼과 섬김의 도</span>
+      <span class="toc-sub">대속물로 자기 목숨을 주려 하심</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch20"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch21')" onkeydown="if(event.key==='Enter')goTo(event,'ch21')">
+      <span class="toc-num">21</span>
+      <span class="toc-title">예루살렘 입성과 성전 청결</span>
+      <span class="toc-sub">겸손한 왕의 입성</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch21"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch22')" onkeydown="if(event.key==='Enter')goTo(event,'ch22')">
+      <span class="toc-num">22</span>
+      <span class="toc-title">논쟁의 절정</span>
+      <span class="toc-sub">큰 계명과 다윗의 자손 문제</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch22"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch23')" onkeydown="if(event.key==='Enter')goTo(event,'ch23')">
+      <span class="toc-num">23</span>
+      <span class="toc-title">서기관과 바리새인 책망</span>
+      <span class="toc-sub">일곱 화(禍)</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch23"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch24')" onkeydown="if(event.key==='Enter')goTo(event,'ch24')">
+      <span class="toc-num">24</span>
+      <span class="toc-title">감람산 강화 (1) — 징조와 재림</span>
+      <span class="toc-sub">그 날과 그 때는 아무도 모르나니</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch24"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch25')" onkeydown="if(event.key==='Enter')goTo(event,'ch25')">
+      <span class="toc-num">25</span>
+      <span class="toc-title">감람산 강화 (2) — 준비의 비유들</span>
+      <span class="toc-sub">지극히 작은 자 하나에게 한 것</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch25"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch26')" onkeydown="if(event.key==='Enter')goTo(event,'ch26')">
+      <span class="toc-num">26</span>
+      <span class="toc-title">배반의 밤</span>
+      <span class="toc-sub">이 잔을 내게서 지나가게 하옵소서</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch26"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch27')" onkeydown="if(event.key==='Enter')goTo(event,'ch27')">
+      <span class="toc-num">27</span>
+      <span class="toc-title">십자가에서</span>
+      <span class="toc-sub">엘리 엘리 라마 사박다니</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch27"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch28')" onkeydown="if(event.key==='Enter')goTo(event,'ch28')">
+      <span class="toc-num">28</span>
+      <span class="toc-title">부활과 지상명령</span>
+      <span class="toc-sub">내가 너희와 항상 함께 있으리라</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch28"></span>
+    </a>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l4 10 10 1-8 7 3 10-9-6-9 6 3-10-8-7 10-1Z" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 1</div>
+      <h1>1장 · 그리스도의 계보와 탄생</h1>
+      <div class="chapter-sub">마태복음 1장 — 아브라함부터 그리스도까지, 임마누엘의 탄생</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 1:1–25</span>
+      <span class="ref-item">사 7:14</span>
+      <span class="ref-item">다윗의 자손</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">족보와 탄생 기사, 두 단락으로 구성된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–17절</div>
+        <div>
+          <div class="flow-title">예수 그리스도의 계보</div>
+          <div class="flow-body">아브라함부터 다윗까지, 다윗부터 바벨론 유수까지, 유수부터 그리스도까지 <b class="hl-term">세 시대 열넷씩</b>으로 정리된다. 다말·라합·룻·우리야의 아내(밧세바) 등 <b class="hl-term">이방인 또는 흠 있는 여인들</b>이 이례적으로 포함된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">18–25절</div>
+        <div>
+          <div class="flow-title">예수의 탄생</div>
+          <div class="flow-body">마리아가 성령으로 잉태된 것을 알고 고민하던 요셉에게 천사가 현몽하여 <b class="hl-quote has-tip" data-tip="&#x27;하나님이 우리와 함께 계시다&#x27;는 뜻의 히브리어. 이사야 7:14의 성취로 예수의 탄생과 함께 선포되며, 마태복음 마지막 구절(28:20)과 수미상관을 이룬다.">"임마누엘"</b>(하나님이 우리와 함께 계시다, 사 7:14 성취)을 선포한다. 요셉은 순종하여 마리아를 아내로 맞이하고, 아들의 이름을 <b class="hl-term">예수</b>라 한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 족보 속에 담긴 은혜</div>
+        <div class="teach-body">이방 여인들과 흠 있는 인물들이 포함된 족보는, 하나님의 구원 계획이 처음부터 죄인과 이방인을 품고 있었음을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 임마누엘 — 하나님이 우리와 함께</div>
+        <div class="teach-body">그리스도의 이름 자체가 신학적 선언이다. 하나님은 멀리 계신 분이 아니라 함께하시는 분이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 순종하는 요셉의 모범</div>
+        <div class="teach-body">의로운 사람 요셉은 마리아를 부끄럽게 하지 않으려 조용히 물러나려 했으나, 천사의 지시에 즉각 순종한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 이름에 담긴 사명</div>
+        <div class="teach-body">"예수"(여호와는 구원이시다)라는 이름 자체가 "자기 백성을 죄에서 구원할 자"라는 사명을 담고 있다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 다윗 언약의 성취자</div>
+        <div class="teach-body">족보는 예수가 다윗에게 주신 언약(삼하 7장)의 성취자임을 강조하는, 유대인 독자를 향한 마태 특유의 신학적 포석이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">족보는 지루하게 느껴지기 쉽지만, 다말·라합·룻·밧세바라는 이름을 하나씩 짚어보면 전혀 다르게 읽혀요. 하나님의 구원 역사는 처음부터 흠 있는 사람들과 함께 쓰여왔습니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>족보의 "14대씩 세 시대" 구조의 상징성</div>
+        <div class="deep-body">다윗이라는 이름의 히브리어 자음 값(게마트리아)이 14라는 점과 연결짓는 해석이 있다. 역대기 등 구약 계보와 비교할 때 일부 세대가 의도적으로 생략된 것으로 보이며, 이는 역사적 부정확이 아니라 문학적 균형(14×3)을 위한 고대의 계보 서술 관습으로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"동정녀가 잉태하여"(23절, 사 7:14 인용)의 번역 논쟁</div>
+        <div class="deep-body">이사야 원문의 히브리어 <b class="hl-term">알마</b>(עַלְמָה, 젊은 여인)와 칠십인역의 헬라어 <b class="hl-term">파르테노스</b>(παρθένος, 처녀) 사이에는 번역상의 간극이 있다. 마태가 칠십인역을 따라 이 본문을 동정녀 탄생의 근거로 사용한 것에 대해서는 해석사적으로 다양한 논의가 있어왔다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="10" r="2.5" /><path d="M24 12.5V20" /><path d="M10 40q14-14 28 0" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 2</div>
+      <h1>2장 · 동방박사와 피난</h1>
+      <div class="chapter-sub">마태복음 2장 — 별을 따라온 경배자들과 헤롯의 폭력</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 2:1–23</span>
+      <span class="ref-item">호 11:1</span>
+      <span class="ref-item">렘 31:15</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">네 장면이 예수의 유아기를 둘러싼 사건들을 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–12절</div>
+        <div>
+          <div class="flow-title">동방박사의 경배</div>
+          <div class="flow-body">별을 보고 온 동방박사들에게 헤롯이 거짓으로 협조를 요청한다. 박사들은 베들레헴에서 아기를 찾아 <b class="hl-term">황금·유향·몰약</b>을 드리고 경배한 후, 꿈의 지시로 다른 길로 돌아간다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–15절</div>
+        <div>
+          <div class="flow-title">애굽 피난</div>
+          <div class="flow-body">요셉이 꿈의 지시로 아기와 마리아를 데리고 애굽으로 피신하니, <b class="hl-quote">"내 아들을 애굽에서 불렀다"</b>(호 11:1)는 말씀이 성취된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">16–18절</div>
+        <div>
+          <div class="flow-title">헤롯의 영아 학살</div>
+          <div class="flow-body">속은 것을 안 헤롯이 베들레헴과 그 지경의 두 살 이하 사내아이들을 학살하니, 예레미야의 <b class="hl-term has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">라마의 통곡</b>(렘 31:15)이 성취된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">19–23절</div>
+        <div>
+          <div class="flow-title">나사렛 정착</div>
+          <div class="flow-body">헤롯 사후 귀환하나 아켈라오를 피해 나사렛으로 가니, "나사렛 사람이라 칭하리라"는 말씀이 성취된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 이방인의 경배가 먼저 옴</div>
+        <div class="teach-body">이방 점성가들의 경배는 복음이 처음부터 만민을 향한다는 사실을 예표적으로 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 거짓 권력의 두려움과 폭력</div>
+        <div class="teach-body">헤롯의 반응은 참 왕 앞에서 거짓 권력이 느끼는 위협과, 그 위협이 낳는 폭력을 적나라하게 드러낸다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 반복되는 성취 인용의 패턴</div>
+        <div class="teach-body">마태복음 특유의 "이는 ~함을 이루려 하심이라"는 반복 인용은, 예수의 생애가 이스라엘의 역사를 재현하며 성취함을 강조한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 고난 속에 함께하시는 하나님</div>
+        <div class="teach-body">아기 예수조차 정치적 폭력의 위협 속에 피난민이 되셨다는 사실은, 오늘날 고난받는 이들에게 실제적 위로가 된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 무고한 고통에 대한 정직한 인정</div>
+        <div class="teach-body">라마의 통곡 본문은 무고한 고통을 성급히 미화하지 않고 정직하게 슬퍼하되, 그 안에서도 이어지는 하나님의 계획을 신뢰하게 한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">아기 예수가 피난민이었다는 사실, 낯설게 다가오지 않나요? 오늘날 난민과 이주민의 고통을 이해하는 데 이 본문이 의외로 실제적인 통찰을 줍니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>마태의 성취 인용 기법</div>
+        <div class="deep-body">호세아 11:1은 원래 출애굽한 이스라엘을 가리키는 구절이나, 마태는 이를 예수께 적용한다. 이는 원문맥을 왜곡한 것이라기보다, 예수가 이스라엘의 이야기를 <b class="hl-term">유형론적으로(typologically)</b> 재연하는 참 이스라엘이라는 마태 특유의 신학적 독법으로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>동방박사는 몇 명이었나</div>
+        <div class="deep-body">성경 본문은 인원수를 명시하지 않으나, 선물이 세 가지(황금·유향·몰약)라는 이유로 후대에 "세 박사"라는 전통이 형성되었다. 발타사르·멜키오르·가스파르라는 이름이 붙여진 것도 성경 본문이 아닌 후대 전승에서 비롯된 것이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8v10" /><path d="M18 16l6 6 6-6" /><path d="M8 36q4-4 8 0t8 0 8 0 8 0" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 3</div>
+      <h1>3장 · 세례 요한과 예수의 세례</h1>
+      <div class="chapter-sub">마태복음 3장 — 회개의 선포와 모든 의를 이루심</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 3:1–17</span>
+      <span class="ref-item">사 40:3</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">요한의 사역과 예수의 세례, 두 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–12절</div>
+        <div>
+          <div class="flow-title">세례 요한의 사역</div>
+          <div class="flow-body">광야에서 회개를 선포하며, 바리새인과 사두개인을 <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"독사의 자식들"</b>이라 책망하고 회개의 열매를 요구한다. 자신보다 능력 많으신 이가 성령과 불로 세례를 주실 것을 예고한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–17절</div>
+        <div>
+          <div class="flow-title">예수의 세례</div>
+          <div class="flow-body">요한이 만류하나 예수는 <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"모든 의를 이루는 것"</b>이라 답하신다. 세례 후 하늘이 열리고 성령이 비둘기같이 임하며, <b class="hl-quote">"이는 내 사랑하는 아들"</b>(3인칭)이라는 음성이 들린다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 말이 아니라 열매</div>
+        <div class="teach-body">회개는 감정적 고백을 넘어 삶으로 증명되는 열매를 요구한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 혈통이 아니라 열매</div>
+        <div class="teach-body">"아브라함의 자손"이라는 특권 의식에 대한 요한의 경고는, 소속이 아니라 응답이 참됨의 척도임을 알려준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 겸손히 낮아지신 그리스도</div>
+        <div class="teach-body">죄 없으신 분이 죄인의 세례를 받으심으로써 인류와 자신을 동일시하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 순종으로서의 의</div>
+        <div class="teach-body">예수의 세례는 죄 사함이 아니라, 하나님의 뜻에 대한 온전한 순종을 상징하는 행위다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 삼위일체적 계시의 순간</div>
+        <div class="teach-body">성부의 음성, 성자의 세례, 성령의 강림이 함께 나타나는 이 장면은 신약에서 삼위일체가 가장 뚜렷하게 계시되는 순간 중 하나다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"모든 의를 이루는 것"이라는 예수님의 대답은 짧지만, 산상수훈 전체에서 다시 만나게 될 '의'라는 단어의 첫 등장이에요. 3장을 기억해두면 5장이 더 깊이 읽힙니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"내 사랑하는 아들"의 3인칭 서술(마태 vs 마가)</div>
+        <div class="deep-body">마가복음 1:11은 "너는 내 사랑하는 아들이라"(2인칭)이나, 마태복음 3:17은 "이는 내 사랑하는 아들"(3인칭)이다. 이는 하늘의 음성이 예수 개인을 향한 사적 확증이 아니라, 공적 선언·증언으로 제시되는 마태 특유의 강조로 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"모든 의를 이루는 것"(15절)의 의미</div>
+        <div class="deep-body">헬라어 <b class="hl-term">디카이오쉬네</b>(의)는 마태복음의 핵심 신학 용어 중 하나다. 세례 요한과 예수 모두 하나님의 뜻에 대한 순종을 실행하는 것으로 이 구절을 이해하는 것이 일반적이며, 이는 이후 산상수훈의 '의' 개념(5장)으로 이어지는 신학적 실마리가 된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 14h32M8 22h32M8 30h32" /><path d="M14 8v28M24 8v28M34 8v28" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 4</div>
+      <h1>4장 · 광야의 시험과 사역의 시작</h1>
+      <div class="chapter-sub">마태복음 4장 — 말씀으로 이기신 시험과 첫 제자들</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 4:1–25</span>
+      <span class="ref-item">신 8:3</span>
+      <span class="ref-item">사 9:1–2</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">시험과 사역 개시, 제자 부름, 네 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–11절</div>
+        <div>
+          <div class="flow-title">광야의 시험</div>
+          <div class="flow-body">40일 금식 후 사탄이 세 가지로 시험한다 — 돌을 떡으로, 성전에서 뛰어내림, 만국의 영광. 예수는 매번 <b class="hl-term">신명기</b>를 인용해 물리치시고, 천사들이 수종든다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">12–17절</div>
+        <div>
+          <div class="flow-title">갈릴리 사역의 시작</div>
+          <div class="flow-body">가버나움에 정착하시니 <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"이방의 갈릴리"</b>(사 9:1–2)의 성취로 제시된다. "회개하라 천국이 가까이 왔느니라" 선포하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">18–22절</div>
+        <div>
+          <div class="flow-title">첫 제자들을 부르심</div>
+          <div class="flow-body">베드로·안드레·야고보·요한이 그물과 배를 <b class="hl-term">즉시</b> 버려두고 따른다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">23–25절</div>
+        <div>
+          <div class="flow-title">사역의 요약</div>
+          <div class="flow-body">가르치심, 천국 복음 전파, 각종 병 고치심이 온 수리아까지 소문난다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 말씀으로 이기신 시험</div>
+        <div class="teach-body">세 번 모두 신명기(광야 시절 이스라엘을 향한 말씀)를 인용해 물리치심으로써, 예수는 새 이스라엘로서 옛 이스라엘이 실패한 시험을 통과하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 시험의 세 영역</div>
+        <div class="teach-body">육체적 필요, 신적 능력의 오용, 세상적 권세 — 인간이 넘어지는 전형적인 세 유혹의 패턴을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 어둠에 비추는 빛</div>
+        <div class="teach-body">이방의 땅으로 여겨지던 갈릴리에서 사역을 시작하심은, 소외된 곳을 먼저 찾으시는 하나님의 마음을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 즉각적 순종의 부르심</div>
+        <div class="teach-body">생업을 두고 즉시 따르는 제자들의 모습은 부르심에 대한 응답의 본이 된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 말씀과 행함의 통합</div>
+        <div class="teach-body">가르치심과 고치심이 함께 가는 천국 복음의 총체성을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">세 가지 시험 모두 신명기 말씀으로 물리치신 것, 우연이 아니에요. 광야에서 실패했던 이스라엘의 이야기를 예수님이 다시 사시며 이기고 계신 겁니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>시험 순서의 마태-누가 차이</div>
+        <div class="deep-body">마태는 성전-광야-산 순서, 누가는 광야-성전-산 순서로 다르게 배열한다. 마태가 "산"을 마지막에 배치한 것은, 곧이어 나올 <b class="hl-term has-tip" data-tip="마태복음 5–7장에 기록된 예수의 대표적 가르침. 팔복으로 시작해 반석 위의 집 비유로 끝나는, 하나님 나라 백성의 삶의 원리를 담은 강화.">산상수훈</b>(5장)으로 자연스럽게 이어지는 문학적 의도라는 해석이 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"천사들이 나아와서 수종드니라"(11절)의 의미</div>
+        <div class="deep-body">시험 승리 후 주어지는 천상의 확증이자, 광야의 이스라엘에게 만나가 공급되었듯 참 이스라엘이신 예수께 공급되는 새로운 광야 서사의 완성으로 읽힌다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="10" r="4" /><path d="M6 36l12-16 6 8 4-5 12 13Z" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 5</div>
+      <h1>5장 · 산상수훈 (1) — 팔복과 율법의 완성</h1>
+      <div class="chapter-sub">마태복음 5장 — 뒤집힌 복과 심화된 의</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 5:1–48</span>
+      <span class="ref-item">산상수훈</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">팔복에서 여섯 반제(antithesis)까지 이어진다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–12절</div>
+        <div>
+          <div class="flow-title">팔복</div>
+          <div class="flow-body">심령이 가난한 자, 애통하는 자, 온유한 자, 의에 주리고 목마른 자, 긍휼히 여기는 자, 마음이 청결한 자, 화평케 하는 자, 의를 위해 박해받는 자 — 여덟 가지 <b class="hl-term">뒤집힌 복</b>이 선포된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–16절</div>
+        <div>
+          <div class="flow-title">소금과 빛</div>
+          <div class="flow-body">제자들을 세상의 <b class="hl-term">소금과 빛</b>으로 선언하시며, 이는 되어야 할 목표가 아니라 이미 주어진 정체성으로 제시된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">17–20절</div>
+        <div>
+          <div class="flow-title">율법의 완성</div>
+          <div class="flow-body"><b class="hl-quote">"폐하러 온 것이 아니요 완전하게 하려 함이라"</b> 선언하시며, 서기관과 바리새인보다 나은 의를 요구하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">21–48절</div>
+        <div>
+          <div class="flow-title">여섯 반제</div>
+          <div class="flow-body">살인/분노, 간음/음욕, 이혼, 맹세, 보복(오른뺨을 대라), 원수 사랑까지 — 율법의 외적 준수를 넘어 그 <b class="hl-term has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">내적 의도</b>를 심화시키신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 뒤집힌 복의 목록</div>
+        <div class="teach-body">세상이 약함으로 여기는 것들을 하나님 나라는 복이라 선언한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 정체성이 곧 사명</div>
+        <div class="teach-body">소금과 빛은 노력으로 되어야 할 목표가 아니라, 이미 그러하다고 선언된 정체성에서 흘러나오는 삶이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 완성으로서의 성취</div>
+        <div class="teach-body">율법 폐기가 아니라 그 본래 의도의 심화이자 완성으로 제시된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 마음의 문제로서의 율법</div>
+        <div class="teach-body">살인·간음의 외적 행위보다 그 뿌리인 분노와 음욕을 다루신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 원수 사랑의 급진성</div>
+        <div class="teach-body">반응적 정의(눈에는 눈)를 넘어서는 하나님 나라의 초과적 사랑을 요구하신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">팔복을 읽을 때 '나는 이 중 몇 개나 해당될까' 점검하기보다, 먼저 이 여덟 문장이 세상의 상식을 얼마나 뒤집고 있는지 느껴보시길 권해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 세 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"심령이 가난한 자"(3절)의 의미</div>
+        <div class="deep-body">물질적 빈곤이 아니라 하나님 앞에서의 영적 파산 상태를 인정하는 겸손을 가리킨다는 해석이 유력하다. 누가복음 6:20의 "가난한 자"(수식어 없음)와 비교하면, 마태는 영적 차원을, 누가는 사회경제적 차원을 함께 강조한다는 차이가 논의된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"서기관과 바리새인보다 나은 의"(20절) 요구의 부담</div>
+        <div class="deep-body">이것이 인간의 노력으로 성취 가능한 도덕적 기준인지, 아니면 그리스도 안에서 전가되는 의를 가리키는지에 대해 신학적 해석이 갈린다. 개혁주의 전통은 전가된 의를, 다른 전통은 성령의 능력에 의한 실제적 성화를 강조하는 경향이 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>"눈이 실족하게 하거든 빼버리라"(29–30절)를 문자 그대로 읽어야 하는가</div>
+        <div class="deep-body">이 구절을 문자적 지시로 받아들여서는 안 된다는 것이 거의 모든 주석가들의 일치된 견해다. 랍비 문헌에도 나타나는 셈어적 과장법(hyperbole) 화법으로, 죄의 심각성과 그것을 다루는 데 필요한 단호함을 극적으로 강조하는 수사적 장치로 이해된다. 실제로 신체를 훼손하는 것은 죄의 근원(마음, 15:19)을 다루지 못한 채 결과만 제거하려는 시도이므로 본문의 논리와도 맞지 않는다. 초대교회 일부에서 이를 문자적으로 실행했다는 전승(오리게네스 관련 일화 등)이 전해지나, 이는 본문의 수사적 의도를 오독한 사례로 후대 교부들 스스로도 경계했다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18v10a10 10 0 0 0 20 0V18" /><path d="M14 18a4 4 0 0 1 8 0M26 18a4 4 0 0 1 8 0" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 6</div>
+      <h1>6장 · 산상수훈 (2) — 은밀한 경건</h1>
+      <div class="chapter-sub">마태복음 6장 — 구제·기도·금식과 하나님 나라의 우선순위</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 6:1–34</span>
+      <span class="ref-item">주기도문</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">은밀한 경건에서 염려하지 말라는 권면까지 이어진다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">은밀한 구제</div>
+          <div class="flow-body"><b class="hl-term">오른손이 하는 것을 왼손이 모르게</b> 하라는 은밀함의 원리가 제시된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">5–15절</div>
+        <div>
+          <div class="flow-title">기도와 주기도문</div>
+          <div class="flow-body">골방에서의 은밀한 기도를 명하시고, <b class="hl-term has-tip" data-tip="마태복음 6:9–13에 기록된, 예수께서 직접 가르치신 모범 기도. 하나님 아버지와의 관계, 그 나라의 임함, 일용할 양식과 용서를 함께 구한다.">주기도문</b>("하늘에 계신 우리 아버지...")을 가르치시며 용서의 상호성을 강조하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">16–18절</div>
+        <div>
+          <div class="flow-title">은밀한 금식</div>
+          <div class="flow-body">슬픈 기색을 내지 말고 은밀하게 금식하라 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">19–24절</div>
+        <div>
+          <div class="flow-title">재물관</div>
+          <div class="flow-body">하늘에 보물을 쌓으라, 눈은 몸의 등불, <b class="hl-term">하나님과 재물을 겸하여 섬기지 못한다</b>.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">25–34절</div>
+        <div>
+          <div class="flow-title">염려하지 말라</div>
+          <div class="flow-body">공중의 새와 들의 백합화를 예로 드시며, <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"먼저 그 나라와 그 의를 구하라"</b> 권면하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 하나님만 보시는 경건</div>
+        <div class="teach-body">사람에게 보이려는 경건에 대한 경고가 구제·기도·금식 모두에서 동일한 구조로 반복된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 관계로서의 기도</div>
+        <div class="teach-body">주기도문은 형식이 아니라 하나님 아버지와의 친밀한 관계를 반영하는 기도의 틀이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 용서받음과 용서함의 연결</div>
+        <div class="teach-body">"우리가 우리에게 죄지은 자를 사하여 준 것 같이"라는 조건적 표현은 가볍지 않은 무게를 지닌다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 두 주인을 섬길 수 없음</div>
+        <div class="teach-body">재물이 우상이 될 때 하나님과 결코 양립할 수 없음을 선언하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 염려에 대한 실제적 위로</div>
+        <div class="teach-body">창조 세계를 향한 하나님의 돌보심을 근거로, 염려 대신 신뢰를 초청하신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">주기도문을 매일 외우면서도 정작 '뜻'을 깊이 생각해본 적 없으신가요? 이번 기회에 한 구절씩 천천히 소리 내어 읽어보시는 것도 좋겠습니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"일용할 양식"(11절)의 번역 난제</div>
+        <div class="deep-body">헬라어 <b class="hl-greek">ἐπιούσιος</b>(에피우시오스)는 신약 전체에서 이 구절과 병행 구절 외에는 거의 등장하지 않는 매우 드문 단어다. "그날의", "내일의", "필요한" 등 다양한 번역 가능성이 제기되어 온 고전적인 번역학 난제다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>염려하지 말라는 명령과 책임 있는 삶의 균형</div>
+        <div class="deep-body">"먼저 그의 나라와 그의 의를 구하라"(33절)는 명령이 계획·저축 등 책임 있는 삶의 태도와 모순되지 않는지에 대한 실제적 목회적 균형이 필요하다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40V26" /><path d="M24 26L10 10M24 26L38 10" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 7</div>
+      <h1>7장 · 산상수훈 (3) — 결단의 촉구</h1>
+      <div class="chapter-sub">마태복음 7장 — 두 가지 길, 두 가지 집</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 7:1–29</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">여섯 단락으로 산상수훈이 마무리된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">비판하지 말라</div>
+          <div class="flow-body">형제의 눈 속 티와 자기 눈 속 들보를 대조하며, 거룩한 것을 개에게 주지 말라 경고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">7–12절</div>
+        <div>
+          <div class="flow-title">구하라 찾으라 두드리라</div>
+          <div class="flow-body">좋은 것을 주시는 아버지를 근거로, <b class="hl-term has-tip" data-tip="&quot;남에게 대접을 받고자 하는 대로 남을 대접하라&quot;(7:12)는 원리. 소극적 금지가 아니라 적극적 사랑의 실천을 요구하는 표현이다.">황금률</b>("남에게 대접을 받고자 하는 대로 남을 대접하라")을 선포하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–14절</div>
+        <div>
+          <div class="flow-title">좁은 문과 넓은 문</div>
+          <div class="flow-body">생명으로 인도하는 좁은 문과 멸망으로 인도하는 넓은 문을 대조하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">15–23절</div>
+        <div>
+          <div class="flow-title">거짓 선지자 분별</div>
+          <div class="flow-body">열매로 나무를 아나니, <b class="hl-quote has-tip" data-tip="마태복음 특유의 표현으로 &#x27;하나님 나라&#x27;와 동일한 의미. 유대인 독자를 배려해 하나님의 이름을 직접 부르기를 꺼리는 관습을 반영한 것으로 이해된다.">"주여 주여" 하는 자마다 다 천국에 들어가는 것이 아니라</b> 경고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">24–27절</div>
+        <div>
+          <div class="flow-title">반석 위의 집과 모래 위의 집</div>
+          <div class="flow-body">말씀을 듣고 행하는 자와 듣고 행하지 않는 자의 결말이 대조된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">28–29절</div>
+        <div>
+          <div class="flow-title">청중의 반응</div>
+          <div class="flow-body">서기관들과 다른 권위 있는 가르침에 무리가 놀란다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 자기 성찰이 먼저</div>
+        <div class="teach-body">타인을 판단하기 전에 자신의 들보를 보라는 요구가 앞선다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 관계적 기도의 확신</div>
+        <div class="teach-body">좋은 것을 구하는 자녀에게 좋은 것으로 응답하시는 아버지의 성품이 기도의 근거가 된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 황금률의 적극성</div>
+        <div class="teach-body">소극적 금지가 아니라 적극적 실천("대접하라")으로 표현된 사랑의 원리다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 좁은 길의 대가</div>
+        <div class="teach-body">천국의 길은 인기 있는 넓은 길이 아니라 소수가 택하는 좁은 길이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 열매로 증명되는 진정성</div>
+        <div class="teach-body">말과 은사가 아니라 삶의 열매가 참된 제자 됨의 증거가 된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'남에게 대접받고 싶은 대로 대접하라'는 황금률, 사실 여러 문화권 격언에도 비슷한 표현이 있어요. 그런데 예수님의 방식은 늘 더 적극적이고 급진적입니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"주여 주여" 경고(21–23절)의 대상</div>
+        <div class="deep-body">예언·축귀·많은 권능을 행한 자들조차 배제될 수 있다는 이 경고가 은사주의적 신앙 표현 자체를 부정하는 것인지, 아니면 은사와 인격적 순종의 분리 가능성을 경고하는 것인지에 대한 해석이 필요하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>산상수훈의 적용 범위 논쟁</div>
+        <div class="deep-body">이 급진적 윤리가 모든 그리스도인을 위한 것인지(전통적 견해), 미래 천년왕국을 위한 것인지(세대주의적 견해), 종말론적 긴급성 속의 임시 윤리인지에 대한 해석사적 스펙트럼이 존재한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30c0-11 6-18 14-18s14 7 14 18" /><path d="M10 30h28" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 8</div>
+      <h1>8장 · 권능의 표적들 (1)</h1>
+      <div class="chapter-sub">마태복음 8장 — 나병환자에서 풍랑까지</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 8:1–34</span>
+      <span class="ref-item">사 53장</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">다섯 개의 치유·능력 사건이 이어진다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">나병환자 치유</div>
+          <div class="flow-body"><b class="hl-quote">"원하시면 저를 깨끗하게 하실 수 있나이다"</b>는 고백에 손을 대어 고치신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">5–13절</div>
+        <div>
+          <div class="flow-title">백부장의 종 치유</div>
+          <div class="flow-body">"말씀으로만 하옵소서"라는 믿음에 <b class="hl-quote">"이스라엘 중 아무에게서도 이런 믿음을 만나보지 못하였노라"</b> 감탄하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">14–17절</div>
+        <div>
+          <div class="flow-title">베드로의 장모와 많은 병자들</div>
+          <div class="flow-body">이사야의 고난받는 종 예언("우리의 연약한 것을 친히 담당하시고")이 성취로 제시된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">18–27절</div>
+        <div>
+          <div class="flow-title">풍랑을 잠잠케 하심</div>
+          <div class="flow-body">제자도의 대가를 말씀하신 후, "어찌하여 무서워하느냐 믿음이 작은 자들아" 책망하시며 풍랑을 잠재우신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">28–34절</div>
+        <div>
+          <div class="flow-title">가다라의 귀신들린 두 사람</div>
+          <div class="flow-body">돼지떼 사건 후 지역민에게 배척받으신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 만지심의 파격</div>
+        <div class="teach-body">부정하다 여겨진 나병환자를 만지시는 것은 정결법을 넘어서는 긍휼이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 이방인의 믿음이 모범이 됨</div>
+        <div class="teach-body">백부장의 믿음은 혈통이 아니라 믿음이 하나님 나라 참여의 기준임을 예표한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 고난받는 종의 치유 사역</div>
+        <div class="teach-body">이사야 53장의 대속적 고난을 치유 사역과 연결짓는 마태 특유의 신학적 해석이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 제자도의 비용</div>
+        <div class="teach-body">"여우도 굴이 있으되 인자는 머리 둘 곳이 없다"는 말씀은 편안함을 보장하지 않는 따름의 길을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 자연과 영적 세계를 다스리시는 권세</div>
+        <div class="teach-body">풍랑과 귀신 모두에게 동일한 권위로 명하신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">백부장은 예수님을 만나러 오지도 않았어요. 그저 "말씀으로만 하옵소서"라고 했을 뿐인데, 예수님은 그 믿음에 놀라셨습니다. 형식보다 신뢰의 크기가 중요했던 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 세 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"이스라엘 중에서 만나보지 못하였다"(10절)는 놀람의 의미</div>
+        <div class="deep-body">전지하신 그리스도의 이 놀람이 인성적 제한을 보여주는지, 극적 강조의 수사법인지에 대한 기독론적 논의가 있다. 이방인의 믿음에 대한 이 인정은 마태복음 전체(28장 지상명령까지)의 궤적 속에서 이방 선교를 예고하는 위치를 차지한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>마태의 "두 귀신들린 자" vs 마가·누가의 한 사람</div>
+        <div class="deep-body">마태는 늘 두 사람으로 서술하는 경향이 있다(9:27의 두 맹인도 동일 패턴). 마태가 신명기의 "두세 증인" 원리를 반영해 의도적으로 증인의 수를 강조했다는 해석이 문헌비평적으로 논의된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>"죽은 자들이 그들의 죽은 자를 장사하게 하라"(21–22절)의 파격성</div>
+        <div class="deep-body">고대 근동 문화에서 부모의 장례는 자녀의 가장 신성한 의무 중 하나였다. "내가 먼저 가서 내 아버지를 장사하게 허락하옵소서"라는 지극히 정당한 요청을 거절하시는 이 말씀은 제자들을 당혹하게 할 만큼 파격적이다. 문자적으로 장례 자체를 금하신다기보다, 하나님 나라를 따르는 부르심이 세상에서 가장 신성하게 여겨지는 의무보다도 우선한다는 것을 극단적 언어로 강조하신 것으로 이해된다. "영적으로 죽은 자들"(아직 하나님 나라에 반응하지 않은 이들)이 "육신적으로 죽은 자"를 장사하게 두라는 언어유희로 읽는 해석도 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch9">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="12" width="30" height="22" rx="2" /><path d="M24 12v22" /><circle cx="24" cy="23" r="3.5" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 9</div>
+      <h1>9장 · 권능의 표적들 (2)와 부르심</h1>
+      <div class="chapter-sub">마태복음 9장 — 죄 사함, 마태를 부르심, 추수의 마음</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 9:1–38</span>
+      <span class="ref-item">호 6:6</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">여섯 장면이 긍휼의 사역과 부르심을 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–8절</div>
+        <div>
+          <div class="flow-title">중풍병자 치유와 죄 사함</div>
+          <div class="flow-body"><b class="hl-quote">"네 죄 사함을 받았느니라"</b> 선언하시며 인자의 권세를 나타내신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">9–13절</div>
+        <div>
+          <div class="flow-title">마태를 부르심</div>
+          <div class="flow-body">세리 마태를 부르시고 죄인들과 식사하시며, <b class="hl-quote">"긍휼을 원하고 제사를 원치 아니하노라"</b>(호 6:6) 인용하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">14–17절</div>
+        <div>
+          <div class="flow-title">금식 논쟁</div>
+          <div class="flow-body">신랑과 새 포도주 비유로 새 시대의 도래를 선언하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">18–26절</div>
+        <div>
+          <div class="flow-title">혈루증 여인과 회당장의 딸</div>
+          <div class="flow-body">믿음으로 구원받는 여인과, 죽음에서 생명으로 회복되는 소녀의 이야기가 얽힌다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">27–34절</div>
+        <div>
+          <div class="flow-title">맹인 둘과 벙어리 귀신들린 자</div>
+          <div class="flow-body"><b class="hl-quote has-tip" data-tip="마태복음에 반복적으로 등장하는 메시아 칭호. 예수가 다윗 언약(삼하 7장)의 성취자임을 강조하는, 유대인 독자를 향한 마태 특유의 기독론적 표현.">"다윗의 자손이여 우리를 불쌍히 여기소서"</b> 부르짖는 맹인들이 눈을 뜬다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">35–38절</div>
+        <div>
+          <div class="flow-title">추수할 것은 많되 일꾼이 적음</div>
+          <div class="flow-body">목자 없는 양 같은 무리를 <b class="hl-term">불쌍히</b> 여기신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 죄와 질병의 통합적 접근</div>
+        <div class="teach-body">육체의 치유에 앞서 영혼의 회복을 선언하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 긍휼이 제사보다 우선</div>
+        <div class="teach-body">형식적 종교 규범보다 자비의 실천을 우선하는 하나님의 마음이 드러난다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 죄인을 부르러 오신 의원</div>
+        <div class="teach-body">세리 마태를 부르신 사건은 복음의 초청이 누구를 향하는지 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 믿음의 다양한 얼굴</div>
+        <div class="teach-body">만짐, 간청, 부르짖음 — 형태는 다르나 모두 응답받는 믿음이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 추수의 마음이 파송의 동기</div>
+        <div class="teach-body">목자 없는 양이라는 긍휼의 시선이 곧이어 나올 제자 파송(10장)의 근거가 된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">세리였던 마태 자신이 이 복음서의 저자로 여겨진다는 사실을 알고 나면, 9장의 부르심 장면이 남다르게 읽힙니다 — 이건 어쩌면 저자의 자화상이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"긍휼을 원하고 제사를 원치 아니하노라"의 반복 인용</div>
+        <div class="deep-body">호세아 6:6이 마태복음에서 두 번 인용되는 것(9:13, 12:7)은, 마태 공동체가 처했던 유대교와의 논쟁적 정황(율법의 형식적 준수 대 내적 의미)을 반영한다는 해석이 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"다윗의 자손"이라는 반복되는 호칭</div>
+        <div class="deep-body">마태복음에서 반복적으로 등장하는 이 메시아 칭호는, 예수를 이스라엘이 기다려온 다윗 언약의 성취자로 부각시키는 마태 특유의 기독론적 강조와 연결된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch10">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="3" /><path d="M30.0 24.0 L40.0 24.0" /><path d="M27.0 29.2 L32.0 37.9" /><path d="M21.0 29.2 L16.0 37.9" /><path d="M18.0 24.0 L8.0 24.0" /><path d="M21.0 18.8 L16.0 10.1" /><path d="M27.0 18.8 L32.0 10.1" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 10</div>
+      <h1>10장 · 열두 제자 파송</h1>
+      <div class="chapter-sub">마태복음 10장 — 거저 받았으니 거저 주라</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 10:1–42</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">명단에서 헌신의 요구까지 다섯 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">열두 제자의 명단과 권세</div>
+          <div class="flow-body">더러운 귀신을 쫓고 병을 고치는 권세를 주신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">5–15절</div>
+        <div>
+          <div class="flow-title">파송 지침</div>
+          <div class="flow-body"><b class="hl-term has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">이스라엘 집의 잃어버린 양에게로</b> 먼저 가라 하시며(이방인·사마리아인 제외는 이 시기의 특수 지침), "거저 받았으니 거저 주라" 명하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">16–25절</div>
+        <div>
+          <div class="flow-title">박해 예고</div>
+          <div class="flow-body">양을 이리 가운데 보냄 같이 하신다며, 성령이 할 말을 주실 것과 형제간의 배신까지 예고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">26–31절</div>
+        <div>
+          <div class="flow-title">두려워하지 말라</div>
+          <div class="flow-body">참새 한 마리도 하나님의 허락 없이 떨어지지 않는다는 세심한 돌보심을 근거로 담대함을 명하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">32–42절</div>
+        <div>
+          <div class="flow-title">헌신의 요구</div>
+          <div class="flow-body">"검을 주러 왔다", 자기 십자가를 지지 않는 자는 합당치 않다는 급진적 부름과, 선지자를 영접하는 자의 상에 대한 약속으로 마친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 거저 받았으니 거저 주라</div>
+        <div class="teach-body">은혜의 선물적 성격이 사역의 태도를 결정한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 이스라엘 우선의 잠정적 선교</div>
+        <div class="teach-body">구원사의 순서(먼저 유대인에게, 후에 이방인에게) 안에서 이해되어야 할 이 시기 특유의 지침이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 박해를 각오한 제자도</div>
+        <div class="teach-body">갈등과 대가를 숨기지 않으시는 예수의 정직함이 돋보인다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 하나님의 세심한 돌보심</div>
+        <div class="teach-body">참새와 머리털까지 세시는 하나님의 관심이 두려움을 이기는 근거가 된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 자기 십자가의 우선성</div>
+        <div class="teach-body">가족보다, 생명보다 그리스도를 향한 충성이 우선됨을 요구하는 급진적 부름이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"거저 받았으니 거저 주라"는 말씀, 사역이나 섬김에 지쳐있다면 다시 새겨볼 만해요. 우리가 주는 것도 결국 먼저 받은 것이니까요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 세 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"검을 주러 왔다"(34절)는 표현의 의미</div>
+        <div class="deep-body">문자적 폭력의 선동이 아니라, 복음이 만들어내는 관계적 균열(가족 간 갈등, 사회적 분열)을 가리키는 비유적 표현이라는 것이 다수 해석이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"이스라엘 집 외에는 가지 말라"와 28장 지상명령의 긴장</div>
+        <div class="deep-body">"모든 민족을 제자로 삼으라"(28장)와의 긴장은 구원사적 단계론(부활 이전·이후 사명 범위의 변화)으로 해소하는 해석이 일반적이나, 마태 공동체의 유대-이방 정체성 문제와 연결짓는 학자들도 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>"인자가 올 때까지 이스라엘의 모든 동네를 다 다니지 못하리라"(23절)의 난제</div>
+        <div class="deep-body">제자들이 박해를 피해 다음 동네로 옮겨가라는 지침 뒤에 이어지는 이 말씀은, 인자의 '오심'이 이 세대 안에 이스라엘 전도가 끝나기도 전에 일어난다는 뜻처럼 읽혀 오랜 논쟁거리가 되어왔다. 변화산 사건(17장)이나 부활·오순절 사건을 그 성취로 보는 해석, AD 70년 예루살렘 멸망을 가리킨다는 해석, 혹은 이스라엘 선교라는 사명 자체가 인자의 재림 때까지 결코 완결되지 않을 것이라는 원리적 진술로 보는 해석 등이 함께 논의된다. 확정적인 학계의 합의는 없으며, 감람산 강화(24장)의 "이 세대가 지나가기 전에"와 유사한 해석사적 난제로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch11">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20h28" /><path d="M14 20v6a4 4 0 0 0 8 0v-6M26 20v6a4 4 0 0 0 8 0v-6" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 11</div>
+      <h1>11장 · 세례 요한과 안식의 초청</h1>
+      <div class="chapter-sub">마태복음 11장 — 수고하고 무거운 짐 진 자들아</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 11:1–30</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">요한의 질문에서 안식의 초청까지 네 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">2–19절</div>
+        <div>
+          <div class="flow-title">세례 요한의 질문</div>
+          <div class="flow-body"><b class="hl-quote">"오실 그이가 당신이오니이까"</b>라는 질문에 이적으로 응답하시고, "여자가 낳은 자 중 요한보다 큰 이가 없도다" 평가하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">20–24절</div>
+        <div>
+          <div class="flow-title">회개하지 않는 도시들 책망</div>
+          <div class="flow-body">고라신, 벳새다, 가버나움을 향한 안타까운 책망이 이어진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">25–27절</div>
+        <div>
+          <div class="flow-title">아버지와 아들의 상호 계시</div>
+          <div class="flow-body"><b class="hl-quote">"아버지 외에는 아들을 아는 자가 없고"</b> 선언하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">28–30절</div>
+        <div>
+          <div class="flow-title">수고하고 무거운 짐 진 자들아</div>
+          <div class="flow-body"><b class="hl-quote">"내게로 오라... 내 멍에는 쉽고 내 짐은 가벼움이라"</b> 초청하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 의심 속에서도 던지는 질문</div>
+        <div class="teach-body">감옥에 갇힌 요한의 흔들림조차 예수께 나아가는 정직한 신앙의 모습으로 받아들여진다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 표적으로 증언되는 메시아</div>
+        <div class="teach-body">말이 아니라 이사야적 성취(맹인이 봄, 못 걷는 자가 걸음)로 자신을 증언하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 은혜의 계시로서의 자기 인식</div>
+        <div class="teach-body">삼위일체적 상호 인식(아버지-아들) 안에서만 참된 지식이 가능함을 선언하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 심판보다 슬픔이 앞서는 책망</div>
+        <div class="teach-body">도시들에 대한 책망 속에 담긴 안타까움이 느껴진다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 안식의 초청</div>
+        <div class="teach-body">율법주의적 무거운 짐과 대조되는 예수의 가볍고 쉬운 멍에가 제시된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">감옥에 갇힌 요한이 흔들리며 던진 질문에 예수님은 나무라지 않으셨어요. 의심을 안고도 질문하러 나아가는 것, 그 자체가 신앙의 한 모습일 수 있습니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"내게로 오라"(28–30절)와 지혜문학 전통</div>
+        <div class="deep-body">집회서(Sirach) 51장 등 유대 지혜문학에서 지혜가 사람들을 초청하는 표현과의 유사성이, 마태가 예수를 하나님의 지혜 자체로 제시한다는 고기독론적 해석의 근거로 자주 논의된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"공관복음의 벼락"이라 불리는 27절</div>
+        <div class="deep-body">"아버지 외에는 아들을 아는 자가 없고"는 공관복음 중 가장 요한복음과 유사한 상호 계시 언어를 담고 있어, 공관복음과 요한복음 기독론의 연속성을 논할 때 중요하게 다뤄지는 구절이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch12">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10v22" /><path d="M24 18q6-4 4-10" /><path d="M18 40h12" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 12</div>
+      <h1>12장 · 안식일의 주인과 표적 논쟁</h1>
+      <div class="chapter-sub">마태복음 12장 — 상한 갈대를 꺾지 않으시는 메시아</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 12:1–50</span>
+      <span class="ref-item">사 42:1–4</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">여섯 장면이 예수의 권위를 둘러싼 논쟁을 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–14절</div>
+        <div>
+          <div class="flow-title">안식일 논쟁</div>
+          <div class="flow-body">밀 이삭 사건과 손 마른 자 치유를 통해 <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"인자는 안식일의 주인이니라"</b> 선언하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">15–21절</div>
+        <div>
+          <div class="flow-title">이사야의 종 인용</div>
+          <div class="flow-body">"상한 갈대를 꺾지 아니하며"(사 42:1–4)라는 온유한 메시아상이 제시된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">22–37절</div>
+        <div>
+          <div class="flow-title">바알세불 논쟁과 성령 모독죄</div>
+          <div class="flow-body">스스로 분쟁하는 나라 비유로 응수하시고, 용서받지 못할 죄와 말의 무게를 경고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">38–42절</div>
+        <div>
+          <div class="flow-title">요나의 표적</div>
+          <div class="flow-body">사흘 밤낮 물고기 배 속의 요나처럼, 인자도 땅속에 사흘 있을 것을 예고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">43–45절</div>
+        <div>
+          <div class="flow-title">더러운 귀신이 돌아옴 비유</div>
+          <div class="flow-body">더러운 귀신이 나갔다가 더 악한 귀신 일곱을 데리고 돌아오는 비유로, 회개 없는 정화의 위험성을 경고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">46–50절</div>
+        <div>
+          <div class="flow-title">예수의 참 가족</div>
+          <div class="flow-body"><b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"하늘에 계신 내 아버지의 뜻대로 행하는 자"</b>가 참 가족이라 선언하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 안식일의 참된 주인</div>
+        <div class="teach-body">규례가 아니라 그것을 세우신 분이 그 의미를 정의하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 상한 갈대를 꺾지 않는 온유함</div>
+        <div class="teach-body">강함이 아니라 부드러움으로 심판을 이루는 메시아상이 제시된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 말의 무게</div>
+        <div class="teach-body">마음에서 나오는 말로 의롭다 함을 받고 정죄받는다는 엄중한 경고다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 요나의 표적: 죽음과 부활의 예고</div>
+        <div class="teach-body">유일하게 주어지는 표적이 곧 자신의 죽음과 부활임을 미리 선언하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 혈연을 넘어서는 참 가족</div>
+        <div class="teach-body">순종이 새로운 공동체의 결속 원리가 된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"인자는 안식일의 주인이니라" — 규칙이 사람을 위해 있다는 이 원리는, 오늘날 우리가 지키는 여러 종교적 관습을 돌아보게 만드는 말씀이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"성령을 거역하는 말"(31–32절)의 해석</div>
+        <div class="deep-body">예수의 축귀 사역을 사탄의 역사로 고의적으로 돌리는 완악한 거부가 문맥상 직접 배경이다. 이 죄를 지었을까 불안해하는 것 자체가 그 죄와는 거리가 있다는 목회적 위로가 전통적으로 함께 제시된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"사흘 밤낮"(40절)과 실제 시간 계산 문제</div>
+        <div class="deep-body">금요일 오후부터 일요일 새벽까지는 문자적으로 사흘 밤낮(72시간)에 못 미친다. 이는 하루의 일부도 하루로 계산하는 유대식 <b class="hl-term">포괄적 계산법</b>으로 설명되는 것이 일반적이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch13">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="28" r="4" /><circle cx="26" cy="20" r="3" /><circle cx="33" cy="30" r="5" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 13</div>
+      <h1>13장 · 천국 비유</h1>
+      <div class="chapter-sub">마태복음 13장 — 씨와 보화와 그물</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 13:1–58</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">일곱 비유가 천국의 성격을 다각도로 조명한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–23절</div>
+        <div>
+          <div class="flow-title">씨 뿌리는 자 비유</div>
+          <div class="flow-body">네 종류의 땅을 통해 말씀을 듣는 자들의 반응을 그린다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">24–30, 36–43절</div>
+        <div>
+          <div class="flow-title">가라지 비유</div>
+          <div class="flow-body">알곡과 가라지가 추수 때까지 함께 자라도록 두신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">31–33절</div>
+        <div>
+          <div class="flow-title">겨자씨와 누룩 비유</div>
+          <div class="flow-body">작은 시작에서 큰 확장으로 이어지는 하나님 나라의 성장을 그린다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">44–46절</div>
+        <div>
+          <div class="flow-title">감추인 보화와 값진 진주</div>
+          <div class="flow-body">모든 것을 팔아서라도 사는 기쁨을 비유하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">47–50절</div>
+        <div>
+          <div class="flow-title">그물 비유</div>
+          <div class="flow-body">마지막 때의 분리를 예고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">51–58절</div>
+        <div>
+          <div class="flow-title">새 것과 옛 것, 고향의 배척</div>
+          <div class="flow-body">고향 나사렛에서 배척받으신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 반응이 결과를 결정한다</div>
+        <div class="teach-body">씨는 동일하나 땅(마음의 상태)에 따라 결실이 달라진다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 심판을 유보하시는 인내</div>
+        <div class="teach-body">가라지를 지금 뽑지 않으심은 성급한 심판보다 알곡을 보호하시는 은혜다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 작음에서 위대함으로</div>
+        <div class="teach-body">겨자씨·누룩 비유는 하나님 나라의 은밀하지만 강력한 확장력을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 최고의 가치를 알아보는 눈</div>
+        <div class="teach-body">보화와 진주 비유는 하나님 나라를 향한 전적 헌신의 합당함을 그린다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 마지막 분리의 필연성</div>
+        <div class="teach-body">그물 비유는 현재의 혼재된 상태가 영원하지 않음을 상기시킨다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">겨자씨와 누룩 비유를 나란히 놓고 보면, 하나님 나라는 크게 시작하지 않는다는 게 보여요. 작음을 두려워하지 않아도 되는 이유입니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>가라지 비유의 목회적 적용</div>
+        <div class="deep-body">교회 안의 불완전함(참과 거짓 신자가 섞여 있음)을 성급하게 정리하려는 충동에 대한 경계이자, 최종 심판을 하나님께 맡기는 인내의 신학으로 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"천국의 비밀을 아는 것을 허락하셨으나"(11절)의 선택적 계시</div>
+        <div class="deep-body">마가복음 4장의 병행 난제와 동일한 신학적 긴장 — 심판적 완악케 하심과 은혜의 신비 사이의 긴장이 마태복음에서도 동일하게 제기된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch14">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30q4-4 8 0t8 0 8 0 8 0" /><path d="M8 38q4-4 8 0t8 0 8 0 8 0" /><circle cx="24" cy="14" r="3" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 14</div>
+      <h1>14장 · 세례 요한의 죽음과 오병이어</h1>
+      <div class="chapter-sub">마태복음 14장 — 물 위를 걸으신 밤</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 14:1–36</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">네 장면이 슬픔과 공급, 믿음과 의심을 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–12절</div>
+        <div>
+          <div class="flow-title">세례 요한의 죽음</div>
+          <div class="flow-body">헤롯의 두려움과 살로메의 요청으로 요한이 참수된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–21절</div>
+        <div>
+          <div class="flow-title">오병이어</div>
+          <div class="flow-body">목자 없는 양 같은 무리를 <b class="hl-term">불쌍히</b> 여기시고, 떡 다섯 개와 물고기 두 마리로 오천 명을 먹이신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">22–33절</div>
+        <div>
+          <div class="flow-title">물 위를 걸으심</div>
+          <div class="flow-body">베드로도 물 위를 걷다가 바람을 보고 빠지려 하니, <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"믿음이 작은 자여 왜 의심하였느냐"</b> 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">34–36절</div>
+        <div>
+          <div class="flow-title">게네사렛에서의 치유</div>
+          <div class="flow-body">옷 가에 손을 대는 것만으로도 나음을 얻는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 권력의 도덕적 타락</div>
+        <div class="teach-body">헤롯의 우유부단함과 체면이 부른 비극적 죽음이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 슬픔 중에도 계속되는 긍휼 사역</div>
+        <div class="teach-body">요한의 죽음 소식 후에도 무리를 불쌍히 여기시는 예수의 마음이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 작은 것을 사용하시는 하나님</div>
+        <div class="teach-body">다섯 개의 떡과 두 마리의 물고기로 시작되는 풍성한 공급이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 믿음과 의심 사이의 베드로</div>
+        <div class="teach-body">물 위를 걷다가 바람을 보고 두려워하는 인간적 신앙의 모습이 생생하다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 만지기만 해도 되는 은혜</div>
+        <div class="teach-body">게네사렛 사람들의 소박하지만 담대한 믿음이 응답받는다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">베드로가 물에 빠진 순간은 실패가 아니라, 오히려 그가 배 밖으로 나갔기 때문에 벌어진 일이에요. 안전한 배에 머물렀다면 그 경험조차 없었겠죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>베드로가 물 위를 걸은 사건(마태에만 등장)</div>
+        <div class="deep-body">마가·누가에는 없는 이 에피소드는, 실패와 구원의 패턴을 통해 제자도의 현실(믿음과 연약함의 공존)을 그려내는 마태 특유의 문학적 기능을 지닌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"의심하였느냐"(31절)의 헬라어 뉘앙스</div>
+        <div class="deep-body">헬라어 <b class="hl-greek">διστάζω</b>(디스타조)는 완전한 불신이 아니라 '둘로 나뉜 마음'을 뜻한다. 믿음의 반대가 무신론이 아니라 분열된 마음일 수 있음을 시사하는 해석이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch15">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="24" width="24" height="4" rx="2" /><circle cx="16" cy="34" r="2" /><circle cx="24" cy="35" r="1.6" /><circle cx="32" cy="34" r="2" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 15</div>
+      <h1>15장 · 전통과 믿음의 경계</h1>
+      <div class="chapter-sub">마태복음 15장 — 가나안 여인의 크신 믿음</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 15:1–39</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">네 장면이 정결과 믿음의 경계를 다룬다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–20절</div>
+        <div>
+          <div class="flow-title">장로들의 유전 논쟁</div>
+          <div class="flow-body">고르반 위선을 지적하시며, <b class="hl-quote">"입에 들어가는 것이 아니라 입에서 나오는 것이 사람을 더럽게 한다"</b> 선언하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">21–28절</div>
+        <div>
+          <div class="flow-title">가나안 여인의 믿음</div>
+          <div class="flow-body">"개도 주인의 상에서 떨어지는 부스러기를 먹나이다"는 응답에 <b class="hl-quote">"네 믿음이 크도다"</b> 감탄하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">29–31절</div>
+        <div>
+          <div class="flow-title">많은 병자를 고치심</div>
+          <div class="flow-body">산에서 많은 병자들을 고치시니 무리가 이스라엘의 하나님께 영광을 돌린다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">32–39절</div>
+        <div>
+          <div class="flow-title">사천 명을 먹이심</div>
+          <div class="flow-body">떡 일곱 개와 생선 두어 마리로 이방 지역의 큰 무리를 먹이신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 전통의 우상화 경계</div>
+        <div class="teach-body">사람의 계명이 하나님의 계명을 무효화하는 위선을 정면으로 지적하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 마음에서 나오는 것이 사람을 더럽힌다</div>
+        <div class="teach-body">정결의 본질을 내면의 문제로 재정의하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 끈질긴 믿음의 모범</div>
+        <div class="teach-body">거절처럼 보이는 상황 속에서도 포기하지 않는 이방 여인의 겸손하고 담대한 믿음이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 경계를 넘는 긍휼</div>
+        <div class="teach-body">이스라엘의 경계를 넘어서는 치유와 공급이 이어진다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 반복되는 공급의 은혜</div>
+        <div class="teach-body">오병이어 이후에도 다시 나타나는 하나님의 신실하심이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">가나안 여인의 대화, 처음 읽으면 불편하게 느껴질 수 있어요. 하지만 끝까지 읽으면 그녀의 재치와 겸손, 그리고 예수님의 반응이 함께 감동을 줍니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>가나안 여인과의 대화(21–28절)의 해석 난제</div>
+        <div class="deep-body">"자녀의 떡을 취하여 개들에게 던짐이 마땅치 아니하니라"(26절)는 발언을 시험(test)으로 보는 해석, 당대의 수사적 관용구 반영으로 보는 해석, 예수의 선교 이해가 확장되는 과정으로 보는 해석 등이 함께 논의된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>오병이어(14장)와 사천 명을 먹이심(15장)은 별개 사건인가</div>
+        <div class="deep-body">16:9–10에서 예수께서 두 사건을 명시적으로 구분해 언급하신다는 점에서 별도의 두 사건이라는 문헌적 확인이 가능하며, 각각 유대·이방 지역을 배경으로 한다는 해석이 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch16">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="26" r="10" /><path d="M28 26h12M36 26v6M40 26v4" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 16</div>
+      <h1>16장 · 베드로의 고백과 첫 수난 예고</h1>
+      <div class="chapter-sub">마태복음 16장 — 이 반석 위에 내 교회를 세우리니</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 16:1–28</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">네 단락이 정체성 계시의 전환점을 이룬다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–12절</div>
+        <div>
+          <div class="flow-title">표적 요구와 누룩 경고</div>
+          <div class="flow-body">"요나의 표적밖에는 보일 표적이 없다" 하시고 바리새인·사두개인의 누룩을 주의하라 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–20절</div>
+        <div>
+          <div class="flow-title">베드로의 신앙고백</div>
+          <div class="flow-body"><b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"주는 그리스도시요 살아 계신 하나님의 아들이시니이다"</b>라는 고백에, <b class="hl-quote has-tip" data-tip="마태복음 16:18 &quot;이 반석 위에 내 교회를 세우리니&quot;에서, 베드로(페트로스)와 반석(페트라)의 헬라어 언어유희가 해석 논쟁의 중심에 있다.">"이 반석 위에 내 교회를 세우리니"</b> 천국 열쇠를 약속하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">21–23절</div>
+        <div>
+          <div class="flow-title">첫 수난 예고와 베드로의 항의</div>
+          <div class="flow-body"><b class="hl-quote">"사탄아 내 뒤로 물러가라"</b> 책망하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">24–28절</div>
+        <div>
+          <div class="flow-title">제자도의 조건</div>
+          <div class="flow-body">자기 십자가를 지고 따르는 자만이 참된 제자임을 선언하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 표적보다 믿음</div>
+        <div class="teach-body">반복된 표적 요구의 거절은 믿음이 증거 축적의 문제가 아님을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 고백 위에 세워지는 교회</div>
+        <div class="teach-body">베드로의 신앙고백이 교회의 기초가 된다는 선언이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 열쇠의 권세</div>
+        <div class="teach-body">매고 푸는 권세는 복음 선포를 통해 하나님 나라의 문을 여닫는 사도적 권위를 상징한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 바른 고백과 인간적 저항의 공존</div>
+        <div class="teach-body">베드로가 그리스도를 고백하면서도 동시에 고난의 길을 거부하는 모순이 드러난다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 십자가 중심의 제자도</div>
+        <div class="teach-body">자기 부인 없이는 참된 따름이 없음을 선언하신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"너는 나를 누구라 하느냐"는 질문은 2천 년 전 베드로에게만 아니라, 지금 이 페이지를 읽는 당신에게도 던져지는 질문이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 세 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"이 반석 위에"(18절)의 반석 논쟁</div>
+        <div class="deep-body">베드로 개인(로마 가톨릭 전통), 베드로의 신앙고백(대다수 개신교 전통), 그리스도 자신 등 교회사에서 가장 논쟁적인 해석 중 하나다. 헬라어 <b class="hl-term">페트로스</b>(베드로, 남성형)와 <b class="hl-term">페트라</b>(반석, 여성형)의 언어유희가 논쟁의 배경이 된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"사탄아 내 뒤로 물러가라"(23절)의 날카로움</div>
+        <div class="deep-body">방금 계시를 받아 그리스도를 고백했던 베드로를 향한 이 격렬한 책망은, 인간적 선의가 하나님의 뜻과 정면 충돌할 수 있다는 경고로 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>"죽음을 맛보지 않을 자들도 있느니라"(28절)는 예고의 성취 시점</div>
+        <div class="deep-body">"여기 서 있는 사람 중에... 죽기 전에 인자가 그 왕권을 가지고 오는 것을 볼 자들도 있느니라"는 이 말씀은 바로 다음 장(17장)에서 일어나는 <b class="hl-term">변화산 사건</b>의 예고로 읽는 것이 문맥상 가장 자연스럽다는 것이 다수 해석이다. 변화산에서 베드로·야고보·요한이 목격한 것은 인자의 영광이 미리 앞당겨 나타난 '예고편'이라는 것이다. 이 외에도 부활과 오순절 성령 강림을 가리킨다는 해석, AD 70년 예루살렘 멸망(마 24장과 연결)을 가리킨다는 해석이 함께 논의되며, 세 해석 모두 재림 자체를 가리키는 것은 아니라는 점에서 대체로 일치한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch17">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v6M24 36v6M6 24h6M36 24h6M11 11l4 4M33 33l4 4M37 11l-4 4M15 33l-4 4" /><circle cx="24" cy="24" r="7" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 17</div>
+      <h1>17장 · 변화산과 성전세</h1>
+      <div class="chapter-sub">마태복음 17장 — 겨자씨 한 알만한 믿음</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 17:1–27</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">네 장면이 영광과 일상의 필요를 함께 다룬다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–13절</div>
+        <div>
+          <div class="flow-title">변화산 사건</div>
+          <div class="flow-body">모세와 엘리야가 나타나고 <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"이는 내 사랑하는 아들이니 너희는 그의 말을 들으라"</b>는 음성이 들린다. 엘리야(세례 요한)에 대한 질문이 이어진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">14–21절</div>
+        <div>
+          <div class="flow-title">귀신들린 아이 치유</div>
+          <div class="flow-body">제자들의 실패에 <b class="hl-quote">"겨자씨 한 알만한 믿음이 있으면"</b> 산도 옮긴다 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">22–23절</div>
+        <div>
+          <div class="flow-title">두 번째 수난 예고</div>
+          <div class="flow-body">인자가 사람들의 손에 넘겨져 죽임을 당하고 사흘 만에 살아나리라 예고하시니 제자들이 심히 근심한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">24–27절</div>
+        <div>
+          <div class="flow-title">성전세 이야기</div>
+          <div class="flow-body">베드로에게 물고기 입에서 동전을 찾게 하여 세금을 내신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 영광과 고난의 병치</div>
+        <div class="teach-body">변화산의 영광 직후 이어지는 무능한 제자들과 고통받는 아이의 대조다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 작은 믿음의 큰 능력</div>
+        <div class="teach-body">믿음의 크기가 아니라 그 대상(하나님의 능력)이 산을 옮기는 근거다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 오해된 선구자</div>
+        <div class="teach-body">엘리야가 이미 왔으나(세례 요한) 사람들이 알아보지 못했다는 지적이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 자유하나 걸림돌 되지 않기 위한 순응</div>
+        <div class="teach-body">하나님의 아들로서 성전세에서 자유하시나, 오해를 피하기 위해 지불하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 창조주의 세심한 공급</div>
+        <div class="teach-body">물고기 입 속 동전이라는 기적으로 사소한 필요까지 채우신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">변화산의 영광 직후, 산 아래에는 아무것도 못 하는 제자들과 고통받는 아이가 있었어요. 신앙생활도 늘 산 위와 산 아래를 오가기 마련입니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"겨자씨 한 알만한 믿음"(20절)의 해석</div>
+        <div class="deep-body">믿음의 양보다 그 대상(하나님의 능력)에 초점을 맞춘 표현이라는 해석이 다수설이다. 제자들의 실패 원인을 믿음의 결핍이 아니라 기도(21절, 일부 사본)의 결핍으로 보는 본문비평적 논의도 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>마태복음에만 등장하는 성전세 이야기</div>
+        <div class="deep-body">다른 복음서에 병행 구절이 없는 이 독특한 기적은, 유대인 대상 마태 공동체의 정황(성전세를 둘러싼 유대-그리스도인 관계 문제)을 반영한다는 해석이 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch18">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="5" /><path d="M14 34c0-8 6-12 10-12s10 4 10 12" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 18</div>
+      <h1>18장 · 공동체의 삶</h1>
+      <div class="chapter-sub">마태복음 18장 — 일흔 번씩 일곱 번이라도</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 18:1–35</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">네 단락이 공동체 윤리를 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–9절</div>
+        <div>
+          <div class="flow-title">누가 크냐</div>
+          <div class="flow-body">어린아이 같이 되지 않으면 천국에 들어갈 수 없다 하시며, 실족케 하는 것에 대해 엄중히 경고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">10–14절</div>
+        <div>
+          <div class="flow-title">잃은 양의 비유</div>
+          <div class="flow-body">아흔아홉을 두고 하나를 찾아 나서는 목자의 마음을 비유하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">15–20절</div>
+        <div>
+          <div class="flow-title">형제가 죄를 범하면</div>
+          <div class="flow-body">단둘이, 두세 증인, 교회로 이어지는 권징 절차와 <b class="hl-quote">"두세 사람이 내 이름으로 모인 곳에는 나도 그 중에 있느니라"</b>는 약속을 주신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">21–35절</div>
+        <div>
+          <div class="flow-title">용서에 대한 가르침</div>
+          <div class="flow-body"><b class="hl-quote">"일흔 번씩 일곱 번"</b>이라도 용서하라 하시며, 용서하지 않는 종의 비유를 드신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 낮아짐이 위대함의 척도</div>
+        <div class="teach-body">어린아이의 겸손과 의존이 하나님 나라의 모범이 된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 한 영혼을 향한 하나님의 마음</div>
+        <div class="teach-body">아흔아홉보다 잃어버린 하나를 찾아 나서는 목자의 열심이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 회복을 지향하는 권징</div>
+        <div class="teach-body">정죄가 아니라 관계 회복을 목적으로 하는 단계적 절차다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 함께하시는 임재의 약속</div>
+        <div class="teach-body">공동체의 작은 모임에도 함께하시는 그리스도의 약속이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 용서의 무한성</div>
+        <div class="teach-body">받은 은혜의 크기를 기억할 때 가능해지는 한없는 용서다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">일흔 번씩 일곱 번 용서하라는 말씀, 계산기를 두드리라는 뜻이 아니라 '숫자를 세지 말라'는 뜻이에요. 490번째에서 멈추라는 게 아니거든요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 세 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"두세 증인" 절차의 현대적 적용</div>
+        <div class="deep-body">교회 권징의 성경적 원리가 현대 교회 갈등 해결과 목회 상담에서 어떻게 적용되어야 하는지, 오·남용의 역사적 사례를 고려한 신중함이 함께 요구된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>용서하지 않는 종의 비유의 액수 대비</div>
+        <div class="deep-body">만 달란트(갚을 수 없는 천문학적 액수)와 백 데나리온(상대적으로 작은 액수)의 극단적 대비는, 우리가 받은 용서와 우리가 베풀어야 할 용서 사이의 비교할 수 없는 격차를 강조한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>"손이나 발이 실족하게 하거든 찍어버리라"(8–9절)와 5장의 반복</div>
+        <div class="deep-body">5장의 눈·손에 대한 동일한 과장법이 문자적 지시가 아니라는 점은 이곳에서도 동일하게 적용된다. 다만 문맥의 강조점은 다르다 — 5장이 개인의 내적 정욕을 다룬다면, 18장은 <b class="hl-quote">"이 작은 자 중 하나를 실족하게 하는 것"</b>(6절)에 대한 경고 직후에 배치되어, 공동체 안의 약한 지체를 넘어지게 하는 원인을 단호히 제거하라는 <b class="hl-term">공동체적 책임</b>의 맥락에서 반복된다. 동일한 수사적 장치가 서로 다른 목회적 정황에서 재사용되는 마태 특유의 편집 패턴을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch19">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="24" r="9" /><circle cx="30" cy="24" r="9" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 19</div>
+      <h1>19장 · 이혼, 어린아이, 부자 청년</h1>
+      <div class="chapter-sub">마태복음 19장 — 사람으로는 할 수 없으나 하나님으로서는</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 19:1–30</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">세 장면이 하나님 나라의 가치를 조명한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–12절</div>
+        <div>
+          <div class="flow-title">이혼 논쟁</div>
+          <div class="flow-body">창조 질서("본래는 그렇지 아니하니라")를 근거로, 음행한 연고 외의 이혼을 금하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–15절</div>
+        <div>
+          <div class="flow-title">어린아이 축복</div>
+          <div class="flow-body">제자들의 제지에도 어린아이들을 안고 안수하시며 축복하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">16–30절</div>
+        <div>
+          <div class="flow-title">부자 청년</div>
+          <div class="flow-body">계명 준수와 완전함의 요구, <b class="hl-quote">"낙타가 바늘귀로 들어가는 것이 부자가 하나님 나라에 들어가는 것보다 쉬우니라"</b>, 베드로의 질문에 "먼저 된 자로서 나중 되고 나중 된 자로서 먼저 될 자가 많으니라" 답하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 창조 질서로서의 결혼</div>
+        <div class="teach-body">이혼 논쟁의 핵심은 창세기의 원래 디자인 회복에 있다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 받아들이는 자로서의 어린아이</div>
+        <div class="teach-body">하나님 나라는 자격이 아니라 전적 수용으로 받는 것이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 소유와 소유당함의 차이</div>
+        <div class="teach-body">부자 청년의 "큰 재물"이 오히려 그를 소유한 상태였음이 드러난다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 사람으로는 할 수 없으나 하나님으로서는</div>
+        <div class="teach-body">구원이 인간의 성취가 아니라 하나님의 은혜의 영역임을 선언하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 하나님 나라 경제학의 역전</div>
+        <div class="teach-body">세상적 순위와 다른 하나님 나라의 가치 기준이 제시된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"사람으로는 할 수 없으나 하나님으로서는 다 하실 수 있느니라" — 구원에 관한 이 한 문장이야말로 복음의 핵심을 가장 간결하게 요약합니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 세 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"낙타가 바늘귀로 들어가는 것"(24절)의 해석</div>
+        <div class="deep-body">이 표현을 문자 그대로의 물리적 불가능성을 극단적으로 과장한 <b class="hl-term">수사적 과장법</b>으로 읽는 것이 압도적 다수설이다. 낙타는 당시 팔레스타인에서 가장 큰 동물로 흔히 언급되었고, 바늘귀는 가장 작은 구멍의 대명사였다 — 둘을 나란히 놓은 것 자체가 "절대적으로 불가능하다"는 뜻을 전하려는 의도적 장치다. 제자들의 반응("그런즉 누가 구원을 얻을 수 있으리이까", 25절)과 예수의 응답("사람으로는 할 수 없으나 하나님으로서는 다 하실 수 있느니라", 26절) 자체가, 이 말씀이 인간의 노력으로는 극복 불가능한 장벽을 가리키고 있음을 본문 스스로 확인해 준다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">마 19:24–26</div>
+          <div class="verse-text">다시 너희에게 말하노니 낙타가 바늘귀로 나가는 것이 부자가 하나님의 나라에 들어가는 것보다 쉬우니라... 사람으로는 할 수 없으나 하나님으로서는 다 하실 수 있느니라</div>
+        </div>
+        <div class="hinge-note">흔히 퍼진 "예루살렘 성벽에 '바늘귀'라 불리는 작은 문이 있어서, 낙타가 짐을 내리고 무릎을 꿇으면 겨우 통과할 수 있었다"는 이야기는 <b class="hl-term">후대(대략 9–10세기 이후)에 만들어진 전설</b>로, 그런 성문이 실제 존재했다는 고고학적·역사적 증거는 없다. 이 민담은 본문의 충격적 강도를 완화해 "불가능하지만 아주 조금의 노력으로 가능하다"는 식으로 순화시키는 효과를 내는데, 이는 본문이 의도한 절대적 불가능성과 그다음 절의 "하나님으로서는 다 하실 수 있느니라"는 은혜의 논리를 오히려 약화시킨다는 점에서 대다수 주석가들이 경계하는 해석이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"음행한 연고 없이"(9절)라는 예외 조항(마태만의 특징)</div>
+        <div class="deep-body">마가·누가에는 없는 이 예외 조항의 존재는 초기 교회의 이혼 문제에 대한 실제적 목회적 필요를 반영한다는 해석이 있다. '음행'(포르네이아)의 구체적 범위에 대해서도 논쟁이 이어진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>"천국을 위하여 스스로 된 고자"(12절)의 의미</div>
+        <div class="deep-body">문자적 거세가 아니라, 하나님 나라를 위해 독신을 자발적으로 선택하는 삶에 대한 은유적 표현으로 이해되는 것이 일반적이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch20">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10v6" /><circle cx="20" cy="20" r="4" /><circle cx="28" cy="20" r="4" /><circle cx="24" cy="26" r="4" /><circle cx="18" cy="30" r="4" /><circle cx="30" cy="30" r="4" /><circle cx="24" cy="35" r="4" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 20</div>
+      <h1>20장 · 포도원 품꾼과 섬김의 도</h1>
+      <div class="chapter-sub">마태복음 20장 — 대속물로 자기 목숨을 주려 하심</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 20:1–34</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">네 장면이 은혜의 역전을 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–16절</div>
+        <div>
+          <div class="flow-title">포도원 품꾼의 비유</div>
+          <div class="flow-body">나중 온 자에게도 동일한 품삯을 주시며 <b class="hl-quote">"나중 된 자로서 먼저 되고"</b> 선언하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">17–19절</div>
+        <div>
+          <div class="flow-title">세 번째 수난 예고</div>
+          <div class="flow-body">가장 상세하게 수난의 과정을 예고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">20–28절</div>
+        <div>
+          <div class="flow-title">야고보·요한 어머니의 요청</div>
+          <div class="flow-body">좌우편 자리 요청에, <b class="hl-quote has-tip" data-tip="헬라어 λύτρον(뤼트론). 노예를 해방시키기 위해 지불하는 몸값을 가리키는 상업·법적 용어로, 예수의 죽음이 지닌 대속적 의미를 설명한다(20:28).">"인자가 온 것은 섬김을 받으려 함이 아니요 도리어 섬기려 하고 자기 목숨을 대속물로 주려 함"</b>이라 답하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">29–34절</div>
+        <div>
+          <div class="flow-title">여리고의 맹인 두 사람</div>
+          <div class="flow-body"><b class="hl-quote has-tip" data-tip="마태복음에 반복적으로 등장하는 메시아 칭호. 예수가 다윗 언약(삼하 7장)의 성취자임을 강조하는, 유대인 독자를 향한 마태 특유의 기독론적 표현.">"다윗의 자손이여 우리를 불쌍히 여기소서"</b> 부르짖음에 응답하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 은혜는 공로가 아니라 주인의 선하심에서</div>
+        <div class="teach-body">품꾼 비유는 하나님 나라의 보상이 인간적 형평성 계산을 초월함을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 불평의 뿌리는 비교</div>
+        <div class="teach-body">"내가 선하므로 네가 악하게 보느냐"는 질문이 비교 의식을 정면으로 겨냥한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 섬김으로서의 위대함</div>
+        <div class="teach-body">이방 통치자들의 권력 행사 방식과 대조되는 하나님 나라의 리더십이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 대속물이 되신 인자</div>
+        <div class="teach-body">마태복음 기독론과 구원론의 핵심을 요약하는 구절이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 부르짖음에 멈춰서시는 그리스도</div>
+        <div class="teach-body">무리의 제지에도 맹인들의 외침에 응답하신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">포도원 품꾼 비유를 읽고 억울해하셨다면, 오히려 정확히 읽으신 거예요. 이 비유는 원래 우리의 공정함 감각을 정면으로 건드리도록 설계되었습니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>포도원 품꾼 비유의 사회경제적 독법</div>
+        <div class="deep-body">일용직 노동자의 생존이 걸린 하루 품삯(한 데나리온)이라는 배경을 고려하면, 이 비유가 은혜의 무조건성을 넘어 경제적 정의의 메시지도 함께 담고 있다는 현대적 해석이 제기된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>요청의 주체(마태는 어머니, 마가는 본인들)</div>
+        <div class="deep-body">마가복음 10:35에서는 두 형제가 직접 요청하나, 마태복음 20:20에서는 그들의 어머니가 요청하는 것으로 다르게 서술된다. 마태가 제자들의 체면을 배려해 편집했다는 해석이 문헌비평적으로 논의된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch21">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40V16" /><path d="M24 16q-10-6-14 2M24 16q10-6 14 2M24 22q-8-4-11 3M24 22q8-4 11 3" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 21</div>
+      <h1>21장 · 예루살렘 입성과 성전 청결</h1>
+      <div class="chapter-sub">마태복음 21장 — 겸손한 왕의 입성</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 21:1–46</span>
+      <span class="ref-item">슥 9:9</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">여섯 장면이 예루살렘에서의 갈등을 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–11절</div>
+        <div>
+          <div class="flow-title">예루살렘 입성</div>
+          <div class="flow-body">나귀와 나귀 새끼(마태만 두 마리)를 타고 입성하시니 무리가 <b class="hl-term">호산나</b> 외친다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">12–17절</div>
+        <div>
+          <div class="flow-title">성전 청결</div>
+          <div class="flow-body">매매하는 자들을 내쫓으시며 <b class="hl-quote">"내 집은 기도하는 집이라 일컬음을 받으리라"</b> 선언하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">18–22절</div>
+        <div>
+          <div class="flow-title">무화과나무 저주</div>
+          <div class="flow-body">열매 없는 무화과나무를 저주하시니 곧 마르고, 믿음과 기도에 대해 가르치신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">23–27절</div>
+        <div>
+          <div class="flow-title">권위에 대한 질문</div>
+          <div class="flow-body">"네가 무슨 권위로 이런 일을 하느냐" 묻는 지도자들에게 요한의 세례에 대한 역질문으로 되받으신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">28–32절</div>
+        <div>
+          <div class="flow-title">두 아들의 비유</div>
+          <div class="flow-body">말보다 행함의 진정성을 가르치신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">33–46절</div>
+        <div>
+          <div class="flow-title">악한 포도원 소작인 비유</div>
+          <div class="flow-body">아들을 죽이는 소작인들의 비유로 <b class="hl-term has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">모퉁이의 머릿돌</b>(시 118편)을 인용하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 겸손한 왕의 입성</div>
+        <div class="teach-body">나귀를 타신 왕은 정복이 아니라 평화의 방식으로 오신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 성전의 본래 목적 회복</div>
+        <div class="teach-body">만민을 위한 기도의 집이라는 정체성 회복을 향한 예언자적 행동이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 말보다 행함의 진정성</div>
+        <div class="teach-body">두 아들 비유는 겉으로 순종한다 말하는 것보다 실제로 행하는 것의 중요성을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 반복된 거부의 역사</div>
+        <div class="teach-body">소작인 비유는 이스라엘 지도층의 반복된 선지자 거부와 아들 살해로 이어질 최종 거부를 압축한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 버려진 돌이 머릿돌로</div>
+        <div class="teach-body">거부당하신 그리스도가 결국 구원 역사의 핵심이 되신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">종려나무 가지를 흔들며 환호했던 무리가 며칠 뒤 십자가에 못 박으라 외칩니다. 우리의 신앙도 순간의 감정보다 깊은 곳에 뿌리내려야 하는 이유입니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>나귀와 나귀 새끼 "두 마리"(마태만의 특징)</div>
+        <div class="deep-body">다른 복음서는 나귀 새끼 한 마리만 언급하나 마태는 두 마리를 언급한다. 스가랴 9:9의 히브리 시적 평행법(같은 대상을 두 표현으로 반복하는 기법)을 마태가 문자적으로 두 마리로 읽어 적용했다는 해석이 유력하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>포도원 소작인 비유가 그리는 구원사</div>
+        <div class="deep-body">"그 나라를 열매 맺는 백성이 받으리라"(43절)는 선언이 교회와 이스라엘의 관계를 어떻게 이해할지에 대한 신학적 논쟁(대체신학 vs 언약적 연속성)의 핵심 본문 중 하나로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch22">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8v32" /><circle cx="24" cy="8" r="3" /><path d="M14 20h20M14 26h20" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 22</div>
+      <h1>22장 · 논쟁의 절정</h1>
+      <div class="chapter-sub">마태복음 22장 — 큰 계명과 다윗의 자손 문제</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 22:1–46</span>
+      <span class="ref-item">시 110편</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">다섯 장면이 연이은 논쟁을 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–14절</div>
+        <div>
+          <div class="flow-title">혼인 잔치 비유</div>
+          <div class="flow-body">초청받은 자들의 거절과, 예복 없는 자에 대한 심판이 이어진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">15–22절</div>
+        <div>
+          <div class="flow-title">가이사에게 세금 논쟁</div>
+          <div class="flow-body">"가이사의 것은 가이사에게, 하나님의 것은 하나님께" 답하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">23–33절</div>
+        <div>
+          <div class="flow-title">부활 논쟁(사두개인)</div>
+          <div class="flow-body">"살아있는 자의 하나님"이심을 선언하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">34–40절</div>
+        <div>
+          <div class="flow-title">큰 계명</div>
+          <div class="flow-body">하나님 사랑과 이웃 사랑, 이 두 계명에 온 율법과 선지자가 달렸다 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">41–46절</div>
+        <div>
+          <div class="flow-title">다윗의 자손 문제</div>
+          <div class="flow-body">시편 110편을 인용해 메시아가 다윗보다 크심을 암시하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 거절당하는 초청의 비극</div>
+        <div class="teach-body">하나님 나라의 잔치에 초대받고도 무관심하거나 적대하는 반응에 대한 경고다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 은혜에는 합당한 응답이 따른다</div>
+        <div class="teach-body">예복 없는 자의 비유는 값없는 초청이 무의미한 응답을 정당화하지 않음을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 하나님과 세상 권세의 올바른 자리</div>
+        <div class="teach-body">시민적 책임과 궁극적 충성의 균형을 가르치신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 사랑의 이중 계명의 통합성</div>
+        <div class="teach-body">모든 율법과 선지자가 이 두 계명에 달려 있다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 메시아는 다윗의 자손 그 이상</div>
+        <div class="teach-body">시편 110편을 통해 메시아의 정체가 다윗 혈통의 인간 왕을 초월함을 암시하신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"하나님의 것은 하나님께"라는 말씀은 세금 문제를 넘어, 삶의 모든 영역에서 무엇이 진짜 하나님의 것인지 묻게 만드는 질문이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 세 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"예복을 입지 않은 자"(11–14절)의 정체</div>
+        <div class="deep-body">혼인 잔치 비유 후반부에 추가된 이 삽화는, 값없는 은혜(초청)와 그에 합당한 삶(예복)이라는 두 진리를 함께 붙드는 마태 신학의 균형점으로 해석된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"율법과 선지자의 강령"(40절)이라는 표현</div>
+        <div class="deep-body">모든 율법과 예언이 사랑의 이중 계명에 근거하고 그것을 지향한다는 마태의 율법 해석 원리로, 산상수훈의 "율법의 완성"(5:17) 주제와 직접 연결된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>"청함을 받은 자는 많되 택함을 입은 자는 적으니라"(14절)</div>
+        <div class="deep-body">혼인 잔치 비유 전체를 마무리하는 이 결론은 언뜻 모순처럼 들린다 — 초청(부름)은 누구에게나 값없이 열려 있으나, 그 초청에 합당하게 응답하는 자는 상대적으로 적다는 뜻으로 이해하는 것이 일반적이다. 이 구절은 하나님의 주권적 선택(예정)과 인간의 자유로운 응답 사이의 긴장을 압축적으로 담고 있어, 개혁주의 전통(하나님의 택하심 강조)과 알미니안 전통(인간의 응답 강조) 사이의 오랜 신학적 논쟁에서 자주 인용되는 본문이다. 마태복음 문맥 안에서는 이스라엘 전체가 초청받았으나 소수만 실제로 잔치에 참여한다는, 이 복음서 전체의 반복된 주제(거절과 대체, 21장 소작인 비유 참고)와 직접 연결된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch23">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 40V22a12 12 0 0 1 24 0v18" /><path d="M12 40h24" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 23</div>
+      <h1>23장 · 서기관과 바리새인 책망</h1>
+      <div class="chapter-sub">마태복음 23장 — 일곱 화(禍)</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 23:1–39</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">세 단락이 위선에 대한 책망을 담는다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–12절</div>
+        <div>
+          <div class="flow-title">외식에 대한 경고</div>
+          <div class="flow-body">행위와 말의 불일치, 높은 자리를 좋아함을 지적하시며 <b class="hl-quote">"너희는 랍비라 칭함을 받지 말라"</b> 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–36절</div>
+        <div>
+          <div class="flow-title">일곱 화</div>
+          <div class="flow-body">천국 문을 닫음, 맹인 인도자, <b class="hl-term has-tip" data-tip="마태복음 23:27의 표현으로, 겉은 아름다우나 속은 죽은 자의 뼈로 가득한 무덤에 위선적 종교 지도자를 비유한 것.">회칠한 무덤</b> 등 일곱 가지 책망이 이어진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">37–39절</div>
+        <div>
+          <div class="flow-title">예루살렘을 향한 탄식</div>
+          <div class="flow-body"><b class="hl-quote">"암탉이 새끼를 날개 아래 모음 같이 하려 하였으나"</b> 탄식하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 언행일치의 요구</div>
+        <div class="teach-body">가르침과 삶이 분리된 종교 지도자에 대한 강력한 경고다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 섬김으로서의 위대함 재확인</div>
+        <div class="teach-body">높아지려는 자는 낮아지고 낮추는 자는 높아진다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 형식과 본질의 전도</div>
+        <div class="teach-body">박하와 회향의 십일조는 챙기면서 정의·긍휼·믿음은 버리는 우선순위의 왜곡을 지적하신다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 회칠한 무덤</div>
+        <div class="teach-body">겉모습과 내면의 괴리에 대한 가장 통렬한 이미지다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 심판 속의 사랑</div>
+        <div class="teach-body">격렬한 책망 뒤에 이어지는 예루살렘을 향한 그리스도의 눈물 어린 탄식이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">23장은 읽기 불편한 장이에요. 하지만 이 책망이 '남'이 아니라 '나'를 향한 거울이 될 때, 비로소 이 본문의 의도대로 읽는 것일지 모릅니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"일곱 화" 본문의 오독 위험</div>
+        <div class="deep-body">이 본문이 역사적으로 반유대주의를 정당화하는 데 오용되어 온 사례가 있다. 본문의 본래 대상은 유대 민족 전체가 아니라 특정 종교 지도층의 위선이며, 예수 자신이 유대인으로서 구약 선지자들의 예언자적 자기비판 전통 위에 서 있다는 신중한 이해가 필요하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"랍비라 칭함을 받지 말라"(8절)의 적용 범위</div>
+        <div class="deep-body">문자적으로 모든 종교적 칭호를 금지하는 것으로 볼지, 칭호 자체보다 그것이 만드는 위계적 특권 의식을 경계하는 원리로 볼지에 대해 교단마다 다양한 해석과 실천이 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch24">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 18h32" /><path d="M16 18l-4 22M32 18l4 22M24 18v22" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 24</div>
+      <h1>24장 · 감람산 강화 (1) — 징조와 재림</h1>
+      <div class="chapter-sub">마태복음 24장 — 그 날과 그 때는 아무도 모르나니</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 24:1–51</span>
+      <span class="ref-item">단 9:27</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">여섯 단락으로 종말의 징조와 권면이 이어진다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–14절</div>
+        <div>
+          <div class="flow-title">성전 파괴 예고와 재난의 징조</div>
+          <div class="flow-body">미혹, 전쟁, 기근, 지진("재난의 시작")이 있을 것과, 복음이 만민에게 전파된 후에 끝이 옴을 예고하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">15–28절</div>
+        <div>
+          <div class="flow-title">큰 환난</div>
+          <div class="flow-body"><b class="hl-term has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">멸망의 가증한 것</b>을 보거든 즉시 도망하라, 거짓 그리스도들을 주의하라 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">29–31절</div>
+        <div>
+          <div class="flow-title">인자의 재림</div>
+          <div class="flow-body">우주적 격변과 함께 인자가 구름을 타고 오셔서 택하신 자들을 모으신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">32–35절</div>
+        <div>
+          <div class="flow-title">무화과나무의 비유</div>
+          <div class="flow-body">"이 세대가 지나가기 전에" 이 일이 다 이루어짐을 말씀하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">36–44절</div>
+        <div>
+          <div class="flow-title">그 날과 그 때는 아무도 모름</div>
+          <div class="flow-body">노아의 때와 같이, 항상 깨어 있으라 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">45–51절</div>
+        <div>
+          <div class="flow-title">충성된 종과 악한 종의 비유</div>
+          <div class="flow-body">주인의 지연된 귀환 앞에서 신실하게 깨어있는 종과 방탕한 종의 상반된 운명을 비유하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 재난은 끝이 아니라 과정</div>
+        <div class="teach-body">"재난의 시작"이라는 표현이 주는 신학적 위로다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 복음의 만민 전파와 종말</div>
+        <div class="teach-body">선교적 사명과 종말론적 소망이 결합되어 있다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 거짓에 대한 분별력</div>
+        <div class="teach-body">반복된 미혹 경고는 종말론적 시대의 영적 분별을 요구한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 예측 불가능성과 항상적 준비</div>
+        <div class="teach-body">날짜 계산이 아니라 항상 깨어있는 삶이 요구된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 충성으로 응답하는 기다림</div>
+        <div class="teach-body">종의 비유는 주인의 지연된 귀환 앞에서의 신실함을 촉구한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">종말에 대한 이야기를 읽을 때 날짜를 계산하고 싶은 유혹이 들 수 있어요. 그런데 본문이 요구하는 반응은 계산이 아니라 '깨어 있음'입니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"이 세대가 지나가기 전에"와 "아무도 모르나니"의 관계</div>
+        <div class="deep-body">마가복음 13장과 동일한 신학적 난제다. 두 구절이 각각 다른 대상(성전 파괴/재림)을 가리킨다는 해석이 다수 복음주의 학자들의 입장이며, 문맥의 전환을 읽어내는 것이 핵심 해석 열쇠다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>24장과 25장의 구조적 관계</div>
+        <div class="deep-body">24장의 징조 설명이 25장의 세 비유(열 처녀, 달란트, 양과 염소)로 자연스럽게 이어지며, 종말론적 지식(24장)이 종말론적 준비(25장)로 실천적으로 귀결되는 마태 특유의 구조적 의도가 엿보인다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch25">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8c4 5 4 9 0 13-4-4-4-8 0-13Z" /><path d="M17 30h14v6a7 7 0 0 1-14 0Z" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 25</div>
+      <h1>25장 · 감람산 강화 (2) — 준비의 비유들</h1>
+      <div class="chapter-sub">마태복음 25장 — 지극히 작은 자 하나에게 한 것</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 25:1–46</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">세 비유가 종말론적 준비를 촉구한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–13절</div>
+        <div>
+          <div class="flow-title">열 처녀 비유</div>
+          <div class="flow-body">기름을 준비한 자와 준비하지 못한 자를 대조하며 <b class="hl-quote">"깨어 있으라"</b> 권면하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">14–30절</div>
+        <div>
+          <div class="flow-title">달란트 비유</div>
+          <div class="flow-body">각각 다르게 맡겨진 달란트에 대한 충성을 평가하시며 <b class="hl-quote">"착하고 충성된 종아"</b> 칭찬하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">31–46절</div>
+        <div>
+          <div class="flow-title">양과 염소의 심판</div>
+          <div class="flow-body"><b class="hl-quote">"이 지극히 작은 자 하나에게 한 것이 곧 내게 한 것이니라"</b> 선언하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 준비는 대신할 수 없다</div>
+        <div class="teach-body">기름을 나눠줄 수 없다는 설정은 신앙의 개인적 책임성을 강조한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 받은 것에 충성하는 청지기 정신</div>
+        <div class="teach-body">다섯 달란트든 한 달란트든, 맡은 것에 대한 충성이 평가의 기준이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 두려움이 만드는 게으름</div>
+        <div class="teach-body">한 달란트 받은 종의 실패는 능력 부족이 아니라 주인에 대한 왜곡된 두려움에서 비롯된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 이웃 사랑이 곧 그리스도 사랑</div>
+        <div class="teach-body">지극히 작은 자를 향한 실천적 사랑이 심판의 기준이 된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 보이지 않는 그리스도를 섬기는 삶</div>
+        <div class="teach-body">양과 염소 모두 자신들이 언제 그리스도를 섬기거나 외면했는지 몰랐다는 설정이 의미심장하다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">달란트 비유에서 가장 눈에 띄는 인물은 사실 한 달란트 받은 종이에요. 그의 실패는 능력 부족이 아니라 주인에 대한 오해에서 비롯됐습니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"이 지극히 작은 자"(40, 45절)가 누구를 가리키는가</div>
+        <div class="deep-body">모든 궁핍한 사람 일반을 가리킨다는 보편적 해석과, "내 형제"라는 표현에 근거해 그리스도를 위해 고난받는 제자·선교사를 특정적으로 가리킨다는 해석 사이의 오랜 주석사적 논쟁이 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>행위 심판처럼 보이는 본문과 이신칭의 교리의 관계</div>
+        <div class="deep-body">개혁주의 전통에서는 이 본문을 구원의 근거가 아니라 구원받은 삶의 필연적 증거(열매)로 이해하는 해석이 일반적이며, 값없는 은혜와 행위의 열매 사이의 신학적 균형을 다루는 대표 본문으로 여겨진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch26">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10h20l-2 14a8 8 0 0 1-16 0Z" /><path d="M24 32v6M17 38h14" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 26</div>
+      <h1>26장 · 배반의 밤</h1>
+      <div class="chapter-sub">마태복음 26장 — 이 잔을 내게서 지나가게 하옵소서</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 26:1–75</span>
+      <span class="ref-item">렘 31:31</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">여섯 장면이 체포로 이어지는 밤을 그린다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–16절</div>
+        <div>
+          <div class="flow-title">향유 부음과 배반 모의</div>
+          <div class="flow-body">여인의 헌신이 <b class="hl-quote">"온 천하에 어디서든지... 이 여자가 행한 일도 말하여 저를 기억하리라"</b>는 약속을 받고, 유다는 은 삼십에 배반을 모의한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">17–30절</div>
+        <div>
+          <div class="flow-title">최후의 만찬</div>
+          <div class="flow-body"><b class="hl-term has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">새 언약의 피</b>를 선포하시며 하나님 나라에서 다시 마실 날을 약속하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">31–46절</div>
+        <div>
+          <div class="flow-title">겟세마네</div>
+          <div class="flow-body">베드로의 부인을 예고하시고, <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"이 잔을 내게서 지나가게 하옵소서 그러나 나의 원대로 마시옵고 아버지의 원대로 하옵소서"</b> 기도하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">47–56절</div>
+        <div>
+          <div class="flow-title">체포</div>
+          <div class="flow-body">유다의 입맞춤, "검을 가지는 자는 다 검으로 망하느니라" 책망하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">57–68절</div>
+        <div>
+          <div class="flow-title">산헤드린 재판</div>
+          <div class="flow-body">"네가 그리스도 하나님의 아들인지 말하라"는 질문에 <b class="hl-quote">"네가 말하였느니라"</b> 답하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">69–75절</div>
+        <div>
+          <div class="flow-title">베드로의 부인</div>
+          <div class="flow-body">세 번 부인한 후 통곡한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 값없어 보이는 헌신의 영원한 기억</div>
+        <div class="teach-body">향유를 부은 여인의 행위가 복음과 함께 영원히 기념된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 새 언약의 피</div>
+        <div class="teach-body">예수의 죽음이 죄 사함을 위한 언약 체결 사건으로 선포된다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 인성적 고뇌와 순종의 공존</div>
+        <div class="teach-body">겟세마네 기도는 두려움과 순종이 모순되지 않음을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 폭력을 거부하시는 그리스도</div>
+        <div class="teach-body">검을 쓰는 것에 대한 명시적 책망이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 실패 이후에도 남는 희망</div>
+        <div class="teach-body">베드로의 처절한 부인은 이후 회복 서사를 예비하는 은혜의 복선이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">겟세마네에서 예수님도 두려워하며 기도하셨다는 사실은, 신앙이 두려움 없는 상태가 아니라 두려움 속에서도 순종하는 것임을 보여줍니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"네가 말하였느니라"(64절)의 함의</div>
+        <div class="deep-body">직접적인 "그렇다"는 대답 대신 사용된 이 셈어적 관용구는 실제로 긍정을 의미하며, 이어지는 신성모독 판결(65–66절)이 이를 뒷받침한다는 언어학적·문맥적 해석이 유력하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>겟세마네의 "이 잔"(39절)의 구약적 배경</div>
+        <div class="deep-body">하나님의 진노의 심판을 상징하는 구약적 "잔" 모티프(시 75:8, 사 51:17)는, 예수의 죽음이 인류의 죄에 대한 하나님의 진노를 대신 짊어지는 대속적 사건임을 시사한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch27">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v36M12 16h24" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 27</div>
+      <h1>27장 · 십자가에서</h1>
+      <div class="chapter-sub">마태복음 27장 — 엘리 엘리 라마 사박다니</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 27:1–66</span>
+      <span class="ref-item">시 22편</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">여섯 장면이 재판에서 장사까지 이어진다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–10절</div>
+        <div>
+          <div class="flow-title">유다의 죽음</div>
+          <div class="flow-body">은 삼십을 돌려주고 목매어 죽으니, 토기장이의 밭 이야기로 이어진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">11–26절</div>
+        <div>
+          <div class="flow-title">빌라도 재판</div>
+          <div class="flow-body">침묵하시는 예수, 바라바 석방, 빌라도가 손을 씻으며 <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"나는 이 사람의 피에 대하여 무죄하다"</b> 선언한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">27–31절</div>
+        <div>
+          <div class="flow-title">희롱</div>
+          <div class="flow-body">가시관과 자색 옷으로 조롱받으신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">32–44절</div>
+        <div>
+          <div class="flow-title">십자가 처형</div>
+          <div class="flow-body">구레네 시몬이 십자가를 지고, 골고다에서 옷을 제비뽑히며 조롱당하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">45–56절</div>
+        <div>
+          <div class="flow-title">죽음</div>
+          <div class="flow-body">어둠 가운데 <b class="hl-quote">"엘리 엘리 라마 사박다니"</b> 부르짖으시니, 성소 휘장이 찢어지고 백부장이 "이는 진실로 하나님의 아들이었도다" 고백한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">57–66절</div>
+        <div>
+          <div class="flow-title">장사</div>
+          <div class="flow-body">아리마대 요셉이 시신을 무덤에 안치하고, 경비병이 배치된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 죄책감과 회개의 차이</div>
+        <div class="teach-body">유다의 후회는 회개로 이어지지 못하고 파멸에 이른다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 침묵으로 답하시는 왕</div>
+        <div class="teach-body">자신을 변호하지 않으시는 메시아의 방식이다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 무고한 피 앞에서의 책임 회피</div>
+        <div class="teach-body">손을 씻는 빌라도의 행동이 오히려 그의 책임을 드러낸다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 버림받음의 극한 속 신뢰</div>
+        <div class="teach-body">시편 22편을 부르짖는 절규 속에서도 "나의 하나님"이라 부르는 신뢰가 담겨 있다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 죽음 앞에 무너지는 경계</div>
+        <div class="teach-body">성소 휘장의 찢어짐과 무덤들이 열림은 예수의 죽음이 만들어내는 우주적 파장을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">십자가 곁을 지나가던 이들의 조롱과 백부장의 고백이 같은 장면에서 엇갈립니다. 오늘 이 본문을 읽는 우리는 어느 쪽에 더 가까울까요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 세 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"그 피를 우리와 우리 자손에게"(25절)의 비극적 해석사</div>
+        <div class="deep-body">이 구절이 역사적으로 반유대주의와 유대인 박해를 정당화하는 근거로 심각하게 오용되어 온 사실을 반드시 짚어야 한다. 본문은 당시 특정 군중의 발언에 대한 서술일 뿐, 이후 세대 유대 민족 전체에 대한 저주 선언으로 읽어서는 안 된다는 것이 현대 성서학계의 압도적 합의다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"자던 성도의 몸이 많이 일어나되"(52–53절)라는 마태만의 기사</div>
+        <div class="deep-body">다른 복음서에 병행 구절이 없는 이 사건이 문자적 역사 서술인지, 예수의 죽음이 가져온 종말론적 승리를 상징적으로 표현하는 묵시문학적 장치인지에 대한 해석학적 논쟁이 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>"선지자 예레미야로 하신 말씀"(9절)이 실제로는 스가랴의 본문인 문제</div>
+        <div class="deep-body">마태는 은 삼십과 토기장이의 밭 이야기를 <b class="hl-quote">"선지자 예레미야로 하신 말씀"</b>이라 소개하지만, 인용된 내용(은 삼십, 그것을 던짐)은 사실 <b class="hl-term">스가랴 11:12–13</b>과 훨씬 더 가깝고, 토기장이의 밭이라는 모티프는 예레미야 19장과 32장의 이미지와 연결된다. 이 불일치는 복음서의 역사적 신빙성 논쟁에서 자주 거론되는 대표적 사례다. 가장 널리 받아들여지는 해법은, 당대 유대 관습상 두루마리 모음에서 <b class="hl-term has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">더 비중 있고 잘 알려진 선지자(예레미야)의 이름으로 그 묶음 전체를 대표해 인용</b>하는 것이 자연스러웠다는 설명이다 — 예레미야가 열두 소선지서를 포함한 후기 예언서 모음의 대표격으로 여겨졌다는 유대 전승과도 맥이 닿는다. 필사자의 오류라는 설, 마태가 두 본문을 의도적으로 결합해 하나로 제시했다는 설도 함께 논의된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch28">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 40V22a12 12 0 0 1 24 0v18" /><path d="M24 8v6M18 12l3 3M30 12l-3 3" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">MATTHEW 28</div>
+      <h1>28장 · 부활과 지상명령</h1>
+      <div class="chapter-sub">마태복음 28장 — 내가 너희와 항상 함께 있으리라</div>
+      <div class="ref-strip">
+        <span class="ref-item">마 28:1–20</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">세 장면이 복음서를 결론짓는다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–10절</div>
+        <div>
+          <div class="flow-title">부활</div>
+          <div class="flow-body">지진과 천사의 선언, 여인들에게 나타나 <b class="hl-quote">"평안하냐"</b> 하시며 갈릴리에서 만나자 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">11–15절</div>
+        <div>
+          <div class="flow-title">경비병의 거짓 보고</div>
+          <div class="flow-body">돈을 받고 "제자들이 밤에 와서 시체를 도둑질하였다"는 소문을 퍼뜨린다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">16–20절</div>
+        <div>
+          <div class="flow-title">지상명령</div>
+          <div class="flow-body">갈릴리 산에서 <b class="hl-quote has-tip" data-tip="헬라어 δικαιοσύνη(디카이오쉬네)의 번역어. 마태복음의 핵심 신학 용어로, 하나님과 올바른 관계에서 흘러나오는 순종의 삶을 가리킨다.">"하늘과 땅의 모든 권세를 내게 주셨으니"</b> 선언하시며, <b class="hl-quote">"모든 민족을 제자로 삼아... 내가 너희와 항상 함께 있으리라"</b> 약속하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 여성 증인들에게 먼저 나타나심</div>
+        <div class="teach-body">당대 사회에서 법적 증언 자격이 없던 여성들이 부활의 첫 증인이 된다는 것 자체가 이 사건의 역사성과 하나님 나라의 전복적 가치를 함께 증언한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">② 거짓과 진실의 경쟁</div>
+        <div class="teach-body">부활을 부인하려는 조작된 소문의 존재 자체가 역설적으로 빈 무덤의 역사성을 뒷받침한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">③ 의심과 예배의 공존</div>
+        <div class="teach-body">"엎드려 절하되 의심하는 자도 있더라"는 정직한 서술은, 완벽한 확신만이 참된 예배의 조건이 아님을 보여준다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">④ 모든 권세를 가지신 주님의 파송</div>
+        <div class="teach-body">지상명령의 권위는 예수 자신의 우주적 주권에 근거한다.</div>
+      </div>
+
+      <div class="teach-card">
+        <div class="teach-title">⑤ 영원한 임재의 약속으로 마치는 복음서</div>
+        <div class="teach-body">"임마누엘"(1:23)로 시작한 마태복음이 "내가 너희와 항상 함께 있으리라"는 약속으로 수미상관을 이루며 끝난다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"내가 너희와 항상 함께 있으리라"는 마지막 약속은 1장의 '임마누엘'과 정확히 짝을 이뤄요. 마태복음은 처음부터 끝까지 이 한 가지를 말하고 있었던 셈입니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>마태복음의 수미상관 구조</div>
+        <div class="deep-body">1:23 "임마누엘"(하나님이 우리와 함께 계시다)과 28:20 "내가... 너희와 항상 함께 있으리라"가 의도적으로 짝을 이루는 문학적 구조로, 마태복음 전체의 핵심 주제(하나님의 임재)를 처음과 끝에서 선언한다는 해석이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>삼위일체 세례 정식(19절)의 형성 문제</div>
+        <div class="deep-body">"아버지와 아들과 성령의 이름으로"라는 이 명시적 삼위일체 공식이 예수 자신의 말씀인지, 초기 교회의 세례 예전 관습이 반영된 것인지에 대한 역사비평적 논쟁이 있다. 다만 두 입장 모두 삼위일체 신앙 자체의 신약적 뿌리를 부정하지는 않는다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+
+<script>
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  if(!tip) return;
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+
+</body></html>
