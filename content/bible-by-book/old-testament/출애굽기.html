@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>출애굽기 연구 — 전권 합본</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+.cover .cover-legend{
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+}
+.cover .cl-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8.5pt;
+  color: #8b96ad;
+}
+.cover .cl-swatch{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(20,28,42,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 출애굽기 연구</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+
+<div class="cover">
+  <div class="eyebrow">BIBLE STUDY · BOOK OF EXODUS</div>
+  <h1>출애굽기 연구</h1>
+  <div class="cover-sub">종의 집에서 임재의 처소까지 — 전체 개관 성경 연구</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">출 1:1 – 40:38</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전체 흐름 개관 · 신학적·목회적 교훈 · 심화 질문</div>
+  <div class="cover-legend">
+    <span class="cl-item"><span class="cl-swatch" style="background:#d8b073"></span>핵심 개념·용어</span>
+    <span class="cl-item"><span class="cl-swatch" style="background:#f0b8a8"></span>성경 본문 인용</span>
+    <span class="cl-item"><span class="cl-swatch" style="background:#a9e6dd"></span>원어 표현(히브리어)</span>
+    <span class="cl-item"><span class="cl-swatch" style="background:#bfe3f8"></span>심화 설명 (탭하면 팝업)</span>
+  </div>
+</div>
+
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>출애굽기 전체 서론</h1>
+  <p class="intro-lead">종의 집에서 나와, 하나님이 거하시는 곳에 이르다.</p>
+
+  <div class="intro-block">
+    <h3>이름과 저작 배경</h3>
+    <p>히브리 성경은 첫 낱말을 따라 이 책을 <b class="hl-term">쉐모트</b>("이름들")라 부르지만, 칠십인역과 우리말 성경은 헬라어 "엑소도스"("나감")를 따라 <b class="hl-term">출애굽기</b>라 이름 붙였다. 전통적으로 모세의 저작으로 여겨지며, 창세기 말미의 야곱 가족 명단을 이어받아 시작해 시내산에서의 성막 완성까지를 다룬다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>역사적 정황과 연대 논쟁</h3>
+    <p>출애굽 연대는 <b class="hl-term">이른 연대설</b>(주전 15세기, 왕상 6:1 기준)과 <b class="hl-term">늦은 연대설</b>(주전 13세기 람세스 시대) 사이의 오랜 논쟁 가운데 있다. 본문이 바로의 이름을 끝내 밝히지 않는 것은 역사적 무관심이 아니라, 대적자가 특정 개인이 아닌 <b class="hl-insight has-insight" data-insight="0">이스라엘을 소유물로 만들려는 제국의 논리 그 자체</b>임을 보여주려는 신학적 선택으로 읽을 수 있다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문학적 구조</h3>
+    <p>출애굽기는 지리적 이동과 신학적 이동이 정확히 포개어지는 세 부분으로 구성된다 — <b class="hl-term">구원</b>(1-15장, 종살이에서 부르심과 열 재앙을 거쳐 홍해를 건너기까지), <b class="hl-term">형성</b>(16-24장, 광야 여정과 시내산 언약), <b class="hl-term">동거</b>(25-40장, 성막의 설계와 건축, 그리고 영광의 임함). 이야기의 절반 이상이 시내산이라는 한 장소에 머문다는 사실은, 탈출 자체보다 하나님과 함께 거하는 백성으로의 재구성이 저자의 진짜 관심사임을 보여준다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p><b class="hl-term">이름의 계시</b>(에흐예 아쉐르 에흐예, 동행의 약속으로서의 하나님의 이름), <b class="hl-term">구속과 심판</b>(재앙과 유월절을 통한 애굽 신학 질서에 대한 도전), <b class="hl-term">언약과 율법</b>(은혜가 먼저 오고 명령이 뒤따르는 문법), 그리고 <b class="hl-term">임재의 처소</b>(성막을 통해 회복되는 하나님과 백성의 동거)가 책 전체를 관통한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1 – 15장</div>
+        <div class="oi-title">구원</div>
+        <div class="oi-body">종살이에서의 부르심, 열 재앙과 유월절, 홍해를 건너 자유에 이른다.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">16 – 24장</div>
+        <div class="oi-title">형성</div>
+        <div class="oi-body">광야 여정을 지나 시내산에서 십계명과 언약서로 언약 백성이 된다.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">25 – 40장</div>
+        <div class="oi-title">동거</div>
+        <div class="oi-body">성막을 설계하고 짓되, 금송아지 배교와 갱신을 거쳐 영광이 임한다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 단원은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 본문을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 역사적 배경과 해석사적 논쟁 등 함께 씨름할 가치가 있는 지점들을 다룬다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">종의 집에서, 부르심 앞으로</span>
+      <span class="toc-sub">1-4장 · 이름을 감춘 산파들, 이름을 밝히시는 하나님</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch1"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-title">열 재앙과 유월절 밤</span>
+      <span class="toc-sub">5-13장 · 애굽의 신들 위에 임한 심판</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch2"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-title">홍해를 건너, 광야를 지나</span>
+      <span class="toc-sub">14-18장 · 노래로 시작해 원망으로 이어지는 자유</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch3"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-title">시내산 언약 — 제사장 나라</span>
+      <span class="toc-sub">19-24장 · 십계명과 언약서, 피로 맺는 관계</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch4"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-title">성막 — 이동하는 시내산</span>
+      <span class="toc-sub">25-31장 · 패턴대로 지어지는 임재의 처소</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch5"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-title">금송아지와 언약의 갱신</span>
+      <span class="toc-sub">32-34장 · 산 위의 청사진과 산 아래의 배교</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch6"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch7')" onkeydown="if(event.key==='Enter')goTo(event,'ch7')">
+      <span class="toc-num">07</span>
+      <span class="toc-title">성막의 완성과 영광의 임함</span>
+      <span class="toc-sub">35-40장 · 자원하는 마음, 그리고 마침내 임하신 영광</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch7"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch8')" onkeydown="if(event.key==='Enter')goTo(event,'ch8')">
+      <span class="toc-num">08</span>
+      <span class="toc-title">신학적 결론</span>
+      <span class="toc-sub">이름 없는 자에서 임재 안의 백성으로</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch8"></span>
+    </a>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40V22" /><path d="M24 22c-6-2-8-8-6-14 4 2 6 6 6 10 0-4 2-8 6-10 2 6 0 12-6 14Z" /><path d="M14 40h20" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EXOD 1–4</div>
+      <h1>1부 · 종의 집에서, 부르심 앞으로</h1>
+      <div class="chapter-sub">출애굽기 1-4장 — 이름을 감춘 산파들, 이름을 밝히시는 하나님</div>
+      <div class="ref-strip">
+        <span class="ref-item">출 1:1–4:31</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">이름 없는 무리로 짓눌리던 백성이, 이름을 계시하시는 하나님을 만난다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1장</div>
+        <div>
+          <div class="flow-title">이름을 지우는 제국, 이름을 새기는 본문</div>
+          <div class="flow-body">요셉을 알지 못하는 새 왕이 히브리인을 통제해야 할 인구로만 대하지만, 본문은 정작 바로의 이름은 감추면서 그에게 저항한 산파 <b class="hl-term">십브라와 부아</b>의 이름은 또렷이 기록한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">2장</div>
+        <div>
+          <div class="flow-title">모세의 출생과 도피</div>
+          <div class="flow-body">나일강에 띄워진 아기가 바로의 딸에게 건짐 받아 자라고, 장성하여 동족을 위해 애굽인을 죽인 뒤 미디안으로 도망하여 십보라와 결혼한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">3장</div>
+        <div>
+          <div class="flow-title">떨기나무의 부르심과 이름의 계시</div>
+          <div class="flow-body">호렙산 떨기나무에서 하나님이 모세를 부르시고, 그 이름을 묻는 모세에게 <b class="hl-quote">"나는 스스로 있는 자이니라"</b>(<b class="hl-term has-tip" data-tip="에흐예 아쉐르 에흐예 — 하야(היה) 동사의 미완료형이 반복된 구문으로, &#x27;나는 (앞으로) 있을 자로 있을 것이다&#x27;에 가깝다. 정의가 아니라 동행의 약속이다.">에흐예 아쉐르 에흐예</b>) 라 응답하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">4장</div>
+        <div>
+          <div class="flow-title">다섯 번의 거절과 아론의 동행</div>
+          <div class="flow-body">모세가 <b class="hl-insight has-insight" data-insight="1">다섯 차례 거듭 거절하지만</b>, 하나님은 표징(지팡이, 손, 물)과 형 아론을 대변자로 붙여주시며 끝내 그를 보내신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 제국이 지우려는 것을 본문이 새겨 넣다</div>
+        <div class="teach-body">바로의 이름은 감춰지고 저항한 산파들의 이름은 기록된다는 사실은, 하나님의 역사에서 누구의 이름이 진짜로 기억되는지를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 이름은 정의가 아니라 동행의 약속</div>
+        <div class="teach-body">"나는 스스로 있는 자"는 하나님을 인간의 정의에 가두지 않으면서도, 함께하시겠다는 약속을 담은 이름이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 다섯 번의 거절도 받아주시는 인내</div>
+        <div class="teach-body">모세의 반복된 거절에도 하나님은 진노하시되 끝내 그를 포기하지 않고 보내신다 — 부르심은 자격이 아니라 인내로 완성된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 약자의 저항이 역사의 방향을 바꾼다</div>
+        <div class="teach-body">산파들의 조용한 불순종이 이후 이스라엘 전체 구원사의 첫 물꼬를 튼다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 평범한 것을 표징으로 삼으심</div>
+        <div class="teach-body">지팡이, 손, 물처럼 모세의 일상 속 평범한 사물들이 하나님의 능력을 드러내는 표징이 된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">3장부터 4장까지 모세는 무려 다섯 번을 거절해요. "내가 누구이기에", "이름을 물으면", "믿지 않으면", "말을 잘 못하는데", 그리고 마지막엔 "그냥 다른 사람 보내주세요"까지. 그런데도 하나님은 끝까지 그를 놓지 않으셨습니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>출애굽 연대 논쟁 — 이른 연대설과 늦은 연대설</div>
+        <div class="deep-body"><b class="hl-term">이른 연대설</b>은 열왕기상 6:1의 "출애굽 후 480년째"를 문자적으로 취해 주전 15세기로 보아 바로를 투트모세 3세 계열로 지목하고, <b class="hl-term">늦은 연대설</b>은 출애굽기 1:11의 국고성 "라암셋"이라는 지명과 고고학적 정황을 근거로 주전 13세기 람세스 2세 시대를 지목한다. 본문이 바로의 이름을 끝내 밝히지 않는 것은, 대적이 특정 개인이 아니라 제국의 논리 그 자체이기 때문일 수 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>모세의 소명 내러티브와 고대 근동 문학 관습</div>
+        <div class="deep-body">3:11부터 4:13까지 이어지는 다섯 번의 반박은 기드온·예레미야에도 등장하는 고대 근동 소명 내러티브의 전형적 패턴이지만, 출애굽기는 이를 유독 다섯 번까지 늘려 하나님의 인내와 모세의 자기 확신 없음을 동시에 부각시킨다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 10v10M24 10v10M36 10v10" /><path d="M8 30q4-5 8 0t8 0 8 0 8 0" /><path d="M8 38h32" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EXOD 5–13</div>
+      <h1>2부 · 열 재앙과 유월절 밤</h1>
+      <div class="chapter-sub">출애굽기 5-13장 — 애굽의 신들 위에 임한 심판</div>
+      <div class="ref-strip">
+        <span class="ref-item">출 5:1–13:22</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">재앙은 우연한 재난이 아니라 애굽 신학 전체에 대한 도전이다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">5-7장</div>
+        <div>
+          <div class="flow-title">첫 대면과 강퍅함의 시작</div>
+          <div class="flow-body">모세와 아론이 바로 앞에 서지만 오히려 노역만 가중되고, 이후 바로의 마음이 완악해지는 이중적 서술 — 스스로 완악하게 하는 구절과 하나님이 강퍅하게 하시는 구절 — 이 교차하며 시작된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">7-10장</div>
+        <div>
+          <div class="flow-title">아홉 재앙, 애굽 신들에 대한 도전</div>
+          <div class="flow-body">나일강이 피가 되는 첫 재앙부터 흑암이 임하는 아홉째 재앙까지, 각 재앙은 나일의 신 하피, 태양신 라 등 <b class="hl-term">애굽 신학의 질서 전체</b>를 겨냥한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">11-13장</div>
+        <div>
+          <div class="flow-title">유월절 제정과 열째 재앙</div>
+          <div class="flow-body">흠 없는 어린양의 피를 문설주에 바르는 <b class="hl-term has-tip" data-tip="페사흐(פֶּסַח) — &#x27;넘어가다, 건너뛰다&#x27;라는 동사에서 온 명사. 죽음의 사자가 피 발린 문을 &#x27;넘어감&#x27;을 가리킨다.">유월절</b>이 제정되고, 장자의 죽음이라는 열째 재앙 이후 이스라엘이 마침내 애굽을 떠난다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 재앙은 자연재해가 아니라 신학적 논쟁</div>
+        <div class="teach-body">"내가 애굽의 모든 신을 심판하리라"(12:12)는 선언은, 재앙의 진짜 대상이 바로 개인이 아니라 애굽 신학 질서 전체임을 명시한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 완악함의 이중 문법</div>
+        <div class="teach-body">바로가 스스로 완악해지는 구절과 하나님이 완악하게 하시는 구절이 교차하는 것은, 인간의 책임과 하나님의 주권이 배타적이지 않음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 심판을 넘어가게 하는 피</div>
+        <div class="teach-body">유월절 피는 심판 자체를 없애는 것이 아니라, 그 심판이 "넘어가게" 하는 표징으로 기능한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 다음 세대에게 설명해야 할 이야기</div>
+        <div class="teach-body">유월절은 "대대로 지킬 규례"(12:14)로 제정되어, 구원의 기억이 예식을 통해 다음 세대로 전수되도록 설계된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 그리스도, 우리의 유월절</div>
+        <div class="teach-body">신약은 이 이미지를 그리스도께 반복 적용하며(고전 5:7), 심판을 넘어가게 하는 피라는 본문 고유의 신학 논리를 그대로 계승한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">나일강이 피가 되는 첫 재앙, 별거 아닌 것 같지만 사실 나일을 신격화한 하피 신앙에 대한 정면 도전이었어요. 재앙 하나하나가 애굽 신전 하나하나를 겨눈 셈이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>열 재앙과 애굽 신들의 대응 관계</div>
+        <div class="deep-body">첫 재앙(나일이 피가 됨)은 나일강의 신 하피를, 아홉째 재앙(흑암)은 태양신 라를 정면으로 겨눈다. 이런 대응 관계를 하나하나 짚어가면, 열 재앙 전체가 임의의 자연재해 목록이 아니라 애굽의 신전 체계 전체에 대한 체계적 심판임이 드러난다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">출애굽기 12:12</div>
+          <div class="verse-text">"내가 애굽 땅에 임하여... 애굽의 <span class="hinge">모든 신</span>을 내가 심판하리라 나는 여호와로라"</div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>바로의 마음이 완악해짐 — 인간 책임과 하나님 주권</div>
+        <div class="deep-body">초반 재앙들에서는 바로 "스스로" 마음을 완악하게 하고(8:15, 8:32), 후반부에서는 하나님이 그의 마음을 "강퍅하게 하신다"(9:12, 10:20)고 서술된다. 이는 인간의 자유의지와 신적 주권이 상호 배제적이지 않다는 히브리적 사고를 그대로 드러내는 대목으로, 신학사에서 오랫동안 논쟁된 주제다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24q6-8 12 0t12 0 12 0" /><path d="M6 34q6-8 12 0t12 0 12 0" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EXOD 14–18</div>
+      <h1>3부 · 홍해를 건너, 광야를 지나</h1>
+      <div class="chapter-sub">출애굽기 14-18장 — 노래로 시작해 원망으로 이어지는 자유의 첫 걸음</div>
+      <div class="ref-strip">
+        <span class="ref-item">출 14:1–18:27</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">구원 이후에도 신뢰는 자동으로 따라오지 않는다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">14-15장</div>
+        <div>
+          <div class="flow-title">홍해 도하와 모세의 노래</div>
+          <div class="flow-body">바다가 갈라져 이스라엘이 마른 땅으로 건너고 애굽 군대가 수장되니, 모세와 백성이 승리의 노래를 부른다. 그러나 노래가 끝나자마자 마라의 쓴 물 앞에서 곧바로 원망이 시작된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">16-17장</div>
+        <div>
+          <div class="flow-title">만나, 반석의 물, 아말렉과의 전쟁</div>
+          <div class="flow-body">하루치만 거두라는 명령과 함께 <b class="hl-term">만나</b>가 주어지고, 반석에서 물이 나며, 모세의 들린 손을 아론과 훌이 붙들어 아말렉과의 전쟁에서 승리한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">18장</div>
+        <div>
+          <div class="flow-title">이드로의 조언</div>
+          <div class="flow-body">미디안 제사장 이드로가 모세 혼자 모든 백성을 재판하는 것을 보고 천부장·백부장·오십부장·십부장의 위계를 제안하니, 시내산 언약 직전 공동체 구조가 예비된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 노래와 원망의 급전환</div>
+        <div class="teach-body">홍해에서 노래하던 입술이 사흘 만에 원망으로 바뀌는 전환은(15:24), 구원 이후에도 신뢰가 자동으로 따라오지 않음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 일용할 양식의 훈련</div>
+        <div class="teach-body">하루치만 거두라는 만나의 규칙은 만나 자체보다 매일 새롭게 의존해야 하는 훈련이 핵심임을 보여주며, 훗날 주기도문으로 이어진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 손 들린 지도자와 공동체의 협력</div>
+        <div class="teach-body">모세의 손을 아론과 훌이 함께 붙드는 장면은, 지도력이 한 사람만의 몫이 아니라 공동체가 함께 지탱하는 것임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 이방인을 통해 주시는 지혜</div>
+        <div class="teach-body">이스라엘 밖의 사람인 이드로를 통해 조직의 지혜가 주어진다는 사실은, 하나님의 인도하심이 반드시 익숙한 통로로만 오지 않음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 분산된 지도력 구조</div>
+        <div class="teach-body">언약 공동체는 한 지도자의 카리스마가 아니라 분산된 책임 구조 위에 세워져야 한다는 원리가 언약 체결 직전에 예비적으로 제시된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">홍해에서 승전가를 부른 지 딱 사흘 만에 마라의 쓴 물 앞에서 원망이 시작돼요. 큰 구원을 경험했다고 그다음부터 저절로 신뢰가 자라는 건 아니라는 걸, 이 급격한 전환이 보여줍니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이드로의 조언이 언약 공동체 형성에 갖는 의미</div>
+        <div class="deep-body">18장이 19장의 시내산 언약 바로 앞에 배치된 것은 우연이 아닐 수 있다. 언약 공동체가 세워지기 전에 먼저 그 공동체를 운영할 구조가 제안된다는 배치는, 신앙 공동체의 질서가 영적 체험만이 아니라 지혜로운 조직화를 필요로 함을 암시한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>만나와 주기도문의 신학적 연결</div>
+        <div class="deep-body">이틀치를 거두어도 썩지 않는 안식일 전날의 예외(16:22-26)를 제외하면, 만나는 원칙적으로 하루치만 허락된다. 이 광야 신학은 훗날 "오늘 우리에게 일용할 양식을 주시옵고"라는 주기도문의 간구로 직접 계승된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 8 14v10c0 10 7 16 16 18 9-2 16-8 16-18V14Z" /><path d="M18 24h12M24 18v12" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EXOD 19–24</div>
+      <h1>4부 · 시내산 언약 — 제사장 나라</h1>
+      <div class="chapter-sub">출애굽기 19-24장 — 십계명과 언약서, 피로 맺어지는 관계</div>
+      <div class="ref-strip">
+        <span class="ref-item">출 19:1–24:18</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">이스라엘의 정체성이 특권이 아니라 기능으로 규정된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">19장</div>
+        <div>
+          <div class="flow-title">제사장 나라의 언약 제안</div>
+          <div class="flow-body">"너희가 내게 대하여 <b class="hl-term">제사장 나라</b>가 되며 거룩한 백성이 되리라"(19:5-6)는 제안이 주어지고, 백성이 스스로 성결하게 하여 산 아래 서게 된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">20장</div>
+        <div>
+          <div class="flow-title">십계명 — 은혜가 먼저, 명령은 다음</div>
+          <div class="flow-body"><b class="hl-quote">"나는 너를 애굽 땅, 종 되었던 집에서 인도하여 낸... 여호와니라"</b>는 선언이 계명 나열보다 먼저 온다. 고대 근동의 종주권 조약 형식을 따라, 은혜가 선포된 후에야 의무가 뒤따른다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">21-23장</div>
+        <div>
+          <div class="flow-title">언약서</div>
+          <div class="flow-body">판례법 형식의 세부 법조문들이 이어지는데, 그 상당수가 노예·나그네·과부·고아 등 약자 보호에 집중되며, 그 근거는 언제나 <b class="hl-insight has-insight" data-insight="2">"너희도 애굽에서 나그네 되었었다"</b>는 자기 경험에 대한 기억이다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">24장</div>
+        <div>
+          <div class="flow-title">피의 언약 체결과 산 위 식사</div>
+          <div class="flow-body">모세가 제단과 백성 위에 번갈아 피를 뿌려 언약을 봉인하고, 모세·아론·나답·아비후·칠십 장로가 산에 올라 "이스라엘의 하나님을 보고 먹고 마셨다"(24:9-11).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 은혜가 먼저, 명령은 응답</div>
+        <div class="teach-body">십계명은 구원의 조건이 아니라 이미 받은 구원에 대한 응답의 문법으로 주어진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 거룩한 백성은 기능적 정체성</div>
+        <div class="teach-body">제사장이 하나님과 백성 사이를 중개하듯, 이스라엘은 하나님과 열방 사이를 중개하는 백성으로 부름받는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 법이 기억에서 나온다</div>
+        <div class="teach-body">약자 보호 조항들의 근거가 언제나 "너희도 나그네였다"는 기억이라는 사실은, 성경 윤리의 독특한 특징을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 언약은 식탁 교제로 완성된다</div>
+        <div class="teach-body">피 뿌림으로 봉인된 언약이 함께 먹고 마시는 장면으로 이어지는 것은, 언약이 단지 계약이 아니라 관계임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 약속과 의무의 순서가 곧 신학</div>
+        <div class="teach-body">종주권 조약 형식을 따르되 은혜의 선언이 앞에 온다는 순서 자체가, 이 언약의 성격을 규정하는 핵심 문법이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">십계명이 "~하지 말라"부터 시작하는 것 같지만, 사실 그 앞에 "나는 너를 애굽에서 인도해 낸 여호와"라는 선언이 먼저 나와요. 계명보다 은혜가 늘 앞선다는 뜻이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>언약서(21-23장)와 고대 근동 법전의 비교</div>
+        <div class="deep-body">언약서는 함무라비 법전을 비롯한 고대 근동 법전들과 판례법 형식("만일 ~하면, ~할 것이다")을 상당 부분 공유한다. 그러나 히브리 법의 결정적 차이는 사회적 약자 보호에 대한 압도적 비중과, 그 근거를 언제나 자기 경험의 기억에서 찾는다는 점이다.</div>
+        <div class="split-table">
+          <div class="split-col a">
+            <div class="split-label">고대 근동 법전 일반</div>
+            <div class="split-event">신적 권위로 정당화되는 법</div>
+            <div class="split-detail">왕이 신에게서 받은 통치 질서를 성문화한 것으로 제시되며, 사회 계층에 따라 처벌이 차등화되는 경우가 많다.</div>
+          </div>
+          <div class="split-col b">
+            <div class="split-label">출애굽기 언약서</div>
+            <div class="split-event">기억에서 나오는 법</div>
+            <div class="split-detail">약자 보호 조항의 근거가 "너희도 애굽에서 나그네였다"(22:21)는 공동체의 경험적 기억에 반복적으로 호소된다.</div>
+          </div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"하나님을 보고 먹고 마셨다"(24:9-11)는 표현의 의미</div>
+        <div class="deep-body">고대 근동에서 함께 먹고 마시는 것은 관계의 봉인을 의미하는 강력한 상징 행위였다. 언약 체결 직후 지도자들이 하나님 앞에서 식사한다는 이 장면은, 언약이 법적 계약을 넘어 실제 교제 관계로 완성됨을 보여주는 대목으로 널리 읽힌다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6 40 16v6H8v-6Z" /><path d="M10 22v18M38 22v18M18 22v18M30 22v18" /><path d="M8 40h32" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EXOD 25–31</div>
+      <h1>5부 · 성막 — 이동하는 시내산</h1>
+      <div class="chapter-sub">출애굽기 25-31장 — 패턴대로 지어지는 임재의 처소</div>
+      <div class="ref-strip">
+        <span class="ref-item">출 25:1–31:18</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">여섯 장에 걸친 설계 지시는 성막이 얼마나 중대하게 여겨지는지를 보여준다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">25-27장</div>
+        <div>
+          <div class="flow-title">성막의 기구들</div>
+          <div class="flow-body">법궤, 진설병 상, 등잔대, 성막 널판과 휘장, 뜰의 규격이 하늘의 <b class="hl-term has-tip" data-tip="타브니트(תַּבְנִית) — &#x27;모형, 패턴, 청사진&#x27;. 하나님이 산 위에서 모세에게 보이신 원형을 가리키며, 성막은 그 원형의 지상적 복제물이다.">타브니트</b>(모형)를 따라 지시된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">28-29장</div>
+        <div>
+          <div class="flow-title">제사장의 위임과 의복</div>
+          <div class="flow-body">아론과 그 아들들을 위한 거룩한 옷이 상세히 지시되고, 칠 일간의 위임식 규례를 통해 제사장직이 세워진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">30-31장</div>
+        <div>
+          <div class="flow-title">분향단, 안식일, 브살렐</div>
+          <div class="flow-body">분향단과 물두멍이 더해지고, 지시의 마지막은 안식일 규례(31:12-17)로 마무리되며, 브살렐과 오홀리압이 성막 건축을 위해 세워진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 하늘의 패턴을 따르는 설계</div>
+        <div class="teach-body">성막은 인간의 창작물이 아니라 산 위에서 보여주신 원형을 따라 지어지는 구조물이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 창조와 평행하는 문학 구조</div>
+        <div class="teach-body">"여호와께서 모세에게 이르시되"의 일곱 단락이 창세기 창조 기사의 일곱 "이르시되"와 평행을 이루며, 성막이 축소된 새 창조임을 암시한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 미쉬칸 — 임재의 근접성이 목적</div>
+        <div class="teach-body">"내가 그들 중에 거할 것이니"(25:8)라는 목적절은, 건축의 궁극적 목적이 예식이 아니라 임재의 가까움임을 명시한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 성별과 세움의 절차성</div>
+        <div class="teach-body">제사장 위임의 칠 일 규례는, 거룩함으로의 이행이 즉흥이 아니라 정해진 과정을 통해 이루어짐을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 안식일로 마무리되는 지시</div>
+        <div class="teach-body">성막 지시가 안식일 규례로 끝나는 배치는, 창조의 안식과 성막의 완성이 신학적으로 연결되어 있음을 암시한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">여섯 장에 걸친 성막 설계도, 솔직히 읽기 지루하죠. 그런데 고대 근동에서 신전 건축 문서가 얼마나 중요한 장르였는지 생각해보면, 이 지루함 자체가 사실 성막이 얼마나 중대하게 다뤄졌는지를 보여주는 증거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>성막과 창조 기사의 문학적 평행</div>
+        <div class="deep-body">창조가 "하나님이 이르시되"의 일곱 반복으로 짜여 있듯, 성막 지시는 "여호와께서 모세에게 이르시되"의 일곱 단락(25:1, 30:11, 30:17, 30:22, 30:34, 31:1, 31:12)으로 구성되며 마지막 단락이 안식일 규례로 마무리된다. 이 평행은 성막이 혼돈 가운데 세워진 질서의 처소, 곧 축소된 새 창조임을 암시하는 것으로 널리 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>미쉬칸 — "거하다"의 처소</div>
+        <div class="deep-body">미쉬칸(מִשְׁכָּן)은 "거하다, 머물다"를 뜻하는 동사 샤칸(שכן)에서 파생된 명사로, 훗날 랍비 문헌의 "쉐키나"(하나님의 임재) 개념의 어원적 뿌리가 된다. 단순한 "성막"이 아니라 "거함"이라는 동사적 의미를 그대로 간직한 이 단어는, 건축의 목적이 예식이 아니라 근접성임을 어휘 자체로 증언한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 10h10v14l-4 12h-2l-4-12Z" /><path d="M24 10h10v14l-4 12h-2l-4-12Z" /><path d="M8 38h32" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EXOD 32–34</div>
+      <h1>6부 · 금송아지와 언약의 갱신</h1>
+      <div class="chapter-sub">출애굽기 32-34장 — 산 위의 청사진과 산 아래의 배교</div>
+      <div class="ref-strip">
+        <span class="ref-item">출 32:1–34:35</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">임재의 설계도가 그려지던 바로 그 시간, 산 아래에서는 배교가 일어난다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">32장</div>
+        <div>
+          <div class="flow-title">금송아지 사건</div>
+          <div class="flow-body">모세가 산에서 지체하는 사이 백성이 아론에게 신을 만들라 요구하고, 금송아지가 만들어지자 모세는 돌판을 깨뜨리고 진노의 심판이 임한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">33장</div>
+        <div>
+          <div class="flow-title">모세의 중보와 영광을 구함</div>
+          <div class="flow-body">모세가 하나님의 진노 앞에 <b class="hl-insight has-insight" data-insight="3">하나님 자신의 명성과 조상들에게 하신 맹세</b>를 근거로 중보하고, 이어 "주의 영광을 내게 보이소서"(33:18) 구한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">34장</div>
+        <div>
+          <div class="flow-title">돌판의 재작성과 하나님의 성품 계시</div>
+          <div class="flow-body">하나님이 <b class="hl-term">"자비롭고 은혜로우신"</b> 성품을 선포하시고(34:6-7), 처음 것과 같은 돌판이 다시 새겨져 언약이 갱신된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 산 위와 산 아래의 병치</div>
+        <div class="teach-body">임재의 청사진이 그려지는 동안 산 아래에서 배교가 일어난다는 이 대조는, 고백과 실제 삶 사이의 간극을 정직하게 비춘다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 모세의 중보</div>
+        <div class="teach-body">모세는 자신의 의로움이 아니라 하나님 자신의 명성과 언약의 맹세를 근거로 중보하며, 이는 훗날 그리스도의 중보를 예비적으로 비춘다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 뜻을 돌이키시는 하나님</div>
+        <div class="teach-body">중보에 응답해 "여호와께서 뜻을 돌이키사"(32:14)라는 서술은, 기도가 실제로 관계 안에서 의미를 갖는다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 자비와 은혜의 자기 계시</div>
+        <div class="teach-body">34:6-7의 고백은 구약 전체에서 가장 자주 인용되는 하나님 성품 요약 본문으로, 배교 직후에 주어졌다는 사실이 더욱 의미심장하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 깨어져도 다시 새겨지는 언약</div>
+        <div class="teach-body">처음 것과 같은 돌판이 다시 준비된다는 것은, 배교가 있어도 언약의 내용 자체는 변하지 않는다는 신학적 진술이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">모세가 산 위에서 성막 설계도를 받는 바로 그 순간, 산 아래에서는 아론이 금송아지를 만들고 있어요. 이 극적인 동시성은 우연한 편집이 아니라, 고백과 삶 사이의 간극을 보여주려는 의도된 배치로 읽힙니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>34:6-7의 반복 인용 전통</div>
+        <div class="deep-body">"자비롭고 은혜로우시며 노하기를 더디하고 인자와 진실이 많으신" 하나님이라는 이 고백은 시편 103편, 요엘 2장, 요나 4:2 등 구약 전체에서 반복 인용되며, 하나님 성품에 대한 이스라엘의 핵심 신앙고백으로 기능한다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">출애굽기 34:6</div>
+          <div class="verse-text">"여호와라 여호와라 <span class="hinge">자비롭고 은혜롭고</span> 노하기를 더디하고 인자와 진실이 많은 하나님이라"</div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>아론의 역할과 지도자의 침묵 문제</div>
+        <div class="deep-body">금송아지를 실제로 만든 것은 아론이었으나, 32:22-24에서 그의 해명은 책임을 회피하는 듯 읽힌다. 이 본문은 지도자가 공동체의 압력 앞에서 침묵하거나 동조할 때 발생하는 위험을 정직하게 드러내는 사례로 자주 논의된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 30q-4-8 4-12 2-6 10-4 6-4 10 2 8 0 6 8" /><path d="M24 30v12" /><path d="M16 42h16" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EXOD 35–40</div>
+      <h1>7부 · 성막의 완성과 영광의 임함</h1>
+      <div class="chapter-sub">출애굽기 35-40장 — 자원하는 마음, 그리고 마침내 임하신 영광</div>
+      <div class="ref-strip">
+        <span class="ref-item">출 35:1–40:38</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">명령과 성취가 정확히 일치하며, 마침내 영광이 임한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">35-36장</div>
+        <div>
+          <div class="flow-title">자원하는 마음으로 드리다</div>
+          <div class="flow-body">"마음이 감동된 자", "자원하는 심령"이 예물을 가져오고(35:21-29), 마침내 예물이 필요보다 많아 <b class="hl-insight has-insight" data-insight="4">모세가 그만 가져오라고 만류하는</b> 이례적인 장면이 등장한다(36:5-7).</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">37-39장</div>
+        <div>
+          <div class="flow-title">명령과 성취의 정확한 일치</div>
+          <div class="flow-body">25-31장의 설계 지시가 거의 동일한 어휘로 반복 서술되며, 이스라엘이 하나님이 지시하신 그대로 한 치의 가감 없이 성막을 지었음을 강조한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">40장</div>
+        <div>
+          <div class="flow-title">성막의 완성과 카보드의 임함</div>
+          <div class="flow-body">성막이 세워지고 <b class="hl-term has-tip" data-tip="카보드(כָּבוֹד) — 본래 &#x27;무게, 중함&#x27;을 뜻하는 명사에서 발전해 하나님의 가시적 영광을 가리키는 신학 용어가 되었다.">카보드</b>가 가득 차, 모세조차 회막에 들어갈 수 없게 된다(40:34-38).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 자원하는 마음의 예배</div>
+        <div class="teach-body">강요된 헌신이 아니라 넘치는 자원함이 성막 건축의 재료였다는 사실은, 이후 성전과 예배 신학 전체에 흐르는 원리가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 명령과 성취의 정확한 일치</div>
+        <div class="teach-body">현대 독자에게는 불필요한 반복처럼 보이지만, 고대 문헌 관습에서는 지시에 대한 완전한 순종을 강조하는 수사 기법이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 넘쳐서 만류해야 했던 헌신</div>
+        <div class="teach-body">모세가 예물을 그만 가져오라고 말려야 했던 이례적 장면은, 오늘 공동체의 헌신 방식에 대해 되돌아보게 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 창세기의 추방과 대칭을 이루는 결말</div>
+        <div class="teach-body">창세기가 에덴에서의 추방으로 끝난 것과 달리, 출애굽기는 임재가 백성 가운데 다시 거하는 이야기로 마무리된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 임재가 인도하는 다음 여정</div>
+        <div class="teach-body">구름과 불로 나타나는 임재가 이후 광야 여정 내내 이스라엘의 진행과 정지를 인도하는 지침이 된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">36장에서 모세가 백성에게 "이제 그만 가져오라"고 말리는 장면, 성경 전체를 통틀어도 꽤 드문 광경이에요. 부족해서가 아니라 넘쳐서 생긴 문제였다는 게 인상적이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>카보드 신학과 이후 성전 신학으로의 발전</div>
+        <div class="deep-body">40:34-38에서 성막에 가득 찬 카보드는 훗날 솔로몬 성전 봉헌 때(왕상 8:10-11)와 에스겔의 환상(겔 10장, 43장)에서 각각 임하고 떠나가는 동일한 신학적 어휘로 반복되며, 임재 신학이 성경 전체를 관통하는 하나의 긴 이야기임을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>모세조차 들어가지 못하는 임재의 신비</div>
+        <div class="deep-body">앞서 33장에서 하나님과 대면하여 말하던(33:11) 모세조차, 40:35에서는 영광이 가득한 회막에 들어갈 수 없게 된다. 이는 임재가 친밀함과 동시에 다가갈 수 없는 거룩함을 함께 지니고 있다는 역설을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8v32M12 16h24M12 32h24" /><path d="M8 16v16M40 16v16" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">CONCLUSION</div>
+      <h1>결론 · 이름 없는 자에서 임재 안의 백성으로</h1>
+      <div class="chapter-sub">출애굽기가 그리는 구원의 전체 패턴</div>
+      <div class="ref-strip">
+        <span class="ref-item">출 1-40장 종합</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">구원 – 형성 – 동거, 세 단계로 요약되는 출애굽기 전체.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-15장</div>
+        <div>
+          <div class="flow-title">구원</div>
+          <div class="flow-body">이름 없는 무리가 이름을 계시하시는 하나님을 만나 종의 집에서 나온다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16-24장</div>
+        <div>
+          <div class="flow-title">형성</div>
+          <div class="flow-body">광야를 지나며 시내산에서 언약 백성으로 재구성된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">25-40장</div>
+        <div>
+          <div class="flow-title">동거</div>
+          <div class="flow-body">성막을 통해 하나님과 백성이 함께 거하는 관계가 회복된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">출애굽기 전체가 남기는 다섯 가지 통찰.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 이름 없는 자를 이름으로 부르시는 하나님</div>
+        <div class="teach-body">출애굽기 전체는 이름 없이 짓눌리던 무리가 이름을 부르시는 하나님을 만나 그 이름의 백성이 되는 이야기로 요약된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 유월절 어린양에서 그리스도로</div>
+        <div class="teach-body">신약은 유월절 어린양을 그리스도로(고전 5:7) 읽어내며, 출애굽기의 구속 이미지를 그대로 계승한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 시내산 언약에서 새 언약으로</div>
+        <div class="teach-body">시내산 언약은 새 언약의 배경이 되어(고후 3장, 히 8-9장), 율법과 은혜의 관계에 대한 신학적 논의를 낳는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 성막의 임재에서 성육신으로</div>
+        <div class="teach-body">"말씀이 육신이 되어 우리 가운데 거하시니"(요 1:14, 헬라어 "장막치다")는 성막의 임재 신학을 그대로 이어받는 표현이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 아직 끝나지 않은 이야기</div>
+        <div class="teach-body">요한계시록 21:3의 "하나님의 장막이 사람들과 함께 있으매"라는 종말론적 완성으로, 출애굽기가 시작한 이야기는 오늘 우리 안에서도 계속된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">출애굽기는 창세기의 추방 이야기와 정확히 대칭을 이뤄요. 하나는 임재로부터 쫓겨나는 이야기로, 다른 하나는 임재가 다시 백성 가운데 거하는 이야기로 끝나죠. 성경 전체가 그리는 구원 이야기의 원형이 여기 있습니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>출애굽기가 성경 전체 구원사의 원형이 되는 방식</div>
+        <div class="deep-body">구원(1-15장) → 형성(16-24장) → 동거(25-40장)라는 패턴은 이후 성경 전체 구원사에서 반복되는 틀이 된다 — 그리스도를 통한 구속, 교회로서의 형성, 그리고 종말론적 동거라는 구조가 이 원형 위에 세워진다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">출애굽기 29:45-46 (요약)</div>
+          <div class="verse-text">"내가 그들 중에 <span class="hinge">거할 것</span>이니 이는 내가 그들의 하나님 여호와인 줄을 그들이 알리라"</div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"이름들"과 "나감" — 두 제목이 함께 말하는 것</div>
+        <div class="deep-body">히브리어 제목 "쉐모트"(이름들)와 헬라어 제목 "엑소도스"(나감)는 서로 다른 강조점을 갖지만, 둘 다 옳다. 이 책은 이름 없는 무리가 이름을 얻어 나가는 이야기이며, 이 두 제목의 긴장 자체가 책 전체의 신학을 압축적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+
+<script>
+var INSIGHTS_DATA = [
+  {"title": "왜 바로의 이름은 끝내 밝히지 않을까", "body": "출애굽기는 이스라엘을 압제한 왕의 이름을 단 한 번도 밝히지 않아요. 그런데 저항한 산파 십브라와 부아의 이름은 또렷이 기록하죠.\n\n이건 역사적 무관심이 아니라 신학적 선택으로 읽을 수 있어요. 본문이 진짜 대적으로 지목하는 건 특정 개인이 아니라, 사람을 소유물로 만들려는 제국의 논리 그 자체이기 때문이에요."},
+  {"title": "다섯 번의 거절, 왜 이렇게 길게 늘어질까", "body": "모세는 3장부터 4장까지 무려 다섯 번을 거절해요. \"내가 누구이기에\", \"이름을 물으면 뭐라 답합니까\", \"그들이 믿지 않으면\", \"나는 말을 잘 못합니다\", 그리고 마지막엔 \"그냥 다른 사람 보내주세요\".\n\n이건 기드온이나 예레미야에게도 나타나는 고대 소명 이야기의 전형적 패턴인데, 출애굽기는 이걸 유독 다섯 번까지 늘려요. 하나님의 인내가 그만큼 크다는 뜻이자, 모세의 자기 확신 없음이 그만큼 깊었다는 뜻이겠죠."},
+  {"title": "법의 근거가 '기억'이라는 게 왜 특별할까", "body": "언약서의 약자 보호 조항들은 하나같이 같은 문장으로 끝나요 — \"너희도 애굽에서 나그네 되었었다.\"\n\n다른 고대 근동 법전들이 왕의 신적 권위로 법을 정당화하는 것과 달리, 출애굽기의 법은 공동체 자신의 아픈 경험을 근거로 삼아요. 잊지 말아야 할 기억이 오늘의 윤리를 이끈다는 거죠."},
+  {"title": "모세는 무엇을 근거로 하나님께 맞섰을까", "body": "금송아지 사건 후 하나님의 진노 앞에서 모세는 두 가지 근거로 중보해요 — 하나님 자신의 명성(\"애굽 사람이 이르기를...\")과 조상들에게 하신 맹세.\n\n자기 의로움이나 백성의 무죄를 근거로 대지 않았다는 게 눈에 띄어요. 오직 하나님이 이미 하신 말씀과 이미 세우신 언약, 그것만을 붙들고 나아간 중보였습니다."},
+  {"title": "왜 모세가 헌금을 그만 받으라고 말려야 했을까", "body": "성막을 위한 예물을 거두는데, 백성들이 너무 많이 가져와서 36장에서는 모세가 오히려 \"그만 가져오라\"고 만류하는 장면이 나와요.\n\n부족해서 생긴 문제가 아니라 넘쳐서 생긴 문제였다는 거죠. 강요된 헌신이 아니라 자원하는 마음이 재료가 될 때, 이런 넘침이 가능하다는 걸 이 짧은 장면이 보여줍니다."}
+];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+</body></html>
