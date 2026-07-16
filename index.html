@@ -268,6 +268,45 @@
     font-size: 0.9rem;
   }
 
+  /* ---------- collapsible folder groups ---------- */
+  details.doc-group{
+    border-top: 1px solid var(--rule);
+  }
+  details.doc-group:last-of-type{
+    border-bottom: 1px solid var(--rule);
+  }
+  details.doc-group summary{
+    cursor: pointer;
+    list-style: none;
+    padding: 1.1rem 0.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    font-size: 1.02rem;
+    color: var(--navy);
+    user-select: none;
+  }
+  details.doc-group summary::-webkit-details-marker{ display: none; }
+  details.doc-group summary .count{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: 0.8rem;
+    color: var(--muted);
+    margin-left: 0.6rem;
+    margin-right: auto;
+  }
+  details.doc-group summary::after{
+    content: "+";
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    line-height: 1;
+  }
+  details.doc-group[open] summary::after{ content: "–"; }
+  details.doc-group .doclist{ border-top: 1px solid var(--rule); }
+
   /* ---------- footer ---------- */
   footer{
     padding: 6vh 8vw 5vh;
@@ -337,10 +376,14 @@
         <p class="room__desc">구약과 신약, 성경 각 권을 따라가며 함께 공부하는 자료입니다.</p>
       </div>
     </div>
-    <p class="subhead">구약</p>
-    <ul class="doclist" id="list-bible_by_book-old"><li class="doclist__empty">불러오는 중...</li></ul>
-    <p class="subhead">신약</p>
-    <ul class="doclist" id="list-bible_by_book-new"><li class="doclist__empty">불러오는 중...</li></ul>
+    <details class="doc-group" open>
+      <summary>구약<span class="count" id="count-bible_by_book-old"></span></summary>
+      <ul class="doclist" id="list-bible_by_book-old"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
+    <details class="doc-group">
+      <summary>신약<span class="count" id="count-bible_by_book-new"></span></summary>
+      <ul class="doclist" id="list-bible_by_book-new"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
   </section>
 
   <section class="room" id="room-2">
@@ -351,7 +394,10 @@
         <p class="room__desc">처음 오신 분들을 위한 안내와 새가족 정착을 돕는 자료입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-newcomers"><li class="doclist__empty">불러오는 중...</li></ul>
+    <details class="doc-group">
+      <summary>목록 보기<span class="count" id="count-newcomers"></span></summary>
+      <ul class="doclist" id="list-newcomers"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
   </section>
 
   <section class="room" id="room-3">
@@ -362,7 +408,10 @@
         <p class="room__desc">목장을 세우고 섬기는 데 필요한 운영 자료입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-mokjang"><li class="doclist__empty">불러오는 중...</li></ul>
+    <details class="doc-group">
+      <summary>목록 보기<span class="count" id="count-mokjang"></span></summary>
+      <ul class="doclist" id="list-mokjang"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
   </section>
 
   <section class="room" id="room-4">
@@ -373,7 +422,10 @@
         <p class="room__desc">주일마다 나누는 예배 순서와 교회 소식지입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-bulletin"><li class="doclist__empty">불러오는 중...</li></ul>
+    <details class="doc-group">
+      <summary>목록 보기<span class="count" id="count-bulletin"></span></summary>
+      <ul class="doclist" id="list-bulletin"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
   </section>
 
   <section class="room" id="room-5">
@@ -384,7 +436,10 @@
         <p class="room__desc">목장 모임에서 함께 나누는 나눔지입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-mokjang_sharing"><li class="doclist__empty">불러오는 중...</li></ul>
+    <details class="doc-group">
+      <summary>목록 보기<span class="count" id="count-mokjang_sharing"></span></summary>
+      <ul class="doclist" id="list-mokjang_sharing"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
   </section>
 
   <section class="room" id="room-6">
@@ -395,7 +450,10 @@
         <p class="room__desc">교회 행정 업무에 쓰이는 각종 서식입니다.</p>
       </div>
     </div>
-    <ul class="doclist" id="list-admin_forms"><li class="doclist__empty">불러오는 중...</li></ul>
+    <details class="doc-group">
+      <summary>목록 보기<span class="count" id="count-admin_forms"></span></summary>
+      <ul class="doclist" id="list-admin_forms"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
   </section>
 
 </main>
@@ -426,8 +484,10 @@
     .then((manifest) => {
       Object.keys(manifest).forEach((key) => {
         const list = document.getElementById('list-' + key);
+        const countEl = document.getElementById('count-' + key);
         if (!list) return;
         const items = manifest[key];
+        if (countEl) countEl.textContent = `(${items ? items.length : 0}건)`;
         if (!items || items.length === 0) {
           list.innerHTML = '<li class="doclist__empty">아직 등록된 자료가 없습니다.</li>';
           return;
