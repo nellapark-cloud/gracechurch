@@ -7,7 +7,6 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
-<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 <style>
   :root{
     --navy: #1c2b4a;
@@ -361,7 +360,6 @@
   <p class="fname">은혜교회</p>
   <p><span class="fgold">기독교한국침례회</span></p>
   <p>이 자료실의 모든 문헌은 은혜교회 성도와 이웃을 위해 열려 있습니다.</p>
-  <p><a href="/admin/" style="color:inherit; text-decoration:underline;">관리자 로그인</a></p>
 </footer>
 
 <script>
@@ -376,15 +374,6 @@
       entries.forEach(e => { if (e.isIntersecting) setActive(e.target.id); });
     }, { rootMargin: '-40% 0px -50% 0px', threshold: 0 });
     rooms.forEach(r => io.observe(r));
-  }
-
-  // 관리자 로그인(Netlify Identity) 연동 — /admin 접속 시 로그인 흐름을 정상 작동시킴
-  if (window.netlifyIdentity) {
-    window.netlifyIdentity.on("init", (user) => {
-      if (!user) {
-        window.netlifyIdentity.on("login", () => { document.location.href = "/admin/"; });
-      }
-    });
   }
 
   // CMS에서 올린 자료 목록(data/manifest.json)을 불러와 각 관에 렌더링
