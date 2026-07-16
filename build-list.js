@@ -1,6 +1,7 @@
-// 콘텐츠 폴더(content/*)의 마크다운 파일들을 읽어서
+// 콘텐츠 폴더(content/*)에 있는 실제 파일들을 그대로 읽어서
 // data/manifest.json 으로 만들어주는 스크립트입니다.
-// Netlify가 배포할 때마다 자동으로 실행돼요. 별도 npm 패키지가 필요 없습니다.
+// 폴더에 파일을 넣기만 하면 자동으로 자료실 목록에 나타나요.
+// Netlify가 아니라 GitHub Actions가 배포할 때마다 자동으로 실행합니다.
 
 const fs = require('fs');
 const path = require('path');
@@ -15,44 +16,36 @@ const categories = [
   { key: 'admin_forms', dir: 'content/admin-forms' },
 ];
 
-function parseFrontmatter(raw) {
-  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---/);
-  if (!match) return {};
-  const data = {};
-  match[1].split(/\r?\n/).forEach((line) => {
-    const idx = line.indexOf(':');
-    if (idx === -1) return;
-    const key = line.slice(0, idx).trim();
-    let val = line.slice(idx + 1).trim();
-    val = val.replace(/^["']|["']$/g, '');
-    data[key] = val;
-  });
-  return data;
-}
-
-const manifest = {};
-
-categories.forEach(({ key, dir }) => {
+function listDocs(dir) {
   const full = path.join(__dirname, dir);
   let files = [];
   try {
-    files = fs.readdirSync(full).filter((f) => f.endsWith('.md'));
+    files = fs.readdirSync(full).filter((f) => {
+      if (f.startsWith('.')) return false;
+      if (f.toLowerCase().startsWith('example')) return false;
+      const stat = fs.statSync(path.join(full, f));
+      return stat.isFile();
+    });
   } catch (e) {
     files = [];
   }
-  const items = files.map((f) => {
-    const raw = fs.readFileSync(path.join(full, f), 'utf8');
-    const fm = parseFrontmatter(raw);
-    return {
-      title: fm.title || f.replace('.md', ''),
-      tag: fm.tag || '',
-      meta: fm.meta || '',
-      date: fm.date || '',
-      file: fm.file || '',
-    };
-  });
-  items.sort((a, b) => (a.date < b.date ? 1 : -1));
-  manifest[key] = items;
+  return files
+    .map((f) => {
+      const ext = path.extname(f).replace('.', '').toUpperCase();
+      const name = path.basename(f, path.extname(f));
+      return {
+        title: name,
+        tag: ext,
+        meta: '',
+        file: dir + '/' + f,
+      };
+    })
+    .sort((a, b) => a.title.localeCompare(b.title, 'ko'));
+}
+
+const manifest = {};
+categories.forEach(({ key, dir }) => {
+  manifest[key] = listDocs(dir);
 });
 
 fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });

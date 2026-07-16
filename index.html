@@ -432,12 +432,15 @@
           list.innerHTML = '<li class="doclist__empty">아직 등록된 자료가 없습니다.</li>';
           return;
         }
-        list.innerHTML = items.map((it) => `
-          <li><a href="${it.file || '#'}" ${it.file ? 'download' : ''}>
+        list.innerHTML = items.map((it) => {
+          const isHtml = /\.html?$/i.test(it.file || '');
+          return `
+          <li><a href="${it.file || '#'}" ${it.file && !isHtml ? 'download' : ''}>
             <span class="tag">${it.tag || ''}</span>
             <span class="title">${it.title || ''}</span>
             <span class="meta">${it.meta || ''}</span>
-          </a></li>`).join('');
+          </a></li>`;
+        }).join('');
       });
     })
     .catch(() => {
