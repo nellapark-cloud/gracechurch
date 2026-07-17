@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이런 교회가 되게 하소서</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1B2A46;
+    --navy-deep: #101c33;
+    --cream: #F7F3EA;
+    --cream-soft: #F1ECDF;
+    --gold: #AE8A4E;
+    --gold-soft: #C9AD78;
+    --ink: #2B2A26;
+    --ink-muted: #6b6a63;
+    --rule: rgba(27, 42, 70, 0.14);
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 28px 100px;
+  }
+
+  /* ---------- Header ---------- */
+  header {
+    padding: 96px 0 64px;
+    text-align: center;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 72px;
+  }
+
+  .eyebrow {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    letter-spacing: 0.42em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin: 0 0 22px;
+  }
+
+  h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    color: var(--navy);
+    font-size: clamp(34px, 6vw, 52px);
+    line-height: 1.35;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+
+  .verse-mark {
+    width: 44px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 20px;
+  }
+
+  .lede {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 15.5px;
+    color: var(--ink-muted);
+    line-height: 1.9;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ---------- Petitions ---------- */
+  .petition {
+    display: grid;
+    grid-template-columns: 88px 1fr;
+    gap: 4px 28px;
+    padding: 46px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .petition:last-of-type { border-bottom: none; }
+
+  .petition .num {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    font-size: 46px;
+    line-height: 1;
+    color: var(--cream-soft);
+    -webkit-text-stroke: 1.4px var(--gold-soft);
+    text-shadow: none;
+    letter-spacing: -0.02em;
+  }
+
+  .petition .body-col {
+    padding-top: 6px;
+  }
+
+  .petition h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 600;
+    font-size: 21px;
+    color: var(--navy);
+    margin: 0 0 12px;
+    letter-spacing: -0.01em;
+  }
+
+  .petition p {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 400;
+    font-size: 15.5px;
+    line-height: 2.02;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ---------- Closing ---------- */
+  .closing {
+    margin-top: 80px;
+    padding: 44px 40px;
+    background: var(--navy);
+    border-radius: 3px;
+    text-align: center;
+    position: relative;
+  }
+
+  .closing::before {
+    content: "";
+    position: absolute;
+    top: 14px; left: 14px; right: 14px; bottom: 14px;
+    border: 1px solid rgba(201, 173, 120, 0.35);
+    pointer-events: none;
+  }
+
+  .closing p {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 500;
+    font-size: 16.5px;
+    line-height: 2;
+    color: var(--cream);
+    margin: 0;
+    letter-spacing: 0.01em;
+  }
+
+  .closing .amen {
+    display: inline-block;
+    margin-top: 18px;
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    letter-spacing: 0.4em;
+    color: var(--gold-soft);
+  }
+
+  /* ---------- Footer ---------- */
+  footer {
+    margin-top: 56px;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    font-size: 12.5px;
+    letter-spacing: 0.06em;
+    color: var(--ink-muted);
+  }
+
+  footer .church {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 500;
+    font-size: 13.5px;
+    color: var(--navy);
+    letter-spacing: 0.02em;
+    margin-bottom: 6px;
+  }
+
+  /* ---------- Motion ---------- */
+  .petition, .closing {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise 0.7s ease forwards;
+  }
+  header { animation: rise 0.7s ease forwards; }
+
+  @keyframes rise {
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    header, .petition, .closing { animation: none; opacity: 1; transform: none; }
+  }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 560px) {
+    header { padding: 64px 0 44px; }
+    .petition {
+      grid-template-columns: 1fr;
+      gap: 10px;
+      padding: 34px 0;
+    }
+    .petition .num { font-size: 32px; }
+    .closing { padding: 34px 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <p class="eyebrow">GRACE CHURCH · PRAYER</p>
+    <h1>이런 교회가<br>되게 하소서</h1>
+    <div class="verse-mark"></div>
+    <p class="lede">은혜교회가 하나님 앞에 드리는 일곱 가지 기도제목입니다.<br>이 기도가 우리 공동체의 걸음이 되게 하소서.</p>
+  </header>
+
+  <section class="petition">
+    <div class="num">01</div>
+    <div class="body-col">
+      <h2>사랑이 가득한 교회</h2>
+      <p>지체를 사랑하고 지키며, 보호하며 섬기는 일을 즐거워하고 나의 지체가 잘되는 것을 기뻐하는 교회가 되게 하소서.</p>
+    </div>
+  </section>
+
+  <section class="petition">
+    <div class="num">02</div>
+    <div class="body-col">
+      <h2>열심이 넘치는 교회</h2>
+      <p>하나님 말씀을 좋아하고 하나님을 알아가는 일에 힘쓰며 하나님의 말씀으로 교제하는 것을 기뻐하는 교회가 되게 하소서.</p>
+    </div>
+  </section>
+
+  <section class="petition">
+    <div class="num">03</div>
+    <div class="body-col">
+      <h2>문턱이 낮은 교회</h2>
+      <p>건전한 믿음으로 하나님을 사랑하고 지체를 위한다면 누구나 공동체의 일원이 될 수 있는 교회, 공동체를 잘 세우고자 하는 애정 어린 마음과 겸손만 있다면 누구든지 재능과 은사를 따라 사역할 수 있는 교회가 되게 하소서.</p>
+    </div>
+  </section>
+
+  <section class="petition">
+    <div class="num">04</div>
+    <div class="body-col">
+      <h2>세대가 어우러지는 교회</h2>
+      <p>아기부터 노인에 이르기까지 모두가 존중받으며 세대 간 경계를 넘어서 모두가 즐거이 교제하고 소통하는 교회가 되게 하소서.</p>
+    </div>
+  </section>
+
+  <section class="petition">
+    <div class="num">05</div>
+    <div class="body-col">
+      <h2>단순한 교회</h2>
+      <p>다양한 프로그램보다 예배와 교제의 단순함 속에서 충분히 채워지고 쓰임 받으며 은혜의 풍성함을 경험하는 교회가 되게 하소서.</p>
+    </div>
+  </section>
+
+  <section class="petition">
+    <div class="num">06</div>
+    <div class="body-col">
+      <h2>자율적인 교회</h2>
+      <p>교회의 필요가 느껴진다면 몸소 그 필요를 채우고 헌신하고자 노력하며 '나로부터 시작되는' 사역이 일어나고 확장되고 이어지는 교회가 되게 하소서.</p>
+    </div>
+  </section>
+
+  <section class="petition">
+    <div class="num">07</div>
+    <div class="body-col">
+      <h2>신뢰하는 교회</h2>
+      <p>이 모든 일에 하나님이 함께 하실 것과 친히 교회를 위해 일하실 것을 믿으며 기도하고 인내로써 기다리며 확신하고 서로를 격려하는 가운데 모든 일에 열매가 열리는 것을 보며 함께 기뻐하는 교회가 되게 하소서.</p>
+    </div>
+  </section>
+
+  <div class="closing">
+    <p>이 모든 말씀 예수 그리스도의 이름으로<br>간구하며 아룁니다.</p>
+    <span class="amen">A M E N</span>
+  </div>
+
+  <footer>
+    <p class="church">기독교한국침례회 은혜교회</p>
+    <p>담임목사 박동준</p>
+  </footer>
+
+</div>
+</body>
+</html>
