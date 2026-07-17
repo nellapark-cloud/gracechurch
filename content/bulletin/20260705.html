@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>은혜교회 주보 — 2026년 7월 5일</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #1a1814;
+    --ink-light: #4a4540;
+    --ink-muted: #8a8480;
+    --cream: #faf8f4;
+    --warm: #f2ede4;
+    --gold: #b8986a;
+    --gold-light: #d4b98a;
+    --rule: #d8d0c4;
+    --accent: #2c4a3e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #e8e3dc;
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--ink);
+    min-height: 100vh;
+    padding: 40px 20px;
+  }
+
+  .page {
+    max-width: 820px;
+    margin: 0 auto;
+    background: var(--cream);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.08);
+  }
+
+  /* ── HEADER ── */
+  .header {
+    background: var(--accent);
+    padding: 44px 52px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    background: rgba(184,152,106,0.12);
+  }
+  .header::after {
+    content: '';
+    position: absolute;
+    bottom: -80px; left: 30%;
+    width: 300px; height: 300px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.03);
+  }
+
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 28px;
+  }
+  .church-name {
+    font-family: 'Noto Serif KR', serif;
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.18em;
+    line-height: 1.9;
+  }
+  .church-name strong {
+    display: block;
+    color: rgba(255,255,255,0.85);
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+  }
+  .issue-badge {
+    text-align: right;
+    color: rgba(255,255,255,0.35);
+    font-size: 10px;
+    letter-spacing: 0.1em;
+    line-height: 2;
+  }
+
+  .header-title {
+    position: relative;
+    z-index: 1;
+  }
+  .header-date {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 15px;
+    margin-bottom: 8px;
+    letter-spacing: 0.05em;
+  }
+  .header-verse {
+    font-family: 'Noto Serif KR', serif;
+    color: #fff;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 6px;
+  }
+  .header-ref {
+    color: var(--gold);
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  .header-tagline {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    color: rgba(255,255,255,0.5);
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-align: center;
+  }
+
+  /* ── ORDER OF WORSHIP ── */
+  .order-section {
+    background: var(--warm);
+    padding: 36px 52px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .section-label {
+    font-size: 9px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    font-weight: 500;
+  }
+  .order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .order-item {
+    display: grid;
+    grid-template-columns: 28px 1fr auto;
+    align-items: baseline;
+    gap: 12px 16px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .order-item:last-child { border-bottom: none; }
+  .order-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 11px;
+    color: var(--gold);
+    font-weight: 700;
+  }
+  .order-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--ink);
+  }
+  .order-sub {
+    font-size: 11px;
+    color: var(--ink-muted);
+    text-align: right;
+    letter-spacing: 0.02em;
+  }
+  .order-item-sermon {
+    border-bottom: 1px solid var(--rule);
+    padding: 10px 0;
+  }
+  .order-item-sermon .order-item {
+    border-bottom: none;
+    padding: 0;
+  }
+  .order-sermon-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    font-style: italic;
+    color: var(--ink-light);
+    padding-left: 44px;
+    margin-top: 6px;
+  }
+
+  /* ── MAIN CONTENT ── */
+  .body-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid var(--rule);
+  }
+  @media (max-width: 620px) {
+    .body-grid { grid-template-columns: 1fr; }
+  }
+
+  .col {
+    padding: 36px 40px;
+  }
+  .col:first-child {
+    border-right: 1px solid var(--rule);
+  }
+
+  /* ── SERMON ── */
+  .sermon-section {}
+  .sermon-title-block {
+    margin-bottom: 24px;
+  }
+  .sermon-scripture {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .sermon-main-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--ink);
+  }
+
+  .sermon-point {
+    margin-bottom: 20px;
+  }
+  .point-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 8px;
+  }
+  .point-num {
+    width: 22px; height: 22px;
+    background: var(--accent);
+    color: #fff;
+    border-radius: 50%;
+    font-size: 10px;
+    font-weight: 600;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+  }
+  .point-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .point-tag {
+    margin-left: auto;
+    font-size: 9px;
+    color: var(--gold);
+    letter-spacing: 0.12em;
+    border: 1px solid var(--gold);
+    padding: 2px 7px;
+    border-radius: 10px;
+    white-space: nowrap;
+  }
+  .point-body {
+    font-size: 11.5px;
+    line-height: 1.85;
+    color: var(--ink-light);
+    padding-left: 32px;
+  }
+
+  /* ── 목장나눔 ── */
+  .moktjang-section {}
+  .moktjang-header {
+    margin-bottom: 20px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .moktjang-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .q-item {
+    margin-bottom: 16px;
+  }
+  .q-num {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+  .q-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 12px;
+    line-height: 1.75;
+    color: var(--ink-light);
+  }
+
+  .closing-prayer {
+    margin-top: 22px;
+    padding: 18px;
+    background: var(--warm);
+    border-radius: 2px;
+  }
+  .prayer-label {
+    font-size: 9px;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    margin-bottom: 10px;
+    font-weight: 500;
+  }
+  .prayer-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 11px;
+    line-height: 1.85;
+    color: var(--ink-light);
+    font-style: italic;
+  }
+
+  /* ── NOTICES ── */
+  .notices-section {
+    padding: 32px 52px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .notice-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 40px;
+    margin-top: 16px;
+  }
+  @media (max-width: 600px) {
+    .notice-grid { grid-template-columns: 1fr; }
+  }
+  .notice-item {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 12px;
+    line-height: 1.65;
+    color: var(--ink-light);
+  }
+  .notice-dot {
+    width: 5px; height: 5px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 6px;
+  }
+  .notice-highlight {
+    grid-column: 1 / -1;
+    padding: 14px 16px;
+    background: var(--warm);
+    border-left: 3px solid var(--accent);
+    font-size: 11.5px;
+    line-height: 1.7;
+    color: var(--ink-light);
+  }
+  .notice-highlight strong { color: var(--accent); }
+
+  /* ── MISSIONS ── */
+  .mission-section {
+    padding: 24px 52px;
+    border-bottom: 1px solid var(--rule);
+    background: var(--warm);
+  }
+  .mission-label {
+    font-size: 9px;
+    letter-spacing: 0.22em;
+    color: var(--gold);
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px 20px;
+  }
+  @media (max-width: 600px) {
+    .mission-grid { grid-template-columns: 1fr 1fr; }
+  }
+  .mission-item {
+    font-size: 11px;
+    line-height: 1.7;
+    color: var(--ink-light);
+  }
+  .mission-name { font-weight: 600; color: var(--ink); font-size: 11.5px; }
+  .mission-place {
+    font-size: 10px;
+    color: var(--ink-muted);
+    letter-spacing: 0.05em;
+  }
+
+  /* ── SCHEDULE TABLE ── */
+  .schedule-section {
+    padding: 28px 52px;
+    border-bottom: 1px solid var(--rule);
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    margin-top: 14px;
+  }
+  thead tr {
+    background: var(--accent);
+    color: #fff;
+  }
+  thead th {
+    padding: 9px 10px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 10.5px;
+    letter-spacing: 0.06em;
+  }
+  tbody tr:nth-child(even) { background: var(--warm); }
+  tbody td {
+    padding: 9px 10px;
+    text-align: center;
+    color: var(--ink-light);
+    border-bottom: 1px solid var(--rule);
+  }
+  tbody td:first-child { font-weight: 600; color: var(--ink); }
+  tbody td:last-child { font-weight: 600; color: var(--accent); }
+
+  /* ── WORSHIP TEAM / SERVICE TIMES (fixed sections) ── */
+  .fixed-info-section {
+    padding: 24px 52px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .fixed-info-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0;
+    margin-top: 14px;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    border-radius: 2px;
+  }
+  .fixed-info-grid.times {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (max-width: 600px) {
+    .fixed-info-grid { grid-template-columns: repeat(3, 1fr); }
+    .fixed-info-grid.times { grid-template-columns: repeat(2, 1fr); }
+  }
+  .fixed-info-cell {
+    padding: 10px 8px;
+    text-align: center;
+    border-right: 1px solid var(--rule);
+  }
+  .fixed-info-cell:last-child { border-right: none; }
+  .fixed-info-label { font-size: 10px; color: var(--ink-muted); margin-bottom: 4px; letter-spacing: 0.04em; }
+  .fixed-info-value { font-size: 12px; font-weight: 600; color: var(--ink); }
+
+  /* ── DEPARTMENT ── */
+  .dept-section {
+    padding: 24px 52px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .dept-grid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0;
+    margin-top: 14px;
+    border: 1px solid var(--rule);
+    overflow: hidden;
+    border-radius: 2px;
+  }
+  @media (max-width: 600px) {
+    .dept-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  .dept-cell {
+    padding: 10px 8px;
+    text-align: center;
+    border-right: 1px solid var(--rule);
+  }
+  .dept-cell:last-child { border-right: none; }
+  .dept-name { font-size: 10px; color: var(--ink-muted); margin-bottom: 4px; letter-spacing: 0.04em; }
+  .dept-person { font-size: 12px; font-weight: 600; color: var(--ink); }
+  .dept-header-row .dept-cell {
+    background: var(--warm);
+    font-size: 9.5px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+  }
+
+  /* ── OFFERING ── */
+  .offering-section {
+    padding: 24px 52px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .offering-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 11.5px;
+    margin-top: 14px;
+  }
+  .offering-table th {
+    background: var(--warm);
+    padding: 8px 12px;
+    font-size: 10px;
+    font-weight: 600;
+    color: var(--ink-muted);
+    letter-spacing: 0.08em;
+    border: 1px solid var(--rule);
+    text-align: center;
+  }
+  .offering-table td {
+    padding: 8px 12px;
+    border: 1px solid var(--rule);
+    text-align: right;
+    color: var(--ink-light);
+  }
+  .offering-table td:first-child { text-align: center; font-weight: 600; color: var(--ink); }
+  .total-cell { font-weight: 700; color: var(--accent); font-size: 13px; }
+
+  /* ── FOOTER ── */
+  .footer {
+    padding: 24px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .footer-info {
+    font-size: 10.5px;
+    color: var(--ink-muted);
+    line-height: 1.9;
+  }
+  .footer-info a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .footer-account {
+    background: var(--warm);
+    padding: 12px 18px;
+    border-radius: 2px;
+    font-size: 11px;
+    color: var(--ink-light);
+    line-height: 1.75;
+    text-align: right;
+  }
+  .footer-account strong { color: var(--accent); font-size: 12px; }
+
+  /* ── CLOSING ── */
+  .closing-banner {
+    background: var(--accent);
+    padding: 16px 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 10px;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.1em;
+  }
+  .closing-banner span { color: rgba(255,255,255,0.7); }
+
+  /* Print */
+  @media print {
+    body { background: #fff; padding: 0; }
+    .page { box-shadow: none; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-top">
+      <div class="church-name">
+        기독교한국침례회
+        <strong>은혜교회</strong>
+        Sejong Grace Church
+      </div>
+      <div class="issue-badge">
+        SINCE 20140420<br>통권 598호
+      </div>
+    </div>
+    <div class="header-title">
+      <div class="header-date">2026년 7월 5일 주일예배</div>
+      <div class="header-verse">보라, 새 일을 행하리라</div>
+      <div class="header-ref">이사야 43:18–21</div>
+    </div>
+    <div class="header-tagline">예수님을 사랑합니다 &nbsp;·&nbsp; 교회를 사랑합니다</div>
+  </div>
+
+  <!-- ORDER OF WORSHIP -->
+  <div class="order-section">
+    <div class="section-label">Order of Worship · 예배순서</div>
+    <div class="order-list">
+      <div class="order-item">
+        <span class="order-num">01</span>
+        <span class="order-title">성경통독</span>
+        <span class="order-sub">잠언 28장</span>
+      </div>
+      <div class="order-item">
+        <span class="order-num">02</span>
+        <span class="order-title">예배기도</span>
+        <span class="order-sub">이지욱</span>
+      </div>
+      <div class="order-item">
+        <span class="order-num">03</span>
+        <span class="order-title">경배찬양</span>
+        <span class="order-sub"></span>
+      </div>
+      <div class="order-item-sermon">
+        <div class="order-item">
+          <span class="order-num">04</span>
+          <span class="order-title">말씀</span>
+          <span class="order-sub">레위기 25:1–55</span>
+        </div>
+        <div class="order-sermon-title">하나님이 채우십니다</div>
+      </div>
+      <div class="order-item">
+        <span class="order-num">05</span>
+        <span class="order-title">봉헌기도 및 축도</span>
+        <span class="order-sub"></span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERMON + MOKTJANG -->
+  <div class="body-grid">
+
+    <!-- SERMON -->
+    <div class="col sermon-section">
+      <div class="section-label">Sermon · 말씀</div>
+      <div class="sermon-title-block">
+        <div class="sermon-scripture">레위기 25:1–55</div>
+        <div class="sermon-main-title">하나님이<br>채우십니다</div>
+      </div>
+
+      <div class="sermon-point">
+        <div class="point-header">
+          <div class="point-num">1</div>
+          <div class="point-title">땅도 쉬게 하시는 하나님</div>
+          <div class="point-tag">안식</div>
+        </div>
+        <div class="point-body">
+          하나님은 여섯 해 동안 땅을 경작한 후 일곱째 해에는 땅을 쉬게 하라고 명하셨습니다(레위기 25:2–4). 생존을 건 이 명령 앞에서 하나님은 여섯째 해에 세 해 먹을 것을 미리 채우겠다고 약속하셨습니다(레위기 25:20–21). 멈추면 뒤처진다는 불안 속에 사는 우리에게, 안식년은 멈춤이 곧 믿음의 고백임을 보여줍니다. 진정한 안식은 게으름이 아니라 채우시는 분을 신뢰하는 자만이 누릴 수 있는 특권입니다.
+        </div>
+      </div>
+
+      <div class="sermon-point">
+        <div class="point-header">
+          <div class="point-num">2</div>
+          <div class="point-title">잃은 것을 되돌려주시는 은혜</div>
+          <div class="point-tag">회복</div>
+        </div>
+        <div class="point-body">
+          오십 년째 되는 희년에는 팔았던 땅이 본래 주인에게 돌아가고 흩어졌던 가족이 다시 모였습니다(레위기 25:9–10). 하나님은 땅이 본래 자신의 것이며 우리는 잠시 머무는 나그네일 뿐이라고 말씀하셨습니다(레위기 25:23). 한 번의 실패나 상실이 영원한 낙인처럼 느껴지는 시대에, 하나님은 이미 회복의 구조를 공동체 안에 심어 두셨습니다. 희년은 우리를 본래의 정체성으로 되돌리시는 하나님의 은혜를 보여주는 장치입니다.
+        </div>
+      </div>
+
+      <div class="sermon-point">
+        <div class="point-header">
+          <div class="point-num">3</div>
+          <div class="point-title">두려움 없이 나누는 삶</div>
+          <div class="point-tag">사랑</div>
+        </div>
+        <div class="point-body">
+          하나님은 가난한 형제를 나그네처럼 품고 이자를 위해 꾸어주지 말며, 종이 된 형제도 품꾼처럼 대하라고 명하셨습니다(레위기 25:35–43). 이 명령의 배후에는 결핍에 대한 두려움이 사람을 착취로 이끈다는 통찰이 담겨 있습니다. 하나님이 채우신다는 것을 경험한 사람은 형제를 두려움의 대상이 아니라 함께 살아갈 이웃으로 볼 수 있습니다. 나눔은 여유가 있는 사람의 선택이 아니라 신뢰가 있는 사람의 열매입니다.
+        </div>
+      </div>
+    </div>
+
+    <!-- MOKTJANG -->
+    <div class="col moktjang-section">
+      <div class="section-label">목장나눔</div>
+      <div class="moktjang-header">
+        <div class="moktjang-title">목장나눔 질문</div>
+      </div>
+
+      <div class="q-item">
+        <div class="q-num">QUESTION 01</div>
+        <div class="q-text">나는 무엇을 멈추는 것이 두려워 쉬지 못하고 있습니까? 그 두려움의 뿌리를 함께 이야기해 봅시다.</div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">QUESTION 02</div>
+        <div class="q-text">지금 내 삶에서 회복되기를 소망하는 부분은 무엇입니까?</div>
+      </div>
+      <div class="q-item">
+        <div class="q-num">QUESTION 03</div>
+        <div class="q-text">결핍에 대한 두려움 때문에 누군가에게 손해를 끼치거나 마음을 닫았던 경험이 있습니까?</div>
+      </div>
+
+      <div class="closing-prayer">
+        <div class="prayer-label">마침기도</div>
+        <div class="prayer-text">우리를 채우시는 하나님, 멈추는 것이 두려워 쉼을 잃어버린 저희를 불쌍히 여겨 주옵소서. 하나님의 공급하심을 신뢰하여 참된 안식을 누리게 하시고, 실패와 상실 속에서도 회복시키시는 은혜를 바라보게 하옵소서. 결핍의 두려움에서 벗어나 형제를 향해 넉넉한 마음을 열게 하시고, 저희 공동체가 서로를 착취하지 않고 품는 곳이 되게 하여 주옵소서. 예수님의 이름으로 기도합니다. 아멘.</div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- NOTICES -->
+  <div class="notices-section">
+    <div class="section-label">Church News · 교회소식</div>
+    <div class="notice-grid">
+      <div class="notice-item">
+        <div class="notice-dot"></div>
+        <div>오늘 설거지: <strong>장년 목장</strong> (다음은 청년 목장)</div>
+      </div>
+      <div class="notice-item">
+        <div class="notice-dot"></div>
+        <div><strong>최은총 자매</strong> 7월 11일~21일 일본선교, 기도와 후원 바랍니다.</div>
+      </div>
+      <div class="notice-item">
+        <div class="notice-dot"></div>
+        <div>여름전교인성경통독캠프 <strong>9월 13일</strong>, 연합예배 및 통독일정으로 진행합니다.</div>
+      </div>
+      <div class="notice-item">
+        <div class="notice-dot"></div>
+        <div><strong>7월 19일(주일)</strong> 정용수 선교사 설교</div>
+      </div>
+      <div class="notice-item">
+        <div class="notice-dot"></div>
+        <div>7월 24–26일(금–주일) <strong>청년부 MT</strong>(강원도 정선)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSIONS -->
+  <div class="mission-section">
+    <div class="mission-label">Intercession · 선교사 중보기도</div>
+    <div class="mission-grid">
+      <div class="mission-item">
+        <div class="mission-name">김환삼·박미경</div>
+        <div class="mission-place">우크라이나 / 청장년</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-name">김성준·송유나</div>
+        <div class="mission-place">남아공 / 청년2</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-name">고현묵·변성희</div>
+        <div class="mission-place">브라질</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-name">고의권·유수란</div>
+        <div class="mission-place">CCC 필리핀 / 장년</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-name">이나라·심상훈</div>
+        <div class="mission-place">DFC</div>
+      </div>
+      <div class="mission-item">
+        <div class="mission-name">정용수·홍용애</div>
+        <div class="mission-place">우수리스크 / 청년1</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCHEDULE TABLE -->
+  <div class="schedule-section">
+    <div class="section-label">Schedule · 예배기도순서</div>
+    <table>
+      <thead>
+        <tr>
+          <th>날짜</th>
+          <th>기도순서</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>7월 5일</td>
+          <td>이지욱</td>
+        </tr>
+        <tr>
+          <td>7월 12일</td>
+          <td>이세라</td>
+        </tr>
+        <tr>
+          <td>7월 19일</td>
+          <td>곽상미</td>
+        </tr>
+        <tr>
+          <td>7월 26일</td>
+          <td>황정선</td>
+        </tr>
+        <tr>
+          <td>8월 2일</td>
+          <td>최은애</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- WORSHIP TEAM (fixed) -->
+  <div class="fixed-info-section">
+    <div class="section-label">Worship Team · 예배팀</div>
+    <div class="fixed-info-grid">
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">찬양인도</div>
+        <div class="fixed-info-value">김지성</div>
+      </div>
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">키보드</div>
+        <div class="fixed-info-value">박채은</div>
+      </div>
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">드럼</div>
+        <div class="fixed-info-value">신수아</div>
+      </div>
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">기타</div>
+        <div class="fixed-info-value">박채성·임건후</div>
+      </div>
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">자막</div>
+        <div class="fixed-info-value">박채경</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SERVICE TIMES (fixed) -->
+  <div class="fixed-info-section">
+    <div class="section-label">Service Times · 예배시간</div>
+    <div class="fixed-info-grid times">
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">주일예배</div>
+        <div class="fixed-info-value">오전 11시</div>
+      </div>
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">수요말씀코이노니아</div>
+        <div class="fixed-info-value">오후 7시</div>
+      </div>
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">금요기도</div>
+        <div class="fixed-info-value">오후 9시</div>
+      </div>
+      <div class="fixed-info-cell">
+        <div class="fixed-info-label">말씀통독</div>
+        <div class="fixed-info-value">오전 7시 월–토</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- DEPARTMENT -->
+  <div class="dept-section">
+    <div class="section-label">Ministry · 부서 및 담당</div>
+    <div class="dept-grid">
+      <div class="dept-cell">
+        <div class="dept-name">유초등부</div>
+        <div class="dept-person">박영희</div>
+      </div>
+      <div class="dept-cell">
+        <div class="dept-name">청청년</div>
+        <div class="dept-person">임도형</div>
+      </div>
+      <div class="dept-cell">
+        <div class="dept-name">청장년부</div>
+        <div class="dept-person">이지욱</div>
+      </div>
+      <div class="dept-cell">
+        <div class="dept-name">장년(남)</div>
+        <div class="dept-person">김덕호</div>
+      </div>
+      <div class="dept-cell">
+        <div class="dept-name">장년(여)</div>
+        <div class="dept-person">이혜정</div>
+      </div>
+      <div class="dept-cell">
+        <div class="dept-name">지혜부</div>
+        <div class="dept-person">최은애</div>
+      </div>
+      <div class="dept-cell">
+        <div class="dept-name">재정/운영</div>
+        <div class="dept-person">김덕호·이지욱</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OFFERING -->
+  <div class="offering-section">
+    <div class="section-label">Offering · 헌금현황</div>
+    <table class="offering-table">
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>주일</th>
+          <th>십일조</th>
+          <th>감사</th>
+          <th>선교</th>
+          <th>외부후원</th>
+          <th>지정</th>
+          <th>합계</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>오프라인</td>
+          <td>40,000</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td>—</td>
+          <td rowspan="2" class="total-cell">1,590,000</td>
+        </tr>
+        <tr>
+          <td>온라인</td>
+          <td>70,000</td>
+          <td>1,030,000</td>
+          <td>50,000</td>
+          <td>—</td>
+          <td>400,000</td>
+          <td>—</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div class="footer-info">
+      담임목사 박동준<br>
+      YouTube <a href="https://youtube.com/@sjgrace">@sjgrace</a>&nbsp;&nbsp;|&nbsp;&nbsp;
+      홈페이지 <a href="https://www.gracechapel.or.kr">www.gracechapel.or.kr</a>
+    </div>
+    <div class="footer-account">
+      온라인 헌금계좌<br>
+      <strong>농협 351-2233-6688-93</strong><br>
+      기독교한국침례회은혜교회
+    </div>
+  </div>
+
+  <!-- CLOSING BANNER -->
+  <div class="closing-banner">
+    <span>하나님이 시작하셨고, 하나님이 인도하시며, 하나님이 열매 맺으십니다 · 걸어 온 모든 길이 우리교회에 주신 이름처럼 '은혜'입니다</span>
+    <span>이제 세종으로 향한 새로운 역사, 광야에 길과 사막에 강을 내시는 주님의 역사를 믿음의 눈으로 바라보며 함께 걸어갑시다</span>
+  </div>
+
+</div>
+</body>
+</html>
