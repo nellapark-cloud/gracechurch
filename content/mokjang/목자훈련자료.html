@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>주님, 제가 목자입니다 | 은혜교회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a41;
+    --navy-deep:#101b2b;
+    --cream:#f6f1e6;
+    --cream-warm:#efe6d3;
+    --gold:#b9975b;
+    --gold-soft:#d9c290;
+    --ink:#2b3138;
+    --ink-soft:#5b6470;
+    --line:#dcd2ba;
+    --white:#fffdf8;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Noto Sans KR', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.85;
+    letter-spacing:-0.01em;
+  }
+  h1,h2,h3,h4{font-family:'Noto Serif KR', serif;}
+
+  /* ===== 표지 ===== */
+  .cover{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    background:
+      radial-gradient(circle at 20% 15%, rgba(185,151,91,0.10), transparent 45%),
+      radial-gradient(circle at 85% 80%, rgba(27,42,65,0.06), transparent 50%),
+      var(--cream);
+    text-align:center;
+    padding:60px 24px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cover::before{
+    content:"";
+    position:absolute; inset:28px;
+    border:1px solid var(--gold-soft);
+    pointer-events:none;
+  }
+  .cover-eyebrow{
+    font-family:'Noto Sans KR', sans-serif;
+    letter-spacing:0.45em;
+    font-size:12px;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:28px;
+    text-transform:uppercase;
+  }
+  .cover h1{
+    font-size:clamp(38px, 7vw, 64px);
+    font-weight:700;
+    color:var(--navy);
+    line-height:1.3;
+    margin-bottom:18px;
+  }
+  .cover h1 span{color:var(--gold);}
+  .cover-sub{
+    font-size:16px;
+    color:var(--ink-soft);
+    margin-bottom:52px;
+    font-weight:400;
+  }
+  .cover-verse{
+    max-width:520px;
+    font-family:'Noto Serif KR', serif;
+    font-size:16px;
+    color:var(--navy);
+    line-height:2.0;
+    padding:28px 32px;
+    border-top:1px solid var(--gold-soft);
+    border-bottom:1px solid var(--gold-soft);
+    margin-bottom:56px;
+  }
+  .cover-verse small{
+    display:block;
+    margin-top:10px;
+    color:var(--gold);
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12px;
+    letter-spacing:0.1em;
+  }
+  .cover-footer{
+    font-size:13px;
+    color:var(--ink-soft);
+    letter-spacing:0.04em;
+  }
+  .cover-footer b{color:var(--navy);}
+
+  /* ===== 공용 레이아웃 ===== */
+  .wrap{max-width:760px; margin:0 auto; padding:0 28px;}
+
+  /* ===== 목차(TOC) ===== */
+  .toc-section{
+    background:var(--navy);
+    color:var(--cream);
+    padding:90px 0 100px;
+  }
+  .toc-section .wrap{max-width:640px;}
+  .toc-title{
+    font-size:13px;
+    letter-spacing:0.4em;
+    color:var(--gold-soft);
+    text-transform:uppercase;
+    margin-bottom:14px;
+    text-align:center;
+  }
+  .toc-section h2{
+    font-size:32px;
+    text-align:center;
+    margin-bottom:56px;
+    font-weight:600;
+  }
+  .toc-part{margin-bottom:34px;}
+  .toc-part-name{
+    font-family:'Noto Serif KR', serif;
+    font-size:14px;
+    color:var(--gold-soft);
+    letter-spacing:0.08em;
+    margin-bottom:12px;
+    padding-bottom:10px;
+    border-bottom:1px solid rgba(217,194,144,0.25);
+  }
+  .toc-list .toc-link{
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    gap:16px;
+    color:var(--cream);
+    text-decoration:none;
+    font-size:15px;
+    padding:9px 2px;
+    border-bottom:1px dotted rgba(246,241,230,0.15);
+    transition:opacity .2s;
+    cursor:pointer;
+  }
+  .toc-list .toc-link:hover{opacity:0.65;}
+  .toc-num{color:var(--gold); font-weight:600; font-family:'Noto Serif KR',serif; min-width:22px;}
+
+  /* ===== 네비게이션(고정) ===== */
+  .nav-dots{
+    position:fixed;
+    right:22px;
+    top:50%;
+    transform:translateY(-50%);
+    z-index:50;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .nav-dots .dot{
+    width:8px; height:8px;
+    border-radius:50%;
+    background:var(--line);
+    display:block;
+    transition:all .25s;
+    cursor:pointer;
+  }
+  .nav-dots .dot.active{background:var(--gold); width:11px; height:11px;}
+  @media (max-width:860px){.nav-dots{display:none;}}
+
+  /* ===== 처음으로/목차 이동 버튼 ===== */
+  .quick-nav{
+    position:fixed;
+    right:22px;
+    bottom:22px;
+    z-index:60;
+    display:flex;
+    flex-direction:column;
+    gap:8px;
+  }
+  .quick-btn{
+    background:var(--navy);
+    color:var(--cream);
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12.5px;
+    font-weight:500;
+    padding:10px 16px;
+    border-radius:999px;
+    border:1px solid rgba(217,194,144,0.4);
+    cursor:pointer;
+    text-align:center;
+    box-shadow:0 4px 14px rgba(16,27,43,0.25);
+    transition:background .2s, transform .2s;
+    white-space:nowrap;
+  }
+  .quick-btn:hover{background:var(--navy-deep); transform:translateY(-1px);}
+  @media (max-width:600px){
+    .quick-nav{right:14px; bottom:14px;}
+    .quick-btn{font-size:11.5px; padding:8px 13px;}
+  }
+
+  /* ===== 부(Part) 구간 ===== */
+  .part{padding:86px 0 20px;}
+  .part-eyebrow{
+    text-align:center;
+    font-size:12px;
+    letter-spacing:0.35em;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:16px;
+  }
+  .part-title{
+    text-align:center;
+    font-size:30px;
+    font-weight:700;
+    color:var(--navy);
+    margin-bottom:14px;
+  }
+  .part-desc{
+    text-align:center;
+    max-width:480px;
+    margin:0 auto 64px;
+    color:var(--ink-soft);
+    font-size:15px;
+    line-height:1.9;
+  }
+
+  /* ===== 챕터(장) ===== */
+  .chapter{
+    scroll-margin-top:24px;
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:2px;
+    padding:44px 40px;
+    margin-bottom:28px;
+    position:relative;
+  }
+  .chapter::before{
+    content:"";
+    position:absolute; left:0; top:0; bottom:0;
+    width:3px;
+    background:var(--gold-soft);
+  }
+  .chapter-head{
+    display:flex;
+    align-items:flex-start;
+    gap:18px;
+    margin-bottom:22px;
+  }
+  .chapter-badge{
+    flex:none;
+    width:44px; height:44px;
+    border-radius:50%;
+    background:var(--navy);
+    color:var(--gold-soft);
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Serif KR', serif;
+    font-weight:700;
+    font-size:16px;
+  }
+  .chapter h3{
+    font-size:21px;
+    color:var(--navy);
+    font-weight:600;
+    line-height:1.5;
+    padding-top:4px;
+  }
+  .chapter p{
+    color:var(--ink);
+    font-size:15.5px;
+    margin-bottom:14px;
+  }
+  .chapter p:last-of-type{margin-bottom:0;}
+
+  .box{
+    margin-top:22px;
+    padding:20px 22px;
+    border-radius:2px;
+    font-size:14.5px;
+    line-height:1.8;
+  }
+  .box-question{
+    background:var(--cream-warm);
+    border-left:3px solid var(--gold);
+  }
+  .box-question .box-label{color:var(--gold); }
+  .box-tip{
+    background:#eef1ec;
+    border-left:3px solid #7c9070;
+  }
+  .box-tip .box-label{color:#5f7554;}
+  .box-scripture{
+    background:var(--cream);
+    border:1px solid var(--gold-soft);
+    border-left:3px solid var(--navy);
+    font-family:'Noto Serif KR', serif;
+    font-style:italic;
+    color:var(--navy);
+  }
+  .box-scripture .verse-ref{
+    display:block;
+    margin-top:8px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-style:normal;
+    font-size:12.5px;
+    color:var(--gold);
+    font-weight:600;
+  }
+
+  /* ===== 본문 하이라이트 ===== */
+  .hl{
+    background:linear-gradient(to bottom, transparent 62%, rgba(185,151,91,0.35) 62%);
+    font-weight:600;
+  }
+  .has-insight{
+    background:rgba(27,42,65,0.08);
+    border-bottom:1px dashed var(--navy);
+    color:var(--navy);
+    font-weight:600;
+    cursor:pointer;
+    padding:0 1px;
+  }
+  .has-insight:hover{background:rgba(27,42,65,0.15);}
+  .has-insight::after{
+    content:"＋";
+    font-size:10px;
+    vertical-align:super;
+    margin-left:1px;
+    color:var(--gold);
+  }
+
+  /* ===== 인사이트 팝업 ===== */
+  .insight-overlay{
+    position:fixed; inset:0;
+    background:rgba(16,27,43,0.55);
+    z-index:200;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .insight-overlay.open{display:flex;}
+  .insight-modal{
+    background:var(--white);
+    max-width:460px;
+    width:100%;
+    padding:34px 32px;
+    border-radius:3px;
+    position:relative;
+    max-height:78vh;
+    overflow-y:auto;
+    border-top:3px solid var(--gold);
+  }
+  .insight-modal h4{
+    color:var(--navy);
+    font-size:18px;
+    font-weight:700;
+    margin-bottom:16px;
+    padding-right:24px;
+  }
+  .insight-modal p{
+    font-size:14.5px;
+    color:var(--ink);
+    line-height:1.85;
+    margin-bottom:12px;
+  }
+  .insight-modal .insight-source{
+    font-size:12px;
+    color:var(--ink-soft);
+    margin-top:16px;
+    padding-top:14px;
+    border-top:1px dotted var(--line);
+  }
+  .insight-close{
+    position:absolute;
+    top:14px; right:16px;
+    cursor:pointer;
+    font-size:22px;
+    color:var(--ink-soft);
+    background:none;
+    border:none;
+    line-height:1;
+  }
+  .insight-close:hover{color:var(--navy);}
+  .box-label{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:0.12em;
+    margin-bottom:8px;
+    text-transform:uppercase;
+    font-family:'Noto Sans KR',sans-serif;
+  }
+
+  /* ===== 마무리 ===== */
+  .closing{
+    background:var(--navy);
+    color:var(--cream);
+    text-align:center;
+    padding:100px 28px 70px;
+  }
+  .closing p{
+    max-width:480px;
+    margin:0 auto 34px;
+    font-family:'Noto Serif KR', serif;
+    font-size:17px;
+    line-height:2.0;
+  }
+  .closing .signature{
+    font-size:13px;
+    color:var(--gold-soft);
+    letter-spacing:0.05em;
+  }
+
+  @media (max-width:600px){
+    .chapter{padding:32px 22px;}
+    .wrap{padding:0 20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="nav-dots" id="navDots"></div>
+
+<div class="quick-nav">
+  <div class="quick-btn" data-target="cover">처음으로</div>
+  <div class="quick-btn" data-target="toc">목차</div>
+</div>
+
+<!-- ===== 표지 ===== -->
+<section class="cover" id="cover">
+  <div class="cover-eyebrow">Shepherd Training</div>
+  <h1>주님<span>, 제가 목자입니다</span></h1>
+  <p class="cover-sub" style="font-size:12px; letter-spacing:0.15em; color:var(--gold);">목자사역가이드 1부</p>
+  <div class="cover-verse">
+    "그는 목자 같이 양 무리를 먹이시며 어린 양을 그 팔로 모아 품에 안으시며 젖먹이는 암컷들을 온순히 인도하시리로다"
+    <small>이사야 40:11</small>
+  </div>
+  <div class="cover-footer"><b>기독교한국침례회 은혜교회</b></div>
+</section>
+
+<!-- ===== 목차 ===== -->
+<section class="toc-section" id="toc">
+  <div class="wrap">
+    <div class="toc-title">Contents</div>
+    <h2>목차</h2>
+
+    <div class="toc-part">
+      <div class="toc-part-name">Ⅰ부 · 목자, 우리는 누구인가</div>
+      <div class="toc-list">
+        <div class="toc-link" data-target="c1"><span><span class="toc-num">01</span> 목장이란 무엇인가</span></div>
+        <div class="toc-link" data-target="c2"><span><span class="toc-num">02</span> 성경이 말하는 목자</span></div>
+        <div class="toc-link" data-target="c3"><span><span class="toc-num">03</span> 담임목사와 목자, 한 몸의 걸음</span></div>
+        <div class="toc-link" data-target="c4"><span><span class="toc-num">04</span> 목자의 영성 — 섬김과 기도</span></div>
+      </div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-name">Ⅱ부 · 목장, 실제로 이렇게</div>
+      <div class="toc-list">
+        <div class="toc-link" data-target="c5"><span><span class="toc-num">05</span> 모임의 결 — 나눔·말씀·기도</span></div>
+        <div class="toc-link" data-target="c6"><span><span class="toc-num">06</span> 심방과 돌봄의 마음</span></div>
+        <div class="toc-link" data-target="c7"><span><span class="toc-num">07</span> 흔들릴 때 다가가는 법</span></div>
+        <div class="toc-link" data-target="c8"><span><span class="toc-num">08</span> 새가족이 스며드는 목장</span></div>
+      </div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-name">Ⅲ부 · 목장 사이를 잇는 시스템</div>
+      <div class="toc-list">
+        <div class="toc-link" data-target="c9"><span><span class="toc-num">09</span> 목장과 목장 사이, 담을 낮추기</span></div>
+        <div class="toc-link" data-target="c10"><span><span class="toc-num">10</span> 담임목사와 나누는 정기적 마음</span></div>
+        <div class="toc-link" data-target="c11"><span><span class="toc-num">11</span> 다음 목자를 세우는 흐름</span></div>
+      </div>
+    </div>
+
+    <div class="toc-part">
+      <div class="toc-part-name">Ⅳ부 · 도심으로 이사 가는 계절</div>
+      <div class="toc-list">
+        <div class="toc-link" data-target="c12"><span><span class="toc-num">12</span> 이전의 계절, 흔들리지 않는 목장</span></div>
+        <div class="toc-link" data-target="c13"><span><span class="toc-num">13</span> 관계 전도의 통로가 되는 목장</span></div>
+        <div class="toc-link" data-target="c14"><span><span class="toc-num">14</span> 새로운 만남을 목장으로 잇는 길</span></div>
+        <div class="toc-link" data-target="c15"><span><span class="toc-num">15</span> 도심의 결에 맞춘 목장</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Ⅰ부 ===== -->
+<section class="part" id="part1">
+  <div class="wrap">
+    <div class="part-eyebrow">PART Ⅰ</div>
+    <h2 class="part-title">목장과 목자, 우리는 무엇인가</h2>
+    <p class="part-desc">기술을 배우기 전에, 먼저 왜 우리가 목장으로 모이고 이 자리에 서 있는지를 붙잡는 시간입니다.</p>
+
+    <article class="chapter" id="c1">
+      <div class="chapter-head">
+        <div class="chapter-badge">01</div>
+        <h3>목장이란 무엇인가</h3>
+      </div>
+      <p>목장은 사람이 편의상 만든 조직이 아닙니다. 출애굽기 18장을 보면, 모세가 홀로 모든 백성의 송사를 재판하느라 지쳐 있을 때 장인 이드로가 찾아와 이렇게 말합니다. "그대가 하는 것이 선하지 못하도다 ... 그대와 이 백성이 필경 기력이 쇠하리니 <span class="has-insight" data-insight="jethro">그대가 혼자 할 수 없으리라</span>." 이드로의 해법은 백성을 천 명, 백 명, 오십 명, 열 명 단위로 나누고, 그 단위마다 재판할 사람을 세우는 것이었습니다. 큰 무리를 그대로 두면 아무도 제대로 돌봄받지 못하지만, 작은 단위로 나누면 각 사람이 실제로 보살핌을 받을 수 있다는 것, 이것이 목장이 존재하는 가장 오래된 성경적 이유입니다.</p>
+      <div class="box box-scripture">
+        "그대와 함께한 이 백성이 필경 기력이 쇠하리니 ... 그대가 혼자 할 수 없으리라 ... 백성 중에서 능력 있는 사람들을 뽑아 ... 천부장과 백부장과 오십부장과 십부장을 삼아"
+        <span class="verse-ref">출애굽기 18:18, 21</span>
+      </div>
+      <p>신약에서도 교회는 처음부터 큰 모임과 작은 모임, 두 결로 함께 움직였습니다. 사도행전 2장은 성도들이 "날마다 마음을 같이하여 <span class="has-insight" data-insight="oikos">성전에도 모이고 집에서도 떡을 떼며</span>" 지냈다고 기록합니다. 성전 모임이 오늘의 예배라면, 집 모임이 오늘의 목장입니다. 바울의 편지에도 "그 집에 있는 교회"(롬 16:5), "라오디게아에 있는 형제들과 눔바와 그 집에 있는 교회"(골 4:15)처럼, 신약 교회는 처음부터 가정 단위의 작은 모임을 통해 존재했습니다.</p>
+      <p>그러니 목장은 사역의 효율을 위한 행정 단위가 아니라, <span class="hl">교회가 교회답게 존재하는 가장 오래된 형태</span>입니다. <span class="has-insight" data-insight="cell-dna">교회 성장을 연구해 온 학자들도 비슷한 결론</span>에 이릅니다. 목장이 편성되어야 하는 이유는 사람이 많아서가 아니라, 한 사람 한 사람이 실제로 이름 불리고 돌봄받는 교회가 되기 위해서입니다.</p>
+      <div class="box box-question">
+        <span class="box-label">함께 생각해봐요</span>
+        만약 우리 교회에 목장이 없다면, 지금 내 목장원 중 누가 가장 먼저 보이지 않게 될까요?
+      </div>
+    </article>
+
+    <article class="chapter" id="c2">
+      <div class="chapter-head">
+        <div class="chapter-badge">02</div>
+        <h3>성경이 말하는 목자</h3>
+      </div>
+      <p>요한복음 10장에서 예수님은 "나는 선한 목자라, 선한 목자는 양들을 위하여 목숨을 버리거니와" 말씀하십니다. 목자는 관리자가 아니라, 양 한 마리 한 마리의 이름을 알고 그 앞에서 걸어가는 사람입니다. 에스겔 34장은 반대로 자기 배만 채운 목자들을 향한 하나님의 책망을 담고 있습니다. 이 두 본문을 나란히 놓고 보면, <span class="hl">목자의 자격은 능력이 아니라 방향에 있다</span>는 걸 알게 됩니다. 누구를 향해 걷고 있는가, 누구를 위해 시간을 쓰는가 하는 방향이요.</p>
+      <p>구약에서 목자를 가리키는 히브리어 '로에(רֹעֶה)'는 본래 양을 '먹이는 자'라는 뜻이고, 신약의 헬라어 '포이멘(ποιμήν)' 역시 단순한 관리자가 아니라 양 무리와 함께 살아가며 돌보는 자를 가리킵니다. 두 단어 모두 공통적으로 '먹이고 인도한다'는 돌봄의 행위에 초점이 있지, 다스리고 명령한다는 권위에 초점이 있지 않습니다. 목자라는 이름 자체가 이미 섬김의 방향을 담고 있는 셈입니다.</p>
+      <p>우리 목장의 목자님들도 마찬가지입니다. 완벽한 리더가 아니라, 매주 한 사람 한 사람의 이름을 부르고 기억하려는 사람이면 충분합니다. 그 마음이 목자의 첫 자격입니다.</p>
+      <div class="box box-scripture">
+        "나는 선한 목자라 선한 목자는 양들을 위하여 목숨을 버리거니와" · "내 백성을 먹이지 아니하고 자기만 먹인 이스라엘 목자들은 화 있을진저"
+        <span class="verse-ref">요한복음 10:11 · 에스겔 34:2</span>
+      </div>
+      <div class="box box-question">
+        <span class="box-label">함께 생각해봐요</span>
+        지금 내 목장원 한 사람의 이름을 떠올려보세요. 그 사람의 요즘 마음은 어떨까요?
+      </div>
+    </article>
+
+    <article class="chapter" id="c3">
+      <div class="chapter-head">
+        <div class="chapter-badge">03</div>
+        <h3>담임목사와 목자, 한 몸의 걸음</h3>
+      </div>
+      <p>목자는 혼자 목회하는 사람이 아닙니다. 담임목사가 전체 양무리를 향해 품은 마음이, 목자를 통해 각 목장의 언어로 다시 전해지는 구조입니다. 그래서 목자에게 가장 중요한 건 창의적인 프로그램이 아니라, 담임목사와 같은 방향을 보고 있다는 신뢰입니다. 이런 <span class="has-insight" data-insight="disciple-training">평신도가 목양의 실제 주체가 되는 구조</span>는 한국 교회의 여러 제자훈련 전통에서도 오랫동안 강조되어 온 부분입니다.</p>
+      <p>베드로전서 5장은 이 구조를 명확히 보여줍니다. 장로들에게 양 무리를 치라고 권면한 뒤, 마지막에는 "목자장이 나타나실 때에 시들지 아니하는 영광의 관을 얻으리라"고 말합니다. 즉 담임목사도, 목자도 모두 궁극적인 목자이신 예수 그리스도 아래 있는 '아래 목자(under-shepherd)'입니다. 이 구조를 기억하면 담임목사와 목자의 관계는 위아래의 지시 관계가 아니라, 한 분 목자장을 함께 바라보는 동역의 관계가 됩니다.</p>
+      <p>이 신뢰는 하루아침에 생기지 않습니다. 정기적으로 만나 이야기 나누고, 목장에서 있었던 크고 작은 일들을 솔직하게 나누는 시간이 쌓일 때 자연스럽게 만들어집니다. 목자는 담임목사의 손과 발이면서 동시에, 담임목사가 미처 보지 못하는 목장의 사정을 전해주는 눈이기도 합니다.</p>
+      <div class="box box-scripture">
+        "너희 중에 있는 하나님의 양 무리를 치되 ... 오직 양 무리의 본이 되라 그리하면 목자장이 나타나실 때에 시들지 아니하는 영광의 관을 얻으리라"
+        <span class="verse-ref">베드로전서 5:2-4</span>
+      </div>
+    </article>
+
+    <article class="chapter" id="c4">
+      <div class="chapter-head">
+        <div class="chapter-badge">04</div>
+        <h3>목자의 영성 — 섬김과 기도</h3>
+      </div>
+      <p>목자 훈련이라고 하면 흔히 모임 진행법이나 대화 기술을 먼저 떠올리기 쉽습니다. 하지만 정말 오래가는 목자는 기술이 아니라 기도에서 만들어집니다. 목장원 한 명 한 명의 이름을 놓고 기도하는 시간이 있는 목자와, 모임 준비만 하는 목자는 시간이 지날수록 확연히 다른 목장을 만듭니다.</p>
+      <p>섬김도 마찬가지입니다. 예수님이 제자들의 발을 씻기신 것처럼, 목자의 섬김은 눈에 띄지 않는 곳에서 시작됩니다. 문자 한 통, 짧은 안부, 작은 기억. 그것이 쌓여 목장의 온도가 됩니다.</p>
+      <div class="box box-scripture">
+        "내가 너희에게 행한 것같이 너희도 행하게 하려 하여 본을 보였노라"
+        <span class="verse-ref">요한복음 13:14-15</span>
+      </div>
+      <div class="box box-tip">
+        <span class="box-label">실천 제안</span>
+        이번 주, 목장원 명단을 놓고 하루 5분만 이름을 부르며 기도해보세요.
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Ⅱ부 ===== -->
+<section class="part" id="part2">
+  <div class="wrap">
+    <div class="part-eyebrow">PART Ⅱ</div>
+    <h2 class="part-title">목장, 실제로 이렇게</h2>
+    <p class="part-desc">마음만으로는 부족합니다. 실제 모임을 이끄는 손끝의 지혜를 나눕니다.</p>
+
+    <article class="chapter" id="c5">
+      <div class="chapter-head">
+        <div class="chapter-badge">05</div>
+        <h3>모임의 결 — 나눔·말씀·기도</h3>
+      </div>
+      <p>좋은 목장 모임에는 공통된 흐름이 있습니다. 먼저 이번 주 삶을 편안하게 나누는 시간, 그다음 말씀을 함께 읽고 삶에 적용하는 시간, 마지막으로 서로를 위해 기도하는 시간입니다. 순서 자체보다 중요한 건 균형입니다. 나눔만 길어지면 목장이 친목 모임에 머물고, 말씀만 강조되면 부담스러운 자리가 됩니다.</p>
+      <p>이 세 요소는 임의로 만든 순서가 아닙니다. 사도행전 2장은 초대교회의 모임을 "가르침을 받아 서로 교제하고 떡을 떼며 오로지 기도하기를 힘쓰니라"고 요약합니다. 가르침(말씀), 교제(나눔), 기도라는 세 기둥은 이미 교회의 첫 모임부터 함께 있었던 것입니다. 목장 모임은 이 원형을 작은 규모로 재현하는 자리입니다.</p>
+      <p>모임 시간을 대략 나눔 30%, 말씀 40%, 기도 30% 정도로 그려두면, 목자가 자연스럽게 흐름을 조율할 수 있습니다. 정답이 아니라 기준점으로 삼아주세요.</p>
+      <div class="box box-scripture">
+        "그들이 사도의 가르침을 받아 서로 교제하고 떡을 떼며 오로지 기도하기를 힘쓰니라"
+        <span class="verse-ref">사도행전 2:42</span>
+      </div>
+    </article>
+
+    <article class="chapter" id="c6">
+      <div class="chapter-head">
+        <div class="chapter-badge">06</div>
+        <h3>심방과 돌봄의 마음</h3>
+      </div>
+      <p>심방은 거창한 방문이 아니어도 괜찮습니다. 커피 한 잔 나누는 시간, 짧은 전화 한 통도 훌륭한 심방입니다. 중요한 건 형식이 아니라 정기성입니다. 한 달에 한 번이라도 목장원 각자와 개인적으로 이야기 나누는 시간을 정해두면, 모임에서는 보이지 않던 마음이 보이기 시작합니다.</p>
+      <p>바울은 갈라디아서에서 "너희가 짐을 서로 지라 그리하여 그리스도의 법을 성취하라"고 권합니다. 심방은 결국 그 사람의 짐을 잠시나마 함께 들어보는 시간입니다. 짐을 대신 없애줄 수는 없어도, 함께 지고 있다는 사실만으로도 그 무게는 달라집니다.</p>
+      <p>심방에서는 듣는 비중을 훨씬 크게 가져가시길 권합니다. 목자가 말을 많이 하는 심방보다, <span class="hl">목자가 잘 들어주는 심방이 사람을 훨씬 깊이 세웁니다</span>.</p>
+      <div class="box box-scripture">
+        "너희가 짐을 서로 지라 그리하여 그리스도의 법을 성취하라"
+        <span class="verse-ref">갈라디아서 6:2</span>
+      </div>
+    </article>
+
+    <article class="chapter" id="c7">
+      <div class="chapter-head">
+        <div class="chapter-badge">07</div>
+        <h3>흔들릴 때 다가가는 법</h3>
+      </div>
+      <p>목장원이 갈등을 겪거나, 낙심해서 발걸음이 뜸해지는 순간은 반드시 찾아옵니다. 이때 목자가 가장 먼저 할 일은 해결책을 주는 것이 아니라, 판단하지 않고 곁에 있어주는 것입니다. "왜 안 나오세요"라는 질문보다 "요즘 어떠세요"라는 질문이 훨씬 문을 엽니다.</p>
+      <p>마태복음 18장의 비유는 이런 순간을 위한 것입니다. 아흔아홉 마리를 산에 두고 길 잃은 한 마리를 찾아 나서는 목자, 그리고 찾았을 때 아흔아홉보다 그 한 마리로 인해 더 기뻐하는 목자. 목장에서 발걸음이 뜸해진 한 사람은 '어차피 나머지가 있으니 괜찮은 손실'이 아니라, 오히려 <span class="hl">그 순간 가장 우선순위가 되어야 할 한 사람</span>입니다.</p>
+      <p>혼자 감당하기 어려운 상황이라면 주저하지 말고 담임목사님께 상황을 나누어주세요. 목자가 모든 걸 짊어지는 게 아니라, 함께 짊어지는 구조가 우리 교회의 힘입니다.</p>
+      <div class="box box-scripture">
+        "만일 어떤 사람이 양 백 마리가 있는데 그 중의 하나가 길을 잃었으면 ... 진실로 너희에게 이르노니 만일 찾으면 길을 잃지 아니한 아흔아홉 마리보다 이것을 더 기뻐하리라"
+        <span class="verse-ref">마태복음 18:12-13</span>
+      </div>
+      <div class="box box-question">
+        <span class="box-label">함께 생각해봐요</span>
+        요즘 마음이 멀어진 것 같은 목장원이 있다면, 이번 주 어떤 한 걸음을 떼어볼 수 있을까요?
+      </div>
+    </article>
+
+    <article class="chapter" id="c8">
+      <div class="chapter-head">
+        <div class="chapter-badge">08</div>
+        <h3>새가족이 스며드는 목장</h3>
+      </div>
+      <p>새가족이 목장에 처음 오는 날, 그날의 기억이 정착 여부를 크게 좌우합니다. 이름을 미리 알고 맞이하기, 앉을 자리를 자연스럽게 안내하기, 모임 중 최소 한 번은 편하게 말을 건네기 같은 작은 배려가 큰 역할을 합니다.</p>
+      <p>로마서 15장은 "그리스도께서 우리를 받아 하나님께 영광을 돌리심과 같이 너희도 서로 받으라"고 말합니다. 우리가 누군가를 목장에 받아들이는 근거는 그 사람이 얼마나 우리와 잘 맞는가가 아니라, 그리스도께서 이미 조건 없이 우리를 받아주셨다는 사실입니다. 이 기준을 기억하면 새가족을 향한 환대가 훨씬 자연스러워집니다.</p>
+      <p>또한 새가족에게는 목장의 흐름을 너무 빨리 요구하지 않는 것이 좋습니다. 나눔에 참여하는 부담, 기도를 인도하는 부담을 자연스럽게 조절해주시면서, 몇 주에 걸쳐 천천히 스며들도록 기다려주세요.</p>
+      <div class="box box-scripture">
+        "그러므로 그리스도께서 우리를 받아 하나님께 영광을 돌리심과 같이 너희도 서로 받으라"
+        <span class="verse-ref">로마서 15:7</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Ⅲ부 ===== -->
+<section class="part" id="part3">
+  <div class="wrap">
+    <div class="part-eyebrow">PART Ⅲ</div>
+    <h2 class="part-title">목장 사이를 잇는 시스템</h2>
+    <p class="part-desc">개척 12년, 이제는 그때그때 마음으로만 이어오던 것들을 지속 가능한 흐름으로 다져갈 때입니다.</p>
+
+    <article class="chapter" id="c9">
+      <div class="chapter-head">
+        <div class="chapter-badge">09</div>
+        <h3>목장과 목장 사이, 담을 낮추기</h3>
+      </div>
+      <p>여자 목장, 남자 목장, 장년 목장이 각자 잘 운영되는 것도 중요하지만, 서로 소식을 나누고 함께 기도하는 연결도 그만큼 중요합니다. 한 목장의 기쁜 소식이나 어려운 소식이 다른 목장에도 자연스럽게 전해질 때, 교회 전체가 한 가족이라는 감각이 살아납니다.</p>
+      <p>고린도전서 12장은 교회를 한 몸에 비유하며 "만일 한 지체가 고통을 받으면 모든 지체가 함께 고통을 받고 한 지체가 영광을 얻으면 모든 지체가 함께 즐거워하느니라"고 말합니다. 목장은 각기 다른 지체이지만 한 몸입니다. 목장 사이의 담이 낮아진다는 것은 결국 이 몸 됨을 실제로 살아내는 일입니다.</p>
+      <p>월별 목자 모임이나 짧은 나눔 채널을 통해, 서로의 목장 근황을 정기적으로 주고받는 흐름을 만들어보시길 권합니다.</p>
+      <div class="box box-scripture">
+        "몸 가운데서 분쟁이 없고 오직 여러 지체가 서로 같이 돌보게 하셨느니라 만일 한 지체가 고통을 받으면 모든 지체가 함께 고통을 받고"
+        <span class="verse-ref">고린도전서 12:25-26</span>
+      </div>
+    </article>
+
+    <article class="chapter" id="c10">
+      <div class="chapter-head">
+        <div class="chapter-badge">10</div>
+        <h3>담임목사와 나누는 정기적 마음</h3>
+      </div>
+      <p>목자 보고는 행정 서류가 아니라, 마음을 나누는 시간이어야 합니다. 정해진 주기로 담임목사님과 짧게라도 만나 목장의 분위기, 어려움을 겪는 목장원, 감사한 일들을 나누어주세요. 형식은 문자든 대화든 상관없습니다. 중요한 건 정기성과 솔직함입니다.</p>
+      <p>히브리서 13장은 지도자들이 "너희 영혼을 위하여 경성하기를 자기가 청산할 자로 여기고" 있다고 말합니다. 담임목사는 각 목장의 사정을 마지막에 하나님 앞에 아뢸 사람입니다. 목자가 정직하게 나누는 소통은 담임목사의 일을 덜어주는 배려이자, 목자 자신도 함께 그 짐을 나누어지는 방식입니다.</p>
+      <div class="box box-scripture">
+        "너희를 인도하는 자들에게 순종하고 복종하라 그들은 너희 영혼을 위하여 경성하기를 자기가 청산할 자로 여기고 하는 자니 즐거움으로 하게 하고 근심으로 하게 하지 말라"
+        <span class="verse-ref">히브리서 13:17</span>
+      </div>
+    </article>
+
+    <article class="chapter" id="c11">
+      <div class="chapter-head">
+        <div class="chapter-badge">11</div>
+        <h3>다음 목자를 세우는 흐름</h3>
+      </div>
+      <p>지금의 목자님들이 언젠가 새로운 목자를 세우는 일은, 교회가 다음 단계로 가기 위해 반드시 필요한 흐름입니다. 목장 안에서 나눔을 인도해볼 사람, 기도를 이끌어볼 사람을 조금씩 세워보는 것부터 시작할 수 있습니다.</p>
+      <p>바울은 디모데에게 "네가 많은 증인 앞에서 내게 들은 바를 충성된 사람들에게 부탁하라 저희가 또 다른 사람들을 가르칠 수 있으리라"고 말합니다. 신앙의 전수는 바울에서 디모데로, 디모데에서 충성된 사람들로, 다시 그들에게서 또 다른 사람들로 이어지는 4대에 걸친 흐름입니다. 목자 한 사람에게서 멈추면 안 되는 이유가 여기 있습니다.</p>
+      <p>목자 한 사람이 모든 걸 계속 짊어지는 구조보다, 목장 안에서 다음 사람이 조금씩 자라나는 구조가 훨씬 건강합니다. <span class="has-insight" data-insight="group-size">목장이 한 사람 정도 규모를 넘어 계속 커지기만 하면</span> 오히려 서로를 세밀히 돌보기 어려워지므로, 다음 목자를 세우는 일은 언젠가 목장이 건강하게 나뉘어 새로운 목장이 되는 밑거름이기도 합니다.</p>
+      <div class="box box-scripture">
+        "또 네가 많은 증인 앞에서 내게 들은 바를 충성된 사람들에게 부탁하라 저희가 또 다른 사람들을 가르칠 수 있으리라"
+        <span class="verse-ref">디모데후서 2:2</span>
+      </div>
+      <div class="box box-tip">
+        <span class="box-label">실천 제안</span>
+        이번 달, 목장원 중 한 사람에게 나눔 진행이나 기도 인도를 부탁해보세요.
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== Ⅳ부 ===== -->
+<section class="part" id="part4">
+  <div class="wrap">
+    <div class="part-eyebrow">PART Ⅳ</div>
+    <h2 class="part-title">도심으로 이사 가는 계절</h2>
+    <p class="part-desc">교회 이전이라는 큰 변화 앞에서, 목장이 흔들리지 않고 오히려 전도의 통로가 되는 법을 그려봅니다.</p>
+
+    <article class="chapter" id="c12">
+      <div class="chapter-head">
+        <div class="chapter-badge">12</div>
+        <h3>이전의 계절, 흔들리지 않는 목장</h3>
+      </div>
+      <p>교회 이전은 설레는 만큼 성도들에게 낯섦과 불안도 함께 가져옵니다. 이런 시기에 목장은 흔들리는 마음을 붙잡아주는 가장 든든한 자리가 될 수 있습니다. 이전과 관련된 소식을 목장 안에서 정직하게 나누고, 막연한 걱정보다 함께 기도할 제목으로 바꾸어주는 것이 목자의 중요한 역할입니다.</p>
+      <p>시편 23편은 "여호와는 나의 목자시니 내게 부족함이 없으리로다"로 시작해서 "사망의 음침한 골짜기로 다닐지라도 해를 두려워하지 않을 것은 주께서 나와 함께 하심이라"로 이어집니다. 장소가 바뀌어도 함께하시는 목자는 바뀌지 않는다는 것, 이것이 이전의 계절을 지나는 목장이 붙잡을 수 있는 가장 분명한 약속입니다.</p>
+      <p>변화의 시기일수록 목장 모임만큼은 평소와 같은 리듬으로 지켜주시길 권합니다. 익숙한 자리가 흔들리는 마음의 닻이 됩니다.</p>
+      <div class="box box-scripture">
+        "여호와는 나의 목자시니 내게 부족함이 없으리로다 ... 내가 사망의 음침한 골짜기로 다닐지라도 해를 두려워하지 않을 것은 주께서 나와 함께 하심이라"
+        <span class="verse-ref">시편 23:1,4</span>
+      </div>
+    </article>
+
+    <article class="chapter" id="c13">
+      <div class="chapter-head">
+        <div class="chapter-badge">13</div>
+        <h3>관계 전도의 통로가 되는 목장</h3>
+      </div>
+      <p>도심 전도는 결국 큰 행사보다 한 사람 한 사람의 관계에서 시작됩니다. 목장은 그 관계 전도가 실제로 열매 맺는 자리입니다. 직장 동료, 이웃, 오래된 친구를 목장 모임처럼 편안한 자리에 초대하는 것이, 낯선 도심에서 가장 자연스러운 전도의 문이 될 수 있습니다.</p>
+      <p>요한복음 1장에서 예수님을 만난 안드레가 가장 먼저 한 일은 대중을 모으는 것이 아니라, 자기 형제 시몬을 찾아가 데리고 온 것이었습니다. 초대교회 전도의 가장 오래된 모델이 바로 이 관계 전도입니다. 목장은 이 모델이 오늘 우리 교회에서 실제로 일어나는 자리입니다.</p>
+      <p>목자님들이 먼저 "우리 목장에 이런 분을 초대해볼까"라는 마음을 품고 기도하기 시작하면, 목장 자체가 살아있는 전도의 거점이 됩니다.</p>
+      <div class="box box-scripture">
+        "그가 먼저 자기의 형제 시몬을 찾아 말하되 우리가 메시야를 만났다 하고 데리고 예수께로 오니"
+        <span class="verse-ref">요한복음 1:41-42</span>
+      </div>
+    </article>
+
+    <article class="chapter" id="c14">
+      <div class="chapter-head">
+        <div class="chapter-badge">14</div>
+        <h3>새로운 만남을 목장으로 잇는 길</h3>
+      </div>
+      <p>도심 이전 이후 새롭게 교회를 찾는 분들이 늘어난다면, 그분들을 예배만이 아니라 목장으로 자연스럽게 연결하는 흐름이 준비되어 있어야 합니다. 처음 오신 분이 늦어도 한두 주 안에 어느 목장에 속하게 될지 정해지는 구조를 미리 그려두시면 좋겠습니다.</p>
+      <p>사도행전 2장은 초대교회가 "날마다 마음을 같이하여 성전에 모이기를 힘쓰고 집에서 떡을 떼며" 지냈고, 그 결과 "주께서 구원 받는 사람을 날마다 더하게 하시니라"고 기록합니다. 큰 모임(성전)과 작은 모임(집)이 함께 있었기에 성장이 흩어지지 않고 붙들려졌습니다. 목장은 오늘 우리 교회의 '집'에 해당합니다.</p>
+      <p>이 연결은 담임목사님과 목자님들이 함께 상의하며, 새가족의 연령대와 상황에 맞는 목장으로 이어드리는 방식이 자연스럽습니다.</p>
+      <div class="box box-scripture">
+        "날마다 마음을 같이하여 성전에 모이기를 힘쓰고 집에서 떡을 떼며 ... 주께서 구원 받는 사람을 날마다 더하게 하시니라"
+        <span class="verse-ref">사도행전 2:46-47</span>
+      </div>
+    </article>
+
+    <article class="chapter" id="c15">
+      <div class="chapter-head">
+        <div class="chapter-badge">15</div>
+        <h3>도심의 결에 맞춘 목장</h3>
+      </div>
+      <p>도심에는 직장인, 1인가구처럼 시간과 생활 리듬이 저마다 다른 분들이 많습니다. 기존의 목장 시간이나 장소가 이런 분들에게는 참여하기 어려운 장벽이 될 수 있습니다. 평일 저녁이나 주말 시간대의 소규모 모임처럼, 조금 더 유연한 목장 형태를 함께 고민해볼 필요가 있습니다.</p>
+      <p>바울은 "여러 사람에게 여러 모양이 된 것은 아무쪼록 몇몇 사람들을 구원코자 함이니"라고 말합니다. 형태를 다양하게 하는 것은 타협이 아니라, 복음의 본질은 그대로 두고 그것을 담는 그릇을 사람에 맞추는 선교적 유연함입니다.</p>
+      <p>모든 목장이 같은 틀일 필요는 없습니다. <span class="hl">사람에게 맞추는 목장이, 결국 더 많은 사람을 품는 목장이 됩니다</span>.</p>
+      <div class="box box-scripture">
+        "내가 여러 사람에게 여러 모양이 된 것은 아무쪼록 몇몇 사람들을 구원코자 함이니"
+        <span class="verse-ref">고린도전서 9:22</span>
+      </div>
+      <div class="box box-question">
+        <span class="box-label">함께 생각해봐요</span>
+        우리 목장이 도심으로 옮긴다면, 어떤 분들이 새롭게 문을 두드릴 것 같나요?
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ===== 마무리 ===== -->
+<section class="closing">
+  <p>목자는 완벽한 사람이 아니라, 먼저 걷는 사람입니다. 오늘도 한 사람의 이름을 부르며 기도하는 그 마음이, 우리 은혜교회를 세워갑니다.</p>
+  <div class="signature">기독교한국침례회 은혜교회</div>
+</section>
+
+<!-- ===== 인사이트 팝업 ===== -->
+<div class="insight-overlay" id="insightOverlay">
+  <div class="insight-modal">
+    <button class="insight-close" id="insightClose">&times;</button>
+    <h4 id="insightTitle"></h4>
+    <div id="insightBody"></div>
+  </div>
+</div>
+
+<script>
+  const parts = ['cover','toc','part1','part2','part3','part4'];
+  const dotsWrap = document.getElementById('navDots');
+  parts.forEach(id=>{
+    const d = document.createElement('div');
+    d.className = 'dot';
+    d.dataset.target = id;
+    dotsWrap.appendChild(d);
+  });
+  const dots = dotsWrap.querySelectorAll('.dot');
+  const sections = parts.map(id=>document.getElementById(id));
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(en=>{
+      if(en.isIntersecting){
+        dots.forEach(d=>d.classList.remove('active'));
+        const idx = sections.indexOf(en.target);
+        if(dots[idx]) dots[idx].classList.add('active');
+      }
+    });
+  }, {threshold:0.4});
+  sections.forEach(s=> s && io.observe(s));
+
+  // 목차 항목 및 점 네비게이션 클릭 시 스크롤 이동 (a 태그를 쓰지 않아 외부 링크 팝업이 뜨지 않음)
+  document.querySelectorAll('[data-target]').forEach(el=>{
+    el.addEventListener('click', function(){
+      const target = document.getElementById(this.dataset.target);
+      if(target) target.scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+
+  // ===== 인사이트 팝업 데이터 =====
+  const INSIGHTS_DATA = {
+    jethro: {
+      title: '이드로의 조직 원리',
+      body: [
+        '모세가 홀로 모든 백성을 재판하려 하자, 장인 이드로는 그 방식이 오래가지 못할 것이라고 지적합니다.',
+        '해법은 능력을 더 짜내는 것이 아니라, 백성을 천 명·백 명·오십 명·열 명 단위로 나누고 각 단위마다 재판할 사람을 세우는 조직의 재구성이었습니다.',
+        '이는 성경에 나오는 가장 오래된 "작은 단위로 나누어 돌봄을 가능하게 하라"는 원리이며, 오늘날 목장 구조의 뿌리이기도 합니다.'
+      ],
+      source: '출애굽기 18:13-26'
+    },
+    oikos: {
+      title: '오이코스 — 신약의 가정 단위',
+      body: [
+        '헬라어 "오이코스(οἶκος)"는 단순한 건물이 아니라 가족·친척·종·가까운 이웃을 포함하는 확장된 생활 공동체를 뜻합니다.',
+        '초대교회의 성장은 대부분 이 오이코스 단위로 퍼져나갔습니다. 고넬료의 집(행 10장), 루디아의 집(행 16:15), 빌립보 간수의 집(행 16:31-34)처럼, 한 사람이 아니라 그가 속한 생활 공동체 전체가 함께 신앙을 받아들이는 경우가 많았습니다.',
+        '목장은 오늘날 이 오이코스가 다시 구현되는 자리라고 볼 수 있습니다.'
+      ],
+      source: '사도행전 2:46, 10장, 16장 / 로마서 16:5 / 골로새서 4:15'
+    },
+    'cell-dna': {
+      title: '작은 모임이 교회의 DNA를 담는다',
+      body: [
+        '셀교회 운동을 연구해 온 학자들은 큰 예배 모임이 교회의 전부가 아니라, 오히려 작은 모임(셀)이야말로 가르침·교제·돌봄·전도라는 교회의 핵심 기능이 실제로 일어나는 자리라고 강조해 왔습니다.',
+        '예배가 교회의 얼굴이라면, 소그룹은 교회의 심장에 가깝다는 것이 이 논의의 핵심입니다.'
+      ],
+      source: '셀교회 관련 논의 참고 (랄프 네이버 외)'
+    },
+    'group-size': {
+      title: '그룹은 자라면 나뉜다',
+      body: [
+        '소그룹 사역을 연구한 학자들은 하나의 소그룹이 대략 열 명 안팎을 넘어서기 시작하면, 구성원 개개인이 실제로 돌봄받는다고 느끼는 정도가 급격히 낮아진다고 지적합니다.',
+        '그래서 건강한 소그룹은 인원이 계속 늘어나는 것을 목표로 하지 않고, 어느 시점에 새로운 리더를 세워 두 모임으로 자연스럽게 나뉘는 것을 성장의 정상적인 과정으로 봅니다.',
+        '우리 교회 목장이 한 목장당 12명 안팎으로 유지되는 것도 이런 원리와 맞닿아 있습니다.'
+      ],
+      source: '소그룹 목회 관련 논의 참고 (칼 조지 외)'
+    },
+    'disciple-training': {
+      title: '평신도가 세워지는 목회',
+      body: [
+        '한국 교회의 제자훈련 전통에서 꾸준히 강조되어 온 것은, 목양이 담임목사 한 사람의 전유물이 아니라 훈련된 평신도들이 함께 감당하는 사역이라는 확신이었습니다.',
+        '목자 제도는 이 확신이 실제 구조로 구현된 형태이며, 담임목사가 모든 성도를 직접 돌보는 대신 훈련된 목자들을 통해 그 돌봄이 확장되도록 하는 것입니다.'
+      ],
+      source: '제자훈련 관련 논의 참고 (옥한흠 외)'
+    }
+  };
+
+  const overlay = document.getElementById('insightOverlay');
+  const insightTitle = document.getElementById('insightTitle');
+  const insightBody = document.getElementById('insightBody');
+
+  function openInsight(id){
+    const data = INSIGHTS_DATA[id];
+    if(!data) return;
+    insightTitle.textContent = data.title;
+    insightBody.innerHTML = data.body.map(p=>`<p>${p}</p>`).join('') +
+      `<div class="insight-source">${data.source}</div>`;
+    overlay.classList.add('open');
+  }
+  function closeInsight(){ overlay.classList.remove('open'); }
+
+  document.querySelectorAll('.has-insight').forEach(el=>{
+    el.addEventListener('click', ()=> openInsight(el.dataset.insight));
+  });
+  document.getElementById('insightClose').addEventListener('click', closeInsight);
+  overlay.addEventListener('click', (e)=>{ if(e.target === overlay) closeInsight(); });
+</script>
+
+</body>
+</html>

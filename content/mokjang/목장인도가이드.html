@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목장인도 가이드</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1B2A41;
+    --navy-deep:#10192A;
+    --cream:#F6F1E7;
+    --paper:#FBF8F2;
+    --gold:#B08D57;
+    --gold-light:#D9BD8C;
+    --ink:#2B2A28;
+    --ink-soft:#5B5750;
+    --line:#E4DCC9;
+    --insight:#7C5E3C;
+    --insight-bg:#F1E4CC;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Noto Serif KR', serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sans{font-family:'Noto Sans KR', sans-serif;}
+
+  /* ===== Header ===== */
+  .hero{
+    background:linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--cream);
+    padding:72px 24px 56px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:"";
+    position:absolute; inset:0;
+    background:
+      radial-gradient(circle at 15% 20%, rgba(176,141,87,0.18), transparent 40%),
+      radial-gradient(circle at 85% 80%, rgba(176,141,87,0.12), transparent 45%);
+    pointer-events:none;
+  }
+  .hero .eyebrow{
+    font-family:'Noto Sans KR', sans-serif;
+    letter-spacing:0.32em;
+    font-size:12px;
+    color:var(--gold-light);
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(28px, 5vw, 44px);
+    font-weight:700;
+    margin:0 0 16px;
+    letter-spacing:-0.01em;
+  }
+  .hero p.sub{
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:300;
+    color:#C9CFD9;
+    font-size:15px;
+    max-width:520px;
+    margin:0 auto;
+  }
+  .hero .staff-mark{
+    width:46px; height:46px;
+    margin:0 auto 22px;
+    opacity:0.9;
+  }
+
+  /* ===== Layout ===== */
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px 120px;
+  }
+  section.chapter{
+    margin-top:64px;
+    padding-top:36px;
+    border-top:1px solid var(--line);
+  }
+  section.chapter:first-of-type{border-top:none;}
+  .chapter-num{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12px;
+    letter-spacing:0.28em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:10px;
+  }
+  h2.chapter-title{
+    font-size:clamp(22px, 4vw, 30px);
+    margin:0 0 22px;
+    color:var(--navy);
+    font-weight:700;
+  }
+  h3{
+    font-size:19px;
+    color:var(--navy);
+    margin:34px 0 14px;
+    font-weight:600;
+  }
+  p{ font-size:16.5px; color:var(--ink); margin:0 0 18px; }
+  .lead{
+    font-size:17.5px;
+    color:var(--ink-soft);
+  }
+
+  /* opening reflection question box */
+  .reflect{
+    background:var(--paper);
+    border-left:3px solid var(--gold);
+    padding:18px 22px;
+    margin:26px 0;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:15px;
+    color:var(--ink-soft);
+    border-radius:2px;
+  }
+  .reflect .label{
+    font-size:11px;
+    letter-spacing:0.2em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:6px;
+    display:block;
+  }
+
+  /* highlight - primary (core point) */
+  .mark{
+    background:linear-gradient(to bottom, transparent 60%, var(--gold-light) 60%);
+    padding:0 1px;
+  }
+
+  /* has-insight: click to open deeper popup (theological/practical) */
+  .has-insight{
+    background:linear-gradient(to bottom, transparent 62%, var(--insight-bg) 62%);
+    border-bottom:1.5px dotted var(--insight);
+    cursor:pointer;
+    font-weight:600;
+    color:var(--insight);
+    padding:0 1px;
+  }
+  .insight-overlay{
+    display:none;
+    position:fixed; inset:0;
+    background:rgba(16,25,42,0.55);
+    z-index:100;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+  }
+  .insight-overlay.open{display:flex; animation:fadeIn .18s ease;}
+  .insight-card{
+    background:var(--paper);
+    max-width:480px;
+    width:100%;
+    border-radius:12px;
+    padding:28px 26px;
+    box-shadow:0 20px 60px rgba(0,0,0,0.3);
+    border-top:4px solid var(--insight);
+    max-height:80vh;
+    overflow-y:auto;
+  }
+  .insight-card .tag{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:11px;
+    letter-spacing:0.2em;
+    color:var(--insight);
+    font-weight:700;
+    margin-bottom:10px;
+    display:block;
+  }
+  .insight-card h4{
+    margin:0 0 14px;
+    color:var(--navy);
+    font-size:18px;
+  }
+  .insight-card p{
+    font-size:15px;
+    color:var(--ink-soft);
+  }
+  .insight-card .ref{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12.5px;
+    color:var(--gold);
+    margin-top:12px;
+  }
+  .insight-close{
+    display:inline-block;
+    margin-top:14px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:13px;
+    color:var(--navy);
+    border:1px solid var(--navy);
+    padding:6px 16px;
+    border-radius:20px;
+    cursor:pointer;
+    background:none;
+  }
+  @keyframes fadeIn{from{opacity:0;} to{opacity:1;}}
+
+  /* flow steps */
+  .flow{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    margin:24px 0;
+  }
+  .flow-item{
+    display:flex;
+    gap:16px;
+    padding:16px 0;
+    border-bottom:1px dashed var(--line);
+  }
+  .flow-item:last-child{border-bottom:none;}
+  .flow-item .fi-marker{
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:700;
+    color:var(--gold);
+    font-size:13px;
+    min-width:64px;
+  }
+  .flow-item .fi-body h4{
+    margin:0 0 6px;
+    font-size:16px;
+    color:var(--navy);
+    font-family:'Noto Sans KR', sans-serif;
+  }
+  .flow-item .fi-body p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* teach grid (2 cols) */
+  .teach-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:14px;
+    margin:22px 0;
+  }
+  @media(max-width:600px){.teach-grid{grid-template-columns:1fr;}}
+  .teach-card{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:16px 18px;
+  }
+  .teach-card .tc-title{
+    font-family:'Noto Sans KR', sans-serif;
+    font-weight:700;
+    font-size:13.5px;
+    color:var(--navy);
+    margin-bottom:6px;
+  }
+  .teach-card p{
+    font-size:14px;
+    color:var(--ink-soft);
+    margin:0;
+  }
+
+  /* speech bubble - example dialogue */
+  .speech-bubble{
+    background:var(--paper);
+    border-radius:14px;
+    border:1px solid var(--line);
+    padding:16px 20px;
+    margin:18px 0;
+    position:relative;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .speech-bubble .who{
+    font-weight:700;
+    color:var(--navy);
+    font-size:12.5px;
+    letter-spacing:0.05em;
+    margin-bottom:4px;
+    display:block;
+  }
+
+  /* checklist */
+  .checklist{
+    list-style:none;
+    padding:0;
+    margin:20px 0;
+  }
+  .checklist li{
+    display:flex;
+    gap:12px;
+    padding:12px 0;
+    border-bottom:1px solid var(--line);
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:14.5px;
+    color:var(--ink);
+  }
+  .checklist li::before{
+    content:"○";
+    color:var(--gold);
+    font-size:15px;
+    flex-shrink:0;
+  }
+
+  /* callout - warm encouragement box */
+  .callout{
+    background:var(--navy);
+    color:var(--cream);
+    padding:26px 26px;
+    border-radius:12px;
+    margin:34px 0;
+  }
+  .callout .tag{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:11px;
+    letter-spacing:0.24em;
+    color:var(--gold-light);
+    font-weight:700;
+    margin-bottom:10px;
+    display:block;
+  }
+  .callout p{color:#DCE1E9; font-size:15px; margin:0;}
+
+  footer{
+    text-align:center;
+    padding:40px 24px 60px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    opacity:0.75;
+  }
+
+  /* toc */
+  .toc{
+    max-width:760px;
+    margin:36px auto 0;
+    padding:0 24px;
+    position:relative;
+    z-index:5;
+  }
+  .toc-inner{
+    background:var(--paper);
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:22px 26px;
+    box-shadow:0 8px 30px rgba(27,42,65,0.08);
+    display:block;
+  }
+  .toc-inner .toc-label{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:11px;
+    letter-spacing:0.24em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:12px;
+    display:block;
+  }
+  .toc-list{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:14px;
+    color:var(--ink-soft);
+    display:grid;
+    gap:8px;
+  }
+  .toc-list a{color:var(--ink-soft); text-decoration:none;}
+  .toc-list a:hover{color:var(--navy);}
+  .toc-list span.n{color:var(--gold); font-weight:700; margin-right:8px;}
+
+  /* floating quick-nav buttons */
+  .quick-nav{
+    position:fixed;
+    right:18px;
+    bottom:22px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    z-index:50;
+  }
+  .quick-nav button{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:12.5px;
+    font-weight:500;
+    color:var(--cream);
+    background:var(--navy);
+    border:none;
+    border-radius:24px;
+    padding:10px 16px;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    cursor:pointer;
+    box-shadow:0 6px 18px rgba(16,25,42,0.28);
+    opacity:0.92;
+    transition:opacity .15s ease, transform .15s ease;
+  }
+  .quick-nav button:hover{opacity:1; transform:translateY(-1px);}
+  .quick-nav button .qn-icon{font-size:14px; line-height:1;}
+  @media(max-width:480px){
+    .quick-nav button{padding:9px 13px; font-size:11.5px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <svg class="staff-mark" viewBox="0 0 48 48" fill="none">
+    <path d="M24 4C24 4 16 12 16 22C16 30 20 34 24 44" stroke="#D9BD8C" stroke-width="2" stroke-linecap="round"/>
+    <path d="M24 4C22 4 18 6 18 10C18 13 21 15 24 15C27 15 30 13 30 10C30 6 26 4 24 4Z" stroke="#D9BD8C" stroke-width="2"/>
+  </svg>
+  <div class="eyebrow">목자사역가이드 2부</div>
+  <h1>목장인도 가이드</h1>
+  <p class="sub">이론이 아니라 오늘 저녁 모임에 바로 들고 갈 수 있는 이야기들을 담았습니다</p>
+</div>
+
+<div class="toc" id="tocSection">
+  <div class="toc-inner">
+    <span class="toc-label">이 안에 담긴 이야기</span>
+    <div class="toc-list">
+      <div><a href="javascript:void(0)" data-target="ch1"><span class="n">01</span>목자의 자리에 서다</a></div>
+      <div><a href="javascript:void(0)" data-target="ch2"><span class="n">02</span>목장은 무엇을 향해 가는가</a></div>
+      <div><a href="javascript:void(0)" data-target="ch3"><span class="n">03</span>모임의 리듬 — 준비, 진행, 마무리</a></div>
+      <div><a href="javascript:void(0)" data-target="ch4"><span class="n">04</span>나눔을 살리는 질문의 기술</a></div>
+      <div><a href="javascript:void(0)" data-target="ch5"><span class="n">05</span>기도로 인도하기</a></div>
+      <div><a href="javascript:void(0)" data-target="ch6"><span class="n">06</span>어려운 순간을 마주할 때</a></div>
+      <div><a href="javascript:void(0)" data-target="ch7"><span class="n">07</span>목자의 자기 돌봄</a></div>
+      <div><a href="javascript:void(0)" data-target="ch8"><span class="n">08</span>스스로 점검해보기</a></div>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ===================== CH 1 ===================== -->
+<section class="chapter" id="ch1">
+  <div class="chapter-num">01</div>
+  <h2 class="chapter-title">목자의 자리에 서다</h2>
+  <p class="lead">처음 목자로 세움 받았을 때, 어떤 마음이 드셨나요? 든든함이었을까요, 아니면 '내가 잘할 수 있을까' 하는 부담이었을까요.</p>
+
+  <div class="reflect">
+    <span class="label">생각해보기</span>
+    누군가를 돌본다는 것은 원래 감당하기 벅찬 일입니다. 그런데 성경 속 목자들 중에 처음부터 준비된 사람은 거의 없었습니다. 다윗도, 모세도 마찬가지였습니다.
+  </div>
+
+  <p>다윗은 왕이 되기 전, 들에서 양을 치던 사람이었습니다. 사자와 곰을 상대하고, 길 잃은 양 한 마리를 찾아 밤새 헤매던 그 경험이 훗날 그가 백성을 이끄는 방식의 밑바탕이 되었습니다. 목자의 일은 화려하지 않습니다. 대신 <span class="mark">한 사람 한 사람을 끝까지 놓지 않는 일</span>입니다.</p>
+
+  <p>예수님은 스스로를 <span class="has-insight" data-insight="i1">선한 목자</span>라 부르셨습니다. 삯꾼과 다른 점은 딱 하나였습니다 — 양이 위험할 때 도망가지 않는다는 것. 목자는 완벽한 사람이 아니라, 떠나지 않는 사람입니다.</p>
+
+  <h3>목자의 역할, 세 단어로</h3>
+  <div class="teach-grid">
+    <div class="teach-card">
+      <div class="tc-title">알기</div>
+      <p>목원 한 사람 한 사람의 이름, 상황, 기도제목을 아는 것. 요한복음 10장에서 선한 목자는 "자기 양의 이름을 각각 불러" 인도합니다.</p>
+    </div>
+    <div class="teach-card">
+      <div class="tc-title">먹이기</div>
+      <p>말씀으로, 기도로, 관심으로 실제로 채워주는 것. 에스겔 34장은 자기 배만 불리는 목자를 강하게 꾸짖습니다.</p>
+    </div>
+    <div class="teach-card">
+      <div class="tc-title">지키기</div>
+      <p>갈등, 지침, 위기의 순간에 곁을 지키는 것. 사도 바울은 밀레도에서 장로들에게 "양무리를 삼가라"고 신신당부했습니다.</p>
+    </div>
+    <div class="teach-card">
+      <div class="tc-title">억지로 하지 않기</div>
+      <p>베드로전서 5장의 권면처럼, 의무감이 아니라 기쁜 마음으로. 억지로 하는 섬김은 오래가지 못합니다.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <span class="tag">기억할 것</span>
+    <p>목자는 완벽해서 세워진 것이 아닙니다. 하나님이 그 사람을 통해 그 목장을 돌보시기로 정하셨기 때문에 세워진 것입니다. 부담을 조금 내려놓으셔도 됩니다.</p>
+  </div>
+</section>
+
+<!-- ===================== CH 2 ===================== -->
+<section class="chapter" id="ch2">
+  <div class="chapter-num">02</div>
+  <h2 class="chapter-title">목장은 무엇을 향해 가는가</h2>
+  <p class="lead">목장 모임을 준비하다 보면 쉽게 빠지는 함정이 있습니다. '오늘 순서를 어떻게 채우지'라는 생각입니다. 그런데 목장은 프로그램이 아니라 <span class="mark">관계</span>입니다.</p>
+
+  <p>사도행전 2장의 초대교회를 보면, 그들은 날마다 한 마음으로 모였고, 떡을 떼며, 서로의 필요를 채웠습니다. 순서지가 있어서가 아니라, 서로를 향한 마음이 있었기 때문입니다. 좋은 목장 모임의 기준은 '순서를 다 마쳤는가'가 아니라 <span class="has-insight" data-insight="i2">'오늘 이 자리에 있던 사람이 조금 더 하나님께, 그리고 서로에게 가까워졌는가'</span>입니다.</p>
+
+  <h3>목장이 필요한 이유</h3>
+  <p>큰 예배당에서는 서로의 안부를 물을 시간이 없습니다. 아플 때 누가 심방을 가야 할지도 애매합니다. 목장은 교회가 <span class="mark">작은 가족 단위로 서로를 알고 돌보게 하는 구조</span>입니다. 이는 특정 규모의 교회에만 필요한 것이 아니라, 교회가 계속 성장하고 변화해가는 동안에도 변하지 않는 원리입니다.</p>
+
+  <div class="speech-bubble">
+    <span class="who">흔히 하는 오해</span>
+    "목장은 성경공부반이다" — 아닙니다. 성경을 나누는 것은 목장의 중요한 한 부분이지만, 목장의 본질은 <b>삶을 나누는 공동체</b>입니다. 말씀은 그 나눔의 중심을 잡아주는 역할을 합니다.
+  </div>
+</section>
+
+<!-- ===================== CH 3 ===================== -->
+<section class="chapter" id="ch3">
+  <div class="chapter-num">03</div>
+  <h2 class="chapter-title">모임의 리듬 — 준비, 진행, 마무리</h2>
+  <p class="lead">좋은 목장 모임은 즉흥적으로 잘 되는 경우가 거의 없습니다. 준비된 즉흥성, 이것이 목자가 할 일입니다.</p>
+
+  <h3>모임 전 — 준비</h3>
+  <div class="flow">
+    <div class="flow-item">
+      <div class="fi-marker">기도</div>
+      <div class="fi-body"><h4>목원 이름을 하나씩 놓고 기도하기</h4><p>모임 시작 전, 오늘 올 사람들의 이름을 부르며 기도하는 것만으로 목자의 마음가짐이 달라집니다.</p></div>
+    </div>
+    <div class="flow-item">
+      <div class="fi-marker">점검</div>
+      <div class="fi-body"><h4>지난주 나눔 기억해두기</h4><p>지난 모임에서 누가 힘든 이야기를 했는지, 어떤 기도제목이 있었는지 짧게 메모해두면 다음 모임에서 "지난주 그 일은 어떻게 됐어요?"라고 물을 수 있습니다. 이 한마디가 관계를 깊게 만듭니다.</p></div>
+    </div>
+    <div class="flow-item">
+      <div class="fi-marker">묵상</div>
+      <div class="fi-body"><h4>본문을 목자가 먼저 삶으로 읽기</h4><p>가르칠 내용을 준비하기 전에, 그 말씀이 이번 주 나의 삶에 무엇을 말하는지 먼저 받아야 합니다. 목자가 받지 못한 말씀은 목원에게도 전달되지 않습니다.</p></div>
+    </div>
+  </div>
+
+  <h3>모임 중 — 진행</h3>
+  <div class="flow">
+    <div class="flow-item">
+      <div class="fi-marker">01 환영</div>
+      <div class="fi-body"><h4>가벼운 나눔으로 마음 열기</h4><p>바로 말씀으로 들어가지 않습니다. "요즘 어떠세요"로 시작해 한 사람씩 마음을 열 수 있는 짧은 시간을 둡니다.</p></div>
+    </div>
+    <div class="flow-item">
+      <div class="fi-marker">02 말씀</div>
+      <div class="fi-body"><h4>본문을 함께 읽고 질문으로 나누기</h4><p>목자가 강의하듯 설명하기보다, 질문을 던지고 목원들이 스스로 발견하게 돕습니다. (4장에서 더 자세히)</p></div>
+    </div>
+    <div class="flow-item">
+      <div class="fi-marker">03 적용</div>
+      <div class="fi-body"><h4>이번 주 삶에 어떻게 적용할지 나누기</h4><p>"그래서 이번 주에 나는 무엇을 할 것인가"까지 가야 말씀이 삶이 됩니다.</p></div>
+    </div>
+    <div class="flow-item">
+      <div class="fi-marker">04 기도</div>
+      <div class="fi-body"><h4>서로를 위해 중보하기</h4><p>목자 혼자 기도하기보다, 짝을 지어 서로를 위해 기도하게 하면 관계가 더 깊어집니다.</p></div>
+    </div>
+  </div>
+
+  <h3>모임 후 — 마무리</h3>
+  <p>모임이 끝나면 그날 나온 이야기 중 <span class="mark">마음에 걸리는 부분</span>을 짧게 적어둡니다. 유난히 말이 없던 사람, 힘든 일을 나눈 사람, 오늘 결석한 사람. 이 기록이 다음 주 심방과 기도의 자료가 됩니다.</p>
+</section>
+
+<!-- ===================== CH 4 ===================== -->
+<section class="chapter" id="ch4">
+  <div class="chapter-num">04</div>
+  <h2 class="chapter-title">나눔을 살리는 질문의 기술</h2>
+  <p class="lead">목장이 성경공부반처럼 느껴지는 순간은 대개 목자가 답을 먼저 말할 때 찾아옵니다. 좋은 목자는 <span class="mark">답을 주는 사람이 아니라 질문하는 사람</span>입니다.</p>
+
+  <p>예수님의 가르치는 방식을 보면 흥미롭습니다. 누가복음에서 예수님은 <span class="has-insight" data-insight="i3">질문으로 대화를 시작</span>하시는 경우가 많았습니다. "너희는 나를 누구라 하느냐"처럼요. 답을 정해주지 않고, 상대가 스스로 그 답에 이르게 하셨습니다.</p>
+
+  <h3>열린 질문 만들기</h3>
+  <div class="teach-grid">
+    <div class="teach-card">
+      <div class="tc-title">피할 질문</div>
+      <p>"이 본문에서 하나님이 신실하신 걸 알 수 있죠?" — 이미 답이 들어있는 질문입니다.</p>
+    </div>
+    <div class="teach-card">
+      <div class="tc-title">좋은 질문</div>
+      <p>"이 본문에서 하나님은 어떤 분으로 보이나요?" — 각자의 관찰과 경험이 들어갈 자리가 있습니다.</p>
+    </div>
+  </div>
+
+  <h3>침묵이 찾아올 때</h3>
+  <p>질문을 던졌는데 아무도 말하지 않는 순간, 목자는 조급해지기 쉽습니다. 하지만 10초의 침묵은 생각보다 짧습니다. 바로 답을 주지 마시고, 잠시 기다려보세요. 정 어려우면 "저는 이렇게 느꼈는데, 여러분은요?" 하고 목자가 먼저 짧게 자기 생각을 나누는 것도 좋은 방법입니다.</p>
+
+  <h3>한 사람이 대화를 독점할 때</h3>
+  <p>애정 어린 개입이 필요합니다. "좋은 나눔 감사해요. 이번엔 아직 이야기 안 하신 분들 이야기도 들어볼까요?" 처럼 그 사람을 무안하게 만들지 않으면서 자연스럽게 방향을 넓히는 말을 미리 준비해두면 도움이 됩니다.</p>
+
+  <div class="speech-bubble">
+    <span class="who">실제 상황 예시</span>
+    한 목원이 매번 다른 사람의 발언을 가로채는 경우, 모임 중이 아니라 <b>모임 후 따로 조용히</b> "OO님 나눔이 참 은혜로운데, 다른 분들도 이야기할 수 있게 조금만 기다려주시면 좋겠어요"라고 말하는 편이 훨씬 효과적입니다.
+  </div>
+</section>
+
+<!-- ===================== CH 5 ===================== -->
+<section class="chapter" id="ch5">
+  <div class="chapter-num">05</div>
+  <h2 class="chapter-title">기도로 인도하기</h2>
+  <p class="lead">목장 기도가 형식적으로 느껴질 때가 있습니다. "오늘도 은혜 주셔서 감사하고..."로 시작해 늘 비슷하게 끝나는 기도. 나쁜 것은 아니지만, 조금 더 깊어질 수 있습니다.</p>
+
+  <h3>중보기도 목록 관리하기</h3>
+  <p>목자가 목원들의 기도제목을 기억하고 있다가 다음 주에 "지난주 부탁하신 취업 문제, 어떻게 되고 있어요?"라고 물어봐 주는 것만으로 그 사람은 <span class="mark">잊혀지지 않았다는 느낌</span>을 받습니다. 작은 수첩이나 메모앱에 목원별로 기도제목을 적어두는 습관을 추천합니다.</p>
+
+  <p>로마서 8장은 우리가 어떻게 기도해야 할지 알지 못할 때에도 <span class="has-insight" data-insight="i4">성령께서 친히 우리를 위해 간구</span>하신다고 말합니다. 목자의 기도가 완벽할 필요는 없습니다. 진심으로 그 사람을 위해 마음 쓰는 것, 그것으로 충분합니다.</p>
+
+  <h3>기도 시간을 살리는 방법</h3>
+  <div class="teach-grid">
+    <div class="teach-card">
+      <div class="tc-title">짝기도</div>
+      <p>두 사람씩 짝지어 서로를 위해 기도하면 목장 전체가 함께 기도하는 부담을 나눌 수 있습니다.</p>
+    </div>
+    <div class="teach-card">
+      <div class="tc-title">구체적으로</div>
+      <p>"힘내세요"보다 "이번 주 화요일 면접을 위해"처럼 구체적인 기도제목이 더 깊은 나눔을 만듭니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CH 6 ===================== -->
+<section class="chapter" id="ch6">
+  <div class="chapter-num">06</div>
+  <h2 class="chapter-title">어려운 순간을 마주할 때</h2>
+  <p class="lead">모든 목장이 평온하게만 흘러가지는 않습니다. 갈등, 반복되는 결석, 갑작스러운 위기 — 이런 순간에 목자가 어떻게 반응하느냐가 목장의 신뢰를 결정합니다.</p>
+
+  <h3>목원 사이에 갈등이 생겼을 때</h3>
+  <p>마태복음은 갈등을 다루는 아주 실제적인 순서를 보여줍니다. 먼저 개인적으로, 그 다음에 다른 사람과 함께. 목장 전체 앞에서 갈등을 드러내거나 중재하려 하지 마세요. 두 사람을 각각, 혹은 함께 조용히 만나 이야기를 듣는 것이 먼저입니다.</p>
+
+  <h3>계속 결석하는 목원</h3>
+  <div class="flow">
+    <div class="flow-item">
+      <div class="fi-marker">1주 결석</div>
+      <div class="fi-body"><h4>가벼운 안부 메시지</h4><p>"오늘 못 오셨네요, 별일 없으신 거죠?" 정도의 가벼운 연락이면 충분합니다.</p></div>
+    </div>
+    <div class="flow-item">
+      <div class="fi-marker">2-3주 결석</div>
+      <div class="fi-body"><h4>직접 만나거나 통화하기</h4><p>메시지보다 목소리로, 혹은 직접 만나서 "요즘 어떠세요"를 물어보세요. 이 시점부터는 형식적 연락이 아니라 진짜 관심이 필요합니다.</p></div>
+    </div>
+    <div class="flow-item">
+      <div class="fi-marker">지속 결석</div>
+      <div class="fi-body"><h4>부목자·담당 사역자와 상의</h4><p>목자 혼자 끌어안지 마세요. 부목자나 교역자와 상황을 나누고 함께 심방을 계획하는 것이 좋습니다.</p></div>
+    </div>
+  </div>
+
+  <h3>위기의 순간 — 질병, 상실, 갑작스러운 어려움</h3>
+  <p>이런 순간에는 정답을 주려 하지 않아도 됩니다. <span class="mark">함께 있어주는 것</span> 자체가 목회입니다. 욥의 친구들이 처음 7일간 아무 말 없이 곁에 앉아있었던 것처럼, 때로는 침묵과 함께함이 가장 좋은 위로입니다.</p>
+
+  <div class="callout">
+    <span class="tag">기억할 것</span>
+    <p>어려운 상황을 마주했을 때 목자가 모든 것을 해결하려 하지 않아도 괜찮습니다. 목자의 역할은 문제를 해결하는 것이 아니라, 그 사람이 혼자가 아니라는 것을 느끼게 하는 것입니다.</p>
+  </div>
+</section>
+
+<!-- ===================== CH 7 ===================== -->
+<section class="chapter" id="ch7">
+  <div class="chapter-num">07</div>
+  <h2 class="chapter-title">목자의 자기 돌봄</h2>
+  <p class="lead">목자도 사람입니다. 계속 남을 돌보다 보면 정작 자기 자신은 채워지지 않은 채 지치기 쉽습니다.</p>
+
+  <p>출애굽기 18장에는 인상적인 장면이 나옵니다. 모세가 아침부터 저녁까지 혼자 백성의 모든 일을 판단하고 있을 때, 장인 이드로가 이렇게 말합니다. <span class="has-insight" data-insight="i5">"네가 하는 것이 선하지 못하다. 네가 필경 기력이 쇠하리라"</span>. 혼자 다 감당하려는 것은 미덕이 아니라 지속가능하지 않은 방식이라는 것을 성경은 분명히 말해줍니다.</p>
+
+  <h3>소진을 막는 몇 가지 습관</h3>
+  <div class="teach-grid">
+    <div class="teach-card">
+      <div class="tc-title">나를 돌보는 사람 두기</div>
+      <p>목자에게도 담임목사, 부목자, 혹은 믿을 만한 동역자가 필요합니다. 힘든 이야기를 나눌 대상이 있어야 합니다.</p>
+    </div>
+    <div class="teach-card">
+      <div class="tc-title">모든 짐을 혼자 지지 않기</div>
+      <p>부목자, 섬김이와 역할을 나누세요. 목자가 모든 것을 해야 좋은 목장이 되는 것이 아닙니다.</p>
+    </div>
+    <div class="teach-card">
+      <div class="tc-title">쉼의 시간 확보하기</div>
+      <p>목자로 섬기는 것과 별개로, 나 자신이 하나님 앞에 조용히 채워지는 시간이 있어야 합니다.</p>
+    </div>
+    <div class="teach-card">
+      <div class="tc-title">완벽하지 않아도 됨을 인정하기</div>
+      <p>모든 모임이 은혜롭지 않아도, 모든 목원이 만족하지 않아도 괜찮습니다. 목자는 완성품을 만드는 사람이 아닙니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CH 8 ===================== -->
+<section class="chapter" id="ch8">
+  <div class="chapter-num">08</div>
+  <h2 class="chapter-title">스스로 점검해보기</h2>
+  <p class="lead">아래 질문들을 가끔 스스로에게 던져보세요. 점수를 매기기 위한 것이 아니라, 놓치고 있던 것을 다시 보기 위함입니다.</p>
+
+  <ul class="checklist">
+    <li>이번 주, 목원들의 이름을 하나씩 놓고 기도했는가</li>
+    <li>지난 모임에서 나온 기도제목을 기억하고 물어봤는가</li>
+    <li>내가 말을 너무 많이 하고, 목원들이 말할 자리가 부족하지는 않았는가</li>
+    <li>오랫동안 나눔에 참여하지 못한 목원이 있는가</li>
+    <li>결석이 이어지는 목원에게 연락했는가</li>
+    <li>나 자신이 지쳐있지는 않은가, 나를 돌봐줄 사람과 이야기를 나눴는가</li>
+    <li>이번 모임에서 말씀보다 순서 채우기에 마음이 더 가 있지는 않았는가</li>
+  </ul>
+
+  <div class="callout">
+    <span class="tag">마치며</span>
+    <p>완벽한 목자는 없습니다. 다만 계속해서 목원을 향해 마음을 기울이는 목자가 있을 뿐입니다. 오늘의 부족함을 너무 무겁게 지지 마시고, 다음 모임을 다시 준비하는 마음으로 나아가시길 바랍니다.</p>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  목자사역가이드 2부<br>
+  기독교한국침례회 은혜교회
+</footer>
+
+<div class="quick-nav">
+  <button type="button" id="btnToTop"><span class="qn-icon">↑</span>처음으로</button>
+  <button type="button" id="btnToToc"><span class="qn-icon">≡</span>목차</button>
+</div>
+
+<div class="insight-overlay" id="insightOverlay">
+  <div class="insight-card">
+    <span class="tag" id="insightTag">깊이 보기</span>
+    <h4 id="insightTitle"></h4>
+    <p id="insightBody"></p>
+    <div class="ref" id="insightRef"></div>
+    <button class="insight-close" id="insightCloseBtn" type="button">닫기</button>
+  </div>
+</div>
+
+<script>
+const INSIGHTS = {
+  i1: {
+    tag: "요한복음 10장",
+    title: "선한 목자와 삯꾼",
+    body: "예수님은 자신을 선한 목자로, 그렇지 않은 이를 삯꾼으로 대조하셨습니다. 삯꾼과 목자를 가르는 기준은 능력이나 지식이 아니라, 위기의 순간 양 곁에 남아있는가였습니다. 목자의 정체성은 완벽한 준비가 아니라 끝까지 함께한다는 헌신에서 시작됩니다.",
+    ref: "요한복음 10:11-13"
+  },
+  i2: {
+    tag: "관계 중심의 목장",
+    title: "순서가 아니라 마음의 거리",
+    body: "잘 짜인 순서지를 완주하는 것과, 목원들이 실제로 서로에게 가까워지는 것은 다른 일입니다. 모임이 조금 흐트러지더라도 누군가의 진짜 이야기가 나왔다면, 그날 목장은 제 역할을 한 것입니다.",
+    ref: "사도행전 2:42-47"
+  },
+  i3: {
+    tag: "예수님의 질문법",
+    title: "답을 주기보다 질문을 던지신 이유",
+    body: "복음서 곳곳에서 예수님은 즉답 대신 되물으셨습니다. 상대가 스스로 생각하고 고백에 이르도록 이끄신 것입니다. 목자의 나눔도 마찬가지입니다 — 답을 외우게 하는 것이 아니라, 스스로 발견하게 돕는 것이 더 오래 남습니다.",
+    ref: "누가복음 9:18-20 외"
+  },
+  i4: {
+    tag: "로마서 8장",
+    title: "성령의 중보",
+    body: "우리가 마땅히 빌 바를 알지 못할 때에도 성령께서 말할 수 없는 탄식으로 우리를 위해 친히 간구하신다고 로마서는 말합니다. 목자의 기도가 서툴러도 괜찮은 이유가 여기에 있습니다. 완벽한 언어가 아니라 진실한 마음이 먼저입니다.",
+    ref: "로마서 8:26-27"
+  },
+  i5: {
+    tag: "출애굽기 18장",
+    title: "이드로의 조언",
+    body: "모세가 홀로 모든 백성의 일을 감당하는 것을 본 이드로는 '네가 반드시 기력이 쇠하리라'며 일을 나누라고 조언합니다. 혼자 다 짊어지는 것은 신실함의 증거가 아니라, 오래갈 수 없는 방식이라는 것을 성경은 아주 이른 시점부터 보여줍니다.",
+    ref: "출애굽기 18:13-23"
+  }
+};
+
+function closeInsight(){
+  document.getElementById('insightOverlay').classList.remove('open');
+}
+
+function openInsight(key){
+  const data = INSIGHTS[key];
+  if(!data) return;
+  document.getElementById('insightTag').textContent = data.tag;
+  document.getElementById('insightTitle').textContent = data.title;
+  document.getElementById('insightBody').textContent = data.body;
+  document.getElementById('insightRef').textContent = data.ref;
+  document.getElementById('insightOverlay').classList.add('open');
+}
+
+// 단일 위임 리스너 — 개별 바인딩에서 발생할 수 있는 누락을 방지
+document.addEventListener('click', function(e){
+  const toTopBtn = e.target.closest('#btnToTop');
+  if(toTopBtn){
+    window.scrollTo({top:0, behavior:'smooth'});
+    return;
+  }
+
+  const toTocBtn = e.target.closest('#btnToToc');
+  if(toTocBtn){
+    const tocEl = document.getElementById('tocSection');
+    if(tocEl){ tocEl.scrollIntoView({behavior:'smooth', block:'start'}); }
+    return;
+  }
+
+  const tocLink = e.target.closest('.toc-list a');
+  if(tocLink){
+    e.preventDefault();
+    const targetId = tocLink.dataset.target;
+    const targetEl = document.getElementById(targetId);
+    if(targetEl){ targetEl.scrollIntoView({behavior:'smooth', block:'start'}); }
+    return;
+  }
+
+  const closeBtn = e.target.closest('#insightCloseBtn');
+  if(closeBtn){ closeInsight(); return; }
+
+  if(e.target.id === 'insightOverlay'){ closeInsight(); return; }
+
+  const insightEl = e.target.closest('.has-insight');
+  if(insightEl){ openInsight(insightEl.dataset.insight); return; }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape') closeInsight();
+});
+
+// 위임 리스너에 더해, 목차 링크에는 직접 바인딩도 이중으로 걸어둠
+document.querySelectorAll('.toc-list a[data-target]').forEach(function(a){
+  a.addEventListener('click', function(e){
+    e.preventDefault();
+    const targetEl = document.getElementById(a.dataset.target);
+    if(targetEl){ targetEl.scrollIntoView({behavior:'smooth', block:'start'}); }
+  });
+});
+</script>
+
+</body>
+</html>
