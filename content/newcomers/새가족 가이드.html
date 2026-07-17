@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#121A29">
+<title>함께 걷는 믿음의 첫걸음 | 은혜교회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #121A29;
+    --bg-elevated: #1C2740;
+    --bg-elevated-2: #253352;
+    --bg-deep: #0B111C;
+    --text: #F3EEE1;
+    --text-soft: #B9C3D6;
+    --gold: #E0B36E;
+    --gold-soft: rgba(224,179,110,0.4);
+    --sage: #8FC189;
+    --sage-deep: #6FA36A;
+    --line: rgba(243,238,225,0.14);
+    --serif: 'Noto Serif KR', serif;
+    --sans: 'Noto Sans KR', sans-serif;
+    --fs-base: 15.5px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html{ background:var(--bg) !important; }
+  body{
+    margin:0;
+    background:var(--bg) !important;
+    color:var(--text);
+    font-family:var(--sans);
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+    font-size:var(--fs-base);
+    word-break:keep-all;
+    overflow-wrap:break-word;
+    min-height:100vh;
+  }
+  @media (min-width:900px){
+    :root{ --fs-base: 17px; }
+    .chapter p, .qa .q, .qa .a, ul.tip-list li, .step .t, .dict-item, .callout{ font-size:16.5px; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.01ms !important; transition-duration:0.01ms !important;}
+  }
+
+  /* ---------- 상단 미니바 ---------- */
+  .topbar{
+    position:fixed; top:0; left:0; right:0; z-index:100;
+    display:flex; align-items:center; justify-content:space-between;
+    padding:14px 28px;
+    background:rgba(18,26,41,0.86);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .topbar .mark{display:flex; align-items:center; gap:8px; font-family:var(--serif); font-weight:600; font-size:15px; letter-spacing:0.02em; color:var(--text);}
+  .topbar .mark svg{width:20px; height:20px;}
+  .topbar .toc-btn{
+    font-size:13px; color:var(--text-soft); text-decoration:none;
+    border:1px solid var(--line); padding:7px 14px; border-radius:100px;
+    font-family:var(--sans); background:transparent; cursor:pointer;
+    transition:all .2s ease;
+  }
+  .topbar .toc-btn:hover{border-color:var(--gold); color:var(--gold);}
+
+  /* ---------- 성장 레일 (시그니처 요소) ---------- */
+  .growth-rail{
+    position:fixed; left:34px; top:50%; transform:translateY(-50%);
+    height:56vh; width:2px; z-index:90;
+    display:flex; flex-direction:column; align-items:center;
+  }
+  .growth-rail .track{
+    position:relative; width:2px; height:100%; background:var(--line); border-radius:2px; overflow:visible;
+  }
+  .growth-rail .fill{
+    position:absolute; top:0; left:0; width:100%; height:0%;
+    background:linear-gradient(var(--sage), var(--sage-deep));
+    border-radius:2px; transition:height .15s linear;
+  }
+  .growth-rail .dot{
+    position:absolute; left:50%; width:9px; height:9px; border-radius:50%;
+    background:var(--bg-elevated); border:2px solid var(--gold-soft);
+    transform:translate(-50%,-50%); transition:all .3s ease;
+  }
+  .growth-rail .dot.active{ background:var(--sage); border-color:var(--sage-deep); box-shadow:0 0 0 4px rgba(110,143,107,0.18);}
+  .growth-rail .sprout{
+    position:absolute; bottom:-26px; left:50%; transform:translateX(-50%);
+    font-size:13px; color:var(--sage-deep); opacity:.85;
+  }
+  @media (max-width:1100px){ .growth-rail{display:none;} }
+
+  /* ---------- 히어로 ---------- */
+  .hero{
+    min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; padding:120px 24px 80px;
+    background:
+      radial-gradient(ellipse at 20% 15%, rgba(224,179,110,0.09), transparent 45%),
+      radial-gradient(ellipse at 85% 80%, rgba(143,193,137,0.10), transparent 50%),
+      var(--bg);
+    position:relative;
+  }
+  .hero .eyebrow{
+    font-size:13px; letter-spacing:0.28em; color:var(--sage); font-weight:600;
+    text-transform:uppercase; margin-bottom:22px;
+  }
+  .hero h1{
+    font-family:var(--serif); font-weight:700; color:var(--text);
+    font-size:clamp(34px,5.4vw,58px); line-height:1.32; margin:0 0 22px;
+    max-width:16ch;
+  }
+  .hero p.sub{
+    font-size:17px; color:var(--text-soft); max-width:36ch; margin:0 auto 40px;
+  }
+  .hero .badge{
+    display:inline-flex; align-items:center; gap:10px;
+    font-family:var(--serif); font-size:14px; color:var(--gold);
+    border:1px solid var(--gold-soft); padding:9px 20px; border-radius:100px;
+    background:rgba(255,255,255,0.04);
+  }
+  .hero .scrolldown{
+    margin-top:64px; font-size:12px; color:var(--text-soft); opacity:.7;
+    display:flex; flex-direction:column; align-items:center; gap:8px;
+  }
+  .hero .scrolldown .line{width:1px; height:34px; background:var(--text-soft); animation:pulse 2s ease-in-out infinite;}
+  @keyframes pulse{0%,100%{opacity:.2;}50%{opacity:.8;}}
+
+  /* ---------- 공통 섹션 ---------- */
+  section{ padding:96px 24px; max-width:760px; margin:0 auto; scroll-margin-top:84px; }
+  .band-navy{
+    background:var(--bg-deep); color:var(--text); max-width:none;
+    padding:110px 24px; border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+  }
+  .band-navy .inner{ max-width:640px; margin:0 auto; text-align:center; }
+  .band-navy h2{ font-family:var(--serif); font-weight:500; font-size:clamp(24px,3.4vw,32px); line-height:1.6; }
+  .band-navy p{ color:var(--gold-soft); font-size:15px; margin-top:20px; color:var(--text-soft); }
+
+  h2.greeting-title{ font-family:var(--serif); font-size:22px; font-weight:600; margin-bottom:18px; color:var(--text);}
+
+  /* ---------- 목차 ---------- */
+  #toc{ max-width:900px; }
+  #toc .toc-head{ text-align:center; margin-bottom:56px; }
+  #toc .toc-head .eyebrow{ font-size:13px; letter-spacing:0.24em; color:var(--sage); font-weight:600; text-transform:uppercase; }
+  #toc .toc-head h2{ font-family:var(--serif); font-size:clamp(26px,3.6vw,34px); margin:14px 0 0; color:var(--text); }
+  .toc-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:14px;
+  }
+  @media (max-width:680px){ .toc-grid{grid-template-columns:1fr;} }
+  .toc-card{
+    display:flex; gap:16px; align-items:flex-start;
+    background:var(--bg-elevated); border:1px solid var(--line); border-radius:14px;
+    padding:20px 22px; text-decoration:none; color:var(--text); cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+  }
+  .toc-card:focus-visible{ outline:2px solid var(--gold); outline-offset:2px; }
+  .toc-card:hover{ transform:translateY(-3px); border-color:var(--gold-soft); box-shadow:0 10px 24px rgba(0,0,0,0.28); background:var(--bg-elevated-2); }
+  .toc-card .num{ font-family:var(--serif); font-size:22px; color:var(--gold); font-weight:600; min-width:34px; }
+  .toc-card .txt strong{ display:block; font-family:var(--serif); font-size:15.5px; margin-bottom:4px; }
+  .toc-card .txt span{ font-size:12.5px; color:var(--text-soft); }
+
+  /* ---------- 챕터 ---------- */
+  .chapter{ scroll-margin-top:90px; }
+  .chapter .eyebrow{
+    font-size:13px; letter-spacing:0.22em; color:var(--sage); font-weight:600; text-transform:uppercase;
+  }
+  .chapter h2{
+    font-family:var(--serif); font-weight:700; font-size:clamp(24px,3.6vw,32px);
+    margin:12px 0 8px; line-height:1.4; color:var(--text);
+  }
+  .chapter .lead{ color:var(--text-soft); font-size:15.5px; margin-bottom:44px; }
+  .chapter hr.rule{ border:none; border-top:1px solid var(--line); margin:0 0 44px; }
+  .chapter h3{
+    font-family:var(--serif); font-size:18px; font-weight:600; margin:44px 0 16px;
+    display:flex; align-items:center; gap:10px; color:var(--text);
+  }
+  .chapter h3::before{ content:""; width:6px; height:6px; border-radius:50%; background:var(--sage); display:inline-block; }
+  .chapter p{ font-size:15.5px; color:var(--text-soft); }
+
+  .qa{
+    border:1px solid var(--line); border-radius:12px; overflow:hidden; margin:14px 0;
+    background:var(--bg-elevated);
+  }
+  .qa .q{ padding:14px 18px; font-weight:600; font-size:14.5px; background:var(--bg-elevated-2); display:flex; gap:10px; color:var(--text); }
+  .qa .q .tag{ color:var(--gold); font-family:var(--serif); }
+  .qa .a{ padding:14px 18px; font-size:14.5px; color:var(--text-soft); display:flex; gap:10px; }
+  .qa .a .tag{ color:var(--sage); font-weight:700; }
+
+  ul.tip-list{ list-style:none; margin:0; padding:0; display:grid; gap:10px; }
+  ul.tip-list li{
+    padding:12px 16px; border:1px solid var(--line); border-radius:10px; font-size:14.5px;
+    background:var(--bg-elevated); color:var(--text-soft);
+  }
+  ul.tip-list li b{ color:var(--sage); }
+
+  .step-grid{ display:grid; gap:12px; margin:18px 0; }
+  .step{
+    display:flex; gap:14px; padding:16px 18px; border-radius:12px; border:1px solid var(--line);
+    background:var(--bg-elevated);
+  }
+  .step .n{ font-family:var(--serif); font-weight:700; color:var(--gold); font-size:16px; min-width:26px; }
+  .step .t{ font-size:14.5px; color:var(--text-soft); }
+  .step .t b{ display:block; font-family:var(--serif); font-size:15px; margin-bottom:2px; color:var(--text); }
+
+  .stage-track{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin:20px 0 8px; }
+  @media (max-width:560px){ .stage-track{ grid-template-columns:1fr 1fr; } }
+  .stage{
+    padding:18px 14px; border-radius:12px; text-align:center; background:var(--bg-elevated); border:1px solid var(--line);
+  }
+  .stage .icon{ font-size:20px; margin-bottom:8px; }
+  .stage b{ display:block; font-family:var(--serif); font-size:14px; margin-bottom:6px; color:var(--text); }
+  .stage span{ font-size:12px; color:var(--text-soft); line-height:1.5; }
+
+  .callout{
+    border-left:3px solid var(--gold); background:var(--bg-elevated); border-radius:0 12px 12px 0;
+    padding:18px 22px; font-size:14.5px; color:var(--text-soft); margin:22px 0;
+  }
+  .callout b{ color:var(--text); }
+
+  .dict-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10px 24px; margin:18px 0; }
+  @media (max-width:560px){ .dict-grid{ grid-template-columns:1fr; } }
+  .dict-item{ font-size:14.5px; padding:10px 0; border-bottom:1px dashed var(--line); color:var(--text-soft); }
+  .dict-item b{ color:var(--sage); font-family:var(--serif); }
+
+  .contact-box{
+    display:flex; gap:24px; flex-wrap:wrap; background:var(--bg-elevated); color:var(--text);
+    border-radius:14px; padding:22px 26px; font-size:14px; margin-top:20px; border:1px solid var(--line);
+  }
+  .contact-box div b{ display:block; color:var(--gold); font-family:var(--serif); margin-bottom:4px; }
+
+  /* ---------- 기도문 ---------- */
+  #prayer{ text-align:center; }
+  #prayer .quote-mark{ font-family:var(--serif); font-size:56px; color:var(--gold-soft); line-height:1; }
+  #prayer .prayer-body{
+    font-family:var(--serif); font-size:18px; line-height:2; color:var(--text);
+    max-width:520px; margin:10px auto 0; font-style:italic;
+  }
+  #prayer .amen{ margin-top:26px; font-family:var(--serif); font-weight:700; color:var(--gold); letter-spacing:0.1em; }
+
+  /* ---------- 푸터 ---------- */
+  footer{
+    text-align:center; padding:80px 24px 60px; background:var(--bg-deep); color:var(--text);
+    border-top:1px solid var(--line);
+  }
+  footer .logo-mark{ display:flex; justify-content:center; margin-bottom:18px; }
+  footer .logo-mark svg{ width:44px; height:44px; }
+  footer .name{ font-family:var(--serif); font-size:13px; letter-spacing:0.06em; color:var(--gold); }
+  footer .church{ font-family:var(--serif); font-size:22px; font-weight:700; margin-top:4px; }
+  footer .tagline{ margin-top:18px; font-size:13.5px; color:var(--text-soft); }
+
+  .reveal{ opacity:0; transform:translateY(18px); transition:opacity .7s ease, transform .7s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body style="background:#121A29;">
+
+<div class="topbar">
+  <div class="mark">
+    <svg viewBox="0 0 24 24" fill="none"><path d="M12 21c0-6 0-12 0-16" stroke="#6E8F6B" stroke-width="1.6" stroke-linecap="round"/><path d="M12 9c0-3 2-5 5-5-1 3-2 5-5 5Z" fill="#6E8F6B"/><path d="M12 9c0-3-2-5-5-5 1 3 2 5 5 5Z" fill="#B3873F"/></svg>
+    은혜교회 · 새가족 가이드
+  </div>
+  <button class="toc-btn" type="button" data-target="toc">목차 보기</button>
+</div>
+
+<div class="growth-rail" aria-hidden="true">
+  <div class="track">
+    <div class="fill" id="railFill"></div>
+    <!-- 10개 챕터 지점 -->
+    <div class="dot" style="top:0%"></div>
+    <div class="dot" style="top:11.1%"></div>
+    <div class="dot" style="top:22.2%"></div>
+    <div class="dot" style="top:33.3%"></div>
+    <div class="dot" style="top:44.4%"></div>
+    <div class="dot" style="top:55.5%"></div>
+    <div class="dot" style="top:66.6%"></div>
+    <div class="dot" style="top:77.7%"></div>
+    <div class="dot" style="top:88.8%"></div>
+    <div class="dot" style="top:100%"></div>
+    <div class="sprout">🌱</div>
+  </div>
+</div>
+
+<!-- ================= HERO ================= -->
+<section class="hero" style="max-width:none;">
+  <div class="eyebrow">기독교한국침례회 · 은혜교회</div>
+  <h1>함께 걷는<br>믿음의 첫걸음</h1>
+  <p class="sub">은혜교회 새가족을 위한 따뜻한 안내서 — 낯선 것들이 익숙해지기까지, 저희가 곁에서 함께 걷겠습니다.</p>
+  <div class="badge">🌱 새싹에서 열매까지, 천천히 함께</div>
+  <div class="scrolldown"><span>아래로 스크롤</span><span class="line"></span></div>
+</section>
+
+<!-- ================= 인사말 ================= -->
+<section class="reveal">
+  <h2 class="greeting-title">당신에게 전하는 첫 마디</h2>
+  <p>안녕하세요! 오늘 이 가이드북을 손에 드신 여러분을 보니 마음이 참 따뜻해집니다.</p>
+  <p>교회라는 새로운 공간, 처음 들어보는 용어들, 낯선 사람들. 혹시 조금 어색하고 떨리시나요? 그런 마음, 정말 당연해요. 사실 저희도 처음엔 그랬거든요.</p>
+  <p>이 작은 책은 여러분의 손을 잡고 함께 걸어가는 친구 같은 존재가 되고 싶어요. 딱딱한 규칙서가 아니라, 따뜻한 대화를 나누는 것처럼 읽어주세요.</p>
+  <div class="callout"><b>“걱정 마세요. 천천히, 함께 가면 됩니다.”</b></div>
+</section>
+
+<!-- ================= 목차 ================= -->
+<section id="toc" class="reveal">
+  <div class="toc-head">
+    <div class="eyebrow">Contents</div>
+    <h2>열 개의 걸음, 하나의 여정</h2>
+  </div>
+  <div class="toc-grid">
+    <div class="toc-card" role="button" tabindex="0" data-target="ch1"><span class="num">01</span><span class="txt"><strong>안녕하세요, 여기가 우리 집이에요</strong><span>처음 교회에 오시는 분들께</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch2"><span class="num">02</span><span class="txt"><strong>기도가 뭔가요?</strong><span>하나님과 나누는 첫 대화</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch3"><span class="num">03</span><span class="txt"><strong>성경책, 어떻게 읽어요?</strong><span>두꺼운 책과 친해지는 법</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch4"><span class="num">04</span><span class="txt"><strong>예배시간이 낯설어요</strong><span>순서와 마음가짐 가이드</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch5"><span class="num">05</span><span class="txt"><strong>사람들과 어떻게 지내죠?</strong><span>교회 용어와 목장 모임</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch6"><span class="num">06</span><span class="txt"><strong>침례받는다는 게 뭐예요?</strong><span>믿음의 공적인 고백</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch7"><span class="num">07</span><span class="txt"><strong>믿음이 자라려면</strong><span>새싹에서 열매까지</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch8"><span class="num">08</span><span class="txt"><strong>나도 뭔가 도울 수 있을까요?</strong><span>봉사와 전도의 부담 내려놓기</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch9"><span class="num">09</span><span class="txt"><strong>가족들이 반대해요</strong><span>지혜롭게 대처하는 법</span></span></div>
+    <div class="toc-card" role="button" tabindex="0" data-target="ch10"><span class="num">10</span><span class="txt"><strong>앞으로 어떻게 살아야 하나요?</strong><span>신앙생활이라는 마라톤</span></span></div>
+  </div>
+</section>
+
+<!-- ================= Chapter 1 ================= -->
+<section id="ch1" class="chapter reveal">
+  <div class="eyebrow">Chapter 01</div>
+  <h2>“안녕하세요, 여기가 우리 집이에요”</h2>
+  <p class="lead">처음 교회에 오시는 분들께</p>
+  <hr class="rule">
+  <p>“어머, 여기가 맞나?” 하면서 교회 앞에 서 계신 분이 혹시 계신가요? 네, 맞습니다! 바로 여기가 은혜교회예요.</p>
+  <p>입구에서 활짝 웃으며 인사해드리는 분들, 너무 부담스러우시다고요? 괜찮아요. 저희는 그냥 반가워서 그런 거예요. 마치 오랜 친구가 집에 놀러 온 것 같아서 말이에요.</p>
+
+  <h3>첫 방문 때 이것만 알아두세요</h3>
+  <div class="qa"><div class="q"><span class="tag">Q</span> 뭘 가져가야 하나요?</div><div class="a"><span class="tag">A</span> 아무것도 안 가져오셔도 돼요. 성경도 저희가 빌려드릴 수 있어요.</div></div>
+  <div class="qa"><div class="q"><span class="tag">Q</span> 어디에 앉아야 하나요?</div><div class="a"><span class="tag">A</span> 어디든 편한 곳에 앉으세요. 앞자리가 부담스러우시면 뒤쪽도 좋아요.</div></div>
+  <div class="qa"><div class="q"><span class="tag">Q</span> 언제 일어나고 앉고 해야 하나요?</div><div class="a"><span class="tag">A</span> 다른 분들을 따라 하시면 돼요. 못 따라가셔도 전혀 괜찮아요.</div></div>
+  <div class="qa"><div class="q"><span class="tag">Q</span> 헌금을 꼭 해야 하나요?</div><div class="a"><span class="tag">A</span> 전혀 부담 가지지 마세요. 마음이 준비되었을 때 하시면 돼요.</div></div>
+
+  <h3>우리가 꿈꾸는 교회는요</h3>
+  <p>어떤 분은 “교회가 뭐 하는 곳인지 잘 모르겠어요” 라고 말씀하세요. 저희도 복잡하게 설명드리고 싶지 않아요. 그냥 이렇게 생각해주세요.</p>
+  <ul class="tip-list">
+    <li><b>집 같은 곳</b> — 가족이 모여 식사하고 이야기 나누듯, 하나님을 아버지로 믿는 사람들이 모여서 함께 시간을 보내는 곳이에요.</li>
+    <li><b>성장하는 곳</b> — 혼자서는 알기 어려운 인생의 지혜와 사랑하는 방법을 배워가는 곳이에요.</li>
+    <li><b>서로 돕는 곳</b> — 기쁠 때는 함께 기뻐하고, 힘들 때는 함께 울어주는 사람들이 있는 곳이에요.</li>
+  </ul>
+
+  <h3>궁금한 게 있으시다면</h3>
+  <p>“이런 걸 물어봐도 되나?” 하고 망설이지 마세요. 목사님이 왜 ‘목사님’인지, 찬송가는 왜 번호로 부르는지, 기도할 때 왜 눈을 감는지, 예수님이 누구신지. 뭐든지 물어보세요. 바보 같은 질문은 없어요. 오히려 물어봐 주시면 저희가 더 고마워요.</p>
+  <p>궁금한 점은 언제든 목사님, 전도사님 같은 교역자나 새가족 담당 이세라 집사님께 편하게 물어보세요.</p>
+  <div class="contact-box">
+    <div><b>교역자</b>목사님 · 전도사님</div>
+    <div><b>새가족 담당</b>이세라 집사님</div>
+  </div>
+</section>
+
+<!-- ================= Chapter 2 ================= -->
+<section id="ch2" class="chapter reveal">
+  <div class="eyebrow">Chapter 02</div>
+  <h2>“기도가 뭔가요?”</h2>
+  <p class="lead">기도, 그게 뭐죠?</p>
+  <hr class="rule">
+  <p>“기도해야 한다는데 뭘 어떻게 해야 하는지 모르겠어요.” 이런 말씀 하시는 분들 정말 많아요. 기도가 뭔지 어려운 말로 설명드릴 수도 있지만, 그냥 쉽게 말할게요.</p>
+  <div class="callout"><b>기도 = 하나님과 수다 떨기.</b> 친한 친구에게 “야, 오늘 힘들었어” 하고 털어놓듯이, 하나님께 “하나님, 오늘 이런 일이 있었는데요…” 하고 이야기하는 거예요.</div>
+
+  <h3>처음 기도는 이렇게 해보세요</h3>
+  <div class="step-grid">
+    <div class="step"><div class="n">1</div><div class="t"><b>편한 자세로</b>꼭 무릎 꿇을 필요 없어요. 침대에 누워서도, 버스에서도 괜찮아요.</div></div>
+    <div class="step"><div class="n">2</div><div class="t"><b>“하나님” 하고 불러보세요</b>“하나님” 또는 “하나님 아버지”라고 부르면 돼요. 길게 안 해도 돼요.</div></div>
+    <div class="step"><div class="n">3</div><div class="t"><b>하고 싶은 말을 해보세요</b>“오늘 날씨가 좋네요”, “회사에서 짜증나는 일이 있었어요”, “뭔가 허전해요” — 뭐든 좋아요.</div></div>
+    <div class="step"><div class="n">4</div><div class="t"><b>“예수님 이름으로 기도합니다, 아멘”</b>기도의 마무리예요. 처음엔 어색할 수 있지만, 하다 보면 자연스러워져요.</div></div>
+  </div>
+
+  <h3>이런 기도도 괜찮아요</h3>
+  <ul class="tip-list">
+    <li>“하나님, 복권 당첨시켜 주세요” — <b>괜찮아요.</b> 솔직한 거잖아요.</li>
+    <li>“하나님, 저 사람이 미워요” — <b>괜찮아요.</b> 진짜 마음이니까요.</li>
+    <li>“하나님 계신가요?” 의심하는 것도 — <b>괜찮아요.</b> 하나님은 우리의 모든 마음을 다 알고 계시고, 솔직한 게 더 좋으세요.</li>
+  </ul>
+
+  <h3>기도 응답은 언제 오나요?</h3>
+  <p>“기도했는데 아무 일도 안 일어나요.” 기도 응답이 항상 우리가 원하는 모습으로 오지는 않아요. 때로는 “좋아, 들어줄게” 하고 바란 대로 해주시기도 하고, “아니야, 이건 좋지 않아” 하고 안 해주시기도 하고, “잠깐만, 때가 아직 안 됐어” 하고 기다리게 하시기도 해요. 마치 좋은 부모님처럼요. 아이가 아이스크림을 달라고 해도 밥 먹기 전에는 안 주시잖아요?</p>
+</section>
+
+<!-- ================= Chapter 3 ================= -->
+<section id="ch3" class="chapter reveal">
+  <div class="eyebrow">Chapter 03</div>
+  <h2>“성경책, 어떻게 읽어요?”</h2>
+  <p class="lead">두꺼운 책과 천천히 친해지는 법</p>
+  <hr class="rule">
+  <p>“성경이 이렇게 두꺼울 줄 몰랐어요. 언제 다 읽죠?” 네, 정말 두꺼워요. 1,189장이나 되거든요. 하지만 걱정하지 마세요. 하루에 다 읽으려고 하지 마시고, 천천히 읽으면 돼요. 마치 좋은 소설책을 읽듯이요.</p>
+
+  <h3>처음 읽을 때 추천하는 순서</h3>
+  <div class="step-grid">
+    <div class="step"><div class="n">1</div><div class="t"><b>마가복음</b>가장 짧고 읽기 쉬워요. 예수님이 어떤 분인지 알 수 있어요. 16장밖에 안 돼요!</div></div>
+    <div class="step"><div class="n">2</div><div class="t"><b>누가복음</b>예수님의 이야기가 더 자세해요. 사랑이 많으신 예수님을 만날 수 있어요.</div></div>
+    <div class="step"><div class="n">3</div><div class="t"><b>요한복음</b>조금 어렵지만 정말 아름다워요. “하나님이 세상을 이처럼 사랑하사…” 그 유명한 구절이 여기 있어요.</div></div>
+  </div>
+
+  <h3>성경 읽기가 어려운 이유들</h3>
+  <ul class="tip-list">
+    <li><b>“말이 너무 어려워요”</b> → 현대어 성경을 추천해요. 개역개정판 말고 ‘쉬운성경’이나 ‘현대인의성경’으로 읽어보세요.</li>
+    <li><b>“무슨 뜻인지 모르겠어요”</b> → 일단 모르는 부분은 넘어가세요. 전체 흐름을 아는 게 더 중요해요.</li>
+    <li><b>“구약은 너무 복잡해요”</b> → 처음엔 신약부터, 구약은 나중에 천천히!</li>
+  </ul>
+
+  <h3>성경 읽기 꿀팁</h3>
+  <div class="dict-grid">
+    <div class="dict-item"><b>앱 활용</b> — 성경읽기표 앱으로 진도 체크, 음성 성경으로 출퇴근길에 듣기</div>
+    <div class="dict-item"><b>시간 정하기</b> — 아침 커피와 함께 10분, 잠들기 전 15분</div>
+    <div class="dict-item"><b>메모하며 읽기</b> — 인상 깊은 구절에 밑줄, 궁금한 부분에 물음표</div>
+    <div class="dict-item"><b>부담 내려놓기</b> — 점심시간 5분이라도 괜찮아요</div>
+  </div>
+</section>
+
+<!-- ================= Chapter 4 ================= -->
+<section id="ch4" class="chapter reveal">
+  <div class="eyebrow">Chapter 04</div>
+  <h2>“예배시간이 낯설어요”</h2>
+  <p class="lead">순서를 알면 마음이 편해져요</p>
+  <hr class="rule">
+
+  <h3>예배 시간 가이드</h3>
+  <div class="qa"><div class="q"><span class="tag">Q</span> 언제 일어나야 하나요?</div><div class="a"><span class="tag">A</span> 다른 사람들 보고 따라 하세요. 못 따라가도 괜찮아요.</div></div>
+  <div class="qa"><div class="q"><span class="tag">Q</span> 찬송 가사를 모르는데요?</div><div class="a"><span class="tag">A</span> 따라 부르려 애쓰지 마시고 듣기만 해도 돼요. 멜로디가 좋죠?</div></div>
+  <div class="qa"><div class="q"><span class="tag">Q</span> 기도할 때 뭘 해야 하나요?</div><div class="a"><span class="tag">A</span> 눈을 감고 가만히 있으면 돼요. 목사님 기도 따라서 마음속으로 “아멘” 해보세요.</div></div>
+  <div class="qa"><div class="q"><span class="tag">Q</span> 설교가 어려워요.</div><div class="a"><span class="tag">A</span> 다 이해하려 하지 마세요. 한두 문장이라도 마음에 와닿으면 성공이에요.</div></div>
+
+  <h3>예배 순서 쉽게 이해하기</h3>
+  <ul class="tip-list">
+    <li><b>찬송</b> — “안녕하세요, 하나님!” 하나님께 인사드리는 시간이에요.</li>
+    <li><b>기도</b> — “오늘도 만나뵙게 되어 기뻐요” 함께 감사드리는 시간이에요.</li>
+    <li><b>말씀</b> — 목사님을 통해 하나님이 우리에게 들려주시는 이야기예요.</li>
+    <li><b>헌금</b> — 받은 사랑에 감사하는 마음을 표현하는 거예요. 부담 갖지 마세요!</li>
+    <li><b>축도</b> — “이제 세상으로 나가세요.” 하나님의 축복을 받고 일상으로 돌아가는 시간이에요.</li>
+  </ul>
+
+  <h3>예배 후 시간도 소중해요</h3>
+  <p>예배가 끝나면 바로 집에 가지 마시고, 잠깐 머물러 보세요. 옆에 앉은 분께 인사해보기, 목사님께 “설교 잘 들었습니다” 인사드리기, 로비에서 커피 한 잔 마시며 사람들 구경하기.</p>
+  <div class="callout">“어색해서 빨리 나가고 싶어요”라고 하시는 분들 많아요. 그 마음 이해해요. 하지만 조금씩 머무는 시간을 늘려보세요. 교회가 점점 친숙해질 거예요.</div>
+</section>
+
+<!-- ================= Chapter 5 ================= -->
+<section id="ch5" class="chapter reveal">
+  <div class="eyebrow">Chapter 05</div>
+  <h2>“사람들과 어떻게 지내죠?”</h2>
+  <p class="lead">교회 안에서 만나는 다양한 얼굴들</p>
+  <hr class="rule">
+
+  <h3>교회 사람들 유형별 가이드</h3>
+  <ul class="tip-list">
+    <li><b>엄청 친절한 분들</b> — 질문이 많아 부담스러우면 “아직 적응하는 중이에요” 하고 웃으면 돼요.</li>
+    <li><b>조용한 분들</b> — 무뚝뚝해 보여도 나쁜 사람 아니에요. 원래 성격이 그래요.</li>
+    <li><b>어르신들</b> — 관심 갖고 물어보시는 거예요. 솔직하게 “이제 막 시작했어요” 하세요.</li>
+    <li><b>아이들과 함께 온 분들</b> — 교회는 가족이 함께 오는 곳이에요, 눈치 주지 마세요.</li>
+  </ul>
+
+  <h3>교회 용어 사전</h3>
+  <div class="dict-grid">
+    <div class="dict-item"><b>은혜받았어요</b> = 좋았어요, 감동받았어요</div>
+    <div class="dict-item"><b>성도</b> = 교회 다니는 사람들</div>
+    <div class="dict-item"><b>집사님·권사님</b> = 교회에서 봉사하는 분들 (직장 상사 아니에요)</div>
+    <div class="dict-item"><b>장로님</b> = 교회 운영을 도와주시는 어른들</div>
+    <div class="dict-item"><b>새가족</b> = 바로 여러분!</div>
+    <div class="dict-item"><b>아멘 · 할렐루야</b> = 맞아요, 좋아요, 감사해요</div>
+  </div>
+
+  <h3>목장 모임에 대해서</h3>
+  <p>“목장이 뭐예요?” 소 키우는 곳 아니에요 (웃음). 교회 안의 작은 모임이에요. 10명 내외로 모여서 더 친하게 지내는 거예요. 간단한 성경공부, 서로 안부 나누기, 함께 기도하기, 생일 축하해주기를 함께해요.</p>
+  <div class="callout">꼭 참여해야 하나요? 아니에요. 하지만 참여하시면 교회가 훨씬 친숙해져요. 처음엔 다 어색해요. 2~3번 나가다 보면 “이분들이 이런 분이구나” 하며 정이 들어요.</div>
+</section>
+
+<!-- ================= Chapter 6 ================= -->
+<section id="ch6" class="chapter reveal">
+  <div class="eyebrow">Chapter 06</div>
+  <h2>“침례받는다는 게 뭐예요?”</h2>
+  <p class="lead">믿음의 공적인 고백</p>
+  <hr class="rule">
+  <p>침례는 마치 결혼식 같은 거예요. 연애를 하다가 “이 사람과 평생 함께 살겠다”는 마음이 들면 결혼식을 올리잖아요? 침례도 그와 비슷해요. “예수님을 믿고 평생 함께 살겠다”는 마음이 들 때 받는 거예요.</p>
+
+  <h3>침례 받기 전에 이런 마음이 들어요</h3>
+  <ul class="tip-list">
+    <li><b>“아직 완벽하지 않은데…”</b> → 완벽한 사람은 없어요. 예수님과 함께 완벽해지고 싶어서 받는 거예요.</li>
+    <li><b>“성경도 잘 모르는데…”</b> → 침례받고 나서 더 열심히 배우면 돼요.</li>
+    <li><b>“죄를 또 지을 것 같은데…”</b> → 당연히 또 지어요 (웃음). 그래서 매일 회개하고 용서받으며 사는 거예요.</li>
+  </ul>
+
+  <h3>침례식은 어떻게 진행되나요?</h3>
+  <div class="step-grid">
+    <div class="step"><div class="n">1</div><div class="t"><b>침례 교육</b>4~6주 간단한 교육, 신앙고백서 작성, 목사님과 상담</div></div>
+    <div class="step"><div class="n">2</div><div class="t"><b>침례식 당일</b>흰 옷 입고 물에 들어가기 (옷은 교회에서 준비), 목사님이 잠깐 물에 담그기</div></div>
+  </div>
+  <p>“물에 들어가는 게 무서워요” → 목사님이 꽉 잡아주시니까 괜찮아요. 수영장 깊이 정도예요.</p>
+
+  <h3>침례 받고 나면 뭐가 달라져요?</h3>
+  <p>솔직히 말하면 다음 날 일어나도 그냥 똑같은 하루예요. 갑자기 천사가 되거나 하지는 않아요. 하지만 마음 한구석에 “아, 내가 정말 하나님의 자녀구나” 하는 확신이 생겨요. 그리고 교회 사람들이 더 반갑게 대해줘요. “우리 가족이 되었구나” 하면서요.</p>
+  <div class="callout">침례는 <b>공적인 믿음의 고백이자 선언</b> 같은 거예요. 하나님이 없다고 믿던 세상을 살다가, 이제 하나님이 계심을 믿고 살아가는 결단이기도 하죠. 그래서 침례는 새롭게 다시 태어나는 것을 의미해요.</div>
+</section>
+
+<!-- ================= Chapter 7 ================= -->
+<section id="ch7" class="chapter reveal">
+  <div class="eyebrow">Chapter 07</div>
+  <h2>“믿음이 자라려면”</h2>
+  <p class="lead">신앙은 하루아침에 자라지 않아요</p>
+  <hr class="rule">
+  <p>“다른 사람들은 믿음이 좋아 보이는데 저는 아직…” 괜찮아요. 다 그런 시간을 거쳐요. 식물도 씨앗 → 새싹 → 나무 → 열매 순서가 있잖아요. 믿음도 마찬가지예요.</p>
+
+  <div class="stage-track">
+    <div class="stage"><div class="icon">🌰</div><b>새싹 단계</b><span>모르는 게 많고 어색하지만, 새로운 걸 시작했다는 설렘이 있어요</span></div>
+    <div class="stage"><div class="icon">🌱</div><b>성장 단계</b><span>기도하는 습관이 생기고 성경 읽기가 재미있어져요</span></div>
+    <div class="stage"><div class="icon">🌿</div><b>성숙 단계</b><span>힘들 때 자연스럽게 하나님을 찾게 돼요</span></div>
+    <div class="stage"><div class="icon">🌳</div><b>열매 단계</b><span>삶 전체가 믿음으로 변화되고, 좋은 영향을 끼치게 돼요</span></div>
+  </div>
+
+  <h3>신앙이 자라는 습관들</h3>
+  <div class="dict-grid">
+    <div class="dict-item"><b>매일</b> — 하루 5분 기도, 성경 한 구절, “감사합니다” 한 번</div>
+    <div class="dict-item"><b>매주</b> — 예배 참석, 목장 모임 참여</div>
+    <div class="dict-item"><b>매달</b> — 새로운 봉사, 신앙 서적 한 권, 교역자 또는 목자와 상담</div>
+  </div>
+
+  <h3>슬럼프가 올 때</h3>
+  <p>“요즘 교회 가기 싫어요. 믿음이 식은 것 같아요.” 이런 때가 꼭 와요. 정말 자연스러운 거예요.</p>
+  <ul class="tip-list">
+    <li><b>다시 불씨를 지피기</b> — 은혜받았던 순간 떠올려보기, 좋아하는 찬송 듣기</li>
+    <li><b>그냥 걸어가기</b> — 기분이 안 들어도 예배는 참석하기, 성경이 재미없어도 한 줄이라도 읽기</li>
+    <li><b>새로운 시도하기</b> — 다른 목장 모임 참여, 믿음 좋은 선배와 만나보기</li>
+  </ul>
+</section>
+
+<!-- ================= Chapter 8 ================= -->
+<section id="ch8" class="chapter reveal">
+  <div class="eyebrow">Chapter 08</div>
+  <h2>“나도 뭔가 도울 수 있을까요?”</h2>
+  <p class="lead">마음이 재능보다 중요해요</p>
+  <hr class="rule">
+
+  <h3>시간별로 선택하기</h3>
+  <div class="step-grid">
+    <div class="step"><div class="n">·</div><div class="t"><b>30분이면 충분한 일</b>예배 전 청소, 주보 나누어드리기, 새가족 안내</div></div>
+    <div class="step"><div class="n">·</div><div class="t"><b>1시간 정도 필요한 일</b>주일학교 교사 돕기, 성가대 반주, 음향 담당, 꽃꽂이</div></div>
+    <div class="step"><div class="n">·</div><div class="t"><b>반나절 투자하는 일</b>교회 행사 준비, 노인정 봉사, 아이들 캠프 돕기</div></div>
+  </div>
+
+  <h3>처음 봉사할 때 팁</h3>
+  <ul class="tip-list">
+    <li>“잘못할까 봐 걱정돼요” → 다 처음엔 서툴러요. 친절하게 알려주실 거예요.</li>
+    <li>“시간이 많지 않아요” → 한 달에 한 번만 해도 큰 도움이 돼요.</li>
+    <li>“별 재능이 없어요” → 재능보다는 마음이 더 중요해요. 웃으면서 인사만 잘해도 훌륭한 봉사예요.</li>
+  </ul>
+
+  <h3>전도에 대한 부담감</h3>
+  <p>전도가 꼭 길거리에서 “예수님 믿으세요” 하고 외치는 건 아니에요. 평소보다 더 친절하게 살기, 힘든 일이 있을 때 “기도해드릴게요” 하기, 좋은 일이 있을 때 “하나님 덕분이에요” 하기 — 이것도 자연스러운 전도예요.</p>
+  <div class="callout">억지로 하지 마세요. 전도는 사랑에서 나오는 거예요. 아직 준비가 안 됐다면, 여러분의 변화된 모습 자체가 전도예요.</div>
+</section>
+
+<!-- ================= Chapter 9 ================= -->
+<section id="ch9" class="chapter reveal">
+  <div class="eyebrow">Chapter 09</div>
+  <h2>“가족들이 반대해요”</h2>
+  <p class="lead">지혜롭게 대처하는 방법</p>
+  <hr class="rule">
+  <p>“너만 혼자 교회 다니냐?” 새가족분들이 가장 힘들어하시는 부분 중 하나예요. 가족들이 이해 못 하시는 거, 정말 속상하시죠?</p>
+
+  <ul class="tip-list">
+    <li><b>말보다는 행동으로</b> — 더 밝아지고, 부지런해지고, 친절해진 모습을 먼저 보여주세요.</li>
+    <li><b>시간을 두고 기다리기</b> — 급하게 설득하려 하지 마세요. 1년, 2년 지나다 보면 인정해주실 거예요.</li>
+    <li><b>더 잘해드리기</b> — 교회 다닌다고 집안일 소홀히 하지 마시고, 오히려 더 잘해드리세요.</li>
+    <li><b>기도로 맡기기</b> — “하나님, 우리 가족들도 언젠가는 알게 해주세요.”</li>
+  </ul>
+
+  <h3>아이들과 함께 교회 다니기</h3>
+  <p>처음엔 당연히 낯설어해요. 먼저 어른이 적응하고, 재미있는 행사부터 참여시키고, 또래 친구들과 친해지도록 돕고, 억지로 끌고 가지 마세요.</p>
+
+  <h3>혼자 믿는 게 외로울 때</h3>
+  <p>정말 외로우실 거예요. 그 마음 충분히 이해해요. 집에서는 혼자서라도 기도하고 찬양하기, 온라인 예배나 설교 듣기를, 교회에서는 같은 상황의 분들과 만나고 목회자와 상담을 받아보세요. “나부터 잘 믿자” 다짐하며, 외로움을 하나님께 털어놓으세요.</p>
+</section>
+
+<!-- ================= Chapter 10 ================= -->
+<section id="ch10" class="chapter reveal">
+  <div class="eyebrow">Chapter 10</div>
+  <h2>“앞으로 어떻게 살아야 하나요?”</h2>
+  <p class="lead">신앙생활은 마라톤이에요</p>
+  <hr class="rule">
+  <p>100미터 달리기가 아니라 마라톤이에요. 빨리 달리려 하지 마시고, 꾸준히 오래 달리는 게 중요해요.</p>
+
+  <div class="step-grid">
+    <div class="step"><div class="n">1년</div><div class="t"><b>적응기</b>교회가 익숙해지는 시간, 기본적인 신앙 습관 만들기</div></div>
+    <div class="step"><div class="n">2~3년</div><div class="t"><b>성장기</b>말씀과 기도가 재미있어지는 시간, 봉사와 목장 참여</div></div>
+    <div class="step"><div class="n">4~5년</div><div class="t"><b>안정기</b>신앙이 삶의 중심이 되는 시간, 후배들을 돌보고 가르치기</div></div>
+    <div class="step"><div class="n">그 이후</div><div class="t"><b>성숙기</b>믿음이 삶 전체에 스며들어 자연스럽게 좋은 영향을 끼치는 시간</div></div>
+  </div>
+
+  <h3>힘들 때 붙잡을 수 있는 것들</h3>
+  <ul class="tip-list">
+    <li><b>기도</b> — “하나님, 힘들어요” 한마디만 해도 위로가 돼요.</li>
+    <li><b>말씀</b> — “수고하고 무거운 짐 진 자들아 다 내게로 오라” (마태복음 11:28)</li>
+    <li><b>교회 가족들</b> — 혼자 끙끙 앓지 말고 교회 식구들에게 털어놓으세요.</li>
+    <li><b>예배</b> — 예배 시간만큼은 모든 걱정 내려놓고 하나님께 집중하세요.</li>
+  </ul>
+</section>
+
+<!-- ================= 마무리 ================= -->
+<section class="band-navy reveal">
+  <div class="inner">
+    <div class="eyebrow" style="color:var(--gold-soft);">함께 걸어가요</div>
+    <h2>여기까지 읽어주신 여러분, 정말 고마워요. 이 가이드북을 읽는다고 갑자기 믿음의 거인이 되는 건 아니에요.<br><br>하지만 혼자가 아니라는 걸 기억해 주세요.</h2>
+    <p>같은 고민을 했던 선배들, 함께 배워가는 동기들, 언제나 기다리는 목회자들, 그리고 무엇보다 우리를 사랑하시는 하나님이 함께 있어요. 천천히 가도 괜찮아요. 완벽하지 않아도 괜찮아요.</p>
+  </div>
+</section>
+
+<!-- ================= 기도문 ================= -->
+<section id="prayer" class="reveal">
+  <div class="quote-mark">“</div>
+  <div class="prayer-body">
+    사랑하는 하나님 아버지,<br><br>
+    오늘 이 가이드북을 읽는 새가족들을 축복해 주세요. 낯선 환경에서 두려워하지 않게 하시고, 따뜻한 사랑을 경험하게 해주세요.<br><br>
+    천천히 하나씩 배워가며 하나님의 자녀로 성장해 나가게 해주세요. 교회 가족들이 이들을 따뜻하게 품어 안고, 함께 믿음의 길을 걸어가게 해주세요.<br><br>
+    이 모든 기도를 예수님의 이름으로 드립니다.
+  </div>
+  <div class="amen">아멘</div>
+</section>
+
+<footer>
+  <div class="logo-mark">
+    <svg viewBox="0 0 44 44" fill="none">
+      <path d="M9 30c6 8 20 8 26 0" stroke="#6E8F6B" stroke-width="2.4" stroke-linecap="round"/>
+      <path d="M9 30V12M14 30V16M19 30V12M25 30V16M30 30V12M35 30V16" stroke="#B3873F" stroke-width="2.2" stroke-linecap="round"/>
+    </svg>
+  </div>
+  <div class="name">기독교한국침례회</div>
+  <div class="church">은혜교회</div>
+  <div class="tagline">은혜교회가 여러분을 사랑합니다 — 여러분의 신앙 여정에 동반자가 되겠습니다</div>
+</footer>
+
+<script>
+  // 성장 레일: 스크롤 진행률 & 활성 챕터 점
+  const fill = document.getElementById('railFill');
+  const dots = document.querySelectorAll('.growth-rail .dot');
+  const chapters = document.querySelectorAll('.chapter');
+
+  function onScroll(){
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = Math.min(100, Math.max(0, (scrollTop / docHeight) * 100));
+    fill.style.height = pct + '%';
+  }
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        e.target.classList.add('in');
+      }
+    });
+  }, {threshold:0.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const chapterObserver = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        const idx = Array.from(chapters).indexOf(e.target);
+        dots.forEach((d,i)=> d.classList.toggle('active', i <= idx+1));
+      }
+    });
+  }, {threshold:0.4});
+  chapters.forEach(c=>chapterObserver.observe(c));
+
+  // 목차/상단바 이동: a href 앵커를 쓰지 않고 data-target + JS 스크롤로 처리
+  // (일부 앱 내장 브라우저가 href="#..." 클릭을 외부 링크로 오인해 확인창을 띄우는 문제 방지)
+  const HEADER_OFFSET = 76;
+  function scrollToId(id){
+    const target = document.getElementById(id);
+    if(!target) return;
+    target.classList.add('in'); // 도착 즉시 보이도록 처리 (reveal 애니메이션 대기 방지)
+    const y = target.getBoundingClientRect().top + window.pageYOffset - HEADER_OFFSET;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+  document.querySelectorAll('[data-target]').forEach(el=>{
+    el.addEventListener('click', ()=> scrollToId(el.getAttribute('data-target')));
+    el.addEventListener('keydown', (e)=>{
+      if(e.key === 'Enter' || e.key === ' '){
+        e.preventDefault();
+        scrollToId(el.getAttribute('data-target'));
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
