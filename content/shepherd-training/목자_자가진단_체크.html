@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목자 자가진단 질문지 | 은혜교회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<style>
+  :root{
+    --navy:#1b2a41; --cream:#f6f1e6; --cream-warm:#efe6d3;
+    --gold:#b9975b; --gold-soft:#d9c290; --ink:#2b3138; --ink-soft:#5b6470;
+    --line:#dcd2ba; --white:#fffdf8; --green:#5f7554;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Noto Sans KR', sans-serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.7;
+    padding:40px 16px 100px;
+  }
+  h1,h2,h3{font-family:'Noto Serif KR', serif;}
+  .wrap{max-width:640px; margin:0 auto;}
+
+  .head{text-align:center; margin-bottom:36px;}
+  .eyebrow{font-size:12px; letter-spacing:0.4em; color:var(--gold); font-weight:600; margin-bottom:10px;}
+  h1{font-size:28px; color:var(--navy); font-weight:700; margin-bottom:10px;}
+  .desc{color:var(--ink-soft); font-size:14px;}
+
+  .meta{
+    display:flex; flex-wrap:wrap; gap:14px;
+    background:var(--white); border:1px solid var(--line);
+    padding:18px 20px; margin-bottom:30px; border-radius:2px;
+  }
+  .meta label{font-size:13px; color:var(--ink-soft); display:block; margin-bottom:4px;}
+  .meta input{
+    border:none; border-bottom:1px solid var(--gold-soft);
+    background:transparent; font-family:'Noto Sans KR',sans-serif;
+    font-size:14px; padding:4px 2px; width:150px; color:var(--ink);
+  }
+  .meta input:focus{outline:none; border-bottom-color:var(--gold);}
+
+  .section-title{
+    font-size:16px; color:var(--navy); font-weight:600;
+    margin:34px 0 14px; padding-bottom:8px;
+    border-bottom:1px solid var(--gold-soft);
+  }
+
+  .qcard{
+    background:var(--white); border:1px solid var(--line);
+    border-left:3px solid var(--gold-soft);
+    padding:18px 20px; margin-bottom:12px; border-radius:2px;
+  }
+  .qtext{font-size:14.5px; color:var(--ink); margin-bottom:12px;}
+  .options{display:flex; gap:18px; flex-wrap:wrap;}
+  .options label{
+    display:flex; align-items:center; gap:6px;
+    font-size:13.5px; color:var(--ink-soft); cursor:pointer;
+  }
+  .options input[type="radio"]{accent-color:var(--gold); width:15px; height:15px; cursor:pointer;}
+
+  .reflect-title{
+    font-size:16px; color:var(--navy); font-weight:600;
+    margin:34px 0 14px; padding-bottom:8px;
+    border-bottom:1px solid var(--gold-soft);
+  }
+  .reflect-box{margin-bottom:16px;}
+  .reflect-box label{display:block; font-size:14px; color:var(--navy); font-weight:600; margin-bottom:8px;}
+  .reflect-box textarea{
+    width:100%; min-height:64px; padding:12px 14px;
+    border:1px solid var(--line); border-radius:2px;
+    font-family:'Noto Sans KR',sans-serif; font-size:14px; color:var(--ink);
+    resize:vertical; background:var(--white);
+  }
+  .reflect-box textarea:focus{outline:none; border-color:var(--gold);}
+
+  .submit-wrap{text-align:center; margin-top:40px;}
+  #confirmBtn{
+    background:var(--navy); color:var(--cream);
+    font-family:'Noto Sans KR',sans-serif; font-size:15px; font-weight:600;
+    padding:14px 40px; border-radius:999px; border:none; cursor:pointer;
+    box-shadow:0 6px 18px rgba(16,27,43,0.25);
+    transition:background .2s, transform .2s;
+  }
+  #confirmBtn:hover{background:#101b2b; transform:translateY(-1px);}
+  .submit-note{margin-top:12px; font-size:12.5px; color:var(--ink-soft);}
+
+  .toast{
+    position:fixed; left:50%; bottom:30px; transform:translate(-50%, 20px);
+    background:var(--navy); color:var(--cream); padding:14px 24px;
+    border-radius:8px; font-size:13.5px; box-shadow:0 8px 24px rgba(0,0,0,0.25);
+    opacity:0; transition:all .3s; pointer-events:none; max-width:90%; text-align:center;
+  }
+  .toast.show{opacity:1; transform:translate(-50%, 0);}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="head">
+    <div class="eyebrow">은혜교회 · 목자사역가이드</div>
+    <h1>목자 자가진단 질문지</h1>
+    <p class="desc">매달 목장 모임 전, 조용히 나를 돌아보는 시간을 가져보세요.</p>
+  </div>
+
+  <div class="meta">
+    <div><label>점검 월</label><input type="text" id="metaMonth" placeholder="예: 7월"></div>
+    <div><label>목장명</label><input type="text" id="metaGroup" placeholder="예: 남자 목장"></div>
+    <div><label>목자</label><input type="text" id="metaShepherd" placeholder="이름"></div>
+  </div>
+
+  <div id="questionArea"></div>
+
+  <div class="reflect-title">이번 달을 돌아보며</div>
+  <div class="reflect-box">
+    <label>가장 감사했던 일</label>
+    <textarea id="reflectThanks"></textarea>
+  </div>
+  <div class="reflect-box">
+    <label>지금 기도가 필요한 부분</label>
+    <textarea id="reflectPrayer"></textarea>
+  </div>
+
+  <div class="submit-wrap">
+    <button id="confirmBtn">확인 — 카카오톡으로 보내기</button>
+    <p class="submit-note">휴대폰에서 열었다면 PDF가 만들어진 뒤 공유 목록이 뜹니다. 거기서 카카오톡을 선택해주세요.<br>PC 등 공유 기능이 없는 환경에서는 PDF만 다운로드됩니다.</p>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  const SECTIONS = [
+    { title: "기도와 섬김", items: [
+      "이번 달, 목장원 한 사람 한 사람의 이름을 놓고 기도했는가?",
+      "목장원의 필요를 알고 실제로 섬긴 일이 있는가?",
+    ]},
+    { title: "심방과 돌봄", items: [
+      "이번 달 안부를 나누지 못한 목장원이 있는가?",
+      "낙심하거나 모임에 뜸해진 목장원에게 먼저 다가갔는가?",
+    ]},
+    { title: "모임 인도", items: [
+      "모임에서 나눔·말씀·기도의 균형을 잘 지켰는가?",
+      "새가족이 있었다면, 편안하게 느끼도록 배려했는가?",
+    ]},
+    { title: "관계와 소통", items: [
+      "담임목사님께 목장의 근황을 솔직하게 나누었는가?",
+      "다른 목장과 소식이나 기도제목을 나누었는가?",
+    ]},
+    { title: "다음 세대 세우기", items: [
+      "목장 안에서 다음 목자가 될 사람을 마음에 두고 있는가?",
+      "목장원에게 작은 섬김(나눔·기도 인도)을 맡겨본 적이 있는가?",
+    ]},
+    { title: "나 자신의 영성", items: [
+      "이번 달 나의 기도와 말씀 묵상은 꾸준했는가?",
+      "몸과 마음의 쉼을 충분히 가졌는가?",
+    ]},
+  ];
+
+  const area = document.getElementById('questionArea');
+  let qIndex = 0;
+  SECTIONS.forEach(sec => {
+    const h = document.createElement('div');
+    h.className = 'section-title';
+    h.textContent = sec.title;
+    area.appendChild(h);
+
+    sec.items.forEach(text => {
+      qIndex++;
+      const name = 'q' + qIndex;
+      const card = document.createElement('div');
+      card.className = 'qcard';
+      card.dataset.section = sec.title;
+      card.dataset.question = text;
+      card.innerHTML = `
+        <div class="qtext">${qIndex}. ${text}</div>
+        <div class="options">
+          <label><input type="radio" name="${name}" value="잘함"> 잘함</label>
+          <label><input type="radio" name="${name}" value="보통"> 보통</label>
+          <label><input type="radio" name="${name}" value="노력필요"> 노력 필요</label>
+        </div>`;
+      area.appendChild(card);
+    });
+  });
+
+  function showToast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(()=> t.classList.remove('show'), 3200);
+  }
+
+  document.getElementById('confirmBtn').addEventListener('click', function(){
+    const month = document.getElementById('metaMonth').value || '(미기입)';
+    const group = document.getElementById('metaGroup').value || '(미기입)';
+    const shepherd = document.getElementById('metaShepherd').value || '(미기입)';
+    const thanks = document.getElementById('reflectThanks').value || '(작성 안 함)';
+    const prayer = document.getElementById('reflectPrayer').value || '(작성 안 함)';
+
+    const cards = document.querySelectorAll('.qcard');
+    const results = [];
+    cards.forEach(card => {
+      const checked = card.querySelector('input[type="radio"]:checked');
+      results.push({
+        section: card.dataset.section,
+        question: card.dataset.question,
+        answer: checked ? checked.value : '(체크 안 함)'
+      });
+    });
+
+    // ===== PDF 생성 =====
+    const { jsPDF } = window.jspdf;
+    const doc = new jsPDF({ unit: 'pt', format: 'a4' });
+    const marginX = 50;
+    let y = 60;
+
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(18);
+    doc.text('Shepherd Self-Check / 목자 자가진단 질문지', marginX, y);
+    y += 26;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(11);
+    doc.text(`Month: ${month}   Group: ${group}   Shepherd: ${shepherd}`, marginX, y);
+    y += 24;
+
+    let lastSection = '';
+    results.forEach((r, i) => {
+      if (r.section !== lastSection) {
+        lastSection = r.section;
+        y += 6;
+        doc.setFont('helvetica', 'bold');
+        doc.setFontSize(12);
+        if (y > 760) { doc.addPage(); y = 60; }
+        doc.text(r.section, marginX, y);
+        y += 16;
+      }
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10.5);
+      const qLines = doc.splitTextToSize(`${i + 1}. ${r.question}`, 420);
+      if (y > 760) { doc.addPage(); y = 60; }
+      doc.text(qLines, marginX, y);
+      y += qLines.length * 13;
+      doc.setFont('helvetica', 'bold');
+      doc.text(`-> ${r.answer}`, marginX + 14, y);
+      y += 18;
+    });
+
+    y += 10;
+    if (y > 720) { doc.addPage(); y = 60; }
+    doc.setFont('helvetica', 'bold');
+    doc.setFontSize(12);
+    doc.text('Reflection', marginX, y);
+    y += 18;
+    doc.setFont('helvetica', 'normal');
+    doc.setFontSize(10.5);
+    doc.text('Thankful for:', marginX, y);
+    y += 14;
+    doc.text(doc.splitTextToSize(thanks, 480), marginX, y);
+    y += doc.splitTextToSize(thanks, 480).length * 13 + 14;
+    if (y > 760) { doc.addPage(); y = 60; }
+    doc.text('Prayer needed:', marginX, y);
+    y += 14;
+    doc.text(doc.splitTextToSize(prayer, 480), marginX, y);
+
+    const fileName = `목자자가진단_${month}_${shepherd}.pdf`;
+    const pdfBlob = doc.output('blob');
+
+    // ===== 공유하기 (모바일에서는 카카오톡 등 공유 목록이 뜸) =====
+    const shareText = `[목자 자가진단] ${group} - ${shepherd} (${month})`;
+    let pdfFile = null;
+    try {
+      pdfFile = new File([pdfBlob], fileName, { type: 'application/pdf' });
+    } catch (e) { /* 구형 브라우저는 File 생성자 미지원 */ }
+
+    if (pdfFile && navigator.canShare && navigator.canShare({ files: [pdfFile] })) {
+      navigator.share({
+        files: [pdfFile],
+        title: shareText,
+        text: shareText
+      }).catch(()=>{
+        // 사용자가 공유를 취소한 경우 등 - 다운로드로 대체
+        doc.save(fileName);
+        showToast('공유가 취소되어 PDF로 저장했습니다.');
+      });
+    } else {
+      // 공유 API 미지원 환경 (대부분 PC 브라우저) - 다운로드로 대체
+      doc.save(fileName);
+      showToast('이 브라우저는 공유하기를 지원하지 않아 PDF로 저장했습니다. 휴대폰에서 열어 다시 시도해보세요.');
+    }
+  });
+</script>
+
+</body>
+</html>
