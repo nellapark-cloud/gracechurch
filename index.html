@@ -504,9 +504,25 @@
 </footer>
 
 <nav class="float-nav" aria-label="빠른 이동">
-  <a href="#toc" title="목차 보기"><span class="icon">≡</span><span class="label">목차</span></a>
-  <a href="#top" title="처음으로"><span class="icon">↑</span><span class="label">처음</span></a>
+  <a href="#toc" id="btn-toc" title="목차 보기"><span class="icon">≡</span><span class="label">목차</span></a>
+  <a href="#top" id="btn-top" title="처음으로"><span class="icon">↑</span><span class="label">처음</span></a>
 </nav>
+
+<script>
+  document.getElementById('btn-top').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.documentElement.scrollTop = 0;
+    document.body.scrollTop = 0;
+    window.scrollTo(0, 0);
+    history.replaceState(null, '', '#top');
+  });
+  document.getElementById('btn-toc').addEventListener('click', (e) => {
+    e.preventDefault();
+    const el = document.getElementById('toc');
+    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    history.replaceState(null, '', '#toc');
+  });
+</script>
 
 <script>
   // 스크롤에 따라 좌측 관(館) 표시등을 갱신
