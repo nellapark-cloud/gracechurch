@@ -103,6 +103,7 @@
     padding: 6vh 8vw 8vh;
     position: relative;
     overflow:hidden;
+    background: linear-gradient(150deg, #cfe9f7 0%, #e8f4fa 55%, var(--cream) 100%);
   }
   .hero::after{
     content:"";
@@ -385,7 +386,8 @@
   <a class="rail__mark" data-room="room-3" href="#room-3">III<span>목장</span></a>
   <a class="rail__mark" data-room="room-4" href="#room-4">IV<span>주보</span></a>
   <a class="rail__mark" data-room="room-5" href="#room-5">V<span>나눔지</span></a>
-  <a class="rail__mark" data-room="room-6" href="#room-6">VI<span>행정양식</span></a>
+  <a class="rail__mark" data-room="room-6" href="#room-6">VI<span>침례교회사</span></a>
+  <a class="rail__mark" data-room="room-7" href="#room-7">VII<span>행정양식</span></a>
 </nav>
 
 <main>
@@ -403,7 +405,8 @@
       <a href="#room-3"><span class="num">III</span><span class="lbl">목장 자료</span><span class="cnt">보기</span></a>
       <a href="#room-4"><span class="num">IV</span><span class="lbl">주보</span><span class="cnt">보기</span></a>
       <a href="#room-5"><span class="num">V</span><span class="lbl">목장 나눔지</span><span class="cnt">보기</span></a>
-      <a href="#room-6"><span class="num">VI</span><span class="lbl">목회행정양식</span><span class="cnt">보기</span></a>
+      <a href="#room-6"><span class="num">VI</span><span class="lbl">침례교에 대하여 · 침례교회사</span><span class="cnt">보기</span></a>
+      <a href="#room-7"><span class="num">VII</span><span class="lbl">목회행정양식</span><span class="cnt">보기</span></a>
     </div>
   </section>
 
@@ -484,6 +487,20 @@
   <section class="room" id="room-6">
     <div class="room__head">
       <span class="room__num">VI</span>
+      <div>
+        <h2 class="room__title">침례교에 대하여</h2>
+        <p class="room__desc">침례교회사를 소개하는 자료입니다.</p>
+      </div>
+    </div>
+    <details class="doc-group">
+      <summary>목록 보기<span class="count" id="count-baptist_history"></span></summary>
+      <ul class="doclist" id="list-baptist_history"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
+  </section>
+
+  <section class="room" id="room-7">
+    <div class="room__head">
+      <span class="room__num">VII</span>
       <div>
         <h2 class="room__title">목회행정양식</h2>
         <p class="room__desc">교회 행정 업무에 쓰이는 각종 서식입니다.</p>
