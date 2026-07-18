@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>1강. 침례교는 어떻게 시작되었는가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:30px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  section{margin-top:50px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:22px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:20px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 18px;text-align:justify;}
+
+  .person{
+    position:relative; cursor:pointer; font-weight:700; color:var(--navy);
+    background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);
+    border-bottom:1px dotted var(--sky-line); padding:0 1px;
+  }
+  .person:after{
+    content:"?"; font-family:'Noto Sans KR',sans-serif; font-size:9px; font-weight:700;
+    color:#fff; background:var(--sky-line); border-radius:50%; width:13px;height:13px;
+    display:inline-flex; align-items:center; justify-content:center; vertical-align:super; margin-left:2px;
+  }
+  .keyword{
+    font-weight:700; color:#7a2748;
+    background:linear-gradient(180deg,transparent 62%,var(--pink) 62%); padding:0 1px;
+  }
+  .impact{
+    font-weight:600; color:#5c4a00;
+    background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%); padding:0 1px;
+  }
+  .info-popup{
+    position:absolute; left:50%; top:100%; transform:translateX(-50%); margin-top:10px;
+    width:250px; background:var(--navy); color:var(--cream); font-family:'Noto Sans KR',sans-serif;
+    font-size:12.5px; font-weight:400; line-height:1.6; padding:14px 16px; border-radius:6px;
+    box-shadow:0 8px 20px rgba(0,0,0,.25); z-index:50; text-align:left;
+  }
+  .info-popup:before{
+    content:""; position:absolute; top:-6px; left:50%; transform:translateX(-50%);
+    border-left:6px solid transparent; border-right:6px solid transparent; border-bottom:6px solid var(--navy);
+  }
+  .info-popup b{color:var(--gold-light); display:block; margin-bottom:4px; font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:26px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+  .summary-box{margin-top:56px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제1강</div>
+    <h1 class="title">침례교는 어떻게 시작되었는가</h1>
+    <div class="subtitle">성경으로 돌아가려는 사람들이 걸어간 길</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>꼭 기억할 핵심 용어</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">초대교회, 침례의 원형</h2></div>
+      <p>사도행전을 펼치면 언제나 같은 순서가 반복됩니다. 사람들이 복음을 듣고, 예수님을 믿고, 그리고 <span class="keyword">침례</span>를 받습니다. 베드로의 설교를 들은 삼천 명이 침례를 받았고, 에티오피아 내시도, 빌립보 간수도 믿은 뒤에야 침례를 받았습니다. <span class="impact">신약교회에서 침례는 이미 믿은 사람이 자신의 신앙을 공개적으로 고백하는 행위였습니다.</span> 순서가 뒤바뀌는 일은 없었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">국가와 하나가 된 교회</h2></div>
+      <p>313년, <span class="person" data-info="로마 제국의 황제. 313년 밀라노 칙령으로 기독교를 공인해 박해를 끝냈다. 그러나 이후 교회와 국가가 결합되며 신앙이 제도화되는 계기를 만들었다.">콘스탄티누스 황제</span>가 기독교를 공인하면서 상황이 달라지기 시작합니다. 처음에는 박해가 끝났다는 좋은 소식이었습니다. 그러나 시간이 흐르며 교회와 국가는 점점 하나의 몸처럼 얽히게 되었고, 교회에 속하는 것은 신앙의 결단이 아니라 사회 구성원이 되는 절차가 되어갔습니다. 태어나면 자연스럽게 <span class="keyword">유아세례</span>를 받는 것이 당연한 일이 되었습니다. <span class="impact">믿음보다 제도가 앞서게 된 것입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">종교개혁이 남긴 숙제</h2></div>
+      <p>16세기, <span class="person" data-info="1483~1546. 독일의 수도사 출신 신학자. 1517년 95개조 반박문으로 종교개혁의 문을 열었다. '오직 성경', '오직 믿음'을 외쳤지만 유아세례 관행은 그대로 유지했다.">마르틴 루터</span>가 "오직 성경", "오직 믿음"을 외치며 등장합니다. <span class="person" data-info="1484~1531. 스위스 취리히의 종교개혁가. 루터와 별도로 스위스에서 개혁운동을 이끌었다. 그의 제자 그룹 중 일부가 훗날 유아세례를 거부하고 재침례파를 이룬다.">츠빙글리</span>와 <span class="person" data-info="1509~1564. 프랑스 출신 신학자로 제네바에서 개혁운동을 체계화했다. 예정론으로 잘 알려져 있으며, 이후 특수침례교 신학 형성에 큰 영향을 준다.">칼뱅</span>도 각자의 자리에서 교회를 개혁해 나갔습니다. <span class="impact">하지만 이 위대한 개혁자들조차 손대지 않은 것이 하나 있었습니다. 바로 <span class="keyword">유아세례</span>였습니다.</span> 당시 국가와 교회는 여전히 긴밀히 묶여 있었고, 이 관행을 건드리는 것은 신학의 문제를 넘어 사회 질서 전체를 흔드는 일이었기 때문입니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">더 철저하게 성경을 읽은 사람들</h2></div>
+      <p>그런데 어떤 이들은 여기서 멈추지 않고 다시 물었습니다. "성경 어디에 유아세례가 있는가?" 아무리 성경을 읽어도 순서는 언제나 믿음, 회개, 그리고 침례였습니다. 이들은 결론에 이릅니다. 믿는 사람만 침례를 받아야 한다고. 사람들은 이들을 "다시 침례를 주는 자들", 곧 <span class="keyword">재침례파</span>라 부르며 비난했지만, 이들의 생각은 달랐습니다. <span class="impact">유아세례는 애초에 성경적인 침례가 아니었으므로, 지금 받는 것이 그들 생애 첫 번째 침례라는 것이었습니다.</span> 이 확신이 이후 침례교 사상 전체의 밑바탕이 됩니다. (이 흐름과 침례교의 구체적 관계는 다음 강에서 다룹니다.)</p>
+      <div class="pull">교회를 교회 되게 하는 것은 <b>태어난 자리</b>가 아니라 <b>고백된 믿음</b>이다 — 이 하나의 확신이 이후 400년 침례교 역사를 관통합니다.</div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">1609년, 암스테르담의 결단</h2></div>
+      <p>영국 국교회의 목사였던 <span class="person" data-info="1554~1612. 영국 국교회 목사였으나 유아세례가 성경적이지 않다는 확신에 이르러 네덜란드로 망명했다. 1609년 스스로와 회중에게 신자의 침례를 베풀었다. 오늘날 침례교의 직접적 출발점으로 평가받는다.">존 스미스</span>도 같은 결론에 도달한 사람 중 하나였습니다. 성경을 연구할수록 유아세례가 성경적이지 않다는 확신이 깊어졌지만, 당시 영국에서 국교회에 반대하는 것은 감옥, 심하면 죽음을 의미했습니다. 그는 네덜란드로 망명했고, 1609년, 스스로 신앙을 고백한 성인 신자들에게 <span class="keyword">신자의 침례</span>를 베풀었습니다. <span class="impact">오늘날 많은 역사가들이 이 사건을 침례교의 직접적 출발점으로 봅니다.</span> 완성된 신학을 갖고 시작한 운동이 아니라, <span class="impact">저항과 성경 연구 속에서 한 걸음씩 형성되어 간 운동이었습니다.</span></p>
+    </section>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li>신약교회의 침례는 <b>믿음 이후의 공개적 고백</b>이었습니다.</li>
+        <li>313년 이후 교회와 국가가 결합되며 <b>유아세례가 사회 편입 절차</b>가 되었습니다.</li>
+        <li>종교개혁조차 유아세례는 그대로 두었습니다.</li>
+        <li>더 철저히 성경을 읽은 이들이 <b>신자의 침례</b>라는 확신에 이르렀습니다.</li>
+        <li><b>1609년 암스테르담, 존 스미스</b>의 침례가 오늘날 침례교의 직접적 출발점으로 여겨집니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>우리는 오늘날 "당연하게 여겨온 신앙의 관습"에 대해 얼마나 깊이 질문해 본 적이 있습니까?</li>
+        <li>"교회는 믿음을 고백한 사람들의 자발적 모임이다"라는 확신은 오늘 우리 공동체에 어떤 의미가 있습니까?</li>
+        <li>제도나 전통보다 성경의 가르침을 다시 살피는 용기가 필요했던 나의 경험이 있다면 나누어 봅시다.</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제1강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){
+    document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); });
+  }
+  document.querySelectorAll('.person').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>
