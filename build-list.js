@@ -13,6 +13,7 @@ const categories = [
   { key: 'mokjang', dir: 'content/mokjang' },
   { key: 'bulletin', dir: 'content/bulletin' },
   { key: 'mokjang_sharing', dir: 'content/mokjang-sharing' },
+  { key: 'baptist_history', dir: 'content/baptist-history' },
   { key: 'admin_forms', dir: 'content/admin-forms' },
 ];
 
