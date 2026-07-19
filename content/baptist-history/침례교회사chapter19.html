@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>19강. 오늘날 침례교의 도전과 과제</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .legacy-grid{display:grid;grid-template-columns:repeat(1,1fr);gap:10px;margin:18px 0;}
+  .legacy-card{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:6px;padding:14px 18px;}
+  .legacy-card .n{font-family:'Noto Sans KR',sans-serif;font-size:13px;font-weight:700;color:#fff;background:var(--navy);width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  .legacy-card div.body h4{margin:0 0 4px;font-size:15.5px;color:var(--navy);}
+  .legacy-card div.body p{margin:0;font-size:14px;font-family:'Noto Sans KR',sans-serif;line-height:1.6;}
+
+  .name-tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px;font-family:'Noto Sans KR',sans-serif;}
+  .name-tags span{background:var(--cream-warm);border:1px solid var(--sky-line);color:var(--navy);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .deepdive-box{margin-top:40px;background:#fff;border:1px solid var(--sky-line);border-radius:2px;padding:26px 28px;}
+  .deepdive-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--sky-line);margin:0 0 12px;font-weight:700;}
+  .deepdive-box h4{font-size:16.5px;color:var(--navy);margin:0 0 10px;}
+  .deepdive-box p{margin:0 0 10px;font-size:15.5px;}
+  .deepdive-box p:last-child{margin-bottom:0;}
+
+  .preview-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul,.summary-box ol{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제19강</div>
+    <h1 class="title">오늘날 침례교의<br>도전과 과제</h1>
+    <div class="subtitle">"변하는 시대 속에서 변하지 않는 복음을 붙들다"</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--pink)"></i>핵심 용어</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 기독교한국침례회의 형성과 발전을 살펴보았습니다. 오늘은 역사 공부를 마무리하면서, 오늘날 침례교회가 직면한 도전과 앞으로의 사명을 생각해 보겠습니다. 침례교는 400년이 넘는 역사 속에서 박해와 전쟁, 사회의 변화를 겪으면서도 성경을 붙들어 왔습니다. <span class="impact">그러나 21세기에는 이전과는 다른 새로운 도전이 우리 앞에 놓여 있습니다.</span> 이러한 시대 속에서 침례교는 무엇을 지켜야 하며, 무엇을 새롭게 준비해야 할까요?</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">세속화의 도전</h2></div>
+      <p>오늘날 많은 사람들은 하나님보다 성공, 돈, 즐거움, 자기 만족을 삶의 우선순위로 두는 경향이 있습니다. 이러한 <span class="keyword">세속화</span>는 교회 안에도 영향을 미칩니다. 예배보다 다른 활동이 우선되고, 신앙이 삶의 중심이 아니라 선택 사항처럼 여겨지기도 합니다. <span class="impact">그러나 침례교는 처음부터 성경을 삶의 기준으로 삼는 공동체였습니다. 시대가 변해도 하나님의 말씀은 변하지 않습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">다음 세대의 신앙교육</h2></div>
+      <p>한국 교회 전체가 고민하는 가장 큰 과제 가운데 하나는 다음 세대의 신앙 계승입니다. 교회학교가 줄어들고, 청소년과 청년의 교회 이탈이 늘어나고 있습니다. 침례교 역시 예외가 아닙니다. 그러므로 교회는 예배만 드리는 곳이 아니라, 다음 세대를 말씀으로 양육하는 공동체가 되어야 합니다. <span class="impact">신앙은 자동으로 이어지지 않습니다. 가정과 교회가 함께 책임을 감당해야 합니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">디지털 시대와 교회</h2></div>
+      <p>인터넷과 스마트폰, 인공지능과 온라인 예배는 교회의 모습을 크게 바꾸었습니다. 이러한 변화는 위기이면서 동시에 기회입니다. 복음은 이제 한 지역을 넘어 전 세계 사람들에게 빠르게 전해질 수 있습니다. <span class="impact">그러나 디지털 환경이 교회의 실제 공동체를 대신할 수는 없습니다.</span> 온라인은 복음을 전하는 좋은 도구가 될 수 있지만, 성도의 교제와 예배 공동체는 여전히 중요합니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">선교 환경의 변화</h2></div>
+      <p>과거에는 선교사가 해외로 나가는 것이 선교의 중심이었습니다. 오늘날에는 외국인이 우리 곁에 살고 있고, 다양한 문화가 함께 살아가며, 직장과 학교도 선교지가 되었습니다. 침례교는 오래전부터 모든 성도가 선교사라는 정신을 강조해 왔습니다. <span class="impact">이제 선교는 특별한 사람만의 일이 아니라, 모든 그리스도인의 삶이 되어야 합니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">교회의 본질을 지키는 일</h2></div>
+      <p>시대가 변할수록 교회는 새로운 프로그램과 다양한 방법을 고민합니다. 이것은 필요할 수 있습니다. 그러나 어떤 시대에도 변하지 않아야 할 것이 있습니다.</p>
+      <ul class="plain">
+        <li><b>성경 중심</b></li>
+        <li><b>복음 중심</b></li>
+        <li><b>기도</b></li>
+        <li><b>예배</b></li>
+        <li><b>제자훈련</b></li>
+      </ul>
+      <p><span class="impact">이 다섯 가지는 교회의 본질입니다. 방법은 달라질 수 있지만, 복음은 바뀔 수 없습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">침례교가 계속 지켜야 할 유산</h2></div>
+      <p>우리가 지난 18강 동안 배운 침례교의 핵심 유산은 다음과 같습니다.</p>
+      <div class="legacy-grid">
+        <div class="legacy-card"><div class="n">1</div><div class="body"><h4>성경의 최종 권위</h4><p>모든 신앙과 삶의 기준은 성경입니다.</p></div></div>
+        <div class="legacy-card"><div class="n">2</div><div class="body"><h4>신자의 침례</h4><p>믿음을 고백한 사람에게 침례를 베푸는 성경적 원리를 지킵니다.</p></div></div>
+        <div class="legacy-card"><div class="n">3</div><div class="body"><h4>지역교회의 자치</h4><p>각 교회는 그리스도를 머리로 하여 책임 있게 사역합니다.</p></div></div>
+        <div class="legacy-card"><div class="n">4</div><div class="body"><h4>종교의 자유</h4><p>믿음은 강요될 수 없으며, 모든 사람의 양심은 존중받아야 합니다.</p></div></div>
+        <div class="legacy-card"><div class="n">5</div><div class="body"><h4>선교적 사명</h4><p>교회는 세상으로 나아가 복음을 전해야 합니다.</p></div></div>
+      </div>
+      <p><span class="impact">이 다섯 가지는 시대가 바뀌어도 변하지 않는 침례교의 정체성입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">한국 침례교의 미래</h2></div>
+      <p>한국 사회는 빠르게 변화하고 있습니다. 교회도 변화에 적응해야 합니다. 그러나 적응과 타협은 다릅니다. 우리는 문화는 이해해야 하지만, 복음은 타협해서는 안 됩니다. <span class="impact">기술은 사용할 수 있지만, 말씀을 대신하게 해서는 안 됩니다. 교회는 세상과 소통해야 하지만, 세상의 기준으로 교회를 판단해서는 안 됩니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">오늘 우리에게 주는 교훈</h2></div>
+      <p>침례교의 역사는 유명한 인물들의 이야기만이 아닙니다. 이들은 모두 성경을 붙들고 자신의 시대를 살아간 사람들이었습니다.</p>
+      <div class="name-tags">
+        <span>존 스미스</span><span>토머스 헬위스</span><span>윌리엄 캐리</span><span>아도니람 저드슨</span><span>말콤 펜윅</span>
+      </div>
+      <p><span class="impact">이제 그 역사는 우리에게 이어졌습니다. 우리 역시 우리 시대의 침례교인으로서 성경을 사랑하고, 복음을 전하며, 교회를 세워 가야 합니다.</span> 역사는 과거의 기록이 아니라, 오늘 우리가 이어 가야 할 믿음의 이야기입니다.</p>
+      <div class="pull">방법은 시대마다 달라졌습니다. 그러나 <b>성경, 복음, 교회</b>를 향한 붙듦은 400년 동안 한 번도 변하지 않았습니다.</div>
+    </section>
+
+    <div class="deepdive-box">
+      <h3>역사 더 깊이 보기</h3>
+      <h4>침례교의 미래는 무엇으로 결정될까?</h4>
+      <p>침례교의 미래는 교단의 규모나 건물의 크기로 결정되지 않습니다. 역사를 돌아보면 침례교는 언제나 성경으로 돌아갈 때 건강했고, 복음을 위해 헌신할 때 성장했습니다.</p>
+      <p>초대 침례교인들이 박해 속에서도 성경을 붙들었던 것처럼, 오늘의 침례교도 시대의 변화 속에서 변하지 않는 진리와 변화하는 방법을 함께 분별하는 지혜가 필요합니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간은 마지막 강의입니다. 지금까지 배운 모든 내용을 종합하여, "오늘 우리는 왜 침례교인인가?"라는 질문에 성경과 역사를 통해 답을 찾아보겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ol>
+        <li>오늘날 침례교는 <b>세속화, 다음 세대, 디지털 시대, 변화하는 선교 환경</b>이라는 새로운 도전에 직면해 있습니다.</li>
+        <li>어떤 시대에도 <b>성경 중심, 복음 중심, 선교 중심</b>이라는 침례교의 핵심 가치는 변하지 않습니다.</li>
+        <li>침례교의 역사는 과거의 유산이 아니라 <b>오늘 우리에게 맡겨진 사명</b>입니다.</li>
+      </ol>
+    </div>
+
+    <div class="questions-box">
+      <h3>생각해 볼 질문</h3>
+      <ol>
+        <li>오늘날 한국 교회가 가장 시급하게 회복해야 할 것은 무엇이라고 생각합니까?</li>
+        <li>디지털 시대에 교회는 어떤 것은 적극 활용하고, 어떤 것은 반드시 지켜야 할까요?</li>
+        <li>하나님께서는 오늘 우리 교회에 어떤 사명을 맡기셨다고 생각합니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제19강</footer>
+  </main>
+</div>
+</body>
+</html>

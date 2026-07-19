@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>16강. 침례교와 성경 해석</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:270px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .reason-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0;}
+  @media (max-width:520px){ .reason-grid{grid-template-columns:1fr;} }
+  .reason-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px;}
+  .reason-card .num{font-family:'Noto Sans KR',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:6px;}
+  .reason-card h4{margin:0 0 6px;font-size:15.5px;color:var(--navy);}
+  .reason-card p{font-size:14px;margin:0;font-family:'Noto Sans KR',sans-serif;line-height:1.65;text-align:left;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .deepdive-box{margin-top:40px;background:#fff;border:1px solid var(--sky-line);border-radius:2px;padding:26px 28px;}
+  .deepdive-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--sky-line);margin:0 0 12px;font-weight:700;}
+  .deepdive-box h4{font-size:16.5px;color:var(--navy);margin:0 0 10px;}
+  .deepdive-box p{margin:0 0 10px;font-size:15.5px;}
+  .deepdive-box p:last-child{margin-bottom:0;}
+
+  .preview-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul,.summary-box ol{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after,.term:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제16강</div>
+    <h1 class="title">침례교와<br>성경 해석</h1>
+    <div class="subtitle">"왜 침례교는 언제나 성경으로 돌아가려 하는가?"</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 침례교의 두 가지 규례인 침례와 주의 만찬을 살펴보았습니다. 오늘은 침례교 신앙의 가장 깊은 토대인 성경관과 성경 해석 원리를 공부하겠습니다. 침례교는 단순히 신자의 침례를 강조하는 교단이 아닙니다. <span class="impact">침례교는 무엇보다도 "성경은 무엇이라고 말하는가?"를 가장 먼저 묻는 공동체입니다.</span> 역사를 돌아보면, 침례교의 모든 중요한 결정은 성경으로 돌아가려는 노력에서 시작되었습니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">오직 성경(Sola Scriptura)</h2></div>
+      <p>종교개혁자들은 <span class="keyword">"오직 성경"</span>(Sola Scriptura)을 외쳤습니다. 침례교 역시 이 정신을 이어받았습니다. "오직 성경"이란, 성경만 읽으면 된다는 뜻이 아닙니다. 그 의미는 신앙과 삶의 최종 권위는 오직 성경이라는 것입니다. 교회의 전통도, 신앙고백도, 목회자의 가르침도 중요합니다. <span class="impact">그러나 이 모든 것은 반드시 성경의 권위 아래 있어야 합니다. 성경과 충돌한다면, 최종적으로 따라야 할 기준은 언제나 성경입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">성경은 왜 권위가 있는가?</h2></div>
+      <p>침례교는 성경이 권위를 가지는 이유를 사람에게서 찾지 않습니다. <span class="impact">성경은 하나님의 말씀이기 때문에 권위가 있습니다.</span> 성경은 인간의 지혜를 기록한 책이 아니라, 하나님께서 성령을 통해 기록하게 하신 말씀입니다.</p>
+      <div class="refs">
+        <span class="ref-tag" data-info="모든 성경은 하나님의 감동으로 기록되어 교훈과 책망, 바르게 함과 의로운 훈련에 유익하다고 말하는 구절입니다.">디모데후서 3:16</span>
+        <span class="ref-tag" data-info="예언은 언제든지 사람의 뜻으로 낸 것이 아니요, 오직 성령의 감동하심을 받은 사람들이 하나님께 받아 말한 것이라는 구절입니다.">베드로후서 1:21</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">성경은 성경으로 해석한다</h2></div>
+      <p>침례교는 성경을 읽을 때 중요한 원칙을 가지고 있습니다. 바로 <span class="term" data-info="어려운 구절은 더 분명한 다른 성경 말씀을 통해 이해해야 한다는 성경 해석의 원칙. 본문의 앞뒤 문맥과 성경 전체의 흐름, 복음의 중심을 함께 살펴 해석함으로써 한 구절만 떼어 내어 교리를 만드는 위험을 피한다.">"성경은 성경으로 해석한다"</span>는 것입니다. 어려운 구절은 더 분명한 다른 성경 말씀을 통해 이해해야 합니다. 한 구절만 떼어 내어 교리를 만드는 것은 매우 위험합니다. <span class="impact">그래서 침례교는 본문의 앞뒤 문맥, 성경 전체의 흐름, 복음의 중심을 함께 살펴봅니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">문자 그대로 읽되, 문학적 장르를 존중한다</h2></div>
+      <p>침례교는 성경을 가능한 한 본문이 의도한 의미대로 읽으려고 합니다. 하지만 모든 표현을 무조건 문자적으로만 이해하는 것은 아닙니다. 예를 들어, 예수님께서 "나는 문이다"(요한복음 10:9)라고 말씀하셨다고 해서, 예수님이 실제 나무문이라는 뜻은 아닙니다. 이는 비유입니다. 또한 시편에는 시가 있고, 잠언에는 지혜 문학이 있으며, 요한계시록에는 상징이 많이 사용됩니다. <span class="impact">따라서 성경은 장르와 문맥을 고려하여 해석해야 합니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">모든 성도가 성경을 읽어야 한다</h2></div>
+      <p>침례교는 <span class="keyword">만인제사장</span>의 원리를 중요하게 생각합니다. 모든 성도는 하나님 앞에서 말씀을 읽고 배우며 순종할 책임이 있습니다. 물론 목회자와 교사는 성경을 가르치는 특별한 사명을 받았습니다. <span class="impact">그러나 성경을 읽을 권리와 책임은 모든 성도에게 있습니다.</span> 그래서 침례교는 성경 읽기, 성경 공부, 제자훈련을 매우 중요하게 여겨 왔습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">성령의 도우심</h2></div>
+      <p>성경은 단순한 학문으로만 이해할 수 없습니다. 성령께서 우리의 마음을 열어 주실 때, 우리는 하나님의 뜻을 더욱 바르게 깨닫게 됩니다. <span class="impact">그러므로 우리는 성경을 읽기 전에 기도하는 마음으로 성령의 인도하심을 구해야 합니다.</span></p>
+      <div class="refs"><span class="ref-tag" data-info="예수님께서 보혜사 곧 성령께서 오시면 모든 것을 가르치시고 예수님이 하신 모든 말씀을 생각나게 하시리라고 약속하신 구절입니다.">요한복음 14:26</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">성경 해석과 교회의 공동체</h2></div>
+      <p>침례교는 개인이 성경을 읽는 것을 중요하게 생각하지만, 혼자만의 해석을 절대적인 기준으로 삼지는 않습니다. 성경은 교회 공동체 안에서 함께 배우고, 역사 속 신앙의 선배들의 지혜도 존중하며, 겸손하게 해석해야 합니다. 그래서 침례교는 설교, 성경 공부, 신앙고백, 교회의 권면을 소중하게 여깁니다. <span class="impact">개인의 자유와 공동체의 책임은 함께 가야 합니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">오늘 우리에게 주는 교훈</h2></div>
+      <p>오늘날 우리는 수많은 정보와 다양한 해석 속에 살아갑니다. 그러나 침례교는 언제나 같은 질문을 던집니다. "성경은 무엇이라고 말씀하는가?" 우리의 경험보다, 문화보다, 전통보다, 하나님의 말씀이 먼저입니다. <span class="impact">성경은 단순히 지식을 쌓기 위한 책이 아니라, 우리의 삶을 변화시키는 하나님의 살아 있는 말씀입니다.</span></p>
+      <div class="pull">침례교인에게 성경은 <b>연구 대상</b>이기 전에 <b>순종할 말씀</b>입니다. 읽는 이유는 지식을 위해서가 아니라, 삶이 변하기 위해서입니다.</div>
+    </section>
+
+    <div class="deepdive-box">
+      <h3>역사 더 깊이 보기</h3>
+      <h4>침례교는 개인의 성경 해석만을 강조하는 교단일까?</h4>
+      <p>그렇지 않습니다. 침례교는 개인의 성경 읽기와 양심의 자유를 매우 중요하게 여기지만, 동시에 교회 공동체 안에서 말씀을 배우고 분별하는 책임도 강조합니다.</p>
+      <p>그래서 역사적으로 1644년 런던 신앙고백, 1689년 런던 신앙고백과 같은 신앙고백서를 작성하여 성경에 대한 공동의 이해를 정리했습니다. 즉, 침례교는 '개인의 자유'와 '공동체의 책임'을 함께 붙드는 전통입니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 시선을 한국으로 옮겨, 침례교가 우리나라에 전해진 과정을 살펴보겠습니다. 말콤 펜윅(Malcolm C. Fenwick)의 사역과 대한기독교회의 탄생, 그리고 오늘의 기독교한국침례회로 이어지는 역사를 통해 하나님께서 한국 교회 가운데 어떻게 침례교를 세우셨는지 함께 배우겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ol>
+        <li>침례교는 성경을 신앙과 삶의 <b>최종 권위</b>로 믿습니다.</li>
+        <li>성경은 성경으로 해석하며, <b>문맥과 성경 전체의 흐름</b> 속에서 이해해야 합니다.</li>
+        <li>모든 성도는 <b>성령의 도우심</b> 가운데 성경을 읽고 배우며 순종할 책임이 있습니다.</li>
+      </ol>
+    </div>
+
+    <div class="questions-box">
+      <h3>생각해 볼 질문</h3>
+      <ol>
+        <li>왜 침례교는 전통보다 성경을 최종 권위로 삼을까요?</li>
+        <li>"성경은 성경으로 해석한다"는 원칙은 잘못된 해석을 막는 데 어떤 도움이 될까요?</li>
+        <li>나는 말씀을 읽을 때 지식을 얻기보다 삶의 변화를 기대하며 읽고 있습니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제16강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>8강. 1689년 런던 신앙고백</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:260px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(calc(-50% + var(--arrow-shift,0px)));border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .chapters-box{margin-top:18px;background:#fff;border:1px solid var(--line);border-radius:6px;padding:18px 22px;font-family:'Noto Sans KR',sans-serif;}
+  .chapters-box .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px 14px;margin-top:10px;}
+  .chapters-box .grid span{font-size:12.5px;color:var(--navy);padding:4px 0;border-bottom:1px dashed var(--line);}
+  .chapters-box .cap{font-size:11.5px;color:#8f8672;}
+
+  .preview-box{margin-top:40px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제8강</div>
+    <h1 class="title">1689년<br>런던 신앙고백</h1>
+    <div class="subtitle">침례교 신앙의 표준이 세워지다</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 · 문서 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 7강에서는 1644년 런던 신앙고백을 살펴보았습니다. 그 문서는 침례교가 자신들의 신앙을 처음으로 세상에 공식적으로 설명한 역사적인 선언이었습니다. 그러나 침례교는 여기서 멈추지 않았습니다. 약 45년이 지난 후, 더욱 성숙하고 체계적인 신앙고백을 발표하게 됩니다. 바로 <span class="keyword">1689년 런던 신앙고백</span>(The Second London Baptist Confession of Faith)입니다. 오늘날까지도 이 문서는 세계 여러 개혁침례교회와 많은 침례교회에서 가장 중요한 신앙고백으로 존중받고 있습니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">왜 새로운 신앙고백이 필요했을까</h2></div>
+      <p>1644년 신앙고백은 침례교가 누구인지를 설명하는 데 큰 역할을 했습니다. 하지만 시간이 지나면서 교회는 더욱 깊은 신학적 질문들을 마주하게 되었습니다. 당시 영국에서는 청교도 운동, 장로교, 회중교회, 그리고 침례교가 서로 성경을 연구하며 많은 신학적 논의를 이어가고 있었습니다. <span class="impact">침례교 역시 "우리는 성경을 이렇게 이해합니다"라고 보다 체계적으로 정리할 필요를 느끼게 되었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">1677년에 작성되고, 1689년에 발표된 이유</h2></div>
+      <p>여기서 많은 사람들이 궁금해하는 부분이 있습니다. 왜 이름은 1689년 신앙고백인데 실제 작성은 1677년일까요? 당시 영국에서는 침례교가 자유롭게 활동하기 어려웠습니다. 국교회가 아닌 교회들은 여전히 많은 제약을 받고 있었습니다. 그래서 1677년에 작성은 되었지만 공식적으로 발표하지 못했습니다. 그러다가 <span class="term" data-info="1689년 영국 의회가 제정한 법. 국교회를 따르지 않는 개신교(비국교도)에게 일정한 예배의 자유를 허용했다. 이 법이 제정되면서 침례교를 비롯한 비국교도들이 신앙을 보다 공개적으로 고백할 수 있는 길이 열렸다.">관용법</span>(Toleration Act)이 제정되면서 비국교도들에게 일정한 종교의 자유가 허용되었습니다. <span class="impact">이후 침례교 대표들이 모여 이 신앙고백을 공식적으로 채택하게 되었고, 그래서 우리는 이를 1689년 런던 신앙고백이라고 부르게 되었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">웨스트민스터 신앙고백과 어떤 관계가 있을까</h2></div>
+      <p>1689년 신앙고백을 읽어 보면 놀라운 사실을 발견하게 됩니다. 상당 부분이 <span class="term" data-info="1646년 영국 웨스트민스터 총회에서 작성된 장로교 신앙고백서. 이후 여러 개혁주의 교단의 표준 문서가 되었다. 1689년 침례교 신앙고백은 이 문서의 구조와 상당 부분의 조항을 따르되, 침례와 교회론 부분을 침례교의 확신에 맞게 고쳐 썼다.">웨스트민스터 신앙고백</span>(1646)과 <span class="term" data-info="1658년 회중교회(독립교회) 지도자들이 발표한 신앙고백서. 웨스트민스터 신앙고백을 바탕으로 하되 교회의 자치와 지역교회 중심의 교회론을 강조했다. 1689년 침례교 신앙고백은 이 문서의 교회론 부분에서도 큰 영향을 받았다.">사보이 선언</span>(1658)의 구조를 그대로 따르고 있습니다. 왜 그랬을까요? 침례교는 새로운 신학을 만들려는 사람들이 아니었습니다. 오히려 <span class="impact">"우리는 역사적인 개혁신앙을 함께 믿습니다"라는 사실을 보여주고 싶었습니다.</span> 삼위일체, 하나님의 주권, 성경의 권위, 은혜로 받는 구원 등 대부분의 핵심 교리는 장로교와 회중교회와 동일했습니다. 그러나 몇 가지 중요한 부분에서는 분명한 차이를 두었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">가장 큰 차이</h2></div>
+      <p><b>첫째, 신자의 침례.</b> 가장 잘 알려진 차이입니다. 장로교는 유아세례를 시행했지만, 침례교는 <span class="impact">믿음을 고백한 사람에게만 침례를 베풀어야 한다고 믿었습니다.</span> 신앙은 부모가 대신할 수 없으며, 각 사람이 직접 그리스도를 믿고 고백해야 한다는 것입니다.</p>
+      <p><b>둘째, 교회의 모습.</b> 장로교는 노회와 총회를 통한 치리를 강조합니다. 반면 침례교는 지역교회가 그리스도를 머리로 하는 독립된 공동체라고 고백합니다. 이를 <span class="keyword">교회의 자치</span>(Local Church Autonomy)라고 부릅니다. 각 교회는 서로 협력하지만, 어느 교회도 다른 교회를 지배하지 않습니다.</p>
+      <p><b>셋째, 교회의 회원.</b> 교회는 단순히 한 지역에 사는 사람들이 아니라 <span class="impact">거듭난 신자들의 공동체입니다.</span> 그래서 침례교는 신앙고백과 교회 회원권을 매우 중요하게 생각했습니다.</p>
+      <div class="refs">
+        <span class="ref-tag" data-info="성도들을 향해 &quot;너희는 왕 같은 제사장이요 거룩한 나라요 그의 소유된 백성&quot;이라 선언하는 구절로, 교회가 거듭난 자들의 공동체임을 보여줍니다.">베드로전서 2:9</span>
+        <span class="ref-tag" data-info="부활하신 예수님께서 제자들에게 모든 민족을 제자 삼아 아버지와 아들과 성령의 이름으로 침례를 주라 명령하신 지상명령 본문입니다.">마태복음 28:19</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">1689년 신앙고백의 구성</h2></div>
+      <p>1689년 신앙고백은 모두 32장으로 이루어져 있습니다. 내용은 매우 체계적이어서, 오늘날 조직신학의 흐름과 거의 같은 구조를 가지고 있습니다.</p>
+      <div class="chapters-box">
+        <span class="cap">32장 중 주요 항목</span>
+        <div class="grid">
+          <span>1. 성경</span><span>2. 하나님</span><span>3. 삼위일체</span><span>4. 창조</span>
+          <span>5. 섭리</span><span>6. 인간의 타락</span><span>8. 그리스도의 구속</span><span>11. 칭의</span>
+          <span>13. 성화</span><span>14. 믿음</span><span>15. 회개</span><span>26. 교회</span>
+          <span>29. 침례</span><span>30. 주의 만찬</span><span>32. 마지막 심판</span>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">침례교만의 특징</h2></div>
+      <p>1689년 신앙고백은 개혁주의 신학을 따르면서도 침례교의 독특한 정체성을 분명히 보여 줍니다. 특히 다음 네 가지가 중요합니다.</p>
+      <ul class="plain">
+        <li><b>성경만이 최종 권위</b>입니다.</li>
+        <li><b>교회는 거듭난 신자들의 공동체</b>입니다.</li>
+        <li><b>침례는 믿음을 고백한 사람</b>에게 시행합니다.</li>
+        <li><b>지역교회의 자치</b>를 존중합니다.</li>
+      </ul>
+      <p><span class="impact">이 네 가지는 오늘날에도 침례교의 중요한 특징으로 이어지고 있습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">오늘날에도 중요한 이유</h2></div>
+      <p>많은 침례교회가 반드시 1689년 신앙고백을 사용하는 것은 아닙니다. 그러나 이 문서는 침례교 신학을 가장 체계적으로 정리한 고전으로 인정받고 있습니다. 특히 개혁침례교회, 여러 신학교, 침례교 역사 연구자들은 지금도 이를 중요한 참고 문헌으로 사용합니다. <span class="impact">무엇보다도 침례교는 감정이나 경험보다 성경을 중심으로 신앙을 세우려는 공동체임을 잘 보여 주는 문서입니다.</span></p>
+      <div class="pull">신앙은 마음속에만 있는 것이 아니라, <b>교회 공동체 안에서 함께 고백되고 삶으로 드러나야</b> 합니다. 1689년 런던 신앙고백은 그 확신의 결정체였습니다.</div>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>내용</th></tr>
+        <tr><td>작성 연도</td><td>1677년</td></tr>
+        <tr><td>공식 발표</td><td>1689년, 관용법 제정 이후</td></tr>
+        <tr><td>구조적 뿌리</td><td>웨스트민스터 신앙고백(1646), 사보이 선언(1658)</td></tr>
+        <tr><td>침례교 고유의 차이</td><td>신자의 침례, 교회의 자치, 거듭난 자들의 회원권</td></tr>
+        <tr><td>오늘날의 위치</td><td>개혁침례교회와 여러 신학교의 표준 신앙고백</td></tr>
+      </table>
+      <p class="table-cap">핵심 교리는 개혁신앙과 함께하되, 교회론과 침례에서는 침례교의 확신을 분명히 했습니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 "영국에서 미국으로: 침례교의 확산"을 다룹니다. 로저 윌리엄스가 세운 로드아일랜드의 첫 침례교회 이후, 침례교가 어떻게 신대륙 전역으로 퍼져 나갔는지, 그리고 대각성 운동이 침례교의 성장에 어떤 영향을 미쳤는지 살펴봅니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li><b>1689년 런던 신앙고백</b>은 1677년에 작성되었으나, 관용법 제정 이후인 1689년에 공식 발표되었습니다.</li>
+        <li>이 문서는 <b>웨스트민스터 신앙고백</b>과 <b>사보이 선언</b>의 구조를 따르며, 역사적 개혁신앙과의 연속성을 보여 줍니다.</li>
+        <li>그러나 <b>신자의 침례, 교회의 자치, 거듭난 자들의 회원권</b>에서는 침례교 고유의 확신을 분명히 했습니다.</li>
+        <li>32장으로 구성된 이 신앙고백은 침례교 신학을 가장 체계적으로 정리한 고전으로 오늘날까지 존중받고 있습니다.</li>
+        <li>침례교의 정체성은 <b>성경을 최종 권위로 삼는 것</b>에 있으며, 신앙고백은 그 성경을 충실히 설명하는 문서일 뿐입니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>왜 침례교는 웨스트민스터 신앙고백의 많은 내용을 그대로 받아들였을까요?</li>
+        <li>신자의 침례는 교회의 회원됨과 어떤 관계가 있을까요?</li>
+        <li>오늘날 우리 교회는 성경을 최종 권위로 삼고 있다는 사실을 실제로 어떻게 보여 줄 수 있을까요?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제8강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+      var el = this;
+      requestAnimationFrame(function(){
+        var rect = popup.getBoundingClientRect();
+        var pad = 10;
+        var shift = 0;
+        if(rect.left < pad) shift = pad - rect.left;
+        else if(rect.right > window.innerWidth - pad) shift = (window.innerWidth - pad) - rect.right;
+        if(shift !== 0){
+          popup.style.marginLeft = shift + 'px';
+          if(!el.classList.contains('ref-tag')){
+            popup.style.setProperty('--arrow-shift', (-shift) + 'px');
+          }
+        }
+      });
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

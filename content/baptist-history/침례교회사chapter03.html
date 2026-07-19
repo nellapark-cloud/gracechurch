@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>3강. 침례교는 재침례파의 후손인가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:260px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .preview-box{margin-top:40px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제3강</div>
+    <h1 class="title">침례교는 재침례파의<br>후손인가</h1>
+    <div class="subtitle">닮은 두 운동, 그리고 역사학자들의 세 가지 견해</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 · 분파 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 침례교가 붙든 여덟 가지 신앙 원리를 살펴보았습니다. 이번 강에서는 침례교 역사에서 가장 많이 질문받는 주제를 다룹니다. "침례교는 재침례파에서 나온 교회인가?" 이 질문은 단순한 역사적 호기심이 아니라, 침례교가 스스로를 어떻게 이해하는가와 직결된 정체성의 문제입니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">닮은 두 운동, 그래서 생긴 오해</h2></div>
+      <p>침례교와 <span class="term" data-info="16세기 종교개혁 당시 등장한 급진적 개혁 운동. 유아세례를 거부하고 신자에게만 침례를 베풀어 '다시 침례를 주는 자들'이라는 뜻의 이름이 붙었다. 가톨릭과 개신교 양쪽에서 박해받았으며, 메노파 등 여러 갈래로 나뉘어 발전했다.">재침례파</span>는 공통점이 많습니다. 둘 다 유아세례를 인정하지 않았고, 신자의 침례를 주장했으며, 국가교회를 반대하고, 성경 중심의 신앙을 강조했습니다. <span class="impact">이 때문에 많은 사람이 오랫동안 침례교를 재침례파의 후손이라고 생각해 왔습니다.</span> 그러나 역사학자들의 연구는 이보다 훨씬 신중합니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">재침례파는 누구인가</h2></div>
+      <p>재침례파는 16세기 종교개혁 당시 등장한 급진적 종교개혁 운동입니다. 루터와 츠빙글리보다 한 걸음 더 나아가 철저하게 성경으로 돌아가려 했습니다. 그들은 성경 어디에도 유아에게 침례를 베푼 기록이 없다는 사실에 주목했고, 믿음을 고백한 사람에게만 침례를 베풀었습니다. 이미 유아세례를 받은 사람들에게 다시 침례를 베풀었기에 사람들은 이들을 "다시 침례를 주는 자들", 곧 재침례파라 불렀지만 정작 그들은 스스로를 그렇게 부르지 않았습니다. <span class="impact">"유아세례는 성경적 침례가 아니므로, 지금 받는 침례가 나의 첫 번째 진정한 침례이다" — 이것이 그들의 확신이었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">재침례파가 지킨 원칙, 그리고 순교</h2></div>
+      <p>재침례파는 신자의 침례, 교회와 국가의 분리, 자발적인 신앙, 성경 중심, 거룩한 삶을 원칙으로 지켰습니다. 이는 당시 사회 전체를 뒤흔드는 급진적 주장이었습니다. <span class="impact">이 때문에 가톨릭과 개신교 양쪽 모두에게 박해를 받았고, 수천 명이 화형과 익사형과 참수형으로 순교했습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">침례교의 기원, 세 가지 견해</h2></div>
+      <p>그렇다면 침례교는 정말 재침례파에서 시작되었을까요? 역사학자들의 견해는 크게 셋으로 나뉩니다.</p>
+      <p><span class="keyword">① 계승설</span> — 침례교가 사도시대부터 재침례파를 거쳐 오늘날까지 끊이지 않고 이어져 왔다는 주장입니다. 대표적으로 <span class="person" data-info="1932년 사망. 20세기 초 미국의 침례교 목사. 1931년 소책자 《The Trail of Blood》를 저술해 침례교가 사도시대부터 끊이지 않고 이어져 왔다는 계승설을 대중적으로 널리 퍼뜨렸다.">J. M. 캐롤</span>의 《The Trail of Blood》가 있습니다. <span class="impact">그러나 이를 뒷받침할 직접적인 사료가 부족하다고 평가하는 학자가 많습니다.</span></p>
+      <p><span class="keyword">② 영국 분리파 기원설</span> — 오늘날 가장 널리 받아들여지는 견해입니다. <span class="person" data-info="1554~1612. 영국 국교회 목사였으나 유아세례가 성경적이지 않다는 확신에 이르러 네덜란드로 망명, 1609년 신자의 침례를 시작했다. 말년에는 메노파와의 연합을 원했다.">존 스미스</span>와 <span class="person" data-info="생몰년 미상(1616년경 사망). 존 스미스와 함께 네덜란드로 망명했던 영국 분리파 지도자. 스미스의 메노파 연합 시도에 반대해 영국으로 돌아가 침례교회를 세웠다.">토머스 헬위스</span>는 영국 국교회에서 갈라져 나온 <span class="term" data-info="16세기 말~17세기 초 영국에서 국교회의 개혁이 불충분하다고 여겨 아예 국교회를 떠나 독립적인 회중을 세운 이들. '분리주의자'라고도 한다. 국가와 결합된 교회 제도 자체를 거부했다는 점에서 재침례파와 통하지만, 별도의 흐름에서 출발했다.">영국 분리파</span> 출신이었고, 네덜란드에서 성경을 연구하며 신자의 침례를 받아들여 1609년 침례교회를 시작했습니다. <span class="impact">이 견해는 침례교가 재침례파에서 직접 나온 것은 아니지만, 네덜란드에서 재침례파와 접촉하며 일정한 영향을 받았을 가능성은 인정합니다.</span></p>
+      <p><span class="keyword">③ 영향설</span> — 조직적 기원은 영국 분리파에 있지만, 일부 사상은 재침례파의 영향을 받았다는 절충적 입장입니다. 오늘날 많은 연구자가 이 설명에 상당 부분 동의합니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">스미스와 헬위스, 갈림길에 서다</h2></div>
+      <p>흥미로운 사건이 하나 있습니다. 존 스미스는 말년에 네덜란드의 <span class="term" data-info="16세기 재침례파 지도자 메노 시몬스(Menno Simons, 1496~1561)를 따르던 무리에서 시작된 재침례파의 한 갈래. 신자의 침례와 평화주의, 사회로부터의 분리를 특히 강하게 지켰으며 오늘날까지 별도의 교단으로 이어지고 있다.">메노파</span>(재침례파의 한 갈래)와 교류하며 깊이 공감했고, 자신의 공동체가 메노파와 연합하기를 원했습니다. 그러나 토머스 헬위스는 여기에 동의하지 않았습니다. 그는 침례교가 독자적으로 서야 한다고 믿었고, 영국으로 돌아가 침례교회를 세웠습니다. <span class="impact">이 하나의 결정이 오늘날 침례교 역사에서 매우 중요한 분기점이 되었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">같고도 다른 길</h2></div>
+      <p>공통점은 많지만 차이도 분명합니다. 재침례파는 평화주의를 매우 강하게 강조하고 일부 공동재산 생활을 했으며 사회로부터의 분리를 지향했던 반면, <span class="impact">침례교는 평화주의를 필수 교리로 보지 않고, 공동재산 생활을 일반적으로 인정하지 않으며, 사회 속에서 복음을 전하는 길을 택했습니다.</span> 즉 침례교는 재침례파의 일부 신앙 원칙에는 공감했지만, 그들의 모든 신학과 실천을 그대로 계승한 것은 아닙니다.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>재침례파</th><th>침례교</th></tr>
+          <tr><td>신자의 침례</td><td>신자의 침례</td></tr>
+          <tr><td>종교의 자유 강조</td><td>종교의 자유 강조</td></tr>
+          <tr><td>교회 자치</td><td>교회 자치</td></tr>
+          <tr><td>평화주의를 매우 강하게 강조</td><td>평화주의를 필수 교리로 보지 않음</td></tr>
+          <tr><td>일부 공동재산 생활</td><td>일반적으로 인정하지 않음</td></tr>
+          <tr><td>사회와의 분리를 강조</td><td>사회 속에서 복음을 전함</td></tr>
+        </table>
+        <p class="table-cap">공통점은 신앙의 뿌리에서, 차이점은 사회를 향한 태도에서 두드러집니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">기독교한국침례회의 이해</h2></div>
+      <p>기독교한국침례회는 다음과 같이 설명합니다. 침례교의 직접적인 역사적 출발은 1609년 존 스미스와 토머스 헬위스에게서 찾되, 신자의 침례와 신앙의 자유를 추구했던 재침례파의 신앙은 역사적으로 중요한 선행 운동으로 존중합니다. <span class="impact">따라서 재침례파를 침례교의 직계 조상이라기보다, 같은 성경적 이상을 추구했던 신앙적 선배로 이해하는 것이 적절합니다.</span></p>
+      <div class="pull">침례교의 뿌리를 이해할 때 중요한 것은 <b>혈통처럼 계보를 따지는 것</b>이 아닙니다. 재침례파도, 영국 분리파도 모두 품었던 것은 <b>"성경으로 돌아가자"</b>는 하나의 열망이었습니다.</div>
+    </section>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 강에서는 "침례와 세례는 무엇이 다른가?"를 다룹니다. 헬라어 '밥티조(baptizō)'의 의미, 초대교회의 실제 관행, 유아세례가 역사 속에서 자리 잡은 과정, 그리고 침례교가 신자의 침례를 고수하는 이유를 성경과 교회사 자료로 살펴봅니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li>침례교와 재침례파는 <b>신자의 침례, 국가교회 반대, 성경 중심</b>이라는 공통점이 있습니다.</li>
+        <li>기원에 관한 견해는 <b>계승설, 영국 분리파 기원설, 영향설</b> 셋으로 나뉘며, 현재는 영국 분리파 기원설이 가장 널리 받아들여집니다.</li>
+        <li>존 스미스는 메노파와의 연합을 원했지만 <b>토머스 헬위스</b>는 이에 반대해 영국으로 돌아가 침례교회를 세웠습니다.</li>
+        <li>평화주의와 공동재산 생활 등에서 재침례파와 침례교는 <b>분명한 차이</b>를 보입니다.</li>
+        <li>기독교한국침례회는 재침례파를 <b>직계 조상이 아닌 신앙적 선배</b>로 이해합니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>침례교와 재침례파의 공통점 중, 오늘 우리 교회가 특별히 더 붙들어야 할 것은 무엇입니까?</li>
+        <li>스미스와 헬위스의 결정을 통해, "독자적으로 선다"는 것이 신앙 공동체에 어떤 의미를 가지는지 나누어 봅시다.</li>
+        <li>"혈통이 아니라 신약성경으로 돌아가려는 열망"이 우리 신앙의 정체성에 어떤 의미가 있습니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제3강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

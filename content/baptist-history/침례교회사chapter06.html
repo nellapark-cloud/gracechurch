@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>6강. 일반침례교와 특수침례교</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:260px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .quote-block{font-family:'Noto Serif KR',serif;font-style:italic;font-size:16px;color:var(--navy);border-left:3px solid var(--gold);background:var(--cream-warm);padding:16px 22px;margin:18px 0;line-height:1.8;}
+  .quote-block .who{display:block;margin-top:8px;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-size:12.5px;color:#8f8672;letter-spacing:.03em;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .preview-box{margin-top:40px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제6강</div>
+    <h1 class="title">일반침례교와<br>특수침례교</h1>
+    <div class="subtitle">"같은 침례교, 무엇이 달랐는가?"</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 침례교가 종교의 자유를 위해 어떤 희생을 감수했는지 살펴보았습니다. 오늘은 침례교가 형성되는 과정에서 나타난 중요한 두 흐름인 <span class="keyword">일반침례교</span>(General Baptists)와 <span class="keyword">특수침례교</span>(Particular Baptists)를 공부하겠습니다. 많은 사람들은 침례교가 하나의 집단으로 시작되었다고 생각하지만, 실제로는 두 개의 중요한 신학적 전통이 존재했습니다. 흥미로운 점은 두 그룹 모두 신자의 침례와 교회의 자치를 지켰지만, 예수 그리스도의 <b>속죄 범위</b>에 대해서는 서로 다른 이해를 가지고 있었다는 것입니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">하나의 침례교가 아니었다</h2></div>
+      <p>1609년 존 스미스와 토머스 헬위스가 시작한 침례교 운동은 시간이 지나면서 영국 전역으로 퍼져 나갔습니다. 그러나 모든 침례교인이 모든 교리를 똑같이 이해한 것은 아니었습니다. 특히 한 가지 질문에서 차이가 나타났습니다. <span class="impact">"예수님은 누구를 위해 죽으셨는가?"</span> 이 질문은 종교개혁 시대에도 매우 중요한 신학적 논쟁이었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">일반침례교의 탄생</h2></div>
+      <p>일반침례교는 토머스 헬위스의 영향을 받은 침례교인들로부터 시작되었습니다. 그들은 <span class="person" data-info="1560~1609. 네덜란드의 신학자. 인간의 자유의지와 하나님의 예정 사이의 관계를 새롭게 해석해, 그리스도의 속죄가 모든 사람에게 열려 있다고 주장했다. 그의 신학은 이후 일반침례교와 감리교 등에 큰 영향을 주었다.">야코부스 아르미니우스</span>(Jacobus Arminius)의 신학과 비슷한 견해를 가지고 있었습니다. 그들의 핵심 주장은 분명합니다. <span class="impact">예수님의 속죄는 모든 사람을 위한 것이며, 누구든지 믿으면 구원받을 수 있습니다.</span> 그래서 이들을 <span class="term" data-info="17세기 초 토머스 헬위스의 영향을 받아 형성된 침례교 흐름. 그리스도의 속죄가 모든 사람에게 열려 있다는 아르미니우스적 신학을 따랐다. '일반'은 속죄가 특정한 소수가 아니라 모든 사람에게 일반적으로 열려 있다는 의미다.">일반(General) 침례교</span>라고 부르게 되었습니다. 여기서 '일반'은 "평범하다"는 뜻이 아니라, 예수님의 속죄가 일반적으로, 곧 모든 사람에게 열려 있다는 의미입니다.</p>
+      <div class="refs">
+        <span class="ref-tag" data-info="하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니, 누구든지 그를 믿으면 멸망하지 않고 영생을 얻는다는 구절입니다. 속죄의 대상이 '누구든지'로 열려 있음을 보여줍니다.">요한복음 3:16</span>
+        <span class="ref-tag" data-info="하나님이 모든 사람이 구원을 받으며 진리를 아는 데 이르기를 원하신다고 말하는 구절입니다.">디모데전서 2:4</span>
+        <span class="ref-tag" data-info="주께서 아무도 멸망하지 않고 다 회개하기에 이르기를 원하신다는 구절로, 구원의 문이 모든 사람에게 열려 있음을 강조합니다.">베드로후서 3:9</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">특수침례교의 등장</h2></div>
+      <p>1630년대에 또 다른 침례교 공동체가 형성됩니다. 이들은 청교도와 칼빈주의의 영향을 많이 받은 사람들이었습니다. 그들은 예수님의 죽으심이 모든 사람에게 충분한 가치가 있지만, <span class="impact">하나님의 구원 계획 안에서는 선택된 백성을 위한 특별한 속죄라는 점을 강조했습니다.</span> 그래서 <span class="term" data-info="1630년대 청교도와 칼빈주의의 영향을 받아 형성된 침례교 흐름. 그리스도의 속죄가 하나님이 선택하신 백성을 위한 것이라는 신학을 강조했다. '특수'는 속죄의 효력이 특정한 대상, 곧 택하신 백성에게 초점이 있다는 의미다.">특수(Particular) 침례교</span>라고 불렸습니다.</p>
+      <div class="refs">
+        <span class="ref-tag" data-info="예수님께서 자신을 선한 목자로 소개하시며, 목자가 양들을 위해 목숨을 버린다고 말씀하시는 구절입니다.">요한복음 10:11</span>
+        <span class="ref-tag" data-info="남편들에게 그리스도께서 교회를 사랑하시고 자신을 내어주심같이 아내를 사랑하라고 권면하는 구절로, 그리스도와 교회의 특별한 관계를 보여줍니다.">에베소서 5:25</span>
+        <span class="ref-tag" data-info="하나님이 미리 아신 자들을 부르시고 의롭다 하시고 영화롭게 하신다는 구원의 순서를 설명하는 구절입니다.">로마서 8:29-30</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">두 그룹은 무엇이 같았는가?</h2></div>
+      <p>신학적 차이가 있었지만, 침례교의 핵심 원리는 동일했습니다. 두 그룹 모두 다음을 굳게 지켰습니다.</p>
+      <ul class="plain">
+        <li><b>성경의 권위</b> — 교회의 전통보다 성경을 우선했습니다.</li>
+        <li><b>신자의 침례</b> — 믿음을 고백한 사람만 침례를 받을 수 있다고 믿었습니다.</li>
+        <li><b>교회의 자치</b> — 각 지역교회는 그리스도 아래 독립적으로 운영되어야 한다고 보았습니다.</li>
+        <li><b>종교의 자유</b> — 국가가 신앙을 강요해서는 안 된다고 주장했습니다.</li>
+      </ul>
+      <p><span class="impact">이 네 가지는 오늘날까지도 침례교의 핵심 정체성으로 이어지고 있습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">무엇이 달랐는가?</h2></div>
+      <p>가장 큰 차이는 구원론이었습니다. 그러나 중요한 것은, <span class="impact">이 차이가 침례교의 정체성을 결정하지는 않았다는 점입니다.</span> 침례교의 핵심은 칼빈주의냐 아르미니우스주의냐가 아니라, 성경에 따른 신자의 침례와 교회의 자유였습니다.</p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>일반침례교</th><th>특수침례교</th></tr>
+          <tr><td>아르미니우스적 성향</td><td>칼빈주의 성향</td></tr>
+          <tr><td>모든 사람을 위한 속죄</td><td>선택된 백성을 위한 속죄 강조</td></tr>
+          <tr><td>인간의 응답을 강조</td><td>하나님의 주권을 강조</td></tr>
+        </table>
+        <p class="table-cap">차이는 구원론에 있었지만, 신자의 침례·교회의 자치·종교의 자유는 두 그룹 모두의 공통 유산이었습니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">1644년 런던 신앙고백</h2></div>
+      <p>특수침례교는 자신들의 신앙을 분명히 밝히기 위해 <span class="term" data-info="1644년 런던의 특수침례교 지도자들이 발표한 신앙고백서. 침례교가 재침례파나 급진적 집단과 다르다는 것을 밝히고, 성경의 권위와 신자의 침례, 복음적 신앙을 분명히 선언했다. 침례교가 사회적 신뢰를 얻는 중요한 계기가 되었다.">1644년 런던 신앙고백</span>을 발표했습니다. 당시 사람들은 침례교를 재침례파와 혼동하거나 급진적인 집단으로 오해했습니다. 그래서 특수침례교 지도자들은 성경을 최종 권위로 믿으며, 신자의 침례를 따르고, 질서를 무너뜨리는 사람이 아니라 복음적 신앙을 가진 교회라는 점을 분명히 했습니다. <span class="impact">이 신앙고백은 침례교가 사회적 신뢰를 얻는 중요한 계기가 되었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">갈등보다 연합을 선택하다</h2></div>
+      <p>일반침례교와 특수침례교는 신학적으로 차이가 있었지만, 공통의 박해를 경험했습니다. 그들은 국가교회의 압력을 함께 견뎌야 했고, 복음을 전하는 일에서는 협력했습니다. <span class="impact">모든 교리를 똑같이 이해하지 않더라도, 복음과 성경이라는 중심을 함께 붙들 수 있다는 것입니다.</span></p>
+      <div class="pull">침례교의 선배들은 <b>핵심 진리</b>를 지키면서도, 가능한 한 <b>복음 안에서 협력</b>하려고 노력했습니다. 이것은 오늘날 한국교회에도 필요한 자세입니다.</div>
+    </section>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 침례교 역사상 최초의 공식 신앙고백인 『1644년 런던 신앙고백』을 자세히 살펴보겠습니다. 왜 이 문서가 작성되었는지, 어떤 내용을 담고 있는지, 그리고 오늘날 침례교 신앙 형성에 어떤 영향을 미쳤는지를 함께 공부하겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li>침례교는 초기부터 <b>일반침례교</b>와 <b>특수침례교</b>라는 두 흐름으로 발전했습니다.</li>
+        <li>두 그룹은 <b>속죄의 범위</b>에 대해서는 차이가 있었지만, 신자의 침례·성경의 권위·교회의 자치·종교의 자유라는 핵심 원리는 함께 지켰습니다.</li>
+        <li>특수침례교는 <b>1644년 런던 신앙고백</b>을 통해 사회적 신뢰를 얻었습니다.</li>
+        <li>침례교의 정체성은 특정 구원론보다 <b>신약성경의 교회를 회복하려는 신앙</b>에 있었습니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>일반침례교와 특수침례교가 공통으로 지킨 가장 중요한 원리는 무엇이었습니까?</li>
+        <li>본질적인 교리와 비본질적인 신학적 차이는 어떻게 구별할 수 있을까요?</li>
+        <li>오늘날 우리 교회는 다양성 속에서도 복음의 중심을 잘 지키고 있습니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제6강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>14강. 침례교의 교회론</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:270px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .mark-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0;}
+  @media (max-width:520px){ .mark-grid{grid-template-columns:1fr;} }
+  .mark-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px;}
+  .mark-card .num{font-family:'Noto Sans KR',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:6px;}
+  .mark-card h4{margin:0 0 6px;font-size:15.5px;color:var(--navy);}
+  .mark-card p{font-size:14px;margin:0;font-family:'Noto Sans KR',sans-serif;line-height:1.65;text-align:left;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .deepdive-box{margin-top:40px;background:#fff;border:1px solid var(--sky-line);border-radius:2px;padding:26px 28px;}
+  .deepdive-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--sky-line);margin:0 0 12px;font-weight:700;}
+  .deepdive-box h4{font-size:16.5px;color:var(--navy);margin:0 0 10px;}
+  .deepdive-box p{margin:0 0 10px;font-size:15.5px;}
+  .deepdive-box p:last-child{margin-bottom:0;}
+
+  .preview-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul,.summary-box ol{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .term:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제14강</div>
+    <h1 class="title">침례교의<br>교회론</h1>
+    <div class="subtitle">"교회의 주인은 누구인가?"</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 아도니람 저드슨을 통해 침례교가 세계 선교에 어떻게 헌신했는지를 살펴보았습니다. 오늘은 침례교 신앙의 가장 중요한 특징 가운데 하나인 <span class="keyword">교회론</span>(Ecclesiology)을 공부하겠습니다. 침례교를 이해하려면 침례만 알아서는 부족합니다. <span class="impact">침례교는 "교회란 무엇인가?", "교회의 주인은 누구인가?"라는 질문에 매우 분명한 성경적 답을 가지고 있습니다.</span></p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">교회의 주인은 오직 예수 그리스도</h2></div>
+      <p>침례교가 가장 먼저 고백하는 것은 교회의 머리(Head)는 오직 예수 그리스도라는 사실입니다. 그러므로 교황도, 국가도, 총회도, 특정 지도자도 교회의 최종 권위가 될 수 없습니다. <span class="impact">교회의 최고 권위는 예수 그리스도이십니다.</span></p>
+      <div class="refs">
+        <span class="ref-tag" data-info="하나님께서 만물을 그리스도의 발 아래 복종하게 하시고, 그리스도를 만물 위에 교회의 머리로 삼으셨다는 내용입니다.">에베소서 1:22</span>
+        <span class="ref-tag" data-info="그리스도는 몸인 교회의 머리이시라고 선언하는 구절입니다.">골로새서 1:18</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">지역교회의 자치</h2></div>
+      <p>침례교를 대표하는 원리 가운데 하나는 <span class="term" data-info="각 지역교회가 그리스도의 통치 아래에서 스스로 운영된다는 침례교의 핵심 원리. 목회자 청빙, 직분자 세움, 재정 관리, 선교 결정 등을 각 교회가 성경의 원리에 따라 책임 있게 결정한다. 교회 간 협력은 지배가 아니라 동역이다.">지역교회의 자치</span>(Local Church Autonomy)입니다. 이 원리는 각 지역교회가 그리스도의 통치 아래에서 스스로 운영된다는 뜻입니다. 목회자를 청빙하고, 직분자를 세우며, 재정을 관리하고, 선교를 결정하는 일은 각 교회가 성경의 원리에 따라 책임 있게 결정합니다. <span class="impact">물론 교회들은 서로 협력합니다. 그러나 협력은 지배가 아니라 동역입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">회중정치</h2></div>
+      <p>침례교는 <span class="term" data-info="교회의 중요한 결정에 회중 전체가 책임 있게 참여하는 정치 방식. 민주주의를 교회에 적용한 것이 아니라, 성령께서 교회 공동체 가운데 역사하신다는 믿음에서 출발한다.">회중정치</span>(Congregational Government)를 중요하게 생각합니다. 이는 교회의 중요한 결정에 회중 전체가 책임 있게 참여하는 방식입니다. 사도행전을 보면, 일곱 집사를 세울 때에도 교회 공동체가 함께 사람을 선택했습니다. <span class="impact">회중정치는 민주주의를 교회에 적용한 것이 아니라, 성령께서 교회 공동체 가운데 역사하신다는 믿음에서 출발합니다.</span></p>
+      <div class="refs"><span class="ref-tag" data-info="구제 문제를 해결하기 위해 일곱 집사를 세울 때, 온 무리가 이 말을 기뻐하여 사람을 선택했다는 내용으로, 교회 공동체가 함께 결정에 참여한 사례입니다.">사도행전 6:5</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">거듭난 사람들의 공동체</h2></div>
+      <p>침례교는 교회를 단순히 같은 지역에 사는 사람들의 모임으로 보지 않습니다. 교회는 예수 그리스도를 믿고 거듭난 사람들이 언약 가운데 함께 모인 공동체입니다. 그래서 침례교는 신앙고백, 신자의 침례, 교회 회원권을 매우 중요하게 생각합니다. <span class="impact">교회 회원이 된다는 것은 단순히 이름을 올리는 것이 아니라, 교회의 사명과 책임을 함께 감당하겠다는 믿음의 약속입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">만인제사장</h2></div>
+      <p>침례교는 종교개혁의 중요한 원리인 <span class="keyword">만인제사장</span>을 적극적으로 받아들였습니다. 모든 성도는 예수 그리스도를 통해 하나님께 직접 나아갈 수 있습니다. 그래서 기도도, 말씀을 배우는 일도, 복음을 전하는 일도 모든 성도의 사명입니다. <span class="impact">목회자는 특별한 계급이 아니라, 교회를 섬기도록 부르심 받은 직분자입니다.</span></p>
+      <div class="refs"><span class="ref-tag" data-info="성도들을 향해 &quot;너희는 왕 같은 제사장들이요 거룩한 나라요 그의 소유된 백성&quot;이라 선언하는 구절로, 만인제사장 원리의 핵심 근거입니다.">베드로전서 2:9</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">교회의 권징</h2></div>
+      <p>침례교는 사랑뿐 아니라 거룩함도 중요하게 생각합니다. 예수님께서는 죄 가운데 있는 형제를 어떻게 권면해야 하는지를 가르쳐 주셨습니다. <span class="term" data-info="교회가 죄 가운데 있는 지체를 대하는 성경적 절차. 벌을 주는 것이 목적이 아니라 죄를 깨닫게 하고 회개를 돕고 교회를 거룩하게 세우는 것이 목적이다. 언제나 사랑과 회복을 지향해야 한다.">권징</span>의 목적은 벌을 주는 것이 아닙니다. 죄를 깨닫게 하고, 회개를 돕고, 교회를 거룩하게 세우는 것입니다. <span class="impact">따라서 권징은 언제나 사랑과 회복을 목표로 해야 합니다.</span></p>
+      <div class="refs"><span class="ref-tag" data-info="죄 가운데 있는 형제를 권면하는 절차를 단계적으로 가르치신 예수님의 말씀입니다.">마태복음 18:15-17</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">교회의 사명</h2></div>
+      <p>침례교는 교회의 존재 목적을 분명하게 이해합니다.</p>
+      <div class="mark-grid">
+        <div class="mark-card"><div class="num">첫째</div><h4>예배</h4><p>교회는 하나님을 예배합니다.</p></div>
+        <div class="mark-card"><div class="num">둘째</div><h4>양육</h4><p>교회는 성도를 양육합니다.</p></div>
+        <div class="mark-card"><div class="num">셋째</div><h4>전도</h4><p>교회는 복음을 전합니다.</p></div>
+        <div class="mark-card"><div class="num">넷째</div><h4>섬김</h4><p>교회는 서로 사랑하며 섬깁니다.</p></div>
+      </div>
+      <p><span class="impact">교회는 건물이 아니라, 세상 속에서 하나님의 나라를 드러내는 공동체입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">오늘 우리에게 주는 교훈</h2></div>
+      <p>오늘날 교회는 규모와 프로그램으로 평가받기 쉽습니다. 그러나 성경은 교회의 본질을 먼저 묻습니다. 우리 교회의 주인은 누구입니까? 우리의 결정은 사람의 의견보다 하나님의 말씀을 따르고 있습니까? <span class="impact">침례교 교회론은 교회의 중심은 언제나 예수 그리스도와 성경이어야 함을 가르쳐 줍니다.</span></p>
+      <div class="pull">교회를 교회 되게 하는 것은 <b>규모나 프로그램</b>이 아닙니다. <b>그리스도가 머리 되심</b>과 <b>말씀에 대한 순종</b>이 교회의 본질입니다.</div>
+    </section>
+
+    <div class="deepdive-box">
+      <h3>역사 더 깊이 보기</h3>
+      <h4>침례교의 '회중정치'는 다수결과 같은 것일까?</h4>
+      <p>많은 사람들이 회중정치를 단순한 다수결로 이해합니다. 그러나 침례교가 말하는 회중정치는 '성령의 인도하심 아래 말씀을 기준으로 공동체가 분별하는 과정'입니다.</p>
+      <p>따라서 단순히 숫자가 많은 의견이 옳다는 의미가 아니라, 모든 성도가 함께 기도하고 성경을 따라 하나님의 뜻을 찾는 것을 목표로 합니다. 그래서 건강한 침례교회는 회중의 참여와 성경의 권위를 동시에 중요하게 여깁니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 침례교가 성례라는 용어보다 규례(Ordinances)라는 표현을 사용하는 이유를 살펴보겠습니다. 또한 침례와 주의 만찬이 어떤 의미를 가지며, 다른 전통과는 어떤 차이가 있는지 성경을 중심으로 함께 배우겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ol>
+        <li>교회의 머리는 오직 <b>예수 그리스도</b>이시며, 성경이 교회의 최종 권위입니다.</li>
+        <li>침례교는 <b>지역교회의 자치</b>와 회중의 책임 있는 참여를 중요하게 여깁니다.</li>
+        <li>교회는 거듭난 신자들의 공동체이며, 모든 성도는 <b>만인제사장</b>으로서 함께 교회를 세워 가는 사명을 받았습니다.</li>
+      </ol>
+    </div>
+
+    <div class="questions-box">
+      <h3>생각해 볼 질문</h3>
+      <ol>
+        <li>왜 침례교는 지역교회의 자치를 중요하게 생각할까요?</li>
+        <li>만인제사장이라는 원리는 우리의 신앙생활을 어떻게 변화시킬까요?</li>
+        <li>우리 교회의 중요한 결정은 성경의 원리에 따라 이루어지고 있는지 함께 점검해 볼 수 있을까요?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제14강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>15강. 침례교의 두 가지 규례</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:270px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .deepdive-box{margin-top:40px;background:#fff;border:1px solid var(--sky-line);border-radius:2px;padding:26px 28px;}
+  .deepdive-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--sky-line);margin:0 0 12px;font-weight:700;}
+  .deepdive-box h4{font-size:16.5px;color:var(--navy);margin:0 0 10px;}
+  .deepdive-box p{margin:0 0 10px;font-size:15.5px;}
+  .deepdive-box p:last-child{margin-bottom:0;}
+
+  .preview-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul,.summary-box ol{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after,.term:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제15강</div>
+    <h1 class="title">침례교의<br>두 가지 규례</h1>
+    <div class="subtitle">"왜 침례교는 침례와 주의 만찬만을 시행하는가?"</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 침례교의 교회론을 통해 교회의 주인은 오직 예수 그리스도이시며, 지역교회의 자치와 회중의 책임 있는 참여가 침례교의 중요한 특징임을 배웠습니다. 오늘은 침례교 신앙의 핵심 실천인 <span class="keyword">두 가지 규례</span>(Ordinances)를 살펴보겠습니다. 많은 사람들이 침례교를 떠올리면 가장 먼저 침례를 생각합니다. <span class="impact">그러나 침례교는 침례 자체를 강조하는 교회가 아니라, 예수님께서 교회에 명하신 두 가지 규례를 성경대로 지키려는 교회입니다.</span></p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">왜 '성례'가 아니라 '규례'라고 부를까?</h2></div>
+      <p>가톨릭과 일부 개신교는 <span class="term" data-info="가톨릭과 일부 개신교 전통에서 사용하는 표현. 하나님께서 은혜를 전달하시는 특별한 수단이라는 의미를 담고 있으며, 의식 자체에 은혜를 전달하는 효력이 있다고 보는 관점이다.">성례</span>(Sacrament)라는 표현을 사용합니다. 성례는 하나님께서 은혜를 전달하시는 특별한 수단이라는 의미를 담고 있습니다. 반면 침례교는 <span class="term" data-info="침례교가 침례와 주의 만찬을 가리킬 때 사용하는 표현. 예수님께서 교회에 직접 명령하신 것이므로 순종하여 행한다는 의미를 담고 있으며, 구원을 자동으로 전달하는 효력이 있다고 보지 않는다.">규례</span>(Ordinance)라는 용어를 사용합니다. 그 이유는 간단합니다. 침례교는 침례와 주의 만찬이 사람을 구원하거나 하나님의 은혜를 자동으로 전달하는 행위가 아니라고 믿기 때문입니다. <span class="impact">규례는 예수님께서 교회에 명령하신 것이므로 순종하여 행하는 것입니다.</span> 따라서 규례는 구원의 조건이 아니라, 이미 구원받은 사람이 믿음을 고백하고 순종하는 행위입니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">왜 두 가지뿐인가?</h2></div>
+      <p>침례교는 신약성경에서 예수님께서 교회에 직접 명령하신 규례는 두 가지라고 믿습니다. 첫째는 침례입니다. 둘째는 주의 만찬입니다. <span class="impact">침례교는 이 두 규례만이 교회가 계속해서 시행하도록 주어진 명령이라고 이해합니다.</span></p>
+      <div class="refs">
+        <span class="ref-tag" data-info="부활하신 예수님께서 제자들에게 모든 민족을 제자 삼아 아버지와 아들과 성령의 이름으로 침례를 베풀라고 명령하신 지상명령 본문입니다.">마태복음 28:19</span>
+        <span class="ref-tag" data-info="주께서 잡히시던 밤에 떡을 떼시며 &quot;이를 행하여 나를 기념하라&quot;고 명하신 주의 만찬 제정 본문입니다.">누가복음 22:19</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">침례의 의미</h2></div>
+      <p>침례는 단순히 물속에 들어갔다 나오는 의식이 아닙니다. 침례는 이미 믿음으로 구원받은 사람이 예수 그리스도와 연합되었음을 공개적으로 고백하는 신앙의 표지입니다. <span class="impact">침례는 옛사람이 그리스도와 함께 죽고, 새 생명으로 살아났음을 상징합니다.</span> 그래서 침례는 한 번만 받습니다. 그리스도의 구원이 한 번이며, 우리의 믿음의 고백도 한 번이기 때문입니다.</p>
+      <div class="refs"><span class="ref-tag" data-info="그리스도와 합하여 침례를 받은 사람은 그의 죽으심과 합하여 침례를 받아 함께 장사되었다는 내용으로, 침례가 옛사람의 죽음과 새 생명을 상징함을 보여줍니다.">로마서 6:4</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">왜 물에 완전히 잠기는 침례를 시행하는가?</h2></div>
+      <p>침례교는 가능한 한 신약성경의 모습을 따르려고 합니다. '침례'로 번역된 헬라어 <span class="term" data-info="신약성경에서 '침례/세례'로 번역된 헬라어 단어. 본래 '담그다', '잠기게 하다'라는 뜻을 가진다.">'밥티조(Baptizō)'</span>는 본래 '잠그다', '담그다'라는 뜻을 가지고 있습니다. 또한 예수님의 침례 장면에서도 "물에서 올라오실새…"라는 표현이 나옵니다. <span class="impact">이러한 성경적 근거를 따라 침례교는 물속에 완전히 잠기는 침례를 가장 성경적인 방식으로 이해합니다.</span></p>
+      <div class="refs"><span class="ref-tag" data-info="&quot;예수께서 침례를 받으시고 곧 물에서 올라오시니…&quot; 물속으로 들어갔다 나오는 동작이 분명하게 드러나는 본문입니다.">마태복음 3:16</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">주의 만찬의 의미</h2></div>
+      <p>주의 만찬은 예수님의 십자가를 기억하고 기념하는 규례입니다. 떡은 그리스도의 몸을, 잔은 그리스도의 피를 상징합니다. 침례교는 떡과 포도즙(또는 잔)이 실제로 그리스도의 몸과 피로 변한다고 믿지 않습니다. 또한 주의 만찬 자체가 죄를 용서하거나 구원을 가져다준다고도 믿지 않습니다. <span class="impact">주의 만찬은 십자가를 기억하고, 믿음을 새롭게 하며, 교회의 연합을 확인하는 거룩한 예배입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">누가 참여할 수 있는가?</h2></div>
+      <p>침례교회마다 약간의 차이는 있지만, 일반적으로 주의 만찬은 예수 그리스도를 믿고, 신앙을 고백하며, 자신의 삶을 돌아보고 참여하는 성도를 위한 규례입니다. <span class="impact">따라서 주의 만찬은 형식적인 의식이 아니라, 회개와 감사 가운데 참여해야 하는 예배입니다.</span></p>
+      <div class="refs"><span class="ref-tag" data-info="사람이 자기를 살피고 그 후에야 떡을 먹고 잔을 마셔야 한다는 권면으로, 주의 만찬 참여에 앞서 자기 성찰이 필요함을 보여줍니다.">고린도전서 11:28</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">규례는 구원의 조건이 아니다</h2></div>
+      <p>침례교는 매우 중요한 원칙을 지켜 왔습니다. 우리는 침례를 받아서 구원받는 것이 아니라, 구원받았기 때문에 침례를 받습니다. 우리는 주의 만찬에 참여해서 구원받는 것이 아니라, 구원받은 사람이 감사함으로 참여합니다. <span class="impact">구원은 언제나 하나님의 은혜와 예수 그리스도를 믿는 믿음으로 받는 선물입니다.</span> 규례는 그 믿음을 눈에 보이게 고백하는 순종입니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">오늘 우리에게 주는 교훈</h2></div>
+      <p>침례와 주의 만찬은 단순한 교회의 전통이 아닙니다. 예수님께서 직접 교회에 맡기신 귀한 선물입니다. 우리는 규례를 통해 복음을 기억하고, 예수님의 십자가를 기념하며, 믿음을 새롭게 하고, 교회 공동체와 하나 됨을 확인합니다. <span class="impact">중요한 것은 의식 자체가 아니라, 그 의식이 가리키는 예수 그리스도입니다.</span></p>
+      <div class="pull">규례는 <b>구원을 만드는</b> 의식이 아니라, 이미 받은 구원을 <b>드러내는</b> 순종입니다. 중요한 것은 물이나 떡과 잔이 아니라, 그것이 가리키는 십자가입니다.</div>
+    </section>
+
+    <div class="deepdive-box">
+      <h3>역사 더 깊이 보기</h3>
+      <h4>침례교회는 왜 '침례'와 '주의 만찬'만을 규례로 인정할까?</h4>
+      <p>가톨릭교회는 일곱 성례를, 일부 개신교 전통은 두 성례를 인정합니다. 반면 침례교는 신약성경에서 예수님께서 교회에 계속 시행하도록 직접 명령하신 것은 침례와 주의 만찬뿐이라고 이해합니다.</p>
+      <p>따라서 이 두 가지를 규례로 지키며, 다른 예식들(결혼식, 임직식, 장례식 등)은 중요한 교회의 예식이지만 규례로는 구분하지 않습니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 침례교의 신학적 토대인 성경관과 성경 해석 원리를 살펴보겠습니다. 침례교가 왜 "오직 성경(Sola Scriptura)"을 강조하는지, 성경을 어떻게 읽고 해석해야 하는지, 그리고 전통과 경험보다 성경을 최종 권위로 삼는 이유를 함께 배우겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ol>
+        <li>침례교는 예수님께서 명령하신 두 가지 <b>규례</b>, 곧 침례와 주의 만찬을 시행합니다.</li>
+        <li>규례는 구원을 얻기 위한 행위가 아니라, 이미 받은 구원을 <b>믿음으로 고백하고 순종하는 표시</b>입니다.</li>
+        <li>침례와 주의 만찬은 모두 <b>예수 그리스도의 복음을 기억하고 선포</b>하는 중요한 신앙의 실천입니다.</li>
+      </ol>
+    </div>
+
+    <div class="questions-box">
+      <h3>생각해 볼 질문</h3>
+      <ol>
+        <li>왜 침례교는 '성례'보다 '규례'라는 표현을 사용할까요?</li>
+        <li>침례와 주의 만찬은 복음을 어떻게 눈에 보이게 보여 주는 역할을 할까요?</li>
+        <li>나는 침례와 주의 만찬에 참여할 때 형식이 아니라 그 의미를 깊이 묵상하고 있습니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제15강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

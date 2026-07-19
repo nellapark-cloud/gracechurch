@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>10강. 로저 윌리엄스는 미국 침례교의 창시자인가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:27px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:260px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(calc(-50% + var(--arrow-shift,0px)));border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .preview-box{margin-top:40px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제10강</div>
+    <h1 class="title">로저 윌리엄스는<br>미국 침례교의 창시자인가</h1>
+    <div class="subtitle">명칭 하나에 담긴 역사적 정확성의 문제</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 9강에서는 <span class="person" data-info="1603~1683. 영국 출신 청교도 목사로 신대륙으로 건너갔으나, 매사추세츠에서도 신앙을 강요하는 모습을 보고 1636년 로드아일랜드를 세웠다. 1638년경 미국 최초의 침례교회 설립에 중심적인 역할을 했다.">로저 윌리엄스</span>의 삶을 따라 미국 최초의 침례교회가 어떻게 시작되었는지 살펴보았습니다. 그런데 이 이야기를 듣고 나면 자연스럽게 이런 질문이 떠오릅니다. "그렇다면 로저 윌리엄스가 침례교를 만든 사람 아닌가?" 오늘은 이 짧지만 중요한 질문 하나를 짚고 넘어가려 합니다. <b>로저 윌리엄스는 정말 침례교의 창시자일까요?</b></p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">흔히 생기는 오해</h2></div>
+      <p>많은 사람들이 로저 윌리엄스를 "미국 침례교의 창시자"라고 부릅니다. 그가 미국 최초의 침례교회를 세우는 데 중심적인 역할을 했으니, 언뜻 자연스러운 표현처럼 보입니다. <span class="impact">그러나 엄밀히 말하면 이는 정확한 표현이 아닙니다.</span> 여기에는 "창시자"라는 말이 무엇을 가리키는지에 대한 혼동이 숨어 있습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">침례교는 이미 영국에서 시작되었다</h2></div>
+      <p>1강과 3강에서 살펴보았듯, 침례교라는 신앙 운동 자체는 로저 윌리엄스보다 훨씬 앞서 영국에서 시작되었습니다. <span class="keyword">1609년 존 스미스</span>가 네덜란드 암스테르담에서 스스로와 회중에게 신자의 침례를 베풀었고, <span class="keyword">1612년 토머스 헬위스</span>가 영국으로 돌아가 최초의 침례교회를 세웠습니다. <span class="impact">로저 윌리엄스가 프로비던스에서 침례를 받은 것은 그로부터 약 26년 뒤인 1638년경의 일입니다.</span> 즉, 그가 신대륙에 도착했을 때 침례교는 이미 존재하는 신앙 운동이었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">그가 실제로 한 일</h2></div>
+      <p>그렇다면 로저 윌리엄스의 진짜 공헌은 무엇일까요? 그는 침례교라는 신학과 원리를 새로 만든 것이 아니라, <span class="impact">이미 영국에 있던 신자의 침례에 대한 확신을 신대륙 땅에서 실제로 실천에 옮긴 사람</span>이었습니다. 그가 세운 교회는 새로운 교리의 발명품이 아니라, 성경으로 돌아가려는 동일한 확신이 대서양 건너에서 다시 피어난 결과였습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">"창시자"와 "개척자", 무엇이 다른가</h2></div>
+      <p>역사를 정확히 말하려면 단어를 정확히 골라야 합니다. <span class="term" data-info="한 운동이나 조직의 신학적·조직적 뿌리를 처음으로 세운 사람을 가리키는 말. 침례교의 경우 1609년 존 스미스와 1612년 토머스 헬위스가 이 역할에 해당한다.">창시자</span>는 운동 자체를 처음 세운 사람을 가리키고, <span class="term" data-info="이미 존재하는 신앙과 원리를 새로운 지역이나 상황 속에서 처음으로 실천하고 뿌리내리게 한 사람을 가리키는 말. 로저 윌리엄스는 침례교의 창시자가 아니라, 미국이라는 새로운 땅에 이 신앙을 처음 심은 개척자로 이해하는 것이 정확하다.">개척자(선구자)</span>는 이미 있는 신앙을 새로운 땅에 처음 심은 사람을 가리킵니다. <span class="impact">이 구분을 따르면, 로저 윌리엄스는 "침례교의 창시자"가 아니라 "미국 침례교회의 개척자" 또는 "선구자"로 부르는 것이 역사적으로 더 정확합니다.</span></p>
+      <div class="table-wrap">
+        <table>
+          <tr><th>인물</th><th>정확한 위치</th></tr>
+          <tr><td>존 스미스 (1609)</td><td>침례교 신앙 운동의 시작점</td></tr>
+          <tr><td>토머스 헬위스 (1612)</td><td>영국 최초의 침례교회 설립자</td></tr>
+          <tr><td>로저 윌리엄스 (1638년경)</td><td>미국 최초의 침례교회 설립을 이끈 개척자</td></tr>
+        </table>
+        <p class="table-cap">세 사람 모두 중요하지만, 침례교라는 신앙 자체를 처음 세운 것은 스미스와 헬위스입니다.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">왜 이 구분이 중요한가</h2></div>
+      <p>사소한 용어 문제처럼 보일 수 있지만, 이는 침례교가 스스로를 이해하는 방식과 맞닿아 있습니다. <span class="impact">침례교의 정체성은 어느 한 사람의 업적이 아니라, 신약성경으로 돌아가려는 공통된 확신에 뿌리를 두고 있기 때문입니다.</span> 한 인물을 실제보다 크게 부풀리면, 마치 침례교가 한 위인의 발명품인 것처럼 오해하게 만들 수 있습니다. 정확한 역사는 오히려 침례교가 성경 중심의 신앙임을 더 분명히 드러내 줍니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">기독교한국침례회의 정리</h2></div>
+      <p>기독교한국침례회는 이를 다음과 같이 정리합니다. 침례교의 역사적 출발은 1609년 존 스미스와 1612년 토머스 헬위스에게서 찾되, <span class="impact">로저 윌리엄스는 그 신앙을 미국 땅에 처음 심은 개척자로 존중받아야 마땅합니다.</span> 그의 위대함은 침례교를 발명한 데 있지 않고, 이미 받은 확신을 낯선 땅에서도 굽히지 않고 실천한 데 있습니다.</p>
+      <div class="pull">진짜 유산은 <b>이름을 남기는 것</b>이 아니라, 받은 확신을 <b>새로운 자리에서도 지켜 내는 것</b>입니다. 로저 윌리엄스가 남긴 것은 바로 그런 유산이었습니다.</div>
+    </section>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 "영국에서 미국으로: 침례교의 확산"을 다룹니다. 불과 수십 개의 작은 교회로 시작한 침례교가 어떻게 미국 전역으로 퍼져 나가 세계 최대 개신교 교단 가운데 하나로 성장했는지, 필라델피아 협회와 찰스턴 협회, 그리고 미국 독립혁명 이후의 성장 과정을 함께 살펴봅니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li>침례교라는 신앙 운동은 <b>1609년 존 스미스, 1612년 토머스 헬위스</b>를 통해 이미 영국에서 시작되었습니다.</li>
+        <li>로저 윌리엄스는 침례교의 <b>창시자가 아니라</b>, 그 신앙을 미국 땅에 처음 심은 <b>개척자(선구자)</b>입니다.</li>
+        <li>"창시자"와 "개척자"의 구분은 단순한 용어 문제가 아니라, 침례교 정체성이 <b>인물이 아닌 성경</b>에 뿌리를 둔다는 사실과 연결됩니다.</li>
+        <li>기독교한국침례회는 로저 윌리엄스를 <b>"미국 침례교회의 개척자"</b>로 부르는 것이 역사적으로 정확하다고 봅니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>왜 역사적 사실을 정확히 아는 것이 신앙 공동체에 중요할까요?</li>
+        <li>"창시자"와 "개척자"의 차이를 우리 자신의 신앙 여정에도 적용해 본다면 어떤 의미가 있을까요?</li>
+        <li>우리 교회는 특정 인물보다 성경을 중심에 두는 정체성을 잘 지켜가고 있습니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제10강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+      var el = this;
+      requestAnimationFrame(function(){
+        var rect = popup.getBoundingClientRect();
+        var pad = 10;
+        var shift = 0;
+        if(rect.left < pad) shift = pad - rect.left;
+        else if(rect.right > window.innerWidth - pad) shift = (window.innerWidth - pad) - rect.right;
+        if(shift !== 0){
+          popup.style.marginLeft = shift + 'px';
+          if(!el.classList.contains('ref-tag')){
+            popup.style.setProperty('--arrow-shift', (-shift) + 'px');
+          }
+        }
+      });
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

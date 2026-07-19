@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>13강. 아도니람 저드슨과 침례교 해외선교의 확장</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  h3.sub-title{font-size:16px;color:var(--navy);font-weight:700;margin:22px 0 10px;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:270px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .hardship-tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px;font-family:'Noto Sans KR',sans-serif;}
+  .hardship-tags span{background:#fff;border:1px solid var(--pink-line);color:#7a2748;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;}
+
+  .reason-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0;}
+  @media (max-width:520px){ .reason-grid{grid-template-columns:1fr;} }
+  .reason-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px;}
+  .reason-card .num{font-family:'Noto Sans KR',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:6px;}
+  .reason-card h4{margin:0 0 6px;font-size:15.5px;color:var(--navy);}
+  .reason-card p{font-size:14px;margin:0;font-family:'Noto Sans KR',sans-serif;line-height:1.65;text-align:left;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .deepdive-box{margin-top:40px;background:#fff;border:1px solid var(--sky-line);border-radius:2px;padding:26px 28px;}
+  .deepdive-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--sky-line);margin:0 0 12px;font-weight:700;}
+  .deepdive-box h4{font-size:16.5px;color:var(--navy);margin:0 0 10px;}
+  .deepdive-box p{margin:0 0 10px;font-size:15.5px;}
+  .deepdive-box p:last-child{margin-bottom:0;}
+
+  .preview-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul,.summary-box ol{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after,.term:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제13강</div>
+    <h1 class="title">아도니람 저드슨과<br>침례교 해외선교의 확장</h1>
+    <div class="subtitle">"한 사람의 순종이 한 나라의 역사를 바꾸다"</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 윌리엄 캐리를 통해 근대 개신교 선교운동의 시작을 살펴보았습니다. 오늘은 침례교 역사에서 빼놓을 수 없는 또 한 명의 선교사, <span class="person" data-info="1788~1850. 미국 최초의 해외 선교사 가운데 한 사람. 회중교회 선교사로 아시아로 향하던 항해 중 성경을 다시 연구하며 침례교 신앙을 받아들였다. 이후 평생 버마(현재의 미얀마)에서 성경 번역과 교회 개척에 헌신했다.">아도니람 저드슨</span>(Adoniram Judson, 1788~1850)을 공부하겠습니다. 그는 미국 최초의 해외 선교사 가운데 한 사람이었으며, 성경 연구를 통해 침례교 신앙을 받아들인 후 평생 버마(현재의 미얀마)에서 복음을 전했습니다. <span class="impact">그의 삶은 침례교가 단순한 교단이 아니라 선교하는 교회임을 보여 주는 대표적인 사례입니다.</span></p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">회중교회 선교사로 출발하다</h2></div>
+      <p>아도니람 저드슨은 미국에서 태어나 뛰어난 교육을 받았습니다. 젊은 시절에는 신앙에 대한 회의를 겪기도 했지만, 하나님의 부르심을 받아 목회의 길을 선택했습니다. 1812년 그는 회중교회(Congregational Church) 선교사로 임명을 받고 아시아 선교를 위해 배를 탔습니다. <span class="impact">그러나 항해 중 그는 중요한 문제를 깊이 연구하기 시작했습니다. 바로 침례였습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">성경을 연구한 결과</h2></div>
+      <p>인도로 향하는 긴 항해 동안, 저드슨은 신약성경을 처음부터 다시 연구했습니다. 그는 원래 유아세례를 지지하는 입장이었습니다. 그러나 성경을 계속 읽을수록 침례는 믿음을 고백한 사람에게 베푸는 것이라는 확신을 갖게 되었습니다. 결국 그는 인도에 도착한 후, 침례교 선교사였던 <span class="person" data-info="윌리엄 캐리와 함께 사역한 인도 세람포어(Serampore)의 침례교 선교사. 저드슨이 신약성경 연구 끝에 침례교 신앙을 받아들이자 그에게 침례를 베풀었다.">윌리엄 워드</span>(William Ward)에게 침례를 받았습니다. 이 결정으로 그는 회중교회 선교회의 재정 지원을 받을 수 없게 되었습니다. <span class="impact">그러나 그는 성경이 가르치는 진리를 따르기로 선택했습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">미국 침례교 선교의 시작</h2></div>
+      <p>저드슨이 침례교인이 되었다는 소식은 미국으로 전해졌습니다. 미국의 침례교회들은 "우리도 해외 선교를 해야 한다"는 마음을 갖게 되었습니다. 그 결과, <span class="keyword">1814년 미국 침례교 해외선교회</span>가 조직되었습니다. <span class="impact">저드슨의 결단은 미국 침례교 해외선교의 출발점이 되었습니다.</span> 한 사람의 성경적 결단이 새로운 선교 역사를 시작한 것입니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">버마 선교의 시작</h2></div>
+      <p>저드슨은 인도를 떠나 버마로 향했습니다. 그러나 선교는 결코 쉽지 않았습니다. 그는 먼저 버마어를 배우는 데 수년을 보냈습니다. 언어를 제대로 배우지 못하면 복음을 정확하게 전할 수 없다고 믿었기 때문입니다. 몇 년 동안 단 한 명의 회심자도 얻지 못했습니다. 많은 사람이라면 포기했을 것입니다. <span class="impact">그러나 그는 하나님의 때를 기다렸습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">끝없는 고난</h2></div>
+      <p>저드슨의 삶은 고난의 연속이었습니다. 그는 전쟁 중 간첩으로 오해받아 17개월 동안 투옥되었고, 쇠사슬에 묶인 채 혹독한 감옥 생활을 했으며, 아내 <span class="person" data-info="아도니람 저드슨의 아내로, 남편과 함께 버마 선교에 헌신했다. 남편이 간첩 혐의로 투옥되었을 때 그를 살리기 위해 끊임없이 노력했으나, 전쟁이 끝난 뒤 병으로 세상을 떠났다.">앤 저드슨</span>(Ann Judson)은 남편을 살리기 위해 끊임없이 노력했습니다. 그러나 전쟁이 끝난 뒤, 앤은 병으로 세상을 떠났고, 어린 딸도 얼마 지나지 않아 세상을 떠났습니다. <span class="impact">저드슨은 깊은 슬픔 속에서도 하나님을 원망하지 않았습니다. 그는 다시 일어나 선교 사역을 이어 갔습니다.</span></p>
+      <div class="hardship-tags">
+        <span>17개월 투옥</span><span>쇠사슬에 묶인 옥살이</span><span>아내의 죽음</span><span>어린 딸의 죽음</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">위대한 열매</h2></div>
+      <p>수십 년 동안 헌신한 결과, 저드슨은 버마어 성경 전체를 번역했습니다. 또한 버마어 사전과 문법서를 편찬하여, 후대 선교사들의 사역 기반을 마련했습니다. 그가 세상을 떠날 무렵, 버마에는 수백 명의 신자와 여러 교회가 세워져 있었습니다. <span class="impact">이후 그 씨앗은 계속 자라, 오늘날 미얀마에는 수백만 명의 침례교인이 있습니다.</span> 특히 카친족(Kachin), 친족(Chin) 등 여러 소수민족 가운데 침례교 신앙이 깊이 뿌리내렸습니다.</p>
+      <div class="flow">
+        <span class="step">1812 회중교회 선교사 파송</span><span class="arrow">→</span>
+        <span class="step">항해 중 침례 신학 연구</span><span class="arrow">→</span>
+        <span class="step">1814 미국 침례교 해외선교회</span><span class="arrow">→</span>
+        <span class="step">버마어 성경 완역</span><span class="arrow">→</span>
+        <span class="step">오늘날 수백만 침례교인</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">저드슨이 보여 준 선교 정신</h2></div>
+      <p>저드슨의 삶은 침례교 선교의 핵심 정신을 잘 보여 줍니다.</p>
+      <div class="reason-grid">
+        <div class="reason-card"><div class="num">첫째</div><h4>성경에 대한 순종</h4><p>그는 기존 전통보다 성경을 우선했습니다. 지원을 잃더라도 성경이 가르치는 길을 선택했습니다.</p></div>
+        <div class="reason-card"><div class="num">둘째</div><h4>인내</h4><p>선교는 단기간에 열매를 얻는 일이 아닙니다. 저드슨은 오랜 시간 열매 없이도 묵묵히 사역했습니다.</p></div>
+        <div class="reason-card"><div class="num">셋째</div><h4>현지 언어의 중요성</h4><p>복음은 사람들의 언어로 전해져야 합니다. 그래서 그는 평생을 바쳐 성경을 번역했습니다.</p></div>
+        <div class="reason-card"><div class="num">넷째</div><h4>고난 속에서도 포기하지 않는 믿음</h4><p>감옥, 질병, 가족의 죽음, 외로움 속에서도 그는 하나님의 부르심을 끝까지 붙들었습니다.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">오늘 우리에게 주는 교훈</h2></div>
+      <p>저드슨은 성공보다 충성을 선택했습니다. 세상은 결과를 먼저 보지만, 하나님은 순종을 먼저 보십니다. 우리 역시 금방 열매가 보이지 않는다고 낙심할 때가 있습니다. <span class="impact">그러나 하나님께서는 우리의 작은 순종도 결코 헛되게 하지 않으십니다.</span> 저드슨이 뿌린 씨앗이 수십 년 뒤 큰 숲이 되었듯, 우리의 믿음도 다음 세대에 귀한 열매를 맺을 수 있습니다.</p>
+      <div class="pull">그는 <b>결과</b>가 아니라 <b>순종</b>을 선택했습니다. 열매 없는 세월 속에서도 자리를 지킨 그 순종이, 오늘 수백만 미얀마 침례교인의 뿌리가 되었습니다.</div>
+    </section>
+
+    <div class="deepdive-box">
+      <h3>역사 더 깊이 보기</h3>
+      <h4>저드슨은 미얀마에서 얼마나 큰 영향을 남겼을까?</h4>
+      <p>저드슨이 38년 동안 사역하며 직접 침례를 준 사람의 수는 매우 많지 않았습니다. 그러나 그는 버마어 성경 번역, 사전 편찬, 현지 지도자 양성이라는 토대를 마련했습니다.</p>
+      <p>그 기반 위에서 미얀마 침례교는 크게 성장했고, 오늘날에도 미얀마는 아시아에서 침례교의 영향력이 가장 큰 나라 가운데 하나로 평가받습니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 역사 이야기를 잠시 넘어, 침례교의 핵심 신학인 교회론을 살펴보겠습니다. 지역교회의 자치, 신자의 교회 회원권, 만인제사장, 회중정치 등 침례교가 왜 이러한 원칙을 중요하게 여기는지 성경과 역사 속에서 함께 배우겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ol>
+        <li><b>아도니람 저드슨</b>은 성경 연구를 통해 침례교 신앙을 받아들이고 미국 침례교 해외선교의 출발점이 되었습니다.</li>
+        <li>그는 버마에서 <b>성경 번역과 교회 개척</b>을 통해 침례교 선교의 기초를 세웠습니다.</li>
+        <li>그의 삶은 <b>성경에 대한 순종과 끝까지 인내하는 믿음</b>이 하나님의 선교를 이루는 힘임을 보여 줍니다.</li>
+      </ol>
+    </div>
+
+    <div class="questions-box">
+      <h3>생각해 볼 질문</h3>
+      <ol>
+        <li>저드슨은 왜 선교회의 지원을 잃는 위험을 감수하면서까지 침례교 신앙을 선택했을까요?</li>
+        <li>선교에서 언어와 문화에 대한 이해는 왜 중요할까요?</li>
+        <li>나는 열매가 보이지 않을 때에도 하나님께 충성할 수 있을까요?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제13강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

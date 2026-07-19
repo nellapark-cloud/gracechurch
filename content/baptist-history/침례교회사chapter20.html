@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>20강. 침례교인은 누구인가?</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:270px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .name-tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px;font-family:'Noto Sans KR',sans-serif;}
+  .name-tags span{background:var(--cream-warm);border:1px solid var(--sky-line);color:var(--navy);font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;}
+
+  .legacy-tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px;font-family:'Noto Sans KR',sans-serif;}
+  .legacy-tags span{background:#fff;border:1px solid var(--pink-line);color:#7a2748;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .closing-box{margin-top:40px;background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);border-radius:2px;padding:34px 34px;}
+  .closing-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 14px;font-weight:700;}
+  .closing-box .verse{font-family:'Noto Serif KR',serif;font-style:italic;font-size:17px;line-height:1.8;margin:0 0 8px;}
+  .closing-box .who{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#a9b3cc;display:block;margin-bottom:18px;}
+  .closing-box p{font-size:15px;line-height:1.85;margin:0 0 12px;font-family:'Noto Sans KR',sans-serif;font-weight:300;}
+  .closing-box p:last-child{margin-bottom:0;}
+  .closing-box p b{color:var(--gold-light);font-weight:600;}
+
+  .final-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:26px 28px;}
+  .final-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 12px;font-weight:700;}
+  .final-box p{font-size:15.5px;margin:0 0 12px;}
+  .final-box p:last-child{margin-bottom:0;}
+  .final-box .credo{font-weight:700;color:var(--navy);font-size:16.5px;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul,.summary-box ol{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제20강 · 최종강</div>
+    <h1 class="title">침례교인은<br>누구인가?</h1>
+    <div class="subtitle">"400년 역사가 우리에게 남긴 신앙의 유산"</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--pink)"></i>핵심 용어</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">드디어 마지막 시간입니다. 우리는 지난 19강 동안 침례교의 시작부터 오늘에 이르기까지의 역사를 함께 걸어왔습니다. 존 스미스와 토머스 헬위스, 1644년과 1689년 런던 신앙고백, 종교의 자유, 윌리엄 캐리와 아도니람 저드슨, 말콤 펜윅, 그리고 기독교한국침례회의 역사까지 살펴보았습니다. 이제 마지막 질문을 던져 보겠습니다. <span class="impact">"침례교인은 누구인가?" 침례교인은 단순히 침례를 받는 사람이 아닙니다. 성경을 최고의 권위로 삼고, 예수 그리스도를 따르며, 복음을 위해 살아가는 사람입니다.</span></p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">침례교의 시작은 '침례'가 아니라 '성경'이었다</h2></div>
+      <p>많은 사람들은 침례교를 생각하면 먼저 침례를 떠올립니다. 그러나 역사적으로 침례교의 출발점은 침례가 아니라 성경이었습니다. 존 스미스와 토머스 헬위스는 끊임없이 질문했습니다. "성경은 무엇이라고 말하는가?" 그 결과 신자의 침례, 지역교회의 자치, 종교의 자유라는 결론에 이르렀습니다. <span class="impact">즉, 침례교의 핵심은 성경으로 돌아가려는 운동입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">성경만이 최종 권위</h2></div>
+      <p>400년 동안 변하지 않은 침례교의 첫 번째 고백은 이것입니다. "성경은 신앙과 삶의 최종 권위이다." 교회의 전통도, 신앙고백도, 목회자의 가르침도 중요합니다. 그러나 이 모든 것은 성경 아래 있어야 합니다. <span class="impact">그래서 침례교인은 언제나 성경을 배우고, 성경을 사랑하며, 성경에 순종하려는 사람입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">믿음은 개인의 결단이다</h2></div>
+      <p>침례교는 누구도 다른 사람을 대신해서 믿을 수 없다고 믿습니다. 부모의 믿음이 자녀를 자동으로 구원하지 않습니다. 교회의 출석이 구원을 보장하지 않습니다. <span class="impact">예수 그리스도를 믿는 믿음은 각 사람이 하나님 앞에서 직접 결단해야 합니다.</span> 그래서 침례교는 신앙고백 후에 침례를 베풉니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">교회는 거듭난 사람들의 공동체</h2></div>
+      <p>침례교는 교회를 단순한 조직이 아니라 <span class="keyword">거듭난 성도들의 공동체</span>라고 믿습니다. 교회의 주인은 목회자도, 교단도, 국가도 아닙니다. 오직 예수 그리스도께서 교회의 머리이십니다. <span class="impact">지역교회는 그리스도의 통치 아래에서 말씀에 따라 함께 순종하는 공동체입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">모든 성도는 사역자이다</h2></div>
+      <p>침례교는 <span class="keyword">만인제사장</span>을 중요하게 생각합니다. 교회는 목회자 혼자 세우는 공동체가 아닙니다. 모든 성도는 기도하는 사람이며, 말씀을 배우는 사람이며, 복음을 전하는 사람이며, 서로를 섬기는 사람입니다. <span class="impact">교회의 사역은 모든 성도가 함께 감당하는 하나님의 일입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">침례교는 선교하는 교회이다</h2></div>
+      <p>우리는 윌리엄 캐리, 아도니람 저드슨, 말콤 펜윅을 통해 침례교가 얼마나 선교를 중요하게 여겼는지 살펴보았습니다. 침례교는 교회를 유지하는 데 만족하지 않습니다. 복음을 아직 듣지 못한 사람들에게 전하는 것을 교회의 본질적인 사명으로 믿습니다. <span class="impact">침례교인은 예배당 안에서만 신앙생활하는 사람이 아니라, 세상 속에서 그리스도의 증인으로 살아가는 사람입니다.</span></p>
+      <div class="refs"><span class="ref-tag" data-info="예수님께서 성령이 임하시면 예루살렘과 온 유대와 사마리아와 땅끝까지 이르러 내 증인이 되리라고 말씀하신 구절입니다.">사도행전 1:8</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">침례교가 다음 세대에 남겨야 할 유산</h2></div>
+      <p>우리가 후손들에게 남겨야 할 가장 큰 유산은 건물이 아닙니다. 재정도 아닙니다. 가장 귀한 유산은 다음과 같습니다.</p>
+      <div class="legacy-tags">
+        <span>성경을 사랑하는 믿음</span><span>복음을 부끄러워하지 않는 용기</span><span>교회를 사랑하는 마음</span><span>선교하는 삶</span>
+      </div>
+      <p><span class="impact">역사는 과거를 자랑하기 위해 배우는 것이 아니라, 미래를 준비하기 위해 배우는 것입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">우리의 고백</h2></div>
+      <p>400년 동안 침례교는 수많은 어려움을 겪었습니다. 박해도 있었고, 전쟁도 있었으며, 가난과 실패도 있었습니다. 그러나 침례교는 끝까지 붙들었습니다. 성경을 붙들었습니다. 복음을 붙들었습니다. 교회를 붙들었습니다. 선교를 붙들었습니다. <span class="impact">이제 그 믿음의 바통은 우리에게 이어졌습니다.</span> 우리 역시 우리 시대의 침례교인으로 살아가야 합니다. 성경을 사랑하고, 예수님을 따르며, 복음을 전하고, 다음 세대에 믿음을 전하는 것이 우리의 사명입니다.</p>
+      <div class="name-tags">
+        <span>존 스미스</span><span>토머스 헬위스</span><span>로저 윌리엄스</span><span>윌리엄 캐리</span><span>아도니람 저드슨</span><span>말콤 펜윅</span>
+      </div>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>주제</th><th>핵심 내용</th></tr>
+        <tr><td>침례교의 시작</td><td>성경으로 돌아가려는 운동</td></tr>
+        <tr><td>핵심 신앙</td><td>성경의 권위, 신자의 침례</td></tr>
+        <tr><td>교회</td><td>지역교회의 자치, 거듭난 신자의 공동체</td></tr>
+        <tr><td>자유</td><td>양심의 자유와 종교의 자유</td></tr>
+        <tr><td>선교</td><td>모든 민족에게 복음을 전하는 사명</td></tr>
+        <tr><td>한국 침례교</td><td>말콤 펜윅의 헌신과 복음 중심의 역사</td></tr>
+        <tr><td>오늘의 사명</td><td>성경을 붙들고 복음을 전하는 삶</td></tr>
+      </table>
+      <p class="table-cap">전체 20강을 관통한 하나의 흐름 — 성경으로 돌아가, 그 성경이 가리키는 그리스도를 따르는 것.</p>
+    </div>
+
+    <div class="closing-box">
+      <h3>맺음말</h3>
+      <p class="verse">"너는 배우고 확신한 일에 거하라."<span class="who">— 디모데후서 3:14</span></p>
+      <p>침례교의 역사는 완전한 사람들의 역사가 아니었습니다. 성경을 붙들기 위해 고민했던 사람들의 역사였고, 복음을 위해 희생했던 사람들의 역사였으며, 예수 그리스도를 따르기 위해 순종했던 사람들의 역사였습니다.</p>
+      <p>이제 그 역사는 우리의 역사가 되었습니다. <b>성경을 사랑하는 침례교인, 복음을 전하는 침례교인, 예수 그리스도를 끝까지 따르는 침례교인</b>으로 살아가는 것. 그것이 400년 침례교 역사가 오늘 우리에게 남긴 가장 소중한 유산입니다.</p>
+    </div>
+
+    <div class="final-box">
+      <h3>시리즈를 마치며</h3>
+      <p>20강을 모두 마치며 한 가지를 꼭 말씀드리고 싶습니다. 역사를 배우는 목적은 과거의 사건을 아는 데 있지 않습니다. 역사는 우리의 정체성을 세우고, 앞으로 어떻게 살아야 하는지를 가르쳐 줍니다.</p>
+      <p>침례교의 역사는 언제나 같은 방향을 가리켜 왔습니다.</p>
+      <p class="credo">"성경으로 돌아가라. 그리고 그 성경이 가르치는 예수 그리스도를 따라 살아가라."</p>
+      <p>이것이 지난 400여 년 동안 침례교가 세상에 전해 온 가장 중요한 메시지이며, 앞으로도 변하지 않을 우리의 신앙 고백입니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ol>
+        <li>침례교인은 <b>성경을 신앙과 삶의 최종 권위</b>로 믿는 사람입니다.</li>
+        <li>침례교인은 예수 그리스도를 믿는 믿음을 스스로 고백하고, <b>거듭난 성도들의 공동체</b> 안에서 살아가는 사람입니다.</li>
+        <li>침례교인은 복음을 세상에 전하고 다음 세대에 신앙을 전수하는 <b>선교적 삶</b>을 살아가는 사람입니다.</li>
+      </ol>
+    </div>
+
+    <div class="questions-box">
+      <h3>마지막 생각해 볼 질문</h3>
+      <ol>
+        <li>20강을 모두 마친 지금, 나는 왜 침례교인인가?</li>
+        <li>침례교의 신앙 가운데 가장 소중하게 붙들고 싶은 가치는 무엇인가?</li>
+        <li>다음 세대에게 어떤 침례교를 물려주고 싶은가?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제20강 · 시리즈 마침</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.ref-tag').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

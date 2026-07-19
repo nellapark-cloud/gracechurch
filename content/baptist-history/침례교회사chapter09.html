@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>9강. 로저 윌리엄스와 미국 침례교의 시작</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:260px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(calc(-50% + var(--arrow-shift,0px)));border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .quote-block{font-family:'Noto Serif KR',serif;font-style:italic;font-size:16px;color:var(--navy);border-left:3px solid var(--gold);background:var(--cream-warm);padding:16px 22px;margin:18px 0;line-height:1.8;}
+  .quote-block .who{display:block;margin-top:8px;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-size:12.5px;color:#8f8672;letter-spacing:.03em;}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .preview-box{margin-top:40px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제9강</div>
+    <h1 class="title">로저 윌리엄스와<br>미국 침례교의 시작</h1>
+    <div class="subtitle">담장 너머로 걸어간 한 사람의 이야기</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 1689년 런던 신앙고백을 통해 침례교가 무엇을 믿는지 살펴보았습니다. 5강에서는 토머스 헬위스가 영국에서 종교의 자유를 위해 어떻게 목숨을 걸었는지도 함께 다루었습니다. 오늘은 그 이야기가 대서양을 건너 신대륙에서 어떻게 이어졌는지, <span class="person" data-info="1603~1683. 영국 출신 청교도 목사로 신대륙으로 건너갔으나, 매사추세츠에서도 신앙을 강요하는 모습을 보고 1636년 로드아일랜드를 세웠다. 정교분리 사상의 대표적 인물로 꼽힌다.">로저 윌리엄스</span> 한 사람의 삶을 따라가며 미국 침례교가 어떻게 시작되었는지를 자세히 살펴보겠습니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">청교도 목사, 신대륙으로</h2></div>
+      <p>로저 윌리엄스는 영국에서 태어난 청교도 목사였습니다. 그는 국교회의 예배와 신학에 만족하지 못했고, 1631년 더 순수한 신앙을 찾아 매사추세츠 식민지로 이주했습니다. <span class="impact">그러나 그가 발견한 것은 자유가 아니라, 영국과 똑같은 방식으로 신앙을 강요하는 또 하나의 국교회였습니다.</span> 매사추세츠 청교도들은 자신들이 박해를 피해 왔으면서도, 정작 자신들과 다른 신앙을 가진 사람은 용납하지 않았습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">매사추세츠에서 추방되다</h2></div>
+      <p>윌리엄스는 몇 가지 이유로 식민지 지도자들과 충돌했습니다. 그는 식민지 정부가 원주민의 땅을 정당한 대가 없이 차지해서는 안 된다고 주장했고, 국가가 시민에게 특정 교회의 예배를 강요할 권한이 없다고 가르쳤습니다. <span class="impact">1635년, 매사추세츠 법정은 그를 위험 인물로 규정하고 추방을 명령했습니다.</span> 한겨울, 그는 눈 덮인 숲을 헤치고 홀로 남쪽으로 걸어야 했습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">로드아일랜드, 자유의 땅</h2></div>
+      <p>추방된 윌리엄스는 <span class="term" data-info="북아메리카 원주민 부족. 오늘날 로드아일랜드 지역에 거주했다. 로저 윌리엄스는 이들과 우호적인 관계를 맺었고, 이들로부터 땅을 정당하게 구매해 프로비던스를 세웠다.">내러간셋 부족</span>의 도움을 받아 살아남았고, 이들에게서 땅을 정당한 값을 치르고 사들여 <span class="keyword">프로비던스</span>(Providence)라는 마을을 세웠습니다. 이것이 오늘날 <span class="keyword">로드아일랜드</span>(Rhode Island)의 시작입니다. 그는 이곳을 어느 한 종파의 소유가 아니라, <span class="impact">누구나 자신의 양심에 따라 신앙을 선택할 수 있는 공동체로 세우고자 했습니다.</span> 국가가 신앙을 정하지 않는 식민지는 당시로서는 전례가 없는 실험이었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">미국 최초의 침례교회</h2></div>
+      <p>1638년경, 프로비던스에서 윌리엄스는 신자의 침례라는 확신에 이르렀습니다. 그는 동료 <span class="term" data-info="로저 윌리엄스와 함께 프로비던스에 정착한 인물. 1638년경 로저 윌리엄스에게 침례를 베풀었고, 이어 윌리엄스가 그를 포함한 십여 명에게 침례를 베풀어 미국 최초의 침례교회가 시작되었다고 전해진다.">에스겔 홀리먼</span>에게 침례를 받았고, 다시 그가 다른 사람들에게 침례를 베풀어 작은 회중을 이루었습니다. <span class="impact">이 모임이 오늘날 '미국 최초의 침례교회'(First Baptist Church in America)로 불립니다.</span> 신학적 완성보다, 성경으로 돌아가려는 절박한 확신이 앞선 출발이었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">얼마 지나지 않아 떠나다</h2></div>
+      <p>흥미롭게도, 윌리엄스는 이 교회에 오래 머물지 않았습니다. 몇 달 만에 그는 이 교회조차 완전한 성경적 형태가 아니라는 생각에 이르렀고, 스스로를 <span class="term" data-info="17세기 영국과 뉴잉글랜드에서, 어떤 기존 교회도 완전한 사도적 정통성을 회복하지 못했다고 보아 특정 교단에 속하기를 거부하고 하나님의 새로운 계시를 기다리며 구도자로 남았던 이들. 로저 윌리엄스도 말년에 이 입장에 가까웠다고 전해진다.">구도자(Seeker)</span>라 부르며 어느 교단에도 다시 속하지 않았습니다. <span class="impact">그러나 그가 세운 교회와 로드아일랜드의 자유는 그가 떠난 뒤에도 계속되었습니다.</span> 한 사람의 확신이 완벽하지 않아도, 그가 놓은 자유의 토대는 다음 세대로 이어질 수 있었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">담장의 비유</h2></div>
+      <p>윌리엄스는 국가와 교회의 관계를 하나의 비유로 설명했습니다. 그는 교회를 순전하게 지키려면, 교회라는 정원과 세상이라는 광야 사이에 <span class="keyword">담장</span>이 있어야 한다고 말했습니다.</p>
+      <div class="quote-block">"교회라는 동산과 세상이라는 광야를 갈라놓는 담장이 무너지면, 하나님께서는 그 동산을 다시 광야로 되돌려 놓으실 것입니다."<span class="who">— 로저 윌리엄스, 1644년 저작 중에서 (한글 요약)</span></div>
+      <p><span class="impact">이 담장은 세상으로부터 교회를 지키기 위한 것이지, 신앙을 없애기 위한 것이 아니었습니다.</span> 훗날 미국에서 이 표현은 국가와 종교의 관계를 설명하는 유명한 비유로 자리 잡게 됩니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">원주민을 향한 시선</h2></div>
+      <p>윌리엄스가 남긴 또 하나의 중요한 유산은 원주민을 대하는 태도였습니다. 그는 내러간셋 부족의 언어를 배워 <span class="term" data-info="로저 윌리엄스가 1643년 출판한 책. 내러간셋 부족의 언어와 풍습을 기록한 책으로, 원주민을 존중하는 태도로 접근한 초기 저작 가운데 하나로 평가받는다.">『아메리카 언어 입문』</span>(A Key into the Language of America)이라는 책을 펴냈고, 원주민도 하나님 앞에서 존엄한 인간이라고 가르쳤습니다. <span class="impact">그의 종교의 자유 사상은 신앙이 다른 사람뿐 아니라, 문화와 민족이 다른 사람에게도 함께 적용되는 것이었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">씨앗이 된 로드아일랜드</h2></div>
+      <p>로드아일랜드는 작은 식민지였지만, 그 자유의 실험은 이후 신대륙 전역에 흩어진 침례교회들에게 하나의 본보기가 되었습니다. <span class="impact">국가가 신앙을 강요하지 않아도 교회가 무너지지 않는다는 것을, 이 작은 공동체가 먼저 증명해 보인 것입니다.</span> 이 씨앗은 다음 세기, 대각성 운동과 함께 신대륙 전역에서 크게 자라나게 됩니다.</p>
+      <div class="refs">
+        <span class="ref-tag" data-info="예수님께서 가이사의 것은 가이사에게, 하나님의 것은 하나님께 바치라고 답하신 장면입니다. 국가와 신앙 각각의 영역이 구분됨을 보여주는 본문으로 자주 인용됩니다.">마태복음 22:21</span>
+      </div>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>시기</th><th>사건</th></tr>
+        <tr><td>1631년</td><td>로저 윌리엄스, 매사추세츠 식민지로 이주</td></tr>
+        <tr><td>1635년</td><td>매사추세츠 법정, 추방 명령</td></tr>
+        <tr><td>1636년</td><td>프로비던스 설립 (로드아일랜드의 시작)</td></tr>
+        <tr><td>1638년경</td><td>미국 최초의 침례교회 시작</td></tr>
+        <tr><td>1643년</td><td>『아메리카 언어 입문』 출판</td></tr>
+        <tr><td>1644년</td><td>담장의 비유가 담긴 저작 출간</td></tr>
+      </table>
+      <p class="table-cap">한 사람의 짧은 여정이 이후 대서양 건너 침례교 전체의 흐름을 바꾸어 놓았습니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 "식민지 전역으로 퍼진 침례교와 대각성 운동"을 다룹니다. 로드아일랜드의 작은 씨앗이 어떻게 신대륙 전역으로 퍼져 나갔는지, 그리고 18세기 대각성 운동이 침례교의 폭발적인 성장에 어떤 영향을 미쳤는지 살펴봅니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li><b>로저 윌리엄스</b>는 매사추세츠에서 추방된 뒤 <b>로드아일랜드</b>를 세워 종교의 자유를 실현했습니다.</li>
+        <li>1638년경 프로비던스에서 <b>미국 최초의 침례교회</b>가 시작되었습니다.</li>
+        <li>윌리엄스는 곧 교회를 떠나 <b>구도자</b>로 남았지만, 그가 놓은 자유의 토대는 계속 이어졌습니다.</li>
+        <li>그는 <b>담장의 비유</b>로 교회와 국가의 관계를 설명했으며, 원주민을 존중하는 태도로도 유산을 남겼습니다.</li>
+        <li>로드아일랜드의 실험은 이후 침례교 확산의 중요한 <b>본보기</b>가 되었습니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>박해를 피해 온 사람들이 다시 다른 이를 박해하게 되는 모습에서, 오늘 우리가 경계해야 할 것은 무엇입니까?</li>
+        <li>윌리엄스가 완전하지 않았음에도 그의 유산이 이어질 수 있었던 이유는 무엇일까요?</li>
+        <li>"담장"의 비유는 오늘 우리 교회가 세상과 맺는 관계에 어떤 의미를 줍니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제9강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+      var el = this;
+      requestAnimationFrame(function(){
+        var rect = popup.getBoundingClientRect();
+        var pad = 10;
+        var shift = 0;
+        if(rect.left < pad) shift = pad - rect.left;
+        else if(rect.right > window.innerWidth - pad) shift = (window.innerWidth - pad) - rect.right;
+        if(shift !== 0){
+          popup.style.marginLeft = shift + 'px';
+          if(!el.classList.contains('ref-tag')){
+            popup.style.setProperty('--arrow-shift', (-shift) + 'px');
+          }
+        }
+      });
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

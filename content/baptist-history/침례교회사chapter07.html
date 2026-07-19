@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>7강. 1644년 런던 신앙고백</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:260px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .quote-block{font-family:'Noto Serif KR',serif;font-style:italic;font-size:16px;color:var(--navy);border-left:3px solid var(--gold);background:var(--cream-warm);padding:16px 22px;margin:18px 0;line-height:1.8;}
+  .quote-block .who{display:block;margin-top:8px;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-size:12.5px;color:#8f8672;letter-spacing:.03em;}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .preview-box{margin-top:40px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제7강</div>
+    <h1 class="title">1644년<br>런던 신앙고백</h1>
+    <div class="subtitle">침례교는 무엇을 믿는가를 세상에 밝히다</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 일반침례교와 특수침례교가 속죄의 범위를 두고 서로 다른 이해를 가지면서도, 신자의 침례와 교회의 자치라는 핵심 원리를 함께 지켰다는 것을 살펴보았습니다. 이번 강에서는 침례교 역사에서 매우 중요한 문서를 공부합니다. 바로 <span class="keyword">1644년 런던 신앙고백</span>(The First London Baptist Confession of Faith)입니다. 많은 사람들은 침례교가 단순히 신자의 침례만 강조하는 교회라고 생각하지만, <span class="impact">침례교는 처음부터 성경적 신앙을 체계적으로 정리하여 세상 앞에 고백한 교회였습니다.</span></p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">왜 신앙고백서를 만들었을까?</h2></div>
+      <p>17세기 영국은 매우 혼란스러운 시대였습니다. 가톨릭과 영국 국교회, 청교도와 여러 분리파가 서로 대립하고 있었고, 종교적 긴장은 정치 문제와도 깊이 연결되어 있었습니다. 이러한 상황 속에서 침례교는 여러 오해를 받았습니다. 사람들은 침례교를 재침례파와 동일시하며 국가를 부정하는 사람들, 사회질서를 무너뜨리는 사람들, 극단적인 종교집단이라고 말했습니다. <span class="impact">이런 오해를 바로잡기 위해 특수침례교 지도자들은 자신들의 믿음을 문서로 정리하기 시작했고, 그 결과가 바로 1644년 런던 신앙고백입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">누가 작성했는가?</h2></div>
+      <p>1644년 당시 런던에는 일곱 개의 특수침례교회가 있었습니다. 이 교회들의 목회자와 지도자들이 함께 모여 신앙고백서를 작성했습니다. 대표적인 인물로는 <span class="person" data-info="1616~1701. 런던의 대표적 특수침례교 지도자. 1644년 런던 신앙고백 작성을 주도했으며, 평생 침례교회의 신학적 정통성과 사회적 신뢰를 지키기 위해 힘썼다.">윌리엄 키핀</span>과 <span class="person" data-info="1599~1691. 청교도 출신 목회자로 특수침례교 지도자가 되었다. 1644년 런던 신앙고백 작성에 참여했으며 이후에도 오랫동안 런던의 침례교회를 이끌었다.">한서드 놀리스</span> 등이 있습니다. <span class="impact">이들은 자신들의 개인적인 의견이 아니라 교회 공동체의 믿음을 정리하려고 했습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">신앙고백서는 성경보다 높은가?</h2></div>
+      <p>여기서 중요한 질문이 있습니다. 침례교는 성경만을 최고의 권위로 믿는데, 왜 신앙고백서를 만들었을까요? 답은 분명합니다. <span class="impact">신앙고백서는 성경을 대신하는 책이 아니라, 성경을 어떻게 이해하는지를 정리한 안내서입니다.</span> 성경이 최종 권위이고, 신앙고백서는 그 성경을 바르게 해석하고 설명하기 위한 문서입니다. 그래서 침례교는 언제나 <span class="keyword">"성경이 신앙고백보다 우선한다"</span>는 원칙을 지켜 왔습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">1644년 신앙고백의 핵심 내용</h2></div>
+      <p>이 신앙고백은 다섯 가지 핵심 내용을 담고 있습니다.</p>
+      <ul class="plain">
+        <li><b>성경의 절대적 권위</b> — 인간의 전통이나 교황의 권위가 아니라 하나님의 말씀이 최종 기준입니다.</li>
+        <li><b>하나님 중심의 구원</b> — 하나님의 주권을 강조하면서도, 인간에게 복음을 전해야 할 책임을 분명히 했습니다.</li>
+        <li><b>신자의 침례</b> — 믿음을 고백한 사람에게 침례를 베풀어야 하며, 물속에 잠기는 방식이 가장 성경적이라고 고백했습니다.</li>
+        <li><b>교회의 자치</b> — 국가도, 교황도, 다른 교회도 지역교회를 지배할 권리가 없습니다.</li>
+        <li><b>성도의 거룩한 삶</b> — 참된 신앙은 반드시 거룩한 삶으로 나타나야 한다고 믿었습니다.</li>
+      </ul>
+      <p><span class="impact">신앙과 삶은 결코 분리될 수 없다는 것이 이 고백의 정신이었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">재침례파와의 차이를 분명히 하다</h2></div>
+      <p>1644년 신앙고백의 중요한 목적 가운데 하나는 <span class="term" data-info="1644년 런던 신앙고백이 세상에 밝히려 했던 자기 이해. 신자의 침례를 함께 주장하면서도, 사회질서를 존중하고 정부의 역할을 인정한다는 점에서 급진적 재침례파와 스스로를 구별하려 했다.">"우리는 급진적인 재침례파와는 다르다"</span>는 점을 밝히는 것이었습니다. 물론 신자의 침례는 함께 주장했습니다. 그러나 사회질서를 존중했고, 정부의 역할을 인정했으며, 성경적인 질서를 중요하게 여겼습니다. <span class="impact">즉 침례교는 무정부주의 운동이 아니라, 성경적 교회를 세우려는 복음주의 운동임을 분명히 했습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">왜 이 문서가 중요한가?</h2></div>
+      <p>1644년 신앙고백은 침례교가 처음으로 <span class="impact">"우리는 이런 사람들입니다"</span>라고 세상 앞에 공식적으로 말한 문서입니다. 이후 침례교는 1677년, 1689년에 더 발전된 신앙고백을 발표하게 됩니다. <span class="impact">그러나 그 출발점은 바로 이 1644년 신앙고백이었습니다.</span></p>
+      <div class="flow">
+        <span class="step">1644년 런던 신앙고백</span><span class="arrow">→</span>
+        <span class="step">1677년 신앙고백</span><span class="arrow">→</span>
+        <span class="step">1689년 런던 신앙고백</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">오늘 우리에게 주는 교훈</h2></div>
+      <p>오늘날 우리는 다양한 신앙고백과 교리서를 접할 수 있습니다. 그러나 침례교는 언제나 다음 순서를 지켜야 합니다.</p>
+      <div class="flow">
+        <span class="step">성경</span><span class="arrow">→</span>
+        <span class="step">신앙고백</span><span class="arrow">→</span>
+        <span class="step">교회의 전통</span>
+      </div>
+      <p><span class="impact">이 순서가 바뀌면, 전통이 성경을 대신하게 되고, 사람의 말이 하나님의 말씀보다 앞서게 됩니다.</span></p>
+      <div class="pull">1644년 런던 신앙고백은 성경을 대신하려는 문서가 아니라, <b>성경을 충실히 따르겠다는 공동체의 고백</b>이었습니다.</div>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>핵심 내용</th></tr>
+        <tr><td>작성 배경</td><td>재침례파와의 혼동을 바로잡기 위해 특수침례교 지도자들이 작성</td></tr>
+        <tr><td>작성자</td><td>윌리엄 키핀, 한서드 놀리스 등 런던 일곱 교회의 지도자들</td></tr>
+        <tr><td>성경과의 관계</td><td>성경을 대신하지 않고, 성경 해석의 안내서 역할을 함</td></tr>
+        <tr><td>핵심 내용</td><td>성경의 권위, 하나님 중심의 구원, 신자의 침례, 교회의 자치, 거룩한 삶</td></tr>
+        <tr><td>역사적 의의</td><td>침례교 최초의 공식 신앙고백, 이후 1677·1689년 고백의 출발점</td></tr>
+      </table>
+      <p class="table-cap">1644년 신앙고백은 침례교가 스스로를 세상에 설명한 첫 공식 문서였습니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 침례교 역사에서 가장 영향력 있는 문서인 『1689년 런던 신앙고백』을 살펴보겠습니다. 1644년 신앙고백과 어떤 차이가 있는지, 왜 이 문서가 오늘날까지도 세계 침례교회에서 중요한 신앙의 기준으로 존중받는지, 그리고 장로교의 웨스트민스터 신앙고백 및 사보이 선언(Savoy Declaration)과 어떤 관계가 있는지도 함께 알아보겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li><b>1644년 런던 신앙고백</b>은 특수침례교가 자신들의 신앙을 공식적으로 밝힌 첫 번째 신앙고백입니다.</li>
+        <li>이 고백은 침례교가 급진적 종교운동이 아니라 <b>성경에 기초한 복음주의 공동체</b>임을 세상에 알리는 역할을 했습니다.</li>
+        <li>핵심 내용은 <b>성경의 권위, 하나님 중심의 구원, 신자의 침례, 교회의 자치, 거룩한 삶</b>이었습니다.</li>
+        <li>침례교는 신앙고백을 소중히 여기지만, <b>성경만이 최종 권위</b>라는 원칙을 결코 포기하지 않았습니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>신앙고백서는 왜 필요하지만, 성경보다 앞설 수는 없을까요?</li>
+        <li>오늘날 교회는 성경과 전통의 관계를 어떻게 이해해야 할까요?</li>
+        <li>우리의 신앙은 올바른 교리뿐 아니라 거룩한 삶으로도 드러나고 있습니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제7강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

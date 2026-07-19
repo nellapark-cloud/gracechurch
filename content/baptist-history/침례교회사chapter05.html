@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>5강. 침례교와 종교의 자유</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:270px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .quote-block{font-family:'Noto Serif KR',serif;font-style:italic;font-size:16px;color:var(--navy);border-left:3px solid var(--gold);background:var(--cream-warm);padding:16px 22px;margin:18px 0;line-height:1.8;}
+  .quote-block .who{display:block;margin-top:8px;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-size:12.5px;color:#8f8672;letter-spacing:.03em;}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .preview-box{margin-top:40px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제5강</div>
+    <h1 class="title">침례교와<br>종교의 자유</h1>
+    <div class="subtitle">침례교가 세상에 남긴 가장 위대한 유산</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 침례교가 왜 신자의 침례를 고수하는지 살펴보았습니다. 이번 강에서는 침례교가 교회사뿐 아니라 세계 역사에도 큰 영향을 끼친 한 가지 주제를 다룹니다. 바로 <b>종교의 자유</b>입니다. 오늘날 우리는 원하는 교회에 자유롭게 다니고 믿거나 믿지 않을 자유도 어느 정도 보장받고 있지만, 이 자유는 처음부터 존재했던 것이 아니라 수많은 신앙인들의 희생 위에 세워진 것입니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">종교의 자유가 없었던 시대</h2></div>
+      <p>오늘날에는 상상하기 어렵지만, 중세와 종교개혁 시대에는 <span class="keyword">국가가 종교를 결정</span>하는 것이 당연한 일이었습니다. 왕이 가톨릭이면 국민도 가톨릭이어야 했고, 왕이 개신교이면 국민도 개신교가 되어야 했습니다. <span class="impact">신앙은 개인의 선택이 아니라 국가의 정책이었습니다.</span> 그래서 다른 신앙을 가지면 벌금, 감옥, 추방, 심지어 화형으로 처벌받았고, 개신교 국가에서조차 다른 개신교를 박해하는 일이 흔했습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">침례교인들도 박해를 받았다</h2></div>
+      <p>침례교인들은 유아세례를 거부했고, 국교회를 인정하지 않았으며, 국가가 교회를 지배하는 것도 거부했습니다. 그래서 위험한 사람으로 여겨졌습니다. 당시 사람들에게는 <span class="impact">"국가의 종교를 거부하는 것은 국가 자체를 거부하는 것"</span>처럼 보였기 때문입니다. 실제로 많은 침례교인들이 감옥에 갇혔고, 재산을 빼앗기거나 생명을 잃었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">토머스 헬위스의 용기</h2></div>
+      <p>여기에서 다시 <span class="person" data-info="생몰년 미상(1616년경 사망). 존 스미스와 함께 네덜란드로 망명했던 영국 침례교 지도자. 스미스의 메노파 연합 시도에 반대해 영국으로 돌아가 런던 근처에 침례교회를 세웠다. 1612년 제임스 1세에게 종교의 자유를 요청하는 책을 직접 보낸 뒤 체포되어 뉴게이트 감옥에서 생을 마쳤다.">토머스 헬위스</span>를 만나게 됩니다. 그는 네덜란드에서 안전하게 살 수 있었지만, 영국 사람들도 성경적인 교회를 알아야 한다고 믿었기에 영국으로 돌아왔습니다. 그는 런던 근처에 침례교회를 세우고 <span class="term" data-info="토머스 헬위스가 1612년 출판한 책. 왕이 신하의 영혼을 다스릴 권세가 없다고 주장하며 종교의 자유를 정면으로 요청한, 교회사에서 매우 중요한 문헌으로 평가받는다.">『A Short Declaration of the Mystery of Iniquity』</span>(1612)라는 책을 펴냈습니다.</p>
+      <p>헬위스는 이 책의 한 부를 제임스 1세에게 직접 보냈고, 책에 왕을 향한 글을 적었습니다.</p>
+      <div class="quote-block">"왕은 죽을 수밖에 없는 인간이며 하나님이 아닙니다. 그러므로 신하들의 영혼을 다스릴 권세가 없습니다."<span class="who">— 토머스 헬위스, 제임스 1세에게 보낸 글 중에서</span></div>
+      <p>이 말은 당시로서는 거의 목숨을 내놓는 선언이었습니다. <span class="impact">결국 그는 체포되어 런던의 뉴게이트 감옥에 수감되었고, 그곳에서 생을 마감한 것으로 알려져 있습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">헬위스가 주장한 종교의 자유</h2></div>
+      <p>헬위스의 가장 놀라운 점은 자신과 같은 신앙을 가진 사람만의 자유를 주장하지 않았다는 것입니다. 그는 가톨릭도, 청교도도, 유대인도, 심지어 당시 표현으로 "터키인"(무슬림을 가리키는 표현)도 자유가 있어야 한다고 말했습니다. <span class="impact">신앙은 하나님과 개인 사이의 문제이기 때문입니다.</span> 이 생각은 당시로서는 매우 혁명적이었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">로저 윌리엄스의 발전</h2></div>
+      <p>이 정신은 미국에서 더욱 발전합니다. <span class="person" data-info="1603~1683. 영국 출신 청교도 목사로 신대륙으로 건너갔으나, 매사추세츠에서도 신앙을 강요하는 모습을 보고 1636년 로드아일랜드를 세웠다. 정교분리 사상의 대표적 인물로 꼽힌다.">로저 윌리엄스</span>는 영국의 박해를 피해 신대륙으로 갔지만, 그곳에서도 종교를 강요하는 모습을 보고 새로운 공동체인 <span class="keyword">로드아일랜드</span>를 세웠습니다. 그는 국가는 질서를 유지해야 하지만 교회를 지배해서는 안 되며, 교회도 국가 권력을 이용해서는 안 된다고 주장했습니다. <span class="impact">이것이 오늘날 말하는 정교분리의 핵심 사상입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">정교분리의 진짜 의미</h2></div>
+      <p>많은 사람들이 <span class="term" data-info="국가가 교회를 지배하지 않고, 교회도 국가 권력을 이용하지 않는다는 원리. 종교를 없애자는 뜻이 아니라, 교회는 복음을 자유롭게 전하고 국가는 모든 국민을 공정하게 대할 수 있도록 하기 위한 원리다.">정교분리</span>를 "종교를 없애자는 것"으로 오해합니다. 하지만 침례교가 말한 정교분리는 전혀 다른 의미입니다. <span class="impact">국가가 교회를 지배하지 않고, 교회도 국가 권력을 이용하지 않는 것입니다.</span> 그래야 교회는 복음을 자유롭게 전할 수 있고, 국가는 모든 국민을 공정하게 대할 수 있습니다. 즉 정교분리는 국가를 보호하기 위한 것이기도 하지만, 무엇보다 <span class="impact">교회의 순수성을 지키기 위한 원리</span>였습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">미국 헌법에 미친 영향</h2></div>
+      <p>침례교인들은 미국 건국 과정에서도 활발히 활동했습니다. 특히 <span class="person" data-info="1724~1806. 미국의 침례교 목사이자 신학자. 매사추세츠에서 종교세와 국교회 특혜에 맞서 싸우며 종교의 자유를 헌법에 명시할 것을 꾸준히 주장했다.">아이작 배커스</span>와 <span class="person" data-info="1754~1841. 미국 버지니아의 침례교 목사. 제임스 매디슨과 교류하며 수정헌법 제1조에 종교의 자유 조항이 포함되도록 영향을 끼쳤다.">존 릴랜드</span>는 종교의 자유를 헌법에 명시하도록 꾸준히 요구했습니다. 그 결과 <span class="keyword">미국 헌법 수정 제1조</span>에는 국가가 특정 종교를 세우거나 종교 활동을 제한해서는 안 된다는 원칙이 담기게 되었습니다. <span class="impact">침례교의 사상이 미국의 종교 자유 전통 형성에 중요한 영향을 준 것입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">성경은 왜 종교의 자유를 지지하는가</h2></div>
+      <p>침례교는 종교의 자유를 단순히 정치적 권리로 보지 않습니다. 그 근거를 성경에서 찾습니다. 예수님은 누구에게도 억지로 자신을 따르라고 하지 않으셨습니다. 부자 청년도, 예루살렘도 거부할 자유를 가졌습니다. <span class="impact">믿음은 강요가 아니라 자발적인 응답입니다.</span> 또한 사도들은 국가 권력이 신앙을 강요할 수 없음을 몸으로 보여 주었습니다.</p>
+      <div class="refs">
+        <span class="ref-tag" data-info="예수님께서 부자 청년에게 가진 것을 팔아 나누어 주고 자신을 따르라고 말씀하시자, 청년은 근심하며 떠나갑니다. 예수님은 그를 붙잡거나 강요하지 않으시고 스스로 결정하도록 두십니다. 믿음이 강요가 아니라 자발적 응답임을 보여주는 장면입니다.">마태복음 19:21-22</span>
+        <span class="ref-tag" data-info="예수님의 가르침이 어렵다며 많은 제자들이 떠나가자, 예수님은 열두 제자에게도 &quot;너희도 가려느냐&quot;고 물으십니다. 남을 자유만큼이나 떠날 자유도 존중하시는 모습입니다.">요한복음 6:66-67</span>
+        <span class="ref-tag" data-info="종교 지도자들이 다시는 예수의 이름으로 가르치지 말라고 명령하자, 베드로와 사도들은 &quot;사람보다 하나님께 순종하는 것이 마땅하다&quot;고 대답합니다. 국가나 권력이 신앙의 내용을 강요할 수 없음을 보여주는 초대교회의 선언입니다.">사도행전 5:29</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">9</div><h2 class="section-title">값을 치른 사람들</h2></div>
+      <p>종교의 자유는 하루아침에 주어지지 않았습니다. 한 세대가 씨를 뿌리면 다음 세대가 열매를 거두는 방식으로 형성되었습니다.</p>
+      <div class="flow">
+        <span class="step">박해의 시대</span><span class="arrow">→</span>
+        <span class="step">헬위스의 청원 (1612)</span><span class="arrow">→</span>
+        <span class="step">로드아일랜드 (1636)</span><span class="arrow">→</span>
+        <span class="step">배커스·릴랜드의 헌법 운동</span><span class="arrow">→</span>
+        <span class="step">수정헌법 제1조</span>
+      </div>
+      <div class="pull">국가가 줄 수 있는 것은 <b>관용</b>이지만, 침례교가 믿은 것은 <b>자유</b>였습니다. 관용은 권력자가 베푸는 것이지만, 자유는 하나님 앞에서 모든 사람이 본래 가진 권리이기 때문입니다.</div>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>인물</th><th>공헌</th></tr>
+        <tr><td>토머스 헬위스</td><td>제임스 1세에게 종교의 자유를 청원, 옥중에서 순교</td></tr>
+        <tr><td>로저 윌리엄스</td><td>로드아일랜드를 세워 정교분리를 실제로 구현</td></tr>
+        <tr><td>아이작 배커스</td><td>종교세와 국교회 특혜에 맞서 헌법 명시를 주장</td></tr>
+        <tr><td>존 릴랜드</td><td>제임스 매디슨을 설득해 수정헌법 제1조에 영향</td></tr>
+      </table>
+      <p class="table-cap">이들의 공통점은 하나입니다. 신앙은 강요될 수 없으며, 모든 사람은 하나님 앞에서 양심의 자유를 가져야 한다는 믿음입니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 "침례교와 예배"를 공부합니다. 초대교회는 어떻게 예배했는지, 침례교 예배는 다른 교단과 무엇이 다른지, 찬양·기도·설교·주의 만찬의 의미를 성경과 교회사 자료로 함께 살펴봅니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li><b>신자의 침례</b>는 침례교의 대표적 특징입니다.</li>
+        <li><b>종교의 자유</b>는 침례교가 세계에 남긴 가장 큰 유산 가운데 하나입니다.</li>
+        <li><b>정교분리</b>는 교회를 약화시키려는 원리가 아니라, 교회와 국가가 각자의 역할을 충실히 하도록 하는 원리입니다.</li>
+        <li><b>양심의 자유</b>는 하나님 앞에서 인간이 가져야 할 기본적인 자유입니다.</li>
+        <li><b>헬위스, 윌리엄스, 배커스, 릴랜드</b>의 헌신이 오늘날의 종교 자유 전통으로 이어졌습니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>나는 다른 사람의 신앙의 자유도 존중하고 있습니까?</li>
+        <li>교회는 권력이 아니라 복음으로 사람을 변화시키고 있습니까?</li>
+        <li>나는 양심을 따라 하나님께 순종할 용기가 있습니까?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제5강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

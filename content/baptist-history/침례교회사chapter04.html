@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>4강. 침례와 세례는 무엇이 다른가</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:260px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .preview-box{margin-top:40px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제4강</div>
+    <h1 class="title">침례와 세례는<br>무엇이 다른가</h1>
+    <div class="subtitle">형식의 차이인가, 성경 해석의 차이인가?</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 침례교와 재침례파가 닮은 두 운동이면서도 서로 다른 뿌리를 가졌다는 것을 살펴보았습니다. 이번 강에서는 많은 사람들이 가장 궁금해하는 질문을 다룹니다. "침례와 세례는 같은 것인가, 다른 것인가?" 많은 분들이 "침례는 물에 들어가는 것이고, 세례는 물을 뿌리는 것이니 결국 방식만 다른 것 아닌가?"라고 생각하지만, 침례교가 중요하게 보는 것은 물을 어떻게 사용하느냐가 아니라 <b>성경이 침례를 무엇으로 가르치는가</b>입니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">성경에는 '세례'라는 말이 있었을까?</h2></div>
+      <p>먼저 놀라운 사실이 하나 있습니다. 성경 원문에는 '세례'도 '침례'도 없습니다. 신약성경은 헬라어로 기록되었는데, 그 단어는 <span class="term" data-info="신약성경에서 '침례/세례'로 번역된 헬라어 단어. 본래 '담그다', '잠기게 하다', '물속에 넣다'라는 뜻을 가진다. 고대 문헌에서 천을 염료에 담그거나 배가 물에 잠기는 것을 표현할 때도 같은 단어가 쓰였다.">βαπτίζω(baptizō, 밥티조)</span>입니다. 이 단어의 원래 뜻은 매우 분명합니다. 담그다, 잠기게 하다, 물속에 넣다. <span class="impact">즉, 언어적으로는 '잠기게 한다'는 의미가 가장 기본입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">초대교회는 어떻게 침례를 베풀었을까?</h2></div>
+      <p>성경을 보면 침례를 받을 때 물이 충분히 있는 장소를 찾는 장면이 반복됩니다.</p>
+      <ul class="plain">
+        <li><b>예수님의 침례</b> — 요단강에서 침례를 받으셨고, 물에서 올라오셨다는 표현은 물속으로 들어갔다가 나오는 모습을 자연스럽게 떠올리게 합니다.</li>
+        <li><b>에티오피아 내시</b> — 빌립과 내시 둘 다 물로 내려갔다가 함께 올라옵니다. 굳이 물속으로 내려갈 필요가 있었던 이유를 생각해 볼 수 있습니다.</li>
+        <li><b>많은 물</b> — 세례 요한은 물이 많기 때문에 그곳에서 침례를 베풀었습니다. 몇 방울의 물만 있으면 된다면, 굳이 물이 많은 장소를 선택할 이유가 없었을 것입니다.</li>
+      </ul>
+      <div class="refs">
+        <span class="ref-tag" data-info="&quot;예수께서 침례를 받으시고 곧 물에서 올라오시니…&quot; — 이 순간 하늘이 열리고 성령이 비둘기 형상으로 내려와 임하는 장면이 이어집니다. 물속으로 들어갔다 나오는 동작이 분명하게 드러나는 본문입니다.">마태복음 3:16</span>
+        <span class="ref-tag" data-info="&quot;둘이 물에서 올라올새 주의 영이 빌립을 이끌어 가시니…&quot; — 내시가 수레를 멈추게 하고 빌립과 함께 물 있는 곳으로 걸어 내려가 침례를 받은 직후의 장면입니다. 두 사람 모두 물속으로 내려갔다가 나오는 동선이 뚜렷합니다.">사도행전 8:38-39</span>
+        <span class="ref-tag" data-info="&quot;애논에서도 요한이 침례를 주니 거기 물이 많음이라…&quot; — 요한이 이 장소를 택한 이유를 직접 설명하는 구절입니다. 사람들이 계속 찾아와 침례를 받았다는 내용도 함께 나옵니다.">요한복음 3:23</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">초대교회 문헌은 무엇을 말하는가</h2></div>
+      <p>신약 이후 가장 오래된 기독교 문헌 가운데 하나인 <span class="term" data-info="1~2세기경 작성된 것으로 추정되는 초대교회 문헌. '열두 사도의 가르침'이라는 뜻으로, 초대교회의 예배와 실천에 관한 초기 증언 중 하나로 평가받는다.">디다케(Didache)</span>는 침례에 대해 이렇게 권합니다. 먼저 흐르는 물에서 침례를 베풀고, 그것이 어렵다면 다른 물에서, 차가운 물이 없으면 따뜻한 물에서, 그마저도 어려우면 머리에 세 번 물을 부으라고 기록합니다. <span class="impact">이 문헌은 원칙은 침수였지만, 특별한 상황에서는 물을 붓는 방식도 허용했다는 사실을 보여 줍니다.</span> 즉, 예외 규정이 있다는 것은 원래의 기준이 있었다는 뜻입니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">그렇다면 유아세례는 언제 시작되었을까</h2></div>
+      <p>신약성경에는 유아에게 침례를 베풀었다는 명확한 기록이 없습니다. 2세기 말에서 3세기에 이르러 <span class="keyword">유아세례</span>에 대한 언급이 나타나기 시작합니다. 여기에는 몇 가지 이유가 있습니다. 첫째, 영아 사망률이 매우 높았습니다. 둘째, <span class="term" data-info="인류가 아담의 범죄로 인해 태어날 때부터 죄의 성향을 가진다는 신학적 개념. 초대교회 이후 이 이해가 발전하면서, 유아도 가능한 빨리 세례를 받아 죄에서 씻겨야 한다는 생각이 널리 퍼졌다.">원죄</span>에 대한 이해가 발전하면서 유아도 가능한 빨리 세례를 받아야 한다는 생각이 퍼졌습니다. 셋째, 교회가 점차 국가와 결합하면서 태어나면 자연스럽게 교회의 구성원이 되는 문화가 형성되었습니다. <span class="impact">이러한 역사적 과정 속에서 유아세례는 점차 일반적인 관행이 되었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">침례교는 왜 유아침례를 시행하지 않는가</h2></div>
+      <p>침례교가 유아침례를 시행하지 않는 이유는 유아를 사랑하지 않아서가 아닙니다. 오히려 <span class="impact">침례의 의미를 소중히 여기기 때문입니다.</span> 신약성경에서 침례는 항상 다음 순서로 나타납니다.</p>
+      <div class="flow">
+        <span class="step">복음을 듣다</span><span class="arrow">→</span>
+        <span class="step">믿다</span><span class="arrow">→</span>
+        <span class="step">회개하다</span><span class="arrow">→</span>
+        <span class="step">침례를 받다</span>
+      </div>
+      <p>침례는 자신의 믿음을 스스로 고백하는 순종의 행위입니다. 아직 스스로 믿음을 고백할 수 없는 유아에게는 이 순서를 적용할 수 없다고 보는 것입니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">그렇다면 침례가 구원을 주는가</h2></div>
+      <p>침례교의 대답은 분명합니다. 아닙니다. 구원은 하나님의 은혜로, 믿음을 통해 받습니다. <span class="impact">침례는 구원의 조건이 아니라 구원받은 사람이 그 믿음을 드러내는 순종의 고백입니다.</span></p>
+      <div class="refs">
+        <span class="ref-tag" data-info="&quot;너희는 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니…&quot; — 이는 사람 스스로 이루어낸 것이 아니라 하나님께서 주신 선물이며, 행위로 얻은 것이 아니므로 누구도 자랑할 수 없다는 점을 이어서 강조합니다.">에베소서 2:8-9</span>
+      </div>
+      <div class="pull">결혼반지가 결혼을 <b>만드는</b> 것은 아닙니다. 결혼이라는 사실을 <b>드러내는</b> 표지입니다. 마찬가지로 침례는 구원을 만드는 것이 아니라, 이미 받은 구원을 공동체 앞에서 고백하는 표지입니다.</div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">그렇다면 왜 침례는 중요한가</h2></div>
+      <p>어떤 사람은 말합니다. "구원과 관계없다면 안 받아도 되지 않나요?" 그러나 성경은 침례를 선택 사항으로 말하지 않습니다. 예수님은 제자들에게 모든 민족을 제자로 삼아 침례를 베풀라고 명령하셨습니다. <span class="impact">그러므로 침례는 구원의 조건은 아니지만, 주님의 명령에 대한 순종입니다.</span></p>
+      <div class="refs">
+        <span class="ref-tag" data-info="&quot;너희는 가서 모든 민족을 제자로 삼아 침례를 베풀고…&quot; — 부활하신 예수님께서 제자들에게 아버지와 아들과 성령의 이름으로 침례를 베풀라고 직접 명령하신 지상명령 본문입니다.">마태복음 28:19</span>
+      </div>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>구분</th><th>핵심 내용</th></tr>
+        <tr><td>밥티조의 원뜻</td><td>담그다, 잠기게 하다, 물속에 넣다</td></tr>
+        <tr><td>초대교회의 방식</td><td>물이 많은 곳을 찾아 침수로 침례를 베풂</td></tr>
+        <tr><td>디다케의 원칙</td><td>침수가 기본, 특별한 상황에서만 예외 허용</td></tr>
+        <tr><td>유아세례의 시작</td><td>2~3세기, 원죄 이해와 국가·교회 결합 속에서 확산</td></tr>
+        <tr><td>침례교의 확신</td><td>침례는 구원의 조건이 아닌 순종의 고백</td></tr>
+      </table>
+      <p class="table-cap">언어와 초대교회의 실천, 문헌 증거는 모두 같은 방향을 가리킵니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 강에서는 "침례교와 종교의 자유"를 다룹니다. 토머스 헬위스와 로저 윌리엄스가 왜 목숨을 걸고 양심의 자유를 외쳤는지, 그리고 그들의 사상이 현대 민주주의와 종교 자유에 어떤 영향을 주었는지 살펴봅니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li><b>밥티조</b>는 본래 '담그다, 잠기게 하다'는 의미를 가진 단어입니다.</li>
+        <li>초대교회는 신앙을 고백한 사람에게 침례를 베풀었고, <b>침수</b>가 일반적인 방식이었습니다.</li>
+        <li><b>유아세례</b>는 시간이 지나면서 형성된 교회의 전통입니다.</li>
+        <li>침례는 <b>구원의 조건이 아니라</b> 구원받은 사람의 순종의 고백입니다.</li>
+        <li>구원과 무관하더라도 침례는 <b>주님의 명령에 대한 순종</b>이므로 중요합니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>예수님께서 직접 침례를 받으신 이유는 무엇이었을까요?</li>
+        <li>침례는 내 믿음을 공동체 앞에서 어떻게 증언하는 행위가 될까요?</li>
+        <li>오늘날 교회는 형식보다 의미를 더 잘 가르치고 있을까요?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제4강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

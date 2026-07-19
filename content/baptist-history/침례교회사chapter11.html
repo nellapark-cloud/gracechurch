@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>11강. 영국에서 미국으로: 침례교의 확산</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:27px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:260px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(calc(-50% + var(--arrow-shift,0px)));border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .deepdive-box{margin-top:40px;background:#fff;border:1px solid var(--line);border-left:3px solid var(--navy);padding:20px 24px;}
+  .deepdive-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--navy);margin:0 0 10px;font-weight:700;}
+  .deepdive-box p{font-size:15px;margin:0 0 10px;}
+  .deepdive-box p:last-child{margin-bottom:0;}
+
+  .preview-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제11강</div>
+    <h1 class="title">영국에서 미국으로:<br>침례교의 확산</h1>
+    <div class="subtitle">작은 공동체가 세계적인 교단으로 성장하기까지</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 로저 윌리엄스를 통해 미국 최초의 침례교회와 종교의 자유의 역사를 살펴보았습니다. 오늘은 영국에서 시작된 작은 침례교 운동이 어떻게 대서양을 건너 미국으로 확산되었고, 세계에서 가장 큰 개신교 전통 가운데 하나로 성장하게 되었는지를 살펴보겠습니다. <span class="impact">침례교의 성장은 국가의 지원이나 강제적인 제도가 아니라, 복음 전도와 교회 개척을 통해 이루어졌다는 점이 가장 큰 특징입니다.</span></p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">작은 시작</h2></div>
+      <p>1609년 존 스미스가 시작한 침례교 공동체는 매우 작은 모임이었습니다. 1612년 토머스 헬위스가 영국으로 돌아와 최초의 침례교회를 세웠을 때도 상황은 크게 다르지 않았습니다. 17세기 중반이 되어도 침례교는 영국에서 소수의 비국교도 집단에 불과했습니다. 그러나 그들은 세 가지 원칙을 굳게 지켰습니다. <b>성경의 절대적 권위, 신자의 침례, 지역교회의 자치</b>입니다. <span class="impact">이 원칙은 이후 침례교 성장의 든든한 기초가 되었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">미국으로 건너간 침례교</h2></div>
+      <p>17세기 후반부터 많은 침례교인들이 신앙의 자유를 찾아 북아메리카로 이주했습니다. 미국에는 국가가 하나의 교회를 강요하지 않는 지역들이 있었고, 새로운 마을과 교회가 계속 세워지고 있었습니다. <span class="impact">이러한 환경은 침례교가 성장하기에 매우 유리했습니다.</span> 특히 로드아일랜드, 펜실베이니아, 뉴저지, 버지니아 등지에서 침례교회가 빠르게 세워졌습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">필라델피아 협회의 탄생</h2></div>
+      <p>1707년, 미국 최초의 침례교 협의체인 <span class="term" data-info="1707년 조직된 미국 최초의 침례교 협의체. 여러 지역교회가 목회자 교육, 신학적 상담, 선교 협력, 교회 개척 지원, 분쟁 조정을 위해 자발적으로 모인 기구였다. 교회를 지배하는 상급 기관이 아니라 권고만 할 수 있는 협력체였다.">필라델피아 협회</span>(Philadelphia Baptist Association)가 조직되었습니다. 이 협회는 교회를 지배하는 기관이 아니었습니다. 오히려 지역교회들이 목회자 교육, 신학적 상담, 선교 협력, 교회 개척 지원, 분쟁 조정을 위해 서로 협력하는 모임이었습니다. <span class="impact">협회는 권고는 할 수 있었지만 명령할 수는 없었습니다. 이는 침례교의 지역교회 자치 원칙을 존중했기 때문입니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">대각성 운동과 침례교의 성장</h2></div>
+      <p>18세기에 들어 미국에서는 <span class="keyword">대각성 운동</span>(The Great Awakening)이 일어났습니다. 대표적인 인물은 <span class="person" data-info="1703~1758. 미국 식민지 시대의 신학자이자 설교자. 대각성 운동을 이끈 대표적 인물로, 형식적 신앙보다 개인의 회심과 거듭남을 강조하는 설교로 큰 영향을 미쳤다.">조너선 에드워즈</span>와 <span class="person" data-info="1714~1770. 영국 출신 순회 설교자로, 대서양을 오가며 대각성 운동을 이끌었다. 야외에서 수천 명을 대상으로 설교하며 개인의 회심을 강조했다.">조지 휫필드</span>였습니다. 이 운동은 사람들에게 형식적인 신앙보다 <span class="impact">개인의 회심과 거듭남을 강조했습니다.</span> 이 점은 침례교가 오래전부터 강조해 온 가치와 잘 맞아떨어졌고, 침례교회는 회심한 사람들에게 신자의 침례를 베풀며 빠르게 성장했습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">미국 독립 이후의 성장</h2></div>
+      <p>1776년 미국이 독립한 이후, 국가가 특정 교회를 우대하는 제도가 점차 약화되었습니다. 종교의 자유가 확대되면서 침례교는 더욱 빠르게 성장했습니다. 또한 미국 서부 개척이 진행되면서, 개척자들은 새로운 마을마다 교회를 세웠습니다. 침례교 목회자들은 말을 타고 넓은 지역을 다니며 복음을 전했는데, 이들을 <span class="term" data-info="말을 타고 넓은 지역을 순회하며 복음을 전한 개척 시대의 설교자들. 이 용어는 감리교에서 더 널리 사용되지만, 침례교 역시 광활한 개척지에서 순회 전도 사역을 활발히 감당했다.">순회 설교자</span>(Circuit Riders)라 불렀습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">왜 침례교는 빠르게 성장했을까</h2></div>
+      <p>침례교의 성장은 단순히 시대의 흐름 때문만은 아니었습니다.</p>
+      <ul class="plain">
+        <li><b>평신도의 적극적인 참여</b> — 목회자만이 아니라 평신도들도 전도와 교회 개척에 적극 참여했습니다.</li>
+        <li><b>지역교회의 자치</b> — 복잡한 행정 절차 없이, 필요한 곳에 새로운 교회를 빠르게 세울 수 있었습니다.</li>
+        <li><b>성경 중심의 신앙</b> — 화려한 제도보다 성경을 가르치고 복음을 전하는 단순성과 명확성이 큰 호응을 얻었습니다.</li>
+        <li><b>선교 중심의 교회</b> — "모든 성도는 선교사"라는 정신 아래 복음이 세상으로 나아가야 한다고 믿었습니다.</li>
+      </ul>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">세계로 퍼져 나간 침례교</h2></div>
+      <p>18세기 말과 19세기에 들어 침례교는 미국을 넘어 세계로 확산되었습니다. 특히 인도, 미얀마, 중국, 아프리카, 남아메리카, 한국 등지에 수많은 선교사를 파송했습니다. <span class="impact">이러한 세계 선교 운동의 중심에는 다음 강의에서 살펴볼 <span class="person" data-info="1761~1834. 영국의 침례교 목사이자 선교사. 1793년 인도로 건너가 평생을 선교에 헌신했으며, '현대 선교의 아버지'로 불린다. 다음 강에서 자세히 다룹니다.">윌리엄 캐리</span>가 있었습니다.</span> 그는 "현대 선교의 아버지"로 불리며 침례교 선교의 새로운 시대를 열었습니다.</p>
+      <div class="pull">침례교의 성장은 국가의 힘이나 정치적 영향력이 아니라, <b>복음을 전하는 평범한 성도들과 작은 교회들의 헌신</b>이 모여 만든 역사였습니다.</div>
+    </section>
+
+    <div class="table-wrap">
+      <table>
+        <tr><th>시기</th><th>사건</th></tr>
+        <tr><td>1609~1612</td><td>영국에서 침례교 시작 (스미스, 헬위스)</td></tr>
+        <tr><td>17세기 후반</td><td>침례교인들, 신앙의 자유를 찾아 북아메리카로 이주</td></tr>
+        <tr><td>1707년</td><td>필라델피아 협회 조직</td></tr>
+        <tr><td>18세기</td><td>대각성 운동과 함께 급속한 성장</td></tr>
+        <tr><td>1776년 이후</td><td>미국 독립, 종교 자유 확대로 성장 가속</td></tr>
+        <tr><td>18~19세기</td><td>세계 선교 운동으로 확산</td></tr>
+      </table>
+      <p class="table-cap">작은 원칙 셋(성경의 권위·신자의 침례·교회의 자치)이 흔들리지 않는 성장의 기초가 되었습니다.</p>
+    </div>
+
+    <div class="deepdive-box">
+      <h3>역사 더 깊이 보기 — 침례교는 언제 세계 최대의 개신교 전통 중 하나가 되었을까?</h3>
+      <p>19세기와 20세기를 거치며 미국 남부를 중심으로 침례교회가 크게 성장했고, 동시에 세계 선교가 활발히 전개되었습니다. 오늘날 침례교는 여러 교단과 연맹을 모두 합하면 전 세계적으로 약 1억 명 이상의 신자를 가진 가장 큰 개신교 전통 가운데 하나로 평가됩니다.</p>
+      <p>다만 침례교는 하나의 세계 본부를 가진 단일 교단이 아니라, <span class="impact">다양한 국가와 연맹으로 구성된 분권적 공동체</span>라는 점이 특징입니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>제12강 – 『윌리엄 캐리와 근대 선교운동』. "기대하라, 위대한 일을. 시도하라, 위대한 일을." 다음 시간에는 '근대 개신교 선교의 아버지' 윌리엄 캐리를 중심으로 침례교가 어떻게 세계 선교의 새로운 시대를 열었는지, 그리고 그의 유명한 말이 어떤 배경에서 나왔는지, 한국을 포함한 세계 선교에 어떤 영향을 미쳤는지 함께 알아보겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ul>
+        <li>침례교는 영국에서 시작되어 <b>종교의 자유</b>를 찾아 미국으로 확산되었습니다.</li>
+        <li><b>필라델피아 협회(1707)</b>는 교회를 지배하지 않으면서도 협력을 가능하게 한 모델이었습니다.</li>
+        <li><b>대각성 운동</b>은 개인의 회심을 강조하며 침례교의 성장과 잘 맞아떨어졌습니다.</li>
+        <li><b>지역교회의 자치와 평신도의 참여</b>는 침례교 성장의 핵심 원동력이었습니다.</li>
+        <li>18~19세기 침례교는 세계 선교를 통해 <b>전 세계로 확산</b>되었습니다.</li>
+      </ul>
+    </div>
+
+    <div class="questions-box">
+      <h3>나눔 질문</h3>
+      <ol>
+        <li>침례교는 왜 중앙집권적인 조직보다 지역교회의 자치를 중요하게 여겼을까요?</li>
+        <li>평신도의 적극적인 사역 참여는 교회의 성장에 어떤 영향을 줄까요?</li>
+        <li>오늘날 우리 교회는 초대 침례교회의 선교 정신을 어떻게 이어갈 수 있을까요?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제11강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+      var el = this;
+      requestAnimationFrame(function(){
+        var rect = popup.getBoundingClientRect();
+        var pad = 10;
+        var shift = 0;
+        if(rect.left < pad) shift = pad - rect.left;
+        else if(rect.right > window.innerWidth - pad) shift = (window.innerWidth - pad) - rect.right;
+        if(shift !== 0){
+          popup.style.marginLeft = shift + 'px';
+          if(!el.classList.contains('ref-tag')){
+            popup.style.setProperty('--arrow-shift', (-shift) + 'px');
+          }
+        }
+      });
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

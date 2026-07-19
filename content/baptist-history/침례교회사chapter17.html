@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>17강. 침례교의 한국 전래와 복음의 시작</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:270px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .reason-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:18px 0;}
+  @media (max-width:520px){ .reason-grid{grid-template-columns:1fr;} }
+  .reason-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px;}
+  .reason-card .num{font-family:'Noto Sans KR',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:6px;}
+  .reason-card h4{margin:0 0 6px;font-size:15.5px;color:var(--navy);}
+  .reason-card p{font-size:14px;margin:0;font-family:'Noto Sans KR',sans-serif;line-height:1.65;text-align:left;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .deepdive-box{margin-top:40px;background:#fff;border:1px solid var(--sky-line);border-radius:2px;padding:26px 28px;}
+  .deepdive-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--sky-line);margin:0 0 12px;font-weight:700;}
+  .deepdive-box h4{font-size:16.5px;color:var(--navy);margin:0 0 10px;}
+  .deepdive-box p{margin:0 0 10px;font-size:15.5px;}
+  .deepdive-box p:last-child{margin-bottom:0;}
+
+  .preview-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul,.summary-box ol{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after,.term:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제17강</div>
+    <h1 class="title">침례교의 한국 전래와<br>복음의 시작</h1>
+    <div class="subtitle">"한 선교사의 순종이 한국 침례교의 씨앗이 되다"</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 침례교의 성경관과 성경 해석 원리를 살펴보았습니다. 오늘부터는 한국 침례교의 역사를 공부하겠습니다. 한국 침례교의 역사는 다른 교단들과 조금 다르게 시작되었습니다. 장로교와 감리교는 선교부의 체계적인 지원을 받아 한국에 들어왔지만, <span class="impact">침례교는 한 사람의 선교사의 헌신과 믿음을 통해 시작되었습니다.</span> 그 주인공이 바로 <span class="person" data-info="1863~1935. 캐나다 온타리오 출신의 평신도 사업가. 신학교 졸업이나 정식 선교단체의 파송 없이 1890년 한국으로 들어왔다. 한국에서 성경을 연구하며 침례교 신앙을 확신하게 되었고, 1906년 대한기독교회를 조직했다. 오늘날 기독교한국침례회의 뿌리를 놓은 인물로 평가받는다.">말콤 C. 펜윅</span>(Malcolm C. Fenwick, 1863~1935)입니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">말콤 펜윅은 누구인가?</h2></div>
+      <p>말콤 펜윅은 캐나다 온타리오에서 태어났습니다. 그는 신학교를 졸업한 목회자가 아니었습니다. 또한 선교단체의 정식 파송을 받은 선교사도 아니었습니다. 평신도 사업가였던 그는 하나님의 부르심을 받고, 1890년 한국으로 들어왔습니다. <span class="impact">그는 안정된 삶을 포기하고, 복음을 위해 낯선 조선 땅을 선택했습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">복음이 먼저였다</h2></div>
+      <p>펜윅은 특정 교단을 세우려 하지 않았습니다. 그가 가장 중요하게 생각한 것은 복음을 전하는 것이었습니다. 그는 충청도와 황해도, 그리고 북부 지역을 중심으로 복음을 전했습니다. 당시 교통이 매우 불편했기 때문에, 수백 킬로미터를 걸어서 전도하는 일이 흔했습니다. <span class="impact">그는 복음을 위해 자신의 모든 것을 드렸습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">성경을 읽으며 침례교 신앙을 확신하다</h2></div>
+      <p>흥미로운 사실이 있습니다. 펜윅은 처음부터 침례교 선교사로 온 것이 아니었습니다. 한국에서 성경을 연구하는 가운데, 신약성경이 가르치는 교회의 모습을 깊이 고민하게 되었습니다. 그는 신자의 침례, 지역교회의 자치, 성경 중심의 교회가 신약성경의 가르침이라고 확신하게 되었습니다. <span class="impact">이후 그는 침례교 신앙을 받아들이고, 그 원리에 따라 교회를 세워 갔습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">대한기독교회의 탄생</h2></div>
+      <p>1906년, 펜윅은 <span class="keyword">대한기독교회</span>를 조직했습니다. 이 교회는 오늘날 기독교한국침례회의 뿌리가 됩니다. 대한기독교회는 처음부터 외국 선교부의 지시를 받는 교회가 아니라, 한국인 지도자를 세우고, 한국 교회가 스스로 성장하도록 돕는 것을 목표로 했습니다. <span class="impact">이것은 침례교의 지역교회 자치 정신을 잘 보여 줍니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">자립·자치·자전</h2></div>
+      <p>펜윅은 매우 앞선 선교 철학을 가지고 있었습니다. 그는 교회가 건강하게 성장하려면 세 가지 원칙이 필요하다고 믿었습니다.</p>
+      <div class="reason-grid">
+        <div class="reason-card"><div class="num">첫째</div><h4>자립 (Self-support)</h4><p>교회는 스스로 재정을 감당해야 합니다. 외국의 도움에만 의존해서는 건강하게 성장하기 어렵습니다.</p></div>
+        <div class="reason-card"><div class="num">둘째</div><h4>자치 (Self-government)</h4><p>교회는 한국인 지도자들이 책임 있게 운영해야 합니다. 선교사는 돕는 사람이지, 교회의 주인이 아닙니다.</p></div>
+        <div class="reason-card"><div class="num">셋째</div><h4>자전 (Self-propagation)</h4><p>교회는 스스로 복음을 전하고, 새로운 교회를 세워야 합니다. 복음은 한 지역에 머물러서는 안 됩니다.</p></div>
+      </div>
+      <p><span class="impact">이 세 가지 원칙은 오늘날에도 건강한 선교의 중요한 기준으로 평가받고 있습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">성경 번역과 출판</h2></div>
+      <p>펜윅은 복음 전도뿐 아니라 성경과 기독교 문서를 보급하는 일에도 힘썼습니다. 그는 출판 사역을 통해 많은 사람들이 하나님의 말씀을 읽을 수 있도록 노력했습니다. <span class="impact">침례교는 처음부터 말씀을 읽고 배우는 교회를 세우는 데 큰 관심을 가졌습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">어려움 속에서도 성장하다</h2></div>
+      <p>한국 침례교의 초기 역사는 결코 순탄하지 않았습니다. 재정적인 어려움, 일제강점기, 교회의 박해, 한국전쟁 등 수많은 시련을 겪었습니다. <span class="impact">그럼에도 복음은 계속 전해졌고, 교회는 조금씩 성장했습니다.</span> 한 사람의 헌신이 수많은 교회의 시작이 되었습니다.</p>
+      <div class="flow">
+        <span class="step">1890 펜윅 입국</span><span class="arrow">→</span>
+        <span class="step">충청·황해·북부 전도</span><span class="arrow">→</span>
+        <span class="step">침례교 신앙 확신</span><span class="arrow">→</span>
+        <span class="step">1906 대한기독교회</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">오늘 우리에게 주는 교훈</h2></div>
+      <p>말콤 펜윅은 유명한 신학자가 아니었습니다. 거대한 선교 조직의 지원도 받지 못했습니다. 그러나 그는 성경을 믿었고, 복음을 사랑했으며, 한국 사람들을 사랑했습니다. <span class="impact">하나님께서는 한 사람의 순종을 통해 한국 침례교의 역사를 시작하셨습니다.</span> 오늘 우리 역시 큰 능력보다 하나님께 대한 작은 순종이 더 중요하다는 사실을 기억해야 합니다.</p>
+      <div class="pull">한국 침례교는 <b>거대한 조직</b>이 아니라 <b>한 사람의 순종</b>에서 시작되었습니다. 신학교 졸업장도, 선교단체의 파송도 없었지만, 그는 걸어서 복음을 전했습니다.</div>
+    </section>
+
+    <div class="deepdive-box">
+      <h3>역사 더 깊이 보기</h3>
+      <h4>펜윅은 정말 '침례교 선교사'였을까?</h4>
+      <p>엄밀히 말하면 펜윅은 처음 한국에 올 때부터 침례교 선교사로 파송된 것은 아니었습니다. 그는 독립적인 선교사로 한국에 와서 사역하는 과정에서 성경을 연구하며 침례교 신앙을 확신하게 되었습니다.</p>
+      <p>이후 대한기독교회를 세웠고, 훗날 이 교회는 미국 남침례회와의 협력을 거쳐 오늘의 기독교한국침례회로 발전하게 됩니다. 이 점은 한국 침례교 역사의 독특한 특징입니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 대한기독교회가 오늘날의 기독교한국침례회로 발전하는 과정을 살펴보겠습니다. 미국 남침례회와의 협력, 한국전쟁 이후의 재건, 교단 조직의 정비, 침례신학대학교의 설립과 성장 등을 통해 오늘의 기독교한국침례회가 어떻게 형성되었는지 함께 배우겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ol>
+        <li><b>말콤 C. 펜윅</b>은 한국 침례교의 기초를 놓은 선구적인 선교사였습니다.</li>
+        <li>그는 대한기독교회를 세우고 <b>자립·자치·자전</b>의 원칙을 통해 건강한 한국 교회를 세우고자 했습니다.</li>
+        <li>한국 침례교는 성경 중심, 선교 중심, 지역교회 중심이라는 <b>침례교 정신을 이어받아</b> 성장해 왔습니다.</li>
+      </ol>
+    </div>
+
+    <div class="questions-box">
+      <h3>생각해 볼 질문</h3>
+      <ol>
+        <li>말콤 펜윅은 왜 한국 교회가 스스로 서야 한다고 강조했을까요?</li>
+        <li>오늘날에도 자립·자치·자전의 원칙은 왜 중요할까요?</li>
+        <li>나는 하나님께서 맡기신 자리에서 어떤 '작은 순종'을 실천할 수 있을까요?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제17강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>

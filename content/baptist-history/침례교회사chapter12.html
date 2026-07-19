@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>12강. 윌리엄 캐리와 근대 선교운동</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a4a; --navy-deep:#101a30;
+    --cream:#faf6ec; --cream-warm:#f3ecd9;
+    --gold:#b8935a; --gold-light:#d9c08f;
+    --sky:#a8d8ea; --sky-line:#5fa8c9;
+    --pink:#f3b6c9; --pink-line:#d97a9c;
+    --yellow:#f9e061; --yellow-line:#d9b400;
+    --ink:#2b2b28; --line:#e2d9c2;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);font-family:'Noto Serif KR',serif;color:var(--ink);line-height:1.95;}
+  .page{max-width:760px;margin:0 auto;padding:0 0 80px;}
+  header.cover{background:linear-gradient(160deg,var(--navy),var(--navy-deep));color:var(--cream);padding:64px 48px 56px;text-align:center;position:relative;}
+  header.cover::after{content:"";position:absolute;left:50%;bottom:28px;transform:translateX(-50%);width:56px;height:2px;background:var(--gold);}
+  .kicker{font-family:'Noto Sans KR',sans-serif;letter-spacing:.35em;font-size:12px;color:var(--gold-light);margin-bottom:18px;}
+  h1.title{font-size:28px;font-weight:700;margin:0 0 14px;line-height:1.5;}
+  .subtitle{font-family:'Noto Sans KR',sans-serif;font-size:14px;color:#c9cfe0;font-weight:300;}
+  .attribution{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:#8f9ab8;margin-top:22px;letter-spacing:.05em;}
+  .legend{display:flex;gap:18px;justify-content:center;margin-top:20px;flex-wrap:wrap;font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#c9cfe0;}
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:12px;height:12px;border-radius:3px;display:inline-block;}
+  main{padding:0 48px;}
+  .intro{margin-top:44px;font-size:16.5px;}
+  section{margin-top:46px;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:18px;}
+  .sec-num{font-family:'Noto Sans KR',sans-serif;font-size:14px;font-weight:700;color:var(--cream);background:var(--navy);width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+  h2.section-title{font-size:19px;color:var(--navy);font-weight:700;margin:0;}
+  h3.sub-title{font-size:16px;color:var(--navy);font-weight:700;margin:22px 0 10px;}
+  p{font-size:16.5px;margin:0 0 14px;text-align:justify;}
+  ul.plain{margin:0 0 14px;padding-left:22px;}
+  ul.plain li{font-size:16.5px;margin-bottom:6px;}
+
+  .refs{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 4px;}
+  .ref-tag{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);padding:4px 10px;border-radius:20px;font-weight:600;position:relative;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease,background .15s ease;}
+  .ref-tag:hover{transform:translateY(-3px);box-shadow:0 4px 10px rgba(27,42,74,.18);background:#fff;}
+  .ref-tag:after{content:"+";margin-left:4px;color:var(--gold);font-weight:700;}
+  .ref-tag .info-popup{left:0;transform:none;width:270px;}
+  .ref-tag .info-popup:before{left:20px;transform:none;}
+
+  .person{position:relative;cursor:pointer;font-weight:700;color:var(--navy);background:linear-gradient(180deg,transparent 62%,var(--sky) 62%);border-bottom:1px dotted var(--sky-line);padding:0 1px;}
+  .person:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--sky-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .keyword{font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);padding:0 1px;}
+  .term{position:relative;cursor:pointer;font-weight:700;color:#7a2748;background:linear-gradient(180deg,transparent 62%,var(--pink) 62%);border-bottom:1px dotted var(--pink-line);padding:0 1px;}
+  .term:after{content:"?";font-family:'Noto Sans KR',sans-serif;font-size:9px;font-weight:700;color:#fff;background:var(--pink-line);border-radius:50%;width:13px;height:13px;display:inline-flex;align-items:center;justify-content:center;vertical-align:super;margin-left:2px;}
+  .term .info-popup{background:#7a2748;}
+  .term .info-popup:before{border-bottom-color:#7a2748;}
+  .term .info-popup b{color:var(--pink);}
+  .impact{font-weight:600;color:#5c4a00;background:linear-gradient(180deg,transparent 20%,var(--yellow) 20%);padding:0 1px;}
+  .info-popup{position:absolute;left:50%;top:100%;transform:translateX(-50%);margin-top:10px;width:250px;background:var(--navy);color:var(--cream);font-family:'Noto Sans KR',sans-serif;font-size:12.5px;font-weight:400;line-height:1.6;padding:14px 16px;border-radius:6px;box-shadow:0 8px 20px rgba(0,0,0,.25);z-index:50;text-align:left;}
+  .info-popup:before{content:"";position:absolute;top:-6px;left:50%;transform:translateX(-50%);border-left:6px solid transparent;border-right:6px solid transparent;border-bottom:6px solid var(--navy);}
+  .info-popup b{color:var(--gold-light);display:block;margin-bottom:4px;font-size:12.5px;}
+
+  .pull{font-family:'Noto Sans KR',sans-serif;font-size:15px;color:var(--navy);background:var(--cream-warm);border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:18px 22px;margin:24px 0;line-height:1.7;font-weight:500;}
+  .pull b{color:var(--gold);}
+
+  .quote-block{font-family:'Noto Serif KR',serif;font-style:italic;font-size:16px;color:var(--navy);border-left:3px solid var(--gold);background:var(--cream-warm);padding:16px 22px;margin:18px 0;line-height:1.8;}
+  .quote-block .who{display:block;margin-top:8px;font-family:'Noto Sans KR',sans-serif;font-style:normal;font-size:12.5px;color:#8f8672;letter-spacing:.03em;}
+
+  .flow{display:flex;align-items:center;flex-wrap:wrap;gap:8px;font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--navy);background:var(--cream-warm);border:1px solid var(--line);border-radius:6px;padding:16px 18px;margin:18px 0;}
+  .flow span.step{background:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 12px;font-weight:600;}
+  .flow span.arrow{color:var(--gold);font-weight:700;}
+
+  .hardship-tags{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 18px;font-family:'Noto Sans KR',sans-serif;}
+  .hardship-tags span{background:#fff;border:1px solid var(--pink-line);color:#7a2748;font-size:12.5px;font-weight:600;padding:6px 12px;border-radius:20px;}
+
+  .reason-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0;}
+  @media (max-width:520px){ .reason-grid{grid-template-columns:1fr;} }
+  .reason-card{background:#fff;border:1px solid var(--line);border-radius:6px;padding:16px 18px;}
+  .reason-card .num{font-family:'Noto Sans KR',sans-serif;font-size:11px;color:var(--gold);font-weight:700;letter-spacing:.1em;margin-bottom:6px;}
+  .reason-card h4{margin:0 0 6px;font-size:15.5px;color:var(--navy);}
+  .reason-card p{font-size:14px;margin:0;font-family:'Noto Sans KR',sans-serif;line-height:1.65;text-align:left;}
+
+  .table-wrap{margin-top:54px;}
+  table{width:100%;border-collapse:collapse;font-family:'Noto Sans KR',sans-serif;font-size:13.5px;}
+  th{background:var(--navy);color:var(--cream);padding:10px 12px;text-align:left;font-weight:600;}
+  td{padding:10px 12px;border-bottom:1px solid var(--line);}
+  tr:nth-child(even) td{background:var(--cream-warm);}
+  .table-cap{font-family:'Noto Sans KR',sans-serif;font-size:11.5px;color:#8f8672;margin:8px 0 0;letter-spacing:.02em;}
+
+  .deepdive-box{margin-top:40px;background:#fff;border:1px solid var(--sky-line);border-radius:2px;padding:26px 28px;}
+  .deepdive-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--sky-line);margin:0 0 12px;font-weight:700;}
+  .deepdive-box h4{font-size:16.5px;color:var(--navy);margin:0 0 10px;}
+  .deepdive-box p{margin:0 0 10px;font-size:15.5px;}
+  .deepdive-box p:last-child{margin-bottom:0;}
+
+  .preview-box{margin-top:24px;background:var(--cream-warm);border-left:3px solid var(--gold);padding:20px 24px;}
+  .preview-box h3{font-family:'Noto Sans KR',sans-serif;font-size:12px;letter-spacing:.2em;color:var(--gold);margin:0 0 10px;font-weight:700;}
+  .preview-box p{font-size:15px;margin:0;}
+  .preview-box .note{margin-top:10px;font-size:12.5px;color:#8f8672;}
+
+  .summary-box{margin-top:40px;background:var(--navy);color:var(--cream);border-radius:2px;padding:30px 34px;}
+  .summary-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold-light);margin:0 0 16px;font-weight:600;}
+  .summary-box ul,.summary-box ol{margin:0;padding-left:20px;}
+  .summary-box li{font-size:15px;margin-bottom:10px;font-family:'Noto Sans KR',sans-serif;font-weight:300;line-height:1.7;}
+  .summary-box li b{color:var(--gold-light);font-weight:600;}
+  .questions-box{margin-top:24px;background:#fff;border:1px solid var(--line);padding:30px 34px;}
+  .questions-box h3{font-family:'Noto Sans KR',sans-serif;font-size:13px;letter-spacing:.2em;color:var(--gold);margin:0 0 18px;font-weight:600;}
+  .questions-box ol{margin:0;padding-left:20px;}
+  .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
+  footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+  @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after,.term:after{display:none;} }
+</style>
+</head>
+<body>
+<div class="page">
+  <header class="cover">
+    <div class="kicker">침례교회사 입문 · 제12강</div>
+    <h1 class="title">윌리엄 캐리와<br>근대 선교운동</h1>
+    <div class="subtitle">"기대하라, 하나님께 큰 일을. 시도하라, 하나님을 위해 큰 일을."</div>
+    <div class="attribution">기독교한국침례회 은혜교회</div>
+    <div class="legend">
+      <span><i style="background:var(--sky)"></i>인물 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--pink)"></i>핵심 용어 (클릭하면 설명이 열립니다)</span>
+      <span><i style="background:var(--yellow)"></i>핵심 문장</span>
+    </div>
+  </header>
+
+  <main>
+    <p class="intro">지난 강에서는 침례교가 영국에서 미국으로 확산되며 세계적인 교단으로 성장한 과정을 살펴보았습니다. 오늘은 침례교 역사뿐 아니라 전 세계 개신교 선교의 전환점이 된 인물, <span class="person" data-info="1761~1834. 영국 침례교 선교사이자 언어학자. 구두 수선공으로 일하다 선교의 소명을 깨닫고, 1792년 특수침례교 선교회 설립을 이끌었다. 1793년 인도로 건너가 성경 번역, 교육, 사회 개혁에 헌신했으며 '근대 개신교 선교의 아버지'로 불린다.">윌리엄 캐리</span>(William Carey, 1761~1834)를 공부하겠습니다. <span class="impact">그는 '근대 개신교 선교의 아버지'로 불리며, 침례교의 선교 정신을 세계로 확장시킨 인물입니다.</span> 오늘날 세계 각국에 복음이 전해진 배경에는 그의 헌신과 비전이 자리하고 있습니다.</p>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">1</div><h2 class="section-title">평범한 구두 수선공</h2></div>
+      <p>윌리엄 캐리는 부유한 가문에서 태어나지 않았습니다. 그는 영국의 작은 마을에서 자라며 구두를 만들고 수선하는 일을 했습니다. 하지만 그는 일하는 틈틈이 성경을 읽고, 지리책을 읽으며 세계 여러 나라에 관심을 가졌습니다. 특히 그는 세계지도를 벽에 붙여 놓고, 아직 복음을 듣지 못한 민족들을 위해 기도했다고 전해집니다. <span class="impact">그는 이렇게 질문했습니다. "왜 우리는 복음을 세계에 전하지 않는가?"</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">2</div><h2 class="section-title">당시 교회의 분위기</h2></div>
+      <p>18세기 후반 영국 교회는 해외 선교에 매우 소극적이었습니다. 일부 사람들은 "하나님께서 구원하실 사람은 하나님이 알아서 구원하신다"고 말하며, 굳이 해외 선교를 할 필요가 없다고 생각했습니다. 그러나 캐리는 성경을 읽으며 전혀 다른 결론에 이르렀습니다. 예수님께서는 분명히 말씀하셨습니다. "그러므로 너희는 가서 모든 민족을 제자로 삼아…" <span class="impact">그는 <span class="term" data-info="부활하신 예수님께서 제자들에게 모든 민족을 제자 삼아 침례를 베풀고 가르쳐 지키게 하라고 명령하신 마태복음 28장의 명령. 캐리는 이 명령이 사도 시대에 국한된 것이 아니라 모든 시대의 교회가 순종해야 할 명령이라고 확신했다.">지상명령</span>(Great Commission)은 모든 시대의 교회가 순종해야 할 명령이라고 확신했습니다.</span></p>
+      <div class="refs"><span class="ref-tag" data-info="부활하신 예수님께서 제자들에게 모든 민족을 제자 삼아 아버지와 아들과 성령의 이름으로 침례를 주고, 가르쳐 지키게 하라고 명령하신 지상명령 본문입니다.">마태복음 28:19</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">3</div><h2 class="section-title">역사적인 설교</h2></div>
+      <p>1792년, 캐리는 이사야 54장 2~3절을 본문으로 유명한 설교를 했습니다. 그 설교의 핵심 문장이 오늘날까지 전해지고 있습니다.</p>
+      <div class="quote-block">"하나님께 큰 일을 기대하라. 하나님을 위해 큰 일을 시도하라."<span class="who">— 윌리엄 캐리, 1792년 설교 중에서 (Expect great things from God; Attempt great things for God.)</span></div>
+      <p>이 설교는 많은 사람들의 마음을 움직였습니다. 그리고 같은 해, <span class="keyword">특수침례교 선교회</span>(Baptist Missionary Society, BMS)가 설립되었습니다. <span class="impact">이것이 근대 개신교 선교운동의 출발점이 되었습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">4</div><h2 class="section-title">인도로 떠나다</h2></div>
+      <p>1793년, 캐리는 가족과 함께 인도로 향했습니다. 그러나 현실은 매우 어려웠습니다. 그는 다음과 같은 수많은 고난을 겪었습니다.</p>
+      <div class="hardship-tags">
+        <span>경제적 어려움</span><span>풍토병</span><span>가족의 질병</span><span>자녀의 죽음</span><span>아내의 정신 질환</span>
+      </div>
+      <p>선교 초기에 오랫동안 눈에 띄는 회심자도 거의 없었습니다. <span class="impact">그럼에도 그는 포기하지 않았습니다.</span></p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">5</div><h2 class="section-title">캐리가 남긴 선교의 열매</h2></div>
+      <p>캐리는 단순히 설교만 한 선교사가 아니었습니다. 그는 인도의 언어와 문화를 깊이 연구했습니다. 그 결과 성경을 여러 인도 언어로 번역하고, 사전을 편찬하며, 학교를 세우고, 인쇄소를 운영하여 기독교 서적을 출판했습니다. <span class="impact">그는 복음이 각 민족의 언어로 전해져야 한다고 믿었습니다.</span> 이 정신은 오늘날 성경 번역 선교의 중요한 기초가 되었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">6</div><h2 class="section-title">사회를 변화시키다</h2></div>
+      <p>캐리는 복음만 전한 것이 아니었습니다. 그는 인도 사회의 여러 문제에도 관심을 가졌습니다. 대표적인 예가 <span class="term" data-info="19세기 이전 인도의 풍습으로, 남편이 죽으면 아내를 함께 화장하던 악습. 캐리는 이 제도의 폐지를 위해 오랫동안 노력했고, 영국 식민 정부가 이를 금지하는 데에도 영향을 주었다.">사티</span>(Sati)라는 풍습입니다. 사티는 남편이 죽으면 아내를 함께 화장하는 악습이었습니다. <span class="impact">캐리는 이 제도의 폐지를 위해 오랫동안 노력했고, 영국 식민 정부가 이를 금지하는 데에도 영향을 주었습니다.</span> 그는 복음이 개인뿐 아니라 사회도 변화시킨다고 믿었습니다.</p>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">7</div><h2 class="section-title">침례교 선교의 특징</h2></div>
+      <p>윌리엄 캐리를 통해 침례교 선교의 특징을 볼 수 있습니다.</p>
+      <div class="reason-grid">
+        <div class="reason-card"><div class="num">첫째</div><h4>성경 중심</h4><p>선교의 목적은 교단을 넓히는 것이 아니라, 복음을 전하는 것이었습니다.</p></div>
+        <div class="reason-card"><div class="num">둘째</div><h4>현지 문화 존중</h4><p>캐리는 현지 언어를 배우고, 그들의 문화를 이해하려고 노력했습니다. 복음은 문화 위에 군림하는 것이 아니라, 각 문화 속에서 이해될 수 있어야 한다고 생각했습니다.</p></div>
+        <div class="reason-card"><div class="num">셋째</div><h4>교육과 선교</h4><p>학교와 교육은 선교의 중요한 도구였습니다. 문맹을 줄이고, 사람들이 스스로 성경을 읽도록 돕는 것이 중요했습니다.</p></div>
+        <div class="reason-card"><div class="num">넷째</div><h4>끝까지 인내</h4><p>캐리는 수년 동안 열매가 없어도 포기하지 않았습니다. 그는 하나님의 때를 신뢰하며 묵묵히 사역했습니다.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><div class="sec-num">8</div><h2 class="section-title">오늘 우리에게 주는 교훈</h2></div>
+      <p>윌리엄 캐리는 특별한 능력을 가진 사람이어서 위대한 선교사가 된 것이 아닙니다. 그는 평범한 사람이었지만, 하나님의 말씀을 믿고 순종했습니다. 오늘날 우리 모두가 해외 선교사가 될 수는 없습니다. 그러나 가정에서, 직장에서, 학교에서, 우리 역시 복음을 전하는 선교적 삶을 살아갈 수 있습니다. <span class="impact">하나님께서는 지금도 순종하는 사람을 통해 일하십니다.</span></p>
+      <div class="pull">캐리를 위대하게 만든 것은 <b>재능</b>이 아니라 <b>순종</b>이었습니다. 열매가 보이지 않는 시간에도 그는 자리를 지켰습니다.</div>
+    </section>
+
+    <div class="deepdive-box">
+      <h3>역사 더 깊이 보기</h3>
+      <h4>윌리엄 캐리는 정말 '근대 개신교 선교의 아버지'인가?</h4>
+      <p>대부분의 교회사 학자들은 윌리엄 캐리를 '근대 개신교 선교의 아버지'라고 부릅니다.</p>
+      <p>물론 그 이전에도 모라비안 교도와 같은 선교 운동이 있었습니다. 그러나 교단 차원의 선교회 설립, 선교사 파송, 후원 조직, 성경 번역, 교육 사역을 체계적으로 연결한 인물이라는 점에서 캐리는 근대 개신교 선교의 새로운 시대를 연 대표적인 인물로 평가받습니다.</p>
+    </div>
+
+    <div class="preview-box">
+      <h3>다음 강의 예고</h3>
+      <p>다음 시간에는 미국 최초의 해외 선교사 가운데 한 사람인 아도니람 저드슨(Adoniram Judson)을 살펴보겠습니다. 원래는 회중교회 선교사로 출발했지만, 성경 연구를 통해 침례교인이 되었고 미얀마(버마) 선교에 평생을 바친 그의 삶을 통해 침례교 선교가 어떻게 세계로 확장되었는지 함께 배우겠습니다.</p>
+    </div>
+
+    <div class="summary-box">
+      <h3>핵심 요약</h3>
+      <ol>
+        <li><b>윌리엄 캐리</b>는 근대 개신교 선교운동의 출발점이 된 침례교 선교사였습니다.</li>
+        <li>그는 <b>성경 번역, 교육, 사회 개혁</b>을 통해 복음을 삶 속에서 실천했습니다.</li>
+        <li>선교는 특별한 사람만의 사명이 아니라 <b>모든 그리스도인에게 주어진 사명</b>입니다.</li>
+      </ol>
+    </div>
+
+    <div class="questions-box">
+      <h3>생각해 볼 질문</h3>
+      <ol>
+        <li>윌리엄 캐리가 선교를 포기하지 않았던 가장 큰 이유는 무엇이었을까요?</li>
+        <li>복음 전도와 교육, 사회적 책임은 어떤 관계가 있을까요?</li>
+        <li>나는 오늘 하나님께서 맡기신 자리에서 어떤 선교적 삶을 살아갈 수 있을까요?</li>
+      </ol>
+    </div>
+
+    <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제12강</footer>
+  </main>
+</div>
+
+<script>
+  function closeAllPopups(){ document.querySelectorAll('.info-popup').forEach(function(p){ p.remove(); }); }
+  document.querySelectorAll('.person, .ref-tag, .term').forEach(function(el){
+    el.addEventListener('click', function(e){
+      e.stopPropagation();
+      var already = this.querySelector('.info-popup');
+      closeAllPopups();
+      if(already) return;
+      var popup = document.createElement('div');
+      popup.className = 'info-popup';
+      var label = document.createElement('b');
+      label.textContent = this.textContent.replace('?','').trim();
+      popup.appendChild(label);
+      popup.appendChild(document.createTextNode(this.dataset.info));
+      this.appendChild(popup);
+    });
+  });
+  document.addEventListener('click', closeAllPopups);
+</script>
+</body>
+</html>
