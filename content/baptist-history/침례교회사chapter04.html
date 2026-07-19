@@ -2,6 +2,7 @@
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>4강. 침례와 세례는 무엇이 다른가</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -85,6 +86,19 @@
   .questions-box ol{margin:0;padding-left:20px;}
   .questions-box li{font-size:15.5px;margin-bottom:14px;font-family:'Noto Sans KR',sans-serif;}
   footer{text-align:center;margin-top:60px;padding-top:24px;border-top:1px solid var(--line);font-family:'Noto Sans KR',sans-serif;font-size:11px;color:#a99;letter-spacing:.1em;}
+    @media (max-width:600px){
+    main{padding:0 20px;}
+    header.cover{padding:48px 22px 40px;}
+    h1.title{font-size:23px;}
+    .subtitle{font-size:13.5px;}
+    .kicker{font-size:11px;letter-spacing:.25em;}
+    p{font-size:17.5px;line-height:1.9;}
+    h2.section-title{font-size:18px;}
+    ul.plain li{font-size:17px;}
+    .summary-box,.questions-box,.deepdive-box,.preview-box,.closing-box,.final-box{padding:22px 20px;}
+    .sec-head{gap:10px;}
+  }
+
   @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
 </style>
 </head>
