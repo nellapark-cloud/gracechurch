@@ -10,11 +10,13 @@ const categories = [
   { key: 'bible_by_book-old', dir: 'content/bible-by-book/old-testament' },
   { key: 'bible_by_book-new', dir: 'content/bible-by-book/new-testament' },
   { key: 'newcomers', dir: 'content/newcomers' },
+  { key: 'baptism_training', dir: 'content/baptism-training' },
   { key: 'mokjang', dir: 'content/mokjang' },
   { key: 'bulletin', dir: 'content/bulletin' },
   { key: 'mokjang_sharing', dir: 'content/mokjang-sharing' },
   { key: 'baptist_history', dir: 'content/baptist-history' },
   { key: 'admin_forms', dir: 'content/admin-forms' },
+  { key: 'officer_training', dir: 'content/officer-training' },
 ];
 
 function listDocs(dir) {
