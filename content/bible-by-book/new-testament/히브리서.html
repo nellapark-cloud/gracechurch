@@ -1,0 +1,2136 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>히브리서 연구 — 전권 합본</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+.cover .cover-legend{
+  margin-top: 18px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+}
+.cover .cl-item{
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 8.5pt;
+  color: #8b96ad;
+}
+.cover .cl-swatch{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(20,28,42,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 히브리서 연구</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+
+<div class="cover">
+  <div class="eyebrow">BIBLE STUDY · EPISTLE TO THE HEBREWS</div>
+  <h1>히브리서 연구</h1>
+  <div class="cover-sub">그림자에서 실체로 — 전체 13장 성경 연구</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">히 1:1 – 13:25</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 13장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+  <div class="cover-legend">
+    <span class="cl-item"><span class="cl-swatch" style="background:#d8b073"></span>핵심 개념·용어</span>
+    <span class="cl-item"><span class="cl-swatch" style="background:#f0b8a8"></span>성경 본문 인용</span>
+    <span class="cl-item"><span class="cl-swatch" style="background:#a9e6dd"></span>원어 표현(헬라어)</span>
+    <span class="cl-item"><span class="cl-swatch" style="background:#bfe3f8"></span>심화 설명 (탭하면 팝업)</span>
+  </div>
+</div>
+
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>히브리서 전체 서론</h1>
+  <p class="intro-lead">그림자였던 것이 실체가 되고, 반복되던 것이 단번에 완성되다.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>히브리서는 신약 27권 중 유일하게 저자가 본문 안에 명시되지 않은 책이다. 전통적으로 바울 저작설이 제기되어 왔으나 문체와 논증 방식이 바울서신과 뚜렷이 구별되며, 초대교회 안에서도 이미 이견이 있었다. 다수 학자들은 예루살렘 성전이 아직 서 있던 서기 60년대, 곧 로마의 박해와 유대교로의 회귀 압력이 동시에 존재하던 시기에 기록된 것으로 본다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>수신자와 정황</h3>
+    <p>제목이 암시하듯 이 서신은 유대적 배경을 가진 그리스도인들, 곧 박해와 압박 속에서 옛 유대교 제사 제도로 되돌아가고 싶은 유혹을 느끼던 이들에게 쓰였다. 저자는 예수 그리스도가 천사보다, 모세보다, 레위 제사장 제도보다 <b class="hl-term">더 나은</b> 분이심을 정교하게 논증하며, 뒤로 물러서지 말고 앞으로 나아가라 권면한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문학적 구조</h3>
+    <p>히브리서는 정교한 교리적 논증(1-10장)과 실천적 권면(11-13장)이 교차하며 진행된다. 특히 본론 곳곳에 다섯 차례의 강력한 경고 단락(2:1-4, 3:7-4:13, 5:11-6:12, 10:19-39, 12:14-29)이 삽입되어, 논증이 진행될 때마다 청중을 향한 직접적 호소로 전환되는 독특한 설교체 구조를 이룬다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p>히브리서 전체를 관통하는 것은 <b class="hl-term">그림자와 실체</b>의 대조다. 옛 언약의 제사장, 성소, 제사, 안식이 모두 장차 올 것의 모형이었으며, 그리스도 안에서 그 모든 것이 <b class="hl-term">단번에</b> 완성되었다는 것이다. 동시에 이 완성된 구원에 안주하지 말고 끝까지 붙들라는 인내와 견인의 권면이 함께 흐른다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1 – 4장</div>
+        <div class="oi-title">아들의 우월성</div>
+        <div class="oi-body">천사보다, 모세보다 뛰어나신 아들을 통해 하나님이 말씀하시고, 그 안에서 참된 안식이 주어진다.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">5 – 10장</div>
+        <div class="oi-title">대제사장 그리스도</div>
+        <div class="oi-body">멜기세덱의 반차를 따른 영원한 대제사장이 자기 피로 단번에 온전한 제사를 드리신다.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">11 – 13장</div>
+        <div class="oi-title">믿음의 삶으로의 초대</div>
+        <div class="oi-body">보이지 않는 것을 붙든 믿음의 증인들을 따라, 인내로 경주하며 실제적 사랑을 실천하라 권면한다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 역사적 배경과 해석사적 논쟁 등 함께 씨름할 가치가 있는 지점들을 다룬다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">아들을 통해 말씀하신 하나님</span>
+      <span class="toc-sub">천사보다 뛰어나신 분</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch1"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-title">큰 구원을 소홀히 여기지 말라</span>
+      <span class="toc-sub">우리와 같아지신 구원자</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch2"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-title">모세보다 뛰어나신 이</span>
+      <span class="toc-sub">광야 세대의 불신앙에서 배우다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch3"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-title">남은 안식에 들어가기를 힘쓰라</span>
+      <span class="toc-sub">살아있고 운동력 있는 말씀</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch4"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-title">멜기세덱의 반차를 따른 대제사장</span>
+      <span class="toc-sub">순종을 배우신 아들</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch5"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-title">완전한 데로 나아가라</span>
+      <span class="toc-sub">흔들리지 않는 소망의 닻</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch6"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch7')" onkeydown="if(event.key==='Enter')goTo(event,'ch7')">
+      <span class="toc-num">07</span>
+      <span class="toc-title">멜기세덱과 더 나은 제사장직</span>
+      <span class="toc-sub">영원히 계신 제사장</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch7"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch8')" onkeydown="if(event.key==='Enter')goTo(event,'ch8')">
+      <span class="toc-num">08</span>
+      <span class="toc-title">새 언약의 중보자</span>
+      <span class="toc-sub">더 좋은 약속으로 세운 언약</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch8"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch9')" onkeydown="if(event.key==='Enter')goTo(event,'ch9')">
+      <span class="toc-num">09</span>
+      <span class="toc-title">하늘의 성소와 그리스도의 피</span>
+      <span class="toc-sub">손으로 짓지 않은 장막</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch9"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch10')" onkeydown="if(event.key==='Enter')goTo(event,'ch10')">
+      <span class="toc-num">10</span>
+      <span class="toc-title">단번에 드리신 온전한 제사</span>
+      <span class="toc-sub">그림자가 아닌 실체</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch10"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch11')" onkeydown="if(event.key==='Enter')goTo(event,'ch11')">
+      <span class="toc-num">11</span>
+      <span class="toc-title">믿음 장</span>
+      <span class="toc-sub">보이지 않는 것의 증거</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch11"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch12')" onkeydown="if(event.key==='Enter')goTo(event,'ch12')">
+      <span class="toc-num">12</span>
+      <span class="toc-title">인내로 경주하며</span>
+      <span class="toc-sub">징계와 흔들리지 않는 나라</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch12"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch13')" onkeydown="if(event.key==='Enter')goTo(event,'ch13')">
+      <span class="toc-num">13</span>
+      <span class="toc-title">마지막 권면과 축복</span>
+      <span class="toc-sub">진영 밖으로 나아가자</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch13"></span>
+    </a>
+  </div>
+</div>
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="20" r="8" /><path d="M24 4v4M24 32v4M8 20h4M36 20h4M12.8 8.8l2.8 2.8M32.4 27.4l2.8 2.8M35.2 8.8l-2.8 2.8M15.6 27.4l-2.8 2.8" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 1</div>
+      <h1>1장 · 아들을 통해 말씀하신 하나님</h1>
+      <div class="chapter-sub">히브리서 1장 — 천사보다 뛰어나신 분</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 1:1–14</span>
+        <span class="ref-item">시 2편, 시 110편</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">서신 전체를 여는 웅장한 신학적 서곡이다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">아들을 통한 계시의 완성</div>
+          <div class="flow-body">여러 부분과 여러 모양으로 선지자들을 통해 말씀하시던 하나님이 이제는 아들을 통해 말씀하신다. 아들은 만유의 상속자요 세계를 지으신 이시며, <b class="hl-insight has-insight" data-insight="0">하나님의 영광의 광채시요 그 본체의 형상이시라</b> 죄를 정결하게 하신 후 하나님 우편에 앉으셨다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">5–9절</div>
+        <div>
+          <div class="flow-title">천사보다 뛰어나신 아들</div>
+          <div class="flow-body">시편과 사무엘하의 여러 구절을 인용하며, 하나님이 어느 천사에게도 "너는 내 아들이라" 하신 적이 없고 오직 아들에게만 경배하라 하셨음을 논증한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">10–14절</div>
+        <div>
+          <div class="flow-title">창조주요 다스리시는 이</div>
+          <div class="flow-body">시편 102편과 110편을 인용하며 아들이 천지를 창조하신 변함없는 분이며, 원수들이 발판이 될 때까지 하나님 우편에 앉아 계신 분임을 확증한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 점진적으로 완성되는 계시</div>
+        <div class="teach-body">"여러 부분과 여러 모양으로" 말씀하시던 계시가 아들 안에서 완결되고 통일된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 계시의 절정이신 아들</div>
+        <div class="teach-body">선지자들은 하나님의 말씀을 전했지만, 아들은 하나님 자신의 광채와 형상이시다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 창조와 구속의 주</div>
+        <div class="teach-body">세계를 지으신 이가 곧 죄를 정결하게 하신 분이라는 것은, 창조와 구원이 한 분 안에서 통합됨을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 경배받으시는 하나님의 아들</div>
+        <div class="teach-body">천사들에게는 결코 하신 적 없는 말씀("내 아들이라")이 오직 그리스도께만 적용된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 다 이루신 후의 안식</div>
+        <div class="teach-body">"앉으셨느니라"는 표현은 제사장의 사역이 완결되었음을 암시하며, 이후 반복적으로 등장할 주제를 예고한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"여러 부분과 여러 모양으로"—히브리서는 이 첫 문장 안에 구약 전체의 다양한 계시 방식을 압축해 넣어요. 그리고 곧바로 그 모든 것이 한 분, 아들 안에서 완성된다고 선언하죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"하나님의 영광의 광채"라는 표현의 헬라어 뉘앙스</div>
+        <div class="deep-body">'아팡가스마'(ἀπαύγασμα)라는 단어는 빛이 광원에서 뿜어져 나오는 것을 묘사하며, 아들이 아버지로부터 파생된 존재가 아니라 아버지의 본질을 그대로 드러내는 광채임을 함의한다. 이는 이후 니케아 신조의 "빛에서 나신 빛"이라는 표현의 신학적 뿌리로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>저자를 밝히지 않은 서신이라는 문제</div>
+        <div class="deep-body">히브리서는 신약 27권 중 유일하게 저자가 명시되지 않은 책이다. 전통적으로 바울 저작설이 제기되어 왔으나 문체와 어휘가 바울서신과 뚜렷이 다르며, 초대교회에서도 이미 저자에 대한 이견이 있었다(오리게네스는 "오직 하나님만이 아신다"고 말했다). 저자보다 중요한 것은 이 책이 처음부터 정경으로 받아들여진 그 신학적 권위다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10v10l7 7" /><circle cx="24" cy="24" r="16" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 2</div>
+      <h1>2장 · 큰 구원을 소홀히 여기지 말라</h1>
+      <div class="chapter-sub">히브리서 2장 — 우리와 같아지신 구원자</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 2:1–18</span>
+        <span class="ref-item">시 8편</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">첫 번째 경고와 함께 성육신의 이유가 설명된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">첫 번째 경고</div>
+          <div class="flow-body">들은 것에서 흘러 떠내려가지 않도록 더욱 유의해야 한다. 천사를 통해 전해진 말씀도 견고했다면, 하물며 주로부터 시작된 큰 구원을 소홀히 하면 어찌 피하겠는가.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">5–9절</div>
+        <div>
+          <div class="flow-title">낮아지셨다가 영광 받으신 이</div>
+          <div class="flow-body">시편 8편을 인용하며, 잠시 천사보다 못하게 되셨던 예수께서 죽음의 고난을 통해 영광과 존귀로 관 쓰신 것을 본다고 말한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">10–18절</div>
+        <div>
+          <div class="flow-title">형제라 부르시기를 부끄러워 아니하심</div>
+          <div class="flow-body">예수는 혈과 육에 함께 속하심으로 <b class="hl-insight has-insight" data-insight="1">형제라 부르시기를 부끄러워 아니하시고</b> 죽음의 세력을 잡은 자를 멸하시며, 시험받는 자들을 능히 도우실 수 있는 자비롭고 신실한 대제사장이 되셨다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 소홀함에 대한 경고</div>
+        <div class="teach-body">큰 죄가 아니라 "소홀히 여김"이 신앙에서 가장 흔한 위험임을 지적한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 낮아지심을 통한 영광</div>
+        <div class="teach-body">예수의 영광은 고난을 우회한 것이 아니라 고난을 통과한 결과였다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 우리와 온전히 같아지심</div>
+        <div class="teach-body">혈과 육에 함께 속하신 것은, 구원자가 인간의 처지를 관념이 아니라 실제로 공유하셨음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 죽음의 공포에서의 해방</div>
+        <div class="teach-body">죽기를 무서워하므로 한평생 매여 종노릇하던 자들을 놓아주려 오셨다는 것은, 복음이 실존적 두려움까지 다룸을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 시험받는 자를 도우실 능력</div>
+        <div class="teach-body">친히 시험을 받아 고난을 당하셨기 때문에, 시험받는 자들을 능히 도우실 수 있다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"형제라 부르시기를 부끄러워하지 아니하시고"—이 짧은 구절 하나가, 거룩하신 하나님의 아들이 연약한 인간을 얼마나 진심으로 끌어안으셨는지를 보여줘요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"죽기를 무서워하므로 한평생 매여 종노릇"(15절)의 의미</div>
+        <div class="deep-body">이는 단순한 육체적 죽음의 공포만이 아니라, 고대 세계 전반에 만연했던 죽음 이후에 대한 불확실성과 그로 인한 삶 전체의 위축을 가리키는 것으로 이해된다. 그리스도의 부활은 이 근원적 공포 자체를 무력화시키는 사건으로 제시된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>시편 8편의 창조 목적론적 인용</div>
+        <div class="deep-body">원래 인류 전체를 향한 찬양시(시8편)를 저자가 그리스도 한 분께 적용하는 것은, 예수를 아담이 실패한 "만물을 다스리는 참 인간"의 완성으로 보는 신학적 읽기다. 이는 이후 로마서 5장의 아담-그리스도 유형론과 유사한 해석학적 궤도를 따른다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="14" width="24" height="24" rx="2" /><path d="M18 14v-4h12v4M18 24h12M18 30h8" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 3</div>
+      <h1>3장 · 모세보다 뛰어나신 이</h1>
+      <div class="chapter-sub">히브리서 3장 — 광야 세대의 불신앙에서 배우다</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 3:1–19</span>
+        <span class="ref-item">시 95편</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">두 번째 경고 단락이 시작된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">집을 지으신 이와 집</div>
+          <div class="flow-body">모세는 종으로서 하나님의 온 집에서 신실하였으나, 그리스도는 아들로서 그 집을 지으신 이로서 모세보다 더욱 큰 영광을 받으실 만하다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">7–11절</div>
+        <div>
+          <div class="flow-title">시편 95편의 경고 인용</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="2">오늘 너희가 그의 음성을 듣거든 마음을 완악하게 하지 말라</b>는 광야 세대를 향한 경고가 다시 인용된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">12–19절</div>
+        <div>
+          <div class="flow-title">믿지 아니하는 악한 마음</div>
+          <div class="flow-body">매일 서로 권면하여 죄의 유혹으로 마음이 완악해지지 않게 하라 권면하며, 광야 세대가 순종하지 않음으로 안식에 들어가지 못한 것을 상기시킨다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 종과 아들의 차이</div>
+        <div class="teach-body">모세의 신실함을 폄하하지 않으면서도, 집을 지은 이와 집 안의 종이라는 범주적 차이를 통해 그리스도의 우월성을 세운다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② "오늘"이라는 긴급성</div>
+        <div class="teach-body">반복되는 "오늘"이라는 단어는, 결단이 미룰 수 없는 현재의 문제임을 강조한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 공동체적 권면의 필요성</div>
+        <div class="teach-body">"매일 서로 권면하라"는 명령은, 신앙의 완악해짐을 막는 것이 개인의 노력만이 아니라 공동체의 책임임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 죄의 유혹이 지닌 속이는 성질</div>
+        <div class="teach-body">"죄의 유혹으로 마음이 완악하게 되지 않게 하라"는 경고는, 죄가 갑작스러운 배교가 아니라 점진적인 무뎌짐으로 온다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 순종과 믿음의 불가분성</div>
+        <div class="teach-body">광야 세대가 들어가지 못한 이유가 "순종하지 아니함"이자 동시에 "믿지 아니함"으로 서술되는 것은, 믿음과 순종이 결국 하나임을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">광야 세대는 홍해의 기적을 직접 본 사람들이었어요. 그런데도 마음이 완악해졌죠. 히브리서는 이 사실을 반복해서 상기시키며, 과거의 은혜 경험이 자동으로 오늘의 신실함을 보장하지 않는다고 경고합니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>시편 95편의 "므리바와 맛사" 사건 재해석</div>
+        <div class="deep-body">원래 출애굽기 17장의 특정 역사적 사건을 가리키던 이 이름들이, 히브리서에서는 광야 세대 전체의 불신앙을 대표하는 상징적 표현으로 확장되어 사용된다. 구약의 특정 사건이 신약에서 더 넓은 신학적 패턴으로 재해석되는 대표적 사례다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"오늘"의 반복이 만드는 신학적 현재성</div>
+        <div class="deep-body">저자는 다윗 시대에 이미 기록된 시편 95편의 "오늘"이라는 단어를 근거로, 안식의 약속이 여전히 유효하며 "오늘"이라는 표현이 계속 갱신된다고 논증한다(4장에서 이어짐). 구약의 약속이 한 세대에 소진되지 않고 매 세대에 새롭게 적용되는 살아있는 말씀임을 보여주는 히브리서 특유의 해석 방식이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 24q8-10 16 0t16 0" /><path d="M24 10v6M24 32v6" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 4</div>
+      <h1>4장 · 남은 안식에 들어가기를 힘쓰라</h1>
+      <div class="chapter-sub">히브리서 4장 — 살아있고 운동력 있는 말씀</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 4:1–16</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">안식이라는 주제가 절정에 이르며 대제사장에 대한 초청으로 마무리된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–5절</div>
+        <div>
+          <div class="flow-title">안식에 들어가지 못할까 두려워할 것</div>
+          <div class="flow-body">안식에 들어갈 약속이 여전히 남아있으나, 들은 자들에게 믿음과 결부되지 않으면 유익이 없었다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">6–11절</div>
+        <div>
+          <div class="flow-title">남아있는 안식</div>
+          <div class="flow-body">여호수아가 준 것이 온전한 안식이 아니었기에, 하나님의 백성에게 여전히 안식할 때가 남아 있으며 그 안식에 들어가기를 힘쓰라 권면한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">12–16절</div>
+        <div>
+          <div class="flow-title">살아있는 말씀과 담대히 나아갈 은혜의 보좌</div>
+          <div class="flow-body">하나님의 <b class="hl-insight has-insight" data-insight="3">말씀은 살아있고 운동력이 있어</b> 혼과 영을 찔러 쪼개기까지 하며, 우리에게는 우리의 연약함을 동정하시는 대제사장이 계시므로 담대히 은혜의 보좌 앞에 나아갈 수 있다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 여호수아도 주지 못한 안식</div>
+        <div class="teach-body">가나안 정착이 궁극적 안식이 아니었다는 지적은, 물리적 성취가 영적 완성과 같지 않음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 힘써야 할 안식</div>
+        <div class="teach-body">안식이 역설적으로 "힘써 들어가야" 하는 것이라는 표현은, 참된 쉼이 수동적 나태함이 아니라 믿음의 능동적 결단을 통해 얻어짐을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 말씀의 꿰뚫는 능력</div>
+        <div class="teach-body">하나님의 말씀이 마음의 생각과 뜻을 판단한다는 것은, 말씀이 정보 전달을 넘어 존재를 변화시키는 살아있는 힘임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 동정하시는 대제사장</div>
+        <div class="teach-body">우리의 연약함을 체휼하지 못하는 대제사장이 아니라 친히 시험을 받으신 분이라는 것은, 그리스도께서 멀리서 심판하시는 분이 아님을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 담대히 나아갈 수 있는 근거</div>
+        <div class="teach-body">죄가 없으신 분이 대제사장이심에도 두려움이 아니라 "담대히" 나아가라 초대하는 것은, 복음이 정죄가 아니라 은혜의 초청임을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"힘써 안식에 들어가기를 힘쓸지니"라는 표현이 역설적이죠. 안식이라는 게 원래 힘쓰지 않고 얻는 것 아닌가요? 그런데 히브리서는 참된 안식이야말로 믿음의 결단이 없이는 얻어지지 않는다고 말합니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>'안식'(카타파우시스)의 삼중적 의미</div>
+        <div class="deep-body">이 장에서 안식은 최소 세 겹의 의미로 겹쳐 사용된다 — 창조 이후 하나님의 안식(창 2장), 가나안 땅에서의 안식(여호수아서), 그리고 궁극적으로 남아있는 종말론적 안식. 저자는 이 세 층위를 의도적으로 겹쳐가며, 구약의 역사적 사건들이 궁극적으로 그리스도 안에서 완성될 영적 실체의 그림자였음을 논증한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"말씀이 살아있고 운동력이 있다"는 표현과 문맥의 관계</div>
+        <div class="deep-body">12-13절의 이 유명한 구절은 흔히 독립된 구절로 인용되지만, 문맥상으로는 바로 앞의 안식과 순종에 대한 논의의 결론이다. 즉 이 말씀은 추상적인 성경론이 아니라, 하나님의 말씀이 광야 세대를 판단했듯 오늘의 청중도 정확히 꿰뚫어 심판하실 수 있다는 실존적 경고로 기능한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8 12 16v10c0 8 5 13 12 14 7-1 12-6 12-14V16Z" /><path d="M24 20v10" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 5</div>
+      <h1>5장 · 멜기세덱의 반차를 따른 대제사장</h1>
+      <div class="chapter-sub">히브리서 5장 — 순종을 배우신 아들</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 5:1–14</span>
+        <span class="ref-item">시 110:4</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">대제사장직의 자격과 그리스도의 순종, 그리고 청중의 영적 미성숙이 다뤄진다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">대제사장의 자격</div>
+          <div class="flow-body">사람 가운데서 택한 대제사장은 자기 자신도 연약에 싸여 있어 백성을 위해서와 같이 자신을 위해서도 속죄제를 드려야 하며, 이 직분은 스스로 취할 수 없고 하나님의 부르심을 받아야 한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">5–10절</div>
+        <div>
+          <div class="flow-title">순종을 배우신 아들</div>
+          <div class="flow-body">그리스도도 스스로 영광을 취하지 않으셨고, 육체에 계실 때 <b class="hl-insight has-insight" data-insight="4">심한 통곡과 눈물로 기도와 간구를 올렸고</b>, 받으신 고난으로 순종함을 배워 온전하게 되셨다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">11–14절</div>
+        <div>
+          <div class="flow-title">영적 미성숙에 대한 책망</div>
+          <div class="flow-body">멜기세덱에 관해 할 말이 많으나 듣는 것이 둔하므로 설명하기 어렵다며, 젖이 아니라 단단한 음식을 먹어야 할 때가 되었음에도 여전히 초보에 머물러 있음을 책망한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 연약함을 함께 지닌 제사장의 자격</div>
+        <div class="teach-body">대제사장이 자기도 연약에 싸여 있어야 한다는 원칙은, 진정한 중보자가 거리를 둔 심판자가 아니라 함께 짊어지는 자여야 함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 통곡과 눈물의 기도</div>
+        <div class="teach-body">겟세마네를 연상시키는 이 묘사는, 그리스도의 순종이 감정 없는 의무 이행이 아니라 극심한 고뇌를 통과한 것이었음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 고난을 통해 배운 순종</div>
+        <div class="teach-body">"순종함을 배워"라는 표현은, 아들이심에도 순종이 경험을 통해 온전해지는 실제적 과정이었음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 스스로 취하지 않는 영광</div>
+        <div class="teach-body">그리스도조차 스스로 대제사장의 영광을 취하지 않으셨다는 것은, 참된 권위가 자천이 아니라 하나님으로부터 옴을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 성장을 요구하는 신앙</div>
+        <div class="teach-body">젖만 먹는 신자에 대한 책망은, 신앙이 처음의 은혜에 머무르지 않고 계속 자라가야 함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"그가 육체에 계실 때에 심한 통곡과 눈물로... 기도와 간구를 올렸고"—이 구절은 그리스도의 신성만이 아니라 그분이 겪으신 지극히 인간적인 고뇌를 정직하게 보여줘요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>예수가 "온전하게 되셨다"(9절)는 표현의 신학적 어려움</div>
+        <div class="deep-body">이미 완전하신 하나님의 아들이 어떻게 "온전하게 될" 수 있는가라는 질문은 오랜 신학적 논쟁거리였다. 다수의 해석자들은 이를 도덕적 완성이 아니라 대제사장으로서의 자격 완성, 곧 고난과 순종의 전 과정을 통과함으로써 인류를 위한 온전한 중보자로 세워지신 것을 의미하는 것으로 이해한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>멜기세덱이라는 인물의 갑작스러운 재등장</div>
+        <div class="deep-body">창세기 14장에 단 세 절로만 등장했던 이 신비로운 인물이, 여기서 갑자기 그리스도의 제사장직을 설명하는 핵심 열쇠로 소환된다. 저자는 청중의 영적 미숙함 때문에 설명을 뒤로 미루지만(7장에서 본격적으로 전개됨), 이 짧은 언급 자체가 이미 시편 110:4("너는 멜기세덱의 서열을 따라 영원한 제사장이라")에 근거한 오래된 메시아적 전통을 전제하고 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10v22" /><circle cx="24" cy="36" r="4" /><path d="M16 18h16M14 24h6M28 24h6" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 6</div>
+      <h1>6장 · 완전한 데로 나아가라</h1>
+      <div class="chapter-sub">히브리서 6장 — 흔들리지 않는 소망의 닻</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 6:1–20</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">세 번째 경고 단락이 확신에 찬 위로와 함께 마무리된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–8절</div>
+        <div>
+          <div class="flow-title">배교의 위험에 대한 엄중한 경고</div>
+          <div class="flow-body">초보의 도리를 버리고 완전한 데로 나아가야 하며, 한 번 빛을 받고 타락한 자들은 다시 새롭게 하여 회개하게 할 수 없다는 엄중한 경고가 주어진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">9–12절</div>
+        <div>
+          <div class="flow-title">확신에 찬 사랑의 권면</div>
+          <div class="flow-body">저자는 청중에게 더 나은 것, 구원에 속한 것을 확신한다며, 그들의 수고와 사랑의 봉사를 하나님이 잊지 않으신다고 격려한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">13–20절</div>
+        <div>
+          <div class="flow-title">흔들리지 않는 소망의 닻</div>
+          <div class="flow-body">하나님이 아브라함에게 맹세로 약속을 확증하셨듯, 앞에 있는 소망을 얻으려고 피할 곳을 찾은 자들을 위한 이 <b class="hl-insight has-insight" data-insight="5">소망은 영혼의 닻 같아서</b> 휘장 안까지 들어간다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 유아기에 머물지 않아야 할 신앙</div>
+        <div class="teach-body">"초보의 도리를 버리고 완전한 데로 나아가자"는 권면은, 신앙의 기초를 반복하는 데 머물지 말고 성숙을 향해 나아가야 함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 배교 경고의 엄중함</div>
+        <div class="teach-body">6-8절의 경고는 신자의 견인에 대한 오랜 신학적 논쟁을 낳았지만, 최소한 배교가 결코 가벼운 문제가 아님을 분명히 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 열매로 확인되는 신앙</div>
+        <div class="teach-body">가시와 엉겅퀴를 내는 땅과 채소를 내는 땅의 비유는, 진정한 신앙이 결국 삶의 열매로 드러남을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 과거의 신실함을 기억하시는 하나님</div>
+        <div class="teach-body">"너희의 행위와... 사랑의 수고를 잊어버리지 아니하시느니라"는 것은, 작아 보이는 섬김도 하나님 앞에서 결코 헛되지 않음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 흔들리지 않는 소망의 닻</div>
+        <div class="teach-body">배가 폭풍 속에서도 닻으로 안전을 유지하듯, 하나님의 맹세에 근거한 소망은 어떤 상황에서도 흔들리지 않는 안전을 제공한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"소망은 영혼의 닻 같아서"—폭풍우 치는 바다 한가운데서도 닻이 바다 밑바닥에 단단히 박혀 있으면 배가 흔들려도 결코 떠내려가지 않죠. 히브리서는 우리의 소망이 바로 그런 닻이라고 말합니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>6:4-8의 경고를 둘러싼 신학적 논쟁</div>
+        <div class="deep-body">"한 번 빛을 받고... 타락한 자들"에 대한 이 구절은, 참신자가 구원을 잃을 수 있는지에 대한 오랜 신학적 논쟁의 핵심 본문 중 하나다. 많은 해석자들은 여기서 묘사된 자들이 은혜를 진정으로 체험했다기보다 외적으로 깊이 관여했던 배교자로 이해하며, 이 경고 자체가 오히려 참된 신자를 견인하시는 하나님의 수단으로 기능한다고 본다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>아브라함의 맹세와 멜기세덱의 연결</div>
+        <div class="deep-body">13-20절에서 아브라함에게 주어진 맹세를 언급한 직후 곧바로 "멜기세덱의 서열을 따라 영원한 대제사장"이라는 결론으로 이어지는 것은 우연이 아니다. 저자는 이 장의 끝에서 다음 장에서 본격적으로 전개될 멜기세덱 논증을 위한 다리를 놓고 있으며, 아브라함에게 주신 맹세의 확실성이 곧 그리스도의 제사장직의 확실성으로 이어짐을 예비한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c6 6 6 12 0 18-6-6-6-12 0-18Z" /><path d="M14 34h20M18 34v-6h12v6" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 7</div>
+      <h1>7장 · 멜기세덱과 더 나은 제사장직</h1>
+      <div class="chapter-sub">히브리서 7장 — 영원히 계신 제사장</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 7:1–28</span>
+        <span class="ref-item">창 14장</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">멜기세덱을 통해 레위 제사장 제도의 한계와 그리스도의 영원성이 논증된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–10절</div>
+        <div>
+          <div class="flow-title">멜기세덱의 위대함</div>
+          <div class="flow-body">살렘 왕이요 지극히 높으신 하나님의 제사장인 멜기세덱이 아브라함에게 축복하고 십일조를 받았으니, 이는 레위 계통보다 그의 반차가 더 크다는 것을 보여준다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">11–19절</div>
+        <div>
+          <div class="flow-title">레위 계통 제사장직의 한계</div>
+          <div class="flow-body">레위 계통 제사직으로 온전함을 얻을 수 있었다면 다른 제사장이 일어날 필요가 없었을 것이니, 육신에 속한 한 계명이 폐지되고 더 좋은 소망이 세워진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">20–28절</div>
+        <div>
+          <div class="flow-title">영원하신 대제사장</div>
+          <div class="flow-body">다른 제사장들은 죽음으로 그 직분을 계속하지 못했으나, 그리스도는 영원히 계시므로 그 제사장 직분이 갈리지 아니하며 <b class="hl-insight has-insight" data-insight="6">항상 살아계셔서 그들을 위하여 간구하심으로</b> 온전히 구원하실 수 있다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 족보 없는 자가 보여주는 영원성</div>
+        <div class="teach-body">멜기세덱의 시작과 끝이 기록되지 않은 것은, 그리스도의 제사장직이 인간의 혈통적 계승이 아니라 영원한 성격을 지님을 예표한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 아브라함 안에서 이미 표해진 경의</div>
+        <div class="teach-body">아브라함이 멜기세덱에게 십일조를 드린 것은, 아직 태어나지 않은 레위 자손들조차 그 안에서 이미 멜기세덱의 우월성을 인정한 셈이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 온전함에 이르지 못한 옛 제도</div>
+        <div class="teach-body">레위 제사장 제도가 온전함을 가져오지 못했다는 것은, 반복되는 제사 자체가 이미 그 한계를 증언하고 있었음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 죽음을 넘어서는 제사장직</div>
+        <div class="teach-body">다른 제사장들은 죽음으로 교체되어야 했지만, 그리스도는 영원히 계시므로 그 직분이 결코 끊어지지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 항상 간구하시는 대제사장</div>
+        <div class="teach-body">그리스도의 사역이 십자가로 끝난 것이 아니라 지금도 계속되는 중보임을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">멜기세덱은 창세기에 딱 두 절 등장하는 신비로운 인물이에요. 족보도, 시작도, 끝도 기록되지 않죠. 히브리서는 바로 그 '기록되지 않음' 자체를 그리스도의 영원하심을 보여주는 예표로 읽어냅니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>멜기세덱의 정체에 대한 해석사</div>
+        <div class="deep-body">그가 단순한 역사적 인물인지, 아니면 성육신 이전 그리스도의 현현인지에 대해 교부시대부터 논쟁이 있었다. 저자의 논증 방식(창세기 본문에 없는 것으로부터 신학적 결론을 이끌어내는 '침묵으로부터의 논증')은 랍비 전통의 해석 기법과 유사하며, 핵심은 멜기세덱의 형이상학적 정체가 아니라 그가 그리스도의 제사장직을 예표하는 문학적·신학적 기능에 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"더 좋은 소망"이 실제로 대체하는 것의 범위</div>
+        <div class="deep-body">18-19절에서 "전엣 계명은... 폐하고"라는 표현은 율법 전체의 폐기가 아니라 구체적으로 레위 계통 제사장 제도와 그에 결부된 성전 제사 규정의 완성을 가리키는 것으로 이해하는 것이 문맥상 정확하다. 히브리서는 도덕법 전체를 무효화하는 것이 아니라, 그림자였던 제사 제도가 실체이신 그리스도 안에서 완성되었다고 논증한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 12h20v24H14Z" /><path d="M20 12v-4h8v4M20 22h8M20 28h8" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 8</div>
+      <h1>8장 · 새 언약의 중보자</h1>
+      <div class="chapter-sub">히브리서 8장 — 더 좋은 약속으로 세운 언약</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 8:1–13</span>
+        <span class="ref-item">렘 31장</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">예레미야서의 새 언약 예언을 통해 옛 언약의 한계가 지적된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">하늘 성소에서 섬기시는 대제사장</div>
+          <div class="flow-body">우리에게 있는 대제사장은 하늘에서 지극히 크신 이의 보좌 우편에 앉으셨고, 사람이 아니라 주께서 세우신 참 장막에서 섬기는 일을 하신다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">7–9절</div>
+        <div>
+          <div class="flow-title">첫 언약의 결함</div>
+          <div class="flow-body">첫 언약이 무흠하였더라면 둘째 것을 요구할 일이 없었을 것이니, 예레미야 31장을 인용하며 새 언약을 세우시겠다는 약속이 소개된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">10–13절</div>
+        <div>
+          <div class="flow-title">새 언약의 내용</div>
+          <div class="flow-body">하나님의 법을 그들의 생각에 두고 그들의 마음에 기록하며, <b class="hl-insight has-insight" data-insight="7">다시는 그들의 죄를 기억하지 아니하리라</b>는 약속과 함께, 첫 것은 낡아지고 쇠하여 없어져 가는 것임이 선언된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 그림자를 섬긴 옛 제사장들</div>
+        <div class="teach-body">옛 제사장들이 섬긴 것이 하늘에 있는 것의 모형과 그림자였다는 것은, 구약의 제도 전체가 처음부터 더 큰 실체를 가리키도록 설계되었음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 결함이 새 언약의 필요를 낳음</div>
+        <div class="teach-body">첫 언약의 결함이 언급된 것은, 문제가 언약 자체의 내용이 아니라 그것을 지킬 수 없었던 인간의 연약함에 있었음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 마음에 새겨지는 법</div>
+        <div class="teach-body">돌판이 아니라 마음에 기록되는 법이라는 새 언약의 약속은, 외적 규율에서 내적 변화로의 전환을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 다시 기억하지 않으시는 용서</div>
+        <div class="teach-body">"다시는 그들의 죄를 기억하지 아니하리라"는 약속은, 새 언약의 용서가 조건부이거나 부분적인 것이 아니라 완전함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 낡아지는 옛 것과 오는 새 것</div>
+        <div class="teach-body">첫 언약이 "낡아지고 쇠하여 없어져 간다"는 선언은, 성전이 아직 서 있던 시기에도 이미 그 제도의 시대가 저물고 있었음을 예견한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"내가 그들의 불의를 긍휼히 여기고 그들의 죄를 다시 기억하지 아니하리라"—이 약속이 얼마나 놀라운지 생각해보세요. 용서가 조건부가 아니라 아예 기억조차 하지 않으시겠다는 겁니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>예레미야 31장 인용이 지닌 문학적 무게</div>
+        <div class="deep-body">저자는 구약에서 가장 긴 단일 인용문(8:8-12) 중 하나를 사용해 새 언약의 약속을 제시한다. 흥미롭게도 이 예언은 원래 "이스라엘 집과 유다 집"을 향한 것이었는데, 저자는 이를 교회에 적용함으로써 새 언약 공동체가 옛 이스라엘의 약속을 대체하는 것이 아니라 완성하고 확장하는 것으로 이해한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"첫 것이 낡아져 간다"는 선언의 역사적 정황</div>
+        <div class="deep-body">많은 학자들은 히브리서가 서기 70년 예루살렘 성전 파괴 이전에 기록되었을 가능성을 이 구절 등을 근거로 제시한다(만약 성전이 이미 파괴되었다면 저자가 그 사실을 결정적 논증으로 사용하지 않았을 이유가 없다는 논리). 이 관찰은 히브리서가 성전 제의가 여전히 진행되던 긴장된 시기에, 유대 그리스도인들에게 옛 체제로 돌아가려는 유혹에 맞서도록 쓰인 목회적 서신이었을 가능성을 뒷받침한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch9">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 38V16l12-8 12 8v22Z" /><path d="M20 38v-10h8v10" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 9</div>
+      <h1>9장 · 하늘의 성소와 그리스도의 피</h1>
+      <div class="chapter-sub">히브리서 9장 — 손으로 짓지 않은 장막</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 9:1–28</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">땅의 성소와 하늘의 성소가 대조되며 그리스도의 단번의 속죄가 논증된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–10절</div>
+        <div>
+          <div class="flow-title">땅의 성소와 그 한계</div>
+          <div class="flow-body">첫 장막의 규례와 성소의 구조가 설명되며, 대제사장이 일 년에 한 번만 피를 가지고 지성소에 들어갔다는 것, 이 모든 것이 아직 완성되지 못한 때를 위한 비유임이 지적된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">11–14절</div>
+        <div>
+          <div class="flow-title">더 크고 온전한 장막을 통과하신 그리스도</div>
+          <div class="flow-body">그리스도는 손으로 짓지 않은, 곧 이 창조에 속하지 않은 더 크고 온전한 장막을 통하여, 염소와 송아지의 피가 아니라 <b class="hl-insight has-insight" data-insight="8">자기 피로 영원한 속죄를 이루셨느니라</b>.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">15–28절</div>
+        <div>
+          <div class="flow-title">새 언약의 중보자와 단번의 제사</div>
+          <div class="flow-body">그리스도는 새 언약의 중보자시니 유언이 효력을 내려면 유언한 자의 죽음이 필요하듯, 그리스도의 죽음이 죄를 없이 하려고 자기를 단번에 드리신 것이며 그가 다시 나타나실 것이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 비유로 주어진 옛 성소</div>
+        <div class="teach-body">첫 장막의 구조 전체가 "현재까지의 비유"라는 것은, 구약의 예배 제도가 문자적 규례를 넘어선 신학적 의미를 담고 있었음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 자기 피로 이루신 속죄</div>
+        <div class="teach-body">짐승의 피가 매년 반복되어야 했던 반면, 그리스도는 자기 피로 단번에 영원한 속죄를 이루셨다는 대조가 이 장의 핵심이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 양심을 깨끗하게 하는 정결</div>
+        <div class="teach-body">짐승의 피가 육체를 정결하게 했다면, 그리스도의 피는 죽은 행실에서 우리 양심을 깨끗하게 하여 살아계신 하나님을 섬기게 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 죽음이 있어야 효력을 내는 언약</div>
+        <div class="teach-body">유언의 비유는, 새 언약이 그리스도의 실제 죽음이라는 대가 없이는 성립될 수 없었음을 강조한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 다시 나타나실 것에 대한 소망</div>
+        <div class="teach-body">죄를 위해서가 아니라 구원을 위해 다시 나타나시리라는 약속은, 그리스도의 사역이 과거의 십자가와 미래의 재림 사이에서 완결됨을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">대제사장은 일 년에 단 한 번, 그것도 자기 피가 아닌 짐승의 피를 가지고서야 지성소에 들어갈 수 있었어요. 그런데 그리스도는 자기 피로, 단 한 번에, 영원한 속죄를 이루셨습니다. 반복이 필요 없어진 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"손으로 짓지 않은... 더 크고 온전한 장막"이 가리키는 것</div>
+        <div class="deep-body">이 표현이 문자적인 하늘의 물리적 건물을 가리키는지, 아니면 그리스도의 몸이나 그분의 완성된 사역 자체를 상징적으로 가리키는지는 해석자들 사이에 이견이 있다. 어느 쪽이든 핵심은 지상 성소가 결코 도달할 수 없었던 하나님과의 직접적 접근이 그리스도를 통해 열렸다는 것이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>유언(디아테케)과 언약(디아테케)의 언어유희</div>
+        <div class="deep-body">헬라어 '디아테케'는 '언약'과 '유언'을 모두 의미할 수 있는 단어로, 저자는 이 이중적 의미를 의도적으로 활용해(16-17절) 새 언약이 그리스도의 실제 죽음을 요구했다는 논증을 전개한다. 이는 저자의 정교한 헬라어 구사력과 신학적 논증 능력을 잘 보여주는 대목으로 평가된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch10">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 30 24 8l10 22Z" /><path d="M14 38h20" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 10</div>
+      <h1>10장 · 단번에 드리신 온전한 제사</h1>
+      <div class="chapter-sub">히브리서 10장 — 그림자가 아닌 실체</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 10:1–39</span>
+        <span class="ref-item">시 40편</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">교리적 논증(1-10장)이 완결되며 네 번째 경고 단락이 이어진다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–18절</div>
+        <div>
+          <div class="flow-title">다시 필요 없는 제사</div>
+          <div class="flow-body">율법은 장차 오는 좋은 일의 그림자일 뿐 참 형상이 아니므로 해마다 늘 드리는 같은 제사로는 온전하게 할 수 없으나, 그리스도는 <b class="hl-insight has-insight" data-insight="9">죄를 위하여 한 영원한 제사를 드리시고 하나님 우편에 앉으셨느니라</b>.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">19–25절</div>
+        <div>
+          <div class="flow-title">담대히 나아가며 서로 격려하라</div>
+          <div class="flow-body">예수의 피를 힘입어 성소에 들어갈 담력을 얻었으니 참 마음과 온전한 믿음으로 나아가고, 모이기를 폐하는 어떤 사람들의 습관과 같이 하지 말고 서로 돌아보아 사랑과 선행을 격려하라 권면한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">26–39절</div>
+        <div>
+          <div class="flow-title">고의적 범죄에 대한 경고와 인내의 격려</div>
+          <div class="flow-body">진리를 아는 지식을 받은 후 고의로 죄를 범하면 다시 속죄하는 제사가 없다는 엄중한 경고와 함께, 지나간 날들에 견뎌낸 큰 싸움을 기억하며 담대함을 버리지 말라 권면한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 그림자와 실체의 대조</div>
+        <div class="teach-body">율법의 제사가 "참 형상이 아니라 그림자"였다는 것은, 구약 제사 제도의 반복성 자체가 이미 그 불완전함의 증거였음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 단번에 드려진 영원한 제사</div>
+        <div class="teach-body">"그리스도는 죄를 위한 한 영원한 제사를 드리시고... 하나님 우편에 앉으셨다"는 것은 히브리서 전체의 논증이 도달하는 정점이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 담대함으로의 초대</div>
+        <div class="teach-body">휘장(그리스도의 육체)을 통해 열린 새로운 살 길로 나아가라는 초대는, 두려움이 아니라 담대함이 새 언약 백성의 특징임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 모이기를 폐하지 말라</div>
+        <div class="teach-body">개인적 신앙만으로는 부족하며, 공동체적 모임과 서로를 향한 돌아봄과 격려가 신앙의 필수 요소로 강조된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 인내를 통해 얻는 약속</div>
+        <div class="teach-body">"너희에게 인내가 필요함은... 약속하신 것을 받기 위함이라"는 것은, 믿음의 여정이 순간적 결단만이 아니라 지속적인 견딤을 요구함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"모이기를 폐하는 어떤 사람들의 습관과 같이 하지 말고 오직 서로 권하여"—2천 년 전에도 이미 모임을 소홀히 하는 신자들이 있었나 봐요. 신앙 공동체의 모임이 선택이 아니라 서로를 지켜주는 필수적 은혜의 통로라는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>26-31절의 경고와 6장 경고의 관계</div>
+        <div class="deep-body">이 본문 역시 6장과 마찬가지로 신자의 견인 문제에 대한 논쟁을 낳아왔다. 두 경고 모두 배교의 심각성을 극도로 강조하면서도, 저자가 곧바로 청중을 향해 "우리는... 뒤로 물러가 침륜에 빠질 자가 아니요 오직 영혼을 구원함에 이르는 믿음을 가진 자"(39절)라고 확신을 표현한다는 점에서, 이는 실제 배교자에 대한 냉정한 판결이라기보다 청중을 향한 강력한 목회적 경고로 기능한다는 해석이 유력하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>시편 40편 인용과 "제사와 예물을 원하지 아니하시고"의 의미</div>
+        <div class="deep-body">5-7절에서 인용된 시편 40편은 원래 다윗의 개인적 고백이었으나, 저자는 이를 성육신하시는 그리스도의 음성으로 재해석한다("한 몸을 예비하셨도다"). 이는 구약 제사 제도에 대한 비판이 히브리서만의 새로운 통찰이 아니라, 이미 구약 자체 안에(삼상 15:22, 시 51편 등) 제사보다 순종을 중시하는 예언자적 전통이 흐르고 있었음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch11">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 10c-8 6-14 6-14 6s0 12 14 22c14-10 14-22 14-22s-6 0-14-6Z" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 11</div>
+      <h1>11장 · 믿음 장</h1>
+      <div class="chapter-sub">히브리서 11장 — 보이지 않는 것의 증거</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 11:1–40</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">창세기부터 이어지는 믿음의 증인들이 나열된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–7절</div>
+        <div>
+          <div class="flow-title">믿음의 정의와 창조 이전의 증인들</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="10">믿음은 바라는 것들의 실상이요 보이지 않는 것들의 증거</b>이니, 아벨과 에녹과 노아가 믿음으로 인정받은 사례로 제시된다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">8–22절</div>
+        <div>
+          <div class="flow-title">아브라함부터 요셉까지</div>
+          <div class="flow-body">아브라함이 갈 바를 알지 못하고 나아갔고, 사라와 이삭과 야곱과 요셉이 각각 자기 생애 속에서 보이지 않는 약속을 붙들고 산 것이 이어진다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">23–40절</div>
+        <div>
+          <div class="flow-title">모세부터 이름 없는 증인들까지</div>
+          <div class="flow-body">모세와 이후 사사들, 선지자들의 믿음이 열거되며, 세상이 감당하지 못할 이들이 궁핍과 환난 중에도 믿음으로 살고 죽었으나 약속된 것을 받지 못했으니, 이는 우리와 함께 온전함을 이루려 하심이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 보이지 않는 것을 붙드는 믿음</div>
+        <div class="teach-body">이 장 전체에 걸쳐 반복되는 패턴은, 믿음의 사람들이 예외 없이 결과를 보지 못한 채로 약속만을 붙들고 살았다는 것이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 순종으로 나타나는 믿음</div>
+        <div class="teach-body">노아의 방주, 아브라함의 떠남과 이삭을 드림은, 믿음이 내적 확신에 그치지 않고 구체적 행동으로 표현됨을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 실패와 연약함을 포함하는 믿음의 명단</div>
+        <div class="teach-body">라합, 삼손, 다윗처럼 도덕적으로 완전하지 않았던 인물들이 함께 열거되는 것은, 믿음이 완벽함이 아니라 하나님을 향한 신뢰의 방향성에 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 세상이 감당하지 못한 자들</div>
+        <div class="teach-body">궁핍과 학대 속에 살았던 이들("세상이 그들을 감당하지 못하였느니라")은, 신앙의 가치가 세상적 성공으로 측정되지 않음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 우리와 함께 온전해지는 옛 성도들</div>
+        <div class="teach-body">이들이 약속된 것을 받지 못한 이유가 "우리와 함께 온전함을 이루려 하심"이라는 것은, 구속사가 개별 세대가 아니라 전체 하나님의 백성의 연합체로 완성됨을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장에 등장하는 인물 중 살아생전에 자기가 바라던 걸 다 이룬 사람은 아무도 없어요. 아브라함도, 모세도, 다 약속만 바라보다가 떠났죠. 믿음이란 결과를 보는 게 아니라 보이지 않는 걸 붙드는 거라는 걸, 이 장 전체가 보여줍니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"믿음의 정의"(1절)가 지닌 독특한 형식</div>
+        <div class="deep-body">"믿음은 바라는 것들의 실상이요 보이지 않는 것들의 증거"라는 표현은 신약에서 믿음에 대한 가장 형식적인 정의로 자주 인용되지만, 저자의 실제 논증 방식은 추상적 정의보다 구체적 인물들의 삶을 나열하는 데 집중한다. 이는 히브리서가 믿음을 교리적 명제가 아니라 살아낸 삶의 패턴으로 제시하려는 의도를 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>목록의 마지막에서 갑자기 전환되는 어조(35-38절)</div>
+        <div class="deep-body">초반의 승리하는 믿음("나라들을 이기기도 하며")에서 후반으로 갈수록 고난받는 믿음("톱으로 켜는 것과... 궁핍과 환난과 학대를 받았으니")으로 어조가 급격히 전환된다. 이는 저자가 신앙의 승리를 오직 외적 성공으로만 그리지 않고, 오히려 인내하며 고난받는 신앙까지 동등하게 "믿음"의 범주 안에 포함시키고 있음을 보여주는 신학적으로 중요한 전환이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch12">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="15" /><path d="M10 24a14 6 0 0 0 28 0M10 24a14 6 0 0 1 28 0" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 12</div>
+      <h1>12장 · 인내로 경주하며</h1>
+      <div class="chapter-sub">히브리서 12장 — 징계와 흔들리지 않는 나라</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 12:1–29</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">믿음의 증인들에 이어 인내와 거룩함을 향한 다섯 번째 경고가 이어진다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–11절</div>
+        <div>
+          <div class="flow-title">징계로 훈련하시는 아버지</div>
+          <div class="flow-body">구름같이 둘러싼 허다한 증인들을 바라보며 인내로 경주하되, <b class="hl-insight has-insight" data-insight="11">믿음의 주요 온전하게 하시는 이인 예수를 바라보자</b> 권면하며, 하나님의 징계를 아들을 향한 사랑의 증거로 받으라 한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">12–17절</div>
+        <div>
+          <div class="flow-title">화평과 거룩함을 따르라</div>
+          <div class="flow-body">피곤한 손과 연약한 무릎을 일으켜 세우고, 모든 사람과 더불어 화평함과 거룩함을 따르며, 에서처럼 한 그릇 음식을 위해 장자의 명분을 판 자가 되지 말라 경고한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">18–29절</div>
+        <div>
+          <div class="flow-title">시내산과 시온산의 대조</div>
+          <div class="flow-body">손으로 만질 만한 불붙는 산이 아니라 시온산과 살아계신 하나님의 도성, 하늘의 예루살렘에 이르렀으니 흔들리지 않는 나라를 받았은즉 감사함으로 기쁘게 섬기라 권면한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 예수를 바라보는 경주</div>
+        <div class="teach-body">"믿음의 주요 온전하게 하시는 이인 예수를 바라보자"는 권면은, 인내가 자기 의지력이 아니라 시선의 대상에서 나옴을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 사랑의 증거로서의 징계</div>
+        <div class="teach-body">"주께서 그 사랑하시는 자를 징계하시고"라는 원리는, 고난이 하나님의 버림이 아니라 오히려 자녀로 대하시는 증거일 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 공동체적 책임의 재강조</div>
+        <div class="teach-body">"화평함과 거룩함을 따르라"는 권면은, 개인의 신앙 여정이 공동체 전체의 화평과 분리될 수 없음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 에서의 후회가 주는 경고</div>
+        <div class="teach-body">눈앞의 만족을 위해 영원한 것을 포기한 에서의 사례는, 순간의 욕구가 장기적 유익을 대체할 때의 위험을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 흔들리지 않는 나라에 대한 감사</div>
+        <div class="teach-body">시내산의 두려움과 시온산의 은혜를 대조하는 결론은, 새 언약 백성이 두려움이 아니라 감사와 경외로 하나님을 섬겨야 함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"모든 무거운 것과 얽매이기 쉬운 죄를 벗어버리고... 인내로써 우리 앞에 당한 경주를 하며"—마라톤을 뛰는 선수가 불필요한 짐을 다 내려놓듯, 신앙의 경주도 그렇게 가볍게, 그러나 끝까지 뛰어야 한다는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>시내산과 시온산의 대조가 갖는 구조적 의미</div>
+        <div class="deep-body">18-24절의 이 대조는 히브리서 전체의 신학(옛 언약과 새 언약, 두려움과 은혜, 그림자와 실체)을 압축적으로 요약하는 문학적 정점이다. 시내산이 "만지지도 못할 산"이었다면 시온산은 "이르렀느니라"고 이미 완료형으로 서술되는데, 이는 새 언약 백성이 이미 지금 여기서 하늘의 예루살렘에 참여하고 있다는 현재적 종말론을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"그의 나라는 흔들리지 않는 나라"(28절)라는 선언의 정치적 함의</div>
+        <div class="deep-body">이 서신이 로마 제국의 박해 가능성 속에서 기록되었을 것으로 추정되는 정황을 고려하면, 이 선언은 단순한 영적 위로를 넘어 흔들리는 지상의 제국들과 대비되는 하나님 나라의 영속성에 대한 담대한 신앙고백으로 읽힌다. 초대교회가 로마의 권력 앞에서 궁극적 충성의 대상이 어디에 있는지를 분명히 하는 정치신학적 진술이기도 하다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch13">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 40 24 8l12 32Z" /><path d="M24 8v10M17 40h14" /></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">HEB 13</div>
+      <h1>13장 · 마지막 권면과 축복</h1>
+      <div class="chapter-sub">히브리서 13장 — 진영 밖으로 나아가자</div>
+      <div class="ref-strip">
+        <span class="ref-item">히 13:1–25</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">서신 전체가 실제적인 삶의 권면과 축복 기도로 마무리된다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">실제적 권면들</div>
+          <div class="flow-body">형제 사랑을 계속하고, 나그네 대접하기를 잊지 말며(어떤 이들은 부지중에 천사들을 대접하였다), 결혼을 귀히 여기고, 돈을 사랑하지 말고 있는 바를 족한 줄로 알라 권면한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">7–17절</div>
+        <div>
+          <div class="flow-title">인도자를 본받고 진영 밖으로 나아가라</div>
+          <div class="flow-body">지도자들의 믿음을 본받고 <b class="hl-insight has-insight" data-insight="12">예수 그리스도는 어제나 오늘이나 영원토록 동일하시니</b>, 그가 성문 밖에서 고난받으셨으니 우리도 그 능욕을 지고 진영 밖으로 그에게 나아가자 권면한다.</div>
+        </div>
+      </div>
+
+      <div class="flow-item">
+        <div class="flow-range">18–25절</div>
+        <div>
+          <div class="flow-title">마지막 기도와 축복</div>
+          <div class="flow-body">저자 자신을 위해 기도해 달라 부탁하며, 평강의 하나님이 모든 선한 일에 온전하게 하시기를 구하는 축복 기도로 서신을 마친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">다섯 가지 신학적·목회적 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 구체적이고 실제적인 사랑</div>
+        <div class="teach-body">나그네 대접, 갇힌 자를 생각함, 결혼의 존중이라는 매우 구체적인 권면들은, 심오한 신학이 결국 일상의 윤리로 착지되어야 함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 부지중 천사를 대접함</div>
+        <div class="teach-body">"부지중에 천사들을 대접한 이들이 있었느니라"는 언급은, 낯선 이를 향한 환대가 예상치 못한 방식으로 거룩한 만남이 될 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 변함없으신 그리스도</div>
+        <div class="teach-body">"예수 그리스도는 어제나 오늘이나 영원토록 동일하시니라"는 짧은 선언은 서신 전체가 논증해온 그리스도의 영원한 대제사장직을 한 문장으로 요약한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 진영 밖으로 나아가는 부르심</div>
+        <div class="teach-body">그리스도께서 성문 밖에서 고난받으신 것처럼 우리도 안정된 자리를 떠나 그분의 능욕을 짊어지라는 부르심은, 신앙이 안락함과 늘 같은 방향을 향하지 않음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 기도로 서로를 세우는 공동체</div>
+        <div class="teach-body">저자가 자신을 위한 기도를 요청하는 것으로 서신을 마무리하는 것은, 영적 지도자 역시 공동체의 중보가 필요한 연약한 존재임을 겸손히 인정하는 것이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"예수 그리스도는 어제나 오늘이나 영원토록 동일하시니라"—히브리서 열세 장에 걸친 방대한 논증이 결국 이 한 문장으로 수렴돼요. 변하는 세상 속에서 변하지 않는 단 한 분이 계시다는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"진영 밖으로 나아가자"(13절)는 권면의 역사적·상징적 이중성</div>
+        <div class="deep-body">이는 일차적으로 속죄일에 제물의 사체를 진영 밖에서 태웠던 레위기 규례(16:27)를 배경으로 하면서, 동시에 예루살렘 성문 밖에서 십자가에 달리신 그리스도의 실제 역사를 가리킨다. 유대 그리스도인들에게 이는 안전했던 유대교 회당과 성전 체제로부터 결별하고 그리스도와 함께 사회적 수치와 소외를 감수하라는 구체적이고 급진적인 요청으로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>히브리서의 결말이 바울 서신들과 닮은 이유</div>
+        <div class="deep-body">18-25절의 개인적 인사, 기도 요청, 축도 형식은 전형적인 바울 서신의 결말 양식과 매우 유사해서, 오랫동안 바울 저작설의 근거로 사용되어 왔다. 그러나 본문 전체의 문체와 신학적 전개 방식이 바울 서신들과 뚜렷이 구별된다는 점에서, 다수의 학자들은 저자가 바울의 동역자였거나 최소한 바울 서신의 서신 형식에 익숙했던 초대교회의 저명한 교사(아볼로, 바나바, 브리스길라 등 다양한 추정이 있음)였을 가능성으로 이해한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+
+<script>
+var INSIGHTS_DATA = [
+{"title": "'광채'라는 단어에 담긴 뜻", "body": "이 짧은 구절 하나에 신학의 정수가 담겨 있어요. '광채'로 번역된 헬라어는 태양에서 뿜어져 나오는 빛살을 가리켜요. 태양과 빛살이 시간차 없이 함께 있듯, 아버지와 아들도 그렇게 뗄 수 없이 하나라는 뜻이죠."},
+{"title": "부끄러워하지 않으셨다는 표현의 무게", "body": "고귀한 신분의 사람이 낮은 신분의 사람을 '형제'라 부르는 건 당시 사회에서 정말 이례적인 일이었어요. 그런데 하나님의 아들이 연약한 인간을 형제라 부르길 부끄러워 아니하셨다니, 그 겸손의 깊이가 느껴지지 않나요."},
+{"title": "'오늘'이 계속 반복되는 이유", "body": "다윗 시대에 이미 옛날 일이 된 광야 사건을 두고 시편은 '오늘'이라 불러요. 히브리서는 그 '오늘'이 지금 이 순간까지 이어진다고 말하죠. 어제도 오늘이었고, 내일도 오늘일 거예요. 결단은 언제나 지금입니다."},
+{"title": "말씀이 '살아있다'는 게 무슨 뜻일까", "body": "책은 원래 죽은 활자잖아요. 그런데 히브리서는 하나님의 말씀이 살아서 움직인다고 해요. 읽는 사람의 마음을 수술하듯 정확히 찔러 쪼갤 수 있는, 지금도 활동하는 힘이라는 거죠."},
+{"title": "완전하신 분이 왜 통곡하며 기도하셨을까", "body": "겟세마네의 밤을 떠올리게 하는 구절이에요. 신성이 인성을 압도해서 고통을 못 느끼신 게 아니라, 진짜로 두려워하고 진짜로 눈물 흘리며 기도하셨다는 거죠. 그래서 우리의 눈물도 이해하실 수 있어요."},
+{"title": "닻이라는 비유가 주는 안정감", "body": "닻은 눈에 보이지 않아요. 바다 밑에 가라앉아 있으니까요. 하지만 폭풍 속에서 배를 지켜주는 건 바로 그 보이지 않는 닻이에요. 우리 소망도 그래요, 보이지 않아도 확실히 우리를 붙들고 있습니다."},
+{"title": "지금도 계속되는 기도", "body": "십자가에서 다 끝난 줄 알았는데, 그리스도의 사역은 지금도 계속되고 있대요. 하늘 보좌에서 지금 이 순간에도 우리를 위해 간구하고 계신다는 거죠. 우리는 결코 혼자 기도하는 게 아니에요."},
+{"title": "기억하지 않으신다는 약속의 파격성", "body": "용서한다면서 계속 그 일을 떠올리는 관계, 다들 겪어보셨을 거예요. 그런데 하나님은 아예 기억조차 안 하시겠다고 하세요. 조건부 용서가 아니라, 완전히 지워버리는 용서인 거죠."},
+{"title": "왜 '자기 피'라는 표현이 중요할까", "body": "대제사장은 늘 남의 피, 짐승의 피를 들고 들어갔어요. 그런데 그리스도는 자기 자신의 피를 가지고 들어가셨죠. 제사장이면서 동시에 제물이 되신 거예요, 역사상 유일한 방식으로요."},
+{"title": "'앉으셨다'는 짧은 표현의 의미", "body": "옛 제사장들은 성소에서 절대 앉지 못했어요, 할 일이 늘 남아있었으니까요. 그런데 그리스도는 앉으셨어요. 더 이상 드릴 제사가 없다는 뜻이에요. 다 이루신 거죠."},
+{"title": "실상이자 증거라는 두 단어", "body": "믿음은 막연한 희망사항이 아니에요. '실상'이라는 단어는 법률 문서의 소유권 증서 같은 확실함을 뜻하고, '증거'는 법정에서 제시하는 확증이에요. 보이지 않아도, 믿음은 그만큼 견고한 겁니다."},
+{"title": "왜 관중이 아니라 예수를 보라고 할까", "body": "앞 절에서 '구름같이 둘러싼 허다한 증인들'을 언급해놓고, 정작 바라보라는 건 그 증인들이 아니라 예수님이에요. 경주자가 관중석을 보며 뛰면 넘어지죠. 시선은 결승선에, 곧 예수님께 고정되어야 해요."},
+{"title": "열세 장의 논증이 응축된 한 문장", "body": "변하는 게 너무 많은 세상이에요. 지도자도 바뀌고, 환경도 바뀌고, 나 자신도 계속 변하죠. 그런데 단 한 분, 절대 변하지 않는 분이 계세요. 히브리서 전체가 결국 이 한 문장을 말하려고 쓰인 편지인지도 몰라요."}
+];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+</body></html>
