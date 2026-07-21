@@ -184,6 +184,57 @@
     color: var(--muted);
     letter-spacing: 0.05em;
   }
+  .hero__index a.featured{
+    border: 1px solid var(--gold);
+    border-bottom: 1px solid var(--gold);
+    border-radius: 8px;
+    padding: 0.7rem 1.2rem;
+    background: rgba(184,147,90,0.1);
+    margin-bottom: 0.5rem;
+  }
+  .hero__index a.featured .lbl{ font-weight: 700; color: var(--navy); }
+  .hero__index a.featured:hover{ background: rgba(184,147,90,0.2); padding-left: 1.2rem; }
+
+  .rail__mark--feature{ color: var(--gold-light) !important; }
+  .rail__mark--feature::before{
+    content:"";
+    position:absolute;
+    left: -18px; top:0; bottom:0;
+    width: 2px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+  .badge-dot{
+    display:block;
+    width: 0.6rem;
+    height: 0.6rem;
+    border-radius: 50%;
+    background: var(--gold);
+    margin: 0 auto 0.4rem;
+  }
+  .badge{
+    display:inline-block;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    margin-right: 0.7rem;
+  }
+  .badge-lg{
+    display:inline-block;
+    background: var(--gold);
+    color: var(--navy-deep);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+  }
 
   /* ---------- rooms ---------- */
   .room{
@@ -192,6 +243,21 @@
     scroll-margin-top: 2rem;
   }
   .room:nth-of-type(even){ background: var(--cream-warm); }
+
+  .room--feature{
+    background: var(--navy) !important;
+    color: var(--cream);
+  }
+  .room--feature .room__num{ color: var(--gold-light); }
+  .room--feature .room__title{ color: var(--cream); }
+  .room--feature .room__desc{ color: rgba(246,242,233,0.72); }
+  .room--feature .doclist{ border-top-color: rgba(246,242,233,0.2); }
+  .room--feature .doclist li{ border-bottom-color: rgba(246,242,233,0.2); }
+  .room--feature .doclist a:hover{ background: rgba(184,147,90,0.18); }
+  .room--feature .doclist .title{ color: var(--cream); font-weight: 600; }
+  .room--feature .doclist .tag{ color: var(--gold-light); }
+  .room--feature .doclist .meta{ color: rgba(246,242,233,0.55); }
+  .room--feature .doclist__empty{ color: rgba(246,242,233,0.55); }
 
   .room__head{
     display:flex;
@@ -386,6 +452,7 @@
 <a id="top"></a>
 
 <nav class="rail" aria-label="자료실 관 이동">
+  <a class="rail__mark rail__mark--feature" data-room="room-0" href="#room-0"><span class="badge-dot"></span><span>신앙철학</span></a>
   <a class="rail__mark" data-room="room-1" href="#room-1">I<span>책별성경공부</span></a>
   <a class="rail__mark" data-room="room-2" href="#room-2">II<span>새가족</span></a>
   <a class="rail__mark" data-room="room-3" href="#room-3">III<span>목장</span></a>
@@ -437,6 +504,7 @@
       주보와 나눔지, 행정 서식까지 — 은혜교회의 사역 자료를 이곳에서 찾아보실 수 있습니다.</p>
 
     <div class="hero__index" id="toc">
+      <a href="#room-0" class="featured"><span class="badge">먼저 읽기</span><span class="lbl">은혜교회의 신앙철학</span><span class="cnt">보기</span></a>
       <a href="#room-1"><span class="num">I</span><span class="lbl">책별성경공부 · 구약·신약</span><span class="cnt">보기</span></a>
       <a href="#room-2"><span class="num">II</span><span class="lbl">새가족 자료</span><span class="cnt">보기</span></a>
       <a href="#room-3"><span class="num">III</span><span class="lbl">목장 자료</span><span class="cnt">보기</span></a>
@@ -446,6 +514,20 @@
       <a href="#room-7"><span class="num">VII</span><span class="lbl">목회행정양식</span><span class="cnt">보기</span></a>
       <a href="#room-8"><span class="num">VIII</span><span class="lbl">직분자 교육 자료</span><span class="cnt">보기</span></a>
     </div>
+  </section>
+
+  <section class="room room--feature" id="room-0">
+    <div class="room__head">
+      <span class="badge-lg">먼저 읽기</span>
+      <div>
+        <h2 class="room__title">은혜교회의 신앙철학</h2>
+        <p class="room__desc">우리(공동체) 중심이 아니라 하나님과 예수 그리스도 중심으로, 성경 안에서 하나님의 뜻과 그리스도의 가르침을 바라보는 것이 은혜교회가 지키는 대원칙입니다.</p>
+      </div>
+    </div>
+    <details class="doc-group" open>
+      <summary>목록 보기<span class="count" id="count-faith_philosophy"></span></summary>
+      <ul class="doclist" id="list-faith_philosophy"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
   </section>
 
   <section class="room" id="room-1">
@@ -626,9 +708,12 @@
           return;
         }
         list.innerHTML = items.map((it) => {
+          const isExternal = /^https?:\/\//i.test(it.file || '');
           const isHtml = /\.html?$/i.test(it.file || '');
+          const openAttrs = isExternal ? 'target="_blank" rel="noopener"' : '';
+          const downloadAttr = (it.file && !isHtml && !isExternal) ? 'download' : '';
           return `
-          <li><a href="${it.file || '#'}" ${it.file && !isHtml ? 'download' : ''}>
+          <li><a href="${it.file || '#'}" ${openAttrs} ${downloadAttr}>
             <span class="tag">${it.tag || ''}</span>
             <span class="title">${it.title || ''}</span>
             <span class="meta">${it.meta || ''}</span>
