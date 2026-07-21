@@ -312,18 +312,18 @@
       </div>
     </div>
     <div class="prose">
-      <p>아래 두 영상은 각기 다른 이야기를 담고 있지만, 하나의 같은 마음으로 이어져 있습니다. 선물 하나를 만들고 전하는 방식 안에, 그리고 어떤 공간과 물건을 대하는 방식 안에 이미 선교적인 철학과 가치관이 녹아 있다는 것입니다. 두 영상 모두 유튜브 채널 <strong>'셜록현준'</strong>의 콘텐츠이며, 우리가 공간에 대한 철학을 이해하는 데 참고가 되도록 함께 나눕니다.</p>
+      <p>아래 두 영상은 각기 다른 이야기를 담고 있지만, 하나의 같은 마음으로 이어져 있습니다. 선물 하나를 만들고 전하는 방식 안에, 그리고 어떤 공간과 물건을 대하는 방식 안에 이미 선교적인 철학과 가치관이 녹아 있다는 것입니다. 두 영상 모두 유튜브 채널 <strong>'셜록현준'</strong>의 콘텐츠이며, 우리가 공간에 대한 철학을 이해하는 데 참고가 되도록 함께 나눕니다. <span style="font-size:13px;color:#8a8368;">(화면을 스크롤해 영상이 보이면 음소거 상태로 자동 재생되고, 화면을 벗어나면 정지합니다.)</span></p>
 
       <div class="video-block">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/zhweq-BwiAI" title="영상 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe id="yt-player-1" src="https://www.youtube.com/embed/zhweq-BwiAI?enablejsapi=1&amp;mute=1&amp;playsinline=1&amp;rel=0" title="영상 1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="video-caption">영상 1 · 유튜브 '셜록현준' — youtu.be/zhweq-BwiAI</div>
       </div>
 
       <div class="video-block">
         <div class="video-frame">
-          <iframe src="https://www.youtube.com/embed/gauj3Jz2H3o" title="영상 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <iframe id="yt-player-2" src="https://www.youtube.com/embed/gauj3Jz2H3o?enablejsapi=1&amp;mute=1&amp;playsinline=1&amp;rel=0" title="영상 2" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
         </div>
         <div class="video-caption">영상 2 · 유튜브 '셜록현준' — youtu.be/gauj3Jz2H3o</div>
       </div>
@@ -403,5 +403,37 @@
   </div>
 
 </div>
+<script>
+  var ytPlayers = {};
+  var ytPlayersReady = false;
+
+  function onYouTubeIframeAPIReady(){
+    ytPlayers['yt-player-1'] = new YT.Player('yt-player-1', {});
+    ytPlayers['yt-player-2'] = new YT.Player('yt-player-2', {});
+    ytPlayersReady = true;
+  }
+
+  var ytTag = document.createElement('script');
+  ytTag.src = 'https://www.youtube.com/iframe_api';
+  document.body.appendChild(ytTag);
+
+  var ytObserver = new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      var iframe = entry.target.querySelector('iframe');
+      if(!iframe) return;
+      var player = ytPlayers[iframe.id];
+      if(!player || typeof player.playVideo !== 'function') return;
+      if(entry.isIntersecting && entry.intersectionRatio >= 0.6){
+        player.playVideo();
+      } else {
+        player.pauseVideo();
+      }
+    });
+  }, { threshold: [0, 0.6, 1] });
+
+  document.querySelectorAll('.video-frame').forEach(function(frame){
+    ytObserver.observe(frame);
+  });
+</script>
 </body>
 </html>
