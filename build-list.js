@@ -16,7 +16,7 @@ const categories = [
   { key: 'mokjang_sharing', dir: 'content/mokjang-sharing' },
   { key: 'baptist_history', dir: 'content/baptist-history' },
   { key: 'admin_forms', dir: 'content/admin-forms' },
-  { key: 'officer_training', dir: 'content/officer-training' },
+  { key: 'officer_training', dir: 'content/servant-leaders' },
 ];
 
 function listDocs(dir) {
