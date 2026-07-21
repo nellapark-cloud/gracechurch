@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이제, 장로(안수집사, 호칭장로)입니다 — 장로(안수집사, 호칭장로) 임직 후보자 교육</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2b4373;
+    --navy-deep:#1f335a;
+    --cream:#f7f3ea;
+    --cream-soft:#efe9db;
+    --gold:#b8935a;
+    --gold-soft:#d9c39a;
+    --ink:#2a2f3a;
+    --ink-soft:#5b6172;
+    --line:#e2dbc9;
+    --serif:'Noto Serif KR', serif;
+    --sans:'Noto Sans KR', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:var(--sans); line-height:1.8; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:760px; margin:0 auto; padding:0 28px 80px;
+  }
+
+  .cover{
+    background:linear-gradient(175deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--cream); min-height:92vh;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; padding:60px 30px; position:relative; overflow:hidden;
+  }
+  .cover::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(184,147,90,0.10), transparent 45%),
+      radial-gradient(circle at 82% 85%, rgba(184,147,90,0.08), transparent 40%);
+  }
+  .cover .eyebrow{
+    font-family:var(--sans); letter-spacing:0.35em; font-size:12px;
+    color:var(--gold-soft); text-transform:uppercase; margin-bottom:26px; z-index:1;
+  }
+  .cover h1{
+    font-family:var(--serif); font-weight:700; font-size:clamp(34px,6vw,52px);
+    line-height:1.35; margin:0 0 18px; z-index:1; letter-spacing:-0.01em;
+  }
+  .cover .sub{
+    font-family:var(--serif); font-size:16px; color:var(--gold-soft);
+    letter-spacing:0.08em; margin-bottom:56px; z-index:1;
+  }
+  .cover .foot{
+    z-index:1; font-size:12.5px; color:rgba(247,243,234,0.55); letter-spacing:0.05em;
+  }
+  .cover .foot b{ color:rgba(247,243,234,0.85); font-weight:500; }
+  .cover .divider{
+    width:34px; height:1px; background:var(--gold); margin:22px 0; z-index:1;
+  }
+
+  .intro{ padding-top:74px; }
+  .intro p{ font-size:16.5px; color:var(--ink); }
+  .intro .signoff{
+    margin-top:34px; font-family:var(--serif); color:var(--ink-soft); font-size:15px;
+  }
+
+  h2.part-title{
+    font-family:var(--serif); font-size:13px; letter-spacing:0.28em; color:var(--gold);
+    text-transform:uppercase; margin:0 0 6px;
+  }
+  h1.part-heading{
+    font-family:var(--serif); font-size:clamp(26px,4vw,32px); font-weight:700;
+    color:var(--navy); margin:0 0 34px; line-height:1.4;
+  }
+
+  section.part{
+    padding-top:90px; border-top:1px solid var(--line); margin-top:20px;
+  }
+  section.part:first-of-type{ border-top:none; }
+
+  h3.sec{
+    font-family:var(--serif); font-weight:600; font-size:20px; color:var(--navy);
+    margin:44px 0 16px; padding-top:6px;
+  }
+  h3.sec .num{ color:var(--gold); font-weight:700; margin-right:8px; }
+
+  p{ margin:0 0 18px; color:var(--ink); }
+  strong{ color:var(--navy); font-weight:600; }
+
+  .hl{
+    background:linear-gradient(transparent 60%, rgba(184,147,90,0.28) 60%);
+    cursor:pointer; font-weight:500; border-bottom:1px dotted var(--gold);
+    transition:background 0.15s;
+  }
+  .hl:hover{ background:linear-gradient(transparent 55%, rgba(184,147,90,0.42) 55%); }
+  .hl.deep{
+    background:linear-gradient(transparent 60%, rgba(22,35,63,0.10) 60%);
+    border-bottom:1px dotted var(--navy);
+  }
+  .hl.deep:hover{ background:linear-gradient(transparent 55%, rgba(22,35,63,0.18) 55%); }
+
+  .overlay{
+    display:none; position:fixed; inset:0; background:rgba(13,24,48,0.55);
+    z-index:100; align-items:center; justify-content:center; padding:24px;
+    backdrop-filter:blur(2px);
+  }
+  .overlay.open{ display:flex; }
+  .popup{
+    background:var(--cream); max-width:480px; width:100%; border-radius:6px;
+    padding:32px 30px 28px; position:relative; border-top:3px solid var(--gold);
+    box-shadow:0 20px 60px rgba(0,0,0,0.3); max-height:80vh; overflow-y:auto;
+  }
+  .popup .tag{
+    font-size:11px; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase;
+    font-weight:700; margin-bottom:10px;
+  }
+  .popup h4{
+    font-family:var(--serif); color:var(--navy); font-size:18px; margin:0 0 14px;
+  }
+  .popup p{ font-size:14.5px; color:var(--ink); margin-bottom:12px; }
+  .popup .close{
+    position:absolute; top:14px; right:16px; cursor:pointer; color:var(--ink-soft);
+    font-size:20px; line-height:1; background:none; border:none;
+  }
+
+  .verse{
+    border-left:3px solid var(--gold); background:var(--cream-soft);
+    padding:18px 22px; margin:26px 0; font-family:var(--serif); font-size:15.5px;
+    color:var(--navy); border-radius:0 4px 4px 0;
+  }
+  .verse cite{ display:block; font-style:normal; font-family:var(--sans); font-size:12.5px;
+    color:var(--ink-soft); margin-top:8px; letter-spacing:0.03em; }
+
+  .qual{
+    display:grid; grid-template-columns:44px 1fr; gap:16px; padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .qual:last-child{ border-bottom:none; }
+  .qual .qn{
+    font-family:var(--serif); font-size:22px; color:var(--gold-soft); font-weight:700;
+  }
+  .qual h4{ font-family:var(--serif); font-size:16.5px; color:var(--navy); margin:0 0 6px; }
+  .qual p{ font-size:14.5px; margin-bottom:0; }
+
+  .mgrid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:28px 0; }
+  @media (max-width:600px){ .mgrid{ grid-template-columns:1fr; } }
+  .mcard{
+    background:#fff; border:1px solid var(--line); border-radius:6px; padding:20px 20px 18px;
+  }
+  .mcard .icon{ font-size:20px; margin-bottom:10px; display:block; }
+  .mcard h4{ font-family:var(--serif); font-size:15.5px; color:var(--navy); margin:0 0 8px; }
+  .mcard p{ font-size:13.8px; color:var(--ink-soft); margin:0; }
+
+  .checklist{ margin:26px 0; }
+  .check-item{
+    display:flex; gap:14px; align-items:flex-start; padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .check-item:last-child{ border-bottom:none; }
+  .check-item .dot{
+    width:8px; height:8px; border-radius:50%; background:var(--gold); margin-top:8px; flex-shrink:0;
+  }
+  .check-item p{ margin:0; font-size:15px; }
+
+  .closing{
+    margin-top:100px; padding:50px 34px; background:var(--navy); border-radius:10px;
+    color:var(--cream); text-align:center;
+  }
+  .closing h3{ font-family:var(--serif); font-size:22px; margin:0 0 16px; color:var(--cream); }
+  .closing p{ color:rgba(247,243,234,0.82); font-size:15px; }
+  .closing .gold{ color:var(--gold-soft); }
+
+  .toc{ margin:28px 0 10px; }
+  .toc a{
+    display:flex; justify-content:space-between; align-items:baseline; text-decoration:none;
+    color:var(--navy); font-family:var(--serif); font-size:15.5px; padding:13px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .toc a span.n{ color:var(--gold); font-size:12px; letter-spacing:0.1em; font-family:var(--sans); }
+
+  .floatnav{
+    position:fixed; right:22px; bottom:26px; z-index:60;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .floatnav a{
+    display:flex; align-items:center; gap:8px; text-decoration:none;
+    background:var(--navy); color:var(--cream); border:1px solid var(--gold);
+    padding:10px 16px; border-radius:30px; font-family:var(--sans); font-size:13px;
+    font-weight:500; box-shadow:0 6px 18px rgba(22,35,63,0.25); opacity:0.92;
+    transition:opacity 0.15s, transform 0.15s;
+  }
+  .floatnav a:hover{ opacity:1; transform:translateY(-1px); }
+  .floatnav a .ic{ color:var(--gold-soft); font-size:14px; }
+  @media (max-width:600px){
+    .floatnav{ right:14px; bottom:16px; }
+    .floatnav a{ padding:9px 13px; font-size:12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover" id="top">
+  <div class="eyebrow">장로(안수집사, 호칭장로) 임직 후보자 교육</div>
+  <h1>이제,<br>장로(안수집사, 호칭장로)입니다</h1>
+  <div class="divider"></div>
+  <div class="sub">장로(안수집사, 호칭장로)사역가이드</div>
+  <div class="foot"><b>기독교한국침례회 은혜교회</b></div>
+</div>
+
+<div class="page">
+
+  <div class="intro">
+    <h2 class="part-title">시작하며</h2>
+    <h1 class="part-heading">양 무리를 치는 사람</h1>
+    <p>장로라는 이름은 교회 안에서 가장 무겁게 들리는 이름 중 하나일 것입니다. 그런데 성경이 그리는 장로의 모습은, 권위를 행사하는 자리가 아니라 <strong>양 무리를 돌보는 목자</strong>의 모습에 훨씬 가깝습니다.</p>
+    <p>이 자료는 장로직이 어디서 왔고, 무엇을 자격으로 삼으며, 오늘 은혜교회 안에서 어떤 모습으로 이어지는지를 함께 살펴보려 합니다. 본문 중 <span class="hl">밑줄 친 부분</span>을 누르시면 조금 더 깊은 이야기가 열립니다.</p>
+    <p class="signoff">장로로 세워지실 것을 진심으로 축하하며,<br>담임목사 박동준 드림</p>
+  </div>
+
+  <div class="toc" id="toc">
+    <a href="#part1"><span>1부 · 장로(안수집사, 호칭장로), 어디서 왔는가</span><span class="n">행 14:23 · 20:17–28</span></a>
+    <a href="#part2"><span>2부 · 장로(안수집사, 호칭장로)의 자격</span><span class="n">딤전 3:1–7</span></a>
+    <a href="#part3"><span>3부 · 장로(안수집사, 호칭장로)의 사역</span><span class="n">벧전 5:1–4</span></a>
+    <a href="#part4"><span>4부 · 은혜교회의 장로(안수집사, 호칭장로)</span><span class="n">협력과 목자</span></a>
+    <a href="#part5"><span>5부 · 준비하는 마음</span><span class="n">자기점검과 서약</span></a>
+  </div>
+
+  <!-- PART 1 -->
+  <section class="part" id="part1">
+    <h2 class="part-title">1부</h2>
+    <h1 class="part-heading">장로(안수집사, 호칭장로), 어디서 왔는가</h1>
+
+    <p>장로라는 이름은 사실 교회보다 먼저 있었습니다. 구약 이스라엘 공동체에는 이미 <span class="hl deep" data-pop="p1-ot">백성을 대표하고 다스리는 장로들</span>이 있었고, 신약의 교회는 이 오래된 이름을 그대로 이어받았습니다.</p>
+
+    <p>바울과 바나바는 1차 전도여행에서 세운 교회마다 <strong>장로들을 택하여 세우는 일</strong>을 빠뜨리지 않았습니다.</p>
+
+    <div class="verse">
+      "각 교회에서 장로들을 택하여 금식 기도 하며 그들이 믿는 주께 그들을 위탁하고"
+      <cite>사도행전 14:23</cite>
+    </div>
+
+    <p>바울이 에베소를 떠나며 남긴 마지막 설교에서도 장로들을 향해 이렇게 당부합니다.</p>
+
+    <div class="verse">
+      "여러분은 자기를 위하여 또는 온 양 떼를 위하여 삼가라 성령이 그들 가운데 여러분을 감독자로 삼고 하나님이 자기 피로 사신 교회를 보살피게 하셨느니라"
+      <cite>사도행전 20:28</cite>
+    </div>
+
+    <p>여기서 눈여겨볼 것이 있습니다. 바울은 같은 사람들을 "장로"(17절)라 부르고, 또 "감독자"(28절)라 부릅니다. <span class="hl deep" data-pop="p1-titles">장로·감독·목자는 신약에서 사실상 같은 직분을 가리키는 세 개의 이름</span>입니다. 이 사실은 장로직의 본질이 다스림보다 돌봄에, 지위보다 섬김에 있다는 것을 분명히 보여줍니다.</p>
+  </section>
+
+  <!-- PART 2 -->
+  <section class="part" id="part2">
+    <h2 class="part-title">2부</h2>
+    <h1 class="part-heading">장로(안수집사, 호칭장로)의 자격</h1>
+
+    <p>바울은 디모데전서 3장에서 감독(장로)의 자격을 가장 먼저, 가장 길게 다룹니다.</p>
+
+    <div class="verse">
+      "미쁘다 이 말이여, 곧 사람이 감독의 직분을 얻으려 함은 선한 일을 사모하는 것이라 함이로다 그러므로 감독은 책망할 것이 없으며 한 아내의 남편이 되며 절제하며 신중하며 단정하며 나그네를 대접하며 가르치기를 잘하며"
+      <cite>디모데전서 3:1–2</cite>
+    </div>
+
+    <div class="qual">
+      <div class="qn">01</div>
+      <div><h4>선한 일을 사모함</h4>
+      <p>장로직을 원하는 마음 자체가 나쁜 것이 아니라, 그 마음이 무엇을 향한 사모함인지가 중요합니다. 자리가 아니라 섬김을 사모하는 것입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">02</div>
+      <div><h4>책망할 것이 없음, 한 아내의 남편</h4>
+      <p>공동체 앞에 흠 잡힐 것이 없는 삶, 그리고 가정에서부터 신실한 삶입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">03</div>
+      <div><h4>절제·신중·단정</h4>
+      <p>감정과 언행이 앞서지 않고, 삶의 태도에 무게와 안정감이 있는 사람입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">04</div>
+      <div><h4>나그네를 대접하고 가르치기를 잘함 — <span class="hl deep" data-pop="q4">왜 '가르침'이 장로만의 자격인가</span></h4>
+      <p>집사의 자격에는 없던 항목입니다. 장로는 말씀을 가르치고 양떼를 먹이는 책임을 지는 자리이기 때문입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">05</div>
+      <div><h4>술을 즐기지 않고 구타하지 않으며 관용함</h4>
+      <p>힘이나 강압이 아니라 온유함으로 사람을 대하는 사람입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">06</div>
+      <div><h4>돈을 사랑하지 않음</h4>
+      <p>교회의 방향과 재정에 영향을 미치는 자리인 만큼, 물질 앞에서 자유로운 사람이어야 합니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">07</div>
+      <div><h4>자기 집을 잘 다스림, 새로 입교한 자가 아님</h4>
+      <p>가정에서 검증된 리더십, 그리고 신앙의 연륜을 통해 교만에 빠지지 않을 만큼 성숙한 사람입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">08</div>
+      <div><h4>외인에게서도 선한 증거를 얻음</h4>
+      <p>교회 밖에서도 신뢰받는 삶—신앙과 삶이 따로 놀지 않는 사람입니다.</p></div>
+    </div>
+  </section>
+
+  <!-- PART 3 -->
+  <section class="part" id="part3">
+    <h2 class="part-title">3부</h2>
+    <h1 class="part-heading">장로(안수집사, 호칭장로)의 사역</h1>
+
+    <p>베드로는 자신도 "함께 장로 된 자"라고 소개하며, 장로들에게 이렇게 권합니다.</p>
+
+    <div class="verse">
+      "너희 중에 있는 하나님의 양 무리를 치되 억지로 하지 말고 하나님의 뜻을 따라 자원함으로 하며 더러운 이득을 위하여 하지 말고 기꺼이 하며 맡은 자들에게 주장하는 자세를 하지 말고 양 무리의 본이 되라"
+      <cite>베드로전서 5:2–3</cite>
+    </div>
+
+    <p>이 세 문장 안에 장로 사역의 태도가 다 담겨 있습니다: <strong>억지가 아니라 자원함으로, 이득이 아니라 기꺼운 마음으로, 주장이 아니라 본을 보임으로.</strong></p>
+
+    <div class="mgrid">
+      <div class="mcard"><span class="icon">📖</span><h4>말씀과 양육</h4><p>성도들이 바른 말씀 위에 서도록 가르치고 함께 살핍니다.</p></div>
+      <div class="mcard"><span class="icon">🧭</span><h4>교회의 방향 세우기</h4><p>담임목사와 함께 교회가 나아갈 길을 분별하고, 중요한 결정에 함께합니다.</p></div>
+      <div class="mcard"><span class="icon">🤲</span><h4>목양적 돌봄</h4><p>성도 한 사람 한 사람의 신앙 여정을 마음에 두고 살핍니다.</p></div>
+      <div class="mcard"><span class="icon">🌾</span><h4>본이 되는 삶</h4><p>말보다 삶으로, 지위보다 섬김으로 공동체 앞에 서는 사람입니다.</p></div>
+    </div>
+  </section>
+
+  <!-- PART 4 -->
+  <section class="part" id="part4">
+    <h2 class="part-title">4부</h2>
+    <h1 class="part-heading">은혜교회의 장로(안수집사, 호칭장로)</h1>
+
+    <p>침례교회는 회중정치를 따르기에 장로교의 당회와 같은 별도 치리기구를 두지 않으며, 은혜교회에도 그런 조직은 따로 없습니다. 담임목사를 비롯한 교역자와 장로·권사·집사가 각자의 자리에서 협력하여 교회를 세워갑니다. 장로는 이 협력 속에서, 목회자를 도와 말씀과 신앙의 연륜으로 공동체의 중심을 잡아주는 자리입니다.</p>
+
+    <p>또한 우리 교회의 목자—12명 정도 단위의 목장을 이끄는 지도자—는 장로·권사·집사 중에서 자격이 충분히 인정된 이들 가운데 세워지며, 교회의 추천을 받아 담임목사가 임명합니다. 장로로 임직하신다는 것은 그 자체로 이미 목자로 세워질 수 있는 자격의 출발점에 서는 일이기도 합니다.</p>
+
+    <p>은혜교회는 개척 12년째, 도심 지역으로 이전하여 전도를 활발히 하려는 계획을 가지고 있습니다. 이런 전환기일수록 장로님들의 신중한 분별과 담임목사와의 신뢰 있는 동행이 교회의 중심을 지키는 힘이 될 것입니다.</p>
+  </section>
+
+  <!-- PART 5 -->
+  <section class="part" id="part5">
+    <h2 class="part-title">5부</h2>
+    <h1 class="part-heading">준비하는 마음</h1>
+
+    <p>임직 전, 스스로에게 조용히 물어보시면 좋을 질문들입니다.</p>
+
+    <div class="checklist">
+      <div class="check-item"><div class="dot"></div><p>나는 이 직분을 자리가 아니라 섬김으로 사모하는가?</p></div>
+      <div class="check-item"><div class="dot"></div><p>나는 억지가 아니라 자원하는 마음으로 양 무리를 대할 수 있는가?</p></div>
+      <div class="check-item"><div class="dot"></div><p>나는 주장하기보다 본이 되는 삶을 살고 있는가?</p></div>
+      <div class="check-item"><div class="dot"></div><p>나는 교회 밖에서도 신뢰받는 삶을 살고 있는가?</p></div>
+      <div class="check-item"><div class="dot"></div><p>나는 담임목사, 그리고 다른 직분자들과 협력할 준비가 되어 있는가?</p></div>
+    </div>
+
+    <p>임직 서약은 사람 앞에서 하는 약속처럼 보이지만, 실은 하나님과 맺는 약속입니다. 양 무리를 부득이함이 아니라 기쁨으로 돌보겠다는 그 다짐이, 앞으로의 섬김 속에서 계속 확인될 수 있기를 바랍니다.</p>
+
+    <div class="closing">
+      <h3>이제, 장로(안수집사, 호칭장로)입니다</h3>
+      <p>목자장 되신 주님 앞에서, 양 무리의 <span class="gold">참된 본</span>이 되어 주시길 바랍니다.</p>
+      <p style="margin-top:20px; font-size:13px; color:rgba(247,243,234,0.55);">기독교한국침례회 은혜교회 · 담임목사 박동준</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="floatnav">
+  <a href="#toc"><span class="ic">☰</span>목차</a>
+  <a href="#top"><span class="ic">↑</span>처음으로</a>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <button class="close" onclick="closePop()">✕</button>
+    <div class="tag" id="pop-tag"></div>
+    <h4 id="pop-title"></h4>
+    <div id="pop-body"></div>
+  </div>
+</div>
+
+<script>
+const INSIGHTS = {
+  "p1-ot": {
+    tag: "구약 배경",
+    title: "이스라엘의 장로들",
+    body: "<p>출애굽기와 민수기에는 모세가 백성을 다스리는 짐을 나누기 위해 일흔 명의 장로를 세우는 장면이 나옵니다(출 18장, 민 11장). 장로는 본래 각 지파와 마을 공동체에서 연륜과 지혜로 신뢰받는 사람들을 가리키는 말이었고, 신약의 교회는 이 익숙한 이름을 그대로 가져와 교회의 지도자를 부르는 이름으로 삼았습니다.</p>"
+  },
+  "p1-titles": {
+    tag: "용어 해설",
+    title: "장로, 감독, 목자 — 하나의 직분, 세 개의 이름",
+    body: "<p>사도행전 20장에서 바울은 에베소의 같은 사람들을 17절에서 '장로'로, 28절에서 '감독자'로 부르고, 같은 절에서 '보살피다(목양하다)'라는 동사를 씁니다. 디도서 1:5-7에서도 '장로를 세우게 하려 함이니'라고 말한 뒤 곧이어 '감독은 하나님의 청지기로서'라고 이어갑니다. 세 이름은 각각 연륜(장로), 감독의 책임(감독), 돌봄의 실제(목자)라는 서로 다른 측면을 강조할 뿐, 신약에서 가리키는 대상은 하나입니다.</p>"
+  },
+  "q4": {
+    tag: "집사의 자격과 비교",
+    title: "왜 '가르침'이 장로만의 자격인가",
+    body: "<p>딤전 3장의 집사 자격(8-13절)에는 '가르치기를 잘함'이 없습니다. 반면 장로(감독)의 자격에는 분명히 들어 있습니다. 이는 장로가 말씀을 통해 공동체를 먹이고 바른 길로 이끄는 책임을 지는 자리이기 때문입니다. 은사와 부르심이 다르기에 요구되는 자격도 다른 것이지, 어느 하나가 더 우월해서가 아닙니다.</p>"
+  }
+};
+
+function openPop(key){
+  const d = INSIGHTS[key];
+  if(!d) return;
+  document.getElementById('pop-tag').textContent = d.tag;
+  document.getElementById('pop-title').textContent = d.title;
+  document.getElementById('pop-body').innerHTML = d.body;
+  document.getElementById('overlay').classList.add('open');
+}
+function closePop(){ document.getElementById('overlay').classList.remove('open'); }
+document.getElementById('overlay').addEventListener('click', function(e){
+  if(e.target === this) closePop();
+});
+document.querySelectorAll('.hl.deep').forEach(function(el){
+  el.addEventListener('click', function(){ openPop(this.getAttribute('data-pop')); });
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>이제, 집사입니다 — 집사 임직 후보자 교육</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#2b4373;
+    --navy-deep:#1f335a;
+    --cream:#f7f3ea;
+    --cream-soft:#efe9db;
+    --gold:#b8935a;
+    --gold-soft:#d9c39a;
+    --ink:#2a2f3a;
+    --ink-soft:#5b6172;
+    --line:#e2dbc9;
+    --serif:'Noto Serif KR', serif;
+    --sans:'Noto Sans KR', sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--cream); color:var(--ink);
+    font-family:var(--sans); line-height:1.8; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .page{
+    max-width:760px; margin:0 auto; padding:0 28px 80px;
+  }
+
+  /* ---------- COVER ---------- */
+  .cover{
+    background:linear-gradient(175deg, var(--navy) 0%, var(--navy-deep) 100%);
+    color:var(--cream); min-height:92vh;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
+    text-align:center; padding:60px 30px; position:relative; overflow:hidden;
+  }
+  .cover::before{
+    content:"";
+    position:absolute; inset:0;
+    background-image:
+      radial-gradient(circle at 20% 15%, rgba(184,147,90,0.10), transparent 45%),
+      radial-gradient(circle at 82% 85%, rgba(184,147,90,0.08), transparent 40%);
+  }
+  .cover .eyebrow{
+    font-family:var(--sans); letter-spacing:0.35em; font-size:12px;
+    color:var(--gold-soft); text-transform:uppercase; margin-bottom:26px; z-index:1;
+  }
+  .cover .mark{
+    width:46px; height:46px; border:1.5px solid var(--gold); border-radius:50%;
+    display:flex; align-items:center; justify-content:center; margin-bottom:28px; z-index:1;
+    font-family:var(--serif); color:var(--gold); font-size:18px;
+  }
+  .cover h1{
+    font-family:var(--serif); font-weight:700; font-size:clamp(34px,6vw,52px);
+    line-height:1.35; margin:0 0 18px; z-index:1; letter-spacing:-0.01em;
+  }
+  .cover .sub{
+    font-family:var(--serif); font-size:16px; color:var(--gold-soft);
+    letter-spacing:0.08em; margin-bottom:56px; z-index:1;
+  }
+  .cover .foot{
+    z-index:1; font-size:12.5px; color:rgba(247,243,234,0.55); letter-spacing:0.05em;
+  }
+  .cover .foot b{ color:rgba(247,243,234,0.85); font-weight:500; }
+  .cover .divider{
+    width:34px; height:1px; background:var(--gold); margin:22px 0; z-index:1;
+  }
+
+  /* ---------- INTRO ---------- */
+  .intro{ padding-top:74px; }
+  .intro p{ font-size:16.5px; color:var(--ink); }
+  .intro .signoff{
+    margin-top:34px; font-family:var(--serif); color:var(--ink-soft); font-size:15px;
+  }
+
+  h2.part-title{
+    font-family:var(--serif); font-size:13px; letter-spacing:0.28em; color:var(--gold);
+    text-transform:uppercase; margin:0 0 6px;
+  }
+  h1.part-heading{
+    font-family:var(--serif); font-size:clamp(26px,4vw,32px); font-weight:700;
+    color:var(--navy); margin:0 0 34px; line-height:1.4;
+  }
+
+  section.part{
+    padding-top:90px; border-top:1px solid var(--line); margin-top:20px;
+  }
+  section.part:first-of-type{ border-top:none; }
+
+  h3.sec{
+    font-family:var(--serif); font-weight:600; font-size:20px; color:var(--navy);
+    margin:44px 0 16px; padding-top:6px;
+  }
+  h3.sec .num{ color:var(--gold); font-weight:700; margin-right:8px; }
+
+  p{ margin:0 0 18px; color:var(--ink); }
+  strong{ color:var(--navy); font-weight:600; }
+
+  /* highlight + popup */
+  .hl{
+    background:linear-gradient(transparent 60%, rgba(184,147,90,0.28) 60%);
+    cursor:pointer; font-weight:500; border-bottom:1px dotted var(--gold);
+    transition:background 0.15s;
+  }
+  .hl:hover{ background:linear-gradient(transparent 55%, rgba(184,147,90,0.42) 55%); }
+  .hl.deep{
+    background:linear-gradient(transparent 60%, rgba(22,35,63,0.10) 60%);
+    border-bottom:1px dotted var(--navy);
+  }
+  .hl.deep:hover{ background:linear-gradient(transparent 55%, rgba(22,35,63,0.18) 55%); }
+
+  .overlay{
+    display:none; position:fixed; inset:0; background:rgba(13,24,48,0.55);
+    z-index:100; align-items:center; justify-content:center; padding:24px;
+    backdrop-filter:blur(2px);
+  }
+  .overlay.open{ display:flex; }
+  .popup{
+    background:var(--cream); max-width:480px; width:100%; border-radius:6px;
+    padding:32px 30px 28px; position:relative; border-top:3px solid var(--gold);
+    box-shadow:0 20px 60px rgba(0,0,0,0.3); max-height:80vh; overflow-y:auto;
+  }
+  .popup .tag{
+    font-size:11px; letter-spacing:0.2em; color:var(--gold); text-transform:uppercase;
+    font-weight:700; margin-bottom:10px;
+  }
+  .popup h4{
+    font-family:var(--serif); color:var(--navy); font-size:18px; margin:0 0 14px;
+  }
+  .popup p{ font-size:14.5px; color:var(--ink); margin-bottom:12px; }
+  .popup .close{
+    position:absolute; top:14px; right:16px; cursor:pointer; color:var(--ink-soft);
+    font-size:20px; line-height:1; background:none; border:none;
+  }
+
+  /* quality-box for scripture / quote */
+  .verse{
+    border-left:3px solid var(--gold); background:var(--cream-soft);
+    padding:18px 22px; margin:26px 0; font-family:var(--serif); font-size:15.5px;
+    color:var(--navy); border-radius:0 4px 4px 0;
+  }
+  .verse cite{ display:block; font-style:normal; font-family:var(--sans); font-size:12.5px;
+    color:var(--ink-soft); margin-top:8px; letter-spacing:0.03em; }
+
+  /* qualification cards */
+  .qual{
+    display:grid; grid-template-columns:44px 1fr; gap:16px; padding:20px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .qual:last-child{ border-bottom:none; }
+  .qual .qn{
+    font-family:var(--serif); font-size:22px; color:var(--gold-soft); font-weight:700;
+  }
+  .qual h4{ font-family:var(--serif); font-size:16.5px; color:var(--navy); margin:0 0 6px; }
+  .qual p{ font-size:14.5px; margin-bottom:0; }
+
+  /* ministry grid */
+  .mgrid{ display:grid; grid-template-columns:1fr 1fr; gap:16px; margin:28px 0; }
+  @media (max-width:600px){ .mgrid{ grid-template-columns:1fr; } }
+  .mcard{
+    background:#fff; border:1px solid var(--line); border-radius:6px; padding:20px 20px 18px;
+  }
+  .mcard .icon{ font-size:20px; margin-bottom:10px; display:block; }
+  .mcard h4{ font-family:var(--serif); font-size:15.5px; color:var(--navy); margin:0 0 8px; }
+  .mcard p{ font-size:13.8px; color:var(--ink-soft); margin:0; }
+
+  /* self-check */
+  .checklist{ margin:26px 0; }
+  .check-item{
+    display:flex; gap:14px; align-items:flex-start; padding:14px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .check-item:last-child{ border-bottom:none; }
+  .check-item .dot{
+    width:8px; height:8px; border-radius:50%; background:var(--gold); margin-top:8px; flex-shrink:0;
+  }
+  .check-item p{ margin:0; font-size:15px; }
+
+  /* closing */
+  .closing{
+    margin-top:100px; padding:50px 34px; background:var(--navy); border-radius:10px;
+    color:var(--cream); text-align:center;
+  }
+  .closing h3{ font-family:var(--serif); font-size:22px; margin:0 0 16px; color:var(--cream); }
+  .closing p{ color:rgba(247,243,234,0.82); font-size:15px; }
+  .closing .gold{ color:var(--gold-soft); }
+
+  .toc{ margin:28px 0 10px; }
+  .toc a{
+    display:flex; justify-content:space-between; align-items:baseline; text-decoration:none;
+    color:var(--navy); font-family:var(--serif); font-size:15.5px; padding:13px 0;
+    border-bottom:1px solid var(--line);
+  }
+  .toc a span.n{ color:var(--gold); font-size:12px; letter-spacing:0.1em; font-family:var(--sans); }
+
+  /* floating nav buttons */
+  .floatnav{
+    position:fixed; right:22px; bottom:26px; z-index:60;
+    display:flex; flex-direction:column; gap:10px;
+  }
+  .floatnav a{
+    display:flex; align-items:center; gap:8px; text-decoration:none;
+    background:var(--navy); color:var(--cream); border:1px solid var(--gold);
+    padding:10px 16px; border-radius:30px; font-family:var(--sans); font-size:13px;
+    font-weight:500; box-shadow:0 6px 18px rgba(22,35,63,0.25); opacity:0.92;
+    transition:opacity 0.15s, transform 0.15s;
+  }
+  .floatnav a:hover{ opacity:1; transform:translateY(-1px); }
+  .floatnav a .ic{ color:var(--gold-soft); font-size:14px; }
+  @media (max-width:600px){
+    .floatnav{ right:14px; bottom:16px; }
+    .floatnav a{ padding:9px 13px; font-size:12px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="cover" id="top">
+  <div class="eyebrow">집사 임직 후보자 교육</div>
+  <h1>이제,<br>집사입니다</h1>
+  <div class="divider"></div>
+  <div class="sub">집사사역가이드</div>
+  <div class="foot"><b>기독교한국침례회 은혜교회</b></div>
+</div>
+
+<div class="page">
+
+  <div class="intro">
+    <h2 class="part-title">시작하며</h2>
+    <h1 class="part-heading">임직은 통과의례가 아닙니다</h1>
+    <p>이 자료를 펼치셨다는 것은, 이미 하나님과 교회 앞에서 무언가를 결단하셨다는 뜻이겠지요. 집사라는 이름은 교회 안에서 오래도록 불려온 이름이지만, 그 이름이 어디서 왔고 무엇을 의미하는지 찬찬히 생각해 볼 기회는 뜻밖에 많지 않습니다.</p>
+    <p>이 자료는 시험지가 아닙니다. 성경이 집사를 어떻게 그리고 있는지, 그리고 그 모습이 오늘 우리 교회의 삶 속에서 어떻게 이어지는지를 함께 걸어가 보려는 안내입니다. 본문 곳곳에 <span class="hl">밑줄 친 부분</span>을 눌러보시면 조금 더 깊은 이야기가 열립니다. 천천히, 자신의 언어로 소화하시면서 읽어 주시면 좋겠습니다.</p>
+    <p class="signoff">집사로 부름받으신 것을 진심으로 축하하며,<br>담임목사 박동준 드림</p>
+  </div>
+
+  <div class="toc" id="toc">
+    <a href="#part1"><span>1부 · 집사, 어디서 왔는가</span><span class="n">행 6:1–7</span></a>
+    <a href="#part2"><span>2부 · 집사의 자격</span><span class="n">딤전 3:8–13</span></a>
+    <a href="#part3"><span>3부 · 집사의 사역</span><span class="n">오늘의 섬김</span></a>
+    <a href="#part4"><span>4부 · 은혜교회의 집사</span><span class="n">목장과 당회</span></a>
+    <a href="#part5"><span>5부 · 준비하는 마음</span><span class="n">자기점검과 서약</span></a>
+  </div>
+
+  <!-- PART 1 -->
+  <section class="part" id="part1">
+    <h2 class="part-title">1부</h2>
+    <h1 class="part-heading">집사, 어디서 왔는가</h1>
+
+    <p>집사라는 직분의 뿌리를 찾아가면 사도행전 6장의 한 사건을 만나게 됩니다. 예루살렘 교회가 빠르게 성장하던 시절, 매일의 구제를 나누는 과정에서 <span class="hl deep" data-pop="p1-widows">헬라파 과부들이 소외되는 문제</span>가 생겼습니다. 불평이 터져 나왔고, 공동체 안에 균열의 조짐이 보였습니다.</p>
+
+    <div class="verse">
+      "우리가 이 일을 그들에게 맡기고 우리는 오로지 기도하는 일과 말씀 사역에 힘쓰리라 하니… 사도들 앞에 세우니 사도들이 기도하고 그들에게 안수하니라"
+      <cite>사도행전 6:4, 6</cite>
+    </div>
+
+    <p>열두 사도는 이 문제를 스스로 떠안지 않았습니다. 대신 <strong>성령과 지혜가 충만하다고 인정받는 사람 일곱</strong>을 공동체가 직접 택하게 했고, 그들에게 구제의 실무를 맡겼습니다. 사도는 말씀과 기도에, 일곱 사람은 섬김의 실제에 — 이렇게 사역이 나뉘는 순간, 교회는 처음으로 <span class="hl deep" data-pop="p1-diakonia">'디아코니아'</span>라는 말이 하나의 직분 이름이 되는 자리를 보게 됩니다.</p>
+
+    <h3 class="sec"><span class="num">·</span>말씀과 섬김, 우열이 아니라 구분</h3>
+    <p>여기서 꼭 짚어야 할 것이 있습니다. 사도들이 "우리는 말씀에 힘쓰겠다"고 한 것은 구제의 일이 하찮아서가 아니었습니다. 오히려 반대입니다. 과부들을 먹이는 일이 제대로 되지 않으면 공동체 전체가 흔들린다는 것을 알았기에, 그 일을 아무나가 아니라 <span class="hl">성령과 지혜가 충만한 사람</span>에게 맡긴 것입니다. 집사직은 처음부터 '이등 직분'이 아니라 교회의 생명을 지키는 자리였습니다.</p>
+
+    <p>흥미롭게도 이 일곱 명 중 스데반과 빌립은 이후 말씀을 전하고 순교하는 자리까지 나아갑니다. 섬김의 자리에서 시작한 사람이 하나님 나라의 가장 결정적인 순간에 서게 된 것이지요. 집사직은 결코 작은 자리가 아닙니다.</p>
+  </section>
+
+  <!-- PART 2 -->
+  <section class="part" id="part2">
+    <h2 class="part-title">2부</h2>
+    <h1 class="part-heading">집사의 자격</h1>
+
+    <p>바울은 디모데전서 3장에서 감독(장로)의 자격을 말한 바로 다음, 집사의 자격을 조목조목 나열합니다. 흥미로운 것은 그 목록이 화려한 능력이 아니라 <strong>일상에서 검증되는 인격</strong>에 집중되어 있다는 점입니다.</p>
+
+    <div class="verse">
+      "이와 같이 집사들도 정중하고 일구이언을 하지 아니하고 술에 인박히지 아니하고 더러운 이를 탐하지 아니하고 깨끗한 양심에 믿음의 비밀을 가진 자라야 할지니 이에 이 사람들을 먼저 시험하여 보고 그 후에 책망할 것이 없으면 집사의 직분을 맡게 할 것이요"
+      <cite>디모데전서 3:8–10</cite>
+    </div>
+
+    <div class="qual">
+      <div class="qn">01</div>
+      <div><h4>정중함 — <span class="hl deep" data-pop="q1">σεμνούς</span></h4>
+      <p>가볍지 않은 사람. 말과 행동에 무게가 있어 사람들이 신뢰할 수 있는 태도를 뜻합니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">02</div>
+      <div><h4>일구이언하지 않음</h4>
+      <p>이 사람 앞에서 다른 말, 저 사람 앞에서 다른 말을 하지 않는 것. 특히 재정과 정보를 다루는 집사에게는 말의 일관성이 곧 신뢰의 기초입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">03</div>
+      <div><h4>술에 인박이지 않음</h4>
+      <p>절제되지 않은 삶의 습관이 공동체를 섬기는 데 걸림돌이 되지 않아야 한다는 뜻입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">04</div>
+      <div><h4>더러운 이익을 탐하지 않음 — <span class="hl deep" data-pop="q4">αἰσχροκερδεῖς</span></h4>
+      <p>집사는 역사적으로 교회의 재정과 구제 물자를 다뤄온 직분입니다. 돈 앞에서 깨끗한 사람이어야 한다는 것이 자격의 핵심에 놓여 있는 이유입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">05</div>
+      <div><h4>깨끗한 양심에 믿음의 비밀을 가짐</h4>
+      <p>신학을 많이 아는 것이 아니라, 믿는 바와 사는 바가 일치하는 사람. 겉과 속이 다르지 않은 신앙입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">06</div>
+      <div><h4>먼저 시험을 받은 후에</h4>
+      <p>임직은 갑작스러운 발탁이 아니라, 시간을 두고 삶으로 검증된 뒤에 오는 것임을 보여줍니다. 지금 이 교육의 시간도 그 검증의 일부입니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">07</div>
+      <div><h4>여자들도 이와 같이 — <span class="hl deep" data-pop="q7">뵈뵈 이야기</span></h4>
+      <p>11절의 "여자들도"를 두고 집사의 아내를 말하는 것인지, 여성 집사(여집사)를 말하는 것인지 오랜 논의가 있어 왔습니다. 어느 쪽으로 읽든, 초대교회에 섬김의 자리에 있던 여성들의 흔적은 분명합니다.</p></div>
+    </div>
+    <div class="qual">
+      <div class="qn">08</div>
+      <div><h4>한 아내의 남편, 자기 집을 잘 다스림</h4>
+      <p>가장 가까운 곳, 가정에서 이미 증명된 삶이 공동체를 섬기는 삶으로 확장되는 것입니다.</p></div>
+    </div>
+  </section>
+
+  <!-- PART 3 -->
+  <section class="part" id="part3">
+    <h2 class="part-title">3부</h2>
+    <h1 class="part-heading">집사의 사역 — 오늘의 섬김</h1>
+
+    <p>2천 년 전 예루살렘의 과부 구제로 시작된 이 직분은, 오늘 우리 교회 안에서 여러 얼굴로 이어지고 있습니다.</p>
+
+    <div class="mgrid">
+      <div class="mcard"><span class="icon">🤝</span><h4>구제와 돌봄</h4><p>어려움을 겪는 성도와 이웃을 살피고, 필요를 채우는 실제적 섬김의 통로가 됩니다.</p></div>
+      <div class="mcard"><span class="icon">📋</span><h4>재정과 행정</h4><p>교회의 헌금과 재정을 정직하고 투명하게 관리하는 청지기의 자리입니다.</p></div>
+      <div class="mcard"><span class="icon">🕊️</span><h4>예배의 섬김</h4><p>예배 준비, 성찬과 절기 행사, 시설과 환경을 정돈하여 공동체가 예배에 집중하도록 돕습니다.</p></div>
+      <div class="mcard"><span class="icon">🏠</span><h4>목장 사역 협력</h4><p>목회자를 도와 목자들의 사역을 곁에서 지원하고, 목장 사이의 필요를 살펴 연결하는 다리 역할을 합니다.</p></div>
+    </div>
+
+    <h3 class="sec"><span class="num">·</span>직분자가 함께 세우는 교회</h3>
+    <p>침례교회는 회중정치를 따르기에, 장로교의 당회와 같은 별도의 치리기구를 두지 않습니다. 은혜교회에도 집사회라는 조직이 따로 있지 않습니다. 담임목사를 비롯한 교역자와 장로·권사·집사가 각자의 자리에서 함께 교회를 세워가는 것이지요. 성경적으로도 집사는 장로의 '아래' 직분이 아니라, <strong>다른 은사와 부르심을 가진 동역자</strong>입니다. 위계가 아니라 협력이 우리 교회가 서 있는 자리입니다.</p>
+  </section>
+
+  <!-- PART 4 -->
+  <section class="part" id="part4">
+    <h2 class="part-title">4부</h2>
+    <h1 class="part-heading">은혜교회의 집사</h1>
+
+    <p>은혜교회는 개척한 지 12년, 아직 크지 않은 공동체입니다. 규모가 작다고 해서 집사의 자리가 가벼운 것은 아닙니다. 오히려 작은 공동체일수록 한 사람 한 사람의 섬김이 교회 전체의 온도를 결정합니다.</p>
+
+    <p>우리 교회는 부부목장, 남자 목장, 여자 목장으로 이루어진 목장 구조로 성도들을 돌보고 있으며, 각 목장은 12명 정도 단위로 목자가 이끕니다. 이 목자는 장로·권사·집사 중에서 그 자격이 충분히 인정된 이들 가운데 세워지며, 교회의 추천을 받아 담임목사가 임명합니다. 즉 집사로 임직하신다는 것은 그 자체로 이미 목자로 세워질 수 있는 자격의 출발점에 서는 일이기도 합니다.</p>
+    <p>지금 당장 목자로 세워지지 않더라도, 집사의 자리에서 감당하는 재정과 행정, 구제의 섬김은 목장 공동체가 건강하게 운영되도록 뒷받침하는 중요한 기둥입니다.</p>
+
+    <p>또한 교회가 앞으로 도심 지역으로 이전하여 전도를 확장해 나가려는 계획을 가지고 있는 만큼, 집사님들의 실무적인 섬김—재정, 행정, 새가족 돌봄—이 이 전환기에 특히 중요한 힘이 될 것입니다.</p>
+  </section>
+
+  <!-- PART 5 -->
+  <section class="part" id="part5">
+    <h2 class="part-title">5부</h2>
+    <h1 class="part-heading">준비하는 마음</h1>
+
+    <p>임직 전, 스스로에게 조용히 물어보시면 좋을 질문들입니다. 정답을 적어 제출하는 것이 아니라, 하나님 앞에서 자신을 돌아보는 시간으로 삼아 주세요.</p>
+
+    <div class="checklist">
+      <div class="check-item"><div class="dot"></div><p>나는 재정과 물질 앞에서 정직한 사람인가?</p></div>
+      <div class="check-item"><div class="dot"></div><p>나는 이 사람 저 사람에게 다른 말을 하지는 않는가?</p></div>
+      <div class="check-item"><div class="dot"></div><p>내 가정에서 나는 어떤 사람으로 살아가고 있는가?</p></div>
+      <div class="check-item"><div class="dot"></div><p>섬김이 알아주지 않아도, 나는 계속 섬길 수 있는가?</p></div>
+      <div class="check-item"><div class="dot"></div><p>나는 이 직분을 자랑이 아니라 책임으로 받아들이고 있는가?</p></div>
+    </div>
+
+    <p>임직 서약은 사람 앞에서 하는 약속처럼 보이지만, 실은 하나님과 맺는 약속입니다. 그날의 서약이 하루 하루의 섬김 속에서 다시 확인될 수 있기를 바랍니다.</p>
+
+    <div class="closing">
+      <h3>이제, 집사입니다</h3>
+      <p>사도행전의 일곱 사람처럼, 부르심 앞에 신실하게 응답하는 <span class="gold">한 사람</span>이 되어 주시길 바랍니다.</p>
+      <p style="margin-top:20px; font-size:13px; color:rgba(247,243,234,0.55);">기독교한국침례회 은혜교회 · 담임목사 박동준</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="floatnav">
+  <a href="#toc"><span class="ic">☰</span>목차</a>
+  <a href="#top"><span class="ic">↑</span>처음으로</a>
+</div>
+
+<!-- popup overlay -->
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <button class="close" onclick="closePop()">✕</button>
+    <div class="tag" id="pop-tag"></div>
+    <h4 id="pop-title"></h4>
+    <div id="pop-body"></div>
+  </div>
+</div>
+
+<script>
+const INSIGHTS = {
+  "p1-widows": {
+    tag: "역사적 배경",
+    title: "왜 헬라파 과부들이 소외되었을까",
+    body: "<p>예루살렘 교회 초기에는 히브리파 유대인(팔레스타인 출신)과 헬라파 유대인(디아스포라 출신으로 헬라어를 쓰는 사람들)이 함께 있었습니다. 언어와 문화의 차이, 그리고 공동체 안의 은근한 위계가 겹치면서 매일의 구제 분배에서 헬라파 과부들이 뒤로 밀리는 일이 생겼습니다. 사도들은 이 불평을 무시하지 않고, 오히려 구조를 바꾸는 결단으로 응답했습니다.</p>"
+  },
+  "p1-diakonia": {
+    tag: "원어 해설",
+    title: "디아코니아 — 식탁에서 교회로",
+    body: "<p>헬라어 '디아코니아'는 원래 식사 자리에서 시중드는 일을 가리키는 아주 일상적인 단어였습니다. 예수님께서도 '섬기는 자(디아코노스)로 너희 중에 있는 나'라고 말씀하시며 이 단어를 사용하셨습니다(눅 22:27). 사도행전 6장을 지나며 이 단어는 점차 교회의 공식적인 섬김의 직분을 가리키는 이름으로 자리잡아 갑니다.</p>"
+  },
+  "q1": {
+    tag: "원어 해설",
+    title: "세므노스 — 무게 있는 사람",
+    body: "<p>같은 단어가 딤전 3:11에서 여자들에게도, 딛 2:2에서 나이 든 남자들에게도 쓰입니다. 위엄이나 근엄함이 아니라, 삶의 태도에 신뢰할 만한 무게감이 있다는 뜻에 가깝습니다.</p>"
+  },
+  "q4": {
+    tag: "왜 이 자격이 먼저인가",
+    title: "돈 앞에서 깨끗한 사람",
+    body: "<p>초대교회에서 집사는 구제 물자와 헌금을 실제로 다루는 사람들이었습니다. 아무리 언변이 좋고 열심이 있어도, 돈 앞에서 깨끗하지 않다면 그 직분을 감당할 수 없습니다. 이 자격이 목록의 중심에 놓인 것은 우연이 아닙니다.</p>"
+  },
+  "q7": {
+    tag: "성경 속 인물",
+    title: "뵈뵈, 겐그레아 교회의 일꾼",
+    body: "<p>로마서 16:1에서 바울은 뵈뵈를 '겐그레아 교회의 일꾼(디아코노스)'으로 소개하며 로마 교회에 추천합니다. 초대교회에서 여성이 섬김의 자리에서 중요한 역할을 했다는 분명한 증거입니다. 이 전통은 오늘날 많은 침례교회에서 권사직으로 이어지고 있습니다.</p>"
+  }
+};
+
+function openPop(key){
+  const d = INSIGHTS[key];
+  if(!d) return;
+  document.getElementById('pop-tag').textContent = d.tag;
+  document.getElementById('pop-title').textContent = d.title;
+  document.getElementById('pop-body').innerHTML = d.body;
+  document.getElementById('overlay').classList.add('open');
+}
+function closePop(){ document.getElementById('overlay').classList.remove('open'); }
+document.getElementById('overlay').addEventListener('click', function(e){
+  if(e.target === this) closePop();
+});
+document.querySelectorAll('.hl.deep').forEach(function(el){
+  el.addEventListener('click', function(){ openPop(this.getAttribute('data-pop')); });
+});
+</script>
+
+</body>
+</html>
