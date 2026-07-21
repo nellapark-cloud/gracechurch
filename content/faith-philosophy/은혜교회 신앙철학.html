@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>은혜교회 신앙철학 | 우리가 믿는 교회</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1c2b45;
+    --navy-deep:#12192b;
+    --cream:#f7f2e7;
+    --cream-dim:#efe7d6;
+    --gold:#b8964f;
+    --gold-light:#d8bd85;
+    --ink:#2a2a26;
+    --line:#dcd2ba;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    line-height:1.9;
+    letter-spacing:-0.01em;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px 120px;}
+
+  /* ===== Cover ===== */
+  .cover{
+    background:
+      radial-gradient(ellipse at top, #24365a 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    color:var(--cream);
+    padding:100px 28px 90px;
+    text-align:center;
+    position:relative;
+    overflow:hidden;
+  }
+  .cover::before{
+    content:"";
+    position:absolute;inset:0;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 38px, rgba(216,189,133,0.05) 38px 39px);
+    pointer-events:none;
+  }
+  .cover .eyebrow{
+    font-family:'Noto Serif KR',serif;
+    letter-spacing:0.45em;
+    font-size:12.5px;
+    color:var(--gold-light);
+    margin-bottom:28px;
+    text-transform:uppercase;
+  }
+  .cover h1{
+    font-family:'Noto Serif KR',serif;
+    font-weight:700;
+    font-size:44px;
+    margin:0 0 20px;
+    line-height:1.45;
+  }
+  .cover .sub{
+    font-family:'Noto Serif KR',serif;
+    font-size:17px;
+    color:#cfd6e4;
+    font-weight:400;
+    max-width:520px;
+    margin:0 auto 34px;
+  }
+  .cover .verse{
+    font-family:'Noto Serif KR',serif;
+    font-size:15px;
+    font-style:italic;
+    color:var(--gold-light);
+    border-top:1px solid rgba(216,189,133,0.35);
+    border-bottom:1px solid rgba(216,189,133,0.35);
+    display:inline-block;
+    padding:16px 0;
+    margin-top:10px;
+  }
+  .cover .meta{
+    margin-top:44px;
+    font-size:12.5px;
+    color:#9aa5bd;
+    letter-spacing:0.05em;
+  }
+
+  /* ===== TOC ===== */
+  .toc{
+    background:var(--navy);
+    margin:0;
+    padding:26px 28px;
+  }
+  .toc-inner{max-width:860px;margin:0 auto;display:flex;flex-wrap:wrap;gap:10px 8px;justify-content:center;}
+  .toc a{
+    color:var(--cream-dim);
+    text-decoration:none;
+    font-size:13px;
+    padding:8px 14px;
+    border:1px solid rgba(216,189,133,0.3);
+    border-radius:99px;
+    white-space:nowrap;
+    transition:all .15s ease;
+    font-family:'Noto Sans KR',sans-serif;
+  }
+  .toc a:hover{background:var(--gold);color:var(--navy-deep);border-color:var(--gold);}
+
+  /* ===== Intro note ===== */
+  .lead{
+    padding:56px 0 10px;
+    font-family:'Noto Serif KR',serif;
+    font-size:16.5px;
+    color:#4a4638;
+    text-align:center;
+  }
+  .lead p{margin:0 auto;max-width:600px;}
+
+  /* ===== Sections ===== */
+  section.chapter{
+    padding:66px 0 10px;
+    border-bottom:1px solid var(--line);
+  }
+  section.chapter:last-of-type{border-bottom:none;}
+
+  .chapter-head{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    margin-bottom:34px;
+  }
+  .num{
+    flex:none;
+    width:58px;height:58px;
+    border-radius:50%;
+    background:var(--navy);
+    color:var(--gold-light);
+    font-family:'Noto Serif KR',serif;
+    font-weight:700;
+    font-size:22px;
+    display:flex;align-items:center;justify-content:center;
+    box-shadow:0 0 0 4px var(--cream), 0 0 0 5px var(--line);
+  }
+  .chapter-head h2{
+    font-family:'Noto Serif KR',serif;
+    font-size:26px;
+    font-weight:700;
+    color:var(--navy);
+    margin:0;
+    line-height:1.4;
+  }
+  .chapter-head .kicker{
+    display:block;
+    font-size:12px;
+    letter-spacing:0.25em;
+    color:var(--gold);
+    font-weight:600;
+    margin-bottom:6px;
+    font-family:'Noto Sans KR',sans-serif;
+  }
+
+  .prose p{margin:0 0 22px;font-size:16px;}
+  .prose{font-family:'Noto Sans KR',sans-serif;}
+  .prose strong{color:var(--navy);font-weight:700;}
+
+  .term{
+    display:inline-flex;
+    align-items:baseline;
+    gap:6px;
+    background:var(--cream-dim);
+    border:1px solid var(--line);
+    border-radius:6px;
+    padding:2px 9px;
+    font-family:'Noto Serif KR',serif;
+  }
+  .term .orig{color:var(--navy);font-weight:600;}
+  .term .translit{color:var(--gold);font-size:0.92em;}
+
+  .verse-box{
+    background:linear-gradient(135deg,#233858,var(--navy-deep));
+    color:var(--cream);
+    border-radius:10px;
+    padding:26px 30px;
+    margin:26px 0 30px;
+    position:relative;
+  }
+  .verse-box::before{
+    content:"“";
+    font-family:'Noto Serif KR',serif;
+    font-size:70px;
+    color:var(--gold);
+    opacity:0.35;
+    position:absolute;
+    top:-8px;left:14px;
+    line-height:1;
+  }
+  .verse-box p{
+    font-family:'Noto Serif KR',serif;
+    font-size:16.5px;
+    line-height:1.85;
+    margin:0 0 10px;
+    position:relative;
+    z-index:1;
+  }
+  .verse-box .cite{
+    font-size:12.5px;
+    color:var(--gold-light);
+    letter-spacing:0.06em;
+  }
+
+  .insight{
+    border-left:3px solid var(--gold);
+    background:#fffdf7;
+    padding:18px 22px;
+    margin:24px 0;
+    border-radius:0 8px 8px 0;
+  }
+  .insight .label{
+    font-size:11.5px;
+    letter-spacing:0.2em;
+    color:var(--gold);
+    font-weight:700;
+    margin-bottom:8px;
+    display:block;
+  }
+  .insight p{margin:0;font-size:15px;color:#3b3a33;}
+
+  .framework{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:10px;
+    margin:28px 0;
+  }
+  .fw-item{
+    background:var(--navy);
+    border-radius:10px;
+    padding:18px 10px 16px;
+    text-align:center;
+    border-top:3px solid var(--gold);
+  }
+  .fw-letter{
+    font-family:'Noto Serif KR',serif;
+    font-weight:900;
+    font-size:26px;
+    color:var(--gold-light);
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .fw-word{
+    font-family:'Noto Sans KR',sans-serif;
+    font-weight:600;
+    font-size:12.5px;
+    color:var(--cream);
+    margin-bottom:6px;
+    letter-spacing:0.02em;
+  }
+  .fw-kr{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:11px;
+    color:#a9b2c6;
+    line-height:1.4;
+  }
+  @media (max-width:600px){
+    .framework{grid-template-columns:repeat(2,1fr);}
+  }
+
+  .view-toggle{
+    display:flex;
+    justify-content:center;
+    gap:8px;
+    margin:26px 0 6px;
+  }
+  .toggle-btn{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:12.5px;
+    font-weight:600;
+    padding:8px 20px;
+    border-radius:99px;
+    border:1px solid var(--navy);
+    background:transparent;
+    color:var(--navy);
+    cursor:pointer;
+    transition:all .15s ease;
+  }
+  .toggle-btn.active{
+    background:var(--navy);
+    color:var(--gold-light);
+  }
+  .toggle-btn:hover{opacity:0.85;}
+  .branch-view{margin:20px 0 28px;}
+
+  .closing{
+    text-align:center;
+    padding:80px 0 40px;
+  }
+  .closing .mark{
+    width:44px;height:2px;background:var(--gold);margin:0 auto 26px;
+  }
+  .closing p{
+    font-family:'Noto Serif KR',serif;
+    font-size:17px;
+    color:var(--navy);
+    max-width:560px;
+    margin:0 auto 8px;
+  }
+  .closing .sign{
+    margin-top:34px;
+    font-size:13px;
+    color:#8a8368;
+    letter-spacing:0.04em;
+  }
+
+  @media (max-width:600px){
+    .cover{padding:70px 22px 60px;}
+    .cover h1{font-size:32px;}
+    .chapter-head h2{font-size:21px;}
+    .num{width:48px;height:48px;font-size:18px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="eyebrow">GRACE CHURCH · CONFESSION OF FAITH</div>
+  <h1>우리가 믿는 교회<br>은혜교회 신앙철학</h1>
+  <p class="sub">교회란 무엇이며, 우리는 왜 이 자리에 존재하는가에 대한 성경적 대답</p>
+  <div class="verse">"내가 이 반석 위에 내 교회를 세우리니 음부의 권세가 이기지 못하리라" — 마태복음 16:18</div>
+  <div class="meta">기독교한국침례회 은혜교회 · 담임목사 박동준</div>
+</div>
+
+<div class="toc">
+  <div class="toc-inner">
+    <a href="#c1">1. 교회는 무엇인가</a>
+    <a href="#c2">2. 교회는 무엇을 하는가</a>
+    <a href="#c3">3. 지역에서의 역할</a>
+    <a href="#c4">4. 목회자는 누구인가</a>
+    <a href="#c5">5. 성도는 누구인가</a>
+    <a href="#c6">6. 직분은 왜 있는가</a>
+    <a href="#c7">7. 우리가 되고 싶은 교회</a>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <div class="lead">
+    <p>교회에 대해 이야기하기 전에, 먼저 마음에 새겨야 할 것이 있습니다.<br>
+    교회는 우리가 만든 조직이 아니라, 하나님께서 그리스도 안에서 친히 세우신 공동체라는 사실입니다.<br>
+    그래서 교회를 이해하는 가장 좋은 방법은, 성경이 교회를 무엇이라 부르는지를 하나씩 따라가 보는 것입니다.</p>
+  </div>
+
+  <!-- 1 -->
+  <section class="chapter" id="c1">
+    <div class="chapter-head">
+      <div class="num">1</div>
+      <div>
+        <span class="kicker">WHAT IS THE CHURCH</span>
+        <h2>교회는 무엇인가?</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>신약성경에서 "교회"로 번역되는 단어는 <span class="term"><span class="orig">ἐκκλησία</span><span class="translit">에클레시아</span></span>입니다. 이 말은 원래 "부름을 받아 밖으로 나온 모임"이라는 뜻을 가진 아주 평범한 헬라어였습니다. 고대 그리스 도시에서는 시민들이 광장에 소집되어 공적인 일을 의논하는 모임을 이렇게 불렀습니다. 그런데 신약성경은 이 세속적인 단어를 가져다가, 전혀 다른 차원의 모임을 가리키는 말로 사용합니다. 하나님께서 세상 가운데서 "불러내신" 사람들의 모임, 그것이 바로 교회입니다.</p>
+
+      <p>그래서 교회를 이해하는 첫 번째 열쇠는 <strong>"모임 자체가 부르심의 결과"</strong>라는 것입니다. 우리가 먼저 모이기로 결심하고 하나님을 찾아간 것이 아니라, 하나님께서 먼저 우리를 부르셨고, 그 부르심에 응답한 사람들이 모여 교회가 되었습니다. 예수님께서는 마태복음 16장에서 처음으로 "내 교회"라는 말씀을 하십니다.</p>
+
+      <div class="verse-box">
+        <p>"너는 베드로라 내가 이 반석 위에 내 교회를 세우리니 음부의 권세가 이기지 못하리라"</p>
+        <div class="cite">마태복음 16:18</div>
+      </div>
+
+      <p>여기서 "세우리니"라는 표현이 중요합니다. 교회의 주인은 예수 그리스도이시며, 교회를 세우시는 분도 그리스도이십니다. 우리는 교회를 소유한 사람들이 아니라, 그리스도께서 세우시는 그 일에 초대받은 사람들입니다. 그렇기에 교회는 사람의 필요에 의해 만들어진 종교 단체가 아니라, 그리스도의 몸입니다.</p>
+
+      <div class="insight">
+        <span class="label">신학적으로 조금 더</span>
+        <p>바울은 에베소서와 골로새서에서 교회를 <span class="term"><span class="orig">σῶμα</span><span class="translit">소마</span></span>, 곧 "몸"이라 부릅니다(엡 1:22-23). 머리 되신 그리스도와 분리된 교회는 있을 수 없다는 뜻입니다. 교회의 정체성은 그리스도와의 연합에서 나오지, 건물이나 조직, 프로그램에서 나오지 않습니다.</p>
+      </div>
+
+      <p>그러므로 "교회는 무엇인가"라는 질문에 대한 가장 단순하면서도 가장 깊은 대답은 이것입니다. 교회는 <strong>그리스도께서 자기 피로 값 주고 사서, 불러내어, 자기 몸으로 삼으신 사람들의 모임</strong>입니다.</p>
+    </div>
+  </section>
+
+  <!-- 2 -->
+  <section class="chapter" id="c2">
+    <div class="chapter-head">
+      <div class="num">2</div>
+      <div>
+        <span class="kicker">WHAT THE CHURCH DOES</span>
+        <h2>교회는 무엇을 하는가?</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>교회가 무엇인지를 알았다면, 이제 교회가 무엇을 하는 곳인지를 물어야 합니다. 사도행전 2장은 예루살렘 초대교회의 모습을 매우 구체적으로 보여 줍니다.</p>
+
+      <div class="verse-box">
+        <p>"그들이 사도의 가르침을 받아 서로 교제하며 떡을 떼며 오로지 기도하기를 힘쓰니라"</p>
+        <div class="cite">사도행전 2:42</div>
+      </div>
+
+      <p>이 한 구절 안에 교회의 네 가지 본질적인 활동이 다 들어 있습니다. 첫째는 <strong>가르침</strong>, 곧 사도들이 전한 말씀 곧 하나님의 계시를 배우는 일입니다. 둘째는 <span class="term"><span class="orig">κοινωνία</span><span class="translit">코이노니아</span></span>, 곧 교제입니다. 이 단어는 단순히 친목을 나누는 것이 아니라 삶과 은혜를 "함께 나눈다"는 뜻입니다. 셋째는 떡을 떼는 일, 곧 성찬을 통해 그리스도의 죽으심과 부활을 기억하고 선포하는 일입니다. 넷째는 기도, 곧 하나님과의 살아 있는 교통입니다.</p>
+
+      <p>여기에 하나를 더해야 합니다. 예수님께서 승천하시기 직전에 남기신 마지막 명령입니다.</p>
+
+      <div class="verse-box">
+        <p>"그러므로 너희는 가서 모든 민족을 제자로 삼아 아버지와 아들과 성령의 이름으로 침례를 베풀고 내가 너희에게 분부한 모든 것을 가르쳐 지키게 하라"</p>
+        <div class="cite">마태복음 28:19-20</div>
+      </div>
+
+      <p>이것을 흔히 지상명령이라 부릅니다. 교회는 안으로 말씀을 배우고 교제하며 기도하는 동시에, 밖으로 복음을 전하고 제자를 세우는 일을 결코 멈추지 않는 공동체입니다. 예배, 교육, 교제, 봉사, 전도. 이 다섯 가지는 어느 하나도 빠질 수 없는, 교회의 존재 자체에서 흘러나오는 자연스러운 열매입니다.</p>
+
+      <div class="insight">
+        <span class="label">신학적으로 조금 더</span>
+        <p>이 활동들은 프로그램의 목록이 아니라 <strong>예배</strong>(λειτουργία, 레이투르기아 – 하나님을 향한 삶 전체의 섬김)에서 흘러나옵니다. 하나님을 향한 예배가 먼저이고, 교육과 교제와 전도는 그 예배가 삶으로 확장된 결과입니다.</p>
+      </div>
+
+      <p>이 다섯 가지 기능은 영어권 교회에서도 오랫동안 정리되어 온 틀입니다. 릭 워렌(Rick Warren)은 저서 《목적이 이끄는 교회》에서 이것을 다섯 개의 M으로 시작하는 단어로 정리했는데, 이를 <strong>5M</strong>이라 부릅니다.</p>
+
+      <div class="view-toggle">
+        <button class="toggle-btn active" onclick="showFwView('grid', this)" type="button">카드형</button>
+        <button class="toggle-btn" onclick="showFwView('branch', this)" type="button">가지형</button>
+      </div>
+
+      <div class="framework" id="fw-grid">
+        <div class="fw-item">
+          <div class="fw-letter">M</div>
+          <div class="fw-word">Magnify</div>
+          <div class="fw-kr">예배 — 하나님을 높임</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-letter">M</div>
+          <div class="fw-word">Membership</div>
+          <div class="fw-kr">교제 — 공동체에 속함</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-letter">M</div>
+          <div class="fw-word">Maturity</div>
+          <div class="fw-kr">교육 — 말씀으로 자람</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-letter">M</div>
+          <div class="fw-word">Ministry</div>
+          <div class="fw-kr">봉사 — 은사로 섬김</div>
+        </div>
+        <div class="fw-item">
+          <div class="fw-letter">M</div>
+          <div class="fw-word">Mission</div>
+          <div class="fw-kr">전도 — 세상으로 보냄</div>
+        </div>
+      </div>
+
+      <div class="branch-view" id="fw-branch" style="display:none;">
+        <svg viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;">
+          <path d="M450,110 C450,170 210,150 165,235" fill="none" stroke="var(--gold)" stroke-width="2" opacity="0.55"/>
+          <path d="M450,110 C450,170 330,170 305,235" fill="none" stroke="var(--gold)" stroke-width="2" opacity="0.55"/>
+          <path d="M450,110 C450,180 450,180 450,235" fill="none" stroke="var(--gold)" stroke-width="2" opacity="0.55"/>
+          <path d="M450,110 C450,170 570,170 595,235" fill="none" stroke="var(--gold)" stroke-width="2" opacity="0.55"/>
+          <path d="M450,110 C450,170 690,150 735,235" fill="none" stroke="var(--gold)" stroke-width="2" opacity="0.55"/>
+
+          <circle cx="450" cy="70" r="52" fill="var(--navy)" stroke="var(--gold)" stroke-width="2.5"/>
+          <text x="450" y="82" text-anchor="middle" font-family="'Noto Serif KR',serif" font-weight="900" font-size="34" fill="var(--gold-light)">5M</text>
+
+          <g>
+            <rect x="95" y="235" width="140" height="112" rx="10" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
+            <text x="165" y="270" text-anchor="middle" font-family="'Noto Serif KR',serif" font-weight="900" font-size="24" fill="var(--gold-light)">M</text>
+            <text x="165" y="294" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-weight="600" font-size="14" fill="#f7f2e7">Magnify</text>
+            <text x="165" y="316" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">예배</text>
+            <text x="165" y="333" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">하나님을 높임</text>
+          </g>
+          <g>
+            <rect x="235" y="235" width="140" height="112" rx="10" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
+            <text x="305" y="270" text-anchor="middle" font-family="'Noto Serif KR',serif" font-weight="900" font-size="24" fill="var(--gold-light)">M</text>
+            <text x="305" y="294" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-weight="600" font-size="14" fill="#f7f2e7">Membership</text>
+            <text x="305" y="316" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">교제</text>
+            <text x="305" y="333" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">공동체에 속함</text>
+          </g>
+          <g>
+            <rect x="380" y="235" width="140" height="112" rx="10" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
+            <text x="450" y="270" text-anchor="middle" font-family="'Noto Serif KR',serif" font-weight="900" font-size="24" fill="var(--gold-light)">M</text>
+            <text x="450" y="294" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-weight="600" font-size="14" fill="#f7f2e7">Maturity</text>
+            <text x="450" y="316" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">교육</text>
+            <text x="450" y="333" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">말씀으로 자람</text>
+          </g>
+          <g>
+            <rect x="525" y="235" width="140" height="112" rx="10" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
+            <text x="595" y="270" text-anchor="middle" font-family="'Noto Serif KR',serif" font-weight="900" font-size="24" fill="var(--gold-light)">M</text>
+            <text x="595" y="294" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-weight="600" font-size="14" fill="#f7f2e7">Ministry</text>
+            <text x="595" y="316" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">봉사</text>
+            <text x="595" y="333" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">은사로 섬김</text>
+          </g>
+          <g>
+            <rect x="665" y="235" width="140" height="112" rx="10" fill="var(--navy)" stroke="var(--gold)" stroke-width="2"/>
+            <text x="735" y="270" text-anchor="middle" font-family="'Noto Serif KR',serif" font-weight="900" font-size="24" fill="var(--gold-light)">M</text>
+            <text x="735" y="294" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-weight="600" font-size="14" fill="#f7f2e7">Mission</text>
+            <text x="735" y="316" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">전도</text>
+            <text x="735" y="333" text-anchor="middle" font-family="'Noto Sans KR',sans-serif" font-size="12" fill="#a9b2c6">세상으로 보냄</text>
+          </g>
+        </svg>
+      </div>
+
+      <div class="insight">
+        <span class="label">참고 · 영어권 프레임</span>
+        <p>다섯 기능을 각 단어의 앞글자만 따면 Worship·Education·Fellowship·Service·Evangelism, 곧 <strong>W·E·F·S·E</strong>가 되지만 앞뒤로 E가 겹쳐 기억하기 좋은 약어가 되지 않습니다. 그래서 워렌은 같은 다섯 기능을 의미가 통하는 M으로 시작하는 단어로 다시 바꾸어 <strong>5M</strong>이라는, 훨씬 널리 쓰이고 기억하기 쉬운 틀로 정리했습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 -->
+  <section class="chapter" id="c3">
+    <div class="chapter-head">
+      <div class="num">3</div>
+      <div>
+        <span class="kicker">THE CHURCH IN ITS COMMUNITY</span>
+        <h2>지역에서의 역할은 무엇인가?</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>교회는 세상과 분리된 섬이 아닙니다. 예수님께서는 산상수훈에서 제자들을 이렇게 부르셨습니다.</p>
+
+      <div class="verse-box">
+        <p>"너희는 세상의 소금이니... 너희는 세상의 빛이라 산 위에 있는 동네가 숨겨지지 못할 것이요"</p>
+        <div class="cite">마태복음 5:13-14</div>
+      </div>
+
+      <p>소금과 빛은 모두 "그 자리에 머물러 있음으로써" 기능하지 않고, "스며들고 비춤으로써" 기능합니다. 소금은 그릇 안에만 담겨 있으면 아무 의미가 없고, 음식 속에 스며들 때 비로소 소금 노릇을 합니다. 빛도 등경 위에 놓여 온 집을 비출 때 의미가 있습니다. 교회가 지역 사회 속에 존재하는 이유도 이와 같습니다. 우리는 우리 안에서만 은혜를 나누기 위해 모인 것이 아니라, 그 은혜가 지역 가운데로 스며들고 비추게 하기 위해 모였습니다.</p>
+
+      <p>구약에서도 하나님께서는 포로로 끌려간 이스라엘 백성에게 이렇게 말씀하셨습니다.</p>
+
+      <div class="verse-box">
+        <p>"너희는 내가 사로잡혀 가게 한 그 성읍의 평안을 구하고 그것을 위하여 여호와께 기도하라 이는 그 성읍이 평안함으로 너희도 평안할 것임이라"</p>
+        <div class="cite">예레미야 29:7</div>
+      </div>
+
+      <p>여기 나오는 "평안"이라는 단어가 바로 <span class="term"><span class="orig">שָׁלוֹם</span><span class="translit">샬롬</span></span>입니다. 단순히 전쟁이 없는 상태가 아니라, 관계와 삶 전체가 하나님의 질서 안에서 온전해지는 상태를 뜻합니다. 교회가 지역에서 감당해야 할 역할은 바로 이 샬롬을 구하고 흘려보내는 일입니다. 지역의 필요에 무관심한 채 우리끼리의 신앙생활에만 머무는 교회는, 소금이 소금 그릇 속에만 머물러 있는 것과 다르지 않습니다.</p>
+
+      <div class="insight">
+        <span class="label">신학적으로 조금 더</span>
+        <p>교회의 지역적 사명은 이원적입니다. 하나는 복음 선포를 통한 회심과 제자화이고, 다른 하나는 지역의 실제적 필요에 응답하는 선한 행실입니다(마 5:16). 이 둘은 경쟁 관계가 아니라, 하나의 사랑이 밖으로 흘러가는 두 통로입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 -->
+  <section class="chapter" id="c4">
+    <div class="chapter-head">
+      <div class="num">4</div>
+      <div>
+        <span class="kicker">WHO THE PASTORS ARE</span>
+        <h2>목회자는 어떤 사람들인가?</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>신약성경이 목회자를 부르는 가장 근본적인 이름은 <span class="term"><span class="orig">ποιμήν</span><span class="translit">포이멘</span></span>, 곧 "목자"입니다. 사도 베드로는 장로들에게 이렇게 권면합니다.</p>
+
+      <div class="verse-box">
+        <p>"너희 중에 있는 하나님의 양 무리를 치되 억지로 하지 말고 하나님의 뜻을 따라 자원함으로 하며... 양 무리의 본이 되라"</p>
+        <div class="cite">베드로전서 5:2-3</div>
+      </div>
+
+      <p>목자라는 이미지는 매우 구체적인 것을 말해 줍니다. 목자는 양을 소유한 사람이 아니라, 양의 주인이신 분을 대신하여 그 양을 돌보는 사람입니다. 예수님 스스로 "나는 선한 목자"라고 말씀하셨고(요 10:11), 목회자는 그 선한 목자를 대신하여 양 무리를 맡아 보살피는 청지기입니다. 그래서 목회를 흔히 "다스림"보다 "돌봄"으로 이해해야 합니다.</p>
+
+      <p>에베소서 4장은 목회자의 역할을 조금 더 폭넓게 설명합니다.</p>
+
+      <div class="verse-box">
+        <p>"어떤 사람은 사도로, 어떤 사람은 선지자로, 어떤 사람은 복음 전하는 자로, 어떤 사람은 목사와 교사로 삼으셨으니 이는 성도를 온전하게 하여 봉사의 일을 하게 하며 그리스도의 몸을 세우려 하심이라"</p>
+        <div class="cite">에베소서 4:11-12</div>
+      </div>
+
+      <p>여기서 목회자의 목적이 분명하게 드러납니다. 목회자가 존재하는 이유는 목회자 자신이 모든 사역을 감당하기 위함이 아니라, <strong>성도를 온전하게 하여 그들이 봉사의 일을 하게 하기 위함</strong>입니다. 즉 목회자는 성도들을 대신해서 신앙생활을 해 주는 사람이 아니라, 성도들이 각자 부르심의 자리에서 하나님을 섬길 수 있도록 준비시키고 세워 주는 사람입니다.</p>
+
+      <div class="insight">
+        <span class="label">신학적으로 조금 더</span>
+        <p>목회자를 부르는 또 다른 단어는 <span class="term"><span class="orig">ἐπίσκοπος</span><span class="translit">에피스코포스</span></span>(감독)입니다. 신약에서 장로(πρεσβύτερος, 프레스뷔테로스), 감독, 목사는 같은 직임을 서로 다른 측면에서 부르는 이름입니다 — 장로는 신앙의 연륜과 인격을, 감독은 살피고 돌보는 기능을, 목사는 양 떼를 먹이는 사랑을 강조합니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 -->
+  <section class="chapter" id="c5">
+    <div class="chapter-head">
+      <div class="num">5</div>
+      <div>
+        <span class="kicker">WHO THE SAINTS ARE</span>
+        <h2>성도는 누구를 말하는가?</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>"성도"라는 말을 들으면 흔히 특별히 거룩한 소수의 사람을 떠올리기 쉽습니다. 그러나 신약성경에서 성도는 <span class="term"><span class="orig">ἅγιος</span><span class="translit">하기오스</span></span>, 곧 "거룩히 구별된 자"라는 뜻으로, 교회에 속한 모든 신자를 가리키는 말입니다. 바울은 편지를 쓸 때마다 받는 이들을 "성도"라 부릅니다.</p>
+
+      <div class="verse-box">
+        <p>"로마에서 하나님의 사랑하심을 받고 성도로 부르심을 받은 모든 자에게"</p>
+        <div class="cite">로마서 1:7</div>
+      </div>
+
+      <p>여기서 거룩함은 도덕적으로 완벽하다는 뜻이 아니라, 세상으로부터 구별되어 하나님께 속하게 되었다는 뜻입니다. 즉 성도는 스스로 거룩해져서 얻은 칭호가 아니라, 그리스도의 피로 씻김 받아 "거룩하다고 선언된" 사람들입니다. 이 점에서 성도는 완성된 존재가 아니라, 매일 자신의 신분에 맞게 살아가도록 부르심을 받은 존재입니다.</p>
+
+      <p>베드로전서는 여기서 한 걸음 더 나아갑니다.</p>
+
+      <div class="verse-box">
+        <p>"너희는 택하신 족속이요 왕 같은 제사장들이요 거룩한 나라요 그의 소유가 된 백성이니"</p>
+        <div class="cite">베드로전서 2:9</div>
+      </div>
+
+      <p>여기 나오는 "왕 같은 제사장"이라는 표현이 바로 종교개혁이 되찾은 <strong>만인제사장 교리</strong>의 성경적 근거입니다. 구약에서는 오직 레위 지파, 그 중에서도 제사장만이 하나님 앞에 직접 나아갈 수 있었습니다. 그러나 그리스도의 십자가로 성소의 휘장이 찢어진 이후로, 모든 성도는 중보자 없이 그리스도를 통해 직접 하나님께 나아갈 수 있게 되었습니다. 이것이 성도라는 신분의 놀라운 특권입니다.</p>
+
+      <div class="insight">
+        <span class="label">신학적으로 조금 더</span>
+        <p>"백성"으로 번역된 <span class="term"><span class="orig">λαός</span><span class="translit">라오스</span></span>는 오늘날 "평신도(라이티, laity)"라는 말의 어원입니다. 그러나 성경적으로 라오스는 목회자와 구분되어 "수동적으로 섬김을 받는 무리"가 아니라, 하나님께 속한 언약 백성 전체를 가리키는 존귀한 이름입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 -->
+  <section class="chapter" id="c6">
+    <div class="chapter-head">
+      <div class="num">6</div>
+      <div>
+        <span class="kicker">WHY OFFICES EXIST</span>
+        <h2>직분은 왜 있는가?</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>모든 성도가 왕 같은 제사장이라면, 어째서 장로, 권사, 집사와 같은 직분이 따로 필요할까요? 이 질문에 대한 대답은 사도행전 6장에서 아주 실제적으로 등장합니다. 초대교회가 급격히 성장하면서 구제를 나누는 일에 불평이 생기자, 사도들은 이렇게 결정합니다.</p>
+
+      <div class="verse-box">
+        <p>"형제들아 너희 가운데서 성령과 지혜가 충만하여 칭찬 받는 사람 일곱을 택하라 우리가 이 일을 그들에게 맡기고 우리는 오로지 기도하는 일과 말씀 사역에 힘쓰리라"</p>
+        <div class="cite">사도행전 6:3-4</div>
+      </div>
+
+      <p>여기서 "섬김"으로 번역되는 원어가 <span class="term"><span class="orig">διακονία</span><span class="translit">디아코니아</span></span>이고, 이것이 오늘날 "집사(디아코노스)"라는 직분의 어원이 됩니다. 직분은 어떤 사람을 더 높이거나 더 특별하게 만들어 주는 계급장이 아니라, 교회 공동체 안에서 필요한 섬김을 질서 있게 감당하도록 구별하여 세우는 것입니다.</p>
+
+      <p>바울은 고린도전서 12장에서 이것을 몸의 지체로 설명합니다. 눈은 눈의 기능을, 손은 손의 기능을 감당할 때 몸 전체가 건강하게 움직입니다. 직분도 마찬가지입니다. 모든 성도가 제사장이지만, 모든 성도가 같은 기능을 감당하지는 않습니다. 하나님께서는 <span class="term"><span class="orig">χάρισμα</span><span class="translit">카리스마</span></span>, 곧 은사를 각 사람에게 다르게 나누어 주셨고, 직분은 그 은사가 교회 공동체 안에서 질서 있게 흘러가도록 돕는 통로입니다.</p>
+
+      <p>여기서 한 가지 전제를 분명히 해 둘 필요가 있습니다. 침례교회는 신약성경의 회중 정치를 따라, 본래 목사와 집사 두 직분만을 둡니다. 회중 스스로가 그리스도 아래서 직접 다스림을 받는다는 원리 위에서, 별도의 당회나 상위 치리 기구 없이 목사와 집사만으로 충분하다고 보기 때문입니다. 그런데 오늘날 한국 교회 안에는 장로교를 비롯해 장로와 권사라는 직분에 익숙한 성도들이 많고, 다른 교단과의 교제와 상호 이해를 위해서도 이 호칭이 필요한 경우가 있습니다. 그래서 우리 교회를 포함한 많은 침례교회는 실질적으로 안수집사의 직무를 감당하는 이를 "장로"라 부르기도 하는데, 이를 <strong>호칭장로</strong>라 합니다. 곧 장로교의 치리 장로와는 다르게, 직제상으로는 여전히 집사이되 예우와 소통의 편의를 위해 장로라는 이름을 함께 쓰는 것입니다. 권사 역시 이와 같은 맥락에서, 여성 성도 가운데 오랜 신앙의 연륜과 섬김으로 인정받은 이를 부르는 이름으로 사용됩니다.</p>
+
+      <p>우리 은혜교회가 속한 침례교회의 정치 구조에서는 당회나 별도의 의결 기구를 두지 않습니다. 담임목사를 비롯한 교역자와, 장로·권사·집사, 그리고 각 목장을 섬기는 목자들이 함께 공동체를 세워 갑니다. 목자는 이 가운데 자격이 인정된 이들 중에서 교회의 추천을 받아 담임목사가 임명하는데, 이는 직분이 위로부터 일방적으로 주어지는 권위가 아니라 공동체의 신뢰와 인정 위에서 세워지는 섬김임을 보여 줍니다.</p>
+
+      <div class="insight">
+        <span class="label">신학적으로 조금 더</span>
+        <p>디모데전서 3장과 디도서 1장은 장로와 집사의 자격을 각각 상세히 규정합니다. 흥미로운 것은 그 기준이 특별한 재능이나 사회적 지위가 아니라, 대부분 인격과 가정생활, 성품에 관한 것이라는 점입니다. 직분의 자격은 능력이 아니라 성숙입니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 -->
+  <section class="chapter" id="c7">
+    <div class="chapter-head">
+      <div class="num">7</div>
+      <div>
+        <span class="kicker">THE CHURCH WE WANT TO BE</span>
+        <h2>우리는 어떤 교회가 되고 싶은가?</h2>
+      </div>
+    </div>
+    <div class="prose">
+      <p>은혜교회는 개척한 지 이제 열두 해를 지나고 있는, 성도 서른 명 남짓의 작은 공동체입니다. 크지 않은 숫자이지만, 우리는 이 작음을 부끄러워하지 않습니다. 오히려 사도행전 2장의 예루살렘 교회가 그러했듯, 작은 무리가 서로의 이름과 삶을 알고 진심으로 교제할 수 있다는 것이 하나님께서 지금 우리에게 주신 은혜라고 믿습니다.</p>
+
+      <div class="verse-box">
+        <p>"무릇 믿는 자가 다 함께 있어 모든 물건을 서로 통용하고... 날마다 마음을 같이하여 성전에 모이기를 힘쓰고 집에서 떡을 떼며 기쁨과 순전한 마음으로 음식을 먹고 하나님을 찬미하며 또 온 백성에게 칭송을 받으니 주께서 구원 받는 사람을 날마다 더하게 하시니라"</p>
+        <div class="cite">사도행전 2:44-47</div>
+      </div>
+
+      <div class="insight">
+        <span class="label">오늘의 언어로</span>
+        <p>여기서 "물건을 통용했다"는 말은 재산 제도를 뜻하는 것이 아니라, 그리스도의 사랑에 사로잡힌 이들이 자원하여 <strong>서로를 도왔다</strong>는 뜻입니다. 실제로 소유권은 여전히 각 사람에게 있었으나(행 5:4), 공동체 안에 누군가의 필요가 보이면 그것을 나와 상관없는 남의 일로 여기지 않는 마음이 자연스럽게 흘러나온 것입니다. 우리 역시 이 본문을 문자 그대로 재현하려 하기보다, 목장과 공동체 안에서 서로의 형편을 살피고 자원하는 마음으로 서로를 돕는 문화로 이어 가고자 합니다.</p>
+        <p>더 나아가 이것은 결국 <strong>서로 합력하여 아름다운 공동체를 함께 세워 가는 일</strong>입니다. "돕는다"는 말도 물질적인 것에 국한되지 않습니다. 마음을 함께 나누는 공감, 곁에 있어 주는 것, 기도로 격려하는 것, 어려운 시간을 함께 견뎌 주는 것 — 이 모두가 서로 돕는 일에 포함됩니다. 오히려 많은 경우 성도에게 가장 필요한 것은 물질이 아니라 이러한 마음의 동행입니다.</p>
+        <p>다만 한 가지는 분명히 해 두어야 합니다. "서로 돕는다"는 것이 곧 금전의 거래나 재정적 요구를 의미하는 것은 아니라는 점입니다. 실제로 교회 안에서 이 부분이 조심스럽게 다뤄지지 않아 오해와 상처가 생기고, 심지어 교회를 떠나는 경우도 있습니다. 그러므로 서로 돕는 마음을 나누되, 그것이 부담이나 강요로 흐르지 않도록 성도 한 사람 한 사람의 사려 깊은 분별과 신중한 행동이 함께 요구됩니다.</p>
+      </div>
+
+      <p>우리가 교회를 도심 지역으로 옮겨 전도에 더욱 힘쓰고자 하는 계획도 이 같은 마음에서 출발합니다. 지금 이 자리에서 조용히 신앙을 지키는 것으로 만족하지 않고, 더 많은 이들이 우리 공동체 안으로 부르심을 받을 수 있도록 우리의 자리를 옮기는 것도 마다하지 않으려 합니다. 소금이 그릇 안에 머물지 않듯, 우리도 사람들이 있는 자리로 나아가고자 합니다.</p>
+
+      <p>남자 목장, 여자 목장, 부부 목장, 장년 목장, 청년 목장, 청소년 목장, 주일학교로 이루어진 우리의 목장 공동체 하나하나가, 사도행전의 가정 교회처럼 서로의 짐을 지고 서로를 위해 기도하며 삶을 나누는 자리가 되기를 바랍니다. 그리고 그 가운데서 세워지는 목자와 직분자들이, 군림하는 자가 아니라 앞서 걷는 본이 되어(벧전 5:3) 서로를 온전하게 세워 가기를 원합니다.</p>
+
+      <p>궁극적으로 우리가 되고 싶은 교회는 단 하나의 모습입니다. <strong>그리스도를 머리로 삼고, 말씀 위에 굳게 서며, 서로를 진실하게 사랑하고, 우리가 속한 지역에 하나님의 샬롬을 흘려보내는 교회.</strong> 크기나 숫자로 증명되는 교회가 아니라, 그리스도의 형상을 닮아 가는 성숙함으로 증명되는 교회가 되기를 바랍니다.</p>
+
+      <div class="verse-box">
+        <p>"그가 어떤 사람은 사도로... 그리스도의 몸을 세우려 하심이라 우리가 다 하나님의 아들을 믿는 것과 아는 일에 하나가 되어... 그리스도의 장성한 분량이 충만한 데까지 이르리니"</p>
+        <div class="cite">에베소서 4:11-13</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="closing">
+    <div class="mark"></div>
+    <p>교회는 우리가 만드는 것이 아니라, 그리스도께서 세우시는 것입니다.<br>
+    우리는 다만 그 부르심에 신실하게 응답하는 사람들이 되기를 원합니다.</p>
+    <div class="sign">기독교한국침례회 은혜교회 · 담임목사 박동준</div>
+  </div>
+
+</div>
+<script>
+function showFwView(mode, btn){
+  document.getElementById('fw-grid').style.display = (mode === 'grid') ? 'grid' : 'none';
+  document.getElementById('fw-branch').style.display = (mode === 'branch') ? 'block' : 'none';
+  document.querySelectorAll('.toggle-btn').forEach(function(b){ b.classList.remove('active'); });
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
