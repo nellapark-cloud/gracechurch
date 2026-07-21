@@ -7,6 +7,7 @@ const fs = require('fs');
 const path = require('path');
 
 const categories = [
+  { key: 'faith_philosophy', dir: 'content/faith-philosophy' },
   { key: 'bible_by_book-old', dir: 'content/bible-by-book/old-testament' },
   { key: 'bible_by_book-new', dir: 'content/bible-by-book/new-testament' },
   { key: 'newcomers', dir: 'content/newcomers' },
@@ -36,12 +37,20 @@ function listDocs(dir) {
     .map((f) => {
       const ext = path.extname(f).replace('.', '').toUpperCase();
       const name = path.basename(f, path.extname(f));
-      return {
-        title: name,
-        tag: ext,
-        meta: '',
-        file: dir + '/' + f,
-      };
+      let file = dir + '/' + f;
+      let tag = ext;
+      if (ext === 'TXT' || ext === 'MD') {
+        try {
+          const content = fs.readFileSync(path.join(full, f), 'utf8').trim();
+          if (/^https?:\/\//i.test(content)) {
+            file = content;
+            tag = /youtube\.com|youtu\.be/i.test(content) ? '유튜브' : '링크';
+          }
+        } catch (e) {
+          // 파일을 못 읽으면 그냥 파일 자체를 링크로 둠
+        }
+      }
+      return { title: name, tag, meta: '', file };
     })
     .sort((a, b) => a.title.localeCompare(b.title, 'ko'));
 }
