@@ -101,6 +101,8 @@
   }
   .intro .card p{color:var(--ink-soft);font-size:15.5px;margin:0 0 8px;}
   .intro .card p:last-child{margin-bottom:0;}
+  .intro .card.gold{border:1px solid var(--gold-dark);background:var(--cream-2);}
+  .intro .card.gold h3{color:var(--gold-dark);}
 
   /* ---------- 목차 ---------- */
   .toc{background:var(--navy-soft);}
@@ -269,6 +271,16 @@
   .pray-box .block-title{margin-top:0;}
   .pray-box p{margin:0;color:var(--ink);font-size:15px;}
 
+  .video-section{background:var(--navy-soft);border-top:1px solid var(--line);}
+  .video-section h2{text-align:center;font-size:24px;margin-bottom:10px;}
+  .video-section .sub-note{text-align:center;color:var(--ink-soft);font-size:14.5px;font-family:'Noto Sans KR',sans-serif;margin-bottom:32px;}
+  .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .video-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .video-item .frame-wrap{position:relative;padding-bottom:56.25%;height:0;}
+  .video-item .frame-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+  .video-item .label{font-family:'Noto Sans KR',sans-serif;font-weight:600;font-size:14.5px;color:var(--navy);padding:12px 14px;}
+  @media(max-width:600px){.video-grid{grid-template-columns:1fr;}}
+
   /* ---------- 닫는 섹션 ---------- */
   .closing{
     background:linear-gradient(160deg, var(--navy) 0%, #0e1a33 100%);
@@ -320,7 +332,7 @@
   <h1>새가족 양육 교재</h1>
   <div class="sub">새로운 삶에서 <b>풍성한 삶</b>, 그리고 <b>기쁨의 삶</b>으로</div>
   <div class="weeks-row">
-    <span>8주 과정</span><span>일대일 양육</span><span>괄호 채우기</span>
+    <span>8주 과정</span><span>일대일 양육</span>
   </div>
   <div class="badge ui">은혜교회 새가족 양육 훈련서</div>
 </section>
@@ -363,6 +375,32 @@
     <li><a href="#week7"><span class="toc-num">7</span><span class="toc-txt"><b>교회</b><span>함께 자라가는 목장 공동체</span></span></a></li>
     <li><a href="#week8"><span class="toc-num">8</span><span class="toc-txt"><b>그리스도인의 삶</b><span>새로운 삶, 풍성한 삶, 기쁨의 삶</span></span></a></li>
   </ul>
+</section>
+
+<!-- 가장 먼저 하고 싶은 말 -->
+<section class="intro" id="worth">
+  <h2 style="text-align:center;margin-bottom:32px;">가장 먼저 하고 싶은 말</h2>
+  <p class="lead" style="margin-bottom:28px;">8주의 여정을 본격적으로 시작하기 전에, 딱 한 가지만 먼저 전하고 싶습니다. 바로 당신이 얼마나 소중한 존재인가 하는 것입니다.</p>
+
+  <div class="card">
+    <h3>🧾 구겨지고 찢어져도, 가치는 그대로입니다</h3>
+    <p>누군가 10만 원짜리 수표를 손으로 마구 구기고, 발로 짓밟고, 반으로 찢어버린다고 해보겠습니다. 그래도 그 수표를 은행에 가져가면 여전히 10만 원으로 인정받습니다. 종이가 어떤 모양이 되었든, 그 안에 새겨진 가치는 조금도 줄어들지 않기 때문입니다.</p>
+    <p>지금까지 살아오며 마음이 구겨지고, 상처받고, 때로는 찢어지는 것 같은 시간들이 있었을지 모릅니다. 그러나 그런 일들은 당신이라는 존재의 가치를 단 1원도 깎아내리지 못했습니다. 당신은 지금도, 처음 지음받았을 때 그 가치 그대로입니다.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌱 치열한 경쟁을 뚫고 태어난 존재입니다</h3>
+    <p>우리가 태어나기까지는, 한 생명이 잉태되는 단 한 번의 순간이 있었습니다. 그 순간이 이루어지기까지 관여하는 수는 보통 1억에서 3억에 이른다고 합니다. 그 가운데 단 하나만이 생명으로 이어집니다. 1억 대 1, 3억 대 1이라는 숫자는, 사실 누구도 "해볼 만한 경쟁"이라고 여기지 않을 확률입니다. 시작도 하기 전에 포기하거나, 애초에 기대조차 하지 않는 것이 당연한 확률이라는 뜻입니다.</p>
+    <p>그런데 당신은, 바로 그 억 단위의 확률을 뚫고 이 땅에 태어났습니다. 그것은 우연히 일어난 일이 아니라, 셀 수 없이 많은 가능성 가운데 당신이 선택받았다는 뜻입니다.</p>
+  </div>
+
+  <div class="card gold">
+    <h3>✝️ 그러나 무엇보다, 당신은 "예수님짜리" 존재입니다</h3>
+    <p>어떤 것의 진짜 가치는, 그것을 얻기 위해 누군가 무엇을 지불했는가로 알 수 있습니다. 하나님은 당신을 얻으시기 위해 돈이나 보석이 아니라, 자신의 하나뿐인 아들 예수 그리스도를 내어주셨습니다.</p>
+    <p>다시 말해, 당신은 "예수님짜리" 존재입니다. 이보다 더 크고 확실한 가치의 증거는 없습니다. 앞으로 8주 동안 나눌 모든 이야기는, 이토록 귀한 존재인 당신을 향한 하나님의 마음에서 시작됩니다.</p>
+  </div>
+
+  <p class="lead" style="text-align:center;margin-top:8px;">이 세 가지를 마음에 품고, 이제 함께 첫걸음을 내디뎌 볼까요?</p>
 </section>
 
 <!-- ============ 1주 ============ -->
@@ -689,6 +727,30 @@
   <div class="pray-box">
     <div class="block-title ui">함께 기도하기</div>
     <p>이렇게 기도해 보세요.<br><br>"성령님, 제 안에 계셔 주셔서 감사합니다. 이번 한 주, ______ 하는 부분에서 저를 도와주세요."<br><br>빈 곳에 이번 주 나에게 필요한 것(인내, 용기, 평안 등)을 채워서 기도해 보세요.</p>
+  </div>
+</section>
+
+<!-- 참고 영상 (1~4주 관련) -->
+<section class="video-section" id="videos-1-4">
+  <h2>참고 영상</h2>
+  <p class="sub-note">지금까지 나눈 하나님, 예수님, 성령님, 그리고 하나님의 형상에 대한 이야기를 영상으로도 짧게 정리해 보았습니다. 시간이 될 때 함께 보시면 좋습니다.</p>
+  <div class="video-grid">
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/btWZh_moadk?start=4" title="하나님" allowfullscreen></iframe></div>
+      <div class="label">하나님</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/Vap2I3oPXu4" title="인자 예수님" allowfullscreen></iframe></div>
+      <div class="label">인자 예수님</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/FpVcnXuU4M4" title="성령" allowfullscreen></iframe></div>
+      <div class="label">성령</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/px76fFQQXQ4" title="하나님의 형상" allowfullscreen></iframe></div>
+      <div class="label">하나님의 형상</div>
+    </div>
   </div>
 </section>
 
