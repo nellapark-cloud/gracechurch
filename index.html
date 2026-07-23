@@ -408,7 +408,7 @@
     padding: 0.55rem 0.8rem;
     border: 1px solid var(--rule);
     border-radius: 6px;
-    font-size: 0.9rem;
+    font-size: 16px;
     font-family: 'Noto Sans KR', sans-serif;
     background: #fff;
     color: var(--ink);
@@ -426,7 +426,7 @@
     background: var(--navy);
     color: var(--cream);
     font-family: 'Noto Sans KR', sans-serif;
-    font-size: 0.85rem;
+    font-size: 16px;
     font-weight: 500;
     white-space: nowrap;
     cursor: pointer;
@@ -813,6 +813,7 @@
     var input = document.getElementById('admin-pw');
     var error = document.getElementById('admin-pw-error');
     if (input.value === ADMIN_PASSWORD) {
+      input.blur();
       document.getElementById('admin-gate').style.display = 'none';
       document.getElementById('admin-content').style.display = 'block';
     } else {
