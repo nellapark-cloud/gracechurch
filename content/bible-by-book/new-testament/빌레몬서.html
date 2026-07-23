@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빌레몬서 연구</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* hl-insight = 더 깊은 설명이 필요한 구절 (하늘색), 클릭 시 팝업 */
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+/* clickable (has a glossary tip) */
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(20,28,42,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+/* Screen-friendly rules above are now the default (baseline) so that any
+   viewer — including ones that don't evaluate @media correctly — shows a
+   clean, readable layout. Printing restores the compact A4-tuned look. */
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 빌레몬서 연구</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+
+<div class="cover">
+  <div class="eyebrow" style="letter-spacing:0.18em;">은혜교회 성경공부 시리즈</div>
+  <h1>빌레몬서 연구</h1>
+  <div class="cover-sub">종이었던 자를 형제로 — 짧지만 깊은 화해의 편지</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">몬 1:1–25</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 1장(25절) · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+  <div style="margin-top:10mm; font-size:8pt; letter-spacing:0.12em; opacity:0.6;">GOLD · 핵심 용어　TERRACOTTA · 성경 인용　TEAL · 원어　SKY · 더 알아보기</div>
+</div>
+
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>빌레몬서 전체 서론</h1>
+  <p class="intro-lead">가장 짧은 편지 속에, 복음이 인간관계를 어떻게 재구성하는지를 담다.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>빌레몬서는 사도 바울이 로마 감옥에서 기록한 <b class="hl-term">옥중서신</b>으로, 골로새서·에베소서와 거의 같은 시기인 <b class="hl-term">AD 60–62년경</b>으로 추정된다. 신약 27권 중 가장 짧은 서신(25절)이며, 바울 서신 중 유일하게 전적으로 한 개인의 사적인 문제—도망친 종 <b class="hl-term">오네시모</b>의 신분과 거취—를 다룬다.</p>
+  </div>
+  <div class="intro-block">
+    <h3>수신자와 정황</h3>
+    <p>수신자 <b class="hl-term has-tip" data-tip="골로새 교회의 유력한 성도로 추정되는 인물. 자신의 집을 교회 모임 장소로 제공했으며(2절), 노예 오네시모의 주인이었다.">빌레몬</b>은 골로새 교회의 지도적 성도로, 그의 집이 교회 모임 장소로 쓰였다(2절). 그의 종 <b class="hl-term">오네시모</b>는 어떤 이유로든 주인에게서 도망하여(아마도 재산상의 손해를 끼치고, 18절) 로마까지 흘러들어 갔다가 옥중의 바울을 만나 <b class="hl-term">복음으로 회심</b>했다. 이제 바울은 그를 다시 빌레몬에게 돌려보내며, 그를 종이 아니라 <b class="hl-term">사랑받는 형제</b>로 받아 달라고 간청하는 편지를 함께 들려 보낸다.</p>
+  </div>
+  <div class="intro-block">
+    <h3>신학적 스타일</h3>
+    <p>빌레몬서는 교리적 논증이 아니라 <b class="hl-term">간청과 설득의 수사학</b>으로 가득하다. 바울은 사도의 권위로 명령할 수도 있었지만(8절) 의도적으로 <b class="hl-term">사랑으로 말미암아 도리어 간구</b>하는 방식을 택한다(9절). 짧은 분량 안에 정중한 인사, 감사, 간청, 신학적 논거, 개인적 약속이 모두 응축되어 있어 고대 서신 수사학의 정교한 모범으로도 평가받는다.</p>
+  </div>
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p>이 편지의 핵심은 <b class="hl-term has-tip" data-tip="빌레몬서 16절의 핵심 표현. 오네시모가 종이라는 신분을 넘어 그리스도 안에서 빌레몬과 동등한 형제가 되었다는 복음의 급진적 결과를 가리킨다.">종에서 형제로의 신분 전환</b>이다. 바울은 노예제 자체를 정면으로 폐지하라고 명령하지는 않지만, 복음이 만들어내는 <b class="hl-term">그리스도 안에서의 형제 됨</b>이 결국 모든 인간적 위계를 근본적으로 재구성한다는 신학적 씨앗을 심어놓는다. 여기에 바울이 오네시모의 빚을 자신이 대신 짊어지겠다고 자청하는 <b class="hl-term">대속의 그림</b>(18–19절)이 이 짧은 편지를 복음 전체의 축소판처럼 만든다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1–7절</div>
+        <div class="oi-title">인사와 감사</div>
+        <div class="oi-body">빌레몬의 믿음과 사랑에 대한 따뜻한 감사와 칭찬으로 편지를 시작한다.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">8–16절</div>
+        <div class="oi-title">오네시모를 위한 간청</div>
+        <div class="oi-body">명령이 아니라 사랑으로 간구하며, 종이 아니라 형제로 그를 받아 달라고 부탁한다.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">17–25절</div>
+        <div class="oi-title">대속의 약속과 확신</div>
+        <div class="oi-body">오네시모의 빚을 자신이 갚겠다는 약속과, 빌레몬의 순종에 대한 확신으로 마친다.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>짧은 서신인 만큼 이 연구는 한 장 안에서 <b class="hl-term">①본문 구조와 핵심 내용</b>을 여러 단락으로 나누어 흐름을 살피고, <b class="hl-term">②신학적·목회적 교훈</b> 다섯 가지, <b class="hl-term">③깊이 생각해볼 문제</b> 두 가지를 함께 다룬다. 짧지만 압축적인 이 편지는 개인 묵상은 물론, 인간관계의 회복과 화해를 다루는 소그룹 자료로도 깊이 있게 사용할 수 있다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">종이었던 자를 형제로</span>
+      <span class="toc-sub">오네시모를 위한 바울의 간청과 화해의 편지</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch1"></span>
+    </a>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l4 10 11 1-8 8 3 11-10-6-10 6 3-11-8-8 11-1z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">PHILEMON</div>
+      <h1>1장 · 종이었던 자를 형제로</h1>
+      <div class="chapter-sub">빌레몬서 — 오네시모를 위한 바울의 간청과 화해의 편지</div>
+      <div class="ref-strip">
+      <span class="ref-item">몬 1:1–25</span>
+      <span class="ref-item">레 25:39–43</span>
+      <span class="ref-item">종에서 형제로</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">짧은 서신 전체를 다섯 단락으로 살펴본다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–3절</div>
+        <div>
+          <div class="flow-title">인사</div>
+          <div class="flow-body">바울은 자신을 <b class="hl-term">그리스도 예수를 위하여 갇힌 자</b>로 소개하며(사도의 권위 대신 고난받는 자의 자리에서 말을 시작한다는 점이 인상적이다), 사랑받는 자요 동역자인 빌레몬과 자매 압비아, 함께 병사 된 아킵보, 그리고 그의 집에 있는 교회에게 편지한다. 하나님 우리 아버지와 주 예수 그리스도로부터 은혜와 평강이 있기를 구한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4–7절</div>
+        <div>
+          <div class="flow-title">빌레몬을 향한 감사</div>
+          <div class="flow-body">바울은 기도할 때마다 빌레몬을 기억하며 항상 하나님께 감사한다. 이는 주 예수와 모든 성도를 향한 그의 <b class="hl-term">사랑과 믿음</b>을 들었기 때문이며, 그의 믿음의 교제가 그리스도를 위하여 있는 각양 선한 일을 아는 데서 역사하기를 기도한다. <b class="hl-quote">"성도들의 마음이 형제로 말미암아 평안함을 얻었으니"</b>라며, 그의 사랑에서 많은 위로와 기쁨을 얻었다고 고백한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8–14절</div>
+        <div>
+          <div class="flow-title">오네시모를 위한 간청 — 명령이 아니라 사랑으로</div>
+          <div class="flow-body">바울은 그리스도 안에서 담대히 마땅한 일을 명할 수도 있으나 <b class="hl-quote">"사랑으로 말미암아 도리어 간구하노라"</b>고 말한다. 그는 갇힌 중에서 낳은 아들 <b class="hl-insight has-insight" data-insight="0">오네시모</b>를 위해 간청하는데, 그가 전에는 빌레몬에게 무익하였으나 이제는 바울과 빌레몬 모두에게 유익한 자가 되었다는 것이다(오네시모라는 이름 자체가 헬라어로 "유익한 자"라는 뜻이다). 바울은 그를 자신의 심복으로 곁에 두고 싶었으나, 빌레몬의 승낙 없이는 아무것도 하지 않기를 원하여 억지가 아니라 자의로 이루어지게 하려고 그를 다시 돌려보낸다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15–16절</div>
+        <div>
+          <div class="flow-title">종이 아니라 사랑받는 형제로</div>
+          <div class="flow-body">바울은 오네시모가 잠시 떠나게 된 것도 <b class="hl-quote">"이는 아마 네가 그를 영원히 두게 함이니 이 후로는 종과 같이 대하지 아니하고 종 이상으로 곧 사랑받는 형제로"</b> 받게 하려는 하나님의 섭리였을지 모른다고 조심스럽게 제안한다. 특히 자신에게 사랑받는 형제라면 빌레몬에게는 육신과 <b class="hl-term">주 안에서 더욱</b> 그러하리라는 것이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">17–25절</div>
+        <div>
+          <div class="flow-title">대속의 약속과 확신</div>
+          <div class="flow-body">바울은 빌레몬이 자신을 동역자로 여긴다면 오네시모 영접하기를 자신을 영접하듯 하라고 부탁하며, <b class="hl-insight has-insight" data-insight="1">"그가 만일 네게 불의를 하였거나 빚진 것이 있으면 그것을 내 앞으로 계산하라 …내가 갚으리라"</b>고 자청한다(다만 빌레몬이 자신에게 빚진 생명, 곧 그의 회심 자체를 상기시키며 은근히 되갚을 것을 기대하지 말라 청한다). 바울은 그의 순종을 확신하며, 자신을 위해 처소를 마련해 달라 부탁하고, 동역자들의 문안과 함께 은혜의 축도로 편지를 마친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 사랑은 명령보다 강한 설득력을 지닌다</div>
+        <div class="teach-body">바울은 사도의 권위로 명령할 수 있었음에도(8절) 의도적으로 사랑에 근거한 간구를 택한다. 이는 강제된 순종보다 자발적으로 우러나오는 사랑의 응답이 관계의 진정한 회복에 훨씬 강력하다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 이름에 담긴 은혜 — 무익한 자에서 유익한 자로</div>
+        <div class="teach-body">오네시모라는 이름의 뜻("유익한 자")을 활용한 바울의 언어유희(11절)는 그의 회심 전후의 극적인 변화를 압축해서 보여준다. 복음은 이름값을 하지 못하던 자를 실제로 그 이름에 걸맞은 존재로 변화시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 강요 없는 순종이 참된 순종이다</div>
+        <div class="teach-body">14절에서 바울은 빌레몬의 승낙 없이는 아무것도 하지 않으려 하며, 선한 일이 "억지"가 아니라 "자의"로 이루어지기를 원한다. 이는 참된 순종과 사랑의 실천은 외부의 압력이 아니라 자발적 결단에서 나와야 함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 신분의 재구성 — 종에서 형제로</div>
+        <div class="teach-body">16절 "종 이상으로 곧 사랑받는 형제로"라는 요청은 사회적 신분 구조를 정면으로 폐지하라는 명령은 아니지만, 그 안에 있는 인간관계를 그리스도 안에서 근본적으로 재정의한다. 이는 훗날 노예제 폐지 운동에 영향을 미친 신학적 씨앗으로 평가된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 대속의 자청이 복음을 압축해서 보여준다</div>
+        <div class="teach-body">18–19절에서 바울이 오네시모의 빚을 자신의 것으로 계산하라고 자청하는 장면은, 그리스도께서 죄인의 빚을 대신 짊어지신 복음의 핵심 원리를 인간관계의 구체적 사례 속에서 생생하게 재현한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">오네시모라는 이름이 '유익한 자'라는 뜻이었다는 걸 알고 나면, 11절 '전에는 무익하였으나 이제는 유익하다'는 문장이 훨씬 재미있게 읽혀요. 바울이 은근히 말장난을 하면서, 그의 변화를 딱 그 이름에 걸맞게 완성시켜준 셈이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>바울은 왜 노예제 자체를 정죄하지 않았는가</div>
+        <div class="deep-body">현대 독자들은 종종 바울이 왜 이 기회에 노예제 자체를 명시적으로 정죄하지 않았는지 의아해한다. 여러 설명이 제시되는데, 어떤 학자는 당시 로마 사회 구조상 즉각적 제도 폐지 요구가 비현실적이었고 오히려 그리스도인 공동체 전체에 위험을 초래할 수 있었다고 본다. 다른 이들은 바울이 제도 자체보다 그 제도 안에 있는 사람들의 관계를 근본적으로 바꾸는 데 집중했으며, "종 이상으로 사랑받는 형제로"(16절)라는 요청이 노예제의 논리적 기반 자체를 서서히 침식하는 씨앗이 되었다고 평가한다. 실제로 이 서신은 후대 노예제 폐지 운동가들에게 중요한 신학적 근거로 자주 인용되었다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">몬 1:16</div>
+          <div class="verse-text">이 후로는 종과 같이 대하지 아니하고 종 이상으로 곧 사랑받는 형제로 둘 것이라 내게 특별히 그러하거든 하물며 육신과 주 안에서 상관된 네게라</div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>18–19절의 대속 언어가 그리스도의 속죄와 어떻게 병행되는가</div>
+        <div class="deep-body">바울이 "그것을 내 앞으로 계산하라 …내가 갚으리라"고 말하는 이 구절은, 그리스도께서 죄인의 죄를 자신의 것으로 여기시고 십자가에서 그 값을 대신 치르신 복음의 핵심 원리(고후 5:21 등)를 인간관계의 실제 사건 속에서 생생하게 재현한다. 바울 자신이 여기서 일종의 그리스도를 닮은 중보자 역할을 자처하는 셈이며, 이는 복음의 신학이 추상적 교리에 머물지 않고 실제 관계의 회복이라는 구체적 실천으로 이어져야 함을 보여주는 살아있는 사례로 읽힌다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<div style="max-width:640px; margin:14mm auto 6mm; padding-top:6mm; border-top:1px solid rgba(120,110,90,0.25); text-align:center; font-size:8.5pt; letter-spacing:0.08em; color:#9a927f;">
+  기독교한국침례회 은혜교회
+</div>
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "오네시모는 정말 '도둑질'을 했을까", "body": "18절에서 바울이 '그가 만일 네게 불의를 하였거나 빚진 것이 있으면'이라고 조심스럽게 가정형으로 말하는 걸 보면, 오네시모가 도망치면서 주인의 돈이나 물건을 가져갔을 가능성이 있어요. 고대 사회에서 도망친 종이 여비를 마련하려고 이런 일을 하는 건 드물지 않았거든요.\n\n그런데 바울은 이걸 콕 집어 비난하지 않고, 그저 '그런 게 있다면 내 앞으로 계산하라'고 담담하게 처리해요. 죄를 캐묻기보다 화해의 길을 여는 데 집중하는 거죠.\n\n결국 이 구절의 핵심은 오네시모의 잘못을 정확히 규명하는 데 있지 않고, 그 어떤 잘못이 있었더라도 바울이 그 값을 대신 치르겠다는 자발적 헌신에 있어요."}, {"title": "바울이 은근히 갚을 것을 상기시킨 이유는 뭘까", "body": "19절 뒷부분에서 바울은 '네가 이 외에 네 자신을 내게 빚진 것은 말하지 아니하노라'고 슬쩍 덧붙여요. 방금 자기가 다 갚겠다고 해놓고, 곧바로 '사실 너도 나한테 빚진 게 있잖아' 하고 말하는 거죠.\n\n이건 모순처럼 보이지만, 사실 매우 정교한 설득의 기술이에요. 빌레몬이 바울을 통해 회심했다는 걸 은근히 상기시키면서, 오네시모를 향한 관용이 결코 부담스러운 요구가 아니라 이미 받은 은혜에 대한 자연스러운 응답이 되게 만드는 거예요.\n\n강요는 아니지만, 결코 가볍지 않은 무게를 지닌 설득이죠."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+</body></html>
