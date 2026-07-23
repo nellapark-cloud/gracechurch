@@ -1,0 +1,1474 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에베소서 연구</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* hl-insight = 더 깊은 설명이 필요한 구절 (하늘색), 클릭 시 팝업 */
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+/* clickable (has a glossary tip) */
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(20,28,42,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+/* Screen-friendly rules above are now the default (baseline) so that any
+   viewer — including ones that don't evaluate @media correctly — shows a
+   clean, readable layout. Printing restores the compact A4-tuned look. */
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 에베소서 연구</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+
+<div class="cover">
+  <div class="eyebrow" style="letter-spacing:0.18em;">은혜교회 성경공부 시리즈</div>
+  <h1>에베소서 연구</h1>
+  <div class="cover-sub">하늘에 속한 신령한 복에서 영적 전쟁까지 — 전체 6장 성경 연구</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">엡 1:1 – 6:24</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 6장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+  <div style="margin-top:10mm; font-size:8pt; letter-spacing:0.12em; opacity:0.6;">GOLD · 핵심 용어　TERRACOTTA · 성경 인용　TEAL · 원어　SKY · 더 알아보기</div>
+</div>
+
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>에베소서 전체 서론</h1>
+  <p class="intro-lead">그리스도 안에서 하늘에 속한 자, 그 안에서 하나 된 교회를 증언하다.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>에베소서는 본문 스스로 <b class="hl-term has-tip" data-tip="사도 바울. 다메섹 도상에서 부활하신 그리스도를 만나 이방인의 사도로 부르심을 받았다. 에베소서는 그가 로마 감옥에서 기록한 것으로 알려진 옥중서신 중 하나다.">사도 바울</b>을 저자로 밝힌다(1:1, 3:1). 로마 감옥에서 기록된 <b class="hl-term">옥중서신</b>(빌립보서, 골로새서, 빌레몬서와 함께)으로 <b class="hl-term">AD 60–62년경</b>으로 추정된다. 근대 이후 일부 학자들은 어휘와 문체가 갈라디아서·로마서와 다르다는 점을 근거로 바울 저작권에 이의를 제기해 왔으나, 초대교회는 예외 없이 바울 저작으로 받아들였으며 신학적 깊이와 사상적 일관성은 바울의 다른 서신들과 자연스럽게 이어진다.</p>
+  </div>
+  <div class="intro-block">
+    <h3>수신자와 정황</h3>
+    <p>가장 오래되고 신뢰할 만한 사본들(파피루스 46, 시내산 사본, 바티칸 사본)에는 1:1의 <b class="hl-greek has-tip" data-tip="엔 에페소. &#x27;에베소에 있는&#x27;이라는 뜻의 헬라어. 이 어구가 초기 사본 일부에는 빠져 있어, 에베소서가 특정 교회 하나가 아니라 소아시아 여러 교회에 두루 회람된 편지였을 가능성을 시사한다.">ἐν Ἐφέσῳ</b>(엔 에페소·에베소에 있는)라는 어구가 빠져 있다. 이는 에베소서가 에베소 한 교회만이 아니라 소아시아 여러 교회에 두루 회람된 <b class="hl-term">회람 서신</b>이었을 가능성을 시사한다. 다른 바울 서신과 달리 구체적 인물이나 지역 문제에 대한 언급이 거의 없다는 점도 이 견해를 뒷받침한다. 개인적 문제 해결보다 그리스도 안에서 하나 된 교회의 정체성과 삶을 폭넓게 가르치려는 목적이 본문 전반에 짙게 배어 있다.</p>
+  </div>
+  <div class="intro-block">
+    <h3>신학적 스타일</h3>
+    <p>에베소서는 바울 서신 중 가장 <b class="hl-term">우주적이고 예전적인</b> 문체를 지닌다. 1장 3–14절은 헬라어 원문에서 단 하나의 긴 문장으로 이어지는 찬양송이며, 논쟁적 변증보다 <b class="hl-term">경배와 기도</b>의 어조가 지배적이다. "하늘에 속한 곳"(ἐπουράνιος, 에푸라니오스)이라는 표현이 다섯 차례 등장하며 그리스도 안에 있는 자의 위치를 하늘의 관점에서 조망한다. 전반부(1–3장)는 교리적 선언, 후반부(4–6장)는 그 교리에 근거한 실천적 권면으로 뚜렷하게 나뉘는 구조도 특징적이다.</p>
+  </div>
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p><b class="hl-term has-tip" data-tip="에베소서에서 가장 자주 반복되는 핵심 어구(그리스어 ἐν Χριστῷ(엔 크리스토) 계열). 신자의 모든 영적 복과 정체성이 그리스도와의 연합에 근거함을 강조한다.">그리스도 안에서</b>라는 어구가 서신 전체에 30회 이상 등장하며 신자의 정체성과 복이 전적으로 그리스도와의 연합에서 나옴을 강조한다. 여기에 <b class="hl-term has-tip" data-tip="유대인과 이방인이 그리스도 안에서 하나의 새로운 백성으로 창조된다는 에베소서 2–3장의 핵심 교리. 갈라놓았던 담이 십자가로 허물어졌음을 선언한다.">하나 된 교회론</b>(유대인과 이방인이 그리스도 안에서 한 새 사람으로 지어짐, 2장)과 <b class="hl-term">영적 전쟁</b>(6장, 하나님의 전신갑주)이 서신 전체를 떠받치는 세 축이다. 구원은 오직 은혜로 믿음을 통해 주어지는 하나님의 선물(2:8–9)이며, 그 구원받은 공동체가 곧 그리스도의 몸으로서 세상 속에서 하나 됨과 거룩함을 살아내야 한다는 것이 서신의 신학적 논리다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1–3장</div>
+        <div class="oi-title">그리스도 안에 있는 우리는 누구인가</div>
+        <div class="oi-body">택하심, 구속, 성령의 인침에서 시작해 은혜로 말미암은 구원, 유대인과 이방인의 하나 됨, 감추었던 비밀의 계시로 이어지는 교리적 선언.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">4–5장</div>
+        <div class="oi-title">부르심에 합당하게 행하라</div>
+        <div class="oi-body">교회의 하나 됨과 다양한 은사, 옛 사람을 벗고 새 사람을 입는 삶, 빛의 자녀로서 살아가는 구체적 권면.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">6장</div>
+        <div class="oi-title">가정과 영적 전쟁</div>
+        <div class="oi-body">자녀와 부모, 종과 상전의 관계 윤리, 그리고 하나님의 전신갑주로 마무리되는 서신의 결론.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 원어 배경, 신학적 논쟁, 해석사적 쟁점 등 확정적 답보다 함께 씨름할 가치가 있는 지점들을 다룬다. 개인 묵상은 물론 소그룹·설교 준비 자료로도 사용할 수 있도록 구성하였다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">그리스도 안에서 있는 신령한 복</span>
+      <span class="toc-sub">삼위일체적 찬양, 바울의 기도, 그리스도의 우주적 주권</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch1"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-title">은혜로 말미암아 하나 된 새 사람</span>
+      <span class="toc-sub">죽었던 자를 살리신 은혜, 유대인과 이방인이 하나 됨</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch2"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-title">감추었던 비밀과 측량할 수 없는 사랑</span>
+      <span class="toc-sub">이방인에게 전해진 비밀, 능력 주시기를 구하는 기도</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch3"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-title">하나 됨을 힘써 지키며 새 사람을 입으라</span>
+      <span class="toc-sub">교회의 하나 됨과 은사, 옛 사람을 벗고 새 사람을 입음</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch4"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-title">빛의 자녀들처럼 행하라</span>
+      <span class="toc-sub">사랑과 빛 가운데 행함, 성령 충만, 그리스도와 교회의 비유</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch5"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-title">하나님의 전신갑주를 입으라</span>
+      <span class="toc-sub">가정의 윤리, 영적 전쟁과 전신갑주, 서신의 결론</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch6"></span>
+    </a>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l4 10 11 1-8 8 3 11-10-6-10 6 3-11-8-8 11-1z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EPHESIANS 1</div>
+      <h1>1장 · 그리스도 안에서 있는 신령한 복</h1>
+      <div class="chapter-sub">에베소서 1장 — 삼위일체적 찬양, 바울의 기도, 그리스도의 우주적 주권</div>
+      <div class="ref-strip">
+      <span class="ref-item">엡 1:1–23</span>
+      <span class="ref-item">신 32:9 · 시 8:6</span>
+      <span class="ref-item">택하심과 기업</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 네 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–2절</div>
+        <div>
+          <div class="flow-title">인사</div>
+          <div class="flow-body">바울은 자신을 <b class="hl-term">하나님의 뜻으로 말미암은 그리스도 예수의 사도</b>로 소개하며 "에베소에 있는 성도들, 그리스도 예수 안에 있는 신실한 자들"에게 편지한다. 이 짧은 인사말 속에 이미 서신 전체를 지배할 "그리스도 안에서"라는 어구가 등장한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">3–14절</div>
+        <div>
+          <div class="flow-title">삼위일체적 찬양</div>
+          <div class="flow-body">헬라어 원문에서 단 하나의 긴 문장으로 이어지는 찬양송이다. <b class="hl-term">성부</b>는 창세 전에 우리를 택하시고 예정하셨고(4–6절), <b class="hl-term">성자</b>는 그 피로 우리를 구속하여 죄 사함을 주셨으며(7–12절), <b class="hl-term">성령</b>은 믿는 자들에게 <b class="hl-insight has-insight" data-insight="0">인印치시고</b> 기업의 보증이 되신다(13–14절). 삼위 하나님의 사역 각각이 "그의 은혜의 영광을 찬송하게 하려는"(6, 12, 14절) 동일한 후렴으로 마무리된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15–19절</div>
+        <div>
+          <div class="flow-title">바울의 기도</div>
+          <div class="flow-body">에베소 성도들의 믿음과 사랑의 소문을 들은 바울은 그들을 위해 감사하며, <b class="hl-term has-tip" data-tip="헬라어 πνεῦμα σοφίας καὶ ἀποκαλύψεως(프뉴마 소피아스 카이 아포칼륍세오스). 하나님을 아는 지식에 이르게 하는 지혜와 계시의 영을 가리킨다.">지혜와 계시의 영</b>을 구하는 기도를 드린다. 부르심의 소망, 성도 안에 있는 기업의 영광의 풍성함, 믿는 자에게 베푸신 능력의 지극히 크심을 <b class="hl-term">마음의 눈</b>이 밝아져 알게 되기를 구한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">20–23절</div>
+        <div>
+          <div class="flow-title">그리스도의 우주적 권위와 교회</div>
+          <div class="flow-body">이 능력은 하나님이 그리스도를 죽은 자 가운데서 살리시고 <b class="hl-quote">"모든 통치와 권세와 능력과 주관하는 자와 이 세상뿐 아니라 오는 세상에 일컫는 모든 이름 위에"</b> 뛰어나게 하신 능력과 같다. 그리스도는 만물을 다스리는 머리로 교회에게 주어지셨으며, 교회는 <b class="hl-term has-tip" data-tip="헬라어 πλήρωμα(플레로마), &#x27;충만&#x27;. 만물을 충만하게 하시는 그리스도의 충만이 곧 교회 안에 나타난다는 에베소서 특유의 표현.">그의 몸이니 만물 안에서 만물을 충만하게 하시는 이의 충만</b>이라 불린다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 창세전 택하심의 은혜</div>
+        <div class="teach-body">4절의 "창세 전에 그리스도 안에서 우리를 택하사"는 구원의 근거가 신자의 자격이나 미래의 선행이 아니라 전적으로 하나님의 주권적 사랑에 있음을 선언한다. 이는 인간의 자기 확신이 아니라 하나님의 신실하심에 신앙의 뿌리를 두게 하는 깊은 위로다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 그리스도 안에서 — 위치적 정체성</div>
+        <div class="teach-body">1장에만 "그리스도 안에서" 계열의 표현이 열 차례 이상 등장한다. 신자의 복은 자신의 성취가 아니라 그리스도와 연합된 위치에서 흘러나오며, 이는 오늘의 그리스도인이 자기 정체성을 어디에 두어야 하는지를 재정의한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 성령의 인침과 보증</div>
+        <div class="teach-body">13–14절의 인印침과 보증(헬라어 ἀρραβών, 아라본—계약금·선금)은 구원이 미래에도 반드시 완성될 것이라는 법적·상업적 확실성의 언어로 표현된다. 성령의 내주는 장차 올 온전한 기업을 미리 맛보게 하는 보증금이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 지혜와 계시의 영 — 아는 것과 깨닫는 것</div>
+        <div class="teach-body">바울은 정보의 축적이 아니라 "마음의 눈이 밝아짐"(18절)을 구한다. 하나님을 아는 지식은 지적 동의를 넘어 성령의 조명으로 말미암은 인격적 깨달음이며, 이는 오늘의 성경 공부에서도 추구해야 할 목표다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 교회는 그리스도의 충만</div>
+        <div class="teach-body">22–23절은 우주 만물을 다스리는 그리스도의 권위와 지극히 작아 보이는 지역 교회를 나란히 놓는다. 만물을 충만케 하시는 이의 충만이 교회 안에 나타난다는 선언은 교회의 존재 자체에 담긴 위엄을 상기시킨다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장 전체가 헬라어로는 딱 두 문장이에요(3–14절, 15–23절). 숨도 안 쉬고 쏟아내는 찬양과 기도처럼 읽어보시면, 바울이 얼마나 벅찬 마음으로 이 말들을 써 내려갔는지 느껴지실 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>창세 전 택하심(4절)을 둘러싼 예정론 논쟁</div>
+        <div class="deep-body">"창세 전에 택하심"과 "그 기쁘신 뜻대로 예정하사"(5절)는 교회사에서 예정론의 핵심 본문으로 다루어져 왔다. 개혁주의 전통은 이를 개별 신자를 향한 무조건적 선택으로 읽는 반면, 알미니안 전통은 그리스도 안에 있는 자들을 향한 하나님의 예지적 결정으로 이해한다. 본문 자체는 이 철학적 긴장을 해소하기보다, 구원의 최종 근거가 인간이 아니라 하나님께 있다는 목회적 위로에 초점을 둔다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">엡 1:4</div>
+          <div class="verse-text">곧 창세 전에 그리스도 안에서 우리를 택하사 우리로 사랑 안에서 그 앞에 거룩하고 흠이 없게 하시려고</div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>인印치심(13절)의 상업적·법적 배경</div>
+        <div class="deep-body">헬라어 <b class="hl-greek has-tip" data-tip="스프라기조. 도장을 찍어 소유권과 진위를 증명하는 고대 상업·법률 행위를 가리키는 헬라어 동사. 곡물 자루나 편지, 문서에 도장을 찍어 봉인하던 관습에서 왔다.">σφραγίζω</b>(스프라기조)는 고대 상거래에서 곡물 자루나 문서에 도장을 찍어 소유권과 진위를 증명하던 관습에서 온 동사다. 성령의 인침은 신자가 하나님의 소유임을 확증하는 법적 봉인이며, 뒤이은 <b class="hl-greek has-tip" data-tip="아라본. 계약금 또는 선금을 뜻하는 헬라어 상업 용어. 현대 그리스어에서도 &#x27;약혼반지&#x27;를 가리키는 말로 쓰인다.">ἀρραβών</b>(아라본, 계약금)은 장차 받을 온전한 기업의 확실한 보증금이라는 이중의 법적 은유를 이룬다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 24h28"/><path d="M24 10v28"/><circle cx="24" cy="24" r="16"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EPHESIANS 2</div>
+      <h1>2장 · 은혜로 말미암아 하나 된 새 사람</h1>
+      <div class="chapter-sub">에베소서 2장 — 죽었던 자를 살리신 은혜, 유대인과 이방인이 하나 됨</div>
+      <div class="ref-strip">
+      <span class="ref-item">엡 2:1–22</span>
+      <span class="ref-item">겔 37:1–14</span>
+      <span class="ref-item">은혜로 말미암은 구원</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 두 개의 큰 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–3절</div>
+        <div>
+          <div class="flow-title">허물과 죄로 죽었던 자</div>
+          <div class="flow-body">바울은 에베소 성도들의 과거를 <b class="hl-term">허물과 죄로 죽었던</b> 상태로 묘사한다. 그들은 <b class="hl-term has-tip" data-tip="사탄을 가리키는 에베소서 특유의 칭호. 눈에 보이지 않는 영적 세력이 불순종의 아들들 가운데 역사한다는 세계관을 담고 있다.">공중의 권세 잡은 자</b>를 따라 행하며 육체의 욕심을 따라 살았고, 본질상 진노의 자녀였다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4–10절</div>
+        <div>
+          <div class="flow-title">은혜로 말미암은 구원</div>
+          <div class="flow-body">그러나 <b class="hl-quote">"긍휼이 풍성하신 하나님이 우리를 사랑하신 그 큰 사랑"</b>으로 죽었던 우리를 그리스도와 함께 살리시고, 함께 일으키사 함께 하늘에 앉히셨다. <b class="hl-quote">"너희는 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니 이것은 너희에게서 난 것이 아니요 하나님의 선물"</b>(8절)이며, 우리는 선한 일을 위하여 그리스도 예수 안에서 지으심을 받은 자다(10절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–18절</div>
+        <div>
+          <div class="flow-title">그리스도의 십자가로 하나 됨</div>
+          <div class="flow-body">이방인이었던 그들은 전에 그리스도 밖에 있었고, 이스라엘 나라 밖의 <b class="hl-term">외인</b>이며 <b class="hl-term">소망이 없고 세상에서 하나님도 없는</b> 자들이었다. 그러나 이제 그리스도의 피로 가까워졌으니, 그리스도는 자기 육체로 둘을 하나로 만드사 <b class="hl-insight has-insight" data-insight="1">막힌 담을 허무시고</b> 원수 된 것 곧 율법을 폐하여 <b class="hl-term">한 새 사람</b>을 지어 화평하게 하셨다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">19–22절</div>
+        <div>
+          <div class="flow-title">하나님의 성전으로 지어져 감</div>
+          <div class="flow-body">이제 이방인은 더 이상 외인이나 나그네가 아니라 성도들과 동일한 시민이요 하나님의 권속이다. 사도들과 선지자들의 터 위에, 그리스도 예수께서 친히 <b class="hl-term">모퉁잇돌</b>이 되어 건물마다 서로 연결되고 자라 주 안에서 성전이 되며, 성령 안에서 하나님이 거하실 처소로 함께 지어져 간다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 죽음에서 생명으로의 전적인 은혜</div>
+        <div class="teach-body">"허물과 죄로 죽었던"(1절) 상태는 개선이 아니라 부활이 필요한 상태다. 구원은 죽은 자에게 힘을 보태는 일이 아니라, 죽은 자를 살리는 하나님의 일방적 개입이라는 사실이 구원의 전적 은혜성을 극명하게 드러낸다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 믿음으로 말미암은 구원과 선한 일의 관계</div>
+        <div class="teach-body">8–10절은 구원이 행위에서 난 것이 아니라 하나님의 선물임을 못박은 직후, 곧바로 선한 일을 위해 지으심을 받았다고 말한다. 선행은 구원의 조건이 아니라 구원받은 자의 자연스러운 열매요 목적이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 십자가는 화해의 사건이다</div>
+        <div class="teach-body">그리스도의 십자가는 하나님과 인간 사이의 화해일 뿐 아니라, 유대인과 이방인 사이를 갈라놓던 막힌 담을 허무는 인간과 인간 사이의 화해이기도 하다. 복음은 개인 구원과 공동체적 화해를 동시에 이루는 사건이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 정체성의 재구성 — 외인에서 권속으로</div>
+        <div class="teach-body">"외인과 나그네가 아니요 …권속"(19절)이라는 선언은 소속 없는 자들에게 가족을 안겨준다. 오늘날 교회 밖에 있다고 느끼는 이들에게 이 본문은 그리스도 안에서 주어지는 완전한 소속감을 증언한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 함께 지어져 가는 성전</div>
+        <div class="teach-body">22절의 "함께 지어져 가느니라"는 현재 진행형 동사다. 교회는 완성된 건물이 아니라 계속해서 함께 지어져 가는 과정 중에 있으며, 이는 성도 각자가 이 건축에 참여하는 살아있는 돌임을 상기시킨다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'외인과 나그네가 아니요 …권속'이라는 구절, 저는 이걸 읽을 때마다 뭉클해요. 어디에도 속하지 못한다고 느껴본 적 있는 사람이라면, 이 짧은 문장이 얼마나 큰 위로인지 아실 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>2:8의 '이것'이 가리키는 것은 무엇인가</div>
+        <div class="deep-body">"너희가 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니 이것은 너희에게서 난 것이 아니요"에서 "이것"(헬라어 τοῦτο, 투토)이 문법적으로 여성형인 "믿음"(πίστις, 피스티스)을 받을 수 없고 중성형이라는 점이 오래된 논쟁거리다. 이 때문에 "이것"이 믿음 자체가 아니라 "은혜로 말미암은 구원 전체 사건"을 가리킨다는 해석이 다수이지만, 결론적으로 믿음까지 포함한 구원 전체가 하나님의 선물이라는 신학적 요지는 변하지 않는다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">엡 2:8-9</div>
+          <div class="verse-text">너희가 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니 이것은 너희에게서 난 것이 아니요 하나님의 선물이라 행위에서 난 것이 아니니 이는 누구든지 자랑하지 못하게 함이라</div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>'막힌 담'(14절)은 실제로 무엇을 가리키는가</div>
+        <div class="deep-body">많은 주석가들은 이 표현이 예루살렘 성전의 <b class="hl-term has-tip" data-tip="성전 뜰 중 이방인이 들어갈 수 있는 구역과 이스라엘 백성만 들어갈 수 있는 안뜰을 나누던 실제 담. 이를 넘는 이방인은 사형에 처한다는 경고 비문이 세워져 있었다.">이방인의 뜰과 이스라엘 뜰을 가르던 실제 돌담</b>을 가리킨다고 본다(이를 넘는 이방인은 사형에 처한다는 경고 비문이 실제로 발굴되었다). 반면 일부 학자는 이를 율법 자체가 만들어낸 상징적 분리로 본다. 어느 쪽이든 그리스도의 십자가가 물리적이든 상징적이든 실재했던 분리의 벽을 완전히 허물었다는 신학적 요점은 동일하다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 38V16l16-8 16 8v22"/><path d="M8 38h32"/><path d="M20 38V26h8v12"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EPHESIANS 3</div>
+      <h1>3장 · 감추었던 비밀과 측량할 수 없는 사랑</h1>
+      <div class="chapter-sub">에베소서 3장 — 이방인에게 전해진 비밀, 능력 주시기를 구하는 기도</div>
+      <div class="ref-strip">
+      <span class="ref-item">엡 3:1–21</span>
+      <span class="ref-item">골 1:26–27</span>
+      <span class="ref-item">감추었던 비밀</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 세 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">이방인을 위해 갇힌 자, 계시된 비밀</div>
+          <div class="flow-body">바울은 자신을 "이방인인 너희를 위하여 그리스도 예수의 <b class="hl-term">갇힌 자</b>"라 부르며, 하나님이 자신에게 <b class="hl-term has-tip" data-tip="헬라어 μυστήριον(뮈스테리온). 과거에는 감추어졌으나 이제 그리스도 안에서 계시된 하나님의 계획을 가리키는 에베소서 핵심 개념. 유대인과 이방인이 한 몸이 되는 것이 그 내용이다.">비밀</b>을 계시로 알게 하셨음을 밝힌다. 이 비밀은 이방인들이 복음으로 말미암아 유대인과 함께 <b class="hl-term">상속자</b>가 되고 <b class="hl-term">한 몸</b>이 되며 <b class="hl-term">약속에 참여하는 자</b>가 된다는 것이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–13절</div>
+        <div>
+          <div class="flow-title">지극히 작은 자보다 더 작은 나에게 주신 은혜</div>
+          <div class="flow-body">바울은 자신을 <b class="hl-quote">"모든 성도 중에 지극히 작은 자보다 더 작은 자"</b>로 부르면서도, 그리스도의 측량할 수 없는 풍성함을 이방인에게 전하고 이 비밀의 경륜을 드러내는 사명을 받았다고 고백한다. 이를 통해 하나님의 <b class="hl-term">각종 지혜</b>가 교회로 말미암아 하늘에 있는 통치자들과 권세들에게 알려지게 하려는 것이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14–19절</div>
+        <div>
+          <div class="flow-title">능력으로 강건하게 하시기를 구하는 기도</div>
+          <div class="flow-body">바울은 무릎을 꿇고, 성령으로 말미암아 속사람을 능력으로 강건하게 하시고 그리스도께서 믿음으로 말미암아 마음에 계시게 하시며, 성도들이 그리스도의 사랑의 <b class="hl-term">너비와 길이와 높이와 깊이</b>가 어떠함을 깨달아 <b class="hl-insight has-insight" data-insight="2">하나님의 모든 충만하신 것으로 충만하게</b> 되기를 기도한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">20–21절</div>
+        <div>
+          <div class="flow-title">송영</div>
+          <div class="flow-body">이 장은 <b class="hl-quote">"우리 가운데서 역사하시는 능력대로 우리가 구하거나 생각하는 모든 것에 더 넘치도록 능히 하실 이"</b>에게 교회 안에서와 그리스도 예수 안에서 영광이 대대로 영원무궁하기를 구하는 송영으로 마친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 비밀은 감추었으나 이제는 계시되었다</div>
+        <div class="teach-body">유대인과 이방인의 하나 됨은 구약 시대에는 완전히 감추어졌던 하나님의 계획이었다. 이제 계시된 이 비밀은, 구원사가 인간이 발견한 진리가 아니라 하나님이 자신의 때에 드러내시는 계획임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 겸손과 사명은 함께 간다</div>
+        <div class="teach-body">바울은 자신을 "지극히 작은 자보다 더 작은 자"로 부르면서도 이방인의 사도라는 큰 사명을 담대히 감당한다. 참된 겸손은 사명을 회피하게 하지 않으며, 오히려 은혜를 더 선명하게 드러낸다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 교회는 하늘의 권세들을 향한 신학 교실이다</div>
+        <div class="teach-body">10절에서 하나님의 지혜가 "교회로 말미암아" 하늘의 통치자들과 권세들에게 알려진다. 지역 교회의 존재와 하나 됨 자체가 영적 세계를 향한 하나님의 지혜의 증거라는 사실은 교회의 존재 의미를 재조명한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 속사람이 강건해지는 것이 우선이다</div>
+        <div class="teach-body">바울의 기도는 상황의 변화가 아니라 "속사람이 능력으로 강건하여지는 것"(16절)을 구한다. 외적 환경보다 내면의 영적 힘이 신앙생활의 근본이라는 원리를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 측량할 수 없는 사랑을 깨닫는 것</div>
+        <div class="teach-body">18–19절은 그리스도의 사랑을 "너비와 길이와 높이와 깊이"로 표현하며 동시에 "지식에 넘치는 사랑"이라 부른다. 하나님의 사랑은 온전히 다 이해할 수 없을 만큼 크지만, 그럼에도 성령을 통해 체험적으로 깨달아가야 할 대상이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">바울이 무릎을 꿇고 기도했다는 표현(14절)이 눈에 띄어요. 유대인들은 보통 서서 기도했는데, 이렇게 무릎을 꿇었다는 건 그만큼 이 기도가 바울에게 얼마나 간절했는지를 보여주는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>'비밀'(뮈스테리온) 개념의 헬라 종교적 배경과 성경적 재정의</div>
+        <div class="deep-body">헬라 세계에서 <b class="hl-greek has-tip" data-tip="뮈스테리온. 헬라 종교의 밀의(密議) 제의에서 온 표현으로, 소수의 입회자만 아는 비밀 지식을 뜻했다. 바울은 이 단어를 빌려오되 그 내용을 완전히 재정의한다.">μυστήριον</b>(뮈스테리온)은 밀의 종교에서 소수의 입회자만 아는 비밀 지식을 뜻하는 전문 용어였다. 바울은 이 단어를 빌려오면서도 그 내용을 완전히 뒤집는다 — 소수만 아는 은밀한 지식이 아니라, 모든 민족에게 공개적으로 선포되어야 할 하나님의 계획이라는 것이다. 이는 복음의 본질이 배타적 비밀주의가 아니라 만인을 향한 공적 선포에 있음을 분명히 한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>20절 송영이 놓인 신학적 위치의 의미</div>
+        <div class="deep-body">3장의 송영은 우연히 놓인 것이 아니라 서신의 정확히 중간, 교리적 선언(1–3장)에서 실천적 권면(4–6장)으로 전환되는 지점에 위치한다. 바울은 하나님의 계획에 대한 깊은 신학적 선언 뒤에 반드시 찬양으로 응답하며, 이는 바른 신학이 궁극적으로 예배로 귀결되어야 한다는 신학함의 모범을 보여준다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">엡 3:20-21</div>
+          <div class="verse-text">우리 가운데서 역사하시는 능력대로 우리가 구하거나 생각하는 모든 것에 더 넘치도록 능히 하실 이에게 교회 안에서와 그리스도 예수 안에서 영광이 대대로 영원무궁하기를 원하노라 아멘</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="6"/><circle cx="10" cy="14" r="4"/><circle cx="38" cy="14" r="4"/><circle cx="10" cy="34" r="4"/><circle cx="38" cy="34" r="4"/><path d="M18 20l-5-4"/><path d="M30 20l5-4"/><path d="M18 28l-5 4"/><path d="M30 28l5 4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EPHESIANS 4</div>
+      <h1>4장 · 하나 됨을 힘써 지키며 새 사람을 입으라</h1>
+      <div class="chapter-sub">에베소서 4장 — 교회의 하나 됨과 은사, 옛 사람을 벗고 새 사람을 입음</div>
+      <div class="ref-strip">
+      <span class="ref-item">엡 4:1–32</span>
+      <span class="ref-item">시 68:18</span>
+      <span class="ref-item">부르심에 합당한 삶</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 네 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">성령이 하나 되게 하신 것을 힘써 지키라</div>
+          <div class="flow-body">바울은 "주 안에서 갇힌 내가 너희를 권하노니 너희가 부르심을 받은 부름에 합당하게 행하라"고 시작한다. <b class="hl-term">겸손과 온유와 오래 참음</b>으로 사랑 가운데서 서로 용납하고, <b class="hl-quote">"평안의 매는 줄로 성령이 하나 되게 하신 것을 힘써 지키라"</b>고 권면하며, 몸도 하나, 성령도 하나, 소망도 하나, 주도 하나, 믿음도 하나, 세례도 하나, 하나님도 한 분이심을 선언한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–16절</div>
+        <div>
+          <div class="flow-title">은사와 그리스도의 몸의 성장</div>
+          <div class="flow-body">그리스도는 각 사람에게 그 분량대로 은혜를 주셨고, <b class="hl-insight has-insight" data-insight="3">사도, 선지자, 복음 전하는 자, 목사와 교사</b>를 세우셔서 성도를 온전하게 하여 봉사의 일을 하게 하시고 그리스도의 몸을 세우게 하셨다. 그 목적은 우리가 다 하나님의 아들을 믿는 것과 아는 일에 하나가 되어 그리스도의 장성한 분량까지 자라가는 것이며, 온몸이 각 마디를 통해 사랑 안에서 스스로 세워져 간다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">17–24절</div>
+        <div>
+          <div class="flow-title">옛 사람을 벗고 새 사람을 입으라</div>
+          <div class="flow-body">바울은 더 이상 이방인처럼 그 마음의 허망한 것으로 행하지 말라고 권한다. 그들은 총명이 어두워지고 마음이 굳어져 감각 없는 자가 되었으나, 성도는 그리스도에게서 그렇게 배우지 않았다. <b class="hl-term">유혹의 욕심을 따라 썩어져 가는 구습을 따르는 옛 사람을 벗어버리고</b>, 심령이 새롭게 되어 하나님을 따라 의와 진리의 거룩함으로 지으심을 받은 <b class="hl-term">새 사람을 입으라</b>는 것이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">25–32절</div>
+        <div>
+          <div class="flow-title">새 사람의 구체적 삶</div>
+          <div class="flow-body">거짓을 버리고 참된 것을 말하며, 분을 내어도 죄를 짓지 말고 해가 지도록 분을 품지 말라. 도둑질하는 자는 다시 도둑질하지 말고 선한 일을 하여 나누어 줄 것을 얻게 하라. <b class="hl-quote">"무릇 더러운 말은 너희 입 밖에도 내지 말고"</b>, 하나님의 성령을 근심하게 하지 말라. 서로 친절하게 하며 불쌍히 여기며 하나님이 그리스도 안에서 너희를 용서하심과 같이 서로 용서하라는 실제적 권면으로 마친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 하나 됨은 만드는 것이 아니라 지키는 것이다</div>
+        <div class="teach-body">3절은 "하나 되게 하신 것을 힘써 지키라"고 말한다. 교회의 하나 됨은 성도가 새로 만들어내야 할 과제가 아니라, 성령이 이미 이루신 실재를 힘써 보존해야 할 책임이다. 이는 분쟁을 대하는 태도를 근본적으로 바꾼다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 다양한 은사, 하나의 목적</div>
+        <div class="teach-body">사도, 선지자, 복음 전하는 자, 목사와 교사라는 서로 다른 은사들이 모두 "성도를 온전하게 하여 봉사의 일을 하게"(12절) 하려는 하나의 목적을 향한다. 은사의 다양성은 경쟁이 아니라 협력을 위한 하나님의 설계다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 몸 전체가 함께 자라간다</div>
+        <div class="teach-body">16절은 성장이 목회자 개인의 사역이 아니라 "각 지체의 분량대로 역사하여" 이루어지는 몸 전체의 일임을 보여준다. 모든 성도가 자기 역할을 감당할 때 몸 전체가 사랑 안에서 스스로 세워져 간다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 옛 사람과 새 사람 — 정체성의 전환</div>
+        <div class="teach-body">"옷을 벗고 입으라"는 동사는 단회적 결단과 반복적 실천을 동시에 함의한다. 그리스도인의 변화는 단번의 회심으로 완결되지 않고, 날마다 옛 습관을 벗고 새로운 정체성을 입는 지속적 과정이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 성령을 근심하게 하는 구체적 행동들</div>
+        <div class="teach-body">30절의 "성령을 근심하게 하지 말라"는 명령 앞뒤로 거짓말, 분노, 도둑질, 더러운 말, 악독 등 매우 구체적인 목록이 나열된다. 성령과의 관계는 추상적 감정이 아니라 일상의 구체적 언행과 직결된다는 사실을 일깨운다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장은 앞부분(1–16절)이 교리적이고 뒷부분(17–32절)이 실천적인데, 사실 두 부분을 잇는 끈이 하나 있어요. '벗으라'와 '입으라'는 동사가 계속 반복되면서, 하나 됨이라는 교리가 결국 일상의 말투와 태도로 이어진다는 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>11절의 '목사와 교사'가 두 직분인가, 하나인가</div>
+        <div class="deep-body">헬라어 원문에서 <b class="hl-greek has-tip" data-tip="투스 데 포이메나스 카이 디다스칼루스. &#x27;목사와 교사&#x27;를 잇는 헬라어 구문으로, 관사를 한 번만 쓰고 &#x27;카이&#x27;(그리고)로 두 명사를 묶은 구조다. 문법적으로 하나의 통합된 사역을 가리킬 가능성이 있다는 논쟁의 근거가 된다.">τοὺς δὲ ποιμένας καὶ διδασκάλους</b>(투스 데 포이메나스 카이 디다스칼루스)는 관사가 한 번만 쓰이고 "그리고"로 두 명사가 묶여 있어, 이를 "목사이자 교사"라는 하나의 통합된 직분으로 보아야 한다는 견해가 상당하다. 다른 세 직분(사도, 선지자, 복음전하는 자)과 달리 이 두 단어만 묶인 것은, 목회 사역에서 양육(목양)과 가르침(교육)이 분리될 수 없는 하나의 소명임을 암시한다는 해석이 널리 받아들여진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>8절의 시편 68:18 인용과 변형</div>
+        <div class="deep-body">바울은 "사로잡혔던 자들을 사로잡으시고 사람들에게 선물을 주셨다"고 인용하는데, 원문 시편 68:18은 "사람에게서 선물을 받으셨다"(승리자가 조공을 받는 이미지)로 되어 있어 방향이 정반대다. 이는 바울이 시편을 오독한 것이 아니라, 유대 전통의 미드라쉬적 해석 관습을 따라 그리스도의 승천을 이스라엘의 옛 승리 이미지 위에 재해석하여 적용한 것으로 이해된다 — 승리자 그리스도는 조공을 받는 대신 오히려 은사를 나누어 주신다는 것이다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">엡 4:8</div>
+          <div class="verse-text">그러므로 이르기를 그가 위로 올라가실 때에 사로잡힌 자를 사로잡으시고 사람들에게 선물을 주셨다 하였도다</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v4"/><path d="M24 38v4"/><path d="M6 24h4"/><path d="M38 24h4"/><circle cx="24" cy="24" r="10"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EPHESIANS 5</div>
+      <h1>5장 · 빛의 자녀들처럼 행하라</h1>
+      <div class="chapter-sub">에베소서 5장 — 사랑과 빛 가운데 행함, 성령 충만, 그리스도와 교회의 비유</div>
+      <div class="ref-strip">
+      <span class="ref-item">엡 5:1–33</span>
+      <span class="ref-item">시 34:8</span>
+      <span class="ref-item">빛의 자녀</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 세 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–14절</div>
+        <div>
+          <div class="flow-title">사랑 가운데, 빛의 자녀로 행하라</div>
+          <div class="flow-body">"하나님을 본받는 자가 되고 그리스도께서 우리를 사랑하신 것 같이 사랑 가운데서 행하라." 음행과 온갖 더러운 것, 탐욕은 그 이름조차 부르지 말고 오히려 감사하는 말을 하라. 전에는 어둠이었으나 이제는 <b class="hl-quote">"주 안에서 빛"</b>이니 <b class="hl-term">빛의 자녀들처럼 행하라</b>는 것이며, 열매 없는 어둠의 일에 참여하지 말고 오히려 책망하라.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15–21절</div>
+        <div>
+          <div class="flow-title">성령 충만과 그 열매</div>
+          <div class="flow-body">"세월을 아끼라 때가 악하니라." 술 취하지 말고 오직 <b class="hl-insight has-insight" data-insight="4">성령으로 충만함을 받으라</b>는 명령이 이 단락의 핵심이다. 성령 충만의 결과는 시와 찬송과 신령한 노래로 서로 화답하며 마음으로 주께 노래하는 것, 범사에 감사하는 것, 그리고 <b class="hl-term">그리스도를 경외함으로 피차 복종하는 것</b>으로 나타난다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">22–33절</div>
+        <div>
+          <div class="flow-title">그리스도와 교회 — 아내와 남편</div>
+          <div class="flow-body">이 단락은 21절의 "피차 복종하라"는 원리를 아내와 남편의 관계에 구체적으로 적용한다. 아내는 남편에게 복종하기를 주께 하듯 하고, 남편은 그리스도께서 교회를 사랑하사 자신을 주심 같이 아내를 사랑하라는 것이다. 바울은 이 관계를 <b class="hl-term has-tip" data-tip="헬라어 μυστήριον(뮈스테리온). 여기서는 부부 관계가 그리스도와 교회의 연합을 반영하는 신비로운 상징임을 가리킨다.">비밀</b>이라 부르며 "내가 그리스도와 교회에 대하여 말하노라"고 그 궁극적 의미를 밝힌다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 사랑의 표준은 그리스도이시다</div>
+        <div class="teach-body">"그리스도께서 우리를 사랑하신 것 같이"(2절)는 사랑의 기준을 인간의 감정이나 문화적 기대가 아니라 십자가에서 자신을 내어주신 그리스도의 사랑에 둔다. 이는 사랑을 감상이 아니라 희생적 행동으로 재정의한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 말의 습관이 정체성을 드러낸다</div>
+        <div class="teach-body">4절의 "누추함과 어리석은 말과 희롱의 말"에 대한 경고는 사소해 보이지만, 일상적 언어 습관이 빛과 어둠 중 어느 쪽에 속했는지를 드러내는 정직한 지표임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 성령 충만은 명령이며 지속적 과정이다</div>
+        <div class="teach-body">18절의 "충만함을 받으라"는 헬라어 현재 수동태 명령형으로, 단회적 사건이 아니라 계속해서 반복되어야 할 과정임을 함의한다. 성령 충만은 특별한 소수의 체험이 아니라 모든 신자에게 주어진 지속적 명령이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 예배와 감사는 성령 충만의 자연스러운 열매다</div>
+        <div class="teach-body">19–20절은 성령 충만이 신비한 감정이 아니라 찬송과 감사라는 구체적이고 관찰 가능한 삶의 모습으로 나타남을 보여준다. 예배의 활력은 성령의 임재를 가늠하는 실제적 척도가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 결혼은 복음을 보여주는 살아있는 그림이다</div>
+        <div class="teach-body">25절의 남편을 향한 명령이 아내를 향한 명령보다 더 길고 강도 높게 그리스도의 희생을 요구한다는 점이 눈에 띈다. 부부 관계는 그 자체로 완결된 사회 제도가 아니라, 그리스도와 교회의 관계를 세상에 드러내는 신학적 상징으로 제시된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">18절 '술 취하지 말라 …오직 성령으로 충만함을 받으라'를 나란히 놓은 게 재미있어요. 둘 다 무언가에 '지배당하는' 상태를 말하는데, 바울은 그 자리를 무엇이 채우느냐가 결국 삶 전체를 바꾼다고 말하는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>22–33절의 '복종'을 어떻게 오늘날 적용할 것인가</div>
+        <div class="deep-body">이 본문은 교회사에서 가장 다양하게 해석되어 온 본문 중 하나다. 어떤 이들은 이를 시대와 문화를 초월하는 고정된 위계 구조로 읽고, 다른 이들은 21절 "그리스도를 경외함으로 피차 복종하라"는 상호적 원리 아래 22절 이하를 남편과 아내 모두에게 요구되는 자기희생적 사랑의 한 적용 사례로 읽는다. 어느 해석을 취하든, 본문이 요구하는 남편의 사랑은 그리스도께서 "자신을 주심"(25절) 같은 희생적 사랑이며, 이는 지배가 아니라 섬김의 언어로 표현되어 있다는 점은 분명하다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">엡 5:25</div>
+          <div class="verse-text">남편들아 아내 사랑하기를 그리스도께서 교회를 사랑하시고 그 교회를 위하여 자신을 주심 같이 하라</div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>32절 '비밀'이 가리키는 신학적 깊이</div>
+        <div class="deep-body">바울은 창세기 2:24("부모를 떠나 그 아내와 합하여 그 둘이 한 몸이 될지니")을 인용한 뒤 이를 "그리스도와 교회에 대하여 말하노라"고 재해석한다. 이는 인간의 결혼 제도가 단지 사회적 관습이 아니라, 창조 때부터 그리스도와 교회의 연합을 예표하도록 설계된 것이라는 대담한 신학적 주장이다. 결혼이 그리스도와 교회를 "가리키는" 상징인지, 혹은 그 자체로 그 실재에 "참여하는" 신비인지는 여전히 신학적 논의의 대상이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l14 6v10c0 10-6 17-14 20-8-3-14-10-14-20V12z"/><path d="M18 24l4 4 8-8"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">EPHESIANS 6</div>
+      <h1>6장 · 하나님의 전신갑주를 입으라</h1>
+      <div class="chapter-sub">에베소서 6장 — 가정의 윤리, 영적 전쟁과 전신갑주, 서신의 결론</div>
+      <div class="ref-strip">
+      <span class="ref-item">엡 6:1–24</span>
+      <span class="ref-item">사 59:17</span>
+      <span class="ref-item">하나님의 전신갑주</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 세 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–9절</div>
+        <div>
+          <div class="flow-title">자녀와 부모, 종과 상전</div>
+          <div class="flow-body">"자녀들아 주 안에서 너희 부모에게 순종하라"는 명령에 이어, 아버지들에게는 자녀를 노엽게 하지 말고 <b class="hl-term">주의 교훈과 훈계로 양육</b>하라고 권한다. 이어 종들에게는 상전에게 순종하되 그리스도께 하듯 성실함으로 하라 하고, 상전들에게도 종들에게 <b class="hl-term">위협을 그치라</b>—하늘에 그들과 너희의 상전이 계시고 그에게는 <b class="hl-insight has-insight" data-insight="5">외모로 사람을 보지 아니하심</b>이 있다고 균형 있게 명한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">10–13절</div>
+        <div>
+          <div class="flow-title">마지막으로 강건하여지라</div>
+          <div class="flow-body">"끝으로 너희가 주 안에서와 그 힘의 능력으로 강건하여지고 마귀의 간계를 능히 대적하기 위하여 하나님의 전신갑주를 입으라." 우리의 씨름은 혈과 육을 상대하는 것이 아니요 <b class="hl-term has-tip" data-tip="에베소서에서 사탄과 그 세력을 가리키는 표현들 중 하나. 눈에 보이는 인간관계 너머에 실재하는 영적 세력과의 싸움을 강조한다.">통치자들과 권세들, 이 어둠의 세상 주관자들, 하늘에 있는 악의 영들</b>을 상대하는 것이므로 하나님의 전신갑주를 취하여 악한 날에 능히 대적하고 모든 일을 행한 후에 서기 위함이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14–20절</div>
+        <div>
+          <div class="flow-title">전신갑주의 각 부분과 기도</div>
+          <div class="flow-body">진리의 <b class="hl-term">허리띠</b>, 의의 <b class="hl-term">호심경</b>, 평안의 복음이 준비한 것으로 신을 <b class="hl-term">신</b>, 믿음의 <b class="hl-term">방패</b>, 구원의 <b class="hl-term">투구</b>, 성령의 검 곧 하나님의 <b class="hl-term">말씀</b>을 취하라. 그리고 <b class="hl-quote">"모든 기도와 간구를 하되 항상 성령 안에서 기도하고"</b> 모든 성도를 위해 깨어 구하며, 바울 자신을 위해서도 복음의 비밀을 담대히 알리도록 기도해 달라고 부탁한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">21–24절</div>
+        <div>
+          <div class="flow-title">맺음말</div>
+          <div class="flow-body">바울은 두기고를 보내어 자신의 형편을 알게 할 것이라 전하며, 형제들에게 평안과 사랑과 믿음을, 우리 주 예수 그리스도를 변함없이 사랑하는 모든 자에게 은혜가 있기를 구하는 축도로 서신을 마친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 가정의 질서는 상호적 책임 위에 선다</div>
+        <div class="teach-body">자녀에게만 순종을 요구하지 않고 아버지에게도 자녀를 노엽게 하지 말라 명하며, 종에게만 순종을 요구하지 않고 상전에게도 위협을 그치라 명한다. 성경적 가정 윤리는 일방적 복종이 아니라 각자의 책임이 균형을 이루는 구조다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 영적 전쟁의 실재를 직시하라</div>
+        <div class="teach-body">12절은 그리스도인의 싸움이 "혈과 육"이 아니라 영적 세력을 상대로 한다고 못박는다. 인간관계의 갈등 이면에 있는 영적 차원을 인식하는 것은 분노와 원한 대신 기도로 반응하게 하는 신학적 근거가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 전신갑주는 능동적으로 입어야 한다</div>
+        <div class="teach-body">11절과 13절의 "입으라", "취하라"는 명령형 동사다. 영적 보호는 저절로 주어지는 것이 아니라 진리, 의, 복음, 믿음, 구원, 말씀을 날마다 의식적으로 취하는 성도의 responsible한 실천을 요구한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 방어구 다음에 오는 유일한 공격 무기</div>
+        <div class="teach-body">나열된 여섯 가지 중 다섯은 방어구(허리띠, 호심경, 신, 방패, 투구)이고 마지막 "성령의 검 곧 하나님의 말씀"만이 공격 무기다. 영적 전쟁에서 하나님의 말씀을 알고 사용하는 것이 가장 결정적인 능동적 무기임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 전신갑주 다음에 기도가 온다</div>
+        <div class="teach-body">전신갑주 목록 직후 곧바로 "모든 기도와 간구로 항상 성령 안에서 기도하라"(18절)는 명령이 이어진다. 갑주를 입는 것과 기도는 분리된 두 가지가 아니라, 기도가 전신갑주 전체를 작동시키는 호흡과 같은 것임을 시사한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">전신갑주 목록을 보면 로마 군인의 갑옷을 그대로 빌려온 게 보여요. 바울이 로마 감옥에서 매일 로마 군인과 사슬로 묶여 있었다는 걸 생각하면, 이 비유가 그에게 얼마나 생생한 이미지였을지 상상이 되시죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>가정 규례(5:22–6:9)가 당대 '가정 규범표'와 다른 점</div>
+        <div class="deep-body">고대 그리스-로마 사회에는 아내·자녀·종에게 상전에 대한 복종만을 일방적으로 요구하는 <b class="hl-term has-tip" data-tip="고대 그리스-로마 사회에서 가장이 아내, 자녀, 노예에 대해 갖는 권위와 그들의 의무를 규정한 전통적 윤리 목록. 대개 하위자의 일방적 복종만을 강조했다.">가정 규범표(Haustafel)</b> 전통이 널리 퍼져 있었다. 바울은 이 익숙한 틀을 사용하면서도, 매 관계마다 반드시 상위자를 향한 책임(자녀를 노엽게 말라, 위협을 그치라)을 추가하고 그 근거를 "그리스도를 경외함"(5:21)과 "하늘에 계신 상전"(6:9)에 둠으로써, 당대의 위계 구조를 그리스도 안에서 근본적으로 재구성한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>전신갑주 비유와 이사야 59:17의 관계</div>
+        <div class="deep-body">바울의 전신갑주 이미지는 로마 군인의 실제 장비뿐 아니라 이사야 59:17의 <b class="hl-quote">"공의를 갑옷으로 삼으시며 구원을 그 머리에 써서 투구를 삼으시고"</b>라는 구절, 곧 여호와 하나님 자신이 홀로 싸우시기 위해 입으신 갑주 묘사에서도 유래한 것으로 널리 이해된다. 이는 성도가 입는 전신갑주가 결국 하나님 자신의 속성(진리, 의, 구원)을 신자가 그리스도 안에서 함께 입는 것임을 암시하며, 전쟁의 승리가 성도 자신의 힘이 아니라 하나님께 속한 것임을 상기시킨다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">사 59:17</div>
+          <div class="verse-text">공의를 갑옷으로 삼으시며 구원을 그 머리에 써서 투구를 삼으시고 보수하는 옷을 입으시며 열심을 겉옷 같이 입으시고</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<div style="max-width:640px; margin:14mm auto 6mm; padding-top:6mm; border-top:1px solid rgba(120,110,90,0.25); text-align:center; font-size:8.5pt; letter-spacing:0.08em; color:#9a927f;">
+  기독교한국침례회 은혜교회
+</div>
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "성령의 '인印치심'이 왜 특별할까", "body": "고대 상거래에서 도장을 찍는다는 건 '이건 내 것이고, 진짜다'라고 법적으로 확정 짓는 행위였어요. 곡물 자루에 도장을 찍으면 그 안의 내용물과 소유주가 보증되는 것처럼요.\n\n성령이 신자를 인치신다는 건, 하나님이 우리를 당신의 소유로 법적으로 확정하셨다는 뜻이에요. 감정이나 느낌의 문제가 아니라, 이미 확정된 사실이라는 거죠.\n\n게다가 바로 뒤에 나오는 '보증'(아라본)은 계약금이에요. 지금 받은 성령이 미래에 완성될 구원의 첫 지불금이라는 거예요. 미래가 불확실한 게 아니라, 이미 계약금까지 받은 확실한 일이라는 뜻이죠."}, {"title": "'막힌 담'이 실제로 있었다는 증거", "body": "실제로 예루살렘 성전 발굴 과정에서 이 담의 경고 비문이 발견됐어요. 헬라어로 '이 담을 넘는 이방인은 죽음의 책임을 스스로 져야 한다'는 무시무시한 경고문이었죠.\n\n바울 시대 사람들에게 이건 비유가 아니라 매일 눈으로 보는 실제 건축물이었어요. 이방인은 저 담을 넘으면 죽을 수도 있었으니까요.\n\n그런데 바울은 그리스도의 십자가가 바로 그 실제 담을 '허무셨다'고 선언해요. 돌로 된 담보다 훨씬 견고했던 민족적 적대감의 담이, 십자가 앞에서는 완전히 무너졌다는 거예요."}, {"title": "'하나님의 충만하신 것으로 충만하게' — 대체 얼마나 채워지라는 걸까", "body": "이 표현은 사실 인간이 도달할 수 있는 최대치를 말하는 것 같아 보여서 부담스럽게 느껴질 수도 있어요. '하나님만큼 충만해지라니, 그게 가능한가?' 싶죠.\n\n하지만 문맥을 보면 이건 성취해야 할 목표라기보다, 그리스도의 사랑의 크기(너비·길이·높이·깊이)를 깨달아갈 때 자연스럽게 따라오는 결과로 그려져요. 사랑을 알아갈수록 그 사랑에 걸맞은 삶으로 점점 채워진다는 거죠.\n\n그러니까 이건 단번에 도달하는 지점이 아니라, 평생 그리스도의 사랑을 더 깊이 알아가며 계속 채워지는 방향성에 가까워요."}, {"title": "왜 이 다섯 가지 직분만 콕 집어 말했을까", "body": "사도, 선지자, 복음 전하는 자, 목사와 교사 — 이 목록이 오늘날 교회의 모든 역할을 다 담고 있는 건 아니에요. 집사도, 장로도, 여러 다른 봉사자들도 있잖아요.\n\n그런데 이 다섯(혹은 넷)의 공통점은 전부 '말씀 사역'과 관련 있다는 거예요. 복음을 전하고, 가르치고, 세우는 사역이죠. 바울이 말하고 싶은 건 특정 직분 목록의 완성이 아니라, 몸을 세우는 근본 원리 — 말씀 사역이 성도를 준비시켜서, 결국 모든 성도가 봉사의 일을 하게 하려는 것 — 그 자체예요.\n\n그러니까 핵심은 목회자만 사역하는 게 아니라, 목회자의 역할이 '모든 성도'를 사역자로 세우는 데 있다는 거죠."}, {"title": "'성령으로 충만하라'는 건 특별한 사람만의 경험일까", "body": "이 구절을 읽으면 뭔가 극적인 체험, 예를 들어 방언이나 강한 감정적 경험 같은 걸 떠올리기 쉬워요. 그런데 바로 다음에 이어지는 결과들을 보면 좀 다른 그림이 나와요 — 함께 찬송하고, 감사하고, 서로 복종하는 것.\n\n헬라어 문법도 흥미로운데, '충만함을 받으라'는 계속 반복되어야 하는 현재형 명령이에요. 한 번의 강렬한 체험이 아니라, 매일 다시 채워져야 하는 지속적 상태라는 거죠.\n\n그러니까 이건 특별한 소수만의 신비 체험이 아니라, 모든 신자가 일상 속에서 계속 추구해야 할 정상적인 삶의 방식이에요."}, {"title": "'외모로 사람을 보지 않으신다'는 말이 왜 상전들에게 나올까", "body": "고대 사회에서 종과 상전의 관계는 완전한 권력 불균형이었어요. 상전은 종을 마음대로 대해도 법적으로 큰 문제가 없었죠.\n\n그런데 바울은 상전들에게 '너희도 하늘에 상전이 계시고, 그분은 외모로, 즉 신분이나 지위로 사람을 차별하지 않으신다'고 말해요. 상전이라는 신분이 하나님 앞에서는 아무 특권도 주지 못한다는 뜻이에요.\n\n이건 노예제 자체를 정면으로 폐지하라는 명령은 아니지만, 그 안에 있던 사람들의 근본적인 영적 평등을 선언함으로써 이후 교회사에서 노예제 폐지 운동의 신학적 뿌리 중 하나가 되었어요."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+</body></html>
