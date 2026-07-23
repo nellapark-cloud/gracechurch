@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목장 나눔 — 2026년 7월 12일</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1c2a3a;
+    --navy-deep: #10192533;
+    --cream: #faf6ee;
+    --gold: #b8925a;
+    --gold-soft: #e8dcc8;
+    --ink: #2b2b28;
+    --line: #ddd3bf;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: 'Noto Serif KR', serif;
+    line-height: 1.75;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .sheet {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 56px 32px 72px;
+  }
+
+  header.top {
+    text-align: center;
+    margin-bottom: 44px;
+  }
+
+  .eyebrow {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.28em;
+    color: var(--gold);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  h1.title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--navy);
+    margin: 0 0 10px;
+  }
+
+  .meta {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    color: #8a7f68;
+  }
+
+  .divider {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    margin: 24px auto 0;
+  }
+
+  .passage-card {
+    background: var(--navy);
+    color: var(--cream);
+    border-radius: 4px;
+    padding: 28px 30px;
+    margin-bottom: 40px;
+    text-align: center;
+  }
+
+  .passage-card .ref {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    color: var(--gold-soft);
+    margin-bottom: 8px;
+  }
+
+  .passage-card .sermon-title {
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  section.points {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 48px;
+  }
+
+  .point {
+    padding-bottom: 30px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .point:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+  }
+
+  .point-head {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 10px;
+  }
+
+  .point-num {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--cream);
+    background: var(--gold);
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    position: relative;
+    top: -1px;
+  }
+
+  .point-kicker {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #8a7f68;
+    margin-bottom: 2px;
+  }
+
+  .point-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+  }
+
+  .point-body {
+    font-size: 15.5px;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  section.questions {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 48px;
+  }
+
+  .q-card {
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    padding: 16px 20px;
+    margin-top: 16px;
+  }
+
+  .q-num {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--gold);
+    margin-bottom: 6px;
+  }
+
+  .q-text {
+    font-size: 15.5px;
+    color: var(--navy);
+  }
+
+  section.prayer {
+    background: var(--gold-soft);
+    border-radius: 4px;
+    padding: 30px 30px 32px;
+  }
+
+  .prayer-label {
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    color: var(--navy);
+    margin-bottom: 12px;
+  }
+
+  .prayer-text {
+    font-size: 16px;
+    color: var(--ink);
+  }
+
+  footer.bottom {
+    margin-top: 56px;
+    text-align: center;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 12px;
+    color: #9a9080;
+    border-top: 1px solid var(--line);
+    padding-top: 20px;
+  }
+
+  @media print {
+    body { background: #fff; }
+    .sheet { padding: 20px; }
+  }
+
+  @media (max-width: 480px) {
+    .sheet { padding: 40px 20px 56px; }
+    h1.title { font-size: 26px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+
+  <header class="top">
+    <div class="eyebrow">GRACE CHURCH · 목장 나눔</div>
+    <h1 class="title">목장나눔</h1>
+    <div class="meta">2026년 7월 12일 주일예배</div>
+    <div class="divider"></div>
+  </header>
+
+  <div class="passage-card">
+    <div class="ref">레위기 26:1–46</div>
+    <div class="sermon-title">신뢰, 순종 그리고 회복의 하나님</div>
+  </div>
+
+  <section class="points">
+    <div class="point">
+      <div class="point-num">1</div>
+      <div class="point-head">
+        <div class="point-kicker">함께 걷기 원하시는 하나님</div>
+        <div class="point-title">동행</div>
+      </div>
+      <p class="point-body">하나님은 규례를 지키는 이스라엘에게 제때 내리는 비와 풍성한 곡식, 평화와 승리를 약속하셨습니다(레위기 26:3–8). 그런데 이 모든 복 중에서 가장 큰 것은 물질이나 안전이 아니라 "내가 너희 중에 행하여 너희 하나님이 되고"라는 동행의 약속이었습니다(레위기 26:12). 하나님은 그들을 애굽의 종살이에서 꺼내어 멍에를 부수고 허리를 펴고 걷게 하신 분임을 다시 떠올려주십니다(레위기 26:13). 종은 고개를 숙이고 걷지만 자유인은 허리를 펴고 걷는 것처럼, 순종의 진짜 열매는 두려움 없이 당당하게 걷는 삶입니다. 우리는 순종의 유익을 승진이나 성공 같은 결과로만 계산하기 쉽지만, 본문은 더 깊은 것을 가리킵니다. 하나님과 함께 걷는 삶 자체가 가장 큰 복이라는 사실입니다.</p>
+      <div class="q-card">
+        <div class="q-num">나눔 질문</div>
+        <div class="q-text">나는 순종을 무언가를 얻기 위한 조건으로 생각해왔습니까, 아니면 하나님과 함께 걷는 삶으로 생각해왔습니까?</div>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">2</div>
+      <div class="point-head">
+        <div class="point-kicker">마음 아파하시는 하나님</div>
+        <div class="point-title">경고</div>
+      </div>
+      <p class="point-body">본문은 순종하지 않을 때 벌어질 일을 네 단계에 걸쳐 점점 강하게 경고합니다. 두려움과 질병에서 시작해서 비 한 방울 내리지 않는 가뭄으로, 들짐승과 전쟁으로, 마침내 성이 무너지고 사람들이 흩어지는 지경까지 강도가 깊어집니다(레위기 26:14–33). 그런데 하나님은 매번 곧바로 최고 수위의 심판을 내리지 않으시고 "너희가 나를 청종하지 아니하고 내게 대항할진대"라는 말씀을 반복하시며 돌아올 기회를 계속 남겨두십니다(레위기 26:18, 21, 24, 28). 한 번에 끝낼 수도 있었던 심판을 단계별로 늦추신다는 것 자체가 돌아오길 기다리는 부모의 마음을 보여줍니다. 우리 주변의 억압이나 관계의 단절도 결국 두려움에서 비롯되는 경우가 많지만, 하나님의 심판은 두려움이 아니라 관계를 향한 진심에서 나온 것입니다. 심판의 목적은 관계를 끊는 것이 아니라 관계를 회복시키는 데 있습니다.</p>
+      <div class="q-card">
+        <div class="q-num">나눔 질문</div>
+        <div class="q-text">하나님께 등을 돌렸던 시절이 있었다면, 그때 하나님은 나에게 어떻게 반응하셨습니까?</div>
+      </div>
+    </div>
+    <div class="point">
+      <div class="point-num">3</div>
+      <div class="point-head">
+        <div class="point-kicker">끝까지 포기하지 않으시는 하나님</div>
+        <div class="point-title">회복</div>
+      </div>
+      <p class="point-body">그렇게 길고 무거운 심판의 목록 뒤에도 본문은 다시 회복의 문을 엽니다. 자기 죄와 조상의 잘못을 인정하고 마음을 낮춘 사람에게 하나님은 아브라함과 이삭과 야곱에게 하신 약속을 기억하시겠다고 하십니다(레위기 26:40–42). 원수의 땅에 있을 때에도 그들을 완전히 버리거나 약속을 깨지 않으시겠다고 다시 확인하십니다(레위기 26:44). 이는 그들의 하나님이 되기 위해 애굽에서 이끌어내신 조상들과의 약속 때문입니다(레위기 26:45). 우리는 한 번의 실패나 오랜 방황이 관계의 완전한 끝이라고 생각하기 쉽지만, 본문은 그렇지 않다고 말합니다. 하나님의 신실하심은 우리의 실패보다 크고, 그 기억하심은 우리의 죄보다 깊습니다. 자백하고 마음을 낮추는 것, 그것이 언제나 회복의 시작점이 됩니다.</p>
+      <div class="q-card">
+        <div class="q-num">나눔 질문</div>
+        <div class="q-text">지금 내가 마음을 낮추고 하나님 앞에 자백해야 할 부분은 무엇입니까?</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="prayer">
+    <div class="prayer-label">마침기도</div>
+    <div class="prayer-text">언약을 기억하시는 하나님, 순종의 자리에서 주와 함께 바로 서서 걷게 하시고, 멀어졌던 자리가 있다면 마음을 낮추어 돌이키게 하옵소서. 저희의 실패보다 크신 주의 신실하심을 의지하여 다시 주 앞으로 나아가게 하시고, 저희 공동체가 주와 동행하는 복을 함께 누리게 하여 주옵소서. 예수님의 이름으로 기도합니다. 아멘.</div>
+  </section>
+
+  <footer class="bottom">
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+
+</div>
+
+</body>
+</html>
