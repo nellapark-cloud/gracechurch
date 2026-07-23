@@ -386,6 +386,56 @@
     font-size: 0.9rem;
   }
 
+  /* ---------- admin password gate ---------- */
+  .admin-gate{
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 1.4rem 1.6rem;
+    max-width: 26rem;
+  }
+  .admin-gate__label{
+    margin: 0 0 0.9rem;
+    font-size: 0.88rem;
+    color: var(--muted);
+  }
+  .admin-gate__row{
+    display: flex;
+    gap: 0.6rem;
+  }
+  .admin-gate__input{
+    flex: 1;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--rule);
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-family: 'Noto Sans KR', sans-serif;
+    background: #fff;
+    color: var(--ink);
+  }
+  .admin-gate__input:focus{
+    outline: none;
+    border-color: var(--gold);
+  }
+  .admin-gate__btn{
+    padding: 0.55rem 1.2rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background .2s ease;
+  }
+  .admin-gate__btn:hover{ background: var(--gold); }
+  .admin-gate__error{
+    display: none;
+    margin: 0.7rem 0 0;
+    font-size: 0.8rem;
+    color: #b23b3b;
+  }
+
   /* ---------- collapsible folder groups ---------- */
   details.doc-group{
     border-top: 1px solid var(--rule);
@@ -510,8 +560,8 @@
   <a class="rail__mark" data-room="room-4" href="#room-4">IV<span>주보</span></a>
   <a class="rail__mark" data-room="room-5" href="#room-5">V<span>나눔지</span></a>
   <a class="rail__mark" data-room="room-6" href="#room-6">VI<span>침례교회사</span></a>
-  <a class="rail__mark" data-room="room-7" href="#room-7">VII<span>행정양식</span></a>
-  <a class="rail__mark" data-room="room-8" href="#room-8">VIII<span>직분자교육</span></a>
+  <a class="rail__mark" data-room="room-7" href="#room-7">VII<span>직분자교육</span></a>
+  <a class="rail__mark" data-room="room-8" href="#room-8">VIII<span>행정양식</span></a>
 </nav>
 
 <main>
@@ -565,8 +615,8 @@
       <a href="#room-4"><span class="num">IV</span><span class="lbl">주보</span><span class="cnt">보기</span></a>
       <a href="#room-5"><span class="num">V</span><span class="lbl">목장 나눔지</span><span class="cnt">보기</span></a>
       <a href="#room-6"><span class="num">VI</span><span class="lbl">침례교에 대하여 · 침례교회사</span><span class="cnt">보기</span></a>
-      <a href="#room-7"><span class="num">VII</span><span class="lbl">목회행정양식</span><span class="cnt">보기</span></a>
-      <a href="#room-8"><span class="num">VIII</span><span class="lbl">직분자 교육 자료</span><span class="cnt">보기</span></a>
+      <a href="#room-7"><span class="num">VII</span><span class="lbl">직분자 교육 자료</span><span class="cnt">보기</span></a>
+      <a href="#room-8"><span class="num">VIII</span><span class="lbl">목회행정양식</span><span class="cnt">보기</span></a>
     </div>
     <p class="hero__caption">배경이미지는, 이런 공간 하나 있으면 얼마나 좋을까 하는 생각에 AI로 만들어 본 것입니다
       <svg class="hero__caption-smile" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true">
@@ -688,20 +738,6 @@
     <div class="room__head">
       <span class="room__num">VII</span>
       <div>
-        <h2 class="room__title">목회행정양식</h2>
-        <p class="room__desc">교회 행정 업무에 쓰이는 각종 서식입니다.</p>
-      </div>
-    </div>
-    <details class="doc-group">
-      <summary>목록 보기<span class="count" id="count-admin_forms"></span></summary>
-      <ul class="doclist" id="list-admin_forms"><li class="doclist__empty">불러오는 중...</li></ul>
-    </details>
-  </section>
-
-  <section class="room" id="room-8">
-    <div class="room__head">
-      <span class="room__num">VIII</span>
-      <div>
         <h2 class="room__title">직분자 교육 자료</h2>
         <p class="room__desc">새 임직 후보자(집사·권사·장로)를 위한 교육 자료입니다.</p>
       </div>
@@ -709,6 +745,28 @@
     <details class="doc-group">
       <summary>목록 보기<span class="count" id="count-officer_training"></span></summary>
       <ul class="doclist" id="list-officer_training"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
+  </section>
+
+  <section class="room" id="room-8">
+    <div class="room__head">
+      <span class="room__num">VIII</span>
+      <div>
+        <h2 class="room__title">목회행정양식</h2>
+        <p class="room__desc">교회 행정 업무에 쓰이는 각종 서식입니다. 관리자 전용 자료라 비밀번호가 필요해요.</p>
+      </div>
+    </div>
+    <div id="admin-gate" class="admin-gate">
+      <p class="admin-gate__label">비밀번호를 입력하시면 목록이 열립니다.</p>
+      <div class="admin-gate__row">
+        <input type="password" id="admin-pw" class="admin-gate__input" placeholder="비밀번호">
+        <button type="button" id="admin-pw-btn" class="admin-gate__btn">확인</button>
+      </div>
+      <p id="admin-pw-error" class="admin-gate__error">비밀번호가 올바르지 않습니다.</p>
+    </div>
+    <details class="doc-group" id="admin-content" style="display:none;">
+      <summary>목록 보기<span class="count" id="count-admin_forms"></span></summary>
+      <ul class="doclist" id="list-admin_forms"><li class="doclist__empty">불러오는 중...</li></ul>
     </details>
   </section>
 
@@ -738,6 +796,27 @@
     const el = document.getElementById('toc');
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
     history.replaceState(null, '', '#toc');
+  });
+</script>
+
+<script>
+  // 목회행정양식 방(VIII) 비밀번호 보호
+  // 아래 문자열만 원하시는 비밀번호로 바꾸시면 돼요.
+  var ADMIN_PASSWORD = '2014';
+
+  function checkAdminPassword() {
+    var input = document.getElementById('admin-pw');
+    var error = document.getElementById('admin-pw-error');
+    if (input.value === ADMIN_PASSWORD) {
+      document.getElementById('admin-gate').style.display = 'none';
+      document.getElementById('admin-content').style.display = 'block';
+    } else {
+      error.style.display = 'block';
+    }
+  }
+  document.getElementById('admin-pw-btn').addEventListener('click', checkAdminPassword);
+  document.getElementById('admin-pw').addEventListener('keydown', function (e) {
+    if (e.key === 'Enter') checkAdminPassword();
   });
 </script>
 
