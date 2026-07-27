@@ -37,4 +37,9 @@
   if (document.readyState === 'complete' || document.readyState === 'interactive') {
     document.body.appendChild(a);
   }
+
+  // 오른쪽 클릭(우클릭) 메뉴 막기 — 완전한 보호는 아니고, 가벼운 방지 장치예요.
+  document.addEventListener('contextmenu', function (e) {
+    e.preventDefault();
+  });
 })();
