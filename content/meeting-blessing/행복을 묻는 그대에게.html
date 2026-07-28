@@ -169,13 +169,13 @@
   }
   .hero-content{ position:relative; z-index:2; text-align:center; max-width:640px; }
   .hero-content .chip{ margin:0 auto 30px; }
-  .hero-title{ font-size:clamp(2.3rem,8vw,4.2rem); font-weight:900; letter-spacing:-.02em; color:var(--text); line-height:1.15; margin-bottom:18px; }
+  .hero-title{ font-family:'Noto Serif KR', serif; font-size:clamp(2.3rem,8vw,4.2rem); font-weight:900; letter-spacing:-.02em; color:var(--text); line-height:1.15; margin-bottom:18px; }
   .hero-title .accent-word{
     background:linear-gradient(90deg,var(--accent),var(--violet-soft));
     -webkit-background-clip:text; background-clip:text; color:transparent;
   }
   .hero-underline{ width:80px; height:2px; margin:0 auto 26px; background:linear-gradient(90deg,var(--accent),var(--violet)); border-radius:3px; }
-  .hero-subtitle{ font-family:'Noto Serif KR', serif; font-size:clamp(0.94rem,2.2vw,1.14rem); font-weight:600; color:var(--gold); margin-bottom:24px; }
+  .hero-subtitle{ font-family:'Noto Sans KR', sans-serif; font-size:clamp(0.8rem,1.7vw,0.95rem); font-weight:600; letter-spacing:.08em; color:var(--gold); margin-bottom:14px; }
   .hero p.lead{ font-size:clamp(0.88rem,1.8vw,1rem); color:var(--text-soft); font-weight:400; max-width:480px; margin:0 auto; line-height:1.95; }
   .scroll-cue{ position:absolute; bottom:32px; left:50%; transform:translateX(-50%); font-size:0.65rem; letter-spacing:.24em; color:var(--accent); display:flex; flex-direction:column; align-items:center; gap:8px; z-index:2; }
   .scroll-cue .bar{ width:1px; height:34px; background:linear-gradient(180deg,var(--accent),transparent); animation:cue 2s ease-in-out infinite; }
@@ -301,9 +301,9 @@
 <section class="hero" data-chapter="0">
   <div class="hero-content">
     <div class="chip"><span class="n"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF"><path d="M12 2 L14 9 L21 11 L14 13 L12 20 L10 13 L3 11 L10 9 Z"/></svg></span>복되고 풍요로운 인생을 찾는 이들을 위한 이야기</div>
-    <h1 class="hero-title">만남의 <span class="accent-word">축복</span></h1>
+    <div class="hero-subtitle">만남의 축복</div>
+    <h1 class="hero-title"><span class="accent-word">행복</span>을 묻는<br>그대에게</h1>
     <div class="hero-underline"></div>
-    <div class="hero-subtitle">행복을 묻는 그대에게</div>
     <div class="illus large" aria-hidden="true">
       <svg viewBox="0 0 200 200" fill="none">
         <circle cx="100" cy="145" r="36" fill="var(--accent)" opacity="0.95"/>
