@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<title>만남의 축복 — 행복을 묻는 그대에게</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-panel:#F4F1E9;
+    --bg-card:#FFFFFF;
+    --text:#141310;
+    --text-soft:#2E2B24;
+    --text-faint:#6B665A;
+    --accent:#B8791E;
+    --accent-deep:#8F5D14;
+    --accent-soft:#D9A94B;
+    --violet:#5C46CC;
+    --violet-soft:#8571E0;
+    --gold:#B8791E;
+    --line:rgba(20,19,16,0.14);
+    --line-soft:rgba(20,19,16,0.09);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  html{ font-size:100%; color-scheme:light !important; background:#FFFFFF !important; }
+  body{
+    font-family:'Noto Sans KR', sans-serif;
+    background:#FFFFFF !important;
+    color:var(--text-soft);
+    line-height:1.95;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .bg-layer{
+    position:fixed; inset:0; width:100vw; height:100vh;
+    background:#FFFFFF !important; z-index:-10; pointer-events:none;
+  }
+  h1,h2,h3,.serif{ font-family:'Noto Serif KR', serif; }
+
+  /* ---- font size control widget ---- */
+  .font-ctrl{
+    position:fixed; right:22px; bottom:22px; z-index:100;
+    display:flex; align-items:center; gap:2px;
+    background:var(--bg-card); border:1px solid var(--line);
+    border-radius:30px; padding:6px; box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  }
+  .font-ctrl button{
+    width:36px; height:36px; border-radius:50%; border:none; cursor:pointer;
+    background:transparent; color:var(--text); font-family:'Noto Sans KR', sans-serif;
+    display:flex; align-items:center; justify-content:center; transition:background .2s ease;
+  }
+  .font-ctrl button:hover{ background:rgba(20,19,16,0.08); }
+  .font-ctrl button:active{ background:rgba(20,19,16,0.15); }
+  .font-ctrl .dec{ font-size:0.75rem; font-weight:700; }
+  .font-ctrl .inc{ font-size:1.05rem; font-weight:700; }
+  .font-ctrl .label{ font-size:0.65rem; color:var(--text-faint); letter-spacing:.05em; padding:0 4px; min-width:32px; text-align:center; }
+  @media (max-width:600px){ .font-ctrl{ right:14px; bottom:14px; } }
+
+  /* ---- reading progress bar (signature element #1) ---- */
+  .progress-rail{ position:fixed; top:0; left:0; width:100%; height:3px; background:rgba(255,255,255,0.12); z-index:100; }
+  .progress-fill{ height:100%; width:0%; background:linear-gradient(90deg,var(--violet),var(--accent)); transition:width .1s linear; }
+
+  /* ---- side chapter nav (signature element #2) ---- */
+  .side-nav{
+    position:fixed; left:26px; top:50%; transform:translateY(-50%);
+    display:flex; flex-direction:column; gap:16px; z-index:90;
+  }
+  .side-nav button{
+    width:8px; height:8px; border-radius:50%; border:1px solid var(--text-faint);
+    background:var(--text-faint); opacity:0.35; cursor:pointer; padding:0; transition:all .3s ease;
+  }
+  .side-nav button.active{ background:var(--violet); border-color:var(--violet); opacity:1; transform:scale(1.5); }
+  @media (max-width:980px){ .side-nav{ display:none; } }
+
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .9s ease, transform .9s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} html{scroll-behavior:auto;} }
+
+  section.block{ padding:100px 24px; position:relative; }
+  .wrap{ max-width:700px; margin:0 auto; }
+
+  .chip{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--bg-panel); border:1px solid var(--line);
+    color:var(--violet); font-size:0.7rem; font-weight:700;
+    letter-spacing:.2em; text-transform:uppercase;
+    padding:8px 18px 8px 8px; border-radius:30px; margin-bottom:28px;
+  }
+  .chip .n{
+    width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--violet));
+    color:#FFFFFF; display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Serif KR', serif; font-weight:800; font-size:0.75rem;
+  }
+
+  h2.title{ font-size:clamp(1.7rem,4.4vw,2.6rem); font-weight:800; color:var(--text); line-height:1.4; letter-spacing:-.01em; margin-bottom:8px; }
+  h3.sub{ font-family:'Noto Serif KR', serif; font-size:clamp(1.1rem,2.3vw,1.3rem); font-weight:700; color:var(--gold); margin:42px 0 16px; }
+  p.deck{ font-size:1.05rem; font-weight:500; color:var(--text); margin:24px 0 6px; line-height:1.95; }
+  p{ font-size:0.94rem; color:var(--text-soft); font-weight:400; margin-bottom:22px; }
+  p strong{ color:var(--text); font-weight:700; }
+
+  .dropcap:first-letter{ float:left; font-family:'Noto Serif KR', serif; font-size:3.3rem; font-weight:400; color:var(--accent); line-height:.78; padding:6px 10px 0 0; }
+
+  /* ---- case cards : bold color-blocked, not subtle border ---- */
+  .case-grid{ display:flex; flex-direction:column; gap:14px; margin:34px 0 10px; }
+  .case{ background:var(--bg-card); border-radius:14px; padding:26px 28px; position:relative; overflow:hidden; }
+  .case::before{ content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:linear-gradient(180deg,var(--accent),var(--violet)); }
+  .case .who{ font-family:'Noto Serif KR', serif; font-weight:700; color:var(--text); font-size:0.94rem; margin-bottom:8px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .case .who .badge{ font-size:0.65rem; letter-spacing:.08em; color:#FFFFFF; background:var(--violet); padding:3px 10px; border-radius:20px; font-family:'Noto Sans KR',sans-serif; font-weight:700; }
+  .case p{ font-size:0.91rem; margin-bottom:0; }
+
+  /* ---- big bold pull-quote, replacing subtle verse border ---- */
+  .verse{ margin:44px 0; background:linear-gradient(135deg, rgba(233,178,78,0.12), rgba(139,124,240,0.08)); border-radius:16px; padding:36px 34px; position:relative; }
+  .verse .mark{ position:absolute; top:14px; left:22px; font-family:'Noto Serif KR', serif; font-size:4.2rem; color:var(--accent); opacity:.4; line-height:1; }
+  .verse p{ font-family:'Noto Serif KR', serif; font-size:1.1rem; color:var(--text); font-weight:600; margin:20px 0 10px; position:relative; z-index:1; }
+  .verse cite{ font-size:0.76rem; color:var(--violet); font-style:normal; letter-spacing:.06em; }
+
+  /* alternate panel background rhythm instead of full dark/light flip */
+  .block.panel{ background:var(--bg-panel); }
+
+  /* ---- reaction tiles ---- */
+  .reaction-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:32px 0 10px; }
+  .reaction{ background:var(--bg-card); border-radius:14px; padding:22px 22px 20px; border-top:2px solid var(--violet); }
+  .reaction .t{ font-family:'Noto Serif KR', serif; font-weight:700; color:var(--text); font-size:0.91rem; margin-bottom:8px; }
+  .reaction p{ font-size:0.82rem; margin-bottom:0; color:var(--text-faint); }
+  @media (max-width:600px){ .reaction-grid{ grid-template-columns:1fr; } }
+
+  /* ---- FAQ : bold pill accordion ---- */
+  .faq-list{ margin-top:28px; display:flex; flex-direction:column; gap:12px; }
+  .faq-item{ background:var(--bg-card); border-radius:14px; overflow:hidden; border:1px solid transparent; transition:border-color .3s ease; }
+  .faq-item.open{ border-color:var(--line); }
+  .faq-q{ width:100%; text-align:left; background:none; border:none; cursor:pointer; padding:20px 22px; display:flex; align-items:center; gap:16px; font-family:'Noto Serif KR', serif; font-size:0.94rem; font-weight:700; color:var(--text); }
+  .faq-q .idx{ flex:none; width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,var(--violet),var(--accent)); color:#FFFFFF; display:flex; align-items:center; justify-content:center; font-family:'Noto Sans KR',sans-serif; font-size:0.76rem; font-weight:800; }
+  .faq-q .chev{ margin-left:auto; flex:none; color:var(--accent); transition:transform .3s ease; font-size:0.82rem; }
+  .faq-item.open .faq-q .chev{ transform:rotate(180deg); }
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height .45s ease; }
+  .faq-a-inner{ padding:0 22px 24px 68px; }
+  .faq-a-inner p{ font-size:0.85rem; margin-bottom:13px; }
+  .faq-a-inner p:last-child{ margin-bottom:0; }
+
+  /* ---- life rows ---- */
+  .life-grid{ display:flex; flex-direction:column; gap:0; margin-top:28px; }
+  .life-row{ display:grid; grid-template-columns:110px 1fr; gap:24px; padding:22px 0; border-top:1px solid var(--line-soft); }
+  .life-row:last-child{ border-bottom:1px solid var(--line-soft); }
+  .life-row .when{ font-family:'Noto Serif KR', serif; color:var(--violet); font-weight:700; font-size:0.85rem; padding-top:2px; }
+  .life-row p{ margin-bottom:0; font-size:0.88rem; }
+  @media (max-width:560px){ .life-row{ grid-template-columns:1fr; gap:6px; } }
+
+  /* ---- next steps ---- */
+  .step-grid{ display:flex; flex-direction:column; gap:12px; margin:32px 0 10px; }
+  .step{ display:grid; grid-template-columns:48px 1fr; gap:20px; padding:22px 24px; background:var(--bg-card); border-radius:14px; }
+  .step .n{ font-family:'Noto Serif KR', serif; font-weight:800; color:var(--accent); font-size:1.3rem; }
+  .step .t{ font-family:'Noto Serif KR', serif; font-weight:700; font-size:0.97rem; color:var(--text); margin-bottom:6px; }
+  .step p{ margin-bottom:0; font-size:0.88rem; }
+
+  /* ---- HERO : bold, kinetic, full dark ---- */
+  .hero{ position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:100px 24px 60px; overflow:hidden; }
+  .hero::before{
+    content:''; position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 30% 12%, rgba(233,178,78,0.18), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 78% 82%, rgba(139,124,240,0.16), transparent 60%);
+  }
+  .hero-content{ position:relative; z-index:2; text-align:center; max-width:640px; }
+  .hero-content .chip{ margin:0 auto 30px; }
+  .hero-title{ font-size:clamp(2.3rem,8vw,4.2rem); font-weight:900; letter-spacing:-.02em; color:var(--text); line-height:1.15; margin-bottom:18px; }
+  .hero-title .accent-word{
+    background:linear-gradient(90deg,var(--accent),var(--violet-soft));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-underline{ width:80px; height:2px; margin:0 auto 26px; background:linear-gradient(90deg,var(--accent),var(--violet)); border-radius:3px; }
+  .hero-subtitle{ font-family:'Noto Serif KR', serif; font-size:clamp(0.94rem,2.2vw,1.14rem); font-weight:600; color:var(--gold); margin-bottom:24px; }
+  .hero p.lead{ font-size:clamp(0.88rem,1.8vw,1rem); color:var(--text-soft); font-weight:400; max-width:480px; margin:0 auto; line-height:1.95; }
+  .scroll-cue{ position:absolute; bottom:32px; left:50%; transform:translateX(-50%); font-size:0.65rem; letter-spacing:.24em; color:var(--accent); display:flex; flex-direction:column; align-items:center; gap:8px; z-index:2; }
+  .scroll-cue .bar{ width:1px; height:34px; background:linear-gradient(180deg,var(--accent),transparent); animation:cue 2s ease-in-out infinite; }
+  @keyframes cue{0%,100%{opacity:.25;}50%{opacity:1;}}
+
+  /* ---- invitation ---- */
+  .invite{ background:linear-gradient(180deg,var(--bg-panel),var(--bg)); padding:120px 24px; text-align:center; }
+  .invite .chip{ margin:0 auto 26px; }
+  .invite h2.title{ color:var(--text); }
+  .invite p{ color:var(--text-soft); font-size:0.94rem; }
+  .prayer-box{ margin:38px auto 0; max-width:480px; padding:32px 30px; border-radius:16px; background:linear-gradient(135deg, rgba(233,178,78,0.13), rgba(139,124,240,0.09)); text-align:left; }
+  .prayer-box .tag2{ font-size:0.7rem; letter-spacing:.2em; color:var(--gold); text-transform:uppercase; font-weight:700; margin-bottom:14px; }
+  .prayer-box p{ font-family:'Noto Serif KR', serif; font-size:0.91rem; color:var(--text); font-weight:400; line-height:2.05; margin-bottom:0; }
+
+  footer{ background:var(--bg); border-top:1px solid var(--line-soft); padding:42px 24px 48px; text-align:center; }
+  footer .brand{ font-family:'Noto Serif KR', serif; color:var(--accent-deep); font-size:0.88rem; font-weight:700; margin-bottom:8px; }
+  footer p{ font-size:0.74rem; color:var(--text-faint); line-height:2; }
+
+  /* ---- illustrations ---- */
+  .illus{ width:168px; height:168px; margin:38px auto 10px; display:block; }
+  .illus svg{ width:100%; height:100%; display:block; }
+  .illus.large{ width:220px; height:220px; }
+  @media (max-width:520px){ .illus{ width:136px; height:136px; } .illus.large{ width:180px; height:180px; } }
+
+  /* ---- scripture reference highlight + popup ---- */
+  .vref{
+    color:var(--violet); border-bottom:1.5px dotted var(--violet-soft);
+    cursor:pointer; font-weight:600; transition:color .2s ease, border-color .2s ease;
+  }
+  .vref:hover{ color:var(--accent); border-color:var(--accent-soft); }
+  span.badge.vref{ border-bottom:none; }
+  .cite-tag{
+    display:inline;
+    font-size:0.92em; font-weight:600; color:var(--violet);
+    background:none; padding:0; border-radius:0;
+    font-family:inherit; margin:0;
+    border-bottom:1.5px dotted var(--violet-soft) !important;
+    cursor:pointer;
+  }
+  .cite-tag:hover{ color:var(--accent); border-color:var(--accent-soft) !important; }
+
+  .vpop-overlay{
+    position:fixed; inset:0; background:rgba(20,19,16,0.4); z-index:300;
+    display:none; align-items:flex-end; justify-content:center;
+  }
+  .vpop-overlay.show{ display:flex; }
+  .vpop{
+    background:var(--bg-card); width:100%; max-width:460px;
+    border-radius:20px 20px 0 0; padding:30px 26px 36px;
+    box-shadow:0 -14px 44px rgba(0,0,0,0.22); position:relative;
+    animation:vpopUp .25s ease;
+  }
+  @keyframes vpopUp{ from{ transform:translateY(24px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+  .vpop .close{ position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.3rem; color:var(--text-faint); cursor:pointer; line-height:1; }
+  .vpop .ref{ font-family:'Noto Serif KR',serif; font-weight:700; color:var(--violet); font-size:0.85rem; letter-spacing:.03em; margin-bottom:14px; padding-right:24px; }
+  .vpop .txt{ font-family:'Noto Serif KR',serif; font-size:1.02rem; line-height:1.95; color:var(--text); font-weight:500; }
+  @media (min-width:640px){ .vpop{ margin-bottom:40px; border-radius:20px; } .vpop-overlay{ align-items:center; } }
+
+  /* ---- table of contents ---- */
+  .toc-grid{ display:flex; flex-direction:column; gap:2px; margin-top:30px; }
+  .toc-item{
+    display:flex; align-items:center; gap:18px;
+    padding:16px 6px; border-bottom:1px solid var(--line-soft);
+    text-decoration:none; color:var(--text-soft); transition:padding-left .25s ease, color .25s ease;
+  }
+  .toc-item:hover{ padding-left:10px; color:var(--text); }
+  .toc-item .tn{
+    flex:none; width:34px; font-family:'Noto Serif KR', serif; font-weight:700;
+    font-size:0.95rem; background:linear-gradient(135deg,var(--accent),var(--violet));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .toc-item .tt{ font-family:'Noto Serif KR', serif; font-size:0.95rem; font-weight:600; }
+
+  /* ---- floating TOC button ---- */
+  .toc-btn{
+    position:fixed; left:22px; bottom:22px; z-index:100;
+    display:flex; align-items:center; gap:8px;
+    background:var(--bg-card); border:1px solid var(--line);
+    color:var(--text); font-family:'Noto Sans KR', sans-serif; font-size:0.78rem; font-weight:700;
+    padding:11px 18px; border-radius:30px; cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  }
+  .toc-btn svg{ width:14px; height:14px; flex:none; }
+  @media (max-width:980px){ .toc-btn{ left:14px; bottom:14px; } }
+  @media (max-width:600px){ .toc-btn span{ display:none; } .toc-btn{ padding:12px; } }
+</style>
+</head>
+<body style="background:#FFFFFF;">
+<div class="bg-layer" style="background:#FFFFFF;"></div>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+<nav class="side-nav" id="sideNav"></nav>
+
+<div class="font-ctrl">
+  <button class="dec" id="fontDec" aria-label="글씨 작게">가</button>
+  <span class="label" id="fontLabel">보통</span>
+  <button class="inc" id="fontInc" aria-label="글씨 크게">가</button>
+</div>
+
+<button class="toc-btn" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg>
+  <span>목차</span>
+</button>
+
+<!-- HERO -->
+<section class="hero" data-chapter="0">
+  <div class="hero-content">
+    <div class="chip"><span class="n"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF"><path d="M12 2 L14 9 L21 11 L14 13 L12 20 L10 13 L3 11 L10 9 Z"/></svg></span>복되고 풍요로운 인생을 찾는 이들을 위한 이야기</div>
+    <h1 class="hero-title">만남의 <span class="accent-word">축복</span></h1>
+    <div class="hero-underline"></div>
+    <div class="hero-subtitle">행복을 묻는 그대에게</div>
+    <div class="illus large" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="145" r="36" fill="var(--accent)" opacity="0.95"/>
+        <g stroke="var(--accent-soft)" stroke-width="2" stroke-linecap="round">
+          <line x1="100" y1="88" x2="100" y2="74"/>
+          <line x1="66" y1="99" x2="55" y2="88"/>
+          <line x1="134" y1="99" x2="145" y2="88"/>
+          <line x1="52" y1="122" x2="36" y2="118"/>
+          <line x1="148" y1="122" x2="164" y2="118"/>
+        </g>
+        <path d="M0 162 Q50 120 100 150 T200 142 L200 200 L0 200 Z" fill="var(--violet-soft)" opacity="0.55"/>
+        <path d="M0 186 Q70 146 120 178 T200 170 L200 200 L0 200 Z" fill="var(--violet)" opacity="0.95"/>
+      </svg>
+    </div>
+    <p class="lead">이 글은 짧게 훑고 지나가는 글이 아닙니다. 인생의 질문 앞에 서 본 모든 사람과, 그 질문에 정직하게 답하고 싶은 한 사람을 위해 조금 더 깊고 구체적으로 써 내려갔습니다.</p>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
+</section>
+
+<!-- TOC -->
+<section class="block panel" data-chapter="toc" id="toc">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">目</span>TABLE OF CONTENTS</div>
+    <h2 class="title">목차</h2>
+    <p class="deck">전체 14개 챕터로 구성되어 있습니다. 가능하면 처음부터 차근차근 순서대로 읽어가시면 좋겠지만, 급하게 찾아보고 싶은 챕터가 있다면 눌러서 바로 이동하실 수도 있습니다.</p>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch1"><span class="tn">01</span><span class="tt">질문 앞에 선 사람들</span></a>
+      <a class="toc-item" href="#ch2"><span class="tn">02</span><span class="tt">하나님과의 만남을 가로막는 네 가지 장애물</span></a>
+      <a class="toc-item" href="#ch3"><span class="tn">03</span><span class="tt">하나님과의 만남이란 정확히 무엇인가</span></a>
+      <a class="toc-item" href="#ch4"><span class="tn">04</span><span class="tt">의심과 믿음은 공존할 수 있는가</span></a>
+      <a class="toc-item" href="#ch5"><span class="tn">05</span><span class="tt">하나님과의 만남이 가져오는 인생의 해답</span></a>
+      <a class="toc-item" href="#ch6"><span class="tn">06</span><span class="tt">진정한 행복, 그리고 기쁨과 자유</span></a>
+      <a class="toc-item" href="#ch7"><span class="tn">07</span><span class="tt">진정한 풍요의 비밀</span></a>
+      <a class="toc-item" href="#ch8"><span class="tn">08</span><span class="tt">혼자서는 어려운 이유</span></a>
+      <a class="toc-item" href="#ch9"><span class="tn">09</span><span class="tt">사람들의 솔직한 반응들</span></a>
+      <a class="toc-item" href="#ch10"><span class="tn">10</span><span class="tt">하나님의 계심을 어떻게 알 수 있는가</span></a>
+      <a class="toc-item" href="#ch11"><span class="tn">11</span><span class="tt">논리적으로 다가가기</span></a>
+      <a class="toc-item" href="#ch12"><span class="tn">12</span><span class="tt">하나님과의 만남 이후, 무엇이 달라지는가</span></a>
+      <a class="toc-item" href="#ch13"><span class="tn">13</span><span class="tt">더 알아가고 싶다면</span></a>
+      <a class="toc-item" href="#ch14"><span class="tn">14</span><span class="tt">이제, 당신이 하나님과의 만남을 시작할 시간입니다</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CH1 -->
+<section class="block" data-chapter="1" id="ch1">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">1</span>THE QUESTION</div>
+    <h2 class="title">질문 앞에 선 사람들</h2>
+    <p class="deck dropcap">사람들은 저마다 다른 얼굴로 같은 질문 앞에 섭니다. 겉으로는 전혀 달라 보이는 삶들이지만, 조용한 새벽이면 결국 같은 갈증에 도달합니다. 실제와 닮은 일곱 가지 이야기를 소개합니다.</p>
+
+    <div class="case-grid">
+      <div class="case"><div class="who">성공한 사업가 K씨 <span class="badge">공허함</span></div>
+        <p>서른일곱, 남들이 부러워하는 자리에 올랐습니다. 원했던 것을 대부분 손에 넣었지만, 최근 들어 밤에 잠들기 전 알 수 없는 헛헛함이 밀려옵니다. "이걸 다 이루면 행복할 줄 알았는데, 왜 그다음이 없을까." 그는 처음으로 자신의 성취가 답이 아니었다는 걸 인정하게 됩니다.</p></div>
+      <div class="case"><div class="who">상실을 겪은 그녀 <span class="badge">왜</span></div>
+        <p>어머니를 갑작스레 떠나보낸 뒤, 그녀는 "왜"라는 질문에서 벗어나지 못합니다. 착하게 살아온 사람에게 왜 이런 일이 생기는지 자꾸 되묻게 됩니다. 위로의 말들은 위로가 되지 못했고, 그녀에게 필요한 건 답이 아니라 함께 있어 줄 누군가였습니다.</p></div>
+      <div class="case"><div class="who">회의적인 대학원생 <span class="badge">이성과 갈등</span></div>
+        <p>물리학을 전공하며 신이라는 개념을 오랫동안 비합리적인 것으로 치부해왔습니다. 그런데 우주의 상수들이 생명이 가능하도록 극도로 정교하게 맞춰져 있다는 사실을 공부하면서, 처음으로 "이게 정말 우연일까"라는 질문이 마음 한켠에 자리 잡습니다.</p></div>
+      <div class="case"><div class="who">지친 청년 <span class="badge">비교와 소진</span></div>
+        <p>스물여섯, 매일 SNS 속 타인의 삶과 자신을 비교하며 하루를 시작합니다. 열심히 살아도 늘 부족한 느낌, 인정받지 못하면 존재 자체가 흔들리는 듯한 불안. 그는 자신이 무엇을 위해 이렇게 애쓰고 있는지조차 잊어버렸습니다.</p></div>
+      <div class="case"><div class="who">고등학생 지민(가명) <span class="badge">청소년 · 정체성</span></div>
+        <p>고2, 성적표 숫자 하나에 그날 하루의 기분이 통째로 결정됩니다. 부모님의 기대와 친구들과의 비교 속에서, "나는 성적이 좋을 때만 괜찮은 사람인가"라는 생각이 자꾸 듭니다. SNS 속 친구들은 다 잘 사는 것 같은데, 나만 뒤처지는 것 같은 불안이 밤마다 찾아옵니다. 아직 어리지만, 지민이도 이미 "나는 왜 이렇게 애써야만 괜찮은 사람이 되는 걸까"라는 어른들과 똑같은 질문 앞에 서 있습니다.</p></div>
+      <div class="case"><div class="who">은퇴를 앞둔 부장님 <span class="badge">허무함</span></div>
+        <p>삼십 년을 한 직장에 바친 그는 은퇴를 앞두고 문득 두려워집니다. 자신을 설명해주던 직함이 사라지고 나면, 나는 도대체 누구인가. 성취로 쌓아온 정체성이 은퇴라는 문턱 앞에서 무너지는 것을 처음으로 목격합니다.</p></div>
+      <div class="case"><div class="who">형식적으로 신앙생활을 해온 분 <span class="badge">공식적 신앙</span></div>
+        <p>어릴 때부터 교회를 다녔지만, 그것이 습관과 문화였을 뿐 실제로 하나님을 인격적으로 만난 기억은 없습니다. 그는 최근 자신의 신앙이 지식과 습관으로만 이루어져 있었다는 것을 깨닫고, 정말 하나님을 '아는' 것이 무엇인지 다시 묻기 시작합니다.</p></div>
+    </div>
+
+    <p style="margin-top:28px;">이 일곱 사람은 나이도, 배경도, 문제의 모양도 다릅니다. 그러나 이들 모두 결국 같은 자리에 도달합니다 — <strong>더 많은 것을 얻거나 더 많이 아는 것으로는 채워지지 않는 갈증</strong>이 있다는 자리입니다. 그리고 흥미롭게도, 이 갈증 앞에서 정직했던 사람들은 하나같이 같은 이야기를 전합니다. 답은 정보가 아니라, 어떤 <strong>만남</strong>을 통해 왔다고 말입니다.</p>
+  </div>
+</section>
+
+<!-- CH2 -->
+<section class="block panel" data-chapter="2" id="ch2">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">2</span>OBSTACLES</div>
+    <h2 class="title">하나님과의 만남을 가로막는 네 가지 장애물</h2>
+    <p class="deck">본격적인 이야기에 들어가기 전에, 많은 사람이 이 만남 앞에서 자기도 모르게 멈추어 서는 지점들을 먼저 짚어보려 합니다.</p>
+
+    <h3 class="sub">자기충족감 — "나는 아쉬울 게 없다"</h3>
+    <p>역설적으로, 삶이 어느 정도 순탄한 사람일수록 이 하나님과의 만남에서 멀어지기 쉽습니다. 필요를 느끼지 못하면 찾지 않게 되기 때문입니다. 그러나 자기충족감은 대개 아직 무너져보지 않은 자리에서 오는 착각인 경우가 많습니다.</p>
+
+    <h3 class="sub">과거의 상처 — "교회에, 혹은 신앙인들에게 실망한 적 있다"</h3>
+    <p>많은 사람이 신앙 자체가 아니라 신앙을 표방한 사람들에게 받은 상처 때문에 마음의 문을 닫습니다. 이 상처는 실재하고 정당합니다. 그러나 사람의 실망과 하나님에 대한 진실은 구분되어야 할 별개의 문제입니다.</p>
+
+    <h3 class="sub">지적 자존심 — "나는 논리적으로 이걸 받아들일 수 없다"</h3>
+    <p>스스로를 이성적이라 여기는 사람일수록, 신앙을 감정적이고 비논리적인 것으로 치부하고 미리 선을 그어버리는 경우가 있습니다. 그러나 뒤에서 살펴보겠지만, 신앙은 이성과 대립하지 않으며 오히려 정교한 논증의 뒷받침을 받을 수 있는 영역입니다.</p>
+
+    <h3 class="sub">두려움 — "믿으면 내 삶이 바뀌어야 할 것 같다"</h3>
+    <p>가장 솔직한 장애물일 수 있습니다. 많은 사람이 신앙을 받아들이는 순간 지금 누리는 자유와 즐거움을 포기해야 한다고 생각합니다. 그러나 실제로 이 하나님과의 만남을 경험한 사람들이 공통으로 전하는 것은 상실이 아니라 더 깊은 자유였습니다.</p>
+
+    <p>이 네 가지 장애물 중 하나라도 마음에 걸린다면, 그것은 잘못된 것이 아니라 오히려 정직한 출발점입니다.</p>
+  </div>
+</section>
+
+<!-- CH3 -->
+<section class="block" data-chapter="3" id="ch3">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">3</span>ENCOUNTER</div>
+    <h2 class="title">하나님과의 만남이란 정확히 무엇인가</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M60 170 L60 60 Q60 30 100 30 Q140 30 140 60 L140 170" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="170" x2="140" y2="170" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="126" cy="118" r="3.5" fill="var(--violet)"/>
+        <circle cx="100" cy="95" r="34" fill="var(--accent)" opacity="0.16"/>
+        <circle cx="100" cy="95" r="10" fill="var(--accent)" opacity="0.7"/>
+        <path d="M100 55 L100 40 M132 70 L144 60 M132 120 L144 130 M68 70 L56 60 M68 120 L56 130" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p class="deck">'하나님과의 만남'이라는 단어를 좀 더 정확히 들여다볼 필요가 있습니다. 많은 사람이 신앙을 하나의 종교 체계, 즉 지켜야 할 규칙과 외워야 할 지식의 목록으로 오해합니다. 그러나 성경이 말하는 하나님과의 만남은 이것과 근본적으로 다릅니다.</p>
+
+    <h3 class="sub">종교와 관계의 차이</h3>
+    <p>대부분의 종교적 체계는 인간이 스스로의 노력, 수행, 선행을 통해 신적 존재에게 다가가려는 구조를 가지고 있습니다. 계율을 철저히 지키고, 선행과 공덕을 쌓고, 고행이나 수행을 통해 자신을 정화하고, 순례를 떠나 신성한 자리에 가까이 가려 합니다. 방식은 저마다 다르지만 방향은 같습니다 — 인간이 아래에서 위로, 부족한 존재에서 신적인 존재를 향해 올라가려는 사다리 구조입니다.</p>
+    <p>반면 성경이 그리는 그림은 정반대입니다. 창세기에서 아담과 하와가 죄를 짓고 숨었을 때, 먼저 움직인 것은 그들이 아니라 하나님이었습니다. <span class="cite-tag vref" data-ref="창세기 3:9" data-txt="여호와 하나님이 아담을 부르시며 그에게 이르시되 네가 어디 있느냐">창세기 3:9</span> "네가 어디 있느냐" 하고 먼저 찾아오신 것입니다. 누가복음 15장의 탕자 이야기에서도, 아버지는 돌아오는 아들이 아직 멀리 있을 때 먼저 그를 보고 달려가 안습니다. <span class="cite-tag vref" data-ref="누가복음 15:20" data-txt="아직도 거리가 먼데 아버지가 보고 측은히 여겨 달려가 목을 안고 입을 맞추니">누가복음 15:20</span> 로마서는 이 구조를 이렇게 요약합니다 — "우리가 아직 죄인 되었을 때에 그리스도께서 우리를 위하여 죽으셨다." <span class="cite-tag vref" data-ref="로마서 5:8" data-txt="우리가 아직 죄인 되었을 때에 그리스도께서 우리를 위하여 죽으심으로 하나님께서 우리에 대한 자기의 사랑을 확증하셨느니라">로마서 5:8</span> 자격을 갖춘 뒤에 다가간 것이 아니라, 자격 없는 상태 그대로 다가오신 것입니다.</p>
+    <p>그래서 에베소서는 구원을 가리켜 "행위에서 난 것이 아니요 하나님의 선물"이라고 말합니다. <span class="cite-tag vref" data-ref="에베소서 2:8-9" data-txt="너희는 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니 이것은 너희에게서 난 것이 아니요 하나님의 선물이라 행위에서 난 것이 아니니 이는 누구든지 자랑하지 못하게 함이라">에베소서 2:8-9</span> 인간이 위로 올라가는 이야기가 아니라, <strong>하나님이 먼저 인간에게 다가오신 사건</strong> — 이 순서 하나가 종교와 만남을 근본적으로 갈라놓습니다.</p>
+
+    <h3 class="sub">'안다'는 것의 두 가지 의미</h3>
+    <p>히브리어에는 '안다'는 뜻을 가진 '야다(יָדַע)'라는 단어가 있습니다. 이 단어는 단순한 정보의 습득을 넘어, 온전히 관계 맺고 경험하는 앎을 의미합니다. 하나님을 '안다'는 것은 하나님에 '대해' 아는 지식이 아니라, 하나님과 실제로 관계 맺는 앎을 뜻합니다.</p>
+
+    <h3 class="sub">하나님과의 만남이 일어나는 세 걸음</h3>
+    <p>이 하나님과의 만남은 대개 세 걸음으로 이루어집니다. 첫째는 <strong>인정</strong>입니다 — 스스로의 힘으로는 채울 수 없는 갈증이 있다는 것을 받아들이는 것입니다. 둘째는 <strong>돌이킴</strong>입니다 — 지금까지 스스로 붙잡고 있던 답들을 내려놓고 방향을 바꾸는 것입니다. 셋째는 <strong>받아들임</strong>입니다 — 하나님이 내미신 손을 붙잡는 것입니다. 이 세 걸음은 순서대로, 때로는 동시에 일어납니다.</p>
+
+    <h3 class="sub">역사 속의 하나님과의 만남들</h3>
+    <p>성경과 교회사에는 이 하나님과의 만남으로 인생이 완전히 달라진 사람들의 이야기가 반복해서 등장합니다.</p>
+
+    <div class="case-grid">
+      <div class="case"><div class="who">모세 <span class="badge vref" data-ref="출애굽기 3:4" data-txt="여호와께서 그가 보려고 돌이켜 오는 것을 보신지라 하나님이 떨기나무 가운데서 그를 불러 이르시되 모세야 모세야 하시매 그가 이르되 내가 여기 있나이다">출애굽기 3장</span></div>
+        <p>광야에서 양을 치던 평범한 하루, 불타는 떨기나무 앞에서 하나님의 음성을 듣습니다. 도망자였던 그는 이 하나님과의 만남 이후 한 민족을 이끄는 사람으로 완전히 다른 인생을 살게 됩니다.</p></div>
+      <div class="case"><div class="who">사마리아 여인 <span class="badge vref" data-ref="요한복음 4:29" data-txt="와서 보라 내가 행한 모든 일을 내게 말한 사람이 있으니 그리스도가 아니냐 하니">요한복음 4장</span></div>
+        <p>사람들의 시선을 피해 한낮에 홀로 물을 길으러 온 여인이 우물가에서 예수님을 만납니다. 자신의 지나온 삶을 다 알고도 정죄하지 않는 그 시선 앞에서, 그녀는 곧장 마을로 달려가 그 하나님과의 만남을 전합니다.</p></div>
+      <div class="case"><div class="who">삭개오 <span class="badge vref" data-ref="누가복음 19:5" data-txt="예수께서 그 곳에 이르사 쳐다보시고 이르시되 삭개오야 속히 내려오라 오늘 내가 네 집에 유하여야 하겠다 하시니">누가복음 19장</span></div>
+        <p>세리라는 이유로 마을 사람들에게 배척받던 그는 나무 위에 올라가서까지 예수님을 보려 했습니다. 예수님이 먼저 그의 이름을 부르신 순간, 그는 평생 살아온 방식을 그 자리에서 내려놓습니다.</p></div>
+      <div class="case"><div class="who">사도 바울 <span class="badge vref" data-ref="사도행전 9:4" data-txt="땅에 엎드러져 들으매 소리가 있어 이르시되 사울아 사울아 네가 어찌하여 나를 박해하느냐 하시거늘">사도행전 9장</span></div>
+        <p>신앙을 핍박하러 가던 다메섹 도상에서 빛과 음성을 만난 그는, 이후 자신이 핍박하던 바로 그 복음을 전하는 사람이 됩니다.</p></div>
+      <div class="case"><div class="who">아우구스티누스 <span class="badge">고백록, 4세기</span></div>
+        <p>방탕한 삶을 살던 젊은 철학자는 밀라노의 한 정원에서, 아이들이 부르는 노랫소리를 듣고 우연히 펼친 성경 구절 앞에서 완전히 다른 사람이 됩니다.</p></div>
+      <div class="case"><div class="who">C.S. 루이스 <span class="badge">20세기 문학자</span></div>
+        <p>한때 철저한 무신론자였던 그는 옥스퍼드의 한 방에서, 스스로도 원치 않았던 항복의 순간을 맞이합니다. 그는 자신을 가리켜 "영국에서 가장 마지못해 회심한 사람"이라 회고했습니다.</p></div>
+    </div>
+
+    <p style="margin-top:28px;">목자, 소외된 여인, 미움받던 세리, 종교를 핍박하던 사람, 방탕했던 철학자, 완고한 무신론자 — 이들의 공통점은 특별함이 아니라 오히려 평범함, 혹은 저항이었습니다. 이들을 바꾼 것은 결심이나 노력이 아니라 <strong>한 번의 하나님과의 만남</strong>이었습니다.</p>
+  </div>
+</section>
+
+<!-- CH4 -->
+<section class="block panel" data-chapter="4" id="ch4">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">4</span>DOUBT</div>
+    <h2 class="title">의심과 믿음은 공존할 수 있는가</h2>
+    <p class="deck">완벽한 확신이 있어야만 믿을 수 있다고 생각하는 분들이 많습니다. 그러나 성경 속 인물들의 이야기는 전혀 다른 그림을 보여줍니다.</p>
+
+    <h3 class="sub">의심하는 도마</h3>
+    <p><span class="cite-tag vref" data-ref="요한복음 20:25" data-txt="다른 제자들이 그에게 이르되 우리가 주를 보았노라 하니 도마가 이르되 내가 그 손의 못 자국을 보며 내 손가락을 그 못 자국에 넣으며 내 손을 그 옆구리에 넣어 보지 않고는 믿지 아니하겠노라 하니라">요한복음 20:25</span> 예수님의 부활 소식을 들었을 때, 제자 도마는 자신이 직접 못 자국을 보고 만지기 전에는 믿지 않겠다고 선언합니다. 예수님은 그런 도마를 책망하지 않으시고, 오히려 직접 찾아가 그의 손을 만지게 하십니다. 의심은 신앙의 반대말이 아니라, 신앙으로 가는 여정의 일부로 다뤄지고 있습니다.</p>
+
+    <h3 class="sub">감옥 속 침례요한의 질문</h3>
+    <p><span class="cite-tag vref" data-ref="마태복음 11:3" data-txt="오실 그이가 당신이오니이까 우리가 다른 이를 기다리오리이까">마태복음 11:3</span> 예수님이 오실 메시아라고 담대히 선포했던 침례요한조차, 감옥에 갇힌 뒤에는 사람을 보내 "당신이 정말 그 오실 이입니까"라고 되묻습니다. 확신에 차 있던 사람도 고난 앞에서는 흔들릴 수 있다는 것을, 성경은 감추지 않고 그대로 기록합니다.</p>
+
+    <h3 class="sub">하박국의 항의</h3>
+    <p><span class="cite-tag vref" data-ref="하박국 1:3" data-txt="어찌하여 내게 죄악을 보게 하시며 패역을 목도하게 하시나이까 겁탈과 강포가 내 앞에 있어서 시비가 일어나고 다툼이 일어나나이다">하박국 1:3</span> 구약의 선지자 하박국은 하나님께 노골적으로 항의합니다. "어찌하여 내게 죄악을 보게 하시며 패역을 목도하게 하시나이까." 그는 답을 얻을 때까지 포기하지 않고 계속 묻습니다. 성경은 이런 질문하는 믿음을 부끄러운 것으로 다루지 않습니다.</p>
+
+    <p>믿음은 의심이 전혀 없는 상태가 아니라, 의심을 안은 채로도 계속 하나님께로 방향을 향하는 것입니다. 100퍼센트의 확신을 갖춘 뒤에 시작하는 여정이 아니라, 불확실함을 안고도 내딛는 첫걸음이 신앙의 시작입니다.</p>
+  </div>
+</section>
+
+<!-- CH5 -->
+<section class="block" data-chapter="5" id="ch5">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">5</span>THE ANSWER</div>
+    <h2 class="title">하나님과의 만남이 가져오는 인생의 해답</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="62" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="100" cy="100" r="4" fill="var(--accent)"/>
+        <line x1="100" y1="30" x2="100" y2="44" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="100" y1="156" x2="100" y2="170" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="30" y1="100" x2="44" y2="100" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="156" y1="100" x2="170" y2="100" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <path d="M100 100 L88 128 L100 118 L112 128 Z" fill="var(--violet)"/>
+        <path d="M100 100 L112 72 L100 82 L88 72 Z" fill="var(--accent-soft)"/>
+      </svg>
+    </div>
+    <p class="deck">하나님을 만난 사람에게 찾아오는 변화는 상황이 아니라 <strong>자기 자신을 보는 눈</strong>에서 시작됩니다. 이 변화는 크게 세 가지 층위로 나누어 살펴볼 수 있습니다.</p>
+
+    <h3 class="sub">정체성 — 나는 누구인가</h3>
+    <p>많은 사람이 자신의 가치를 성취, 외모, 타인의 인정으로 측정합니다. 시험 성적, 연봉, 팔로워 수, 승진 속도 — 이런 잣대들은 오늘은 나를 높여주다가도 내일은 나를 바닥까지 끌어내립니다. 그러나 이 기준은 언제나 흔들립니다. 하나님을 만난 사람은 전혀 다른 기준을 갖게 됩니다 — 나는 우연히 존재하는 것이 아니라, <strong>사랑받기 위해 지음받은 존재</strong>라는 기준입니다. 시편 기자는 이것을 이렇게 노래합니다. "내가 나를 지으심이 심히 기묘하심이라." <span class="cite-tag vref" data-ref="시편 139:14" data-txt="내가 주께 감사하옴은 나를 지으심이 심히 기묘하심이라 주께서 하시는 일이 기이함을 내 영혼이 잘 아나이다">시편 139:14</span> 성과가 오르내려도, 이 정체성의 뿌리는 흔들리지 않습니다.</p>
+
+    <h3 class="sub">목적 — 나는 왜 사는가</h3>
+    <p>목적 없는 삶은 방향 없이 노를 젓는 배와 같습니다. 아무리 부지런히 저어도, 목적지가 없으면 그 부지런함조차 지치게 만드는 소모로 끝납니다. 하나님과의 관계 안에서 사람은 자신의 일과 관계와 시간이 더 큰 이야기의 일부라는 것을 알게 됩니다. 이것은 반드시 목회자나 선교사가 되어야 한다는 뜻이 아닙니다. 회사에서의 정직한 하루, 자녀를 향한 인내, 이웃에게 건네는 작은 친절 — 이 모든 평범한 순간들이 각자에게 맡겨진 고유한 몫이 되고, 그 몫에는 우연이 아닌 무게가 실립니다.</p>
+
+    <h3 class="sub">방향 — 나는 어디로 가는가</h3>
+    <p>많은 사람이 인생의 다음 단계 — 다음 학기, 다음 승진, 다음 집 — 를 향해 달리지만 정작 최종 목적지에 대해서는 생각하지 않습니다. 마치 목적지를 정하지 않은 채 내비게이션만 켜놓고 달리는 것과 같습니다. 하나님을 만난 사람은 죽음 이후에 대한 막연한 불안 대신, 소망이라는 단어로 미래를 마주하게 됩니다. 오늘의 선택 하나하나가 그저 흩어지는 하루가 아니라, 분명한 목적지를 향해 쌓여가는 걸음이 됩니다.</p>
+
+    <div class="verse"><span class="mark">"</span><p>내가 온 것은 양으로 생명을 얻게 하고 더 풍성히 얻게 하려는 것이라</p><cite class="vref" data-ref="요한복음 10:10" data-txt="도둑이 오는 것은 도둑질하고 죽이고 멸망시키려는 것뿐이요 내가 온 것은 양으로 생명을 얻게 하고 더 풍성히 얻게 하려는 것이라">요한복음 10:10</cite></div>
+    <p>여기서 '생명'은 단지 살아있음을 뜻하지 않습니다. 정체성과 목적과 방향이 회복된 삶, 그리고 그 모든 것 위에 하나님과의 관계가 자리한 삶을 의미합니다.</p>
+  </div>
+</section>
+
+<!-- CH6 -->
+<section class="block panel" data-chapter="6" id="ch6">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">6</span>HAPPINESS, JOY & FREEDOM</div>
+    <h2 class="title">진정한 행복, 그리고 기쁨과 자유</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M40 130 Q70 90 100 108 Q130 90 160 130" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 100 Q80 70 100 88 Q120 70 140 100" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+        <path d="M80 70 Q92 54 100 66 Q108 54 120 70" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="deck">결국 인간은 행복을 추구하는 존재입니다. 대학 진학도, 취업도, 연애도, 심지어 신앙조차 많은 사람에게는 "행복해지고 싶다"는 갈망의 다른 이름입니다. 그렇다면 진짜 질문은 이것입니다 — 무엇이 진정한 행복인가.</p>
+
+    <h3 class="sub">모든 인간이 향해 가는 단 하나의 목적지</h3>
+    <p>고대 철학자 아리스토텔레스는 인간의 모든 행동에는 저마다 이유가 있지만, 그 이유들을 계속 거슬러 올라가면 결국 하나의 지점에 도달한다고 보았습니다. 바로 행복입니다. 돈을 버는 이유도, 관계를 맺는 이유도, 건강을 챙기는 이유도 결국은 행복하기 위해서입니다. 행복은 다른 무언가를 위한 수단이 아니라, 그 자체로 인간이 추구하는 최종 목적이라는 것입니다.</p>
+
+    <h3 class="sub">쾌락과 행복은 다릅니다</h3>
+    <p>문제는 많은 사람이 행복을 순간의 쾌락과 혼동한다는 데 있습니다. 맛있는 음식, 좋아요 숫자, 승진, 새로 산 물건 — 이런 것들은 분명 즐거움을 줍니다. 그러나 그 즐거움은 짧고, 곧 더 큰 자극을 요구합니다. 1장에서 만난 사업가 K씨가 그랬듯, 원하던 것을 다 가져도 그 다음엔 다시 헛헛해지는 이유가 여기에 있습니다. 순간의 쾌락은 채워도 채워도 밑 빠진 독에 물 붓기와 같습니다.</p>
+
+    <h3 class="sub">흔들리지 않는 행복은 어디에서 오는가</h3>
+    <p>진정한 행복은 상황이 주는 것이 아니라, 상황과 무관하게 유지되는 마음의 상태에서 옵니다. 그리고 성경은 이 흔들리지 않는 행복의 뿌리가 어디에 있는지를 분명히 가리킵니다 — 바로 하나님과의 관계입니다. 이것이 바로 지금부터 이야기할 기쁨과 자유의 실체입니다.</p>
+
+    <h3 class="sub">완벽주의로부터의 자유</h3>
+    <p>실수 하나로 자신의 존재 전체가 무너지는 것 같은 느낌, 그 밑바닥에는 대개 '완벽해야만 사랑받는다'는 믿음이 깔려 있습니다. 은혜는 이 공식을 뒤집습니다.</p>
+
+    <h3 class="sub">인정중독으로부터의 자유</h3>
+    <p>타인의 반응 하나에 하루의 기분이 좌우되는 삶은 결국 자기 자신을 타인의 손에 맡기는 삶입니다.</p>
+
+    <h3 class="sub">비교의식으로부터의 자유</h3>
+    <p>SNS 시대의 가장 큰 병 중 하나는 끝없는 비교입니다. 각 사람이 서로 다른 존재로 지음받았다는 사실을 알게 되면, 옆 사람의 삶은 더 이상 나의 기준이 되지 않습니다.</p>
+
+    <h3 class="sub">두려움으로부터의 자유</h3>
+    <p>죽음에 대한 두려움, 미래에 대한 막연한 불안은 인간이 짊어진 가장 근원적인 짐 중 하나입니다. 하나님과의 관계 안에서 이 두려움은 완전히 사라지지는 않아도, 더 이상 삶을 지배하지 못하게 됩니다.</p>
+
+    <div class="verse"><span class="mark">"</span><p>그리스도께서 우리로 자유를 누리게 하려고 자유를 주셨으니 그러므로 굳건하게 서서 다시는 종의 멍에를 메지 말라</p><cite class="vref" data-ref="갈라디아서 5:1" data-txt="그리스도께서 우리를 자유롭게 하려고 자유를 주셨으니 그러므로 굳건하게 서서 다시는 종의 멍에를 메지 말라">갈라디아서 5:1</cite></div>
+    <p>이 자유는 현실 도피가 아닙니다. 실패해도 무너지지 않고, 성공해도 거기에 매이지 않는 견고함 — 이것이 하나님과의 만남이 가져오는 실제적인 변화입니다.</p>
+  </div>
+</section>
+
+<!-- CH7 -->
+<section class="block" data-chapter="7" id="ch7">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">7</span>ABUNDANCE</div>
+    <h2 class="title">진정한 풍요의 비밀</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M70 100 L74 150 Q75 160 90 160 L110 160 Q125 160 126 150 L130 100" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="100" cy="100" rx="30" ry="9" stroke="var(--accent)" stroke-width="2"/>
+        <path d="M85 92 Q88 76 100 80 Q112 68 118 84" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+        <path d="M78 84 Q80 70 92 72" stroke="var(--violet-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+      </svg>
+    </div>
+    <p class="deck">사도 바울은 감옥에 갇힌 상태에서 이런 편지를 씁니다. "나는 비천에 처할 줄도 알고 풍부에 처할 줄도 알아, 모든 일에 처할 줄 아는 일체의 비결을 배웠노라." <span class="cite-tag vref" data-ref="빌립보서 4:12" data-txt="나는 비천에 처할 줄도 알고 풍부에 처할 줄도 알아 모든 일 곧 배부름과 배고픔과 풍부와 궁핍에도 처할 줄 아는 일체의 비결을 배웠노라">빌립보서 4:12</span></p>
+
+    <h3 class="sub">'비결'이라는 단어의 무게</h3>
+    <p>여기서 '비결'이라는 단어는 은밀히 전수되는 신비 종교의 비법을 가리키던 단어입니다. 바울은 자신이 그리스도 안에서 발견한 만족의 원리를 설명하는 데 이 단어를 사용합니다.</p>
+
+    <h3 class="sub">오해하기 쉬운 지점 — 물질적 성공에 대한 약속이 아닙니다</h3>
+    <p>간혹 신앙을 물질적 풍요와 성공의 보장으로 오해하는 시각이 있습니다. 그러나 바울은 감옥에서, 궁핍 속에서 이 고백을 했습니다. 진정한 풍요는 환경이 아니라 <strong>환경과 무관하게 흔들리지 않는 마음의 자리</strong>에 있습니다.</p>
+
+    <h3 class="sub">관계의 풍요</h3>
+    <p>진정한 풍요의 또 다른 얼굴은 관계입니다. 하나님과 화목해진 사람은 자신도 모르게 타인과의 관계에서도 더 너그러워지고, 더 깊이 연결될 수 있는 여유를 얻게 됩니다.</p>
+
+    <div class="verse"><span class="mark">"</span><p>내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라</p><cite class="vref" data-ref="빌립보서 4:12-13" data-txt="나는 비천에 처할 줄도 알고 풍부에 처할 줄도 알아 모든 일 곧 배부름과 배고픔과 풍부와 궁핍에도 처할 줄 아는 일체의 비결을 배웠노라 내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라">빌립보서 4:13</cite></div>
+    <p>진정한 풍요란 하나님과의 관계 안에서 이미 채워져 있다는 확신입니다. 이것은 노력해서 얻는 마인드셋이 아니라, 하나님과의 만남을 통해 주어지는 선물입니다.</p>
+  </div>
+</section>
+
+<!-- CH8 -->
+<section class="block panel" data-chapter="8" id="ch8">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">8</span>COMMUNITY</div>
+    <h2 class="title">혼자서는 어려운 이유</h2>
+    <p class="deck">이 하나님과의 만남은 지극히 개인적인 사건에서 시작되지만, 신기하게도 혼자만의 것으로 남지 않습니다.</p>
+
+    <h3 class="sub">신앙은 개인적이지만, 사적이지 않습니다</h3>
+    <p>많은 사람이 신앙을 '나와 하나님' 사이의 은밀한 문제로만 여깁니다. 그러나 성경 속 하나님과의 만남의 이야기들은 한결같이 공동체로 이어집니다.</p>
+
+    <h3 class="sub">함께일 때 비로소 보이는 것들</h3>
+    <p>혼자서는 자신의 맹점을 보기 어렵습니다. 함께 걷는 사람들이 있을 때, 우리는 서로의 부족함을 통해 배우고, 서로의 위로를 통해 회복됩니다.</p>
+
+    <h3 class="sub">불완전한 사람들의 모임이라는 것을 기억하기</h3>
+    <p>공동체는 완성된 사람들의 집합이 아니라, 함께 나아가는 부족한 사람들의 모임입니다. 실망할 일이 생길 수도 있습니다. 그러나 그 불완전함 때문에 하나님과의 만남 자체를 포기하지 않기를 바랍니다.</p>
+  </div>
+</section>
+
+<!-- CH9 -->
+<section class="block" data-chapter="9" id="ch9">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">9</span>REACTIONS</div>
+    <h2 class="title">사람들의 솔직한 반응들</h2>
+    <p class="deck">여기까지 읽으면서 마음에 어떤 반응이 올라왔을 수 있습니다. 그 반응이 무엇이든, 부끄러워하지 않으셔도 됩니다.</p>
+
+    <div class="reaction-grid">
+      <div class="reaction"><div class="t">"너무 좋은 이야기라 믿기 어려워요"</div><p>지나치게 이상적으로 들리는 것은 당연한 반응입니다. 좋은 이야기라고 해서 사실이 아닌 것은 아닙니다.</p></div>
+      <div class="reaction"><div class="t">"교회에 실망한 경험이 있어요"</div><p>매우 정당한 감정입니다. 신앙의 본질과 신앙을 실천하는 사람들의 부족함은 구분해서 볼 필요가 있습니다.</p></div>
+      <div class="reaction"><div class="t">"나는 종교랑 안 맞는 사람이에요"</div><p>여기서 이야기하는 것은 특정 종교 문화가 아니라, 하나님이라는 한 인격체와의 만남입니다. 성향의 문제가 아니라 관계의 문제입니다.</p></div>
+      <div class="reaction"><div class="t">"믿으면 뭔가를 포기해야 할 것 같아요"</div><p>실제로 하나님과의 만남을 경험한 사람들이 공통으로 전하는 것은 그 반대입니다 — 포기가 아니라, 진짜 자유를 얻었다는 고백입니다.</p></div>
+      <div class="reaction"><div class="t">"지금은 때가 아닌 것 같아요"</div><p>성경 속 하나님과의 만남의 이야기들을 보면, 완벽한 때란 존재하지 않았습니다. 가장 준비되지 않은 순간에 그 하나님과의 만남은 찾아왔습니다.</p></div>
+    </div>
+
+    <p style="margin-top:28px;">이 반응들 중 어느 것도 틀린 감정이 아닙니다. 오히려 이 질문들을 정직하게 마주하는 것이, 이 여정에서 가장 중요한 다음 걸음입니다.</p>
+  </div>
+</section>
+
+<!-- CH10 -->
+<section class="block" data-chapter="10" id="ch10">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">10</span>DOES GOD EXIST</div>
+    <h2 class="title">하나님의 계심을 어떻게 알 수 있는가</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <line x1="100" y1="35" x2="100" y2="150" stroke="var(--text-faint)" stroke-width="2"/>
+        <line x1="52" y1="68" x2="148" y2="68" stroke="var(--text-faint)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="52" y1="68" x2="38" y2="108" stroke="var(--violet)" stroke-width="1.5"/>
+        <line x1="52" y1="68" x2="70" y2="108" stroke="var(--violet)" stroke-width="1.5"/>
+        <path d="M34 108 Q52 130 74 108" stroke="var(--violet)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <line x1="148" y1="68" x2="130" y2="108" stroke="var(--accent)" stroke-width="1.5"/>
+        <line x1="148" y1="68" x2="162" y2="108" stroke="var(--accent)" stroke-width="1.5"/>
+        <path d="M126 108 Q148 130 166 108" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M82 150 L100 168 L118 150 Z" fill="var(--text-faint)" opacity="0.35"/>
+        <circle cx="100" cy="35" r="5" fill="var(--text-faint)"/>
+      </svg>
+    </div>
+    <p class="deck">이것은 인류 역사상 가장 오래된 질문 중 하나입니다. 어느 한쪽의 결론을 미리 정해두기보다, 여러 분야가 이 질문에 어떻게 접근해왔는지 — 지지하는 목소리와 회의하는 목소리를 함께 — 먼저 정직하게 들여다보려 합니다.</p>
+
+    <h3 class="sub">철학의 접근 — 우주는 왜 없지 않고 있는가</h3>
+    <p><strong>긍정적 논증:</strong> 우리가 경험하는 모든 것은 시작이 있고, 시작된 것에는 원인이 있습니다. 우주 역시 시작이 있었다면, 그 시작에는 우주 밖의 원인이 필요하다는 결론에 이릅니다. 이를 <span class="cite-tag vref" data-ref="우주론적 논증이란?" data-txt="무언가가 왜 아무것도 없지 않고 존재하는지를 묻는 철학적 논증입니다. '모든 결과에는 원인이 있다'는 우리의 일상적 경험을, 우주 전체의 시작에도 그대로 적용해 우주 밖의 원인이 필요하다고 보는 논리입니다.">우주론적 논증</span>이라 부릅니다.</p>
+    <p><strong>회의적 응답:</strong> 이에 대해 일부 철학자와 과학자는, 시간과 인과율 자체가 우주 안에서만 성립하는 개념이므로 "우주 이전의 원인"을 묻는 것 자체가 성립하지 않는 질문일 수 있다고 반박합니다. 또한 우주가 원인 없이 <span class="cite-tag vref" data-ref="양자요동이란?" data-txt="아무것도 없는 완전한 진공처럼 보이는 공간에서도, 아주 작은 미시세계에서는 에너지가 순간적으로 생겼다 사라지기를 반복하는 미세한 흔들림이 있다는 양자역학의 개념입니다. 일부 과학자들은 우주 전체도 이런 미시적 요동에서 우연히 생겨났을 수 있다고 봅니다. 다만 이 요동이 일어나려면 최소한의 양자장이나 물리 법칙이 이미 존재해야 하므로, '완전한 무(無)'에서 생겨났다고 보기는 어렵다는 반론도 있습니다.">양자요동</span>에서 발생했을 가능성을 제시하기도 합니다. 이 논쟁은 지금도 철학자들 사이에서 계속되고 있습니다.</p>
+
+    <h3 class="sub">과학의 접근 — 우주는 왜 이렇게 정교한가</h3>
+    <p><strong>긍정적 논증:</strong> 중력, 전자기력 등 우주의 <span class="cite-tag vref" data-ref="물리 상수란?" data-txt="중력의 세기나 빛의 속도처럼, 우주 전체에서 늘 똑같이 유지되는 값들을 말합니다. 이 값들이 지금과 조금만 달랐어도 별과 원자, 나아가 생명 자체가 만들어질 수 없었을 것이라고 과학자들은 이야기합니다.">물리 상수</span>들은 생명이 존재할 수 있는 극도로 좁은 범위에 정확히 맞춰져 있습니다. 이 정교함을 지성적 설계의 증거로 보는 시각이 있습니다.</p>
+    <p><strong>회의적 응답:</strong> 다른 과학자들은 우리 우주와 다른 물리 상수를 가진 무수히 많은 우주가 존재할 수 있다는 <span class="cite-tag vref" data-ref="다중우주 가설이란?" data-txt="우리가 사는 우주 말고도, 서로 다른 물리 법칙과 물리 상수를 가진 우주가 무수히 많이 존재할 수 있다는 가설입니다. 아직 직접 관측되거나 실험으로 확인된 적은 없고, 이론적으로 제안된 가능성입니다.">다중우주 가설</span>을 제시합니다. 그중 우연히 생명이 가능한 우주에 우리가 살고 있을 뿐이라는 것입니다. 다만 이 가설은 아직 관측이나 실험으로 직접 검증된 바는 없습니다.</p>
+
+    <h3 class="sub">도덕의 접근 — 옳고 그름은 어디서 오는가</h3>
+    <p><strong>긍정적 논증:</strong> 잔인함과 배신은 문화를 초월해 보편적으로 잘못된 것으로 여겨집니다. 이 보편적 도덕 감각이 물리 법칙만으로는 설명되지 않는 초월적 근원을 가리킨다고 보는 시각이 있습니다.</p>
+    <p><strong>회의적 응답:</strong> <span class="cite-tag vref" data-ref="진화생물학이란?" data-txt="생물이 자연선택을 통해 오랜 시간에 걸쳐 어떻게 변화해왔는지 연구하는 학문입니다. 여기서는 인간의 도덕적 감정이나 협동심 역시 생존과 번식에 유리했기 때문에 자연스럽게 발달한 본능이라고 보는 설명 방식을 가리킵니다.">진화생물학</span>은 협력과 이타심이 집단의 생존 확률을 높였기 때문에 자연선택을 통해 발달한 본능일 뿐이라고 설명합니다. 도덕은 신의 명령이 아니라 진화의 산물이라는 것입니다.</p>
+
+    <h3 class="sub">심리학의 접근 — 신앙은 투사인가, 발견인가</h3>
+    <p><strong>회의적 논증:</strong> 프로이트는 신에 대한 믿음을 아버지의 이미지를 하늘에 투사한 심리적 소망 충족이라고 설명했습니다. 인간이 안전을 갈망하기에 신을 만들어냈다는 것입니다.</p>
+    <p><strong>긍정적 응답:</strong> 반면 C.S. 루이스는 다른 방향에서 이 갈망을 해석합니다. 배고픔이라는 감각이 실제로 음식이 존재하기에 생겨난 것처럼, 인간에게 보편적으로 존재하는 초월을 향한 갈망 역시 그 갈망을 채울 실제 대상이 있기에 생겨난 것일 수 있다는 것입니다. 갈망 자체가 투사인지 발견인지는 이 논증만으로 최종 결론이 나지 않습니다.</p>
+
+    <h3 class="sub">역사의 접근 — 부활은 실제로 있었던 사건인가</h3>
+    <p><strong>긍정적 논증:</strong> 빈 무덤, 여러 목격자들의 일관된 증언, 제자들이 이후 목숨을 걸고 이 사건을 전했다는 사실, 그리고 로마 제국 전역으로의 폭발적인 초대교회 확산은 부활 사건의 역사성을 지지하는 정황 증거로 제시됩니다.</p>
+    <p><strong>회의적 응답:</strong> 일부 학자는 제자들의 집단 환각, 시신 도난, 또는 설화의 점진적 각색 가능성을 대안으로 제시합니다. 다만 이런 대안 설명들 각각도 나름의 설명하기 어려운 지점들을 안고 있어, 역사학자들 사이에서도 여전히 논쟁이 계속됩니다.</p>
+
+    <h3 class="sub">그렇다면 성경의 권위는 어디서 오는가</h3>
+    <p>지금까지 살펴본 여러 접근이 하나님의 존재를 가리킨다면, 그리스도인들은 왜 특별히 성경이라는 이 책에 그토록 압도적인 권위를 둘까요. 전통적으로 몇 가지 근거가 제시됩니다.</p>
+    <p><strong>자기 증언:</strong> 성경은 스스로를 하나님의 감동으로 기록된 책이라 주장합니다. <span class="cite-tag vref" data-ref="디모데후서 3:16" data-txt="모든 성경은 하나님의 감동으로 된 것으로 교훈과 책망과 바르게 함과 의로 교육하기에 유익하니">디모데후서 3:16</span> <span class="cite-tag vref" data-ref="베드로후서 1:21" data-txt="예언은 언제든지 사람의 뜻으로 낸 것이 아니요 오직 성령의 감동하심을 받은 사람들이 하나님께 받아 말한 것임이라">베드로후서 1:21</span> 물론 스스로를 권위 있다고 말한다고 해서 곧바로 권위가 증명되는 것은 아니라는 지적도 있습니다.</p>
+    <p><strong>역사적 신뢰성과 통일성:</strong> 신약 사본은 고대 문헌 중 사본 수와 기록 시점의 근접성에서 유례없이 많은 자료를 갖고 있습니다. 또한 40여 명의 저자가 1,500년에 걸쳐 서로 다른 언어와 대륙에서 기록했음에도, 창조와 타락과 구속과 회복이라는 하나의 이야기로 이어진다는 점이 놀랍다고 여겨집니다.</p>
+    <p><strong>삶을 바꾸는 힘:</strong> 이 책을 읽고 인생이 완전히 달라진 수많은 증언 — 앞서 3장에서 살펴본 아우구스티누스와 C.S. 루이스처럼 — 이 경험적 근거로 제시되기도 합니다.</p>
+    <p>다만 정직하게 말하면, 이슬람도 꾸란에 대해, 힌두교 전통도 베다에 대해 비슷한 구조의 주장을 합니다. 그러니 이런 근거들은 이미 그 전통 안에 있는 사람에게는 설득력 있게 다가오지만, 전통 밖에서 볼 때는 "왜 이 책이 다른 경전보다 우월한가"에 대한 별도의 논증이 여전히 필요합니다. 그 지점에서 그리스도인들이 붙잡는 최종 근거는 텍스트 자체의 우수성보다, 앞서 살펴본 <strong>그리스도의 부활이라는 역사적 사건</strong>입니다. 성경의 권위는 결국 그 책이 증언하는 사건의 사실 여부에 달려 있다는 것입니다.</p>
+
+    <h3 class="sub">그렇다면 성경은 무엇이라 말하는가</h3>
+    <p>흥미롭게도 성경은 하나님의 존재가 애초에 감추어져 있지 않다고 말합니다. <span class="cite-tag vref" data-ref="로마서 1:20" data-txt="창세로부터 그의 보이지 아니하는 것들 곧 그의 영원하신 능력과 신성이 그가 만드신 만물에 분명히 보여 알려졌나니 그러므로 그들이 핑계하지 못할지니라">로마서 1:20</span> 하나님의 영원하신 능력과 신성이 창조 세계 자체를 통해 이미 분명히 드러나 있다는 것입니다. 시편 기자 역시 이렇게 노래합니다. <span class="cite-tag vref" data-ref="시편 19:1" data-txt="하늘이 하나님의 영광을 선포하고 궁창이 그의 손으로 하신 일을 나타내는도다">시편 19:1</span> "하늘이 하나님의 영광을 선포하고."</p>
+    <p>다만 여기서 중요한 것 하나를 짚어야 합니다. 위의 모든 논증은 아무리 정교해도 "하나님이 계실 가능성이 높다"는 결론까지는 데려다줄 수 있지만, 3장에서 다룬 것처럼 <strong>하나님을 인격적으로 '아는' 자리</strong>까지 데려다주지는 못합니다. 증거는 문 앞까지 안내할 뿐, 그 문을 여는 것은 논증이 아니라 만남입니다. 그래서 이 모든 지적 여정의 다음 걸음은 여전히, 하나님과의 만남을 향해 열려 있습니다.</p>
+  </div>
+</section>
+
+<!-- CH11 -->
+<section class="block panel" data-chapter="11" id="ch11">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">11</span>REASON</div>
+    <h2 class="title">논리적으로 다가가기</h2>
+    <p class="deck">감정과 별개로, 머리로도 납득이 되어야 마음이 움직이는 분들을 위해 조금 더 깊이 들어가 보려 합니다. 아래 열두 가지 질문을 하나씩 눌러 열어보세요.</p>
+
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">1</span><span>신이 존재한다는 것이 논리적으로 말이 되나요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>우주는 시작이 있었습니다. 시작된 모든 것에는 원인이 있어야 한다는 것은 우리가 세상을 이해하는 가장 기본적인 방식입니다.</p>
+          <p>우주를 구성하는 <span class="cite-tag vref" data-ref="물리 상수란?" data-txt="중력의 세기나 빛의 속도처럼, 우주 전체에서 늘 똑같이 유지되는 값들을 말합니다. 이 값들이 지금과 조금만 달랐어도 별과 원자, 나아가 생명 자체가 만들어질 수 없었을 것이라고 과학자들은 이야기합니다.">물리 상수</span>들은 생명이 가능하도록 극도로 정교하게 맞추어져 있습니다. 이를 우연으로 설명하려는 시도와 지성적 설계로 설명하려는 시도 중, <strong>어느 쪽이 더 단순하고 자연스러운 설명</strong>인지는 생각해 볼 가치가 있습니다.</p>
+          <p>인간에게는 옳고 그름에 대한 보편적 감각이 있습니다. 이 도덕적 실재감 자체가 물리 법칙만으로는 설명되지 않는 무언가를 가리키고 있는지도 모릅니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">2</span><span>선한 신이 있다면 왜 세상에 고통이 있나요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>가장 무겁고 정당한 질문입니다. 하나님은 고통을 멀리서 설명하는 분이 아니라, 십자가에서 직접 고통 속으로 들어오신 분입니다.</p>
+          <p>사랑은 자유를 전제로 합니다. 하나님은 인간에게 선택의 자유를 주셨고, 세상의 많은 고통은 이 자유가 남용된 결과입니다.</p>
+          <p>성경은 고통이 끝이 아니라고 말합니다. 지금 설명되지 않는 고통도 언젠가 회복과 의미로 이어질 수 있다는 소망이 신앙의 핵심입니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">3</span><span>성경을 어떻게 믿을 수 있나요? 오래된 옛날이야기 아닌가요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>신약성경은 고대 문헌 중 사본의 수와 기록 시점의 근접성에서 압도적으로 많은 자료를 가진 문헌입니다.</p>
+          <p>복음서 저자들은 자신의 이야기를 미화하지 않았습니다. 부활을 처음 목격한 사람이 당시 사회적으로 증언권이 없던 여성들이었다는 사실은, <strong>불리한 사실도 감추지 않는 정직한 기록</strong>이라는 근거가 됩니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">4</span><span>다른 종교와 무엇이 다른가요? 결국 다 같은 길 아닌가요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>많은 종교의 구조는 인간이 신에게 다가가려는 노력으로 이루어져 있습니다. 그러나 기독교는 정반대로, <strong>하나님이 인간에게 내려오신 이야기</strong>입니다.</p>
+          <p>자격을 갖추어야 사랑받는 것이 아니라, 사랑받았기에 자격 없이도 받아들여진다는 것 — 이 순서의 차이가 기독교를 근본적으로 구분 짓습니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">5</span><span>교회 다니는 사람들이 오히려 위선적이지 않나요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>그런 경험이 실제로 있을 수 있습니다. 교회는 완성된 사람들의 모임이 아니라, 여전히 부족한 사람들의 모임이기 때문입니다.</p>
+          <p>신앙의 기준은 신앙인의 완성도가 아니라 예수 그리스도입니다. 의사가 불친절했다고 의학 자체가 거짓이 되지 않는 것처럼요.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">6</span><span>과학이 이미 신앙을 반증하지 않았나요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>과학은 '어떻게'를 설명하는 도구이고, 신앙은 '왜'를 다루는 질문입니다. 본질적으로 충돌하지 않습니다.</p>
+          <p>역사 속 뛰어난 과학자들 중 상당수가 신앙인이었으며, 우주의 정교한 질서를 발견할수록 오히려 신앙으로 이어지는 경우도 많습니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">7</span><span>기적 같은 이야기를 어떻게 믿을 수 있나요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>기적을 처음부터 불가능하다고 전제하면, 어떤 증거를 봐도 믿지 않게 됩니다. 우주 밖에 우주를 만든 존재가 실재한다면, 그 존재가 특별한 방식으로 개입하는 것은 오히려 자연스러운 일입니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">8</span><span>신이 있다면 왜 침묵하나요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>하나님이 압도적으로 자신을 증명하신다면, 그것은 사랑이 아니라 강요가 될 것입니다. 사랑은 언제나 거절할 수 있는 여지를 남겨둡니다.</p>
+          <p>성경은 자연의 질서, 인간의 양심, 무엇보다 예수 그리스도를 통해 이미 하나님이 자신을 드러내셨다고 말합니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">9</span><span>신앙은 결국 심리적 자기위안이 아닌가요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>신앙이 위안을 준다는 사실이, 신앙이 거짓이라는 증거는 되지 않습니다. 어떤 믿음이 위로가 된다는 것과 그 믿음이 사실인지는 다른 질문입니다.</p>
+          <p>성경이 그리는 신앙은 편안한 위안만이 아니라 회개와 자기 부인을 요구합니다. 단순한 위안이 목적이었다면 이렇게 불편한 요구를 담지 않았을 것입니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">10</span><span>예수님만이 유일한 길이라는 주장이 오만하지 않나요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>어떤 진리 주장이든, 그것이 참이라면 상충하는 주장은 참이 될 수 없습니다. 이는 모든 진리 주장의 논리적 성격입니다.</p>
+          <p>이 주장의 핵심은 우월감이 아니라 은혜입니다. "내가 낫다"가 아니라 "스스로는 답을 찾을 수 없었기에 다가와 주신 분을 붙잡았다"는 고백에 가깝습니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">11</span><span>죽음 이후 심판과 지옥이 정말 있나요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>세상의 불의들이 아무 결말 없이 사라진다면 그것이 오히려 더 부당한 우주일 것입니다. 심판은 궁극적으로 정의가 실현된다는 소망과 맞닿아 있습니다.</p>
+          <p>동시에 하나님은 심판을 원하시는 분이 아니라, 모든 사람이 돌아오기를 바라시는 분입니다. 문은 아직 열려 있습니다.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">12</span><span>완벽히 확신이 서지 않으면 믿을 수 없는 건가요?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>그렇지 않습니다. 도마도 침례요한도 하박국도 완전한 확신 없이 질문하며 나아갔습니다. 믿음은 불확실함을 안은 채로도 방향을 정하고 내딛는 첫걸음입니다.</p>
+        </div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CH12 -->
+<section class="block" data-chapter="12" id="ch12">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">12</span>AFTERWARD</div>
+    <h2 class="title">하나님과의 만남 이후, 무엇이 달라지는가</h2>
+    <p class="deck">이 모든 이야기가 추상적으로 들릴 수 있어, 실제 일상에서 무엇이 달라지는지 조금 더 구체적으로 나누어 보겠습니다.</p>
+
+    <div class="life-grid">
+      <div class="life-row"><div class="when">아침에</div><p>눈을 뜨는 이유가 오늘 해내야 할 일의 목록이 아니라, 오늘도 나를 사랑하시는 분이 계신다는 사실에서 시작됩니다.</p></div>
+      <div class="life-row"><div class="when">일할 때</div><p>일의 결과가 곧 나의 가치가 되는 압박에서 벗어나, 맡겨진 일을 정직하게 감당하는 여유가 생깁니다.</p></div>
+      <div class="life-row"><div class="when">돈을 대할 때</div><p>소유가 안정의 근원이 아니라는 것을 알게 되면서, 움켜쥐는 마음 대신 나누는 마음의 여백이 생깁니다.</p></div>
+      <div class="life-row"><div class="when">실패했을 때</div><p>실수 하나로 존재 전체가 무너지지 않습니다. 실패는 정체성이 아니라 지나가는 사건이 됩니다.</p></div>
+      <div class="life-row"><div class="when">관계 속에서</div><p>사랑받기 위해 애쓰던 자리에서, 이미 사랑받았기에 있는 그대로 사랑할 수 있는 자리로 옮겨갑니다.</p></div>
+      <div class="life-row"><div class="when">갈등이 생겼을 때</div><p>옳고 그름을 증명하려는 싸움 대신, 관계를 회복하려는 마음이 먼저 움직이기 시작합니다.</p></div>
+      <div class="life-row"><div class="when">상실 앞에서</div><p>슬픔이 사라지지는 않지만, 그 슬픔을 홀로 짊어지지 않습니다. 소망이라는 단어가 슬픔 곁에 함께 서 있습니다.</p></div>
+      <div class="life-row"><div class="when">죽음을 마주할 때</div><p>끝이 아니라 이어짐이라는 확신이, 삶을 더 가볍게가 아니라 더 진지하게 살게 합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CH13 -->
+<section class="block panel" data-chapter="13" id="ch13">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">13</span>NEXT STEP</div>
+    <h2 class="title">더 알아가고 싶다면</h2>
+    <p class="deck">여기까지 읽으셨다면, 마음 한켠에 다음 걸음에 대한 궁금증이 생겼을 수 있습니다. 거창하게 시작할 필요는 없습니다.</p>
+
+    <div class="step-grid">
+      <div class="step"><div class="n">1</div><div><div class="t">요한복음을 처음부터 끝까지 읽어보기</div><p>신약성경 네 개의 복음서 중 요한복음은 예수님이 누구신지를 가장 인격적으로 소개하는 책입니다.</p></div></div>
+      <div class="step"><div class="n">2</div><div><div class="t">꾸밈없이 짧게 기도해보기</div><p>완벽한 언어나 격식이 필요하지 않습니다. 오늘 느낀 솔직한 마음을 그대로 말씀드리는 것으로 충분합니다.</p></div></div>
+      <div class="step"><div class="n">3</div><div><div class="t">믿는 사람과 편하게 대화해보기</div><p>혼자 답을 찾으려 하기보다, 신앙의 여정을 먼저 걸어간 사람과 질문을 나누어 보는 것이 큰 도움이 됩니다.</p></div></div>
+      <div class="step"><div class="n">4</div><div><div class="t">가까운 예배 공동체에 한 번 참석해보기</div><p>부담 없이 관찰자로 앉아만 있어도 괜찮습니다. 그 자체가 하나의 시작이 될 수 있습니다.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Invitation -->
+<section class="invite" data-chapter="14" id="ch14">
+  <div class="wrap reveal">
+    <div class="chip" style="margin:0 auto 26px;"><span class="n">14</span>INVITATION</div>
+    <div class="illus large" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="70" fill="var(--accent)" opacity="0.06"/>
+        <path d="M60 175 L60 55 Q60 25 100 25 Q140 25 140 55 L140 175" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="175" x2="140" y2="175" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="126" cy="118" r="3.5" fill="var(--accent)"/>
+        <path d="M100 175 L100 60" stroke="var(--violet)" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.6"/>
+        <circle cx="100" cy="90" r="8" fill="var(--violet-soft)" opacity="0.9"/>
+      </svg>
+    </div>
+    <h2 class="title">이제, 당신이 하나님과의 만남을 시작할 시간입니다</h2>
+    <p>이 글이 지식으로 끝나지 않기를 바랍니다. 지금까지 살펴본 모든 이야기의 목적은 하나입니다 — 당신이 직접 그 하나님과의 만남을 경험하는 것입니다.</p>
+    <p>거창한 준비나 완벽한 이해가 필요하지 않습니다. 모세도, 사마리아 여인도, 삭개오도, 바울도, 아우구스티누스도, C.S. 루이스도 아무 준비 없이 그 하나님과의 만남을 맞이했습니다. 지금 이 자리에서, 조용히 다음의 말을 자신의 언어로 옮겨보셔도 좋습니다.</p>
+    <div class="prayer-box">
+      <div class="tag2">한 걸음, 조용한 기도</div>
+      <p>하나님, 아직 잘 모르지만<br>
+      제 삶의 질문 앞에 당신을 초대합니다.<br>
+      지금까지 제 힘으로 답을 찾으려 했던 것을 내려놓고,<br>
+      당신과의 만남을 구합니다.<br>
+      제게 오셔서, 진짜 기쁨과 자유,<br>
+      그리고 풍요의 비밀을 알게 해주세요.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">은혜교회</div>
+  <p>기독교한국침례회 · 담임목사 박동준<br>이 글을 나누고 싶은 분들과 자유롭게 공유해 주세요.</p>
+</footer>
+
+<div class="vpop-overlay" id="vpopOverlay">
+  <div class="vpop">
+    <button class="close" id="vpopClose" aria-label="닫기">×</button>
+    <div class="ref" id="vpopRef"></div>
+    <div class="txt" id="vpopTxt"></div>
+  </div>
+</div>
+
+<script>
+  function toggleFaq(btn){
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>{
+      if(el !== item){ el.classList.remove('open'); el.querySelector('.faq-a').style.maxHeight = null; }
+    });
+    if(isOpen){ item.classList.remove('open'); answer.style.maxHeight = null; }
+    else{ item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, { threshold:0.1 });
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  // font size control (in-memory only, resets on reload)
+  const fontSteps = [
+    { pct:87.5,  label:'작게' },
+    { pct:100,   label:'보통' },
+    { pct:112.5, label:'크게' },
+    { pct:125,   label:'매우 크게' }
+  ];
+  let fontIdx = 1; // default = '보통'
+  const fontLabel = document.getElementById('fontLabel');
+  function applyFontSize(){
+    document.documentElement.style.fontSize = fontSteps[fontIdx].pct + '%';
+    fontLabel.textContent = fontSteps[fontIdx].label;
+  }
+  document.getElementById('fontInc').addEventListener('click', ()=>{
+    fontIdx = Math.min(fontIdx + 1, fontSteps.length - 1);
+    applyFontSize();
+  });
+  document.getElementById('fontDec').addEventListener('click', ()=>{
+    fontIdx = Math.max(fontIdx - 1, 0);
+    applyFontSize();
+  });
+
+  // progress bar
+  window.addEventListener('scroll', ()=>{
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+  });
+
+  // side nav dots
+  const sections = Array.from(document.querySelectorAll('[data-chapter]'));
+  const nav = document.getElementById('sideNav');
+  sections.forEach(sec=>{
+    const btn = document.createElement('button');
+    btn.dataset.target = sec.id || 'top';
+    btn.addEventListener('click', ()=> sec.scrollIntoView({behavior:'smooth'}));
+    nav.appendChild(btn);
+  });
+  const navBtns = Array.from(nav.querySelectorAll('button'));
+  const navIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        navBtns.forEach(b=>b.classList.remove('active'));
+        const idx = sections.indexOf(e.target);
+        if(navBtns[idx]) navBtns[idx].classList.add('active');
+      }
+    });
+  }, { threshold:0.5 });
+  sections.forEach(s=>navIo.observe(s));
+
+  // scripture reference popup
+  const vpopOverlay = document.getElementById('vpopOverlay');
+  const vpopRef = document.getElementById('vpopRef');
+  const vpopTxt = document.getElementById('vpopTxt');
+  function openVerse(ref, txt){
+    vpopRef.textContent = ref;
+    vpopTxt.textContent = txt;
+    vpopOverlay.classList.add('show');
+  }
+  document.querySelectorAll('.vref').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      openVerse(el.dataset.ref || '', el.dataset.txt || '');
+    });
+  });
+  document.getElementById('vpopClose').addEventListener('click', ()=> vpopOverlay.classList.remove('show'));
+  vpopOverlay.addEventListener('click', (e)=>{ if(e.target === vpopOverlay) vpopOverlay.classList.remove('show'); });
+</script>
+
+</body>
+</html>
