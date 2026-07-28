@@ -304,6 +304,36 @@
   .room--feature .doclist .meta{ color: rgba(246,242,233,0.55); }
   .room--feature .doclist__empty{ color: rgba(246,242,233,0.55); }
 
+  .room--feature-alt{
+    padding-top: 2.3vh;
+    padding-bottom: 2.3vh;
+    background: #46293b !important;
+    color: var(--cream);
+    border-top: 2px solid #cf9a5c;
+    border-bottom: 2px solid #cf9a5c;
+  }
+  .room--feature-alt .room__title{ color: var(--cream); }
+  .room--feature-alt .room__desc{ color: rgba(246,242,233,0.72); }
+  .room--feature-alt .doclist{ border-top-color: rgba(246,242,233,0.2); }
+  .room--feature-alt .doclist li{ border-bottom-color: rgba(246,242,233,0.2); }
+  .room--feature-alt .doclist a:hover{ background: rgba(207,154,92,0.18); }
+  .room--feature-alt .doclist .title{ color: var(--cream); font-weight: 600; }
+  .room--feature-alt .doclist .tag{ color: #e0b483; }
+  .room--feature-alt .doclist .meta{ color: rgba(246,242,233,0.55); }
+  .room--feature-alt .doclist__empty{ color: rgba(246,242,233,0.55); }
+  .badge-lg-alt{
+    background: linear-gradient(120deg, #ffe4a8 0%, #f0a15c 45%, #cf5f8a 100%);
+    color: #3a1220;
+    box-shadow: 0 2px 10px rgba(207,95,138,0.45), inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+  .hero__index a.featured-alt{ border-color: #b8567f; background: rgba(184,86,127,0.08); }
+  .hero__index a.featured-alt:hover{ background: rgba(184,86,127,0.18); }
+  .badge-alt{
+    background: linear-gradient(120deg, #ffe4a8 0%, #f0a15c 45%, #cf5f8a 100%);
+    color: #3a1220;
+    box-shadow: 0 2px 10px rgba(207,95,138,0.45), inset 0 1px 0 rgba(255,255,255,0.5);
+  }
+
   .room__head{
     display:flex;
     align-items:flex-end;
@@ -568,6 +598,7 @@
 <a id="top"></a>
 
 <nav class="rail" aria-label="자료실 관 이동">
+  <a class="rail__mark rail__mark--feature" data-room="room-0b" href="#room-0b"><span class="badge-dot"></span><span>인생질문</span></a>
   <a class="rail__mark rail__mark--feature" data-room="room-0" href="#room-0"><span class="badge-dot"></span><span>신앙철학</span></a>
   <a class="rail__mark" data-room="room-1" href="#room-1">I<span>책별성경공부</span></a>
   <a class="rail__mark" data-room="room-2" href="#room-2">II<span>새가족</span></a>
@@ -623,6 +654,7 @@
       주보와 나눔지, 행정 서식까지 — 은혜교회의 사역 자료를 이곳에서 찾아보실 수 있습니다.</p>
 
     <div class="hero__index" id="toc">
+      <a href="#room-0b" class="featured featured-alt"><span class="badge badge-alt">인생 질문</span><span class="lbl">행복을 묻는 그대에게</span><span class="cnt">보기</span></a>
       <a href="#room-0" class="featured"><span class="badge">먼저 읽기</span><span class="lbl">은혜교회의 신앙철학</span><span class="cnt">보기</span></a>
       <a href="#room-1"><span class="num">I</span><span class="lbl">책별성경공부 · 구약·신약</span><span class="cnt">보기</span></a>
       <a href="#room-2"><span class="num">II</span><span class="lbl">새가족 자료</span><span class="cnt">보기</span></a>
@@ -641,6 +673,17 @@
         <path d="M7.5 14.2c1 1.6 2.7 2.6 4.5 2.6s3.5-1 4.5-2.6" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
       </svg>
     </p>
+  </section>
+
+  <section class="room room--feature-alt" id="room-0b">
+    <div class="room__head">
+      <span class="badge-lg badge-lg-alt">인생 질문</span>
+      <div>
+        <h2 class="room__title">행복을 묻는 그대에게</h2>
+        <p class="room__desc">우리는 인생에서 반드시 해야만 하는 존재와 길, 그리고 필연적으로 행복에 대한 진지한 질문에 맞서있는 우리들의 친구이자 나그네들을 위하여 이 자료를 준비했습니다. 이 글을 전합니다.</p>
+      </div>
+    </div>
+    <ul class="doclist" id="list-meeting_blessing"><li class="doclist__empty">불러오는 중...</li></ul>
   </section>
 
   <section class="room room--feature" id="room-0">
