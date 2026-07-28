@@ -261,10 +261,27 @@
   .toc-btn svg{ width:14px; height:14px; flex:none; }
   @media (max-width:980px){ .toc-btn{ left:14px; bottom:14px; } }
   @media (max-width:600px){ .toc-btn span{ display:none; } .toc-btn{ padding:12px; } }
+
+  .back-btn{
+    position:fixed; left:22px; top:22px; z-index:100;
+    display:flex; align-items:center; gap:8px;
+    background:var(--bg-card); border:1px solid var(--line);
+    color:var(--text); font-family:'Noto Sans KR', sans-serif; font-size:0.78rem; font-weight:700;
+    padding:11px 18px; border-radius:30px; cursor:pointer;
+    box-shadow:0 8px 24px rgba(20,19,16,0.12); text-decoration:none;
+  }
+  .back-btn svg{ width:14px; height:14px; flex:none; }
+  .back-btn:hover{ background:var(--bg-panel); }
+  @media (max-width:600px){ .back-btn span{ display:none; } .back-btn{ padding:12px; } }
 </style>
 </head>
 <body style="background:#FFFFFF;">
 <div class="bg-layer" style="background:#FFFFFF;"></div>
+
+<button class="back-btn" onclick="history.length > 1 ? history.back() : window.close()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  <span>자료실로 돌아가기</span>
+</button>
 
 <div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
 <nav class="side-nav" id="sideNav"></nav>
