@@ -4,7 +4,7 @@
 
 (function () {
   var a = document.createElement('a');
-  a.href = '/gracechurch/';
+  a.href = '/';
   a.textContent = '← 자료실로';
   a.setAttribute('aria-label', '자료실 첫 페이지로 돌아가기');
   a.style.cssText = [
