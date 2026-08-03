@@ -254,6 +254,79 @@
     margin-top:10px;
   }
 
+  /* ===== Link section ===== */
+  .link-section{
+    margin:36px 0 10px;
+    padding:28px 26px;
+    background:var(--cream-dim);
+    border:1px solid var(--line);
+    border-radius:12px;
+  }
+  .link-section-title{
+    font-family:'Noto Serif KR',serif;
+    font-size:18px;
+    font-weight:700;
+    color:var(--navy);
+    margin:0 0 12px;
+  }
+  .link-section-desc{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:14.5px;
+    color:#4a4638;
+    margin:0 0 18px;
+  }
+  .link-list{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .link-item{
+    display:flex;
+    align-items:center;
+    gap:14px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:9px;
+    padding:13px 16px;
+    text-decoration:none;
+    transition:all .15s ease;
+  }
+  .link-item:hover{
+    border-color:var(--gold);
+    background:#fffdf7;
+    transform:translateX(2px);
+  }
+  .link-badge{
+    flex:none;
+    width:28px;height:28px;
+    border-radius:50%;
+    background:var(--navy);
+    color:var(--gold-light);
+    font-family:'Noto Serif KR',serif;
+    font-weight:700;
+    font-size:13px;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .link-text{display:flex;flex-direction:column;gap:2px;}
+  .link-title{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:14.5px;
+    font-weight:600;
+    color:var(--navy);
+  }
+  .link-url{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:12.5px;
+    color:var(--gold);
+  }
+  .link-section-source{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:12px;
+    color:#a3936f;
+    margin:16px 0 0;
+    text-align:right;
+  }
+
   .closing{
     text-align:center;
     padding:80px 0 40px;
@@ -329,6 +402,35 @@
       </div>
 
       <p>두 영상 모두, 겉으로는 대단해 보이지 않는 것 — 선물 하나, 만듦새 하나 — 를 대하면서도 그 안에 깊은 의도와 배려, 그리고 다른 이를 향한 마음을 담아내고 있습니다. 그것이 바로 <strong>선교적 마인드</strong>입니다. 거창한 선언이 아니라, 일상의 아주 작은 결정 하나하나에 스며드는 태도입니다.</p>
+
+      <div class="link-section">
+        <h3 class="link-section-title">다시 생각해볼 대한민국 교회 공간에 대하여</h3>
+        <p class="link-section-desc">아래 세 영상은 유튜브 채널 <strong>'크리스챤투데이'</strong>의 콘텐츠이며, 오늘날 한국 교회의 공간에 대해 다시 한번 생각해 보게 하는 참고 자료로 함께 링크를 남깁니다.</p>
+        <div class="link-list">
+          <a class="link-item" href="https://youtu.be/99JQdYA6eWs" target="_blank" rel="noopener noreferrer">
+            <span class="link-badge">1</span>
+            <span class="link-text">
+              <span class="link-title">영상 보러 가기</span>
+              <span class="link-url">youtu.be/99JQdYA6eWs</span>
+            </span>
+          </a>
+          <a class="link-item" href="https://youtu.be/EtVzZ0v3rF4" target="_blank" rel="noopener noreferrer">
+            <span class="link-badge">2</span>
+            <span class="link-text">
+              <span class="link-title">영상 보러 가기</span>
+              <span class="link-url">youtu.be/EtVzZ0v3rF4</span>
+            </span>
+          </a>
+          <a class="link-item" href="https://youtu.be/BG6-iS9yWK0" target="_blank" rel="noopener noreferrer">
+            <span class="link-badge">3</span>
+            <span class="link-text">
+              <span class="link-title">영상 보러 가기</span>
+              <span class="link-url">youtu.be/BG6-iS9yWK0</span>
+            </span>
+          </a>
+        </div>
+        <p class="link-section-source">출처: 유튜브 '크리스챤투데이'</p>
+      </div>
     </div>
   </section>
 
@@ -435,6 +537,5 @@
     ytObserver.observe(frame);
   });
 </script>
-   <script src="/assets/back-home.js"></script>
 </body>
 </html>
