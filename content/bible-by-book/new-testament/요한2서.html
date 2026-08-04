@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>요한2서 연구</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#5c2a35;
+  --navy-soft:#7a4552;
+  --gold:#b0793e;
+  --gold-soft:#cc9a5f;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e6d9d2;
+  --white:#ffffff;
+  --insight:#4fa3d1;
+}
+
+body{
+  margin:0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+b, strong{ font-weight:700; }
+.wrap{ max-width: 720px; margin: 0 auto; background: var(--white); min-height: 100vh; }
+
+/* ===== TOP BAR (sticky, solid bg - no blur, no fixed) ===== */
+.top-bar{
+  position: sticky; top: 0; z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 4vw;
+  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+}
+.top-bar .tb-title{
+  font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
+}
+.top-bar .tb-toc{
+  color: var(--navy-soft); font-size: 13px; cursor: pointer;
+  padding: 6px 13px; border: 1px solid var(--line); border-radius: 14px;
+  background: var(--white); white-space: nowrap;
+}
+.top-bar .tb-toc:active{ background: var(--cream-deep); }
+
+/* ===== BOTTOM NAV BUTTON GROUP (static, not fixed) ===== */
+.bottom-nav{
+  display: flex; gap: 10px; padding: 20px 4vw 34px;
+  border-top: 1px solid var(--line);
+  background: var(--cream-deep);
+}
+.bottom-nav button{
+  flex: 1; padding: 13px 6px; border-radius: 10px; border: none;
+  background: var(--navy); color: var(--gold-soft);
+  font-size: 13.5px; font-weight: 700; cursor: pointer;
+  font-family: inherit;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.bottom-nav button svg{ width: 18px; height: 18px; }
+.bottom-nav button:active{ background: var(--navy-soft); }
+
+/* ===== COVER (gradient + pearl sheen) ===== */
+.cover{
+  position: relative;
+  overflow: hidden;
+  padding: 70px 7vw 50px;
+  color: var(--white);
+  text-align: center;
+}
+.cover::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.14) 22%, rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 15% 92%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%);
+  pointer-events:none;
+}
+.cover-inner{ position:relative; z-index:1; }
+.cover .eyebrow{
+  font-size: 11px; letter-spacing: 0.24em; color: var(--gold-soft);
+  font-weight: 700; text-transform: uppercase; margin-bottom: 20px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 32px; font-weight: 700; margin: 0 0 14px; letter-spacing: -0.01em;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.18);
+}
+.cover .cover-sub{ font-size: 14px; color:#f0e2e5; margin-bottom: 30px; line-height:1.7; }
+
+/* pearl divider: gold line + glossy pearl bead */
+.pearl-divider{ display:flex; align-items:center; justify-content:center; gap:9px; margin: 0 auto 30px; }
+.pearl-divider .pl-line{ width:34px; height:1.5px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+.pearl-divider .pl-line.r{ background: linear-gradient(90deg, var(--gold-soft), transparent); }
+.pearl-divider .pl-bead{
+  width:11px; height:11px; border-radius:50%; flex-shrink:0;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #f4eee2 26%, #d8c9b0 55%, #a9906f 100%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25), inset 0 0 2px rgba(255,255,255,0.6);
+}
+
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13px; color: var(--gold-soft); letter-spacing:0.04em;
+}
+.cover .cover-note{ margin-top: 40px; font-size: 12px; color:#e0c7cb; }
+
+/* ===== INTRO ===== */
+.intro-page{ padding: 34px 6vw 10px; }
+.page-label{ font-size: 11px; letter-spacing:0.2em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 6px;
+}
+.intro-lead{ font-size:15px; color:var(--ink-soft); margin-bottom: 26px; line-height:1.75; }
+.intro-block{ margin-bottom: 24px; }
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 16px; color: var(--navy-soft); font-weight:700; margin:0 0 10px;
+  padding-left: 10px; border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{ margin: 0 0 10px; text-align:left; font-size:15px; line-height:1.8; }
+.intro-block b{ color: var(--navy-soft); }
+.intro-outline{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+.intro-outline .oi{ background: var(--cream-deep); border-radius:8px; padding:14px 16px; border-top:3px solid var(--gold-soft); }
+.intro-outline .oi .oi-tag{ font-size:11px; color:var(--gold); font-weight:700; letter-spacing:0.05em; margin-bottom:5px; }
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight:700; color:var(--navy); font-size:14.5px; margin-bottom:4px;
+}
+.intro-outline .oi .oi-body{ font-size:13px; color:var(--ink-soft); line-height:1.65; }
+
+/* ===== TOC ===== */
+.toc-page{ padding: 34px 6vw 20px; }
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 20px;
+}
+.toc-item{
+  display:flex; flex-wrap:wrap; align-items:baseline; color:var(--ink);
+  padding: 14px 0; border-bottom:1px solid var(--line); cursor:pointer;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:14px; font-weight:700; color:var(--gold); width:26px; flex-shrink:0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:16px; font-weight:600; color:var(--navy);
+}
+.toc-sub{ font-size:12.5px; color:var(--ink-soft); margin-left:26px; flex-basis:100%; margin-top:3px; }
+
+/* ===== CHAPTER ===== */
+.chapter{ padding: 8px 6vw 10px; }
+.chapter-head{
+  margin: 18px 0 20px; padding-bottom:14px; border-bottom:2px solid var(--navy);
+  display:flex; align-items:flex-start; gap:12px;
+}
+.chapter-icon-badge{
+  flex-shrink:0; width:42px; height:42px; border-radius:50%;
+  background: var(--navy); color: var(--gold-soft);
+  display:flex; align-items:center; justify-content:center;
+}
+.chapter-icon-badge svg{ width:22px; height:22px; }
+.chapter-eyebrow{ font-size:11px; letter-spacing:0.16em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:4px; }
+.chapter-head h2.chtitle{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:20px; font-weight:700; color:var(--navy); margin:0 0 4px;
+}
+.chapter-head .chapter-sub{ font-size:13px; color:var(--ink-soft); }
+.ref-strip{ display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.ref-item{ font-size:11.5px; color:var(--navy-soft); padding:2px 9px; background:var(--cream-deep); border-radius:10px; }
+
+section.sub{ margin-bottom: 30px; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14px; color:var(--gold); font-weight:700; }
+h3.sech{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:18px; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:13px; margin:0 0 14px; }
+
+/* flow */
+.flow-item{ padding: 12px 0; border-top:1px solid var(--line); }
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:13px; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:16px; margin:2px 0 6px; }
+.flow-body{ color:var(--ink); font-size:15px; line-height:1.8; text-align:left; }
+
+/* teaching cards */
+.teach-card{
+  background: var(--cream-deep); border-radius:12px; padding:16px 17px; margin-bottom:14px;
+  border-left: 4px solid var(--gold-soft);
+}
+.teach-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; border-radius:50%; background:var(--navy); color:var(--gold-soft);
+  font-size:12px; font-weight:700; margin-right:8px;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--navy); font-size:16px; }
+.teach-body{ color:var(--ink); font-size:15px; line-height:1.8; margin-top:8px; text-align:left; }
+
+.speech-bubble{
+  display:flex; gap:10px; align-items:flex-start;
+  background: var(--white); border:1px solid var(--line); border-radius:12px;
+  padding:13px 15px; margin-top:10px;
+}
+.sb-avatar{
+  width:28px; height:28px; min-width:28px; border-radius:50%;
+  background: var(--navy); color:var(--gold-soft);
+  display:flex; align-items:center; justify-content:center; font-size:13px;
+}
+.sb-text{ font-size:14px; color:var(--navy-soft); line-height:1.75; }
+.sb-text b{ color:var(--navy); }
+
+/* deep questions */
+.deep-wrap{ background: var(--navy); border-radius:14px; padding:18px 17px 8px; color:var(--white); }
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h3.sech{ color:var(--white); }
+.deep-wrap .sec-desc{ color:#d9c3c8; }
+.deep-item{ margin-bottom:18px; }
+.deep-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--white); font-size:16px; margin-bottom:8px; display:flex; gap:8px; }
+.deep-num{
+  flex-shrink:0; width:22px; height:22px; border-radius:50%;
+  background: var(--gold-soft); color:var(--navy);
+  display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;
+}
+.deep-body{ font-size:14.5px; color:#e9dde0; line-height:1.8; text-align:left; padding-left:30px; }
+.verse-box{
+  margin: 10px 0 4px 30px; background: rgba(255,255,255,0.07);
+  border-left:2px solid var(--gold-soft); padding:10px 13px; border-radius:0 8px 8px 0;
+}
+.verse-ref{ font-size:11.5px; color:var(--gold-soft); margin-bottom:4px; font-weight:700; }
+.verse-text{ font-size:14.5px; color:#f0e4e6; line-height:1.7; }
+
+/* highlight terms */
+b.hl-term{ background:#f1dfba; color:#7a5220; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-quote{ background:#f2dcd3; color:#9a4632; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-greek{ background:#d7ebe6; color:#235f56; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-insight{ background:#d7ebf7; color:#1c5f85; padding:1px 4px; border-radius:3px; font-weight:700; cursor:pointer; }
+b.hl-insight:after{ content:"\25C6"; font-size:0.55em; margin-left:2px; vertical-align:super; opacity:0.85; }
+
+.deep-body b.hl-term, .verse-text b.hl-term{ background: rgba(216,176,115,0.28); color:#f3dfb8; }
+.deep-body b.hl-quote, .verse-text b.hl-quote{ background: rgba(224,122,105,0.26); color:#f0b8a8; }
+.deep-body b.hl-greek, .verse-text b.hl-greek{ background: rgba(110,196,188,0.26); color:#a9e6dd; }
+.deep-body b.hl-insight, .verse-text b.hl-insight{ background: rgba(120,190,230,0.28); color:#bfe3f8; }
+
+/* ===== INSIGHT POPUP MODAL ===== */
+#insightOverlay{
+  display:none; position:fixed; inset:0; z-index:800;
+  background: rgba(40,20,25,0.55); align-items:center; justify-content:center; padding:20px;
+}
+#insightOverlay.open{ display:flex; }
+#insightCard{
+  background: var(--white); max-width:440px; width:100%; max-height:78vh; overflow-y:auto;
+  border-radius:14px; padding:22px 20px 18px; box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  position:relative; border-top:5px solid var(--insight);
+}
+#insightCard .insight-eyebrow{ font-size:11px; letter-spacing:0.12em; color:var(--insight); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+#insightCard h4{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif; font-size:17px; color:var(--navy);
+  font-weight:700; margin:0 0 12px; line-height:1.4;
+}
+#insightCard .insight-body{ font-size:14px; line-height:1.82; color:var(--ink); white-space:pre-line; }
+#insightCard .insight-close{
+  position:absolute; top:12px; right:14px; width:26px; height:26px; border-radius:50%;
+  background: var(--cream-deep); color:var(--navy-soft);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:14px;
+}
+#insightCard .insight-close:active{ background: var(--line); }
+
+/* ===== TERM TOOLTIP ===== */
+#termTip{
+  display:none; position:absolute; z-index:500; max-width:260px;
+  background: var(--white); color:var(--ink); font-size:13px; line-height:1.6;
+  padding:11px 14px; border-radius:10px; border-top:4px solid var(--gold);
+  box-shadow:0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip .tip-close{
+  position:absolute; top:5px; right:8px; width:18px; height:18px; border-radius:50%;
+  background: var(--cream-deep); display:flex; align-items:center; justify-content:center;
+  color:var(--navy-soft); font-size:11px; cursor:pointer;
+}
+b.has-tip{ cursor:pointer; }
+
+.footer-brand{
+  text-align:center; padding: 26px 6vw 6px; font-size:12px; color:var(--ink-soft);
+}
+
+@media print{
+  .top-bar, .bottom-nav, #insightOverlay, #termTip{ display:none !important; }
+}
+</style>
+</head><body>
+<div class="wrap">
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">&#10005;</div><div class="insight-eyebrow">&#128172; 더 알아보기</div><h4 id="insightTitle"></h4><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="top-bar">
+  <div class="tb-title" onclick="goTo('top')">📖 요한2서 연구</div>
+  <div class="tb-toc" onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg> 목차</div>
+</div>
+
+<div class="cover" style="background: linear-gradient(150deg, #3d2038 0%, #6d3d63 100%);">
+  <div class="cover-inner">
+    <div class="eyebrow">BIBLE STUDY · 2 JOHN</div>
+    <h1>요한2서 연구</h1>
+    <div class="cover-sub">진리와 사랑 안에서 행하라 — 짧지만 단호한 한 장의 편지</div>
+    <div class="pearl-divider"><span class="pl-line"></span><span class="pl-bead"></span><span class="pl-line r"></span></div>
+    <div class="cover-range">요이 1:1-13 · 구조 · 교훈 · 심화 질문</div>
+    <div class="cover-note">전 1장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>요한2서 연구 서론</h1>
+  <p class="intro-lead">가장 짧은 편지 중 하나이지만, 진리와 사랑의 균형을 가장 선명하게 보여주다.</p>
+  <div class="intro-block"><h3>저자와 기록 시기</h3><p>요한2서는 자신을 '장로'라 칭하는 인물의 기록으로, 전통적으로 <b class='hl-term'>사도 요한</b>의 저작으로 받아들여져 왔다. 요한1서와의 어휘·주제적 유사성(진리, 사랑, 적그리스도, 그리스도의 교훈 등)이 매우 뚜렷하다. 기록 시기는 요한1서와 비슷한 <b class='hl-term'>AD 85–95년경</b>으로 추정된다.</p></div><div class="intro-block"><h3>수신자와 정황</h3><p>신약성경 중 가장 짧은 책 중 하나로(헬라어 원문 245단어), '택하심을 입은 부녀와 그 자녀들'에게 보내졌다. 배경은 요한1서와 동일하게 <b class='hl-term'>성육신을 부인하는 순회 거짓 교사들</b>의 활동이며, 특히 이들이 지역 교회들을 옮겨 다니며 숙식을 제공받는 관행을 통해 미혹을 확산시키는 상황을 다룬다.</p></div><div class="intro-block"><h3>문체적 특징</h3><p>고대 서신 형식(발신자-수신자 인사, 감사/기쁨의 표현, 본론, 마무리 인사)을 충실히 따르는 전형적인 개인 서신의 틀을 지닌다. 짧은 분량 안에 <b class='hl-term'>진리</b>와 <b class='hl-term'>사랑</b>이라는 요한 신학의 핵심 개념이 압축적으로 반복된다.</p></div><div class="intro-block"><h3>핵심 신학 주제</h3><p>이 편지는 <b class='hl-term'>진리 안에서의 사랑</b>과 <b class='hl-term'>거짓 교훈에 대한 단호한 경계</b>라는 두 축을 짧지만 명료하게 제시한다. 사랑의 실천이 무비판적 포용이 아니라, 그리스도의 교훈이라는 확고한 진리의 틀 안에서 이루어져야 함을 보여준다.</p></div>
+  <div class="intro-outline"><div class="oi"><div class="oi-tag">PART 1</div><div class="oi-title">인사와 사랑의 계명 (1-6절)</div><div class="oi-body">진리 안에서의 인사, 서로 사랑하라는 계명의 재확인</div></div><div class="oi"><div class="oi-tag">PART 2</div><div class="oi-title">경고와 마무리 (7-13절)</div><div class="oi-body">미혹하는 자들에 대한 경고, 환대의 한계, 직접 만남에 대한 소망</div></div></div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-item" onclick="goTo('ch1')"><span class="toc-num">01</span><span class="toc-title">진리와 사랑 안에서 행하라</span><span class="toc-sub">거짓 교사를 분별하는 짧지만 단호한 권면</span></div>
+</div>
+
+<div class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 1</div>
+      <h2 class="chtitle">진리와 사랑 안에서 행하라</h2>
+      <div class="chapter-sub">거짓 교사를 분별하는 짧지만 단호한 권면</div>
+      <div class="ref-strip"><span class="ref-item">요이 1:1-13</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-3절</div><div class="flow-title">진리 안에서 인사하는 장로</div><div class="flow-body">저자는 자신을 '장로'라 칭하며 <b class="hl-insight" data-insight="0">택하심을 입은 부녀와 그 자녀들</b>에게 편지한다. 그는 '진리를 아는 모든 자'와 함께 진리로 말미암아 그들을 사랑한다고 말하며, 은혜와 긍휼과 평강이 진리와 사랑 가운데서 함께하기를 기원한다.</div></div><div class="flow-item"><div class="flow-range">4-6절</div><div class="flow-title">서로 사랑하라는 계명</div><div class="flow-body">장로는 부녀의 자녀 중 일부가 진리 안에서 행함을 보고 크게 기뻐한다고 전한다. 그는 처음부터 있던 계명 — 서로 사랑하라 — 을 새 계명처럼 쓰는 것이 아니라 다시 확인하며, 사랑은 계명을 따라 행하는 것이라고 정의한다.</div></div><div class="flow-item"><div class="flow-range">7-11절</div><div class="flow-title">미혹하는 자들에 대한 경고</div><div class="flow-body">예수 그리스도께서 육체로 오신 것을 부인하는 <b class='hl-term'>미혹하는 자, 적그리스도</b>가 세상에 많이 나왔다. 장로는 자신들이 이룬 것을 잃지 않도록 스스로 삼가라고 경고하며, 그리스도의 교훈 안에 거하지 않는 자를 집에 들이거나 인사조차 하지 말라는 단호한 지침을 준다.</div></div><div class="flow-item"><div class="flow-range">12-13절</div><div class="flow-title">마무리 인사</div><div class="flow-body">장로는 할 말이 많지만 종이와 먹으로 쓰기를 원하지 않고, 직접 가서 얼굴을 마주하고 이야기함으로 기쁨이 충만하기를 바란다고 편지를 맺는다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>진리와 사랑은 결코 분리되지 않는다</div><div class="teach-body">이 짧은 편지 안에서 '진리'와 '사랑'이라는 단어가 계속 함께 등장한다. 요한에게 사랑 없는 진리는 냉랭하고, 진리 없는 사랑은 공허하다. 둘은 함께 가야 온전한 신앙이 된다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">13절짜리 짧은 편지인데도 '진리'가 5번, '사랑'이 4번이나 나와요. 요한은 이 두 단어를 거의 한 몸처럼 붙여서 쓰는데, 이게 우연이 아니라는 생각이 들어요. 사랑한다고 하면서 진리를 외면하거나, 진리를 안다고 하면서 사랑 없이 차갑게 구는 것 모두 요한이 그리는 신앙의 모습과는 거리가 멀어요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>계명은 새것이 아니라 처음부터 있던 것의 재확인이다</div><div class="teach-body">5절에서 장로는 자신이 '새 계명을 쓰는 것이 아니라 처음부터 우리가 가진 것'이라고 강조한다. 참된 신앙은 늘 새로운 것을 좇기보다, 이미 주어진 진리를 신실하게 지켜가는 데 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>기쁨의 근거는 외적 성공이 아니라 진리 안에서 행함이다</div><div class="teach-body">4절에서 장로가 크게 기뻐하는 이유는 부녀의 자녀들이 '진리 안에서 행함'을 보았기 때문이다. 목회적 기쁨의 진정한 척도는 규모나 성과가 아니라 신실함이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>공동체를 지키는 것은 소극적 태도가 아니라 적극적 사랑이다</div><div class="teach-body">거짓 교사를 집에 들이지 말라는 단호한 명령은 냉담함이 아니라, 공동체 전체를 미혹으로부터 지키려는 목자적 사랑의 표현으로 이해해야 한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>직접 만남에 대한 갈망</div><div class="teach-body">12절에서 장로는 종이와 먹보다 얼굴을 마주하는 만남을 원한다고 고백한다. 아무리 잘 쓰인 편지도 인격적 만남의 기쁨을 완전히 대체할 수 없다는 진솔한 고백이다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>'택하심을 입은 부녀'의 정체 논쟁</div><div class="deep-body"><b class="hl-insight" data-insight="0">부녀와 자녀들이라는 표현</b>을 실제 인물로 볼지 교회 공동체의 은유로 볼지는 확정할 수 없는 문제로 남아 있다. 다만 이 논쟁이 편지의 핵심 메시지 자체를 바꾸지는 않는다는 점에서, 본문의 실천적 권면에 집중하는 것이 유익한 독법이다.</div><div class="verse-box"><div class="verse-ref">요이 1:1</div><div class="verse-text">장로인 나는 택하심을 받은 부녀와 그 자녀에게 편지하노니 내가 참으로 사랑하는 자요 나뿐 아니라 진리를 아는 모든 자도 그리하는 것은</div></div></div><div class="deep-item"><div class="deep-title"><span class="deep-num">2</span>환대의 거절이라는 명령을 어떻게 오늘에 적용할 것인가</div><div class="deep-body"><b class="hl-insight" data-insight="1">집에 들이지도 말고 인사도 하지 말라는 명령</b>을 문자 그대로 모든 낯선 이나 의견이 다른 사람에게 적용하면 성경 전체가 강조하는 환대의 정신과 충돌한다. 본문의 구체적 대상 — 그리스도의 성육신을 부인하며 조직적으로 거짓을 전파하는 순회 교사 — 을 놓치지 않는 신중한 해석이 필요하다.</div><div class="verse-box"><div class="verse-ref">요이 1:10-11</div><div class="verse-text">누구든지 이 교훈을 가지지 않고 너희에게 나아오거든 그를 집에 들이지도 말고 인사도 하지 말라 그에게 인사하는 자는 그 악한 일에 참여하는 자임이라</div></div></div>
+    </div>
+  </section>
+</div>
+
+<div class="bottom-nav">
+  <button onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg><span>목차 가기</span></button>
+  <button onclick="goTo('top')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg><span>처음으로</span></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>자료실로 가기</span></button>
+</div>
+<div class="footer-brand">기독교한국침례회 은혜교회</div>
+</div>
+<script>
+var INSIGHTS_DATA = [{"title": "'택하심을 입은 부녀'는 실제 인물인가 교회의 은유인가", "body": "요한2서 1절은 '택하심을 입은 부녀와 그 자녀들에게'라고 인사하는데, 이 표현이 실제 한 여성과 그 가족을 가리키는지, 아니면 한 지역 교회 공동체를 은유적으로 가리키는지는 오래된 논쟁거리예요.\n\n은유설을 지지하는 이들은 13절의 '택하심을 입은 네 자매의 자녀들이 네게 문안하느니라'는 구절이 자매 교회의 인사로 읽힌다는 점, 그리고 신약성경에서 교회를 여성적 이미지(신부, 어머니)로 표현하는 전통(계 12장 등)이 흔하다는 점을 근거로 들어요.\n\n반면 실제 인물설을 지지하는 이들은 본문이 지나치게 구체적이고 개인적인 어조(자녀들을 만나 기뻐한다는 표현 등)를 띤다는 점을 근거로 들죠. 어느 쪽이든 편지의 핵심 메시지 — 진리와 사랑 안에서 행하고 거짓 교사를 분별하라는 권면 — 에는 큰 영향을 주지 않기 때문에, 이 논쟁은 흥미로운 배경 지식으로 남아 있어요."}, {"title": "손님을 대접하지 말라는 명령이 오늘날 '환대'와 충돌하지 않는가", "body": "10-11절은 '누구든지 이 교훈을 가지지 않고 너희에게 나아오거든 그를 집에 들이지도 말고 인사도 하지 말라'고 말해요. 이 구절은 그리스도인의 환대 정신과 정면으로 충돌하는 것처럼 보여 많은 사람을 불편하게 만들어요.\n\n하지만 맥락을 보면 이 명령이 모든 낯선 사람이나 다른 의견을 가진 사람 전체를 향한 게 아니라는 걸 알 수 있어요. 요한이 문제 삼는 것은 구체적으로 '그리스도의 교훈'(즉 예수의 성육신에 대한 참된 고백, 7절)을 부인하며 순회 전도자로 다니는 거짓 교사들이에요.\n\n당시 초대교회는 순회 교사들에게 숙식을 제공하는 문화가 있었는데, 이 관행 자체가 거짓 가르침이 여러 교회로 퍼져나가는 통로가 되고 있었던 거죠. 요한의 명령은 '누구에게도 친절하지 말라'가 아니라, 조직적으로 이단을 전파하는 교사에게 공동체의 자원과 플랫폼을 제공하지 말라는 매우 구체적이고 제한적인 지침으로 이해하는 것이 균형 잡힌 해석이에요."}];
+
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){
+    var bar = document.querySelector('.top-bar');
+    var barH = bar ? bar.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - barH - 10;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+}
+
+document.addEventListener('click', function(e){
+  var closeBtn = e.target.closest('.insight-close');
+  if(closeBtn){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  var insTerm = e.target.closest('.hl-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    return;
+  }
+  if(e.target.id === 'insightOverlay'){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  var tip = document.getElementById('termTip');
+  var tipCloseBtn = e.target.closest('.tip-close');
+  if(tipCloseBtn){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var cb = document.createElement('span');
+    cb.className = 'tip-close';
+    cb.textContent = '\u2715';
+    tip.appendChild(cb);
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 260;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+  } else if(tip && !e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
