@@ -40,33 +40,30 @@ b, strong{ font-weight:700; }
   background: var(--cream);
   border-bottom: 1px solid var(--line);
   padding: 12px 4vw;
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  display: flex; align-items: center; justify-content: flex-start; gap: 10px;
 }
 .top-bar .tb-title{
   font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
 }
-.top-bar .tb-toc{
-  color: var(--navy-soft); font-size: 13px; cursor: pointer;
-  padding: 6px 13px; border: 1px solid var(--line); border-radius: 14px;
-  background: var(--white); white-space: nowrap;
-}
-.top-bar .tb-toc:active{ background: var(--cream-deep); }
-
-/* ===== BOTTOM NAV BUTTON GROUP (static, not fixed) ===== */
+/* ===== BOTTOM NAV (floating circular icon buttons, bottom-right, stacked) ===== */
 .bottom-nav{
-  display: flex; gap: 10px; padding: 20px 4vw 34px;
-  border-top: 1px solid var(--line);
-  background: var(--cream-deep);
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
 }
 .bottom-nav button{
-  flex: 1; padding: 13px 6px; border-radius: 10px; border: none;
+  width: 46px; height: 46px; border-radius: 50%; border: none;
   background: var(--navy); color: var(--gold-soft);
-  font-size: 13.5px; font-weight: 700; cursor: pointer;
-  font-family: inherit;
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: transform 0.15s, background 0.15s;
 }
-.bottom-nav button svg{ width: 18px; height: 18px; }
-.bottom-nav button:active{ background: var(--navy-soft); }
+.bottom-nav button svg{ width: 20px; height: 20px; }
+.bottom-nav button:active{ background: var(--navy-soft); transform: scale(0.94); }
+.bottom-nav-spacer{ height: 0; }
 
 /* ===== COVER (gradient + pearl sheen) ===== */
 .cover{
@@ -303,7 +300,6 @@ b.has-tip{ cursor:pointer; }
 
 <div class="top-bar">
   <div class="tb-title" onclick="goTo('top')">📖 요한3서 연구</div>
-  <div class="tb-toc" onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg> 목차</div>
 </div>
 
 <div class="cover" style="background: linear-gradient(150deg, #43241d 0%, #82502f 100%);">
@@ -350,7 +346,7 @@ b.has-tip{ cursor:pointer; }
 
   <section class="sub">
     <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
-    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
     <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>영혼의 잘됨이 삶의 진짜 척도다</div><div class="teach-body">2절의 기도 — 영혼이 잘됨 같이 범사에 잘되기를 — 는 물질적 형통을 영적 성숙 다음에 둔다. 이는 이 구절을 물질적 축복의 근거 본문으로 오용하는 소위 '번영신학'적 해석과 거리를 두어야 할 이유를 보여준다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">이 구절이 종종 '너의 영혼이 잘되는 것처럼 물질도 잘될 것이다'는 식으로, 거의 축복 공식처럼 쓰이는 걸 본 적 있으실 거예요. 하지만 원래 흐름을 보면 이건 약속이 아니라 인사말 속의 기도예요. 그리고 강조점은 명백히 '영혼의 잘됨'에 있어요 — 물질적 형통이 영적 성숙을 뒤따라야지, 그 반대가 되어서는 안 된다는 뜻으로 읽는 게 훨씬 본문에 충실해요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>환대는 복음 사역의 실제적 동역이다</div><div class="teach-body">8절은 나그네 된 전도자를 영접하는 것이 '진리를 위하여 함께 일하는 자'가 되는 길이라고 말한다. 직접 나가서 전하지 못하는 사람도 환대를 통해 선교에 동참할 수 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>으뜸 되기를 좋아함은 신앙 공동체의 고질적 위험이다</div><div class="teach-body">디오드레베의 사례는 교회 안에서도 지위와 통제에 대한 욕망이 얼마든지 자랄 수 있음을 보여준다. 리더십은 섬김이지 지배가 아니라는 원칙이 반복적으로 요구되는 이유다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>악을 본받지 말고 선을 본받으라</div><div class="teach-body">11절의 간결한 권면은 요한3서 전체의 핵심 메시지를 압축한다. 신자는 나쁜 본을 흉내 내기보다, 눈에 보이는 좋은 본(가이오, 데메드리오)을 따라야 한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>좋은 평판은 하루아침에 만들어지지 않는다</div><div class="teach-body">12절에서 데메드리오는 '뭇 사람'과 '진리 자체'에게서 좋은 증거를 받았다고 소개된다. 이는 일관된 삶으로 오랜 시간에 걸쳐 쌓인 신뢰를 암시하며, 신뢰는 인격의 결실임을 보여준다.</div></div>
   </section>
 
@@ -363,10 +359,11 @@ b.has-tip{ cursor:pointer; }
   </section>
 </div>
 
+<div class="bottom-nav-spacer"></div>
 <div class="bottom-nav">
-  <button onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg><span>목차 가기</span></button>
-  <button onclick="goTo('top')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg><span>처음으로</span></button>
-  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>자료실로 가기</span></button>
+  <button onclick="goTo('toc')" title="목차로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg></button>
+  <button onclick="goTo('top')" title="처음으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}" title="자료실로 가기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
 </div>
 <div class="footer-brand">기독교한국침례회 은혜교회</div>
 </div>

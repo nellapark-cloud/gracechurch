@@ -40,33 +40,30 @@ b, strong{ font-weight:700; }
   background: var(--cream);
   border-bottom: 1px solid var(--line);
   padding: 12px 4vw;
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  display: flex; align-items: center; justify-content: flex-start; gap: 10px;
 }
 .top-bar .tb-title{
   font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
 }
-.top-bar .tb-toc{
-  color: var(--navy-soft); font-size: 13px; cursor: pointer;
-  padding: 6px 13px; border: 1px solid var(--line); border-radius: 14px;
-  background: var(--white); white-space: nowrap;
-}
-.top-bar .tb-toc:active{ background: var(--cream-deep); }
-
-/* ===== BOTTOM NAV BUTTON GROUP (static, not fixed) ===== */
+/* ===== BOTTOM NAV (floating circular icon buttons, bottom-right, stacked) ===== */
 .bottom-nav{
-  display: flex; gap: 10px; padding: 20px 4vw 34px;
-  border-top: 1px solid var(--line);
-  background: var(--cream-deep);
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
 }
 .bottom-nav button{
-  flex: 1; padding: 13px 6px; border-radius: 10px; border: none;
+  width: 46px; height: 46px; border-radius: 50%; border: none;
   background: var(--navy); color: var(--gold-soft);
-  font-size: 13.5px; font-weight: 700; cursor: pointer;
-  font-family: inherit;
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: transform 0.15s, background 0.15s;
 }
-.bottom-nav button svg{ width: 18px; height: 18px; }
-.bottom-nav button:active{ background: var(--navy-soft); }
+.bottom-nav button svg{ width: 20px; height: 20px; }
+.bottom-nav button:active{ background: var(--navy-soft); transform: scale(0.94); }
+.bottom-nav-spacer{ height: 0; }
 
 /* ===== COVER (gradient + pearl sheen) ===== */
 .cover{
@@ -303,7 +300,6 @@ b.has-tip{ cursor:pointer; }
 
 <div class="top-bar">
   <div class="tb-title" onclick="goTo('top')">📖 유다서 연구</div>
-  <div class="tb-toc" onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg> 목차</div>
 </div>
 
 <div class="cover" style="background: linear-gradient(150deg, #2b1116 0%, #5c2233 100%);">
@@ -350,7 +346,7 @@ b.has-tip{ cursor:pointer; }
 
   <section class="sub">
     <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
-    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
     <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>본래 쓰려던 편지와 실제로 써야 했던 편지</div><div class="teach-body">3절에서 유다는 '우리가 일반으로 받은 구원에 관하여' 쓰려 했으나, 급박한 상황 때문에 경고의 편지를 써야 했다고 고백한다. 때로 목회적 필요는 우리가 원래 하고 싶었던 일을 미루고 더 시급한 일에 응답하도록 요구한다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">유다가 원래 하고 싶었던 건 아마 구원의 풍성함을 노래하는 훈훈한 편지였을 거예요. 그런데 갑자기 방향을 틀어 날 선 경고의 편지를 써야 했죠. 사랑은 때로 하고 싶은 말이 아니라 지금 꼭 필요한 말을 하는 거라는 걸 유다서 첫머리부터 배우게 돼요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>역사 속 심판의 선례는 오늘의 경고다</div><div class="teach-body">애굽, 타락한 천사들, 소돔과 고모라라는 세 가지 사례는 모두 '한때 특권이나 좋은 위치에 있었으나 스스로 그것을 저버린' 존재들이다. 은혜를 받았다는 사실 자체가 심판을 면제해주지 않는다는 엄중한 경고다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>거짓 교사의 특징은 자기중심성이다</div><div class="teach-body">12절의 이미지들 — 자기 몸만 기르는 목자, 열매 없는 나무, 자기 수치의 거품을 뿜는 물결 — 은 하나같이 겉만 화려하고 실속과 유익이 없는 존재를 그린다. 참된 지도자는 자신이 아니라 양떼를 위해 존재한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>믿음 위에 자신을 세운다는 것의 실천적 의미</div><div class="teach-body">20-21절의 권면 — 믿음 위에 세우고, 성령으로 기도하고, 하나님의 사랑 안에 자신을 지키고, 긍휼을 기다리는 것 — 은 거짓 가르침에 대한 최선의 방어가 논쟁이 아니라 견고한 영적 훈련임을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>긍휼의 세 단계 — 분별 있는 사랑의 실천</div><div class="teach-body">22-23절은 모든 사람을 같은 방식으로 대하지 말라고 가르친다. 의심하는 자에게는 긍휼을, 위험에 처한 자에게는 적극적 구조를, 더 깊이 물든 자에게는 신중한 경계와 함께하는 긍휼을 — 사랑은 획일적이지 않고 상황을 분별하는 지혜를 요구한다.</div></div>
   </section>
 
@@ -363,10 +359,11 @@ b.has-tip{ cursor:pointer; }
   </section>
 </div>
 
+<div class="bottom-nav-spacer"></div>
 <div class="bottom-nav">
-  <button onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg><span>목차 가기</span></button>
-  <button onclick="goTo('top')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg><span>처음으로</span></button>
-  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>자료실로 가기</span></button>
+  <button onclick="goTo('toc')" title="목차로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg></button>
+  <button onclick="goTo('top')" title="처음으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}" title="자료실로 가기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
 </div>
 <div class="footer-brand">기독교한국침례회 은혜교회</div>
 </div>

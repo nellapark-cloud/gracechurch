@@ -40,33 +40,30 @@ b, strong{ font-weight:700; }
   background: var(--cream);
   border-bottom: 1px solid var(--line);
   padding: 12px 4vw;
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  display: flex; align-items: center; justify-content: flex-start; gap: 10px;
 }
 .top-bar .tb-title{
   font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
 }
-.top-bar .tb-toc{
-  color: var(--navy-soft); font-size: 13px; cursor: pointer;
-  padding: 6px 13px; border: 1px solid var(--line); border-radius: 14px;
-  background: var(--white); white-space: nowrap;
-}
-.top-bar .tb-toc:active{ background: var(--cream-deep); }
-
-/* ===== BOTTOM NAV BUTTON GROUP (static, not fixed) ===== */
+/* ===== BOTTOM NAV (floating circular icon buttons, bottom-right, stacked) ===== */
 .bottom-nav{
-  display: flex; gap: 10px; padding: 20px 4vw 34px;
-  border-top: 1px solid var(--line);
-  background: var(--cream-deep);
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
 }
 .bottom-nav button{
-  flex: 1; padding: 13px 6px; border-radius: 10px; border: none;
+  width: 46px; height: 46px; border-radius: 50%; border: none;
   background: var(--navy); color: var(--gold-soft);
-  font-size: 13.5px; font-weight: 700; cursor: pointer;
-  font-family: inherit;
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: transform 0.15s, background 0.15s;
 }
-.bottom-nav button svg{ width: 18px; height: 18px; }
-.bottom-nav button:active{ background: var(--navy-soft); }
+.bottom-nav button svg{ width: 20px; height: 20px; }
+.bottom-nav button:active{ background: var(--navy-soft); transform: scale(0.94); }
+.bottom-nav-spacer{ height: 0; }
 
 /* ===== COVER (gradient + pearl sheen) ===== */
 .cover{
@@ -303,7 +300,6 @@ b.has-tip{ cursor:pointer; }
 
 <div class="top-bar">
   <div class="tb-title" onclick="goTo('top')">📖 요한1서 연구</div>
-  <div class="tb-toc" onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg> 목차</div>
 </div>
 
 <div class="cover" style="background: linear-gradient(150deg, #4a1f2c 0%, #7d3c4d 100%);">
@@ -350,7 +346,7 @@ b.has-tip{ cursor:pointer; }
 
   <section class="sub">
     <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
-    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
     <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>교제(코이노니아)는 신학적 진술 이전에 관계다</div><div class="teach-body">요한은 편지의 목적을 교리 논쟁이 아니라 '교제'와 '기쁨의 충만'이라고 밝힌다. 신앙은 궁극적으로 하나님과의 인격적 관계이며, 이 관계는 공동체적 사귐으로 확장된다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">결국 요한1서 전체는 '어떻게 하면 바르게 믿을까'보다 '어떻게 하면 하나님과 온전히 사귈까'를 묻는 편지예요. 교리는 이 사귐을 보호하기 위한 수단이지, 그 자체가 목적이 아니라는 걸 기억할 필요가 있어요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>빛 가운데 행함은 완전함이 아니라 정직함이다</div><div class="teach-body">빛 가운데 행한다는 것은 무죄한 삶이 아니라, 자신의 죄를 숨기지 않고 하나님의 빛 앞에 정직하게 드러내는 삶이다. 어둠은 죄의 존재 자체가 아니라 <b class='hl-term'>죄를 숨기고 부인하는 태도</b>를 가리킨다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>죄 없다는 주장과 죄를 인정하지 않는 것의 위험</div><div class="teach-body"><b class="hl-insight" data-insight="1">죄가 없다고 말하는 것</b>은 단순한 착각이 아니라 자기기만이며, 궁극적으로 하나님의 증언(그분이 온 세상이 죄 아래 있다고 하신 말씀)을 거짓으로 만드는 심각한 영적 오류다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>사죄의 확신은 하나님의 성품에 근거한다</div><div class="teach-body">9절은 '미쁘시고 의로우사'라는 표현으로 사죄가 우리의 자격이 아니라 하나님의 신실하심과 의로우심에 근거함을 보여준다. 그리스도의 속죄가 이미 이루어졌기에, 자백하는 자에게 용서는 확실히 주어진다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>예수의 피가 '모든 죄'에서 우리를 깨끗하게 한다</div><div class="teach-body">7절의 약속은 특정한 죄가 아니라 '모든 죄'를 포괄한다. 이는 그리스도인이 죄책감에 매여 살 필요가 없으며, 지속적으로 정결케 하시는 은혜 안에 거할 수 있다는 확신을 준다.</div></div>
   </section>
 
@@ -380,7 +376,7 @@ b.has-tip{ cursor:pointer; }
 
   <section class="sub">
     <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
-    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
     <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>죄와 싸우되 정죄 아래 살지 않는다</div><div class="teach-body">요한의 목적은 신자가 죄를 짓지 않게 하려는 것이지만, 실패했을 때조차 하늘에는 우리를 대언하는 그리스도가 계신다는 확신을 준다. 죄의 심각성과 은혜의 확실성이 함께 강조된다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">죄와 싸우라는 권면과 넘어져도 괜찮다는 위로, 이 둘은 모순이 아니에요. 오히려 대언자가 계시다는 확신이 있을 때 우리는 죄와 더 정직하게 싸울 힘을 얻거든요. 정죄가 무서워 숨기기보다, 이미 변호받고 있다는 믿음으로 죄를 마주할 수 있는 거죠.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>계명을 안다는 것과 지킨다는 것의 간극</div><div class="teach-body">4절은 '그의 계명을 지키지 아니하면서도 저를 아노라 하는 자는 거짓말하는 자'라고 단호하게 말한다. 참된 지식(그노시스)은 지적 동의가 아니라 순종하는 삶으로 증명된다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>사랑의 계명은 오래되었으면서 늘 새롭다</div><div class="teach-body">형제 사랑은 율법의 핵심으로 이미 오래전부터 계시되었지만, 그리스도의 십자가와 성육신을 통해 완전히 새로운 차원으로 나타났다. 옛것과 새것은 대립이 아니라 심화의 관계다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>세상 사랑과 하나님 사랑은 공존할 수 없다</div><div class="teach-body">육신의 정욕, 안목의 정욕, 이생의 자랑이라는 세 가지 범주는 창세기 3장 하와의 유혹(먹기에 좋고, 보암직하고, 지혜롭게 할 만큼 탐스러움)을 떠올리게 하며, 죄의 근본 패턴이 시대를 초월해 반복됨을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>기름부음의 확신은 인간 교사에 대한 맹목적 의존이 아니다</div><div class="teach-body">27절은 '너희는 주께 받은 바 기름부음이 너희 안에 거하나니 아무도 너희를 가르칠 필요가 없고'라고 말한다. 이는 교회의 가르침을 부정하는 것이 아니라, 성령의 내적 조명이 거짓 교사의 미혹을 분별하는 최종 기준임을 강조하는 것이다.</div></div>
   </section>
 
@@ -410,7 +406,7 @@ b.has-tip{ cursor:pointer; }
 
   <section class="sub">
     <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
-    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
     <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>자녀 됨은 감격의 대상이지 당연한 권리가 아니다</div><div class="teach-body">1절의 '보라'라는 감탄사는 자녀 됨의 은혜가 결코 당연하지 않고 경이로운 선물임을 강조한다. 신자는 이 신분을 익숙함으로 무디게 만들지 않도록 주의해야 한다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">이 구절을 읽을 때마다 저는 '자녀'라는 단어에 너무 익숙해져서 그 무게를 잊지 않았나 돌아보게 돼요. 요한은 감탄사까지 써가며 '이게 얼마나 놀라운 사랑인지 보라'고 말하거든요. 익숙한 진리일수록 다시 새롭게 놀랄 수 있어야 하지 않을까요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>종말의 소망이 오늘의 거룩함을 만든다</div><div class="teach-body">3절은 '그를 향하여 이 소망을 가진 자마다 자신을 깨끗하게 하느니라'고 말한다. 미래에 그리스도와 같이 될 것이라는 소망은 추상적 위로가 아니라 오늘의 윤리적 결단을 이끄는 동력이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>사랑은 감정이 아니라 구체적 행동으로 검증된다</div><div class="teach-body">17-18절은 재물을 가지고도 궁핍한 형제를 외면하는 경우를 사랑 없음의 구체적 증거로 제시한다. 요한에게 사랑은 정서가 아니라 자원을 나누는 실천적 행위다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>가인의 이야기가 주는 경고</div><div class="teach-body">형제 살해라는 극단적 사례를 통해, 요한은 형제 미움이 궁극적으로 어디로 흘러갈 수 있는지를 보여준다. 미움은 사소한 감정이 아니라 살인의 씨앗이라는 예수님의 산상수훈적 관점(마 5:21-22)과 맞닿아 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>마음의 정죄보다 크신 하나님</div><div class="teach-body">19-20절은 죄책감이나 자기 정죄로 흔들리는 신자에게 큰 위로를 준다. 우리의 감정적 확신이 흔들려도 하나님의 지식과 자비는 우리 마음보다 크시다는 선언은 불안정한 감정 신앙을 넘어서게 한다.</div></div>
   </section>
 
@@ -440,7 +436,7 @@ b.has-tip{ cursor:pointer; }
 
   <section class="sub">
     <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
-    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
     <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>사랑의 기원은 인간이 아니라 하나님이다</div><div class="teach-body">10절은 '사랑은 여기 있으니 우리가 하나님을 사랑한 것이 아니요 오직 하나님이 우리를 사랑하사'라고 말한다. 인간의 사랑은 응답이지 시작이 아니다. 이 순서를 놓치면 사랑이 공로가 되어버린다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">가끔 우리는 '내가 하나님을 얼마나 사랑하는가'로 신앙의 깊이를 재려 하는데, 요한은 정반대의 순서를 보여줘요. 하나님이 먼저, 압도적으로, 조건 없이 사랑하셨다는 사실이 먼저고, 우리의 사랑은 그 사랑에 대한 반응일 뿐이라는 거죠. 이 순서를 기억하면 사랑조차 부담이 아니라 반응의 기쁨이 될 수 있어요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>보이지 않는 하나님 사랑은 보이는 형제 사랑으로 검증된다</div><div class="teach-body">20절의 논리는 명료하다. 보이는 대상을 사랑하지 못하면서 보이지 않는 대상을 사랑한다는 주장은 검증 불가능한 자기기만이 될 위험이 크다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>성령의 내주는 확신의 근거다</div><div class="teach-body">13절은 성령의 내주하심이 하나님과의 상호 거함을 아는 인식론적 근거임을 보여준다. 신앙의 확신은 막연한 느낌이 아니라 성령이 주시는 구체적 증거에 기초한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>온전한 사랑은 심판의 두려움을 제거한다</div><div class="teach-body">17-18절은 사랑의 성숙이 마지막 심판 앞에서도 담대함을 준다고 말한다. 이는 값싼 안도가 아니라, 그리스도의 사랑 안에 굳게 거하는 자에게 주어지는 실제적 평안이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>거짓 영과 참 영을 가르는 기준은 신학적 명료함이다</div><div class="teach-body">화려한 영적 체험이 아니라 성육신에 대한 정확한 고백이 참과 거짓을 가르는 기준이라는 점은, 오늘날 영적 은사나 체험을 평가할 때도 여전히 중요한 원리다.</div></div>
   </section>
 
@@ -470,7 +466,7 @@ b.has-tip{ cursor:pointer; }
 
   <section class="sub">
     <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
-    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
     <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>믿음은 수동적 동의가 아니라 세상을 이기는 능동적 힘이다</div><div class="teach-body">4-5절은 믿음을 단순한 지적 동의가 아니라 세상의 가치체계와 유혹을 실제로 이겨내는 역동적인 능력으로 묘사한다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">'세상을 이긴다'는 표현이 참 힘 있게 들리지 않나요? 믿음이 그저 마음속 확신에 머무는 게 아니라, 실제로 삶에서 세상의 압력과 유혹을 이겨내는 현실적인 힘이라는 거예요. 이건 우리가 매일 경험할 수 있는 싸움이자 승리이기도 해요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>계명은 무겁지 않다는 역설</div><div class="teach-body">3절은 계명 준수가 사랑의 결과일 때 결코 무거운 짐이 아니라고 말한다. 이는 율법주의적 순종과 사랑에서 우러난 순종의 근본적 차이를 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>확신 있는 신앙은 불안한 신앙보다 견고하다</div><div class="teach-body">13절의 목적은 '너희로 하여금 너희에게 영생이 있음을 알게 하려 함'이다. 요한은 독자들이 구원의 확신 없이 불안 속에 살기를 원하지 않으며, 이는 요한1서 전체의 목회적 관심사이기도 하다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>중보기도의 공동체적 책임</div><div class="teach-body">16절은 형제의 죄를 목격했을 때 침묵하거나 정죄하는 대신 기도로 중보하라고 가르친다. 죄에 대한 대응은 일차적으로 심판이 아니라 사랑의 중보다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>편지의 마지막 권면 — 우상에게서 멀리하라</div><div class="teach-body">여러 심오한 신학 논증 끝에 요한은 매우 실천적이고 구체적인 명령으로 편지를 맺는다. 신학은 결국 일상의 구체적 선택으로 이어져야 한다는 메시지다.</div></div>
   </section>
 
@@ -483,10 +479,11 @@ b.has-tip{ cursor:pointer; }
   </section>
 </div>
 
+<div class="bottom-nav-spacer"></div>
 <div class="bottom-nav">
-  <button onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg><span>목차 가기</span></button>
-  <button onclick="goTo('top')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg><span>처음으로</span></button>
-  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>자료실로 가기</span></button>
+  <button onclick="goTo('toc')" title="목차로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg></button>
+  <button onclick="goTo('top')" title="처음으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}" title="자료실로 가기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
 </div>
 <div class="footer-brand">기독교한국침례회 은혜교회</div>
 </div>

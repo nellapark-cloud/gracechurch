@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>요한복음 연구</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+:root{
+  --cream:#f6f8f2;
+  --cream-deep:#e9f0e6;
+  --navy:#0e3d3a;
+  --navy-soft:#1e5a54;
+  --gold:#c08a2e;
+  --gold-soft:#d9ab52;
+  --ink:#1f2b26;
+  --ink-soft:#5a6b62;
+  --line:#d3e2da;
+  --white:#ffffff;
+  --insight:#3f7fb0;
+}
+
+body{
+  margin:0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+b, strong{ font-weight:700; }
+.wrap{ max-width: 720px; margin: 0 auto; background: var(--white); min-height: 100vh; }
+
+/* ===== TOP BAR (sticky, solid bg - no blur, no fixed) ===== */
+.top-bar{
+  position: sticky; top: 0; z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 4vw;
+  display: flex; align-items: center; justify-content: flex-start; gap: 10px;
+}
+.top-bar .tb-title{
+  font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
+}
+/* ===== BOTTOM NAV (floating circular icon buttons, bottom-right, stacked) ===== */
+.bottom-nav{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.bottom-nav button{
+  width: 46px; height: 46px; border-radius: 50%; border: none;
+  background: var(--navy); color: var(--gold-soft);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: transform 0.15s, background 0.15s;
+}
+.bottom-nav button svg{ width: 20px; height: 20px; }
+.bottom-nav button:active{ background: var(--navy-soft); transform: scale(0.94); }
+.bottom-nav-spacer{ height: 0; }
+
+/* ===== COVER (gradient + pearl sheen) ===== */
+.cover{
+  position: relative;
+  overflow: hidden;
+  padding: 70px 7vw 50px;
+  color: var(--white);
+  text-align: center;
+}
+.cover::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.14) 22%, rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 15% 92%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%);
+  pointer-events:none;
+}
+.cover-inner{ position:relative; z-index:1; }
+.cover .eyebrow{
+  font-size: 11px; letter-spacing: 0.24em; color: var(--gold-soft);
+  font-weight: 700; text-transform: uppercase; margin-bottom: 20px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 32px; font-weight: 700; margin: 0 0 14px; letter-spacing: -0.01em;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.18);
+}
+.cover .cover-sub{ font-size: 14px; color:#f0e2e5; margin-bottom: 30px; line-height:1.7; }
+
+/* pearl divider: gold line + glossy pearl bead */
+.pearl-divider{ display:flex; align-items:center; justify-content:center; gap:9px; margin: 0 auto 30px; }
+.pearl-divider .pl-line{ width:34px; height:1.5px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+.pearl-divider .pl-line.r{ background: linear-gradient(90deg, var(--gold-soft), transparent); }
+.pearl-divider .pl-bead{
+  width:11px; height:11px; border-radius:50%; flex-shrink:0;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #f4eee2 26%, #d8c9b0 55%, #a9906f 100%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25), inset 0 0 2px rgba(255,255,255,0.6);
+}
+
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13px; color: var(--gold-soft); letter-spacing:0.04em;
+}
+.cover .cover-note{ margin-top: 40px; font-size: 12px; color:#e0c7cb; }
+
+/* ===== INTRO ===== */
+.intro-page{ padding: 34px 6vw 10px; }
+.page-label{ font-size: 11px; letter-spacing:0.2em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 6px;
+}
+.intro-lead{ font-size:15px; color:var(--ink-soft); margin-bottom: 26px; line-height:1.75; }
+.intro-block{ margin-bottom: 24px; }
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 16px; color: var(--navy-soft); font-weight:700; margin:0 0 10px;
+  padding-left: 10px; border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{ margin: 0 0 10px; text-align:left; font-size:15px; line-height:1.8; }
+.intro-block b{ color: var(--navy-soft); }
+.intro-outline{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+.intro-outline .oi{ background: var(--cream-deep); border-radius:8px; padding:14px 16px; border-top:3px solid var(--gold-soft); }
+.intro-outline .oi .oi-tag{ font-size:11px; color:var(--gold); font-weight:700; letter-spacing:0.05em; margin-bottom:5px; }
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight:700; color:var(--navy); font-size:14.5px; margin-bottom:4px;
+}
+.intro-outline .oi .oi-body{ font-size:13px; color:var(--ink-soft); line-height:1.65; }
+
+/* ===== TOC ===== */
+.toc-page{ padding: 34px 6vw 20px; }
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 20px;
+}
+.toc-item{
+  display:flex; flex-wrap:wrap; align-items:baseline; color:var(--ink);
+  padding: 14px 0; border-bottom:1px solid var(--line); cursor:pointer;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:14px; font-weight:700; color:var(--gold); width:26px; flex-shrink:0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:16px; font-weight:600; color:var(--navy);
+}
+.toc-sub{ font-size:12.5px; color:var(--ink-soft); margin-left:26px; flex-basis:100%; margin-top:3px; }
+
+/* ===== CHAPTER ===== */
+.chapter{ padding: 8px 6vw 10px; }
+.chapter-head{
+  margin: 18px 0 20px; padding-bottom:14px; border-bottom:2px solid var(--navy);
+  display:flex; align-items:flex-start; gap:12px;
+}
+.chapter-icon-badge{
+  flex-shrink:0; width:42px; height:42px; border-radius:50%;
+  background: var(--navy); color: var(--gold-soft);
+  display:flex; align-items:center; justify-content:center;
+}
+.chapter-icon-badge svg{ width:22px; height:22px; }
+.chapter-eyebrow{ font-size:11px; letter-spacing:0.16em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:4px; }
+.chapter-head h2.chtitle{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:20px; font-weight:700; color:var(--navy); margin:0 0 4px;
+}
+.chapter-head .chapter-sub{ font-size:13px; color:var(--ink-soft); }
+.ref-strip{ display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.ref-item{ font-size:11.5px; color:var(--navy-soft); padding:2px 9px; background:var(--cream-deep); border-radius:10px; }
+
+section.sub{ margin-bottom: 30px; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14px; color:var(--gold); font-weight:700; }
+h3.sech{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:18px; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:13px; margin:0 0 14px; }
+
+/* flow */
+.flow-item{ padding: 12px 0; border-top:1px solid var(--line); }
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:13px; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:16px; margin:2px 0 6px; }
+.flow-body{ color:var(--ink); font-size:15px; line-height:1.8; text-align:left; }
+
+/* teaching cards */
+.teach-card{
+  background: var(--cream-deep); border-radius:12px; padding:16px 17px; margin-bottom:14px;
+  border-left: 4px solid var(--gold-soft);
+}
+.teach-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; border-radius:50%; background:var(--navy); color:var(--gold-soft);
+  font-size:12px; font-weight:700; margin-right:8px;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--navy); font-size:16px; }
+.teach-body{ color:var(--ink); font-size:15px; line-height:1.8; margin-top:8px; text-align:left; }
+
+.speech-bubble{
+  display:flex; gap:10px; align-items:flex-start;
+  background: var(--white); border:1px solid var(--line); border-radius:12px;
+  padding:13px 15px; margin-top:10px;
+}
+.sb-avatar{
+  width:28px; height:28px; min-width:28px; border-radius:50%;
+  background: var(--navy); color:var(--gold-soft);
+  display:flex; align-items:center; justify-content:center; font-size:13px;
+}
+.sb-text{ font-size:14px; color:var(--navy-soft); line-height:1.75; }
+.sb-text b{ color:var(--navy); }
+
+/* deep questions */
+.deep-wrap{ background: var(--navy); border-radius:14px; padding:18px 17px 8px; color:var(--white); }
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h3.sech{ color:var(--white); }
+.deep-wrap .sec-desc{ color:#d9c3c8; }
+.deep-item{ margin-bottom:18px; }
+.deep-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--white); font-size:16px; margin-bottom:8px; display:flex; gap:8px; }
+.deep-num{
+  flex-shrink:0; width:22px; height:22px; border-radius:50%;
+  background: var(--gold-soft); color:var(--navy);
+  display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;
+}
+.deep-body{ font-size:14.5px; color:#e9dde0; line-height:1.8; text-align:left; padding-left:30px; }
+.verse-box{
+  margin: 10px 0 4px 30px; background: rgba(255,255,255,0.07);
+  border-left:2px solid var(--gold-soft); padding:10px 13px; border-radius:0 8px 8px 0;
+}
+.verse-ref{ font-size:11.5px; color:var(--gold-soft); margin-bottom:4px; font-weight:700; }
+.verse-text{ font-size:14.5px; color:#f0e4e6; line-height:1.7; }
+
+/* highlight terms */
+b.hl-term{ background:#f1dfba; color:#7a5220; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-quote{ background:#f2dcd3; color:#9a4632; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-greek{ background:#d7ebe6; color:#235f56; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-insight{ background:#d7ebf7; color:#1c5f85; padding:1px 4px; border-radius:3px; font-weight:700; cursor:pointer; }
+b.hl-insight:after{ content:"\25C6"; font-size:0.55em; margin-left:2px; vertical-align:super; opacity:0.85; }
+
+.deep-body b.hl-term, .verse-text b.hl-term{ background: rgba(216,176,115,0.28); color:#f3dfb8; }
+.deep-body b.hl-quote, .verse-text b.hl-quote{ background: rgba(224,122,105,0.26); color:#f0b8a8; }
+.deep-body b.hl-greek, .verse-text b.hl-greek{ background: rgba(110,196,188,0.26); color:#a9e6dd; }
+.deep-body b.hl-insight, .verse-text b.hl-insight{ background: rgba(120,190,230,0.28); color:#bfe3f8; }
+
+/* ===== INSIGHT POPUP MODAL ===== */
+#insightOverlay{
+  display:none; position:fixed; inset:0; z-index:800;
+  background: rgba(40,20,25,0.55); align-items:center; justify-content:center; padding:20px;
+}
+#insightOverlay.open{ display:flex; }
+#insightCard{
+  background: var(--white); max-width:440px; width:100%; max-height:78vh; overflow-y:auto;
+  border-radius:14px; padding:22px 20px 18px; box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  position:relative; border-top:5px solid var(--insight);
+}
+#insightCard .insight-eyebrow{ font-size:11px; letter-spacing:0.12em; color:var(--insight); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+#insightCard h4{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif; font-size:17px; color:var(--navy);
+  font-weight:700; margin:0 0 12px; line-height:1.4;
+}
+#insightCard .insight-body{ font-size:14px; line-height:1.82; color:var(--ink); white-space:pre-line; }
+#insightCard .insight-close{
+  position:absolute; top:12px; right:14px; width:26px; height:26px; border-radius:50%;
+  background: var(--cream-deep); color:var(--navy-soft);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:14px;
+}
+#insightCard .insight-close:active{ background: var(--line); }
+
+/* ===== TERM TOOLTIP ===== */
+#termTip{
+  display:none; position:absolute; z-index:500; max-width:260px;
+  background: var(--white); color:var(--ink); font-size:13px; line-height:1.6;
+  padding:11px 14px; border-radius:10px; border-top:4px solid var(--gold);
+  box-shadow:0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip .tip-close{
+  position:absolute; top:5px; right:8px; width:18px; height:18px; border-radius:50%;
+  background: var(--cream-deep); display:flex; align-items:center; justify-content:center;
+  color:var(--navy-soft); font-size:11px; cursor:pointer;
+}
+b.has-tip{ cursor:pointer; }
+
+.footer-brand{
+  text-align:center; padding: 26px 6vw 6px; font-size:12px; color:var(--ink-soft);
+}
+
+@media print{
+  .top-bar, .bottom-nav, #insightOverlay, #termTip{ display:none !important; }
+}
+</style>
+</head><body>
+<div class="wrap">
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">&#10005;</div><div class="insight-eyebrow">&#128172; 더 알아보기</div><h4 id="insightTitle"></h4><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="top-bar">
+  <div class="tb-title" onclick="goTo('top')">📖 요한복음 연구</div>
+</div>
+
+<div class="cover" style="background: linear-gradient(150deg, #0b332f 0%, #2e7d6b 100%);">
+  <div class="cover-inner">
+    <div class="eyebrow">BIBLE STUDY · GOSPEL OF JOHN</div>
+    <h1>요한복음 연구</h1>
+    <div class="cover-sub">말씀이 육신이 되어 — 표적과 영광, 생명의 복음서</div>
+    <div class="pearl-divider"><span class="pl-line"></span><span class="pl-bead"></span><span class="pl-line r"></span></div>
+    <div class="cover-range">요 1:1 – 21:25 · 구조 · 교훈 · 심화 질문</div>
+    <div class="cover-note">전 21장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>요한복음 연구 서론</h1>
+  <p class="intro-lead">빛과 생명, 영광과 사랑 — 믿음으로 생명을 얻게 하려는 표적의 복음서.</p>
+  <div class="intro-block"><h3>저자와 기록 시기</h3><p>요한복음은 전통적으로 <b class='hl-term'>사도 요한</b>의 기록으로 받아들여져 왔으며, 본문 자체가 '예수께서 사랑하시는 그 제자'(21:20, 24)를 저자로 지목한다. 초대교회 교부들(이레니우스, 알렉산드리아의 클레멘스 등)도 일관되게 이를 뒷받침한다. 기록 시기는 대체로 <b class='hl-term'>AD 85–95년경</b>, 에베소에서 기록된 것으로 추정되며, 신약성경 중 가장 늦게 기록된 복음서로 여겨진다.</p></div><div class="intro-block"><h3>수신자와 정황</h3><p>공관복음(마태·마가·누가)과 달리 요한복음은 독립적인 전승과 독특한 신학적 관점을 지닌다. 20:31에 명시된 저술 목적 — '예수께서 하나님의 아들 그리스도이심을 너희로 믿게 하려 함' — 은 이 복음서가 처음부터 <b class='hl-term'>신앙 형성을 위한 목적성 있는 신학적 서술</b>임을 보여준다. 헬라 철학적 배경을 가진 독자와 유대적 배경을 가진 독자 모두를 염두에 둔 것으로 보인다.</p></div><div class="intro-block"><h3>문체적 특징</h3><p>공관복음의 짧은 비유와 격언 대신, 예수님의 <b class='hl-term'>긴 담화</b>와 상징적 대화(니고데모, 사마리아 여인 등)가 두드러진다. '나는 ~이다(에고 에이미)' 선언, 빛과 어둠, 위와 아래, 육과 영 등 <b class='hl-term'>이원론적 대구</b>가 반복되며, 일곱 개의 표적을 중심으로 예수님의 정체성을 점층적으로 드러내는 구조를 지닌다.</p></div><div class="intro-block"><h3>핵심 신학 주제</h3><p>요한복음의 중심에는 <b class='hl-term'>성육신</b>(말씀이 육신이 되심), <b class='hl-term'>영광</b>(십자가가 오히려 영광의 자리로 그려짐), 그리고 <b class='hl-term'>믿음을 통한 영생</b>이라는 세 축이 있다. 표적들은 단순한 기적이 아니라 예수님이 누구이신지를 계시하는 '표징'으로 기능하며, 독자를 신앙의 결단으로 초대하는 목적을 지닌다.</p></div>
+  <div class="intro-outline"><div class="oi"><div class="oi-tag">PART 1</div><div class="oi-title">표적의 책 (1-12장)</div><div class="oi-body">성육신, 첫 표적들, 담화와 논쟁, 나사로 부활, 예루살렘 입성</div></div><div class="oi"><div class="oi-tag">PART 2</div><div class="oi-title">영광의 책 (13-17장)</div><div class="oi-body">발 씻기심, 마지막 만찬 담화, 성령의 약속, 대제사장의 기도</div></div><div class="oi"><div class="oi-tag">PART 3</div><div class="oi-title">십자가와 부활 (18-21장)</div><div class="oi-body">체포와 재판, 십자가 처형, 부활, 베드로의 회복</div></div></div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-item" onclick="goTo('ch1')"><span class="toc-num">01</span><span class="toc-title">말씀이 육신이 되어</span><span class="toc-sub">로고스의 선재와 성육신, 제자들의 부름</span></div><div class="toc-item" onclick="goTo('ch2')"><span class="toc-num">02</span><span class="toc-title">가나의 표적과 성전 정결</span><span class="toc-sub">물이 포도주로, 성전이 그의 몸으로</span></div><div class="toc-item" onclick="goTo('ch3')"><span class="toc-num">03</span><span class="toc-title">거듭남과 하나님의 사랑</span><span class="toc-sub">니고데모와의 대화, 세례 요한의 마지막 증언</span></div><div class="toc-item" onclick="goTo('ch4')"><span class="toc-num">04</span><span class="toc-title">생수와 참된 예배</span><span class="toc-sub">사마리아 여인과의 대화, 왕의 신하의 아들 치유</span></div><div class="toc-item" onclick="goTo('ch5')"><span class="toc-num">05</span><span class="toc-title">베데스다의 치유와 아들의 권세</span><span class="toc-sub">안식일 논쟁과 아버지·아들의 관계</span></div><div class="toc-item" onclick="goTo('ch6')"><span class="toc-num">06</span><span class="toc-title">생명의 떡</span><span class="toc-sub">오병이어, 바다 위를 걸으심, 생명의 떡 강화</span></div><div class="toc-item" onclick="goTo('ch7')"><span class="toc-num">07</span><span class="toc-title">초막절의 예수</span><span class="toc-sub">형제들의 불신, 생수의 강 선언, 무리의 분열</span></div><div class="toc-item" onclick="goTo('ch8')"><span class="toc-num">08</span><span class="toc-title">세상의 빛과 아브라함보다 먼저 계신 이</span><span class="toc-sub">간음한 여인, 빛 되신 예수, 자유케 하는 진리</span></div><div class="toc-item" onclick="goTo('ch9')"><span class="toc-num">09</span><span class="toc-title">날 때부터 맹인 된 사람</span><span class="toc-sub">육신의 눈뜸과 영적 눈멂의 대조</span></div><div class="toc-item" onclick="goTo('ch10')"><span class="toc-num">10</span><span class="toc-title">선한 목자</span><span class="toc-sub">양의 문, 선한 목자의 희생, 아버지와의 하나 됨</span></div><div class="toc-item" onclick="goTo('ch11')"><span class="toc-num">11</span><span class="toc-title">나는 부활이요 생명이니</span><span class="toc-sub">나사로를 살리신 표적</span></div><div class="toc-item" onclick="goTo('ch12')"><span class="toc-num">12</span><span class="toc-title">향유 부음과 예루살렘 입성</span><span class="toc-sub">마리아의 헌신, 종려주일, 밀알의 비유</span></div><div class="toc-item" onclick="goTo('ch13')"><span class="toc-num">13</span><span class="toc-title">제자들의 발을 씻기심</span><span class="toc-sub">겸손의 모범, 새 계명, 배반과 부인 예고</span></div><div class="toc-item" onclick="goTo('ch14')"><span class="toc-num">14</span><span class="toc-title">길이요 진리요 생명</span><span class="toc-sub">처소 예비의 약속과 보혜사 성령의 선물</span></div><div class="toc-item" onclick="goTo('ch15')"><span class="toc-num">15</span><span class="toc-title">참포도나무</span><span class="toc-sub">내 안에 거하라, 서로 사랑하라, 세상의 미움</span></div><div class="toc-item" onclick="goTo('ch16')"><span class="toc-num">16</span><span class="toc-title">근심이 도리어 기쁨이 되리라</span><span class="toc-sub">성령의 사역과 세상을 이기신 예수</span></div><div class="toc-item" onclick="goTo('ch17')"><span class="toc-num">17</span><span class="toc-title">아버지여 때가 이르렀나이다</span><span class="toc-sub">대제사장의 기도</span></div><div class="toc-item" onclick="goTo('ch18')"><span class="toc-num">18</span><span class="toc-title">잡히심과 재판</span><span class="toc-sub">체포, 안나스와 가야바 앞에서, 베드로의 부인, 빌라도 앞에서</span></div><div class="toc-item" onclick="goTo('ch19')"><span class="toc-num">19</span><span class="toc-title">십자가에 못 박히시다</span><span class="toc-sub">채찍질과 조롱, 십자가 처형, 다 이루었다, 장사되심</span></div><div class="toc-item" onclick="goTo('ch20')"><span class="toc-num">20</span><span class="toc-title">빈 무덤과 부활하신 주님</span><span class="toc-sub">마리아, 제자들, 도마와의 만남</span></div><div class="toc-item" onclick="goTo('ch21')"><span class="toc-num">21</span><span class="toc-title">디베랴 호숫가에서</span><span class="toc-sub">고기잡이 기적, 베드로의 회복, 마지막 부탁</span></div>
+</div>
+
+<div class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 1</div>
+      <h2 class="chtitle">말씀이 육신이 되어</h2>
+      <div class="chapter-sub">로고스의 선재와 성육신, 제자들의 부름</div>
+      <div class="ref-strip"><span class="ref-item">요 1:1-51</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-5절</div><div class="flow-title">태초에 계신 말씀</div><div class="flow-body">요한은 <b class="hl-insight" data-insight="0">로고스(말씀)</b>가 태초부터 하나님과 함께 계셨고 곧 하나님이셨다고 선언한다. 만물이 그로 말미암아 지은 바 되었고, 그 안에 생명이 있었으니 이 생명은 사람들의 빛이었다. 빛이 어둠에 비치되 어둠이 이기지 못하였다.</div></div><div class="flow-item"><div class="flow-range">6-13절</div><div class="flow-title">증인 요한과 참 빛</div><div class="flow-body">세례 요한은 빛에 대하여 증언하러 온 자였을 뿐, 그 빛 자체는 아니었다. 참 빛이 세상에 왔으나 세상은 그를 알지 못했고 자기 백성도 영접하지 않았다. 그러나 영접하는 자, 곧 그 이름을 믿는 자들에게는 <b class='hl-term'>하나님의 자녀가 되는 권세</b>를 주셨으니, 이는 혈통이나 육정이 아니라 하나님께로부터 난 것이다.</div></div><div class="flow-item"><div class="flow-range">14-18절</div><div class="flow-title">육신이 되신 말씀, 은혜와 진리</div><div class="flow-body">말씀이 육신이 되어 우리 가운데 거하시매 우리가 그 영광을 보니 아버지의 독생자의 영광이요 <b class='hl-term'>은혜와 진리</b>가 충만하였다. 율법은 모세로 말미암아 주어졌으나 은혜와 진리는 예수 그리스도로 말미암아 왔다. <b class="hl-insight" data-insight="1">본래 하나님을 본 사람이 없으되</b> 독생하신 하나님이 그분을 나타내셨다.</div></div><div class="flow-item"><div class="flow-range">19-51절</div><div class="flow-title">세례 요한의 증언과 첫 제자들</div><div class="flow-body">세례 요한은 자신이 그리스도가 아니라 '주의 길을 곧게 하라' 외치는 자의 소리임을 밝히고, 예수를 '세상 죄를 지고 가는 하나님의 어린 양'으로 증언한다. 안드레와 베드로, 빌립과 나다나엘이 차례로 예수를 만나 따르며, 나다나엘은 '랍비여 당신은 하나님의 아들이시요 이스라엘의 임금이로소이다'라고 고백한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>로고스 기독론은 철학이 아니라 역사적 인격체를 가리킨다</div><div class="teach-body">요한은 헬라 철학과 유대 지혜 전통이 공유하던 언어를 빌려오되, 그 의미를 결정적으로 역사적 성육신 사건에 못박는다. 추상적 원리가 인격이 되었다는 이 선언이 복음서 전체의 출발점이다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">철학자들이 수백 년간 논하던 '우주의 원리'가 어느 날 갈릴리에서 태어나 목수 일을 하고, 배고파하고, 눈물 흘리는 한 인간이 되었다는 거예요. 이보다 더 충격적인 주장이 있을까요? 요한은 이 충격을 첫 문장부터 정면으로 던지고 있어요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>빛은 어둠에 압도당하지 않는다</div><div class="teach-body">5절의 '어둠이 이기지 못하였다'는 표현은 헬라어로 '깨닫지 못하다'와 '이기지 못하다'라는 두 가지 뜻을 함께 담을 수 있는 중의적 단어(카탈람바노)다. 어느 쪽으로 읽든 결론은 같다 — 빛의 우위는 흔들리지 않는다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>자녀 됨은 성취가 아니라 선물이다</div><div class="teach-body">12-13절은 하나님의 자녀 됨이 혈통이나 인간의 의지가 아니라 전적으로 하나님께로부터 난 것임을 강조한다. 신분의 근원이 인간의 노력이 아니라 하나님의 주권적 은혜에 있다는 요한 신학의 출발점이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>'와서 보라'는 초대가 여전히 유효하다</div><div class="teach-body">빌립이 나다나엘에게 한 말 '와서 보라'(46절)는 논쟁으로 설득하기보다 직접 경험하도록 초대하는 전도의 원형을 보여준다. 요한복음 전체에서 반복되는 '보다', '알다'라는 동사들의 신학적 무게가 여기서 시작된다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>로고스 개념의 헬라-유대적 배경</div><div class="deep-body"><b class="hl-insight" data-insight="0">태초에 말씀이 계시니라는 선언</b>이 어떤 사상적 뿌리를 갖는지는 신약학의 오랜 연구 주제다. 필론의 로고스 개념과의 유사성과 결정적 차이(필론의 로고스는 결코 인격체가 되어 육신을 입지 않는다)를 함께 이해할 때 요한의 독창성이 분명해진다.</div><div class="verse-box"><div class="verse-ref">요 1:14</div><div class="verse-text">말씀이 육신이 되어 우리 가운데 거하시매 우리가 그의 영광을 보니 아버지의 독생자의 영광이요 은혜와 진리가 충만하더라</div></div></div><div class="deep-item"><div class="deep-title"><span class="deep-num">2</span>구약의 신현과 요한의 '아무도 본 자가 없다'는 진술의 조화</div><div class="deep-body"><b class="hl-insight" data-insight="1">본래 하나님을 본 사람이 없다는 진술</b>과 모세·이사야의 신현 체험을 어떻게 조화시킬지는 계시론에서 중요한 질문이다. 요한의 요점은 부분적 계시와 완전한 계시 사이의 질적 차이에 있다.</div><div class="verse-box"><div class="verse-ref">요 1:18</div><div class="verse-text">본래 하나님을 본 사람이 없으되 아버지 품속에 있는 독생하신 하나님이 나타내셨느니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 2</div>
+      <h2 class="chtitle">가나의 표적과 성전 정결</h2>
+      <div class="chapter-sub">물이 포도주로, 성전이 그의 몸으로</div>
+      <div class="ref-strip"><span class="ref-item">요 2:1-25</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-11절</div><div class="flow-title">가나의 혼인잔치 표적</div><div class="flow-body"><b class="hl-insight" data-insight="2">가나의 첫 표적</b>에서 예수님은 어머니의 요청으로 물을 좋은 포도주로 바꾸신다. 이는 제자들로 하여금 그를 믿게 한 첫 표적으로, 그의 영광이 나타난 사건이었다.</div></div><div class="flow-item"><div class="flow-range">12-17절</div><div class="flow-title">성전을 깨끗하게 하심</div><div class="flow-body">유월절이 가까워 예루살렘에 올라가신 예수님은 성전에서 매매하는 자들을 채찍으로 내쫓으시며 '내 아버지의 집을 장사하는 집으로 만들지 말라'고 하신다. 제자들은 '주의 전을 사모하는 열심이 나를 삼키리라'는 시편 구절을 떠올린다.</div></div><div class="flow-item"><div class="flow-range">18-25절</div><div class="flow-title">성전 된 그의 몸</div><div class="flow-body">유대인들이 표적을 요구하자 예수님은 '너희가 이 성전을 헐라 내가 사흘 동안에 일으키리라'고 답하시는데, 이는 그의 몸인 성전을 가리킨 것이었다. 제자들은 부활 후에야 이 말씀을 기억하고 성경과 예수의 말씀을 믿었다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>영광은 처음부터 은밀하게, 그러나 확실하게 나타난다</div><div class="teach-body">가나의 표적은 소수만 아는 조용한 사건이었지만, 그 안에는 이미 완전한 신적 영광이 담겨 있었다. 하나님의 일하심은 화려한 무대가 아니라 작은 순종 속에서 시작되는 경우가 많다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">잔치 손님 대부분은 무슨 일이 일어났는지도 몰랐어요. 오직 하인들과 제자들만 알았죠. 하나님의 가장 결정적인 일하심이 종종 이렇게 눈에 띄지 않는 자리에서 시작된다는 게 은혜롭지 않나요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>성전 정결은 열심과 심판이 함께 있는 사건이다</div><div class="teach-body">예수님의 행동은 단순한 분노 표출이 아니라, 예배의 순수성을 향한 거룩한 열심에서 나온 의도적 행동이었다. 사랑은 때로 단호한 개입의 모습을 띤다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>몸이 성전이라는 선언의 파격</div><div class="teach-body">예수님은 예루살렘 성전을 자신의 몸으로 대체하시며, 하나님을 만나는 자리가 이제 건물이 아니라 그리스도 자신임을 선언하신다. 이는 요한복음 4장의 '신령과 진정으로 예배'하라는 가르침으로 이어지는 씨앗이 된다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>표적을 보고도 온전히 믿지 않는 자들</div><div class="teach-body">23-25절은 많은 사람이 표적을 보고 믿었지만, 예수님은 그들에게 자신을 의탁하지 않으셨다고 전한다. 사람 속에 있는 것을 아셨기 때문이다. 표면적 반응과 온전한 신뢰는 다르다는 통찰이다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>가나의 표적이 지닌 상징적 의미</div><div class="deep-body"><b class="hl-insight" data-insight="2">돌항아리의 물이 포도주로 변화된 사건</b>을 유대교 정결례의 완성과 대체로 읽는 해석은 신약학에서 널리 받아들여지지만, 단순한 자비의 기적으로 읽는 견해도 있다. 두 해석이 반드시 배타적이지 않다는 점도 함께 고려할 만하다.</div><div class="verse-box"><div class="verse-ref">요 2:11</div><div class="verse-text">예수께서 이 첫 표적을 갈릴리 가나에서 행하여 그의 영광을 나타내시매 제자들이 그를 믿으니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 3</div>
+      <h2 class="chtitle">거듭남과 하나님의 사랑</h2>
+      <div class="chapter-sub">니고데모와의 대화, 세례 요한의 마지막 증언</div>
+      <div class="ref-strip"><span class="ref-item">요 3:1-36</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-8절</div><div class="flow-title">거듭나야 하리라</div><div class="flow-body">바리새인이요 유대인의 지도자인 니고데모가 밤에 예수님을 찾아온다. 예수님은 '사람이 <b class="hl-insight" data-insight="3">거듭나지</b> 아니하면 하나님의 나라를 볼 수 없느니라'고 하시며, 육으로 난 것은 육이요 영으로 난 것은 영이니 바람이 임의로 불듯 성령으로 난 사람도 그러하다고 설명하신다.</div></div><div class="flow-item"><div class="flow-range">9-15절</div><div class="flow-title">모세의 놋뱀과 인자의 들림</div><div class="flow-body">예수님은 광야에서 모세가 놋뱀을 든 것같이 인자도 들려야 하리니, 이는 그를 믿는 자마다 영생을 얻게 하려 하심이라고 하신다.</div></div><div class="flow-item"><div class="flow-range">16-21절</div><div class="flow-title">하나님이 세상을 이처럼 사랑하사</div><div class="flow-body">요한복음에서 가장 널리 알려진 구절 '<b class="hl-quote">하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니 이는 그를 믿는 자마다 멸망하지 않고 영생을 얻게 하려 하심이라</b>'(16절)가 선포된다. 하나님이 아들을 보내신 것은 세상을 심판하려 하심이 아니요 구원하려 하심이며, 빛보다 어둠을 더 사랑하는 것이 심판의 이유가 된다.</div></div><div class="flow-item"><div class="flow-range">22-36절</div><div class="flow-title">세례 요한의 마지막 증언</div><div class="flow-body">세례 요한은 제자들의 시기 어린 질문에 '그는 흥하여야 하겠고 나는 쇠하여야 하리라'고 답하며 신랑의 친구로서의 기쁨을 고백한다. 하늘로부터 오시는 이가 만유 위에 계시며, 아들을 믿는 자에게는 영생이 있다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>거듭남은 인간의 성취가 아니라 성령의 주권적 역사다</div><div class="teach-body">바람의 비유는 성령의 역사가 인간이 통제하거나 예측할 수 없는 신비로운 방식으로 일어남을 보여준다. 거듭남은 프로그램화된 절차가 아니라 하나님의 자유로운 은혜의 사건이다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">니고데모 같은 종교 엘리트조차 '어떻게 그럴 수 있습니까'라며 당황했다는 게 위로가 돼요. 거듭남을 논리적으로 완전히 설명하지 못한다고 해서 신앙이 부족한 게 아니라, 원래 그 본질이 신비롭고 주권적인 것이니까요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>놋뱀 비유는 십자가의 예표다</div><div class="teach-body">민수기 21장의 놋뱀 사건 — 뱀에 물린 자가 놋뱀을 바라보면 살았던 사건 — 은 십자가에 달리신 그리스도를 바라봄으로 생명을 얻는 구원의 패턴을 미리 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>3:16은 하나님의 사랑의 보편성과 구체성을 함께 말한다</div><div class="teach-body">'세상'이라는 보편적 대상과 '독생자'라는 구체적이고 값비싼 선물이 한 문장 안에 함께 담겨 있다. 하나님의 사랑은 막연한 감정이 아니라 실제적 희생으로 증명된 사랑이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>겸손한 위대함 — '그는 흥하고 나는 쇠하여야 하리라'</div><div class="teach-body">세례 요한의 고백은 사역의 성공이 자신의 영향력 확대가 아니라 그리스도를 높이는 데 있음을 보여주는 지도자상의 모범이다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>'아노덴'의 중의성이 만드는 신학적 깊이</div><div class="deep-body"><b class="hl-insight" data-insight="3">거듭나야 한다는 말씀</b>에 담긴 헬라어 단어의 이중적 의미는 단순한 언어유희를 넘어, 영적 진리가 육적 사고방식으로는 오해될 수밖에 없다는 요한복음 전체의 주제(빛과 어둠, 위와 아래의 대조)를 압축적으로 보여준다.</div><div class="verse-box"><div class="verse-ref">요 3:3</div><div class="verse-text">예수께서 대답하여 이르시되 진실로 진실로 네게 이르노니 사람이 거듭나지 아니하면 하나님의 나라를 볼 수 없느니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 4</div>
+      <h2 class="chtitle">생수와 참된 예배</h2>
+      <div class="chapter-sub">사마리아 여인과의 대화, 왕의 신하의 아들 치유</div>
+      <div class="ref-strip"><span class="ref-item">요 4:1-54</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-15절</div><div class="flow-title">생수를 구하는 대화</div><div class="flow-body"><b class="hl-insight" data-insight="4">사마리아 여인과의 대화</b>에서 예수님은 '내가 주는 물을 마시는 자는 영원히 목마르지 아니하리니 내가 주는 물은 그 속에서 영생하도록 솟아나는 샘물이 되리라'고 말씀하신다.</div></div><div class="flow-item"><div class="flow-range">16-26절</div><div class="flow-title">신령과 진정으로 예배할 때</div><div class="flow-body">예수님은 여인의 사생활을 정확히 아시면서도 정죄하지 않으시고, 예배의 장소(그리심산이냐 예루살렘이냐)를 넘어 '<b class="hl-term">신령과 진정으로</b>' 예배하는 참된 예배자들에 대해 말씀하신다. 여인이 메시아를 언급하자 예수님은 '내가 그라'고 직접 밝히신다.</div></div><div class="flow-item"><div class="flow-range">27-42절</div><div class="flow-title">추수할 것이 이미 익었도다</div><div class="flow-body">여인은 물동이를 버려두고 동네로 가서 예수님을 증언하고, 많은 사마리아인이 그의 말과 예수님 자신의 말씀을 듣고 믿는다. 예수님은 제자들에게 '눈을 들어 밭을 보라 희어져 추수하게 되었도다'라고 하신다.</div></div><div class="flow-item"><div class="flow-range">43-54절</div><div class="flow-title">왕의 신하의 아들 치유</div><div class="flow-body">갈릴리로 돌아오신 예수님은 왕의 신하의 죽어가는 아들을 말씀 한마디로 고치신다. '가라 네 아들이 살아 있다'는 말씀을 믿음으로 받아들인 신하와 그 온 집안이 믿게 된다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>예수님은 사회적 장벽 너머 사람을 먼저 찾아가신다</div><div class="teach-body">성별, 민족, 도덕적 평판이라는 삼중 장벽에도 불구하고 예수님이 먼저 다가가신 것은, 복음이 자격 있는 자를 위한 것이 아니라 목마른 자를 위한 것임을 보여준다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">이 여인은 아마 마을에서 손가락질받는 존재였을 거예요. 그런데 요한복음에서 예수님이 자신의 메시아 되심을 가장 분명하게 밝히신 첫 대상이 바로 이 사람이에요. 종교 엘리트가 아니라 소외된 한 사람에게요. 이게 복음의 방향을 상징적으로 보여주는 것 같아요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>참된 예배는 장소가 아니라 성령과 진리 안에 있다</div><div class="teach-body">예수님은 예배 장소를 둘러싼 오래된 논쟁을 근본적으로 재정의하신다. 예배의 본질은 지리적 위치가 아니라 하나님과의 진실한 영적 만남에 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>증언은 완전한 사람이 아니라 만난 사람에게서 시작된다</div><div class="teach-body">여인은 신학적으로 완벽한 설명을 하지 못했지만, '내가 행한 모든 일을 내게 말한 사람을 와서 보라'는 단순한 증언만으로 온 동네를 움직였다. 증언의 힘은 완벽함이 아니라 진실함에 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>믿음은 표적을 보기 전에 말씀을 신뢰하는 것이다</div><div class="teach-body">왕의 신하는 예수님이 직접 가서 손 얹기를 청했지만, 예수님은 그저 말씀만 하셨고 신하는 그 말씀만으로 발걸음을 돌렸다. 이는 요한복음이 강조하는, 보지 않고 믿는 믿음의 한 사례다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>사마리아 여인 이야기의 사회사적 배경</div><div class="deep-body"><b class="hl-insight" data-insight="4">세 겹의 사회적 장벽을 넘어선 만남</b>을 이해하려면 1세기 유대-사마리아 관계사와 당시 여성의 사회적 지위에 대한 배경 지식이 필요하다. 이 배경을 알고 읽을 때 본문의 파격성이 온전히 드러난다.</div><div class="verse-box"><div class="verse-ref">요 4:9</div><div class="verse-text">사마리아 여자가 이르되 당신은 유대인으로서 어찌하여 사마리아 여자인 나에게 물을 달라 하나이까 하니 이는 유대인이 사마리아인과 상종하지 아니함이러라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 5</div>
+      <h2 class="chtitle">베데스다의 치유와 아들의 권세</h2>
+      <div class="chapter-sub">안식일 논쟁과 아버지·아들의 관계</div>
+      <div class="ref-strip"><span class="ref-item">요 5:1-47</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-9절</div><div class="flow-title">베데스다 못의 치유</div><div class="flow-body"><b class="hl-insight" data-insight="5">38년 된 병자</b>에게 예수님은 '일어나 네 자리를 들고 걸어가라'고 하시고, 그는 즉시 나아 자리를 들고 걸었다. 이 일은 안식일에 일어났다.</div></div><div class="flow-item"><div class="flow-range">10-18절</div><div class="flow-title">안식일 논쟁과 아들의 권세</div><div class="flow-body">유대인들이 안식일 규정 위반을 문제 삼자 예수님은 '내 아버지께서 이제까지 일하시니 나도 일한다'고 답하시는데, 이는 자신을 하나님과 동등하게 여기는 발언으로 받아들여져 살해 위협의 빌미가 된다.</div></div><div class="flow-item"><div class="flow-range">19-30절</div><div class="flow-title">아버지와 아들의 온전한 연합</div><div class="flow-body">예수님은 아들이 아버지께서 하시는 일을 보는 대로 행하며, 아버지께서 죽은 자를 일으켜 살리심같이 아들도 자기가 원하는 자들을 살린다고 말씀하신다. 아버지께서 심판을 다 아들에게 맡기셨으니, 이는 모든 사람으로 아버지를 공경하듯 아들을 공경하게 하려 하심이다.</div></div><div class="flow-item"><div class="flow-range">31-47절</div><div class="flow-title">네 가지 증언</div><div class="flow-body">예수님은 자신에 대한 증언으로 세례 요한의 증언, 자신이 행하는 일들의 증언, 아버지의 증언, 그리고 모세의 글의 증언을 제시하며 '모세를 믿었더라면 또한 나를 믿었으리니 이는 그가 나를 가리켜 기록하였음이라'고 하신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>변화에는 종종 의지의 일깨움이 먼저 필요하다</div><div class="teach-body">낫고자 하느냐는 질문은 육체적 치유 이전에 마음의 소망을 회복시키는 과정이었을 수 있다. 은혜는 종종 우리 자신의 응답을 요청하는 방식으로 다가온다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">38년이면 거의 평생이잖아요. 그 시간 동안 '병자'라는 게 자기 정체성이 되어버렸을 수도 있어요. 예수님의 질문이 좀 이상하게 들릴 수 있지만, 사실 우리 모두에게 비슷한 질문이 필요할 때가 있는 것 같아요 — 정말 변화를 원하는가.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>안식일의 주인이신 예수</div><div class="teach-body">예수님이 안식일에 병자를 고치신 것은 규정을 무시한 것이 아니라, 안식일의 참된 목적(생명과 회복)을 성취하신 것으로 이해할 수 있다. 안식일의 주인이 안식일의 의미를 온전케 하신 것이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>아들의 권세는 아버지와의 완전한 연합에서 나온다</div><div class="teach-body">19절 '아들이 아버지께서 하시는 일을 보는 대로 행한다'는 말씀은 예수님의 사역이 독립적 활동이 아니라 아버지와의 온전한 일치 속에서 이루어짐을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>성경은 궁극적으로 그리스도를 가리킨다</div><div class="teach-body">39절과 46절의 말씀은 구약 전체가 그리스도를 증언하는 책임을 지닌 문서임을 선언한다. 구약을 읽으면서도 그리스도를 발견하지 못하면 참된 독법이 아니라는 도전이다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>'낫고자 하느냐'는 질문이 던지는 심리적·영적 함의</div><div class="deep-body"><b class="hl-insight" data-insight="5">38년 된 병자를 향한 질문</b>은 단순한 확인 질문을 넘어, 오랜 시간에 걸쳐 형성된 정체성과 체념을 흔드는 도전으로 읽을 수 있다. 이 해석이 본문의 유일한 독법은 아니지만, 목회적 적용에 있어 풍성한 시사점을 준다.</div><div class="verse-box"><div class="verse-ref">요 5:6-7</div><div class="verse-text">예수께서 그가 누운 것을 보시고 병이 벌써 오랜 줄 아시고 이르시되 네가 낫고자 하느냐 병자가 대답하되 주여 물이 움직일 때에 나를 못에 넣어 줄 사람이 없어 내가 가는 동안에 다른 사람이 먼저 내려가나이다</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 6</div>
+      <h2 class="chtitle">생명의 떡</h2>
+      <div class="chapter-sub">오병이어, 바다 위를 걸으심, 생명의 떡 강화</div>
+      <div class="ref-strip"><span class="ref-item">요 6:1-71</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-15절</div><div class="flow-title">오병이어의 표적</div><div class="flow-body">보리떡 다섯 개와 물고기 두 마리로 오천 명을 먹이신 표적이 일어난다. 무리가 그를 억지로 임금 삼으려 하자 예수님은 홀로 산으로 떠나신다.</div></div><div class="flow-item"><div class="flow-range">16-21절</div><div class="flow-title">바다 위를 걸으심</div><div class="flow-body">제자들이 배를 타고 가는데 예수님이 바다 위로 걸어오시며 '내니 두려워하지 말라'고 하신다.</div></div><div class="flow-item"><div class="flow-range">22-40절</div><div class="flow-title">생명의 떡이신 예수</div><div class="flow-body">무리가 다시 찾아오자 예수님은 썩을 양식이 아니라 영생하도록 있는 양식을 위하여 일하라 하시며, '나는 생명의 떡이니 내게 오는 자는 결코 주리지 아니할 터이요 나를 믿는 자는 영원히 목마르지 아니하리라'고 선언하신다.</div></div><div class="flow-item"><div class="flow-range">41-71절</div><div class="flow-title">살과 피의 말씀과 제자들의 반응</div><div class="flow-body"><b class="hl-insight" data-insight="6">내 살을 먹고 내 피를 마시라는 말씀</b>에 많은 제자가 '이 말씀은 어렵도다 누가 들을 수 있느냐'며 떠나간다. 예수님이 열두 제자에게 '너희도 가려느냐' 물으시자 베드로는 '주여 영생의 말씀이 주께 있사오니 우리가 누구에게로 가오리이까'라고 고백한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>육신의 필요를 채우신 표적은 더 깊은 갈망을 가리킨다</div><div class="teach-body">오병이어 표적으로 배부른 무리는 표적의 '기능'만 원했을 뿐, 그것이 가리키는 실재(생명의 떡이신 그리스도 자신)는 원하지 않았다. 표적은 목적이 아니라 이정표다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">무리는 배가 부르니까 예수님을 왕으로 세우려 했어요. 하지만 예수님이 진짜 주시려던 건 한 끼 식사가 아니었죠. 우리도 종종 하나님께 필요를 채워달라고만 하고, 정작 그분 자신을 원하지는 않을 때가 있는 것 같아요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>두려움 속에서 들려오는 '내니 두려워하지 말라'</div><div class="teach-body">풍랑 이는 바다 위로 걸어오신 사건은 혼돈과 위협 가운데서도 예수님의 임재 자체가 궁극적 평안의 근거임을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>영원한 양식을 위해 일하라는 역설적 명령</div><div class="teach-body">27절은 썩을 양식이 아닌 영생하는 양식을 위해 '일하라'고 명령하지만, 29절에서 그 일은 결국 '하나님이 보내신 이를 믿는 것'으로 정의된다. 참된 노동은 신뢰다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>떠나는 자들 앞에서 베드로의 고백</div><div class="teach-body">많은 자들이 떠나가는 위기의 순간, 베드로의 고백은 신앙이 편안함이 아니라 '다른 대안이 없음'을 깨닫는 데서도 깊어질 수 있음을 보여준다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>생명의 떡 담화와 성찬 신학의 관계</div><div class="deep-body"><b class="hl-insight" data-insight="6">살을 먹고 피를 마시라는 파격적 표현</b>이 성찬(성만찬)을 직접 예고하는지, 아니면 더 넓은 의미의 영적 연합을 가리키는지는 신학 전통에 따라 해석이 갈린다. 어느 쪽이든 이 말씀이 요구하는 것은 그리스도와의 전인격적이고 깊은 연합이라는 점에는 폭넓은 공감대가 있다.</div><div class="verse-box"><div class="verse-ref">요 6:53-54</div><div class="verse-text">예수께서 이르시되 내가 진실로 진실로 너희에게 이르노니 인자의 살을 먹지 아니하고 인자의 피를 마시지 아니하면 너희 속에 생명이 없느니라 내 살을 먹고 내 피를 마시는 자는 영생을 가졌고 마지막 날에 내가 그를 다시 살리리니</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 7</div>
+      <h2 class="chtitle">초막절의 예수</h2>
+      <div class="chapter-sub">형제들의 불신, 생수의 강 선언, 무리의 분열</div>
+      <div class="ref-strip"><span class="ref-item">요 7:1-52</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-13절</div><div class="flow-title">은밀히 명절에 올라가심</div><div class="flow-body">예수님의 형제들조차 그를 믿지 않았고, 예수님은 공개적으로가 아니라 은밀하게 초막절에 예루살렘으로 올라가신다.</div></div><div class="flow-item"><div class="flow-range">14-24절</div><div class="flow-title">성전에서의 가르침과 안식일 논쟁</div><div class="flow-body">예수님은 자신의 가르침이 자기 것이 아니라 보내신 이의 것이라 말씀하시며, 겉모습으로 판단하지 말고 공의롭게 판단하라고 하신다.</div></div><div class="flow-item"><div class="flow-range">25-36절</div><div class="flow-title">메시아 논쟁</div><div class="flow-body">무리 가운데 예수가 그리스도인지에 대한 논쟁이 일어나고, 대제사장들과 바리새인들은 그를 잡으려 관리들을 보내지만 실패한다.</div></div><div class="flow-item"><div class="flow-range">37-52절</div><div class="flow-title">생수의 강</div><div class="flow-body"><b class="hl-insight" data-insight="7">명절 끝날, 큰 명절에</b> 예수님은 목마른 자마다 자신에게 와서 마시라 외치시며, 믿는 자에게서 생수의 강이 흘러나올 것이라 선언하신다. 무리는 그가 그리스도인지, 갈릴리에서 날 수 있는지를 두고 다시 분열한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>가장 가까운 사람이 가장 늦게 믿을 수 있다</div><div class="teach-body">예수님의 형제들조차 처음에는 그를 믿지 않았다는 사실은, 신앙이 혈연이나 근접성으로 자동 전달되지 않음을 보여준다. 훗날 야고보를 비롯한 형제들이 믿음에 이른 것(행 1:14)은 큰 소망을 준다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">가족이라고 해서 자동으로 믿음이 전해지는 게 아니라는 게 오히려 위로가 될 때가 있어요. 예수님의 친형제들도 처음엔 안 믿었으니까요. 지금 안 믿는 가족이 있다고 해서 절망할 이유는 없다는 거죠.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>가르침의 권위는 출처에서 나온다</div><div class="teach-body">16-17절에서 예수님은 자신의 가르침이 보내신 분의 것이라 밝히시며, 그 뜻을 행하려는 자만이 이 가르침이 참된지 알 수 있다고 하신다. 진리 인식은 순종의 의지와 연결되어 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>생수의 강 선언은 절기의 상징을 완성한다</div><div class="teach-body">초막절의 물 붓는 예식이 상징하던 것을 예수님이 자신 안에서 성취하신다고 선언하신 것은, 그가 구약의 모든 절기와 상징의 궁극적 실체이심을 보여주는 요한복음의 반복적 패턴이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>무리의 분열은 오늘날에도 반복된다</div><div class="teach-body">예수의 정체를 둘러싼 논쟁과 분열은 표적과 말씀이 명확히 주어져도 사람마다 다르게 반응할 수 있음을 보여준다. 진리 앞에서의 반응은 강요될 수 없다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>초막절 물 붓는 예식과 생수의 강 선언의 관계</div><div class="deep-body"><b class="hl-insight" data-insight="7">명절 끝날의 선언</b>이 초막절 물 붓는 예식(후대 유대 문헌에 기록된 관습)과 정확히 어떤 시점에 맞물리는지는 본문만으로 완전히 확정하기 어렵지만, 절기의 상징과 예수님 선언 사이의 신학적 연결은 폭넓게 인정된다.</div><div class="verse-box"><div class="verse-ref">요 7:37-38</div><div class="verse-text">명절 끝날 곧 큰 날에 예수께서 서서 외쳐 이르시되 누구든지 목마르거든 내게로 와서 마시라 나를 믿는 자는 성경에 이름과 같이 그 배에서 생수의 강이 흘러나오리라 하시니</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 8</div>
+      <h2 class="chtitle">세상의 빛과 아브라함보다 먼저 계신 이</h2>
+      <div class="chapter-sub">간음한 여인, 빛 되신 예수, 자유케 하는 진리</div>
+      <div class="ref-strip"><span class="ref-item">요 8:1-59</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-11절</div><div class="flow-title">간음 중 잡힌 여인</div><div class="flow-body"><b class="hl-insight" data-insight="8">간음 중 잡힌 여인 이야기</b>에서 예수님은 '너희 중에 죄 없는 자가 먼저 돌로 치라'고 하시고, 고발자들이 하나둘 떠나자 여인에게 '나도 너를 정죄하지 아니하노니 가서 다시는 죄를 범하지 말라'고 하신다.</div></div><div class="flow-item"><div class="flow-range">12-30절</div><div class="flow-title">나는 세상의 빛이라</div><div class="flow-body">예수님은 '나는 세상의 빛이니 나를 따르는 자는 어둠에 다니지 아니하고 생명의 빛을 얻으리라'고 선언하시며, 바리새인들과 자신의 증언과 권위에 대해 논쟁하신다.</div></div><div class="flow-item"><div class="flow-range">31-47절</div><div class="flow-title">진리가 너희를 자유롭게 하리라</div><div class="flow-body">예수님은 자신의 말에 거하는 것이 참 제자의 표지이며, 진리를 알지니 진리가 자유롭게 하리라고 말씀하신다. 아브라함의 자손이라 자부하는 이들과의 논쟁이 이어지며, 그들의 영적 아비가 마귀임을 지적하신다.</div></div><div class="flow-item"><div class="flow-range">48-59절</div><div class="flow-title">아브라함보다 먼저 있느니라</div><div class="flow-body">논쟁이 격화되며 예수님은 <b class="hl-insight" data-insight="9">아브라함이 나기 전부터 내가 있느니라</b>고 선언하시고, 청중은 이를 신성모독으로 여겨 돌을 들어 치려 하나 예수님은 몸을 숨겨 성전에서 나가신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>자비는 죄를 가볍게 여기는 것이 아니다</div><div class="teach-body">예수님은 여인을 정죄하지 않으셨지만 동시에 '다시는 죄를 범하지 말라'고 명하셨다. 참된 자비는 죄의 심각성을 부인하지 않으면서도 정죄 대신 회복의 길을 여는 것이다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">이 이야기가 사랑받는 이유는, 정죄와 방임이라는 두 극단 사이에서 예수님이 제3의 길 — 은혜로운 진실함 — 을 보여주시기 때문인 것 같아요. 죄를 못 본 척하지도, 그렇다고 정죄로 짓밟지도 않으시죠.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>빛을 따르는 삶은 어둠 속을 걷지 않는 삶이다</div><div class="teach-body">세상의 빛이라는 선언은 단순한 계시자를 넘어, 그를 따르는 자의 삶의 방향과 질을 근본적으로 바꾸는 실제적 능력을 의미한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>진리는 지식이 아니라 자유를 낳는 관계적 진리다</div><div class="teach-body">31-32절에서 자유를 주는 진리는 추상적 정보가 아니라 '내 말에 거함' — 즉 그리스도와의 지속적 관계 안에 머무는 것과 연결되어 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>혈통적 특권은 영적 정체성을 보장하지 않는다</div><div class="teach-body">아브라함의 자손이라는 자부심이 실제 영적 아비 됨을 보장하지 않는다는 예수님의 지적은, 외적 신분보다 실제 삶의 열매가 더 중요하다는 도전을 준다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>간음한 여인 본문의 본문비평적 위치</div><div class="deep-body"><b class="hl-insight" data-insight="8">가장 오래된 사본에는 없는 이 본문</b>을 어떻게 다룰 것인가는 성경의 영감과 본문 전승에 대한 균형 잡힌 이해를 요구하는 대표적 사례다. 본문비평적 사실을 인정하면서도 본문이 담고 있는 신학적 메시지의 가치를 훼손하지 않는 것이 바람직한 태도다.</div><div class="verse-box"><div class="verse-ref">요 8:7</div><div class="verse-text">그들이 계속 묻자 이에 일어나 이르시되 너희 중에 죄 없는 자가 먼저 돌로 치라 하시고</div></div></div><div class="deep-item"><div class="deep-title"><span class="deep-num">2</span>'에고 에이미' 선언들의 신학적 무게</div><div class="deep-body"><b class="hl-insight" data-insight="9">아브라함보다 먼저 있느니라는 선언</b>은 요한복음에 반복적으로 나오는 '나는 ~이다(에고 에이미)' 선언들(생명의 떡, 세상의 빛, 선한 목자, 부활이요 생명 등) 중에서도 가장 직접적으로 신적 정체성을 주장하는 구절로 꼽힌다.</div><div class="verse-box"><div class="verse-ref">요 8:58-59</div><div class="verse-text">예수께서 이르시되 진실로 진실로 너희에게 이르노니 아브라함이 나기 전부터 내가 있느니라 하시니 그들이 돌을 들어 치려 하거늘 예수께서 숨어 성전에서 나가시니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch9">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 9</div>
+      <h2 class="chtitle">날 때부터 맹인 된 사람</h2>
+      <div class="chapter-sub">육신의 눈뜸과 영적 눈멂의 대조</div>
+      <div class="ref-strip"><span class="ref-item">요 9:1-41</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-12절</div><div class="flow-title">실로암 못에서 눈을 뜨다</div><div class="flow-body"><b class="hl-insight" data-insight="10">누구의 죄로 인함이니이까</b>라는 제자들의 질문에 예수님은 하나님의 일이 나타나기 위함이라 답하시고, 진흙을 이겨 눈에 바르고 실로암 못에 가서 씻으라 하신다. 그가 씻고 밝은 눈으로 왔다.</div></div><div class="flow-item"><div class="flow-range">13-34절</div><div class="flow-title">바리새인들의 심문</div><div class="flow-body">안식일에 일어난 일이라 바리새인들이 그를 심문하지만, 그는 담대하게 '한 가지 아는 것은 내가 맹인으로 있다가 지금 보는 그것이니이다'라고 증언한다. 결국 그는 출교당한다.</div></div><div class="flow-item"><div class="flow-range">35-41절</div><div class="flow-title">영적 눈뜸과 눈먼 자들</div><div class="flow-body">예수님이 그를 찾아가 '네가 인자를 믿느냐'고 물으시자 그는 '주여 내가 믿나이다'라고 경배한다. 예수님은 '내가 심판하러 이 세상에 왔으니 보지 못하는 자들은 보게 하고 보는 자들은 맹인이 되게 하려 함이라'고 말씀하시며, 바리새인들의 영적 맹목을 지적하신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>고난의 원인보다 하나님의 일하심에 주목하라</div><div class="teach-body">예수님은 죄와 벌의 인과관계를 따지는 질문을 넘어서, 고난 가운데서도 나타날 수 있는 하나님의 영광에 시선을 돌리게 하신다. 이는 고난 앞에 선 이들에게 실제적 위로가 된다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">'누구 잘못이냐'는 질문에 갇히면 앞으로 나아갈 수가 없어요. 예수님은 그 질문 자체를 다른 질문으로 바꿔주셨죠 — '여기서 하나님이 무엇을 하고 계신가'로요. 이 전환이 고난 중에 있는 사람에게 얼마나 큰 위로가 되는지 몰라요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>점진적으로 자라가는 신앙 고백</div><div class="teach-body">이 사람의 예수님에 대한 이해는 '예수라 하는 그 사람'(11절)에서 '선지자'(17절)로, 마침내 '주'로 경배하는 데까지(38절) 점진적으로 깊어진다. 신앙의 성장은 종종 단계적으로 이루어진다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>경험한 진실을 담대히 증언하는 용기</div><div class="teach-body">이 사람은 신학적 논쟁에서 밀리지 않고 '내가 아는 것은 내가 전에는 맹인이었으나 지금은 본다는 것'이라는 단순하고 확고한 경험적 증언을 고수한다. 이는 오늘날 신자들에게도 유효한 증언의 모델이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>보는 것과 보지 못하는 것의 아이러니</div><div class="teach-body">육신의 눈을 뜬 자는 영적으로 점점 밝히 보게 되지만, 눈으로 보고 있다고 자부하는 바리새인들은 오히려 영적으로 어두워진다. 요한복음은 이 역설적 대조를 통해 진정한 '봄'이 무엇인지 묻는다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>고난의 신학 — 인과응보를 넘어서는 관점</div><div class="deep-body"><b class="hl-insight" data-insight="10">누구의 죄로 인함이니이까라는 질문</b>에 대한 예수님의 대답은 고난에 대한 성경적 관점을 이해하는 데 중요한 본문이지만, 이것이 모든 고난에 인과관계가 전혀 없다는 뜻으로 단순화되어서는 안 된다. 성경은 다양한 본문에서 고난의 여러 차원(징계, 시험, 신비, 영광의 통로)을 함께 다룬다는 점을 균형 있게 고려해야 한다.</div><div class="verse-box"><div class="verse-ref">요 9:2-3</div><div class="verse-text">제자들이 물어 이르되 랍비여 이 사람이 맹인으로 난 것이 누구의 죄로 인함이니이까 자기니이까 그의 부모니이까 예수께서 대답하시되 이 사람이나 그의 부모의 죄로 인한 것이 아니라 그에게서 하나님이 하시는 일을 나타내고자 하심이라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch10">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 10</div>
+      <h2 class="chtitle">선한 목자</h2>
+      <div class="chapter-sub">양의 문, 선한 목자의 희생, 아버지와의 하나 됨</div>
+      <div class="ref-strip"><span class="ref-item">요 10:1-42</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-10절</div><div class="flow-title">양의 문이신 예수</div><div class="flow-body">예수님은 자신을 양의 문이라 하시며, '내가 온 것은 양으로 생명을 얻게 하고 더 풍성히 얻게 하려는 것'이라 말씀하신다.</div></div><div class="flow-item"><div class="flow-range">11-21절</div><div class="flow-title">선한 목자의 희생</div><div class="flow-body">'나는 선한 목자라 선한 목자는 양들을 위하여 목숨을 버리거니와' — 삯꾼과 달리 선한 목자는 양을 알고 양도 목자를 알며, 목숨을 스스로 버리고 다시 얻을 권세도 있다고 말씀하신다.</div></div><div class="flow-item"><div class="flow-range">22-42절</div><div class="flow-title">나와 아버지는 하나이니라</div><div class="flow-body">수전절에 유대인들이 그리스도인지 밝히 말하라 요구하자 예수님은 자신의 양은 내 음성을 듣고 따르며 영원히 멸망하지 않는다 하시고, <b class="hl-insight" data-insight="11">나와 아버지는 하나이니라</b>고 선언하신다. 유대인들은 돌로 치려 하나 예수님은 아버지의 일들이 증거가 됨을 지적하시고 그들의 손에서 벗어나신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>목자는 양을 위해 죽지만 삯꾼은 도망친다</div><div class="teach-body">삯꾼과 목자의 대조는 참된 리더십과 이기적 지도력의 근본적 차이를 보여준다. 참된 목자의 표지는 위기 속에서의 헌신이다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">요즘도 이 대조가 유효한 것 같아요. 진짜 좋은 리더는 어려운 상황에서 도망치지 않고 남아 있는 사람이죠. 삯꾼은 상황이 좋을 때만 함께하고요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>목자와 양의 관계는 인격적이고 상호적이다</div><div class="teach-body">14절 '나는 내 양을 알고 양도 나를 아는 것이'는 단순한 소유 관계가 아니라 깊은 인격적 친밀함을 묘사한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>목숨을 버리는 것은 강요가 아니라 자원함이다</div><div class="teach-body">18절 '이를 내게서 빼앗는 자가 있는 것이 아니라 내가 스스로 버리노라'는 십자가가 예수님께 강요된 사건이 아니라 자발적이고 주권적인 사랑의 행위였음을 강조한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>한 우리 밖의 다른 양들</div><div class="teach-body">16절 '이 우리에 들지 아니한 다른 양들이 내게 있어... 한 무리가 되어 한 목자에게 있으리라'는 이방인을 포함한 하나님 백성의 확장을 예고하는 구절로 널리 이해된다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>'나와 아버지는 하나이니라'는 선언의 삼위일체론적 함의</div><div class="deep-body"><b class="hl-insight" data-insight="11">중성 단수형으로 표현된 하나 됨</b>은 초대교회의 삼위일체 교리 형성에 중요한 성경적 근거가 된 본문 중 하나다. 구별된 인격이면서도 완전한 본질적 일치를 이룬다는 개념은 이후 교회사에서 정교하게 다듬어진다.</div><div class="verse-box"><div class="verse-ref">요 10:30-31</div><div class="verse-text">나와 아버지는 하나이니라 하신대 유대인들이 다시 돌을 들어 치려 하거늘</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch11">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 11</div>
+      <h2 class="chtitle">나는 부활이요 생명이니</h2>
+      <div class="chapter-sub">나사로를 살리신 표적</div>
+      <div class="ref-strip"><span class="ref-item">요 11:1-57</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-16절</div><div class="flow-title">이틀을 더 유하신 예수</div><div class="flow-body"><b class="hl-insight" data-insight="12">나사로의 죽음 소식과 예수님의 지연</b> 후, 예수님은 제자들에게 '나사로가 죽었느니라... 내가 거기 있지 아니한 것을 너희를 위하여 기뻐하노니 이는 너희로 믿게 하려 함이라'고 말씀하시며 유대로 가자 하신다.</div></div><div class="flow-item"><div class="flow-range">17-27절</div><div class="flow-title">나는 부활이요 생명이니</div><div class="flow-body">마르다에게 예수님은 '나는 부활이요 생명이니 나를 믿는 자는 죽어도 살겠고 무릇 살아서 나를 믿는 자는 영원히 죽지 아니하리니 이것을 네가 믿느냐'고 물으시고, 마르다는 '주는 그리스도시요 하나님의 아들이신 줄 내가 믿나이다'라고 고백한다.</div></div><div class="flow-item"><div class="flow-range">28-37절</div><div class="flow-title">예수께서 눈물을 흘리시더라</div><div class="flow-body">마리아와 함께 애통해하는 사람들을 보시고 예수님은 심령에 비통히 여기시고 눈물을 흘리신다.</div></div><div class="flow-item"><div class="flow-range">38-44절</div><div class="flow-title">나사로야 나오라</div><div class="flow-body">예수님은 무덤 앞에서 하나님께 기도하신 후 큰 소리로 '나사로야 나오라' 외치시고, 죽은 지 나흘 된 나사로가 수족을 베로 동인 채로 걸어 나온다.</div></div><div class="flow-item"><div class="flow-range">45-57절</div><div class="flow-title">죽이려는 모의의 시작</div><div class="flow-body">이 표적으로 많은 사람이 믿었으나, 대제사장들과 바리새인들은 공회를 모아 예수를 죽이기로 모의한다. 가야바는 '한 사람이 백성을 위하여 죽어 온 민족이 망하지 않게 되는 것이 너희에게 유익한 줄을 생각하지 아니하는도다'라고 말하는데, 요한은 이것이 뜻하지 않게 예언이 되었다고 해설한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>지연은 무관심이 아니라 더 큰 계획일 수 있다</div><div class="teach-body">예수님의 지연은 사랑의 부재가 아니라, 부활의 능력이 온전히 드러나기 위한 의도된 기다림이었다. 응답이 늦어지는 기도 앞에서도 이 진리는 위로가 된다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">마르다와 마리아 둘 다 똑같이 '주께서 여기 계셨더라면'이라고 말해요. 그 고통이 얼마나 컸을지 짐작이 가요. 하지만 결국 그 기다림 끝에 그들은 상상도 못 한 훨씬 큰 것을 보게 되죠. 늦어지는 응답이 반드시 거절은 아니라는 걸 이 이야기가 보여주는 것 같아요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>눈물 흘리시는 하나님</div><div class="teach-body">35절은 성경에서 가장 짧은 구절이지만, 하나님이신 예수님이 인간의 고통에 진심으로 공감하며 우신다는 깊은 신학적 진리를 담고 있다. 그는 멀리서 관찰하는 신이 아니라 함께 우는 분이시다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>믿음의 고백은 완전한 이해를 기다리지 않는다</div><div class="teach-body">마르다는 오라비가 다시 살아날 것을 온전히 이해하지 못했지만, 그럼에도 예수님이 그리스도이심을 담대히 고백했다. 믿음은 모든 답을 알아야 가능한 것이 아니다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>가장 큰 표적이 가장 큰 반대를 낳다</div><div class="teach-body">나사로를 살리신 표적은 많은 이를 믿게 했지만, 동시에 종교 지도자들의 살해 모의를 촉발했다. 가장 명백한 은혜의 증거 앞에서도 마음이 완악해질 수 있다는 경고다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>예수님의 의도적 지연이 담고 있는 신학적 목적</div><div class="deep-body"><b class="hl-insight" data-insight="12">이틀을 더 유하신 결정</b>을 어떻게 이해할 것인가는 하나님의 주권과 인간의 고통이 만나는 지점에서 중요한 질문을 던진다. 본문은 지연의 이유를 '하나님의 영광'과 '믿음'으로 명시하지만, 이것이 모든 고난의 지연에 동일하게 적용되는 공식은 아니라는 신중함도 필요하다.</div><div class="verse-box"><div class="verse-ref">요 11:4</div><div class="verse-text">예수께서 들으시고 이르시되 이 병은 죽을병이 아니라 하나님의 영광을 위함이요 하나님의 아들이 이로 말미암아 영광을 받게 하려 함이라 하시더라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch12">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 12</div>
+      <h2 class="chtitle">향유 부음과 예루살렘 입성</h2>
+      <div class="chapter-sub">마리아의 헌신, 종려주일, 밀알의 비유</div>
+      <div class="ref-strip"><span class="ref-item">요 12:1-50</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-11절</div><div class="flow-title">베다니에서의 향유 부음</div><div class="flow-body"><b class="hl-insight" data-insight="13">삼백 데나리온짜리 향유</b>를 마리아가 예수님의 발에 붓고, 유다는 이를 낭비라 비난하지만 예수님은 그의 장례를 위한 준비라 하신다.</div></div><div class="flow-item"><div class="flow-range">12-19절</div><div class="flow-title">예루살렘 입성</div><div class="flow-body">많은 무리가 종려나무 가지를 들고 '호산나 찬송하리로다 주의 이름으로 오시는 이 곧 이스라엘의 왕이시여'라 외치며 예수님을 맞이한다.</div></div><div class="flow-item"><div class="flow-range">20-36절</div><div class="flow-title">한 알의 밀이 죽지 아니하면</div><div class="flow-body">헬라인들이 예수님을 보고자 하자 예수님은 '한 알의 밀이 땅에 떨어져 죽지 아니하면 한 알 그대로 있고 죽으면 많은 열매를 맺느니라'고 말씀하시며 자신의 죽음이 가져올 열매를 예고하신다.</div></div><div class="flow-item"><div class="flow-range">37-50절</div><div class="flow-title">믿지 않는 자들에 대한 요약</div><div class="flow-body">많은 표적을 보고도 믿지 않는 자들에 대해 요한은 이사야의 예언을 인용하며 해설하고, 예수님은 자신이 세상의 빛으로 왔음을 다시 한번 선포하며 공생애 담화를 마무리하신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>계산 없는 사랑의 헌신</div><div class="teach-body">마리아의 향유는 경제적 합리성을 넘어서는 사랑의 표현이었다. 참된 예배는 종종 손익 계산을 초월한다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">유다는 '이걸 팔았으면 얼마인데'라고 계산했지만, 마리아는 아예 계산하지 않았어요. 사랑이 진짜가 될 때는 이렇게 계산기를 내려놓게 되는 것 같아요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>찬양의 순간도 지나가는 그림자일 수 있다</div><div class="teach-body">종려주일의 환호는 불과 며칠 후 십자가 처형 요구로 뒤바뀐다. 군중의 인기는 신앙의 확실한 척도가 아니다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>죽음이 생명을 낳는 역설</div><div class="teach-body">밀알의 비유는 십자가의 죽음이 패배가 아니라 풍성한 생명의 시작임을 보여준다. 이는 제자도의 원리이기도 하다 — 자기를 버리는 자가 생명을 얻는다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>표적을 보고도 믿지 않을 수 있다</div><div class="teach-body">12장 말미의 요약은 아무리 명백한 증거가 주어져도 마음이 완악해질 수 있음을 엄중하게 경고하며, 이사야의 예언이 성취되었음을 보여준다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>마리아의 헌신이 지닌 예언적 성격</div><div class="deep-body"><b class="hl-insight" data-insight="13">머리를 풀어 발을 닦은 파격적 행위</b>을 예수님이 장례 준비로 해석하신 것은, 인간의 순전한 사랑의 행위가 하나님의 더 큰 계획 안에서 예상치 못한 의미를 지닐 수 있음을 보여준다.</div><div class="verse-box"><div class="verse-ref">요 12:7-8</div><div class="verse-text">예수께서 이르시되 그를 가만두어 나의 장례할 날을 위하여 그것을 간직하게 하라 가난한 자들은 항상 너희와 함께 있거니와 나는 항상 있지 아니하리라 하시니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch13">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 13</div>
+      <h2 class="chtitle">제자들의 발을 씻기심</h2>
+      <div class="chapter-sub">겸손의 모범, 새 계명, 배반과 부인 예고</div>
+      <div class="ref-strip"><span class="ref-item">요 13:1-38</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-17절</div><div class="flow-title">발을 씻기신 예수</div><div class="flow-body"><b class="hl-insight" data-insight="14">발을 씻기신 사건</b>에서 예수님은 겉옷을 벗고 제자들의 발을 씻기시며, '내가 너희에게 행한 것 같이 너희도 행하게 하려 하여 본을 보였노라'고 말씀하신다.</div></div><div class="flow-item"><div class="flow-range">18-30절</div><div class="flow-title">배반을 예고하심</div><div class="flow-body">예수님은 자신을 팔 자가 있음을 미리 아시고 유다에게 '네가 하는 일을 속히 하라'고 하시며, 유다는 밤에 나간다.</div></div><div class="flow-item"><div class="flow-range">31-35절</div><div class="flow-title">새 계명을 주노니</div><div class="flow-body">예수님은 '내가 너희를 사랑한 것 같이 너희도 서로 사랑하라 너희가 서로 사랑하면 이로써 모든 사람이 너희가 내 제자인 줄 알리라'는 새 계명을 주신다.</div></div><div class="flow-item"><div class="flow-range">36-38절</div><div class="flow-title">베드로의 부인을 예고하심</div><div class="flow-body">베드로가 목숨을 버리겠다고 장담하지만 예수님은 닭 울기 전에 그가 세 번 자신을 부인할 것을 예고하신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>참된 위대함은 섬김에서 드러난다</div><div class="teach-body">만물의 주가 스스로 종의 자리로 내려가신 이 사건은, 권위와 리더십이 지배가 아니라 섬김으로 나타나야 함을 보여주는 신약성경 최고의 모범이다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">가장 높으신 분이 가장 낮은 자리로 내려가셨다는 게, 아무리 여러 번 읽어도 새롭게 다가와요. 이게 기독교 리더십의 근본적 그림이라는 생각이 들어요 — 위에서 군림하는 게 아니라 발밑까지 내려가는 것.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>씻김을 받아들이는 것도 겸손이다</div><div class="teach-body">베드로의 저항과 예수님의 응답은, 섬김을 받는 것 역시 겸손의 훈련임을 보여준다. 은혜를 받아들이지 못하는 것도 일종의 자기 의일 수 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>사랑은 새 계명이자 정체성의 표지다</div><div class="teach-body">34-35절의 새 계명은 단순한 도덕적 권면을 넘어, 제자 공동체의 정체성을 세상에 드러내는 결정적 표지로 제시된다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>장담과 실패의 간극</div><div class="teach-body">베드로의 확신에 찬 다짐과 곧이어 예고되는 부인은, 인간의 결단만으로는 신실함을 보장할 수 없으며 오직 은혜에 의존해야 함을 미리 보여준다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>발 씻김의 사회적 배경과 신학적 의미</div><div class="deep-body"><b class="hl-insight" data-insight="14">유월절 만찬 자리에서의 겸손</b>이 지닌 파격성은 1세기 팔레스타인의 종 제도와 사회적 관습을 이해할 때 온전히 드러난다. 이 행위는 단순한 도덕적 모범을 넘어 십자가 은혜의 상징적 예표로도 읽힌다.</div><div class="verse-box"><div class="verse-ref">요 13:14-15</div><div class="verse-text">내가 주와 선생이 되어 너희 발을 씻었으니 너희도 서로 발을 씻어 주는 것이 옳으니라 내가 너희에게 행한 것 같이 너희도 행하게 하려 하여 본을 보였노라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch14">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 14</div>
+      <h2 class="chtitle">길이요 진리요 생명</h2>
+      <div class="chapter-sub">처소 예비의 약속과 보혜사 성령의 선물</div>
+      <div class="ref-strip"><span class="ref-item">요 14:1-31</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-14절</div><div class="flow-title">내가 곧 길이요 진리요 생명이니</div><div class="flow-body">근심하는 제자들에게 예수님은 아버지 집에 거할 곳이 많다며 그들을 위해 처소를 예비하러 가신다 하시고, <b class="hl-insight" data-insight="15">내가 곧 길이요 진리요 생명이니</b>라고 선언하신다. '나를 본 자는 아버지를 보았거늘'이라며 자신과 아버지의 온전한 하나 됨을 다시 강조하신다.</div></div><div class="flow-item"><div class="flow-range">15-24절</div><div class="flow-title">또 다른 보혜사를 보내시리라</div><div class="flow-body">예수님은 아버지께 구하여 또 다른 보혜사, 진리의 영을 보내주실 것을 약속하시며, 이 영은 제자들과 함께 거하고 그들 속에 계시리라 하신다.</div></div><div class="flow-item"><div class="flow-range">25-31절</div><div class="flow-title">평안을 너희에게 끼치노니</div><div class="flow-body">예수님은 '평안을 너희에게 끼치노니 곧 나의 평안을 너희에게 주노라 내가 너희에게 주는 것은 세상이 주는 것과 같지 아니하니라'는 약속으로 근심하는 제자들을 위로하시고, 마귀가 이르러도 자신에게 아무 상관이 없음을 밝히신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>근심 앞에서 주어지는 구체적 약속</div><div class="teach-body">예수님은 막연한 위로가 아니라 '처소를 예비하러 간다', '다시 와서 너희를 내게로 영접하리라'는 구체적이고 실제적인 약속으로 제자들의 근심을 다루신다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">제자들이 근심할 때 예수님은 추상적인 격려 대신 아주 구체적인 약속을 주세요. '처소를 예비하겠다', '다시 오겠다'처럼요. 막연한 위로보다 구체적 약속이 흔들리는 마음을 훨씬 더 굳게 붙잡아 주는 것 같아요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>보이지 않는 아버지를 보는 길</div><div class="teach-body">9절 '나를 본 자는 아버지를 보았거늘'은 예수 그리스도가 보이지 않는 하나님을 온전히 계시하시는 분임을 다시 한번 확증한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>성령은 대체가 아니라 연속이다</div><div class="teach-body">'또 다른 보혜사'라는 표현은 성령이 그리스도의 부재를 메우는 임시 대체물이 아니라, 그리스도와 동일한 성격의 인격적 임재로 함께하심을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>세상이 줄 수 없는 평안</div><div class="teach-body">예수님이 주시는 평안은 환경의 안정에서 오는 것이 아니라, 그분 자신과의 관계에서 흘러나오는 근본적으로 다른 차원의 평안이다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>'길이요 진리요 생명'의 배타적 주장을 어떻게 이해할 것인가</div><div class="deep-body"><b class="hl-insight" data-insight="15">나로 말미암지 않고는 아버지께로 올 자가 없다는 선언</b>을 오늘날 다원화된 사회 속에서 어떻게 이해하고 나눌 것인지는 그리스도인들에게 계속되는 신학적·목회적 과제다. 본문의 위로적 맥락과 요한복음 전체의 그리스도론적 주장을 함께 고려하는 신중한 해석이 필요하다.</div><div class="verse-box"><div class="verse-ref">요 14:6</div><div class="verse-text">예수께서 이르시되 내가 곧 길이요 진리요 생명이니 나로 말미암지 않고는 아버지께로 올 자가 없느니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch15">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 15</div>
+      <h2 class="chtitle">참포도나무</h2>
+      <div class="chapter-sub">내 안에 거하라, 서로 사랑하라, 세상의 미움</div>
+      <div class="ref-strip"><span class="ref-item">요 15:1-27</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-8절</div><div class="flow-title">내 안에 거하라</div><div class="flow-body"><b class="hl-insight" data-insight="16">참포도나무 비유</b>에서 예수님은 자신이 포도나무요 제자들은 가지라 하시며, '내 안에 거하라 나도 너희 안에 거하리라... 나를 떠나서는 너희가 아무것도 할 수 없음이라'고 말씀하신다.</div></div><div class="flow-item"><div class="flow-range">9-17절</div><div class="flow-title">내 사랑 안에 거하라, 서로 사랑하라</div><div class="flow-body">예수님은 아버지께서 자신을 사랑하신 것같이 제자들을 사랑하셨다 하시며, 자기 목숨을 버리는 것보다 더 큰 사랑이 없다 하시고 서로 사랑하라는 계명을 다시 강조하신다. '내가 너희를 친구라 하였노니'라며 종이 아닌 친구로 부르신다.</div></div><div class="flow-item"><div class="flow-range">18-27절</div><div class="flow-title">세상이 너희를 미워하면</div><div class="flow-body">세상이 제자들을 미워할 것을 예고하시며, 이는 세상이 먼저 예수님을 미워했기 때문이라 하시고, 보혜사가 오시면 예수님에 대해 증언하실 것이라 약속하신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>열매는 노력이 아니라 연합에서 나온다</div><div class="teach-body">가지가 스스로 열매를 맺을 수 없듯, 그리스도인의 열매 맺는 삶은 자기 노력이 아니라 그리스도와의 지속적 연합에서 흘러나온다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">'나를 떠나서는 아무것도 할 수 없다'는 말씀이 처음엔 좀 극단적으로 들릴 수 있어요. 근데 곰곰이 생각해보면 이게 오히려 자유를 줘요 — 열매를 맺어야 한다는 압박 대신, 그냥 붙어 있기만 하면 된다는 거니까요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>가지치기는 사랑의 다른 표현이다</div><div class="teach-body">2절의 '깨끗하게 하시느니라'는 표현은 고통스러울 수 있는 가지치기 과정이 파괴가 아니라 더 풍성한 결실을 위한 아버지의 세심한 돌보심임을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>종에서 친구로의 신분 전환</div><div class="teach-body">15절 '이제부터는 너희를 종이라 하지 아니하리니... 너희를 친구라 하였노니'는 제자들이 단순한 명령 수행자가 아니라 하나님의 뜻을 함께 나누는 친밀한 동반자로 격상되었음을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>세상의 미움은 배신의 증거가 아니다</div><div class="teach-body">세상의 반대와 미움을 예고하신 것은, 제자들이 그런 반응을 만났을 때 이를 신앙의 실패로 오해하지 않고 오히려 예수님과 동일시되는 표지로 이해하게 하려는 목적이다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>참포도나무 비유와 구약 이스라엘 전통의 관계</div><div class="deep-body"><b class="hl-insight" data-insight="16">참포도나무라는 선언</b>은 구약에서 반복적으로 실패한 포도나무로 그려진 이스라엘의 이야기를 배경으로 할 때 그 의미가 온전히 살아난다. 예수님이 이스라엘이 이루지 못한 신실함을 성취하시는 참된 대표자이심을 보여주는 본문이다.</div><div class="verse-box"><div class="verse-ref">요 15:5</div><div class="verse-text">나는 포도나무요 너희는 가지라 그가 내 안에, 내가 그 안에 거하면 사람이 열매를 많이 맺나니 나를 떠나서는 너희가 아무것도 할 수 없음이라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch16">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 16</div>
+      <h2 class="chtitle">근심이 도리어 기쁨이 되리라</h2>
+      <div class="chapter-sub">성령의 사역과 세상을 이기신 예수</div>
+      <div class="ref-strip"><span class="ref-item">요 16:1-33</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-15절</div><div class="flow-title">보혜사가 오시면</div><div class="flow-body"><b class="hl-insight" data-insight="17">내가 떠나가는 것이 너희에게 유익이라</b>는 말씀과 함께, 보혜사가 오시면 죄와 의와 심판에 대해 세상을 책망하시고 제자들을 모든 진리 가운데로 인도하시리라 약속하신다.</div></div><div class="flow-item"><div class="flow-range">16-24절</div><div class="flow-title">근심이 도리어 기쁨이 되리라</div><div class="flow-body">예수님은 잠시 후면 제자들이 자신을 보지 못하다가 다시 보게 될 것이라 하시며, 이를 해산하는 여인의 고통이 아이를 낳은 기쁨으로 바뀌는 것에 비유하신다.</div></div><div class="flow-item"><div class="flow-range">25-33절</div><div class="flow-title">내가 세상을 이기었노라</div><div class="flow-body">예수님은 자신이 아버지께로부터 나와 세상에 왔고 다시 세상을 떠나 아버지께로 간다고 밝히시며, '세상에서는 너희가 환난을 당하나 담대하라 내가 세상을 이기었노라'는 말씀으로 담화를 마무리하신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>떠남이 때로 더 큰 유익을 위한 것일 수 있다</div><div class="teach-body">예수님의 떠나심이 성령의 오심을 위한 전제였듯, 우리 삶에서도 상실처럼 느껴지는 변화가 더 깊은 은혜의 문이 될 수 있다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">제자들 입장에서는 예수님이 떠나신다는 게 그저 슬픈 소식이었을 거예요. 그런데 그게 성령이 오시기 위한 필수 조건이었다니, 우리 눈에 상실처럼 보이는 일도 하나님의 더 큰 그림 안에서는 다른 의미를 가질 수 있다는 생각이 들어요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>성령의 사역은 죄, 의, 심판에 대한 세상의 인식을 바꾼다</div><div class="teach-body">8-11절은 성령이 단순히 위로자에 그치지 않고, 세상의 가치관 자체를 근본적으로 재조명하는 적극적 사역을 하심을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>고통과 기쁨은 순차적으로 연결되어 있다</div><div class="teach-body">해산의 고통 비유는 현재의 슬픔이 미래의 기쁨과 무관한 것이 아니라, 오히려 그 기쁨을 낳는 필수적 과정임을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>담대함의 근거는 이미 이루어진 승리다</div><div class="teach-body">'내가 세상을 이기었노라'는 선언은 미래형이 아니라 이미 확정된 승리를 근거로 한다. 그리스도인의 담대함은 낙관주의가 아니라 이미 이루어진 사실에 기초한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>성령의 오심이 예수님의 떠나심보다 '유익'한 이유</div><div class="deep-body"><b class="hl-insight" data-insight="17">떠나가는 것이 유익이라는 역설적 선언</b>은 성육신하신 그리스도의 공간적 제약과, 성령을 통한 편재적이고 내적인 임재의 차이를 이해할 때 온전히 풀린다. 이는 오순절 이후 교회의 존재 방식을 이해하는 핵심 신학적 토대가 된다.</div><div class="verse-box"><div class="verse-ref">요 16:7</div><div class="verse-text">그러나 내가 너희에게 실상을 말하노니 내가 떠나가는 것이 너희에게 유익이라 내가 떠나가지 아니하면 보혜사가 너희에게로 오시지 아니할 것이요 가면 내가 그를 너희에게로 보내리니</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch17">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 17</div>
+      <h2 class="chtitle">아버지여 때가 이르렀나이다</h2>
+      <div class="chapter-sub">대제사장의 기도</div>
+      <div class="ref-strip"><span class="ref-item">요 17:1-26</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-5절</div><div class="flow-title">아들을 영화롭게 하옵소서</div><div class="flow-body"><b class="hl-insight" data-insight="18">대제사장의 기도</b>가 시작되며, 예수님은 '아버지여 때가 이르렀사오니 아들을 영화롭게 하사 아들로 아버지를 영화롭게 하게 하옵소서'라고 기도하시며, 영생이 곧 유일하신 참 하나님과 그가 보내신 자 예수 그리스도를 아는 것이라 정의하신다.</div></div><div class="flow-item"><div class="flow-range">6-19절</div><div class="flow-title">제자들을 위한 기도</div><div class="flow-body">예수님은 아버지께서 자신에게 주신 사람들을 위해 기도하시며, 그들을 세상에서 데려가지 마시고 악에 빠지지 않게 지켜주시기를, 그리고 진리로 거룩하게 하시기를 구하신다.</div></div><div class="flow-item"><div class="flow-range">20-26절</div><div class="flow-title">장차 믿을 자들을 위한 기도</div><div class="flow-body">예수님은 제자들의 말로 말미암아 자신을 믿게 될 모든 사람이 하나가 되게 해달라고 기도하시며, '아버지께서 내 안에, 내가 아버지 안에 있는 것같이 그들도 다 하나가 되어... 세상으로 아버지께서 나를 보내신 것을 믿게 하옵소서'라고 간구하신다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>영생은 정보가 아니라 인격적 앎이다</div><div class="teach-body">3절은 영생을 하나님과 그리스도를 '아는 것'으로 정의한다. 이는 지적 동의를 넘어선 인격적이고 관계적인 지식을 의미한다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">영생을 이렇게 정의하시는 게 참 놀라워요 — 천국에 가는 티켓이 아니라 '아는 것'이라니요. 결국 구원은 어떤 장소로의 이동이 아니라 하나님과의 관계 그 자체라는 거죠.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>세상 속에 있되 세상에 속하지 않은 존재</div><div class="teach-body">15-16절은 제자들이 세상에서 격리되는 것이 아니라, 세상 안에 머물면서도 세상에 속하지 않은 독특한 정체성으로 살아가야 함을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>거룩함은 진리를 통해 이루어진다</div><div class="teach-body">17절 '저희를 진리로 거룩하게 하옵소서 아버지의 말씀은 진리니이다'는 거룩함이 감정적 경험이 아니라 진리 안에서 형성되는 것임을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>하나 됨을 향한 간절한 기도</div><div class="teach-body">20-23절의 하나 됨을 위한 기도는 교회의 일치가 단순한 조직적 목표가 아니라, 삼위일체의 신비를 반영하는 신학적으로 깊은 소명임을 보여준다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>대제사장의 기도라는 명칭과 그리스도의 중보 사역</div><div class="deep-body"><b class="hl-insight" data-insight="18">아버지여 때가 이르렀나이다로 시작되는 기도</b>를 대제사장적 관점에서 읽는 전통은 히브리서의 그리스도론과 함께 읽을 때 더욱 풍성해진다. 예수님이 자신을 희생 제물로 드리시기 직전 드린 중보기도라는 점에서, 구약 제사 제도의 완성으로 이해할 수 있다.</div><div class="verse-box"><div class="verse-ref">요 17:20-21</div><div class="verse-text">내가 비옵는 것은 이 사람들만 위함이 아니요 또 그들의 말로 말미암아 나를 믿는 사람들도 위함이니 아버지여 아버지께서 내 안에, 내가 아버지 안에 있는 것 같이 그들도 다 하나가 되어 우리 안에 있게 하사 아버지께서 나를 보내신 것을 세상으로 믿게 하옵소서</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch18">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 18</div>
+      <h2 class="chtitle">잡히심과 재판</h2>
+      <div class="chapter-sub">체포, 안나스와 가야바 앞에서, 베드로의 부인, 빌라도 앞에서</div>
+      <div class="ref-strip"><span class="ref-item">요 18:1-40</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-11절</div><div class="flow-title">겟세마네에서 잡히심</div><div class="flow-body"><b class="hl-insight" data-insight="19">내가 그니라는 대답</b>에 무리가 뒤로 물러가 엎드러진다. 베드로가 칼을 휘둘러 대제사장의 종의 귀를 베자 예수님은 '아버지께서 주신 잔을 내가 마시지 아니하겠느냐'며 그를 막으신다.</div></div><div class="flow-item"><div class="flow-range">12-27절</div><div class="flow-title">안나스와 가야바, 베드로의 부인</div><div class="flow-body">예수님은 먼저 안나스에게, 이어 대제사장 가야바에게 심문받으신다. 그 사이 베드로는 뜰에서 세 번 예수님을 모른다고 부인하고, 곧 닭이 운다.</div></div><div class="flow-item"><div class="flow-range">28-40절</div><div class="flow-title">빌라도 앞에서</div><div class="flow-body">예수님은 로마 총독 빌라도 앞에 서시고, '네가 유대인의 왕이냐'는 질문에 '내 나라는 이 세상에 속한 것이 아니니라... 나는 이를 위하여 태어났으며 이를 위하여 세상에 왔나니 곧 진리에 대하여 증언하려 함이로라'고 답하신다. 빌라도는 '진리가 무엇이냐'고 묻지만 답을 듣지 않고 나가, 무리는 예수 대신 강도 바라바를 놓아주기를 청한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>십자가로 가는 길은 주권적 순종의 길이다</div><div class="teach-body">체포당하시는 순간에도 예수님은 압도적 권세를 지니신 분으로 그려진다. 십자가는 강요된 패배가 아니라 스스로 선택하신 사랑의 순종이었다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">예수님이 잡히시는 장면인데도 오히려 그분이 상황을 주관하시는 것처럼 느껴져요. 무력하게 끌려가시는 게 아니라, 스스로 그 잔을 받아들이기로 선택하신 거죠. 이게 십자가를 훨씬 더 깊이 이해하게 해줘요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>폭력이 아니라 순종으로 지키신 나라</div><div class="teach-body">베드로의 칼을 막으신 사건은 예수님의 나라가 세상의 방식(무력과 힘)이 아니라 전혀 다른 원리로 세워짐을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>장담이 무너지는 순간의 인간적 연약함</div><div class="teach-body">그토록 목숨을 걸겠다던 베드로의 부인은, 인간의 결단이 얼마나 쉽게 무너질 수 있는지, 그리고 은혜 없이는 신실할 수 없음을 생생하게 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>'진리가 무엇이냐'는 질문 앞에서의 침묵</div><div class="teach-body">빌라도의 질문은 진리 자체가 바로 눈앞에 서 계신다는 아이러니를 담고 있다. 때로 가장 깊은 질문은 이미 답을 앞에 두고도 알아보지 못하는 데서 비롯된다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>'에고 에이미' 선언이 체포 장면에서 갖는 위엄</div><div class="deep-body"><b class="hl-insight" data-insight="19">무리가 뒤로 물러가 엎드러진 사건</b>을 신적 이름 선언의 극적 발현으로 읽는 해석은 요한복음 전체의 '에고 에이미' 모티프와 일관되게 연결된다. 이는 십자가 사건 전체가 예수님의 주권 아래 있었음을 강조하는 요한의 신학적 관점을 뒷받침한다.</div><div class="verse-box"><div class="verse-ref">요 18:5-6</div><div class="verse-text">이르되 나사렛 예수라 하거늘 이르시되 내가 그니라 하시니라... 예수께서 그들에게 내가 그니라 하시매 그들이 물러가서 땅에 엎드러지는지라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch19">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 19</div>
+      <h2 class="chtitle">십자가에 못 박히시다</h2>
+      <div class="chapter-sub">채찍질과 조롱, 십자가 처형, 다 이루었다, 장사되심</div>
+      <div class="ref-strip"><span class="ref-item">요 19:1-42</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-16절</div><div class="flow-title">십자가에 못 박으라는 외침</div><div class="flow-body">빌라도는 예수님에게서 죄를 찾지 못했다고 거듭 밝히지만, 무리의 압박에 밀려 결국 십자가형을 허락한다. 대제사장들은 '가이사 외에는 우리에게 왕이 없나이다'라고 외친다.</div></div><div class="flow-item"><div class="flow-range">17-27절</div><div class="flow-title">십자가 처형과 어머니를 부탁하심</div><div class="flow-body">예수님은 골고다에서 십자가에 못 박히시며, 그 위에 '나사렛 예수 유대인의 왕'이라는 명패가 붙는다. 십자가 곁에 선 어머니 마리아를 사랑하시는 제자에게 부탁하신다.</div></div><div class="flow-item"><div class="flow-range">28-37절</div><div class="flow-title">다 이루었다</div><div class="flow-body"><b class="hl-insight" data-insight="20">다 이루었다는 마지막 말씀</b>과 함께 예수님은 머리를 숙이시고 영혼이 떠나가신다. 군인이 그의 옆구리를 창으로 찌르니 곧 피와 물이 나온다.</div></div><div class="flow-item"><div class="flow-range">38-42절</div><div class="flow-title">아리마대 요셉의 장사</div><div class="flow-body">은밀한 제자였던 아리마대 요셉과 니고데모가 예수님의 시신을 정성껏 수습하여 새 무덤에 장사한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>십자가는 실패가 아니라 완성이다</div><div class="teach-body">'다 이루었다'는 선언은 십자가가 계획이 어긋난 비극이 아니라, 처음부터 예비된 구속 사역의 완전한 성취였음을 보여준다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">예수님의 마지막 말씀이 '다 이루었다'라는 게 참 놀라워요. 절규나 패배의 말이 아니라, 마치 오랜 프로젝트를 완성하고 도장을 찍는 듯한 선언이잖아요. 십자가를 실패가 아니라 완성으로 보게 만드는 한마디예요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>고난 중에도 남을 돌보시는 사랑</div><div class="teach-body">극심한 고통 가운데서도 예수님은 어머니의 앞날을 챙기신다. 십자가 위에서도 그의 사랑은 자기중심적이지 않았다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>피와 물이 상징하는 것</div><div class="teach-body">34절의 피와 물은 예수님의 실제 죽음을 증언하는 의학적 증거이자, 동시에 요한1서 5장의 '물과 피로 임하신 예수 그리스도'와 연결되는 신학적 상징으로도 읽힌다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>은밀한 제자들의 용기 있는 헌신</div><div class="teach-body">니고데모와 아리마대 요셉은 예수님의 생전에는 은밀히 따르던 자들이었지만, 그의 죽음 앞에서 공개적으로 나서는 용기를 보인다. 두려움도 결국 사랑 앞에서 극복될 수 있다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>'테텔레스타이'가 담고 있는 승리의 선언</div><div class="deep-body"><b class="hl-insight" data-insight="20">다 이루었다는 헬라어 단어</b>가 지닌 상업적·법적 함의(빚의 완전한 청산)를 이해하면, 십자가가 단순한 고통의 종결이 아니라 구속 사역의 완전한 성취로서의 승리 선언임이 더욱 분명해진다.</div><div class="verse-box"><div class="verse-ref">요 19:30</div><div class="verse-text">예수께서 신 포도주를 받으신 후에 이르시되 다 이루었다 하시고 머리를 숙이니 영혼이 떠나가시니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch20">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 20</div>
+      <h2 class="chtitle">빈 무덤과 부활하신 주님</h2>
+      <div class="chapter-sub">마리아, 제자들, 도마와의 만남</div>
+      <div class="ref-strip"><span class="ref-item">요 20:1-31</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-10절</div><div class="flow-title">빈 무덤을 발견하다</div><div class="flow-body">막달라 마리아가 무덤이 비어 있음을 발견하고 베드로와 다른 제자에게 알리니, 그들이 달려가 세마포와 수건을 보고 믿는다.</div></div><div class="flow-item"><div class="flow-range">11-18절</div><div class="flow-title">마리아를 만나심</div><div class="flow-body">울고 있던 마리아에게 부활하신 예수님이 '마리아야' 부르시자, 그녀는 즉시 알아보고 '랍오니(선생님)'라 부른다. 예수님은 그녀에게 형제들에게 가서 자신의 부활을 전하라 하신다.</div></div><div class="flow-item"><div class="flow-range">19-23절</div><div class="flow-title">제자들에게 나타나심</div><div class="flow-body">문이 잠긴 방에 나타나신 예수님은 '너희에게 평강이 있을지어다' 하시고 그들에게 숨을 내쉬며 '성령을 받으라'고 하신다.</div></div><div class="flow-item"><div class="flow-range">24-29절</div><div class="flow-title">도마와의 만남</div><div class="flow-body">그 자리에 없었던 도마는 '내가 그 손의 못 자국을 보며... 내가 믿지 아니하겠노라'고 하지만, <b class="hl-insight" data-insight="21">도마가 실제로 만졌는지는 본문에 명시되지 않은 채</b> 예수님을 뵙자마자 '나의 주님이시요 나의 하나님이시니이다'라고 고백한다. 예수님은 '보지 못하고 믿는 자들은 복되도다'라고 말씀하신다.</div></div><div class="flow-item"><div class="flow-range">30-31절</div><div class="flow-title">기록 목적</div><div class="flow-body">요한은 이 책을 기록한 목적이 '예수께서 하나님의 아들 그리스도이심을 너희로 믿게 하려 함이요 또 너희로 믿고 그의 이름을 힘입어 생명을 얻게 하려 함'이라고 밝힌다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>부르시는 음성 안에서 알아보는 관계</div><div class="teach-body">마리아가 예수님을 알아본 것은 논리적 추론이 아니라 자신의 이름을 부르시는 익숙한 음성을 통해서였다. 참된 앎은 종종 인격적 관계 안에서 즉각적으로 일어난다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">'마리아야'라는 한마디에 모든 게 바뀌어요. 논증도, 증거도 아니고 그냥 이름을 불러주신 것뿐인데요. 우리를 향한 하나님의 앎도 이렇게 개인적이고 구체적이라는 게 참 큰 위로가 돼요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>부활의 첫 선물은 평강과 성령이다</div><div class="teach-body">부활하신 예수님이 제자들에게 가장 먼저 주신 것은 책망이 아니라 평강이었고, 이어서 성령을 통한 새로운 능력이었다. 부활은 심판이 아니라 새 창조의 시작이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>의심도 정직하게 표현될 때 만남으로 이어질 수 있다</div><div class="teach-body">도마의 의심은 정죄당하지 않았고, 오히려 예수님은 그의 의심을 직접 다루어 주셨다. 정직한 의심은 신앙의 적이 아니라 더 깊은 만남으로 가는 통로가 될 수 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>보지 못하고 믿는 복</div><div class="teach-body">예수님의 마지막 축복은 물리적 증거 없이 믿는 이후 세대 모든 신자를 향한 것이기도 하다. 이는 오늘날 우리의 믿음이 결코 도마의 믿음보다 열등하지 않음을 보여준다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>도마의 '만짐'에 대한 본문의 침묵이 지닌 함의</div><div class="deep-body"><b class="hl-insight" data-insight="21">본문이 명확히 말하지 않는 지점</b>을 지나치게 확대 해석하는 것은 주의해야 하지만, 이 침묵이 도마의 고백 자체가 지닌 즉각성과 깊이를 부각시킨다는 점은 흥미로운 관찰이다.</div><div class="verse-box"><div class="verse-ref">요 20:28-29</div><div class="verse-text">도마가 대답하여 이르되 나의 주님이시요 나의 하나님이시니이다 예수께서 이르시되 너는 나를 본 고로 믿느냐 보지 못하고 믿는 자들은 복되도다 하시니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch21">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 21</div>
+      <h2 class="chtitle">디베랴 호숫가에서</h2>
+      <div class="chapter-sub">고기잡이 기적, 베드로의 회복, 마지막 부탁</div>
+      <div class="ref-strip"><span class="ref-item">요 21:1-25</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-14절</div><div class="flow-title">디베랴 호숫가의 아침 식사</div><div class="flow-body">밤새 고기를 잡지 못한 제자들에게 예수님은 배 오른편에 그물을 던지라 하시고, 그물을 들 수 없을 만큼 많은 물고기가 잡힌다. 요한이 '주님이시라'고 외치자 베드로는 곧장 물로 뛰어든다.</div></div><div class="flow-item"><div class="flow-range">15-19절</div><div class="flow-title">네가 나를 사랑하느냐</div><div class="flow-body"><b class="hl-insight" data-insight="22">세 번의 질문</b>을 통해 예수님은 베드로에게 '내 양을 먹이라'는 사명을 회복시켜 주시며, 그가 장차 어떻게 죽어 하나님께 영광을 돌릴지도 예고하신다.</div></div><div class="flow-item"><div class="flow-range">20-25절</div><div class="flow-title">마무리</div><div class="flow-body">베드로가 사랑하시는 제자의 미래에 대해 묻자 예수님은 '내가 올 때까지 그를 머물게 하고자 할지라도 네게 무슨 상관이냐 너는 나를 따르라'고 답하신다. 요한은 예수께서 행하신 일이 이 외에도 많아 낱낱이 기록하면 이 세상이라도 이 기록된 책을 두기에 부족할 것이라며 복음서를 마무리한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>실패는 사명의 끝이 아니다</div><div class="teach-body">베드로의 세 번의 부인은 결코 그의 사도적 부르심을 무효화하지 않았다. 오히려 그리스도는 그를 다시 찾아오셔서 사명을 회복시키신다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">베드로가 부인한 뒤에도 예수님이 여전히 그를 찾아오셔서 사명을 맡기신다는 게 얼마나 큰 위로인지 몰라요. 우리의 실패가 하나님의 부르심보다 크지 않다는 걸 이 장면이 보여주는 것 같아요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>사랑의 확인이 사명의 전제다</div><div class="teach-body">예수님은 베드로에게 능력이나 계획을 묻지 않으시고 먼저 사랑을 물으신다. 사명은 사랑에서 흘러나와야 한다는 근본 원리를 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>각자의 부르심은 비교 대상이 아니다</div><div class="teach-body">베드로가 다른 제자의 미래를 궁금해하자 예수님은 '너는 나를 따르라'고 하시며 시선을 자신에게 되돌리게 하신다. 부르심은 각자 다르며 서로 비교할 대상이 아니다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>기록될 수 없이 넘치는 그리스도의 일하심</div><div class="teach-body">복음서의 마지막 구절은 예수 그리스도의 사역이 문자로 담을 수 있는 것보다 훨씬 크고 풍성함을 겸손하게 인정하며 끝맺는다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>세 번의 질문과 헬라어 동사 교체의 신학적 의미</div><div class="deep-body"><b class="hl-insight" data-insight="22">아가파오와 필레오의 교차 사용</b>이 의도적 신학적 구별인지 문체적 다양성인지는 여전히 논쟁적이다. 어느 해석을 택하든, 이 본문의 핵심은 실패한 제자를 회복시키시는 그리스도의 은혜라는 점에는 변함이 없다.</div><div class="verse-box"><div class="verse-ref">요 21:17</div><div class="verse-text">세 번째 이르시되 요한의 아들 시몬아 네가 나를 사랑하느냐 하시니 주께서 세 번째 네가 나를 사랑하느냐 하시므로 베드로가 근심하여 이르되 주님 모든 것을 아시오매 내가 주님을 사랑하는 줄을 주님께서 아시나이다 예수께서 이르시되 내 양을 먹이라</div></div></div>
+    </div>
+  </section>
+</div>
+
+<div class="bottom-nav-spacer"></div>
+<div class="bottom-nav">
+  <button onclick="goTo('toc')" title="목차로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg></button>
+  <button onclick="goTo('top')" title="처음으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}" title="자료실로 가기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+</div>
+<div class="footer-brand">기독교한국침례회 은혜교회</div>
+</div>
+<script>
+var INSIGHTS_DATA = [{"title": "'로고스(λόγος)'라는 단어가 담고 있던 두 세계의 울림", "body": "요한은 복음서를 '태초에 말씀(로고스)이 계시니라'로 시작해요. 이 단어 선택은 결코 우연이 아니에요. 헬라 철학, 특히 스토아 철학에서 '로고스'는 우주에 질서를 부여하는 이성적 원리를 가리키는 핵심 개념이었어요. 헬라 세계 독자들에게는 매우 익숙한 철학적 용어였던 거죠.\n\n동시에 유대인 독자에게 '말씀'은 창세기 1장에서 '하나님이 이르시되'라는 창조의 능력, 그리고 구약의 지혜 문학에서 인격화된 '지혜'(잠 8장)를 떠올리게 했어요.\n\n요한은 이 두 세계 모두에게 다리를 놓으면서도, 결정적으로 다른 이야기를 해요 — 이 로고스는 추상적 원리가 아니라 '하나님과 함께 계셨고' '곧 하나님이셨으며', 마침내 '육신이 되어 우리 가운데 거하신' 인격적 존재라는 거예요. 철학적 개념을 역사적 인물로 못박아버리는 대담한 선언인 셈이죠."}, {"title": "'하나님을 본 사람이 없으되'라는 말과 구약의 신현(神現) 사건들", "body": "1:18절은 '본래 하나님을 본 사람이 없으되 아버지 품속에 있는 독생하신 하나님이 나타내셨느니라'고 말해요. 그런데 구약에는 모세가 하나님과 대면하여 말했다거나(출 33:11), 이사야가 보좌에 앉으신 주를 보았다는(사 6:1) 기록이 있죠. 모순처럼 보일 수 있어요.\n\n하지만 자세히 보면 구약 본문들도 하나님의 '완전한 본질' 자체를 보았다고 말하지는 않아요. 출애굽기 33:20에서 하나님은 모세에게 '네가 내 얼굴을 보지 못하리니 나를 보고 살 자가 없음이니라'고 하시며, 모세는 하나님의 '등'만 보게 되죠. 이사야의 환상도 보좌와 영광의 현현이지, 하나님의 온전한 존재 자체를 다 본 것은 아니에요.\n\n요한의 요점은 이거예요 — 구약의 신현들은 부분적이고 간접적인 계시였지만, 예수 그리스도 안에서는 아버지의 품속에 계신 독생자께서 하나님을 온전히, 직접적으로 '나타내셨다'는 것. 이전의 모든 계시를 완성하는 결정적 사건이라는 선언이죠."}, {"title": "물을 포도주로 바꾸신 표적이 '첫 표적'인 이유", "body": "요한은 가나의 혼인잔치 표적을 '예수께서 그의 영광을 나타내시매'라고 부르며 '표적의 시작'이라 명시해요(2:11). 요한복음에는 총 일곱 개의 주요 표적이 나오는데, 이것이 왜 첫 번째로 선택되었을까요?\n\n물이 포도주로 변하는 이 사건은 단순한 기적 이상의 상징성을 지녀요. 유대교 정결 의식에 쓰이던 <b>돌항아리</b>의 물이 변화되었다는 설정 자체가, 옛 언약의 정결 규례가 그리스도 안에서 새로운 것으로 변화됨을 암시한다는 해석이 널리 받아들여져요. 게다가 풍성하게 넘치는 좋은 포도주는 메시아 시대의 풍성함을 그리는 구약의 이미지(암 9:13, 사 25:6)와도 공명하죠.\n\n결국 이 표적은 예수님의 사역 전체를 미리 보여주는 서곡과 같아요 — 옛것을 폐하지 않으면서 그것을 훨씬 더 풍성하고 좋은 것으로 변화시키는 사역이라는 거죠."}, {"title": "'거듭남'과 '위로부터 남' — 헬라어 '아노덴(ἄνωθεν)'의 이중 의미", "body": "니고데모는 예수님이 '거듭나야 한다'고 하시자 '사람이 늙으면 어떻게 날 수 있사옵나이까 두 번째 모태에 들어갔다가 날 수 있사옵나이까'라고 되묻습니다(3:4). 이 오해는 우연이 아니라 헬라어 단어 자체의 특성에서 비롯돼요.\n\n예수님이 쓰신 단어 '아노덴(ἄνωθεν)'은 '다시(again)'라는 뜻과 '위로부터(from above)'라는 �은 동시에 가질 수 있는 이중적인 단어예요. 니고데모는 이를 '다시'로만 이해해서 물리적 재출생을 떠올린 거죠.\n\n요한은 이 언어유희를 의도적으로 사용해서, 참된 거듭남이 인간의 노력으로 반복되는 생물학적 사건이 아니라 <b>위로부터, 곧 성령으로부터 오는 전적으로 새로운 시작</b>임을 강조해요. 니고데모의 오해 자체가 육에 속한 사고방식으로는 영적 실재를 결코 이해할 수 없다는 예수님의 요점을 몸소 보여주는 셈이죠."}, {"title": "사마리아 여인과의 대화가 파격적인 세 가지 이유", "body": "4장의 이 대화는 당시 사회적 관습으로 보면 놀라운 사건이 연속돼요. 첫째, 랍비가 공공장소에서 여성과 단둘이 대화하는 것 자체가 이례적이었어요(9절, 27절에서 제자들도 놀라죠). 둘째, 유대인과 사마리아인은 수백 년간 이어진 종교적·민족적 반목 관계였어요(9절 '유대인이 사마리아인과 상종하지 아니함이러라'). 셋째, 이 여인은 다섯 번 결혼하고 지금은 결혼하지 않은 남자와 살고 있는, 사회적으로 평판이 좋지 않았을 인물이었어요(대낮이 아니라 다른 여인들을 피해 정오에 물을 길으러 온 것도 이를 암시한다는 해석이 있죠).\n\n예수님은 이 세 겹의 장벽 — 성별, 민족, 도덕적 평판 — 을 모두 넘어서 그녀에게 먼저 말을 거시고, 심지어 사마리아 여인 중에서는 최초로 자신이 메시아임을 명시적으로 밝히신 대상이 되게 하세요(25-26절). 요한복음에서 예수님이 자신의 정체를 가장 분명하게 드러내신 대상이, 종교 엘리트 니고데모가 아니라 사회적 소외자였던 이 여인이라는 사실이 이 이야기의 파격을 더욱 두드러지게 만들어요."}, {"title": "38년 된 병자에게 '낫고자 하느냐'고 물으신 이유", "body": "베데스다 못가에 38년이나 누워 있던 병자에게 예수님은 뜬금없어 보이는 질문을 던지세요 — '네가 낫고자 하느냐'(5:6). 당연히 낫고 싶지 않을 이유가 있을까요?\n\n하지만 이 질문은 표면적인 것 이상을 겨냥해요. 38년이라는 긴 세월 동안 병자로 살아온 사람에게는, 그 정체성과 삶의 방식 자체가 '병자'라는 상태에 굳어져 버렸을 수 있어요. 실제로 병자의 대답은 '예'가 아니라 '나를 물에 넣어 줄 사람이 없어서'라는 변명으로 시작되죠 — 마치 낫는 것이 자기 힘으로는 불가능하다는 체념이 배어 있는 듯해요.\n\n예수님의 질문은 병자 안에 남아 있는 소망과 의지를 일깨우는 질문이었다는 해석이 많아요. 오늘날에도 이 질문은 육체적 질병을 넘어, 오랜 습관이나 상처에 익숙해져 버린 우리 각자에게 던져지는 도전적인 질문으로 읽힐 수 있어요 — '너는 정말 변화되기를 원하느냐?'"}, {"title": "'나는 생명의 떡이라'는 선언과 만나 논쟁의 배경", "body": "6장의 긴 담화는 오병이어 표적 직후, 무리가 다시 떡을 구하러 예수님을 찾아온 데서 시작돼요. 이때 예수님은 무리가 '광야에서 조상들이 만나를 먹었다'며 모세의 표적을 언급하자, 그 만나조차 모세가 아니라 하나님이 주신 것이며 '하늘에서 내려오는 참 떡'은 따로 있다고 정정하세요.\n\n그리고 마침내 '내가 곧 생명의 떡이니'(35절)라는 파격적 선언을 하시죠. 이는 단순한 비유를 넘어, 만나가 광야에서 이스라엘 백성을 하루하루 먹였던 것처럼, 자신이 온 인류에게 영원한 생명의 양식이 되신다는 주장이에요.\n\n더 나아가 '내 살을 먹고 내 피를 마시라'(53-56절)는 표현은 당시 청중들에게 극도로 충격적이고 심지어 혐오스럽게 들렸을 거예요(유대 율법은 피를 먹는 것을 엄격히 금했으니까요, 레 17:10-14). 이 표현이 문자적 식인을 말하는 게 아니라, 예수님과의 온전하고 깊은 연합, 그리고 훗날 성찬의 신학적 뿌리가 되는 상징적 언어라는 것이 대다수 해석자들의 견해예요. 그럼에도 이 말씀의 파격성 때문에 '많은 제자가 떠나가고 다시 그와 함께 다니지 아니'하는 결과를 낳았죠(66절)."}, {"title": "초막절과 '생수의 강' 선언의 절묘한 타이밍", "body": "7장의 사건은 유대인의 3대 절기 중 하나인 초막절(장막절, 수콧) 기간에 벌어져요. 이 절기는 광야 시절 이스라엘의 장막 생활을 기념하는 동시에, 흥미롭게도 매일 실로암 못에서 물을 길어 제단에 붓는 <b>물 붓는 예식</b>이 진행되던 절기였어요(미쉬나 등 후대 유대 문헌에 자세히 기록됨). 이는 광야에서 반석으로부터 물을 주신 것을 기념하고, 장차 성령이 부어질 것을 예표하는 상징적 의식이었죠.\n\n요한은 바로 이 물 붓는 의식이 절정에 달했을 명절 끝날, 예수님이 서서 큰 소리로 외치신 것을 기록해요 — '누구든지 목마르거든 내게로 와서 마시라... 나를 믿는 자는 성경에 이름과 같이 그 배에서 생수의 강이 흘러나오리라'(37-38절).\n\n타이밍이 절묘해요. 모두가 물 붓는 의식으로 광야의 물 기적과 성령의 부으심을 기념하는 바로 그 순간, 예수님은 자신이 그 상징이 가리키는 실체라고 선언하신 거예요. 요한은 이것이 '그를 믿는 자들이 받을 성령을 가리켜 말씀하신 것이라'고 직접 해설을 덧붙입니다(39절)."}, {"title": "간음 중 잡힌 여인 이야기, 본문비평에서 다뤄지는 이유", "body": "8장 앞부분(7:53-8:11)의 간음 중 잡힌 여인 이야기는 성경 독자들에게 매우 익숙하고 사랑받는 본문이지만, 사실 본문비평학에서는 독특한 위치를 차지해요. 가장 오래되고 신뢰할 만한 사본들(예: 시내산 사본, 바티칸 사본)에는 이 부분이 없고, 후대 사본에서야 나타나기 시작하며, 심지어 어떤 사본에서는 요한복음이 아니라 누가복음 뒤에 배치되기도 해요.\n\n그렇다고 이 이야기가 완전히 '지어낸' 것이라 보는 학자는 많지 않아요. 오히려 예수님의 성품과 초대교회의 구전 전승에 잘 부합하는, 역사적으로 실제 있었을 법한 사건으로 여겨지며 초기부터 별도로 전해지다가 후대에 이 위치에 삽입되었을 가능성이 크다는 것이 다수 견해예요.\n\n그래서 오늘날 대부분의 현대 번역 성경은 이 본문에 괄호를 치거나 각주를 달아 '가장 오래된 사본에는 없음'이라고 표기해요. 본문의 신학적 메시지 — '죄 없는 자가 먼저 돌로 치라'는 정의로운 자비 — 는 여전히 소중하게 여겨지지만, 본문비평적 정직함과 함께 다루는 것이 균형 잡힌 태도예요."}, {"title": "'아브라함이 나기 전부터 내가 있느니라' — 문법을 넘어선 선언", "body": "8:58절에서 예수님은 '아브라함이 나기 전부터 내가 있느니라'고 말씀하세요. 헬라어 원문을 보면 이 문장이 문법적으로 매우 이상해요 — '아브라함이 나기 전부터'는 과거 시제인데, '내가 있느니라'는 현재형 '에고 에이미(ἐγώ εἰμι)'를 그대로 사용하거든요. 정상적인 헬라어 문법이라면 '내가 있었느니라'는 과거형을 써야 자연스러워요.\n\n이 부자연스러운 문법이 우연이 아니라는 게 대다수 학자의 견해예요. '에고 에이미'는 출애굽기 3:14에서 하나님이 모세에게 자신의 이름을 계시하실 때 쓰신 '나는 스스로 있는 자(I AM WHO I AM)'와 정확히 같은 표현(70인역 헬라어 번역)이에요. 예수님은 단순히 '나는 아브라함보다 오래 존재했다'는 시간적 우위를 주장하신 게 아니라, 자신을 시간에 매이지 않는 영원한 존재, 곧 하나님 자신으로 선언하신 거예요.\n\n청중들의 반응이 이 해석을 뒷받침해요 — 그들은 즉시 돌을 들어 그를 치려 합니다(59절). 신성모독으로 받아들였다는 뜻이죠."}, {"title": "'누구의 죄로 인함이니이까'라는 질문과 고난의 신학", "body": "제자들은 날 때부터 맹인 된 사람을 보고 '이 사람이 맹인으로 난 것이 누구의 죄로 인함이니이까 자기니이까 그의 부모니이까'라고 묻습니다(9:2). 이 질문은 당시 유대 사회에 널리 퍼져 있던 인과응보적 사고방식을 보여줘요 — 고난은 반드시 누군가의 죄에 대한 벌이라는 생각이죠.\n\n예수님의 대답은 이 틀 자체를 깨뜨려요 — '이 사람이나 그 부모의 죄로 인함이 아니라 그에게서 하나님이 하시는 일을 나타내고자 하심이라'(3절). 이는 모든 고난이 죄의 직접적 결과라는 단순한 인과관계를 부정하시는 거예요.\n\n주의할 점은, 이 말씀이 고난에는 '어떤 목적도 원인도 없다'는 뜻은 아니라는 거예요. 오히려 예수님은 이 고난이 하나님의 영광과 일하심이 나타나는 통로가 될 수 있다는, 전혀 다른 차원의 목적론을 제시하세요. 죄와 벌의 기계적 연결이 아니라, 고난 속에서도 하나님이 일하고 계시다는 소망의 관점으로 초점을 옮기신 거죠. 오늘날 고난 앞에 선 이들에게도 이 말씀은 '누구 잘못이냐'는 비난보다 '하나님이 여기서 무엇을 하고 계신가'라는 질문으로 시선을 돌리게 하는 힘이 있어요."}, {"title": "'나와 아버지는 하나이니라'는 선언의 헬라어 문법이 말해주는 것", "body": "10:30절 '나와 아버지는 하나이니라'는 요한복음에서 예수님의 신성을 가장 명료하게 선언하는 구절 중 하나예요. 흥미로운 건 헬라어 문법이에요 — '하나'에 해당하는 단어 '헨(ἕν)'은 중성 단수형이에요. 만약 예수님이 '나와 아버지는 (인격적으로) 같은 존재'라는 뜻이었다면 남성형 '헤이스(εἷς)'를 써야 자연스러웠을 텐데, 중성형을 쓰신 거죠.\n\n이는 예수님이 아버지와 자신이 '한 인격'이라고 말씀하신 게 아니라(그러면 삼위일체가 아니라 양태론이 되어버리겠죠), '하나의 본질/목적/능력'에서 완전히 연합되어 있다는 것을 뜻한다는 게 문법적으로 뒷받침되는 해석이에요. 아버지와 아들은 구별된 인격이시지만 신적 본질과 뜻과 능력에서 완전히 하나이시다 — 이는 훗날 니케아 공의회에서 정식화되는 삼위일체 교리의 성경적 뿌리 중 하나가 됩니다.\n\n유대인들의 반응도 이 해석을 뒷받침해요. 그들은 즉시 돌을 들어 치려 하며 '네가 사람이 되어 자칭 하나님이라 함이로라'고 항의하죠(33절) — 신성 주장으로 정확히 이해했다는 뜻이에요."}, {"title": "예수님이 나사로가 죽은 것을 아시고도 이틀을 더 유하신 이유", "body": "11:6절은 예수님이 나사로가 병들었다는 소식을 들으시고도 '그 계시던 곳에 이틀을 더 유하시고'라고 전해요. 사랑하는 친구가 위독하다는데 곧장 달려가지 않으신 거예요. 언뜻 무정해 보일 수 있는 이 지연은 사실 본문 안에서 신학적으로 매우 중요한 역할을 해요.\n\n예수님은 이미 4절에서 '이 병은 죽을병이 아니라 하나님의 영광을 위함이요 하나님의 아들이 이로 말미암아 영광을 받게 하려 함이라'고 선언하셨어요. 즉 지연은 무관심이 아니라, 단순한 치유를 넘어서는 훨씬 더 큰 표적 — 죽은 자를 살리는 부활의 표적 — 을 위한 의도적 기다림이었다는 거죠.\n\n마르다와 마리아의 반응(21절, 32절 — 둘 다 '주께서 여기 계셨더라면 내 오라비가 죽지 아니하였겠나이다')은 이 지연이 그들에게 얼마나 큰 고통이었는지를 보여줘요. 예수님도 이 고통에 무감각하지 않으셨어요 — '눈물을 흘리시더라'(35절)는 성경에서 가장 짧지만 가장 인간적인 구절 중 하나로 꼽히죠. 지연이 있었다고 해서 사랑이 없었던 게 아니라, 오히려 더 큰 소망을 예비하는 사랑이었다는 것을, 나사로를 살리신 사건이 증명해요."}, {"title": "삼백 데나리온짜리 향유 — 마리아의 헌신이 지닌 파격성", "body": "12:3절에서 마리아는 지극히 비싼 향유 한 근을 가져다가 예수님의 발에 붓고 자기 머리털로 닦아요. 유다는 이 향유가 삼백 데나리온에 팔 수 있었다고 지적하는데, 당시 노동자의 하루 품삯이 1데나리온이었으니 삼백 데나리온은 거의 1년치 연봉에 해당하는 어마어마한 금액이에요.\n\n게다가 여성이 공개적으로 머리를 풀어 남자의 발을 닦는 행위는 당시 사회적 관습으로는 매우 파격적이고 심지어 부적절하게 여겨질 수 있는 행동이었어요. 마리아는 사회적 체면이나 경제적 손실을 전혀 계산하지 않고, 오직 예수님을 향한 사랑과 예배의 마음으로 이 모든 것을 쏟아부은 거예요.\n\n예수님은 이 헌신을 '내 장례할 날을 위하여 이를 두게 하라'고 해석하시며(7절), 무의식적으로라도 마리아가 다가올 죽음을 준비하는 예언적 행위를 했다고 인정하세요. 계산되지 않은 사랑의 헌신이 종종 가장 깊은 영적 진실을 담아낸다는 것을 보여주는 장면이죠."}, {"title": "발을 씻기신 사건이 유월절 만찬 자리에서 갖는 무게", "body": "13:1절은 '유월절 전에 예수께서 자기가 세상을 떠나 아버지께로 돌아가실 때가 이른 줄 아시고... 끝까지 사랑하시니라'라는 말로 시작해요. 그리고 곧바로 예수님이 겉옷을 벗고 수건을 두르시고 제자들의 발을 씻기시는, 신약성경에서 가장 인상적인 겸손의 장면 중 하나가 펼쳐지죠.\n\n당시 발을 씻기는 일은 가장 낮은 신분의 종이 하는 허드렛일이었어요. 심지어 유대인 종에게는 이 일을 강요할 수 없고 이방인 종에게만 시킬 수 있었다는 랍비 문헌 기록도 있을 정도로, 극도로 천한 일로 여겨졌어요.\n\n그런데 만물의 창조주이시며 아버지께로부터 모든 것을 받으신 분(3절)이 스스로 그 자리에 내려가신 거예요. 베드로가 '내 발을 절대로 씻지 못하시리이다'라고 저항한 것도 이런 사회적 통념 때문이었을 거예요. 예수님의 대답 — '내가 너를 씻어 주지 아니하면 네가 나와 상관이 없느니라' — 은 이 겸손의 행위가 단순한 예절 교육이 아니라, 그리스도의 십자가 은혜를 받아들이는 것 자체를 상징한다는 것을 보여줍니다."}, {"title": "'내가 곧 길이요 진리요 생명이니'가 배타적으로 들리는 이유와 그 맥락", "body": "14:6절 '내가 곧 길이요 진리요 생명이니 나로 말미암지 않고는 아버지께로 올 자가 없느니라'는 오늘날 종교다원주의 시대에 가장 논쟁적으로 받아들여지는 성경 구절 중 하나예요. 배타적으로 들릴 수 있는 이 선언을 이해하려면 문맥을 살펴봐야 해요.\n\n이 말씀은 도마가 '주께서 어디로 가시는지 우리가 알지 못하거늘 그 길을 어찌 알겠사옵나이까'라고 묻는 질문에 대한 답이었어요(5절). 즉 이는 추상적인 종교 비교론이 아니라, 근심하는 제자들에게 '내가 너희를 위하여 처소를 예비하러 간다'(2-3절)는 위로의 약속 안에서 주어진 대답이에요.\n\n또한 요한복음 전체 맥락에서 이 선언은 예수님이 반복적으로 사용하신 '나는 ~이다(에고 에이미)' 정체성 선언들(생명의 떡, 세상의 빛, 선한 목자, 부활이요 생명 등)의 연장선에 있어요. 이 선언들은 그가 하나님께 이르는 여러 길 중 하나가 아니라, 하나님 자신을 온전히 나타내시는 유일한 계시자이심을 주장하는 요한복음의 핵심 그리스도론과 맞닿아 있죠. 이 구절을 다른 신앙을 가진 이들과의 대화에서 어떻게 지혜롭고 사랑스럽게 나눌 것인가는 오늘날에도 그리스도인들에게 중요한 과제로 남아 있어요."}, {"title": "포도나무 비유와 구약의 '이스라엘 = 포도나무' 전통", "body": "예수님이 '나는 참포도나무요 내 아버지는 농부'라고 선언하실 때(15:1), 구약을 잘 아는 청중이라면 즉시 익숙한 이미지를 떠올렸을 거예요. 구약에서 포도나무는 반복적으로 <b>이스라엘</b>을 상징하는 이미지로 쓰였거든요 — 시편 80편, 이사야 5장의 '포도원 노래', 예레미야 2:21 등에서요.\n\n그런데 이 구약의 포도나무 비유들은 대부분 '들포도를 맺는 실패한 포도나무'로서 이스라엘의 불순종을 책망하는 맥락에서 등장해요(사 5:2, 4 '내가 좋은 포도 맺기를 기다렸더니 들포도를 맺었도다').\n\n예수님이 자신을 '<b>참</b>포도나무'라고 선언하신 것은 매우 의미심장해요. 이는 이스라엘이 실패했던 그 자리에서, 자신이 하나님이 원래 의도하셨던 참되고 신실한 '포도나무' — 곧 하나님 백성의 참된 대표자요 성취자가 되신다는 선언인 거예요. 그리고 이제 그 나무에 '붙어 있는' 가지가 되는 것, 곧 그리스도 안에 거하는 것이 참된 열매 맺는 삶의 유일한 길이 된다는 거죠."}, {"title": "'내가 떠나가는 것이 너희에게 유익이라'는 역설적 위로", "body": "16:7절에서 예수님은 놀라운 말씀을 하세요 — '내가 떠나가는 것이 너희에게 유익이라 내가 떠나가지 아니하면 보혜사가 너희에게로 오시지 아니할 것이요 가면 내가 그를 너희에게로 보내리니.' 제자들에게는 스승이자 친구인 예수님이 떠나신다는 것이 재앙처럼 느껴졌을 텐데, 예수님은 오히려 이것이 '유익'이라 말씀하시는 거예요.\n\n이 역설은 성령의 사역이 지닌 특별한 성격을 이해할 때 풀려요. 육신을 입으신 예수님은 한 번에 한 장소에만 계실 수 있었지만, 성령을 통한 임재는 모든 믿는 자 안에, 세상 모든 곳에 동시에 거하실 수 있어요. 게다가 성령은 단순히 '함께 계심'을 넘어 신자들 '안에' 내주하시며, 그리스도를 아는 지식과 진리 가운데로 인도하는 더 깊은 차원의 사역을 하세요.\n\n즉 예수님의 떠나심은 상실이 아니라, 더 크고 널리 퍼지는 임재로의 전환이었던 거예요. 오늘날 신자들도 예수님을 육신으로 뵙지 못하지만, 성령을 통해 그리스도와의 친밀한 교제를 누릴 수 있다는 것이 이 약속의 실제적 의미예요."}, {"title": "'대제사장의 기도' — 요한복음 17장을 부르는 오랜 별칭", "body": "17장 전체는 예수님이 십자가를 앞두고 아버지께 드리는 긴 기도로 이루어져 있는데, 교회 역사에서는 오래전부터 이를 '<b>대제사장의 기도(Priestly Prayer)</b>'라 불러왔어요. 이 별칭은 종교개혁자 데오도어 베자(Theodore Beza) 등이 16세기에 널리 사용하면서 굳어졌다고 알려져 있어요.\n\n이 별칭이 적절한 이유가 있어요. 구약의 대제사장은 자신을 위해, 그리고 백성을 위해 중보하는 역할을 했는데(레 16장 속죄일 규례 참조), 예수님도 이 기도에서 먼저 자신의 영광을 위해(1-5절), 그다음 제자들을 위해(6-19절), 그리고 마지막으로 장차 믿게 될 모든 사람을 위해(20-26절) 순서대로 중보하시거든요.\n\n무엇보다 이 기도가 예수님의 십자가 죽음 직전, 곧 그분이 참 대제사장으로서 자기 자신을 희생 제물로 드리시기 직전에 드려졌다는 점에서, 구약의 대제사장이 속죄일에 드리던 중보기도의 완성이자 성취로 이해할 수 있어요. 히브리서가 그리스도를 '큰 대제사장'으로 부르는 신학(히 4:14)이 이 기도 안에서 이미 생생하게 예표되고 있는 셈이죠."}, {"title": "'내가 그니라'는 대답에 무리가 뒤로 물러가 땅에 엎드러진 이유", "body": "18:5-6절, 예수님을 잡으러 온 무리에게 예수님이 '내가 그니라(에고 에이미)'라고 답하시자, '저희가 물러가서 땅에 엎드러지는지라'라는 놀라운 반응이 나와요. 단순히 정체를 확인하는 대답에 왜 무장한 무리 전체가 뒤로 넘어졌을까요?\n\n여기서도 '에고 에이미'라는 표현이 열쇠예요. 8장에서 살펴본 것처럼, 이 표현은 출애굽기 3:14에서 하나님이 자신을 계시하신 '나는 스스로 있는 자'라는 신적 이름과 연결될 수 있는 표현이에요. 요한은 아마도 이 순간, 예수님의 대답 속에 담긴 신적 위엄이 순간적으로 드러나면서, 그를 잡으러 온 자들조차 저항할 수 없는 압도적 힘 앞에 무릎 꿇듯 넘어졌다는 것을 암시하려 했을 가능성이 있어요.\n\n중요한 신학적 포인트는, 이 장면이 예수님의 체포가 결코 그분의 의지를 거스른 강제 사건이 아니었다는 것을 보여준다는 거예요. 심지어 잡히시는 그 순간까지도, 예수님은 압도적 권세를 지니신 분으로 그려져요. 십자가로 향하는 길은 무력한 희생자의 길이 아니라, 스스로 선택하신 주권적 순종의 길이었다는 것을 요한은 이 사건을 통해 강조하고 있는 거죠."}, {"title": "'다 이루었다'는 한 단어, 헬라어 '테텔레스타이(τετέλεσται)'의 무게", "body": "19:30절, 십자가 위에서 예수님의 마지막 말씀은 '다 이루었다'예요. 헬라어 원문으로는 단 한 단어, '테텔레스타이(τετέλεσται)'예요. 이 단어는 당시 상업 문서에서 '빚을 완전히 청산했다'는 뜻으로, 또는 완성된 예술 작품에 '다 되었다'는 도장을 찍을 때 쓰이던 일상적 표현이었다는 것이 파피루스 문서 연구를 통해 알려져 있어요.\n\n이 단어의 시제도 중요해요 — 헬라어 완료시제는 과거에 일어난 행동이 현재까지 지속되는 결과를 낳는다는 뉘앙스를 담고 있어요. 즉 '테텔레스타이'는 단순히 '고통이 끝났다'는 뜻이 아니라, '해야 할 일을 완전하고도 영구적으로 성취했다'는 승리의 선언이에요.\n\n이는 패배자의 마지막 신음이 아니라, 자신에게 맡겨진 구속 사역을 온전히 완수하신 승리자의 선언으로 읽는 것이 본문의 무게에 훨씬 더 부합해요. 죄를 위한 화목제물, 하나님과 인간 사이의 화해, 옛 언약의 완성 — 이 모든 것이 이 한마디 단어 안에 응축되어 있는 셈이죠."}, {"title": "도마가 만졌는지, 만지지 않았는지 — 본문이 침묵하는 지점", "body": "많은 사람이 '의심하는 도마'가 실제로 예수님의 상처에 손을 넣어 '만졌다'고 기억하지만, 흥미롭게도 본문은 이 부분에 대해 명확히 말하지 않아요. 예수님은 분명 도마에게 '네 손가락을 이리 내밀어 내 손을 보고 네 손을 내밀어 내 옆구리에 넣어 보라'고 초청하시지만(27절), 도마가 실제로 손을 뻗어 만졌는지, 아니면 그저 눈으로 보는 것만으로 충분했는지는 본문에 직접 기록되어 있지 않아요.\n\n바로 다음 절에서 도마는 곧바로 '나의 주님이시요 나의 하나님이시니이다'라고 고백하는데, 이는 그가 실제로 만져보기도 전에 예수님의 초청 자체와 그분의 임재만으로 이미 충분히 확신했을 가능성을 열어놓아요.\n\n이 침묵은 사소해 보이지만 의미심장할 수 있어요. 어쩌면 요한은, 도마가 물리적 확인을 필요로 하지 않고도 부활하신 주를 알아보았다는 뉘앙스를 남기고 싶었을지도 몰라요. 확정할 수는 없지만, 이 열린 결말은 도마의 '보지 못하고 믿는 자들이 복되다'는 예수님의 축복(29절)과도 절묘하게 어울리는 여운을 남겨요."}, {"title": "세 번의 질문과 세 번의 부인 — 우연의 일치가 아니다", "body": "21:15-17절에서 부활하신 예수님은 베드로에게 '네가 나를 사랑하느냐'고 정확히 세 번 물으세요. 베드로가 세 번째 질문에 근심하는 장면까지 나오죠. 이 반복은 결코 우연이 아니에요 — 베드로가 예수님을 세 번 부인했던 사건(18장)을 정확히 되짚어 회복시키시는 은혜의 장면으로 널리 이해돼요.\n\n흥미로운 건 헬라어 원문에서 사용된 '사랑하다'라는 동사가 미묘하게 바뀐다는 점이에요. 예수님의 첫 두 질문에는 좀 더 헌신적이고 희생적인 사랑을 뜻하는 '아가파오(ἀγαπάω)'가 쓰이지만, 베드로는 매번 좀 더 형제애나 우정에 가까운 '필레오(φιλέω)'로 답해요. 세 번째 질문에서는 예수님도 베드로의 언어인 '필레오'로 물으시죠.\n\n이 단어 교체가 신학적으로 큰 의미를 갖는지, 아니면 단순히 문체적 다양성(요한복음에 흔한 동의어 교차 사용)인지는 학자들 사이에 이견이 있어요. 어느 쪽이든 분명한 것은, 실패한 베드로를 정죄하지 않으시고 오히려 그의 눈높이에 맞춰 다가가시며 '내 양을 먹이라'는 사명을 다시 맡기시는 은혜의 패턴이에요."}];
+
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){
+    var bar = document.querySelector('.top-bar');
+    var barH = bar ? bar.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - barH - 10;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+}
+
+document.addEventListener('click', function(e){
+  var closeBtn = e.target.closest('.insight-close');
+  if(closeBtn){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  var insTerm = e.target.closest('.hl-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    return;
+  }
+  if(e.target.id === 'insightOverlay'){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  var tip = document.getElementById('termTip');
+  var tipCloseBtn = e.target.closest('.tip-close');
+  if(tipCloseBtn){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var cb = document.createElement('span');
+    cb.className = 'tip-close';
+    cb.textContent = '\u2715';
+    tip.appendChild(cb);
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 260;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+  } else if(tip && !e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

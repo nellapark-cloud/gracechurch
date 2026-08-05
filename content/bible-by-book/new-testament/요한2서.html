@@ -40,33 +40,30 @@ b, strong{ font-weight:700; }
   background: var(--cream);
   border-bottom: 1px solid var(--line);
   padding: 12px 4vw;
-  display: flex; align-items: center; justify-content: space-between; gap: 10px;
+  display: flex; align-items: center; justify-content: flex-start; gap: 10px;
 }
 .top-bar .tb-title{
   font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
 }
-.top-bar .tb-toc{
-  color: var(--navy-soft); font-size: 13px; cursor: pointer;
-  padding: 6px 13px; border: 1px solid var(--line); border-radius: 14px;
-  background: var(--white); white-space: nowrap;
-}
-.top-bar .tb-toc:active{ background: var(--cream-deep); }
-
-/* ===== BOTTOM NAV BUTTON GROUP (static, not fixed) ===== */
+/* ===== BOTTOM NAV (floating circular icon buttons, bottom-right, stacked) ===== */
 .bottom-nav{
-  display: flex; gap: 10px; padding: 20px 4vw 34px;
-  border-top: 1px solid var(--line);
-  background: var(--cream-deep);
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
 }
 .bottom-nav button{
-  flex: 1; padding: 13px 6px; border-radius: 10px; border: none;
+  width: 46px; height: 46px; border-radius: 50%; border: none;
   background: var(--navy); color: var(--gold-soft);
-  font-size: 13.5px; font-weight: 700; cursor: pointer;
-  font-family: inherit;
-  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: transform 0.15s, background 0.15s;
 }
-.bottom-nav button svg{ width: 18px; height: 18px; }
-.bottom-nav button:active{ background: var(--navy-soft); }
+.bottom-nav button svg{ width: 20px; height: 20px; }
+.bottom-nav button:active{ background: var(--navy-soft); transform: scale(0.94); }
+.bottom-nav-spacer{ height: 0; }
 
 /* ===== COVER (gradient + pearl sheen) ===== */
 .cover{
@@ -303,7 +300,6 @@ b.has-tip{ cursor:pointer; }
 
 <div class="top-bar">
   <div class="tb-title" onclick="goTo('top')">📖 요한2서 연구</div>
-  <div class="tb-toc" onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg> 목차</div>
 </div>
 
 <div class="cover" style="background: linear-gradient(150deg, #3d2038 0%, #6d3d63 100%);">
@@ -350,7 +346,7 @@ b.has-tip{ cursor:pointer; }
 
   <section class="sub">
     <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
-    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
     <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>진리와 사랑은 결코 분리되지 않는다</div><div class="teach-body">이 짧은 편지 안에서 '진리'와 '사랑'이라는 단어가 계속 함께 등장한다. 요한에게 사랑 없는 진리는 냉랭하고, 진리 없는 사랑은 공허하다. 둘은 함께 가야 온전한 신앙이 된다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">13절짜리 짧은 편지인데도 '진리'가 5번, '사랑'이 4번이나 나와요. 요한은 이 두 단어를 거의 한 몸처럼 붙여서 쓰는데, 이게 우연이 아니라는 생각이 들어요. 사랑한다고 하면서 진리를 외면하거나, 진리를 안다고 하면서 사랑 없이 차갑게 구는 것 모두 요한이 그리는 신앙의 모습과는 거리가 멀어요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>계명은 새것이 아니라 처음부터 있던 것의 재확인이다</div><div class="teach-body">5절에서 장로는 자신이 '새 계명을 쓰는 것이 아니라 처음부터 우리가 가진 것'이라고 강조한다. 참된 신앙은 늘 새로운 것을 좇기보다, 이미 주어진 진리를 신실하게 지켜가는 데 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>기쁨의 근거는 외적 성공이 아니라 진리 안에서 행함이다</div><div class="teach-body">4절에서 장로가 크게 기뻐하는 이유는 부녀의 자녀들이 '진리 안에서 행함'을 보았기 때문이다. 목회적 기쁨의 진정한 척도는 규모나 성과가 아니라 신실함이다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>공동체를 지키는 것은 소극적 태도가 아니라 적극적 사랑이다</div><div class="teach-body">거짓 교사를 집에 들이지 말라는 단호한 명령은 냉담함이 아니라, 공동체 전체를 미혹으로부터 지키려는 목자적 사랑의 표현으로 이해해야 한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>직접 만남에 대한 갈망</div><div class="teach-body">12절에서 장로는 종이와 먹보다 얼굴을 마주하는 만남을 원한다고 고백한다. 아무리 잘 쓰인 편지도 인격적 만남의 기쁨을 완전히 대체할 수 없다는 진솔한 고백이다.</div></div>
   </section>
 
@@ -363,10 +359,11 @@ b.has-tip{ cursor:pointer; }
   </section>
 </div>
 
+<div class="bottom-nav-spacer"></div>
 <div class="bottom-nav">
-  <button onclick="goTo('toc')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg><span>목차 가기</span></button>
-  <button onclick="goTo('top')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg><span>처음으로</span></button>
-  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg><span>자료실로 가기</span></button>
+  <button onclick="goTo('toc')" title="목차로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg></button>
+  <button onclick="goTo('top')" title="처음으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}" title="자료실로 가기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
 </div>
 <div class="footer-brand">기독교한국침례회 은혜교회</div>
 </div>
