@@ -17,6 +17,7 @@ const categories = [
   { key: 'bulletin', dir: 'content/bulletin' },
   { key: 'mokjang_sharing', dir: 'content/mokjang-sharing' },
   { key: 'baptist_history', dir: 'content/baptist-history' },
+  { key: 'admin_personal', dir: 'content/admin-personal' },
   { key: 'admin_forms', dir: 'content/admin-forms' },
   { key: 'officer_training', dir: 'content/servant-leaders' },
 ];

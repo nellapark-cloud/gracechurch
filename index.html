@@ -130,16 +130,17 @@
   }
   .hero__eyebrow{
     font-family: 'Noto Serif KR', serif;
-    font-size: 0.72rem;
+    font-size: 0.85rem;
     letter-spacing: 0.14em;
-    color: var(--navy);
-    font-weight: 700;
+    font-weight: 800;
     margin: 0 0 1.4rem;
-    padding: 0.4rem 1.4rem;
-    border-left: none;
+    padding: 0;
     display: inline-block;
-    background: linear-gradient(90deg, #ffd6e0 0%, #d6e0ff 100%);
-    border-radius: 4px;
+    background: linear-gradient(120deg, #d9527d 0%, #8a5fb0 50%, #4a3f9e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #8a5fb0;
   }
   .hero__denom{
     font-size: 0.78rem;
@@ -875,10 +876,16 @@
       </div>
       <p id="admin-pw-error" class="admin-gate__error">비밀번호가 올바르지 않습니다.</p>
     </div>
-    <details class="doc-group" id="admin-content" style="display:none;">
-      <summary>목록 보기<span class="count" id="count-admin_forms"></span></summary>
-      <ul class="doclist" id="list-admin_forms"><li class="doclist__empty">불러오는 중...</li></ul>
-    </details>
+    <div id="admin-content" style="display:none;">
+      <details class="doc-group">
+        <summary>개인자료<span class="count" id="count-admin_personal"></span></summary>
+        <ul class="doclist" id="list-admin_personal"><li class="doclist__empty">불러오는 중...</li></ul>
+      </details>
+      <details class="doc-group">
+        <summary>행정서식<span class="count" id="count-admin_forms"></span></summary>
+        <ul class="doclist" id="list-admin_forms"><li class="doclist__empty">불러오는 중...</li></ul>
+      </details>
+    </div>
   </section>
 
 </main>
