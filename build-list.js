@@ -22,6 +22,16 @@ const categories = [
   { key: 'officer_training', dir: 'content/servant-leaders' },
 ];
 
+const FLAGS = { en: '🇺🇸', ja: '🇯🇵', zh: '🇨🇳', ko: '🇰🇷' };
+
+function withLanguageFlag(name) {
+  const m = name.match(/[-_](en|ja|zh|ko)$/i);
+  if (!m) return name;
+  const code = m[1].toLowerCase();
+  const base = name.slice(0, m.index).trim();
+  return FLAGS[code] + ' ' + (base || name);
+}
+
 function listDocs(dir) {
   const full = path.join(__dirname, dir);
   let files = [];
@@ -52,7 +62,7 @@ function listDocs(dir) {
           // 파일을 못 읽으면 그냥 파일 자체를 링크로 둠
         }
       }
-      return { title: name, tag, meta: '', file };
+      return { title: withLanguageFlag(name), tag, meta: '', file };
     })
     .sort((a, b) => a.title.localeCompare(b.title, 'ko'));
 }
