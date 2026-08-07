@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>은혜교회 자료실</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c2b4a'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='32' font-weight='700' fill='%23b8935a' text-anchor='middle'%3E%EC%9D%80%3C/text%3E%3C/svg%3E">
 <meta name="description" content="은혜교회 자료실 — 책별 성경공부, 새가족 자료, 목장 사역, 주보와 나눔지, 행정 서식까지 한자리에 모았습니다.">
 <meta property="og:type" content="website">
 <meta property="og:title" content="은혜교회 자료실">
@@ -235,25 +236,32 @@
   }
 
   .hero__index{
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.6rem;
+    max-width: 42rem;
+  }
+  @media (min-width: 640px){
+    .hero__index{ grid-template-columns: repeat(2, 1fr); }
   }
   .hero__index a{
     text-decoration:none;
     display:flex;
-    align-items:baseline;
+    align-items:center;
     gap:0.6rem;
-    padding: 0.5rem 1.4rem 0.5rem 0;
-    border-bottom: 1px solid var(--rule);
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--rule);
+    border-radius: 8px;
     width: 100%;
-    max-width: 30rem;
+    max-width: none;
+    box-sizing: border-box;
     color: var(--navy);
-    transition: padding-left .3s ease, color .3s ease;
+    transition: padding-left .3s ease, color .3s ease, background .2s ease;
   }
   .hero__index a:hover{
-    padding-left: 0.6rem;
+    padding-left: 1.2rem;
     color: var(--gold);
+    background: rgba(184,147,90,0.06);
   }
   .hero__index .num{
     font-family: 'Noto Serif KR', serif;
@@ -268,19 +276,18 @@
     font-size: 0.75rem;
     color: var(--muted);
     letter-spacing: 0.05em;
+    flex-shrink: 0;
   }
   .hero__index a.featured{
     border: 1px solid var(--gold);
-    border-bottom: 1px solid var(--gold);
     border-radius: 8px;
     padding: 0.7rem 1.2rem;
     background: rgba(184,147,90,0.1);
-    margin-bottom: 0.5rem;
     box-sizing: border-box;
-    max-width: calc(30rem - 2.5rem);
+    grid-column: 1 / -1;
   }
   .hero__index a.featured .lbl{ font-weight: 700; color: var(--navy); }
-  .hero__index a.featured:hover{ background: rgba(184,147,90,0.2); padding-left: 1.2rem; }
+  .hero__index a.featured:hover{ background: rgba(184,147,90,0.2); padding-left: 1.4rem; }
   .hero__index a.featured-alt{ border-color: #b8567f; background: rgba(184,86,127,0.08); }
   .hero__index a.featured-alt:hover{ background: rgba(184,86,127,0.18); }
 
