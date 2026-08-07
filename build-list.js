@@ -22,18 +22,20 @@ const categories = [
   { key: 'officer_training', dir: 'content/servant-leaders' },
 ];
 
-function withLanguageFlag(name) {
+function withLanguageFlag(rawName) {
+  const name = rawName.normalize('NFC');
   // 제목 안의 글자 종류(한글/일본어 가나/중국어 한자/스페인어 특수문자·단어/영어)를 보고 국기를 붙입니다.
-  if (/[\u3040-\u30ff]/.test(name)) return '🇯🇵 ' + name;                        // 히라가나/가타카나 -> 일본어
-  if (/[\uac00-\ud7a3]/.test(name)) return '🇰🇷 ' + name;                        // 한글 -> 한국어
-  if (/[\u4e00-\u9fff]/.test(name)) return '🇨🇳 ' + name;                        // 한자만 있음 -> 중국어
-  if (/[ñÑ¿¡áéíóúÁÉÍÓÚü]/.test(name)) return '🇪🇸 ' + name;                      // 스페인어 특수문자 -> 스페인어
-  if (/\b(del|bendici[oó]n|encuentro)\b/i.test(name)) return '🇪🇸 ' + name;      // 특수문자 없는 스페인어 단어 -> 스페인어
-  if (/[A-Za-z]/.test(name)) return '🇺🇸 ' + name;                               // 영문 -> 영어
-  return name;
+  if (/[\u3040-\u30ff]/.test(name)) return '🇯🇵 ' + rawName;                     // 히라가나/가타카나 -> 일본어
+  if (/[\uac00-\ud7a3]/.test(name)) return '🇰🇷 ' + rawName;                     // 한글 -> 한국어
+  if (/[\u4e00-\u9fff]/.test(name)) return '🇨🇳 ' + rawName;                     // 한자만 있음 -> 중국어
+  if (/[ñÑ¿¡áéíóúÁÉÍÓÚü]/.test(name)) return '🇪🇸 ' + rawName;                   // 스페인어 특수문자 -> 스페인어
+  if (/\b(del|bendici[oó]n|encuentro)\b/i.test(name)) return '🇪🇸 ' + rawName;   // 특수문자 없는 스페인어 단어 -> 스페인어
+  if (/[A-Za-z]/.test(name)) return '🇺🇸 ' + rawName;                            // 영문 -> 영어
+  return rawName;
 }
 
-function langPriority(name) {
+function langPriority(rawName) {
+  const name = rawName.normalize('NFC');
   // 한국어 -> 영어 -> 스페인어 -> 일본어 -> 중국어 순서로 정렬하기 위한 우선순위
   if (/[\uac00-\ud7a3]/.test(name)) return 0;                                    // 한국어
   if (/[ñÑ¿¡áéíóúÁÉÍÓÚü]/.test(name)) return 2;                                 // 스페인어(특수문자)
