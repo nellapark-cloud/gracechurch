@@ -22,17 +22,16 @@ const categories = [
   { key: 'officer_training', dir: 'content/servant-leaders' },
 ];
 
-const FLAGS = { en: '🇺🇸', ja: '🇯🇵', zh: '🇨🇳', ko: '🇰🇷' };
-
 function withLanguageFlag(name) {
-  const m = name.match(/[-_](en|ja|zh|ko)$/i);
-  if (!m) return name;
-  const code = m[1].toLowerCase();
-  const base = name.slice(0, m.index).trim();
-  return FLAGS[code] + ' ' + (base || name);
+  // 제목 안의 글자 종류(한글/일본어 가나/중국어 한자/영어)를 보고 국기를 붙입니다.
+  if (/[\u3040-\u30ff]/.test(name)) return '🇯🇵 ' + name;      // 히라가나/가타카나 -> 일본어
+  if (/[\uac00-\ud7a3]/.test(name)) return '🇰🇷 ' + name;      // 한글 -> 한국어
+  if (/[\u4e00-\u9fff]/.test(name)) return '🇨🇳 ' + name;      // 한자만 있음 -> 중국어
+  if (/[A-Za-z]/.test(name)) return '🇺🇸 ' + name;             // 영문 -> 영어
+  return name;
 }
 
-function listDocs(dir) {
+function listDocs(dir, withFlags) {
   const full = path.join(__dirname, dir);
   let files = [];
   try {
@@ -62,14 +61,14 @@ function listDocs(dir) {
           // 파일을 못 읽으면 그냥 파일 자체를 링크로 둠
         }
       }
-      return { title: withLanguageFlag(name), tag, meta: '', file };
+      return { title: withFlags ? withLanguageFlag(name) : name, tag, meta: '', file };
     })
     .sort((a, b) => a.title.localeCompare(b.title, 'ko'));
 }
 
 const manifest = {};
 categories.forEach(({ key, dir }) => {
-  manifest[key] = listDocs(dir);
+  manifest[key] = listDocs(dir, key === 'meeting_blessing');
 });
 
 fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
