@@ -1,0 +1,994 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新しい家族 養育教材 | 恵み教会</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700;900&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#182848;
+    --navy-2:#24365f;
+    --navy-soft:#eef1f7;
+    --cream:#faf6ec;
+    --cream-2:#f2ead6;
+    --gold:#c9a961;
+    --gold-dark:#a3823f;
+    --ink:#2b2b2b;
+    --ink-soft:#5c5c5c;
+    --line:#e3dac2;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Noto Serif JP', serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.9;
+    -webkit-font-smoothing:antialiased;
+  }
+  .ui{font-family:'Noto Sans JP', sans-serif;}
+  section{max-width:760px;margin:0 auto;padding:40px 28px;}
+  h1,h2,h3{font-family:'Noto Serif JP', serif; font-weight:700; color:var(--navy);}
+
+  .cover{
+    min-height:60vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(201,169,97,0.18), transparent 55%),
+      linear-gradient(160deg, var(--navy) 0%, #0e1a33 100%);
+    color:var(--cream);
+    padding:60px 28px;
+    max-width:none;
+  }
+  .cover .eyebrow{
+    font-family:'Noto Sans JP',sans-serif;
+    letter-spacing:.3em;
+    font-size:12px;
+    color:var(--gold);
+    margin-bottom:22px;
+    text-transform:uppercase;
+  }
+  .cover h1{
+    color:#fff;
+    font-size:clamp(28px,5.5vw,44px);
+    margin:0 0 18px;
+    letter-spacing:-0.01em;
+  }
+  .cover .sub{
+    font-size:17px;
+    color:#dfe4f0;
+    margin-bottom:46px;
+    font-weight:400;
+  }
+  .cover .sub b{color:var(--gold);font-weight:600;}
+  .cover .badge{
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:13px;
+    color:#b9c2d6;
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-top:22px;
+    margin-top:10px;
+  }
+  .cover .weeks-row{
+    display:flex;gap:8px;margin-top:38px;flex-wrap:wrap;justify-content:center;
+  }
+  .cover .weeks-row span{
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:12px;color:var(--navy);
+    background:var(--gold);
+    padding:6px 12px;border-radius:20px;
+    font-weight:600;
+  }
+
+  .intro{background:var(--cream);}
+  .intro .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:32px 30px;
+    margin-bottom:20px;
+  }
+  .intro .card h3{
+    font-size:17px;margin:0 0 12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .intro .card p{color:var(--ink-soft);font-size:15.5px;margin:0 0 8px;}
+  .intro .card p:last-child{margin-bottom:0;}
+  .intro .card.gold{border:1px solid var(--gold-dark);background:var(--cream-2);}
+  .intro .card.gold h3{color:var(--gold-dark);}
+
+  .toc{background:var(--navy-soft);}
+  .toc h2{text-align:center;font-size:24px;margin-bottom:36px;}
+  .toc-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .toc-list a{
+    display:flex;align-items:center;gap:16px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 20px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:.2s;
+  }
+  .toc-list a:hover{border-color:var(--gold);transform:translateX(4px);}
+  .toc-num{
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:700;color:var(--gold-dark);
+    font-size:13px;
+    background:var(--cream-2);
+    width:44px;height:44px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .toc-txt b{display:block;font-size:16px;color:var(--navy);}
+  .toc-txt span{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--ink-soft);}
+
+  .week{background:var(--cream);border-top:1px solid var(--line);}
+  .week-head{
+    display:flex;align-items:center;gap:18px;margin-bottom:8px;
+  }
+  .week-badge{
+    font-family:'Noto Sans JP',sans-serif;
+    background:var(--navy);color:var(--gold);
+    font-weight:700;font-size:14px;
+    padding:10px 16px;border-radius:10px;
+    letter-spacing:.05em;
+    flex-shrink:0;
+  }
+  .week h2{font-size:25px;margin:0;}
+  .week .week-sub{
+    font-family:'Noto Sans JP',sans-serif;
+    color:var(--ink-soft);font-size:14px;
+    margin:0 0 30px 78px;
+  }
+  .week p.lead{font-size:16px;color:var(--ink);}
+
+  .block-title{
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:13px;font-weight:700;color:var(--navy);
+    letter-spacing:.06em;
+    margin:38px 0 14px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .block-title::before{
+    content:"";width:18px;height:2px;background:var(--gold);display:inline-block;
+  }
+
+  .verse-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    border-radius:10px;
+    padding:20px 22px;
+    margin-bottom:14px;
+    font-size:15.5px;
+  }
+  .verse-card .ref{
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:12.5px;color:var(--ink-soft);
+    margin-top:10px;
+  }
+  .blank{
+    display:inline-block;
+    min-width:64px;
+    text-align:center;
+    background:var(--cream-2);
+    border:1px dashed var(--gold-dark);
+    border-radius:6px;
+    padding:1px 8px;
+    color:transparent;
+    cursor:pointer;
+    font-weight:700;
+    transition:.15s;
+    user-select:none;
+  }
+  .blank.revealed{
+    color:var(--navy);
+    background:#fbf3de;
+    border-style:solid;
+  }
+  .blank:active{transform:scale(0.97);}
+  .blank-hint{
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:12px;color:var(--gold-dark);
+  }
+
+  .qa-box{
+    background:var(--navy);
+    color:var(--cream);
+    border-radius:var(--radius);
+    padding:26px 26px;
+    margin-top:8px;
+  }
+  .qa-box .block-title{color:var(--gold);margin-top:0;}
+  .qa-box .block-title::before{background:var(--gold);}
+  .qa-list{list-style:none;padding:0;margin:0;counter-reset:qa;}
+  .qa-list li{
+    counter-increment:qa;
+    display:flex;gap:12px;
+    padding:12px 0;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:15px;
+  }
+  .qa-list li:first-child{border-top:none;}
+  .qa-list li::before{
+    content:counter(qa);
+    font-family:'Noto Sans JP',sans-serif;
+    font-weight:700;color:var(--navy);
+    background:var(--gold);
+    width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12.5px;flex-shrink:0;margin-top:2px;
+  }
+
+  .apply-box{
+    margin-top:24px;
+    background:var(--cream-2);
+    border-radius:10px;
+    padding:20px 22px;
+    font-size:14.5px;
+    color:var(--ink-soft);
+  }
+  .apply-box b{color:var(--navy);}
+
+  .pray-box{
+    margin-top:24px;
+    background:var(--navy-soft);
+    border:1px dashed var(--gold-dark);
+    border-radius:var(--radius);
+    padding:22px 24px;
+  }
+  .pray-box .block-title{margin-top:0;}
+  .pray-box p{margin:0;color:var(--ink);font-size:14.5px;}
+
+  .video-section{background:var(--navy-soft);border-top:1px solid var(--line);}
+  .video-section h2{text-align:center;font-size:22px;margin-bottom:10px;}
+  .video-section .sub-note{text-align:center;color:var(--ink-soft);font-size:14px;font-family:'Noto Sans JP',sans-serif;margin-bottom:32px;}
+  .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .video-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .video-item .frame-wrap{position:relative;padding-bottom:56.25%;height:0;}
+  .video-item .frame-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+  .video-item .label{font-family:'Noto Sans JP',sans-serif;font-weight:600;font-size:14px;color:var(--navy);padding:12px 14px;}
+  @media(max-width:600px){.video-grid{grid-template-columns:1fr;}}
+
+  .closing{
+    background:linear-gradient(160deg, var(--navy) 0%, #0e1a33 100%);
+    color:var(--cream);
+    text-align:center;
+  }
+  .closing h2{color:#fff;font-size:24px;}
+  .closing p{color:#dfe4f0;font-size:15px;}
+  .closing .sig{
+    font-family:'Noto Sans JP',sans-serif;
+    color:#b9c2d6;font-size:12.5px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-top:20px;
+  }
+
+  .float-nav{
+    position:fixed;right:18px;bottom:18px;
+    display:flex;flex-direction:column;gap:10px;
+    z-index:50;
+    opacity:0;pointer-events:none;
+    transition:.25s;
+  }
+  .float-nav.show{opacity:1;pointer-events:auto;}
+  .float-nav a{
+    font-family:'Noto Sans JP',sans-serif;
+    font-size:12px;font-weight:600;
+    background:var(--navy);color:var(--gold);
+    border:1px solid var(--gold-dark);
+    border-radius:24px;
+    padding:10px 16px;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+  }
+
+  @media(max-width:600px){
+    section{padding:30px 20px;}
+    .week .week-sub{margin-left:0;margin-top:6px;}
+    .week-head{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<section class="cover" id="top">
+  <div class="eyebrow ui">韓国バプテスト連盟 ・ 恵み教会</div>
+  <h1>新しい家族<br>養育教材</h1>
+  <div class="sub">新しいいのちから<b>豊かないのち</b>へ、そして<b>喜びのいのち</b>へ</div>
+  <div class="weeks-row">
+    <span>8週間コース</span><span>一対一の養育</span>
+  </div>
+  <div class="badge ui">恵み教会 新しい家族 養育訓練書</div>
+</section>
+
+<section class="intro" id="intro">
+  <h2 style="text-align:center;margin-bottom:32px;">はじめに</h2>
+
+  <div class="card">
+    <h3>🤝 このように出会います</h3>
+    <p>この教材は、新しい家族お一人と、牧者(または養育者)が一対一で向き合い、8週間にわたって週に一度お会いして分かち合うためのものです。講義を聞く時間ではなく、共にみことばを開き、語り合う時間として用いていただければと思います。</p>
+  </div>
+
+  <div class="card">
+    <h3>✏️ 空欄の使い方</h3>
+    <p>本文のところどころに、<span class="blank">ここ</span>のようにぼかされた空欄があります。声に出して一緒に読みながら、この部分で少し立ち止まり、答えを話し合ってから空欄をタップして確認してみてください。正解を当てる試験ではなく、みことばをゆっくり味わうための工夫です。</p>
+  </div>
+
+  <div class="card">
+    <h3>💬 心を分かち合う</h3>
+    <p>毎週の最後に「心を分かち合う」という質問があります。正解のある質問ではありませんので、養育者が先に自分の話を正直に分かち合ってくださると、新しい家族も心を開きやすくなります。</p>
+  </div>
+
+  <div class="card">
+    <h3>🌱 8週間の流れ</h3>
+    <p>1週目は「救い」から始まり、父なる神・イエス・キリスト・聖霊様を順に出会い、人間と罪、聖書、教会を経て、最後の8週目に再び「クリスチャンの生活」に戻ってきます。始まりと終わりがつながるように構成されていますので、8週間を終える時に1週目の内容を一緒に振り返ってみるのもよいでしょう。</p>
+  </div>
+</section>
+
+<section class="toc" id="toc">
+  <h2>8週間コース目次</h2>
+  <ul class="toc-list ui">
+    <li><a href="#week1"><span class="toc-num">1</span><span class="toc-txt"><b>新しい始まり</b><span>救いの確信と新しいいのち</span></span></a></li>
+    <li><a href="#week2"><span class="toc-num">2</span><span class="toc-txt"><b>父なる神</b><span>あなたを造り、愛してくださる方</span></span></a></li>
+    <li><a href="#week3"><span class="toc-num">3</span><span class="toc-txt"><b>イエス・キリスト</b><span>あなたのために来られ、死なれ、生きておられる方</span></span></a></li>
+    <li><a href="#week4"><span class="toc-num">4</span><span class="toc-txt"><b>聖霊様</b><span>今、あなたと共に歩まれる方</span></span></a></li>
+    <li><a href="#week5"><span class="toc-num">5</span><span class="toc-txt"><b>人間と罪</b><span>私は誰であり、罪とは何か</span></span></a></li>
+    <li><a href="#week6"><span class="toc-num">6</span><span class="toc-txt"><b>聖書</b><span>神のことば、人生の灯火</span></span></a></li>
+    <li><a href="#week7"><span class="toc-num">7</span><span class="toc-txt"><b>教会</b><span>共に成長する牧場共同体</span></span></a></li>
+    <li><a href="#week8"><span class="toc-num">8</span><span class="toc-txt"><b>クリスチャンの生活</b><span>新しいいのち、豊かないのち、喜びのいのち</span></span></a></li>
+  </ul>
+</section>
+
+<section class="intro" id="worth">
+  <h2 style="text-align:center;margin-bottom:32px;">最初にお伝えしたいこと</h2>
+  <p class="lead" style="margin-bottom:28px;">8週間の旅を本格的に始める前に、まず一つだけお伝えしたいことがあります。それは、あなたがどれほど尊い存在であるかということです。</p>
+
+  <div class="card">
+    <h3>🧾 しわになっても、破れても、価値は変わりません</h3>
+    <p>誰かが一万円札を手でくしゃくしゃに丸め、足で踏みつけ、半分に破ってしまったとします。それでもその紙幣を銀行に持っていけば、やはり一万円として認められます。紙がどんな形になっても、そこに刻まれた価値は少しも減らないからです。</p>
+    <p>これまでの人生で、心がしわになり、傷つき、時には破れるような時間があったかもしれません。しかし、そのようなことは、あなたという存在の価値を一円も減らしてはいません。あなたは今も、造られた時のその価値のままです。</p>
+  </div>
+
+  <div class="card">
+    <h3>🌱 激しい競争を勝ち抜いて生まれた存在です</h3>
+    <p>私たちが生まれるまでには、一つのいのちが宿るただ一度の瞬間がありました。その瞬間に関わる数は、一億から三億に及ぶと言われています。そのうちのただ一つだけがいのちへとつながります。一億分の一、三億分の一という数字は、実は誰も「挑戦する価値がある」とは思わないほどの確率です。始める前にあきらめるか、そもそも期待すらしないのが当然な確率だということです。</p>
+    <p>それでもあなたは、その億単位の確率を勝ち抜いてこの地に生まれました。それは偶然に起こったことではなく、数えきれないほどの可能性の中から、あなたが選ばれたということです。</p>
+  </div>
+
+  <div class="card gold">
+    <h3>✝️ しかし何よりも、あなたは「イエス様ほどの価値」がある存在です</h3>
+    <p>あるものの本当の価値は、それを得るために誰かが何を支払ったかによって分かります。神様は、あなたを得るために、お金や宝石ではなく、ご自分のひとり子であるイエス・キリストを与えてくださいました。</p>
+    <p>つまり、あなたは「イエス様ほどの価値」がある存在なのです。これ以上に大きく確かな価値の証拠はありません。これから8週間分かち合うすべての話は、これほど尊いあなたに向けられた神様の御心から始まります。</p>
+  </div>
+
+  <p class="lead" style="text-align:center;margin-top:8px;">この三つを心に留めて、共に第一歩を踏み出しましょう。</p>
+</section>
+
+<!-- ============ 1週目 ============ -->
+<section class="week" id="week1">
+  <div class="week-head"><span class="week-badge ui">1週目</span><h2>新しい始まり</h2></div>
+  <p class="week-sub ui">救いの確信と新しいいのち</p>
+
+  <p class="lead">人は誰でも、人生のどこかの地点で方向を変えます。私たちがイエス様を信じるということも同じです。それは単に「良い人になろうと決心する」ことではなく、罪によって神様との関係が断たれていた人生から立ち返り、イエス・キリストによってまったく新しいいのちを受け取ることです。今日は、なぜ私たちに救いが必要なのか、その新しい始まりとは何か、そしてそれがなぜ「贈り物」と呼ばれるのかを共に見ていきます。</p>
+
+  <div class="block-title">なぜ私たちには救いが必要なのでしょうか</div>
+  <p class="lead">「救い」ということばは、誰かが危険な状態にあることを前提としています。聖書は、人が罪によって神様との関係が断たれ、自分の力ではその問題を解決できない状態にあると語っています。これは、私たちがどれほど悪い人間であるかという問題ではなく、神様を離れたすべての人が共通して抱えている状態です。ですから救いは、私たちが自分の力で成し遂げた成果ではなく、神様が先に近づいてくださって成し遂げてくださったことなのです。</p>
+
+  <div class="verse-card">
+    神は、実に、そのひとり子をお与えになったほどに、世を愛された。それは御子を信じる者が、一人として滅びることなく、<span class="blank">永遠のいのち</span>を持つためである。
+    <div class="ref ui">ヨハネの福音書 3章16節</div>
+  </div>
+  <div class="verse-card">
+    私たちが行った義のわざによってではなく、神のあわれみのゆえに、聖霊による<span class="blank">新生</span>と刷新によって、私たちを救ってくださいました。
+    <div class="ref ui">テトスへの手紙 3章5節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 救いが必要だと認めることは、恥ずかしい告白ではなく、正直な出発点です。病気を認めなければ治療を受けられないように、自分の状態を認めることで初めて神様の助けを受け入れることができます。
+  </div>
+
+  <div class="block-title">共に読むみことば</div>
+
+  <div class="verse-card">
+    神は私たちを<span class="blank">暗闇</span>の力から救い出して、愛する御子の支配の中に移してくださいました。
+    <div class="ref ui">コロサイ人への手紙 1章13節</div>
+  </div>
+  <div class="verse-card">
+    ですから、キリストのうちにあるなら、その人は<span class="blank">新しく造られた者</span>です。古いものは過ぎ去って、見よ、すべてが新しくなりました。
+    <div class="ref ui">コリント人への手紙第二 5章17節</div>
+  </div>
+  <div class="verse-card">
+    あなたがたは恵みにより、<span class="blank">信仰</span>によって救われたのです。それは、あなたがたから出たことではなく、神の<span class="blank">賜物</span>です。
+    <div class="ref ui">エペソ人への手紙 2章8節</div>
+  </div>
+  <div class="verse-card">
+    口でイエスを主と<span class="blank">告白する</span>なら、あなたは救われます。
+    <div class="ref ui">ローマ人への手紙 10章10節(参照)</div>
+  </div>
+  <p class="blank-hint ui">👆 空欄をタップして答えを確認してみましょう</p>
+
+  <div class="block-title">救いは出来事でしょうか、それとも旅路でしょうか</div>
+  <p class="lead">救いはある一瞬に始まりますが、そこで終わるのではありません。「新しく造られた者になる」ということは、完成した状態に到達したという意味ではなく、新しいいのちが成長し始めたという意味です。赤ちゃんが生まれる瞬間と、その後の一生涯にわたる成長がどちらも一つのいのちに属しているように、今日始まったこの新しいいのちも、これからの8週間、そしてその後も成長し続けていきます。</p>
+
+  <div class="apply-box">
+    <b>恵み教会では</b> — 救いの確信が揺らぐたびに、今日分かち合ったみことばに立ち返ってください。確信は感情ではなく、神様の約束に基づくものだからです。
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">心を分かち合う</div>
+    <ul class="qa-list">
+      <li>イエス様を信じる前と後で、あなたの人生に変わったことはありますか。</li>
+      <li>「新しく造られた者」ということばは、あなたにとってどのような意味がありますか。</li>
+      <li>救いが自分の努力ではなく贈り物であることは、なぜ大切なのでしょうか。</li>
+      <li>救いが必要だと初めて感じた瞬間はいつでしたか。</li>
+      <li>「口で告白する」ということは、あなたにとって具体的にどのような経験でしたか、あるいはどのような経験になりうるでしょうか。</li>
+      <li>この8週間、あなたの信仰がどのように成長してほしいと願っていますか。</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">共に祈りましょう</div>
+    <p>このように祈ってみましょう。<br><br>「神様、私が罪人であったことを認めます。イエス様を信じます。私を愛し、救ってくださって感謝します。これから新しいいのちを生きさせてください。」<br><br>この文章のまま読んでもよいですし、自分のことばに変えて祈ってもよいです。</p>
+  </div>
+</section>
+
+<!-- ============ 2週目 ============ -->
+<section class="week" id="week2">
+  <div class="week-head"><span class="week-badge ui">2週目</span><h2>父なる神</h2></div>
+  <p class="week-sub ui">あなたを造り、愛してくださる方</p>
+
+  <p class="lead">私たちが信じる神様は、遠くで世界を造ってただ見守っているだけの方ではありません。聖書は神様を、全世界を造られた創造主でありながら、同時に私たち一人ひとりを人格的に知り、愛してくださる「父」として紹介しています。今日は、神様がどのような方であるか、そして私たちと神様の関係がどのような関係であるかを見ていきます。</p>
+
+  <div class="block-title">神様がおられることを、どのように知ることができるでしょうか</div>
+  <p class="lead">信仰とは、目を閉じてただ盲目的に信じることではありません。私たちの周りのあちこちに、そして私たち自身の中に、神様がおられることを感じさせる痕跡があります。四つのことを一緒に考えてみましょう。</p>
+
+  <div class="verse-card">
+    <b>① 心の中にコンパスがあります。</b><br>
+    世界のどこへ行っても、人々は「嘘をつくのは悪いことだ」「弱い人を助けるべきだ」ということを知っています。誰も一つひとつ教えたわけではないのに、このような道徳感覚(良心)を誰もが持っているという事実は、その基準を最初に植え付けた方がおられるということではないでしょうか。<br><br>
+    ……律法の命じる行いが彼らの心に書き記されていることを示しており、彼らの<span class="blank">良心</span>もこれを証しし……
+    <div class="ref ui">ローマ人への手紙 2章15節</div>
+  </div>
+
+  <div class="verse-card">
+    <b>② 天が語っています。</b><br>
+    夜空の星、精巧に噛み合って動く自然の秩序を見て、「これがすべて偶然に自然にできた」ということと「誰かが造った」ということ、どちらがより筋が通った説明でしょうか。聖書は、創造の世界そのものがすでに神様を指し示していると語ります。<br><br>
+    天は神の<span class="blank">栄光</span>を語り告げ、大空は御手のわざを告げ知らせる。
+    <div class="ref ui">詩篇 19篇1節</div>
+  </div>
+
+  <div class="verse-card">
+    <b>③ 満たされない渇きがあります。</b><br>
+    どれほど多く持っても、人の心の片隅にはいつも何かもっと深いものへの渇きが残っています。聖書はその理由を、神様が人の心に「永遠を思う心」を置かれたからだと説明しています。この世のもので決して満たされないその渇きは、私たちがもともと神様に向かって造られたことの痕跡かもしれません。<br><br>
+    神はまた、人の心に<span class="blank">永遠</span>を与えられた。
+    <div class="ref ui">伝道者の書 3章11節</div>
+  </div>
+
+  <div class="verse-card">
+    <b>④ 私たちが考え、経験するすべてのことが、実はその方を指し示しています。</b><br>
+    もう一歩深く入ってみると、創造の世界や良心のような個別の「証拠」一つひとつを超えた話があります。私たちが何かを理解しようとし、真理を探し求め、美しさに感動し、「これは正しい、あれは間違っている」と判断するこのすべての能力そのものが、実はこの世界にすでにある秩序と意味を前提にしているということです。私たちはその秩序と意味を作り出したのではなく、発見しているだけです。聖書は、私たちが息をし、考え、生きているそのすべての瞬間が、すでに神様の中で行われていると語ります。私たちの考えと経験そのものが、その方を前提としてのみ成り立つという意味です。<br><br>
+    世界が創造されたときから、神の、目に見えない性質、すなわち神の永遠の力と<span class="blank">神性</span>は、造られたものを通して知られ、はっきりと認められるからです。
+    <div class="ref ui">ローマ人への手紙 1章20節</div>
+    <br>
+    私たちは神の中に生き、<span class="blank">動き</span>、存在しているのです。
+    <div class="ref ui">使徒の働き 17章28節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — この四つは、神様の存在を数式のように「証明」するものではありません。しかし、私たちが生きるこの世界、私たちの心、そして何かを考え経験するその方法そのものが指し示す方向を正直にたどっていくと、「神様がおられる」ということのほうが、はるかに筋の通った説明であることに気づかされます。
+  </div>
+
+  <div class="block-title">共に読むみことば</div>
+
+  <div class="verse-card">
+    はじめに、神が天と地を<span class="blank">創造</span>された。
+    <div class="ref ui">創世記 1章1節</div>
+  </div>
+  <div class="verse-card">
+    神は<span class="blank">愛</span>です。
+    <div class="ref ui">ヨハネの手紙第一 4章8節</div>
+  </div>
+  <div class="verse-card">
+    天にいます私たちの<span class="blank">父</span>よ、御名が聖なるものとされますように。
+    <div class="ref ui">マタイの福音書 6章9節</div>
+  </div>
+  <div class="verse-card">
+    私は<span class="blank">恐ろしいほどに不思議に</span>造られています。
+    <div class="ref ui">詩篇 139篇14節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 「父」という呼び方は、距離感ではなく親しみのことばです。神様は私たちを法廷の被告人のように扱われるのではなく、ご自分の子どものように抱いてくださいます。
+  </div>
+
+  <div class="block-title">神様はなぜ私たちに関心を持たれるのでしょうか</div>
+  <p class="lead">全宇宙を造られた方が、私一人の人生に関心を持たれるというのは、一見似つかわしくないように思えます。しかし聖書はまったく反対のことを語ります。神様は偉大な方だからこそ、かえって最も小さなことまで細やかに顧みることができる方だというのです。</p>
+
+  <div class="verse-card">
+    主は私の羊飼い。私は<span class="blank">乏しいことがありません</span>。
+    <div class="ref ui">詩篇 23篇1節</div>
+  </div>
+  <div class="verse-card">
+    あなたがたは悪い者であっても、自分の子どもには良い物を与えることを知っているのなら、天におられるあなたがたの父は、なおのこと、求める者に<span class="blank">良い物</span>を下さらないことがあるでしょうか。
+    <div class="ref ui">マタイの福音書 7章11節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 羊飼いが一匹一匹の羊の状態を確かめるように、父が子どもに必要なものを察するように、神様は私たちの人生のとても具体的な部分にまで心を配ってくださっています。
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">心を分かち合う</div>
+    <ul class="qa-list">
+      <li>良心、天、心の渇き、考えと経験そのもののうち、あなたに一番響くのはどれですか。</li>
+      <li>神様を「父」と呼ぶことは、あなたにどのような感じを与えますか。</li>
+      <li>神様があなたを造り、知っていてくださることは、人生にどのような慰めになりますか。</li>
+      <li>これまで神様について持っていた誤解はありましたか。</li>
+      <li>「羊飼い」と「父」という二つのイメージのうち、今のあなたの状況により近く感じるのはどちらですか。</li>
+      <li>神様に一番求めたい「良い物」は何ですか。</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">共に祈りましょう</div>
+    <p>このように祈ってみましょう。<br><br>「天の父よ、私を造り、いつも顧みてくださって感謝します。今日、私の心の心配と必要を父のもとにお持ちします。」<br><br>その後、今あなたの心にあることを自分のことばで父に打ち明けてみましょう。</p>
+  </div>
+</section>
+
+<!-- ============ 3週目 ============ -->
+<section class="week" id="week3">
+  <div class="week-head"><span class="week-badge ui">3週目</span><h2>イエス・キリスト</h2></div>
+  <p class="week-sub ui">あなたのために来られ、死なれ、生きておられる方</p>
+
+  <p class="lead">イエス様は優れた教師や良い人というだけの存在ではなく、神様でありながら人となって来られた方です。十字架で私たちの罪の代価を代わりに払われ、三日目によみがえられて死に打ち勝たれました。今日は、イエス様がどなたであるか、そして十字架と復活がなぜ私たちにとって決定的な出来事なのかを見ていきます。</p>
+
+  <div class="block-title">共に読むみことば</div>
+
+  <div class="verse-card">
+    ことばは人となって、私たちの間に<span class="blank">住まわれ</span>ました。私たちはその栄光を見ました。父のひとり子としての栄光です。
+    <div class="ref ui">ヨハネの福音書 1章14節</div>
+  </div>
+  <div class="verse-card">
+    しかし、私たちがまだ罪人であったとき、キリストが私たちのために<span class="blank">死んで</span>くださったことにより、神は私たちに対するご自分の愛を明らかにしておられます。
+    <div class="ref ui">ローマ人への手紙 5章8節</div>
+  </div>
+  <div class="verse-card">
+    キリストは聖書の示すとおりに私たちの罪のために死なれたこと、また聖書の示すとおりに<span class="blank">三日目</span>によみがえられたこと……
+    <div class="ref ui">コリント人への手紙第一 15章3-4節</div>
+  </div>
+  <div class="verse-card">
+    自分を低くして、<span class="blank">死にまで</span>、それも十字架の死にまで従われました。
+    <div class="ref ui">ピリピ人への手紙 2章8節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 十字架は「イエス様が理不尽に遭われた事故」ではありません。それは、私が受けるべき罰をイエス様が代わりに背負われた出来事です。そして復活は、その身代わりが無駄ではなかったことの確証です。
+  </div>
+
+  <div class="block-title">なぜイエス様だけが唯一の救い主なのでしょうか</div>
+  <p class="lead">世の中には優れた教師も、良い教えもたくさんあります。それなのに、なぜキリスト教はイエス様だけが唯一の道だと言うのでしょうか。それは、イエス様が単に良い教えを与えられた方ではなく、神でありながら同時に人となられ、私たちが決して償うことのできない罪の代価を直接支払われた唯一の方だからです。他の誰も、完全な神でありながら完全な人であることはできませんでした。</p>
+
+  <div class="verse-card">
+    イエスは彼に言われた。「わたしが<span class="blank">道</span>であり、真理であり、いのちです。わたしを通してでなければ、だれも父のみもとに行くことはできません。」
+    <div class="ref ui">ヨハネの福音書 14章6節</div>
+  </div>
+  <div class="verse-card">
+    キリストのうちには、<span class="blank">神性</span>のすべての満ち満ちたご性質が、からだとなって宿っています。
+    <div class="ref ui">コロサイ人への手紙 2章9節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 他の宗教や哲学は「このように生きなさい」という道を示すだけですが、イエス様はご自分で「わたしが道である」とおっしゃいました。方法ではなく、人格そのものなのです。
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">心を分かち合う</div>
+    <ul class="qa-list">
+      <li>イエス様が神様なのに人となって来られたということが、なぜ驚くべきことに感じられますか。</li>
+      <li>十字架でイエス様が自分の代わりに死なれたことを実感した瞬間はありましたか。</li>
+      <li>復活は、今のあなたの人生に実際どのような希望を与えますか。</li>
+      <li>「イエス様だけが唯一の道」ということばは、最初どのように感じられましたか。</li>
+      <li>イエス様を初めて知ったきっかけ、あるいは一番気になったことは何でしたか。</li>
+      <li>イエス様のどのような姿が、あなたに一番印象深く残っていますか。</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">共に祈りましょう</div>
+    <p>このように祈ってみましょう。<br><br>「イエス様、私のために来られ、十字架で死なれ、よみがえってくださって感謝します。まだよく分かりませんが、イエス様をもっと知りたいです。」<br><br>実感がわかなくても大丈夫です。素直なその気持ちのままお祈りすればよいのです。</p>
+  </div>
+</section>
+
+<!-- ============ 4週目 ============ -->
+<section class="week" id="week4">
+  <div class="week-head"><span class="week-badge ui">4週目</span><h2>聖霊様</h2></div>
+  <p class="week-sub ui">今、あなたと共に歩まれる方</p>
+
+  <p class="lead">イエス様を信じたからといって、私たちが一人残されるわけではありません。神様は聖霊様を送ってくださり、今この瞬間も私たちの内に、私たちと共におられます。聖霊様は私たちを慰め、導き、私たちの内に神様に似た性質を成長させてくださいます。今日は、聖霊様がどなたであるか、そしてその方と共に生きるとはどういうことかを見ていきます。</p>
+
+  <div class="block-title">共に読むみことば</div>
+
+  <div class="verse-card">
+    わたしは父にお願いします。そうすれば父は、もう一人の<span class="blank">助け主</span>をあなたがたにお与えになります。その方はいつまでもあなたがたと共におられます。
+    <div class="ref ui">ヨハネの福音書 14章16節</div>
+  </div>
+  <div class="verse-card">
+    しかし、御霊の実は、愛、喜び、平安、寛容、親切、善意、誠実、柔和、<span class="blank">自制</span>です。
+    <div class="ref ui">ガラテヤ人への手紙 5章22-23節</div>
+  </div>
+  <div class="verse-card">
+    聖霊があなたがたの上に臨まれるとき、あなたがたは力を受けます。そして地の果てにまで、わたしの<span class="blank">証人</span>となります。
+    <div class="ref ui">使徒の働き 1章8節</div>
+  </div>
+  <div class="verse-card">
+    同じように御霊も、私たちの弱さを助けてくださいます。……御霊ご自身が、<span class="blank">ことばにならないうめき</span>をもって、私たちのためにとりなしてくださるのです。
+    <div class="ref ui">ローマ人への手紙 8章26節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 御霊の実は、私たちが無理に作り出すものではなく、聖霊様と共に歩むときに人生に自然に結ばれる結果です。
+  </div>
+
+  <div class="block-title">聖霊様とどのように共に歩めるでしょうか</div>
+  <p class="lead">聖霊様は遠くにおられる方ではなく、信じる人の内に実際に住んでおられる方です。ですから、私たちのからだと人生全体が、聖霊様がおられる場所となります。また聖霊様は、私たちが自分では知りがたいこと――これからの道と真理を見分けることまで――導いてくださいます。</p>
+
+  <div class="verse-card">
+    あなたがたのからだは、神から受けた、あなたがたのうちにおられる聖霊の<span class="blank">宮</span>であることを知らないのですか。
+    <div class="ref ui">コリント人への手紙第一 6章19節</div>
+  </div>
+  <div class="verse-card">
+    しかし、その方、すなわち真理の御霊が来ると、あなたがたをすべての<span class="blank">真理</span>に導き入れます。
+    <div class="ref ui">ヨハネの福音書 16章13節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 自分のからだが聖霊様のおられる場所だと分かるなら、日常の小さな選択――何を見て、聞いて、話すか――も、聖霊様と共にある人生の一部となります。
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">心を分かち合う</div>
+    <ul class="qa-list">
+      <li>聖霊様が自分と共におられることを実際に感じた瞬間はありましたか。</li>
+      <li>御霊の実の中で、今のあなたの人生に一番必要なものは何ですか。</li>
+      <li>聖霊様に頼るということは、具体的にはどのように生きることでしょうか。</li>
+      <li>自分のからだが「聖霊の宮」だということばは、あなたにとってどのような意味がありますか。</li>
+      <li>大切な決断を前に、聖霊様の導きを求めた経験はありますか。</li>
+      <li>今週、聖霊様ともっと近く歩むために変えてみたい習慣はありますか。</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">共に祈りましょう</div>
+    <p>このように祈ってみましょう。<br><br>「聖霊様、私の内に住んでくださって感謝します。今週、______な部分で私を助けてください。」<br><br>空欄に今週の自分に必要なもの(忍耐、勇気、平安など)を入れて祈ってみましょう。</p>
+  </div>
+</section>
+
+<section class="video-section" id="videos-1-4">
+  <h2>参考動画</h2>
+  <p class="sub-note">これまで分かち合った神様、イエス様、聖霊様、そして神のかたちについての話を、YouTubeチャンネル「バイブルプロジェクト(BibleProject)」の動画でも短くまとめてみました。時間があるときに一緒にご覧ください。</p>
+  <div class="video-grid">
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/btWZh_moadk?start=4" title="神" allowfullscreen></iframe></div>
+      <div class="label">神</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/Vap2I3oPXu4" title="人の子イエス" allowfullscreen></iframe></div>
+      <div class="label">人の子イエス</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/FpVcnXuU4M4" title="聖霊" allowfullscreen></iframe></div>
+      <div class="label">聖霊</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/px76fFQQXQ4" title="神のかたち" allowfullscreen></iframe></div>
+      <div class="label">神のかたち</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5週目 ============ -->
+<section class="week" id="week5">
+  <div class="week-head"><span class="week-badge ui">5週目</span><h2>人間と罪</h2></div>
+  <p class="week-sub ui">私は誰であり、罪とは何か</p>
+
+  <p class="lead">聖書は人間を非常に高く評価すると同時に、非常に正直に診断しています。人は神のかたちに造られた尊い存在ですが、同時に神様を離れ、自分自身を中心にしようとした罪の問題を抱えています。罪とは単なる「悪い行動のリスト」ではなく、神様との関係が断たれた状態を意味します。今日は、聖書の目を通して自分自身を改めて見つめます。</p>
+
+  <div class="block-title">共に読むみことば</div>
+
+  <div class="verse-card">
+    神はご自分のかたちとして人を<span class="blank">創造</span>された。神のかたちとして人を創造し、男と女に彼らを創造された。
+    <div class="ref ui">創世記 1章27節</div>
+  </div>
+  <div class="verse-card">
+    すべての人は罪を犯したので、神の<span class="blank">栄光</span>を受けることができず……
+    <div class="ref ui">ローマ人への手紙 3章23節</div>
+  </div>
+  <div class="verse-card">
+    罪から来る報酬は<span class="blank">死</span>です。しかし神の賜物は、私たちの主キリスト・イエスにある<span class="blank">永遠のいのち</span>です。
+    <div class="ref ui">ローマ人への手紙 6章23節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 人は「価値のない存在」ではなく、「尊く造られたが、道に迷った存在」です。罪を認めることは自分を卑下することではなく、正直に神様のもとへ帰る第一歩です。
+  </div>
+
+  <div class="block-title">罪を認めることが、なぜ自由にするのでしょうか</div>
+  <p class="lead">私たちはよく、罪を隠したり否定したりしようとします。しかし聖書はまったく反対の道を示します。罪をありのままに認めるとき、かえってその罪から自由になる道が開かれます。隠したものはずっと私たちを縛りますが、正直に差し出したものは赦され、清められることができるからです。</p>
+
+  <div class="verse-card">
+    見よ。私は<span class="blank">咎の中に</span>生まれ、罪の中に母は私をみごもりました。
+    <div class="ref ui">詩篇 51篇5節</div>
+  </div>
+  <div class="verse-card">
+    もし私たちが自分の罪を<span class="blank">言い表す</span>なら、神は真実で正しい方ですから、その罪を赦し、すべての不義から私たちをきよめてくださいます。
+    <div class="ref ui">ヨハネの手紙第一 1章9節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — ダビデは罪を犯した後、長い間それを隠していましたが、正直に認めた後になって初めて回復を経験しました(詩篇51篇)。隠すことよりも、正直に打ち明けることが回復の始まりです。
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">心を分かち合う</div>
+    <ul class="qa-list">
+      <li>人が「神のかたち」に造られたということは、なぜ大切なのでしょうか。</li>
+      <li>罪を「悪い行動」ではなく「神様との関係の断絶」として理解すると、何が変わりますか。</li>
+      <li>話せる範囲でかまいません――今も格闘している習慣や心があれば、一緒に祈ってみましょうか。</li>
+      <li>何かを隠していたけれど、正直に打ち明けた後にかえって心が軽くなった経験はありますか。</li>
+      <li>「罪を言い表す」ということは、あなたには負担に感じられますか、それとも安心できますか。それはなぜですか。</li>
+      <li>神様の前で正直になることは、人の前で正直になることとどう違うでしょうか。</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">共に祈りましょう</div>
+    <p>このように祈ってみましょう。<br><br>「神様、私の中にある______を正直にお見せします。私を赦し、きよめてくださって感謝します。」<br><br>空欄は声に出して言いにくければ、心の中で静かに満たしても大丈夫です。</p>
+  </div>
+</section>
+
+<!-- ============ 6週目 ============ -->
+<section class="week" id="week6">
+  <div class="week-head"><span class="week-badge ui">6週目</span><h2>聖書</h2></div>
+  <p class="week-sub ui">神のことば、人生の灯火</p>
+
+  <p class="lead">聖書は、人が神様について想像して書き記した本ではなく、神様が人を通してご自身を知らせてくださったことばです。ですから聖書は昔の物語集ではなく、今日の私たちの道を照らす灯火となります。今日は、聖書がどのような書物であるか、そしてどのように読んでいけばよいかを一緒に語り合います。</p>
+
+  <div class="block-title">共に読むみことば</div>
+
+  <div class="verse-card">
+    聖書はすべて神の霊感によるもので、教えと戒めと矯正と義の訓練のために<span class="blank">益となる</span>ものです。
+    <div class="ref ui">テモテへの手紙第二 3章16節</div>
+  </div>
+  <div class="verse-card">
+    あなたのみことばは、私の足のための<span class="blank">ともしび</span>、私の道のための光です。
+    <div class="ref ui">詩篇 119篇105節</div>
+  </div>
+  <div class="verse-card">
+    神のことばは生きていて、力があり、どんな両刃の<span class="blank">剣</span>よりも鋭く……
+    <div class="ref ui">ヘブル人への手紙 4章12節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 聖書を読む目的は知識を蓄えることではなく、神様をもっと知り、今日の生活をその方に照らし合わせることです。最初は短く、毎日少しずつ読む習慣から始めるだけでも十分です。
+  </div>
+
+  <div class="block-title">聖書をどのように読めばよいでしょうか</div>
+  <p class="lead">聖書は人の考えから出た本ではなく、聖霊様が人々を通して書き記させたことばです。ですから聖書を読むということは、単に良い文章を読むことではなく、そのことばの源であるイエス様に出会うことです。初めて読むときは、創世記から順に読むのではなく、ヨハネの福音書や詩篇のような比較的理解しやすいところから始めるのもよい方法です。</p>
+
+  <div class="verse-card">
+    あなたがたは、聖書の中に<span class="blank">永遠のいのち</span>があると思って調べています。ところが、この聖書はわたしについて証ししているのです。
+    <div class="ref ui">ヨハネの福音書 5章39節</div>
+  </div>
+  <div class="verse-card">
+    預言は決して人間の意志によってもたらされたのではなく、人々が聖霊に導かれて、<span class="blank">神から</span>語ったものだからです。
+    <div class="ref ui">ペテロの手紙第二 1章21節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 聖書のすべての物語は、最終的にイエス様を指し示しています。創世記の約束、詩篇の祈り、預言書の希望が、すべてイエス様の中で成就しました。ですから聖書を読むとき、「この箇所はイエス様とどうつながっているだろうか」と問いかけることが、よい出発点になります。
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">心を分かち合う</div>
+    <ul class="qa-list">
+      <li>聖書が実際に「人生の道しるべ」になった経験はありますか。</li>
+      <li>聖書をどう読めばよいか分からず戸惑ったことはありますか。</li>
+      <li>今週から聖書をどのように読んでいくか、一緒に小さな計画を立ててみましょうか。</li>
+      <li>聖書が人の考えではなく神様のことばであることは、あなたにとってどのような違いを生みますか。</li>
+      <li>これまで読んだ聖書のことばの中で、心に残っているものはありますか。</li>
+      <li>どんな時間、どんな方法で聖書を読むのが自分に一番合っていると思いますか。</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">共に祈りましょう</div>
+    <p>このように祈ってみましょう。<br><br>「神様、みことばを通して主をもっと知りたいです。今週、みことばに近づく習慣を始められるように助けてください。」</p>
+  </div>
+</section>
+
+<!-- ============ 7週目 ============ -->
+<section class="week" id="week7">
+  <div class="week-head"><span class="week-badge ui">7週目</span><h2>教会</h2></div>
+  <p class="week-sub ui">共に成長する牧場共同体</p>
+
+  <p class="lead">信仰生活は一人で走り抜くマラソンではありません。聖書は教会を「キリストのからだ」と呼びます。それぞれの部分がつながってこそからだが正しく動くように、私たちも共同体の中でこそ本当に成長します。恵み教会では、この共同体が「牧場」と呼ばれる小さな集まりを通して具体的に形づくられています。今日は、教会とは何か、なぜ牧場が必要なのかを見ていきます。</p>
+
+  <div class="block-title">共に読むみことば</div>
+
+  <div class="verse-card">
+    あなたがたはキリストの<span class="blank">からだ</span>であり、一人ひとりはその部分です。
+    <div class="ref ui">コリント人への手紙第一 12章27節</div>
+  </div>
+  <div class="verse-card">
+    ある人々のように、集まることをやめたりせず、かえって<span class="blank">励まし合い</span>ましょう。かの日が近づいているのを見て、ますますそうしようではありませんか。
+    <div class="ref ui">ヘブル人への手紙 10章25節</div>
+  </div>
+  <div class="verse-card">
+    彼らは使徒たちの教えを守り、交わりを持ち、パンを裂き、<span class="blank">祈る</span>ことに専念していた。
+    <div class="ref ui">使徒の働き 2章42節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>恵み教会では</b> — 信徒たちが12名ほどの規模の牧場に集まり、生活を分かち合い、共にみことばの中で成長していきます。牧場を導く牧者は、この共同体が健やかに成長するのを助ける頼もしい同伴者です。
+  </div>
+
+  <div class="block-title">なぜ牧場なのでしょうか</div>
+  <p class="lead">大きな礼拝堂に共に座っているだけでは、互いの人生を知ることは難しいものです。ですから初代教会の時代から今日まで、信仰共同体はいつも、より小さな集まりを通して互いを実際に顧みてきました。牧場は、それぞれが担う賜物と役割を通して互いを建て上げ、名前を呼び合い、人生を分かち合う場です。</p>
+
+  <div class="verse-card">
+    キリストによって、からだ全体は、あらゆる節々の助けにより、しっかりと組み合わされ、結び合わされ、それぞれの部分がその分に応じて働くことにより、成長を遂げ、愛のうちに自分を<span class="blank">建て上げ</span>ているのです。
+    <div class="ref ui">エペソ人への手紙 4章16節</div>
+  </div>
+  <div class="verse-card">
+    二人か三人がわたしの<span class="blank">名</span>において集まるところには、わたしもその中にいるのです。
+    <div class="ref ui">マタイの福音書 18章20節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 牧場は完璧な人たちの集まりではなく、互いの足りなさを知りながらも、共に成長することを選んだ人たちの集まりです。ですから牧場の中では、互いに対する忍耐と愛そのものが信仰の訓練となります。
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">心を分かち合う</div>
+    <ul class="qa-list">
+      <li>一人で信仰生活を送ることと、共同体の中で信仰生活を送ることは、何が違うでしょうか。</li>
+      <li>牧場(小グループ)が、あなたにとってなぜ必要でしょうか。</li>
+      <li>教会共同体の中で期待していること、あるいは少し心配なことがあれば分かち合ってみましょうか。</li>
+      <li>これまでの人生で、「共にいてくれる人たち」のおかげで力を得た経験はありますか。</li>
+      <li>牧場の中で、あなたはどのような役割で他の人を助けられそうですか。</li>
+      <li>牧場に初めて参加するとき、一番戸惑いそう、あるいは慣れなさそうな部分は何ですか。</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">共に祈りましょう</div>
+    <p>このように祈ってみましょう。<br><br>「神様、これから出会う牧場の家族のために祈ります。良い関係の中で共に成長させてください。」</p>
+  </div>
+</section>
+
+<!-- ============ 8週目 ============ -->
+<section class="week" id="week8">
+  <div class="week-head"><span class="week-badge ui">8週目</span><h2>クリスチャンの生活</h2></div>
+  <p class="week-sub ui">新しいいのち、豊かないのち、喜びのいのち</p>
+
+  <p class="lead">1週目に、私たちは「新しいいのち」が始まったと語りました。しかしその新しいいのちはそこで止まりません。イエス様は、私たちにいのちを「もっと豊かに」与えるために来られたとおっしゃり、その豊かさは最終的に喜びへと流れていきます。今日は8週間の旅を締めくくりながら、この新しいいのちがどのように豊かないのち、喜びのいのちへとつながっていくのかを共に見ていきます。</p>
+
+  <div class="block-title">共に読むみことば</div>
+
+  <div class="verse-card">
+    盗人が来るのは、盗み、殺し、滅ぼすためでしかありません。わたしが来たのは、羊がいのちを得るため、しかも<span class="blank">豊かに</span>得るためです。
+    <div class="ref ui">ヨハネの福音書 10章10節</div>
+  </div>
+  <div class="verse-card">
+    私はキリストとともに十字架につけられました。もはや私が生きているのではなく、<span class="blank">キリスト</span>が私のうちに生きておられるのです。
+    <div class="ref ui">ガラテヤ人への手紙 2章20節</div>
+  </div>
+  <div class="verse-card">
+    わたしはぶどうの木、あなたがたは枝です。……人がわたしに<span class="blank">とどまらなければ</span>、枝のように投げ捨てられて、枯れます。
+    <div class="ref ui">ヨハネの福音書 15章5-6節</div>
+  </div>
+  <div class="verse-card">
+    主にあって<span class="blank">いつも喜んでいなさい</span>。もう一度言います。喜びなさい。
+    <div class="ref ui">ピリピ人への手紙 4章4節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 「豊かないのち」とは物が多くなる人生ではありません。キリストに根ざし、その方と共に生きる人生です。そしてそのように生きる人生には、状況を超えた喜びが伴います。
+  </div>
+
+  <div class="block-title">豊かないのちはどのように続いていくのでしょうか</div>
+  <p class="lead">豊かないのちは一度の決心で完成するのではなく、日々新しく選び取ることによって続いていきます。私たちの考えと態度がこの世のやり方ではなく神様のやり方によって絶えず新しくされるとき、そして感謝と喜びと祈りが人生のリズムとなるとき、豊かないのちは特別な出来事ではなく日常となります。</p>
+
+  <div class="verse-card">
+    この世と調子を合わせてはいけません。<span class="blank">心</span>の一新によって自分を変えていただき、神のみこころは何か……をわきまえ知りなさい。
+    <div class="ref ui">ローマ人への手紙 12章2節</div>
+  </div>
+  <div class="verse-card">
+    いつも喜んでいなさい。絶えず<span class="blank">祈り</span>なさい。すべてのことについて、感謝しなさい。これが、キリスト・イエスにあって神があなたがたに望んでおられることです。
+    <div class="ref ui">テサロニケ人への手紙第一 5章16-18節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 喜びと祈りと感謝、この三つは私たちが無理に作り出す感情ではなく、キリストに根ざした人生から自然に流れ出るリズムです。
+  </div>
+
+  <div class="block-title">豊かさを流していく生活 — 十分の一献金</div>
+  <p class="lead">豊かないのちは、受け取ることだけでは終わりません。受け取ったものを再び流していくとき、その豊かさは初めて完成します。十分の一献金とは、収入の十分の一を分けて神様にお捧げすることですが、これは神様が私たちの暮らしを苦しくしようとする要求ではなく、「私が持っているすべては、実は神様から来たものだ」ということを、からだをもって告白する訓練です。残りの十のうち九をどう使うかも、この一を捧げる心から方向が定まっていきます。</p>
+
+  <div class="verse-card">
+    <span class="blank">十分の一</span>の献げ物をすべて、宝物倉に携えて来なさい。わたしの家に食物があるように。これによって、わたしを試してみよ――万軍の主は言われる――わたしがあなたがたのために天の窓を開き、あふれるばかりの祝福を注ぐか、どうかを。
+    <div class="ref ui">マラキ書 3章10節</div>
+  </div>
+  <div class="verse-card">
+    あなたの財産と、地の実りの<span class="blank">初物</span>をもって、主をあがめよ。そうすれば、あなたの倉は満ちあふれ、あなたの搾り場は新しいぶどう酒であふれ出る。
+    <div class="ref ui">箴言 3章9-10節</div>
+  </div>
+  <div class="verse-card">
+    各自、自分の心の中で決めたとおりにしなさい。いやいやながらでなく、強いられてでもなく。神は<span class="blank">喜んで</span>与える人を愛してくださいます。
+    <div class="ref ui">コリント人への手紙第二 9章7節</div>
+  </div>
+  <div class="verse-card">
+    あなたの宝のあるところに、あなたの<span class="blank">心</span>もあるのです。
+    <div class="ref ui">マタイの福音書 6章21節</div>
+  </div>
+
+  <div class="apply-box">
+    <b>考えてみましょう</b> — 十分の一献金は神様に何かを「支払う」ことではなく、すでに受け取ったものを感謝をもってお返しすることです。ですから金額よりも大切なのは心です。最初は慣れず、負担に感じられるかもしれませんが、小さくても始めてみることをお勧めします。
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">心を分かち合う</div>
+    <ul class="qa-list">
+      <li>「豊かないのち」とは、物質的な豊かさでないとすれば何だと思いますか。</li>
+      <li>この8週間で、あなたの信仰にどのような変化がありましたか。</li>
+      <li>これから牧場(共同体)の中でどのように成長していきたいですか。</li>
+      <li>8週間の中で一番心に残っているテーマやみことばは何ですか。</li>
+      <li>自分の持っているものが神様から来たということを、日常でどのように表せるでしょうか。</li>
+      <li>これから牧者とどのような関係を続けていきたいですか。</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">共に祈りましょう</div>
+    <p>このように祈ってみましょう。<br><br>「神様、この8週間、共にいてくださって感謝します。これから始まる新しいいのち、豊かないのち、喜びのいのちを、これからも生き続けさせてください。」</p>
+  </div>
+</section>
+
+<section class="closing">
+  <h2>ここから、始まりです</h2>
+  <p>8週間の旅を共に歩んでこられました。しかしこれは到着ではなく、新しい始まりです。1週目に始まった新しいいのちは、今日からは牧場共同体の中で成長し続けていきます。これからも牧者との出会いを続けながら、みことばと祈り、そして人々との交わりの中で、豊かないのち、喜びのいのちへと進んでいかれますようお祈りします。</p>
+  <div class="sig ui">韓国バプテスト連盟 恵み教会 ・ 新しい家族 養育教材</div>
+</section>
+
+<div class="float-nav ui" id="floatNav">
+  <a href="#toc">📖 目次</a>
+  <a href="#top">⬆ 上へ</a>
+</div>
+
+<script>
+  document.querySelectorAll('.blank').forEach(el=>{
+    el.addEventListener('click',()=>{
+      el.classList.toggle('revealed');
+    });
+  });
+
+  const floatNav = document.getElementById('floatNav');
+  const introEl = document.getElementById('intro');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > introEl.offsetTop - 200){
+      floatNav.classList.add('show');
+    } else {
+      floatNav.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>
