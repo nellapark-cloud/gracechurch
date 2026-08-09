@@ -11,6 +11,7 @@ const categories = [
   { key: 'meeting_blessing', dir: 'content/meeting-blessing' },
   { key: 'bible_by_book-old', dir: 'content/bible-by-book/old-testament' },
   { key: 'bible_by_book-new', dir: 'content/bible-by-book/new-testament' },
+  { key: 'bible_by_person', dir: 'content/bible-by-person' },
   { key: 'newcomers', dir: 'content/newcomers' },
   { key: 'baptism_training', dir: 'content/baptism-training' },
   { key: 'mokjang', dir: 'content/mokjang' },
@@ -21,18 +22,6 @@ const categories = [
   { key: 'admin_forms', dir: 'content/admin-forms' },
   { key: 'officer_training', dir: 'content/servant-leaders' },
 ];
-
-function withLanguageFlag(rawName) {
-  const name = rawName.normalize('NFC');
-  // 제목 안의 글자 종류(한글/일본어 가나/중국어 한자/스페인어 특수문자·단어/영어)를 보고 언어 코드를 붙입니다.
-  if (/[\u3040-\u30ff]/.test(name)) return '(JA) ' + rawName;                    // 히라가나/가타카나 -> 일본어
-  if (/[\uac00-\ud7a3]/.test(name)) return '(KO) ' + rawName;                    // 한글 -> 한국어
-  if (/[\u4e00-\u9fff]/.test(name)) return '(ZH) ' + rawName;                    // 한자만 있음 -> 중국어
-  if (/[ñÑ¿¡áéíóúÁÉÍÓÚü]/.test(name)) return '(ES) ' + rawName;                  // 스페인어 특수문자 -> 스페인어
-  if (/\b(del|bendici[oó]n|encuentro)\b/i.test(name)) return '(ES) ' + rawName;  // 특수문자 없는 스페인어 단어 -> 스페인어
-  if (/[A-Za-z]/.test(name)) return '(EN) ' + rawName;                           // 영문 -> 영어
-  return rawName;
-}
 
 function langPriority(rawName) {
   const name = rawName.normalize('NFC');
@@ -76,7 +65,7 @@ function listDocs(dir, withFlags) {
       }
     }
     return {
-      title: withFlags ? withLanguageFlag(name) : name,
+      title: name,
       tag,
       meta: '',
       file,
