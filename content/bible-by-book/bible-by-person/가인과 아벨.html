@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>가인과 아벨</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --ink: #262220;
+    --sub: #6b6560;
+    --bg: #FBFAF7;
+    --line: #E4E0D8;
+    --accent: #9C4A2E;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  header{
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h1{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height:1.2;
+    margin-bottom: 8px;
+  }
+
+  .hebrew{
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    color: var(--sub);
+  }
+
+  .refs{
+    margin-top: 14px;
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--sub);
+    background: rgba(156,74,46,0.07);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 44px;
+    margin-bottom: 14px;
+  }
+
+  h2 .num{
+    color: var(--accent);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 8px;
+    font-size: 17px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.9;
+    color: #3a3532;
+    margin-bottom: 16px;
+  }
+
+  ul{
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+
+  li{
+    font-size: 16px;
+    line-height: 1.85;
+    color: #3a3532;
+    margin-bottom: 10px;
+  }
+
+  strong{
+    color: var(--ink);
+    font-weight: 600;
+    background: linear-gradient(to bottom, transparent 65%, rgba(156,74,46,0.08) 65%);
+  }
+
+  .note{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--sub);
+    border-left: 2px solid var(--line);
+    padding: 4px 0 4px 16px;
+    margin: 20px 0;
+  }
+
+  footer{
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: var(--sub);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding: 40px 20px 70px; }
+    h1{ font-size: 32px; }
+  }
+
+  /* --- 용어 팝업 --- */
+  .term{
+    position: relative;
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+    border-bottom: 1px dotted var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .popover{
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: 270px;
+    max-width: 78vw;
+    background: var(--ink);
+    color: #f2ede4;
+    font-family: 'Noto Serif KR', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 1.65;
+    padding: 14px 16px;
+    border-radius: 6px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    z-index: 20;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .popover .ptitle{
+    display:block;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: #d99a7c;
+    margin-bottom: 5px;
+  }
+
+  .popover::after{
+    content:"";
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+
+  .term.open .popover{ display:block; }
+
+  @media (max-width: 480px){
+    .popover{
+      position: fixed;
+      left: 5vw;
+      right: 5vw;
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      max-width: none;
+    }
+    .popover::after{ display:none; }
+    .term.open::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 19;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">성경인물묵상</div>
+    <h1>가인과 아벨</h1>
+    <div class="hebrew">קַיִן וְהֶבֶל — 첫 형제, 첫 살인</div>
+    <div class="refs">등장 성구 · 창세기 4장 · 히 11:4 · 요일 3:12 · 유 1:11</div>
+  </header>
+
+  <h2><span class="num">01</span>출생과 이름</h2>
+  <p>하와는 가인을 낳고 "내가 여호와로 말미암아 득남하였다"(4:1)고 말합니다. '가인(קַיִן)'은 '얻다, 획득하다'는 동사 '카나'와 연결되는 이름입니다. 이어 태어난 아벨의 이름 <span class="term" tabindex="0">'헤벨'<span class="popover"><span class="ptitle">헤벨 (הֶבֶל)</span>'숨, 안개, 증기, 헛됨'을 뜻하는 히브리어. 전도서에서 반복되는 "헛되고 헛되도다"의 그 단어("헤벨 하바림")와 동일한 단어다. 손에 잡히지 않고 금방 사라지는 것을 가리키며, 아벨이라는 인물의 짧은 생애를 이름 자체가 예고하는 셈이다.</span></span>(הֶבֶל)은 '숨, 안개, 헛됨'을 뜻하는데 — 태어날 때부터 이름에 삶의 덧없음이 예고된 셈입니다.</p>
+
+  <h2><span class="num">02</span>직업과 제사</h2>
+  <p>가인은 농사짓는 자, 아벨은 양 치는 자가 됩니다. 시간이 지나 둘 다 하나님께 <span class="term" tabindex="0">제물<span class="popover"><span class="ptitle">제물 (민하, מִנְחָה)</span>본문에서 쓰인 히브리어 '민하'는 원래 곡식 제물이든 짐승 제물이든 포괄적으로 쓸 수 있는 일반적인 '예물, 공물'이라는 단어다. 나중에 레위기에서는 곡식 소제를 가리키는 전문 용어로 좁혀진다. 즉 이 시점에서 가인의 곡물 제물 자체가 문제였다고 단정하기는 어렵다.</span></span>을 드립니다. 가인은 땅의 소산을, 아벨은 양의 첫 새끼와 그 기름을 드립니다. 하나님은 아벨과 그의 제물은 받으시고, 가인과 그의 제물은 받지 않으십니다.</p>
+  <p>본문은 그 이유를 명시하지 않습니다. 다만 아벨의 예물이 "첫 새끼와 그 기름"이라고 구체적으로 서술되는 반면 가인의 예물은 "땅의 소산"이라고만 서술되는 표현의 차이에 주목해, 정성이나 최선의 것을 드렸는지 여부가 관건이었다고 보는 해석이 많습니다. 히브리서 11:4도 아벨의 제사를 "믿음으로" 드린 것이라 평가하며 이 해석을 뒷받침합니다.</p>
+
+  <h2><span class="num">03</span>하나님의 경고</h2>
+  <p>가인이 분하여 안색이 변하자, 하나님은 그에게 직접 경고하십니다. "네가 선을 행하면 어찌 낯을 들지 못하겠느냐 선을 행하지 아니하면 죄가 문에 엎드리느니라 죄가 너를 원하나 너는 죄를 다스릴지니라"(4:6-7). 이는 성경 전체에서 '죄'라는 단어가 명사로 처음 등장하는 대목이기도 합니다. 죄는 마치 문 앞에 웅크린 짐승처럼 묘사되며, 인간에게는 그것을 다스릴 책임과 가능성이 함께 주어집니다 — 즉 가인의 살인은 피할 수 없는 운명이 아니라 경고 이후에 선택된 행동이라는 뜻입니다.</p>
+
+  <h2><span class="num">04</span>살인과 심문</h2>
+  <p>가인은 아벨을 들로 유인해 죽입니다. 성경 최초의 살인이자 최초의 형제 살해입니다. 하나님이 "네 아우 아벨이 어디 있느냐" 물으시자 가인은 "내가 알지 못하나이다 내가 내 아우를 지키는 자니이까"라고 답합니다. 이 대사는 이후 성경 전체에서 이웃에 대한 책임을 묻는 질문으로 반복 인용된다.</p>
+  <p>하나님은 "네 아우의 핏소리가 땅에서부터 내게 호소하느니라"고 말씀하시는데, 여기서 '호소하다(차아크)'는 억울하게 죽은 자의 부르짖음을 나타내는 강한 동사로, 이후 출애굽기에서 이스라엘 백성이 억압 속에서 하나님께 부르짖을 때도 같은 어근이 쓰입니다.</p>
+
+  <h2><span class="num">05</span>형벌과 가인의 표</h2>
+  <p>가인은 땅에서 저주를 받아 다시는 땅이 그 효력을 내지 않게 되고, 정처 없이 떠도는 자가 됩니다. 가인이 "내 죄벌이 지기가 너무 무거우니이다"라며 자신을 죽이려는 자들을 두려워하자, 하나님은 오히려 그를 보호하기 위해 <span class="term" tabindex="0">가인의 표<span class="popover"><span class="ptitle">가인의 표 (Mark of Cain)</span>창세기 4:15에서 하나님이 가인에게 주신 표식으로, "그를 만나는 모든 사람에게 죽임을 면하게" 하기 위한 보호 장치였다. 본문은 표의 형태를 구체적으로 밝히지 않는다. 후대 역사에서 이 구절이 특정 인종이나 집단을 저주받은 존재로 낙인찍는 데 오용된 사례가 있으나, 이는 본문의 원래 의도와는 무관한 왜곡된 해석이다.</span></span>를 주십니다. 처벌 속에서도 생명을 보존하시는 이 조치는, 심판과 자비가 동시에 작동하는 하나님의 성품을 보여주는 대목으로 자주 언급됩니다.</p>
+
+  <h2><span class="num">06</span>신학적 의미</h2>
+  <p>가인과 아벨 이야기는 아담의 불신이 다음 세대에서 어떻게 폭력으로 확대되는지를 보여줍니다. 동시에 죄를 "다스릴 수 있는 것"으로 제시함으로써, 인간에게 도덕적 책임과 선택의 여지가 있음을 분명히 합니다. 요한일서 3:12은 가인을 "악한 자에게 속하여" 형제를 죽인 자로 언급하며 대조적으로 형제 사랑을 권면하고, 유다서 1:11은 그를 부정적 모범으로 인용합니다.</p>
+
+  <p class="note">다음엔 홍수 이전 가인의 후손들(문명의 시작)을 살펴보거나, 셋의 계보로 넘어가 노아까지 이어볼 수 있다.</p>
+
+  <footer>
+    <span>GENESIS STUDY</span>
+    <span>קין והבל</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.term').forEach(term => {
+    term.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = term.classList.contains('open');
+      document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+      if (!wasOpen) term.classList.add('open');
+    });
+    term.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); term.click(); }
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+  });
+</script>
+</body>
+</html>
