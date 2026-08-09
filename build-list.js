@@ -11,7 +11,7 @@ const categories = [
   { key: 'meeting_blessing', dir: 'content/meeting-blessing' },
   { key: 'bible_by_book-old', dir: 'content/bible-by-book/old-testament' },
   { key: 'bible_by_book-new', dir: 'content/bible-by-book/new-testament' },
-  { key: 'bible_by_person', dir: 'content/bible-by-person' },
+  { key: 'bible_by_person', dir: 'content/bible-by-book/bible-by-person' },
   { key: 'newcomers', dir: 'content/newcomers' },
   { key: 'baptism_training', dir: 'content/baptism-training' },
   { key: 'mokjang', dir: 'content/mokjang' },
