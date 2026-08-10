@@ -1,0 +1,2645 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사무엘하 — 은혜교회 성경공부 시리즈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf5ee;
+  --cream-deep:#f0e0c9;
+  --navy:#47141f;
+  --navy-soft:#6b2430;
+  --gold:#b8860b;
+  --gold-soft:#d4a52e;
+  --ink:#2c1015;
+  --ink-soft:#6b4a4f;
+  --line:#e8d3b8;
+  --white:#ffffff;
+}
+
+*{ box-sizing: border-box; }
+html, body{ margin:0; padding:0; }
+body{
+  background: var(--white);
+  color: var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 15.5px;
+  line-height: 1.75;
+  -webkit-text-size-adjust: 100%;
+}
+b, strong{ font-weight:700; }
+img{ max-width:100%; }
+
+/* ===== COVER — 책마다 다른 톤의 그라데이션 + 펄 효과 ===== */
+.cover{
+  min-height: 50vh;
+  background:
+    radial-gradient(circle at 22% 18%, rgba(212,165,46,0.26), transparent 52%),
+    radial-gradient(circle at 84% 24%, rgba(184,134,11,0.20), transparent 50%),
+    radial-gradient(circle at 62% 88%, rgba(212,165,46,0.14), transparent 55%),
+    linear-gradient(150deg, #26090f 0%, #47141f 32%, #6b2430 60%, #1c0509 100%);
+  color: var(--white);
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center;
+  padding: 7vh 7vw;
+}
+.cover .eyebrow{
+  font-size: 12px; letter-spacing:0.28em; color: var(--gold-soft);
+  font-weight:700; text-transform:uppercase; margin-bottom:20px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 34px; font-weight:700; margin:0 0 12px; letter-spacing:-0.01em;
+}
+.cover .cover-sub{ font-size:14px; color:#d8c6ac; margin-bottom:20px; }
+.cover .cover-line{ width:48px; height:2px; background:var(--gold-soft); margin:0 auto 22px; }
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:13px; color:var(--gold-soft); letter-spacing:0.05em;
+}
+.cover .cover-note{ margin-top:24px; font-size:12px; color:#a89a82; }
+
+/* ===== INTRO ===== */
+.intro-page{ padding: 10vw 6vw 6vw; max-width:640px; margin:0 auto; }
+.page-label{ font-size:11px; letter-spacing:0.2em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+.intro-page h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:26px; color:var(--navy); font-weight:700; margin:0 0 14px; }
+.intro-page .intro-lead{ font-size:15px; color:var(--ink-soft); margin-bottom:28px; line-height:1.7; }
+.intro-block{ margin-bottom:24px; }
+.intro-block h3{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:16px; color:var(--navy-soft); font-weight:700; margin:0 0 8px; padding-left:10px; border-left:3px solid var(--gold-soft); }
+.intro-block p{ margin:0 0 8px; text-align:left; word-break:keep-all; }
+.intro-block b{ color:var(--navy-soft); }
+.intro-outline{ display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+.oi{ background:var(--cream); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+.oi-tag{ font-family:"Noto Serif CJK KR",serif; font-size:12px; color:var(--gold); font-weight:700; margin-bottom:4px; }
+.oi-title{ font-weight:700; color:var(--navy); font-size:15px; margin-bottom:4px; }
+.oi-body{ font-size:13px; color:var(--ink-soft); line-height:1.6; }
+
+/* ===== TOC ===== */
+.toc-page{ padding: 8vw 6vw; max-width:640px; margin:0 auto; }
+.toc-page h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:24px; color:var(--navy); font-weight:700; margin:0 0 18px; }
+.toc-list{ display:flex; flex-direction:column; }
+.toc-item{
+  display:flex; align-items:baseline; gap:10px; text-decoration:none; color:var(--ink);
+  padding:12px 4px; border-bottom:1px solid var(--line); cursor:pointer;
+}
+.toc-num{ font-family:"Noto Serif CJK KR",serif; font-size:14px; font-weight:700; color:var(--gold); width:24px; flex-shrink:0; }
+.toc-text{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.toc-title{ font-family:"Noto Serif CJK KR",serif; font-size:15px; font-weight:600; color:var(--navy); }
+.toc-sub{ font-size:12px; color:var(--ink-soft); }
+
+/* ===== CHAPTER ===== */
+.chapter{ padding: 9vw 6vw 4vw; max-width:640px; margin:0 auto; }
+.chapter-head{ margin-bottom:22px; padding-bottom:16px; border-bottom:2px solid var(--navy); display:flex; align-items:flex-start; gap:12px; }
+.chapter-icon-badge{ flex-shrink:0; width:42px; height:42px; border-radius:50%; background:var(--navy); color:var(--gold-soft); display:flex; align-items:center; justify-content:center; }
+.chapter-icon-badge .chapter-icon{ width:58%; height:58%; }
+.chapter-head-text{ flex:1; min-width:0; }
+.chapter-eyebrow{ font-size:11px; letter-spacing:0.18em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:6px; }
+.chapter-head h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:21px; font-weight:700; color:var(--navy); margin:0 0 6px; }
+.chapter-head .chapter-sub{ font-size:13px; color:var(--ink-soft); line-height:1.5; }
+.chapter-head .ref-strip{ display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.chapter-head .ref-item{ font-size:11px; color:var(--navy-soft); padding:3px 10px; background:var(--cream-deep); border-radius:10px; }
+
+section.sub{ margin-bottom:26px; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:8px; }
+.sec-num{ font-family:"Noto Serif CJK KR",serif; font-size:12px; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:17px; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:12.5px; margin:0 0 12px; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{ display:flex; flex-direction:column; gap:6px; padding:12px 0; border-top:1px solid var(--line); }
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR",serif; font-size:12px; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:15px; }
+.flow-body{ color:var(--ink); font-size:14px; line-height:1.75; text-align:left; word-break:keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap:10px; }
+.teach-card{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft); border-radius:6px; padding:14px 15px; }
+.teach-title{ font-family:"Noto Serif CJK KR",serif; font-size:14.5px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.teach-body{ font-size:13.5px; color:var(--ink); text-align:left; word-break:keep-all; line-height:1.7; }
+
+.speech-bubble{ display:flex; gap:12px; align-items:flex-start; background:var(--cream-deep); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:20px 0 8px; }
+.speech-bubble .sb-avatar{ width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--navy); color:var(--gold-soft); display:flex; align-items:center; justify-content:center; font-size:15px; }
+.speech-bubble .sb-text{ font-size:13.5px; color:var(--navy-soft); line-height:1.7; }
+
+.deep-wrap{ background:var(--navy); border-radius:12px; padding:20px 18px; margin-top:10px; }
+.deep-wrap .sec-num{ color:var(--gold-soft); }
+.deep-wrap h2{ color:var(--white); }
+.deep-wrap .sec-desc{ color:#c4b7a2; }
+.deep-item{ padding:14px 0; border-top:1px solid rgba(255,255,255,0.14); }
+.deep-item:first-of-type{ margin-top:6px; }
+.deep-num{ display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border:1px solid var(--gold-soft); color:var(--gold-soft); border-radius:50%; font-size:12px; font-weight:700; margin-right:8px; flex-shrink:0; }
+.deep-title{ display:flex; align-items:center; font-family:"Noto Serif CJK KR",serif; font-size:14.5px; font-weight:700; color:var(--white); margin-bottom:8px; }
+.deep-body{ font-size:13.5px; color:#e2d6c2; padding-left:30px; text-align:left; word-break:keep-all; line-height:1.75; }
+.deep-body b{ color:var(--gold-soft); font-weight:600; }
+
+/* ===== HIGHLIGHT SYSTEM ===== */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background:#f1dfba; color:#7a5220; padding:1px 4px; border-radius:3px; font-weight:700;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background:#f2dcd3; color:#9a4632; padding:1px 4px; border-radius:3px; font-weight:700;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background:#d7ebe6; color:#235f56; padding:1px 4px; border-radius:3px; font-weight:700;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.deep-body b.hl-term, .hinge-note b.hl-term{ background:rgba(216,176,115,0.28); color:#f3dfb8; padding:1px 4px; border-radius:3px; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.deep-body b.hl-quote{ background:rgba(224,122,105,0.26); color:#f0b8a8; padding:1px 4px; border-radius:3px; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.deep-body b.hl-greek{ background:rgba(110,196,188,0.26); color:#a9e6dd; padding:1px 4px; border-radius:3px; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background:#d7ebf7; color:#1c5f85; padding:1px 4px; border-radius:3px; font-weight:700;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.deep-body b.hl-insight{ background:rgba(120,190,230,0.28); color:#bfe3f8; padding:1px 4px; border-radius:3px; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+b.has-insight{ cursor:pointer; }
+b.has-insight:after{ content:"\25C6"; font-size:0.55em; margin-left:2px; vertical-align:super; opacity:0.85; }
+b.has-tip{ cursor:pointer; }
+b.has-tip:after{ content:"\24D8"; font-size:0.65em; margin-left:2px; vertical-align:super; opacity:0.75; }
+
+/* ===== TERM TOOLTIP ===== */
+#termTip{
+  display:none; position:absolute; z-index:500; max-width:280px;
+  background:var(--white); color:var(--ink); font-size:13px; line-height:1.65;
+  padding:12px 15px; border-radius:10px; border-top:4px solid var(--gold);
+  box-shadow:0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip .tip-close{ position:absolute; top:6px; right:9px; width:20px; height:20px; border-radius:50%; background:var(--cream-deep); display:flex; align-items:center; justify-content:center; color:var(--navy-soft); font-size:12px; cursor:pointer; }
+
+/* ===== INSIGHT POPUP ===== */
+#insightOverlay{ display:none; position:fixed; inset:0; z-index:800; background:rgba(20,16,10,0.6); align-items:center; justify-content:center; padding:20px; }
+#insightOverlay.open{ display:flex; }
+#insightCard{ background:var(--white); max-width:460px; width:100%; max-height:80vh; overflow-y:auto; border-radius:16px; padding:24px 22px 20px; box-shadow:0 20px 60px rgba(0,0,0,0.4); position:relative; border-top:5px solid #4fa3d1; }
+#insightCard .insight-close{ position:absolute; top:14px; right:16px; width:28px; height:28px; border-radius:50%; background:var(--cream-deep); display:flex; align-items:center; justify-content:center; color:var(--navy-soft); font-size:14px; cursor:pointer; }
+#insightCard .insight-eyebrow{ font-size:11px; letter-spacing:0.14em; color:#4fa3d1; font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+#insightCard h3{ font-family:"Noto Serif CJK KR","Noto Serif KR",serif; font-size:16.5px; color:var(--navy); font-weight:700; margin:0 0 12px; line-height:1.5; }
+#insightCard .insight-body{ font-size:13.5px; color:var(--ink); line-height:1.8; white-space:pre-line; }
+
+/* ===== FLOATING NAV — 플로팅만, 하단 정적 버튼 없음 ===== */
+.floating-nav{
+  position:fixed; right:14px; bottom:16px; z-index:400;
+  display:flex; flex-direction:column; gap:8px; align-items:flex-end;
+}
+.floating-nav button{
+  display:flex; align-items:center; gap:6px; font-family:inherit;
+  background:var(--navy); color:var(--gold-soft); border:1px solid var(--gold-soft);
+  border-radius:24px; padding:10px 15px; font-size:12.5px; font-weight:600;
+  box-shadow:0 4px 16px rgba(0,0,0,0.3); cursor:pointer;
+}
+.floating-nav button:active{ transform:scale(0.96); }
+.floating-nav .fn-icon{ font-size:13px; }
+
+/* ===== FOOTER / BRANDING ===== */
+.book-footer{ max-width:640px; margin:0 auto; padding:8vw 6vw 16vw; text-align:center; }
+.book-footer .ff-line{ width:40px; height:2px; background:var(--gold-soft); margin:0 auto 16px; }
+.book-footer .ff-org{ font-size:12px; letter-spacing:0.12em; color:var(--ink-soft); }
+
+@media print{
+  .flow-body, .teach-body, .intro-block p, .sb-text, .deep-body{ text-align: justify; }
+  .floating-nav{ display:none; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">&#10005;</div><div class="insight-eyebrow">&#128172; 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="floating-nav">
+  <button onclick="goTo(event,'toc')"><span class="fn-icon">&#128214;</span>목차 가기</button>
+  <button onclick="goTo(event,'top')"><span class="fn-icon">&#8593;</span>처음으로</button>
+  <button onclick="goBackHomeSafe()"><span class="fn-icon">&#127968;</span>자료실로 가기</button>
+</div>
+
+<div class="cover">
+  <div class="eyebrow">은혜교회 성경공부 시리즈 · 2 SAMUEL</div>
+  <h1>사무엘하</h1>
+  <div class="cover-sub">통일 왕국의 영광, 그리고 그 영광에 드리운 그림자</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">삼하 1:1 – 24:25</span>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 24장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>사무엘하 전체 서론</h1>
+  <p class="intro-lead">기름부음의 성취에서 왕좌의 그림자까지 — 다윗 왕조의 영광과 대가.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>사무엘하는 사무엘상과 원래 히브리어 정경에서 한 권이었으며, 저자는 명시되지 않으나 선지자 나단과 갓의 기록이 자료로 사용되었을 것으로 여겨진다(대상 29:29). 다윗 왕조가 이미 확립된 이후의 관점에서, 그 왕조의 기원과 정당성뿐 아니라 그 이면의 인간적 실패까지 정직하게 조명하기 위해 편집되었다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>역사적 배경</h3>
+    <p>사울의 죽음 직후부터 다윗 통치 말년까지, 대략 <b class="hl-term">주전 1010~970년경</b>을 다룬다. 지파 연합체였던 이스라엘이 예루살렘을 수도로 한 중앙집권적 통일 왕국으로 완성되어가는 시기이며, 다윗 왕조에 대한 하나님의 언약이 선포되는 결정적 전환점이기도 하다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문체적 특징과 구조</h3>
+    <p>사무엘하는 뚜렷하게 두 부분으로 나뉜다. 1~10장은 <b class="hl-term">다윗의 상승</b> — 왕국 통일, 예루살렘 정복, 언약궤 이송, 다윗 언약(7장)이라는 절정으로 이어지는 영광의 서사이며, 11~24장은 <b class="hl-term">다윗의 하강</b> — 밧세바 사건(11-12장)을 기점으로 암논과 다말, 압살롬의 반역, 왕국의 내분으로 이어지는 대가의 서사다. 이 극명한 전환이 책 전체의 문학적·신학적 구조를 이룬다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p>사무엘하의 중심에는 <b class="hl-term">다윗 언약</b>(7장) — "네 집과 네 나라가 내 앞에 영원히 보전되고"라는 무조건적 은혜의 약속이 자리한다. 그러나 책은 곧이어 다윗 자신의 심각한 죄(11-12장)와 그로 인한 가정과 왕국의 균열을 가감 없이 기록함으로써, 하나님의 언약적 신실하심이 인간의 실패에도 불구하고 지속된다는 것과, 동시에 죄에는 반드시 실제적 대가가 따른다는 것을 함께 증언한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 원어 배경과 해석사적 논쟁 등 함께 씨름할 가치가 있는 지점들을 다룬다.</p>
+  </div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-text">
+        <span class="toc-title">사울과 요나단을 위한 애가</span>
+        <span class="toc-sub">아말렉 청년의 거짓 보고, 처형, "두 용사가 엎드러졌도다"</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-text">
+        <span class="toc-title">다윗이 유다의 왕이 되다</span>
+        <span class="toc-sub">헤브론에서의 즉위, 이스보셋의 대립 왕국, 내전의 시작</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-text">
+        <span class="toc-title">아브넬과 요압의 갈등</span>
+        <span class="toc-sub">아브넬의 귀순 시도, 요압의 암살, 다윗의 애도</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-text">
+        <span class="toc-title">이스보셋의 암살</span>
+        <span class="toc-sub">왕조의 붕괴, 배신자들의 최후, 므비보셋의 등장</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-text">
+        <span class="toc-title">온 이스라엘의 왕이 되다</span>
+        <span class="toc-sub">이스라엘 장로들의 기름부음, 예루살렘 정복, 블레셋 격퇴</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-text">
+        <span class="toc-title">언약궤를 예루살렘으로</span>
+        <span class="toc-sub">웃사의 죽음, 미갈의 경멸, 다윗의 춤</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch7')" onkeydown="if(event.key==='Enter')goTo(event,'ch7')">
+      <span class="toc-num">07</span>
+      <span class="toc-text">
+        <span class="toc-title">다윗 언약</span>
+        <span class="toc-sub">성전을 짓고자 하는 열망, 나단의 신탁, 영원한 왕조의 약속</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch8')" onkeydown="if(event.key==='Enter')goTo(event,'ch8')">
+      <span class="toc-num">08</span>
+      <span class="toc-text">
+        <span class="toc-title">다윗의 정복 전쟁들</span>
+        <span class="toc-sub">블레셋, 모압, 아람, 에돔의 정복, 공의와 정의의 통치</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch9')" onkeydown="if(event.key==='Enter')goTo(event,'ch9')">
+      <span class="toc-num">09</span>
+      <span class="toc-text">
+        <span class="toc-title">므비보셋에게 은총을 베풀다</span>
+        <span class="toc-sub">요나단과의 언약을 기억하다, 왕의 상에 앉은 다리 저는 자</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch10')" onkeydown="if(event.key==='Enter')goTo(event,'ch10')">
+      <span class="toc-num">10</span>
+      <span class="toc-text">
+        <span class="toc-title">암몬과 아람 전쟁</span>
+        <span class="toc-sub">모욕당한 사절단, 동맹군의 결집, 요압과 아비새의 형제 전략</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch11')" onkeydown="if(event.key==='Enter')goTo(event,'ch11')">
+      <span class="toc-num">11</span>
+      <span class="toc-text">
+        <span class="toc-title">밧세바와 우리아</span>
+        <span class="toc-sub">다윗의 큰 죄, 은폐 시도, 우리아의 죽음</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch12')" onkeydown="if(event.key==='Enter')goTo(event,'ch12')">
+      <span class="toc-num">12</span>
+      <span class="toc-text">
+        <span class="toc-title">나단의 책망과 회개</span>
+        <span class="toc-sub">"당신이 그 사람이라", 아이의 죽음, 솔로몬의 출생</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch13')" onkeydown="if(event.key==='Enter')goTo(event,'ch13')">
+      <span class="toc-num">13</span>
+      <span class="toc-text">
+        <span class="toc-title">암논과 다말, 압살롬의 복수</span>
+        <span class="toc-sub">왕가 내부의 비극, 침묵 속의 분노, 계획된 살인</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch14')" onkeydown="if(event.key==='Enter')goTo(event,'ch14')">
+      <span class="toc-num">14</span>
+      <span class="toc-text">
+        <span class="toc-title">압살롬의 귀환</span>
+        <span class="toc-sub">요압의 중재, 드고아 여인의 비유, 불완전한 화해</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch15')" onkeydown="if(event.key==='Enter')goTo(event,'ch15')">
+      <span class="toc-num">15</span>
+      <span class="toc-text">
+        <span class="toc-title">압살롬의 반역</span>
+        <span class="toc-sub">민심을 훔치다, 헤브론에서의 봉기, 다윗의 도피</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch16')" onkeydown="if(event.key==='Enter')goTo(event,'ch16')">
+      <span class="toc-num">16</span>
+      <span class="toc-text">
+        <span class="toc-title">다윗의 도피 중 시므이의 저주</span>
+        <span class="toc-sub">시바의 계략, 시므이의 돌팔매와 저주, 압살롬의 오판</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch17')" onkeydown="if(event.key==='Enter')goTo(event,'ch17')">
+      <span class="toc-num">17</span>
+      <span class="toc-text">
+        <span class="toc-title">아히도벨과 후새의 모략 대결</span>
+        <span class="toc-sub">지혜의 충돌, 후새의 설득, 아히도벨의 자살</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch18')" onkeydown="if(event.key==='Enter')goTo(event,'ch18')">
+      <span class="toc-num">18</span>
+      <span class="toc-text">
+        <span class="toc-title">압살롬의 죽음</span>
+        <span class="toc-sub">에브라임 수풀의 전투, 상수리나무에 걸린 머리카락, 다윗의 통곡</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch19')" onkeydown="if(event.key==='Enter')goTo(event,'ch19')">
+      <span class="toc-num">19</span>
+      <span class="toc-text">
+        <span class="toc-title">다윗의 왕권 회복</span>
+        <span class="toc-sub">요압의 직언, 슬픔을 딛고 일어서다, 예루살렘 귀환</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch20')" onkeydown="if(event.key==='Enter')goTo(event,'ch20')">
+      <span class="toc-num">20</span>
+      <span class="toc-text">
+        <span class="toc-title">세바의 반란</span>
+        <span class="toc-sub">"우리는 다윗과 나눌 분깃이 없도다", 지혜로운 여인의 중재</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch21')" onkeydown="if(event.key==='Enter')goTo(event,'ch21')">
+      <span class="toc-num">21</span>
+      <span class="toc-text">
+        <span class="toc-title">기브온의 보복과 다윗의 용사들</span>
+        <span class="toc-sub">삼 년 기근, 사울 자손들의 처형, 용사들의 무용담</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch22')" onkeydown="if(event.key==='Enter')goTo(event,'ch22')">
+      <span class="toc-num">22</span>
+      <span class="toc-text">
+        <span class="toc-title">다윗의 노래</span>
+        <span class="toc-sub">구원의 반석, 승리의 감사, 시편 18편과의 병행</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch23')" onkeydown="if(event.key==='Enter')goTo(event,'ch23')">
+      <span class="toc-num">23</span>
+      <span class="toc-text">
+        <span class="toc-title">다윗의 마지막 말과 용사들</span>
+        <span class="toc-sub">고별시, 삼십칠 용사의 명단, 물 세 사람의 헌신</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch24')" onkeydown="if(event.key==='Enter')goTo(event,'ch24')">
+      <span class="toc-num">24</span>
+      <span class="toc-text">
+        <span class="toc-title">인구조사와 아라우나의 타작마당</span>
+        <span class="toc-sub">다윗의 실책, 온역, 값을 치르고 드리는 예배</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 1</div>
+      <h1>1장 · 사울과 요나단을 위한 애가</h1>
+      <div class="chapter-sub">아말렉 청년의 거짓 보고, 처형, "두 용사가 엎드러졌도다"</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 1:1-27</span><span class="ref-item">다윗의 애가</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-16절</div>
+        <div>
+          <div class="flow-title">거짓 보고와 처형</div>
+          <div class="flow-body">사울이 죽은 지 사흘 만에 한 아말렉 청년이 다윗에게 와서 자신이 사울을 죽였다고 거짓으로 주장하며 그의 왕관과 팔찌를 가져온다. 다윗은 <b class="hl-quote">"네가 어찌하여 손을 들어 여호와의 기름 부으신 자를 죽이기를 두려워하지 아니하였느냐"</b>며 그를 처형하게 한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">17-27절</div>
+        <div>
+          <div class="flow-title">"두 용사가 엎드러졌도다"</div>
+          <div class="flow-body">다윗은 사울과 요나단을 위해 <b class="hl-term">활 노래</b>라는 애가를 지어 유다 족속에게 가르치라 명한다. 그는 <b class="hl-quote">"이스라엘아 네 영광이 산 위에서 죽임을 당하였도다 오호라 두 용사가 엎드러졌도다"</b>라 애통하며, 특별히 요나단에 대해서는 <b class="hl-quote">"내 형 요나단이여 내가 그대를 애통함은 그대는 내게 심히 아름다움이라 그대가 나를 사랑함이 기이하여 여인의 사랑보다 더하였도다"</b>라 고백한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 원수의 죽음 앞에서도 지켜지는 원칙</div>
+        <div class="teach-body">다윗은 자신을 오랫동안 쫓던 사울의 죽음 소식에도 기뻐하지 않고, 오히려 그를 죽였다 주장하는 자를 처형한다. 그의 원칙(기름부음 받은 자를 존중함)은 상황이 유리해져도 흔들리지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 거짓으로 환심을 사려는 시도는 실패한다</div>
+        <div class="teach-body">아말렉 청년은 다윗에게 잘 보이려 거짓 공로를 꾸며냈지만, 오히려 이것이 그의 죽음을 부른다. 진실하지 않은 아첨은 결국 스스로를 해친다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 슬픔을 있는 그대로 표현하는 것의 건강함</div>
+        <div class="teach-body">다윗은 자신을 죽이려 했던 사울에 대해서도 깊이 애통해한다. 복잡하고 상반된 감정(고통과 존중)을 모두 인정하는 것이 억누르는 것보다 건강한 애도다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 우정에 대한 정직한 고백</div>
+        <div class="teach-body">요나단을 향한 다윗의 애가는 그들의 우정이 얼마나 깊었는지를 숨김없이 드러낸다. 진실한 관계에 대한 감사와 그리움을 공개적으로 표현하는 것은 부끄러운 일이 아니다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 공동체적 기억으로 남기는 애도</div>
+        <div class="teach-body">다윗은 이 애가를 유다 족속 전체에게 가르치라 명한다. 개인적 슬픔을 공동체의 기억으로 승화시켜, 사울과 요나단의 희생이 잊히지 않게 한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">아말렉 청년의 거짓말이 참 안타까워요. 다윗의 마음을 얻고 싶었겠지만, 그는 다윗이 어떤 원칙을 지켜온 사람인지 전혀 몰랐던 거죠. 진실하지 않은 지름길은 결국 스스로를 해쳐요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>아말렉 청년의 증언은 사무엘상 31장의 기록과 어떻게 다른가?</div>
+        <div class="deep-body">사무엘상 31:4-5는 사울이 스스로 자기 칼 위에 엎드러져 죽었다고 명확히 기록하지만, 이 청년은 자신이 사울을 죽였다고 주장한다. 이는 청년이 시신 곁에서 왕관과 팔찌를 취한 것을 기회 삼아 다윗에게 공로를 인정받고 보상을 얻으려 거짓말을 지어낸 것으로 이해되며, 그의 거짓 증언이 오히려 자신의 처형을 자초하는 아이러니로 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"활 노래"라 불리는 이 애가는 왜 "야살의 책"에 기록되었다고 언급되는가?</div>
+        <div class="deep-body">18절은 이 노래가 "야살의 책"에 기록되어 있다고 전한다. 이는 성경에 직접 포함되지 않은 별도의 고대 문헌으로, 여호수아 10:13에도 동일한 문헌이 언급된다. 이런 외부 문헌 인용은 고대 이스라엘에 구전과 기록으로 전승되던 전쟁 영웅시 전통이 실제로 존재했으며, 성경 저자들이 이런 자료를 선별적으로 인용해 정경 본문을 구성했음을 보여주는 흥미로운 증거로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 2</div>
+      <h1>2장 · 다윗이 유다의 왕이 되다</h1>
+      <div class="chapter-sub">헤브론에서의 즉위, 이스보셋의 대립 왕국, 내전의 시작</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 2:1-32</span><span class="ref-item">분열된 왕국의 시작</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-7절</div>
+        <div>
+          <div class="flow-title">헤브론에서 유다의 왕이 되다</div>
+          <div class="flow-body">다윗이 여호와께 물어 헤브론으로 올라가니, 유다 사람들이 그에게 기름을 부어 <b class="hl-term">유다 족속의 왕</b>으로 삼는다. 다윗은 사울의 시체를 거두었던 야베스길르앗 사람들에게 감사를 전한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8-11절</div>
+        <div>
+          <div class="flow-title">이스보셋의 대립 왕국</div>
+          <div class="flow-body">사울의 군대장관 <b class="hl-insight has-insight" data-insight="0">아브넬</b>이 사울의 아들 <b class="hl-term">이스보셋</b>을 마하나임에서 이스라엘 왕으로 세우니, 이스라엘은 두 왕국으로 나뉘어 대립하게 된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12-32절</div>
+        <div>
+          <div class="flow-title">기브온 못가의 전투와 아사헬의 죽음</div>
+          <div class="flow-body">아브넬의 군대와 다윗의 군대장관 <b class="hl-term">요압</b>의 군대가 기브온 못가에서 맞붙는데, 처음엔 열두 명씩 대결하다 전면전으로 번진다. 요압의 동생 <b class="hl-term">아사헬</b>이 아브넬을 집요하게 추격하다 결국 그의 창에 찔려 죽으니, 이는 훗날 요압의 복수(3장)의 원인이 된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 왕이 되고도 여전히 하나님께 묻는 겸손</div>
+        <div class="teach-body">이미 오래전 기름부음을 받았음에도 다윗은 헤브론으로 올라가기 전 다시 여호와께 묻는다. 확정된 소명 안에서도 매 단계마다 하나님의 인도하심을 구하는 습관이 이어진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 은혜를 기억하고 갚는 지도력</div>
+        <div class="teach-body">다윗은 사울의 시신을 거둔 야베스길르앗 사람들에게 감사를 전한다. 지나간 신실함을 기억하고 인정하는 것이 좋은 지도자의 자질이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 왕국의 분열은 오랜 상처를 남긴다</div>
+        <div class="teach-body">다윗이 왕이 된 순간에도 온 이스라엘이 즉시 그를 받아들인 것은 아니었다. 하나님의 계획이 성취되는 과정에도 인간적 저항과 시간이 수반될 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 사적인 복수심이 공적인 비극의 씨앗이 된다</div>
+        <div class="teach-body">아사헬의 죽음은 정당방위에 가까운 전투 중 사건이었지만, 이는 이후 요압의 개인적 복수(3장)로 이어져 더 큰 정치적 비극을 낳는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 내전의 참혹함은 승자에게도 그림자를 남긴다</div>
+        <div class="teach-body">동족 간의 이 전투는 다윗이 원했던 것이 아니었다. 그의 왕권이 확립되어가는 과정 자체가 순탄하지만은 않았다는 현실이 드러난다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다윗이 왕이 되고서도 야베스길르앗 사람들에게 먼저 감사를 전하는 모습이 좋아요. 큰 자리에 올라서도 작은 은혜를 잊지 않는 마음, 그게 진짜 성숙한 지도력인 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"열두 명씩 대결"이라는 전투 방식은 어떤 의미가 있었을까?</div>
+        <div class="deep-body">요압과 아브넬이 시작한 이 소규모 대결(2:14-16)은 이후 전면전으로 확대되는데, 학자들은 이것이 고대 근동의 대표 전사 결투 관습(다윗과 골리앗의 대결과 유사)의 변형일 수 있다고 본다. 그러나 이번에는 어느 한쪽의 명확한 승리로 끝나지 않고 양측 모두에 사상자를 내며 전면전으로 확대되었다는 점에서, 그 장소가 훗날 "헬갓 하수림"(칼날의 밭)이라 불리게 되었다는 사실이 이 비극의 무게를 상징적으로 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>아사헬의 죽음 장면에서 아브넬이 그를 여러 번 만류한 것은 어떤 의미가 있는가?</div>
+        <div class="deep-body">아브넬은 아사헬에게 "너는 어찌하여 나를 따라오느냐 다른 데로 가서 소년 하나를 붙잡아 그 군복을 빼앗지 아니하느냐"며 여러 차례 그를 살려주려 시도한다(2:21-22). 이는 아브넬이 불필요한 살상을 원하지 않았음을 보여주며, 그가 창 뒤 끝으로 아사헬을 찌른 것(2:23, 정면이 아닌 방식)도 그를 죽이려는 의도보다는 필사적인 자기방어였을 가능성을 시사한다. 그럼에도 이 죽음은 이후 요압의 복수를 정당화하는 근거가 되지 못하는데, 이는 3장에서 다윗이 요압의 행위를 강하게 책망하는 것으로 확인된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 3</div>
+      <h1>3장 · 아브넬과 요압의 갈등</h1>
+      <div class="chapter-sub">아브넬의 귀순 시도, 요압의 암살, 다윗의 애도</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 3:1-39</span><span class="ref-item">아브넬의 죽음</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-21절</div>
+        <div>
+          <div class="flow-title">아브넬의 귀순 협상</div>
+          <div class="flow-body">이스보셋과 아브넬 사이에 다툼이 생기자, 아브넬은 다윗에게 사자를 보내 <b class="hl-quote">"이 땅이 누구의 것이니이까... 내 손으로 왕과 언약하게 하소서 그리하시면 내가 왕을 위하여 온 이스라엘이 돌아오게 하리이다"</b>라 제안하고, 다윗은 이를 받아들여 잔치를 베풀고 그를 평안히 돌려보낸다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">22-30절</div>
+        <div>
+          <div class="flow-title">요압의 복수와 암살</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="1">요압</b>이 돌아와 이 사실을 알고 다윗 몰래 아브넬을 다시 불러들여, 자기 동생 아사헬의 죽음에 대한 복수로 그를 배 속을 찔러 죽인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">31-39절</div>
+        <div>
+          <div class="flow-title">다윗의 애도와 결백 선언</div>
+          <div class="flow-body">다윗은 크게 슬퍼하며 아브넬을 위해 애곡하고 <b class="hl-quote">"오늘 이스라엘에 왕자와 대인이 죽었도다... 내가 기름 부음을 받은 왕이 되었으나 오늘 약하고 스루야의 아들들은 나보다 강하니 여호와는 악행한 자에게 그 악한 대로 갚으시기를 원하노라"</b>라 백성 앞에서 자신의 결백을 밝힌다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 정치적 화해도 진실한 애도로 뒷받침될 수 있다</div>
+        <div class="teach-body">다윗은 왕국 통일이라는 정치적 목표를 위해 아브넬과 협상했지만, 그의 죽음 앞에서 보인 슬픔은 단순한 정략을 넘어선 진심이었다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 개인적 복수심은 공동체 전체의 화해를 위협한다</div>
+        <div class="teach-body">요압의 사적 복수는 다윗이 어렵게 성사시킨 왕국 통일의 기회를 심각하게 훼손할 뻔했다. 다뤄지지 않은 개인적 원한이 공동체적 선을 파괴할 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 권력자도 자신이 통제할 수 없는 부하를 가질 수 있다</div>
+        <div class="teach-body">다윗은 왕이었음에도 요압의 행동을 사전에 막지 못했다. 이는 권위 있는 자리에 있어도 모든 사람을 완전히 통제할 수는 없는 현실적 한계를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 공개적으로 결백을 밝히는 지도력</div>
+        <div class="teach-body">다윗은 백성들의 오해를 피하기 위해 공개적으로 애곡하며 자신의 무고함을 밝힌다. 투명하게 진실을 밝히는 것이 신뢰를 지키는 지도력의 중요한 부분이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 정의를 하나님께 맡기는 반복된 원칙</div>
+        <div class="teach-body">다윗은 요압을 즉시 처벌하지 못하는 상황에서도 "여호와는 악행한 자에게 그 악한 대로 갚으시기를 원하노라"며 궁극적 심판을 하나님께 맡긴다. 이는 사울을 대하던 그의 원칙(24, 26장)과 일관된 태도다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다윗이 '오늘 나는 약하다'고 고백하는 장면이 인상 깊어요. 왕이라는 자리에 있으면서도 자신의 한계를 솔직히 인정하는 것, 그게 오히려 그의 진실함을 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>다윗은 왜 요압을 즉시 처벌하지 않았을까?</div>
+        <div class="deep-body">본문은 명시적 이유를 밝히지 않지만, 다윗 자신이 3:39에서 "스루야의 아들들은 나보다 강하니"라고 고백하는 것으로 보아, 요압과 그의 형제들(아비새 등)이 군사적으로 다윗의 통제를 넘어서는 실질적 권력을 지니고 있었을 가능성이 제기된다. 이는 다윗이 왕이었음에도 정치적 현실 앞에서 완전한 권한을 행사하지 못했던 복잡한 상황을 보여주며, 이 미해결된 문제는 훗날 다윗의 임종 유언(왕상 2:5-6)에서 다시 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>아브넬이 다윗에게 귀순하려 한 진짜 동기는 무엇이었을까?</div>
+        <div class="deep-body">표면적으로는 이스보셋과의 다툼(사울의 첩 리스바 문제, 3:7-8)이 계기였지만, 이는 아브넬이 이미 다윗 쪽으로 기울고 있던 정치적 계산의 촉매였을 가능성이 크다. 사무엘하 3:17-18은 아브넬이 이미 이스라엘 장로들과 물밑에서 다윗 지지를 논의하고 있었음을 보여주며, 이는 그의 귀순이 순간적 감정이 아니라 신중한 정치적 판단의 결과였음을 시사한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 4</div>
+      <h1>4장 · 이스보셋의 암살</h1>
+      <div class="chapter-sub">왕조의 붕괴, 배신자들의 최후, 므비보셋의 등장</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 4:1-12</span><span class="ref-item">이스보셋의 죽음</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-8절</div>
+        <div>
+          <div class="flow-title">이스보셋의 암살</div>
+          <div class="flow-body">아브넬의 죽음으로 손이 약해진 이스보셋의 부하 <b class="hl-term">바아나와 레갑</b> 두 사람이 낮에 그가 침상에서 쉬는 틈을 타 배를 찔러 죽이고 그 머리를 베어 다윗에게 가져가 상을 기대한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5-8절</div>
+        <div>
+          <div class="flow-title">"보소서 원수의 머리이니이다"</div>
+          <div class="flow-body">그들은 <b class="hl-quote">"왕의 생명을 해하려 하던 원수 사울의 아들 이스보셋의 머리가 여기 있나이다... 여호와께서 오늘 우리 주 되신 왕의 원수를 사울과 그의 자손에게 갚으셨나이다"</b>라 자랑스럽게 고한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9-12절</div>
+        <div>
+          <div class="flow-title">다윗의 처형</div>
+          <div class="flow-body">다윗은 아말렉 청년을 처형했던 것과 동일한 원칙으로 <b class="hl-quote">"내 생명을 여러 환난에서 구원하신 여호와께서 살아 계심을 두고 맹세하노니... 하물며 악인이 의인을 그 집 침상 위에서 죽인 것이겠느냐"</b>며 그들을 처형하고 시신을 헤브론 못가에 매달게 한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 왕의 자리를 향한 야망은 배신을 정당화하지 않는다</div>
+        <div class="teach-body">바아나와 레갑은 자신들의 행위를 다윗에 대한 충성으로 포장했지만, 이는 정당한 전투가 아니라 무방비한 상태의 인물을 살해한 비겁한 암살이었다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 잔혹한 행위는 보상이 아니라 심판을 부른다</div>
+        <div class="teach-body">이들은 상을 기대했지만 오히려 처형당한다. 부당한 방법으로 얻은 이익을 향한 계산은 결국 빗나간다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 일관된 도덕 원칙이 지도자의 권위를 세운다</div>
+        <div class="teach-body">다윗이 사울, 아말렉 청년, 그리고 이제 이스보셋의 암살자들에게까지 동일한 원칙(부당하게 흘린 피에 대한 심판)을 적용하는 것은, 그의 도덕적 일관성이 단순한 정치적 편의가 아님을 증명한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 무고한 피는 결국 드러난다</div>
+        <div class="teach-body">이스보셋은 사울 가문의 마지막 남은 왕좌의 상속자였지만, 침상에서 무방비하게 살해당한다. 이 부당함은 다윗의 즉각적인 처벌을 통해 정의롭게 다뤄진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 권력 공백기의 위험성</div>
+        <div class="teach-body">아브넬이라는 실질적 지지 기반을 잃은 이스보셋의 왕국은 급속히 붕괴한다. 강력한 지지 기반이 사라진 지도자는 내부의 배신에 취약해질 수 있다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다윗이 이 살인자들에게도 이전과 똑같은 원칙을 적용하는 모습을 보면서, 그의 정의감이 상황에 따라 바뀌는 게 아니라 정말 일관된 신념이었다는 걸 다시 확인하게 돼요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이스보셋 왕조의 붕괴는 어떤 신학적 의미를 지니는가?</div>
+        <div class="deep-body">이스보셋의 이름은 원래 '에스바알'(바알의 사람)이었을 가능성이 역대상 8:33, 9:39의 이문(異文)을 통해 제기되는데, 이는 사울 가문 내에서도 이미 우상숭배적 요소가 있었을 가능성을 시사한다. 그의 왕조가 짧고 불안정하게 끝난 것은, 15장에서 이미 선언된 사울 왕조에 대한 하나님의 심판(왕위가 다윗에게로 옮겨감)이 사울 자신의 죽음 이후에도 그 아들 대에서까지 계속 성취되고 있음을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>다윗이 배신자들의 시신을 헤브론 못가에 '매달게' 한 것은 어떤 의미가 있는가?</div>
+        <div class="deep-body">이는 공개적으로 그들의 죄를 드러내고 경고하는 고대의 관습으로, 신명기 21:22-23의 규정(나무에 달린 시체는 그 날에 장사해야 함)과 관련하여 이해된다. 동시에 그들의 손발을 자르고 못가에 매단 행위(4:12)는 살인이라는 범죄에 상응하는 공개적 처벌을 통해, 다윗이 무고한 피 흘림에 대해 결코 관대하지 않다는 메시지를 온 이스라엘에 분명히 전달하려는 의도로 해석된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 5</div>
+      <h1>5장 · 온 이스라엘의 왕이 되다</h1>
+      <div class="chapter-sub">이스라엘 장로들의 기름부음, 예루살렘 정복, 블레셋 격퇴</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 5:1-25</span><span class="ref-item">다윗의 통일 왕국</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-5절</div>
+        <div>
+          <div class="flow-title">온 이스라엘의 왕으로</div>
+          <div class="flow-body">이스라엘 모든 지파가 헤브론에 모여 다윗에게 <b class="hl-quote">"우리는 왕의 한 골육이니이다... 여호와께서도 왕에게 이르시기를 네가 내 백성 이스라엘의 목자가 되며 이스라엘의 주권자가 되리라 하셨나이다"</b>라 고백하며 그에게 기름을 부어 온 이스라엘의 왕으로 삼으니, 그는 삼십 세에 왕이 되어 사십 년을 다스린다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6-16절</div>
+        <div>
+          <div class="flow-title">예루살렘 정복</div>
+          <div class="flow-body">다윗이 <b class="hl-term">여부스 족속</b>이 차지하고 있던 예루살렘을 정복하여 다윗성이라 부르고 그곳을 수도로 삼는다. 두로 왕 히람이 백향목과 목수, 석수를 보내 다윗의 왕궁을 짓는 것을 돕는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">17-25절</div>
+        <div>
+          <div class="flow-title">블레셋의 두 차례 격퇴</div>
+          <div class="flow-body">블레셋이 다윗이 왕이 되었다는 소식에 그를 잡으러 올라오나, 다윗이 여호와께 묻고 나아가 두 차례 모두 크게 승리한다. 두 번째 전투에서는 <b class="hl-term">"뽕나무 꼭대기에서 걷는 소리"</b>가 들리거든 곧 공격하라는 구체적인 신적 지시를 따른다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 오랜 기다림 끝에 완성되는 부르심</div>
+        <div class="teach-body">16장에서 기름부음을 받은 지 약 15년 만에 다윗은 마침내 온 이스라엘의 왕이 된다. 하나님의 약속은 더디게 느껴져도 반드시 성취된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 상징적 수도의 전략적 선택</div>
+        <div class="teach-body">예루살렘은 유다와 이스라엘 어느 지파에도 속하지 않던 중립적 위치에 있었다. 다윗은 지혜롭게 이곳을 수도로 택하여 남과 북 모두를 아우르는 통합의 상징으로 삼는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 왕이 되어서도 계속되는 자문의 습관</div>
+        <div class="teach-body">다윗은 왕이 된 후에도 전쟁마다 여호와께 묻는 습관을 이어간다. 지위가 높아질수록 오히려 더 신중하게 하나님의 인도를 구하는 태도가 필요하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 동일한 상황에도 매번 새롭게 묻는 지혜</div>
+        <div class="teach-body">두 번째 블레셋 전투에서 다윗은 이전과 같은 방식으로 싸우지 않고 다시 하나님께 묻는다. 과거의 성공 공식을 무비판적으로 반복하지 않는 겸손한 분별력이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 국제적 협력을 통한 왕국의 번영</div>
+        <div class="teach-body">두로 왕 히람의 도움은 다윗의 왕국이 고립된 것이 아니라 주변 나라들과의 관계 속에서 번영해갔음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">16장에서 기름부음 받은 소년 다윗이 이제 온 이스라엘의 왕이 되기까지, 정말 긴 시간이 걸렸어요. 하나님의 약속은 더딘 것 같아도 결국 신실하게 이루어진다는 걸 다윗의 인생이 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"뽕나무 꼭대기에서 걷는 소리"라는 신호는 어떤 의미가 있었을까?</div>
+        <div class="deep-body">이는 하나님이 이미 블레셋 군대를 향해 앞서 나아가고 계신다는 초자연적 신호로 해석된다(5:24, "그때에 여호와께서 너보다 앞서 나아가서 블레셋 군대를 치리라"). 이는 사무엘상 7장 미스바 전투에서의 우렛소리, 14장 요나단의 믹마스 습격에서의 혼란과 같이, 이스라엘의 전쟁에서 반복적으로 나타나는 '하나님이 먼저 싸우신다'는 신학적 주제의 연장선에 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>예루살렘 정복 기사(5:6-9)에서 '맹인과 다리 저는 자'에 대한 언급은 어떤 의미인가?</div>
+        <div class="deep-body">여부스 족속이 예루살렘 성이 너무 견고하여 '맹인과 다리 저는 자도 너를 물리치리라'며 다윗을 조롱한 것으로 보이는 이 난해한 구절은 여러 해석이 있다. 일부는 이를 성벽의 견고함에 대한 과장된 조롱으로, 다른 이들은 우상 숭배와 관련된 저주 의식으로 이해한다. 정확한 의미는 불확실하지만, 다윗이 이 견고해 보이는 성을 결국 함락시켰다는 사실 자체가 이 장의 핵심 메시지로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 6</div>
+      <h1>6장 · 언약궤를 예루살렘으로</h1>
+      <div class="chapter-sub">웃사의 죽음, 미갈의 경멸, 다윗의 춤</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 6:1-23</span><span class="ref-item">언약궤의 예루살렘 입성</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-11절</div>
+        <div>
+          <div class="flow-title">웃사의 죽음</div>
+          <div class="flow-body">다윗이 언약궤를 새 수레에 실어 예루살렘으로 옮기던 중, 소들이 날뛰어 궤가 흔들리자 <b class="hl-insight has-insight" data-insight="2">웃사</b>가 손을 내밀어 궤를 붙들었다가 여호와의 진노로 그 자리에서 죽는다. 두려워진 다윗은 궤를 예루살렘으로 옮기기를 멈추고 오벧에돔의 집에 석 달간 두게 한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12-15절</div>
+        <div>
+          <div class="flow-title">온전한 절차로 다시 옮기다</div>
+          <div class="flow-body">오벧에돔의 집에 복이 임했다는 소식을 듣고 다윗은 크게 기뻐하며 궤를 다윗성으로 옮기는데, 이번에는 여섯 걸음마다 소와 살진 짐승으로 제사를 드리며 다윗이 온 힘을 다해 춤추며 예루살렘으로 들어온다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16-23절</div>
+        <div>
+          <div class="flow-title">미갈의 경멸과 다윗의 응답</div>
+          <div class="flow-body">사울의 딸 미갈이 창으로 이 광경을 보고 다윗이 왕으로서의 위엄 없이 춤추는 것을 마음속으로 업신여긴다. 다윗은 <b class="hl-quote">"이는 여호와 앞에서 한 것이니라... 내가 스스로 낮아지더라도 내가 내 눈에는 높아지리라"</b>라 응답하고, 미갈은 죽는 날까지 자식이 없었다고 기록된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 좋은 의도가 잘못된 절차의 문제를 해결하지 못한다</div>
+        <div class="teach-body">다윗의 언약궤 이송은 선한 열심에서 시작되었지만, 하나님이 정하신 방식(레위인이 어깨에 메는 것)을 따르지 않았다. 열심과 순종은 별개의 문제일 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 실패 후 다시 시도하는 겸손</div>
+        <div class="teach-body">다윗은 첫 시도의 실패에 낙심하여 포기하지 않고, 무엇이 잘못되었는지 성찰한 후 올바른 방식으로 다시 시도한다. 실패는 끝이 아니라 배움의 기회가 될 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 위엄보다 예배의 진정성을 택한 왕</div>
+        <div class="teach-body">다윗은 왕의 체면보다 하나님 앞에서의 진실한 기쁨의 표현을 선택한다. 참된 예배는 종종 사회적 체면을 내려놓는 것을 요구한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 타인의 예배를 판단하는 것의 위험성</div>
+        <div class="teach-body">미갈은 다윗의 열정적 예배를 왕답지 못한 행동으로 폄하한다. 다른 사람의 진실한 예배의 형태를 자신의 기준으로 재단하는 것은 위험할 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 거룩한 것 앞에서의 경외심은 형식을 넘어선다</div>
+        <div class="teach-body">웃사의 죽음과 다윗의 열정적 춤은 언뜻 모순되어 보이지만, 둘 다 하나님의 거룩하심에 대한 합당한 반응이 무엇인지를 다른 각도에서 보여준다 — 하나는 존엄에 대한 경외, 다른 하나는 은혜에 대한 기쁨.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다윗이 '내가 스스로 낮아지더라도 내 눈에는 높아지리라'고 응답하는 장면이 참 좋아요. 사람들의 시선보다 하나님 앞에서의 진실함을 택하는 그 자유로움이 부러워요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>웃사의 죽음은 정당한 심판이었는가, 지나치게 가혹했는가?</div>
+        <div class="deep-body">이는 오랜 신학적 논쟁거리다. 웃사 개인의 관점에서는 궤가 땅에 떨어지는 것을 막으려는 선의의 반사적 행동이었다. 그러나 성경의 관점에서 핵심은 웃사 개인의 동기가 아니라,애초에 하나님이 명확히 규정하신 운반 방식(레위인이 어깨에 메는 것, 민 4:15, 7:9)을 무시하고 블레셋식 수레 운반(삼상 6장에서 이방인들이 사용했던 방식)을 그대로 답습한 절차 전체의 불경건함에 있다는 것이 지배적 해석이다. 이는 거룩한 것을 인간의 편의나 관습대로 다루는 것의 위험성을 경고하는 사건으로 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>미갈이 죽는 날까지 자식이 없었다는 것은 저주였을까, 단순한 서술이었을까?</div>
+        <div class="deep-body">본문은 이를 명시적으로 저주라 하지 않지만, 문맥상 다윗과 미갈 사이의 관계 단절(그녀의 경멸에 대한 다윗의 응답 직후 이 서술이 이어짐)을 암시하는 것으로 흔히 해석된다. 이는 왕의 후사를 이을 자녀가 사울 가문의 혈통(미갈)을 통해서는 태어나지 않게 됨으로써, 다윗 왕조의 정통성이 온전히 다윗 자신의 계열을 통해서만 이어지게 되는 신학적·정치적 함의를 지니는 것으로도 논의된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 7</div>
+      <h1>7장 · 다윗 언약</h1>
+      <div class="chapter-sub">성전을 짓고자 하는 열망, 나단의 신탁, 영원한 왕조의 약속</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 7:1-29</span><span class="ref-item">다윗 언약</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-3절</div>
+        <div>
+          <div class="flow-title">성전을 짓고자 하는 다윗의 열망</div>
+          <div class="flow-body">여호와께서 다윗에게 사방의 원수들로부터 평온을 주시자, 다윗은 나단 선지자에게 <b class="hl-quote">"볼지어다 나는 백향목 궁에 살거늘 하나님의 궤는 휘장 가운데에 있도다"</b>라 말하며 성전 건축의 열망을 밝히고, 나단은 처음엔 "여호와께서 왕과 함께 계시니 가서 마음에 있는 모든 것을 행하소서"라 답한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4-17절</div>
+        <div>
+          <div class="flow-title">나단의 신탁 — 뒤바뀐 약속</div>
+          <div class="flow-body">그러나 그날 밤 여호와께서 나단에게 임하여 <b class="hl-insight has-insight" data-insight="3">뜻밖의 신탁</b>을 주신다. 하나님은 다윗이 집을 지어드리는 대신, 오히려 <b class="hl-quote">"여호와가 너를 위하여 집을 짓고... 네 집과 네 나라가 내 앞에 영원히 보전되고 네 왕위가 영원히 견고하리라"</b>고 약속하시며, 성전 건축은 그의 아들(솔로몬)의 몫으로 남겨두신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">18-29절</div>
+        <div>
+          <div class="flow-title">다윗의 감사 기도</div>
+          <div class="flow-body">다윗은 여호와 앞에 나아가 앉아 <b class="hl-quote">"주 여호와여 나는 누구이오며 내 집은 무엇이기에 나를 여기까지 이르게 하셨나이까"</b>라 겸손히 감사하며, 이 언약이 영원히 지켜지기를 간구한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 선한 열망도 하나님의 때와 방법을 따라야 한다</div>
+        <div class="teach-body">다윗의 성전 건축 열망은 진실했지만, 하나님은 그것을 다음 세대(솔로몬)의 몫으로 정하신다. 좋은 의도라도 하나님의 계획과 시간표를 앞서갈 수는 없다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 우리가 드리려는 것보다 크신 하나님의 주심</div>
+        <div class="teach-body">다윗이 하나님께 집을 지어드리려 했을 때, 하나님은 오히려 그에게 영원한 집(왕조)을 지어주겠다 응답하신다. 인간의 헌신은 늘 하나님의 더 큰 은혜로 되돌아온다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 조건 없는 은혜의 언약</div>
+        <div class="teach-body">다윗 언약은 후손의 범죄에도 불구하고 완전히 취소되지 않는 은혜의 언약으로 제시된다. 이는 인간의 신실함이 아니라 하나님의 신실하심에 기초한 관계의 모델을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 선지자도 성급한 답변을 재고할 수 있어야 한다</div>
+        <div class="teach-body">나단은 처음에 자신의 판단으로 다윗의 계획을 승인했지만, 하나님의 말씀을 받은 후 그것을 정정한다. 진정한 선지자적 사역은 자신의 첫 생각에 집착하지 않고 하나님의 뜻에 열려 있는 것이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 큰 은혜 앞에서의 겸손한 자기 인식</div>
+        <div class="teach-body">"나는 누구이오며 내 집은 무엇이기에"라는 다윗의 반응은, 큰 약속을 받을 때일수록 오히려 자신의 작음을 깊이 인식하는 겸손이 필요함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다윗이 하나님께 집을 지어드리려 했는데, 오히려 하나님이 그에게 집을 지어주겠다 하시는 이 반전이 참 은혜로워요. 우리가 드리려는 것보다 하나님이 주시려는 것이 언제나 더 크다는 걸 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>다윗 언약은 신약에서 어떻게 성취되는 것으로 이해되는가?</div>
+        <div class="deep-body">"네 왕위가 영원히 견고하리라"는 약속은 인간 왕조의 관점에서는 바벨론 포로기(주전 586년)에 다윗 왕조의 정치적 통치가 끝나며 위기에 처하는 것처럼 보인다. 그러나 신약은 이 약속이 예수 그리스도를 통해 궁극적으로 성취된다고 선언한다 — 누가복음 1:32-33은 천사가 마리아에게 예수에 대해 "주 하나님께서 그 조상 다윗의 왕위를 그에게 주시리니... 그 나라가 무궁하리라"고 전하는 장면에서 이 언약을 직접 반향한다. 이는 다윗 언약이 사무엘하 7장에서 신약 전체를 관통하는 메시아 신학의 핵심 뿌리가 됨을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"그가 만일 죄를 범하면 내가 사람의 매와 인생의 채찍으로 징계하려니와 내 은총을 그에게서 빼앗지 아니하리라"(7:14-15)는 구절은 무엇을 의미하는가?</div>
+        <div class="deep-body">이는 다윗의 후손들이 범죄할 경우 징계는 있을지언정, 사울에게 일어났던 것과 같은 완전한 왕위 박탈(언약 자체의 파기)은 없을 것이라는 약속이다. 이 구절은 다윗 왕조를 향한 하나님의 언약이 사울에게 주어졌던 조건적 왕위와 근본적으로 다른, 은혜에 기초한 무조건적 언약임을 명시하는 핵심 구절로 신학적으로 매우 중요하게 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 8</div>
+      <h1>8장 · 다윗의 정복 전쟁들</h1>
+      <div class="chapter-sub">블레셋, 모압, 아람, 에돔의 정복, 공의와 정의의 통치</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 8:1-18</span><span class="ref-item">다윗의 군사적 확장</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-14절</div>
+        <div>
+          <div class="flow-title">사방으로 확장되는 다윗의 왕국</div>
+          <div class="flow-body">다윗은 블레셋을 쳐서 굴복시키고, 모압을 쳐서 조공을 바치게 하며, 아람과 에돔까지 정복하여 조공국으로 삼는다. <b class="hl-term">"다윗이 어디를 가든지 여호와께서 이기게 하시니라"</b>는 반복되는 후렴구가 이 장 전체의 신학적 요약이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15-18절</div>
+        <div>
+          <div class="flow-title">공의와 정의의 통치 체계</div>
+          <div class="flow-body">다윗이 온 이스라엘을 다스리며 <b class="hl-quote">"모든 백성에게 정의와 공의를 행할새"</b>, 요압은 군대장관, 여호사밧은 사관, 사독과 아히멜렉은 제사장, 스라야는 서기관으로 삼는 등 안정된 행정 체제를 갖춘다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 승리의 궁극적 원천은 하나님이시다</div>
+        <div class="teach-body">"여호와께서 이기게 하시니라"는 반복되는 표현은, 다윗의 군사적 성공이 그의 개인적 능력이 아니라 하나님의 은혜였음을 명확히 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 확장된 권력은 정의로운 통치의 책임을 동반한다</div>
+        <div class="teach-body">다윗은 영토를 확장하는 동시에 '정의와 공의'를 행하는 통치 체제를 세운다. 권력의 확대는 그만큼 더 큰 도덕적 책임을 요구한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 안정된 행정 체계가 지속 가능한 통치를 뒷받침한다</div>
+        <div class="teach-body">군대장관, 사관, 제사장, 서기관 등 명확한 역할 분담은 한 사람의 카리스마에만 의존하지 않는 지속 가능한 통치 구조를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 조공을 받되 백성 위에 군림하지 않는 균형</div>
+        <div class="teach-body">다윗은 주변국들을 정복했지만 본문은 이를 착취보다 안정적 질서 확립의 맥락에서 서술한다. 힘의 사용에도 절제와 목적이 필요함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 언약의 성취로서의 확장</div>
+        <div class="teach-body">이 장의 정복들은 7장에서 약속된 '영원한 왕위'가 실제 역사 속에서 구체적으로 확장되어가는 모습을 보여준다. 하나님의 약속은 추상적 선언에 머물지 않고 실제 삶으로 나타난다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장에서 계속 반복되는 '여호와께서 이기게 하시니라'는 문구가 인상적이에요. 다윗의 화려한 정복의 역사 뒤에서도, 성경은 계속 그 공로를 하나님께 돌리고 있어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>다윗의 정복 전쟁은 어떻게 신학적으로 정당화되는가?</div>
+        <div class="deep-body">이 장의 정복들은 이스라엘의 국경을 확장하고 주변 위협 세력(블레셋, 아람 등)을 제압하는 방어적·안정화 성격이 강조된다. 다윗이 모압 포로 중 '두 줄'을 죽이고 '한 줄'을 살린 것(8:2) 같은 세부 묘사는 현대 윤리 기준으로는 논쟁적이지만, 고대 근동 전쟁 관습의 맥락에서 이해될 필요가 있다. 이 장 전체의 신학적 강조점은 정복의 잔혹함 자체보다 '여호와께서 이기게 하셨다'는 반복된 후렴구를 통해 하나님이 다윗과 함께하셨다는 사실에 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"다윗이 정의와 공의를 행할새"라는 요약적 진술은 이후 다윗의 삶과 어떻게 대조되는가?</div>
+        <div class="deep-body">이 요약은 다윗 통치의 이상적 절정을 보여주지만, 바로 다음 장들(특히 11-12장의 밧세바 사건)에서 다윗 자신이 정의와 공의를 심각하게 저버리는 모습이 드러난다는 점에서 날카로운 문학적 대조를 이룬다. 이는 사무엘하가 다윗을 완벽한 이상적 왕으로 그리지 않고, 위대함과 심각한 결함이 공존하는 현실적 인물로 묘사하고 있음을 보여주는 구조적 장치로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch9">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 9</div>
+      <h1>9장 · 므비보셋에게 은총을 베풀다</h1>
+      <div class="chapter-sub">요나단과의 언약을 기억하다, 왕의 상에 앉은 다리 저는 자</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 9:1-13</span><span class="ref-item">언약의 성취</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-8절</div>
+        <div>
+          <div class="flow-title">요나단과의 언약을 기억하다</div>
+          <div class="flow-body">다윗은 <b class="hl-quote">"사울의 집에 아직도 남은 사람이 있느냐 내가 요나단으로 말미암아 그에게 은총을 베풀리라"</b>라 물어, 사울의 종이었던 시바를 통해 요나단의 아들 <b class="hl-insight has-insight" data-insight="4">므비보셋</b>이 로데발에 살아있음을 알게 된다. 다윗 앞에 불려온 그는 두려워 엎드리나, 다윗은 <b class="hl-term">"두려워하지 말라 내가 반드시 네 아버지 요나단으로 말미암아 네게 은총을 베풀리라"</b>며 안심시킨다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9-13절</div>
+        <div>
+          <div class="flow-title">왕의 상에서 늘 함께 먹다</div>
+          <div class="flow-body">다윗은 사울의 모든 토지를 므비보셋에게 돌려주고, 시바와 그의 가족들에게 그 땅을 경작하게 하며, 므비보셋 자신은 <b class="hl-term">"항상 왕의 상에서 먹으므로"</b> 마치 왕의 아들 중 하나처럼 예루살렘에서 지내게 된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 언약은 세대를 넘어 신실하게 지켜져야 한다</div>
+        <div class="teach-body">다윗은 이미 세상을 떠난 요나단과의 오래된 언약을 잊지 않고 그의 아들을 통해 그것을 성취한다. 참된 신실함은 시간이 지나도 희미해지지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 권력자가 취할 수 있었던 다른 선택과의 대조</div>
+        <div class="teach-body">고대 왕조 교체기에 이전 왕가의 후손은 흔히 위협으로 간주되어 제거되었다. 다윗의 선택은 이런 정치적 관행을 거스르는, 언약에 근거한 파격적인 은혜였다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 자격 없는 자에게 베풀어지는 은혜의 그림</div>
+        <div class="teach-body">므비보셋은 스스로 아무 공로도 없이(오히려 다리를 저는 약자로서) 왕의 상에 앉는 특권을 누린다. 이는 인간이 하나님의 은혜를 받을 자격이 아니라 순전한 은혜로 받아들여진다는 신학적 그림으로도 널리 읽힌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 두려움이 은혜 앞에서 안심으로 바뀌는 순간</div>
+        <div class="teach-body">므비보셋은 처음엔 죽음을 각오하고 엎드렸지만, 다윗의 확언을 듣고 안심하게 된다. 참된 은혜는 두려움을 신뢰로 변화시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 실질적이고 지속적인 돌봄으로 나타나는 사랑</div>
+        <div class="teach-body">다윗의 은혜는 말뿐이 아니라 토지 반환과 지속적인 부양(왕의 상에서 늘 먹음)이라는 구체적이고 지속적인 형태로 나타난다. 진정한 사랑은 실제적 돌봄으로 증명된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">므비보셋이 왕의 상에서 늘 함께 먹었다는 구절이 참 따뜻해요. 그는 아무것도 한 게 없는데, 그저 요나단의 아들이라는 이유만으로 그런 은혜를 받았죠. 은혜란 원래 그런 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>므비보셋의 이야기는 왜 종종 복음의 예표로 해석되는가?</div>
+        <div class="deep-body">많은 설교자와 신학자들은 이 이야기를 은혜의 복음에 대한 생생한 예화로 사용한다 — 왕(다윗)이 먼저 찾아나서고, 약하고 자격 없는 자(다리를 저는 므비보셋)를 부르며, 아무 공로 없이 왕의 상에 영구히 앉히는 구조가 죄인을 향한 하나님의 은혜와 유사하다는 것이다. 다만 이는 본문 자체의 일차적 의미(다윗과 요나단의 언약 성취)를 넘어선 적용적 해석이라는 점에서, 본문 주해와 적용을 구분하는 해석학적 논의의 좋은 사례로도 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>다윗이 사울 가문의 생존자를 찾은 것은 순수한 은혜였을까, 정치적 계산도 있었을까?</div>
+        <div class="deep-body">본문은 다윗의 동기를 명확히 '요나단으로 말미암아'라고 밝히지만, 일부 학자들은 이것이 동시에 잠재적 왕위 도전자를 다윗의 감시 아래(예루살렘 궁정)에 두려는 현명한 정치적 조치이기도 했을 가능성을 제기한다. 두 해석이 반드시 상충하는 것은 아니며, 다윗의 진실한 언약적 신실함과 실용적인 정치적 지혜가 함께 작동했을 가능성이 폭넓게 논의된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch10">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 10</div>
+      <h1>10장 · 암몬과 아람 전쟁</h1>
+      <div class="chapter-sub">모욕당한 사절단, 동맹군의 결집, 요압과 아비새의 형제 전략</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 10:1-19</span><span class="ref-item">암몬-아람 전쟁</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-5절</div>
+        <div>
+          <div class="flow-title">모욕당한 조문 사절단</div>
+          <div class="flow-body">암몬 왕 나하스가 죽자 다윗이 그 아들 하눈에게 조문 사절을 보내나, 암몬 지도자들은 이를 정탐으로 의심하여 사절들의 <b class="hl-term">수염 절반을 깎고 의복 하반부를 잘라</b> 심히 능욕하여 돌려보낸다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6-14절</div>
+        <div>
+          <div class="flow-title">동맹군의 결집과 요압의 전략</div>
+          <div class="flow-body">암몬은 이 일로 다윗과 원수가 될 것을 알고 아람 용병들을 대거 고용하니, 요압이 군대를 이끌고 나가 앞뒤로 협공당할 상황에 처하자 <b class="hl-quote">"네가 강하면 나를 도우라... 여호와께서 선히 여기시는 대로 행하시기를 원하노라"</b>며 자신은 아람을, 동생 아비새는 암몬을 상대하는 지혜로운 이중 전략을 세워 승리한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15-19절</div>
+        <div>
+          <div class="flow-title">아람의 항복</div>
+          <div class="flow-body">패배한 아람이 더 큰 군대를 모아 다시 도전하나 다윗이 직접 나서 대승을 거두니, 아람의 왕들이 이스라엘과 화친하고 암몬을 돕기를 그친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 선의가 의심받을 때의 억울함</div>
+        <div class="teach-body">다윗의 조문은 순수한 선의였지만 하눈의 신하들은 이를 의심하여 극단적으로 대응한다. 선한 의도가 늘 있는 그대로 받아들여지지는 않는다는 현실을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 지도자의 지혜로운 위기 대응</div>
+        <div class="teach-body">요압은 양쪽에서 협공당하는 절체절명의 상황에서도 침착하게 병력을 나누는 전략을 세운다. 위기 속에서의 냉정한 판단력이 중요하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 형제 간의 신뢰와 협력</div>
+        <div class="teach-body">요압과 아비새는 서로를 신뢰하며 "네가 강하면 나를 도우라"는 상호 지원의 약속으로 위기를 함께 헤쳐 나간다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 결과를 하나님께 맡기는 담대함</div>
+        <div class="teach-body">요압은 최선을 다해 준비하면서도 "여호와께서 선히 여기시는 대로 행하시기를 원하노라"며 결과를 하나님께 맡긴다. 이는 인간의 최선과 하나님께 대한 신뢰가 함께 가는 모범이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 작은 모욕이 큰 전쟁으로 확대될 수 있다</div>
+        <div class="teach-body">사절단에 대한 모욕이라는 비교적 작은 사건이 대규모 국제 전쟁으로 번진다. 관계의 작은 균열이 걷잡을 수 없는 결과를 낳을 수 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">요압이 위기 속에서 동생과 세운 '네가 강하면 나를 도우라'는 약속이 참 좋아요. 각자 자기 자리에서 최선을 다하면서도 서로를 의지하는 것, 그게 건강한 협력의 모습인 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>수염을 깎고 옷을 자른 모욕은 고대 근동에서 얼마나 심각한 것이었나?</div>
+        <div class="deep-body">고대 근동 문화에서 수염은 남성의 존엄과 권위의 핵심 상징이었으며, 이를 강제로 깎는 것은 극도의 공적 수치를 의미했다. 옷의 하반부를 잘라 신체를 노출시킨 것 또한 마찬가지로 심각한 모욕이었다. 다윗이 사절들에게 여리고에 머물며 수염이 자랄 때까지 기다렸다가 돌아오라 배려한 것(10:5)은, 그가 이 모욕의 무게를 정확히 이해하고 신하들의 존엄을 지켜주려 했음을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>이 전쟁은 이후 11장의 밧세바 사건과 어떻게 연결되는가?</div>
+        <div class="deep-body">11장은 "그 해가 돌아와서 왕들이 출전할 때가 되매... 다윗은 예루살렘에 그대로 있더라"는 구절로 시작되는데, 이는 바로 이 암몬과의 계속되는 전쟁(11장에서 랍바성 포위로 이어짐)을 배경으로 한다. 다윗이 마땅히 전장에 나가야 할 시기에 예루살렘에 남아있었다는 사실이 그의 도덕적 해이와 이어지는 비극의 배경이 된다는 점에서, 10장은 11장의 비극을 이해하는 중요한 서곡 역할을 한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch11">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 11</div>
+      <h1>11장 · 밧세바와 우리아</h1>
+      <div class="chapter-sub">다윗의 큰 죄, 은폐 시도, 우리아의 죽음</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 11:1-27</span><span class="ref-item">다윗의 타락</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-5절</div>
+        <div>
+          <div class="flow-title">전장에 나가지 않은 왕</div>
+          <div class="flow-body">왕들이 출전할 때가 되었는데도 다윗은 예루살렘에 머물다가, 옥상에서 목욕하는 <b class="hl-insight has-insight" data-insight="5">밧세바</b>를 보고 사람을 보내 그녀를 데려와 동침하니, 그녀가 임신하였음을 알린다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6-13절</div>
+        <div>
+          <div class="flow-title">우리아를 속이려는 시도</div>
+          <div class="flow-body">다윗은 밧세바의 남편 <b class="hl-term">우리아</b>를 전장에서 불러들여 집에 가서 아내와 함께 있게 하여 죄를 은폐하려 하나, 우리아는 <b class="hl-quote">"언약궤와 이스라엘과 유다가 야영 중에 있고 내 주 요압과 내 왕의 신복들이 바깥 들에 진 치고 있거늘 내가 어찌 내 집으로 가서 먹고 마시고 내 처와 같이 자리이까"</b>라 거절하며 왕궁 문에서 잔다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14-27절</div>
+        <div>
+          <div class="flow-title">우리아의 죽음</div>
+          <div class="flow-body">다윗은 결국 요압에게 편지를 보내 <b class="hl-term">우리아를 격전지 맨 앞에 두었다가 물러나 그를 죽게 하라</b>는 치명적 지시를 내린다. 요압이 이를 이행하여 우리아가 전사하니, 밧세바는 애곡한 후 다윗의 아내가 된다. 본문은 <b class="hl-quote">"다윗이 행한 그 일이 여호와 보시기에 악하였더라"</b>는 짧고 무거운 평가로 장을 맺는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 한가함과 안일함이 죄의 통로가 될 수 있다</div>
+        <div class="teach-body">다윗이 마땅히 있어야 할 전장이 아니라 예루살렘에 한가하게 머문 것이 이 모든 비극의 시작이었다. 책임과 부르심의 자리를 벗어난 안일함이 유혹의 문을 연다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 죄는 은폐를 위해 더 큰 죄를 낳는다</div>
+        <div class="teach-body">다윗은 처음의 죄(간음)를 감추려 우리아를 속이려 했고, 그것이 실패하자 결국 살인이라는 더 큰 죄로 나아간다. 죄의 은폐 시도는 흔히 원래의 죄보다 더 심각한 결과를 낳는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 신실한 자의 성실함이 오히려 왕의 죄를 부각시킨다</div>
+        <div class="teach-body">전장의 동료들을 생각하며 편안함을 거절한 우리아의 성실함은, 안일함에 빠진 다윗의 모습과 극명하게 대조되며 그의 죄를 더욱 선명하게 드러낸다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 권력은 죄를 은폐하는 수단으로 오용될 수 있다</div>
+        <div class="teach-body">다윗은 왕의 권력을 이용해 우리아를 조종하고 결국 그의 죽음까지 지시한다. 권력이 정의를 위해서가 아니라 개인의 죄를 감추기 위해 사용될 때 그 파괴력은 극도로 커진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 성경은 위대한 인물의 죄도 미화하지 않는다</div>
+        <div class="teach-body">"다윗이 행한 그 일이 여호와 보시기에 악하였더라"는 짧고 단호한 평가는, 성경이 신앙의 영웅조차 그 죄를 정당화하거나 축소하지 않고 있는 그대로 기록한다는 것을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장은 읽을 때마다 마음이 무거워요. 다윗 같은 사람도 이렇게 무너질 수 있다는 게, 오히려 우리 모두에게 경각심을 주는 것 같아요. 안일함이 얼마나 위험한 시작점이 될 수 있는지를요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>밧세바는 이 사건에서 어느 정도의 주체성을 가졌던 것으로 이해해야 하는가?</div>
+        <div class="deep-body">본문은 밧세바의 감정이나 동의 여부를 거의 서술하지 않는다는 점에서 신중한 해석이 요구된다. 현대의 많은 주석가들은 절대 권력을 지닌 왕이 신하의 아내를 부르는 상황 자체가 이미 근본적인 권력 불균형을 내포하며, 밧세바가 실질적으로 거부할 수 있는 위치에 있었는지 의문을 제기한다. 나단의 책망(12장)이 전적으로 다윗을 향하고 있으며 밧세바를 공범으로 지목하지 않는다는 점도 이런 해석을 뒷받침하는 것으로 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>다윗이 우리아를 죽음으로 몬 편지는 왜 특별히 잔혹한 죄로 평가되는가?</div>
+        <div class="deep-body">다윗은 요압에게 보낸 편지에서 다른 병사들까지 함께 위험에 빠뜨리는 전략(우리아만 골라 죽이면 의심받을 것을 우려해 전열을 후퇴시켜 여러 사람이 함께 죽게 함, 11:15-17)을 지시한다. 이는 단순한 살인을 넘어, 자신의 개인적 죄를 감추기 위해 무고한 여러 병사의 생명까지 도구로 사용한 것으로, 이후 12장에서 나단이 이를 매우 무겁게 다루는 배경이 된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch12">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 12</div>
+      <h1>12장 · 나단의 책망과 회개</h1>
+      <div class="chapter-sub">"당신이 그 사람이라", 아이의 죽음, 솔로몬의 출생</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 12:1-31</span><span class="ref-item">다윗의 회개</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-14절</div>
+        <div>
+          <div class="flow-title">"당신이 그 사람이라"</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="6">나단</b>이 다윗에게 가난한 자의 유일한 암양 새끼를 빼앗아 잡은 부자의 비유를 들려주자 다윗이 크게 노하여 그 자를 죽어 마땅하다 판결하니, 나단은 <b class="hl-quote">"당신이 그 사람이라... 어찌하여 당신이 여호와의 말씀을 업신여기고 나 보기에 악을 행하였느냐"</b>라 직접 지적한다. 다윗은 즉시 <b class="hl-term">"내가 여호와께 죄를 범하였노라"</b>고 고백한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15-23절</div>
+        <div>
+          <div class="flow-title">아이의 죽음과 다윗의 반응</div>
+          <div class="flow-body">여호와께서 밧세바가 낳은 아이를 치시니 다윗은 이레 동안 금식하며 땅에 엎드려 간구하나, 아이가 죽자 오히려 일어나 몸을 씻고 예배하며 <b class="hl-quote">"아이가 살았을 때에 내가 금식하고 운 것은... 지금은 그가 죽었으니 내가 어찌 금식하랴 내가 다시 돌아오게 할 수 있느냐 나는 그에게로 가려니와 그는 내게로 돌아오지 아니하리라"</b>라 신앙적 소망을 고백한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">24-31절</div>
+        <div>
+          <div class="flow-title">솔로몬의 출생과 랍바 함락</div>
+          <div class="flow-body">다윗이 밧세바를 위로하니 그녀가 아들을 낳아 <b class="hl-term">솔로몬</b>이라 이름하고, 여호와께서 그를 사랑하사 나단을 통해 <b class="hl-term">여디디야</b>(여호와께서 사랑하신 자)라는 이름도 주신다. 다윗은 요압이 포위해온 암몬의 수도 랍바를 함락시켜 전쟁을 마무리한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 사랑은 때로 불편한 진실을 말하는 용기를 요구한다</div>
+        <div class="teach-body">나단은 왕의 진노를 살 수 있는 위험을 감수하고 다윗을 직접 대면한다. 진정한 사랑은 침묵하는 것이 아니라, 필요할 때 진실을 담대히 전하는 것이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 즉각적이고 진실한 회개의 모범</div>
+        <div class="teach-body">다윗은 지적받자마자 변명하거나 부인하지 않고 즉시 "내가 여호와께 죄를 범하였노라"고 인정한다. 이는 사울의 책임 전가(삼상 15장)와 극명하게 대조되는 진정한 회개의 모습이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 죄의 결과는 용서받아도 남을 수 있다</div>
+        <div class="teach-body">다윗의 회개는 진실했지만, 그의 죄로 인한 결과(아이의 죽음)까지 완전히 없어지지는 않는다. 용서와 결과의 제거는 다른 차원의 문제일 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 애도 후의 소망 있는 신앙</div>
+        <div class="teach-body">다윗이 아이의 죽음 후 보인 반응("나는 그에게로 가려니와")은, 슬픔 속에서도 죽음 너머의 소망을 붙드는 신앙의 태도를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 은혜는 폐허 속에서도 새 생명을 예비한다</div>
+        <div class="teach-body">이 비극적 사건 이후 태어난 솔로몬이 '여호와께서 사랑하신 자'로 불린다는 것은, 인간의 가장 어두운 실패 속에서도 하나님의 은혜와 새로운 시작이 여전히 가능함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">나단이 목숨을 걸고 왕 앞에서 '당신이 그 사람이라' 말하는 장면은, 진짜 사랑이 무엇인지 보여줘요. 침묵하는 게 아니라, 위험을 감수하고서라도 진실을 말해주는 것, 그게 사랑이라는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>시편 51편은 이 사건과 어떻게 연결되는가?</div>
+        <div class="deep-body">시편 51편의 표제는 "다윗이 방세바와 동침한 후 선지자 나단이 그에게 온 때에"라고 명시한다. 이 시편에서 다윗은 "하나님이여 나를 긍휼히 여기시되 주의 인자를 따라 하시며... 내가 내 죄과를 아오니 내 죄가 항상 내 앞에 있나이다"라 절절히 고백하는데, 이는 사무엘하 12장의 짧은 산문적 회개("내가 여호와께 죄를 범하였노라")의 배후에 있는 다윗의 실제 내적 고뇌와 회개의 깊이를 시적으로 보여주는 귀중한 자료로 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>아이의 죽음이 다윗의 죄에 대한 형벌이었다면, 이는 정의로운 것인가?</div>
+        <div class="deep-body">이는 무고한 생명이 타인(부모)의 죄로 인해 고통받는 것에 대한 신학적으로 어려운 질문을 제기한다. 본문은 이를 직접적으로 설명하지 않지만, 나단이 이미 언급한 더 큰 결과들(12:10-12, 다윗 집안에 칼이 떠나지 않을 것, 가까운 자에 의한 배신)과 함께 이 사건을 이해할 때, 이는 개인의 죄가 자기 자신을 넘어 가족과 공동체 전체에 파급되는 성경적 현실(연대적 결과)을 보여주는 사례로 폭넓게 논의되며, 동시에 다윗 자신이 "나는 그에게로 가려니와"라고 고백하듯 죽은 아이에 대한 궁극적 소망을 성경이 완전히 닫아두지 않는다는 점도 함께 주목된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch13">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 13</div>
+      <h1>13장 · 암논과 다말, 압살롬의 복수</h1>
+      <div class="chapter-sub">왕가 내부의 비극, 침묵 속의 분노, 계획된 살인</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 13:1-39</span><span class="ref-item">다윗 집안의 균열</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-22절</div>
+        <div>
+          <div class="flow-title">암논의 범죄</div>
+          <div class="flow-body">다윗의 아들 <b class="hl-term">암논</b>이 이복 여동생 <b class="hl-term">다말</b>을 사랑하여 병든 척 속여 그녀를 자기 처소로 부른 뒤 강간한다. 이후 그는 그녀를 심히 미워하여 내쫓으니, 다말은 찢어진 옷을 입고 통곡하며 오라비 <b class="hl-insight has-insight" data-insight="7">압살롬</b>의 집에 머문다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">23-33절</div>
+        <div>
+          <div class="flow-title">2년 뒤의 치밀한 복수</div>
+          <div class="flow-body">압살롬은 이 일에 대해 암논에게 아무 말도 하지 않은 채 <b class="hl-term">2년간 침묵</b>하며 속으로 미워하다가, 양털 깎는 잔치를 빌미로 암논을 초대해 그를 취하게 한 뒤 종들을 시켜 그를 죽인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">34-39절</div>
+        <div>
+          <div class="flow-title">압살롬의 도피</div>
+          <div class="flow-body">압살롬은 외조부가 있는 그술로 도망하여 <b class="hl-term">3년간</b> 머물고, 다윗은 암논의 죽음에 슬퍼하면서도 시간이 지나며 압살롬을 향한 그리움도 커져간다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 처리되지 않은 상처는 반드시 대가를 요구한다</div>
+        <div class="teach-body">다말의 고통은 즉시 다뤄지지 않았고, 압살롬의 침묵된 분노는 결국 2년 뒤 살인으로 폭발한다. 억눌린 상처와 분노는 사라지지 않고 언젠가 다른 형태로 터져 나온다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 부모의 침묵이 자녀들의 고통을 방치할 수 있다</div>
+        <div class="teach-body">본문은 다윗이 암논의 죄에 대해 노했다고만 짧게 언급할 뿐(13:21), 실질적인 처벌이나 다말에 대한 돌봄의 흔적이 보이지 않는다. 지도자(부모)의 무기력한 침묵은 상처받은 이들을 더욱 고립시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 냉정하게 계획된 복수의 위험성</div>
+        <div class="teach-body">압살롬의 복수는 순간적 분노가 아니라 2년에 걸쳐 치밀하게 계획된 것이었다. 오래 억눌린 분노가 냉정한 계산과 결합할 때 더욱 치명적인 결과를 낳을 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 침묵 속에 자라나는 소외감</div>
+        <div class="teach-body">다말은 "황폐하게"(13:20) 오라비의 집에 머물렀다고 기록된다. 이는 이 가정 전체가 서로의 고통을 직면하지 못한 채 각자의 방식으로 무너져가고 있었음을 상징적으로 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 은폐된 가정의 죄가 국가적 위기로 확대된다</div>
+        <div class="teach-body">이 사적인 가정 비극은 이후 15장 압살롬의 전면적 반역으로 확대된다. 가정 안에서 다뤄지지 않은 갈등이 결국 훨씬 더 큰 공동체적 위기로 번질 수 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다말의 고통이 제대로 다뤄지지 않은 채 흘러가는 이 장을 읽으면 마음이 아파요. 상처를 정직하게 마주하고 돌보는 일이 얼마나 중요한지, 이 침묵의 결과가 뼈아프게 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>다윗은 왜 암논을 처벌하지 않았을까?</div>
+        <div class="deep-body">본문은 다윗이 '심히 노하니라'(13:21)고만 짧게 서술할 뿐, 구체적인 처벌 조치를 언급하지 않는다. 일부 학자들은 암논이 장자로서 왕위 계승 서열 1위였다는 점, 그리고 다윗 자신이 최근 밧세바 사건(11-12장)으로 성적 죄에 대해 강력하게 도덕적 권위를 내세우기 어려운 처지였을 가능성을 그 배경으로 지적한다. 이는 다윗 자신의 과거 죄가 자녀들에 대한 훈육과 정의 집행에도 그림자를 드리웠을 가능성을 보여주는 사례로 논의된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>이 사건은 나단의 예언(12:10-11)과 어떻게 연결되는가?</div>
+        <div class="deep-body">나단은 다윗의 죄를 책망하며 "칼이 네 집에서 영원히 떠나지 아니하리라... 내가 네 집에 재화를 일으켜"라고 예언했었다. 암논의 죽음(형제에 의한 살인)과 이후 이어질 압살롬의 반역은 이 예언이 다윗 왕가 내부에서 구체적으로 성취되는 과정으로 이해되며, 이는 개인의 죄가 자기 자신을 넘어 가족 전체의 운명에 지속적인 영향을 미칠 수 있음을 보여주는 사무엘하 후반부 전체의 신학적 틀을 형성한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch14">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 14</div>
+      <h1>14장 · 압살롬의 귀환</h1>
+      <div class="chapter-sub">요압의 중재, 드고아 여인의 비유, 불완전한 화해</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 14:1-33</span><span class="ref-item">압살롬의 예루살렘 귀환</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-20절</div>
+        <div>
+          <div class="flow-title">요압의 지혜로운 중재</div>
+          <div class="flow-body">다윗의 마음이 압살롬을 향해 있음을 안 요압은 드고아의 지혜로운 여인을 시켜, 두 아들이 싸우다 하나가 다른 하나를 죽여 마지막 남은 아들마저 처형될 위기에 처한 과부의 비유를 다윗에게 들려주게 한다. 다윗이 이를 듣고 판결하자 여인은 <b class="hl-quote">"어찌하여 왕께서 하나님의 백성에게 이 같은 뜻을 두어... 쫓겨난 자가 왕에게서 버림 받지 않도록 하지 아니하시나이까"</b>라며 압살롬의 귀환을 은유적으로 청한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">21-24절</div>
+        <div>
+          <div class="flow-title">귀환했으나 얼굴을 보지 못하다</div>
+          <div class="flow-body">다윗이 압살롬의 귀환을 허락하나 <b class="hl-term">"자기 집으로 물러가고 내 얼굴을 보지 말라"</b>는 조건을 붙여, 압살롬은 예루살렘에 돌아왔음에도 2년간 아버지의 얼굴을 보지 못한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">25-33절</div>
+        <div>
+          <div class="flow-title">불에 태워서라도 얻어낸 만남</div>
+          <div class="flow-body">압살롬이 요압에게 다윗을 만나게 해달라 청하나 응답이 없자, 그의 보리밭에 불을 질러서라도 주의를 끌어 마침내 요압을 통해 다윗과의 만남을 성사시키고, 다윗은 그에게 입 맞추며 화해한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 지혜로운 중재는 완고한 마음을 움직일 수 있다</div>
+        <div class="teach-body">드고아 여인의 비유는 다윗이 스스로 판단하게 함으로써 자신의 마음을 돌아보게 만든다. 직접적 설득보다 이야기를 통한 간접적 접근이 때로 더 효과적일 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 절반의 화해는 완전한 화해가 아니다</div>
+        <div class="teach-body">다윗은 압살롬의 귀환은 허락했지만 그의 얼굴 보기는 거부한다. 이런 불완전한 화해는 오히려 관계의 골을 더 깊게 만들 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 무시당한 관계는 극단적 행동을 부를 수 있다</div>
+        <div class="teach-body">압살롬은 정당한 요청이 계속 무시되자 결국 밭에 불을 지르는 극단적 방법을 택한다. 소통이 막힌 관계는 종종 파괴적인 방식으로 다시 열리려 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 겉으로 보이는 화해가 내면의 치유를 보장하지 않는다</div>
+        <div class="teach-body">다윗과 압살롬은 결국 입 맞추며 화해하지만, 이 화해가 얼마나 깊고 진실했는지는 이후 15장의 반역을 통해 의문에 부쳐진다. 형식적 화해와 진정한 관계 회복은 다를 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 지연된 정의와 관계는 곪아간다</div>
+        <div class="teach-body">3년의 도피와 2년의 냉대, 총 5년에 이르는 긴 소외의 시간은 부자 사이의 골을 더욱 깊게 만들었을 것이다. 지연된 화해는 그 자체로 또 다른 상처가 될 수 있다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">압살롬이 밭에 불을 질러서라도 아버지를 만나려 했던 그 절박함이 마음 아파요. 얼마나 오랫동안 무시당했다고 느꼈으면 그랬을까요. 관계의 문을 계속 닫아두는 것이 얼마나 위험한지 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>다윗이 압살롬을 완전히 용서하지 못한 근본적 이유는 무엇이었을까?</div>
+        <div class="deep-body">본문은 명시적으로 설명하지 않지만, 압살롬이 이복형 암논을 살해했다는 사실 자체가 왕으로서 정의를 집행해야 할 책임과 아버지로서의 사랑 사이에서 다윗을 깊은 딜레마에 빠뜨렸을 것으로 보인다. 이는 다윗이 이전에 보였던 결단력(사울, 아브넬, 이스보셋 관련 사건들에서의 단호한 정의 집행)과 대조적으로, 자기 아들의 문제 앞에서는 우유부단하고 회피적인 태도를 보인다는 점에서, 그의 지도력의 또 다른 취약점을 드러내는 것으로 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>드고아 여인의 비유는 실제로 다윗을 완전히 설득했는가?</div>
+        <div class="deep-body">다윗은 요압이 이 계략의 배후에 있음을 즉시 알아챈다(14:19). 이는 그가 완전히 속은 것이 아니라, 이 지혜로운 접근을 통해 자신의 억눌린 마음(압살롬을 향한 그리움, 14:1)을 정당화할 명분을 얻은 것에 가깝다는 해석을 가능케 한다. 그러나 이후 그가 붙인 제한적 조건(얼굴을 보지 말라)은 그의 마음이 완전히 열리지는 않았음을 보여주며, 이는 형식적 허락과 진정한 화해 사이의 간극을 드러내는 이 장 전체의 핵심 긴장으로 이해된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch15">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 15</div>
+      <h1>15장 · 압살롬의 반역</h1>
+      <div class="chapter-sub">민심을 훔치다, 헤브론에서의 봉기, 다윗의 도피</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 15:1-37</span><span class="ref-item">압살롬의 쿠데타</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-12절</div>
+        <div>
+          <div class="flow-title">민심을 훔치는 압살롬</div>
+          <div class="flow-body">압살롬은 병거와 말, 호위병 오십 명을 두고 성문에서 재판을 구하러 오는 자들에게 <b class="hl-quote">"내가 이 땅에서 재판관이 되었으면... 내게 오는 모든 자의 송사를 처리하여 그들에게 공의를 베풀 것을..."</b>라며 접근해 <b class="hl-term">"이스라엘 사람의 마음을 훔치니라"</b>. 4년 후 그는 헤브론에서 반역을 일으켜 스스로 왕이 되었다고 선포한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13-23절</div>
+        <div>
+          <div class="flow-title">다윗의 도피 결정</div>
+          <div class="flow-body">다윗은 예루살렘을 지키려 싸우지 않고 <b class="hl-quote">"일어나 도망하자 그렇지 아니하면 우리 중 한 사람도 압살롬을 피하지 못하리라... 그는 신속히 와서 우리를 급습하고 해하며 성읍을 칼날로 칠까 하노라"</b>며 예루살렘을 떠나기로 하고, 백성들과 신하들이 눈물로 그를 따른다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">24-37절</div>
+        <div>
+          <div class="flow-title">언약궤를 돌려보내고 후새를 파송하다</div>
+          <div class="flow-body">다윗은 언약궤를 메고 따라오려던 사독에게 <b class="hl-term">"하나님의 궤를 성으로 도로 메어 가라... 나를 좋게 여기시면 나를 돌아오게 하사"</b>며 궤를 예루살렘으로 돌려보내고, 지혜자 후새를 압살롬 진영에 첩자로 남겨 아히도벨의 모략을 무력화시키도록 계획한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 매력적인 언변이 반드시 진실한 마음을 뜻하지 않는다</div>
+        <div class="teach-body">압살롬은 공의를 베풀겠다는 매력적인 약속으로 백성의 마음을 얻지만, 이는 실제 정의 실현이 아니라 권력을 위한 계산된 전략이었다. 화려한 언변에 쉽게 마음을 내어주지 않는 분별력이 필요하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 위기 속에서도 유혈을 피하려는 지혜</div>
+        <div class="teach-body">다윗은 예루살렘에서 맞서 싸울 수도 있었지만, 도시와 백성을 보호하기 위해 스스로 물러나는 길을 택한다. 자존심보다 공동체의 안전을 우선하는 지혜로운 판단이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 상징물보다 하나님과의 관계를 신뢰하는 성숙함</div>
+        <div class="teach-body">다윗은 언약궤를 자신의 안전을 위한 부적처럼 취급하지 않고 제자리로 돌려보낸다. 이는 4장에서 언약궤를 미신적으로 사용했던 이스라엘의 실수와 대조되는 성숙한 신앙을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 결과를 하나님께 겸손히 맡기는 기도</div>
+        <div class="teach-body">"나를 좋게 여기시면 나를 돌아오게 하시려니와"라는 다윗의 말은, 최악의 위기 속에서도 자신의 미래를 하나님의 뜻에 겸손히 맡기는 신뢰를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 위기 속에서 발휘되는 전략적 지혜</div>
+        <div class="teach-body">다윗은 절망 속에서도 무기력하게 있지 않고, 후새를 통해 반격의 발판을 마련하는 지혜로운 조치를 취한다. 신뢰와 행동은 함께 갈 수 있다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다윗이 언약궤를 자기 안전을 위해 가져가지 않고 제자리로 돌려보내는 장면이 참 성숙해 보여요. 위기의 순간에도 하나님을 부적처럼 이용하지 않으려는 그 마음이요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>압살롬의 반역은 얼마나 오랫동안 준비된 것이었나?</div>
+        <div class="deep-body">15:7은 이 봉기가 "사십 년 만에"(일부 사본은 "사 년 만에") 일어났다고 기록하는데, 대부분의 현대 번역과 학자들은 이를 필사 오류로 보고 "사 년"을 채택한다. 이는 압살롬이 13장의 도피와 14장의 귀환 이후, 오랜 시간에 걸쳐 치밀하게 민심을 얻고 반역을 준비했음을 보여주며, 이 반역이 순간적 충동이 아니라 오랜 원한과 계산이 결합된 결과였음을 시사한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>다윗이 예루살렘을 떠나며 보인 겸손과 애통은 시편의 어떤 대목과 연결되는가?</div>
+        <div class="deep-body">시편 3편의 표제는 "다윗이 그의 아들 압살롬을 피할 때에 지은 시"라고 명시한다. 이 시에서 다윗은 "여호와여 나의 대적이 어찌 그리 많은지요... 그러나 여호와여 주는 나의 방패시요 나의 영광이시요 나의 머리를 드시는 자니이다"라 고백하는데, 이는 자기 아들에게 쫓기는 극도의 굴욕과 고통 속에서도 다윗이 하나님을 향한 근본적 신뢰를 잃지 않았음을 보여주는 귀중한 시적 증언으로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch16">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 16</div>
+      <h1>16장 · 다윗의 도피 중 시므이의 저주</h1>
+      <div class="chapter-sub">시바의 계략, 시므이의 돌팔매와 저주, 압살롬의 오판</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 16:1-23</span><span class="ref-item">도피 중의 굴욕</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-4절</div>
+        <div>
+          <div class="flow-title">시바의 의심스러운 보고</div>
+          <div class="flow-body">므비보셋의 종 시바가 다윗에게 나귀와 음식을 가져오며 므비보셋이 "오늘 이스라엘 족속이 내 아버지의 나라를 내게 돌리리라" 기대하며 예루살렘에 남았다고 거짓 보고하니, 다윗은 진위를 확인하지 않고 므비보셋의 소유를 시바에게 넘겨준다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5-14절</div>
+        <div>
+          <div class="flow-title">시므이의 돌팔매와 저주</div>
+          <div class="flow-body">사울 가문의 시므이가 다윗을 향해 돌을 던지고 저주하며 <b class="hl-quote">"피를 흘린 자여 사악한 자여 가거라 가거라... 네가 피를 흘린 왕이기 때문이니라"</b>라 외치자, 아비새가 그의 목을 베겠다 하나 다윗은 <b class="hl-quote">"내버려 두라 그가 저주하게 하라 여호와께서 그에게 명령하신 것이니라... 혹시 여호와께서 나의 원통함을 감찰하시고 오늘 그의 저주 때문에 선으로 내게 갚아 주시리라"</b>라 만류한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15-23절</div>
+        <div>
+          <div class="flow-title">압살롬의 결정적 오판</div>
+          <div class="flow-body">압살롬이 예루살렘에 입성하여 아히도벨의 조언대로 다윗의 후궁들과 관계하여 자신의 반역이 돌이킬 수 없음을 온 이스라엘에 공개적으로 알리니, 이는 나단이 예언했던 심판(12:11-12)의 성취이기도 했다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 성급한 판단은 억울한 자를 만들 수 있다</div>
+        <div class="teach-body">다윗은 시바의 말만 듣고 므비보셋의 소유를 즉시 넘겨준다. 위기 상황에서도 성급한 판단보다 신중한 확인이 필요함을 보여준다(19장에서 이 판단이 재고된다).</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 부당한 모욕 앞에서 발휘하는 놀라운 절제</div>
+        <div class="teach-body">다윗은 자신을 저주하는 시므이를 죽일 힘이 있었음에도 그를 살려둔다. 억울한 상황에서도 즉각적인 보복보다 하나님의 뜻을 구하는 태도를 보인다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 굴욕도 하나님의 섭리 안에서 해석하는 신앙</div>
+        <div class="teach-body">다윗은 시므이의 저주조차 "여호와께서 명령하신 것"일 수 있다고 받아들이며, 그것이 오히려 하나님의 은혜로 이어질 가능성을 열어둔다. 이는 고난을 향한 매우 성숙한 신학적 태도다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 조언자의 지혜가 항상 선을 위해 쓰이지는 않는다</div>
+        <div class="teach-body">아히도벨의 조언은 전략적으로 효과적이었지만, 그것은 압살롬을 돌이킬 수 없는 파멸의 길로 몰아넣는 조언이기도 했다. 지혜와 그 지혜가 섬기는 목적은 별개의 문제다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 예언의 성취는 고통스럽더라도 정확하다</div>
+        <div class="teach-body">압살롬의 행동은 나단이 이미 예고했던 심판(12:11-12)의 정확한 성취였다. 하나님의 말씀은 시간이 걸리더라도 반드시 이루어진다는 사실이 다시 확인된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다윗이 시므이의 저주를 들으면서도 '혹시 여호와께서 선으로 내게 갚아주시리라' 말하는 장면이 놀라워요. 가장 억울한 순간에도 하나님의 더 큰 그림을 신뢰하려는 그 마음가짐이요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>다윗이 므비보셋에 대한 시바의 보고를 검증 없이 받아들인 것은 그의 판단력에 어떤 의미가 있는가?</div>
+        <div class="deep-body">이는 위기와 도피라는 극도의 스트레스 상황에서 평소라면 신중했을 다윗조차 성급한 판단을 내릴 수 있음을 보여준다. 19:24-30에서 므비보셋이 실제로는 슬픔에 잠겨 다윗을 애도하며 기다렸다고 항변하는 것으로 보아, 시바의 보고는 거짓이었을 가능성이 크다. 다윗은 이 사건에서 완전한 진실을 가려내지 못한 채 재산을 두 사람에게 나누어 갖게 하는 절충적 결정을 내리는데, 이는 그의 판단이 늘 완벽하지는 않았음을 인정하는 성경의 정직한 묘사로 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>다윗이 시므이를 살려둔 것은 이후 어떻게 되는가?</div>
+        <div class="deep-body">다윗은 이 순간 시므이를 살려두지만, 임종 시 솔로몬에게 그를 "백발이 피 가운데에 스올에 내려가게 하라"는 유언을 남긴다(왕상 2:8-9). 이는 다윗이 살아있는 동안에는 맹세(19:23)를 지켜 그를 해치지 않았지만, 근본적으로 그의 저주와 배신을 완전히 잊거나 용서한 것은 아니었음을 보여주는 복잡한 결말로, 다윗의 관용에도 인간적 한계가 있었음을 드러내는 대목으로 논의된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch17">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 17</div>
+      <h1>17장 · 아히도벨과 후새의 모략 대결</h1>
+      <div class="chapter-sub">지혜의 충돌, 후새의 설득, 아히도벨의 자살</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 17:1-29</span><span class="ref-item">모략의 대결</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-14절</div>
+        <div>
+          <div class="flow-title">두 모략의 충돌</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="8">아히도벨</b>은 지금 즉시 다윗을 추격해 지친 그를 급습하자는 신속한 전략을 제안하나, 다윗의 첩자 <b class="hl-term">후새</b>는 다윗과 그 용사들이 <b class="hl-term">"곰이 새끼를 빼앗긴 것 같이 격분하였다"</b>며 신중하게 온 이스라엘을 모아 대대적으로 공격하자는 지연 전략을 제안한다. 압살롬과 장로들은 후새의 계략을 택하니, 이는 <b class="hl-term">"여호와께서 압살롬에게 화를 내리려 하사 아히도벨의 좋은 모략을 파하기로 작정하셨음이더라"</b>.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15-22절</div>
+        <div>
+          <div class="flow-title">다윗에게 전해지는 경고</div>
+          <div class="flow-body">후새는 즉시 사독과 아비아달을 통해 다윗에게 서둘러 요단을 건너라는 경고를 전하고, 다윗과 그 일행은 아히마아스와 요나단이라는 두 청년의 도움으로 위험을 피해 무사히 강을 건넌다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">23-29절</div>
+        <div>
+          <div class="flow-title">아히도벨의 죽음과 다윗을 향한 도움</div>
+          <div class="flow-body">아히도벨은 자기 모략이 채택되지 않은 것을 보고 고향으로 돌아가 <b class="hl-term">스스로 목매어 죽는다</b>. 한편 요단강을 건넌 다윗 일행에게는 뜻밖에도 여러 사람들이 침구와 그릇, 음식을 가져와 지친 그들을 돌본다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 인간의 뛰어난 지혜도 하나님의 주권 아래 있다</div>
+        <div class="teach-body">아히도벨의 조언은 '하나님께 물어 받은 말씀과 같이' 여겨질 만큼 탁월했지만, 하나님이 그것을 무력화시키기로 작정하셨을 때 그 지혜는 아무 힘을 발휘하지 못한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 보이지 않는 곳에서 응답되는 기도</div>
+        <div class="teach-body">다윗이 압살롬 진영으로 향하는 후새에게 "원하건대 당신은 아히도벨의 모략을 어리석게 하옵소서"(15:31)라 기도했던 것이 바로 이 장에서 성취된다. 하나님은 조용히, 그러나 확실하게 기도에 응답하신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 위험을 무릅쓴 첩보 활동이 생명을 구한다</div>
+        <div class="teach-body">후새와 두 청년의 용감한 정보 전달이 없었다면 다윗은 붙잡혔을 것이다. 보이지 않는 곳에서의 헌신이 결정적인 순간에 생명을 구하는 통로가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 실패를 감당하지 못하는 완벽주의의 위험성</div>
+        <div class="teach-body">아히도벨은 자신의 계획이 거부되자 극단적 선택을 한다. 이는 자신의 지혜와 판단에 대한 지나친 확신이 무너졌을 때 얼마나 파괴적인 결과로 이어질 수 있는지를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 위기 중에도 이어지는 뜻밖의 돌봄</div>
+        <div class="teach-body">지치고 쫓기던 다윗 일행에게 뜻밖의 사람들이 나서 필요를 채워준다. 하나님은 예상치 못한 통로를 통해 자기 백성을 계속 돌보신다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'여호와께서 아히도벨의 좋은 모략을 파하기로 작정하셨다'는 구절이 참 인상 깊어요. 아무리 뛰어난 지혜라도, 하나님의 더 큰 뜻 앞에서는 무력해질 수 있다는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>아히도벨이 밧세바의 할아버지였을 가능성은 그의 배신을 어떻게 설명해주는가?</div>
+        <div class="deep-body">사무엘하 11:3은 밧세바를 "엘리암의 딸"이라 소개하고, 23:34은 엘리암을 "길로 사람 아히도벨의 아들"이라 기록한다. 만약 이 둘이 동일 인물이라면, 아히도벨은 밧세바의 할아버지가 된다. 이 가설이 맞다면, 그가 압살롬의 반역에 가담한 것은 단순한 정치적 계산을 넘어 손녀에게 가해진 다윗의 죄에 대한 오랜 개인적 원한이 배경에 있었을 가능성을 시사하며, 이는 11-12장의 사건이 다윗 왕국 내부에 얼마나 깊고 오래가는 균열을 남겼는지를 보여주는 사례로 논의된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>후새의 조언이 실제로는 군사적으로 더 열등했는데도 채택된 것은 무엇을 보여주는가?</div>
+        <div class="deep-body">본문 자체가 "여호와께서... 작정하셨음이더라"(17:14)고 명시적으로 밝히듯, 이는 인간적 논리나 설득력의 우열 문제가 아니라 하나님의 주권적 개입의 결과로 제시된다. 이는 사무엘상하 전체에서 반복되는 신학적 주제 — 전쟁과 정치의 결과가 궁극적으로 인간의 전략이 아니라 하나님의 뜻에 달려 있다는 것 — 를 다시 한번 극적으로 확인시켜주는 사례다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch18">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 18</div>
+      <h1>18장 · 압살롬의 죽음</h1>
+      <div class="chapter-sub">에브라임 수풀의 전투, 상수리나무에 걸린 머리카락, 다윗의 통곡</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 18:1-33</span><span class="ref-item">압살롬의 최후</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-8절</div>
+        <div>
+          <div class="flow-title">다윗의 간곡한 당부</div>
+          <div class="flow-body">다윗은 군대를 세 부대로 나누어 요압, 아비새, 잇대에게 맡기고 직접 나가려 하나 백성들이 만류하니, 그는 성문 곁에 머물며 <b class="hl-quote">"나를 위하여 젊은 압살롬을 너그러이 대우하라"</b>고 모든 지휘관에게 간곡히 당부한다. 전투는 에브라임 수풀에서 벌어져 이스라엘이 크게 패한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9-18절</div>
+        <div>
+          <div class="flow-title">상수리나무에 걸린 압살롬의 죽음</div>
+          <div class="flow-body">압살롬이 노새를 타고 도망하다가 큰 상수리나무 가지에 그의 머리(머리털)가 걸려 공중에 매달리니, 요압은 다윗의 당부를 어기고 직접 창 셋으로 그의 심장을 찌르고 부하들도 그를 쳐 죽인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">19-33절</div>
+        <div>
+          <div class="flow-title">"내 아들 압살롬아"</div>
+          <div class="flow-body">아히마아스와 구스 사람이 다윗에게 승전 소식을 전하러 달려가나, 정작 다윗이 가장 궁금해했던 것은 승패가 아니라 <b class="hl-quote">"청년 압살롬은 잘 있느냐"</b>는 것이었다. 아들의 죽음을 들은 다윗은 문루로 올라가 <b class="hl-quote">"내 아들 압살롬아 내 아들 내 아들 압살롬아 차라리 내가 너를 대신하여 죽었더면, 압살롬 내 아들아 내 아들아"</b>라 애통하게 울부짖는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 정의와 부성애 사이의 고통스러운 긴장</div>
+        <div class="teach-body">다윗은 반역자를 진압해야 하는 왕이면서 동시에 아들을 사랑하는 아버지였다. 이 두 역할 사이의 찢어지는 긴장이 그의 절절한 애통에 그대로 드러난다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 명령 불복종이 낳는 돌이킬 수 없는 결과</div>
+        <div class="teach-body">요압은 다윗의 명백한 당부를 무시하고 압살롬을 죽인다. 그의 판단이 전략적으로는 효과적이었을지 몰라도, 이는 왕의 권위에 대한 중대한 도전이자 다윗에게 깊은 상처를 남긴다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 죽음 앞에서 드러나는 사랑의 깊이</div>
+        <div class="teach-body">압살롬은 아버지에게 칼을 겨눈 반역자였지만, 다윗의 슬픔은 조금도 줄어들지 않는다. 참된 부모의 사랑은 자녀의 잘못과 무관하게 지속된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 승리 속에서도 슬픔이 가려지지 않는다</div>
+        <div class="teach-body">군사적으로는 명백한 승리였지만, 다윗에게 이는 결코 축하할 일이 아니었다. 겉으로 드러난 결과가 반드시 내면의 감정을 대변하지는 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ "대신하여 죽었더면"이라는 절규의 무게</div>
+        <div class="teach-body">다윗의 이 부르짖음은 부모가 자녀를 위해 자신의 생명까지 내어주고 싶어하는 극한의 사랑을 보여주며, 이는 성경 전체에서 하나님이 인류를 향해 품으신 사랑의 그림자로도 종종 읽힌다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'내 아들 압살롬아'라는 다윗의 울부짖음은 성경에서 가장 마음 아픈 장면 중 하나예요. 그가 왕이기 전에 아버지였다는 사실이, 이 순간 온전히 드러나는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요압이 다윗의 명령을 어긴 것은 어떻게 평가되어야 하는가?</div>
+        <div class="deep-body">요압의 행동은 실용적 관점(반역의 뿌리를 완전히 제거해야 왕국의 안정이 보장된다는 판단)에서는 정당화될 여지가 있지만, 왕의 명백한 명령에 대한 불복종이라는 점에서 심각한 문제였다. 이는 3장의 아브넬 암살, 그리고 이후 왕상 2장에서 다윗이 임종 시 요압의 처리를 솔로몬에게 유언으로 남기는 것과 연결되는 반복된 패턴으로, 요압이 다윗의 통치 기간 내내 자신의 판단을 왕의 명령보다 우선시하는 위험한 인물이었음을 보여주는 또 하나의 사례로 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>압살롬의 머리카락이 나무에 걸렸다는 세부 묘사는 어떤 문학적 의미를 지니는가?</div>
+        <div class="deep-body">14:25-26은 압살롬의 아름다움과 유독 무거웠던 머리털을 상세히 묘사한 바 있다 — 그의 자랑이었던 외모와 머리카락이 결국 그의 죽음의 직접적 원인이 된다는 것은 날카로운 문학적 아이러니로 다뤄진다. 자신의 강점(외모, 매력, 그것으로 얻은 민심)이 오히려 파멸의 도구가 되었다는 점은, 성경에서 반복되는 '자기 죄의 도구로 심판받는다'는 주제(예: 삼손의 머리카락, 하만의 나무)와 공명하는 것으로 해석된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch19">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 19</div>
+      <h1>19장 · 다윗의 왕권 회복</h1>
+      <div class="chapter-sub">요압의 직언, 슬픔을 딛고 일어서다, 예루살렘 귀환</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 19:1-43</span><span class="ref-item">다윗의 복귀</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-8절</div>
+        <div>
+          <div class="flow-title">요압의 직언 — "일어나 나가서 종들의 마음을 위로하소서"</div>
+          <div class="flow-body">다윗의 지나친 슬픔이 오히려 생명을 걸고 싸운 백성들의 사기를 꺾는 것을 보고 요압이 <b class="hl-quote">"왕께서 오늘 왕의 생명과 왕의 자녀의 생명을 구원한 모든 신복의 얼굴을 부끄럽게 하시니... 오늘 내가 아나이다 만일 압살롬이 살고 오늘 우리가 다 죽었더면 왕이 마땅히 여기실 뻔하였나이다"</b>라 담대히 직언하니, 다윗이 일어나 성문에 앉아 백성을 맞이한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9-30절</div>
+        <div>
+          <div class="flow-title">귀환길의 화해들</div>
+          <div class="flow-body">다윗이 예루살렘으로 돌아오는 길에 자신을 저주했던 <b class="hl-term">시므이</b>가 용서를 구하니 다윗은 그를 살려두고, <b class="hl-term">므비보셋</b>은 다윗이 떠난 날부터 발도 닦지 않고 슬퍼했다며 시바의 거짓 보고를 해명하니 다윗은 땅을 시바와 절반씩 나누라는 절충안을 내린다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">31-43절</div>
+        <div>
+          <div class="flow-title">바르실래의 신실함과 지파 간 갈등</div>
+          <div class="flow-body">다윗을 극진히 도왔던 노인 <b class="hl-term">바르실래</b>는 왕궁으로의 초대를 정중히 사양하고 고향에서 여생을 보내기를 청하며, 유다와 이스라엘 지파들 사이에 다윗을 모셔오는 문제로 다시 갈등의 조짐이 나타난다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 슬픔에도 때와 균형이 필요하다</div>
+        <div class="teach-body">다윗의 슬픔은 진실했지만, 그것이 함께 싸운 이들의 희생을 부정하는 방식으로 표출될 때는 조정이 필요했다. 요압의 직언은 무례했지만 필요한 것이었다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 직언할 수 있는 관계의 소중함</div>
+        <div class="teach-body">요압의 결함 많은 인물됨에도 불구하고, 이 순간 그의 직언은 다윗을 실질적으로 회복시킨다. 완벽하지 않은 사람도 필요한 진실을 전할 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 완전한 진실을 알 수 없을 때의 지혜로운 절충</div>
+        <div class="teach-body">다윗은 시바와 므비보셋 중 누가 진실을 말하는지 확신할 수 없는 상황에서 재산을 절반씩 나누는 절충안을 택한다. 모든 갈등이 명쾌하게 해결되지는 않는다는 현실적 지혜다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 보상을 사양하는 겸손한 신실함</div>
+        <div class="teach-body">바르실래는 다윗의 호의(왕궁에서의 여생)를 정중히 거절하고 소박한 삶을 택한다. 신실한 섬김이 반드시 큰 보상을 목표로 하지 않는다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 화해 이후에도 남아있는 긴장</div>
+        <div class="teach-body">압살롬의 반역이 진압된 후에도 지파 간의 갈등은 완전히 해소되지 않는다. 큰 위기가 지나간 후에도 공동체의 완전한 치유에는 지속적인 노력이 필요하다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">다윗이 슬픔에서 일어나 백성을 맞이하는 장면이 참 인상적이에요. 자신의 고통이 진짜여도, 함께 싸운 이들을 위해 그 슬픔을 딛고 일어서야 할 때가 있다는 걸 요압의 직언이 일깨워줘요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>다윗이 시므이를 다시 용서한 것은 16장의 관용과 어떻게 연결되는가?</div>
+        <div class="deep-body">다윗은 이번에도 시므이를 죽이지 않고 "네가 죽지 아니하리라"는 맹세까지 한다(19:23). 이는 그가 왕권을 회복한 순간에도 여전히 보복보다 관용을 택하는 일관된 태도를 보여준다. 다만 앞서 언급했듯, 이 관용이 완전한 망각을 의미하지는 않았다는 것이 왕상 2장의 유언을 통해 드러난다는 점에서, 다윗의 관용은 상황적 자제이지 완전한 화해의 완성은 아니었던 것으로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>유다와 이스라엘 지파 간의 갈등(19:41-43)은 무엇을 예고하는가?</div>
+        <div class="deep-body">"우리는 왕에 대하여 십분을 가졌고 다윗에 대하여도 너희보다 낫거늘"이라는 이스라엘 지파들의 항변과 유다 지파의 반박은, 압살롬의 반역이 진압된 직후에도 남과 북 지파 사이의 뿌리 깊은 긴장이 해소되지 않았음을 보여준다. 이 갈등은 곧바로 이어지는 20장의 세바의 반란으로 즉시 폭발하며, 훗날 솔로몬 사후 왕국이 남북으로 완전히 분열되는(왕상 12장) 근본적 균열의 전조로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch20">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 20</div>
+      <h1>20장 · 세바의 반란</h1>
+      <div class="chapter-sub">"우리는 다윗과 나눌 분깃이 없도다", 지혜로운 여인의 중재</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 20:1-26</span><span class="ref-item">세바의 반란과 진압</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-13절</div>
+        <div>
+          <div class="flow-title">새로운 반란의 불씨</div>
+          <div class="flow-body">베냐민 사람 <b class="hl-term">세바</b>가 나팔을 불며 <b class="hl-quote">"우리는 다윗과 함께 할 분깃이 없으며 이새의 아들과 함께 할 유업이 없도다 이스라엘아 각기 장막으로 돌아가라"</b>라 선동하니 이스라엘 사람들이 그를 따른다. 다윗은 아마사에게 병력 소집을 명하나 지체되자 아비새를 보내고, 요압은 도중에 아마사를 속여 살해한 뒤 지휘권을 다시 차지한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14-22절</div>
+        <div>
+          <div class="flow-title">지혜로운 여인의 중재</div>
+          <div class="flow-body">요압이 세바를 쫓아 아벨 성을 포위하자, 그 성의 한 지혜로운 여인이 성벽에서 <b class="hl-quote">"이스라엘 중에 평화롭고 충성된 자가 있어서... 어찌하여 당신이 여호와의 기업을 삼키고자 하나이까"</b>라 요압을 설득하고, 성읍 사람들이 세바의 머리를 베어 던져 전쟁을 신속히 끝낸다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">23-26절</div>
+        <div>
+          <div class="flow-title">다윗의 행정 체계 재정비</div>
+          <div class="flow-body">요압이 다시 온 이스라엘 군대의 지휘관이 되고, 다윗은 여러 신하들의 직책을 정리하며 왕국의 질서를 재정비한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 해소되지 않은 갈등은 반복해서 터져 나온다</div>
+        <div class="teach-body">19장에서 이미 드러났던 지파 간의 긴장이 완전히 다뤄지지 않은 채 세바의 반란으로 즉시 재발한다. 근본 원인이 해결되지 않은 갈등은 형태를 바꿔 계속 나타난다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 권력에 대한 집착이 다시 폭력을 부른다</div>
+        <div class="teach-body">요압은 자신의 지위를 위협하는 아마사를 잔인하게 암살한다. 이는 그가 권력 유지를 위해서라면 또 다시 무고한 피를 흘릴 수 있는 인물임을 재확인시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 지혜로운 말 한마디가 전쟁을 멈출 수 있다</div>
+        <div class="teach-body">이름 없는 한 여인의 지혜로운 중재가 성읍 전체의 파괴를 막는다. 위기의 순간, 담대하고 지혜로운 목소리가 얼마나 큰 힘을 가질 수 있는지 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 공동체의 안전을 위한 결단의 무게</div>
+        <div class="teach-body">아벨 성 사람들은 한 개인(세바)의 목숨과 성읍 전체의 안전 사이에서 결단해야 했다. 공동체적 위기 앞에서 때로 냉정하고 어려운 선택이 요구된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 반복되는 위기 속에서도 이어지는 통치의 재건</div>
+        <div class="teach-body">다윗은 반란이 진압될 때마다 다시 행정 체계를 정비하며 왕국을 안정시키려 노력한다. 지속적인 위기 속에서도 포기하지 않고 질서를 재건하는 인내가 요구된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이름도 알려지지 않은 아벨 성의 지혜로운 여인이 한 마디로 전쟁을 멈추는 장면이 참 인상적이에요. 역사에 이름을 남기지 못해도, 결정적인 순간에 발휘된 지혜가 얼마나 큰 일을 이루는지 보여줘요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요압이 아마사를 죽인 것은 3장의 아브넬 암살과 어떻게 비교되는가?</div>
+        <div class="deep-body">두 사건 모두 요압이 자신의 군사적 지위를 위협하는 인물을 기만적인 방식(친근한 척 다가가 방심시킨 후)으로 살해한다는 공통점이 있다. 이는 요압이라는 인물이 다윗의 통치 기간 내내 반복적으로 개인적 이익과 권력 유지를 위해 살인을 저지르는 위험한 패턴을 보이고 있음을 보여주며, 왕상 2장에서 다윗이 그를 마침내 처리하도록 유언하는 근거가 축적되어가는 과정으로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"어찌하여 당신이 여호와의 기업을 삼키고자 하나이까"라는 여인의 말은 어떤 신학적 의미를 담고 있는가?</div>
+        <div class="deep-body">이 말은 아벨 성을 단순한 군사적 목표가 아니라 '여호와의 기업'(하나님께 속한 언약 백성의 삶의 터전)으로 규정함으로써, 요압에게 이 성을 파괴하는 것이 단순한 군사 작전이 아니라 하나님의 소유를 해치는 행위임을 상기시킨다. 이는 전쟁과 정치적 갈등 한복판에서도 언약 공동체 전체가 하나님께 속해 있다는 인식이 살아있었음을 보여주는 사례로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch21">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 21</div>
+      <h1>21장 · 기브온의 보복과 다윗의 용사들</h1>
+      <div class="chapter-sub">삼 년 기근, 사울 자손들의 처형, 용사들의 무용담</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 21:1-22</span><span class="ref-item">부록의 시작</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-14절</div>
+        <div>
+          <div class="flow-title">기브온과의 오랜 빚</div>
+          <div class="flow-body">삼 년간 기근이 이어지자 다윗이 여호와께 물으니, 이는 <b class="hl-term">"사울이 기브온 사람을 죽여 그 피를 흘렸기 때문"</b>이었다(수 9장의 오랜 언약을 어긴 것). 기브온 사람들의 요구에 따라 사울의 자손 일곱 명이 처형되고, 사울의 첩 리스바가 그 시신들을 지키며 짐승과 새들로부터 보호하는 모습에 감동한 다윗이 마침내 사울과 요나단의 뼈까지 수습하여 예를 갖춰 장사한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15-22절</div>
+        <div>
+          <div class="flow-title">블레셋 거인들과의 전투</div>
+          <div class="flow-body">블레셋과의 거듭된 전투에서 다윗이 위태로워지자 <b class="hl-term">아비새</b>가 그를 구하고, 이후 신하들은 다윗에게 다시는 직접 전장에 나가지 말라 청한다. 이후 골리앗의 아우를 포함한 블레셋의 거인 용사들이 다윗의 신하들에게 차례로 죽임당한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 오래된 언약 위반도 결국 다뤄져야 한다</div>
+        <div class="teach-body">사울의 언약 위반은 여러 해가 지난 후에도 하나님 앞에서 여전히 무거운 문제로 남아있었다. 시간이 지났다고 해서 정의의 문제가 저절로 사라지지는 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 슬픔 속에서도 지켜지는 헌신</div>
+        <div class="teach-body">리스바가 죽은 자들의 시신을 짐승들로부터 지키며 오랫동안 그 자리를 떠나지 않은 것은, 상실 앞에서도 마지막까지 지켜야 할 존엄이 있다는 것을 보여주는 감동적인 모성적 헌신이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 타인의 헌신이 지도자의 마음을 움직일 수 있다</div>
+        <div class="teach-body">리스바의 행동은 다윗으로 하여금 오랫동안 미뤄두었던 일(사울과 요나단의 뼈를 예를 갖춰 장사하는 것)을 마침내 완수하게 만든다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 지도자의 안전을 지키려는 공동체의 지혜</div>
+        <div class="teach-body">다윗이 전장에서 위태로워지자 신하들은 그가 "이스라엘의 등불"이므로 더 이상 위험을 감수하지 말라 요청한다. 공동체 전체를 위해 핵심 지도자를 보호하려는 지혜로운 판단이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 세대를 넘어 이어지는 거인과의 싸움</div>
+        <div class="teach-body">골리앗과의 싸움(17장) 이후에도 블레셋의 거인 용사들과의 전투가 계속된다는 것은, 하나의 승리가 모든 싸움의 끝이 아니라는 것과, 다음 세대의 용사들이 그 싸움을 계속 이어가야 함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">리스바가 자식들의 시신을 지키며 짐승들을 쫓아냈다는 이야기가 참 마음 아프면서도 아름다워요. 가장 깊은 상실 속에서도 끝까지 지켜내려는 그 헌신이, 결국 오래된 잘못을 바로잡는 계기가 되었다는 것도요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>사울이 기브온 사람들을 죽인 사건은 어디에서도 직접 기록되지 않았는데, 이는 어떻게 이해해야 하는가?</div>
+        <div class="deep-body">사무엘상 어디에도 사울이 기브온 사람들을 학살했다는 명시적 기록이 없다는 점은 흥미로운 본문상의 공백이다. 학자들은 이것이 사울의 통치 기간 중 별도로 기록되지 않은 사건이었거나, 사울의 민족주의적 열심(이스라엘의 순수성을 위해 이방 조약 상대였던 기브온을 공격)에서 비롯되었을 가능성을 추정한다. 여호수아 9장에서 기브온과 맺은 언약이 속임수에 의한 것이었음에도 불구하고 여전히 하나님 앞에서 유효한 것으로 다뤄진다는 사실은, 성급하게 맺은 서원이나 언약이라도 함부로 파기해서는 안 된다는 반복된 성경적 원칙을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>일곱 명의 처형은 오늘날의 정의 관념과 어떻게 충돌하는가?</div>
+        <div class="deep-body">이는 개인의 죄에 대해 그 자손들이 대신 처벌받는 연좌적 정의로, 현대의 개인 책임 원칙과는 상충되는 고대 근동의 집단적 책임 개념을 반영한다. 성경 자체도 이후(왕하 14:6, 겔 18장) 이런 연좌적 형벌 개념에 대해 신학적으로 발전된 이해(각자 자기 죄로만 죽을 것이라는 원칙)를 제시한다는 점에서, 21장의 사건은 구약 내에서도 정의 개념이 시대에 따라 심화되어 가는 과정을 보여주는 사례로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch22">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 22</div>
+      <h1>22장 · 다윗의 노래</h1>
+      <div class="chapter-sub">구원의 반석, 승리의 감사, 시편 18편과의 병행</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 22:1-51</span><span class="ref-item">다윗의 감사 시</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-20절</div>
+        <div>
+          <div class="flow-title">구원의 하나님을 향한 찬양</div>
+          <div class="flow-body">다윗은 <b class="hl-quote">"여호와는 나의 반석이시요 나의 요새시요 나를 건지시는 이시요... 내가 환난 중에서 여호와께 아뢰며 내 하나님께 아뢰었더니 그가 성전에서 내 소리를 들으심이여 나의 부르짖음이 그의 귀에 들렸도다"</b>라 노래하며, 위기 속에서 자신을 구원하신 하나님의 능력을 극적인 자연의 이미지(땅의 진동, 하늘의 강림)로 묘사한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">21-30절</div>
+        <div>
+          <div class="flow-title">의로운 삶에 대한 확신</div>
+          <div class="flow-body">다윗은 <b class="hl-term">"여호와께서 내 공의를 따라 상 주시며 내 손의 깨끗함을 따라 내게 갚으셨으니"</b>라 고백하며, 자신이 하나님의 도를 지켜 행하려 애썼던 삶을 돌아본다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">31-51절</div>
+        <div>
+          <div class="flow-title">전쟁의 하나님과 영원한 왕조에 대한 감사</div>
+          <div class="flow-body">다윗은 자신에게 전쟁의 기술과 힘을 주신 하나님을 찬양하며, 노래의 결론으로 <b class="hl-quote">"그런즉 여호와여 내가 이방 나라들 중에서 주께 감사하며 주의 이름을 찬양하리이다... 여호와께서 그의 왕에게 큰 구원을 주시며 기름 부음 받은 자에게 인자를 베푸심이여 영원토록 다윗과 그 후손에게로다"</b>라 7장의 다윗 언약을 다시 확인하며 노래를 맺는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 지나온 삶 전체를 돌아보며 드리는 감사</div>
+        <div class="teach-body">이 노래는 다윗이 오랜 인생 여정(사울에게 쫓기던 시절부터 왕이 되기까지) 전체를 돌아보며 드리는 종합적인 감사시다. 삶의 굽이굽이마다 함께하신 하나님을 기억하는 것이 신앙의 중요한 습관이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 극적인 언어로 표현되는 하나님의 구원</div>
+        <div class="teach-body">땅의 진동과 하늘의 강림 같은 극적인 이미지는, 다윗이 경험한 구원이 그에게 얼마나 우주적이고 강력한 사건으로 느껴졌는지를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 완전무결함이 아닌 신실함에 대한 확신</div>
+        <div class="teach-body">다윗이 자신의 '공의'와 '손의 깨끗함'을 노래하는 것은 그가 죄가 없었다는 뜻이 아니라(11-12장에서 이미 그의 심각한 죄가 기록됨), 전반적인 삶의 방향이 하나님을 향해 있었다는 정직한 자기 인식으로 이해된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 개인의 간증이 예배의 언어로 승화되다</div>
+        <div class="teach-body">다윗은 자신의 개인적 구원 경험을 시와 노래라는 예배의 형식으로 빚어내어 공동체가 함께 부를 수 있는 신앙 언어로 남긴다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 언약을 다시 확인하며 맺는 결론</div>
+        <div class="teach-body">노래의 마지막이 7장의 다윗 언약을 다시 언급하는 것으로 끝나는 것은, 다윗의 모든 승리와 구원 경험이 궁극적으로 그 영원한 약속과 연결되어 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 노래를 읽으면서, 다윗이 자기 인생 전체를 하나님 앞에서 돌아보며 부른 감사의 무게가 느껴져요. 도망자였던 시절부터 왕이 되기까지, 모든 순간이 하나님의 손안에 있었다는 그 고백이요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>사무엘하 22장과 시편 18편은 어떤 관계인가?</div>
+        <div class="deep-body">두 본문은 사소한 문자적 차이를 제외하면 거의 동일한 내용으로, 이는 사무엘하가 다윗의 실제 시편 작품을 역사서 안에 그대로 편입시킨 사례로 이해된다. 시편 18편의 표제는 이 노래가 "여호와께서 다윗을 그 모든 원수의 손과 사울의 손에서 구원하신 날"에 지어졌다고 밝히는데, 이는 이 노래가 사무엘하 후반부 시점(생애 말년)이 아니라 그의 통치 초기, 혹은 삶 전체를 회고하며 지어진 것일 수 있음을 시사한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>다윗의 '의로움' 주장(22:21-25)은 밧세바 사건 이후에도 여전히 정당화될 수 있는가?</div>
+        <div class="deep-body">이는 오랜 해석적 긴장을 낳는 질문이다. 가장 널리 받아들여지는 해석은, 다윗이 이 구절에서 완전무결함을 주장하는 것이 아니라 특정한 갈등 상황(아마도 사울에게 쫓기던 시절, 부당한 고발 앞에서의 결백)에서의 자신의 정직함을 노래하는 것이며, 시편 51편에서 보여준 것과 같은 진실한 죄의 고백과 이 노래의 자기 의로움에 대한 확신이 한 사람 안에서 공존할 수 있다는 것이다. 이는 인간이 특정 영역에서는 신실하면서도 다른 영역에서는 심각하게 실패할 수 있는 복잡한 존재임을 보여주는 사례로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch23">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 23</div>
+      <h1>23장 · 다윗의 마지막 말과 용사들</h1>
+      <div class="chapter-sub">고별시, 삼십칠 용사의 명단, 물 세 사람의 헌신</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 23:1-39</span><span class="ref-item">다윗의 용사들</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-7절</div>
+        <div>
+          <div class="flow-title">다윗의 마지막 말</div>
+          <div class="flow-body">다윗은 <b class="hl-quote">"이스라엘의 하나님이 말씀하시며 이스라엘의 반석이 내게 이르시기를 사람을 공의로 다스리는 자, 하나님을 경외함으로 다스리는 자는 돋는 해 아침 빛 같고 구름 없는 아침 같으니"</b>라는 통치자의 이상을 마지막 시로 남기며, 자신의 집이 하나님과 맺은 영원한 언약 위에 서 있음을 다시 확인한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8-23절</div>
+        <div>
+          <div class="flow-title">삼십칠 용사들의 무용담</div>
+          <div class="flow-body">요셉바셋, 엘르아살, 삼마를 비롯한 다윗의 <b class="hl-term">세 용사</b>의 놀라운 무용담이 기록되며, 특히 세 용사가 목숨을 걸고 베들레헴 성문 우물물을 떠다 바쳤을 때 다윗이 그 물을 마시지 않고 <b class="hl-quote">"내가 어찌 생명을 걸고 갔던 사람들의 피를 마시겠느냐"</b>며 여호와께 부어드린 일화가 기록된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">24-39절</div>
+        <div>
+          <div class="flow-title">삼십칠 용사의 명단</div>
+          <div class="flow-body">요압의 아우 아사헬부터 시작해 <b class="hl-term">헷 사람 우리아</b>(밧세바의 남편)에 이르기까지, 다윗을 위해 헌신한 용사들의 이름이 하나하나 열거되며 그들의 공로가 영구히 기억되도록 기록된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 통치의 이상을 명확히 남기는 유언</div>
+        <div class="teach-body">다윗은 마지막 말에서 공의와 하나님 경외를 통치의 핵심 원칙으로 제시한다. 지도자는 자신의 삶의 끝자락에서 후대에 전할 핵심 가치를 명료하게 정리할 필요가 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 헌신은 마땅히 기억되고 기록되어야 한다</div>
+        <div class="teach-body">이름 없이 사라질 수 있었던 수많은 용사들의 이름이 성경에 상세히 기록된다. 눈에 띄지 않는 헌신도 소중히 기억하고 존중하는 공동체적 습관이 중요하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 생명을 건 헌신을 함부로 소비하지 않는 존중</div>
+        <div class="teach-body">다윗은 목숨을 걸고 떠온 물을 마시지 않고 하나님께 부어드린다. 타인의 희생을 가볍게 여기지 않고 그 무게에 합당하게 존중하는 태도를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 헌신을 예배로 승화시키는 지혜</div>
+        <div class="teach-body">다윗은 용사들의 희생을 개인적으로 소비하는 대신 하나님께 드림으로써, 그들의 헌신을 예배의 자리로 끌어올린다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 우리아의 이름이 남긴 무거운 여운</div>
+        <div class="teach-body">용사 명단 끝에 등장하는 "헷 사람 우리아"의 이름은, 다윗이 죽인 바로 그 신실한 용사를 상기시키며, 그의 위대한 통치 이야기 전체에 드리운 죄와 회개의 그림자를 마지막까지 놓지 않게 한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">용사 명단 끝에 '헷 사람 우리아'라는 이름이 나올 때, 마음이 철렁해요. 다윗의 위대한 이야기 전체에, 그가 저지른 죄의 흔적이 이렇게 끝까지 함께 기록되어 있다는 게, 오히려 성경의 정직함을 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>다윗이 물을 마시지 않고 부어드린 행위는 어떤 제의적 의미를 지니는가?</div>
+        <div class="deep-body">이는 전제(奠祭, 부어드리는 제사)의 한 형태로 이해되며, 다윗이 이 극도로 귀한 물을 자신의 갈증 해소가 아니라 하나님께 대한 예배의 표현으로 전환시켰음을 보여준다. 이는 용사들의 생명을 건 헌신이 왕 개인의 사적 만족이 아니라 공동체 전체를 위한 하나님께의 헌신으로 승화되어야 한다는 신학적 메시지를 담고 있는 것으로 해석된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>우리아의 이름이 이 명단에 포함된 것은 편집상의 우연인가, 의도적 배치인가?</div>
+        <div class="deep-body">많은 주석가들은 이를 의도적인 문학적 장치로 본다. 다윗의 통치를 화려하게 요약하는 이 장의 마지막에 그가 부당하게 죽인 우리아의 이름이 다른 위대한 용사들과 나란히, 그것도 명단의 맨 끝에 놓여있다는 사실은, 사무엘하 저자가 다윗의 위대함을 찬양하면서도 동시에 그의 가장 어두운 죄를 독자의 기억에서 지우지 않으려는 신중한 균형 감각을 보여주는 것으로 이해된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch24">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34 L12 15 L20 26 L24 10 L28 26 L36 15 L40 34 Z"/><path d="M8 34 L40 34"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 SAMUEL 24</div>
+      <h1>24장 · 인구조사와 아라우나의 타작마당</h1>
+      <div class="chapter-sub">다윗의 실책, 온역, 값을 치르고 드리는 예배</div>
+      <div class="ref-strip">
+        <span class="ref-item">삼하 24:1-25</span><span class="ref-item">성전 부지의 기원</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-9절</div>
+        <div>
+          <div class="flow-title">인구조사의 죄</div>
+          <div class="flow-body">여호와께서 다시 이스라엘을 향해 진노하시어 다윗을 격동해 <b class="hl-term">"가서 이스라엘과 유다의 인구를 조사하라"</b> 하시니(역대상 21:1은 이를 사탄의 격동으로도 기록한다), 요압이 만류함에도 다윗은 온 나라의 인구를 조사하게 한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">10-17절</div>
+        <div>
+          <div class="flow-title">다윗의 뉘우침과 온역</div>
+          <div class="flow-body">다윗의 마음이 곧 찔려 <b class="hl-quote">"내가 이 일을 행함으로 큰 죄를 범하였나이다... 이제 간구하옵나니 종의 죄를 사하여 주옵소서"</b>라 고백하나, 선지자 갓을 통해 세 가지 벌 중 하나를 택하라는 말씀이 임하고, 다윗은 <b class="hl-quote">"내가 사람의 손에 빠지지 아니하고 여호와의 손에 빠지기를 원하노니 그의 궁휼이 크심이니이다"</b>라며 온역을 택해 칠만 명이 죽는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">18-25절</div>
+        <div>
+          <div class="flow-title">값을 치르고 드리는 예배</div>
+          <div class="flow-body">천사가 예루살렘을 멸하려 할 때 여호와께서 그 재앙을 그치게 하시고, 다윗은 선지자 갓의 지시로 여부스 사람 <b class="hl-insight has-insight" data-insight="9">아라우나</b>의 타작마당에 제단을 쌓으라는 지시를 받는다. 아라우나가 모든 것을 값없이 드리려 하나 다윗은 <b class="hl-quote">"값 없이는 내 하나님 여호와께 번제를 드리지 아니하리라"</b>며 정당한 값을 치르고 그곳에 제단을 쌓아 번제와 화목제를 드리니 재앙이 그친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 위대한 왕도 마지막까지 실책에서 자유롭지 않다</div>
+        <div class="teach-body">사무엘하의 마지막 장에서조차 다윗은 또 다른 심각한 죄(인구조사)를 범한다. 이는 인간이 평생 계속해서 하나님 앞에 자신을 살피고 회개해야 하는 존재임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 즉각적인 양심의 찔림이 회개의 시작이다</div>
+        <div class="teach-body">다윗의 마음이 곧바로 찔렸다는 서술은, 성숙한 신앙인의 특징이 죄를 짓지 않는 완벽함이 아니라 죄를 지었을 때 신속하게 반응하는 예민한 양심에 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 심판 속에서도 하나님의 긍휼을 신뢰하는 믿음</div>
+        <div class="teach-body">다윗이 "여호와의 손에 빠지기를 원하노니 그의 긍휼이 크심이니이다"라 고백하며 인간의 손이 아닌 하나님의 심판을 택한 것은, 심판자이신 하나님 안에 여전히 긍휼이 있다는 근본적 신뢰를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 값을 치르지 않은 예배는 진정한 예배가 아니다</div>
+        <div class="teach-body">다윗의 "값 없이는 번제를 드리지 아니하리라"는 원칙은, 진정한 예배와 헌신에는 언제나 실제적인 대가와 희생이 따라야 한다는 성경 전체의 핵심 원리를 압축적으로 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 심판의 자리가 은혜의 자리로 바뀌다</div>
+        <div class="teach-body">온역의 재앙이 그친 바로 그 자리(아라우나의 타작마당)가 훗날 솔로몬 성전이 세워지는 자리가 된다는 것은, 하나님의 심판이 임했던 장소가 이후 그분의 은혜와 예배가 영원히 머무는 자리로 변화될 수 있음을 상징적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">사무엘하가 다윗의 화려한 승리가 아니라 이 회개와 예배의 장면으로 끝난다는 게 참 의미심장해요. 위대한 왕의 마지막 모습이 결국 '값을 치르고 드리는 예배'였다는 것이, 그의 인생 전체를 요약하는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>인구조사가 왜 죄로 여겨졌는가?</div>
+        <div class="deep-body">인구조사 자체는 민수기에서도 시행된 적이 있어 본질적으로 죄악은 아니었다. 다수의 해석자들은 이 인구조사의 문제가 절차 자체보다 그 동기에 있었다고 본다 — 군사력을 계수함으로써 자신의 국력과 안전을 하나님이 아닌 인간적 자원(병력 수)에 두려는 교만한 마음이 근본 문제였다는 것이다. 요압이 "어찌하여 왕이 이 일을 기뻐하시나이까"(24:3)라며 반대한 것도 이런 우려를 반영하는 것으로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>사무엘하가 다윗의 승리가 아니라 이 회개와 예배의 장면으로 끝나는 것은 어떤 문학적·신학적 의미가 있는가?</div>
+        <div class="deep-body">사무엘하는 시간 순서상 마지막 사건이 아닌(열왕기상 1-2장이 다윗의 실제 마지막 나날을 다룸) 이 사건으로 책을 마무리한다. 이는 편집자가 의도적으로 다윗의 이야기를 군사적 정복이나 정치적 성취가 아니라, 죄의 고백과 값을 치른 예배라는 주제로 마무리하려 했음을 보여준다. 나아가 이 장소가 훗날 성전 부지가 된다는 사실은, 다윗의 개인적 실책과 회개의 자리가 이스라엘 전체의 항구적인 예배 처소의 기원이 된다는 점에서, 인간의 죄와 회개마저도 하나님의 더 큰 구속사적 계획 안에 사용될 수 있음을 보여주는 사무엘서 전체의 결론적 메시지로 다뤄진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="book-footer">
+  <div class="ff-line"></div>
+  <div class="ff-org">기독교한국침례회 은혜교회</div>
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "아브넬 — 사울 가문을 지탱한 군대장관", "body": "사울의 사촌이자 군대장관으로, 사울이 죽은 후 그의 아들 이스보셋을 왕으로 세워 사울 왕조를 이어가려 한다.\n\n아브넬은 상당 기간 이스라엘 지파들의 실질적 권력자로 군림하며 다윗의 유다 왕국과 대치하지만, 이후 이스보셋과의 갈등을 계기로 다윗에게 귀순을 시도한다(3장). 그러나 이 시도는 요압의 개인적 복수(자신의 동생 아사헬을 죽인 것에 대한)로 인해 비극적으로 끝난다.\n\n아브넬의 이야기는 정치적 권력 다툼 속에서 한 인물의 충성과 야망, 그리고 뒤늦은 화해의 시도가 얼마나 복잡하게 얽힐 수 있는지를 보여준다."}, {"title": "요압 — 다윗의 충직하고 위험한 군대장관", "body": "다윗의 누이 스루야의 아들로 다윗의 조카이며, 오랜 세월 다윗의 군대장관으로서 여러 전쟁에서 결정적 역할을 한다.\n\n요압은 다윗에게 군사적으로는 누구보다 충직했지만, 동시에 다윗의 통제를 벗어나 자신의 판단대로 잔혹한 행동(아브넬 암살, 압살롬 살해 등)을 서슴지 않는 위험한 인물이기도 했다.\n\n다윗은 임종 시 솔로몬에게 요압을 처리하라는 유언을 남길 만큼(왕상 2:5-6), 그를 평생 필요로 하면서도 완전히 신뢰하지는 못했다. 요압은 사무엘하 전체에서 권력의 실용성과 도덕적 정당성 사이의 긴장을 보여주는 대표적 인물이다."}, {"title": "웃사의 죽음 — 거룩한 것을 대하는 태도의 무게", "body": "다윗이 언약궤를 예루살렘으로 옮기던 중, 소들이 뛰므로 궤가 흔들리자 웃사가 손을 내밀어 궤를 붙들었는데, 그 즉시 여호와께서 그를 치셔서 그가 궤 곁에서 죽는다.\n\n이 사건은 표면적으로 가혹해 보이지만, 신명기 규정(민 4:15)에 따르면 언약궤는 레위 지파 고핫 자손이 채에 꿰어 어깨에 메어 운반해야 했고, 소가 끄는 수레에 실어서는 안 되는 것이었다. 즉 이 비극의 근본 원인은 웃사 개인의 잘못이라기보다, 처음부터 잘못된 방식(블레셋 식 수레 운반, 삼상 6장 참조)으로 궤를 옮기려 했던 절차 전체의 문제였다.\n\n이 사건 이후 다윗은 석 달 후 규례대로 레위인들이 궤를 메게 하여 다시 시도하는데(대상 15장), 이는 거룩한 것을 대하는 올바른 방식에 대한 성경 전체의 엄중한 메시지를 담고 있다."}, {"title": "다윗 언약 — \"네 집과 네 나라가 내 앞에 영원히 보전되고\"", "body": "다윗이 백향목 궁에 거하며 언약궤는 여전히 휘장 가운데 있음을 부끄러워하여 성전을 짓고자 하자, 하나님은 나단 선지자를 통해 뜻밖의 응답을 주신다.\n\n다윗이 하나님을 위해 집(성전)을 짓겠다고 하자, 하나님은 오히려 자신이 다윗을 위해 집(왕조)을 지어주겠다고 말씀을 뒤집으신다. '네 집과 네 나라가 내 앞에 영원히 보전되고 네 왕위가 영원히 견고하리라'는 이 약속은 성경 전체에서 '다윗 언약'이라 불리며, 이후 메시아 대망의 신학적 뿌리가 된다.\n\n흥미로운 건 이 언약이 다윗의 자손의 죄에도 불구하고 취소되지 않는 무조건적 은혜의 언약으로 제시된다는 점이다(7:14-15, '그가 만일 죄를 범하면... 그러나 내 은총을 그에게서 빼앗지 아니하리라'). 이는 이후 신약에서 예수 그리스도를 '다윗의 자손'으로 소개하는 신학적 기초가 된다."}, {"title": "므비보셋 — 다리를 저는, 그러나 왕의 상에 앉은 자", "body": "요나단의 아들로, 사울과 요나단이 전사했을 때 유모가 급히 안고 도망하다가 떨어뜨려 두 발을 다 절게 되었다.\n\n다윗은 요나단과 맺은 언약(삼상 20:14-15)을 기억하며 사울 가문에 은총을 베풀 자가 남아있는지 수소문하고, 마침내 로데발에서 숨어 살던 므비보셋을 찾아낸다. 왕조 교체기에 이전 왕조의 후손은 흔히 잠재적 위협으로 제거되던 고대 근동의 관습을 생각하면, 다윗의 이 행동은 매우 이례적이다.\n\n다윗은 그를 죽이거나 이용하지 않고 오히려 사울의 모든 토지를 돌려주고 왕의 상에서 늘 함께 먹게 하니, 이는 요나단과의 언약이 세대를 넘어 신실하게 지켜지는 아름다운 성취를 보여준다."}, {"title": "밧세바 — 다윗의 가장 큰 죄의 중심에 선 여인", "body": "우리아의 아내로, 다윗이 왕궁 옥상에서 목욕하는 그녀를 보고 사람을 보내 데려와 동침한다.\n\n본문은 밧세바의 내적 동기나 반응을 거의 서술하지 않아, 그녀가 이 사건에서 얼마나 자발적이었는지 혹은 피해자였는지에 대해 오랜 해석적 논쟁이 있다. 분명한 것은 왕이 신하의 아내를 부른 상황에서 그녀에게 실질적인 거부의 선택지가 있었을지는 매우 의문스럽다는 점이다.\n\n이후 그녀는 임신 사실을 알리고(11:5), 남편 우리아가 죽임당한 후 애곡하며(11:26-27), 다윗의 아내가 되어 훗날 솔로몬의 어머니가 된다. 밧세바는 이후 열왕기상 1장에서 나이 든 다윗에게 나아가 아들 솔로몬의 왕위 계승을 확실히 하는 데 결정적인 역할을 하는, 정치적으로도 중요한 인물로 다시 등장한다."}, {"title": "나단 — \"당신이 그 사람이라\"고 왕 앞에서 말한 선지자", "body": "다윗의 궁정 선지자로, 7장에서는 성전 건축에 대한 신탁을 전했던 인물이다. 이제 그는 훨씬 더 위험한 임무를 맡는다 — 왕의 치명적인 죄를 직접 대면하여 책망하는 것이다.\n\n나단은 직접적인 고발 대신 부자와 가난한 자의 비유를 사용하는 지혜로운 접근을 택한다. 가난한 자의 유일한 어린 양을 빼앗아 잡은 부자 이야기에 다윗이 크게 노하여 '그 사람은 마땅히 죽을 자라'고 판결하자, 나단은 짧고 강렬한 한마디로 응수한다: '당신이 그 사람이라.'\n\n이 대담한 직면은 나단이 왕의 진노로 목숨을 잃을 수도 있는 위험을 감수한 것이었다. 그러나 이 직면이 없었다면 다윗의 진정한 회개(시편 51편의 배경이 됨)도 없었을 것이라는 점에서, 나단은 사랑으로 진실을 말하는 예언자적 용기의 대표적 모범으로 다뤄진다."}, {"title": "압살롬 — 준수했던 왕자, 복수를 품은 형제", "body": "다윗의 셋째 아들로, 본문은 그를 '온 이스라엘 가운데 압살롬 같이 아름다움으로 크게 칭찬 받는 자가 없었으니 그는 발바닥부터 정수리까지 흠이 없음이라'고 묘사한다.\n\n여동생 다말이 이복형 암논에게 겁탈당하자, 압살롬은 처음엔 침묵하며 속으로 분노를 삭이다가 2년 후 치밀하게 계획된 복수로 암논을 살해한다. 이 사건은 압살롬이 이후 아버지 다윗에 대해 품게 되는 깊은 원망과 소외감의 근원이 되며, 결국 15장의 전면적인 반역으로 이어진다.\n\n압살롬의 이야기는 다윗 왕가 내부의 처리되지 않은 갈등과 침묵이 어떻게 훗날 국가적 위기로 확대되는지를 보여주는 비극적 서사의 중심축이다."}, {"title": "아히도벨 — 신탁처럼 여겨졌던 모사의 배신과 최후", "body": "다윗의 오랜 모사(謀士)로, 본문은 그의 조언이 '마치 하나님께 물어서 받은 말씀과 같이' 여겨졌다고 기록할 만큼 뛰어난 지략가였다.\n\n그런 그가 압살롬의 반역에 가담한 것은 다윗 진영에 심각한 타격이었다. 흥미롭게도 아히도벨은 밧세바의 할아버지로 추정되는데(삼하 11:3, 23:34 비교), 이 때문에 그의 배신이 다윗의 밧세바 사건에 대한 개인적 원한에서 비롯되었을 가능성이 오랫동안 제기되어 왔다.\n\n그의 조언이 후새의 반대 조언에 밀려 채택되지 않자, 아히도벨은 자신의 계획이 실패했음을 직감하고 고향으로 돌아가 스스로 목매어 죽는다. 이는 그가 자신의 지략에 대한 확신이 얼마나 컸는지, 그리고 그 실패를 감당할 수 없었던 인물이었는지를 동시에 보여준다."}, {"title": "아라우나 — 타작마당을 왕에게 값을 받고 내어준 여부스 사람", "body": "예루살렘의 원주민이었던 여부스 사람으로, 자신의 타작마당을 다윗에게 제단을 쌓을 자리로 요청받는다.\\n\\n아라우나는 처음에 타작마당과 소, 도구까지 모두 값없이 왕에게 드리려 하지만, 다윗은 \"내가 값을 주고 네게서 사리라 값 없이는 내 하나님 여호와께 번제를 드리지 아니하리라\"며 정당한 값(은 오십 세겔, 역대상 21:25에서는 금 육백 세겔로 더 큰 액수가 언급됨)을 지불하고 구입한다.\\n\\n이 자리는 이후 역대하 3:1에서 솔로몬 성전이 세워지는 바로 그 장소로 밝혀진다. 값을 치르지 않은 예배를 거부한 다윗의 원칙은 이후 성전이라는 이스라엘 신앙의 가장 중요한 장소의 기원이 되었다는 점에서 깊은 신학적 상징성을 지닌다."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var top = el.getBoundingClientRect().top + window.pageYOffset - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '\u2715';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
