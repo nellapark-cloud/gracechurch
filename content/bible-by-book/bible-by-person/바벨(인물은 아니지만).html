@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바벨탑</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --ink: #262220;
+    --sub: #6b6560;
+    --bg: #FBFAF7;
+    --line: #E4E0D8;
+    --accent: #9C4A2E;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  header{
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h1{
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height:1.2;
+    margin-bottom: 8px;
+  }
+
+  .hebrew{
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    color: var(--sub);
+  }
+
+  .refs{
+    margin-top: 14px;
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--sub);
+    background: rgba(156,74,46,0.07);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 44px;
+    margin-bottom: 14px;
+  }
+
+  h2 .num{
+    color: var(--accent);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 8px;
+    font-size: 17px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.9;
+    color: #3a3532;
+    margin-bottom: 16px;
+  }
+
+  ul{
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+
+  li{
+    font-size: 16px;
+    line-height: 1.85;
+    color: #3a3532;
+    margin-bottom: 10px;
+  }
+
+  strong{
+    color: var(--ink);
+    font-weight: 600;
+    background: linear-gradient(to bottom, transparent 65%, rgba(156,74,46,0.16) 65%);
+  }
+
+  .split{
+    display:flex;
+    gap: 14px;
+    margin: 18px 0 24px;
+  }
+
+  .split .col{
+    flex: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 16px 4px;
+    background: #fff;
+  }
+
+  .split .col h3{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .split .col p{
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  .table-wrap{
+    margin: 18px 0 24px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+  }
+
+  th{
+    background: rgba(156,74,46,0.08);
+    text-align: left;
+    padding: 10px 14px;
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+  }
+
+  td{
+    padding: 9px 14px;
+    border-top: 1px solid var(--line);
+    color: #3a3532;
+  }
+
+  .quote-block{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #4a453f;
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    margin: 18px 0 22px;
+  }
+
+  .note{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--sub);
+    border-left: 2px solid var(--line);
+    padding: 4px 0 4px 16px;
+    margin: 20px 0;
+  }
+
+  footer{
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: var(--sub);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding: 40px 20px 70px; }
+    h1{ font-size: 30px; }
+    .split{ flex-direction: column; }
+    table{ font-size: 13px; }
+    th, td{ padding: 8px 10px; }
+  }
+
+  /* --- 용어 팝업 --- */
+  .term{
+    position: relative;
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+    border-bottom: 1px dotted var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .popover{
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: 270px;
+    max-width: 78vw;
+    background: var(--ink);
+    color: #f2ede4;
+    font-family: 'Noto Serif KR', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 1.65;
+    padding: 14px 16px;
+    border-radius: 6px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    z-index: 20;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .popover .ptitle{
+    display:block;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: #d99a7c;
+    margin-bottom: 5px;
+  }
+
+  .popover::after{
+    content:"";
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+
+  .term.open .popover{ display:block; }
+
+  @media (max-width: 480px){
+    .popover{
+      position: fixed;
+      left: 5vw;
+      right: 5vw;
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      max-width: none;
+    }
+    .popover::after{ display:none; }
+    .term.open::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 19;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">성경인물묵상</div>
+    <h1>바벨탑</h1>
+    <div class="hebrew">스스로 이름을 내려던 자들, 흩으심 속에서 시작되는 구원사</div>
+    <div class="refs">등장 성구 · 창세기 10:8-10 · 창세기 11:1-9</div>
+  </header>
+
+  <h2><span class="num">01</span>니므롯의 땅, 시날 평지</h2>
+  <p>바벨탑 사건은 니므롯 이야기 바로 다음에 이어집니다. 니므롯이 세운 나라의 시작이 "시날 땅의 바벨과 에렉과 악갓과 갈레"(10:10)였다는 사실은, 11장의 바벨탑이 니므롯이 다진 권력의 터 위에서 벌어진 사건임을 보여줍니다. "온 땅의 언어가 하나요 말이 하나였더라"(11:1)는 문장으로 시작되는 이 이야기는, 니므롯이라는 강한 사냥꾼이 상징하던 인간 중심 문명이 어디까지 나아갈 수 있는지를 보여주는 정점입니다.</p>
+
+  <h2><span class="num">02</span>"우리 이름을 내자"</h2>
+  <p>시날 평지에 모인 사람들은 이렇게 말합니다.</p>
+  <div class="quote-block">"자, 성읍과 탑을 건설하여 그 탑 꼭대기를 하늘에 닿게 하여 우리 이름을 내고 온 지면에 흩어짐을 면하자" (창세기 11:4)</div>
+  <p>이 한 문장 안에 두 가지 저항이 담겨 있습니다. 첫째는 <span class="term" tabindex="0">이름<span class="popover"><span class="ptitle">쉠 (שֵׁם, shem)</span>'이름'을 뜻하는 히브리어. 바벨탑 사람들은 스스로 '쉠'을 내려 했지만, 정작 11장의 남은 절반은 '쉠'(셈)이라는 이름을 가진 인물의 족보로 채워지고, 그 족보의 끝에서 하나님은 아브람에게 "내가 네 이름을 창대하게 하리라"(12:2)고 말씀하신다.</span></span>을 스스로 내려는 시도이고, 둘째는 "생육하고 번성하여 땅에 충만하라"(9:1)는 하나님의 명령, 곧 흩어져 땅을 채우라는 명령에 대한 정면 거부입니다. 하나로 뭉쳐 하늘까지 닿는 탑을 쌓는 이 프로젝트는 겉보기엔 문명의 진보처럼 보이지만, 본질은 하나님 없이 인간 스스로 영광과 안전을 확보하려는 시도였습니다.</p>
+
+  <h2><span class="num">03</span>"우리가 내려가서" — 하나님의 개입</h2>
+  <p>사람들의 "자, 우리가 ~하자"(나벨라, 11:3-4)는 말은 하나님의 "자, 우리가 내려가서"(11:7)라는 응답과 정확히 대구를 이룹니다. 인간이 하늘까지 닿으려 쌓아 올린 탑을, 하나님은 굳이 '내려오셔야' 보일 수 있는 낮은 것으로 묘사합니다. 이는 창세기 1:26, 3:22에서도 나타나는 삼위 하나님의 자기 대화 형식으로, 인간의 자기 확장 시도가 얼마나 하나님 앞에서 보잘것없는지를 문학적으로 드러냅니다.</p>
+
+  <h2><span class="num">04</span>바벨 — 이름에 담긴 아이러니</h2>
+  <p>하나님은 언어를 <span class="term" tabindex="0">혼잡<span class="popover"><span class="ptitle">발랄 (בָּלַל, balal)</span>'섞다, 혼란케 하다'를 뜻하는 동사. '바벨'(בָּבֶל)이라는 지명과 발음이 비슷해, 본문은 의도적인 언어유희로 이 사건의 이름을 짓는다. 원래 바벨론 사람들에게 '바벨'은 '신의 문'(bab-ilu)이라는 자긍심 담긴 이름이었으나, 성경 저자는 그 이름을 '혼잡'이라는 조롱 섞인 의미로 재해석한다.</span></span>하게 하시고 사람들을 온 지면에 흩으십니다. 결과적으로 성읍의 이름은 '바벨'이 되는데, 이는 그들이 스스로 붙이려 했던 위엄 있는 이름이 아니라 '혼잡'이라는 뜻으로 남습니다. 스스로 이름을 내려던 시도는 도리어 수치의 이름으로 기록되고, 흩어짐을 피하려던 시도는 도리어 흩어짐으로 끝납니다. 인간의 계획과 정반대의 결과를 통해, 성경은 하나님이 역사의 최종 저자이심을 분명히 합니다.</p>
+
+  <div class="split">
+    <div class="col">
+      <h3>사람들의 계획</h3>
+      <p>하나 되어 이름을 내고, 흩어짐을 면하려 한다.</p>
+    </div>
+    <div class="col">
+      <h3>하나님의 결과</h3>
+      <p>언어가 혼잡해지고, 온 지면에 흩어지며, 성읍은 '혼잡'이라 불린다.</p>
+    </div>
+  </div>
+
+  <h2><span class="num">05</span>복음과의 연결</h2>
+  <p>바벨탑 사건 직후 11장은 셈의 족보로 이어지고, 그 끝에서 하나님은 아브람을 부르시며 이렇게 말씀하십니다. "내가 네게 큰 복을 주어 네 이름을 창대하게 하리니"(12:2). 바벨의 사람들이 스스로 만들려다 실패한 그 '이름'을, 하나님은 순전히 은혜로 아브람에게 주십니다. 인간의 자기 영광 프로젝트는 무너지지만, 하나님의 은혜의 부르심은 거기서부터 구원사를 새로 시작합니다.</p>
+  <p>이 흩으심의 저주는 신약 사도행전 2장 오순절에서 놀랍게 역전됩니다. 바벨에서 언어가 혼잡해져 사람들이 흩어졌다면, 오순절에는 성령이 임하여 서로 다른 언어를 쓰는 사람들이 각자의 방언으로 복음을 알아듣게 됩니다. 바벨이 심판으로 흩으신 사건이라면, 오순절은 복음으로 다시 모으시는 사건입니다. 그리스도 안에서 바벨의 저주가 마침내 되돌려집니다.</p>
+
+  <h2><span class="num">06</span>우리의 현실과 설교적 교훈</h2>
+  <p>바벨탑은 먼 옛날의 건축 프로젝트가 아니라, 오늘도 반복되는 인간의 근본적인 욕구를 보여줍니다. 하나님 없이 안전을 확보하려는 마음, 하나님이 주신 이름이 아니라 스스로 만든 이름으로 인정받으려는 마음입니다. 우리의 성취와 연결망과 플랫폼이 커질수록, 그것이 하나님을 향한 의존을 대신하는 탑이 되고 있지는 않은지 돌아볼 필요가 있습니다.</p>
+  <p>동시에 이 본문은 위로이기도 합니다. 인간의 프로젝트가 무너진 자리에서 하나님은 언제나 새로운 구원의 이야기를 시작하십니다. 바벨의 실패 직후 아브람의 부르심이 놓인 것처럼, 우리의 무너진 탑들도 하나님이 시작하시는 새로운 이야기의 출발점이 될 수 있습니다. 스스로 이름을 내려 하지 않고 하나님이 주시는 이름을 구하는 것 — 이것이 바벨탑이 오늘 우리에게 남기는 가장 실제적인 질문입니다.</p>
+
+  <p class="note">다음엔 셈의 족보를 거쳐 아브람의 부르심(창세기 12장)으로 넘어갈 수 있다.</p>
+
+  <footer>
+    <span>GENESIS STUDY</span>
+    <span>בבל — תולדות אדם</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.term').forEach(term => {
+    term.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = term.classList.contains('open');
+      document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+      if (!wasOpen) term.classList.add('open');
+    });
+    term.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); term.click(); }
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+  });
+</script>
+</body>
+</html>
