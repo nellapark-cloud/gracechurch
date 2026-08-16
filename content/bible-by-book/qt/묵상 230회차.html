@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>230일차 · 예레미야 44~47장, 시편 75편</title>
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css" />
+<style>
+  :root{
+    --ink:#232030;
+    --ink-soft:#7c7688;
+    --paper:#fdfcfa;
+    --accent:#8b6fe8;
+    --accent-deep:#6c4fd8;
+    --line:rgba(35,32,48,0.09);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'PretendardVariable', Pretendard, -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;}
+
+  /* ---------- hero : pearl gradient ---------- */
+  .hero{
+    position:relative;
+    padding:60px 24px 46px;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 12% 0%, #ffe3ee 0%, transparent 55%),
+      radial-gradient(110% 90% at 90% 10%, #d9e8ff 0%, transparent 55%),
+      radial-gradient(100% 90% at 50% 100%, #e3f5e9 0%, transparent 60%),
+      radial-gradient(130% 100% at 40% 40%, #efe3ff 0%, transparent 65%),
+      linear-gradient(180deg,#fdfcfa,#fdfcfa);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(60% 40% at 20% 10%, rgba(255,255,255,0.75) 0%, transparent 60%),
+      radial-gradient(50% 35% at 85% 25%, rgba(255,255,255,0.6) 0%, transparent 60%);
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+  .hero-content{position:relative;}
+  .hero .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.02em;
+    color:var(--accent-deep);
+    background:rgba(255,255,255,0.65);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.8);
+    padding:7px 14px;
+    border-radius:99px;
+    margin-bottom:22px;
+    box-shadow:0 4px 16px rgba(140,110,230,0.12);
+  }
+  .hero h1{
+    font-size:32px;
+    font-weight:800;
+    line-height:1.32;
+    letter-spacing:-0.03em;
+    margin:0 0 14px;
+    color:var(--ink);
+  }
+  .hero p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin:0;
+  }
+
+  /* ---------- chip nav ---------- */
+  .chipnav{
+    display:flex;
+    gap:0;
+    overflow-x:auto;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    scrollbar-width:none;
+    position:sticky;
+    top:0;
+    z-index:5;
+  }
+  .chipnav::-webkit-scrollbar{display:none;}
+  .chipnav a{
+    flex:none;
+    font-size:13px;
+    font-weight:700;
+    color:var(--ink-soft);
+    padding:14px 18px;
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:2px solid transparent;
+  }
+  .chipnav a:hover{color:var(--accent-deep);border-bottom:2px solid var(--accent);}
+
+  /* ---------- chapter blocks ---------- */
+  .item{
+    padding:0 24px;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:52px;
+  }
+  .item-inner{padding:32px 0;}
+  .item-head{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:14px;
+    margin-bottom:14px;
+  }
+  .item-num{
+    font-size:30px;
+    font-weight:800;
+    background:linear-gradient(135deg,var(--accent),#f0a8c9);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    line-height:1;
+    letter-spacing:-0.02em;
+  }
+  .item-titles .ref{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    color:var(--ink);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:4px;
+    opacity:0.5;
+  }
+  .item-titles h2{
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .item p{
+    font-size:15.5px;
+    line-height:1.8;
+    color:#3f3b4a;
+    font-weight:450;
+    margin:0 0 10px;
+  }
+  .item p:last-child{margin-bottom:0;}
+
+  /* ---------- meditation : pearl gradient ---------- */
+  .med-section{
+    position:relative;
+    padding:50px 24px 58px;
+    overflow:hidden;
+    background:
+      radial-gradient(110% 80% at 85% 0%, #ffe6f0 0%, transparent 55%),
+      radial-gradient(100% 80% at 10% 15%, #e2ecff 0%, transparent 55%),
+      radial-gradient(100% 90% at 50% 100%, #eaf7ee 0%, transparent 60%),
+      radial-gradient(120% 100% at 60% 50%, #f1e6ff 0%, transparent 65%),
+      linear-gradient(180deg,#fdfcfa,#fdfcfa);
+  }
+  .med-section::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(55% 35% at 75% 5%, rgba(255,255,255,0.7) 0%, transparent 60%);
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+  .med-content{position:relative;}
+  .med-head .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--accent-deep);
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.8);
+    padding:7px 14px;
+    border-radius:99px;
+    margin-bottom:18px;
+  }
+  .med-head h2{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin:0 0 8px;
+    color:var(--ink);
+  }
+  .med-head p{
+    font-size:14px;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin:0 0 28px;
+  }
+
+  .med-stack{display:flex;flex-direction:column;gap:12px;}
+  .med-card{
+    background:rgba(255,255,255,0.62);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.85);
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 8px 28px rgba(140,110,230,0.08);
+  }
+  .med-card .ref{
+    display:inline-block;
+    font-size:12px;
+    font-weight:800;
+    color:var(--accent-deep);
+    background:rgba(139,111,232,0.12);
+    padding:4px 10px;
+    border-radius:7px;
+    margin-bottom:12px;
+  }
+  .med-card p{
+    font-size:15.5px;
+    line-height:1.85;
+    font-weight:500;
+    margin:0;
+    color:#302c3d;
+  }
+
+  footer{
+    padding:24px;
+    font-size:12.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+    text-align:center;
+    background:var(--paper);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-content">
+      <span class="tag">✦ 230일차 · 365일 성경통독</span>
+      <h1>예레미야 44~47장<br>시편 75편</h1>
+      <p>오늘 본문을 정리하고, 묵상 포인트로 하루를 시작해요.</p>
+    </div>
+  </div>
+
+  <nav class="chipnav">
+    <a href="#ch44">렘 44</a>
+    <a href="#ch45">렘 45</a>
+    <a href="#ch46">렘 46</a>
+    <a href="#ch47">렘 47</a>
+    <a href="#ps75">시 75</a>
+    <a href="#meditation">묵상</a>
+  </nav>
+
+  <div class="item" id="ch44">
+    <div class="item-inner">
+      <div class="item-head">
+        <span class="item-num">01</span>
+        <div class="item-titles">
+          <span class="ref">예레미야 44장</span>
+          <h2>애굽으로 도망간 자들의 완악함</h2>
+        </div>
+      </div>
+      <p>바벨론을 피해 애굽으로 내려간 유다 유민들이 그곳에서도 '하늘 여신'에게 분향하며 우상숭배를 이어갑니다. 예레미야가 심판을 경고하지만, 백성들은 오히려 "우상에게 분향할 때 형통했고, 그것을 그친 후로 재앙을 만났다"며 회개를 거부합니다.</p>
+      <p>하나님은 이들이 결국 애굽 땅에서 멸망할 것을 선언하십니다.</p>
+    </div>
+  </div>
+
+  <div class="item" id="ch45">
+    <div class="item-inner">
+      <div class="item-head">
+        <span class="item-num">02</span>
+        <div class="item-titles">
+          <span class="ref">예레미야 45장</span>
+          <h2>바룩에게 주신 말씀</h2>
+        </div>
+      </div>
+      <p>예레미야의 서기관 바룩 개인에게 주신 짧은 말씀입니다. 나라가 무너지는 절망적 상황 속에서 바룩이 "내게 화로다"라며 낙심하자, 하나님은 큰 것을 구하지 말라 하시며 "네 생명만은 노략물처럼 살려주겠다"고 개인적으로 위로하십니다.</p>
+    </div>
+  </div>
+
+  <div class="item" id="ch46">
+    <div class="item-inner">
+      <div class="item-head">
+        <span class="item-num">03</span>
+        <div class="item-titles">
+          <span class="ref">예레미야 46장</span>
+          <h2>애굽에 대한 심판 예언</h2>
+        </div>
+      </div>
+      <p>느부갓네살이 갈그미스 전투에서 애굽 군대를 격파하는 장면을 예언적으로 그리며, 강대국 애굽조차 하나님의 손 안에 있음을 보여줍니다.</p>
+    </div>
+  </div>
+
+  <div class="item" id="ch47">
+    <div class="item-inner">
+      <div class="item-head">
+        <span class="item-num">04</span>
+        <div class="item-titles">
+          <span class="ref">예레미야 47장</span>
+          <h2>블레셋에 대한 심판 예언</h2>
+        </div>
+      </div>
+      <p>북쪽에서 밀려오는 물결(침략군)이 블레셋 땅을 휩쓸 것을 경고합니다. 이스라엘의 오랜 대적조차 하나님의 심판 아래 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="item" id="ps75">
+    <div class="item-inner">
+      <div class="item-head">
+        <span class="item-num">05</span>
+        <div class="item-titles">
+          <span class="ref">시편 75편</span>
+          <h2>정하신 때에 공의로 심판하시는 하나님</h2>
+        </div>
+      </div>
+      <p>"내가 정한 기약이 이르면 심판하리라"(2절)는 하나님의 말씀을 중심으로, 교만한 자들에게 뿔을 들지 말라 경고합니다. 심판과 높이심, 낮추심이 오직 하나님께 달려 있음을 노래합니다.</p>
+    </div>
+  </div>
+
+  <div class="med-section" id="meditation">
+    <div class="med-content">
+      <div class="med-head">
+        <span class="tag">✦ 오늘의 묵상</span>
+        <h2>본문을 마음에 두고</h2>
+        <p>다섯 본문을 천천히 다시 떠올리며 조용히 머물러 봅니다.</p>
+      </div>
+
+      <div class="med-stack">
+        <div class="med-card">
+          <span class="ref">렘 44장</span>
+          <p>지금 내 삶이 평안하고 잘 풀린다고 해서, 그것이 곧 내가 옳게 살고 있다는 증거는 아닙니다. "이렇게 하니 잘 되더라"는 마음으로 은근히 붙들고 있는 것은 없는지, 오늘 나의 신앙과 삶을 조용히 돌아봅니다.</p>
+        </div>
+        <div class="med-card">
+          <span class="ref">렘 45장</span>
+          <p>나라 전체가 무너지는 큰 위기 속에서도, 하나님은 바룩이라는 한 사람의 낙심을 놓치지 않고 찾아와 위로하셨습니다. 지금 내가 겪는 작은 낙심과 두려움도 하나님은 결코 지나치지 않으신다는 사실을 마음에 새겨봅니다.</p>
+        </div>
+        <div class="med-card">
+          <span class="ref">렘 46~47장</span>
+          <p>애굽과 블레셋처럼 강력해 보이는 세력도 하나님의 주권 아래 있었습니다. 지금 내가 두려워하고 있는 크고 강한 문제 앞에서, 이 본문이 주는 안심을 나의 상황에 가만히 적용해봅니다.</p>
+        </div>
+        <div class="med-card">
+          <span class="ref">시 75편</span>
+          <p>"정한 기약"이라는 말씀처럼, 심판과 회복의 때는 내가 아니라 하나님이 정하십니다. 조급하게 스스로 판단하고 앞서가려는 마음을 내려놓고, 기다리는 믿음을 오늘 하루 연습해봅니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>기독교한국침례회 은혜교회 · 담임목사 박동준</footer>
+
+</div>
+
+</body>
+</html>
