@@ -355,14 +355,8 @@
     padding: 7vh 8vw;
     border-top: 1px solid var(--rule);
     scroll-margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-content: flex-start;
-    column-gap: 1.6rem;
   }
   .room:nth-of-type(even){ background: var(--cream-warm); }
-  .room__head{ flex: 1 1 100%; }
-  .room > .subhead{ flex: 1 1 100%; }
 
   .room--feature{
     background: var(--navy) !important;
@@ -497,13 +491,6 @@
     border-radius: 8px;
     padding: 1.4rem 1.6rem;
     max-width: 26rem;
-    flex: 1 1 100%;
-  }
-  #admin-content{
-    flex: 1 1 100%;
-    display: flex;
-    flex-wrap: wrap;
-    column-gap: 1.6rem;
   }
   .admin-gate__label{
     margin: 0 0 0.9rem;
@@ -555,16 +542,10 @@
 
   /* ---------- collapsible folder groups ---------- */
   details.doc-group{
-    border: 1px solid var(--rule);
-    border-radius: 8px;
-    padding: 0 0.2rem;
-    flex: 1 1 300px;
-    min-width: 260px;
-    margin-bottom: 1rem;
-    align-self: flex-start;
+    border-top: 1px solid var(--rule);
   }
   details.doc-group:last-of-type{
-    border: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
   }
   details.doc-group summary{
     cursor: pointer;
@@ -659,7 +640,6 @@
 
   @media (max-width: 720px){
     .hero, .room, footer{ padding-left: 6vw; padding-right: 6vw; }
-    details.doc-group{ flex-basis: 100%; min-width: 0; }
   }
 
   @media (max-width: 480px){
@@ -969,7 +949,7 @@
     if (input.value === ADMIN_PASSWORD) {
       input.blur();
       document.getElementById('admin-gate').style.display = 'none';
-      document.getElementById('admin-content').style.display = 'flex';
+      document.getElementById('admin-content').style.display = 'block';
     } else {
       error.style.display = 'block';
     }
