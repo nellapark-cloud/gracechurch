@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>232일차 · 예레미야 50장, 시편 77편</title>
+<meta property="og:type" content="article">
+<meta property="og:title" content="232일차 · 예레미야 50장, 시편 77편">
+<meta property="og:description" content="오늘 본문을 정리하고, 묵상 포인트로 하루를 시작해요.">
+<meta property="og:image" content="https://sejonggrace.com/content/bible-by-book/images/qt-thumb-v2.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable.css" />
+<style>
+  :root{
+    --ink:#232030;
+    --ink-soft:#7c7688;
+    --paper:#fdfcfa;
+    --accent:#8b6fe8;
+    --accent-deep:#6c4fd8;
+    --line:rgba(35,32,48,0.09);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'PretendardVariable', Pretendard, -apple-system, sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:640px;margin:0 auto;}
+
+  /* ---------- hero : pearl gradient ---------- */
+  .hero{
+    position:relative;
+    padding:60px 24px 46px;
+    overflow:hidden;
+    background:
+      radial-gradient(120% 90% at 12% 0%, #ffe3ee 0%, transparent 55%),
+      radial-gradient(110% 90% at 90% 10%, #d9e8ff 0%, transparent 55%),
+      radial-gradient(100% 90% at 50% 100%, #e3f5e9 0%, transparent 60%),
+      radial-gradient(130% 100% at 40% 40%, #efe3ff 0%, transparent 65%),
+      linear-gradient(180deg,#fdfcfa,#fdfcfa);
+  }
+  .hero::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:
+      radial-gradient(60% 40% at 20% 10%, rgba(255,255,255,0.75) 0%, transparent 60%),
+      radial-gradient(50% 35% at 85% 25%, rgba(255,255,255,0.6) 0%, transparent 60%);
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+  .hero-content{position:relative;}
+  .hero .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:0.02em;
+    color:var(--accent-deep);
+    background:rgba(255,255,255,0.65);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.8);
+    padding:7px 14px;
+    border-radius:99px;
+    margin-bottom:22px;
+    box-shadow:0 4px 16px rgba(140,110,230,0.12);
+  }
+  .hero h1{
+    font-size:32px;
+    font-weight:800;
+    line-height:1.32;
+    letter-spacing:-0.03em;
+    margin:0 0 14px;
+    color:var(--ink);
+  }
+  .hero p{
+    font-size:14.5px;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin:0;
+  }
+
+  /* ---------- chip nav ---------- */
+  .chipnav{
+    display:flex;
+    gap:0;
+    overflow-x:auto;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    scrollbar-width:none;
+    position:sticky;
+    top:0;
+    z-index:5;
+  }
+  .chipnav::-webkit-scrollbar{display:none;}
+  .chipnav a{
+    flex:none;
+    font-size:13px;
+    font-weight:700;
+    color:var(--ink-soft);
+    padding:14px 18px;
+    text-decoration:none;
+    white-space:nowrap;
+    border-bottom:2px solid transparent;
+  }
+  .chipnav a:hover{color:var(--accent-deep);border-bottom:2px solid var(--accent);}
+
+  /* ---------- chapter blocks ---------- */
+  .item{
+    padding:0 24px;
+    border-bottom:1px solid var(--line);
+    scroll-margin-top:52px;
+  }
+  .item-inner{padding:32px 0;}
+  .item-head{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:14px;
+    margin-bottom:14px;
+  }
+  .item-num{
+    font-size:30px;
+    font-weight:800;
+    background:linear-gradient(135deg,var(--accent),#f0a8c9);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    line-height:1;
+    letter-spacing:-0.02em;
+  }
+  .item-titles .ref{
+    display:block;
+    font-size:12px;
+    font-weight:700;
+    color:var(--ink);
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:4px;
+    opacity:0.5;
+  }
+  .item-titles h2{
+    font-size:19px;
+    font-weight:800;
+    letter-spacing:-0.01em;
+    margin:0;
+    line-height:1.4;
+    color:var(--ink);
+  }
+  .item p{
+    font-size:15.5px;
+    line-height:1.8;
+    color:#3f3b4a;
+    font-weight:450;
+    margin:0 0 10px;
+  }
+  .item p:last-child{margin-bottom:0;}
+
+  /* ---------- meditation : pearl gradient ---------- */
+  .med-section{
+    position:relative;
+    padding:50px 24px 58px;
+    overflow:hidden;
+    background:
+      radial-gradient(110% 80% at 85% 0%, #ffe6f0 0%, transparent 55%),
+      radial-gradient(100% 80% at 10% 15%, #e2ecff 0%, transparent 55%),
+      radial-gradient(100% 90% at 50% 100%, #eaf7ee 0%, transparent 60%),
+      radial-gradient(120% 100% at 60% 50%, #f1e6ff 0%, transparent 65%),
+      linear-gradient(180deg,#fdfcfa,#fdfcfa);
+  }
+  .med-section::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(55% 35% at 75% 5%, rgba(255,255,255,0.7) 0%, transparent 60%);
+    mix-blend-mode:overlay;
+    pointer-events:none;
+  }
+  .med-content{position:relative;}
+  .med-head .tag{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    font-size:12.5px;
+    font-weight:700;
+    color:var(--accent-deep);
+    background:rgba(255,255,255,0.7);
+    backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.8);
+    padding:7px 14px;
+    border-radius:99px;
+    margin-bottom:18px;
+  }
+  .med-head h2{
+    font-size:24px;
+    font-weight:800;
+    letter-spacing:-0.02em;
+    margin:0 0 8px;
+    color:var(--ink);
+  }
+  .med-head p{
+    font-size:14px;
+    color:var(--ink-soft);
+    font-weight:500;
+    margin:0 0 28px;
+  }
+
+  .med-stack{display:flex;flex-direction:column;gap:12px;}
+  .med-card{
+    background:rgba(255,255,255,0.62);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.85);
+    border-radius:20px;
+    padding:22px;
+    box-shadow:0 8px 28px rgba(140,110,230,0.08);
+  }
+  .med-card .ref{
+    display:inline-block;
+    font-size:12px;
+    font-weight:800;
+    color:var(--accent-deep);
+    background:rgba(139,111,232,0.12);
+    padding:4px 10px;
+    border-radius:7px;
+    margin-bottom:12px;
+  }
+  .med-card p{
+    font-size:15.5px;
+    line-height:1.85;
+    font-weight:500;
+    margin:0;
+    color:#302c3d;
+  }
+
+  footer{
+    padding:24px;
+    font-size:12.5px;
+    font-weight:500;
+    color:var(--ink-soft);
+    text-align:center;
+    background:var(--paper);
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <div class="hero">
+    <div class="hero-content">
+      <span class="tag">✦ 232일차 · 365일 성경통독</span>
+      <h1>예레미야 50장<br>시편 77편</h1>
+      <p>오늘 본문을 정리하고, 묵상 포인트로 하루를 시작해요.</p>
+    </div>
+  </div>
+
+  <nav class="chipnav">
+    <a href="#ch50">렘 50</a>
+    <a href="#ps77">시 77</a>
+    <a href="#meditation">묵상</a>
+  </nav>
+
+  <div class="item" id="ch50">
+    <div class="item-inner">
+      <div class="item-head">
+        <span class="item-num">01</span>
+        <div class="item-titles">
+          <span class="ref">예레미야 50장</span>
+          <h2>바벨론에 대한 심판 예언</h2>
+        </div>
+      </div>
+      <p>유다를 무너뜨렸던 바벨론 제국 자체가 이제 심판의 대상이 됩니다. "바벨론이 함락되고 벨이 수치를 당하며"(2절)라는 선언과 함께, 하나님은 흩어진 이스라엘과 유다 백성을 다시 불러 모아 언약으로 돌아오게 하실 것을 약속하십니다.</p>
+      <p>강대국의 흥망도 결국 하나님의 손 안에 있음을 보여주는 본문입니다.</p>
+    </div>
+  </div>
+
+  <div class="item" id="ps77">
+    <div class="item-inner">
+      <div class="item-head">
+        <span class="item-num">02</span>
+        <div class="item-titles">
+          <span class="ref">시편 77편</span>
+          <h2>과거를 기억하며 다시 붙잡는 믿음</h2>
+        </div>
+      </div>
+      <p>시인은 깊은 고통 속에서 "주께서 영원히 버리실까"(7절)라며 하나님께 부르짖습니다. 그러나 시의 흐름은 탄식에서 멈추지 않고, 홍해를 가르셨던 옛 구원의 역사를 떠올리며 다시 하나님을 신뢰하는 방향으로 나아갑니다.</p>
+    </div>
+  </div>
+
+  <div class="med-section" id="meditation">
+    <div class="med-content">
+      <div class="med-head">
+        <span class="tag">✦ 오늘의 묵상</span>
+        <h2>본문을 마음에 두고</h2>
+        <p>두 본문을 천천히 다시 떠올리며 조용히 머물러 봅니다.</p>
+      </div>
+
+      <div class="med-stack">
+        <div class="med-card">
+          <span class="ref">렘 50장</span>
+          <p>나를 힘들게 했던 상황이나 강해 보이던 문제도 결국 하나님의 때가 되면 무너집니다. 지금 내가 도무지 이길 수 없을 것 같은 것 앞에서, 이 본문이 주는 소망을 붙잡아봅니다.</p>
+        </div>
+        <div class="med-card">
+          <span class="ref">시 77편</span>
+          <p>지금 마음이 힘들 때, 감정을 억누르기보다 시인처럼 솔직하게 하나님께 토로하는 것부터 시작해봅니다. 그리고 과거에 하나님이 나를 어떻게 지켜오셨는지 하나씩 떠올리며, 오늘의 믿음을 다시 세워봅니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>기독교한국침례회 은혜교회</footer>
+
+</div>
+
+</body>
+</html>
