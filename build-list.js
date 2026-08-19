@@ -11,6 +11,7 @@ const categories = [
   { key: 'meeting_blessing', dir: 'content/meeting-blessing' },
   { key: 'bible_by_book-old', dir: 'content/bible-by-book/old-testament' },
   { key: 'bible_by_book-new', dir: 'content/bible-by-book/new-testament' },
+  { key: 'romans_chapters', dir: 'content/bible-by-book/new-testament/romans-chapters' },
   { key: 'bible_by_person', dir: 'content/bible-by-book/bible-by-person' },
   { key: 'bible_qt', dir: 'content/bible-by-book/qt' },
   { key: 'newcomers', dir: 'content/newcomers' },
