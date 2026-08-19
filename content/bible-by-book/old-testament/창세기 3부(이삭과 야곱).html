@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>창세기 연구 — 3부 이삭과 야곱(26-36장)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* hl-insight = 더 깊은 설명이 필요한 구절 (하늘색), 클릭 시 팝업 */
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+/* clickable (has a glossary tip) */
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(20,28,42,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+/* Screen-friendly rules above are now the default (baseline) so that any
+   viewer — including ones that don't evaluate @media correctly — shows a
+   clean, readable layout. Printing restores the compact A4-tuned look. */
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 창세기 연구 · 3부</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+<div class="cover">
+  <div class="eyebrow">은혜교회 성경공부 시리즈</div>
+  <h1>창세기 연구</h1>
+  <div class="cover-sub">우물가의 만남에서 얍복강의 씨름까지 — 3부 이삭과 야곱(26–36장)</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">창 26:1 – 36:43</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">
+    전 11장 · 구조 · 신학적·목회적 교훈 · 심화 질문<br/><br/>
+    <span style="color:#d8b073;">■</span> 핵심 신학 용어　
+    <span style="color:#e07a69;">■</span> 성경 본문 인용　
+    <span style="color:#6ec4bc;">■</span> 원어(히브리어)　
+    <span style="color:#78bee6;">■</span> 더 알아보기(탭하여 열람)
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>창세기 3부 서론 — 이삭과 야곱 내러티브(창 26-36장)</h1>
+  <p class="intro-lead">반복되는 실수, 그리고 씨름 끝에 얻은 새 이름.</p>
+
+  <div class="intro-block">
+    <h3>2부에서 3부로 — 조용한 아들에서 씨름하는 손자로</h3>
+    <p>2부가 아브라함의 부르심과 언약을 다루었다면, 3부는 상대적으로 <b class="hl-term">조용하고 수동적인 인물 이삭</b>을 지나, 훨씬 더 역동적이고 결함 많은 인물 <b class="hl-term">야곱</b>에게 초점을 맞춘다. 야곱의 이야기는 속임수와 도피, 착취와 반전, 그리고 결정적으로 하나님과의 씨름을 통한 정체성의 근본적 전환(이스라엘이라는 새 이름)을 담고 있다. 이 열한 장은 이스라엘이라는 이름 자체의 기원 이야기이기도 하다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>반복되는 패턴의 신학적 의미</h3>
+    <p>3부에는 2부의 사건들이 놀랍도록 정교하게 반복되는 문학적 패턴이 가득하다 — 이삭이 아버지처럼 아내를 누이라 속이고(26장), 야곱이 형을 속인 것과 정확히 대칭되는 방식으로 라반에게 속으며(29장), 야곱이 아버지를 속인 것처럼 훗날 그 자신도 아들들에게 속게 된다(37장에서 이어짐). 이러한 반복은 우연이 아니라, 죄의 패턴이 세대를 넘어 전수될 수 있음을 보여주는 동시에, 하나님의 정의로운 섭리가 인간의 죄를 통해서도 훈육의 도구로 작동함을 보여주는 정교한 문학적·신학적 장치다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>얍복강 — 창세기 전체의 신학적 정점 중 하나</h3>
+    <p>32장의 얍복강 씨름은 창세기 전체에서 가장 신비롭고 심오한 장면 중 하나로 꼽힌다. 속이는 자 '야곱'이 하나님과 대면하여 씨름하고 상처 입은 채 '이스라엘'이라는 새 이름을 얻는 이 사건은, 이후 이스라엘 민족 전체의 정체성 — 완전하지 않지만 하나님과 씨름하며 붙드는 백성 — 을 상징적으로 규정한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>가정의 어두운 현실을 정직하게 기록함</h3>
+    <p>3부는 편애(이삭과 리브가, 그리고 이후 야곱 자신), 자매간의 경쟁(레아와 라헬), 성적 폭력과 그에 대한 과잉 보복(디나와 세겜, 34장), 근친상간(르우벤과 빌하, 35장) 등 결코 미화되지 않는 가정의 어두운 현실을 가감없이 기록한다. 성경은 족장들의 가정을 이상화하지 않고, 그 모든 결함과 죄 한가운데서도 하나님의 언약이 신실하게 이어져 감을 보여준다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관 (3부, 26-36장)</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">26-28장</div>
+        <div class="oi-title">반복되는 실수와 도피</div>
+        <div class="oi-body">이삭의 실수, 빼앗은 축복, 그리고 도망자 야곱에게 나타나신 하나님(벧엘).</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">29-31장</div>
+        <div class="oi-title">라반의 집에서</div>
+        <div class="oi-body">속은 자가 속임을 당함, 자녀 경쟁과 번성, 그리고 은밀한 도피와 화해의 언약.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">32-33장</div>
+        <div class="oi-title">씨름과 화해</div>
+        <div class="oi-body">얍복강에서 이스라엘이라는 새 이름을 얻고, 두려워하던 에서와 눈물로 재회함.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">34-36장</div>
+        <div class="oi-title">어두운 그림자와 다음 세대로</div>
+        <div class="oi-body">디나의 비극, 벧엘로의 귀환과 라헬의 죽음, 그리고 에서의 계보 정리.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 다루며, <b class="hl-term">③깊이 생각해볼 문제</b>는 해석사적 논쟁과 난해 구절을 다룬다. 골드로 표시된 용어와 하늘색으로 표시된 구절은 탭하여 추가 설명을 확인할 수 있다.</p>
+  </div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents · 3부</div>
+  <h1>목차 — 이삭과 야곱 (26-36장)</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch26')" onkeydown="if(event.key==='Enter')goTo(event,'ch26')">
+      <span class="toc-num">26</span>
+      <span class="toc-title">이삭과 그랄</span>
+      <span class="toc-sub">아버지의 실수를 반복하는 아들, 그리고 신실하신 하나님</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch27')" onkeydown="if(event.key==='Enter')goTo(event,'ch27')">
+      <span class="toc-num">27</span>
+      <span class="toc-title">빼앗은 축복</span>
+      <span class="toc-sub">속임수로 얻은 장자의 축복</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch28')" onkeydown="if(event.key==='Enter')goTo(event,'ch28')">
+      <span class="toc-num">28</span>
+      <span class="toc-title">벧엘에서의 꿈</span>
+      <span class="toc-sub">도망자에게 나타나신 하나님, 사닥다리 환상</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch29')" onkeydown="if(event.key==='Enter')goTo(event,'ch29')">
+      <span class="toc-num">29</span>
+      <span class="toc-title">라반의 집에서</span>
+      <span class="toc-sub">속인 자가 속는다 — 레아와 라헬</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch30')" onkeydown="if(event.key==='Enter')goTo(event,'ch30')">
+      <span class="toc-num">30</span>
+      <span class="toc-title">자녀 경쟁과 야곱의 번성</span>
+      <span class="toc-sub">두 자매의 다툼, 그리고 얼룩무늬 양떼</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch31')" onkeydown="if(event.key==='Enter')goTo(event,'ch31')">
+      <span class="toc-num">31</span>
+      <span class="toc-title">라반을 떠나는 야곱</span>
+      <span class="toc-sub">이십 년의 노동 끝에 고향으로</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch32')" onkeydown="if(event.key==='Enter')goTo(event,'ch32')">
+      <span class="toc-num">32</span>
+      <span class="toc-title">얍복강의 씨름</span>
+      <span class="toc-sub">이스라엘이라는 새 이름을 얻다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch33')" onkeydown="if(event.key==='Enter')goTo(event,'ch33')">
+      <span class="toc-num">33</span>
+      <span class="toc-title">에서와의 재회</span>
+      <span class="toc-sub">두려워하던 만남이 화해로</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch34')" onkeydown="if(event.key==='Enter')goTo(event,'ch34')">
+      <span class="toc-num">34</span>
+      <span class="toc-title">디나의 사건과 세겜의 비극</span>
+      <span class="toc-sub">폭력이 낳은 더 큰 폭력</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch35')" onkeydown="if(event.key==='Enter')goTo(event,'ch35')">
+      <span class="toc-num">35</span>
+      <span class="toc-title">벧엘로의 귀환과 라헬의 죽음</span>
+      <span class="toc-sub">정화, 재확증, 그리고 슬픔</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch36')" onkeydown="if(event.key==='Enter')goTo(event,'ch36')">
+      <span class="toc-num">36</span>
+      <span class="toc-title">에서의 계보</span>
+      <span class="toc-sub">야곱의 형, 에돔의 조상</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+  </div>
+</div>
+
+<section class="chapter" id="ch26">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30q4 8 0 14M40 30q-4 8 0 14" fill="none" stroke="currentColor" stroke-width="1.6"/><rect x="14" y="18" width="20" height="16" rx="2" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 26</div>
+      <h1>26장 · 이삭과 그랄</h1>
+      <div class="chapter-sub">아버지의 실수를 반복하는 아들, 그리고 신실하신 하나님</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 26:1-35</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">26:1-11</div>
+        <div>
+          <div class="flow-title">반복되는 흉년과 반복되는 거짓말</div>
+          <div class="flow-body">흉년이 들자 이삭은 애굽으로 내려가려 하지만, 하나님은 그를 막으시며 <b class="hl-quote">"애굽으로 내려가지 말고 내가 네게 이르는 땅에 거주하라"</b>(2절)고 하시고 아버지 아브라함에게 주신 언약(땅, 자손, 복의 근원)을 그대로 재확인하신다(3-5절). 그러나 그랄에 거주하던 이삭은 아버지가 두 번이나 저질렀던 바로 그 실수 — 아내 리브가를 누이라 속이는 것 — 을 <b class="hl-insight has-insight" data-insight="0">그대로 반복</b>한다(7절). 아비멜렉이 우연히 이삭이 리브가를 껴안는 것을 보고 진실을 알게 되어 그를 책망한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">26:12-35</div>
+        <div>
+          <div class="flow-title">우물 분쟁과 재확증</div>
+          <div class="flow-body">이삭은 그 땅에서 농사하여 <b class="hl-term">백 배의 결실</b>을 거두고 거부가 되지만, 블레셋 사람들이 그를 시기하여 아버지가 팠던 우물들을 흙으로 메운다. 이삭은 다투지 않고 계속 새 우물을 팠고, 두 번은 분쟁이 일어났으나(에섹, 싯나) 마침내 다투지 않는 우물(르호봇)을 얻는다. 브엘세바에서 여호와께서 다시 나타나 언약을 확증하시고, 아비멜렉도 찾아와 화친을 청한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">언약은 개인이 아니라 가문을 통해 이어진다</div>
+        <div class="teach-body">하나님이 이삭에게 나타나 아브라함의 언약을 그대로 재확인하시는 장면(3-5절)은, 언약이 한 개인의 일생에 국한되지 않고 세대를 넘어 이어지는 것임을 보여준다. 특히 5절에서 언약의 근거로 "아브라함이 내 말을 순종하고 내 명령과 내 계명과 내 율례와 내 법도를 지켰음이라"고 하시는 것은, 아브라함의 순종이 후손에게까지 복으로 미치는 언약적 연대성을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">조상의 죄가 반복될 수 있음을 정직하게 보여줌</div>
+        <div class="teach-body">이삭이 아버지와 똑같은 실수를 반복하는 것은 가족 안에서 죄와 두려움의 패턴이 세대를 넘어 전수될 수 있음을 보여주는 냉정한 사례다. 성경은 이것을 미화하지 않고 있는 그대로 기록함으로써, 신앙의 가문이라 해도 자동으로 흠 없는 삶을 보장받지 않는다는 것을 가르친다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">다투지 않고 옮겨가는 지혜</div>
+        <div class="teach-body">이삭은 우물을 둘러싼 반복된 분쟁에서 힘으로 맞서지 않고 계속 자리를 옮기며 새 우물을 판다. 이는 로마서 12:18("할 수 있거든 너희로서는 모든 사람과 더불어 화목하라")의 원리를 미리 보여주는 실천적 지혜이며, 결국 하나님은 그에게 '르호봇'(넓은 곳, 33절)이라는 다투지 않는 안식의 자리를 허락하신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">박해받는 자에게 임하는 풍성한 복</div>
+        <div class="teach-body">이삭은 그 땅에서 나그네였음에도 불구하고 백 배의 결실을 거둔다(12절). 이는 그가 처한 취약한 상황(이방 땅의 나그네, 시기의 대상)에도 불구하고 하나님의 복이 인간적 조건을 초월하여 임할 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">용서와 화해의 가능성 — 아비멜렉과의 재확인된 관계</div>
+        <div class="teach-body">아버지 아브라함 때와 마찬가지로, 갈등을 겪었던 아비멜렉이 다시 찾아와 화친을 청한다. 이는 언약 백성이 주변 민족과 반복적으로 갈등하면서도 궁극적으로 평화의 관계로 나아갈 수 있다는 것을 보여주며, 아브라함의 복의 약속("너를 축복하는 자는 내가 복을 주고")이 아들 대에도 여전히 유효함을 확증한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">26장을 읽다 보면 데자뷔 같은 느낌이 들어요. 아버지가 했던 실수를 아들이 그대로 반복하니까요. 그런데 흥미로운 건, 하나님도 똑같이 반복해서 그를 지켜주시고 언약을 재확인해 주신다는 거예요. 우리의 반복되는 연약함보다 하나님의 반복되는 신실하심이 항상 더 크다는 걸 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이삭이 아버지의 실수를 반복한 것은 단순한 우연인가, 아니면 학습된 가족 패턴인가?</div>
+        <div class="deep-body">본문은 명시적 설명을 하지 않지만, 아브라함이 두 차례(12장, 20장)나 이 방식으로 위기를 모면했다는 사실을 이삭이 알고 있었을 가능성이 크다. 즉 이것이 '가족 안에서 전수된 위기 대응 전략'이었을 수 있다는 해석이 설득력을 얻는다. 이는 가정 안에서 죄와 두려움의 패턴이 의식적·무의식적으로 대물림될 수 있다는 것을 보여주는 사례로, 오늘날의 가족 체계 이론과도 흥미롭게 연결되는 지점이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>하나님이 이삭에게 아브라함의 순종을 근거로 언약을 확증하시는 것(5절)은 이삭 자신의 믿음이 무의미하다는 뜻인가?</div>
+        <div class="deep-body">그렇지 않다. 이는 오히려 언약적 연속성의 신학을 보여준다 — 하나님의 약속은 한 세대의 성취로 완결되지 않고 여러 세대에 걸쳐 누적되고 이어진다는 것이다. 이삭 자신도 이후 본문에서 직접 하나님과 교제하며(24절, "내가 네 아버지 아브라함의 하나님이니 두려워하지 말라 내가 너와 함께 있어") 자신의 언약적 관계를 확증받는다. 조상의 신실함이 후손에게 복의 통로가 되는 동시에, 각 세대는 여전히 자신의 믿음으로 그 언약 안에 서야 한다는 이중적 진리가 함께 작동한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch27">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c-9 7-15 13-15 21a15 15 0 0030 0c0-8-6-14-15-21z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M18 26c1-3 4-3 5 0M25 26c1-3 4-3 5 0" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 27</div>
+      <h1>27장 · 빼앗은 축복</h1>
+      <div class="chapter-sub">속임수로 얻은 장자의 축복</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 27:1-46</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">27:1-29</div>
+        <div>
+          <div class="flow-title">리브가의 계략과 야곱의 속임</div>
+          <div class="flow-body">눈이 어두워진 늙은 이삭이 에서에게 사냥한 고기로 별미를 만들어 오면 축복하겠다고 하자, 이를 엿들은 리브가는 야곱에게 염소 새끼로 별미를 만들게 하고 에서의 옷을 입히며 염소 가죽으로 손과 목을 <b class="hl-term">덮어</b> 털 많은 에서처럼 위장시킨다. 야곱은 아버지 앞에서 <b class="hl-quote">"내가 에서로소이다"</b>(19절)라며 직접적으로 거짓말하고, 의심하는 이삭을 속여 결국 <b class="hl-insight has-insight" data-insight="1">장자의 축복</b>을 가로챈다(27-29절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">27:30-46</div>
+        <div>
+          <div class="flow-title">에서의 통곡과 야곱의 도피</div>
+          <div class="flow-body">진실이 드러나자 에서는 "통곡하며 아버지여 내게 축복하소서 내게도 그리하소서"(34절)라며 절규하지만, 이미 준 축복은 되돌릴 수 없었다. 이삭이 에서에게도 축복하지만 그것은 야곱을 섬기는 처지에 대한 것이었다. 에서는 야곱을 죽이기로 결심하고, 리브가는 야곱을 급히 외삼촌 라반에게로 피신시킨다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">인간의 계략과 하나님의 주권의 얽힘</div>
+        <div class="teach-body">25:23에서 이미 하나님은 "큰 자가 어린 자를 섬기리라"고 예언하셨다. 그 예언의 성취가 이제 리브가와 야곱의 명백한 속임수를 통해 이루어진다는 것은 매우 불편한 신학적 긴장을 낳는다 — 하나님의 뜻이 인간의 죄를 통해서도 이루어질 수 있다는 것을 보여주지만, 이는 결코 그 죄를 정당화하지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">거짓의 대가는 반드시 따른다</div>
+        <div class="teach-body">야곱은 축복을 얻지만 그 즉시 집과 가족을 떠나 도망자 신세가 되며(이는 이후 20년간 지속됨), 다시는 어머니 리브가를 살아서 보지 못한다(성경은 이를 명시하지 않지만 리브가의 죽음 기록이 없다는 사실이 암시적이다). 죄를 통해 얻은 것은 그것대로 큰 대가를 요구한다는 성경 전체의 반복되는 패턴이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">편애가 가정을 파괴함</div>
+        <div class="teach-body">25:28은 이미 "이삭은 에서가 사냥한 고기를 좋아하므로 그를 사랑하고 리브가는 야곱을 사랑하였더라"고 부모의 편애를 명시했다. 이 편애는 형제간의 극심한 갈등과 가정의 붕괴로 직접 이어지며, 이는 이후 야곱 자신도 요셉을 편애하여 같은 실수를 반복하게 되는(37장) 세대를 넘어선 경고가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">에서의 통곡 — 돌이킬 수 없는 상실의 슬픔</div>
+        <div class="teach-body">에서의 절규는 히브리서 12:17에서 "그가 눈물을 흘리며 구하되 그가 버린 것을 도로 찾지 못하였느니라"는 엄중한 경고로 다시 인용된다. 이는 어떤 영적 특권과 기회는 한 번 잃으면 아무리 눈물로 구해도 되돌릴 수 없다는 냉정한 경고이며, 히브리서 저자는 이를 배교의 위험성에 대한 경고로 사용한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">돌이킬 수 없는 말의 무게 — 축복과 저주의 실재성</div>
+        <div class="teach-body">고대 근동과 성경적 세계관에서 입으로 선포된 축복과 저주는 단순한 말이 아니라 실제로 효력을 발생시키는 것으로 이해되었다. 이삭이 "내가 그를 위하여 축복하였은즉 그가 반드시 복을 받을 것이니라"(33절)며 이미 준 축복을 철회할 수 없다고 한 것은, 언어와 축복의 신학적 무게에 대한 고대적 이해를 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장을 읽으면 마음이 무거워져요. 가족 모두가 조금씩 잘못했거든요 — 이삭의 편애, 에서의 경솔함, 리브가의 계략, 야곱의 거짓말까지요. 그런데도 하나님은 이 얽히고설킨 인간의 실패 한복판에서 여전히 자신의 계획을 이루어가세요. 이게 위로가 되는 동시에, 우리의 선택에 대한 책임도 가볍게 여기지 말라는 경고이기도 한 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>리브가와 야곱의 속임수가 결국 하나님이 예언하신 결과(25:23)를 성취했다면, 이들의 죄는 정당화되는가?</div>
+        <div class="deep-body">성경은 결과의 성취와 수단의 도덕성을 명확히 구분한다. 하나님의 주권적 계획은 인간의 죄를 통해서도 이루어질 수 있지만(요셉 이야기의 "너희는 나를 해하려 하였으나 하나님은 그것을 선으로 바꾸사", 50:20이 이 원리를 명시적으로 표현), 그렇다고 그 죄 자체가 선한 것으로 재분류되지는 않는다. 리브가와 야곱의 행위는 이후 이야기에서 반복적으로 대가를 치르게 되며(야곱이 라반에게 속아 20년을 고생하는 것, 자신의 아들들에게 속임을 당하는 것 등), 성경 내러티브는 이런 인과적 연결을 통해 은연중에 이 행위에 대한 도덕적 평가를 전달한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>눈이 어두워 잘 보지 못하는 이삭이 그렇게 쉽게 속았다는 것이 이야기의 신빙성을 떨어뜨리지 않는가?</div>
+        <div class="deep-body">본문 자체는 이삭이 목소리("음성은 야곱의 음성이나", 22절)로 의심했지만 촉감(가죽으로 위장된 손)과 냄새(에서의 옷 냄새, 27절)로 최종 확신했다고 상세히 기록하며, 이 다중 감각적 속임수의 세부사항을 통해 이야기의 개연성을 신중하게 뒷받침한다. 더 깊은 신학적 차원에서, 이삭의 육체적 눈멂은 그의 영적 분별력의 약화(그가 애초에 에서가 아니라 야곱을 마땅히 축복해야 했다는 하나님의 뜻, 25:23을 알고 있었음에도 개인적 편애 때문에 에서를 축복하려 했다는 점)와 상징적으로 연결되어 읽히기도 한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch28">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 42V10M34 42V10" stroke="currentColor" stroke-width="2"/><path d="M14 34l20-8M14 26l20-8M14 18l20-8" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 28</div>
+      <h1>28장 · 벧엘에서의 꿈</h1>
+      <div class="chapter-sub">도망자에게 나타나신 하나님, 사닥다리 환상</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 28:1-22</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">28:1-9</div>
+        <div>
+          <div class="flow-title">이삭의 축복과 에서의 자각</div>
+          <div class="flow-body">이삭은 야곱에게 가나안 여인과 결혼하지 말라 명하며 밧단아람의 외삼촌 집으로 보내고, 이번에는 명시적으로 아브라함의 언약적 축복("하나님이... 아브라함에게 허락하신 복을 네게 주사", 4절)을 선포한다. 에서는 부모가 가나안 여인을 기뻐하지 않는 것을 깨닫고 뒤늦게 이스마엘의 딸과도 결혼하며 부모의 인정을 얻으려 하지만, 이는 근본적 문제(장자권과 축복의 상실)를 해결하지 못하는 뒤늦은 노력이었다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">28:10-22</div>
+        <div>
+          <div class="flow-title">하늘까지 닿은 사닥다리와 벧엘의 서원</div>
+          <div class="flow-body">홀로 도망하던 야곱은 돌을 베고 자다가 <b class="hl-quote">땅에 세워진 사닥다리가 하늘에 닿고 하나님의 사자들이 그 위에서 오르락내리락</b>하는 환상을 본다(12절). 하나님은 그 위에서 아브라함과 이삭에게 주신 언약을 그대로 야곱에게 재확인하시며, 결정적으로 <b class="hl-insight has-insight" data-insight="2">"내가 너와 함께 있어 네가 어디로 가든지 너를 지키며"</b>(15절)라는 개인적 임재의 약속을 더하신다. 잠에서 깬 야곱은 두려워하며 그곳을 <b class="hl-term">벧엘</b>('하나님의 집')이라 이름하고, 하나님이 자신과 함께하시면 그분을 자신의 하나님으로 삼겠다는 서원을 드린다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">도망자에게도 찾아오시는 하나님</div>
+        <div class="teach-body">야곱은 자신의 죄(속임수)로 인해 집을 잃고 홀로 광야에 있는 가장 낮고 취약한 순간에 있었다. 바로 그 순간 하나님이 그에게 나타나신다는 것은, 하나님의 은혜가 인간의 도덕적 자격이 갖춰진 순간이 아니라 오히려 가장 연약하고 죄스러운 순간에도 임할 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하늘과 땅을 잇는 사닥다리 — 그리스도의 예표</div>
+        <div class="teach-body">요한복음 1:51에서 예수님은 나다나엘에게 "하늘이 열리고 하나님의 사자들이 인자 위에 오르락내리락하는 것을 보리라"고 말씀하시며 이 벧엘의 환상을 직접 자신에게 적용하신다. 이는 그리스도 자신이 하늘과 땅을, 하나님과 인간을 잇는 참된 '사닥다리'이심을 선언하는 것으로 이해된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">조건적 서원 속에 담긴 성장하는 믿음</div>
+        <div class="teach-body">야곱의 서원("하나님이... 나를 지키시고... 내가 평안히 아버지 집으로 돌아가게 하시오면 여호와께서 나의 하나님이 되실 것이요", 20-21절)은 얼핏 거래적이고 조건적으로 들려 미숙해 보이지만, 이는 오히려 인간이 하나님과의 관계를 시작하는 자연스러운 첫걸음으로 이해될 수 있다. 야곱의 신앙은 이 순간부터 시작해 이후 수십 년의 삶을 통해 점진적으로 깊어져 간다(32장의 얍복강 씨름에서 훨씬 성숙한 신앙으로 발전).</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">어디로 가든지 함께하시는 하나님 — 임마누엘의 신학적 뿌리</div>
+        <div class="teach-body">15절의 약속은 특정 장소(성전, 가나안 땅)에 국한되지 않는 하나님의 편재적 임재를 보여준다. 이는 성경 전체에서 반복되는 임마누엘('하나님이 우리와 함께 계시다') 신학의 중요한 초기 사례이며, 궁극적으로 마태복음 28:20의 "내가 세상 끝날까지 너희와 항상 함께 있으리라"는 그리스도의 약속으로 이어진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">두려운 곳이 거룩한 곳이 됨 — 예배의 자발적 시작</div>
+        <div class="teach-body">야곱은 두려움 속에서 깨어나 "이것은 다름 아닌 하나님의 집이요 하늘의 문이로다"(17절)라고 고백하며 자발적으로 돌을 세워 기둥을 삼고 기름을 붓는다. 이는 인간이 정해놓은 성소가 아니라 하나님이 임재하신 곳이면 어디든 예배의 자리가 될 수 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">야곱이 이 순간 어떤 상태였는지 생각해보세요. 형을 속이고, 가족을 등지고, 홀로 광야에서 돌을 베고 자는 도망자였어요. 그런 사람에게 하나님이 나타나셔서 '내가 너와 함께 있어 네가 어디로 가든지 너를 지키리라'고 하시는 거예요. 우리가 가장 낮고 죄스러운 순간에도 하나님의 은혜는 거기까지 찾아오시는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>야곱의 서원이 조건부("만일 하나님이... 하시면")라는 것은 그의 믿음이 불완전하거나 거래적임을 보여주는가?</div>
+        <div class="deep-body">많은 해석자들은 이를 미성숙하지만 진실한 믿음의 출발점으로 이해한다. 성경에서 조건적 서원 자체가 부정적으로 평가되지는 않으며(한나의 서원, 삼상 1:11 참조), 중요한 것은 야곱이 이후 실제로 그 서원을 기억하고 지킨다는 점이다(35:1-7에서 하나님이 다시 벧엘로 돌아가라 하실 때 야곱이 순종하여 우상을 제거하고 서원을 이행함). 이는 신앙의 여정이 완벽한 성숙에서 시작하는 것이 아니라, 작고 조건적인 발걸음에서 시작해 점진적으로 깊어질 수 있음을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>하나님이 속임수로 축복을 가로챈 야곱에게 왜 이렇게 즉각적이고 풍성한 은혜를 베푸시는가?</div>
+        <div class="deep-body">이는 성경 전체에 걸친 은혜의 신학의 핵심을 보여준다 — 하나님의 은혜는 인간의 공로에 대한 보상이 아니라, 값없이 주어지는 선물이다. 동시에 이것이 야곱의 죄를 눈감아주신다는 뜻은 아니다. 이후 20년간 그는 외삼촌 라반에게 반복적으로 속으며 자신이 행한 속임수와 정확히 대칭되는 훈육의 과정을 겪는다. 은혜와 훈육은 성경에서 결코 상호 배타적이지 않으며, 하나님은 야곱을 향한 언약적 사랑을 거두지 않으시면서도 동시에 그의 성품을 다듬어가신다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch29">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 24h6M34 24h6M24 8v6M24 34v6" stroke="currentColor" stroke-width="1.6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 29</div>
+      <h1>29장 · 라반의 집에서</h1>
+      <div class="chapter-sub">속인 자가 속는다 — 레아와 라헬</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 29:1-35</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">29:1-14</div>
+        <div>
+          <div class="flow-title">우물가에서 라헬을 만남</div>
+          <div class="flow-body">야곱은 밧단아람에 이르러 우물가에서 외삼촌 라반의 딸 <b class="hl-term">라헬</b>을 만나는데, 이는 24장에서 아브라함의 종이 리브가를 만난 장면과 문학적으로 정확히 병행된다. 야곱은 우물의 돌을 혼자 옮기고 라헬에게 입 맞추며 소리 높여 운다(11절) — 감정 표현이 풍부한 장면이다. 라반은 그를 반기며 한 달간 머물게 한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">29:15-35</div>
+        <div>
+          <div class="flow-title">속임을 당한 야곱과 자녀들의 출생</div>
+          <div class="flow-body">야곱은 라헬을 위해 <b class="hl-term">칠 년</b>을 일하기로 하지만, 혼인 첫날밤 라반이 어둠을 틈타 언니 레아를 대신 들여보내는 속임수를 쓴다. 야곱은 <b class="hl-insight has-insight" data-insight="3">아침에야 그것이 레아임을 알게 되고</b>(25절) 격분하지만, 라반은 "언니보다 아우를 먼저 주는 것은 우리 지방에서 하지 아니하는 바이라"(26절)며 궁색한 변명을 한다. 결국 야곱은 라헬을 위해 다시 칠 년을 더 일하기로 하고, 사랑받지 못하는 레아를 긍휼히 여기신 하나님은 그녀에게 먼저 아들들(르우벤, 시므온, 레위, 유다)을 주신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">뿌린 대로 거둔다 — 야곱이 속은 것의 시적 정의</div>
+        <div class="teach-body">야곱은 형을 속여 장자의 축복을 가로챘던 바로 그 사람이, 이제 '동생이 언니보다 먼저일 수 없다'는 논리로 정확히 속아 넘어간다. 이는 갈라디아서 6:7("사람이 무엇으로 심든지 그대로 거두리라")의 원리가 족장사에서 구체적으로 실현되는 인상적인 사례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">편애의 고통과 하나님의 균형 잡힌 긍휼</div>
+        <div class="teach-body">야곱이 라헬만을 사랑하고 레아를 미워하다시피 한 것(31절, "레아는 사랑을 받지 못함을 여호와께서 보시고")은 다시 한 세대의 편애 문제를 보여준다. 그러나 하나님은 인간이 소홀히 여기는 자를 특별히 돌보시며, 사랑받지 못하는 레아에게 먼저 자녀를 허락하신다. 이는 하나님이 세상의 편애와 다른 기준으로 사람을 대하신다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">오랜 인내가 필요한 사랑</div>
+        <div class="teach-body">야곱이 라헬을 위해 칠 년, 그리고 속은 후 다시 칠 년, 도합 십사 년을 일한 것은 진실한 사랑과 헌신의 깊이를 보여준다. 성경은 이 긴 시간을 "그를 사랑하는 까닭에 칠 년을 며칠 같이 여겼더라"(20절)고 묘사하며, 사랑이 시간의 길이를 초월하는 헌신을 가능하게 함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">레아의 아들들의 이름에 담긴 고통스러운 신앙 고백</div>
+        <div class="teach-body">레아가 낳은 아들들의 이름(르우벤 '보라 아들이라', 시므온 '들으심', 레위 '연합함', 유다 '찬송함')은 각각 사랑받지 못하는 그녀의 고통과 그 속에서도 하나님을 바라보려는 신앙적 몸부림을 담고 있다. 특히 넷째 유다('찬송함')의 이름에서는 마침내 남편의 사랑을 바라는 것을 넘어 순전한 하나님 찬양으로 나아가는 성숙이 엿보이며, 이 유다의 계보에서 훗날 다윗과 그리스도가 나신다는 것은 깊은 신학적 아이러니다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">복잡한 가정사 속에서도 이어지는 언약의 계보</div>
+        <div class="teach-body">이 혼란스럽고 고통스러운 가정 이야기(속임수, 경쟁, 편애) 한가운데서 이스라엘 열두 지파의 조상들이 태어나기 시작한다. 이는 하나님의 구속사가 완벽한 가정이 아니라 깨어지고 뒤엉킨 인간관계 속에서도 꾸준히 전진한다는 것을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">야곱이 형을 속였을 때는 몰랐을 거예요. 자기도 언젠가 똑같은 방식으로 속게 될 줄은요. '동생을 언니보다 먼저 줄 수 없다'는 라반의 말, 얼마나 얄궂나요 — 야곱이 바로 동생이면서 형(에서)보다 먼저 축복을 가로챈 사람이잖아요. 성경은 이런 아이러니를 참 정교하게 짜 넣어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>라반의 속임수는 도덕적으로 야곱의 속임수(27장)와 동일한 무게로 평가되어야 하는가?</div>
+        <div class="deep-body">본문은 라반의 행위를 명시적으로 정죄하지 않지만, 문학적 병행 구조(야곱이 속인 자에서 속는 자로 정확히 전환되는 것) 자체가 암묵적인 도덕적 평가를 담고 있다. 다만 라반의 변명(장녀를 먼저 시집보내는 관습)이 실제 고대 근동의 사회적 관습을 반영했을 가능성도 있어, 순수한 악의라기보다는 관습과 기회주의가 뒤섞인 행위로 이해될 수 있다. 어느 쪽이든 창세기 저자는 야곱이 겪는 이 경험을 통해 그가 자신이 형에게 행한 일의 고통을 스스로 체감하게 되는 섭리적 훈육의 과정으로 서술하고 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>레아와 라헬 사이의 경쟁이 이스라엘 열두 지파의 형성 과정에 어떤 신학적 의미를 갖는가?</div>
+        <div class="deep-body">자매간의 격렬한 경쟁(30장에서 더 노골화됨)에도 불구하고, 결과적으로 이 경쟁적 관계에서 태어난 아들들이 이스라엘 열두 지파 전체를 구성하게 된다. 이는 하나님이 인간의 깨어진 관계와 죄악된 경쟁심마저도 자신의 더 큰 구속사적 계획을 이루는 데 사용하실 수 있음을 보여주는 사례로 이해되며, 인간의 결함이 하나님의 계획을 좌절시키지 못한다는 성경 전체의 신학과 일치한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch30">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="32" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 38c0-6 3-10 6-10M38 38c0-6-3-10-6-10" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 30</div>
+      <h1>30장 · 자녀 경쟁과 야곱의 번성</h1>
+      <div class="chapter-sub">두 자매의 다툼, 그리고 얼룩무늬 양떼</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 30:1-43</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">30:1-24</div>
+        <div>
+          <div class="flow-title">여종들을 통한 자녀 경쟁</div>
+          <div class="flow-body">자식을 낳지 못하는 라헬은 언니를 시기하여 <b class="hl-quote">"내게 자식을 낳게 하라 그렇지 아니하면 내가 죽겠노라"</b>(1절)며 남편을 압박하고, 자신의 여종 빌하를 통해 아들을 얻는다. 레아도 이에 맞서 자신의 여종 실바를 통해 또 아들들을 낳는다. 두 자매는 심지어 아들이 가져온 <b class="hl-term">합환채(사랑의 열매)</b>를 두고 흥정을 벌이기까지 한다(14-16절). 이 치열한 경쟁 끝에 마침내 <b class="hl-insight has-insight" data-insight="4">"하나님이 라헬을 생각하신지라... 그의 태를 여시니"</b>(22절)라는 구절과 함께 요셉이 태어난다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">30:25-43</div>
+        <div>
+          <div class="flow-title">야곱의 지혜와 하나님의 번성케 하심</div>
+          <div class="flow-body">야곱은 라반에게 자신의 몫으로 얼룩무늬와 점 있는 가축만을 요청하고, 나뭇가지를 벗겨 물 구유에 두는 등의 목축 기술(과 하나님의 섭리적 개입, 31:10-12에서 야곱 자신이 이를 꿈을 통한 하나님의 인도로 설명함)을 통해 자신의 가축이 라반의 것보다 훨씬 크게 번성하게 한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">경쟁과 시기가 만드는 가정의 상처</div>
+        <div class="teach-body">레아와 라헬의 자녀 경쟁은 극심한 감정적 상처와 가정의 불화를 낳는다. 이는 사랑과 인정을 향한 인간의 근원적 욕구가 왜곡될 때 얼마나 파괴적일 수 있는지를 보여주는 정직한 초상이며, 오늘날 형제 자매 간, 혹은 공동체 내 비교와 경쟁의 위험성에 대한 경고로 읽힌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">자식을 여시는 분은 하나님이심</div>
+        <div class="teach-body">22절 "하나님이 라헬을 생각하신지라... 그의 태를 여시니"라는 표현은, 생명의 근원이 인간의 노력이나 계략(합환채를 둘러싼 흥정 등)이 아니라 전적으로 하나님의 주권에 달려 있음을 다시 확인시켜준다. 이는 창세기 전체에서 반복되는 주제(사라, 리브가의 불임과 하나님의 개입)의 재확인이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">요셉의 출생과 이름에 담긴 갈망</div>
+        <div class="teach-body">요셉('더하시기를 원하노라')이라는 이름은 라헬의 "여호와는 다시 다른 아들을 내게 더하시기를 원하노라"(24절)는 소원에서 비롯된다. 이 아들이 훗날 창세기 마지막 부분 전체를 이끄는 중심인물이 된다는 것은 극적인 서사적 반전이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">열두 아들 — 이스라엘 열두 지파의 완성</div>
+        <div class="teach-body">이 장에서 레아, 라헬, 그리고 두 여종을 통해 태어난 자녀들이 모여 야곱의 열두 아들(과 딸 디나) 대부분이 완성된다. 이는 깨어지고 경쟁적인 가정사 속에서도 하나님이 약속하신 '큰 민족'(이스라엘)의 기초가 착실히 놓여가고 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">정직한 노동과 하나님이 주시는 번성</div>
+        <div class="teach-body">야곱의 목축 기술이 실제로 유전학적 효과가 있었는지에 대한 논쟁과 별개로(아래 심화 질문 참조), 그는 라반의 밑에서 이십 년간(31:41) 성실하게 일했고, 그 정직한 수고 위에 하나님이 풍성한 복을 더하셨다. 이는 인간의 노력과 하나님의 은혜로운 개입이 함께 작동하는 성경적 노동관을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장을 읽으면 솔직히 마음이 좀 아파요. 두 자매가 남편의 사랑과 자녀 숫자를 두고 이렇게까지 경쟁해야 했다는 게요. 근데 그 아픈 이야기 한가운데서 하나님은 여전히 일하고 계세요. 결국 이 모든 아이들이 모여서 이스라엘 열두 지파가 되거든요. 우리의 상한 이야기 속에서도 하나님은 당신의 계획을 이루어가세요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>야곱이 나뭇가지를 벗겨 물 구유에 두는 목축 기술이 실제로 가축의 무늬에 유전적 영향을 미칠 수 있는가?</div>
+        <div class="deep-body">현대 유전학의 관점에서 볼 때 이러한 시각적 자극이 실제로 유전 형질(무늬)에 영향을 미친다는 것은 과학적으로 입증되지 않는다. 그러나 31:10-12에서 야곱은 이 결과가 자신의 기술이 아니라 꿈 가운데 하나님이 자신에게 지시하신 초자연적 개입의 결과였다고 직접 설명한다. 즉 본문 자체가 이 사건을 순수한 목축 기술의 결과가 아니라, 야곱이 라반에게 이십 년간 부당하게 착취당한 것에 대한 하나님의 정의로운 보상적 개입으로 재해석하도록 이끌고 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>레아와 라헬, 그리고 두 여종을 통한 이 복잡한 가족 구조가 오늘날 일부다처제를 정당화하는 근거가 될 수 있는가?</div>
+        <div class="deep-body">창세기는 이러한 가족 구조를 명시적으로 승인하거나 이상적 모델로 제시하지 않는다. 오히려 본문 전체는 이 구조에서 비롯되는 극심한 갈등, 시기, 상처를 매우 상세하고 생생하게 보여줌으로써, 은연중에 이것이 하나님이 처음 창조 때 의도하신 결혼 제도(창 2:24, 한 남자와 한 여자의 연합)에서 벗어난 결과임을 암시한다. 성경은 족장들의 삶을 규범적 모델이 아니라 있는 그대로의 역사로 기록하며, 그 결과의 고통까지 정직하게 드러냄으로써 독자로 하여금 스스로 이 구조의 문제를 인식하게 한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch31">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 26h32" stroke="currentColor" stroke-width="2"/><path d="M14 26v-4a2 2 0 012-2h4M34 26v-4a2 2 0 00-2-2h-4" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="16" cy="34" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="32" cy="34" r="3" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 31</div>
+      <h1>31장 · 라반을 떠나는 야곱</h1>
+      <div class="chapter-sub">이십 년의 노동 끝에 고향으로</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 31:1-55</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">31:1-21</div>
+        <div>
+          <div class="flow-title">은밀한 도피 결정</div>
+          <div class="flow-body">라반과 그 아들들의 태도가 달라지자, 하나님은 야곱에게 <b class="hl-quote">"네 조상의 땅 네 족속에게로 돌아가라 내가 너와 함께 있으리라"</b>(3절)고 명하신다. 야곱은 아내들을 불러 라반이 자신의 품삯을 열 번이나 변경했지만 하나님이 자신을 지키셨음을 설명하고, 두 아내도 <b class="hl-insight has-insight" data-insight="5">아버지 집에 자신들의 몫이 없다</b>며 동의한다(14-16절). 라헬은 아버지의 <b class="hl-term">드라빔(가정 수호신상)</b>을 몰래 훔치고, 온 가족은 라반이 양털 깎는 틈을 타 은밀히 떠난다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">31:22-55</div>
+        <div>
+          <div class="flow-title">추격과 화해의 언약</div>
+          <div class="flow-body">사흘 후 이 사실을 안 라반이 뒤쫓아 길르앗 산에서 야곱을 따라잡지만, 하나님이 꿈에서 그에게 야곱을 해하지 말라 경고하셨기에(24절) 그는 대신 도둑맞은 드라빔을 추궁한다. 라헬이 그것을 낙타 안장 아래 숨기고 앉아 "생리 중이라 일어날 수 없다"고 속여 발각을 피한다. 결국 야곱과 라반은 돌무더기를 쌓아 <b class="hl-term">미스바</b>('여호와께서 감찰하시옵소서')를 세우고 서로 해치지 않기로 언약을 맺는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">이십 년의 착취를 견뎌낸 인내와 정직</div>
+        <div class="teach-body">야곱은 라반에게 자신이 "낮에는 더위와 밤에는 추위"(40절)를 견디며 성실히 일했고 손해 본 것은 자기가 물어냈다고 항변한다. 이는 부당한 대우 속에서도 정직하게 일한 것에 대한 정당한 자기 변호이며, 결국 하나님이 그 신실함을 갚아주셨다는 확신으로 이어진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">드라빔 절도 사건이 보여주는 미신의 잔재</div>
+        <div class="teach-body">라헬이 아버지의 가정 수호신상을 훔친 것은, 언약 가문 안에도 여전히 이방 종교의 잔재와 미신적 애착이 남아 있었음을 보여준다. 이는 이후 35장에서 야곱이 온 집안에 "너희 중에 있는 이방 신상들을 버리라"고 명하는 정화 사건으로 이어지는 배경이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님이 직접 개입하여 보호하심</div>
+        <div class="teach-body">라반이 야곱을 해하려 했을 가능성이 있었지만, 하나님이 그의 꿈에 직접 나타나 경고하심으로써 야곱을 보호하신다(24절, 29절). 이는 야곱이 자신의 힘으로 라반을 대적할 수 없는 상황에서도, 하나님이 보이지 않게 그의 방패가 되어주셨음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">화해와 경계 설정의 지혜 — 미스바 언약</div>
+        <div class="teach-body">오랜 갈등 끝에 야곱과 라반은 폭력이 아니라 언약(경계를 정하고 서로 침범하지 않기로 하는 평화 협정)으로 관계를 마무리한다. 이는 완전히 화해하지는 못하더라도 최소한 평화롭게 각자의 길을 갈 수 있는 실제적 지혜를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">공정한 하나님, 억울함을 살피시는 하나님</div>
+        <div class="teach-body">라반은 야곱을 "내 딸들이요 내 자식이요 내 양떼"라 주장하며 소유권을 내세우지만, 결국 스스로도 "네 아버지의 하나님이 어제 밤에 내게 말씀하시기를 너는 삼가 야곱에게 선악간에 말하지 말라 하셨느니라"(29절)며 하나님의 개입을 인정할 수밖에 없었다. 이는 억울하게 착취당하는 자의 하나님이 결국 정의를 세우신다는 확신을 심어준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">미스바 언약, '여호와께서 나와 너 사이를 감찰하시옵소서'라는 이 말이 사실 원래는 따뜻한 축복의 말이 아니었어요. 서로를 완전히 신뢰하지 못하는 두 사람이 '하나님이 우리 서로를 감시해주셔서 다시는 해치지 못하게 해주십시오'라는, 일종의 견제의 말이었거든요. 오늘날 축복의 인사말로 자주 쓰이는 것과는 원래 맥락이 좀 다르다는 게 흥미로워요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>라헬이 드라빔을 훔친 이유는 무엇이었을까?</div>
+        <div class="deep-body">몇 가지 해석이 있다: 단순히 이방 우상에 대한 개인적 애착이었다는 견해, 고대 근동의 일부 법전(누지 문서)에서 가정 수호신상의 소유가 상속권과 연결되었다는 점을 근거로 남편의 정당한 상속 몫을 확보하려는 법적·전략적 행위였다는 견해, 혹은 단순히 아버지에 대한 반감에서 비롯된 행위였다는 견해다. 본문은 명확한 이유를 밝히지 않지만, 어느 경우든 이 행위가 언약 가정 안에 여전히 남아 있던 영적 혼합주의(하나님을 믿으면서도 이방 신상에 대한 애착을 완전히 버리지 못한 상태)를 드러낸다는 점에서 신학적으로 중요하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>라헬이 아버지에게 거짓말을 하면서까지 드라빔을 숨긴 것에 대해 본문은 어떤 평가를 내리는가?</div>
+        <div class="deep-body">본문은 이 사건에 대해 명시적 도덕적 판단을 내리지 않지만, 창세기 전체의 패턴(속임수가 반복되고 결국 대가를 치르는)에 비추어 볼 때 이 역시 긍정적으로 평가되지는 않을 것이다. 흥미롭게도 라헬은 이 사건 이후(35:16-19) 베냐민을 낳다가 난산으로 일찍 죽는데, 본문이 이 두 사건을 인과적으로 명시적으로 연결하지는 않지만, 일부 해석자들은 창세기의 반복적인 '죄와 결과' 패턴 속에서 이 사건들을 함께 읽기도 한다. 다만 이는 신중하게 접근해야 할 추론이며, 본문이 명시적으로 확언하지 않는 인과관계를 단정하는 것은 지나친 해석일 수 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch32">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 12c6 6 6 12 0 18M34 12c-6 6-6 12 0 18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 36l-4 6M30 36l4 6" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 32</div>
+      <h1>32장 · 얍복강의 씨름</h1>
+      <div class="chapter-sub">이스라엘이라는 새 이름을 얻다</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 32:1-32</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">32:1-21</div>
+        <div>
+          <div class="flow-title">에서를 향한 두려움과 대비</div>
+          <div class="flow-body">야곱은 형 에서가 사백 명을 거느리고 마중 나온다는 소식에 <b class="hl-quote">"심히 두렵고 답답하여"</b>(7절) 무리를 두 떼로 나누고, 하나님께 <b class="hl-term">간절한 기도</b>를 드린다: "나는 주께서 주의 종에게 베푸신 모든 자비와 모든 진실을 감당할 수 없사오나"(10절). 이어 그는 막대한 예물을 여러 떼로 나누어 앞서 보내며 형의 노를 누그러뜨리려는 신중한 전략을 세운다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">32:22-32</div>
+        <div>
+          <div class="flow-title">얍복강 나루에서의 씨름</div>
+          <div class="flow-body">야곱은 가족을 먼저 강 건너로 보내고 홀로 남았는데, <b class="hl-insight has-insight" data-insight="6">어떤 사람</b>이 나타나 날이 새도록 그와 씨름한다(24절). 그 사람은 야곱의 환도뼈를 쳐서 위골시키면서도 이기지 못하자, 야곱에게 놓아달라 하지만 야곱은 <b class="hl-quote">"당신이 내게 축복하지 아니하면 가게 하지 아니하겠나이다"</b>(26절)라고 붙든다. 그는 야곱에게 <b class="hl-term has-tip" data-tip="히브리어 '이스라엘'(יִשְׂרָאֵל). '하나님과 겨루어 이기다' 혹은 '하나님이 다스리신다'는 뜻으로 해석되며, 이후 야곱의 열두 아들의 후손 전체, 곧 하나님의 언약 백성 전체를 가리키는 민족명이 된다.">이스라엘</b>이라는 새 이름을 주며 "네가 하나님과 및 사람들과 겨루어 이기었음이니라"(28절)고 선언한다. 야곱은 그곳을 브니엘('하나님의 얼굴')이라 이름하며 절뚝거리며 그곳을 떠난다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">두려움 속에서의 진실한 기도</div>
+        <div class="teach-body">야곱의 기도(9-12절)는 창세기에서 가장 길고 개인적인 기도 중 하나로, 자신의 무자격함을 인정하면서도 하나님의 이전 약속("주께서 전에 말씀하시기를... 하셨나이다")을 구체적으로 붙들고 간구한다. 이는 위기의 순간에 하나님의 신실하심을 기억하며 기도하는 성경적 모범을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">씨름 — 하나님과의 진실한 씨름이 축복으로 이어짐</div>
+        <div class="teach-body">이 신비로운 씨름은 인간이 하나님과 정면으로, 필사적으로 씨름하는 것이 죄가 아니라 오히려 진실한 신앙의 한 형태일 수 있음을 보여준다. 야곱은 상처를 입으면서도 포기하지 않고 축복을 구하며, 이 끈질긴 간구가 결국 응답받는다. 이는 예수님의 비유(눅 18:1-8, 불의한 재판관과 과부의 비유)의 원형적 이미지로도 읽힌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">이름의 변화 — 정체성의 근본적 전환</div>
+        <div class="teach-body">'야곱'(발꿈치를 잡은 자, 속이는 자라는 부정적 함의)에서 '이스라엘'(하나님과 겨루어 이긴 자)로의 이름 변경은, 그의 정체성이 속이는 자에서 하나님과 씨름하며 축복을 구하는 자로 근본적으로 전환되었음을 상징한다. 이는 아브람에서 아브라함으로의 변화(17장)와 함께, 하나님과의 만남이 인간의 정체성 자체를 새롭게 하는 성경적 패턴을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">약함 속의 강함 — 절뚝거리며 걷는 축복받은 자</div>
+        <div class="teach-body">야곱은 씨름에서 이겼다고 선언받았지만 동시에 평생 절뚝거리게 되는 상처를 입는다. 이는 승리와 상처가 공존할 수 있음을 보여주며, 바울의 "내가 약한 그 때에 강함이라"(고후 12:10)는 신학과 맞닿는 역설이다. 하나님과의 참된 만남은 종종 인간의 자기 확신과 자립성을 깨뜨리는 방식으로 온다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님의 얼굴을 보고도 살아남음 — 은혜로운 만남</div>
+        <div class="teach-body">야곱은 "내가 하나님과 대면하여 보았으나 내 생명이 보전되었다"(30절)며 놀라워한다. 출애굽기 33:20에서 하나님이 모세에게 "네가 내 얼굴을 보지 못하리니 나를 보고 살 자가 없음이니라"고 하신 것과 대조하면, 이는 야곱이 경험한 특별한 은혜의 만남이 얼마나 이례적이고 은혜로운 것이었는지를 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'네가 나를 축복하지 아니하면 가게 하지 아니하겠나이다' — 저는 이 구절이 참 좋아요. 상처 입고 지쳤는데도 놓지 않는 거예요. 때로는 신앙이 이런 모습일 수 있어요. 완벽한 확신이 아니라, 다치고 지친 채로도 하나님을 붙들고 끝까지 놓지 않는 것이요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>야곱과 씨름한 '그 사람'의 정체는 정확히 누구였는가?</div>
+        <div class="deep-body">본문은 처음에 '어떤 사람'(24절)이라 부르다가 야곱 자신의 말(30절, "내가 하나님과 대면하여 보았으나")과 호세아 12:4("천사와 겨루어 이기고")을 통해 신적 존재, 혹은 신현적 천사(theophanic angel)로 이해된다. 이는 앞서 18장에서 아브라함을 방문한 세 사람의 경우와 유사하게, 구약에서 하나님이 인격적이고 가시적인 형태로 인간과 씨름하며 만나시는 신비로운 신현 현상의 사례로 여겨진다. 정확한 정체에 대한 조직신학적 확정보다, 이 만남이 야곱에게 실제로 하나님 자신과의 대면으로 경험되고 해석되었다는 사실이 본문의 신학적 핵심이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>'네가 이기었다'는 선언이 뜻하는 바는 무엇인가? 인간이 정말 하나님을 이길 수 있는가?</div>
+        <div class="deep-body">이는 역설적 표현으로 이해된다. 야곱의 '승리'는 힘으로 하나님을 제압한 것이 아니라(오히려 그는 환도뼈를 다쳐 육체적으로 완전히 패배했다), 포기하지 않고 끝까지 축복을 구하며 매달린 끈질긴 믿음의 태도를 가리킨다. 즉 이 '이김'은 힘의 승리가 아니라 간구와 신뢰의 승리이며, 하나님은 자신을 향해 필사적으로 매달리는 인간의 믿음에 스스로 '패배'하시고 축복으로 응답하시는 방식으로 자신의 은혜로운 성품을 드러내신다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch33">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 26c2-6 8-10 12-10s10 4 12 10" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M18 26c0-4 6-4 6 0M24 26c0-4 6-4 6 0" fill="none" stroke="currentColor" stroke-width="1.4"/><path d="M6 40h36" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 33</div>
+      <h1>33장 · 에서와의 재회</h1>
+      <div class="chapter-sub">두려워하던 만남이 화해로</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 33:1-20</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">33:1-17</div>
+        <div>
+          <div class="flow-title">화해의 포옹</div>
+          <div class="flow-body">야곱은 여인들과 자녀들을 순서대로 배치하고 자신은 앞서 나가 형에게 일곱 번 땅에 몸을 굽힌다(3절). 그러나 예상과 달리 <b class="hl-quote">"에서가 달려와서 그를 맞이하여 안고 목을 어긋맞추어 그와 입맞추고 서로 우니라"</b>(4절) — 20년간 쌓인 두려움이 순식간에 눈물의 화해로 녹아내리는 장면이다. 야곱은 <b class="hl-insight has-insight" data-insight="7">"형님의 얼굴을 뵈온즉 하나님의 얼굴을 본 것 같사오며"</b>(10절)라며 감격적으로 예물을 받아달라 간청하고, 에서는 처음엔 사양하다가 받아들인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">33:18-20</div>
+        <div>
+          <div class="flow-title">세겜에 정착함</div>
+          <div class="flow-body">에서가 세일로 돌아간 후, 야곱은 세겜 땅에 이르러 장막을 치고 그 땅의 일부를 사서 제단을 쌓고 <b class="hl-term">엘엘로헤이스라엘</b>('하나님, 이스라엘의 하나님')이라 이름한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">두려워하던 일이 실제로는 은혜로 임함</div>
+        <div class="teach-body">야곱은 형이 자신을 죽일 것이라는 20년 묵은 두려움을 안고 왔지만, 실제로는 눈물의 포옹으로 맞이받는다. 이는 인간의 두려움이 종종 실제 현실보다 훨씬 과장되어 있으며, 하나님이 우리가 예상하지 못한 방식으로 화해와 은혜를 예비하실 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">낮아짐과 겸손을 통한 화해의 시작</div>
+        <div class="teach-body">야곱이 형 앞에 일곱 번 몸을 굽힌 것(고대 근동에서 신하가 왕에게 하는 극도의 존경 표시)은, 화해를 구하는 자의 자발적 겸손이 관계 회복의 중요한 첫걸음이 될 수 있음을 보여준다. 그는 더 이상 축복을 가로챈 자로서 우월한 위치에 서려 하지 않고, 온전히 낮아진 자세로 형에게 나아간다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">화해한 형제의 얼굴에서 하나님을 보다</div>
+        <div class="teach-body">야곱의 고백("형님의 얼굴을 뵈온즉 하나님의 얼굴을 본 것 같다")은 바로 전날 밤 얍복강에서 하나님의 얼굴을 본 경험(32:30)과 의도적으로 연결된다. 이는 인간관계의 화해와 회복 자체가 하나님의 은혜와 임재를 경험하는 통로가 될 수 있음을 아름답게 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">에서의 성숙함 — 원한을 넘어선 관용</div>
+        <div class="teach-body">에서는 사백 명의 군사를 거느리고 나타나지만 정작 복수가 아니라 관대한 포옹으로 응답한다. 이는 27장에서 통곡하며 살의를 품었던 그가 20년의 세월 동안 스스로도 성숙해지고 원한을 내려놓았음을 보여주는, 성경에서 자주 간과되는 에서에 대한 긍정적 초상이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">완전한 동행을 사양하는 지혜로운 거리두기</div>
+        <div class="teach-body">에서는 함께 가자고 제안하지만, 야곱은 정중히 사양하며 천천히 자기 속도로 뒤따르겠다고 한다(12-14절). 이는 화해가 이루어졌다 해도 서로 다른 삶의 방향과 속도를 존중하는 것이 여전히 지혜로울 수 있음을 보여준다 — 완전한 화해가 반드시 완전한 재결합을 의미하지는 않는다는 실제적 통찰이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">20년을 두려워하며 준비해온 만남이 눈물의 포옹으로 끝나는 이 장면, 저는 참 좋아해요. 야곱이 그렇게 치밀하게 예물을 나누고 전략을 짜며 대비했는데, 정작 필요했던 건 그런 계략이 아니라 그냥 서로를 향해 달려가는 마음이었던 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>야곱이 세일로 형을 따라가겠다고 말해놓고 실제로는 세겜으로 갔다는 것(33:14, 17)은 또 다른 거짓말인가?</div>
+        <div class="deep-body">이는 오랜 해석사적 논쟁거리다. 일부 주석가들은 이를 야곱의 옛 습성(말과 행동의 불일치)이 완전히 사라지지 않았음을 보여주는 사례로 읽는다. 반면 다른 해석자들은 이것이 반드시 기만이 아니라, 자녀와 가축을 거느린 상황에서 실용적으로 다른 경로를 택한 것일 수 있으며, 에서에게 명시적으로 거짓 약속을 한 것은 아니라고 본다(그는 단지 "내 주께서 앞서 가소서"라고 했을 뿐 세일로 가겠다고 명시하지 않았다). 본문 자체가 이에 대해 판단을 내리지 않기에 확정적 결론은 어렵지만, 야곱의 성품이 얍복강 사건 이후에도 완전히 새로운 사람으로 즉각 변모하지는 않았다는 점을 보여주는 사례로 자주 언급된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>에서와 야곱의 화해가 완전했다면, 왜 이후 두 형제(그리고 그 후손인 이스라엘과 에돔)의 관계는 성경 전체에서 계속 긴장 관계로 남는가?</div>
+        <div class="deep-body">개인적 화해와 민족적·역사적 관계는 반드시 일치하지 않는다는 것이 성경 전체가 보여주는 복잡한 현실이다. 야곱과 에서 개인 사이의 이 아름다운 화해는 진실했던 것으로 보이지만, 이후 그들의 후손인 이스라엘과 에돔은 역사 속에서 반복적으로 갈등한다(민 20장의 에돔의 통행 거부, 오바댜서의 에돔에 대한 심판 예언 등). 이는 개인의 화해가 후대에도 자동으로 계승되지는 않으며, 각 세대가 자신의 관계를 새롭게 형성해간다는 것을 보여주는 현실적 사례로 이해된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch34">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v20" stroke="currentColor" stroke-width="2"/><path d="M14 26h20l-4 14h-12z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 34</div>
+      <h1>34장 · 디나의 사건과 세겜의 비극</h1>
+      <div class="chapter-sub">폭력이 낳은 더 큰 폭력</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 34:1-31</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">34:1-24</div>
+        <div>
+          <div class="flow-title">디나의 욕보임과 협상</div>
+          <div class="flow-body">야곱의 딸 <b class="hl-term">디나</b>가 그 땅 여자들을 보러 나갔다가 세겜 하몰의 아들에게 <b class="hl-quote">강간당한다</b>(2절). 세겜은 그녀를 사랑하게 되어 정식으로 결혼을 청하고, 하몰은 야곱의 아들들과 통혼과 교역을 제안한다. 야곱의 아들들은 <b class="hl-insight has-insight" data-insight="8">속임수로</b> 세겜 성읍 모든 남자가 할례를 받는다면 결혼을 허락하겠다고 제안한다(13-17절) — 이는 처음부터 복수를 계획한 거짓 조건이었다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">34:25-31</div>
+        <div>
+          <div class="flow-title">시므온과 레위의 학살</div>
+          <div class="flow-body">셋째 날, 할례로 아직 아파하는 틈을 타 디나의 친오라비인 시므온과 레위가 세겜 성읍의 모든 남자를 칼로 죽이고 성읍을 노략한다. 야곱은 이 일로 두려워하며 아들들을 책망하지만("내가 이 땅의 주민... 가나안 족속과 브리스 족속 중에서 악취를 내게 하였도다", 30절), 아들들은 "그가 우리 누이를 창녀같이 대우함이 옳으니이까"(31절)라며 자신들의 행위를 정당화한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">성적 폭력은 결코 가볍게 여겨져서는 안 된다</div>
+        <div class="teach-body">본문은 디나에 대한 폭력을 '욕되게 하다'(히브리어로 강한 도덕적 함의를 지닌 단어)로 명확히 규정하며 이를 결코 미화하지 않는다. 이는 성경이 여성에 대한 성적 폭력을 심각한 죄악으로 인식하고 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">정당한 분노가 정당하지 않은 방식으로 표출될 위험</div>
+        <div class="teach-body">시므온과 레위의 분노(누이가 당한 폭력에 대한)는 그 자체로 이해할 만한 것이지만, 그들이 취한 방법(속임수와 무차별적 대량 학살, 죄 없는 세겜 성읍 전체 주민까지 포함)은 정당한 분노를 훨씬 넘어서는 잔혹한 보복이었다. 이는 정의로운 분노와 죄악된 복수 사이의 경계가 얼마나 쉽게 무너질 수 있는지를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">할례라는 거룩한 표징의 오용</div>
+        <div class="teach-body">언약의 거룩한 표징인 할례(17장)가 이 사건에서는 계략과 살육의 도구로 악용된다. 이는 거룩한 것도 죄악된 목적을 위해 왜곡되어 사용될 수 있다는 경고이며, 신앙적 상징과 의식이 본래의 신학적 의미와 분리되어 오용될 위험성을 상기시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">야곱의 뒤늦고 미온적인 반응</div>
+        <div class="teach-body">야곱은 이 사건 전체에서 놀랍도록 수동적이다 — 디나가 욕을 당했다는 소식을 듣고도(5절) 아들들이 돌아올 때까지 침묵하며, 학살 이후에도 도덕적 분노보다 자신의 안전(주변 민족의 보복 가능성)을 먼저 걱정한다. 이는 야곱의 가부장적 리더십의 한계를 보여주며, 훗날 49:5-7에서 그는 임종 시에야 비로소 시므온과 레위의 "잔인한 무기"와 "분노"를 명시적으로 저주하며 뒤늦은 도덕적 평가를 내린다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">복수의 대가는 세대를 넘어 이어짐</div>
+        <div class="teach-body">49:7에서 야곱은 시므온과 레위를 이스라엘 중에 "나누며 흩으리로다"라고 예언하는데, 실제로 이 두 지파는 이후 가나안 정복 후 독립된 영토를 갖지 못하고 다른 지파들 사이에 흩어지게 된다(시므온은 유다 지파 영토 안에, 레위는 제사장 지파로 온 이스라엘에 흩어져 배치됨). 이는 이 폭력적 행위의 대가가 세대를 넘어 지파의 운명에까지 영향을 미쳤다는 것을 암시적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">34장은 창세기에서 가장 읽기 힘든 장 중 하나예요. 어느 쪽도 완전히 옳지 않거든요. 세겜의 폭력도, 그에 대한 아들들의 보복도, 그리고 그 모든 걸 지켜보며 침묵했던 야곱의 태도도요. 성경이 이런 이야기를 미화하지 않고 있는 그대로 남겨둔다는 게, 오히려 이 본문이 정직하다는 증거인 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>시므온과 레위의 행동은 도덕적으로 완전히 정죄되어야 하는가, 아니면 부분적으로 정당화될 수 있는가?</div>
+        <div class="deep-body">본문 자체(창세기 내러티브)는 이 사건에 대해 복합적인 태도를 보인다 — 세겜의 원죄(성폭력)는 명백히 비난받아 마땅하지만, 그에 대한 대응(속임수를 통한 무차별 학살, 죄 없는 성읍 주민 전체를 포함)은 야곱 자신에 의해서도(34:30, 그리고 결정적으로 49:5-7에서) 명시적으로 정죄된다. 정의로운 분노의 대상(세겜 한 사람)과 실제 보복의 범위(성읍 전체 남성) 사이의 불균형이 이 사건의 핵심적 도덕적 문제로 지적된다. 성경은 피해자의 고통에 대한 공감과 그 고통에 대한 부당한 보복 사이의 경계를 이 사건을 통해 날카롭게 드러낸다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>세겜이 디나를 강간한 후 그녀를 진심으로 사랑하게 되었다는 서술(3절, 8절)이 이 범죄를 어떤 식으로든 완화하는가?</div>
+        <div class="deep-body">본문은 세겜의 이후 태도(사랑, 정식 결혼 제안, 정당한 신부 값 지불 의사)를 서술하지만, 이것이 처음의 범죄 자체를 소급하여 정당화하지는 않는다. 오히려 이는 성폭력이라는 근본적 범죄와 그 이후의 개인적 감정이나 태도 변화가 별개의 문제임을 보여주는 사례로 읽힌다 — 가해자의 사후 애정이나 결혼 의사가 피해자에게 가해진 최초의 폭력을 무효화하거나 정당화할 수 없다는 것이 현대 윤리적 관점에서도, 그리고 본문이 암묵적으로 전달하는 메시지에서도 일관되게 확인된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch35">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="20" width="24" height="18" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 20l12-12 12 12" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="24" y1="26" x2="24" y2="38" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 35</div>
+      <h1>35장 · 벧엘로의 귀환과 라헬의 죽음</h1>
+      <div class="chapter-sub">정화, 재확증, 그리고 슬픔</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 35:1-29</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">35:1-15</div>
+        <div>
+          <div class="flow-title">벧엘에서의 정화와 언약의 재확증</div>
+          <div class="flow-body">하나님은 야곱에게 벧엘로 올라가 제단을 쌓으라 명하시고, 야곱은 온 집안에 <b class="hl-quote">"너희 중에 있는 이방 신상들을 버리고 자신을 정결하게 하고 너희 의복을 바꾸어 입으라"</b>(2절)고 명한다 — 라헬이 훔친 드라빔을 포함해 모든 이방 신상이 상수리나무 아래 묻힌다. 하나님은 다시 나타나 야곱의 이름을 <b class="hl-term">이스라엘</b>로 재확인하시고, 아브라함과 이삭에게 주신 언약(생육하고 번성함, 땅의 약속)을 온전히 물려주신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">35:16-29</div>
+        <div>
+          <div class="flow-title">라헬의 죽음과 이삭의 죽음</div>
+          <div class="flow-body">베들레헴으로 가는 길에서 라헬은 베냐민을 낳다가 난산으로 죽고, 야곱은 그녀의 무덤에 기둥을 세운다. 이 시기에 <b class="hl-insight has-insight" data-insight="9">르우벤이 아버지의 첩 빌하와 동침</b>하는 심각한 죄를 범한다(22절, 훗날 49:4에서 이로 인해 장자권을 박탈당함). 야곱의 열두 아들의 명단이 정리되고, 이삭이 180세로 죽어 에서와 야곱이 함께 그를 장사한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">과거의 우상을 버리는 결단</div>
+        <div class="teach-body">야곱이 온 집안에 이방 신상을 버리라 명하는 것은, 언약 백성이 하나님께 온전히 나아가기 위해서는 과거에 뒤섞여 있던 우상숭배와 미신의 잔재를 의도적으로 정리해야 함을 보여준다. 이는 신앙의 회복이 종종 구체적이고 실천적인 결단(버림, 정결케 함, 옷을 바꿔입음)을 수반한다는 것을 상기시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">서원을 기억하고 지키는 신실함</div>
+        <div class="teach-body">28장에서 야곱이 두려움 속에 드렸던 조건적 서원("내가... 평안히 아버지 집으로 돌아가게 하시오면")이 이제 문자 그대로 성취되고, 그는 그 서원을 잊지 않고 벧엘로 돌아가 이행한다. 이는 인생의 위기 속에서 드린 기도와 서원이 시간이 지나도 하나님 앞에서 여전히 유효하다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">기쁨과 슬픔이 공존하는 인생의 실상</div>
+        <div class="teach-body">이 장은 언약의 재확증(기쁨)과 사랑하는 아내 라헬의 죽음(깊은 슬픔)이 바로 이어서 서술된다. 이는 신앙의 여정이 순전한 축복의 연속이 아니라, 큰 은혜의 순간과 깊은 상실의 순간이 뒤섞여 있는 인생의 실제 모습을 정직하게 반영한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">가정 안의 계속되는 죄와 하나님의 참으심</div>
+        <div class="teach-body">르우벤의 죄(아버지의 첩과의 동침, 고대 근동에서 이는 아버지의 권위와 유산에 대한 심각한 도전으로 여겨짐)는 야곱 가정이 여전히 심각한 도덕적 혼란 속에 있음을 보여준다. 그럼에도 하나님은 이 가정을 완전히 버리지 않으시고 언약을 계속 이어가신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">에서와 야곱이 함께 아버지를 장사함 — 지속되는 화해의 증거</div>
+        <div class="teach-body">33장의 화해가 일회적 사건으로 끝나지 않고, 이삭의 장례(29절)에서 두 형제가 다시 함께 등장한다는 사실은 그들의 관계 회복이 상당 기간 지속되었음을 보여주는 조용한 증거다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">35장은 정말 많은 감정이 한 장에 압축되어 있어요. 정화의 결단, 언약의 재확증이라는 기쁨, 그리고 바로 이어지는 라헬의 죽음이라는 깊은 슬픔이요. 인생이 원래 이렇죠 — 큰 은혜의 순간과 큰 상실의 순간이 그렇게 나란히 놓여 있곤 해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>베냐민의 출생 이름이 두 가지로 기록된 것(라헬이 지은 '베노니'와 야곱이 바꾼 '베냐민')은 무엇을 의미하는가?</div>
+        <div class="deep-body">라헬은 죽어가면서 아들의 이름을 '베노니'('내 슬픔의 아들')라 지었지만, 야곱은 이를 '베냐민'('오른손의 아들', 곧 '복과 힘의 아들')으로 바꾼다(18절). 이는 극심한 고통과 상실의 순간에서 태어난 이름이라도, 아버지의 사랑과 소망 속에서 새로운 의미로 재해석되고 변화될 수 있음을 보여주는 아름다운 사례로 자주 언급된다. 슬픔의 기억이 저주가 아니라 축복의 이름으로 승화되는 순간이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>르우벤의 죄가 여기서는 매우 간략하게 언급되고 즉각적인 서술적 처벌 없이 넘어가는데, 이는 그 죄를 가볍게 여기는 것인가?</div>
+        <div class="deep-body">본문의 간결한 언급(단 한 절, 22절)은 즉각적 처벌을 서술하지 않지만, 이는 결코 이 죄가 가볍게 여겨졌다는 뜻이 아니다. 오히려 49:3-4에서 야곱이 임종 시 이 죄를 명시적으로 재소환하며 르우벤의 장자권을 박탈하는 결정적 근거로 삼는다는 사실은, 이 죄의 무게가 시간이 지나도 결코 잊히거나 가벼워지지 않았음을 보여준다. 성경은 종종 사건이 일어난 즉시 도덕적 판단을 명시하기보다, 이후 서사 전체를 통해 그 결과와 평가를 점진적으로 드러내는 문학적 방식을 취한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch36">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="22" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="31" cy="22" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 38h10M28 38h10" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 36</div>
+      <h1>36장 · 에서의 계보</h1>
+      <div class="chapter-sub">야곱의 형, 에돔의 조상</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 36:1-43</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">36:1-43</div>
+        <div>
+          <div class="flow-title">에돔 족속의 계보</div>
+          <div class="flow-body">이 장 전체는 에서(에돔)의 후손들과 그가 세일 산에 정착한 경위, 그리고 <b class="hl-insight has-insight" data-insight="10">에돔 땅에 이스라엘 왕정보다 먼저 세워진 여덟 왕들</b>의 명단(31-39절)을 상세히 기록한다. 본문은 명시적으로 <b class="hl-quote">"이는 이스라엘 자손을 다스리는 왕이 있기 전에 에돔 땅을 다스리던 왕들이더라"</b>(31절)고 밝히며, 에서의 후손이 야곱보다 먼저 상당한 정치적 조직과 왕정을 이루었음을 보여준다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">버림받지 않은 형 — 이스마엘처럼 여전히 복 받은 에서</div>
+        <div class="teach-body">장자권과 언약적 축복을 잃었음에도 불구하고, 에서 역시 25:23의 예언("두 국민이 네 태중에 있다")대로 실제로 크고 강한 민족(에돔)의 조상이 된다. 이는 하나님의 특별한 언약적 선택(야곱)이 다른 자에 대한 완전한 저주나 방치를 의미하지 않는다는 것을 다시 한번 보여주며, 이스마엘의 경우(17:20, 25:12-18)와 병행되는 하나님의 보편적 돌보심을 확인시켜준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">눈에 보이는 성공과 하나님의 계획의 차이</div>
+        <div class="teach-body">본문이 명시하듯 에돔은 이스라엘보다 먼저 왕정을 이루어 훨씬 앞서 정치적으로 성공한 것처럼 보인다. 그러나 성경 전체의 구속사적 관점에서 볼 때, 세상적으로 먼저 번성하고 조직화되는 것이 반드시 하나님의 구속사적 계획의 중심에 있다는 것을 의미하지 않는다는 역설적 교훈을 준다 — 언약의 특별한 계보(야곱)는 오히려 더디고 고난에 찬 길을 걷는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">계보를 통한 하나님의 신실하심의 재확인</div>
+        <div class="teach-body">지루해 보이는 이 족보는 하나님이 아브라함에게 하신 모든 약속(이스마엘과 마찬가지로 에서에게도 한 민족을 이루게 하리라는 암묵적 약속, 25:23)이 실제 역사 속에서 구체적으로 성취되었음을 증언하는 문서적 증거로 기능한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">이스라엘과 에돔의 지속적 관계에 대한 배경 설정</div>
+        <div class="teach-body">이 계보는 이후 성경 역사 전체에서 반복적으로 등장하는 이스라엘과 에돔의 관계(민 20장의 통행 거부, 사울과 다윗 시대의 정복, 오바댜서의 심판 예언, 헤롯 대왕이 에돔 혈통이었다는 신약 시대의 역사적 배경까지)를 이해하는 데 필요한 역사적 기초를 제공한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">창세기 구조의 전환점 — 이제 야곱에게로 완전히 집중됨</div>
+        <div class="teach-body">창세기는 관례적으로 주변 인물(이스마엘, 그리고 이제 에서)의 계보를 간략히 정리한 후, 언약의 중심 계보(야곱과 그 아들들)에 서사적 초점을 완전히 맞추는 문학적 패턴을 반복한다. 36장 이후 창세기 나머지 전체(37-50장)는 온전히 야곱의 아들들, 특히 요셉의 이야기에 집중된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">36장까지 왔다는 건, 창세기 3부(이삭과 야곱 이야기)를 다 지나왔다는 뜻이에요. 이 족보 장을 넘기고 나면 이제 요셉 이야기가 시작돼요 — 창세기에서 가장 길고 아름다운 이야기 중 하나죠. 잠깐 숨을 고르는 자리라고 생각하시면 좋을 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이 지루해 보이는 족보 장이 창세기 전체 구조에서 어떤 문학적·신학적 기능을 하는가?</div>
+        <div class="deep-body">창세기는 반복적으로 '주변 계보를 정리하고 넘어가는' 패턴을 사용한다(가인의 계보 후 셋의 계보, 야벳·함의 계보 후 셈의 계보, 이스마엘의 계보 후 이삭의 계보, 그리고 이제 에서의 계보 후 야곱의 계보). 이는 저자가 하나님의 선택과 언약이 어떻게 특정한 한 계보를 통해 좁혀지고 집중되는지를 문학적으로 강조하는 장치이며, 동시에 배제된 계보에 대해서도 그들이 무시되거나 잊힌 것이 아니라 여전히 하나님의 돌보심 아래 있고 나름의 역사와 번영을 이루었음을 존중하며 기록하는 균형 잡힌 태도를 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>이 족보에 등장하는 에돔의 초기 왕들에 대한 언급(31절, "이스라엘 자손을 다스리는 왕이 있기 전에")은 창세기의 저작 시기에 대해 무엇을 암시하는가?</div>
+        <div class="deep-body">이 구절은 창세기의 최종 편집 혹은 기록이 최소한 이스라엘에 왕정이 수립된 시점(사울, 대략 주전 11세기 말) 이후, 혹은 그 시점을 이미 알고 있는 관점에서 서술되었을 가능성을 시사한다고 많은 학자들이 지적한다. 이는 모세오경의 저작과 편집 과정에 대한 학문적 논의(전통적 모세 저작설과 후대 편집 가설 등)와 연결되는 흥미로운 본문이지만, 어느 입장을 취하든 이 구절 자체의 신학적 핵심(에돔이 이스라엘보다 정치적으로 먼저 조직되었다는 역사적 사실)은 본문의 문자적 의미로 분명하게 남는다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+<div class="final-footer" style="text-align:center; padding: 14mm 4vw 20mm; color:var(--ink-soft); font-size:9pt; letter-spacing:0.04em;">
+  기독교한국침례회 은혜교회
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "'같은 죄의 반복'이라는 문학적 장치의 의도", "body": "창세기 저자가 이삭의 이야기를 아브라함과 거의 동일한 패턴(흉년, 아내를 누이라 속임, 이방 왕과의 만남, 우물 분쟁, 화친)으로 서술하는 것은 단순한 우연의 일치가 아니라 의도적인 문학적 병행 구조로 보인다. 이는 이삭이 독자적인 영웅적 인물이 아니라, 아브라함에게 주신 언약이 다음 세대에도 동일하게 유효하고 반복적으로 확증된다는 것을 강조하려는 신학적 의도를 담고 있는 것으로 이해된다. 동시에 이삭이 상대적으로 창세기에서 가장 '조용하고 수동적인' 족장으로 그려진다는 점과도 맞아떨어진다."}, {"title": "\"음성은 야곱의 음성이요 손은 에서의 손이로다\"의 문학적 아이러니", "body": "22절의 이 유명한 구절은 창세기 전체에서 가장 정교한 아이러니 중 하나로 평가된다. 이삭은 진실(음성)과 조작된 증거(손) 사이에서 갈등하지만 결국 촉각을 신뢰하고 속는다. 흥미롭게도 이는 훗날 야곱 자신이 아들들에게 속임을 당하는 장면(37:31-33, 요셉의 채색옷에 피를 묻혀 보여주는 시각적 증거로 속는 것)과 정확히 대칭을 이루는 문학적 되갚음(poetic justice)으로, 창세기 저자가 얼마나 정교하게 사건들을 서로 연결시켜 서술하는지를 보여주는 사례다."}, {"title": "사닥다리(סֻלָּם, 술람)라는 단어의 독특성", "body": "이 단어는 구약성경 전체에서 오직 이 구절에만 등장하는 매우 희귀한 단어(hapax legomenon)다. 고대 근동의 지구라트(계단식 신전탑, 창세기 11장 바벨탑 참조)의 형태와 유사성이 종종 지적되는데, 흥미로운 신학적 대조가 있다 — 바벨탑은 인간이 스스로 하늘에 닿으려 했던 교만한 시도였지만, 벧엘의 사닥다리는 정반대로 하나님이 스스로 하늘에서 내려오셔서 인간과 소통하시는 은혜로운 계시로 그려진다는 점이다. 이 대조는 인간의 자기 구원 시도와 하나님의 은혜로운 자기 계시 사이의 근본적 차이를 상징적으로 보여준다."}, {"title": "결혼 첫날밤 신부를 알아보지 못한 것이 실제로 가능했는가", "body": "고대 근동의 결혼 관습에서는 신부가 짙은 베일로 얼굴을 가리고, 결혼식 피로연에서 술을 마시는 관습, 그리고 어두운 신방이라는 조건들이 결합되면 실제로 신랑이 신부를 즉시 알아보지 못하는 것이 불가능하지 않았다는 것이 고대 근동 연구자들의 견해다. 이런 문화적 배경 지식은 이 사건이 단순한 문학적 과장이 아니라 실제로 있을 법한 상황이었음을 보여주며, 동시에 야곱이 얼마나 철저하게 속았는지, 그리고 그 속임수가 자신이 아버지에게 행했던 것과 얼마나 정교하게 대칭을 이루는지를 더욱 부각시킨다."}, {"title": "합환채(사랑의 열매)를 둘러싼 흥정의 배경", "body": "고대 근동에서 합환채(만드레이크)는 최음 효과와 다산을 돕는다고 믿어졌던 식물이다. 라헬이 자신의 남편과의 동침권까지 포기하면서 이 식물을 얻으려 한 것(15-16절)은, 그녀가 얼마나 절박하게 자녀를 원했는지를 보여주는 동시에 두 자매가 신앙(하나님께 의탁하는 것)과 미신적 수단(민간요법) 사이에서 갈등했던 당시의 문화적 정황을 생생하게 보여준다. 흥미롭게도 정작 라헬은 합환채를 통해서가 아니라 그 이후(22절) 순전히 하나님의 은혜로운 개입을 통해서만 아이를 얻게 되는데, 이는 인간적 수단이 아니라 하나님의 주권이 궁극적 열쇠임을 다시 한번 보여주는 서사적 장치로 읽힌다."}, {"title": "\"생리 중이라 일어날 수 없나이다\"라는 라헬의 속임수의 정교함", "body": "고대 근동 문화에서 여성의 생리는 의식적 부정함(unclean)으로 여겨져, 그 상태의 여성이 앉아있는 자리를 남성이 뒤지는 것은 문화적 금기에 해당했다. 라헬은 이 문화적 관습을 정확히 알고 이용하여 아버지가 자신이 앉은 안장 방석 아래를 확인하지 못하게 만든다. 이는 그녀가 매우 영리하고 침착하게 위기를 모면했음을 보여주는 동시에, 야곱 집안 전체에 여전히 배어 있는 기만의 패턴(할아버지 아브라함부터 이어진)을 다시 한번 드러내는 문학적 아이러니로 읽힌다."}, {"title": "환도뼈가 위골된 것의 지속적 상징성", "body": "32절은 이 사건 이후 \"그 환도뼈 큰 힘줄을 먹지 아니하더라\"는 이스라엘 백성의 후대 관습(코셔 율법의 일부로 발전)의 기원을 설명한다. 이는 단순한 개인적 사건이 아니라 이스라엘 민족 전체의 정체성과 기억 속에 영구히 새겨진 사건임을 보여준다 — 이스라엘이라는 이름을 얻은 바로 그 순간이 동시에 인간적 연약함과 상처의 표시(절뚝거림)를 영원히 지니게 된 순간이었다는 것을, 매 식사 때마다 상기시키는 살아있는 기념 관습이 된 것이다."}, {"title": "엘엘로헤이스라엘이라는 이름의 의미와 무게", "body": "야곱이 세겜에 세운 제단의 이름 '엘엘로헤이스라엘'은 문자적으로 '하나님, 이스라엘의 하나님'이라는 뜻이다. 이는 야곱이 32장에서 받은 새 이름 '이스라엘'을 하나님의 이름 앞에 직접 붙인 것으로, 얍복강에서의 만남이 단지 일회적 사건이 아니라 그의 정체성 전체를 영구적으로 새롭게 규정한 사건이었음을 확인시켜준다. 이는 성경에서 인간이 하나님께 붙인 이름 중 자신의 새 정체성을 가장 직접적으로 반영하는 사례 중 하나로 꼽힌다."}, {"title": "디나 자신의 목소리가 본문에 전혀 등장하지 않는다는 점", "body": "이 장 전체에서 디나 자신의 말이나 감정은 단 한 마디도 직접 인용되지 않는다. 그녀는 사건의 중심에 있지만 서사 안에서는 철저히 침묵당한 인물로 남는다. 오빠들과 아버지, 세겜과 하몰의 말은 상세히 기록되지만, 정작 가장 큰 고통을 겪은 당사자의 목소리는 지워져 있다는 점은 많은 현대 독자와 여성신학자들이 이 본문을 읽을 때 특별히 주목하는 지점이며, 고대 가부장 사회에서 여성의 경험이 어떻게 주변화되었는지를 본문 자체의 서술 방식이 무의식적으로 반영하고 있다는 비평적 관찰로 이어진다."}, {"title": "라헬의 무덤이 오늘날까지 남긴 지리적·역사적 흔적", "body": "베들레헴 근처에 있는 것으로 전통적으로 알려진 '라헬의 무덤'은 오늘날까지도 유대교, 기독교, 이슬람교 모두에서 중요한 순례지로 여겨진다. 예레미야 31:15은 훗날 \"라마에서 슬퍼하며 통곡하는 소리가 들리니 라헬이 그 자식을 위하여 애곡하는 것이라\"며 이 무덤과 라헬의 이미지를 이스라엘의 포로기 슬픔을 표현하는 상징으로 재사용하며, 마태복음 2:18은 이 구절을 헤롯의 유아 학살 사건에 다시 인용해 라헬의 슬픔이라는 이미지가 성경 전체에 걸쳐 반복되는 강력한 애도의 상징으로 자리잡았음을 보여준다."}, {"title": "\"왕이 없어도 다스리는 자들\" — 족장에서 부족장으로의 전환 기록", "body": "36:15-19과 40-43절은 에돔의 지도자들을 '족장'(알루프, 문자적으로는 '천 명의 지도자')으로, 이후 31-39절은 '왕'으로 서로 다른 정치 체제 용어로 기록한다. 이는 에돔 사회가 시간이 지나며 부족 연합체에서 왕정 국가로 정치적으로 발전해간 과정을 성경 본문이 세밀하게 반영하고 있음을 보여주는 사례로, 고대 근동 정치사 연구에서도 흥미로운 자료로 다뤄진다."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+</body></html>

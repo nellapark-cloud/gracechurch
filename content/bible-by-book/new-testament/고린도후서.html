@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>고린도후서 연구 — 전권 합본</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a8a80;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#f7f1e6;
+  --cream-deep:#ede2cd;
+  --navy:#5c2a35;
+  --navy-soft:#7a3f4a;
+  --gold:#b0793e;
+  --gold-soft:#d1a468;
+  --ink:#2c2620;
+  --ink-soft:#6b6055;
+  --line:#e0d3ba;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #e2ccd0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #b8949a;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#d8c2c6; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#e6d4d8; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#e2ccd0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(209,164,104,0.1); border:1px solid rgba(209,164,104,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(209,164,104,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(209,164,104,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#c99aa3; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#e2ccd0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#e2ccd0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(209,164,104,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* hl-insight = 더 깊은 설명이 필요한 구절 (하늘색), 클릭 시 팝업 */
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+/* clickable (has a glossary tip) */
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(92,42,53,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(247,241,230,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+/* Screen-friendly rules above are now the default (baseline) so that any
+   viewer — including ones that don't evaluate @media correctly — shows a
+   clean, readable layout. Printing restores the compact A4-tuned look. */
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style>
+
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 고린도후서 연구</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+
+<style>
+.church-footer{ text-align:center; padding: 14px 4vw 34px; font-size: 12px; color: var(--ink-soft); letter-spacing: 0.04em; }
+@media print{ .church-footer{ padding: 6mm 0 0; font-size: 8.5pt; } }
+</style>
+
+
+<div class="cover">
+  <div class="eyebrow">은혜교회 성경공부 시리즈 · 2 CORINTHIANS</div>
+  <h1>고린도후서 연구</h1>
+  <div class="cover-sub">약함 속에 나타나는 능력 — 전체 13장 성경 연구</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">고후 1:1 – 13:13</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 13장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+</div>
+
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>고린도후서 전체 서론</h1>
+  <p class="intro-lead">가장 개인적이고 가장 상처받기 쉬운 편지, 약함 속에서 발견한 하나님의 능력.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>고린도전서를 보낸 이후, 바울과 고린도교회 사이에는 상당히 아프고 복잡한 갈등의 시간이 있었다. 바울의 계획했던 방문이 근심스럽게 끝난 사건(2:1, "고통 중의 방문"), 그리고 눈물로 쓴 또 다른 편지(2:4, 7:8)를 거쳐, 바울은 <b class="hl-term">마게도냐</b>에서 디도로부터 고린도교회의 회복 소식을 전해 듣고(7:6-7) 이 서신을 기록한다. 대체로 <b class="hl-term">AD 55–56년경</b>으로 추정되며, 신약 서신 중 바울의 개인적 감정과 사역의 애환이 가장 짙게 드러나는 서신으로 꼽힌다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>수신자와 정황</h3>
+    <p>고린도교회는 바울의 사도적 권위에 도전하는 <b class="hl-term">거짓 사도들</b>의 영향을 받고 있었고, 이들은 화려한 언변과 자기 추천으로 교인들의 신뢰를 얻으려 했다. 동시에 예루살렘 성도를 위한 <b class="hl-term">연보</b> 문제가 실제적인 관심사로 이어지고 있었다. 바울은 이 서신에서 한편으로는 회복된 관계에 대한 깊은 감사와 위로를, 다른 한편으로는 자신의 사도직을 향한 도전에 대한 단호한 변호를 함께 다룬다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문체적 특징</h3>
+    <p>고린도전서의 체계적인 주제별 논증과 달리, 고린도후서는 <b class="hl-term">감정의 기복</b>이 뚜렷한 서신이다. 기쁨과 안도(1-7장), 실제적 권면(8-9장), 날카로운 자기 변호(10-13장)로 어조가 크게 전환되며, 이 때문에 여러 편지가 하나로 편집되었을 가능성이 학계에서 꾸준히 논의되어 왔다. 바울 자신의 고난, 눈물, 약함에 대한 고백이 유독 솔직하고 생생하게 드러난다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p><b class="hl-term">위로의 하나님</b>과 질그릇 속에 담긴 보배(1-4장)로 시작하여, 화목하게 하는 직분(5장)과 거룩한 삶의 요청(6-7장)을 거쳐, 예루살렘 성도를 위한 <b class="hl-term">연보</b>(8-9장)를 실천적으로 다룬다. 마지막으로 거짓 사도들에 맞선 <b class="hl-term">참 사도직의 변호</b>(10-13장)에서, "내가 약할 그 때에 강함이라"는 역설적 진리로 서신 전체가 수렴된다. 처음부터 끝까지, 능력은 강함이 아니라 약함 속에서 온전해진다는 신학이 관통한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1 – 7장</div>
+        <div class="oi-title">위로와 화목의 사역</div>
+        <div class="oi-body">환난 중의 위로, 새 언약의 영광, 화목하게 하는 직분, 근심에서 회개로.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">8 – 9장</div>
+        <div class="oi-title">연보에 관한 권면</div>
+        <div class="oi-body">마게도냐 교회의 본, 심는 대로 거두는 원리, 즐거이 내는 마음.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">10 – 13장</div>
+        <div class="oi-title">참 사도직의 변호</div>
+        <div class="oi-body">거짓 사도들에 대한 경고, 어리석은 자랑, 약함 속의 강함, 자기 시험의 권면.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 역사적 정황, 본문비평, 해석사적 논쟁 등 확정적 답보다 함께 씨름할 가치가 있는 지점들을 다룬다. 개인 묵상은 물론 소그룹·설교 준비 자료로도 사용할 수 있도록 구성하였다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">모든 위로의 하나님</span>
+      <span class="toc-sub">환난 중의 위로, 방문 계획 변경</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch1"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-title">근심의 편지에서 용서로</span>
+      <span class="toc-sub">눈물의 편지, 용서와 화해</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch2"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-title">수건을 벗은 얼굴, 영광에서 영광으로</span>
+      <span class="toc-sub">새 언약의 일꾼, 모세의 수건</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch3"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-title">질그릇에 담긴 보배</span>
+      <span class="toc-sub">낙심하지 않음, 보이지 않는 것의 영원함</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch4"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-title">화목하게 하는 직분</span>
+      <span class="toc-sub">그리스도의 사랑, 화목하게 하는 직분</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch5"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-title">마음을 넓히라</span>
+      <span class="toc-sub">하나님의 동역자, 고난의 목록</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch6"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch7')" onkeydown="if(event.key==='Enter')goTo(event,'ch7')">
+      <span class="toc-num">07</span>
+      <span class="toc-title">근심이 회개에 이르니</span>
+      <span class="toc-sub">근심에서 회개로, 위로</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch7"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch8')" onkeydown="if(event.key==='Enter')goTo(event,'ch8')">
+      <span class="toc-num">08</span>
+      <span class="toc-title">마게도냐 교회의 본</span>
+      <span class="toc-sub">연보에 관한 권면 (1)</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch8"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch9')" onkeydown="if(event.key==='Enter')goTo(event,'ch9')">
+      <span class="toc-num">09</span>
+      <span class="toc-title">즐겨 내는 자를 사랑하시느니라</span>
+      <span class="toc-sub">연보에 관한 권면 (2)</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch9"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch10')" onkeydown="if(event.key==='Enter')goTo(event,'ch10')">
+      <span class="toc-num">10</span>
+      <span class="toc-title">육신을 따라 싸우지 않음</span>
+      <span class="toc-sub">사도적 권위 변호의 시작</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch10"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch11')" onkeydown="if(event.key==='Enter')goTo(event,'ch11')">
+      <span class="toc-num">11</span>
+      <span class="toc-title">어리석은 자랑, 참 사도의 고난</span>
+      <span class="toc-sub">거짓 사도들과 참 사도의 고난 목록</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch11"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch12')" onkeydown="if(event.key==='Enter')goTo(event,'ch12')">
+      <span class="toc-num">12</span>
+      <span class="toc-title">내가 약할 그때에 강함이라</span>
+      <span class="toc-sub">셋째 하늘, 육체의 가시, 약할 때 강함</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch12"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch13')" onkeydown="if(event.key==='Enter')goTo(event,'ch13')">
+      <span class="toc-num">13</span>
+      <span class="toc-title">너희 자신을 시험하라</span>
+      <span class="toc-sub">자기 시험, 마지막 축도</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch13"></span>
+    </a>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 30c0-8 6-14 14-14s14 6 14 14"/><path d="M10 30v6a4 4 0 0 0 4 4M38 30v6a4 4 0 0 1-4 4"/><path d="M18 40h12"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 1</div>
+      <h1>1장 · 모든 위로의 하나님</h1>
+      <div class="chapter-sub">고린도후서 1장 — 인사, 환난 중 위로하시는 하나님, 방문 계획 변경에 대한 해명</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 1:1–24</span>
+      <span class="ref-item">시 34:19</span>
+      <span class="ref-item">위로의 하나님과 신실하심</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–7절</div>
+        <div>
+          <div class="flow-title">위로의 하나님</div>
+          <div class="flow-body">바울은 <b class="hl-term">모든 위로의 하나님</b>을 찬송하며 시작한다. 하나님은 우리의 모든 환난 중에서 우리를 위로하사, 우리로 하여금 하나님께 받는 위로로써 온갖 환난 중에 있는 자들을 능히 위로하게 하신다. 그리스도의 고난이 우리에게 넘친 것 같이 위로도 그리스도로 말미암아 넘친다는 원리가 제시된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8–11절</div>
+        <div>
+          <div class="flow-title">아시아에서 당한 환난</div>
+          <div class="flow-body">바울은 <b class="hl-insight has-insight" data-insight="0">아시아에서 당한 환난이 얼마나 심했던지 살 소망까지 끊어지고 사형 선고를 받은 줄 알았다</b>고 고백한다. 이는 자기를 의지하지 말고 오직 죽은 자를 다시 살리시는 하나님만 의지하게 하시려는 것이었으며, 그 하나님이 이런 큰 사망에서 그들을 건지셨고 또 건지시리라는 소망을 나눈다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–14절</div>
+        <div>
+          <div class="flow-title">순전함과 진실함으로 행함</div>
+          <div class="flow-body">바울의 자랑은 세상 지혜가 아니라 하나님의 <b class="hl-term">거룩함과 진실함</b>으로 세상에서 행하였다는 양심의 증거다. 고린도 교인들이 온전히 깨닫기를 바라는 것은, 그들이 바울 일행을 자랑스러워하는 것 같이 바울 일행도 주의 날에 그들을 자랑스러워하리라는 것이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15–24절</div>
+        <div>
+          <div class="flow-title">여행 계획 변경에 대한 해명</div>
+          <div class="flow-body">바울이 애초 계획했던 두 번의 방문을 변경한 것에 대해, 이것이 육체의 계획을 따라 예 하고 아니라 함을 동시에 하는 가벼움이 아니었음을 해명한다. 하나님은 예와 아니라가 되지 않으시며, 그리스도 안에서 하나님의 약속은 <b class="hl-quote">얼마든지 예가 되니 그런즉 그로 말미암아 우리가 아멘 한다</b>. 바울이 다시 고린도에 가지 않은 것은 그들을 아끼려는 마음, 곧 그들에게 근심을 더하지 않으려는 목회적 배려였다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 받은 위로는 다시 흘려보내라고 주어진다</div>
+        <div class="teach-body">하나님의 위로는 개인의 소유물로 그치지 않고, 다른 고난받는 이들을 위로하는 통로가 되도록 주어진다. 고난의 경험은 무의미하지 않고 사역의 자원이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 절망의 경험이 자기 의존을 무너뜨린다</div>
+        <div class="teach-body">극한의 고난은 자기 능력에 대한 신뢰를 근본적으로 재편성하는 계기가 된다. 죽은 자를 다시 살리시는 하나님만 의지하게 되는 자리가 오히려 가장 깊은 신뢰의 출발점이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 사역자의 진실함은 화려한 언변이 아니라 양심의 증거다</div>
+        <div class="teach-body">바울이 자랑하는 것은 세상적 성공이나 수사학적 능력이 아니라 순전함과 진실함으로 살아온 삶 자체다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 계획 변경이 곧 신실함의 결여는 아니다</div>
+        <div class="teach-body">인간적 계획은 상황에 따라 바뀔 수 있으나, 그 변경의 동기가 사랑과 배려에 있다면 그것은 가벼움이 아니라 오히려 성숙한 목회적 지혜다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 그리스도 안에서 하나님의 약속은 신실하다</div>
+        <div class="teach-body">하나님의 성품(예와 아니라가 아니라 오직 예이신)이 사도의 인간적 계획 변경 문제를 훨씬 뛰어넘는 궁극적 신뢰의 근거로 제시된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 서신 전체에서 바울이 유독 자기 감정을 많이 드러내는 게 느껴져요. 강한 사도의 이미지보다, 고난 앞에서 흔들리고 절망했다가 다시 하나님을 붙드는 한 사람의 모습이 훨씬 인간적으로 다가와요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"아시아에서 당한 환난"은 구체적으로 무엇이었을까</div>
+        <div class="deep-body">본문은 이 환난의 정확한 내용을 밝히지 않는다. 에베소에서의 소요(행 19장의 은장색 데메드리오 사건), 심각한 질병, 혹은 생명을 위협하는 박해 등 다양한 추정이 있으나 확정할 수 없다. 다만 바울이 이를 '사형 선고를 받은 줄 알았다'고 표현할 만큼 극한이었다는 것만은 분명하며, 본문의 신학적 핵심(자기 의존의 포기와 하나님께 대한 전적 의탁)은 그 구체적 정체와 무관하게 유효하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"예와 아니라"(17-20절) 논증의 신학적 함의</div>
+        <div class="deep-body">바울의 계획 변경을 둘러싼 다소 사소해 보이는 해명이, 갑자기 그리스도 안에서 하나님의 모든 약속이 '예'가 된다는 웅장한 신학 진술로 확장되는 것이 흥미롭다. 이는 인간의 변덕과 하나님의 신실하심을 대조하려는 수사적 전략으로, 사소한 오해까지도 결국 그리스도 중심의 신학으로 풀어가는 바울의 사고 패턴을 잘 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12h28v26l-8-6H10Z"/><path d="M24 20c3-4 3-7 0-9-3 2-3 5 0 9Z" fill="currentColor" stroke="none"/><path d="M16 26h16"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 2</div>
+      <h1>2장 · 근심의 편지에서 용서로</h1>
+      <div class="chapter-sub">고린도후서 2장 — 눈물로 쓴 편지, 범죄자에 대한 용서와 위로, 그리스도의 향기</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 2:1–17</span>
+      <span class="ref-item">용서와 화해의 권면</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">많은 눈물로 쓴 편지</div>
+          <div class="flow-body">바울은 다시 근심 중에 고린도를 방문하지 않기로 결심하고 대신 <b class="hl-insight has-insight" data-insight="1">많은 눈물로 편지를 썼다</b>고 고백한다. 그 목적은 근심하게 하려는 것이 아니라 오히려 그들을 향한 넘치는 사랑을 알게 하려는 것이었다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–11절</div>
+        <div>
+          <div class="flow-title">이제는 용서하고 위로하라</div>
+          <div class="flow-body">누군가 근심하게 하였다면 그것은 바울만이 아니라 어느 정도는 고린도 교인 전체를 근심하게 한 것이다. 다수가 이미 내린 벌이 그 사람에게 족하니, 이제는 오히려 그를 <b class="hl-term">용서하고 위로</b>할 때다 — 그렇지 않으면 그가 지나친 근심에 잠길까 염려된다. 사탄에게 속지 않기 위해 서로 용서하라는 권면이 이어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–13절</div>
+        <div>
+          <div class="flow-title">드로아에서의 초조함</div>
+          <div class="flow-body">바울은 드로아에서 그리스도의 복음을 위해 문이 열렸으나, 형제 <b class="hl-term">디도</b>를 만나지 못하여 마음에 평안이 없어 그곳을 떠나 마게도냐로 갔다고 나눈다. 사역의 기회 앞에서도 관계에 대한 염려가 앞섰던 인간적인 모습이 드러난다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14–17절</div>
+        <div>
+          <div class="flow-title">그리스도의 향기</div>
+          <div class="flow-body">그러나 <b class="hl-quote">항상 우리를 그리스도 안에서 이기게 하시고 우리로 말미암아 각처에서 그리스도를 아는 냄새를 나타내시는 하나님께 감사</b>한다. 신자는 구원 얻는 자들에게나 망하는 자들에게나 하나님 앞에서 <b class="hl-term">그리스도의 향기</b>이니, 바울은 하나님의 말씀을 혼잡하게 하지 않고 순전함으로 그리스도 안에서 말한다는 확신으로 마무리한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 사랑이 있기에 엄격할 수도 있다</div>
+        <div class="teach-body">눈물로 쓴 편지의 목적이 근심이 아니라 사랑을 알게 하려는 것이었다는 고백은, 진정한 사랑이 때로 아프더라도 진실을 말할 수밖에 없음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 징계 이후에는 용서와 회복이 따라야 한다</div>
+        <div class="teach-body">다수의 벌로 충분하다면 이제는 용서와 위로가 필요하다는 원칙은, 교회의 권징이 영구적 배제가 아니라 회복을 목표로 함을 다시 확인시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 용서하지 않음은 사탄에게 틈을 내주는 것이다</div>
+        <div class="teach-body">공동체 안의 지나친 근심과 용서받지 못함은 영적 위협이 될 수 있다는 경고는, 화해가 선택이 아니라 필수적 영적 방어임을 시사한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 사역의 열매보다 사람에 대한 사랑이 앞설 때가 있다</div>
+        <div class="teach-body">드로아에서 열린 문을 뒤로하고 디도를 찾아 마게도냐로 간 바울의 결정은, 최적화된 사역 기회보다 관계와 사람에 대한 사랑이 우선일 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 신자의 삶 자체가 그리스도를 나타내는 향기다</div>
+        <div class="teach-body">말과 행위 이전에, 신자의 존재 자체가 누군가에게는 생명의 향기로, 누군가에게는 거부감을 주는 냄새로 작용한다는 인식은 삶 전체의 증인 됨을 성찰하게 한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">바울이 열린 사역의 문 앞에서도 디도를 걱정하느라 마음이 편치 않았다는 대목, 참 사람 냄새 나는 고백이에요. 아무리 큰 사도라도 사랑하는 동역자에 대한 염려 앞에서는 흔들릴 수 있다는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"눈물의 편지"는 고린도전서를 가리키는가, 소실된 편지인가</div>
+        <div class="deep-body">이 질문은 신약학에서 오래 논의되어 온 주제다. 고린도전서를 가리킨다는 견해도 있으나, 다수의 학자는 고린도전서와 고린도후서 사이에 쓰인 <b class="hl-term">소실된 편지</b>(때로 '엄중한 편지'라 불림)를 가리킨다고 본다. 고린도전서의 전반적 어조가 이 정도의 극심한 고통과 눈물을 표현할 만큼 격하지 않다고 보기 때문이다. 어느 쪽이든 본문의 핵심 메시지(사랑에서 우러난 책망과 그 뒤의 용서)는 변하지 않는다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"범죄한 자"(5-11절)는 고린도전서 5장의 그 사람과 같은 인물인가</div>
+        <div class="deep-body">많은 학자들은 이 인물이 고린도전서 5장의 근친상간 사건 당사자가 아니라, 바울을 개인적으로 모욕하거나 공개적으로 대적했던 다른 인물일 가능성이 더 높다고 본다. 문맥상 이 죄는 성적인 문제라기보다 바울의 사도적 권위에 대한 개인적 도전에 가까운 것으로 보이기 때문이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10v28M32 10v28"/><path d="M16 24c4-3 12-3 16 0"/><circle cx="24" cy="16" r="3"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 3</div>
+      <h1>3장 · 수건을 벗은 얼굴, 영광에서 영광으로</h1>
+      <div class="chapter-sub">고린도후서 3장 — 새 언약의 일꾼, 모세의 수건, 성령의 자유와 변화</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 3:1–18</span>
+      <span class="ref-item">출 34:29–35</span>
+      <span class="ref-item">새 언약과 영광의 변화</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">마음에 쓴 그리스도의 편지</div>
+          <div class="flow-body">바울은 자기를 추천하는 편지가 필요 없으니, 고린도 교인들 자체가 <b class="hl-term">그리스도의 편지</b>, 마음판에 쓴 편지라고 말한다. 새 언약의 일꾼 됨은 조문(율법 조문)으로 하지 아니하고 <b class="hl-quote">오직 영으로 함이니 조문은 죽이는 것이요 영은 살리는 것</b>이기 때문이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–11절</div>
+        <div>
+          <div class="flow-title">없어질 영광과 더욱 영광스러운 것</div>
+          <div class="flow-body">돌에 새긴 죽게 하는 조문의 직분도 영광이 있어 모세의 얼굴에 광채가 났으나 이는 없어질 영광이었다. 그렇다면 성령의 직분은 더욱 영광 가운데 있지 않겠느냐고 반문한다. <b class="hl-term">정죄의 직분</b>도 영광이 있었은즉 <b class="hl-term">의의 직분</b>은 더욱 영광이 넘친다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–18절</div>
+        <div>
+          <div class="flow-title">수건을 벗은 얼굴</div>
+          <div class="flow-body">모세가 이스라엘 자손이 그 없어질 것의 결국을 주목하지 못하게 하려고 수건을 썼던 것과 달리, <b class="hl-insight has-insight" data-insight="2">그리스도 안에서만 그 수건이 벗겨지며 오늘까지도 옛 언약을 읽을 때 그 수건이 그대로 있다</b>고 말한다. 그러나 주께로 돌아가면 수건이 벗겨지니, 주는 영이시요 주의 영이 계신 곳에는 자유가 있다. 우리는 다 수건을 벗은 얼굴로 주의 영광을 보며 <b class="hl-quote">그와 같은 형상으로 변화하여 영광에서 영광에 이른다</b>.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 성도의 삶 자체가 복음의 증거다</div>
+        <div class="teach-body">바울은 추천서가 아니라 고린도 교인들의 변화된 삶 자체를 그리스도의 편지로 제시한다. 신자의 삶이 곧 복음의 살아 있는 증거가 된다는 원리다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 조문(문자)과 영(성령)의 대조는 형식주의에 대한 경고다</div>
+        <div class="teach-body">외적 규범을 지키는 것만으로는 생명을 줄 수 없으며, 오직 성령의 내적 사역만이 참된 변화를 일으킨다는 원리는 오늘날의 형식적 신앙에도 경종을 울린다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 옛 언약의 영광조차 새 언약 앞에서는 상대화된다</div>
+        <div class="teach-body">모세의 광채가 실제였음에도 불구하고 '없어질 영광'으로 규정되는 것은, 그리스도 안에서 주어진 영광이 얼마나 더 크고 영구한지를 극적으로 부각시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 수건은 마음의 완악함을 상징한다</div>
+        <div class="teach-body">외적인 수건이 아니라 마음에 덮인 수건이 진리를 보지 못하게 한다는 통찰은, 영적 무지의 근본 원인이 정보의 부족이 아니라 마음의 상태에 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 변화는 점진적이며 영광에서 영광으로 나아간다</div>
+        <div class="teach-body">그리스도인의 성화는 순간적 완성이 아니라 지속적인 과정이며, 이는 주를 바라봄으로써 계속 이루어지는 성령의 사역이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">모세는 얼굴을 가려야 했는데 우리는 얼굴을 드러낸다는 이 대조가 참 인상적이에요. 감춰야 할 영광에서 드러내며 나눌 수 있는 영광으로 — 이게 옛 언약과 새 언약의 결정적 차이인 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"주는 영이시니"(17절)의 삼위일체적 의미</div>
+        <div class="deep-body">이 구절은 그리스도와 성령의 관계를 다루는 신학적으로 미묘한 본문이다. 이는 성자와 성령이 동일 인격이라는 뜻이라기보다, <b class="hl-term">사역과 경험의 차원에서 그리스도와 성령이 긴밀하게 하나로 작용</b>하심을 나타내는 것으로 보는 해석이 널리 받아들여진다. 즉 그리스도께로 돌아가는 것과 성령의 자유를 누리는 것이 실제 경험 속에서 분리되지 않는다는 것이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>고린도전서 3장의 성전 은유와 고린도후서 3장의 편지 은유의 관계</div>
+        <div class="deep-body">두 본문 모두 3장에서 공동체적 이미지를 사용하지만 강조점이 다르다. 고린도전서 3장이 <b class="hl-term">공동체의 거룩함과 연합</b>을 강조한다면, 고린도후서 3장의 '그리스도의 편지' 은유는 <b class="hl-term">공동체의 삶이 외부인에게 읽히는 복음의 증거</b>라는 선교적 차원을 부각시킨다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 18h14l3 20a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4Z"/><path d="M20 18v-4a4 4 0 0 1 8 0v4"/><path d="M24 24v10M20 6l2 4M28 6l-2 4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 4</div>
+      <h1>4장 · 질그릇에 담긴 보배</h1>
+      <div class="chapter-sub">고린도후서 4장 — 낙심하지 않는 사역, 질그릇 속의 보배, 보이지 않는 것의 영원함</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 4:1–18</span>
+      <span class="ref-item">창 1:3</span>
+      <span class="ref-item">연약함 속에 나타나는 능력</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">그리스도의 복음의 광채</div>
+          <div class="flow-body">바울은 이 직분을 받았으므로 낙심하지 않으며, 부끄러운 것을 숨기지 않고 속임으로 행하지 않으며 하나님의 말씀을 혼잡하게 하지 않는다. 이 세대의 신 곧 <b class="hl-term">이 세상의 신</b>이 믿지 아니하는 자들의 마음을 혼미하게 하여 그리스도의 영광의 복음의 광채를 보지 못하게 한다. 어두운 데 빛이 비치라 말씀하신 하나님이 <b class="hl-quote">예수 그리스도의 얼굴에 있는 하나님의 영광을 아는 빛</b>을 우리 마음에 비추셨다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–12절</div>
+        <div>
+          <div class="flow-title">질그릇 속의 보배</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="3">이 보배를 질그릇에 가졌으니, 심히 큰 능력이 하나님께 있고 우리에게 있지 않음을 나타내려 함</b>이다. 사방으로 우겨쌈을 당하여도 싸이지 아니하며, 답답한 일을 당하여도 낙심하지 아니하며, 박해를 받아도 버린 바 되지 아니하며, 거꾸러뜨림을 당하여도 망하지 아니한다. 우리가 살아 있는 동안 예수를 위하여 항상 죽음에 넘겨짐은 예수의 생명이 우리 몸에 나타나게 하려 함이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–15절</div>
+        <div>
+          <div class="flow-title">믿었으므로 말하였다</div>
+          <div class="flow-body">시편의 말씀 <b class="hl-quote">"내가 믿었으므로 말하였다"</b>를 인용하며, 예수를 다시 살리신 이가 예수와 함께 우리도 다시 살리사 함께 그 앞에 서게 하실 줄 아는 믿음의 확신을 나눈다. 모든 것은 고린도 교인들을 위함이니 은혜가 많은 사람의 감사를 통하여 넘쳐 하나님께 영광을 돌리게 하려는 것이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16–18절</div>
+        <div>
+          <div class="flow-title">보이지 않는 것의 영원함</div>
+          <div class="flow-body">그러므로 낙심하지 아니하니 겉사람은 낡아지나 <b class="hl-term">속사람</b>은 날로 새로워진다. 잠시 받는 환난의 경한 것이 지극히 크고 영원한 영광의 중한 것을 우리에게 이루게 함이니, <b class="hl-quote">보이는 것은 잠깐이요 보이지 않는 것은 영원함이라</b>는 결론으로 마무리된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 사역의 능력은 사역자의 강함이 아니라 하나님께 있다</div>
+        <div class="teach-body">질그릇의 이미지는 연약한 그릇을 통해 오히려 능력의 진짜 출처가 드러나는 역설을 보여준다. 자기 능력에 대한 과신이 아니라 겸손한 의탁이 참된 사역의 태도다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 고난 중에도 무너지지 않는 것은 성품이 아니라 은혜다</div>
+        <div class="teach-body">"우겨쌈을 당하여도 싸이지 아니하며"라는 일련의 대조는 인간적 강인함이 아니라 지탱하시는 하나님의 은혜에 대한 증언이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 예수의 생명은 고난을 통해 드러난다</div>
+        <div class="teach-body">고난 자체가 목적이 아니라, 그 안에서 예수의 생명이 나타나는 통로가 된다는 것이 그리스도인의 고난에 대한 독특한 이해다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 낙심하지 않는 근거는 속사람의 새로워짐이다</div>
+        <div class="teach-body">외적 상황이 악화되어도(겉사람이 낡아져도) 내적 실재(속사람)는 오히려 성장한다는 것은, 그리스도인의 참된 성숙이 환경과 무관하게 진행됨을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 영원의 관점이 오늘의 고난을 가볍게 한다</div>
+        <div class="teach-body">잠시의 환난을 영원한 영광에 견주어 "경한 것"으로 재해석하는 시각은, 종말론적 소망이 현재의 고난을 견디는 실제적 힘이 됨을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"우겨쌈을 당하여도 싸이지 아니하며"라는 표현들, 원어로 보면 다 압박과 그 압박에 짓눌리지 않음을 대조시키는 말장난 같은 리듬이 있어요. 고난이 없다는 게 아니라, 고난이 완전히 짓누르지는 못한다는 뜻이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"이 세상의 신"(4절)이라는 표현의 신학적 무게</div>
+        <div class="deep-body">이 구절은 신약에서 사탄을 가리키는 표현 중 가장 강력한 축에 속한다. 이는 사탄이 이 세상 체제 안에서 상당한 영향력을 행사하고 있음을 인정하면서도, 동시에 결코 궁극적 주권자가 아니라 잠정적으로 허용된 존재임을 문맥 전체(그리스도의 궁극적 승리)가 분명히 한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"예수를 위하여 항상 죽음에 넘겨짐"(11절)이 뜻하는 바</div>
+        <div class="deep-body">이는 순교의 위협만을 가리키는 것이 아니라, 사역자가 일상적으로 자기 안위와 편안함을 내려놓고 그리스도를 위해 자기를 계속 내어주는 삶의 방식 전체를 가리키는 것으로 이해된다. 바울 신학에서 반복되는 '그리스도와 함께 죽고 함께 사는' 패턴(갈 2:20 등)의 연장선에 있는 표현이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 26L24 12l16 14"/><path d="M12 24v14h24V24"/><path d="M20 38v-8h8v8"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 5</div>
+      <h1>5장 · 화목하게 하는 직분</h1>
+      <div class="chapter-sub">고린도후서 5장 — 하늘에 있는 영원한 집, 그리스도의 사랑이 강권하심, 화목의 직분</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 5:1–21</span>
+      <span class="ref-item">새로운 피조물과 화목의 사역</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–10절</div>
+        <div>
+          <div class="flow-title">하늘에 있는 영원한 집</div>
+          <div class="flow-body">우리의 장막 집(육신의 몸)이 무너지면 하나님이 지으신 <b class="hl-term">하늘에 있는 영원한 집</b>이 있음을 안다. 몸을 떠나 주와 함께 있는 것을 원하며 살든지 죽든지 주를 기쁘시게 하고자 힘쓴다. 이는 우리가 다 반드시 그리스도의 심판대 앞에 나타나 각각 선악 간에 그 몸으로 행한 것을 따라 받으려 함이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–15절</div>
+        <div>
+          <div class="flow-title">그리스도의 사랑이 강권하시는도다</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="4">그리스도의 사랑이 우리를 강권하시는도다</b> — 한 사람이 모든 사람을 대신하여 죽었으니 모든 사람이 죽은 것이요, 그가 모든 사람을 대신하여 죽으신 것은 살아 있는 자들로 하여금 다시는 자기를 위하여 살지 않고 오직 그들을 대신하여 죽었다가 다시 살아나신 이를 위하여 살게 하려는 것이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16–17절</div>
+        <div>
+          <div class="flow-title">새로운 피조물</div>
+          <div class="flow-body">그러므로 이제부터는 어떤 사람도 육신을 따라 알지 아니한다. <b class="hl-quote">누구든지 그리스도 안에 있으면 새로운 피조물이라 이전 것은 지나갔으니 보라 새 것이 되었도다</b>는 선언이 서신 전체를 대표하는 구절 중 하나로 제시된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">18–21절</div>
+        <div>
+          <div class="flow-title">화목하게 하는 직분</div>
+          <div class="flow-body">이 모든 것이 하나님께로 나서 그리스도로 말미암아 우리를 자기와 화목하게 하시고 <b class="hl-term">화목하게 하는 직분</b>을 우리에게 주셨다. 하나님이 그리스도 안에서 세상을 자기와 화목하게 하시며 그들의 죄를 그들에게 돌리지 아니하시고 화목하게 하는 말씀을 우리에게 부탁하셨으니, 우리는 그리스도를 대신하여 <b class="hl-term">사신</b>이 된 것이다. 죄를 알지도 못하신 이를 우리를 대신하여 죄로 삼으신 것은 우리로 하여금 그 안에서 하나님의 의가 되게 하려 하심이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 영원한 소망이 현재의 삶의 태도를 결정한다</div>
+        <div class="teach-body">하늘의 영원한 집에 대한 확신은 도피주의가 아니라, 오히려 지금 살든지 죽든지 주를 기쁘시게 하려는 적극적 삶의 동기가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 심판대 앞에 선다는 인식이 신실함을 지속시킨다</div>
+        <div class="teach-body">구원의 확신과 별개로, 신자는 자신의 삶에 대한 책임 있는 청지기적 인식을 갖고 살아야 한다는 균형 잡힌 종말론이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 그리스도의 사랑을 아는 것이 삶의 방향을 바꾼다</div>
+        <div class="teach-body">단순한 교리적 동의가 아니라 그리스도의 대속적 사랑에 대한 실존적 깨달음이 신자를 자기중심적 삶에서 그리스도 중심적 삶으로 이끈다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 그리스도 안에 있는 자는 근본적으로 새로워진 존재다</div>
+        <div class="teach-body">"새로운 피조물"이라는 선언은 점진적 개선이 아니라 정체성 자체의 근본적 전환을 의미하며, 이는 신자의 자기 이해의 출발점이 되어야 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 화목은 수동적 은혜인 동시에 능동적 사명이다</div>
+        <div class="teach-body">하나님과 화목된 신자는 그 은혜를 누리는 데서 그치지 않고, 다른 사람들을 하나님과 화목하게 하는 사신의 직분을 받는다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"그리스도를 대신하여 사신이 되었다"는 표현, 외교관이 자국을 대표해 말하듯 우리도 그리스도를 대표해 이 세상에 화목의 메시지를 전한다는 뜻이에요. 무거운 책임이지만 동시에 놀라운 특권이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"죄로 삼으신 것"(21절)의 정확한 의미</div>
+        <div class="deep-body">이 구절 "죄를 알지도 못하신 이를 우리를 대신하여 죄로 삼으신 것"은 신학적으로 매우 중요하면서도 논쟁적인 본문이다. 그리스도가 문자적으로 '죄인'이 되셨다는 뜻이 아니라, <b class="hl-term">우리의 죄를 법적으로 대신 짊어지시고 그 형벌을 받으셨다</b>는 대속의 신학(구약의 속죄제사 배경)을 압축적으로 표현한 것으로 이해된다. 이는 종교개혁 이후 개신교 신학에서 '위대한 교환'(the great exchange)이라 불리는 개념의 핵심 본문 중 하나다.</div>
+        <div class="verse-box">
+          <div class="verse-ref">고후 5:21</div>
+          <div class="verse-text">하나님이 죄를 알지도 못하신 이를 우리를 대신하여 죄로 삼으신 것은 우리로 하여금 그 안에서 하나님의 의가 되게 하려 하심이라</div>
+        </div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>벗은 자로 발견되지 않기를 원한다(3-4절)는 표현의 배경</div>
+        <div class="deep-body">이 구절은 죽음 이후의 중간 상태(몸을 벗은 상태)에 대한 바울의 다소 불편함을 드러낸다. 헬라 철학에서는 몸을 벗는 것(영혼만 남는 것)을 이상적으로 여겼지만, 바울은 오히려 벗은 상태보다 <b class="hl-term">덧입는 것</b>(부활의 몸을 입는 것)을 더 바란다고 말한다. 이는 히브리적 인간 이해(몸과 영혼의 통합적 인간관)가 헬라적 이원론과 대비되는 지점을 잘 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 38C10 29 8 19 15 14c5-3.5 9 0 9 5 0-5 4-8.5 9-5 7 5 5 15-9 24Z"/><path d="M8 10l6 6M40 10l-6 6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 6</div>
+      <h1>6장 · 마음을 넓히라</h1>
+      <div class="chapter-sub">고린도후서 6장 — 하나님의 동역자, 고난 속의 역설적 삶, 불신자와 멍에를 같이 하지 말라</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 6:1–18</span>
+      <span class="ref-item">사 49:8 · 사 52:11</span>
+      <span class="ref-item">동역자의 삶과 거룩한 분리</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–2절</div>
+        <div>
+          <div class="flow-title">은혜받은 것이 헛되지 않게</div>
+          <div class="flow-body">바울은 하나님과 함께 일하는 자로서 하나님의 은혜를 헛되이 받지 말라고 권한다. <b class="hl-quote">"내가 은혜 베풀 때에 너에게 듣고 구원의 날에 너를 도왔다"</b>는 이사야의 말씀을 인용하며, 지금이 바로 <b class="hl-term">은혜받을 만한 때요 구원의 날</b>이라고 강조한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">3–10절</div>
+        <div>
+          <div class="flow-title">역설로 증명되는 사도직</div>
+          <div class="flow-body">바울은 <b class="hl-insight has-insight" data-insight="5">많은 환난·궁핍·매 맞음·갇힘의 고난 목록과 깨끗함·지식·사랑·성령의 감화라는 은혜의 목록을 나란히 제시</b>하며 이것이 자신의 사도 됨을 증명하는 방식이라 말한다. <b class="hl-quote">"속이는 자 같으나 참되고, 근심하는 자 같으나 항상 기뻐하고, 아무것도 없는 자 같으나 모든 것을 가진 자로다"</b>라는 역설적 표현들이 이어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–13절</div>
+        <div>
+          <div class="flow-title">마음을 넓히라</div>
+          <div class="flow-body">바울은 고린도 교인들에게 <b class="hl-term">"입을 열고 마음을 넓혔으니"</b>라고 말하며, 좁아진 것이 있다면 그것은 자신들의 심정이 아니라 고린도 교인들 자신의 마음에 있는 것이라고 지적한다. 자녀에게 말하듯 그들도 마음을 넓히라고 권한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14–18절</div>
+        <div>
+          <div class="flow-title">믿지 않는 자와 멍에를 같이 메지 말라</div>
+          <div class="flow-body"><b class="hl-term">믿지 않는 자와 멍에를 같이 메지 말라</b>는 명령과 함께, 의와 불법이, 빛과 어둠이 어떻게 사귈 수 있느냐는 일련의 수사적 질문이 이어진다. "너희는 그들 중에서 나와서 따로 있고 부정한 것을 만지지 말라"는 구약의 말씀을 인용하며, 하나님이 그들에게 아버지가 되고 그들은 자녀가 되리라는 약속으로 마무리된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 은혜의 때는 지금이며 미룰 수 없다</div>
+        <div class="teach-body">구원과 응답의 기회를 뒤로 미루지 말라는 긴박한 초청은, 신앙적 결단과 성장에는 적기가 있다는 인식을 촉구한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 참된 사역자의 증거는 성공이 아니라 역설적 진실성이다</div>
+        <div class="teach-body">세상의 평가와 실제 영적 실재 사이의 간극(속이는 자 같으나 참되고 등)을 견뎌내는 것이 참된 사역자의 표지일 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 관계의 좁아짐은 종종 일방적이지 않다</div>
+        <div class="teach-body">바울이 마음을 넓혔다고 말하며 고린도 교인들에게도 마음을 넓히라 권하는 것은, 갈등 관계에서 자신의 개방성을 먼저 확인시킨 후 상대의 반응을 요청하는 성숙한 관계 회복의 모범이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 정체성의 경계는 실제로 의미가 있다</div>
+        <div class="teach-body">믿지 않는 자와의 멍에를 금하는 것은 사람과의 관계 자체를 단절하라는 것이 아니라, 근본적 가치관과 헌신의 방향이 다른 존재와 깊이 결속되는 것에 대한 경계다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 거룩한 분리는 소외가 아니라 자녀 됨의 확증이다</div>
+        <div class="teach-body">세상과 구별된 삶은 고립을 위한 것이 아니라, 하나님의 자녀로서 그분과의 친밀한 관계 안에 거하기 위한 것이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"속이는 자 같으나 참되고, 무명한 자 같으나 유명하고" 같은 표현들, 세상의 눈으로 보는 바울과 실제 하나님 앞에서의 바울 사이의 간극을 보여주는 것 같아요. 겉모습과 실재가 다를 수 있다는 걸 스스로 인정하는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"멍에를 같이 메지 말라"(14절)의 적용 범위</div>
+        <div class="deep-body">이 구절은 흔히 결혼에만 적용되어 왔지만, 문맥은 훨씬 넓은 범위(사업 동업, 깊은 우정, 이념적 결속 등)를 포함하는 것으로 보인다. 핵심은 특정 관계 유형의 금지가 아니라, <b class="hl-term">근본적 가치관과 헌신의 방향이 근원적으로 다른 대상과 인생 전체를 결속시키는 것</b>에 대한 원리적 경계다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>6:14–7:1이 서신의 다른 부분과 문체가 다르다는 지적</div>
+        <div class="deep-body">일부 학자들은 이 단락이 바울 서신의 다른 부분과 어휘·문체가 다소 다르다는 점에 주목하며, 이것이 다른 자료에서 삽입되었을 가능성을 제기한다. 그러나 사본학적으로 이 구절을 배제할 근거는 전혀 없으며, 대다수 학자들은 이를 바울 자신의 저작으로 받아들인다. 이는 성경 각 권이 단일한 저작 순간의 산물이 아니라 여러 소재를 아우르는 복합적 저작 과정의 결과일 수 있음을 보여주는 사례로 논의되기도 한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="20" r="6"/><circle cx="32" cy="20" r="6"/><path d="M9 40c0-7 4-11 7-11M39 40c0-7-4-11-7-11"/><path d="M20 30l4 4 4-4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 7</div>
+      <h1>7장 · 근심이 회개에 이르니</h1>
+      <div class="chapter-sub">고린도후서 7장 — 디도가 전한 소식, 하나님의 뜻대로 하는 근심과 회개, 위로</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 7:1–16</span>
+      <span class="ref-item">경건한 근심과 회개의 열매</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1절</div>
+        <div>
+          <div class="flow-title">자신을 깨끗하게 하라</div>
+          <div class="flow-body">앞 장의 약속들을 가졌으니 육과 영의 온갖 더러운 것에서 <b class="hl-term">자신을 깨끗하게 하고</b> 하나님을 두려워하는 가운데 거룩함을 온전히 이루라는 짧지만 강력한 권면이 제시된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">2–4절</div>
+        <div>
+          <div class="flow-title">마음에 품은 자리</div>
+          <div class="flow-body">바울은 고린도 교인들에게 마음으로 자리를 내어 달라 하며, 자신이 누구도 해하거나 해롭게 하거나 속인 일이 없음을 밝힌다. 그들에 대한 신뢰와 자랑이 크며, 모든 환난 중에도 위로가 넘친다고 고백한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–9절</div>
+        <div>
+          <div class="flow-title">디도를 통해 받은 위로</div>
+          <div class="flow-body">마게도냐에서도 편할 겨를이 없이 사방으로 환난을 겪었으나, 낙심한 자들을 위로하시는 하나님이 <b class="hl-term">디도가 옴</b>으로 바울 일행을 위로하셨다. 디도가 전한 고린도 교인들의 사모함과 애통함과 열심이 바울을 더욱 기쁘게 하였다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">10–16절</div>
+        <div>
+          <div class="flow-title">경건한 근심과 세상 근심</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="6">하나님의 뜻대로 하는 근심은 후회 없는 구원에 이르는 회개를 이루나 세상 근심은 사망을 이룬다</b>는 결정적 구분이 제시된다. 고린도 교인들의 근심이 간절함, 변증, 분함, 두려움, 사모함, 열심, 벌함으로 나타난 것을 보며 바울은 위로를 얻고, 그들에 대한 신뢰가 온전함을 확인하며 기뻐한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 거룩함은 지속적으로 추구해야 할 과정이다</div>
+        <div class="teach-body">"거룩함을 온전히 이루라"는 표현은 거룩함이 단회적 사건이 아니라 지속적으로 자라가야 할 삶의 방향임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 관계의 회복에는 상호적 신뢰 회복이 필요하다</div>
+        <div class="teach-body">바울이 자신의 정직함을 다시 확인시키는 것은, 오해와 갈등 이후의 관계 회복에는 서로에 대한 신뢰의 재구축이 반드시 필요함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 위로는 종종 사람을 통해 온다</div>
+        <div class="teach-body">바울이 디도의 도착을 통해 위로를 받았다는 것은, 하나님의 위로가 초자연적 방식만이 아니라 신실한 동역자와 공동체를 통해서도 실제로 임한다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 모든 근심이 유익한 것은 아니다</div>
+        <div class="teach-body">근심의 방향과 결과(회개와 생명 vs 절망과 죽음)를 구분하는 지혜는, 죄를 대면했을 때 건강한 반응과 파괴적 반응을 분별하게 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 진정한 회개는 삶의 구체적 변화로 나타난다</div>
+        <div class="teach-body">간절함, 변증, 열심 등 고린도 교인들의 다양한 반응은, 참된 회개가 감정적 반응에서 그치지 않고 구체적 삶의 태도 변화로 이어짐을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"세상 근심은 사망을 이루고 하나님의 뜻대로 하는 근심은 회개를 이룬다"는 구분, 죄책감을 다루는 우리의 태도에도 중요한 지침이 돼요. 자책과 절망에 머무는 게 아니라, 하나님 앞에서 정직하게 대면하고 돌이키는 근심이어야 한다는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>디도가 고린도교회와의 관계 회복에서 맡았던 실제 역할</div>
+        <div class="deep-body">디도는 이 서신 전후 맥락(8:6, 16-24)에서도 계속 언급되며, 예루살렘 교회를 위한 연보 문제와 관련해서도 중요한 중재자 역할을 맡는다. 그가 바울과 고린도교회 사이의 긴장된 시기에 직접 다리를 놓는 역할을 했다는 것은, 갈등 해결에 있어 신뢰받는 제3자의 중재가 얼마나 중요한지를 잘 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"후회할 것이 없는 구원"(10절)이라는 표현의 의미</div>
+        <div class="deep-body">이는 회개가 단순한 감정적 후회로 끝나지 않고, 구원이라는 확실하고 되돌릴 수 없는 결과로 이어짐을 강조하는 표현이다. <b class="hl-term">경건한 근심</b>은 그 과정 자체는 고통스러울 수 있으나, 그 결과에 있어서는 후회 없는 견고한 열매를 맺는다는 것이 이 구절의 핵심이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8v26"/><path d="M15 18l9-10 9 10"/><path d="M11 32c4 4 22 4 26 0"/><path d="M9 36h30"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 8</div>
+      <h1>8장 · 마게도냐 교회의 본</h1>
+      <div class="chapter-sub">고린도후서 8장 — 예루살렘 성도를 위한 연보, 마게도냐 교회의 자원하는 헌신</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 8:1–24</span>
+      <span class="ref-item">마게도냐 교회의 헌신과 연보 원칙</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–5절</div>
+        <div>
+          <div class="flow-title">극심한 가난 중의 풍성한 연보</div>
+          <div class="flow-body">바울은 <b class="hl-insight has-insight" data-insight="7">마게도냐 교회들이 환난의 시련과 극심한 가난 중에도 넘치는 기쁨으로 풍성한 연보를 넘치도록 하였다</b>고 소개한다. 그들은 힘에 지나도록 자원하여 헌금하였고, 무엇보다 먼저 자신을 주께 드리고 그 다음 하나님의 뜻을 따라 바울에게 자신을 내어주었다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6–9절</div>
+        <div>
+          <div class="flow-title">그리스도의 은혜를 본받아</div>
+          <div class="flow-body">이 은혜의 일을 디도가 마저 이루게 하려 함이며, 믿음과 말과 지식과 모든 간절함과 사랑에 풍성한 것 같이 이 은혜에도 풍성하게 하라 권한다. <b class="hl-quote">"우리 주 예수 그리스도의 은혜를 너희가 알거니와 부요하신 이로서 너희를 위하여 가난하게 되심은 그의 가난함으로 말미암아 너희를 부요하게 하려 하심이라"</b>는 신학적 근거가 제시된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">10–15절</div>
+        <div>
+          <div class="flow-title">있는 대로 하는 것과 균등의 원리</div>
+          <div class="flow-body">마음에 원하는 것은 있는 대로 받으실 만한 것이지 없는 것으로 하는 것이 아니라고 말하며, 다른 이들은 평안하게 하고 고린도 교인들은 곤고하게 하려는 것이 아니라 <b class="hl-term">균등하게</b> 하려 함이라고 설명한다. 광야의 만나 이야기(많이 거둔 자도 남지 않고 적게 거둔 자도 모자라지 않았다는)를 인용하여 이 원리를 뒷받침한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16–24절</div>
+        <div>
+          <div class="flow-title">연보를 관리할 신실한 동역자들</div>
+          <div class="flow-body">연보를 전달하고 관리하는 일에 디도와 함께 여러 형제들을 보내니, 이는 이 거액의 연보를 처리하는 일에 있어 아무도 우리를 비방하지 못하게 하고 주 앞에서뿐 아니라 사람 앞에서도 <b class="hl-term">선한 일에 조심하려는</b> 세심한 배려다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 자원하는 헌신은 재정적 여유에서 나오지 않는다</div>
+        <div class="teach-body">마게도냐 교회의 사례는 물질적 궁핍이 관대함을 가로막지 못한다는 것을 보여주며, 헌신의 근원이 소유가 아니라 마음의 방향에 있음을 증언한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 참된 헌금은 자신을 하나님께 드리는 것에서 흘러나온다</div>
+        <div class="teach-body">"먼저 자신을 주께 드리고"라는 원칙은, 물질의 나눔이 더 근본적인 자기 헌신의 자연스러운 열매임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 그리스도의 성육신과 십자가가 나눔의 궁극적 모범이다</div>
+        <div class="teach-body">부요하신 이가 가난하게 되심으로 우리를 부요하게 하셨다는 원리는, 그리스도인의 나눔이 궁극적으로 그리스도의 자기 비움을 본받는 행위임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 나눔의 목적은 균등이지 다른 이를 곤고하게 하는 것이 아니다</div>
+        <div class="teach-body">공동체 간의 나눔은 한쪽의 희생으로 다른 쪽을 채우는 것이 아니라, 서로 넘치는 것과 부족한 것을 채워주는 상호적 균형을 지향한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 재정 관리의 투명성은 신뢰의 필수 조건이다</div>
+        <div class="teach-body">여러 동역자를 함께 세워 연보를 관리하게 한 것은, 선한 일일수록 사람 앞에서도 의심의 여지가 없도록 세심하게 관리해야 함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">교회 재정을 다룰 때 한 사람에게만 맡기지 않고 여러 신뢰할 만한 사람을 함께 세우는 이 원칙, 2천 년 전이나 지금이나 여전히 유효한 지혜예요. 선한 일도 투명하게 관리될 때 더 신뢰받을 수 있으니까요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이 연보가 역사적으로 왜 그렇게 중요했을까</div>
+        <div class="deep-body">예루살렘 교회를 위한 이 연보는 단순한 구제 활동을 넘어, 유대인 중심의 예루살렘 교회와 이방인 중심의 여러 교회들 사이의 <b class="hl-term">연합과 화해</b>를 상징하는 신학적·정치적 의미를 지녔다. 로마서 15:25-27에서도 바울은 이 연보를 이방인 교회가 영적 유익을 나눠 받은 데 대한 화답으로 설명한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"많이 거둔 자도 남지 않고 적게 거둔 자도 모자라지 않았다"(15절, 출 16장 인용)의 적용</div>
+        <div class="deep-body">출애굽기의 만나 이야기는 원래 개인이 필요 이상으로 쌓아두지 못하게 한 규정이었다. 바울은 이를 <b class="hl-term">공동체 간 자원의 균등한 분배</b> 원리로 확장 적용하며, 이는 개인 윤리를 넘어 공동체 경제 정의의 신학적 근거로 자주 인용되어 온 본문이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch9">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40V22"/><path d="M24 22c0-8-8-10-8-10s0 8 8 10Z"/><path d="M24 22c0-6 8-8 8-8s0 6-8 8Z"/><path d="M12 40h24"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 9</div>
+      <h1>9장 · 즐겨 내는 자를 사랑하시느니라</h1>
+      <div class="chapter-sub">고린도후서 9장 — 연보의 준비, 심는 대로 거둠, 즐거이 내는 마음</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 9:1–15</span>
+      <span class="ref-item">시 112:9</span>
+      <span class="ref-item">심는 대로 거두는 원리와 기쁨의 나눔</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–5절</div>
+        <div>
+          <div class="flow-title">미리 준비하게 하라</div>
+          <div class="flow-body">성도 섬기는 일에 관하여는 바울이 다시 쓸 필요가 없으니 이는 그들의 원함을 이미 알기 때문이다. 그러나 형제들을 미리 보내어 이전에 약속한 연보를 미리 준비하게 하니, 이는 억지가 아니라 <b class="hl-term">자원하는 연보</b>가 되게 하려는 세심한 배려다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6–9절</div>
+        <div>
+          <div class="flow-title">심는 대로 거두리라</div>
+          <div class="flow-body"><b class="hl-term">적게 심는 자는 적게 거두고 많이 심는 자는 많이 거둔다</b>는 농사의 원리가 제시되고, <b class="hl-insight has-insight" data-insight="8">각각 마음에 정한 대로 할 것이요 인색함이나 억지로 하지 말지니 하나님은 즐겨 내는 자를 사랑하신다</b>는 유명한 구절이 이어진다. 시편 112:9을 인용하며 흩어 가난한 자들에게 주었으니 그 의가 영원히 있다는 약속이 뒷받침된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">10–12절</div>
+        <div>
+          <div class="flow-title">넉넉하여 넘치게 하시리라</div>
+          <div class="flow-body">심는 자에게 씨와 먹을 양식을 주시는 하나님이 헌금 하는 자의 씨를 풍성하게 하시고 의의 열매를 더하게 하시리라. 이 봉사의 직무가 성도들의 부족한 것을 보충할 뿐 아니라 하나님께 드리는 <b class="hl-term">많은 감사</b>로 인하여 넘친다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–15절</div>
+        <div>
+          <div class="flow-title">말할 수 없는 은사로 인하여 하나님께 감사</div>
+          <div class="flow-body">이 직무로 증거를 삼아 그리스도의 복음을 진실히 순종하는 것과 그들과 모든 사람을 위하여 후하게 연보하는 것으로 인하여 하나님께 영광을 돌리게 될 것이다. 마지막으로 <b class="hl-quote">"말할 수 없는 그의 은사로 말미암아 하나님께 감사하노라"</b>는 찬양으로 연보에 관한 두 장의 논의를 마무리한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 신중하게 준비된 헌신이 자원하는 헌신이다</div>
+        <div class="teach-body">즉흥적 감정이 아니라 미리 마음에 정하고 준비하는 것이, 오히려 참된 자원함과 기쁨의 헌신을 가능하게 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 나눔의 결과는 하나님이 책임지신다</div>
+        <div class="teach-body">심는 자에게 씨와 양식을 주시는 하나님에 대한 신뢰는, 나눔으로 인한 결핍을 두려워하지 않고 후하게 베풀 수 있는 근거가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 헌금의 가치는 액수가 아니라 마음의 태도로 결정된다</div>
+        <div class="teach-body">인색함이나 억지가 아니라 즐거움으로 하는 것이 하나님이 기뻐하시는 나눔의 핵심 기준이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 나눔은 받는 자의 필요를 채울 뿐 아니라 하나님께 드리는 감사를 낳는다</div>
+        <div class="teach-body">물질적 나눔의 결과가 단순한 필요 충족을 넘어, 여러 사람의 감사와 하나님께 대한 영광으로 확산되는 공동체적 파급 효과를 지닌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 궁극적 은사는 그리스도 자신이다</div>
+        <div class="teach-body">연보에 관한 모든 논의는 결국 "말할 수 없는 그의 은사"(그리스도 자신, 혹은 그로 인한 구원의 은혜)에 대한 감사로 수렴된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"하나님은 즐겨 내는 자를 사랑하시느니라"는 말씀이 결혼식 축의금 봉투에 적힌 문구처럼 익숙하게 느껴질 수 있는데, 원래 맥락은 어려운 형편의 예루살렘 성도들을 위한 아주 구체적이고 실제적인 헌금 운동 한복판에서 나온 말씀이었다는 걸 기억하면 좋겠어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>고린도후서 8-9장이 별개의 두 편지였을 가능성</div>
+        <div class="deep-body">일부 학자들은 8장과 9장이 원래 서로 다른 두 개의 짧은 편지(혹은 편지의 일부)였다가 나중에 하나로 편집되었을 가능성을 제기한다. 9:1에서 "성도 섬기는 일에 관하여는 내가 쓸 필요가 없다"고 말하면서도 계속 연보에 대해 쓰는 것이, 두 단락이 원래 다른 수신 맥락(9장은 아가야 지역 전체, 8장은 고린도교회 특정)을 가졌을 가능성을 시사한다는 것이다. 이는 확정된 결론이 아니라 학계의 가설 중 하나로 다뤄져야 한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>심고 거두는 원리(6절)가 소위 '번영 신학'과 어떻게 다른가</div>
+        <div class="deep-body">이 구절은 종종 헌금을 많이 하면 물질적으로 풍요로워진다는 식으로 오용되어 왔다. 그러나 문맥을 보면 8절이 약속하는 것은 개인의 물질적 축적이 아니라 <b class="hl-term">"모든 착한 일을 넘치게 하게"</b> 하시는 것, 즉 계속해서 나눌 수 있는 능력의 공급이다. 즉 이 본문의 초점은 '내가 부자가 된다'가 아니라 '내가 계속 나눌 수 있게 된다'는 데 있으며, 이는 번영 신학의 자기중심적 해석과 뚜렷이 구별되어야 한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch10">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="18" width="9" height="20"/><rect x="27" y="18" width="9" height="20"/><path d="M10 18h28M15 18v-5h6v5M27 18v-5h6v5"/><path d="M8 8l32 32"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 10</div>
+      <h1>10장 · 육신을 따라 싸우지 않음</h1>
+      <div class="chapter-sub">고린도후서 10장 — 바울의 사도적 권위 변호의 시작, 하나님의 능력으로 싸우는 전쟁</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 10:1–18</span>
+      <span class="ref-item">견고한 진을 무너뜨리는 능력</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">하나님의 능력으로 무너뜨리는 견고한 진</div>
+          <div class="flow-body">바울은 그리스도의 온유와 관용으로 권한다며, 어떤 이들이 자신을 육신을 따라 행하는 자로 여긴다고 언급한다. 그러나 <b class="hl-quote">"우리의 싸우는 무기는 육신에 속한 것이 아니요 오직 어떤 견고한 진도 무너뜨리는 하나님의 능력"</b>이라 선언하며, 모든 이론과 하나님 아는 것을 대적하여 높아진 것을 무너뜨리고 모든 생각을 사로잡아 그리스도에게 복종하게 한다고 말한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–11절</div>
+        <div>
+          <div class="flow-title">자신을 향한 비판에 대한 응답</div>
+          <div class="flow-body">고린도 교인 중 어떤 이들이 겉모양(외적 인상)만 보고 판단한다고 지적하며, 바울은 <b class="hl-insight has-insight" data-insight="9">"그의 편지들은 무게가 있고 힘이 있으나 몸으로 대할 때는 약하고 말도 시원하지 않다"</b>는 자신에 대한 험담을 그대로 인용한다. 그러면서 떠나 있을 때 편지로 말하는 것과 함께 있을 때 행하는 것이 다르지 않을 것이라고 확언한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–18절</div>
+        <div>
+          <div class="flow-title">자기를 칭찬하지 않고 주 안에서 자랑함</div>
+          <div class="flow-body">바울은 자기를 추천하는 어떤 자들과 자신을 비교할 마음이 없다며, 오직 하나님이 나눠 주신 <b class="hl-term">한계의 법칙</b>을 따라 헤아릴 뿐이라고 말한다. 남의 수고 위에 건축하여 자랑하지 않고, 오직 <b class="hl-quote">"자랑하는 자는 주 안에서 자랑할지니라"</b>는 원칙을 재확인한다 — 이는 자기를 칭찬하는 자가 아니라 주께서 칭찬하시는 자가 옳다 인정함을 받는다는 결론으로 이어진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 영적 전쟁의 무기는 세상적 힘이 아니다</div>
+        <div class="teach-body">설득력 있는 언변이나 사회적 지위가 아니라 하나님의 능력이 진정한 영적 싸움의 무기라는 원칙은, 사역의 근본 자원에 대한 재정의를 요구한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 생각을 사로잡아 그리스도께 복종시키는 것이 영적 싸움의 목표다</div>
+        <div class="teach-body">외적 갈등의 제압이 아니라, 그릇된 사고 체계와 교만한 논리를 무너뜨리고 진리에 복종하게 하는 것이 참된 영적 전쟁의 목적이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 겉모습에 근거한 평가는 본질을 놓친다</div>
+        <div class="teach-body">화려한 언변이나 인상적인 외모로 사역자를 평가하는 것은, 참된 능력과 진실성이 있는 곳을 놓치게 하는 위험한 기준이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 일관성 있는 삶이 신뢰의 기초다</div>
+        <div class="teach-body">말과 행동, 편지와 실제 만남 사이의 일관성에 대한 바울의 확언은, 리더십의 신뢰가 결국 언행일치에서 나온다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 비교가 아니라 주어진 몫에 충실한 것이 참된 자랑이다</div>
+        <div class="teach-body">다른 사람과 자신을 비교하며 자신을 높이는 것이 아니라, 하나님이 나눠 주신 각자의 영역에서 신실하게 행하는 것이 옳은 자기 이해다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">자신에 대한 험담을 이렇게 그대로 인용하는 게 쉬운 일은 아니었을 거예요. 하지만 바울은 그걸 회피하지 않고 정면으로 마주하면서, 결국 중요한 건 겉모습이 아니라 실제 열매라는 걸 보여주고 싶었던 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>10-13장의 갑작스러운 어조 변화, 별도의 편지였을 가능성</div>
+        <div class="deep-body">1-9장의 화해와 위로의 어조와 달리, 10장부터는 갑자기 방어적이고 날카로운 논조로 전환된다. 이 급격한 변화 때문에 많은 학자들은 10-13장이 원래 <b class="hl-term">별도의 편지</b>(어쩌면 2장에서 언급된 '눈물의 편지'이거나 그 이후의 또 다른 서신)였다가 나중에 지금의 형태로 합쳐졌을 가능성을 제기한다. 이는 확정된 결론이 아니라 학계의 여러 가설 중 하나이며, 어느 쪽이든 본문 자체의 신학적 메시지는 온전히 유효하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"한계의 법칙"(13절)이라는 다소 생소한 표현의 의미</div>
+        <div class="deep-body">이는 하나님이 각 사역자에게 정해 주신 <b class="hl-term">사역의 범위와 영역</b>을 가리키는 것으로 이해된다. 바울은 자신이 고린도교회를 세운 것이 하나님이 자신에게 나눠 주신 정당한 영역 안에서 이루어진 일임을 강조하며, 남이 세운 터 위에 무단히 건축하며 자랑하는 태도와 자신을 구별한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch11">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12l14 6-6 20-14-8Z"/><path d="M38 12l-14 6 6 20 14-8Z"/><path d="M18 18l6 2M22 30l4 1"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 11</div>
+      <h1>11장 · 어리석은 자랑, 참 사도의 고난</h1>
+      <div class="chapter-sub">고린도후서 11장 — 거짓 사도들에 대한 경고, 참 사도의 고난 목록, 자랑 아닌 자랑</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 11:1–33</span>
+      <span class="ref-item">거짓 사도와 참 사도의 대조</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">순전함을 잃을까 하는 염려</div>
+          <div class="flow-body">바울은 하나님의 열심으로 고린도 교인들을 향해 질투한다며, <b class="hl-term">순결한 처녀</b>로 그리스도께 드리려 정혼하였다고 말한다. 뱀이 하와를 미혹한 것 같이 그들의 생각이 그리스도를 향한 진실함과 <b class="hl-term">깨끗한 마음</b>에서 떠나 부패할까 두려워한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–15절</div>
+        <div>
+          <div class="flow-title">거짓 사도들에 대한 경고</div>
+          <div class="flow-body">바울이 값없이 복음을 전한 것을 스스로 낮추어 그들을 높이려 함이었다고 해명하며, <b class="hl-insight has-insight" data-insight="10">자칭 사도라 하는 자들은 자기를 그리스도의 사도로 가장하는 거짓 사도요 속이는 일꾼</b>이라고 경고한다. 사탄도 자신을 광명의 천사로 가장하니 그 일꾼들도 의의 일꾼으로 가장하는 것이 이상한 일이 아니라고 덧붙인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16–21절</div>
+        <div>
+          <div class="flow-title">어리석은 자로서의 자랑</div>
+          <div class="flow-body">자신을 어리석은 자로 여기고 좀 용납해 달라 청하며, 육체를 따라 자랑하는 자가 많으니 자신도 자랑하겠다고 말한다. 남들이 종을 삼고 잡아먹고 억지로 빼앗고 스스로 높아지고 뺨을 칠지라도 참아 온 자신들과 달리, 그런 자들의 강함을 오히려 풍자적으로 대조시킨다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">22–33절</div>
+        <div>
+          <div class="flow-title">참 사도의 고난 목록</div>
+          <div class="flow-body">히브리인, 이스라엘인, 아브라함의 후손, 그리스도의 일꾼 됨을 조목조목 확인한 후, <b class="hl-quote">수고를 넘치도록 하고, 옥에 갇히기도 더 많이 하고, 매도 수없이 맞고, 여러 번 죽을 뻔하였다</b>는 극한의 고난 목록이 이어진다 — 유대인에게 사십에서 하나 감한 매를 다섯 번, 세 번 태장, 한 번 돌로 맞음, 세 번 파선, 강과 강도와 동족과 이방인과 광야와 바다와 거짓 형제의 위험, 자지 못함과 주리고 목마름과 헐벗음. 다마스쿠스에서 광주리를 타고 성벽에서 달아난 부끄러운 탈출로 이 목록을 마무리한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 참된 사역자는 순전함을 지키려는 거룩한 질투를 갖는다</div>
+        <div class="teach-body">공동체가 잘못된 가르침에 미혹될까 하는 바울의 염려는, 사랑에서 우러난 보호 본능이 참된 목회의 중요한 요소임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 화려한 겉모습이 참된 권위를 보장하지 않는다</div>
+        <div class="teach-body">거짓 사도들의 자신만만한 자기 추천과 바울의 고난에 찬 삶 사이의 대조는, 인상적인 겉모습과 참된 신실함이 얼마나 다를 수 있는지 극명하게 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 참된 자랑거리는 성취가 아니라 고난이다</div>
+        <div class="teach-body">세상적 성공이 아니라 그리스도를 위해 견뎌 낸 고난의 목록을 자랑스럽게 내세우는 것은, 참된 사역의 증거가 어디 있는지에 대한 완전히 다른 기준을 제시한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 자기를 낮추는 것이 오히려 사랑의 표현일 수 있다</div>
+        <div class="teach-body">값없이 복음을 전한 것에 대해 낮아짐을 자처한 바울의 선택은, 자기희생이 상대를 높이려는 사랑의 실천적 형태가 될 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 부끄러운 순간까지도 정직하게 나눌 수 있는 것이 진실함이다</div>
+        <div class="teach-body">성벽에서 광주리를 타고 도망친, 영웅적이지 않은 사건을 굳이 기록한 것은, 진실한 자기 서사가 미화를 필요로 하지 않음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">광주리를 타고 성벽을 넘어 도망친 이야기, 사실 그렇게 자랑스러운 무용담은 아니잖아요. 그런데 바울이 굳이 이걸 자신의 '고난 목록' 마지막에 넣었다는 게, 오히려 그의 진실함을 더 신뢰하게 만드는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"거짓 사도들"의 정체는 구체적으로 누구였을까</div>
+        <div class="deep-body">본문은 이들의 정체를 명확히 밝히지 않는다. 학자들은 유대주의적 순회 설교자들, 헬라 수사학 전통의 영향을 받은 화려한 웅변가들, 혹은 영지주의적 경향을 지닌 이들 등 다양한 가설을 제시하지만 확정할 수 없다. 분명한 것은 이들이 화려한 언변과 자기 추천, 물질적 후원 요구로 고린도 교인들의 마음을 상당 부분 사로잡고 있었다는 점이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"사십에 하나 감한 매"(24절)라는 표현의 배경</div>
+        <div class="deep-body">유대 율법(신 25:3)은 매를 40대까지만 허용했는데, 실수로 40대를 넘기지 않도록 관례적으로 39대(사십에 하나 감한 매)로 제한하는 관습이 있었다. 바울이 이를 다섯 번이나 겪었다는 것은, 그가 회당 공동체로부터 심각한 수준의 반복적 징계를 받았음을 보여주며 그의 사역이 유대교 내부에서도 상당한 갈등과 저항에 부딪혔음을 시사한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch12">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30q4-6 10-4t8 0 8 0 6 4"/><path d="M24 26V10"/><path d="M24 10l-3 5M24 10l3 5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 12</div>
+      <h1>12장 · 내가 약할 그때에 강함이라</h1>
+      <div class="chapter-sub">고린도후서 12장 — 셋째 하늘의 체험, 육체의 가시, 약함 속에서 온전해지는 능력</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 12:1–21</span>
+      <span class="ref-item">약함 속에 나타나는 하나님의 능력</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">셋째 하늘까지 이끌려 감</div>
+          <div class="flow-body">유익하지 않으나 부득불 자랑하겠다며, 그리스도 안에 있는 한 사람이 십사 년 전 <b class="hl-term">셋째 하늘</b>까지 이끌려 갔던 일을 말한다. 몸 안에 있었는지 몸 밖에 있었는지 자신도 알지 못하며, 낙원으로 이끌려가서 말할 수 없는 말을 들었으나 사람이 가히 이르지 못할 말이라고만 밝힌다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–10절</div>
+        <div>
+          <div class="flow-title">육체의 가시와 은혜의 충분함</div>
+          <div class="flow-body">여러 계시를 받은 것이 지극히 크므로 <b class="hl-insight has-insight" data-insight="11">너무 자만하지 않게 하시려고 육체에 가시 곧 사탄의 사자를 주셨다</b>고 고백한다. 이를 세 번 주께 간구하였으나 주의 응답은 <b class="hl-quote">"내 은혜가 네게 족하도다 이는 내 능력이 약한 데서 온전하여짐이라"</b>였으니, 바울은 도리어 크게 기뻐함으로 자신의 여러 약한 것들을 자랑하며 <b class="hl-quote">"내가 약한 그 때에 강함이라"</b>는 역설적 결론에 이른다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–13절</div>
+        <div>
+          <div class="flow-title">표적으로 나타난 사도의 표</div>
+          <div class="flow-body">바울은 어리석은 자가 되었으나 고린도 교인들이 억지로 그렇게 하게 하였다며, 자신이 지극히 큰 사도들보다 부족한 것이 조금도 없다고 말한다. 사도의 표가 된 것은 온갖 참음과 표적과 기사와 능력을 그들 가운데서 행한 것으로 나타났다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14–21절</div>
+        <div>
+          <div class="flow-title">세 번째 방문을 앞둔 부모의 심정</div>
+          <div class="flow-body">세 번째 고린도에 갈 준비가 되어 있으나 그들의 것을 구하지 않고 그들을 구한다고 말하며, 자녀가 부모를 위하여 재물을 저축하지 않고 부모가 자녀를 위하여 하는 것이 마땅하다는 비유로 자신의 마음을 표현한다. 다투는 것, 시기, 분냄, 분쟁, 비방, 수군거림, 거만함, 혼란함이 남아있을까 두려워하는 목회자의 솔직한 염려로 마무리된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 신비한 체험이 자랑의 근거가 될 수 없다</div>
+        <div class="teach-body">놀라운 영적 경험조차 스스로를 높이는 도구로 삼지 않는 바울의 태도는, 영적 체험과 인격적 겸손이 반드시 함께 가야 함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 응답받지 못한 기도에도 하나님의 지혜가 있다</div>
+        <div class="teach-body">가시를 제거해 달라는 세 번의 간구가 거절된 것은, 모든 기도가 원하는 대로 응답되는 것은 아니며 그 거절 자체에 하나님의 더 깊은 뜻이 있을 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 하나님의 은혜는 약함을 없애는 것이 아니라 약함 속에서 완전해진다</div>
+        <div class="teach-body">연약함의 제거가 아니라 연약함 가운데 나타나는 하나님의 능력이 그리스도인의 참된 능력의 자리다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 약함을 인정하는 것이 오히려 강함의 통로가 된다</div>
+        <div class="teach-body">자신의 부족함과 한계를 솔직히 인정하는 것은 패배가 아니라, 하나님의 능력이 온전히 드러나는 통로를 여는 것이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 참된 리더십은 받는 것보다 주는 것을 지향한다</div>
+        <div class="teach-body">자녀를 위해 저축하는 부모처럼, 참된 목회적 리더십은 자신의 유익이 아니라 섬기는 대상의 유익을 우선으로 한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"내 은혜가 네게 족하도다"라는 이 짧은 응답, 우리가 없애 달라고 간절히 기도하는 어떤 어려움이 끝내 사라지지 않을 때도 붙잡을 수 있는 말씀이에요. 문제가 없어지는 게 아니라, 그 문제 속에서도 충분한 은혜가 있다는 약속이니까요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"육체의 가시"(7절)는 구체적으로 무엇이었을까</div>
+        <div class="deep-body">이는 신약에서 가장 많이 추측되어 온 질문 중 하나다. 만성 안질환, 간질, 편두통, 말라리아 같은 신체적 질병이라는 견해, 혹은 그를 반대하는 사람들(거짓 사도들을 포함한 지속적 박해자들)을 가리킨다는 견해 등이 제기된다. 본문 자체가 구체적 정보를 주지 않으므로 어느 것도 확정할 수 없으며, 오히려 이 모호함이 다양한 고난을 겪는 모든 독자가 이 본문에 자신의 상황을 비추어 볼 수 있게 하는 여지를 남긴다고 보는 학자들도 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>셋째 하늘·낙원 체험을 3인칭으로 서술한 이유</div>
+        <div class="deep-body">바울은 자신의 이야기를 하면서도 "내가 그리스도 안에 있는 한 사람을 아노니"라며 3인칭으로 거리를 둔다. 이는 대부분의 학자들이 바울 자신의 체험으로 이해하면서도, 그가 이 체험을 <b class="hl-term">자기 자랑의 소재로 삼기를 극도로 꺼렸음</b>을 보여주는 문학적 장치로 해석한다. 체험의 진위보다 그것을 다루는 태도(겸손한 거리 두기)에 더 주목해야 할 본문이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch13">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="9" width="22" height="30" rx="2"/><path d="M18 18h12M18 24h12M18 30h7"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 CORINTHIANS 13</div>
+      <h1>13장 · 너희 자신을 시험하라</h1>
+      <div class="chapter-sub">고린도후서 13장 — 세 번째 방문 경고, 자기 시험의 권면, 마지막 축도</div>
+      <div class="ref-strip">
+        <span class="ref-item">고후 13:1–13</span>
+      <span class="ref-item">신 19:15</span>
+      <span class="ref-item">자기 점검과 온전함을 향한 소망</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">세 번째 방문을 향한 경고</div>
+          <div class="flow-body">바울은 세 번째로 고린도에 갈 것이라며 신명기의 원칙(두세 증인의 입으로 확정하리라)을 인용, 전에 죄 지은 자들과 그 남은 모든 사람에게 다시 가면 용서하지 않겠다고 경고한다. 그리스도께서 약하여 십자가에 못 박히셨으나 하나님의 능력으로 살아 계신 것 같이, 바울 자신도 그리스도 안에서 약하나 하나님의 능력으로 그들을 대하여 살리라 말한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–10절</div>
+        <div>
+          <div class="flow-title">너희 자신을 시험하라</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="12">너희는 믿음 안에 있는가 너희 자신을 시험하고 확증하라</b>는 도전적 권면이 제시된다. 바울은 자신들이 버림받은 자가 아니기를 바라며, 무엇보다 그들이 선을 행하고 온전하게 되는 것을 원한다고 밝힌다. 이 모든 것을 떠나 있을 때 쓰는 것은 대면했을 때 엄하게 하지 않으려 함이니, 주께서 주신 권세는 무너뜨리려는 것이 아니라 세우려는 것이기 때문이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–13절</div>
+        <div>
+          <div class="flow-title">마지막 권면과 은혜의 축도</div>
+          <div class="flow-body"><b class="hl-quote">"마지막으로 말하노니 기뻐하라 온전하게 되며 위로를 받으며 마음을 같이하며 평안할지어다 또 사랑과 평강의 하나님이 너희와 함께 계시리라"</b>는 요약적 권면과 함께 거룩하게 입 맞춤으로 서로 문안하라는 인사가 이어진다. 서신은 삼위일체적 형식의 축도로 마무리된다 — <b class="hl-term">"주 예수 그리스도의 은혜와 하나님의 사랑과 성령의 교통하심이 너희 무리와 함께 있을지어다."</b></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 강함은 부드러움 없는 권위와 다르다</div>
+        <div class="teach-body">여러 번 경고했음에도 결국 세우기 위한 권세를 강조하는 바울의 태도는, 참된 영적 권위가 벌하기 위해서가 아니라 세우기 위해 존재함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 자신을 점검하는 습관은 신앙생활의 기본 요소다</div>
+        <div class="teach-body">다른 사람의 신실함을 판단하기 전에 자기 자신의 믿음을 먼저 점검하라는 요구는 건강한 자기 성찰의 원리를 제시한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 사도의 궁극적 소원은 인정받는 것이 아니라 공동체의 온전함이다</div>
+        <div class="teach-body">바울이 진정으로 원하는 것은 자신의 권위 확인이 아니라 고린도 교인들이 선을 행하고 성숙해지는 것이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 그리스도의 약함과 능력의 패턴이 사역자의 삶에도 반복된다</div>
+        <div class="teach-body">십자가에서 약하셨으나 하나님의 능력으로 사신 그리스도처럼, 사역자도 자신의 약함 가운데 하나님의 능력으로 살아간다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 삼위일체 하나님의 은혜·사랑·교통하심이 공동체의 궁극적 기초다</div>
+        <div class="teach-body">서신 전체를 마무리하는 이 축도는, 모든 관계 회복과 성숙의 최종 근거가 인간의 노력이 아니라 삼위 하나님의 은혜에 있음을 선언한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">고린도전서에서 시작된 분쟁과 갈등의 이야기가, 고린도후서 끝에 와서는 이렇게 따뜻한 축도로 마무리돼요. "거룩하게 입 맞춤으로 문안하라"는 말, 갈등을 겪었던 공동체가 다시 서로를 향해 마음을 열도록 초청하는 마지막 몸짓 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"두세 증인의 입으로 말마다 확정하리라"(1절, 신 19:15 인용)의 적용</div>
+        <div class="deep-body">이는 원래 재판에서 단독 증언의 위험을 막기 위한 구약의 사법 원칙이다. 바울이 이를 인용하는 방식에 대해서는 두 견해가 있다 — 자신이 고린도를 세 번 방문하는 것 자체가 마치 세 번의 '증언'처럼 신중한 확증의 절차라는 견해, 혹은 실제 교회의 권징 절차에서 이 원칙을 문자적으로 적용해야 한다는 견해다. 어느 쪽이든 핵심은 <b class="hl-term">성급하고 일방적인 판단을 경계</b>하는 원칙이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>삼위일체적 축도(13절)가 신약에서 갖는 신학사적 위치</div>
+        <div class="deep-body">이 구절은 신약에서 성부·성자·성령을 나란히 언급하는 가장 명시적인 삼위일체적 표현 중 하나로 꼽히며, 이후 기독교 예배 전통에서 축도문으로 광범위하게 사용되어 왔다. 은혜(그리스도)·사랑(하나님 아버지)·교통하심(성령)이라는 각 위격에 대한 서로 다른 강조점은, 삼위 하나님이 각기 다른 방식으로 신자의 삶에 관여하시면서도 하나로 역사하심을 압축적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+<div class="church-footer">기독교한국침례회 은혜교회</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "바울은 왜 자신이 죽을 것 같았던 고난을 이렇게 자세히 털어놓을까", "body": "바울은 8절에서 '우리가 아시아에서 당한 환난'이 얼마나 심했는지 이야기해요 — '힘에 겹도록 심한 고생을 받아 살 소망까지 끊어지고... 우리는 우리 자신이 사형 선고를 받은 줄 알았다'고요. 사도가 이렇게까지 솔직하게 자기 약함과 절망을 드러내는 건 흔치 않은 일이에요.\n\n왜 이렇게 자세히 나눴을까요? 문맥을 보면 답이 나와요. 바로 다음 절에서 '이는 우리로 자기를 의지하지 말고 오직 죽은 자를 다시 살리시는 하나님만 의지하게 하심이라'고 해요. 즉 이 고난의 경험은 바울 자신의 강함이 아니라 하나님의 신실하심을 증명하는 무대였던 거예요.\n\n그리고 이건 1장 전체를 여는 주제(위로의 하나님)와도 정확히 맞물려요. 바울은 '우리가 받는 환난이나 위로가 다 너희의 위로와 구원을 위함'이라고 말하는데, 자신의 극한 고난을 솔직히 나누는 것 자체가 고린도 교인들에게 실제적인 위로와 소망의 근거가 되는 거죠. 약함을 감추지 않는 리더십이, 오히려 더 큰 위로의 통로가 될 수 있다는 걸 보여주는 대목이에요."}, {"title": "눈물로 쓴 편지가 대체 어떤 내용이었길래 이렇게 조심스럽게 언급할까", "body": "바울은 2장에서 '내가 다시 근심 중에 너희에게 나아가지 않기로 스스로 결심하였다'며, 대신 '많은 눈물로 편지를 썼다'고 말해요(4절). 그런데 정작 그 편지의 구체적 내용은 자세히 설명하지 않죠 — 다만 그 목적이 '너희를 근심하게 하려 함이 아니요 오직 내가 너희를 향하여 넘치는 사랑이 있음을 너희로 알게 하려 함'이었다고만 해요.\n\n이 '눈물의 편지'가 지금 우리가 가진 고린도전서를 가리키는지, 아니면 소실된 별도의 편지(고린도전서와 고린도후서 사이에 쓰인 또 다른 서신)를 가리키는지는 학자들 사이에서 계속 논쟁이 되는 주제예요. 후자로 보는 학자들이 더 많은데, 고린도전서의 어조가 이 정도로 극심한 눈물과 고통을 표현할 만큼 격하지는 않다고 보기 때문이죠.\n\n어느 쪽이든 분명한 건, 바울과 고린도교회 사이에 상당히 아프고 긴장된 갈등의 시간이 있었다는 거예요. 그리고 이 장에서 바울은 그 갈등을 일으켰던 사람(아마도 공개적으로 바울을 대적했던 어떤 인물)에 대한 징계가 이미 충분했으니, 이제는 그를 용서하고 위로하여 근심에 잠기지 않게 하라고 권해요. 관계의 회복이 징계보다 우선이라는 걸 보여주는 대목이죠."}, {"title": "모세의 얼굴에서 광채가 났다는 이야기가 왜 갑자기 새 언약 논의에 등장할까", "body": "3장에서 바울은 출애굽기 34장의 유명한 장면을 꺼내요 — 모세가 시내산에서 내려올 때 그 얼굴에 광채가 나서, 이스라엘 백성이 두려워하자 모세가 수건으로 얼굴을 가렸다는 이야기요. 바울은 이 이미지를 옛 언약(율법)과 새 언약(성령)을 대조하는 데 사용해요.\n\n핵심은 이거예요 — 모세의 영광조차 점점 없어질 영광이었는데(7절, '없어질 것의 영광'), 그런데도 이스라엘 백성은 그 없어질 영광의 결말을 보지 못하도록 수건으로 눈이 가려진 채 남아 있다는 거예요. 바울은 이걸 오늘날까지도 옛 언약(모세오경)을 읽을 때 그 수건이 벗겨지지 않은 채 남아 있다고 표현하죠 — 그리스도 안에서만 그 수건이 없어진다고요(14절).\n\n그런데 바울의 논증에는 놀라운 반전이 있어요. 옛 언약의 영광조차 이렇게 찬란했다면, 성령의 직분(새 언약)은 얼마나 더 영광스럽겠느냐는 거예요(8-11절, '더욱 영광 가운데 있으리라'). 그리고 마지막 절(18절)에서는 그리스도인 자신이 '수건을 벗은 얼�굴로 주의 영광을 보매 그와 같은 형상으로 변화하여 영광에서 영광에 이른다'고 선언해요. 모세는 자기 얼굴의 광채를 가려야 했지만, 신자는 오히려 얼굴을 드러낸 채 점점 더 그리스도를 닮아가는 영광의 과정에 있다는 거죠. 감추어야 했던 영광에서, 드러내며 자라가는 영광으로의 전환 — 그게 새 언약의 핵심입니다."}, {"title": "보배를 담은 그릇이 왜 하필 '질그릇'이어야 했을까", "body": "바울은 '우리가 이 보배를 질그릇에 가졌으니'라고 말해요(7절). 여기서 보배는 앞 구절(6절)에서 말한 '그리스도의 얼굴에 있는 하나님의 영광을 아는 빛'이에요. 그런데 왜 굳이 이 귀한 보배가 가장 값싸고 깨지기 쉬운 그릇, 질그릇에 담겨 있다고 표현했을까요?\n\n답은 바로 다음 구절에 있어요 — '이는 심히 큰 능력은 하나님께 있고 우리에게 있지 아니함을 나타내게 하려 함이라.' 만약 보배가 화려한 금 그릇에 담겨 있었다면, 사람들은 그 그릇의 아름다움에 주목했을 거예요. 하지만 질그릇처럼 하찮고 연약한 존재(바울 자신을 포함한 모든 사역자)를 통해 그 보배가 전해질 때, 오히려 능력의 출처가 그릇이 아니라 그 안의 보배, 곧 하나님께 있다는 것이 더 분명하게 드러나는 거예요.\n\n그래서 바울은 곧이어 자신이 겪은 온�간 고난의 목록을 나열해요 — 사방으로 우겨쌈을 당하여도 싸이지 아니하며, 답답한 일을 당하여도 낙심하지 아니하며... 이런 극한의 연약함 속에서도 무너지지 않는 이유는, 질그릇 자체가 강해서가 아니라 그 안에 담긴 보배(예수의 생명)의 능력이 그 연약함을 통해 오히려 더 선명하게 나타나기 때문이라는 거죠. 약함이 부끄러운 게 아니라, 하나님의 능력을 드러내는 무대가 될 수 있다는 신학이 여기서 시작됩니다."}, {"title": "그리스도의 사랑이 '강권한다'는 게 무슨 뜻일까, 억지로 떠민다는 건가", "body": "14절에서 바울은 '그리스도의 사랑이 우리를 강권하시는도다'라고 말해요. '강권하다'는 표현이 마치 억지로 무언가를 하게 만든다는 부정적 뉘앙스로 들릴 수도 있어요.\n\n하지만 헬라어 원어(συνέχει, 쉬네케이)는 '함께 붙잡다', '압박하다', '몰아가다'는 뜻으로, 오히려 강물이 물줄기를 한 방향으로 밀어가듯 거스를 수 없는 강한 추진력을 표현해요. 바울이 말하려는 건 두려움이나 의무감에 떠밀려 억지로 사역하는 게 아니라, 그리스도의 사랑을 깊이 경험한 사람이라면 자연스럽게, 거의 필연적으로 특정한 방향(그리스도를 위해 사는 삶)으로 이끌려 갈 수밖에 없다는 거예요.\n\n바로 이어지는 구절이 이걸 확인해줘요 — '한 사람이 모든 사람을 대신하여 죽었으니 모든 사람이 죽은 것이라... 그리스도를 위하여 살게 하려 함이라.' 그리스도의 죽음이 나를 대신한 것이었다는 걸 진심으로 깨달으면, 더 이상 자기 자신을 위해 사는 삶으로 돌아갈 수 없다는 뜻이에요. 이건 억압이 아니라, 사랑을 알게 된 사람에게 자연스럽게 일어나는 삶의 방향 전환을 가리키는 말입니다."}, {"title": "고난의 목록이 이렇게 길게 나열되는 이유가 뭘까", "body": "6장 중반부에서 바울은 자신이 하나님의 일꾼임을 증명하는 방식으로, 놀랍게도 성공의 목록이 아니라 고난의 목록을 나열해요 — '많이 견디는 것과 환난과 궁핍과 고난과 매 맞음과 갇힘과 난동과 수고로움과 자지 못함과 먹지 못함'(4-5절). 그리고 곧이어 '깨끗함과 지식과 오래 참음과 자비함과 성령의 감화와 거짓 없는 사랑과 진리의 말씀과 하나님의 능력'(6-7절) 같은 성품과 은사의 목록도 이어지죠.\n\n왜 이렇게 상반돼 보이는 두 목록을 나란히 놓았을까요? 바로 그 다음 구절들이 답을 줘요 — '영광과 욕됨으로 그러했으며 악한 이름과 아름다운 이름으로 그러했느니라... 속이는 자 같으나 참되고... 근심하는 자 같으나 항상 기뻐하고... 아무것도 없는 자 같으나 모든 것을 가진 자로다.' 이건 세상의 평가 기준으로는 완전히 모순되어 보이는 삶의 방식이 사실은 참된 사도직의 표지라는 걸 보여주려는 거예요.\n\n즉 바울은 자신의 사도 됨을 화려한 성공이 아니라, 고난과 은혜가 뒤섞인 역설적 삶 전체로 증명하고 있는 거예요. 세상의 눈에는 실패자처럼 보일 수 있는 그 모든 요소(궁핍, 매 맞음, 악평)가, 실은 참된 사역자의 진실성을 드러내는 증거라는 거죠."}, {"title": "근심이 회개로 이어진다는데, 근심 자체가 좋은 건가", "body": "바울은 이렇게 말해요 — '내가 이제 기뻐함은 너희로 근심하게 한 까닭이 아니요 도리어 너희가 근심함으로 회개함에 이른 까닭이라'(9절). 그리고 곧바로 아주 중요한 구분을 해요 — '하나님의 뜻대로 하는 근심은 후회할 것이 없는 구원에 이르게 하는 회개를 이루는 것이요 세상 근심은 사망을 이루는 것이니라'(10절).\n\n즉 근심 자체가 좋은 게 아니라, 근심의 종류가 결정적으로 다르다는 거예요. '하나님의 뜻대로 하는 근심'은 죄를 직면하고 그것을 하나님과의 관계 안에서 다루며 결국 회개와 회복으로 이어지는 근심이에요. 반면 '세상 근심'은 단지 결과에 대한 두려움이나 자기 연민, 수치심에 머물러 오히려 절망과 파괴로 이어지는 근심이죠.\n\n고린도 교인들의 경우가 좋은 예시예요 — 그들은 바울의 눈물의 편지를 받고 근심했지만, 그 근심이 자기 방어나 원망으로 끝나지 않고 오히려 스스로를 살피고(11절, '너희가 얼마나 간절함과 얼마나 변증과 얼마나 분함과 얼마나 두려움과 얼마나 사모함과 얼마나 열심과 얼마나 벌하는 것을 내었는가') 실제 삶의 변화로 이어졌어요. 그래서 바울은 그 결과를 보고 기뻐하는 거예요. 근심은 그 자체로 목적이 아니라, 회개라는 열매를 맺을 때만 의미가 있다는 거죠."}, {"title": "마게도냐 교회가 '극심한 가난' 중에도 풍성한 연보를 했다는 게 어떻게 가능했을까", "body": "바울은 마게도냐 교회들(빌립보, 데살로니가, 베뢰아 등)의 헌금을 소개하면서 이렇게 표현해요 — '환난의 많은 시련 가운데서 그들의 넘치는 기쁨과 극심한 가난이 힘을 다하여 풍성한 연보를 넘치도록 하게 하였다'(2절). 시련·극심한 가난과 넘치는 기쁨·풍성한 연보가 한 문장 안에 나란히 놓여 있는 게 언뜻 앞뒤가 안 맞아 보여요.\n\n그런데 3-5절을 보면 답이 나와요. 그들은 힘대로 할 뿐 아니라 힘에 지나도록 자원하여 연보했고, 심지어 '이 은혜와 성도 섬기는 일에 참여함에 대하여 우리에게 간절히 구하였다'고 해요. 즉 이건 바울이 강요하거나 부담을 준 게 아니라, 그들 스스로 간청해서 얻어낸 특권이었다는 거죠. 그리고 결정적인 구절 — '그들이 먼저 자신을 주께 드리고 그 다음 하나님의 뜻을 따라 우리에게 주었도다'(5절).\n\n즉 마게도냐 교인들의 연보는 재정적 여유에서 나온 게 아니라, 이미 자기 자신을 주께 온전히 내어드린 삶의 자연스러운 결과였던 거예요. 가난이 후한 마음을 막지 못했던 건, 그들의 헌신이 소유의 많고 적음이 아니라 이미 이루어진 자기 헌신에서 흘러나왔기 때문이에요. 바울이 이 사례를 든 이유도 분명해요 — 고린도 교인들에게 '얼마나 많이 가졌느냐'가 아니라 '자신을 얼마나 내어드렸느냐'가 진짜 관건이라는 걸 보여주려는 거죠."}, {"title": "하나님이 '즐겨 내는 자'를 사랑하신다는데, 마지못해 내는 헌금은 다 헛된 걸까", "body": "9장 7절은 이렇게 말해요 — '각각 그 마음에 정한 대로 할 것이요 인색함으로나 억지로 하지 말지니 하나님은 즐겨 내는 자를 사랑하시느니라.' 이 구절만 보면 마치 마지못해 내는 헌금은 아무 가치가 없다는 뜻처럼 들릴 수 있어요.\n\n하지만 전체 맥락을 보면 바울의 핵심은 헌금의 액수나 형식이 아니라 마음의 태도에 있다는 거예요. 6절에서 그는 '적게 심는 자는 적게 거두고 많이 심는 자는 많이 거둔다'는 농사의 비유를 먼저 제시해요. 그리고 이어서 각자 '마음에 정한 대로' 하라고 하죠 — 이건 즉흥적이거나 감정에 휘둘리는 결정이 아니라, 미리 신중하게 헤아리고 결정한 것을 뜻해요.\n\n그러니까 이 구절이 대조하는 건 '많이 내느냐 적게 내느냐'가 아니라 '인색함과 억지로'냐 '즐거움으로'냐예요. 두려움이나 사회적 압박, 죄책감에 떠밀려 내는 것과, 하나님의 은혜에 대한 감사와 기쁨으로 자원하여 내는 것은 겉으로는 같은 액수라도 전혀 다른 헌신이라는 거죠. 그리고 바로 다음 절(8절)에서 하나님이 모든 은혜를 넘치게 하사 모든 일에 항상 모든 것이 넉넉하여 모든 착한 일을 넘치게 하게 하신다는 약속이 이어지는 걸 보면, 이건 결핍에 대한 두려움 없이 자유롭게, 기쁘게 나눌 수 있는 근거를 하나님이 친히 마련해 주신다는 뜻이기도 해요."}, {"title": "바울의 편지는 무게 있는데 실제로 만나면 그렇지 않다는 험담, 왜 이렇게 정면으로 다룰까", "body": "10장 10절에서 바울은 자신을 반대하는 사람들의 말을 그대로 인용해요 — '그들의 말이 그의 편지들은 무게가 있고 힘이 있으나 그가 몸으로 대할 때는 약하고 그 말도 시원하지 않다 하니.' 자신에 대한 부정적 평가를 이렇게 직접적으로, 상세하게 인용하는 게 좀 의아하게 느껴질 수 있어요. 왜 굳이 이 험담을 그대로 옮겨 적었을까요?\n\n답은 10장 전체의 논조에 있어요. 바울은 이 장에서 자신의 사도적 권위에 대한 고린도 교회 일부의 도전에 정면으로 맞서고 있거든요. 어떤 '거짓 사도들'(11장에서 더 구체적으로 다뤄짐)이 바울의 외모나 언변이 초라하다고 깎아내리며, 자신들의 화려한 언변과 자기 추천을 내세우고 있었던 것 같아요.\n\n바울의 전략은 이 비난을 회피하지 않고 정면으로 마주하는 거예요. 그는 3-5절에서 이렇게 선언해요 — '우리의 싸우는 무기는 육신에 속한 것이 아니요 오직 어떤 견고한 진도 무너뜨리는 하나님의 능력이라.' 즉 사역의 능력은 화려한 언변이나 인상적인 외모가 아니라, 성령의 능력에 있다는 거예요. 그러니 자신을 향한 이 인신공격적 비난이 사실이라 해도(말이 시원치 않다는 것), 그것이 그의 사도직의 진정성을 훼손하지 못한다는 걸 이 방식으로 역설적으로 증명하고 있는 셈이죠."}, {"title": "바울은 왜 스스로를 '어리석은 자'라 부르면서까지 자기 자랑을 늘어놓을까", "body": "11장에서 바울은 아주 독특한 수사법을 써요 — '나를 좀 용납하라 어리석은 것을 좀 용납하라'(1절)고 미리 양해를 구한 뒤, 자신의 사도적 자격과 고난을 조목조목 나열하기 시작하죠. 그러면서 스스로 '어리석은 말을 하는 것 같이 말하노니'(21절), '내가 미친 사람처럼 말하노라'(23절)라고 반복해서 자기 비하적 표현을 덧붙여요.\n\n왜 이렇게까지 불편해하면서 자기 자랑을 늘어놓을까요? 바울에게 자기를 내세우는 건 본래 매우 꺼리는 일이었어요(10:18, \"자기를 칭찬하는 자가 아니라 주께서 칭찬하시는 자\"). 그런데 고린도교회에 침투한 '거짓 사도들'(13절, '자기를 그리스도의 사도로 가장하는 자들')이 화려한 자기 추천으로 교인들을 미혹하고 있었기에, 바울은 마지못해 같은 방식(자기 자랑)으로 대응할 수밖에 없었던 거예요.\n\n그런데 그 방식이 참 독특해요 — 그는 자신의 화려한 업적이 아니라 오히려 고난의 목록(매 맞음, 감옥, 파선, 굶주림, 위험들)을 자랑거리로 내세워요(23-27절). 그리고 결정적으로 다마스쿠스에서 광주리를 타고 성벽에서 도망친, 전혀 영웅적이지 않은 부끄러운 사건으로 이 목록을 마무리하죠(32-33절). 이건 세상적 자랑의 논리를 완전히 뒤집는 거예요 — 거짓 사도들이 강함과 화려함으로 자랑할 때, 바울은 약함과 고난으로 자신의 진정성을 증명하고 있는 거죠."}, {"title": "셋째 하늘까지 이끌려 갔다면서 왜 그 경험을 자세히 말하지 않을까", "body": "바울은 12장 2-4절에서 자신이 (혹은 아는 어떤 사람이) '셋째 하늘'까지 이끌려 갔고 '낙원으로 이끌려가서 말할 수 없는 말을 들었으니 사람이 가히 이르지 못할 말이라'고 해요. 이렇게 놀라운 신비 체험을 언급해 놓고는 정작 그 내용은 전혀 설명하지 않죠. 왜일까요?\n\n일단 바울 스스로 이렇게 말해요 — '내가 이런 사람을 위하여 자랑하겠으나 나를 위하여는 약한 것들 외에 자랑하지 아니하리라'(5절). 즉 이 체험 자체를 자신의 영적 우월함을 증명하는 도구로 쓰고 싶지 않았던 거예요. 오히려 그는 '너무 자만하지 않게 하시려고' 육체에 가시가 주어졌다고 해요(7절) — 신비 체험이 곧바로 겸손하게 하는 고난과 짝을 이루도록 하나님이 배려하셨다는 거죠.\n\n그리고 이 장의 결정적 순간이 바로 이어져요 — 바울이 이 가시를 제거해 달라고 세 번이나 간구했지만, 주님의 응답은 '내 은혜가 네게 족하도다 이는 내 능력이 약한 데서 온전하여짐이라'(9절)였다는 거예요. 그래서 바울은 결론적으로 이렇게 선언해요 — '그러므로 도리어 크게 기뻐함으로 나의 여러 약한 것들에 대하여 자랑하리니... 내가 약한 그 때에 강함이라.' 셋째 하늘의 신비 체험보다 더 중요하게 다뤄지는 건, 오히려 응답받지 못한 기도와 그 안에서 발견한 하나님의 은혜라는 거죠. 신비 체험이 자랑거리가 아니라, 약함 속에서 발견한 하나님의 충분하심이야말로 진짜 자랑거리라는 겁니다."}, {"title": "바울은 왜 마지막에 '너희 자신을 시험하라'고 요구할까", "body": "13장 5절에서 바울은 상당히 도전적인 요구를 해요 — '너희는 믿음 안에 있는가 너희 자신을 시험하고 너희 자신을 확증하라. 예수 그리스도께서 너희 안에 계신 줄을 너희가 스스로 알지 못하느냐.' 서신 전체에서 바울은 자신의 사도직에 대한 고린도 교인들의 의심에 계속 답해 왔는데, 마지막에 와서는 갑자기 화살을 돌려 그들 자신을 점검하라고 하는 거예요.\n\n이건 상당히 영리한 논증 전환이에요. 고린도 교인들은 그동안 '바울이 진짜 사도인지' 계속 시험하고 판단해 왔거든요(3절, \"그리스도께서 내 안에서 말씀하시는 증거를 너희가 구하니\"). 바울은 이걸 뒤집어서, 정작 시험받아야 할 것은 자신이 아니라 그들 자신의 믿음이라고 말하는 거예요. 만약 그리스도께서 정말 그들 안에 계신다면, 그리스도의 사역을 통해 그들을 낳은 바울의 사도직에 대한 의심 자체가 성립할 수 없다는 논리죠.\n\n그리고 이 요구는 서신 전체의 목회적 목적과도 맞닿아 있어요. 바울이 진짜 원하는 건 자신의 권위를 인정받는 게 아니라, 고린도 교인들이 실제로 견고한 믿음 안에 서는 거예요. 그래서 그는 다음 절(9절)에서 '우리가 약할 때에도 너희가 강하기를 기뻐한다... 우리가 원하는 바는 너희가 온전하게 되는 것이라'고 밝혀요. 자기 시험의 요구는 결국, 사도의 권위 문제를 넘어 각 사람이 실제로 그리스도 안에 굳게 서 있는지를 스스로 점검하라는 진심 어린 목회적 초청인 셈이에요."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+<script src="/assets/back-home.js"></script>
+</body>
+</html>
