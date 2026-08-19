@@ -544,6 +544,11 @@
   details.doc-group{
     border-top: 1px solid var(--rule);
   }
+  details.doc-group .doc-group--nested{
+    margin: 0.6rem 0 0.8rem 1.4rem;
+    border-top: 1px solid var(--rule);
+    border-bottom: 1px solid var(--rule);
+  }
   details.doc-group:last-of-type{
     border-bottom: 1px solid var(--rule);
   }
@@ -578,6 +583,12 @@
   }
   details.doc-group[open] summary::after{ content: "–"; }
   details.doc-group .doclist{ border-top: 1px solid var(--rule); }
+  details.doc-group--nested summary{
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: var(--muted);
+    padding-left: 0.4rem;
+  }
 
   /* ---------- floating nav buttons ---------- */
   .float-nav{
@@ -778,10 +789,10 @@
     <details class="doc-group">
       <summary>신약<span class="count" id="count-bible_by_book-new"></span></summary>
       <ul class="doclist" id="list-bible_by_book-new"><li class="doclist__empty">불러오는 중...</li></ul>
-    </details>
-    <details class="doc-group">
-      <summary>로마서 장별 강해<span class="count" id="count-romans_chapters"></span></summary>
-      <ul class="doclist" id="list-romans_chapters"><li class="doclist__empty">불러오는 중...</li></ul>
+      <details class="doc-group doc-group--nested">
+        <summary>로마서 장별 강해<span class="count" id="count-romans_chapters"></span></summary>
+        <ul class="doclist" id="list-romans_chapters"><li class="doclist__empty">불러오는 중...</li></ul>
+      </details>
     </details>
     <details class="doc-group">
       <summary>인물별<span class="count" id="count-bible_by_person"></span></summary>
