@@ -1,1 +1,750 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>로마서 강해 | 1장 — 복음 안에 나타난 하나님의 의</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#1a2744;
+  --navy-2:#243758;
+  --navy-3:#0f1830;
+  --cream:#f6f1e6;
+  --cream-2:#efe7d4;
+  --gold:#c9a961;
+  --gold-2:#e0c589;
+  --ink:#2b2a26;
+  --sub:#6b6558;
 
+  --hl-theo:#f0d78c;      /* 신학 핵심 개념 - 골드 */
+  --hl-theo-b:#b8903a;
+  --hl-greek:#a9d7c4;     /* 헬라어 원어 - 민트 */
+  --hl-greek-b:#3f8a68;
+  --hl-person:#a9c6e8;    /* 인물·관계 - 스카이블루 */
+  --hl-person-b:#3a6ea8;
+  --hl-sin:#e9aeae;       /* 죄악·경고 - 로즈 */
+  --hl-sin-b:#a24444;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:'Noto Sans KR',sans-serif;
+  line-height:1.8;
+}
+h1,h2,h3,h4,.serif{font-family:'Noto Serif KR',serif;}
+
+/* ===== Cover ===== */
+.cover{
+  background:
+    radial-gradient(1200px 500px at 15% -10%, rgba(224,197,137,.18), transparent 60%),
+    linear-gradient(160deg, var(--navy-3), var(--navy) 55%, var(--navy-2));
+  color:var(--cream);
+  padding:80px 24px 64px;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+.cover::after{
+  content:"";
+  position:absolute; inset:0;
+  background:repeating-linear-gradient(90deg, rgba(201,169,97,.06) 0 1px, transparent 1px 64px);
+  pointer-events:none;
+}
+.cover .eyebrow{
+  letter-spacing:.35em;
+  font-size:12px;
+  color:var(--gold-2);
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+.cover h1{
+  font-size:clamp(32px,6vw,54px);
+  font-weight:900;
+  margin:0 0 10px;
+  letter-spacing:-.01em;
+}
+.cover .verse-ref{
+  font-size:15px;
+  color:var(--gold-2);
+  margin-bottom:28px;
+}
+.cover .theme-verse{
+  max-width:640px;
+  margin:0 auto 32px;
+  font-size:clamp(16px,2.6vw,20px);
+  font-weight:500;
+  color:#f1ead9;
+  border-top:1px solid rgba(224,197,137,.35);
+  border-bottom:1px solid rgba(224,197,137,.35);
+  padding:22px 8px;
+}
+.cover .theme-verse span{color:var(--gold-2); font-weight:700;}
+.cover .attribution{
+  font-size:13px;
+  color:rgba(246,241,230,.65);
+  letter-spacing:.05em;
+}
+
+/* ===== Nav ===== */
+.stickynav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(246,241,230,.94);
+  backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--cream-2);
+  padding:10px 16px;
+  display:flex;
+  gap:8px;
+  overflow-x:auto;
+  scrollbar-width:none;
+}
+.stickynav::-webkit-scrollbar{display:none;}
+.stickynav a{
+  flex:0 0 auto;
+  font-size:13px;
+  color:var(--navy);
+  text-decoration:none;
+  padding:7px 14px;
+  border-radius:999px;
+  border:1px solid var(--cream-2);
+  white-space:nowrap;
+  font-weight:500;
+}
+.stickynav a:hover{background:var(--navy); color:var(--cream); border-color:var(--navy);}
+
+/* ===== Sections ===== */
+.wrap{max-width:880px; margin:0 auto; padding:56px 22px;}
+.section-label{
+  display:inline-block;
+  font-size:11px;
+  letter-spacing:.28em;
+  text-transform:uppercase;
+  color:var(--gold-2);
+  background:var(--navy);
+  padding:5px 12px;
+  border-radius:3px;
+  margin-bottom:16px;
+}
+h2.title{
+  font-size:clamp(24px,4vw,32px);
+  font-weight:700;
+  color:var(--navy);
+  margin:0 0 6px;
+}
+.sub{color:var(--sub); font-size:14.5px; margin-bottom:30px;}
+
+/* ===== Overview cards ===== */
+.info-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(190px,1fr));
+  gap:1px;
+  background:var(--cream-2);
+  border:1px solid var(--cream-2);
+  border-radius:10px;
+  overflow:hidden;
+  margin:26px 0;
+}
+.info-cell{background:#fff; padding:18px 18px;}
+.info-cell .k{font-size:11px; letter-spacing:.14em; color:var(--gold-b,var(--sub)); text-transform:uppercase; color:#a58a49; margin-bottom:6px; font-weight:700;}
+.info-cell .v{font-size:14.5px; color:var(--ink); font-weight:500;}
+
+.prose{font-size:15.5px; color:#3a382f;}
+.prose p{margin:0 0 16px;}
+
+.structure-table{
+  width:100%;
+  border-collapse:collapse;
+  margin:22px 0 8px;
+  font-size:14px;
+  background:#fff;
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:0 1px 3px rgba(26,39,68,.08);
+}
+.structure-table th{
+  background:var(--navy); color:var(--cream);
+  padding:11px 14px; text-align:left; font-weight:600; font-size:12.5px; letter-spacing:.03em;
+}
+.structure-table td{padding:12px 14px; border-bottom:1px solid var(--cream-2); vertical-align:top;}
+.structure-table tr:last-child td{border-bottom:none;}
+.structure-table .tag{
+  display:inline-block; font-size:11px; font-weight:700; color:var(--navy);
+  background:var(--cream-2); padding:2px 8px; border-radius:4px; margin-bottom:3px;
+}
+
+/* ===== Legend / filters ===== */
+.legend-box{
+  background:#fff;
+  border:1px solid var(--cream-2);
+  border-radius:12px;
+  padding:18px 20px;
+  margin:26px 0 8px;
+}
+.legend-box .lt{font-size:12.5px; color:var(--sub); margin-bottom:12px;}
+.legend-row{display:flex; flex-wrap:wrap; gap:8px;}
+.legend-btn{
+  display:flex; align-items:center; gap:8px;
+  border:1px solid var(--cream-2);
+  background:#fdfbf6;
+  padding:8px 13px;
+  border-radius:999px;
+  font-size:13px;
+  cursor:pointer;
+  color:var(--ink);
+  transition:transform .12s ease, box-shadow .12s ease;
+  font-family:inherit;
+}
+.legend-btn:hover{transform:translateY(-1px); box-shadow:0 3px 10px rgba(26,39,68,.1);}
+.legend-btn.active{background:var(--navy); color:#fff; border-color:var(--navy);}
+.legend-dot{width:11px; height:11px; border-radius:3px; display:inline-block;}
+.legend-reset{margin-left:auto; font-size:12.5px; color:var(--sub); background:none; border:none; text-decoration:underline; cursor:pointer;}
+
+/* ===== Pericope ===== */
+.pericope{margin-top:52px;}
+.pericope-head{
+  display:flex; align-items:baseline; gap:12px;
+  border-bottom:2px solid var(--navy);
+  padding-bottom:10px;
+  margin-bottom:8px;
+}
+.pericope-head .range{
+  font-family:'Noto Serif KR',serif;
+  font-weight:900; color:var(--navy); font-size:22px;
+}
+.pericope-head .name{font-weight:600; color:var(--ink); font-size:16px;}
+.pericope-intro{font-size:14.5px; color:var(--sub); margin:10px 0 22px; max-width:70ch;}
+
+/* ===== Verse card ===== */
+.verse-card{
+  background:#fff;
+  border:1px solid var(--cream-2);
+  border-left:4px solid var(--navy);
+  border-radius:10px;
+  padding:20px 22px 18px;
+  margin-bottom:16px;
+  transition:box-shadow .15s ease;
+}
+.verse-card:hover{box-shadow:0 4px 16px rgba(26,39,68,.07);}
+.verse-head{display:flex; align-items:center; gap:10px; margin-bottom:10px;}
+.verse-num{
+  font-family:'Noto Serif KR',serif;
+  font-weight:900; color:var(--gold-b,#a5842f); color:#a5842f;
+  background:var(--cream);
+  width:30px; height:30px; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  font-size:14px; flex:0 0 auto;
+}
+.verse-text{
+  font-family:'Noto Serif KR',serif;
+  font-size:17px;
+  line-height:2;
+  color:var(--navy-3);
+  margin-bottom:14px;
+}
+mark{
+  border-radius:3px;
+  padding:1px 3px;
+  color:var(--ink);
+  cursor:help;
+  position:relative;
+  text-decoration-line:underline;
+  text-decoration-style:dotted;
+  text-decoration-color:rgba(0,0,0,.35);
+}
+mark.hl-theo{background:var(--hl-theo);}
+mark.hl-greek{background:var(--hl-greek);}
+mark.hl-person{background:var(--hl-person);}
+mark.hl-sin{background:var(--hl-sin);}
+mark[data-tip]:hover::after{
+  content:attr(data-tip);
+  position:absolute; left:50%; bottom:135%; transform:translateX(-50%);
+  background:var(--navy-3); color:#fff;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:12.5px; line-height:1.5; font-weight:400;
+  padding:9px 12px; border-radius:8px;
+  width:max-content; max-width:260px;
+  box-shadow:0 8px 20px rgba(0,0,0,.25);
+  z-index:20; text-decoration:none;
+  white-space:normal;
+}
+mark[data-tip]:hover::before{
+  content:"";
+  position:absolute; left:50%; bottom:115%; transform:translateX(-50%);
+  border:6px solid transparent; border-top-color:var(--navy-3);
+  z-index:20;
+}
+body.filter-active mark{opacity:.28; filter:grayscale(60%);}
+body.filter-active mark.filter-on{opacity:1; filter:none;}
+
+.verse-gloss{font-size:14.5px; color:#3f3d34; margin-bottom:8px;}
+.verse-gloss p{margin:0 0 10px;}
+.verse-gloss p:last-child{margin-bottom:0;}
+
+.insight-btn{
+  display:inline-flex; align-items:center; gap:6px;
+  background:var(--cream);
+  border:1px solid var(--gold-2);
+  color:#8a6d2c;
+  font-size:12.5px; font-weight:600;
+  padding:6px 12px; border-radius:999px;
+  cursor:pointer; font-family:inherit;
+  margin-top:4px;
+}
+.insight-btn:hover{background:var(--gold-2); color:var(--navy-3);}
+
+/* ===== Message box ===== */
+.message-box{
+  margin:22px 0 8px;
+  background:linear-gradient(155deg, var(--navy-3), var(--navy));
+  color:var(--cream);
+  border-radius:12px;
+  padding:22px 24px;
+  position:relative;
+  overflow:hidden;
+}
+.message-box::before{
+  content:"오늘의 메시지";
+  position:absolute; top:14px; right:18px;
+  font-size:11px; letter-spacing:.2em; color:var(--gold-2); text-transform:uppercase;
+}
+.message-box h4{margin:0 0 10px; color:var(--gold-2); font-size:15px; font-weight:700; padding-right:110px;}
+.message-box p{margin:0; font-size:14.5px; line-height:1.85; color:#efe9d8;}
+
+/* ===== Modal ===== */
+.modal-overlay{
+  position:fixed; inset:0; background:rgba(15,24,48,.55);
+  display:none; align-items:center; justify-content:center;
+  z-index:200; padding:20px; backdrop-filter:blur(2px);
+}
+.modal-overlay.open{display:flex;}
+.modal-box{
+  background:#fffdf8; max-width:520px; width:100%;
+  border-radius:14px; padding:28px 26px 24px;
+  box-shadow:0 24px 60px rgba(0,0,0,.35);
+  max-height:80vh; overflow-y:auto;
+  border-top:5px solid var(--gold);
+}
+.modal-box .mtag{font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#a5842f; font-weight:700; margin-bottom:8px;}
+.modal-box h3{margin:0 0 14px; color:var(--navy); font-size:19px; font-family:'Noto Serif KR',serif;}
+.modal-box .mbody{font-size:14.5px; color:#3a382f; line-height:1.85;}
+.modal-box .mbody p{margin:0 0 12px;}
+.modal-close{
+  margin-top:18px; background:var(--navy); color:#fff; border:none;
+  padding:9px 18px; border-radius:8px; font-size:13.5px; cursor:pointer; font-family:inherit;
+}
+.modal-close:hover{background:var(--navy-2);}
+
+footer{text-align:center; padding:40px 20px 60px; color:var(--sub); font-size:12.5px;}
+footer .fline{margin-bottom:4px;}
+
+@media(max-width:600px){
+  .cover{padding:56px 18px 44px;}
+  .wrap{padding:40px 16px;}
+  .verse-card{padding:16px 16px 14px;}
+  .legend-reset{margin-left:0; width:100%; text-align:right;}
+}
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="eyebrow">Romans · 로마서 강해</div>
+  <h1>복음 안에 나타난<br>하나님의 의</h1>
+  <div class="verse-ref">로마서 1장 절별 상세 강해</div>
+  <div class="theme-verse">
+    "내가 복음을 부끄러워하지 아니하노니 이 복음은 모든 믿는 자에게 구원을 주시는
+    <span>하나님의 능력</span>이 됨이라 ··· 복음에는 <span>하나님의 의</span>가 나타나서
+    믿음으로 믿음에 이르게 하나니" — 로마서 1:16-17
+  </div>
+  <div class="attribution">기독교한국침례회 은혜교회 · 담임목사 박동준</div>
+</div>
+
+<div class="stickynav">
+  <a href="#overview">로마서 개관</a>
+  <a href="#legend">하이라이트 안내</a>
+  <a href="#p1">1:1-7 인사말</a>
+  <a href="#p2">1:8-15 감사와 소원</a>
+  <a href="#p3">1:16-17 주제절</a>
+  <a href="#p4">1:18-32 이방세계의 죄</a>
+</div>
+
+<div class="wrap" id="overview">
+  <span class="section-label">Overview</span>
+  <h2 class="title">로마서 개관</h2>
+  <div class="sub">복음의 전체 체계를 담은 바울 신학의 정점</div>
+
+  <div class="info-grid">
+    <div class="info-cell"><div class="k">저자</div><div class="v">사도 바울 (1:1)</div></div>
+    <div class="info-cell"><div class="k">기록 연대</div><div class="v">주후 57년경</div></div>
+    <div class="info-cell"><div class="k">기록 장소</div><div class="v">고린도 (3차 전도여행 말미)</div></div>
+    <div class="info-cell"><div class="k">수신자</div><div class="v">로마 교회 (유대인·이방인 혼합)</div></div>
+    <div class="info-cell"><div class="k">전달자</div><div class="v">뵈뵈 (겐그레아 교회 일꾼, 16:1-2)</div></div>
+    <div class="info-cell"><div class="k">핵심 주제</div><div class="v">복음 안에 나타난 하나님의 의</div></div>
+  </div>
+
+  <div class="prose">
+    <p>로마서는 바울이 세우지 않은 교회에 보낸 유일한 주요 서신입니다. 로마 교회는 오순절 이후 로마에 흩어져 있던 유대인들과 이방인 개종자들을 통해 자연스럽게 형성되었을 것으로 추정되며, 주후 49년 글라우디오 황제의 유대인 추방령으로 유대인 신자들이 로마를 떠났다가 이후 돌아오면서, 그 사이 이방인 중심으로 재편된 교회 안에서 유대인과 이방인 신자 사이에 신학적·관계적 긴장이 존재했습니다. 로마서 곳곳(특히 9-11장, 14장)에 흐르는 문제의식은 바로 이 긴장을 배경으로 합니다.</p>
+    <p>바울은 이 편지를 통해 세 가지를 이루고자 했습니다. 첫째, 아직 방문하지 못한 로마 교회에 자신이 전하는 복음을 체계적으로 소개하여 오해를 풀고자 했습니다(1:11-15). 둘째, 서바나(스페인) 선교를 위한 전초기지로 로마 교회의 후원을 요청하고자 했습니다(15:24, 28). 셋째, 유대인과 이방인이 그리스도 안에서 어떻게 하나의 백성이 되는지를 신학적으로 논증하고자 했습니다.</p>
+    <p>그 결과 로마서는 바울의 다른 서신들과 달리 특정 교회의 위기에 대응하는 상황적 편지가 아니라, 복음 전체를 처음부터 끝까지 논리적으로 펼쳐 보이는 신학 논문에 가까운 성격을 지닙니다. 그래서 초대교회 이래로 로마서는 '기독교 신학의 대헌장'으로 불려왔습니다.</p>
+  </div>
+
+  <table class="structure-table">
+    <tr><th style="width:110px;">범위</th><th>내용</th></tr>
+    <tr>
+      <td><span class="tag">1-8장</span></td>
+      <td><b>교리 — 복음이란 무엇인가</b><br>
+        1-3장 모든 인간의 죄와 심판 아래 있음 · 3-5장 믿음으로 말미암는 칭의 · 6-8장 성령 안에서의 성화와 승리</td>
+    </tr>
+    <tr>
+      <td><span class="tag">9-11장</span></td>
+      <td><b>이스라엘 — 하나님은 신실하신가</b><br>
+        이스라엘의 불신앙에도 불구하고 변함없는 하나님의 언약적 신실하심과 구원 계획</td>
+    </tr>
+    <tr>
+      <td><span class="tag">12-16장</span></td>
+      <td><b>실천 — 복음은 어떻게 사는가</b><br>
+        산 제사로서의 삶, 교회 공동체의 윤리, 국가와 이웃에 대한 태도, 개인적 인사</td>
+    </tr>
+  </table>
+
+  <div class="prose" style="margin-top:18px;">
+    <p style="margin-bottom:0;"><b>신학사적 무게.</b> 로마서는 교회사의 결정적 순간마다 다시 등장합니다. 어거스틴은 로마서 13:13-14을 읽다가 회심했고, 마르틴 루터는 로마서 1:17 '오직 의인은 믿음으로 말미암아 살리라'를 통해 이신칭의를 재발견하며 종교개혁의 문을 열었으며, 존 웨슬리는 알더스게이트 집회에서 로마서 서문이 낭독되는 중 '마음이 이상하게 뜨거워짐'을 경험했습니다. 1장은 바로 이 모든 흐름이 시작되는 자리입니다.</p>
+  </div>
+</div>
+
+<div class="wrap" id="legend" style="padding-top:0;">
+  <div class="legend-box">
+    <div class="lt">본문 안의 색상 하이라이트 — 버튼을 누르면 해당 범주만 강조되고, 나머지는 흐려집니다. 단어 위에 마우스를 올리면(모바일은 길게 터치) 간단한 뜻이 뜹니다.</div>
+    <div class="legend-row">
+      <button class="legend-btn" data-cat="theo"><span class="legend-dot" style="background:var(--hl-theo)"></span>신학 핵심 개념</button>
+      <button class="legend-btn" data-cat="greek"><span class="legend-dot" style="background:var(--hl-greek)"></span>헬라어 원어</button>
+      <button class="legend-btn" data-cat="person"><span class="legend-dot" style="background:var(--hl-person)"></span>인물 · 관계</button>
+      <button class="legend-btn" data-cat="sin"><span class="legend-dot" style="background:var(--hl-sin)"></span>죄악 · 경고</button>
+      <button class="legend-reset" id="resetFilter">전체 보기로 초기화</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ PERICOPE A ============ -->
+<div class="wrap pericope" id="p1">
+  <div class="pericope-head"><span class="range">1:1–7</span><span class="name">인사말 — 사도의 자기소개와 문안</span></div>
+  <p class="pericope-intro">고대 서신의 관례(발신자–수신자–인사)를 따르되, 바울은 이 짧은 일곱 절 안에 복음의 핵심 내용(그리스도의 인성과 신성, 부활, 사도직의 근거)을 압축해 담습니다. 세우지 않은 교회에 보내는 편지이기에, 처음부터 자신의 권위와 복음의 정통성을 분명히 해 둘 필요가 있었습니다.</p>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">1</span></div>
+    <div class="verse-text"><mark class="hl-person" data-tip="이 편지의 저자">바울</mark>은 <mark class="hl-person" data-tip="바울이 섬기는 대상">그리스도 예수</mark>의 <mark class="hl-theo" data-tip="δοῦλος(둘로스) — 종, 노예. 전적 소유와 헌신을 뜻함">종</mark>, 부르심을 받은 <mark class="hl-theo" data-tip="ἀπόστολος(아포스톨로스) — 보내심을 받은 자">사도</mark>, <mark class="hl-theo" data-tip="εὐαγγέλιον(유앙겔리온) — 좋은 소식">복음</mark>을 위해 택정함을 입었으니</div>
+    <div class="verse-gloss">
+      <p>바울은 자신을 세 겹으로 소개합니다. '종'은 노예를 가리키는 단어로, 자기 뜻이 아니라 주인의 뜻대로 사는 존재라는 전적 헌신을 뜻합니다. '사도'는 그리스도께서 직접 보내신 자라는 권위의 근거이며, '택정함을 입었으니'(ἀφωρισμένος)는 '따로 구별되었다'는 뜻으로 다메섹 도상의 부르심(갈 1:15-16)을 떠올리게 합니다.</p>
+    </div>
+    <button class="insight-btn" data-insight="v1">💡 더 깊이 — 종(δοῦλος)이라는 자기 이해</button>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">2</span></div>
+    <div class="verse-text">이 <mark class="hl-theo" data-tip="εὐαγγέλιον — 복음">복음</mark>은 하나님이 <mark class="hl-person" data-tip="구약의 예언자들">선지자들</mark>을 통하여 그의 아들에 관하여 <mark class="hl-theo" data-tip="구약 성경 전체를 가리킴">성경</mark>에 미리 약속하신 것이라</div>
+    <div class="verse-gloss">
+      <p>복음은 갑작스레 등장한 새 종교가 아니라, 구약 전체가 예고해 온 하나님의 오랜 계획이 성취된 사건임을 첫머리에서부터 못박습니다. 로마 교회 안에 있던 '복음이 유대교와 단절인가 연속인가'라는 물음에 대한 답을 미리 제시하는 셈입니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">3–4</span></div>
+    <div class="verse-text">그의 아들에 관하여 말하면 <mark class="hl-theo" data-tip="메시아의 자격 — 삼하 7:12-13 언약의 성취">육신으로는 다윗의 혈통</mark>에서 나셨고, 성결의 영으로는 <mark class="hl-theo" data-tip="그리스도의 신성이 공적으로 확증된 사건">죽은 자들 가운데서 부활</mark>하사 능력으로 <mark class="hl-person" data-tip="영원 전부터의 신분이 역사 속에서 확증됨">하나님의 아들</mark>로 인정되셨으니 곧 우리 <mark class="hl-person" data-tip="예수 그리스도">주 예수 그리스도</mark>시니라</div>
+    <div class="verse-gloss">
+      <p>학자들은 이 두 절을 바울이 초대교회에서 이미 사용되던 신앙고백 문구를 인용한 것으로 봅니다. '육신으로는'과 '성결의 영으로는'의 대구는 그리스도의 인성과 신성을 동시에 선언합니다. 부활로 그가 '하나님의 아들로 인정되셨다'는 말은 그때 비로소 아들이 되셨다는 뜻이 아니라, 영원 전부터의 신분이 부활을 통해 공적으로 확증되었다는 뜻입니다.</p>
+    </div>
+    <button class="insight-btn" data-insight="v4">💡 더 깊이 — '인정되셨으니'의 번역 논쟁</button>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">5</span></div>
+    <div class="verse-text">그로 말미암아 우리가 <mark class="hl-theo" data-tip="χάρις — 은혜">은혜</mark>와 사도의 직분을 받아 그의 이름을 위하여 모든 이방인 중에서 <mark class="hl-theo" data-tip="πίστεως ὑπακοήν — 믿음의 순종. 로마서 전체를 감싸는 핵심 어구(1:5, 16:26)">믿어 순종</mark>하게 하나니</div>
+    <div class="verse-gloss">
+      <p>'믿음의 순종'은 로마서의 처음(1:5)과 끝(16:26)을 감싸는 수미상관 어구입니다. 믿음과 순종을 대립시키지 않고 하나로 묶음으로써, 참된 믿음은 반드시 순종하는 삶으로 나타난다는 로마서 전체의 뼈대를 처음부터 세워 둡니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">6</span></div>
+    <div class="verse-text">너희도 그들 중에서 <mark class="hl-person" data-tip="예수 그리스도">예수 그리스도</mark>의 것으로 <mark class="hl-theo" data-tip="κλητός — 부르심을 받은 자">부르심을 받은</mark> 자니라</div>
+    <div class="verse-gloss">
+      <p>로마 교회 성도들을 이방인 선교의 결실 안에 위치시키며, 아직 만난 적 없는 바울과 로마 교회 사이에 이미 존재하는 연대감을 확인시킵니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">7</span></div>
+    <div class="verse-text"><mark class="hl-person" data-tip="로마에 있는 성도들">로마</mark>에 있어 하나님의 사랑하심을 받고 성도로 부르심을 받은 모든 자에게 <mark class="hl-person" data-tip="성부 하나님">하나님 우리 아버지</mark>와 <mark class="hl-person" data-tip="성자 예수 그리스도">주 예수 그리스도</mark>로부터 <mark class="hl-theo" data-tip="은혜(카리스)와 평강(샬롬) — 헬라식 인사와 히브리식 인사의 결합">은혜와 평강</mark>이 있기를 원하노라</div>
+    <div class="verse-gloss">
+      <p>고대 서신의 정형화된 인사말 '카이레인'(기뻐하라)을 바울은 '카리스'(은혜)로 바꾸고, 여기에 히브리적 인사 '샬롬'(평강)을 더해 유대와 헬라 두 세계를 복음 안에서 하나로 묶습니다. 하나님 아버지와 그리스도를 나란히 은혜와 평강의 근원으로 언급하는 것 자체가 초기 고기독론(高基督論)의 뚜렷한 증거입니다.</p>
+    </div>
+  </div>
+
+  <div class="message-box">
+    <h4>인사말이 주는 메시지</h4>
+    <p>바울은 인사말 한 단락 안에 이미 복음의 전부를 요약해 둡니다. 우리가 신앙생활을 시작할 때도 마찬가지입니다. '나는 무엇에 부르심을 받았는가', '내 믿음은 순종으로 나타나고 있는가'를 매일의 첫 물음으로 삼을 때, 신앙은 정보가 아니라 삶이 됩니다.</p>
+  </div>
+</div>
+
+<!-- ============ PERICOPE B ============ -->
+<div class="wrap pericope" id="p2">
+  <div class="pericope-head"><span class="range">1:8–15</span><span class="name">감사와 로마 방문의 소원</span></div>
+  <p class="pericope-intro">바울 서신에 자주 나오는 '감사 단락'입니다. 얼굴을 본 적 없는 교회를 향한 바울의 애정과, 사도라도 성도들에게서 위로를 받는다는 겸손한 상호성이 드러납니다.</p>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">8</span></div>
+    <div class="verse-text">먼저 내가 예수 그리스도로 말미암아 너희 모든 사람에 관하여 내 하나님께 감사함은 너희 <mark class="hl-theo" data-tip="πίστις — 믿음">믿음</mark>이 온 세상에 전파됨이로다</div>
+    <div class="verse-gloss">
+      <p>로마는 제국의 수도였기에, 로마 교회의 믿음이 '온 세상'에 전파된다는 말은 과장이 아니라 로마가 지닌 상징적 중심성을 반영한 표현입니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">9–10</span></div>
+    <div class="verse-text">내가 그의 아들의 복음 안에서 내 심령으로 섬기는 하나님이 나의 증인이 되시거니와 항상 내 기도에 쉬지 않고 너희를 말하며, 어떻게 하든지 이제 <mark class="hl-theo" data-tip="바울의 계획은 언제나 하나님의 주권 아래 있음">하나님의 뜻</mark> 안에서 너희에게로 나아갈 좋은 길 얻기를 구하노라</div>
+    <div class="verse-gloss">
+      <p>바울의 쉬지 않는 중보기도 습관과 로마 방문에 대한 간절함이 드러납니다. '하나님의 뜻 안에서'라는 단서는, 사도조차 자신의 계획을 언제나 하나님의 주권 아래 두는 겸손한 신앙 태도를 보여줍니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">11–12</span></div>
+    <div class="verse-text">내가 너희 보기를 간절히 원하는 것은 어떤 신령한 은사를 너희에게 나누어 주어 너희를 견고하게 하려 함이니, 이는 곧 내가 너희 가운데서 너희와 나의 믿음으로 말미암아 <mark class="hl-theo" data-tip="일방적 시혜가 아닌 상호 격려">피차 안위함</mark>을 얻으려 함이라</div>
+    <div class="verse-gloss">
+      <p>바울은 자신을 일방적인 시혜자로 그리지 않습니다. '피차'(서로)라는 단어를 통해, 사도라 할지라도 성도들의 믿음에서 위로를 받는다는 상호성을 겸손히 인정합니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">13–14</span></div>
+    <div class="verse-text">형제들아 내가 여러 번 너희에게 가고자 한 것을 너희가 모르기를 원하지 아니하노니 ··· 헬라인이나 야만인이나 지혜 있는 자나 어리석은 자에게 다 내가 <mark class="hl-theo" data-tip="ὀφειλέτης — 빚진 자. 복음은 특정 계층의 전유물이 아니라 모든 인류에게 진 빚">빚진 자</mark>라</div>
+    <div class="verse-gloss">
+      <p>'빚진 자'라는 표현은 복음이 문화적·지적 계층을 초월해 모든 인류에게 지고 있는 사명임을 강조합니다. 헬라인이든 야만인이든, 지혜자든 어리석은 자든 예외가 없습니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">15</span></div>
+    <div class="verse-text">그러므로 나는 할 수 있는 대로 로마에 있는 너희에게도 <mark class="hl-theo" data-tip="εὐαγγελίσασθαι — 복음을 전하다">복음 전하기</mark>를 원하노라</div>
+    <div class="verse-gloss">
+      <p>로마 방문의 목적이 명시적으로 선언됩니다 — 관광도, 정치적 목적도 아닌 오직 복음 전파입니다.</p>
+    </div>
+  </div>
+
+  <div class="message-box">
+    <h4>감사 단락이 주는 메시지</h4>
+    <p>바울은 아직 만나지도 못한 성도들을 위해 쉬지 않고 기도했습니다. 참된 목회적 사랑은 눈앞의 관계를 넘어서까지 넓어집니다. 우리 역시 아직 만나지 못한 이들, 아직 복음을 듣지 못한 이들을 향한 '빚진 자'의 마음을 회복해야 합니다.</p>
+  </div>
+</div>
+
+<!-- ============ PERICOPE C ============ -->
+<div class="wrap pericope" id="p3">
+  <div class="pericope-head"><span class="range">1:16–17</span><span class="name">로마서 전체의 주제절</span></div>
+  <p class="pericope-intro">단 두 절이지만 로마서 전체, 나아가 종교개혁 신학 전체의 심장부입니다. 이 두 절 안에 복음의 능력, 대상의 보편성, 그리고 칭의의 원리(믿음)가 압축되어 있습니다.</p>
+
+  <div class="verse-card" style="border-left-color:var(--gold-b,#a5842f);">
+    <div class="verse-head"><span class="verse-num">16</span></div>
+    <div class="verse-text">내가 <mark class="hl-theo" data-tip="당시 십자가에 달린 메시아를 전하는 것은 로마 사회에서 극도로 수치스러운 일이었음">복음을 부끄러워하지 아니하노니</mark> 이 복음은 모든 믿는 자에게 구원을 주시는 <mark class="hl-theo" data-tip="δύναμις — 실제로 역사하는 힘, 정보가 아닌 능력">하나님의 능력</mark>이 됨이라 먼저는 <mark class="hl-person" data-tip="구속사적 우선성">유대인</mark>에게요 그리고 <mark class="hl-person" data-tip="복음의 보편적 확장">헬라인</mark>에게로다</div>
+    <div class="verse-gloss">
+      <p>로마서 전체의 주제 선언입니다. '부끄러워하지 아니하노니'는, 로마 제국의 심장부에서 십자가에 달린 메시아를 전하는 일이 얼마나 사회적으로 수치스러운 일이었는지를 역설적으로 드러내는 표현입니다. '먼저는 유대인에게요 그리고 헬라인에게'는 구속사적 순서(유대인의 우선성)를 인정하면서도 복음이 결국 모든 민족을 향한다는 보편성을 선언합니다.</p>
+    </div>
+    <button class="insight-btn" data-insight="v16">💡 더 깊이 — 십자가와 로마의 명예-수치 문화</button>
+  </div>
+
+  <div class="verse-card" style="border-left-color:var(--gold-b,#a5842f);">
+    <div class="verse-head"><span class="verse-num">17</span></div>
+    <div class="verse-text">복음에는 <mark class="hl-theo" data-tip="δικαιοσύνη θεοῦ — 종교개혁의 분수령이 된 표현">하나님의 의</mark>가 나타나서 <mark class="hl-theo" data-tip="처음부터 끝까지 오직 믿음으로">믿음으로 믿음에</mark> 이르게 하나니 기록된 바 오직 <mark class="hl-theo" data-tip="합박국 2:4 인용">의인은 믿음으로 말미암아 살리라</mark> 함과 같으니라</div>
+    <div class="verse-gloss">
+      <p>'하나님의 의'라는 표현의 해석은 종교개혁의 분수령이 되었습니다. 마르틴 루터는 이것을 '심판하는 의'가 아니라 '하나님이 값없이 주시는 의'로 재발견하며 이신칭의 교리의 기초를 놓았습니다. '믿음으로 믿음에'는 처음부터 끝까지 오직 믿음으로 이루어지는 구원의 과정을 강조하는 히브리적 표현이며, 합박국 2:4 인용은 이 진리가 이미 구약에서부터 이어져 온 것임을 증명합니다.</p>
+      <p><b>'믿음으로 믿음에'(ἐκ πίστεως εἰς πίστιν)는 조금 더 풀어서 설명이 필요한 구절입니다.</b> 헬라어 원문을 문자 그대로 옮기면 '믿음으로부터 믿음을 향하여'인데, 같은 단어를 반복하는 이런 표현은 히브리어와 헬라어 모두에서 '처음부터 끝까지', '철저하게', '온전히'라는 뜻을 강조하는 관용적 표현법입니다. 예를 들어 '영광에서 영광으로'(고후 3:18), '능력은 능력으로'(시 84:7) 같은 구절도 같은 화법입니다. 그러니 1:17을 쉽게 풀면, "사람이 하나님 앞에 의롭다 함을 얻는 길은 시작도 믿음이고 과정도 믿음이고 끝도 믿음, 오직 믿음 하나로만 이루어진다"는 뜻입니다. 즉 구원은 '어느 정도는 내 노력, 어느 정도는 믿음'이 아니라, 처음 믿을 때부터 마지막 그날까지 처음부터 끝까지 믿음만으로 이루어진다는 것을 강조하는 표현입니다.</p>
+    </div>
+    <button class="insight-btn" data-insight="v17">💡 더 깊이 — 루터의 탑의 체험(Turmerlebnis)</button>
+    <button class="insight-btn" data-insight="v17b">💡 더 깊이 — '믿음으로 믿음에', 다른 해석들도 있을까</button>
+  </div>
+
+  <div class="message-box">
+    <h4>주제절이 주는 메시지</h4>
+    <p>복음은 부끄러워할 것이 아니라 자랑할 능력입니다. 우리의 의로 하나님 앞에 설 수 없기에, 하나님께서 그리스도 안에서 값없이 주시는 의를 '믿음으로' 받는 것 — 이것이 처음부터 지금까지 변하지 않는 구원의 유일한 길입니다.</p>
+  </div>
+</div>
+
+<!-- ============ PERICOPE D ============ -->
+<div class="wrap pericope" id="p4">
+  <div class="pericope-head"><span class="range">1:18–32</span><span class="name">하나님을 거부한 인류의 죄</span></div>
+  <p class="pericope-intro">1:17 '하나님의 의가 나타나서'와 정확히 대구를 이루는 1:18 '하나님의 진노가 ··· 나타나나니'로 시작합니다. 바울은 이 단락에서 이방 세계 전체가 어떻게 창조주를 알고도 거부하여 총체적 타락에 이르렀는지를 논증하며, 이는 2장에서 '그러므로 남을 판단하는 자여'(2:1)라는 반전으로 이어질 논증의 첫 단계입니다.</p>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">18</span></div>
+    <div class="verse-text"><mark class="hl-sin" data-tip="ὀργὴ θεοῦ — 죄에 대한 하나님의 거룩한 반응">하나님의 진노</mark>가 불의로 진리를 막는 사람들의 모든 <mark class="hl-sin" data-tip="ἀσέβεια — 하나님을 향한 죄">경건하지 않음</mark>과 <mark class="hl-sin" data-tip="ἀδικία — 사람을 향한 죄">불의</mark>에 대하여 하늘로부터 <mark class="hl-theo" data-tip="1:17 '나타나서'와 의도적으로 대구를 이루는 단어">나타나나니</mark></div>
+    <div class="verse-gloss">
+      <p>1:17의 '하나님의 의가 나타나서'와 1:18의 '하나님의 진노가 나타나나니'는 바울이 의도적으로 만든 대구입니다. 복음이 계시하는 것은 구원의 의만이 아니라 심판의 진노도 포함합니다. '진리를 막는'(κατεχόντων)은 인간이 하나님에 대한 진리를 알면서도 능동적으로 억누른다는 뜻입니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">19–20</span></div>
+    <div class="verse-text">이는 하나님을 알 만한 것이 그들 속에 보임이라 ··· 창세로부터 그의 보이지 아니하는 것들 곧 그의 <mark class="hl-theo" data-tip="일반계시의 핵심 근거 본문">영원하신 능력과 신성</mark>이 그가 만드신 만물에 분명히 보여 알려졌나니 그러므로 그들이 <mark class="hl-sin" data-tip="ἀναπολόγητος — 변명할 수 없음">핑계하지 못할지니라</mark></div>
+    <div class="verse-gloss">
+      <p>일반계시(자연계시) 교리의 핵심 본문입니다. 창조세계를 통해 하나님의 존재와 속성이 '분명히 보여' 모든 인간이 핑계할 수 없다고 선언합니다. 이는 성경 없이도 인간이 하나님을 전혀 알 수 없다는 뜻이 아니라, 알 만한 것을 알고도 거부한다는 뜻입니다.</p>
+    </div>
+    <button class="insight-btn" data-insight="v20">💡 더 깊이 — 일반계시와 특별계시</button>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">21–23</span></div>
+    <div class="verse-text">하나님을 알되 하나님을 영화롭게도 아니하며 감사하지도 아니하고 오히려 그 생각이 <mark class="hl-sin" data-tip="ματαιόω — 헛되어짐">허망하여지며</mark> 미련한 마음이 <mark class="hl-sin" data-tip="영적 분별력의 상실">어두워졌나니</mark> 스스로 지혜 있다 하나 어리석게 되어 썩어지지 아니하는 하나님의 영광을 썩어질 사람과 새와 짐승과 기어다니는 동물 모양의 <mark class="hl-sin" data-tip="창조주와 피조물의 자리를 바꾸는 죄">우상</mark>으로 바꾸었느니라</div>
+    <div class="verse-gloss">
+      <p>죄의 본질을 세 단계의 '교환'(바꾸었느니라)으로 묘사합니다 — 영광을 우상과(23절), 진리를 거짓과(25절), 순리를 역리와(26절) 바꾸는 것입니다. 타락의 논리적 순서는 이렇습니다: 하나님을 알고도 영화롭게/감사하지 않음 → 생각이 허망해짐 → 마음이 어두워짐 → 우상숭배. 이것이 로마서 1장이 그리는 인류 타락의 궤적입니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">24</span></div>
+    <div class="verse-text">그러므로 하나님께서 그들을 마음의 정욕대로 더러움에 <mark class="hl-sin" data-tip="παρέδωκεν — 넘겨주다, 방치하다. 1장에서 24·26·28절 세 번 반복되는 핵심 동사">내버려 두사</mark> 그들의 몸을 서로 욕되게 하게 하셨으니</div>
+    <div class="verse-gloss">
+      <p>'내버려 두셨으니'는 1장에서 세 번(24, 26, 28절) 반복되는 핵심 동사입니다. 하나님의 심판이 여기서는 능동적 개입이 아니라 '허용적 심판' — 인간이 원하는 대로 그 죄의 결과 속에 방치하시는 형태로 나타납니다.</p>
+    </div>
+    <button class="insight-btn" data-insight="v24">💡 더 깊이 — 세 번 반복되는 '내버려 두심'의 구조</button>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">25</span></div>
+    <div class="verse-text">이는 그들이 하나님의 진리를 <mark class="hl-sin" data-tip="ψεῦδος — 거짓">거짓 것으로 바꾸어</mark> <mark class="hl-theo" data-tip="창조하신 분">창조주</mark>보다 <mark class="hl-theo" data-tip="지음받은 존재">피조물</mark>을 더 경배하고 섬김이라 주는 곧 영원히 찬송할 이시로다 아멘</div>
+    <div class="verse-gloss">
+      <p>우상숭배의 본질을 '창조주-피조물'의 구분이 무너지는 것으로 정의합니다. 모든 형태의 우상숭배는 결국 지음받은 것을 지으신 분의 자리에 놓는 것입니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">26–27</span></div>
+    <div class="verse-text">이 때문에 하나님께서 그들을 부끄러운 욕심에 <mark class="hl-sin" data-tip="παρέδωκεν 두 번째 반복">내버려 두셨으니</mark> 곧 그들의 여자들도 순리대로 쓸 것을 바꾸어 역리로 쓰며, 그와 같이 남자들도 순리대로 여자 쓰기를 버리고 서로 향하여 음욕이 불 일듯 하매 ··· 그 그릇됨에 상당한 보응을 그들 자신이 받았느니라</div>
+    <div class="verse-gloss">
+      <p>바울은 우상숭배(하나님과의 관계 왜곡)의 결과로 나타나는 인간관계의 왜곡을 보여주는 하나의 대표적 예로 이 본문을 제시합니다. 로마서 1장의 논증 구조에서 중요한 것은, 이 죄만을 유별나게 지목하는 것이 아니라 이어지는 29-31절의 광범위한 죄 목록 전체가 '하나님을 하나님으로 인정하지 않은'(21절) 동일한 근본 문제에서 흘러나온다는 점입니다. 이 본문은 반드시 32절까지의 전체 흐름, 그리고 2:1 '그러므로 남을 판단하는 사람아 ··· 네가 핑계하지 못할 것은'이라는 전환과 함께 읽어야 하며, 바울의 최종 목적은 특정한 죄를 별도로 정죄하는 것이 아니라 모든 인간이 예외 없이 하나님의 심판 아래 있음(3:23)을 논증하는 데 있습니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">28</span></div>
+    <div class="verse-text">또한 그들이 마음에 하나님 두기를 싫어하매 하나님께서 그들을 그 <mark class="hl-sin" data-tip="ἀδόκιμον νοῦν — '인정받지 못한/불합격한' 마음. 헬라어 언어유희">상실한 마음</mark>대로 내버려 두사 합당하지 못한 일을 하게 하셨으니</div>
+    <div class="verse-gloss">
+      <p>헬라어 원문에는 언어유희가 있습니다 — '하나님을 알기를 (시험하여) 합당하다 인정하지 않으매'(οὐκ ἐδοκίμασαν) → 그 결과 '합당치 못한(ἀδόκιμον, 불합격 판정을 받은) 마음'에 내버려지는 것입니다. 인간이 하나님을 판단(시험)하려 들자, 결국 자신이 불합격 판정을 받는 아이러니입니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">29–31</span></div>
+    <div class="verse-text">곧 모든 <mark class="hl-sin">불의, 추악, 탐욕, 악의</mark>가 가득한 자요 <mark class="hl-sin">시기, 살인, 분쟁, 사기, 악독</mark>이 가득한 자요 수군수군하는 자요, <mark class="hl-sin">비방하는 자요 하나님께서 미워하시는 자요 능욕하는 자요 교만한 자요 자랑하는 자요 악을 도모하는 자요 부모를 거역하는 자요</mark>, <mark class="hl-sin">우매한 자요 배약하는 자요 무정한 자요 무자비한 자</mark>라</div>
+    <div class="verse-gloss">
+      <p>헬라 문학에 익숙한 '죄악 목록'(vice list) 형식을 빌려온 것으로, 성적 타락뿐 아니라 시기·살인·사기·수군거림·비방·교만·부모 거역·무정함 등 관계적·사회적 죄까지 폭넓게 포괄합니다. 이는 26-27절이 죄 목록 전체의 한 예일 뿐, 그 자체가 유일한 강조점이 아님을 문학적으로 뒷받침합니다.</p>
+    </div>
+  </div>
+
+  <div class="verse-card">
+    <div class="verse-head"><span class="verse-num">32</span></div>
+    <div class="verse-text">그들이 이같은 일을 행하는 자는 <mark class="hl-sin" data-tip="죄의 마땅한 결과">사형에 해당한다</mark>고 <mark class="hl-theo" data-tip="양심을 통한 하나님에 대한 앎">하나님의 정하심을 알고도</mark> 자기들만 행할 뿐 아니라 또한 그런 일을 행하는 자들을 <mark class="hl-sin" data-tip="συνευδοκοῦσιν — 함께 기뻐하고 인정함. 양심의 완전한 마비">옳다 하느니라</mark></div>
+    <div class="verse-gloss">
+      <p>1장의 절정입니다. 죄의 최종 단계는 죄를 행하는 것 자체를 넘어, 그 죄를 '옳다 함' — 사회적으로 정당화하고 함께 기뻐하며 축하하는 단계입니다. 양심의 완전한 마비를 보여주며, 이는 2장의 '그러므로'(2:1)로 자연스럽게 이어지는 반전의 발판이 됩니다.</p>
+    </div>
+    <button class="insight-btn" data-insight="v32">💡 더 깊이 — 1장에서 2장으로, 바울의 수사적 전략</button>
+  </div>
+
+  <div class="message-box">
+    <h4>이방세계의 죄 단락이 주는 메시지</h4>
+    <p>이 본문은 '저들'의 죄를 나열하는 데서 끝나지 않습니다. 바울의 진짜 목적지는 2장 1절, '남을 판단하는 그대도 똑같이 행하고 있다'는 반전입니다. 1장을 읽으며 손가락질할 대상을 찾기 전에, 우리 각자의 마음에도 '하나님 두기를 싫어하는' 자리가 없는지 먼저 돌아보아야 합니다. 심판의 진노 앞에 선 인류에게 남은 유일한 희망은 1:16-17이 선언한 '믿음으로 말미암는 하나님의 의'뿐입니다.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="fline">로마서 1장 강해 · 색상 하이라이트 / 원어 팝업 / 단락별 메시지 포함</div>
+  <div class="fline">기독교한국침례회 은혜교회 · 담임목사 박동준</div>
+</footer>
+
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box">
+    <div class="mtag" id="modalTag">더 깊이</div>
+    <h3 id="modalTitle"></h3>
+    <div class="mbody" id="modalBody"></div>
+    <button class="modal-close" id="modalClose">닫기</button>
+  </div>
+</div>
+
+<script>
+const INSIGHTS = {
+  v1: {
+    title: "종(δοῦλος)이라는 자기 이해",
+    body: "<p>구약에서 모세, 여호수아, 다윗, 그리고 여러 선지자들은 스스로를 '여호와의 종'으로 불렀습니다. 바울이 자신을 그리스도의 '종'으로 소개하는 것은 단순한 겸손의 표현을 넘어, 자신의 사역이 구속사의 오랜 계보 위에 놓여 있음을 암시하는 신학적 자기 규정입니다.</p><p>또한 로마 사회에서 '노예'라는 단어는 극히 낮은 신분을 뜻했습니다. 사도라는 높은 직분을 소개하기 직전에 '종'이라는 낮은 신분을 먼저 언급함으로써, 바울은 자신의 권위가 자기 성취가 아니라 전적으로 위임받은 것임을 분명히 합니다.</p>"
+  },
+  v4: {
+    title: "'인정되셨으니'(ὁρισθέντος)의 번역 논쟁",
+    body: "<p>헬라어 '호리스덴토스'는 '경계를 정하다, 확정하다, 선언하다'라는 뜻을 지닙니다. 이를 어떻게 번역하느냐에 따라 신학적 함의가 크게 달라질 수 있어, 초대교회부터 이 단어를 둘러싼 신중한 해석이 이어져 왔습니다.</p><p>정통 기독론은 이 단어를 '이미 참되신 하나님의 아들이심이 부활을 통해 공적으로 확증/선언되었다'는 뜻으로 이해합니다. 즉 부활이 그리스도를 하나님의 아들로 '만든' 것이 아니라, 영원 전부터의 신분을 역사 속에서 '드러낸' 사건이라는 것입니다.</p>"
+  },
+  v16: {
+    title: "십자가와 로마의 명예-수치 문화",
+    body: "<p>고대 로마 사회는 철저한 명예-수치 체계 위에 세워져 있었습니다. 십자가형은 그중에서도 가장 수치스러운 처형 방식으로, 주로 노예와 반역자에게 집행되었으며 로마 시민에게는 원칙적으로 금지되었을 정도였습니다.</p><p>이런 문화 속에서 '십자가에 달려 죽은 자가 구원자'라는 복음의 메시지는 세상의 지혜로 볼 때 어리석고 수치스러운 것이었습니다(고전 1:18-23). 바울이 로마의 심장부를 향해 '내가 복음을 부끄러워하지 아니하노니'라고 선언하는 것은, 로마 문화 전체의 가치 체계를 정면으로 뒤집는 담대한 선포였습니다.</p>"
+  },
+  v17: {
+    title: "루터의 탑의 체험(Turmerlebnis)",
+    body: "<p>마르틴 루터는 오랫동안 '하나님의 의'라는 표현을 두려워했습니다. 그는 이 말을 죄인을 심판하는 하나님의 공의로 이해했고, 그 앞에서 자신이 결코 의로울 수 없다는 절망감에 시달렸습니다.</p><p>그러나 비텐베르크 수도원 탑 서재에서 로마서 1:17을 묵상하던 중, 루터는 '하나님의 의'가 심판하는 의가 아니라 하나님께서 믿는 자에게 값없이 '주시는' 의라는 사실을 깨닫습니다. 이 발견의 순간을 후에 그는 '천국의 문이 열리는 것 같았다'고 회고했으며, 이 통찰은 이신칭의 교리와 종교개혁 전체의 신학적 출발점이 되었습니다.</p>"
+  },
+  v17b: {
+    title: "'믿음으로 믿음에', 다른 해석들도 있을까",
+    body: "<p>대부분의 개신교 주석은 '믿음으로 믿음에'를 위에서 설명한 대로 '처음부터 끝까지 오직 믿음으로'라는 강조 표현으로 읽습니다. 이것이 가장 널리 받아들여지는 해석입니다.</p><p>다만 학자들 사이에는 몇 가지 다른 결의 해석도 제기되어 왔습니다. 어떤 이들은 앞의 '믿음'을 하나님의 '신실하심'(πίστις에는 '신실함'이라는 뜻도 있음)으로, 뒤의 '믿음'을 사람의 '믿음'으로 읽어 '하나님의 신실하심으로부터 사람의 믿음에 이르기까지'로 해석하기도 합니다. 또 어떤 이들은 구약 시대 성도들의 믿음에서 신약 시대 성도들의 믿음으로 이어지는 구속사적 흐름으로, 또 다른 이들은 한 사람이 처음 믿을 때의 믿음에서 점점 자라가는 믿음으로 나아가는 개인의 성장 과정으로 이해하기도 합니다.</p><p>이런 해석의 다양성이 있지만, 어느 경우든 결론은 크게 다르지 않습니다. 구원은 처음부터 끝까지, 하나님 편에서든 사람 편에서든 '믿음'이라는 통로를 통해서만 이루어진다는 것 — 이 점에서는 모든 해석이 일치합니다.</p>"
+  },
+  v20: {
+    title: "일반계시와 특별계시",
+    body: "<p>신학에서는 하나님을 아는 두 가지 통로를 구분합니다. '일반계시'는 창조세계와 인간의 양심을 통해 누구에게나 주어지는 계시로, 하나님의 존재와 능력, 신성을 드러내지만 구원의 길까지 온전히 알려주지는 못합니다. '특별계시'는 성경과 예수 그리스도를 통해 주어지는 계시로, 구원에 이르는 구체적인 길을 알려줍니다.</p><p>로마서 1:20은 일반계시가 실재한다는 것, 그리고 그것만으로도 인간이 하나님을 전혀 몰랐다고 핑계할 수 없을 만큼 충분하다는 것을 분명히 합니다. 문제는 계시의 부족이 아니라 인간의 억누름(1:18)에 있습니다.</p>"
+  },
+  v24: {
+    title: "세 번 반복되는 '내버려 두심'의 구조",
+    body: "<p>1장에서 '내버려 두사'(παρέδωκεν)는 정확히 세 번, 점층적으로 반복됩니다. 24절은 '몸의 더러움'(관계적·성적 타락), 26절은 '부끄러운 욕심'(자연의 질서를 거스르는 타락), 28절은 '상실한 마음'(총체적 도덕적 타락)으로 심화됩니다.</p><p>이 구조는 죄가 하나의 사건이 아니라 나선형으로 깊어지는 과정임을 보여줍니다. 하나님을 떠난 인간은 외부의 강제 없이도 스스로 점점 더 깊은 어둠으로 걸어 들어간다는 것이, 바울이 그리는 타락의 심리학입니다.</p>"
+  },
+  v32: {
+    title: "1장에서 2장으로 — 바울의 수사적 전략",
+    body: "<p>1:18-32의 죄악 목록은 유대인 독자들로 하여금 '그렇지, 이방인들은 정말 저렇다'며 자연스럽게 고개를 끄덕이게 만드는 효과가 있었습니다. 당대 유대 문헌에도 이방 세계의 도덕적 타락을 열거하는 비슷한 목록들이 존재했습니다.</p><p>그런데 바울은 2:1에서 갑자기 방향을 돌립니다. '그러므로 남을 판단하는 사람아 누구를 막론하고 네가 핑계하지 못할 것은 남을 판단하는 것으로 네 자신을 정죄함이니, 판단하는 네가 같은 일을 행함이라.' 고대 수사학에서 '디아트리베'로 불리는 이 기법은, 청중이 동의하도록 유도한 뒤 그 동의를 이용해 청중 자신을 향해 논증의 칼끝을 돌리는 전략입니다. 1장의 진짜 목적은 이방인을 정죄하는 데 있지 않고, 3:23 '모든 사람이 죄를 범하였으매'라는 보편적 결론으로 모든 독자를 이끄는 데 있습니다.</p>"
+  }
+};
+
+document.querySelectorAll('.insight-btn').forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const data = INSIGHTS[btn.dataset.insight];
+    if(!data) return;
+    document.getElementById('modalTitle').textContent = data.title;
+    document.getElementById('modalBody').innerHTML = data.body;
+    document.getElementById('modalOverlay').classList.add('open');
+  });
+});
+document.getElementById('modalClose').addEventListener('click', closeModal);
+document.getElementById('modalOverlay').addEventListener('click', e=>{
+  if(e.target.id === 'modalOverlay') closeModal();
+});
+function closeModal(){ document.getElementById('modalOverlay').classList.remove('open'); }
+
+const legendBtns = document.querySelectorAll('.legend-btn');
+legendBtns.forEach(btn=>{
+  btn.addEventListener('click', ()=>{
+    const cat = btn.dataset.cat;
+    const alreadyActive = btn.classList.contains('active');
+    legendBtns.forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('mark').forEach(m=>m.classList.remove('filter-on'));
+    if(alreadyActive){
+      document.body.classList.remove('filter-active');
+      return;
+    }
+    btn.classList.add('active');
+    document.body.classList.add('filter-active');
+    document.querySelectorAll('mark.hl-'+cat).forEach(m=>m.classList.add('filter-on'));
+  });
+});
+document.getElementById('resetFilter').addEventListener('click', ()=>{
+  legendBtns.forEach(b=>b.classList.remove('active'));
+  document.body.classList.remove('filter-active');
+  document.querySelectorAll('mark').forEach(m=>m.classList.remove('filter-on'));
+});
+</script>
+
+</body>
+</html>
