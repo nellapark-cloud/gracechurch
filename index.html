@@ -211,7 +211,7 @@
     border: 1px solid var(--gold);
     border-radius: 999px;
     background: rgba(184,147,90,0.08);
-    max-width: calc(30rem - 2.5rem);
+    max-width: 42rem;
     width: 100%;
     box-sizing: border-box;
     margin-bottom: 2rem;
@@ -434,16 +434,10 @@
     list-style:none;
     margin:0; padding:0;
     display: grid;
-    grid-template-columns: 1fr;
-    column-gap: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    column-gap: 1.4rem;
     row-gap: 0;
     border-top: 1px solid var(--rule);
-  }
-  @media (min-width: 721px) and (max-width: 1100px){
-    .doclist{ grid-template-columns: repeat(2, 1fr); }
-  }
-  @media (min-width: 1101px){
-    .doclist{ grid-template-columns: repeat(3, 1fr); }
   }
   .doclist li{ border-bottom: 1px solid var(--rule); min-width: 0; }
   .doclist a{
