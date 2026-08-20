@@ -18,6 +18,7 @@
 <meta name="twitter:image" content="https://sejonggrace.com/content/bible-by-book/new-testament/romans-chapters/og-romans.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css">
 <style>
 :root{
   --navy:#1a2744;
@@ -45,19 +46,24 @@ body{margin:0; background:var(--cream); color:var(--ink); font-family:'Noto Sans
 h1,h2,h3,h4,.serif{font-family:'Noto Serif KR',serif;}
 
 .cover{
-  background:radial-gradient(1200px 500px at 15% -10%, rgba(224,197,137,.18), transparent 60%),
-    linear-gradient(160deg, var(--navy-3), var(--navy) 55%, var(--navy-2));
-  color:var(--cream); padding:80px 24px 64px; text-align:center; position:relative; overflow:hidden;
+  background:
+    radial-gradient(120% 90% at 12% -18%, rgba(255,255,255,.92), transparent 55%),
+    radial-gradient(100% 85% at 96% 118%, rgba(255,255,255,.55), transparent 50%),
+    linear-gradient(120deg, #fbeadc 0%, #f7e2ea 24%, #ece0f4 48%, #dfe7f4 72%, #eef3e6 100%);
+  color:var(--navy); padding:80px 24px 64px; text-align:center; position:relative; overflow:hidden;
+  border-bottom:1px solid rgba(201,169,97,.35);
 }
 .cover::after{content:""; position:absolute; inset:0;
-  background:repeating-linear-gradient(90deg, rgba(201,169,97,.06) 0 1px, transparent 1px 64px); pointer-events:none;}
-.cover .eyebrow{letter-spacing:.35em; font-size:12px; color:var(--gold-2); text-transform:uppercase; margin-bottom:18px;}
-.cover h1{font-size:clamp(32px,6vw,54px); font-weight:900; margin:0 0 10px; letter-spacing:-.01em;}
-.cover .verse-ref{font-size:15px; color:var(--gold-2); margin-bottom:28px;}
-.cover .theme-verse{max-width:640px; margin:0 auto 32px; font-size:clamp(16px,2.6vw,20px); font-weight:500; color:#f1ead9;
-  border-top:1px solid rgba(224,197,137,.35); border-bottom:1px solid rgba(224,197,137,.35); padding:22px 8px;}
-.cover .theme-verse span{color:var(--gold-2); font-weight:700;}
-.cover .attribution{font-size:13px; color:rgba(246,241,230,.65); letter-spacing:.05em;}
+  background:repeating-linear-gradient(115deg, rgba(255,255,255,.4) 0 2px, transparent 2px 46px);
+  mix-blend-mode:overlay; pointer-events:none;}
+.cover .eyebrow{letter-spacing:.35em; font-size:12px; color:#a5842f; text-transform:uppercase; margin-bottom:18px; font-weight:600;}
+.cover h1{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif; font-size:clamp(32px,6vw,54px); font-weight:900; margin:0 0 10px; letter-spacing:-.02em; color:var(--navy);}
+.cover .verse-ref{font-size:15px; color:#a5842f; margin-bottom:28px; font-weight:500;}
+.cover .theme-verse{max-width:640px; margin:0 auto 32px; font-size:clamp(16px,2.6vw,20px); font-weight:500; color:var(--navy-3);
+  background:rgba(255,255,255,.55); border-radius:14px; backdrop-filter:blur(2px);
+  border-top:1px solid rgba(201,169,97,.4); border-bottom:1px solid rgba(201,169,97,.4); padding:22px 24px;}
+.cover .theme-verse span{color:#a5842f; font-weight:700;}
+.cover .attribution{font-size:13px; color:var(--sub); letter-spacing:.05em;}
 
 .stickynav{position:sticky; top:0; z-index:50; background:rgba(246,241,230,.94); backdrop-filter:blur(6px);
   border-bottom:1px solid var(--cream-2); padding:10px 16px; display:flex; gap:8px; overflow-x:auto; scrollbar-width:none;}
@@ -69,7 +75,7 @@ h1,h2,h3,h4,.serif{font-family:'Noto Serif KR',serif;}
 .wrap{max-width:880px; margin:0 auto; padding:56px 22px;}
 .section-label{display:inline-block; font-size:11px; letter-spacing:.28em; text-transform:uppercase; color:var(--gold-2);
   background:var(--navy); padding:5px 12px; border-radius:3px; margin-bottom:16px;}
-h2.title{font-size:clamp(24px,4vw,32px); font-weight:700; color:var(--navy); margin:0 0 6px;}
+h2.title{font-family:'Pretendard',-apple-system,BlinkMacSystemFont,'Noto Sans KR',sans-serif; font-size:clamp(24px,4vw,32px); font-weight:700; color:var(--navy); margin:0 0 6px; letter-spacing:-.01em;}
 .sub{color:var(--sub); font-size:14.5px; margin-bottom:30px;}
 .prose{font-size:15.5px; color:#3a382f;}
 .prose p{margin:0 0 16px;}
@@ -104,12 +110,19 @@ mark.hl-theo{background:var(--hl-theo);}
 mark.hl-greek{background:var(--hl-greek);}
 mark.hl-person{background:var(--hl-person);}
 mark.hl-sin{background:var(--hl-sin);}
-mark[data-tip]:hover::after{content:attr(data-tip); position:absolute; left:50%; bottom:135%; transform:translateX(-50%);
-  background:var(--navy-3); color:#fff; font-family:'Noto Sans KR',sans-serif; font-size:12.5px; line-height:1.5;
-  font-weight:400; padding:9px 12px; border-radius:8px; width:max-content; max-width:260px;
-  box-shadow:0 8px 20px rgba(0,0,0,.25); z-index:20; text-decoration:none; white-space:normal;}
-mark[data-tip]:hover::before{content:""; position:absolute; left:50%; bottom:115%; transform:translateX(-50%);
-  border:6px solid transparent; border-top-color:var(--navy-3); z-index:20;}
+.tip-bubble{
+  position:fixed; z-index:300;
+  background:var(--navy-3); color:#fff;
+  font-family:'Noto Sans KR',sans-serif;
+  font-size:12.5px; line-height:1.5; font-weight:400;
+  padding:9px 12px; border-radius:8px;
+  max-width:min(260px, 82vw);
+  box-shadow:0 8px 20px rgba(0,0,0,.28);
+  opacity:0; pointer-events:none;
+  transition:opacity .12s ease;
+  white-space:normal;
+}
+.tip-bubble.show{opacity:1;}
 body.filter-active mark{opacity:.28; filter:grayscale(60%);}
 body.filter-active mark.filter-on{opacity:1; filter:none;}
 
@@ -415,6 +428,8 @@ footer .fline{margin-bottom:4px;}
   <div class="fline">기독교한국침례회 은혜교회 · 담임목사 박동준</div>
 </footer>
 
+<div class="tip-bubble" id="tipBubble"></div>
+
 <div class="modal-overlay" id="modalOverlay">
   <div class="modal-box">
     <div class="mtag" id="modalTag">더 깊이</div>
@@ -484,6 +499,50 @@ document.getElementById('resetFilter').addEventListener('click', ()=>{
   document.body.classList.remove('filter-active');
   document.querySelectorAll('mark').forEach(m=>m.classList.remove('filter-on'));
 });
+
+// ---- 원어/용어 툴팁 (화면 밖으로 넘치지 않도록 위치 계산) ----
+const tipBubble = document.getElementById('tipBubble');
+let tipOwner = null;
+
+function positionTip(el){
+  const rect = el.getBoundingClientRect();
+  tipBubble.style.left = '0px';
+  tipBubble.style.top = '0px';
+  tipBubble.classList.add('show');
+  const bw = tipBubble.offsetWidth;
+  const bh = tipBubble.offsetHeight;
+  const margin = 10;
+  let left = rect.left + rect.width/2 - bw/2;
+  left = Math.max(margin, Math.min(left, window.innerWidth - bw - margin));
+  let top = rect.top - bh - 10;
+  if(top < margin){ top = rect.bottom + 10; }
+  tipBubble.style.left = left + 'px';
+  tipBubble.style.top = top + 'px';
+}
+
+function showTip(el){
+  const text = el.getAttribute('data-tip');
+  if(!text) return;
+  tipBubble.textContent = text;
+  tipOwner = el;
+  requestAnimationFrame(()=>positionTip(el));
+}
+function hideTip(){
+  tipBubble.classList.remove('show');
+  tipOwner = null;
+}
+
+document.querySelectorAll('mark[data-tip]').forEach(el=>{
+  el.addEventListener('mouseenter', ()=>showTip(el));
+  el.addEventListener('mouseleave', hideTip);
+  el.addEventListener('click', (e)=>{
+    e.stopPropagation();
+    if(tipOwner === el){ hideTip(); } else { showTip(el); }
+  });
+});
+document.addEventListener('click', ()=>{ if(tipOwner) hideTip(); });
+document.addEventListener('scroll', ()=>{ if(tipOwner) hideTip(); }, true);
+window.addEventListener('resize', ()=>{ if(tipOwner) hideTip(); });
 </script>
 
 </body>
