@@ -393,6 +393,34 @@
   .room--feature-alt .doclist .meta{ color: rgba(246,242,233,0.55); }
   .room--feature-alt .doclist__empty{ color: rgba(246,242,233,0.55); }
 
+  .room--feature-teal{
+    padding-top: 2.3vh;
+    padding-bottom: 2.3vh;
+    background: #1f4a45 !important;
+    color: var(--cream);
+    border-top: 2px solid #6fbfae;
+    border-bottom: 2px solid #6fbfae;
+  }
+  .room--feature-teal .room__title{ color: var(--cream); }
+  .room--feature-teal .room__desc{ color: rgba(246,242,233,0.72); }
+  .room--feature-teal .doclist{ border-top-color: rgba(246,242,233,0.2); }
+  .room--feature-teal .doclist li{ border-bottom-color: rgba(246,242,233,0.2); }
+  .room--feature-teal .doclist a:hover{ background: rgba(111,191,174,0.18); }
+  .room--feature-teal .doclist .title{ color: var(--cream); font-weight: 600; }
+  .room--feature-teal .doclist .tag{ color: #a6ddd0; }
+  .room--feature-teal .doclist .meta{ color: rgba(246,242,233,0.55); }
+  .room--feature-teal .doclist__empty{ color: rgba(246,242,233,0.55); }
+  .badge-lg-teal{
+    background: linear-gradient(120deg, #cdeee6 0%, #6fbfae 50%, #2f8577 100%);
+    color: #0c2c27;
+  }
+  .badge-teal{
+    background: linear-gradient(120deg, #cdeee6 0%, #6fbfae 50%, #2f8577 100%);
+    color: #0c2c27;
+  }
+  .hero__index a.featured-teal{ border-color: #6fbfae; background: rgba(111,191,174,0.08); }
+  .hero__index a.featured-teal:hover{ background: rgba(111,191,174,0.18); }
+
   .room__head{
     display:flex;
     align-items:flex-end;
@@ -670,6 +698,7 @@
 <nav class="rail" aria-label="자료실 관 이동">
   <a class="rail__mark rail__mark--feature" data-room="room-0b" href="#room-0b"><span class="badge-dot"></span><span>인생질문</span></a>
   <a class="rail__mark rail__mark--feature" data-room="room-0" href="#room-0"><span class="badge-dot"></span><span>신앙철학</span></a>
+  <a class="rail__mark rail__mark--feature" data-room="room-0c" href="#room-0c"><span class="badge-dot"></span><span>흔한고민</span></a>
   <a class="rail__mark" data-room="room-1" href="#room-1">I<span>성경공부</span></a>
   <a class="rail__mark" data-room="room-2" href="#room-2">II<span>새가족</span></a>
   <a class="rail__mark" data-room="room-3" href="#room-3">III<span>목장</span></a>
@@ -730,6 +759,7 @@
     <div class="hero__index" id="toc">
       <a href="#room-0b" class="featured featured-alt"><span class="badge badge-alt">인생 질문</span><span class="lbl">행복을 묻는 그대에게</span><span class="cnt">보기</span></a>
       <a href="#room-0" class="featured"><span class="badge">먼저 읽기</span><span class="lbl">은혜교회의 신앙철학</span><span class="cnt">보기</span></a>
+      <a href="#room-0c" class="featured featured-teal"><span class="badge badge-teal">신앙 Q&amp;A</span><span class="lbl">기독교인의 흔한 고민</span><span class="cnt">보기</span></a>
       <a href="#room-1"><span class="num">I</span><span class="lbl">성경공부</span><span class="cnt">보기</span></a>
       <a href="#room-2"><span class="num">II</span><span class="lbl">새가족 자료</span><span class="cnt">보기</span></a>
       <a href="#room-3"><span class="num">III</span><span class="lbl">목장 자료</span><span class="cnt">보기</span></a>
@@ -771,6 +801,20 @@
     <details class="doc-group" open>
       <summary>목록 보기<span class="count" id="count-faith_philosophy"></span></summary>
       <ul class="doclist" id="list-faith_philosophy"><li class="doclist__empty">불러오는 중...</li></ul>
+    </details>
+  </section>
+
+  <section class="room room--feature-teal" id="room-0c">
+    <div class="room__head">
+      <span class="badge-lg badge-lg-teal">신앙 Q&amp;A</span>
+      <div>
+        <h2 class="room__title">기독교인의 흔한 고민</h2>
+        <p class="room__desc">신앙생활을 하며 누구나 한 번쯤 마주치는 질문과 고민들에 대한 답을 나눕니다.</p>
+      </div>
+    </div>
+    <details class="doc-group" open>
+      <summary>목록 보기<span class="count" id="count-common_questions"></span></summary>
+      <ul class="doclist" id="list-common_questions"><li class="doclist__empty">불러오는 중...</li></ul>
     </details>
   </section>
 
