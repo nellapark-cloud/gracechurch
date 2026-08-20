@@ -46,6 +46,7 @@ function listDocs(dir, withFlags) {
     files = fs.readdirSync(full).filter((f) => {
       if (f.startsWith('.')) return false;
       if (f.toLowerCase().startsWith('example')) return false;
+      if (/^readme(\.[a-z0-9]+)?$/i.test(f)) return false; // README 파일은 항상 목록에서 제외
       const stat = fs.statSync(path.join(full, f));
       return stat.isFile();
     });
