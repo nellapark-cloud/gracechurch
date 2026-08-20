@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:title" content="기도해도 응답이 없다고 느껴질 때 | 은혜교회">
+<meta property="og:description" content="침묵도 하나님의 언어일 수 있다는 것에 대하여">
+<meta property="og:type" content="article">
+<title>기도해도 응답이 없다고 느껴질 때 | 신앙 에세이</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@200;300;400;500;600;700;900&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#faf6ee;
+    --paper-deep:#f3ece0;
+    --ink:#232220;
+    --ink-soft:#5a564d;
+    --rust:#a8492b;
+    --rust-soft:#c07a5c;
+    --rule:#ddd3c0;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Serif KR', serif;
+  }
+  .page{max-width:640px;margin:0 auto;padding:0 26px 140px;}
+
+  /* ===== Masthead ===== */
+  .masthead{
+    padding:56px 26px 0;
+    text-align:center;
+  }
+  .masthead .kicker{
+    font-family:'Pretendard',sans-serif;
+    font-size:11.5px;
+    font-weight:600;
+    letter-spacing:0.32em;
+    color:var(--rust);
+    text-transform:uppercase;
+  }
+  .masthead .rule{
+    width:34px;height:1px;background:var(--rust);
+    margin:16px auto;
+  }
+  .masthead .issue{
+    font-family:'Pretendard',sans-serif;
+    font-size:11px;
+    color:var(--ink-soft);
+    letter-spacing:0.1em;
+  }
+
+  .headline-block{
+    max-width:640px;margin:0 auto;
+    padding:26px 26px 46px;
+    text-align:center;
+    border-bottom:1px solid var(--rule);
+  }
+  .headline-block h1{
+    font-weight:900;
+    font-size:38px;
+    line-height:1.4;
+    margin:0 0 20px;
+    letter-spacing:-0.01em;
+  }
+  .headline-block .deck{
+    font-size:16px;
+    font-weight:400;
+    font-style:italic;
+    color:var(--ink-soft);
+    max-width:440px;
+    margin:0 auto 26px;
+    line-height:1.75;
+  }
+  .byline{
+    font-family:'Pretendard',sans-serif;
+    font-size:12.5px;
+    color:var(--ink-soft);
+    letter-spacing:0.03em;
+  }
+  .byline b{color:var(--ink);font-weight:600;}
+
+  /* ===== Body ===== */
+  .article{padding:50px 0 0;}
+  .article p{
+    font-size:17px;
+    line-height:2.05;
+    margin:0 0 26px;
+    color:var(--ink);
+  }
+  .article p.drop::first-letter{
+    font-size:58px;
+    font-weight:900;
+    color:var(--rust);
+    float:left;
+    line-height:0.8;
+    padding:8px 10px 0 0;
+  }
+  .article strong{font-weight:700;color:var(--ink);}
+  .article em{font-style:italic;color:var(--ink-soft);}
+
+  .refline{
+    font-family:'Pretendard',sans-serif;
+    font-size:13px;
+    color:var(--rust-soft);
+    display:inline-block;
+    margin:0 2px;
+  }
+
+  /* ===== Pull quote ===== */
+  .pullquote{
+    margin:52px 0;
+    padding:34px 0;
+    border-top:1px solid var(--rust);
+    border-bottom:1px solid var(--rust);
+    text-align:center;
+  }
+  .pullquote p{
+    font-size:24px;
+    font-weight:600;
+    line-height:1.65;
+    color:var(--rust);
+    margin:0;
+    font-style:italic;
+  }
+
+  /* ===== Scripture citation ===== */
+  .scripture{
+    margin:44px 0;
+    padding:0 0 0 22px;
+    border-left:2px solid var(--rule);
+  }
+  .scripture p{
+    font-size:16px;
+    line-height:1.9;
+    color:var(--ink-soft);
+    font-style:italic;
+    margin:0 0 8px;
+  }
+  .scripture .cite{
+    font-family:'Pretendard',sans-serif;
+    font-size:12px;
+    font-style:normal;
+    color:var(--rust);
+    letter-spacing:0.05em;
+  }
+
+  /* ===== Section break ===== */
+  .break{
+    text-align:center;
+    margin:50px 0;
+    font-family:'Pretendard',sans-serif;
+    color:var(--rust-soft);
+    letter-spacing:0.4em;
+    font-size:13px;
+  }
+
+  /* ===== Marginal note (application) ===== */
+  .margin-note{
+    margin:48px 0 10px;
+    padding:28px 30px;
+    background:var(--paper-deep);
+  }
+  .margin-note .tag{
+    font-family:'Pretendard',sans-serif;
+    font-size:11px;
+    font-weight:700;
+    letter-spacing:0.2em;
+    color:var(--rust);
+    display:block;
+    margin-bottom:14px;
+  }
+  .margin-note p{
+    font-size:15.5px;
+    line-height:1.9;
+    margin:0 0 12px;
+    color:var(--ink);
+  }
+  .margin-note p:last-child{margin-bottom:0;}
+
+  /* ===== Closing ===== */
+  .end{
+    text-align:center;
+    padding:60px 0 0;
+  }
+  .end .mark{
+    font-family:'Pretendard',sans-serif;
+    font-size:20px;
+    color:var(--rust);
+    letter-spacing:0.3em;
+  }
+  .end .sign{
+    margin-top:24px;
+    font-family:'Pretendard',sans-serif;
+    font-size:12px;
+    color:var(--ink-soft);
+    letter-spacing:0.04em;
+  }
+
+  @media (max-width:600px){
+    .headline-block h1{font-size:28px;}
+    .headline-block .deck{font-size:15px;}
+    .article p{font-size:16px;}
+    .pullquote p{font-size:20px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="masthead">
+  <div class="kicker">신앙 에세이</div>
+  <div class="rule"></div>
+  <div class="issue">GRACE CHURCH — 흔한 고민 No. 01</div>
+</div>
+
+<div class="headline-block">
+  <h1>기도해도 응답이 없다고<br>느껴질 때</h1>
+  <p class="deck">침묵도 하나님의 언어일 수 있다는 것에 대하여</p>
+  <div class="byline">글 · <b>박동준</b> 목사 &nbsp;|&nbsp; 기독교한국침례회 은혜교회</div>
+</div>
+
+<div class="page">
+  <div class="article">
+
+    <p class="drop">기도한 지 오래됐는데, 아무 일도 일어나지 않을 때가 있습니다. 분명 간절했고, 눈물로 매달리기까지 했는데도 하늘은 그저 조용합니다. 그럴 때 마음속에는 여러 질문이 동시에 밀려옵니다. 하나님이 정말 계신 걸까. 내 기도가 부족한 걸까. 혹시 내가 뭔가 잘못한 걸까.</p>
+
+    <p>흥미로운 것은, 성경 속에서 하나님을 가장 깊이 사랑했던 사람들도 똑같은 자리에 서 있었다는 사실입니다. 다윗은 시편 곳곳에서 <em>"여호와여 어느 때까지니이까"</em>라고 따져 물었습니다. 선지자 하박국은 아예 대놓고 항의했습니다.</p>
+
+    <div class="scripture">
+      <p>내가 부르짖어도 주께서 듣지 아니하시나이다<br>내가 강포를 인하여 외쳐도 주께서 구원하지 아니하시나이다</p>
+      <span class="cite">하박국 1:2</span>
+    </div>
+
+    <p>다윗과 하박국의 공통점은 하나입니다. 침묵 앞에서도 등을 돌리지 않았다는 것. 오히려 더 가까이 다가가 따져 물었다는 것. 그러니 지금 느끼는 서운함과 답답함은, 신앙이 무너지고 있다는 신호가 아니라 여전히 하나님과 씨름하고 있다는 증거일 수 있습니다.</p>
+
+    <div class="pullquote">
+      <p>"응답이 없는 것이 아니라,<br>아직 우리 눈에 보이지 않는 것일 수 있습니다."</p>
+    </div>
+
+    <p>하나님은 우리의 기도에 대개 세 가지 방식으로 응답하십니다. 그렇다, 아니다, 그리고 기다려라. 문제는 우리가 오직 첫 번째만을 응답이라 여긴다는 데 있습니다. 그래서 "아니다"나 "기다려라"라는 응답을 이미 받고 있으면서도, 그것을 침묵이라 오해하곤 합니다.</p>
+
+    <p>사도 바울에게는 그가 "육체의 가시"라 부른 고통이 있었습니다. 그는 이것을 없애 달라고 세 번이나 간절히 구했습니다. 그런데 하나님의 응답은 가시의 제거가 아니었습니다.</p>
+
+    <div class="scripture">
+      <p>내 은혜가 네게 족하도다<br>이는 내 능력이 약한 데서 온전하여짐이라</p>
+      <span class="cite">고린도후서 12:9</span>
+    </div>
+
+    <p>바울이 원했던 답은 <strong>가시의 제거</strong>였지만, 그가 받은 답은 <strong>은혜의 충분함</strong>이었습니다. 우리도 종종 문제의 해결을 구하지만, 하나님은 그 문제 한복판에서 함께 계시는 임재로 응답하실 때가 있습니다. 원하던 답이 오지 않았다고 해서, 응답이 없었던 것은 아닙니다.</p>
+
+    <div class="break">· · ·</div>
+
+    <p>그렇다면 이 침묵의 시간을, 오늘 우리는 어떻게 지나야 할까요.</p>
+
+    <div class="margin-note">
+      <span class="tag">지나는 법</span>
+      <p><strong>요청에서 임재로.</strong> "이것을 해주세요"라고만 구하던 기도에, "지금 이 자리에 함께 계셔 주세요"라는 기도를 더해 보세요.</p>
+      <p><strong>기록하기.</strong> 무엇을 구했는지, 지금 마음이 어떤지 짧게라도 적어보면, 하나님이 그 기도를 어떻게 다뤄오셨는지가 나중에 눈에 보이기 시작합니다.</p>
+      <p><strong>혼자 견디지 않기.</strong> 지금 붙들고 있는 기도 제목을 목장 식구에게 나눠보세요. 함께 기도해 줄 사람이 있다는 것만으로 침묵의 무게는 가벼워집니다.</p>
+    </div>
+
+    <p>하나님의 침묵은 부재의 증거가 아니라, 때로는 더 깊은 일하심의 시간입니다. 지금 이 기다림 가운데도, 주님은 여전히 당신과 함께 계십니다.</p>
+
+  </div>
+
+  <div class="end">
+    <div class="mark">✝</div>
+    <div class="sign">기독교한국침례회 은혜교회 · 담임목사 박동준</div>
+  </div>
+</div>
+
+</body>
+</html>
