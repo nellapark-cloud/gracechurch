@@ -39,6 +39,14 @@ function langPriority(rawName) {
   return 5;
 }
 
+function naturalCompare(a, b) {
+  // 제목 맨 앞의 숫자를 기준으로 정렬 (1, 2, 3 ... 10, 11, 12 순서가 되도록)
+  const numA = parseInt(a.match(/^\d+/), 10);
+  const numB = parseInt(b.match(/^\d+/), 10);
+  if (!isNaN(numA) && !isNaN(numB) && numA !== numB) return numA - numB;
+  return a.localeCompare(b, 'ko');
+}
+
 function listDocs(dir, withFlags) {
   const full = path.join(__dirname, dir);
   let files = [];
@@ -81,7 +89,7 @@ function listDocs(dir, withFlags) {
   if (withFlags) {
     items.sort((a, b) => a._priority - b._priority);
   } else {
-    items.sort((a, b) => a.title.localeCompare(b.title, 'ko'));
+    items.sort((a, b) => naturalCompare(a.title, b.title));
   }
   items.forEach((it) => { delete it._priority; });
   return items;
