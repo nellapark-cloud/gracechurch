@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목장 나눔 자료</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #f2f7f6;
+    --warm-white: #fbfefd;
+    --gold: #2f7a72;
+    --gold-light: #4a9990;
+    --gold-pale: #dcece9;
+    --brown: #17423d;
+    --brown-light: #2f6e64;
+    --text: #16241f;
+    --text-muted: #5c7873;
+    --border: #cfe3df;
+    --section-bg: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--cream);
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(47,122,114,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(23,66,61,0.05) 0%, transparent 50%);
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    padding: 60px 20px;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 64px;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .header-label {
+    display: inline-block;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    color: var(--gold);
+    text-transform: uppercase;
+    border: 1px solid var(--gold-pale);
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    color: var(--brown);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .header-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    margin-top: 10px;
+  }
+
+  .header-line {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+    margin: 20px auto 0;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--section-bg);
+    border-radius: 16px;
+    margin-bottom: 36px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(23,66,61,0.07), 0 1px 4px rgba(23,66,61,0.05);
+    animation: fadeUp 0.7s ease both;
+    border: 1px solid var(--border);
+  }
+
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+
+  .card-header {
+    background: linear-gradient(135deg, var(--brown) 0%, #285e56 100%);
+    padding: 28px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: 40px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(47,122,114,0.14);
+  }
+
+  .card-num {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--gold-light);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-verse {
+    font-size: 13px;
+    color: rgba(255,255,255,0.65);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+  }
+
+  .card-body {
+    padding: 32px 36px;
+  }
+
+  /* Scripture quote */
+  .scripture-block {
+    border-left: 3px solid var(--gold);
+    background: var(--gold-pale);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .scripture-block p {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: var(--brown);
+    line-height: 1.9;
+    font-weight: 400;
+  }
+
+  /* Meditation */
+  .meditation-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--gold);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .meditation-text {
+    font-size: 15px;
+    line-height: 2.0;
+    color: var(--text);
+    font-weight: 300;
+    white-space: pre-line;
+  }
+
+  .meditation-text strong {
+    color: var(--brown);
+    font-weight: 600;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+  }
+
+  /* Question block */
+  .question-block {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+
+  .question-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .question-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold), var(--gold-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .question-header-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--brown);
+  }
+
+  .question-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .question-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .question-badge {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--brown);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .question-item p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-muted);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.8s ease 0.5s both;
+  }
+
+  .footer-cross {
+    font-size: 24px;
+    color: var(--gold);
+    margin-bottom: 12px;
+    letter-spacing: 8px;
+  }
+
+  .footer-church {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--brown);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .footer-author {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* Animations */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 40px 16px; }
+    .card-header { padding: 24px 24px; }
+    .card-body { padding: 24px 24px; }
+    .question-block { padding: 20px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-label">은혜교회 묵상나눔</div>
+    <h1>말씀 묵상과 나눔</h1>
+    <div class="header-date">2026 · 8-4</div>
+    <div class="header-line"></div>
+  </div>
+
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 01</div>
+      <div class="card-title">스바냐 3장 17절</div>
+      <div class="card-verse">"너를 잠잠히 사랑하시며 너로 말미암아 즐거이 부르며 기뻐하시리라"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>너의 하나님 여호와가 너의 가운데에 계시니 그는 구원을 베푸실 전능자이시라 그가 너로 말미암아 기쁨을 이기지 못하시며 너를 잠잠히 사랑하시며 너로 말미암아 즐거이 부르며 기뻐하시리라 하리라</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">이 말씀은 우리가 하나님을 기뻐하는 이야기가 아니라, 하나님이 우리로 말미암아 기뻐하신다는 놀라운 선언입니다. 우리는 흔히 하나님과의 관계를 '내가 얼마나 잘하고 있는가'로 가늠하려 하지만, 스바냐는 정반대의 그림을 보여줍니다. 전능하신 하나님이 우리 가운데 계시고, 우리를 향해 기쁨을 이기지 못하시며, 잠잠히 사랑하신다는 것입니다. '잠잠히'라는 표현이 특히 마음에 남습니다. 요란한 감정이 아니라, 흔들림 없이 한결같은 사랑입니다. 오늘 내 신앙의 성취나 부족함과 상관없이, 하나님은 지금 이 순간에도 나로 말미암아 기뻐하고 계십니다. 우리의 정체성은 우리의 노력이 아니라, 우리를 향한 이 조용하고 견고한 사랑 위에 세워져 있습니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>하나님이 나로 말미암아 기뻐하신다는 사실이 낯설거나 믿기 어렵게 느껴졌던 순간이 있다면 나눠봅시다.</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>'잠잠히 사랑하신다'는 표현처럼, 조용하고 한결같은 하나님의 사랑을 최근 경험한 적이 있나요?</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 02</div>
+      <div class="card-title">이사야 30장 15절</div>
+      <div class="card-verse">"돌이켜 조용히 있어야 구원을 얻을 것이요 잠잠하고 신뢰하여야 힘을 얻으리라"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>주 여호와 이스라엘의 거룩하신 이가 이같이 말씀하시되 너희가 돌이켜 조용히 있어야 구원을 얻을 것이요 잠잠하고 신뢰하여야 힘을 얻을 것이거늘 너희가 원하지 아니하고</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">이스라엘은 위기 앞에서 하나님을 신뢰하는 대신 애굽의 군사력에 의지하려 했습니다. 하나님은 그들에게 '돌이켜 조용히 있으라', '잠잠하고 신뢰하라'고 말씀하셨지만, 그들은 원하지 않았습니다. 이 장면은 오늘 우리의 모습과 크게 다르지 않습니다. 불안한 상황이 닥칠 때 우리는 본능적으로 더 많이 움직이고, 더 많이 계획하고, 스스로 해결책을 만들어내려 합니다. 그러나 하나님이 원하시는 힘의 통로는 분주함이 아니라 멈춤이며, 나의 능력이 아니라 신뢰입니다. 조용히 있는다는 것은 아무것도 하지 않는 무기력이 아니라, 하나님이 일하고 계심을 믿고 내 손을 내려놓는 적극적인 믿음의 행위입니다. 우리가 원하지 않을 때조차, 하나님은 여전히 이 초대를 거두지 않으십니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>불안한 상황 속에서 하나님보다 나의 힘과 계획을 먼저 의지하려 했던 경험이 있다면 나눠봅시다.</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>'조용히 있어 신뢰하는 것'이 내 삶의 자리에서는 구체적으로 어떤 모습일까요?</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 03</div>
+      <div class="card-title">데살로니가전서 1장 6~7절</div>
+      <div class="card-verse">"많은 환난 가운데서 성령의 기쁨으로 말씀을 받아"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>또 너희는 많은 환난 가운데서 성령의 기쁨으로 말씀을 받아 우리와 주를 본받은 자가 되었으니 그러므로 너희가 마게도냐와 아가야에 있는 모든 믿는 자의 본이 되었느니라</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">데살로니가 교인들은 편안한 환경이 아니라 많은 환난 가운데서 복음을 받아들였습니다. 그런데 그들의 반응은 낙심이나 불평이 아니라 '성령의 기쁨'이었습니다. 이는 상황이 좋아서 얻은 기쁨이 아니라, 고난 한복판에서도 그들과 함께하신 성령이 부어주신 기쁨입니다. 그리고 그 기쁨은 개인의 위로로 끝나지 않고, 주변의 믿는 자들에게 본이 되는 열매로 이어졌습니다. 우리는 흔히 어려움이 없어야 신앙의 본이 될 수 있다고 생각하지만, 성경은 오히려 환난 속에서 나타나는 기쁨과 믿음이 더 강력한 증거가 된다고 말합니다. 지금 내가 겪는 어려움도, 하나님이 일하시면 누군가에게 소망의 이유가 될 수 있습니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>힘든 상황 속에서도 하나님이 주시는 기쁨을 경험한 적이 있다면 나눠봅시다.</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>나의 신앙의 모습이 누군가에게 본이 되었다고 느낀 순간이 있었나요?</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 04</div>
+      <div class="card-title">미가 6장 8절</div>
+      <div class="card-verse">"정의를 행하며 인자를 사랑하며 겸손하게 네 하나님과 함께 행하라"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>사람아 주께서 선한 것이 무엇임을 네게 보이셨나니 여호와께서 네게 구하시는 것은 오직 정의를 행하며 인자를 사랑하며 겸손하게 네 하나님과 함께 행하는 것이 아니냐</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">미가 선지자는 화려한 제사나 종교적 형식이 아니라, 하나님이 진짜로 원하시는 것이 무엇인지를 명료하게 정리합니다. 정의를 행하는 것, 인자를 사랑하는 것, 겸손하게 하나님과 동행하는 것. 이 세 가지는 서로 다른 영역이 아니라 한 사람의 삶 안에서 함께 자라야 할 모습입니다. 정의는 옳은 것을 실천하는 용기이며, 인자는 그 정의가 차갑지 않도록 감싸는 사랑이고, 겸손은 이 모든 것을 나의 의로움이 아니라 하나님과의 동행 안에서 살아내는 태도입니다. 신앙은 예배당 안에서의 감동으로 끝나는 것이 아니라, 일터와 관계와 일상의 결정 속에서 이 세 가지 모습으로 드러나야 합니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>정의, 인자, 겸손 중 내게 가장 부족하다고 느껴지는 것은 무엇인가요? 그 이유도 함께 나눠봅시다.</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>이번 주 내 삶의 자리에서 이 세 가지를 구체적으로 실천할 수 있는 방법은 무엇일까요?</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p class="footer-church">기독교한국침례회 은혜교회</p>
+    <p class="footer-author">작성 · 박동준 목사</p>
+  </div>
+
+</div>
+</body>
+</html>
