@@ -1003,13 +1003,23 @@
     document.documentElement.scrollTop = 0;
     document.body.scrollTop = 0;
     window.scrollTo(0, 0);
-    history.replaceState(null, '', '#top');
   });
   document.getElementById('btn-toc').addEventListener('click', (e) => {
     e.preventDefault();
     const el = document.getElementById('toc');
     if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    history.replaceState(null, '', '#toc');
+  });
+
+  // 관(room) 이동 링크들은 클릭해도 주소창에 #room-8 같은 해시가 남지 않도록,
+  // 기본 앵커 이동 대신 직접 스크롤만 처리합니다.
+  document.querySelectorAll('a[href^="#room-"]').forEach((a) => {
+    a.addEventListener('click', (e) => {
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
   });
 </script>
 
