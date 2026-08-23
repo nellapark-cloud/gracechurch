@@ -25,6 +25,7 @@ const categories = [
   { key: 'admin_personal', dir: 'content/admin-personal' },
   { key: 'admin_forms', dir: 'content/admin-forms' },
   { key: 'officer_training', dir: 'content/servant-leaders' },
+  { key: 'bible_study', dir: 'content/bible-study' },
 ];
 
 function langPriority(rawName) {
