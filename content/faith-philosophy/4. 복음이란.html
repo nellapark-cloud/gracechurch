@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>복음이란 무엇인가? | 은혜교회 신앙철학</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  :root{
+    --bg:#fbfaf6;
+    --panel:#f3f0e8;
+    --card:#ffffff;
+    --ink:#17181c;
+    --ink-soft:#6b6a62;
+    --accent:#ff5a36;
+    --accent-soft:#ffe1d3;
+    --navy:#1c2b4a;
+    --line:#e7e2d4;
+    --serif:'Noto Serif KR',serif;
+    --sans:'Pretendard Variable',Pretendard,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.9;-webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--accent-soft);}
+  img,svg{display:block;max-width:100%;}
+
+  .progress{position:fixed;top:0;left:0;height:3px;background:var(--accent);z-index:999;width:0%;transition:width .1s linear;}
+
+  .shell{display:block;min-height:100vh;}
+
+  /* rail */
+  .rail{position:sticky;top:0;z-index:60;background:var(--bg);border-bottom:1px solid var(--line);padding:16px 20px;}
+  .rail-eyebrow{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.24em;text-transform:uppercase;color:var(--accent);margin-bottom:6px;}
+  .rail-title{font-family:var(--sans);font-weight:800;font-size:18px;letter-spacing:-.01em;color:var(--ink);}
+  .rail-nav{display:flex;gap:18px;overflow-x:auto;margin-top:14px;padding-bottom:2px;-ms-overflow-style:none;scrollbar-width:none;}
+  .rail-nav::-webkit-scrollbar{display:none;}
+  .rail-nav a{flex:none;font-family:var(--sans);font-size:13px;font-weight:500;color:var(--ink-soft);text-decoration:none;white-space:nowrap;padding-bottom:6px;border-bottom:2px solid transparent;transition:color .15s,border-color .15s;}
+  .rail-nav a.active,.rail-nav a:hover{color:var(--navy);border-color:var(--accent);}
+  .rail-foot{display:none;}
+
+  /* hero */
+  .hero{position:relative;padding:64px 22px 56px;overflow:hidden;background:var(--bg);}
+  .hero .kicker{font-family:var(--sans);font-size:12px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;}
+  .hero h1{font-family:var(--sans);font-weight:800;letter-spacing:-.02em;font-size:clamp(36px,10vw,76px);line-height:1.08;margin:0;color:var(--navy);}
+  .hero .sub{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:clamp(15px,2.2vw,18px);max-width:520px;margin:24px 0 0;}
+  .hero-mark{margin-top:36px;width:100%;max-width:340px;height:64px;}
+
+  /* content */
+  main{position:relative;}
+  section.block{position:relative;padding:52px 22px 48px;border-bottom:1px solid var(--line);}
+  section.block:nth-of-type(even){background:var(--panel);}
+  .block-inner{position:relative;z-index:1;max-width:700px;}
+  .num-tag{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-size:12.5px;font-weight:700;letter-spacing:.12em;color:var(--navy);margin-bottom:14px;}
+  .num-tag .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);}
+  section.block h2{font-family:var(--sans);font-weight:800;letter-spacing:-.01em;font-size:clamp(23px,5vw,32px);color:var(--navy);margin:0 0 20px;line-height:1.4;}
+  section.block p{font-size:clamp(15.5px,2vw,17px);color:var(--ink);margin:0 0 20px;max-width:65ch;}
+  section.block p:last-child{margin-bottom:0;}
+  strong.hl{color:var(--accent);font-weight:700;}
+
+  blockquote{margin:28px 0;padding:22px 24px;background:var(--card);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;font-style:italic;color:var(--navy);font-size:clamp(15px,2vw,16.5px);box-shadow:0 6px 20px -12px rgba(28,43,74,.15);}
+  blockquote cite{display:block;margin-top:10px;font-style:normal;font-family:var(--sans);font-size:12px;letter-spacing:.06em;color:var(--ink-soft);}
+
+  .callout{margin:28px 0;padding:26px;background:var(--card);border:1px solid var(--line);border-radius:10px;}
+  .callout .lbl{font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.14em;color:var(--accent);text-transform:uppercase;margin-bottom:12px;display:block;}
+  .callout ul{margin:0;padding-left:18px;}
+  .callout li{margin-bottom:12px;font-size:15px;color:var(--ink);}
+  .callout li:last-child{margin-bottom:0;}
+
+  .divider-word{text-align:center;font-family:var(--sans);color:var(--accent);letter-spacing:.32em;font-size:12px;font-weight:600;margin-top:6px;}
+
+  footer.credit{text-align:center;padding:56px 24px 72px;font-family:var(--sans);color:var(--ink-soft);font-size:13px;background:var(--bg);}
+  footer.credit .name{color:var(--navy);font-weight:700;margin-bottom:4px;}
+
+  /* desktop */
+  @media (min-width:900px){
+    .shell{display:grid;grid-template-columns:280px 1fr;min-height:100vh;align-items:start;}
+    .rail{position:sticky;top:0;height:100vh;border-bottom:none;border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;padding:44px 32px;}
+    .rail-title{font-size:24px;line-height:1.4;margin-top:4px;}
+    .rail-nav{display:flex;flex-direction:column;gap:16px;overflow:visible;margin-top:40px;}
+    .rail-nav a{border-bottom:none;padding-bottom:0;border-left:2px solid transparent;padding-left:14px;}
+    .rail-nav a.active,.rail-nav a:hover{border-left-color:var(--accent);color:var(--navy);}
+    .rail-foot{display:block;font-family:var(--sans);font-size:12px;color:var(--ink-soft);line-height:1.7;}
+    .rail-foot .name{color:var(--navy);font-weight:700;}
+    main{grid-column:2;}
+    .hero{padding:10vh 6vw 8vh;}
+    section.block{padding:8vh 6vw;}
+    .block-inner{max-width:680px;margin-left:2vw;}
+  }
+  @media (min-width:1440px){
+    .shell{grid-template-columns:320px 1fr;}
+    .hero h1{font-size:clamp(58px,6vw,96px);}
+    section.block{padding:9vh 8vw;}
+    .block-inner{max-width:720px;margin-left:4vw;}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="shell">
+  <aside class="rail">
+    <div class="rail-top">
+      <div class="rail-eyebrow">은혜교회 신앙철학</div>
+      <div class="rail-title">복음이란<br>무엇인가?</div>
+    </div>
+    <nav class="rail-nav" id="railNav">
+      <a href="#s1" data-target="s1">01 · '복음'의 뜻</a>
+      <a href="#s2" data-target="s2">02 · 문제</a>
+      <a href="#s3" data-target="s3">03 · 하신 일</a>
+      <a href="#s4" data-target="s4">04 · 선물</a>
+      <a href="#s5" data-target="s5">05 · 오해</a>
+      <a href="#s6" data-target="s6">06 · 반응</a>
+      <a href="#s7" data-target="s7">07 · 변화</a>
+      <a href="#s8" data-target="s8">08 · 결론</a>
+    </nav>
+    <div class="rail-foot">
+      <div class="name">기독교한국침례회 은혜교회</div>
+      <div>담임목사 박동준</div>
+    </div>
+  </aside>
+
+  <main>
+    <div class="hero">
+      <div class="kicker">GOOD NEWS · 선포된 소식</div>
+      <h1>복음이란<br>무엇인가?</h1>
+      <p class="sub">우리가 매주 듣지만, 정작 한 문장으로 설명하기는 어려운 그 말</p>
+      <svg class="hero-mark" viewBox="0 0 340 64" aria-hidden="true">
+        <line x1="0" y1="32" x2="120" y2="32" stroke="#e7e2d4" stroke-width="1.5"/>
+        <circle cx="150" cy="32" r="26" fill="none" stroke="#ff5a36" stroke-width="2"/>
+        <circle cx="150" cy="32" r="8" fill="#ff5a36"/>
+        <line x1="180" y1="32" x2="340" y2="32" stroke="#e7e2d4" stroke-width="1.5"/>
+      </svg>
+    </div>
+
+    <section class="block" id="s1">
+      <div class="block-inner">
+        <span class="num-tag"><span class="dot"></span>01 — 유앙겔리온</span>
+        <h2>'복음'이라는 말의 뜻</h2>
+        <p>교회에 오래 다닌 분들도 막상 "복음이 뭐예요?"라는 질문을 받으면 잠깐 멈칫하실 때가 있습니다. 너무 자주 들어서 익숙한 단어인데, 정작 그 뜻을 설명하려고 하면 말이 잘 안 나오는 거예요. 그건 이상한 일이 아닙니다. 오히려 그만큼 이 단어가 우리 신앙의 가장 중심에 있다는 뜻이기도 합니다.</p>
+        <p>'복음'은 헬라어 <strong class="hl">유앙겔리온(εὐαγγέλιον)</strong>을 번역한 말입니다. 이 단어는 원래 교회 안에서만 쓰던 종교 용어가 아니었습니다. 고대 로마 시대에는 전쟁에서 승리했다는 소식, 새로운 황제가 즉위했다는 소식처럼 사람들의 삶을 완전히 바꿔놓는 <strong class="hl">"기쁜 소식"</strong>을 가리킬 때 쓰던 일상어였습니다. 전령이 마을에 뛰어 들어와 "이겼다!"라고 외치는 그 순간의 단어가 바로 유앙겔리온입니다.</p>
+        <p>그래서 성경이 예수님에 대한 소식을 '복음'이라고 부를 때, 거기에는 분명한 의미가 담겨 있습니다. 이것은 지켜야 할 도덕적 교훈이나 따라야 할 종교적 규칙이 아니라, <strong class="hl">이미 일어난 사건에 대한 소식</strong>이라는 것입니다.</p>
+        <blockquote>"하나님의 아들 예수 그리스도 복음의 시작이라"<cite>마가복음 1:1</cite></blockquote>
+        <p>복음은 우리가 만들어내는 것이 아니라, 우리에게 <strong class="hl">전달되는</strong> 것입니다. 마치 전쟁이 끝났다는 소식을 들은 사람이 그 소식을 만들어낸 게 아니라 받아들이기만 하면 되는 것처럼 말이죠.</p>
+      </div>
+    </section>
+
+    <section class="block" id="s2">
+      <div class="block-inner">
+        <span class="num-tag"><span class="dot"></span>02 — 진단</span>
+        <h2>무엇이 문제였는가</h2>
+        <p>좋은 소식이 좋은 소식이 되려면, 그 전에 나쁜 소식이 있어야 합니다. 이미 다 괜찮은 사람에게는 "구원받았다"는 말이 아무 의미가 없거든요. 그래서 복음을 제대로 이해하려면, 먼저 성경이 말하는 인간의 진짜 문제가 무엇인지부터 봐야 합니다.</p>
+        <p>성경은 그 문제를 '죄'라고 부릅니다. 성경이 말하는 죄는 단순히 "나쁜 행동 목록"이 아닙니다. 더 근본적으로 죄는 <strong class="hl">하나님과의 관계가 끊어진 상태</strong>를 말합니다. 아담과 하와가 하나님의 말씀을 어긴 후 가장 먼저 한 행동은 하나님을 피해 숨는 것이었습니다. 죄의 본질은 바로 그것입니다.</p>
+        <blockquote>"모든 사람이 죄를 범하였으매 하나님의 영광에 이르지 못하더니"<cite>로마서 3:23</cite></blockquote>
+        <p>여기서 중요한 단어는 "모든 사람"입니다. 도덕적으로 훌륭해 보이는 사람이든, 종교적으로 열심인 사람이든, 예외가 없습니다.</p>
+        <blockquote>"죄의 삯은 사망이요"<cite>로마서 6:23</cite></blockquote>
+        <p>여기서 '사망'은 육체가 멈추는 것만을 뜻하지 않습니다. 하나님과 영원히 분리되는 것, 그것이 죄가 가져오는 가장 무서운 결과입니다. 인간은 스스로 이 문제를 해결할 수 없습니다.</p>
+      </div>
+    </section>
+
+    <section class="block" id="s3">
+      <div class="block-inner">
+        <span class="num-tag"><span class="dot"></span>03 — 개입</span>
+        <h2>하나님이 하신 일</h2>
+        <p>바로 여기서 복음이 시작됩니다. 인간이 해결할 수 없는 문제 앞에서, 하나님이 직접 움직이셨다는 것. 이것이 복음의 심장입니다.</p>
+        <p>하나님은 그 아들 예수 그리스도를 이 땅에 사람의 몸을 입혀 보내셨습니다. 완전한 하나님이신 분이 완전한 사람이 되셨습니다. 그리고 그 예수님은 우리가 마땅히 받아야 할 죄의 형벌을 대신 짊어지시고 십자가에서 죽으셨습니다.</p>
+        <blockquote>"성경대로 그리스도께서 우리 죄를 위하여 죽으시고 장사 지낸 바 되셨다가 성경대로 사흘 만에 다시 살아나사"<cite>고린도전서 15:3-4</cite></blockquote>
+        <p>이 짧은 구절 안에 복음의 핵심 뼈대가 다 들어 있습니다. <strong class="hl">그리스도의 죽음</strong>과 <strong class="hl">그리스도의 부활</strong>. 만약 이야기가 십자가에서 끝났다면 그것은 슬픈 죽음일 뿐입니다. 복음이 복음인 이유는 부활이 있기 때문입니다. 사흘 만에 예수님이 다시 살아나심으로, 죽음도 그분을 이기지 못한다는 것이 증명되었습니다.</p>
+        <blockquote>"하나님이 세상을 이처럼 사랑하사 독생자를 주셨으니 이는 그를 믿는 자마다 멸망하지 않고 영생을 얻게 하려 하심이라"<cite>요한복음 3:16</cite></blockquote>
+        <p>이 모든 일의 출발점은 사랑입니다. 규칙이나 의무감 때문이 아니라, 사랑하셨기 때문입니다.</p>
+      </div>
+    </section>
+
+    <section class="block" id="s4">
+      <div class="block-inner">
+        <span class="num-tag"><span class="dot"></span>04 — 은혜</span>
+        <h2>복음의 핵심 — 행위가 아니라 선물</h2>
+        <p>여기까지 들으면 자연스럽게 이런 질문이 떠오릅니다. "그럼 나는 무엇을 해야 이 구원을 받을 수 있는가?" 많은 사람들이 무의식중에 다시 '행위'로 돌아갑니다. 하지만 이것이야말로 복음이 정면으로 뒤집는 생각입니다.</p>
+        <blockquote>"너희는 그 은혜에 의하여 믿음으로 말미암아 구원을 받았으니 이것은 너희에게서 난 것이 아니요 하나님의 선물이라 행위에서 난 것이 아니니 이는 누구든지 자랑하지 못하게 함이라"<cite>에베소서 2:8-9</cite></blockquote>
+        <p>이 구절이 강조하는 두 단어는 <strong class="hl">은혜</strong>와 <strong class="hl">선물</strong>입니다. 선물의 본질은 받는 사람이 값을 지불하지 않는다는 것입니다. 구원은 성과가 아니라, 값없이 주시는 선물입니다.</p>
+        <p>그렇다면 우리 편에서 아무것도 하지 않아도 될까요? 성경은 우리에게 <strong class="hl">믿음</strong>으로 반응할 것을 요청합니다.</p>
+        <blockquote>"네가 만일 네 입으로 예수를 주로 시인하며 또 하나님께서 그를 죽은 자 가운데서 살리신 것을 네 마음에 믿으면 구원을 받으리라"<cite>로마서 10:9</cite></blockquote>
+        <p>믿음은 행위가 아니라, 이미 완성된 일을 받아들이는 손입니다. 구명 튜브가 던져졌을 때, 우리가 할 일은 그것을 새로 만드는 게 아니라 그저 붙잡는 것뿐입니다.</p>
+      </div>
+    </section>
+
+    <section class="block" id="s5">
+      <div class="block-inner">
+        <span class="num-tag"><span class="dot"></span>05 — 점검</span>
+        <h2>자주 하는 오해들</h2>
+        <div class="callout">
+          <span class="lbl">확인해볼 만한 생각들</span>
+          <ul>
+            <li><strong>"복음은 처음 믿을 때 한 번만 필요하다"</strong> — 복음은 신앙생활의 입구일 뿐 아니라, 평생 살아가야 할 삶의 자리입니다.</li>
+            <li><strong>"이제부터는 내가 노력해서 하나님을 기쁘시게 해야 한다"</strong> — 구원의 시작이 은혜였다면, 그 이후의 삶도 여전히 은혜 안에서 이루어집니다.</li>
+            <li><strong>"복음은 개인의 죄 문제만 다룬다"</strong> — 골로새서 1장은 그리스도 안에서 만물이 회복된다고 말합니다. 복음은 개인을 넘어 세상을 향한 하나님의 회복 계획입니다.</li>
+            <li><strong>"복음을 믿으려면 먼저 삶을 정리하고 와야 한다"</strong> — 오히려 반대입니다. 복음은 준비된 사람이 아니라, 준비되지 않은 사람에게 주어지는 소식입니다.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="s6">
+      <div class="block-inner">
+        <span class="num-tag"><span class="dot"></span>06 — 반응</span>
+        <h2>복음에 합당한 반응</h2>
+        <p>복음을 듣고 나면, 성경은 두 가지 반응을 요청합니다. 바로 <strong class="hl">회개</strong>와 <strong class="hl">믿음</strong>입니다. 회개(메타노이아, μετάνοια)는 문자적으로 '생각을 완전히 돌이키는 것'을 뜻합니다. 삶의 방향을 스스로에게서 하나님께로 돌이키는 것입니다.</p>
+        <p>이 반응이 눈에 보이는 형태로 표현되는 자리가 바로 <strong class="hl">침례</strong>입니다. 침례는 구원의 조건이 아니라, 이미 일어난 구원을 몸으로 증언하는 예식입니다.</p>
+        <blockquote>"그러므로 우리가 그의 죽으심과 합하여 침례를 받음으로 그와 함께 장사되었나니 이는 아버지의 영광으로 말미암아 그리스도를 죽은 자 가운데서 살리심과 같이 우리로 또한 새 생명 가운데서 행하게 하려 함이라"<cite>로마서 6:4</cite></blockquote>
+      </div>
+    </section>
+
+    <section class="block" id="s7">
+      <div class="block-inner">
+        <span class="num-tag"><span class="dot"></span>07 — 열매</span>
+        <h2>복음이 가져오는 변화</h2>
+        <p>복음을 받아들인 사람에게는 실제적인 변화가 일어납니다. 먼저, <strong class="hl">정체성이 바뀝니다.</strong> 더 이상 하나님을 피해 숨는 존재가 아니라, 하나님의 자녀로 받아들여진 존재가 됩니다.</p>
+        <blockquote>"그가 우리를 흑암의 권세에서 건져내사 그의 사랑의 아들의 나라로 옮기셨으니"<cite>골로새서 1:13</cite></blockquote>
+        <p>다음으로, <strong class="hl">소망이 바뀝니다.</strong> 죽음이 더 이상 모든 것의 끝이 아니라는 것을 알게 됩니다. 그리고 <strong class="hl">삶의 방향이 바뀝니다.</strong> 선한 행동이 구원의 조건이 아니라 구원의 열매가 되는 것, 이것이 복음이 만들어내는 순서입니다.</p>
+      </div>
+    </section>
+
+    <section class="block" id="s8">
+      <div class="block-inner">
+        <span class="num-tag"><span class="dot"></span>08 — 결론</span>
+        <h2>매일 다시 돌아가야 할 소식</h2>
+        <p>복음은 신앙생활을 시작하는 입구에서 한 번 듣고 지나가는 이야기가 아닙니다. 우리가 실패했다고 느낄 때도, 잘하고 있다고 느낄 때도, 우리가 서 있어야 할 자리는 동일합니다. 내가 무엇을 이뤘는가가 아니라, 그리스도께서 나를 위해 무엇을 이루셨는가 하는 자리입니다.</p>
+        <p>그래서 은혜교회는 이 질문을 신앙의 가장 근본적인 출발점으로 여깁니다. 복음이란 무엇인가. 그것은 우리가 스스로 해결할 수 없었던 문제를, 하나님이 그리스도를 통해 값없이 해결해 주셨다는 소식입니다. 그 소식은 지금 이 순간, 우리 각자를 향해 여전히 선포되고 있습니다.</p>
+        <p class="divider-word">SOLI DEO GLORIA</p>
+      </div>
+    </section>
+
+    <footer class="credit">
+      <div class="name">기독교한국침례회 은혜교회</div>
+      <div>담임목사 박동준</div>
+    </footer>
+  </main>
+</div>
+
+<script>
+  var bar = document.getElementById('progress');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = scrolled + '%';
+  });
+
+  var links = document.querySelectorAll('#railNav a');
+  var sections = document.querySelectorAll('section.block');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          links.forEach(function(l){ l.classList.remove('active'); });
+          var match = document.querySelector('#railNav a[data-target="'+entry.target.id+'"]');
+          if(match) match.classList.add('active');
+        }
+      });
+    }, {rootMargin:'-40% 0px -55% 0px'});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+</script>
+
+</body>
+</html>
