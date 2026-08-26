@@ -373,6 +373,15 @@
   .room--feature .doclist .title{ color: var(--cream); font-weight: 600; }
   .room--feature .doclist .tag{ color: var(--gold-light); }
   .room--feature .doclist .meta{ color: rgba(246,242,233,0.55); }
+  .room--feature .doclist li.doclist__own{
+    border-left: 3px solid var(--gold-light);
+    background: rgba(217,189,141,0.16);
+  }
+  .room--feature .doclist li.doclist__own .tag{
+    color: var(--navy-deep);
+    background: var(--gold-light);
+  }
+  .room--feature .doclist li.doclist__own .title{ color: var(--gold-light); font-weight: 700; }
   .room--feature .doclist__empty{ color: rgba(246,242,233,0.55); }
 
   .room--feature-alt{
@@ -474,6 +483,18 @@
     .doclist{ grid-template-columns: repeat(3, 1fr); }
   }
   .doclist li{ border-bottom: 1px solid var(--rule); min-width: 0; }
+  .doclist li.doclist__own{
+    border-left: 3px solid var(--gold);
+    background: rgba(184,147,90,0.14);
+  }
+  .doclist li.doclist__own .tag{
+    color: var(--navy-deep);
+    background: var(--gold);
+    padding: 2px 9px;
+    border-radius: 999px;
+    font-weight: 700;
+  }
+  .doclist li.doclist__own .title{ font-weight: 700; }
   .doclist a{
     display:grid;
     grid-template-columns: 4rem 1fr;
@@ -1078,9 +1099,10 @@
           const isHtml = /\.html?$/i.test(it.file || '');
           const openAttrs = isExternal ? 'target="_blank" rel="noopener"' : '';
           const downloadAttr = (it.file && !isHtml && !isExternal) ? 'download' : '';
+          const isOwn = key === 'faith_philosophy' && /^[12]\./.test(it.title || '');
           return `
-          <li><a href="${it.file || '#'}" ${openAttrs} ${downloadAttr}>
-            <span class="tag">${it.tag || ''}</span>
+          <li class="${isOwn ? 'doclist__own' : ''}"><a href="${it.file || '#'}" ${openAttrs} ${downloadAttr}>
+            <span class="tag">${isOwn ? '은혜교회' : (it.tag || '')}</span>
             <span class="title">${it.title || ''}</span>
             <span class="meta">${it.meta || ''}</span>
           </a></li>`;
