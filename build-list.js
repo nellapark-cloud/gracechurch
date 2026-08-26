@@ -21,10 +21,6 @@ const categories = [
   { key: 'bulletin', dir: 'content/bulletin' },
   { key: 'mokjang_sharing', dir: 'content/mokjang-sharing' },
   { key: 'baptist_history', dir: 'content/baptist-history' },
-  { key: 'admin_sermons', dir: 'content/admin-sermons' },
-  { key: 'admin_personal', dir: 'content/admin-personal' },
-  { key: 'admin_forms', dir: 'content/admin-forms' },
-  { key: 'admin_minutes', dir: 'content/admin-minutes' },
   { key: 'officer_training', dir: 'content/servant-leaders' },
   { key: 'bible_study', dir: 'content/bible-study' },
 ];
