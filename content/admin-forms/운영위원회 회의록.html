@@ -312,20 +312,6 @@
           <td><textarea rows="2" placeholder="논의 내용 요약"></textarea></td>
           <td class="result"><input type="text" placeholder="결정 사항 / 담당자 / 기한"></td>
         </tr>
-        <tr>
-          <td class="num">2</td>
-          <td><input type="text" placeholder=""></td>
-          <td><input type="text" placeholder=""></td>
-          <td><textarea rows="2" placeholder=""></textarea></td>
-          <td class="result"><input type="text" placeholder=""></td>
-        </tr>
-        <tr>
-          <td class="num">3</td>
-          <td><input type="text" placeholder=""></td>
-          <td><input type="text" placeholder=""></td>
-          <td><textarea rows="2" placeholder=""></textarea></td>
-          <td class="result"><input type="text" placeholder=""></td>
-        </tr>
       </tbody>
     </table>
 
@@ -356,7 +342,7 @@
   </div>
 
 <script>
-  let agendaCount = 3;
+  let agendaCount = 1;
   function addAgendaRow(){
     agendaCount++;
     const tbody = document.getElementById('agendaBody');
