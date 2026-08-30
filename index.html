@@ -1082,8 +1082,9 @@
         list.innerHTML = items.map((it) => {
           const isExternal = /^https?:\/\//i.test(it.file || '');
           const isHtml = /\.html?$/i.test(it.file || '');
-          const openAttrs = isExternal ? 'target="_blank" rel="noopener"' : '';
-          const downloadAttr = (it.file && !isHtml && !isExternal) ? 'download' : '';
+          const isImage = /\.(png|jpe?g|gif|webp|svg)$/i.test(it.file || '');
+          const openAttrs = (isExternal || isImage) ? 'target="_blank" rel="noopener"' : '';
+          const downloadAttr = (it.file && !isHtml && !isExternal && !isImage) ? 'download' : '';
           const isOwn = key === 'faith_philosophy' && /^[12]\./.test(it.title || '');
           return `
           <li class="${isOwn ? 'doclist__own' : ''}"><a href="${it.file || '#'}" ${openAttrs} ${downloadAttr}>

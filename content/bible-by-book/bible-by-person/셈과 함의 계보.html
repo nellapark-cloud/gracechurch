@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>셈과 함의 후손들</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --ink: #262220;
+    --sub: #6b6560;
+    --bg: #FBFAF7;
+    --line: #E4E0D8;
+    --accent: #9C4A2E;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  header{
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h1{
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height:1.2;
+    margin-bottom: 8px;
+  }
+
+  .hebrew{
+    font-family: 'EB Garamond', serif;
+    font-size: 16px;
+    color: var(--sub);
+  }
+
+  .refs{
+    margin-top: 14px;
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--sub);
+    background: rgba(156,74,46,0.07);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 44px;
+    margin-bottom: 14px;
+  }
+
+  h2 .num{
+    color: var(--accent);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 8px;
+    font-size: 17px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.9;
+    color: #3a3532;
+    margin-bottom: 16px;
+  }
+
+  ul{
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+
+  li{
+    font-size: 16px;
+    line-height: 1.85;
+    color: #3a3532;
+    margin-bottom: 10px;
+  }
+
+  strong{
+    color: var(--ink);
+    font-weight: 600;
+    background: linear-gradient(to bottom, transparent 65%, rgba(156,74,46,0.08) 65%);
+  }
+
+  .table-wrap{
+    margin: 18px 0 24px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+  }
+
+  th{
+    background: rgba(156,74,46,0.08);
+    text-align: left;
+    padding: 10px 14px;
+    font-family: 'EB Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    color: var(--accent);
+  }
+
+  td{
+    padding: 9px 14px;
+    border-top: 1px solid var(--line);
+    color: #3a3532;
+  }
+
+  .note{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--sub);
+    border-left: 2px solid var(--line);
+    padding: 4px 0 4px 16px;
+    margin: 20px 0;
+  }
+
+  footer{
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: var(--sub);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding: 40px 20px 70px; }
+    h1{ font-size: 30px; }
+    table{ font-size: 13px; }
+    th, td{ padding: 8px 10px; }
+  }
+
+  /* --- 용어 팝업 --- */
+  .term{
+    position: relative;
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+    border-bottom: 1px dotted var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .popover{
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: 270px;
+    max-width: 78vw;
+    background: var(--ink);
+    color: #f2ede4;
+    font-family: 'Noto Serif KR', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 1.65;
+    padding: 14px 16px;
+    border-radius: 6px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    z-index: 20;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .popover .ptitle{
+    display:block;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: #d99a7c;
+    margin-bottom: 5px;
+  }
+
+  .popover::after{
+    content:"";
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+
+  .term.open .popover{ display:block; }
+
+  @media (max-width: 480px){
+    .popover{
+      position: fixed;
+      left: 5vw;
+      right: 5vw;
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      max-width: none;
+    }
+    .popover::after{ display:none; }
+    .term.open::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 19;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">성경인물묵상</div>
+    <h1>셈과 함의 후손들</h1>
+    <div class="hebrew">노아의 세 아들에서 갈라지는 온 세상 민족들</div>
+    <div class="refs">등장 성구 · 창세기 10장 · 창세기 11:10-26</div>
+  </header>
+
+  <h2><span class="num">01</span>열국표란 무엇인가</h2>
+  <p>창세기 10장은 노아의 세 아들 셈, 함, 야벳에게서 갈라져 나온 민족들을 정리한 <span class="term" tabindex="0">열국표<span class="popover"><span class="ptitle">열국표 (Table of Nations)</span>창세기 10장을 가리키는 학술 용어. 고대 근동 문헌 중 특정 민족의 계보가 아니라 "온 세상 민족"을 하나의 가족(노아)에서 나온 것으로 그리는 문헌은 매우 드물어, 성경 신학에서 인류의 근원적 통일성을 보여주는 본문으로 자주 언급된다.</span></span>다. 정확한 혈통 계보라기보다는, 당대 이스라엘이 인식하던 주변 민족들을 지리·언어·정치적 친연성에 따라 세 계열로 묶어 정리한 것에 가깝다. 총 70개 민족이 언급되며, 이는 "온 땅의 백성"을 상징하는 완전수로 읽힌다.</p>
+  <p>이 족보의 서사적 역할도 중요하다. 10장에서 민족들이 "각기 언어와 종족과 나라대로"(10:20, 31) 이미 나뉘어 있다고 서술한 뒤, 11장 <strong>바벨탑</strong> 사건에서 "온 땅의 언어가 하나였더라"며 시간을 거슬러 올라가 언어가 흩어지게 된 이유를 설명한다 — 열국표는 <strong>결과</strong>를, 바벨탑은 <strong>원인</strong>을 보여주는 구조다.</p>
+
+  <h2><span class="num">02</span>야벳의 후손</h2>
+  <p>고멜, 마곡, 마대, 야완, 두발, 메섹, 디라스 등 일곱 아들이 언급되며, 대체로 이스라엘의 북쪽과 서쪽 — 오늘날의 아나톨리아, 흑해 연안, 그리스 방면 민족들과 연결하여 이해된다. 열국표 중 가장 짧게 다뤄지며, 이후 이스라엘 역사 서사에서도 상대적으로 등장 빈도가 낮다.</p>
+
+  <h2><span class="num">03</span>함의 후손</h2>
+  <p>구스, 미스라임(이집트), 붓, 가나안 네 아들이 나온다. 이 계열은 대체로 아프리카 북동부와 가나안 땅, 메소포타미아 남부와 연결된다. 특히 구스의 아들 <span class="term" tabindex="0">니므롯<span class="popover"><span class="ptitle">니므롯 (נִמְרוֹד)</span>"세상에 첫 용사"이자 "여호와 앞에서 특이한 사냥꾼"으로 묘사되는 인물(10:8-9). 그의 나라는 바벨, 에렉, 악갓 등 메소포타미아의 주요 도시들에서 시작되었다고 기록되는데, 이는 이어지는 11장 바벨탑 이야기의 배경 지리와 정확히 겹친다.</span></span>이 별도로 상세히 소개되는데, "세상에 첫 용사"이자 큰 나라를 세운 자로 묘사된다. 그의 나라가 바벨, 니느웨 등에서 시작되었다는 서술은 다음 장의 바벨탑 사건과 앗수르 제국사를 예비한다.</p>
+  <p>가나안의 후손 목록이 특히 상세하게 다뤄지는데, 이는 훗날 <strong>이스라엘이 정복하게 될 땅</strong>의 원주민들을 미리 짚어두는 서사적 포석으로 읽힌다 — 노아가 함의 아들 가나안에게 내렸던 저주(9:25)와 이어지는 흐름이다.</p>
+
+  <h2><span class="num">04</span>셈의 후손</h2>
+  <p>엘람, 앗수르, 아르박삿, 룻, 아람 등이 언급되며, 대체로 메소포타미아 북부와 아라비아 방면 민족들과 연결된다. 이 계열에서 특별히 <span class="term" tabindex="0">에벨<span class="popover"><span class="ptitle">에벨 (עֵבֶר)</span>'히브리(עִבְרִי, Ibri)'라는 명칭의 어원에 대해서는 두 가지 설이 있다. 하나는 셈의 후손인 이 인물 '에벨'의 이름에서 유래했다는 설이고, 다른 하나는 '건너다, 지나가다'를 뜻하는 히브리어 어근 '아바르(עָבַר)'에서 왔다는 설이다 — 강 저편에서 '건너온 자'라는 뜻으로, 아브라함이 유프라테스강을 건너온 것을 가리킨다는 해석이다. 고대 근동 문헌에 등장하는 '하비루/아피루'라는 집단명과의 연관성도 함께 논의된다. 두 설 모두 학계에서 지지자가 있으며 확정된 결론은 없다.</span></span>이 언급되는데, 이는 훗날 <strong>'히브리인'</strong>이라는 명칭의 어원으로 추정된다(다만 '건너온 자'라는 뜻의 다른 어원설도 있다 — 팝업 참고). 창세기 10장 끝에 짧게 등장한 셈의 계보는 11장 10-26절에서 다시 상세히 이어지며, 에벨 → 벨렉 → ... → 데라 → <strong>아브람</strong>으로 연결된다.</p>
+
+  <div class="table-wrap">
+    <table>
+      <tr><th>계열</th><th>대표 지역</th><th>주요 인물/민족</th></tr>
+      <tr><td>야벳</td><td>북쪽·서쪽 (아나톨리아, 그리스 방면)</td><td>고멜, 마곡, 야완</td></tr>
+      <tr><td>함</td><td>아프리카·가나안·메소포타미아 남부</td><td>미스라임(이집트), 가나안, 니므롯</td></tr>
+      <tr><td>셈</td><td>메소포타미아 북부·아라비아</td><td>엘람, 앗수르, 에벨 → 아브라함</td></tr>
+    </table>
+  </div>
+
+  <h2><span class="num">05</span>신학적 의미</h2>
+  <p>열국표가 강조하는 핵심은 온 세상의 다양한 민족이 결국 <strong>한 가족</strong>, 곧 노아에게서 비롯되었다는 점이다. 이는 특정 민족이 태생적으로 우월하거나 열등하다는 사고를 정당화할 근거가 성경 본문 자체에는 없음을 시사한다 — 모든 민족이 <strong>공통의 기원</strong>을 공유한다는 선언이기 때문이다. 동시에 이 족보는 셈 계열, 그중에서도 에벨과 아브라함으로 좁혀지는 흐름을 통해, 이후 창세기 12장부터 시작되는 아브라함 이야기로 독자의 시선을 서서히 이동시킨다.</p>
+
+  <p class="note">다음엔 바벨탑 사건으로 넘어가 언어가 흩어진 이유를 살펴보거나, 셈의 계보를 따라 아브라함으로 곧장 이어갈 수 있다.</p>
+
+  <footer>
+    <span>GENESIS STUDY</span>
+    <span>שם וחם — תולדות בני נח</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.term').forEach(term => {
+    term.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = term.classList.contains('open');
+      document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+      if (!wasOpen) term.classList.add('open');
+    });
+    term.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); term.click(); }
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,2083 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>창세기 연구 — 2부 아브라함(12-25장)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* hl-insight = 더 깊은 설명이 필요한 구절 (하늘색), 클릭 시 팝업 */
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+/* clickable (has a glossary tip) */
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(20,28,42,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+/* Screen-friendly rules above are now the default (baseline) so that any
+   viewer — including ones that don't evaluate @media correctly — shows a
+   clean, readable layout. Printing restores the compact A4-tuned look. */
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 창세기 연구 · 2부</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+<div class="cover">
+  <div class="eyebrow">은혜교회 성경공부 시리즈</div>
+  <h1>창세기 연구</h1>
+  <div class="cover-sub">부르심에서 팥죽 한 그릇까지 — 2부 아브라함 내러티브(12–25장)</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">창 12:1 – 25:34</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">
+    전 14장 · 구조 · 신학적·목회적 교훈 · 심화 질문<br/><br/>
+    <span style="color:#d8b073;">■</span> 핵심 신학 용어　
+    <span style="color:#e07a69;">■</span> 성경 본문 인용　
+    <span style="color:#6ec4bc;">■</span> 원어(히브리어)　
+    <span style="color:#78bee6;">■</span> 더 알아보기(탭하여 열람)
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>창세기 2부 서론 — 아브라함 내러티브(창 12-25장)</h1>
+  <p class="intro-lead">떠남으로 시작된 믿음, 언약으로 완성되어 가는 여정.</p>
+
+  <div class="intro-block">
+    <h3>1부에서 2부로 — 온 세상에서 한 사람으로</h3>
+    <p>1부(1-11장)가 창조에서 바벨탑까지 온 인류를 다루었다면, 2부는 바로 그 인류의 반복된 실패 한가운데서 하나님이 부르신 <b class="hl-term">한 사람 아브람</b>에게 초점을 완전히 좁힌다. 아브라함 내러티브는 단지 한 개인의 전기가 아니라, 하나님이 온 열방을 구원하시기 위해 택하신 한 가족을 통해 일하시는 구속사의 본격적 출발점이다. 신약에서 바울은 아브라함을 "믿는 모든 자의 조상"(롬 4:11)이라 부르며, 이 열네 장을 신약 신학의 핵심 근거로 반복해서 인용한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>언약의 점진적 심화</h3>
+    <p>아브라함 언약은 한 번에 완성되지 않고 여러 단계를 거쳐 점진적으로 심화된다: 12장의 최초 부르심과 약속, 15장의 공식적 언약 체결(쪼갠 짐승 의식), 17장의 할례라는 몸의 표징과 이름의 변경. 이 반복적 확증은 하나님이 인간의 의심과 연약함(웃음, 하갈을 통한 인간적 해결 시도 등)에도 불구하고 끝까지 자신의 약속을 붙들고 계심을 보여준다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>흠 있는 믿음의 조상 — 성경의 정직한 초상</h3>
+    <p>아브라함은 이상화된 성인이 아니라 두 차례나 아내를 속이고(12장, 20장), 하갈을 통해 인간적 방법으로 약속을 이루려 시도한(16장) 연약한 인간으로 그려진다. 그럼에도 그는 히브리서 11장의 믿음의 전당에 이름을 올리며, 로마서 4장에서 이신칭의 교리의 원형적 인물로 제시된다. 이는 성경적 믿음이 도덕적 완전함이 아니라, 실패에도 불구하고 계속되는 하나님에 대한 신뢰임을 보여준다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>그리스도를 가리키는 예표들</h3>
+    <p>2부에는 신약 신학의 뿌리가 되는 풍성한 예표들이 담겨 있다: 멜기세덱(왕이자 제사장, 히 7장), 이삭을 바치는 사건과 대신 죽은 숫양(대속의 원리, 롬 8:32), 그리고 믿음으로 여겨진 의(15:6, 롬 4장 이신칭의 교리의 근거)가 대표적이다. 이 장들을 읽을 때마다 신약이 이 본문들을 어떻게 재해석하고 성취로 선언하는지 함께 살피는 것이 이 부의 핵심 독법이다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관 (2부, 12-25장)</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">12-14장</div>
+        <div class="oi-title">부르심과 첫 시험들</div>
+        <div class="oi-body">떠남의 명령, 롯과의 분리, 그리고 전쟁과 멜기세덱의 축복.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">15-17장</div>
+        <div class="oi-title">언약의 확증</div>
+        <div class="oi-body">믿음으로 여겨진 의, 하갈을 통한 인간적 시도, 할례와 이름의 변경.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">18-20장</div>
+        <div class="oi-title">심판과 중보, 그리고 반복된 실패</div>
+        <div class="oi-body">소돔을 위한 중보기도, 소돔의 멸망, 그랄에서 반복된 속임수.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">21-25장</div>
+        <div class="oi-title">약속의 성취와 다음 세대로</div>
+        <div class="oi-body">이삭의 출생, 모리아 산의 시험, 사라의 죽음, 리브가와의 결혼, 그리고 야곱과 에서의 출생.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 다루며, <b class="hl-term">③깊이 생각해볼 문제</b>는 해석사적 논쟁과 난해 구절을 다룬다. 골드로 표시된 용어와 하늘색으로 표시된 구절은 탭하여 추가 설명을 확인할 수 있다.</p>
+  </div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents · 2부</div>
+  <h1>목차 — 아브라함 내러티브 (12-25장)</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch12')" onkeydown="if(event.key==='Enter')goTo(event,'ch12')">
+      <span class="toc-num">12</span>
+      <span class="toc-title">아브람의 부르심</span>
+      <span class="toc-sub">떠나라는 명령과 땅·자손·복의 약속</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch13')" onkeydown="if(event.key==='Enter')goTo(event,'ch13')">
+      <span class="toc-num">13</span>
+      <span class="toc-title">아브람과 롯의 분리</span>
+      <span class="toc-sub">관대함의 선택과 소돔을 향한 시선</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch14')" onkeydown="if(event.key==='Enter')goTo(event,'ch14')">
+      <span class="toc-num">14</span>
+      <span class="toc-title">전쟁과 멜기세덱</span>
+      <span class="toc-sub">롯을 구출한 아브람, 그리고 신비로운 왕제사장</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch15')" onkeydown="if(event.key==='Enter')goTo(event,'ch15')">
+      <span class="toc-num">15</span>
+      <span class="toc-title">언약 체결</span>
+      <span class="toc-sub">믿음으로 여겨진 의, 그리고 쪼갠 짐승 사이로</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch16')" onkeydown="if(event.key==='Enter')goTo(event,'ch16')">
+      <span class="toc-num">16</span>
+      <span class="toc-title">하갈과 이스마엘</span>
+      <span class="toc-sub">인간의 조급함이 낳은 갈등</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch17')" onkeydown="if(event.key==='Enter')goTo(event,'ch17')">
+      <span class="toc-num">17</span>
+      <span class="toc-title">할례 언약과 이름의 변경</span>
+      <span class="toc-sub">아브람에서 아브라함으로, 사래에서 사라로</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch18')" onkeydown="if(event.key==='Enter')goTo(event,'ch18')">
+      <span class="toc-num">18</span>
+      <span class="toc-title">세 사람의 방문과 소돔을 위한 중보</span>
+      <span class="toc-sub">환대, 웃음, 그리고 의인을 위한 간구</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch19')" onkeydown="if(event.key==='Enter')goTo(event,'ch19')">
+      <span class="toc-num">19</span>
+      <span class="toc-title">소돔의 멸망</span>
+      <span class="toc-sub">심판의 불과 뒤돌아본 롯의 아내</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch20')" onkeydown="if(event.key==='Enter')goTo(event,'ch20')">
+      <span class="toc-num">20</span>
+      <span class="toc-title">그랄에서의 아비멜렉</span>
+      <span class="toc-sub">반복되는 실패, 그리고 이방 왕의 정직함</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch21')" onkeydown="if(event.key==='Enter')goTo(event,'ch21')">
+      <span class="toc-num">21</span>
+      <span class="toc-title">이삭의 출생과 하갈의 추방</span>
+      <span class="toc-sub">웃음이 현실이 되다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch22')" onkeydown="if(event.key==='Enter')goTo(event,'ch22')">
+      <span class="toc-num">22</span>
+      <span class="toc-title">이삭을 바치라 하심</span>
+      <span class="toc-sub">가장 큰 시험, 그리고 여호와 이레</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch23')" onkeydown="if(event.key==='Enter')goTo(event,'ch23')">
+      <span class="toc-num">23</span>
+      <span class="toc-title">사라의 죽음과 매장지 구입</span>
+      <span class="toc-sub">약속의 땅에서의 첫 소유</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch24')" onkeydown="if(event.key==='Enter')goTo(event,'ch24')">
+      <span class="toc-num">24</span>
+      <span class="toc-title">이삭의 신부 리브가</span>
+      <span class="toc-sub">기도로 인도받은 만남</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch25')" onkeydown="if(event.key==='Enter')goTo(event,'ch25')">
+      <span class="toc-num">25</span>
+      <span class="toc-title">아브라함의 죽음과 야곱·에서의 출생</span>
+      <span class="toc-sub">한 시대가 저물고, 새로운 갈등이 태어나다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+  </div>
+</div>
+
+<section class="chapter" id="ch12">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 40 L24 8 L38 40" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><line x1="24" y1="8" x2="24" y2="2" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 12</div>
+      <h1>12장 · 아브람의 부르심</h1>
+      <div class="chapter-sub">떠나라는 명령과 땅·자손·복의 약속</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 12:1-20</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">12:1-9</div>
+        <div>
+          <div class="flow-title">부르심과 언약의 약속</div>
+          <div class="flow-body">바벨탑에서 흩어진 인류의 이야기 직후, 하나님은 갑자기 한 사람 아브람에게 나타나 <b class="hl-quote">"너는 너의 고향과 친척과 아버지의 집을 떠나 내가 네게 보여 줄 땅으로 가라"</b>(1절)고 명하신다. 이는 고대 세계에서 씨족과 조상의 땅을 떠난다는 것이 안전과 정체성 전체를 포기하는 것과 같았던 시대에 극단적으로 급진적인 요구였다. 그 대가로 하나님은 <b class="hl-term has-tip" data-tip="창세기 12:2-3에서 하나님이 아브람에게 주신 약속. 큰 민족, 땅, 복, 그리고 '땅의 모든 족속이 너로 말미암아 복을 얻을 것'이라는 네 가지 축복으로 구성되며, 이후 성경 전체 구속사의 근간이 된다.">일곱 겹의 약속</b>(2-3절)을 주신다: 큰 민족, 이름의 창대함, 복의 근원, 그리고 결정적으로 <b class="hl-insight has-insight" data-insight="0">"땅의 모든 족속이 너로 말미암아 복을 얻을 것이라"</b>는 보편적 약속이다. 아브람은 즉시 순종하여 가나안 땅에 이르고, 하나님이 나타나신 곳마다 제단을 쌓는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12:10-20</div>
+        <div>
+          <div class="flow-title">애굽으로의 도피와 사래를 누이라 속임</div>
+          <div class="flow-body">가나안에 기근이 들자 아브람은 애굽으로 내려가며, 아름다운 아내 사래 때문에 자신이 죽임당할까 두려워 그녀를 누이라 속이라고 요청한다. 결과적으로 바로가 사래를 데려가지만, 하나님이 바로의 집에 재앙을 내리시어 사태를 바로잡으신다. 약속을 받은 직후임에도 아브람의 믿음은 즉시 흔들리며, 이는 이후 20장에서 <b class="hl-term">동일한 실수</b>가 반복될 것을 예고한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">떠남이 곧 믿음의 시작</div>
+        <div class="teach-body">하나님의 부르심은 언제나 익숙한 것을 떠나는 것에서 시작된다. 히브리서 11:8은 이를 믿음의 모범으로 제시한다: "믿음으로 아브라함은 부르심을 받았을 때에 순종하여 장래 기업으로 받을 땅에 나갈새 갈 바를 알지 못하고 나갔으며." 목적지를 다 알지 못한 채 순종하는 것이 믿음의 본질이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">복의 근원이 되는 소명</div>
+        <div class="teach-body">아브람에게 주신 복은 그 개인만을 위한 것이 아니라 "땅의 모든 족속"을 향한 것이다. 이는 이스라엘의 선택이 배타적 특권이 아니라 온 세상을 위한 도구적 소명임을 처음부터 선언하며, 갈라디아서 3:8-9은 이 구절을 복음이 이방인에게까지 전해질 것에 대한 예언으로 직접 인용한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">제단을 쌓는 삶 — 이동 중에도 예배</div>
+        <div class="teach-body">아브람은 정착하지 못하고 계속 이동하는 나그네의 삶을 살면서도 가는 곳마다 제단을 쌓는다. 이는 삶의 불안정성 속에서도 예배의 중심성을 잃지 않는 신앙의 모범이며, 히브리서 11:9-10은 아브라함이 "하나님이 계획하시고 지으실 터가 있는 성을 바랐다"는 종말론적 소망과 연결한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">약속받은 자의 연약함</div>
+        <div class="teach-body">방금 위대한 약속을 받은 아브람이 곧바로 두려움 때문에 아내를 속이는 장면은 충격적이지만 정직하다. 성경은 믿음의 조상을 이상화하지 않고 그의 실패까지 그대로 기록한다. 이는 신앙이 완벽함이 아니라 실패에도 불구하고 계속되는 하나님과의 관계임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님이 언약을 지키시는 방식 — 인간의 실패를 넘어서는 신실하심</div>
+        <div class="teach-body">아브람의 거짓말로 인해 약속의 계보(사래를 통한 후손) 전체가 위협받을 뻔했지만, 하나님은 직접 개입하여 바로의 집에 재앙을 내리고 사래를 보호하신다. 이는 언약의 성취가 궁극적으로 인간의 신실함이 아니라 하나님의 주권적 신실하심에 달려 있다는 진리를 처음부터 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">12:1의 '떠나라'는 명령, 원어로 보면 순서가 재밌어요. '고향 → 친척 → 아버지의 집' 순으로, 점점 더 가깝고 본질적인 것들을 하나씩 내려놓으라는 거예요. 믿음은 대개 이렇게 한 번에 다가 아니라 점진적으로 무언가를 내려놓는 과정으로 시작되는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>아브람의 부르심이 순전히 그의 의로움 때문이었는가?</div>
+        <div class="deep-body">본문은 아브람이 부름받기 전 어떤 공로를 세웠는지 전혀 언급하지 않는다. 여호수아 24:2은 오히려 아브람의 조상들이 "다른 신들을 섬겼다"고 명시한다. 이는 부르심이 순전히 하나님의 은혜로운 주권적 선택에 근거함을 보여주며, 로마서 4장에서 바울이 아브라함의 의가 행위가 아니라 믿음으로 말미암았다고 논증하는 신학적 기초가 된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>사래를 누이라 속인 것이 완전한 거짓말이 아니라는 점(20:12에서 밝혀짐)은 이 행위를 정당화하는가?</div>
+        <div class="deep-body">20:12에서 아브람은 사래가 실제로 자신의 이복누이였다고 밝힌다. 그러나 이는 도덕적 변명이 되지 못한다 — 아브람은 의도적으로 결혼 관계라는 결정적 정보를 숨겨 상대를 속였고, 그 결과 사래가 다른 남자의 집에 들어가는 위험한 상황을 자초했다. 절반의 진실로 상대를 오도하는 것은 여전히 기만이라는 것이 본문에 대한 일반적 윤리적 평가이며, 이는 성경이 족장들의 흠을 미화하지 않고 있는 그대로 기록한다는 점을 다시 확인시켜준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch13">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 24h16M26 24h16" stroke="currentColor" stroke-width="2"/><circle cx="14" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="34" cy="24" r="6" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 13</div>
+      <h1>13장 · 아브람과 롯의 분리</h1>
+      <div class="chapter-sub">관대함의 선택과 소돔을 향한 시선</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 13:1-18</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">13:1-13</div>
+        <div>
+          <div class="flow-title">다툼과 분리</div>
+          <div class="flow-body">애굽에서 돌아온 아브람과 롯은 가축이 많아져 그 땅이 그들을 함께 용납할 수 없었고, 목자들 사이에 다툼이 일어난다. 아브람은 조카에게 <b class="hl-quote">"우리는 한 친족이라... 네 앞에 온 땅이 있지 아니하냐 나를 떠나라"</b>(8-9절)며 먼저 선택할 권리를 양보한다. 롯은 <b class="hl-term">요단 온 지역</b>을 택해 소돔 근처에 장막을 치는데, 본문은 은근히 경고를 심어둔다: <b class="hl-insight has-insight" data-insight="1">"소돔 사람은 여호와 앞에 악하며 큰 죄인이었더라"</b>(13절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13:14-18</div>
+        <div>
+          <div class="flow-title">약속의 재확인</div>
+          <div class="flow-body">롯이 떠난 후 하나님은 아브람에게 다시 나타나 땅과 자손에 대한 약속을 재확인하시며, "네 눈을 들어... 동서남북을 바라보라... 보이는 땅을 내가 너와 네 자손에게 주리니"(14-15절)라고 하신다. 아브람은 헤브론 마므레 상수리 수풀에 이르러 거하며 또 제단을 쌓는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">관대함이 신뢰에서 나온다</div>
+        <div class="teach-body">아브람이 조카에게 먼저 선택권을 양보한 것은 손해를 감수하는 관대함이지만, 그 배경에는 하나님의 약속에 대한 깊은 신뢰가 있다. 땅과 미래가 이미 하나님께 보장되어 있다고 믿는 자는 눈앞의 이익을 움켜쥘 필요가 없다. 이는 빌립보서 2:3-4의 "다른 사람들의 일을 돌보아 나의 일로 여기라"는 원리와 연결된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">눈에 보이는 것과 하나님이 보시는 것의 차이</div>
+        <div class="teach-body">롯은 "눈을 들어 요단 지역을 바라본즉 온 땅에 물이 넉넉하니"(10절)라며 순전히 물질적·시각적 기준으로 선택한다. 그러나 본문은 곧바로 그 땅이 영적으로 얼마나 부패했는지를 알려준다(13절). 이는 눈앞의 풍요와 하나님 보시기의 실상이 다를 수 있다는 경고이며, 이후 롯의 비극(19장)의 씨앗이 여기서 이미 뿌려진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">손해 보는 선택이 결국 더 큰 약속으로</div>
+        <div class="teach-body">아브람은 롯에게 좋은 땅을 양보하지만, 정확히 그 직후 하나님은 그에게 훨씬 더 큰 약속(눈에 보이는 모든 땅)을 다시 확인해 주신다. 이는 하나님 나라의 원리 — "자기를 낮추는 자는 높아지리라"(마 23:12) — 가 족장사에서부터 이미 작동하고 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">함께 살 수 없을 만큼의 풍요 — 복이 만드는 새로운 문제</div>
+        <div class="teach-body">아브람과 롯의 다툼은 부족해서가 아니라 오히려 "소유가 많아져서"(6절) 생긴 문제였다. 물질적 축복이 반드시 관계의 평화를 보장하지 않으며, 오히려 새로운 갈등의 씨앗이 될 수 있다는 실존적 통찰을 준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">땅을 바라보라는 명령과 하나님 나라의 시야</div>
+        <div class="teach-body">14절에서 하나님이 아브람에게 사방을 "바라보라"고 하신 명령은, 롯이 스스로 "눈을 들어 바라본"(10절) 이기적 시선과 대조된다. 하나님이 주도하시는 시야는 소유욕이 아니라 약속에 대한 신뢰에서 나오는 것임을 대비적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">13장은 겉으로 보면 그냥 목축업자들의 땅 분쟁 해결처럼 보이는데, 그 안에 인생의 중요한 질문이 숨어 있어요. '내가 지금 무엇을 기준으로 선택하고 있는가?' 롯은 눈에 보이는 물의 풍요로, 아브람은 보이지 않는 약속에 대한 신뢰로 움직였죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>아브람의 양보가 단순한 미덕인가, 전략적 지혜인가?</div>
+        <div class="deep-body">본문은 아브람의 동기를 명시하지 않지만, 문맥상 그가 하나님의 약속(12:7, 땅에 대한 약속)을 이미 받은 상태였다는 점이 중요하다. 즉 그의 관대함은 손해를 감수하는 순수한 미덕이면서 동시에, 이미 약속으로 보장된 미래를 신뢰하기에 가능한 여유이기도 하다. 신앙적 미덕과 약속에 대한 확신은 본문에서 서로 배타적이지 않다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>롯이 악한 소돔 근처를 선택한 것에 대해 본문은 그를 얼마나 비난하는가?</div>
+        <div class="deep-body">본문은 롯을 노골적으로 정죄하지 않고 담담히 사실을 서술할 뿐이다. 그러나 베드로후서 2:7-8은 롯을 "의로운 롯"이라 부르며 소돔에서 그가 "저 무법한 자들의 음란한 행실로 말미암아 고통 당하였다"고 기록해, 그가 소돔의 죄악에 물들지는 않았지만 잘못된 환경 선택으로 인해 큰 대가를 치렀다는 균형 잡힌 그림을 제공한다. 이는 신자가 완전히 타락하지 않고도 잘못된 선택으로 인해 영적·물질적 손실을 겪을 수 있음을 경고하는 사례로 자주 사용된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch14">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 14</div>
+      <h1>14장 · 전쟁과 멜기세덱</h1>
+      <div class="chapter-sub">롯을 구출한 아브람, 그리고 신비로운 왕제사장</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 14:1-24</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">14:1-16</div>
+        <div>
+          <div class="flow-title">왕들의 전쟁과 롯의 포로됨</div>
+          <div class="flow-body">동방 네 왕의 연합군이 소돔을 포함한 다섯 왕을 정복하고 롯과 그의 재산을 사로잡아 간다. 소식을 들은 아브람은 집에서 훈련된 <b class="hl-term">318명</b>을 거느리고 추격하여 야습으로 승리하고 롯과 포로된 사람들, 재물을 모두 되찾는다 — 이는 아브람이 단지 목자가 아니라 유력한 족장으로서의 군사적 역량도 지녔음을 보여준다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14:17-24</div>
+        <div>
+          <div class="flow-title">멜기세덱의 축복과 아브람의 십일조</div>
+          <div class="flow-body">승전 후 살렘 왕이자 <b class="hl-term has-tip" data-tip="창세기 14:18에 처음 등장하는 신비로운 인물. '살렘 왕이며 지극히 높으신 하나님의 제사장'으로 소개되며, 족보나 출생·죽음 기록이 없다. 시편 110:4과 히브리서 5-7장에서 그리스도의 영원한 제사장직의 예표로 해석된다.">멜기세덱</b>이 떡과 포도주를 가지고 나와 아브람을 축복한다: <b class="hl-quote">"천지의 주재이시요 지극히 높으신 하나님이여 아브람에게 복을 주옵소서"</b>(19절). 아브람은 그에게 <b class="hl-insight has-insight" data-insight="2">모든 것의 십분의 일</b>을 드린다(20절). 이어 소돔 왕이 재물을 아브람에게 주려 하나, 아브람은 "실 한 오라기나 들메끈 한 가닥도 받지 아니하리라"(23절)며 단호히 거절한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">가족을 향한 희생적 개입</div>
+        <div class="teach-body">아브람은 자신과 갈라선 롯을 위해 목숨을 걸고 나선다. 이미 자발적으로 분리된 관계임에도 위기에 처한 가족을 외면하지 않는 이 행동은, 갈라섬이 곧 사랑의 단절을 의미하지 않는다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">멜기세덱 — 그리스도의 예표</div>
+        <div class="teach-body">멜기세덱은 레위 계열의 제사장직보다 앞서 존재하며, 왕이자 동시에 제사장이라는 독특한 정체성을 지닌다. 히브리서 7장은 그를 "아버지도 없고 어머니도 없고 족보도 없고 시작한 날도 없고 생명의 끝도 없어 하나님의 아들과 닮아서 항상 제사장으로 있느니라"(히 7:3)고 해석하며, 그리스도의 영원하고 왕적인 제사장직의 예표로 제시한다. 시편 110:4("너는 멜기세덱의 서열을 따라 영원한 제사장이라")은 다윗 왕조 메시아 예언에서 이 인물을 다시 소환한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">떡과 포도주 — 성찬의 예표</div>
+        <div class="teach-body">멜기세덱이 아브람에게 가져온 떡과 포도주는 훗날 예수님이 최후의 만찬에서 제정하신 성찬(마 26:26-28)의 요소와 동일하다. 직접적 인과관계를 단정할 수는 없지만, 많은 신학자들이 이 장면을 성찬 신학의 구약적 배경으로 함께 살핀다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">십일조의 최초 사례</div>
+        <div class="teach-body">아브람이 멜기세덱에게 드린 십일조는 모세 율법(레 27:30)보다 수백 년 앞선 최초의 사례로, 십일조가 율법의 산물이 아니라 그보다 앞선 신앙적 감사와 헌신의 원리임을 보여준다. 히브리서 7:4-10은 이를 근거로 멜기세덱(과 그리스도)의 제사장직이 레위 제사장직보다 우월함을 논증한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">소돔 왕의 제안을 거절함 — 오직 하나님만이 나의 부요</div>
+        <div class="teach-body">아브람이 소돔 왕의 재물을 거절한 것은 하나님이 아니라 이방 왕에 의해 부요해졌다는 오해를 피하기 위함이었다. 이는 신자의 정체성과 번영이 오직 하나님께로부터 온다는 것을 세상에 증거하려는 신중한 신앙적 결단이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">멜기세덱은 딱 몇 절 등장했다가 사라지는 인물인데, 히브리서에서 완전히 재발견돼요. 족보가 없다는 게 오히려 신학적 의미가 되는 인물이라니, 성경 해석의 재미있는 지점이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>멜기세덱은 역사적으로 정확히 누구였는가?</div>
+        <div class="deep-body">본문은 그의 출신이나 계보를 전혀 밝히지 않는다. 일부 유대 전통은 그를 노아의 아들 셈과 동일시하기도 하지만 본문에 명시적 근거는 없다. 히브리서 저자는 오히려 이 정보의 '부재' 자체(족보 없음)를 신학적으로 활용하여 그를 영원한 제사장직의 예표로 제시한다. 역사적 정체보다 그의 신학적 기능(왕이자 제사장, 그리스도의 예표)이 성경 해석에서 훨씬 중요하게 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>318명의 소수 병력으로 대군을 이긴 것을 어떻게 이해해야 하는가?</div>
+        <div class="deep-body">본문은 이 승리의 군사적 세부사항(야습 전술, 지리적 이점 등)을 간략히만 언급하며 신적 개입을 명시적으로 서술하지는 않는다. 그러나 아브람 내러티브 전체의 문맥에서, 이는 그가 이미 받은 하나님의 보호와 복의 약속(12:2-3, "너를 축복하는 자에게는 내가 복을 내리고")이 실제 역사 속에서 구체적으로 작동하고 있음을 보여주는 사례로 읽힌다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch15">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 12v24M38 12v24" stroke="currentColor" stroke-width="2"/><path d="M10 12l6 8-6 8M38 12l-6 8 6 8" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 15</div>
+      <h1>15장 · 언약 체결</h1>
+      <div class="chapter-sub">믿음으로 여겨진 의, 그리고 쪼갠 짐승 사이로</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 15:1-21</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">15:1-6</div>
+        <div>
+          <div class="flow-title">별과 같은 자손의 약속과 믿음으로 여겨진 의</div>
+          <div class="flow-body">하나님이 환상 중에 아브람에게 <b class="hl-quote">"나는 네 방패요 너의 지극히 큰 상급이니라"</b>(1절)고 말씀하시자, 아브람은 자식이 없어 상속자가 자기 집 종이 될 것이라고 탄식한다. 하나님은 그를 밖으로 데리고 나가 <b class="hl-quote">"하늘을 우러러 뭇별을 셀 수 있나 보라... 네 자손이 이와 같으리라"</b>(5절)고 하시며, 그 결과 <b class="hl-insight has-insight" data-insight="3">"아브람이 여호와를 믿으니 여호와께서 이를 그의 의로 여기셨더라"</b>(6절)는 성경 전체 구원론의 가장 중요한 구절 중 하나가 등장한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15:7-21</div>
+        <div>
+          <div class="flow-title">쪼갠 짐승 사이로 지나가시는 언약</div>
+          <div class="flow-body">하나님은 땅에 대한 약속을 확증하시기 위해 아브람에게 암소, 암염소, 숫양, 산비둘기, 집비둘기를 가져와 쪼개게 하신다. 해질 무렵 <b class="hl-term has-tip" data-tip="고대 근동의 언약 체결 의식. 쪼갠 짐승 사이로 지나가는 것은 '내가 이 언약을 어기면 이 쪼개진 짐승처럼 되겠다'는 자기 저주적 맹세의 상징적 행위였다.">깊은 잠</b>과 흑암과 두려움이 아브람에게 임하고, 하나님은 그의 후손이 400년간 이방에서 종살이할 것과 이후 큰 재물을 이끌고 나올 것을 예언하신다(13-16절). 놀랍게도 오직 <b class="hl-term">타는 횃불과 연기 나는 화로</b>(하나님을 상징)만이 쪼갠 고기 사이로 지나가고, 아브람은 지나가지 않는다(17절) — 언약의 성취 책임이 전적으로 하나님께만 있음을 보여주는 일방적 언약이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">믿음으로 여겨진 의 — 구원론의 초석</div>
+        <div class="teach-body">15:6은 성경 전체 구원론의 핵심 구절이다. 아브람은 어떤 행위도 하지 않은 채, 단지 하나님의 약속을 믿었을 뿐인데 그것이 '의'로 여겨졌다. 바울은 로마서 4:3-5과 갈라디아서 3:6에서 이 구절을 직접 인용하며, 율법 이전에 이미 믿음으로 말미암은 칭의의 원리가 확립되어 있었다고 논증한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">의심 섞인 질문도 받아주시는 하나님</div>
+        <div class="teach-body">아브람은 하나님의 약속 앞에서 "내가 무엇을 주신다 해도... 내게 무엇을 주시려 하나이까"(2절)라며 회의 섞인 질문을 던진다. 하나님은 이 질문을 책망하지 않으시고 오히려 별을 보여주시며 구체적으로 응답하신다. 이는 믿음이 의심 없는 완벽한 확신이 아니라, 의문을 가지고도 하나님께 나아가는 정직함을 포함한다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님만 지나가시는 언약 — 은혜의 일방성</div>
+        <div class="teach-body">고대 근동의 언약 의식에서는 통상 쌍방이 모두 쪼갠 짐승 사이로 지나가며 서로에게 책임을 지웠다. 그러나 이 언약에서는 오직 하나님(불과 연기)만 지나가신다. 이는 이 언약의 성취가 아브람의 신실함이 아니라 전적으로 하나님의 신실하심에 달려 있다는 은혜의 신학을 상징적으로 극화한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">400년의 종살이 예언 — 고난을 미리 아시고 계획하시는 하나님</div>
+        <div class="teach-body">하나님은 후손이 이방에서 400년간 종살이할 것을 미리 예언하신다(13절). 이는 훗날 출애굽 사건이 우연이 아니라 이미 아브라함 때부터 하나님의 계획 안에 있었음을 보여주며, 고난의 시기에도 하나님이 이미 그 끝(구원과 심판, 16절)을 알고 계획하고 계셨다는 신학적 위로를 준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">"아모리 족속의 죄악이 아직 관영하지 아니함이라"</div>
+        <div class="teach-body">16절의 이 구절은 심판의 정의로움에 대한 중요한 통찰을 준다. 하나님은 가나안 땅을 즉시 주시지 않고 400년을 기다리시는데, 이는 아모리 족속에게 회개할 기회와 시간을 충분히 주시는 하나님의 오래 참으심을 보여준다. 정의로운 심판은 성급하지 않다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">15장의 쪼갠 짐승 사이를 지나가는 의식, 처음 보면 낯설고 무섭게 느껴지는데 이게 사실 성경에서 가장 은혜로운 장면 중 하나예요. 원래는 언약 당사자 둘 다 지나가야 하는데, 하나님만 지나가시거든요. 아브람이 아니라 하나님이 전적으로 책임지시겠다는 뜻이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>아브람이 '믿었다'는 것은 정확히 무엇을 믿은 것인가? 단순한 지적 동의인가, 인격적 신뢰인가?</div>
+        <div class="deep-body">히브리어 '헤에민'은 단순한 사실 인정이 아니라 '견고히 붙들다, 신뢰로 의지하다'는 능동적 의미를 담고 있다. 아브람은 자손이 별처럼 많아질 것이라는, 인간적으로 불가능해 보이는 약속(그는 이미 노년이고 사래는 불임이었다)을 하나님의 성품과 능력에 근거해 신뢰로 붙든 것이다. 이는 지적 동의를 넘어 삶 전체를 거는 인격적 신뢰였다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>의로 '여겨졌다'는 것은 아브람이 실제로 의로워졌다는 뜻인가, 아니면 법적으로만 그렇게 간주된 것인가?</div>
+        <div class="deep-body">이는 종교개혁 시대부터 이어진 중요한 신학적 논쟁이다. 개신교 전통(특히 루터, 칼빈)은 이를 '전가된 의'(imputed righteousness) — 실제 내적 변화가 아니라 하나님이 법적으로 의롭다고 선언하시는 것 — 로 해석하며 이신칭의 교리의 핵심 근거로 삼는다. 반면 다른 전통들은 믿음이 실제 성품의 변화(내재적 의)를 동반한다고 강조한다. 본문 자체는 이 논쟁을 명시적으로 해결하지 않지만, 바울의 로마서 4장 논증은 명백히 '행위와 무관하게' 여겨진 의라는 점을 강조하며 전가적 해석에 무게를 싣는다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch16">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 40c0-8 5-14 10-14s10 6 10 14" fill="none" stroke="currentColor" stroke-width="2"/><path d="M6 30q4 8 0 14M42 30q-4 8 0 14" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 16</div>
+      <h1>16장 · 하갈과 이스마엘</h1>
+      <div class="chapter-sub">인간의 조급함이 낳은 갈등</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 16:1-16</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">16:1-6</div>
+        <div>
+          <div class="flow-title">사래의 계획과 하갈의 임신</div>
+          <div class="flow-body">자식을 기다리다 지친 사래는 당시 관습에 따라 애굽 여종 하갈을 통해 후손을 얻자고 제안하고, 아브람은 <b class="hl-quote">"아브람이 사래의 말을 들으니라"</b>(2절)며 순응한다. 하갈이 임신하자 그녀는 여주인을 <b class="hl-term">멸시</b>하고, 이에 사래는 하갈을 학대하여 결국 하갈이 도망친다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16:7-16</div>
+        <div>
+          <div class="flow-title">광야에서 하갈을 만나신 하나님</div>
+          <div class="flow-body">광야 샘물 곁에서 <b class="hl-term has-tip" data-tip="구약에서 하나님의 자기 현현으로 이해되는 존재. 여러 학자들은 이를 성자 그리스도의 선재적(先在的) 현현(기독론적 신현)으로 해석한다.">여호와의 사자</b>가 하갈에게 나타나 여주인에게 돌아가 복종하라 명하시며, 동시에 그녀의 후손이 셀 수 없이 많아질 것을 약속하신다. 하갈은 이 만남을 통해 하나님을 <b class="hl-insight has-insight" data-insight="4">"나를 살피시는 하나님"</b>(엘로이, 13절)이라 부르는데, 이는 성경에서 인간이 하나님께 새로운 이름을 붙인 유일한 사례다. 그녀는 순종하여 돌아가 아들 이스마엘을 낳는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">인간적 방법으로 하나님의 약속을 이루려는 시도의 결과</div>
+        <div class="teach-body">사래와 아브람의 계획은 당시 문화적으로 정당한 대안적 상속 방식이었지만, 결과적으로 가정의 불화와 이후 이스마엘과 이삭 후손들 사이의 지속적 긴장(오늘날까지 이어지는 갈등의 신학적·역사적 배경으로 종종 언급됨)을 낳는다. 이는 하나님의 약속을 인간의 계획과 조급함으로 앞당기려 할 때 발생하는 대가를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">멸시받고 버림받은 자를 찾아오시는 하나님</div>
+        <div class="teach-body">하갈은 사회적으로 가장 낮은 지위(이방인 여종)에 있었지만, 하나님은 광야에서 그녀를 직접 찾아와 만나주신다. 이는 하나님의 은혜가 언약 공동체의 중심 인물(아브람, 사래)에게만 국한되지 않고, 소외되고 버림받은 자에게까지 미친다는 것을 보여주는 성경 전체에 반복되는 패턴이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">나를 살피시는 하나님 — 보이지 않는 곳에서의 임재</div>
+        <div class="teach-body">하갈이 광야, 곧 아무도 자신을 보지 못할 것 같은 곳에서 오히려 하나님께 '보임'을 받는 경험은 시편 139편("주께서 나를 살펴 보셨으므로 나를 아시나이다")의 신학과 맞닿는다. 가장 고립되고 버림받은 순간에도 하나님의 시선은 결코 떠나지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">약속의 후손과 육신의 후손의 구별의 시작</div>
+        <div class="teach-body">이스마엘의 출생은 훗날 바울이 갈라디아서 4:22-31에서 발전시키는 '육체를 따라 난 자'(하갈-이스마엘)와 '약속을 따라 난 자'(사라-이삭)의 대조적 알레고리의 역사적 출발점이 된다. 바울은 이를 율법(종의 자녀)과 은혜(자유의 자녀)의 대조로 신학적으로 확장한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">이스마엘을 향한 하나님의 신실한 돌보심</div>
+        <div class="teach-body">이스마엘은 언약의 후손은 아니지만, 하나님은 그를 결코 버리지 않으시고 큰 민족으로 삼겠다고 약속하신다(10절, 그리고 훗날 17:20, 21:18에서 재확인됨). 이는 언약의 특별한 선택과 하나님의 보편적 돌보심이 함께 작동함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">하갈이 하나님께 이름을 붙인 유일한 사람이라는 게 참 놀라워요. 아브람도, 사래도 하나님께 이름을 붙이지 않았는데, 가장 낮은 자리에 있던 이방인 여종이 그렇게 해요. '나를 살피시는 하나님'이라고요. 하나님의 마음이 어디로 향하는지 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>사래의 계획은 당시 문화적으로 정당했는가, 아니면 명백한 불신앙이었는가?</div>
+        <div class="deep-body">고대 근동의 법전들(누지 문서, 함무라비 법전 등)은 실제로 불임 아내가 여종을 통해 후사를 얻는 관행을 법적으로 인정했다. 이런 의미에서 사래의 제안은 당대 기준으로 '비정상적'이지 않았다. 그러나 성경 내러티브는 이를 단순히 문화적 관습으로 중립적으로 서술하지 않고, 그 결과(가정불화, 지속되는 갈등)를 통해 은연중에 부정적으로 평가한다. 문화적으로 용인된 방법이라 해도 하나님의 구체적 약속(자손이 아브람의 몸에서 날 것, 15:4)을 우회하려 한 것은 신뢰의 결핍을 보여준다는 것이 일반적 해석이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>하갈에게 여주인에게 '돌아가 복종하라'는 명령은 학대 상황으로 돌아가라는 잔인한 요구가 아닌가?</div>
+        <div class="deep-body">이는 현대 독자들에게 매우 불편하게 다가오는 본문이다. 다만 몇 가지 맥락을 고려할 필요가 있다: 첫째, 당시 광야에서 홀로 임신한 여성이 생존할 가능성은 거의 없었기에, 돌아가는 것이 실질적으로 생존을 위한 유일한 길이었을 수 있다. 둘째, 하나님은 단순히 복종만 명하신 것이 아니라 동시에 그녀와 그녀의 후손에 대한 구체적이고 큰 약속을 주셨다(10-12절) — 이는 그녀의 고통을 못 본 체하신 것이 아니라, 고통스러운 상황 속에서도 소망과 미래를 주신 것으로 이해할 수 있다. 이 본문을 오늘날 학대 상황에 기계적으로 적용하는 것은 신중해야 하며, 많은 현대 주석가들은 이를 특정 역사적 상황에 대한 하나님의 구체적 응답으로 이해하지 보편적 원리로 일반화하지 않는다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch17">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="15" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 24l4 4 8-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 17</div>
+      <h1>17장 · 할례 언약과 이름의 변경</h1>
+      <div class="chapter-sub">아브람에서 아브라함으로, 사래에서 사라로</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 17:1-27</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">17:1-8</div>
+        <div>
+          <div class="flow-title">엘 샤다이의 나타나심과 이름의 변경</div>
+          <div class="flow-body">아브람이 99세 때 하나님은 <b class="hl-term has-tip" data-tip="히브리어 '엘 샤다이'(אֵל שַׁדַּי). 전통적으로 '전능하신 하나님'으로 번역되며, 인간적으로 불가능해 보이는 상황(고령의 아브람과 사래)에서 후손을 주시겠다는 약속의 맥락에서 처음 사용된 하나님의 칭호다.">엘 샤다이(전능하신 하나님)</b>로 나타나 언약을 재확인하시며, 그의 이름을 아브람('존귀한 아버지')에서 <b class="hl-term">아브라함</b>('열국의 아버지')으로 바꾸신다. 이는 <b class="hl-insight has-insight" data-insight="5">아직 자녀가 하나도 없는 사람에게 미리 붙여진, 순전히 약속에 근거한 새 이름</b>이었다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">17:9-27</div>
+        <div>
+          <div class="flow-title">할례의 표징과 사라의 이름 변경</div>
+          <div class="flow-body">하나님은 언약의 표징으로 <b class="hl-term">할례</b>를 명하시며, 대대로 태어난 지 팔 일 만에 남자아이에게 행하라 하신다(9-14절). 사래 역시 사라('열국의 어머니')로 이름이 바뀌며, 하나님은 그녀를 통해 아들(이삭)이 태어날 것을 구체적으로 예고하신다. 아브라함은 웃으며 "백 세 된 사람이 어찌 자식을 낳을까"(17절) 생각하지만, 하나님은 정확한 시기("내년 이맘때", 21절)까지 못박아 약속하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">이름의 변경 — 정체성이 소명을 앞서 결정됨</div>
+        <div class="teach-body">아브라함이 자녀가 없는 상태에서 '열국의 아버지'라는 이름을 받은 것은, 하나님이 아직 이뤄지지 않은 약속을 이미 성취된 것처럼 그의 정체성에 새겨 넣으신 것이다. 로마서 4:17은 이를 "없는 것을 있는 것으로 부르시는" 하나님의 성품과 연결하며, 이는 그리스도인의 새로운 정체성(고후 5:17, "새로운 피조물")이 아직 완전히 실현되지 않았어도 이미 하나님 안에서 확정된 것이라는 신학과 맞닿는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">할례 — 몸에 새겨진 언약의 표징</div>
+        <div class="teach-body">할례는 단지 위생적 관습이 아니라 언약 공동체에 속했음을 몸에 영구적으로 새기는 표징이다. 이는 이후 신명기 10:16, 30:6에서 '마음의 할례'로 영적으로 심화되고, 로마서 2:29과 골로새서 2:11-12에서 그리스도 안에서 성령으로 이루어지는 마음의 할례(육신의 예식이 아닌 내적 변화)로 재해석된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">웃음의 두 얼굴 — 불신과 기쁨 사이</div>
+        <div class="teach-body">아브라함의 웃음(17절)은 다음 장 사라의 웃음(18:12)과 짝을 이루며, 인간적으로 불가능해 보이는 약속 앞에서의 회의를 드러낸다. 그러나 이 웃음은 완전한 불신앙으로 정죄되지 않는다 — 오히려 태어날 아들의 이름 '이삭'(웃음이라는 뜻)이 이 인간적 웃음을 하나님이 유머러스하게 받아들이시고 영원한 기쁨의 이름으로 바꾸어 주셨다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">영원한 언약 — 세대를 넘어서는 신실하심</div>
+        <div class="teach-body">17:7 "내가... 너와 네 후손의 하나님이 되리라"는 표현은 이 언약이 한 세대의 계약이 아니라 대대로 이어지는 영원한 관계 언약임을 선언한다. 이는 성경 전체에서 반복되는 언약 공식("나는 너희 하나님이 되고 너희는 내 백성이 되리라", 렘 31:33)의 원형이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">즉각적 순종 — 아브라함의 성숙</div>
+        <div class="teach-body">12장과 20장에서 아내를 속였던 아브라함과 달리, 17장의 아브라함은 자기 자신과 집안의 모든 남자에게 즉시 할례를 행한다(23-27절). 이는 오랜 세월 하나님과 동행하며 성숙해 온 신앙의 진전을 보여주는 대목이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">자녀가 하나도 없는 99세 노인에게 '열국의 아버지'라는 이름을 붙이시는 거, 좀 웃기지 않아요? 근데 그게 바로 하나님의 방식인 것 같아요. 아직 안 보이는 걸 이미 이루어진 것처럼 이름 붙이시는 거요. 우리한테도 그러실 때가 있잖아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>할례라는 표징이 왜 하필 생식 기관에 행해졌는가?</div>
+        <div class="deep-body">이는 이 언약의 핵심 내용(후손과 자손의 번성)과 직결된다. 자녀를 낳는 바로 그 신체 부위에 언약의 표징을 새김으로써, 후손 하나하나가 태어날 때마다 자신이 하나님의 약속 아래 있는 언약 백성임을 몸으로 기억하게 하려는 상징적 의도가 있다는 것이 일반적 해석이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>할례를 받지 않은 이스마엘도 이 언약에 포함되는가?</div>
+        <div class="deep-body">본문은 이스마엘도 할례를 받는다고 기록한다(23, 25-26절) — 이는 그가 언약 공동체의 표징을 받았음을 보여주지만, 동시에 하나님은 명시적으로 "내 언약은 내가 내년 이 시기에 사라가 네게 낳을 이삭과 세우리라"(21절)고 하시며 언약의 계승자를 이삭으로 못박으신다. 즉 이스마엘은 할례의 표징(외적 언약 공동체의 일원)은 공유하지만, 특별한 언약적 후사(메시아 계보로 이어지는 약속의 상속자)는 아니라는 구별이 본문 안에 이미 존재한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch18">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 20l8-8 8 8 8-8 8 8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M10 20v18h28V20" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 18</div>
+      <h1>18장 · 세 사람의 방문과 소돔을 위한 중보</h1>
+      <div class="chapter-sub">환대, 웃음, 그리고 의인을 위한 간구</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 18:1-33</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">18:1-15</div>
+        <div>
+          <div class="flow-title">세 나그네의 방문과 사라의 웃음</div>
+          <div class="flow-body">마므레 상수리 수풀 아래서 아브라함은 세 사람(본문은 이들을 <b class="hl-term">여호와</b>와 두 천사로 점차 드러낸다)을 극진히 대접한다. 손님들은 "내년 이맘때 내가 반드시 네게로 돌아오리니 네 아내 사라에게 아들이 있으리라"(10절) 예고하고, 장막 뒤에서 듣던 사라는 속으로 웃는다. 여호와는 <b class="hl-insight has-insight" data-insight="6">"여호와께 능하지 못한 일이 있겠느냐"</b>(14절)고 반문하시며, 사라의 숨긴 웃음까지 다 아셨음을 드러내신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">18:16-33</div>
+        <div>
+          <div class="flow-title">소돔을 위한 아브라함의 중보</div>
+          <div class="flow-body">여호와는 "내가 하려는 것을 아브라함에게 숨기겠느냐"(17절)며 소돔과 고모라 심판 계획을 그에게 알리시고, 아브라함은 대담하게 협상에 나선다: <b class="hl-quote">"주께서 의인을 악인과 함께 멸하시리이까"</b>(23절). 그는 의인 오십 명에서 시작해 마흔다섯, 마흔, 서른, 스물, 마침내 <b class="hl-term">열 명</b>까지 점차 낮춰가며 간구하고, 하나님은 매번 그 요청을 들어주신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">나그네 환대 — 손님 속에 숨은 하나님</div>
+        <div class="teach-body">아브라함의 극진한 환대(직접 뛰어나가 맞이하고, 발을 씻기고, 최고의 음식을 준비함)는 고대 근동의 환대 문화의 모범일 뿐 아니라, 히브리서 13:2("손 대접하기를 잊지 말라 이로써 부지 중에 천사들을 대접한 이들이 있었느니라")이 이 사건을 직접 배경으로 삼아 신자들에게 나그네 환대를 명하는 근거가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">여호와께 능하지 못한 일이 없다 — 불가능을 넘어서는 약속</div>
+        <div class="teach-body">사라의 냉소적 웃음에 대한 하나님의 반문은 성경 전체에서 반복되는 신학적 후렴구다(렘 32:17, 27; 눅 1:37 마리아에게 하신 천사의 말 "대저 하나님의 모든 말씀은 능하지 못하심이 없느니라"). 인간적 불가능성은 결코 하나님의 약속의 한계가 되지 못한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">중보기도의 대담함과 겸손의 균형</div>
+        <div class="teach-body">아브라함은 "티끌이나 재와 같은 나이오나 감히 주께 아뢰나이다"(27절)라며 자신의 낮음을 인정하면서도, 동시에 하나님의 정의로운 성품("세상을 심판하시는 이가 정의를 행하실 것이 아니니이까", 25절)에 근거해 담대히 간구를 이어간다. 이는 성경적 중보기도의 모범 — 하나님의 성품에 근거한 겸손하지만 대담한 간구 — 을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">열 명을 위한 자비 — 소수를 위해서도 움직이시는 하나님</div>
+        <div class="teach-body">하나님은 단 열 명의 의인을 위해서도 온 성읍을 살리시겠다고 응답하신다(32절). 이는 하나님의 자비가 다수의 논리가 아니라 소수의 의인을 위해서도 기꺼이 작동한다는 것을 보여주며(실제로 19장에서 소돔에 열 명의 의인조차 없었다는 비극적 결말로 이어짐), 동시에 신자의 중보기도가 실제로 하나님의 심판 방식에 영향을 미칠 수 있음을 시사한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님이 자신의 계획을 아브라함에게 미리 알리심 — 언약 백성과의 친밀함</div>
+        <div class="teach-body">"내가 하려는 것을 아브라함에게 숨기겠느냐"(17절)는 하나님의 자문은, 언약 관계가 단순한 명령-복종 구조가 아니라 친밀한 동반자적 관계임을 보여준다. 이는 요한복음 15:15에서 예수님이 제자들을 "종"이 아니라 "친구"라 부르시며 아버지께 들은 것을 다 알게 하셨다는 말씀과 신학적으로 연결된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">아브라함의 중보기도, 처음 볼 때는 마치 시장에서 흥정하는 것처럼 보일 수 있어요. 근데 자세히 보면 이건 흥정이 아니라 하나님의 성품에 대한 확신에서 나온 기도예요. '정의로우신 분이 정의롭게 행하지 않으시겠느냐'는 확신이요. 우리도 기도할 때 이렇게 하나님의 성품을 붙들고 담대히 나아갈 수 있어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>세 사람 중 한 명이 '여호와'로 지칭되는 것(18:1, 13절 등)을 어떻게 이해해야 하는가?</div>
+        <div class="deep-body">본문은 세 명 중 한 명을 명시적으로 '여호와'로, 다른 둘을 훗날 19:1에서 '천사'로 밝힌다. 이는 구약에서 종종 나타나는 신현(theophany) 패턴이며, 특히 삼위일체론적 관점에서는 이를 성자의 선재적 현현으로 이해하는 전통이 있다(초대교회 교부들부터 이어짐). 본문 자체는 이 정체성에 대한 조직신학적 설명을 제공하지 않지만, 하나님이 인격적이고 가시적인 방식으로 아브라함과 교제하셨다는 사실 자체가 신학적으로 중요하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>아브라함의 협상이 열 명에서 멈춘 이유는 무엇인가? 왜 한 명까지 낮추지 않았는가?</div>
+        <div class="deep-body">본문은 명시적 이유를 밝히지 않지만, 일부 해석자들은 열 명이라는 숫자가 이후 유대 전통에서 회당 예배를 위한 최소 정족수(미냔)와 연결되어, '최소한의 신앙 공동체'를 상징하는 숫자로 이해되었을 가능성을 제기한다. 또 다른 해석은 아브라함이 협상을 계속 이어갈 수도 있었지만, 이 시점에서 하나님의 자비의 한계가 아니라 소돔의 죄악의 심각성(실제로 단 한 명의 의인 — 롯의 가족만이 겨우 구원받음)이 이미 명백했기에 대화가 자연스럽게 마무리되었다고 본다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch19">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l4 10h11l-9 7 3 11-9-7-9 7 3-11-9-7h11z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M6 40h36" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 19</div>
+      <h1>19장 · 소돔의 멸망</h1>
+      <div class="chapter-sub">심판의 불과 뒤돌아본 롯의 아내</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 19:1-38</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">19:1-29</div>
+        <div>
+          <div class="flow-title">소돔의 죄악과 심판</div>
+          <div class="flow-body">두 천사가 소돔에 이르자 롯은 그들을 집으로 맞아들이지만, 성읍 사람들이 몰려와 그 손님들을 <b class="hl-quote">"상관하리라"</b>(5절)며 폭력적 성적 학대를 시도한다. 천사들은 그들을 눈멀게 하고 롯의 가족을 성 밖으로 피신시키며, <b class="hl-insight has-insight" data-insight="7">"뒤를 돌아보지 말라"</b>(17절)고 엄중히 경고한다. 여호와께서 하늘에서 유황과 불을 소돔과 고모라에 내리시고, 롯의 아내는 뒤를 돌아보다가 <b class="hl-term">소금 기둥</b>이 된다(26절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">19:30-38</div>
+        <div>
+          <div class="flow-title">롯과 두 딸의 비극</div>
+          <div class="flow-body">모압과 암몬 족속의 기원이 되는 어두운 사건이 이어진다. 롯의 두 딸은 아버지에게 술을 먹여 동침하고 각각 임신하여 모압과 벤암미(암몬)를 낳는데, 이는 소돔에서 도피한 이후 극도의 고립과 절망 속에서 벌어진 왜곡된 생존 시도로 읽힌다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">죄악의 관영함과 정의로운 심판</div>
+        <div class="teach-body">소돔의 죄는 앞서 18:20-21에서 이미 하나님께 "부르짖음"으로 상달되었다고 묘사되며, 에스겔 16:49-50은 소돔의 죄를 "교만함과 음식이 풍족함과 태평함"과 "가난하고 궁핍한 자를 도와주지 아니"함, 그리고 "가증한 일"로 폭넓게 정의한다. 19장의 성적 폭력 시도는 이 광범위한 부패의 극단적 표출이며, 하나님의 심판은 자의적 분노가 아니라 누적된 불의에 대한 정의로운 응답이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">뒤돌아보지 말라 — 옛 삶에 대한 미련의 위험</div>
+        <div class="teach-body">롯의 아내가 소금 기둥이 된 사건은 예수님 자신도 직접 인용하며 경고로 사용하신다(눅 17:32, "롯의 처를 기억하라"). 이는 구원의 부르심을 받고도 마음이 여전히 심판받을 옛 삶에 머물러 있는 것의 위험성을 상징하며, 구원은 단호한 방향 전환(회개)을 요구한다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">의인을 위한 자비의 실제 작동 — 롯의 구원</div>
+        <div class="teach-body">18장에서 아브라함이 간구했던 열 명의 의인은 소돔에서 발견되지 않았지만, 하나님은 아브라함을 기억하시고(19:29) 롯과 그 가족만이라도 건지신다. 이는 중보기도가 완전한 응답으로 이어지지 않을 때도 하나님의 자비가 부분적으로나마 작동할 수 있음을 보여주는 사례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">롯의 망설임과 하나님의 붙드심</div>
+        <div class="teach-body">천사들이 서두르라고 재촉하는데도 롯이 <b>지체하매</b>(16절), 결국 천사들이 그와 그 아내와 두 딸의 손을 잡아 성 밖으로 이끌어낸다. 이는 구원이 인간의 결단력이나 신속함이 아니라 결국 하나님의 붙드시는 은혜에 달려 있음을 다시 한번 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">롯의 딸들의 비극 — 왜곡된 상황이 낳는 왜곡된 선택</div>
+        <div class="teach-body">이 사건은 미화되지 않고 있는 그대로 냉정하게 기록된다. 소돔에서 태어나고 자란 딸들의 왜곡된 도덕관(아버지와의 근친상간을 대안으로 여긴 것)은, 소돔이라는 환경이 그들의 가치관에 얼마나 깊은 영향을 미쳤는지를 역설적으로 보여주는 비극적 결말이다. 성경은 이 사건을 정당화하지 않고, 이로부터 태어난 모압과 암몬이 이후 이스라엘의 지속적인 대적이 되는 역사(민 22-25장, 룻기의 배경 등)로 이어짐을 담담히 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'뒤를 돌아보지 말라'는 경고, 예수님이 직접 다시 꺼내신다는 게 인상적이에요(눅 17:32). 새로운 삶으로 부름받았는데 계속 옛 삶 쪽으로 마음이 기울어 있으면, 결국 그 자리에 멈춰 서게 된다는 경고로 읽혀요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>소돔의 죄는 정확히 무엇이었는가 — 성적인 죄에 국한되는가, 더 넓은 불의를 포함하는가?</div>
+        <div class="deep-body">본문의 즉각적 사건(19:5)은 명백히 성적 폭력을 포함하지만, 에스겔 16:49-50은 소돔의 죄를 훨씬 넓게 정의한다 — 교만, 풍족함 속의 안일, 가난한 자를 돕지 않음, 그리고 '가증한 일'(성적 부도덕을 포함하는 포괄적 표현으로 이해됨). 유다서 7절은 특히 "다른 육체를 따라 가다가 음란하며"라는 표현으로 성적 부도덕을 강조한다. 현대 학자들은 이 본문이 단일한 죄가 아니라 사회 전체의 총체적 부패(경제적 불의, 나그네에 대한 극단적 적대감, 성적 폭력을 포함)를 겨냥한다고 보는 것이 균형 잡힌 해석이라고 본다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>롯과 두 딸의 근친상간 사건이 성경에 아무런 명시적 도덕적 판단 없이 기록된 이유는?</div>
+        <div class="deep-body">창세기는 종종 인물의 행위에 대한 명시적 도덕적 평가를 생략하고 사건만을 서술하는 문학적 특징을 지닌다. 그러나 이것이 그 행위를 승인한다는 뜻은 아니다. 오히려 본문의 침묵은 독자로 하여금 이 사건의 비극성을 스스로 인식하게 하는 문학적 장치로 기능하며, 이후 모압과 암몬이 이스라엘 역사에서 지속적인 갈등과 대적의 근원이 된다는 사실(신 23:3-6, 이들은 여호와의 총회에 들어오지 못하도록 규정됨) 자체가 이 기원 사건에 대한 성경 전체의 암묵적 평가로 읽힌다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch20">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c-9 7-15 13-15 21a15 15 0 0030 0c0-8-6-14-15-21z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="27" r="4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 20</div>
+      <h1>20장 · 그랄에서의 아비멜렉</h1>
+      <div class="chapter-sub">반복되는 실패, 그리고 이방 왕의 정직함</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 20:1-18</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">20:1-18</div>
+        <div>
+          <div class="flow-title">두 번째 반복되는 속임수</div>
+          <div class="flow-body">아브라함은 그랄로 이주하며 다시 한번 사라를 누이라 속이고, 그랄 왕 아비멜렉이 사라를 데려간다. 그러나 하나님이 꿈에 아비멜렉에게 나타나 <b class="hl-quote">"네가 죽으리니 그가 남의 아내임이라"</b>(3절)고 경고하시자, 그는 놀라 <b class="hl-insight has-insight" data-insight="8">자신의 무죄함</b>을 항변한다("내가 온전한 마음과 깨끗한 손으로 이렇게 하였나이다", 5절). 하나님은 그의 정직함을 인정하시며 그를 범죄에서 막으셨다고 확인해 주신다(6절). 아비멜렉은 아브라함을 책망하고, 아브라함은 사라가 실제로 이복누이였음을 밝힌다(12절). 아브라함이 아비멜렉을 위해 기도하자 그와 그 집의 불임이 치유된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">성숙한 신앙인의 반복되는 실패</div>
+        <div class="teach-body">12장의 실수를 아브라함이 다시 반복한다는 사실은 충격적이지만 동시에 정직한 기록이다. 오랜 세월 하나님과 동행하고 큰 약속을 받은 후에도 인간은 동일한 유혹과 두려움에 다시 넘어질 수 있다는 것을 보여주며, 이는 신앙의 여정이 단선적 성장이 아니라 반복적 씨름을 포함한다는 실존적 진실을 정직하게 드러낸다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">이방인에게도 임하는 하나님의 일반 은총과 도덕적 인식</div>
+        <div class="teach-body">아비멜렉은 언약 백성이 아님에도 상당한 도덕적 정직함과 하나님을 향한 경외를 보여준다("주여 주께서 의로운 백성도 멸하시나이까", 4절). 이는 하나님의 도덕적 계시와 일반 은총이 언약 공동체 밖에도 작동한다는 것을 보여주며, 로마서 2:14-15의 "율법 없는 이방인이... 본성으로 율법의 일을 행할 때"라는 신학과 연결된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님이 범죄로부터 사람을 막으심</div>
+        <div class="teach-body">6절 "네가 온전한 마음으로 이렇게 한 줄을 나도 알았으므로 너를 막아 나에게 범죄하지 아니하게 하였나니"라는 구절은, 하나님이 인간의 자범죄를 미리 막으실 수 있고 실제로 그렇게 행하신다는 신학적으로 중요한 통찰을 제공한다. 이는 시편 19:13의 "주의 종에게 고범죄를 짓지 말게 하사"라는 기도의 배경이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">선지자로서의 아브라함의 중보 사역</div>
+        <div class="teach-body">7절에서 하나님은 아브라함을 "선지자"라 부르시며 그의 중보기도를 통해 아비멜렉의 치유를 약속하신다. 이는 성경에서 '선지자'라는 단어가 처음 사용되는 곳이며, 아브라함의 역할이 단순히 언약의 수혜자를 넘어 다른 사람들을 위한 중보자로 확장됨을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">부끄러운 실패조차 하나님의 언약을 무너뜨리지 못함</div>
+        <div class="teach-body">아브라함의 반복된 실수에도 불구하고, 이 사건 직후 21장에서 마침내 약속된 아들 이삭이 태어난다. 이는 하나님의 언약 성취가 인간의 도덕적 완전함이 아니라 하나님 자신의 신실하심에 근거함을 다시 한번 확증한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장을 읽으면서 조금 실망스러울 수도 있어요. '아브라함이 또?' 싶으니까요. 근데 저는 이게 오히려 위로가 돼요. 믿음의 조상이라 불리는 사람도 같은 실수를 반복하는데, 하나님은 여전히 그를 통해 약속을 이루어가시거든요. 완벽해야만 쓰임받는 게 아니라는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이 사건과 12장의 애굽 사건이 실제로 별개의 사건인가, 아니면 같은 전승의 다른 버전인가?</div>
+        <div class="deep-body">두 사건은 배경(애굽 vs 그랄), 등장인물(바로 vs 아비멜렉), 세부 전개가 다르지만 핵심 구조(기근/이주, 아내를 누이라 속임, 이방 통치자의 개입, 하나님의 심판적 경고, 재물을 받고 떠남)가 매우 유사하다. 일부 비평학자들은 이를 동일한 구전 전승의 변형된 두 버전으로 본다. 그러나 본문을 있는 그대로 받아들이는 전통적 독법에서는, 아브라함이 동일한 두려움의 패턴에 두 번 빠진 것으로 이해하며, 이는 오히려 인간의 반복되는 연약함에 대한 정직한 증언으로 읽는다(26장에서 이삭도 동일한 패턴을 그의 아내 리브가에게 반복한다는 점도 이 해석을 뒷받침한다).</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>아비멜렉이 도덕적으로 아브라함보다 더 나은 사람으로 그려지는 것은 무엇을 의미하는가?</div>
+        <div class="deep-body">이는 성경이 언약 백성을 자동으로 도덕적으로 우월한 존재로 그리지 않는다는 중요한 신학적 통�찰을 제공한다. 하나님의 선택과 언약은 인간의 도덕적 자격에 근거하지 않으며, 오히려 이방인이 때로 더 정직하고 신실한 모습을 보일 수 있다. 이는 이후 성경 전체에서 반복되는 패턴(요나서의 니느웨 사람들, 룻기의 모압 여인 룻, 선한 사마리아인 비유)과 연결되며, 하나님 백성의 정체성이 도덕적 우월성이 아니라 은혜로운 부르심에 있음을 겸손하게 상기시킨다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch21">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 42V20a10 10 0 0120 0v22" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="12" r="5" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 21</div>
+      <h1>21장 · 이삭의 출생과 하갈의 추방</h1>
+      <div class="chapter-sub">웃음이 현실이 되다</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 21:1-34</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">21:1-7</div>
+        <div>
+          <div class="flow-title">약속대로 태어난 이삭</div>
+          <div class="flow-body"><b class="hl-quote">"여호와께서 말씀하신 대로 사라를 돌보셨고... 여호와께서 말씀하신 대로 사라에게 행하셨으므로"</b>(1절)라는 이중 반복은 하나님의 정확한 신실하심을 강조한다. 백 세의 아브라함에게서 이삭이 태어나고, 사라는 "하나님이 나를 웃게 하시니 듣는 자가 다 나와 함께 웃으리로다"(6절)라며 기쁨을 표현한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">21:8-21</div>
+        <div>
+          <div class="flow-title">하갈과 이스마엘의 추방</div>
+          <div class="flow-body">이삭이 젖을 뗄 때 이스마엘이 이삭을 <b class="hl-term">놀리는(희롱하는)</b> 것을 본 사라는 하갈 모자를 내쫓으라 요구하고, 아브라함은 이를 근심하지만 하나님은 그에게 사라의 말을 들으라 하시며 이스마엘도 한 민족을 이루게 하실 것을 약속하신다. 광야에서 물이 떨어져 죽어가던 이스마엘을 위해 <b class="hl-insight has-insight" data-insight="9">하나님이 하갈의 눈을 밝히사 샘물을 보게</b> 하신다(19절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">21:22-34</div>
+        <div>
+          <div class="flow-title">아비멜렉과의 언약과 브엘세바</div>
+          <div class="flow-body">아비멜렉이 아브라함에게 화친을 청하고, 우물 문제로 다툼이 있었으나 둘은 언약을 맺는다. 아브라함은 그곳 이름을 <b class="hl-term">브엘세바</b>('맹세의 우물')라 하고 에셀나무를 심어 여호와의 이름을 부른다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">하나님은 말씀하신 대로 행하신다</div>
+        <div class="teach-body">1절의 이중 반복("말씀하신 대로... 말씀하신 대로")은 25년(12장의 부르심부터 21장의 이삭 출생까지)이라는 긴 기다림 끝에도 하나님의 말씀이 정확히 성취되었음을 강조한다. 이는 하나님의 약속이 지연될 수는 있어도 결코 무효화되지 않는다는 신학적 확신을 심어준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">웃음이 조롱에서 기쁨으로 변화됨</div>
+        <div class="teach-body">18장의 회의적 웃음이 21장에서는 순전한 기쁨의 웃음으로 변화된다("하나님이 나를 웃게 하시니"). 이는 인간의 의심 섞인 반응조차 결국 하나님의 신실하심 앞에서 기쁨으로 완성될 수 있다는 은혜의 패턴을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">버려진 자를 향한 하나님의 지속적 신실하심</div>
+        <div class="teach-body">하갈과 이스마엘이 아브라함의 집에서 추방되었지만, 하나님은 그들을 광야에 버려두지 않으신다. "하나님이 그 아이의 소리를 들으셨다"(17절)는 표현은 이스마엘이 비록 언약의 상속자는 아니지만 여전히 하나님의 돌보심 아래 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">눈이 밝아짐 — 이미 있던 것을 보게 되는 은혜</div>
+        <div class="teach-body">본문은 하나님이 샘을 새로 만드셨다고 하지 않고 "하갈의 눈을 밝히셨다"(19절)고 한다. 이는 종종 하나님의 은혜가 없던 것을 창조하는 방식이 아니라, 이미 존재하지만 절망 속에서 보지 못했던 것을 보게 하시는 방식으로 임한다는 영적 통찰을 준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">이방 왕과의 평화로운 언약 — 복의 근원으로서의 삶</div>
+        <div class="teach-body">아비멜렉이 스스로 찾아와 "하나님이 네가 무슨 일을 하든지 너와 함께 계시도다"(22절)라며 화친을 청하는 장면은, 아브라함이 12:2-3의 약속대로 실제로 주변 민족에게 복의 근원이자 존중받는 인물로 자리매김하고 있음을 구체적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이삭이라는 이름, '웃음'이라는 뜻이잖아요. 처음엔 아브라함과 사라 둘 다 회의적으로 웃었는데, 이 아이가 실제로 태어나니까 이번엔 진짜 기쁨의 웃음이 돼요. 하나님은 우리의 의심 섞인 웃음조차 결국 순전한 기쁨으로 바꾸실 수 있는 분이신 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이스마엘이 이삭을 '놀린' 것(9절)이 정확히 무엇을 의미하며, 왜 그렇게 심각한 추방으로 이어졌는가?</div>
+        <div class="deep-body">히브리어 '메차헤크'(놀리다, 희롱하다)는 앞서 이삭의 이름의 어원인 '차하크'(웃다)와 동일한 어근이다. 일부 학자들은 이를 단순한 어린아이의 장난이 아니라 상속권을 둘러싼 조롱이나 학대적 행위(갈라디아서 4:29은 이를 '박해'로 해석함)로 이해한다. 사라의 강경한 반응은 단지 감정적 질투가 아니라, 이삭의 상속권을 명확히 하려는 실질적 우려에서 비롯되었을 가능성이 크며, 하나님도 이 요구를 승인하신다(12절).</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>바울이 갈라디아서 4장에서 이 사건을 율법과 은혜의 알레고리로 사용하는 것은 정당한 해석인가?</div>
+        <div class="deep-body">바울은 갈라디아서 4:21-31에서 하갈-이스마엘을 시내산 언약(율법, 종의 신분)에, 사라-이삭을 약속(은혜, 자유의 신분)에 대응시키며, "여종의 아들을 내쫓으라... 여종의 아들이 자유하는 여자의 아들과 더불어 유업을 얻지 못하리라"(30절, 창 21:10 인용)는 구절을 신학적 근거로 사용한다. 이는 원 저자(창세기 저자)가 의도했던 역사적 의미를 넘어서는 '모형론적(typological)' 해석으로, 신약 저자들이 구약 본문을 그리스도 사건에 비추어 재해석하는 정당한 해석학적 방법으로 이해된다. 다만 이는 역사적 이스마엘이나 그 후손에 대한 인종적 폄하로 오용되어서는 안 되며, 바울의 논지는 어디까지나 율법주의와 은혜의 신학적 대조에 초점이 있다는 것이 신중한 해석가들의 공통된 입장이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch22">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v20M14 26h20M18 30l6 8 6-8" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M10 40h28" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 22</div>
+      <h1>22장 · 이삭을 바치라 하심</h1>
+      <div class="chapter-sub">가장 큰 시험, 그리고 여호와 이레</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 22:1-24</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">22:1-8</div>
+        <div>
+          <div class="flow-title">모리아 산으로의 여정</div>
+          <div class="flow-body">본문은 처음부터 독자에게 이것이 <b class="hl-term">시험</b>임을 알려준다(1절) — 아브라함은 알지 못한 채였다. 하나님은 <b class="hl-quote">"네 아들 네 독자 이삭을... 번제로 드리라"</b>(2절)는, 성경에서 가장 극단적인 명령을 내리신다. 아브라함은 아침 일찍 일어나 지체 없이 순종하여 길을 떠나며, 이삭이 제물이 어디 있는지 묻자 <b class="hl-insight has-insight" data-insight="10">"하나님이 자기를 위하여 친히 준비하시리라"</b>(8절)고 답한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">22:9-19</div>
+        <div>
+          <div class="flow-title">멈추신 손과 여호와 이레</div>
+          <div class="flow-body">아브라함이 실제로 칼을 들어 아들을 잡으려는 순간, 여호와의 사자가 하늘에서 그를 부르며 멈추게 하시고 <b class="hl-quote">"네가 네 아들 네 독자까지도 내게 아끼지 아니하였으니 내가 이제야 네가 하나님을 경외하는 줄을 아노라"</b>(12절)고 선언하신다. 수풀에 뿔이 걸린 숫양이 이삭을 대신하는 번제물로 발견되고, 아브라함은 그곳을 <b class="hl-term has-tip" data-tip="히브리어 '여호와 이레'(יְהוָה יִרְאֶה), '여호와께서 준비하신다/보신다'는 뜻. 하나님이 필요를 미리 아시고 준비하시는 성품을 가리키는 이름으로, 이후 '여호와의 산에서 준비되리라'는 격언으로 이어진다.">여호와 이레</b>라 부른다(14절). 하나님은 이 순종에 대한 응답으로 언약의 약속을 맹세로 재확인하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">믿음의 극한 시험 — 이해를 넘어선 순종</div>
+        <div class="teach-body">이 명령은 인간적으로 완전히 이해 불가능하다 — 하나님 자신이 주신 약속의 유일한 상속자를 다시 하나님이 죽이라 명하시는 모순처럼 보인다. 히브리서 11:17-19은 아브라함이 "하나님이 능히 죽은 자 가운데서도 다시 살리실 줄로 생각한지라"며 부활 신앙으로 이 명령에 순종했다고 해석한다. 이는 이해되지 않는 하나님의 명령 앞에서도 그분의 성품(신실하심)에 근거해 순종하는 믿음의 극치를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">여호와 이레 — 준비하시는 하나님</div>
+        <div class="teach-body">아브라함이 아들에게 한 답변("하나님이 친히 준비하시리라")은 단순한 위로의 말이 아니라 예언적 신앙 고백으로 드러난다. 결정적 순간에 대신할 제물(숫양)이 준비되어 있었다는 사실은, 하나님이 그의 백성의 필요를 미리 아시고 정확한 때에 준비하신다는 성경 전체의 반복되는 신학적 주제를 확립한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">모리아 산 — 예루살렘 성전과의 지리적 연결</div>
+        <div class="teach-body">역대하 3:1은 솔로몬의 성전이 세워진 곳이 바로 이 모리아 산이라고 명시한다. 이는 아브라함이 아들을 바치려 했던 바로 그 장소에서, 훗날 이스라엘의 모든 제사(대속의 상징)가 드려지게 됨을 지리적으로 연결하며, 궁극적으로는 예루살렘 인근 갈보리에서 하나님이 자신의 독생자를 실제로 내어주시는 사건을 예표적으로 가리킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">아들을 아끼지 않으신 아버지 — 십자가의 그림자</div>
+        <div class="teach-body">22:12의 "네 아들 네 독자까지도 내게 아끼지 아니하였으니"라는 표현은 로마서 8:32("자기 아들을 아끼지 아니하시고 우리 모든 사람을 위하여 내주신 이")과 놀랍도록 정확히 대응한다. 아브라함이 이삭을 아끼지 않은 것의 예표적 성취는, 하나님 아버지께서 실제로 자신의 독생자 그리스도를 십자가에 내어주신 사건이다. 이삭이 나무(제단의 장작)를 지고 산에 올라간 것(6절) 역시 예수님이 십자가를 지고 골고다에 오르신 사건의 예표로 널리 해석된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">대신 죽은 숫양 — 대속의 신학</div>
+        <div class="teach-body">이삭 대신 죽은 숫양은 성경 전체에서 반복되는 대속의 원리(누군가의 자리에서 다른 것/사람이 죽음)의 초기 사례이며, 이는 유월절 어린양(출 12장), 레위기의 속죄제, 그리고 궁극적으로 "세상 죄를 지고 가는 하나님의 어린양"(요 1:29)이신 그리스도에게서 완성된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장은 창세기에서 가장 무겁고 어려운 본문일 거예요. 근데 저는 8절의 그 짧은 대답이 참 좋아요. '하나님이 친히 준비하시리라.' 아브라함은 그 순간 무슨 일이 일어날지 정확히 알지 못했을 텐데도, 그렇게 대답했어요. 그리고 정말로 하나님은 준비하셨죠 — 숫양으로, 그리고 훗날 그 아들 그 자체로요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>하나님이 인신 제사를 명하신 것처럼 보이는 이 본문을 어떻게 도덕적으로 이해해야 하는가?</div>
+        <div class="deep-body">이는 성경에서 가장 윤리적으로 도전적인 본문 중 하나다. 몇 가지 중요한 신학적 고려사항이 있다: 첫째, 본문 자체가 처음부터 이것이 '시험'(1절)이라고 명시하여, 독자에게 이것이 하나님의 진정한 의도(실제로 인신 제사를 원하심)가 아니라 아브라함의 신앙을 시험하기 위한 특수한 상황임을 미리 알려준다. 둘째, 결정적 순간에 하나님은 실제로 이삭을 죽이는 것을 막으신다 — 이는 하나님이 인신 제사를 혐오하신다는 것을 오히려 극적으로 확증하는 사건이다(레 18:21, 신 12:31은 인신 제사를 가나안의 가증한 관습으로 명시적으로 정죄한다). 셋째, 이 사건은 고대 근동에서 실제로 인신 제사가 흔했던 시대적 배경 속에서, 이스라엘의 하나님이 그런 신들과 근본적으로 다르다는 것을 이 극적인 '중단'을 통해 선언하는 것으로 이해할 수 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>이삭 자신은 이 사건에서 얼마나 능동적으로 순종했는가?</div>
+        <div class="deep-body">본문은 이삭의 나이를 명시하지 않지만(전통적으로 청소년 이상으로 추정되며, 스스로 장작을 지고 산에 오를 수 있었다는 점에서 상당히 성장했을 가능성이 크다), 그가 아버지에게 저항했다는 기록이 전혀 없다. 유대 전통(미드라쉬)에서는 종종 이삭을 단순한 희생자가 아니라 자발적으로 순종한 인물로 그리며, 이를 '아케다'(결박, 히브리어로 이 사건을 가리키는 전통적 명칭)의 중요한 측면으로 강조한다. 이런 관점에서 보면 이 사건은 아브라함만의 시험이 아니라 이삭의 순종과 신뢰의 이야기이기도 하며, 이는 그리스도께서 자발적으로 십자가에 순종하신 것(빌 2:8)과의 예표적 연결을 더욱 풍성하게 한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch23">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="18" width="28" height="20" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M10 18l14-10 14 10" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 23</div>
+      <h1>23장 · 사라의 죽음과 매장지 구입</h1>
+      <div class="chapter-sub">약속의 땅에서의 첫 소유</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 23:1-20</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">23:1-20</div>
+        <div>
+          <div class="flow-title">헷 족속과의 협상과 막벨라 굴 구입</div>
+          <div class="flow-body">사라가 127세로 헤브론에서 죽자, 아브라함은 그녀를 장사할 땅을 구하기 위해 <b class="hl-term">헷 족속</b>과 정중히 협상한다. 그는 자신을 <b class="hl-quote">"나는 당신들 중에 나그네요 우거한 자니"</b>(4절)라고 소개하며, 결국 에브론의 막벨라 밭과 굴을 <b class="hl-insight has-insight" data-insight="11">은 사백 세겔</b>의 정당한 값을 다 지불하고 구입한다(16절). 이는 아브라함이 가나안 땅에서 합법적으로 소유한 첫 번째이자 유일한 땅이었다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">나그네이면서 동시에 상속자 — 이미와 아직의 신앙</div>
+        <div class="teach-body">아브라함은 스스로를 "나그네요 우거한 자"라 부르면서도, 동시에 약속의 땅에서 처음으로 실제 소유지를 얻는다. 이는 히브리서 11:13의 "믿음을 따라 죽었으며... 땅에서는 외국인과 나그네임을 증언하였으니"라는 구절과 연결되며, 신자가 이 땅에서 나그네로 살면서도 동시에 약속의 성취를 부분적으로 미리 맛보는 '이미와 아직'의 신앙적 긴장을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">정당한 값을 다 지불함 — 정직한 거래의 모범</div>
+        <div class="teach-body">에브론이 처음에는 땅을 거저 주겠다고 제안하지만(11절), 아브라함은 굳이 정당한 시장가를 다 지불하겠다고 고집한다. 이는 훗날 어떤 법적 분쟁의 소지도 남기지 않으려는 지혜로운 신중함이며, 동시에 은혜로 받은 것이 아니라 정당한 대가를 치른 소유권이야말로 후손들에게 분명한 근거가 된다는 실제적 지혜를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">막벨라 굴 — 족장들의 공동 매장지</div>
+        <div class="teach-body">이 굴은 이후 아브라함 자신(25:9), 이삭과 리브가(49:31), 야곱과 레아(49:31, 50:13)까지 안장되는 족장들의 공동 매장지가 된다. 이는 약속의 땅에 대한 소망이 여러 세대에 걸쳐 하나의 장소로 구체화되고 이어지는 것을 상징적으로 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">죽음 앞에서도 약속을 붙드는 신앙</div>
+        <div class="teach-body">사라의 죽음이라는 슬픔의 순간에도, 아브라함의 행동(땅을 사는 것)은 여전히 미래의 약속(이 땅이 언젠가 그의 후손의 소유가 될 것이라는 약속, 12:7, 15:18)에 대한 신앙의 표현이다. 죽음 한가운데서도 약속에 대한 소망을 실천적으로 이어가는 모습이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">슬픔을 억누르지 않는 애도</div>
+        <div class="teach-body">2절 "아브라함이 들어가서 사라를 위하여 슬퍼하며 애통하다가"는 표현은, 믿음의 조상이라 할지라도 사랑하는 사람의 죽음 앞에서 슬픔을 억누르지 않고 정직하게 애도했음을 보여준다. 신앙은 슬픔을 부정하는 것이 아니라 소망 안에서 슬퍼하는 것(살전 4:13)이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">23장은 얼핏 지루한 부동산 계약처럼 보이지만, 저는 이 장면이 참 뭉클해요. 평생 나그네로 떠돌던 사람이 처음으로 '내 땅'이라 부를 수 있는 작은 굴 하나를 얻는 순간이거든요. 그것도 사랑하는 아내를 묻기 위해서요. 약속의 완전한 성취는 아직 멀었지만, 그 시작이 이렇게 작고 구체적인 곳에서 이루어진다는 게 인상적이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이 장이 단지 부동산 거래의 세부사항처럼 보이는데, 왜 성경이 이렇게 상세히 기록하는가?</div>
+        <div class="deep-body">고대 근동의 법적 관습에 정통한 학자들은 이 장의 협상 과정(공개적 성문에서의 증인 앞 거래, 정확한 은의 무게 명시 등)이 실제 고대 근동의 부동산 매매 계약 형식을 정확히 반영한다고 지적한다. 이는 단순한 문학적 장식이 아니라, 이스라엘 후손들에게 이 땅에 대한 법적으로 명확하고 반박 불가능한 소유권 증거를 제공하려는 의도로 이해된다. 약속의 땅에 대한 하나님의 언약이 단지 영적·추상적 개념이 아니라 구체적이고 법적으로 검증 가능한 역사적 실체임을 강조하는 신학적 목적을 지닌 것이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>아브라함이 받은 땅에 대한 약속(12:7, "내가 이 땅을 네 자손에게 주리라")과 그가 실제로 죽을 때까지 작은 매장지 하나만 소유했다는 사실 사이의 긴장을 어떻게 이해할 것인가?</div>
+        <div class="deep-body">히브리서 11:13은 바로 이 긴장을 신학적으로 다룬다: "이 사람들은 다 믿음을 따라 죽었으며 약속을 받지 못하였으되 그것들을 멀리서 보고 환영하며..." 아브라함은 땅에 대한 약속의 완전한 성취를 생전에 보지 못했지만, 그럼에도 그 약속을 신뢰하며 살았다. 이는 신앙이 즉각적 성취를 요구하지 않고, 자신의 생애를 넘어서는 하나님의 장기적 계획을 신뢰하는 것을 포함한다는 중요한 교훈을 준다. 궁극적으로 히브리서는 아브라함이 바라본 것이 이 땅의 지리적 영토를 넘어 "더 나은 본향 곧 하늘에 있는 것"(히 11:16)이었다고 해석하며, 이 약속의 궁극적 성취를 종말론적 지평으로 확장한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch24">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="26" r="8" fill="none" stroke="currentColor" stroke-width="2"/><path d="M22 20l14-8M30 24h10M22 30l12 6" stroke="currentColor" stroke-width="1.6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 24</div>
+      <h1>24장 · 이삭의 신부 리브가</h1>
+      <div class="chapter-sub">기도로 인도받은 만남</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 24:1-67</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">24:1-27</div>
+        <div>
+          <div class="flow-title">종의 사명과 우물가의 기도</div>
+          <div class="flow-body">늙은 아브라함은 나이 많은 종에게 이삭의 아내를 자신의 고향 친족 중에서 구해오라는 엄중한 사명을 맡기며, 가나안 여인과 결혼하지 말 것과 이삭을 그 땅으로 데려가지 말 것을 맹세시킨다(3-8절). 종은 나홀의 성에 이르러 우물가에서 <b class="hl-term">구체적이고 실제적인 표징</b>을 구하는 기도를 드린다: 낙타에게까지 물을 길어주는 여인이 정해진 자가 되게 해달라는 것이다(12-14절). 기도를 마치기도 전에 <b class="hl-insight has-insight" data-insight="12">리브가</b>가 정확히 그 표징대로 응답하며 등장한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">24:28-67</div>
+        <div>
+          <div class="flow-title">협상과 리브가의 결단, 그리고 만남</div>
+          <div class="flow-body">종은 라반의 집에서 자신의 사명을 설명하고, 라반과 브두엘은 <b class="hl-quote">"이 일이 여호와께로 말미암았으니"</b>(50절)라며 동의한다. 리브가 본인에게 의향을 물었을 때 그녀는 "가겠나이다"(58절)라고 즉시 스스로 결단한다. 가나안으로 돌아오는 길에 리브가는 저물녘 들에 나와 묵상하던 이삭을 만나고, 이삭은 그녀를 사랑하여 어머니 사라를 잃은 슬픔에 위로를 얻는다(67절).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">구체적인 것을 구하는 기도의 정당성</div>
+        <div class="teach-body">종의 기도는 매우 구체적이고 실제적인 표징을 구한다. 이는 하나님께 드리는 기도가 막연한 소원이 아니라 삶의 실제적 결정을 위해 명료하고 구체적으로 드려질 수 있음을 보여주는 성경적 모범이며, 동시에 그 표징이 단순한 우연이 아니라 그 여인의 성품(수고를 아끼지 않는 섬김의 태도)까지 드러낼 수 있는 지혜로운 기준이었다는 점도 주목할 만하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">신앙의 계승에 대한 신중함</div>
+        <div class="teach-body">아브라함이 가나안 여인과의 결혼을 엄격히 금한 것은 인종적 순수성이 아니라 신앙적 순수성에 대한 관심에서 비롯된다. 가나안 족속의 우상숭배와 도덕적 부패(19장의 소돔 사건 참조)로부터 언약의 후손을 지키려는 신중함이며, 이는 훗날 이스라엘 전체에게 반복되는 신앙적 원칙(신 7:3-4)의 초기 사례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">섬김의 태도가 드러내는 성품</div>
+        <div class="teach-body">리브가가 낙타 열 마리에게까지 물을 길어주는 것은 엄청난 육체적 수고(낙타 한 마리가 한 번에 마시는 물의 양은 상당하다)를 요구하는 일이다. 이는 그녀가 낯선 나그네에게조차 아낌없이 베푸는 후한 환대와 근면함을 지닌 인물임을 행동으로 증명하며, 이러한 실천적 성품이 배우자 선택의 중요한 기준이 될 수 있음을 시사한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">리브가의 자발적 결단</div>
+        <div class="teach-body">라반과 브두엘의 동의 이후에도, 본문은 굳이 리브가 자신에게 직접 의향을 묻는다("네가 이 사람과 함께 가려느냐", 58절). 그녀의 즉각적이고 자발적인 "가겠나이다"라는 응답은, 하나님의 인도하심에 대한 순종이 단지 가족의 결정에 수동적으로 따르는 것이 아니라 본인의 믿음의 결단을 포함함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님의 인도하심에 대한 겸손한 감사</div>
+        <div class="teach-body">종은 여정 내내 자신의 능력이 아니라 하나님의 인도하심을 반복해서 인정한다("여호와께서 나의 길에 순조롭게 인도하셨나이다", 56절 등). 이는 인생의 중요한 결정을 앞두고 인간의 계획과 하나님의 주권적 인도하심이 함께 작동한다는 것을 보여주는 아름다운 사례다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장에서 제가 제일 좋아하는 부분은 라반과 브두엘의 대답이에요. '이 일이 여호와께로 말미암았으니 우리는 가부를 말할 수 없노라'(50절). 때로는 어떤 일이 너무나 분명하게 하나님의 손길로 이루어졌다는 걸 알아차리는 순간이 있는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>종의 기도(구체적 표징을 구함)는 오늘날 신자들에게도 기도의 모범으로 그대로 적용될 수 있는가, 아니면 특수한 상황에 국한된 것인가?</div>
+        <div class="deep-body">이 사례는 흔히 '양털 시험'(사사기 6장 기드온의 사례와 함께)이라는 개념으로 오늘날 인도하심을 구하는 기도의 근거로 자주 인용된다. 다만 신중한 해석가들은 이것이 구속사의 특수한 국면(족장 시대, 아직 기록된 계시가 완성되지 않은 시기)에서 있었던 특별한 사례이며, 오늘날에는 성경 전체의 완성된 계시와 성령의 인도하심(요 16:13)이라는 훨씬 풍성한 자원이 있다는 점을 함께 고려해야 한다고 본다. 그럼에도 이 본문은 하나님이 구체적이고 실제적인 기도에 신실하게 응답하실 수 있는 분이라는 원리 자체는 여전히 유효한 것으로 받아들여진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>이삭이 아내를 구하는 이 과정에서 전혀 능동적으로 등장하지 않는 것(모든 과정이 아버지와 종에 의해 진행됨)을 어떻게 이해해야 하는가?</div>
+        <div class="deep-body">이삭은 창세기 인물 중 상대적으로 수동적인 인물로 자주 묘사되며(22장에서도, 24장에서도, 이후 26장의 실수에서도), 이는 그가 아버지 아브라함과 아들 야곱이라는 훨씬 더 역동적인 두 인물 사이에서 '연결 다리' 역할을 하는 인물이라는 문학적 관찰과 맞아떨어진다. 다만 67절에서 이삭이 리브가를 실제로 "사랑하였다"는 정서적 묘사는, 이 결혼이 단지 가문의 정략적 결합이 아니라 실제 인격적 사랑으로 이어졌음을 보여주며, 이는 창세기에서 부부간의 사랑이 명시적으로 언급되는 몇 안 되는 소중한 구절 중 하나다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch25">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="17" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="31" cy="24" r="7" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 25</div>
+      <h1>25장 · 아브라함의 죽음과 야곱·에서의 출생</h1>
+      <div class="chapter-sub">한 시대가 저물고, 새로운 갈등이 태어나다</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 25:1-34</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">25:1-18</div>
+        <div>
+          <div class="flow-title">아브라함의 죽음과 이스마엘의 계보</div>
+          <div class="flow-body">아브라함은 그두라를 통해 여러 자녀를 더 얻지만, 모든 소유를 이삭에게 물려주고 다른 아들들에게는 재물을 주어 동방으로 보낸다(5-6절). 175세로 <b class="hl-quote">"수가 높고 나이가 많아 기운이 다하여"</b>(8절) 죽으매, <b class="hl-term">이삭과 이스마엘</b>이 함께 그를 막벨라 굴에 장사한다 — 오랜 갈등에도 불구하고 두 형제가 아버지의 장례에서 함께한다는 사실이 조용히 기록된다. 이스마엘의 계보도 열두 지도자로 상세히 기록되며(12-18절), 그가 하나님이 약속하신 대로 큰 민족을 이루었음을 확증한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">25:19-34</div>
+        <div>
+          <div class="flow-title">에서와 야곱의 출생, 그리고 장자권 매매</div>
+          <div class="flow-body">이삭이 리브가를 위해 기도하자 그녀가 임신하는데, 태 속에서부터 <b class="hl-insight has-insight" data-insight="13">두 아이가 다투며</b>(22절) 하나님은 리브가에게 "큰 자가 어린 자를 섬기리라"(23절)는 예언을 주신다. 붉고 털이 많은 에서가 먼저 나오고 그 발꿈치를 잡은 야곱이 뒤이어 태어난다. 장성하여 에서는 들사람 사냥꾼이, 야곱은 조용한 사람이 되는데, 어느 날 사냥에서 돌아와 심히 피곤한 에서는 팥죽 한 그릇에 <b class="hl-term">장자의 명분</b>을 야곱에게 팔아넘긴다(29-34절).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">평온한 죽음 — 약속을 신뢰하며 맞이한 마지막</div>
+        <div class="teach-body">아브라함은 "나이가 많고 늙어 기운이 다하여" 평안히 죽었다(8절). 그는 약속의 완전한 성취(가나안 전체 소유, 셀 수 없는 자손)를 생전에 보지 못했지만, 여전히 만족과 평안 가운데 생을 마쳤다. 이는 신앙이 요구하는 것이 즉각적 성취의 확인이 아니라, 하나님의 신실하심에 대한 신뢰 속에서의 안식임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">화해의 조용한 증거 — 함께 장례를 치른 형제들</div>
+        <div class="teach-body">이삭과 이스마엘이 함께 아버지를 장사했다는 짧은 구절(9절)은 큰 설명 없이 지나가지만, 오랜 갈등(21장의 추방)에도 불구하고 두 형제 사이에 어떤 화해와 관계 회복이 있었음을 암시한다. 이는 깨어진 가족 관계도 시간이 지나며 회복될 수 있다는 조용한 소망을 남긴다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">택하심의 주권 — 태어나기 전부터 정해진 하나님의 계획</div>
+        <div class="teach-body">야곱이 형보다 택함받은 것("큰 자가 어린 자를 섬기리라")은 두 사람이 어떤 선이나 악을 행하기도 전, 태중에서부터 선언된다. 바울은 로마서 9:10-13에서 이 사건을 직접 인용하며 하나님의 선택이 인간의 행위가 아니라 부르시는 이의 뜻에 달려 있다는 주권적 은혜의 교리를 논증하는 근거로 삼는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">장자권을 가볍게 여긴 죄</div>
+        <div class="teach-body">에서가 순간의 배고픔 때문에 장자권(단순한 재산 상속권을 넘어, 언약의 축복과 족장 지위 계승을 포함하는 영적 특권)을 팔아넘긴 것은 히브리서 12:16에서 "음행하는 자와 혹 한 그릇 음식을 위하여 장자의 명분을 판 에서와 같이 망령된 자가 있을까 두려워하라"는 엄중한 경고의 근거가 된다. 이는 영원한 가치를 순간의 욕구와 맞바꾸는 것의 위험성을 경고한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">야곱의 교활함 — 택함받았어도 정당화되지 않는 방법</div>
+        <div class="teach-body">야곱이 형의 굶주림을 이용해 장자권을 취한 방식은 결코 도덕적으로 칭찬받을 만한 것이 아니다. 하나님의 주권적 선택(23절의 예언)이 야곱에게 있었다 하더라도, 그가 그것을 취하는 과정에서 보인 교활함은 이후 그의 삶 전체에 걸쳐 반복되는 성품적 결함(어머니와 공모한 축복 가로채기, 라반과의 술수 대결 등)의 시작을 예고하며, 하나님은 이런 인간적 결함을 통해서도 자신의 주권적 계획을 이루어가신다는 것을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">25장은 창세기 전체의 중요한 전환점이에요. 아브라함이라는 한 시대가 저물고, 야곱과 에서라는 새로운 갈등과 이야기가 시작되죠. 팥죽 한 그릇 이야기, 그냥 우스갯소리처럼 들릴 수 있지만 사실 히브리서까지 가서 무거운 경고로 다시 등장해요. 순간의 욕구와 영원한 가치를 맞바꾸는 것에 대한 이야기예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>하나님이 야곱을 선택하신 것이 그의 행위와 무관하다면, 왜 그는 이후 삶에서 그토록 많은 고난(라반에게 속음, 자녀들 사이의 불화 등)을 겪어야 했는가?</div>
+        <div class="deep-body">이는 무조건적 선택(로마서 9장의 주권적 은혜)과 인과응보적 훈육이 성경 안에서 어떻게 공존하는지를 보여주는 흥미로운 사례다. 하나님의 선택은 야곱의 공로와 무관했지만, 그가 선택된 이후의 삶에서 저지른 구체적 잘못(속임수)에 대해서는 여전히 자연스러운 결과(그 자신이 라반에게 속고, 아들들 사이의 속임수와 배신을 경험함)를 통해 훈육받는다. 이는 하나님의 은혜로운 선택이 인간을 도덕적 책임에서 면제시키지 않으며, 오히려 선택받은 자일수록 더욱 하나님의 성품을 닮아가도록 다듬어지는 과정을 겪는다는 것을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>장자권 매매 사건에서 에서와 야곱 중 누가 더 큰 도덕적 책임을 지는가?</div>
+        <div class="deep-body">본문과 히브리서 12:16은 명백히 에서의 책임(영적 가치를 경솔히 여긴 것)에 초점을 맞춘다. 그러나 야곱의 행동(형의 극심한 배고픔이라는 취약한 순간을 이용해 거래를 성사시킨 것) 역시 도덕적으로 결코 미화되지 않는다. 성경 내러티브는 두 사람 모두에게 결함이 있음을 암시적으로 보여주면서도, 궁극적 신학적 초점은 하나님이 인간의 도덕적 완전함이 아니라 주권적 은혜를 통해 자신의 구속사적 계획(야곱을 통한 이스라엘 열두 지파의 형성)을 이루어가신다는 데 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+<div class="final-footer" style="text-align:center; padding: 14mm 4vw 20mm; color:var(--ink-soft); font-size:9pt; letter-spacing:0.04em;">
+  기독교한국침례회 은혜교회
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "\"땅의 모든 족속이 너로 말미암아 복을 얻으리라\" — 구속사 전체의 씨앗", "body": "이 구절은 창세기 3:15의 원시복음에 이은 두 번째 결정적 구속사적 약속이다. 아담 이후 인류 전체에 임한 저주(3장)와 뿔뿔이 흩어짐(11장 바벨) 직후에, 한 사람을 통해 '모든 족속'이 복을 받을 것이라는 약속이 주어진다는 것은 문학적으로도 신학적으로도 의미심장하다. 사도 바울은 갈라디아서 3:16에서 이 '후손'이 궁극적으로 그리스도를 가리킨다고 해석하며, 아브라함 언약이 결국 온 열방을 향한 복음의 예언이었음을 선언한다."}, {"title": "소돔에 대한 조기 경고의 문학적 기능", "body": "13:13의 짧은 경고(\"소돔 사람은... 큰 죄인이었더라\")는 당장은 아무 영향이 없어 보이지만, 독자에게 다가올 19장의 심판을 미리 예고하는 문학적 복선이다. 고대 히브리 서사는 이런 식으로 인물의 선택에 대한 암묵적 평가를 사건이 벌어지기 훨씬 전에 미리 심어두는 경우가 많으며, 이는 독자로 하여금 롯의 선택을 단순한 사업적 결정이 아니라 영적으로 위험한 결정으로 읽도록 유도한다."}, {"title": "십분의 일 — '모든 것'의 십일조", "body": "14:20의 표현은 특정 소유물이 아니라 '모든 것'(포로에서 되찾은 전리품 전체)의 십분의 일을 가리킨다. 이는 훗날 이스라엘의 십일조 제도가 소출과 가축에 국한된 것과 비교할 때, 아브람의 십일조가 훨씬 더 포괄적이고 자발적인 감사의 표현이었음을 보여준다. 히브리서 저자는 이 사건을 근거로 레위 지파(아직 태어나지도 않았던, 아브람의 허리 속에 있던 자손)조차 멜기세덱에게 십일조를 바친 셈이라는 정교한 논증을 펼친다(히 7:9-10)."}, {"title": "의로 '여겨졌다'의 회계적 뉘앙스", "body": "히브리어 '하샤브'(여기다)는 상업·회계 문서에서 '계산하다, 장부에 기입하다'는 뜻으로 자주 사용되는 단어다. 이는 아브람의 믿음이 마치 회계장부에 '의'로 기록되는 것과 같은 이미지를 전달하며, 바울이 로마서 4:4-5에서 '삯'과 '은혜'를 대조하며 행위가 아닌 믿음으로 의가 '값없이 계산된다'는 논증을 펼칠 때 이 원어의 회계적 뉘앙스가 신학적으로 중요하게 작용한다."}, {"title": "브엘라해로이 — 이름에 새겨진 신앙 고백", "body": "하갈이 만난 샘의 이름 '브엘라해로이'(14절)는 '나를 살피시는 살아계신 이의 우물'이라는 뜻이다. 지명에 신학적 고백을 새기는 것은 창세기 전체에서 반복되는 패턴으로(예: 벧엘 '하나님의 집', 브엘세바 '맹세의 우물'), 이는 단순한 지리적 표지가 아니라 하나님을 만난 구체적 경험을 후대에 전하는 신앙적 기념비의 역할을 한다."}, {"title": "엘 샤다이라는 이름이 처음 등장하는 맥락", "body": "'엘 샤다이'(전능하신 하나님)라는 칭호가 성경에서 처음 등장하는 곳이 바로 이 구절이며, 그 문맥이 인간적으로 완전히 불가능한 상황(99세 노인의 출산)이라는 점은 의미심장하다. 이 이름은 이후 출애굽기 6:3에서 하나님이 모세에게 자신을 '여호와'로 온전히 계시하시기 전, 족장들에게 알려진 이름으로 다시 언급되며, 초자연적 능력으로 불가능을 가능케 하시는 하나님의 성품을 강조하는 칭호로 자리잡는다."}, {"title": "사라의 웃음과 아브라함의 웃음의 차이", "body": "17장에서 아브라함이 웃었을 때(17절)는 하나님이 특별히 책망하지 않으셨지만, 18장에서 사라가 웃자(12절) 하나님은 이를 직접 지적하시며 \"내가 웃었나이다\"라는 사라의 부인까지 정정하신다(15절). 이 차이에 대해 명확한 본문적 이유는 제시되지 않지만, 사라의 웃음이 좀 더 노골적인 회의(\"내가 노쇠하였고... 내가 어찌 낙을 보리요\")를 담고 있었다는 문맥적 뉘앙스가 있다. 어느 쪽이든 두 사람의 인간적 웃음은 결국 태어날 아들의 이름 '이삭'(웃음) 안에서 하나님의 유머와 은혜로 승화된다."}, {"title": "소금 기둥이 된 것에 대한 지리적·지질학적 배경", "body": "사해 남단 지역은 역사적으로 염분이 매우 높은 지형과 유황·역청 매장지로 알려져 있으며, 오늘날에도 '롯의 아내'라 불리는 소금 기둥 모양의 암염 지형이 관광지로 남아 있다. 본문의 사건을 문자적 초자연적 심판으로 이해하든, 실제 지질학적 재해(유황과 역청의 폭발적 연소)와 결합된 신적 심판으로 이해하든, 창세기 저자는 이 지역의 실제 지리적 특징을 배경으로 독자들에게 생생하고 검증 가능한 심판의 증거로 이 사건을 제시하고 있다."}, {"title": "\"온전한 마음과 깨끗한 손\"이라는 아비멜렉의 항변", "body": "이 표현은 훗날 시편에서 예배자의 자격을 묘사하는 데 반복적으로 사용되는 언어와 유사하다(시 24:4, \"손이 깨끗하며 마음이 청결하며\"). 이방 왕의 입에서 이런 표현이 나온다는 것은, 도덕적 정직함에 대한 인식이 특정 종교 공동체에 국한되지 않고 인간의 보편적 양심(로마서 2장이 말하는 '마음에 새긴 율법')에 뿌리내리고 있음을 보여주는 흥미로운 사례다."}, {"title": "브엘세바라는 지명에 담긴 이중적 의미", "body": "'브엘세바'(בְּאֵר שֶׁבַע)는 히브리어로 '일곱의 우물' 또는 '맹세의 우물' 두 가지로 해석될 수 있는 언어유희를 담고 있다. 아브라함이 아비멜렉에게 일곱 마리 암양 새끼를 증거로 주고(30절) 맹세를 맺었다는 사실이 이 두 의미를 모두 satisfying한다. 이 지명은 이후 성경 전체에서 이스라엘 땅의 남쪽 경계를 나타내는 관용구(\"단에서 브엘세바까지\")로 반복 사용되며, 족장들의 신앙 여정에서 중요한 지리적·신학적 이정표로 남는다."}, {"title": "\"여호와의 산에서 준비되리라\"는 격언의 형성", "body": "14절 후반부 \"오늘날까지 사람들이 이르기를 여호와의 산에서 준비되리라 하더라\"는 표현은, 이 사건이 창세기 저자 당대에 이미 하나의 신앙적 격언으로 굳어져 있었음을 보여준다. 이는 위기의 순간에 인간이 스스로 해결책을 만들어낼 수 없을 때, 하나님이 정확한 시점에 필요를 준비하신다는 이스라엘 백성의 집단적 신앙 고백으로 대대로 전해졌으며, 이후 성전이 세워진 바로 그 산에서 이 격언이 문자 그대로 계속 성취되었다는 점에서 더욱 깊은 의미를 지닌다."}, {"title": "\"은 사백 세겔\"의 실제 가치", "body": "이는 고대 근동 기준으로 상당히 높은 가격이었다(에스겔 45:12 등에 나타나는 표준 세겔 무게로 환산하면 노동자의 수년 치 임금에 해당하는 것으로 추정된다). 에브론은 처음에 겉으로는 거저 주는 척하며 정중한 언사로 협상을 시작했지만, 결국 매우 높은 가격을 제시했고 아브라함은 흥정 없이 그대로 지불했다. 이는 고대 근동의 정교한 예의 바른 협상 관습(겉으로는 겸양하지만 실제로는 최대한의 이익을 추구하는)을 생생하게 보여주는 동시에, 아브라함이 이 거래에서 어떤 흠결도 남기지 않으려는 신중함을 다시 확인시켜준다."}, {"title": "낙타에게 물을 긷는 일의 실제적 규모", "body": "고대 근동에서 갈증 난 낙타 한 마리는 한 번에 상당한 양(수십 리터에 이를 수 있음)의 물을 마실 수 있었다. 종이 데려온 낙타가 열 마리였다는 점(24:10)을 고려하면, 리브가가 자원하여 감당한 일은 결코 사소한 친절이 아니라 우물에서 물을 긷고 나르는 일을 수십 차례 반복해야 하는 상당한 육체적 노동이었다. 이런 배경 지식은 그녀의 자발적 섬김이 얼마나 이례적이고 후한 것이었는지를 훨씬 더 생생하게 이해하게 해준다."}, {"title": "\"두 국민이 네 태중에 있다\"는 예언의 역사적 성취", "body": "리브가에게 주신 예언(23절, \"두 국민이 네 태중에 있구나... 큰 자가 어린 자를 섬기리라\")은 단지 개인적 형제 관계를 넘어, 이후 이스라엘(야곱의 후손)과 에돔(에서의 후손) 두 민족 사이의 역사적 관계를 예고하는 것으로 이해된다. 실제로 에돔은 사울과 다윗 시대(삼하 8:14)에 이스라엘에게 정복당하며, 이 예언은 개인 차원과 민족 차원 모두에서 성취되는 이중적 구조를 지닌다. 말라기 1:2-3의 \"내가 야곱은 사랑하였고 에서는 미워하였다\"는 표현도 이 민족적 차원의 예언과 연결하여 이해하는 것이 균형 잡힌 해석이다."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+</body></html>

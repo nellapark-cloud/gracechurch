@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>창세기 연구 — 1부 원역사(1-11장)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* hl-insight = 더 깊은 설명이 필요한 구절 (하늘색), 클릭 시 팝업 */
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+/* clickable (has a glossary tip) */
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(20,28,42,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+/* Screen-friendly rules above are now the default (baseline) so that any
+   viewer — including ones that don't evaluate @media correctly — shows a
+   clean, readable layout. Printing restores the compact A4-tuned look. */
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 창세기 연구 · 1부</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+<div class="cover">
+  <div class="eyebrow">은혜교회 성경공부 시리즈</div>
+  <h1>창세기 연구</h1>
+  <div class="cover-sub">태초의 말씀에서 흩어진 열방까지 — 1부 원역사(1–11장)</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">창 1:1 – 11:32</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">
+    전 11장 · 구조 · 신학적·목회적 교훈 · 심화 질문<br/><br/>
+    <span style="color:#d8b073;">■</span> 핵심 신학 용어　
+    <span style="color:#e07a69;">■</span> 성경 본문 인용　
+    <span style="color:#6ec4bc;">■</span> 원어(히브리어)　
+    <span style="color:#78bee6;">■</span> 더 알아보기(탭하여 열람)
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>창세기 1부 서론 — 원역사(창 1-11장)</h1>
+  <p class="intro-lead">모든 성경의 뼈대, 구속사 전체의 출발점.</p>
+
+  <div class="intro-block">
+    <h3>왜 창세기, 왜 원역사인가</h3>
+    <p>창세기는 <b class="hl-term">모세오경</b>의 첫 책이자 성경 66권 전체의 문을 여는 책이다. 특히 1-11장(원역사, Primeval History)은 이후 이어질 아브라함부터 요셉까지의 족장사, 나아가 출애굽·시내산 언약·가나안 정복·왕정·포로·귀환, 그리고 신약의 그리스도 사건에 이르기까지 모든 구속사의 신학적 토대를 놓는 구간이다. 창조, 인간의 존엄, 죄의 기원, 심판과 은혜, 언약이라는 성경 전체의 핵심 주제가 전부 이 열한 장 안에서 처음 등장한다. 신약의 저자들(바울의 로마서 5장, 히브리서 11장, 요한계시록의 여러 이미지)은 끊임없이 이 본문으로 되돌아가 자신들의 신학을 세운다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문학적 구조 — 톨레도트</h3>
+    <p>창세기는 <b class="hl-term has-tip" data-tip="'톨레도트'(תּוֹלְדֹת), '내력·계보'라는 뜻의 히브리어. 창세기 전체를 열 번에 걸쳐 구획하는 구조적 표지어다.">톨레도트</b>("...의 계보/내력은 이러하니라")라는 표지어로 전체 구조가 짜여 있다. 1부(원역사)에서는 천지의 계보(2:4), 아담의 계보(5:1), 노아의 계보(6:9), 노아 아들들의 계보(10:1), 셈의 계보(11:10)가 이 표지어로 나뉘며, 창조에서 시작해 점차 인류 전체(온 세상)에서 한 가족(셈-데라-아브람)으로 초점이 좁혀지는 문학적 깔때기 구조를 이룬다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>반복되는 패턴 — 죄, 심판, 은혜</h3>
+    <p>원역사 전체는 하나의 패턴을 반복한다: <b class="hl-term">인간의 범죄</b> → <b class="hl-term">하나님의 심판 선언</b> → <b class="hl-term">그럼에도 베푸시는 은혜</b>. 아담과 하와의 타락 후 가죽옷, 가인의 살인 후 보호의 표, 온 땅의 부패 후 노아를 통한 구원, 바벨탑의 교만 후 아브람의 부르심 — 이 패턴은 하나님의 심판이 결코 인간을 완전히 버리시는 것이 아니라 언제나 회복의 길을 함께 예비하신다는 성경 전체의 메시지를 처음부터 각인시킨다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>고대 근동 문헌과의 관계</h3>
+    <p>창조 기사(에누마 엘리쉬), 홍수 설화(길가메시 서사시, 아트라하시스), 인간 기원 신화 등은 고대 근동에 널리 퍼져 있었다. 창세기는 이러한 공통된 고대 세계의 배경 속에서 기록되었으나, 신학적으로는 근본적으로 다르다 — 다신론이 아닌 유일신론, 물질과 인간을 선하게 보는 관점, 인간의 존엄성(모든 인간이 하나님의 형상), 그리고 도덕적 죄에 대한 심판이라는 주제에서 창세기는 주변 신화들과 뚜렷이 구별된다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관 (1부, 1-11장)</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1-2장</div>
+        <div class="oi-title">창조</div>
+        <div class="oi-body">말씀으로 지으신 우주와, 형상과 숨으로 지음받은 인간, 그리고 돕는 배필과 결혼 제도.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">3-5장</div>
+        <div class="oi-title">타락과 그 확산</div>
+        <div class="oi-body">선악과와 원시복음, 가인의 살인, 그리고 죽음의 보편성 속 에녹의 예외.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">6-9장</div>
+        <div class="oi-title">홍수와 새 언약</div>
+        <div class="oi-body">극에 달한 죄악, 노아의 순종과 방주, 심판의 물, 그리고 무지개 언약.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">10-11장</div>
+        <div class="oi-title">열방과 바벨, 그리고 아브람</div>
+        <div class="oi-body">흩어진 열국의 계보, 하나 되려는 인간의 교만(바벨탑), 그리고 셈의 계보를 통해 아브람에게로 좁혀지는 초점.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰(각 교훈마다 이후 성경, 특히 신약에서 어떻게 이어지고 성취되는지 함께 제시)을 다루며, <b class="hl-term">③깊이 생각해볼 문제</b>는 해석사적 논쟁과 난해 구절을 다룬다. 골드로 표시된 용어와 하늘색으로 표시된 구절은 탭하여 추가 설명을 확인할 수 있다.</p>
+  </div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents · 1부</div>
+  <h1>목차 — 원역사 (1-11장)</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">천지 창조</span>
+      <span class="toc-sub">말씀으로 지으신 우주, 형상으로 지으신 인간</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-title">동산과 돕는 배필</span>
+      <span class="toc-sub">흙으로 지음받은 사람, 하나님이 지으신 관계</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-title">타락</span>
+      <span class="toc-sub">선악과, 뱀의 유혹, 그리고 첫 약속</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-title">가인과 아벨</span>
+      <span class="toc-sub">최초의 예배, 최초의 살인, 그리고 은혜의 표</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-title">아담의 계보</span>
+      <span class="toc-sub">죽음의 반복과 에녹의 예외</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-title">타락의 심화와 방주 준비</span>
+      <span class="toc-sub">네피림, 하나님의 근심, 그리고 노아의 순종</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch7')" onkeydown="if(event.key==='Enter')goTo(event,'ch7')">
+      <span class="toc-num">07</span>
+      <span class="toc-title">홍수의 시작</span>
+      <span class="toc-sub">심판의 물이 땅을 덮다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch8')" onkeydown="if(event.key==='Enter')goTo(event,'ch8')">
+      <span class="toc-num">08</span>
+      <span class="toc-title">물이 줄어들고 새 땅이 드러나다</span>
+      <span class="toc-sub">까마귀와 비둘기, 그리고 새로운 시작</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch9')" onkeydown="if(event.key==='Enter')goTo(event,'ch9')">
+      <span class="toc-num">09</span>
+      <span class="toc-title">노아 언약과 새로운 인류</span>
+      <span class="toc-sub">무지개, 새 계명, 그리고 함의 죄</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch10')" onkeydown="if(event.key==='Enter')goTo(event,'ch10')">
+      <span class="toc-num">10</span>
+      <span class="toc-title">열국 족보</span>
+      <span class="toc-sub">노아 후손들의 세계 지도</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch11')" onkeydown="if(event.key==='Enter')goTo(event,'ch11')">
+      <span class="toc-num">11</span>
+      <span class="toc-title">바벨탑과 셈의 계보</span>
+      <span class="toc-sub">언어의 혼잡, 그리고 아브라함을 향한 다리</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+  </div>
+</div>
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="9" fill="none" stroke="currentColor" stroke-width="2"/><g stroke="currentColor" stroke-width="2"><line x1="24" y1="3" x2="24" y2="9"/><line x1="24" y1="39" x2="24" y2="45"/><line x1="3" y1="24" x2="9" y2="24"/><line x1="39" y1="24" x2="45" y2="24"/></g></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 1</div>
+      <h1>1장 · 천지 창조</h1>
+      <div class="chapter-sub">말씀으로 지으신 우주, 형상으로 지으신 인간</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 1:1 – 2:3</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1:1-2</div>
+        <div>
+          <div class="flow-title">태초와 혼돈</div>
+          <div class="flow-body">본문은 <b class="hl-quote">"태초에 하나님이 천지를 창조하시니라"</b>(1절)로 시작한다. 이는 시간, 공간, 물질 전체의 절대적 시작을 선언하는 문장으로, 고대 근동의 다른 창조 신화들이 이미 존재하는 혼돈의 물질에서 신들이 싸워 세계를 빚어내는 것과 근본적으로 다르다. 2절의 <b class="hl-term has-tip" data-tip="히브리어 '토후 바보후'(תֹהוּ וָבֹהוּ). 형체 없고 텅 빈 상태를 뜻하는 관용구. 창조가 아직 질서와 충만함을 갖추기 전 단계를 가리킨다.">혼돈하고 공허하며</b> 흑암이 깊음 위에 있다는 묘사는 심판이 아니라 아직 질서가 부여되지 않은 <b class="hl-insight has-insight" data-insight="0">원재료 상태</b>를 가리킨다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">1:3-2:3</div>
+        <div>
+          <div class="flow-title">엿새 창조와 안식</div>
+          <div class="flow-body">창조는 엄격한 문학적 구조를 갖는다. 첫 사흘(빛과 어둠의 분리, 하늘과 바다의 분리, 땅과 식물)은 <b class="hl-term">영역</b>을 만들고, 다음 사흘(해와 달과 별, 물고기와 새, 육축과 짐승과 사람)은 그 영역을 채우는 <b class="hl-term">거주자</b>를 만든다. 이 평행 구조 자체가 혼돈에서 질서로, 공허에서 충만으로 나아가는 하나님의 성품을 보여준다. 여섯째 날의 절정은 <b class="hl-term has-tip" data-tip="히브리어 '첼렘'(צֶלֶם). 고대 근동에서는 왕만이 신의 형상을 지닌 존재로 여겨졌으나, 창세기는 모든 인간이 하나님의 형상을 지녔다고 선언하여 인간 존엄성의 보편적 근거를 놓는다.">하나님의 형상</b>대로 지음받은 인간이며, 일곱째 날 <b class="hl-greek has-tip" data-tip="히브리어 '샤바트'(שָׁבַת), '그치다·쉬다'라는 뜻. 훗날 안식일 계명(출 20:8-11)의 신학적 근거가 된다.">안식(샤바트)</b>은 창조의 완성이자 목적으로 제시된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">말씀의 능력</div>
+        <div class="teach-body">하나님은 재료 없이 <b>말씀</b>으로 창조하신다("하나님이 이르시되... 그대로 되니라"). 이는 하나님의 절대 주권과 능력을 보여주며, 후에 요한복음 1장의 로고스 신학("태초에 말씀이 계시니라")과 히브리서 11:3("믿음으로 모든 세계가 하나님의 말씀으로 지어진 줄을 우리가 아나니")의 뿌리가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">보시기에 좋았더라 — 세계의 선함</div>
+        <div class="teach-body">창조 기사는 반복적으로 <b>"보시기에 좋았더라"</b>고 선언한다. 물질세계 자체는 악하지 않고 하나님이 의도하신 선한 것이다. 이는 훗날 영지주의처럼 물질을 악으로 보는 이단들을 신학적으로 반박하는 근거가 되며, 몸의 부활(고전 15장)과 새 하늘 새 땅(계 21장) 교리의 기초가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님의 형상으로서의 인간 존엄</div>
+        <div class="teach-body">인간이 하나님의 형상대로 지음받았다는 선언은 인간 존엄성의 신학적 근거다. 남자와 여자 모두 동등하게 형상을 지녔다는 것(1:27, "남자와 여자를 창조하시고")은 고대 가부장 사회 속에서 파격적인 선언이었고, 이는 야고보서 3:9("하나님의 형상대로 지음을 받은 사람")까지 이어져 인간 폭력과 차별을 금하는 근거가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">다스림과 청지기직</div>
+        <div class="teach-body">인간에게 주신 "생육하고 번성하여... 다스리라"는 명령(1:28)은 착취적 지배가 아니라 <b>청지기적 돌봄</b>의 통치를 의미한다. 하나님의 형상을 지닌 자로서 피조세계를 하나님의 방식대로(자비롭고 질서 있게) 다스리라는 위임이며, 이는 오늘날 창조세계 돌봄 신학의 성경적 근거다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">안식의 신학</div>
+        <div class="teach-body">일곱째 날의 안식은 단지 피곤해서 쉬는 것이 아니라 창조의 <b>목적이자 완성</b>이다. 안식일 계명(출 20장), 안식년과 희년(레 25장), 그리고 궁극적으로 그리스도 안에서의 참 안식(히 4:9-10, "그런즉 안식할 때가 하나님의 백성에게 남아 있도다")으로 이어지는 성경 전체의 안식 신학이 여기서 시작된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">창세기 1장은 과학 교과서가 아니라 예배 문서예요. 고대 근동 사람들이 신으로 섬기던 해, 달, 별, 바다 괴물(1:21 '큰 물고기'가 바로 그 상징)이 여기서는 전부 하나님이 '만드신' 피조물로 격하돼요. 이건 우상숭배에 대한 강력한 선전포고인 셈이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"우리의 형상을 따라"(1:26)의 '우리'는 누구를 가리키는가?</div>
+        <div class="deep-body">위엄의 복수형(왕적 화법)이라는 견해, 천상 회의(욥 1장의 하늘 회의처럼)를 향한 말씀이라는 견해, 그리고 기독교 전통에서는 삼위일체를 예표하는 표현으로 읽는 견해가 있다. 본문 자체는 명시하지 않지만, 신약의 계시(성부·성자·성령의 창조 사역, 요 1:1-3, 골 1:16)에 비추어 소급적으로 삼위일체적으로 읽는 것이 정경적 해석의 한 방식이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>엿새 창조를 문자적 24시간으로 볼 것인가, 문학적 틀로 볼 것인가?</div>
+        <div class="deep-body">이는 복음주의 내에서도 오랜 논쟁 주제다. 젊은 지구 창조론은 문자적 24시간 엿새를 주장하고, 날-시대 이론이나 틀 가설(framework hypothesis)은 본문의 시적·구조적 성격(위에서 본 영역-거주자 평행구조)에 주목해 상징적 틀로 읽는다. 본문의 일차 목적은 '어떻게, 얼마나 오래'가 아니라 '누가, 왜' 세상을 지으셨는가에 있다는 데는 대부분의 해석자들이 동의한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6c-9 7-15 13-15 21a15 15 0 0030 0c0-8-6-14-15-21z" fill="none" stroke="currentColor" stroke-width="2"/><line x1="24" y1="17" x2="24" y2="37" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 2</div>
+      <h1>2장 · 동산과 돕는 배필</h1>
+      <div class="chapter-sub">흙으로 지음받은 사람, 하나님이 지으신 관계</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 2:4-25</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">2:4-17</div>
+        <div>
+          <div class="flow-title">사람을 지으시고 동산에 두심</div>
+          <div class="flow-body">2장은 1장의 파노라마적 창조 기사와 달리 인간 창조에 초점을 맞춘 <b class="hl-term has-tip" data-tip="'톨레도트'(תּוֹלְדֹת), '내력·계보'라는 뜻. 창세기는 이 단어를 표지로 열 번 반복하며 전체 구조를 나눈다(2:4; 5:1; 6:9; 10:1; 11:10; 11:27; 25:12; 25:19; 36:1; 37:2).">톨레도트</b> 구조로 근접 촬영한다. 하나님이 <b class="hl-quote">"땅의 흙으로 사람을 지으시고 생기를 그 코에 불어넣으시니"</b>(7절) 사람이 생령이 되었다. 인간은 흙(연약함, 유한성)과 하나님의 숨(존엄성, 영적 생명)이 결합된 독특한 존재다. 하나님은 에덴동산을 지어 사람을 그곳에 두시고 경작하며 지키게 하셨다(15절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">2:18-25</div>
+        <div>
+          <div class="flow-title">돕는 배필의 창조</div>
+          <div class="flow-body">"사람이 혼자 사는 것이 좋지 아니하니"(18절)는 창조 기사에서 처음 등장하는 '좋지 아니함'의 선언이다. 하나님은 아담에게 짐승들의 이름을 짓게 하신 후(이는 다스림의 첫 행위이자, 짐승 중에 짝이 없음을 스스로 깨닫게 하는 과정), 아담을 깊이 잠들게 하시고 그 <b class="hl-term">갈빗대</b>로 여자를 지으신다. 아담의 시는 <b class="hl-quote">"내 뼈 중의 뼈요 살 중의 살이라"</b>(23절)로 동등성과 연합을 노래하며, 24절은 결혼 제도의 원형("둘이 한 몸을 이룰지로다")을 선언한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">흙과 숨 — 인간의 이중적 본질</div>
+        <div class="teach-body">인간은 흙(아다마)에서 왔기에 겸손해야 하고, 하나님의 숨을 받았기에 존엄하다. 이 긴장은 시편 8편("사람이 무엇이기에... 존귀와 영화로 관을 씌우셨나이다")과 전도서 3:20("다 흙으로 말미암았으므로 흙으로 돌아가나니")에서 계속 울린다. 그리스도인의 정체성은 이 둘 사이의 균형에 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">노동은 타락의 결과가 아니라 창조 질서</div>
+        <div class="teach-body">아담은 타락 이전, 완전한 동산에서 이미 "경작하며 지키게"(15절) 하는 노동을 부여받았다. 노동 자체는 저주가 아니라 인간에게 주신 존엄한 소명이다. 타락 후 노동에 '수고'와 '땀'이 더해질 뿐(3:17-19), 일 자체의 선함은 그대로다. 이는 신약의 노동관(살후 3:10, "일하기 싫거든 먹지도 말라")과 소명 신학의 뿌리다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">돕는 배필 — 열등이 아닌 상응하는 동반자</div>
+        <div class="teach-body">'돕는 배필'(에제르 케네그도)의 '에제르'는 구약에서 대부분 하나님 자신을 가리키는 데 쓰이는 단어(시 121:2, "나의 도움은... 여호와에게서로다")로, 결코 열등한 조력자를 뜻하지 않는다. '케네그도'는 '그와 상응하는, 마주 서는'이라는 뜻으로 동등성을 강조한다. 이는 남녀의 본질적 동등성에 대한 창조 질서의 증언이며, 에베소서 5장의 결혼 신학의 기초가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">결혼 제도의 신적 기원</div>
+        <div class="teach-body">"떠나... 합하여 둘이 한 몸을 이룰지로다"(24절)는 인간이 만든 사회적 계약이 아니라 창조주가 세우신 제도임을 보여준다. 예수님은 이 구절을 그대로 인용하시며(마 19:4-6) 결혼의 불가침성을 가르치셨고, 바울은 이를 그리스도와 교회의 연합의 예표로 사용한다(엡 5:31-32).</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">부끄러워하지 아니하니라 — 죄 이전의 투명성</div>
+        <div class="teach-body">2:25 "아담과 그의 아내 두 사람이 벌거벗었으나 부끄러워하지 아니하니라"는 죄가 들어오기 전 인간 관계의 완전한 투명성과 신뢰를 보여준다. 이 상태는 3장에서 죄로 인해 산산조각 나며, 수치와 은폐가 시작된다. 창조 질서의 완전함을 가늠하는 기준점이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'돕는 배필'이라는 한글 번역 때문에 오해가 참 많아요. 히브리어 '에제르'는 시편에서 하나님을 가리킬 때 훨씬 더 많이 쓰이는 단어예요. '돕는 사람 = 낮은 사람'이 아니라 '없어서는 안 될, 힘이 되는 존재'라는 뜻에 훨씬 가까워요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>1장과 2장의 창조 순서가 다른 것처럼 보이는 이유는?</div>
+        <div class="deep-body">1장은 시간 순서(우주→식물→동물→인간)로, 2장은 인간을 중심에 두고 그를 위해 무엇이 준비되었는지를 신학적·주제적으로 서술한다. 고대 근동 문헌에서도 개관(파노라마)과 근접(포커스) 서술을 함께 쓰는 것은 흔한 문학 기법이며, 두 본문은 모순이 아니라 상호 보완적 관점으로 읽는 것이 정경적 해석의 일반적 입장이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>'돕는 배필'이라는 표현이 여성의 종속을 정당화하는 근거로 오용되어 온 역사를 어떻게 볼 것인가?</div>
+        <div class="deep-body">본문의 원어적 의미(위 교훈 참조)는 동등성을 가리키지만, 교회사에서는 3:16의 타락 이후 상황("남편은 너를 다스릴 것이니라")과 2장을 혼동해 여성 종속을 정당화한 경우가 많았다. 창조 질서(2장)와 타락의 결과(3장)를 구분하는 것이 신학적으로 중요하며, 갈라디아서 3:28("남자나 여자나... 다 그리스도 예수 안에서 하나이니라")은 그리스도 안에서 창조 질서의 회복을 선언한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8c-9 0-15 7-15 16 0 9 6 14 15 14s15-5 15-14c0-9-6-16-15-16z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 20c2-3 3-3 5 0M25 20c2-3 3-3 5 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 3</div>
+      <h1>3장 · 타락</h1>
+      <div class="chapter-sub">선악과, 뱀의 유혹, 그리고 첫 약속</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 3:1-24</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">3:1-7</div>
+        <div>
+          <div class="flow-title">유혹과 범죄</div>
+          <div class="flow-body">뱀은 <b class="hl-term">"교활하니라"</b>(1절)고 소개되며, 하나님의 말씀을 <b class="hl-quote">"하나님이 참으로... 하시더냐"</b>는 의문형으로 왜곡한다. 여자는 하나님의 명령에 '만지지도 말라'는 말을 더해 응답하는데(3절, 실제로는 없던 조항), 이는 이미 말씀에 대한 신뢰가 흔들리기 시작했음을 암시한다. 뱀은 <b class="hl-insight has-insight" data-insight="1">"결코 죽지 아니하리라"</b>(4절)며 하나님의 말씀을 정면으로 부정하고, 선악과를 먹으면 <b class="hl-term">"하나님과 같이 되어"</b> 선악을 알게 된다며 유혹한다. 여자가 먹고 남편에게도 주매 그도 먹었다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">3:8-24</div>
+        <div>
+          <div class="flow-title">심문, 저주, 그리고 원시복음</div>
+          <div class="flow-body">하나님은 "네가 어디 있느냐"(9절)고 물으시는데, 이는 정보를 몰라서가 아니라 회개의 자리로 부르시는 은혜의 질문이다. 아담과 여자는 각각 책임을 전가하며 변명하고, 하나님은 뱀, 여자, 남자 순서로 각각 심판을 선언하신다. 그 가운데 <b class="hl-term has-tip" data-tip="창세기 3:15을 가리키는 신학 용어. '최초의 복음'이라는 뜻으로, 타락 직후 주어진 구원 약속을 가리킨다. 여자의 후손이 뱀의 머리를 상하게 할 것이라는 예언이 온 성경의 구속사를 여는 첫 실마리가 된다.">원시복음(프로토에방겔리움)</b>(3:15)이 주어진다: <b class="hl-quote">"여자의 후손은 네 머리를 상하게 할 것이요"</b>. 하나님은 가죽옷을 지어 입히시고(21절, 최초의 희생), 생명나무를 지키기 위해 에덴에서 그들을 내보내신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">죄의 본질 — 하나님처럼 되려는 욕망</div>
+        <div class="teach-body">죄의 핵심은 단순한 규칙 위반이 아니라 <b>하나님의 자리를 찬탈하려는 욕망</b>이다("하나님과 같이 되어"). 이는 이사야 14장의 교만한 왕의 묘사("내가 가장 높은 구름에 올라... 지극히 높은 이와 같아지리라")와 동일한 구조이며, 빌립보서 2:6-8에서 그리스도가 반대로 "하나님과 동등됨을 취할 것으로 여기지 아니하시고" 자기를 낮추신 것과 정면으로 대조된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">수치와 은폐, 그리고 관계의 파괴</div>
+        <div class="teach-body">죄의 즉각적 결과는 수치(무화과 잎으로 가림)와 하나님으로부터의 도피(숨음)다. 죄는 하나님과의 관계, 부부 관계(책임 전가), 인간과 자연의 관계(가시덤불과 엉겅퀴) 모두를 파괴한다. 이 사중적 소외(하나님-자신-이웃-피조물)는 이후 성경 전체 구속사의 회복 대상이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">원시복음 — 최초의 구원 약속</div>
+        <div class="teach-body">3:15은 성경 전체 구속사의 씨앗이다. '여자의 후손'과 '뱀의 후손' 사이의 적대는 가인과 아벨(4장), 이스라엘과 대적들, 궁극적으로 그리스도와 사탄의 싸움(십자가에서 사탄의 '머리'가 치명상을 입고, 그리스도의 '발꿈치'가 상함, 곧 죽으심)으로 이어진다. 요한계시록 12장의 여자와 용의 싸움도 이 원시복음의 확장이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">가죽옷 — 최초의 희생과 은혜의 옷 입히심</div>
+        <div class="teach-body">하나님이 가죽옷을 지어 입히신 것(21절)은 무화과 잎으로 자신을 가리려 한 인간의 노력(불완전한 자기 의)과 대조되는 하나님의 은혜다. 짐승의 죽음(피 흘림)이 죄를 가리는 데 필요했다는 암시는 레위기의 제사 제도, 그리고 궁극적으로 그리스도의 십자가(히 9:22, "피 흘림이 없은즉 사함이 없느니라")를 예표한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">에덴에서의 추방 — 심판과 자비의 공존</div>
+        <div class="teach-body">생명나무 길을 그룹과 화염검으로 막으신 것(24절)은 언뜻 가혹해 보이지만, 실은 자비의 행위다. 죄인이 영생하는 상태로 고착되는 것을 막으신 것이다(만약 타락한 상태로 영원히 산다면 그것은 축복이 아니라 영원한 저주가 된다). 하나님의 심판에는 언제나 자비의 목적이 함께 있다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">3:15을 '원시복음'이라고 부르는 게 참 좋아요. 창세기 3장, 그러니까 성경 전체에서 가장 먼저 나오는 나쁜 소식(타락) 바로 다음에, 가장 먼저 나오는 좋은 소식(구원 약속)이 등장하거든요. 성경은 절망으로 시작하지 않아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>뱀은 문자적 동물인가, 사탄 자체인가?</div>
+        <div class="deep-body">본문은 뱀을 '들짐승 중에 가장 교활한' 피조물로 소개하지만, 요한계시록 12:9과 20:2은 이 뱀을 '옛 뱀 곧 마귀요 사탄'과 명시적으로 동일시한다. 대부분의 성경신학자들은 문자적 뱀이 사탄의 도구/매개체였거나, 사탄이 뱀의 형상을 입고 나타났다고 본다. 본문의 일차 관심은 유혹자의 생물학적 정체보다 유혹의 전략(하나님 말씀 왜곡, 의심 심기, 욕망 자극)에 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>하나님이 왜 애초에 선악과를 두셔서 인간이 죄를 지을 가능성을 여셨는가?</div>
+        <div class="deep-body">이는 신정론(神正論)의 핵심 질문 중 하나다. 성경적 답은, 진정한 사랑과 순종은 선택의 자유 없이는 존재할 수 없다는 것이다. 선악과는 인간이 로봇이 아니라 하나님을 자유로이 사랑하고 신뢰할 수 있는 인격체임을 보여주는 장치였다. 자유가 남용될 가능성 자체를 제거하는 것은 자유 자체를 제거하는 것과 같다는 것이 전통적 응답이며, 동시에 하나님은 타락을 미리 아시고도 구속의 계획(3:15)을 이미 준비하고 계셨다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 40h24M18 40V22l6-13 6 13v18" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 26h20" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 4</div>
+      <h1>4장 · 가인과 아벨</h1>
+      <div class="chapter-sub">최초의 예배, 최초의 살인, 그리고 은혜의 표</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 4:1-26</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">4:1-8</div>
+        <div>
+          <div class="flow-title">두 제물과 형제 살인</div>
+          <div class="flow-body">가인은 땅의 소산으로, 아벨은 양의 첫 새끼와 그 기름으로 제사를 드렸다. 본문은 <b class="hl-quote">"여호와께서 아벨과 그의 제물은 받으셨으나 가인과 그의 제물은 받지 아니하신지라"</b>(4-5절)고 담담히 서술할 뿐 이유를 상세히 설명하지 않는다. 히브리서 11:4은 아벨이 <b class="hl-term">믿음으로</b> 더 나은 제사를 드렸다고 해석한다. 하나님은 분노한 가인에게 <b class="hl-insight has-insight" data-insight="2">"죄가 문에 엎드려 있느니라... 너는 죄를 다스릴지니라"</b>(7절)고 경고하시지만, 가인은 결국 아벨을 들로 꾀어 죽인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4:9-26</div>
+        <div>
+          <div class="flow-title">심판과 은혜의 표, 그리고 두 계보</div>
+          <div class="flow-body">"네 아우 아벨이 어디 있느냐"는 질문에 가인은 <b class="hl-quote">"내가 알지 못하나이다 내가 내 아우를 지키는 자니이까"</b>(9절)라며 발뺌한다. 하나님은 가인을 땅에서 유리하는 자가 되게 하시되, 그를 죽이려는 자들로부터 보호하기 위해 <b class="hl-term">표</b>를 주신다(15절) — 심판 중에도 자비를 베푸시는 하나님의 성품이다. 이후 계보는 가인 계열(라멕의 폭력적 노래, 24절)과, 아담-셋-에노스로 이어지는 계보(26절, "그 때에 사람들이 비로소 여호와의 이름을 불렀더라")로 대조되며 갈라진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">참된 예배는 형식이 아니라 믿음의 태도</div>
+        <div class="teach-body">두 제물의 차이는 곡물이냐 짐승이냐가 아니라(레위기의 곡식제사도 정당한 제사다), 드리는 자의 마음과 믿음에 있었다(히 11:4). 가인의 제사가 거절된 근본 원인은 제물의 종류가 아니라 마지못해, 최선이 아닌 것으로 드린 태도에 있었을 가능성이 크다(가인은 그냥 '땅의 소산'을, 아벨은 '첫 새끼와 그 기름' 곧 최고의 것을 드렸다).</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">죄는 문 앞에 엎드려 다스림을 기다리는 짐승</div>
+        <div class="teach-body">7절의 이미지는 생생하다. 죄는 수동적 유혹이 아니라 능동적으로 '엎드려' 기회를 노리는 존재로 묘사된다. 그러나 하나님은 동시에 "너는 죄를 다스릴지니라"고 하시며 인간에게 죄를 제어할 책임과 능력이 있음을 선언하신다. 이는 로마서 6:12-14의 죄와 싸우는 신자의 자세와 맞닿아 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">형제를 지키는 자 — 공동체적 책임</div>
+        <div class="teach-body">"내가 내 아우를 지키는 자니이까"는 가인의 회피용 수사 의문문이지만, 성경은 이에 대해 사실상 "그렇다"고 답한다. 레위기 19:18의 이웃 사랑 계명, 그리고 궁극적으로 선한 사마리아인의 비유(눅 10장)는 우리가 서로를 지키는 자로 부름받았다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">심판 중의 자비 — 가인에게 주신 표</div>
+        <div class="teach-body">가인은 최초의 살인자임에도 하나님은 그를 즉결 처형하지 않으시고 보호의 표를 주신다. 이는 하나님의 정의가 언제나 무자비한 응징이 아니라 회개와 회복의 여지를 남기는 자비와 함께 작동함을 보여준다. 이후 성경 전체에서 반복되는 패턴 — 심판 선언과 동시에 주어지는 은혜의 표(노아의 무지개, 이스라엘의 유월절 피 등) — 의 첫 사례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">아벨의 피가 부르짖다 — 그리스도의 피와의 대조</div>
+        <div class="teach-body">히브리서 12:24은 그리스도의 뿌린 피가 "아벨의 피보다 더 나은 것을 말한다"고 선언한다. 아벨의 피는 복수를 부르짖었으나(창 4:10), 그리스도의 피는 용서와 화목을 선언한다. 최초의 순교자 아벨은 예수님 자신도 언급하실 만큼(마 23:35, "의로운 아벨의 피로부터...") 신앙의 계보에서 중요한 이정표로 남는다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'표'라고 하면 흔히 낙인이나 저주의 표시로 오해하기 쉬운데, 본문을 보면 정반대예요. 가인을 '보호하기 위한' 표거든요. 하나님은 최초의 살인자에게조차 즉결 심판이 아니라 자비의 여지를 남기세요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>하나님이 아벨의 제물을 받으신 이유를 본문이 명시하지 않는데, 우리는 이를 어떻게 알 수 있나?</div>
+        <div class="deep-body">본문 자체는 침묵하지만 정경 전체가 답을 준다. 히브리서 11:4은 명시적으로 '믿음으로' 아벨이 더 나은 제사를 드렸다고 해석하며, 아벨이 드린 '첫 새끼와 그 기름'(최상의 것)이라는 표현이 가인의 그냥 '땅의 소산'과 대조되는 것도 단서다. 신약의 해석을 통해 구약 본문의 침묵을 채우는 것은 정경적 해석(canonical reading)의 정당한 방법이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>가인이 살인 후에도 벌을 면하고 도시까지 세운 것(4:17)은 정의롭지 않아 보이지 않는가?</div>
+        <div class="deep-body">이는 하나님의 심판이 인간이 기대하는 즉각적 응보와 다르게 작동함을 보여준다. 가인은 유리하는 자, 곧 땅에 정착하지 못하고 떠도는 자가 되는 벌을 받았고, 도시를 세운 것 자체가 오히려 그 저주(정착하지 못함에 대한 불안)를 스스로 벗어나려는 몸부림으로 읽을 수도 있다. 성경은 이후로도 악인의 형통이라는 신정론적 긴장을 계속 다루며(시 73편, 욥기), 최종적 정의는 종말론적 심판에서 완성된다고 가르친다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v9M24 33v9M15 24H6M42 24h-9" stroke="currentColor" stroke-width="2"/><circle cx="24" cy="24" r="8" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 5</div>
+      <h1>5장 · 아담의 계보</h1>
+      <div class="chapter-sub">죽음의 반복과 에녹의 예외</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 5:1-32</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">5:1-5</div>
+        <div>
+          <div class="flow-title">계보의 시작과 하나님의 형상의 계승</div>
+          <div class="flow-body">1-2절은 1장의 창조 기사를 다시 인용하며 인간이 하나님의 형상대로 지음받았음을 재확인한다. 3절은 놀랍게도 아담이 <b class="hl-quote">"자기 모양 곧 자기 형상과 같은 아들을 낳아"</b> 셋을 낳았다고 말한다 — 하나님의 형상이 타락한 인간을 통해서도 대대로 계승됨을 보여주는 신학적으로 중요한 구절이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5:6-32</div>
+        <div>
+          <div class="flow-title">반복되는 후렴구 '그가 죽었더라'</div>
+          <div class="flow-body">계보 전체에 걸쳐 각 인물은 "그가 낳고... 그리고 그가 죽었더라"는 후렴구로 마무리된다. 이 반복은 창세기 3장에서 선언된 죽음의 형벌("너는 흙이니 흙으로 돌아갈 것이니라")이 예외 없이 성취되고 있음을 냉정하게 증언한다. 유일한 예외는 <b class="hl-term has-tip" data-tip="셋의 계보 7대손. 향년 365세를 살고 '하나님과 동행하더니 하나님이 그를 데려가시므로 세상에 있지 아니하였더라'(5:24)고 기록되어, 죽음을 보지 않고 하늘로 옮겨진 인물로 여겨진다. 유다서 14-15절은 에녹의 예언을 인용한다.">에녹</b>이다 — <b class="hl-insight has-insight" data-insight="3">"에녹이 하나님과 동행하더니 하나님이 그를 데려가시므로 세상에 있지 아니하였더라"</b>(24절).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">죽음의 보편성 — 죄의 삯</div>
+        <div class="teach-body">이 장의 무거운 후렴구 "그가 죽었더라"는 로마서 5:12("한 사람으로 말미암아 죄가 세상에 들어오고 죄로 말미암아 사망이 들어왔나니")과 6:23("죄의 삯은 사망이요")의 신학적 배경이 된다. 아무리 오래 살아도(므두셀라 969세) 예외 없이 죽음이 찾아온다는 사실은 인간의 유한성과 죄의 결과를 냉정하게 증언한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">에녹의 동행 — 죽음을 이기는 삶의 모범</div>
+        <div class="teach-body">에녹은 유일하게 죽음을 보지 않고 하늘로 옮겨졌다. 그 비결은 초자연적 능력이 아니라 단순하고 반복적인 표현, "하나님과 동행하더니"였다. 이는 신앙생활의 본질이 특별한 행위가 아니라 하나님과의 지속적인 인격적 동행에 있음을 보여준다. 미가 6:8("겸손하게 네 하나님과 함께 행하는 것")의 원형이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">소망의 이름, 노아</div>
+        <div class="teach-body">29절에서 라멕은 아들의 이름을 노아('안식, 위로'라는 뜻)로 지으며 "이 아들이 우리를 위로하리라"고 말한다. 이는 죄와 저주로 가득한 계보 속에서도 회복에 대한 소망이 완전히 사라지지 않았음을 보여주며, 실제로 노아를 통해 하나님은 심판 중에 구원을 베푸신다(6-9장).</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">형상의 계승과 인간 존엄의 지속</div>
+        <div class="teach-body">5:3에서 아담이 '자기 형상'대로 아들을 낳았다는 표현은, 타락 이후에도 하나님의 형상이 인간에게서 완전히 사라지지 않고 대대로 전달됨을 보여준다. 이는 타락한 인간에게도 여전히 존엄성과 책임이 있다는 신학적 근거이며, 창세기 9:6("이는 하나님이 자기 형상대로 사람을 지으셨음이니라")에서 살인 금지의 근거로 다시 사용된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">계보 문학의 목적 — 역사의 연속성과 하나님의 신실하심</div>
+        <div class="teach-body">지루해 보이는 족보는 단순한 통계가 아니라, 창조로부터 노아까지 하나님의 구속사가 끊이지 않고 이어지고 있음을 증언하는 문학 장치다. 이는 마태복음 1장과 누가복음 3장의 예수님 족보로까지 이어지는 성경 전체의 계보 신학의 시작이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">5장을 그냥 넘기고 싶은 마음, 이해해요. 하지만 '그가 죽었더라'가 이렇게 반복되다가 딱 한 번, 에녹에게서만 끊기는 그 순간의 문학적 충격을 느껴보세요. 죽음의 행진 한가운데 열린 작은 창문 같은 장면이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이 시대 사람들의 수백 년에 이르는 수명을 어떻게 이해해야 하는가?</div>
+        <div class="deep-body">고대 근동의 수메르 왕명록에도 홍수 이전 왕들이 수만 년을 다스렸다는 기록이 있어, 이 장르가 고대 근동에서 특별한 상징적 숫자 체계를 사용했을 가능성이 제기된다. 문자적으로 읽는 견해(하나님이 지으신 세계의 원래 질서가 타락 후 점차 쇠퇴했다는 설명)와 상징적으로 읽는 견해(장수는 하나님의 복과 의로움의 상징적 표현) 모두 복음주의 학자들 사이에 존재하며, 본문의 신학적 핵심(죽음의 보편성, 에녹의 예외)은 어느 해석을 택하든 변하지 않는다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>에녹이 죽음을 보지 않고 옮겨진 사건은 다른 성경 인물과 어떻게 연결되는가?</div>
+        <div class="deep-body">엘리야도 불수레를 타고 승천하여 죽음을 보지 않은 두 번째 인물이 된다(왕하 2:11). 히브리서 11:5은 에녹의 사건을 믿음의 모범으로 제시하며, 유다서 14-15절은 외경적 전승(에녹서)에 나오는 그의 예언을 인용한다. 이 두 사례는 궁극적으로 그리스도의 부활과 승천, 그리고 성도들의 부활 소망(살전 4:17, '끌어올려')의 예표로 여겨진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 30c0-11 7-19 15-19s15 8 15 19" fill="none" stroke="currentColor" stroke-width="2"/><path d="M7 30h34v6H7z" fill="none" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 6</div>
+      <h1>6장 · 타락의 심화와 방주 준비</h1>
+      <div class="chapter-sub">네피림, 하나님의 근심, 그리고 노아의 순종</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 6:1-22</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">6:1-8</div>
+        <div>
+          <div class="flow-title">극에 달한 죄악과 하나님의 근심</div>
+          <div class="flow-body">"하나님의 아들들"이 "사람의 딸들"을 아내로 삼는 사건(1-4절)은 해석이 분분한 난해 구절이다. 결과적으로 땅에는 <b class="hl-term has-tip" data-tip="히브리어 '네필림'(נְפִלִים), '떨어진 자들' 혹은 '거인들'로 번역된다. 민수기 13:33에도 다시 등장하며 가나안 정탐 보고에서 두려움의 대상으로 언급된다.">네피림</b>이 있었고, 인간의 죄악이 세상에 가득했다. 본문은 하나님의 반응을 놀랍도록 인격적으로 묘사한다: <b class="hl-quote">"땅 위에 사람 지으셨음을 한탄하사 마음에 근심하시고"</b>(6절). 그러나 즉시 <b class="hl-insight has-insight" data-insight="4">"그러나 노아는 여호와께 은혜를 입었더라"</b>(8절)는 반전이 이어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6:9-22</div>
+        <div>
+          <div class="flow-title">의인 노아와 방주 설계도</div>
+          <div class="flow-body">노아는 "당대에 의인이요 완전한 자라 그가 하나님과 동행하였으며"(9절)로 소개된다. 하나님은 땅의 부패와 포악함을 이유로 홍수 심판을 선언하시고(11-13절), 노아에게 구체적 치수와 설계까지 담은 방주 제작 명령을 주신다(14-16절). 그리고 노아와 <b class="hl-term">언약</b>을 세우겠다고 선언하시며(18절, 성경 최초의 '언약' 용어 사용), 방주에 들어갈 생물의 목록을 상세히 지시하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">죄의 확산성 — 개인에서 온 땅으로</div>
+        <div class="teach-body">3-5장에 걸쳐 가인 한 사람의 살인에서 시작된 죄는 5-6장에 이르러 "땅에 가득"한 지경에 이른다. 죄는 고립된 사건이 아니라 방치하면 사회 전체를 오염시키는 확산성을 지닌다는 경고이며, 이는 오늘날 공동체적 죄와 구조적 악에 대한 신학적 통찰의 근거가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님의 근심 — 인격적이신 하나님</div>
+        <div class="teach-body">6절의 '한탄하사 마음에 근심하시고'는 하나님을 무감정한 절대자가 아니라 피조물과 인격적으로 관계 맺으시는 분으로 그린다. 이는 신인동형론적 표현(하나님의 불변성 교리와 함께 신중히 다뤄야 할 본문)이지만, 동시에 하나님이 죄를 가볍게 여기지 않으시며 깊이 아파하신다는 진실을 전한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">은혜 — 자격이 아니라 하나님의 선물</div>
+        <div class="teach-body">"노아는... 은혜를 입었더라"(8절)는 성경에서 '은혜(헨)'라는 단어가 처음 등장하는 곳이다. 노아가 의인이라 불리는 것도(9절) 그의 선행 이전에 먼저 하나님의 은혜가 있었기 때문이라는 순서가 중요하다 — 이는 에베소서 2:8-9의 '행위가 아니라 은혜로 말미암은 구원' 교리의 원형적 예표다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">순종의 정확성</div>
+        <div class="teach-body">6:22 "노아가 그와 같이 하여 하나님이 자기에게 명하신 대로 다 준행하였더라"는 표현은 이후 6-7장에 걸쳐 여러 번 반복된다. 이는 신앙의 본질이 감정이나 이해가 아니라 구체적 순종에 있음을 강조하며, 히브리서 11:7("믿음으로 노아는... 방주를 준비하여")에서 믿음의 행위로 재확인된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">심판과 구원의 동시성 — 방주라는 은혜의 배</div>
+        <div class="teach-body">홍수는 심판이지만, 방주는 동시에 구원의 수단이다. 하나님의 심판은 언제나 구원의 길을 함께 마련하신다는 패턴이 여기서 확립되며, 베드로전서 3:20-21은 방주의 물을 세례의 예표로, 노아의 구원을 그리스도를 통한 구원의 그림자로 해석한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">6:8의 '그러나'라는 한 글자가 성경 전체 구속사의 방향을 바꿔요. 온 땅이 부패했다는 절망적 선언 바로 다음에, '그러나 노아는' 하고 이어지죠. 심판의 어둠 속에서도 하나님은 항상 남은 자를 예비하세요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"하나님의 아들들"과 "사람의 딸들"은 누구를 가리키는가?</div>
+        <div class="deep-body">주요 해석은 세 가지다: (1) 타락한 천사들이 인간 여자와 결합했다는 견해(유다서 6절, 벧후 2:4의 지지를 받음), (2) 셋의 경건한 계보(하나님의 아들들로 불림, 창세기 상반부 참조)와 가인의 불경건한 계보의 통혼이라는 견해, (3) 고대 근동의 폭군적 왕들(신적 존재로 자처하던 통치자들)을 가리킨다는 견해. 어느 해석을 택하든 본문의 신학적 핵심은 경계를 넘는 죄의 확산과 그에 대한 하나님의 심판이라는 점에서 일치한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>하나님이 '한탄하시고 마음에 근심하셨다'는 표현이 하나님의 불변성 교리와 모순되지 않는가?</div>
+        <div class="deep-body">조직신학에서는 이를 '신인동형론적 표현'(하나님을 인간의 언어와 감정으로 묘사하는 성경의 서술 방식)으로 이해한다. 하나님의 본질적 불변성(말 3:6, "나 여호와는 변하지 아니하나니")과 인간의 죄에 대한 하나님의 실제적이고 인격적인 반응은 모순이 아니라, 하나님이 시간과 역사 안에서 인간과 진실하게 관계 맺으시는 살아계신 인격체임을 함께 보여주는 것으로 이해된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 30h34v6H7z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M9 30c0-11 7-19 15-19s15 8 15 19" fill="none" stroke="currentColor" stroke-width="2"/><path d="M3 40q4-3 8 0t8 0 8 0 8 0 8 0" fill="none" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 7</div>
+      <h1>7장 · 홍수의 시작</h1>
+      <div class="chapter-sub">심판의 물이 땅을 덮다</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 7:1-24</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">7:1-10</div>
+        <div>
+          <div class="flow-title">방주에 들어감</div>
+          <div class="flow-body">하나님은 노아에게 정결한 짐승은 일곱씩, 부정한 짐승은 둘씩 방주에 들이라 명하신다(2-3절) — 이는 훗날 제사와 정결법(레위기)을 예견하는 구별이다. 노아는 <b class="hl-quote">"여호와께서 자기에게 명하신 대로 다 준행하였더라"</b>(5절)는 반복된 순종의 후렴구와 함께 600세에 방주에 들어간다. 결정적으로 <b class="hl-quote">"여호와께서 그를 닫아 넣으시니라"</b>(16절) — 노아가 아니라 하나님이 문을 닫으신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7:11-24</div>
+        <div>
+          <div class="flow-title">큰 깊음의 샘들과 하늘의 창들</div>
+          <div class="flow-body">홍수의 원인은 "큰 깊음의 샘들이 터지며 하늘의 창들이 열려"(11절)로 묘사되어, 창세기 1장에서 나뉘었던 위의 물과 아래의 물이 다시 합쳐지며 창조 이전의 <b class="hl-term">혼돈</b> 상태로 되돌아가는 것 같은 이미지를 그린다. 40일간의 비와 150일간 물이 창일하여 온 천하의 높은 산이 다 잠기고, 방주 안에 있는 자들 외에 육지의 모든 생물이 <b class="hl-insight has-insight" data-insight="5">멸절되었다</b>(21-23절).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">창조 질서의 역전 — 심판은 탈창조</div>
+        <div class="teach-body">홍수는 단순한 자연재해가 아니라 창세기 1장에서 나뉘었던 물들(위·아래)이 다시 합쳐지는 '탈창조(de-creation)' 사건으로 묘사된다. 죄가 극에 달할 때 하나님의 심판은 세계를 창조 이전 혼돈 상태로 되돌릴 수 있다는 엄중한 경고이며, 이는 예레미야 4:23("보라 땅이 혼돈하고 공허하며")에서 유다의 심판을 묘사할 때도 동일한 창세기 1장의 언어가 재사용된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님이 문을 닫으셨다 — 구원의 확실성</div>
+        <div class="teach-body">7:16 "여호와께서 그를 닫아 넣으시니라"는 짧지만 심오한 구절이다. 노아의 순종으로 방주에 들어갔지만, 최종적으로 그를 안전하게 지키신 것은 하나님의 직접적 행위였다. 이는 구원이 인간의 노력으로 시작되나 궁극적으로 하나님이 보증하시고 완성하신다는 구원론적 진리(빌 1:6, "착한 일을 시작하신 이가 그리스도 예수의 날까지 이루실 줄을")를 예표한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">정결과 부정의 구별 — 예배 제도의 예고</div>
+        <div class="teach-body">홍수 이전에 이미 정결한 짐승과 부정한 짐승의 구별이 존재했다는 사실(2-3절)은, 이 구별이 모세 율법(레 11장)에서 처음 만들어진 것이 아니라 태초부터 존재했던 원리임을 시사한다. 노아가 방주에서 나온 후 정결한 짐승으로 제사를 드리는 것(8:20)도 이 구별과 연결된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">심판의 철저함과 남은 자 신학</div>
+        <div class="teach-body">7:23 "오직 노아와 그와 함께 방주에 있던 자들만 남았더라"는 표현은 성경 전체에 반복되는 '남은 자(remnant)' 신학의 시작이다. 온 세상이 심판받을 때에도 하나님은 항상 신실한 소수를 남기고 보존하신다는 패턴은 이후 이스라엘 포로기(사 10:20-22)와 로마서 11:5("은혜로 택하심을 따라 남은 자가 있느니라")까지 이어진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">물 심판과 그리스도인의 세례</div>
+        <div class="teach-body">베드로전서 3:20-21은 홍수의 물을 세례의 예표로 명시적으로 해석한다. 물은 심판(옛 생명의 죽음)이자 동시에 구원(방주 안에서의 생명 보존)의 이중적 상징으로, 그리스도인의 세례가 옛 자아의 죽음과 그리스도 안에서의 새 생명을 동시에 나타내는 것과 신학적으로 연결된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">7:16의 '여호와께서 그를 닫아 넣으시니라'는 구절, 그냥 지나치기 쉬운데 저는 이 문장이 참 좋아요. 노아가 문을 잠근 게 아니라 하나님이 잠그셨어요. 우리의 구원도 결국 우리 손에 달린 게 아니라 하나님이 붙드시는 거잖아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>전 지구적 홍수였는가, 지역적 홍수였는가?</div>
+        <div class="deep-body">본문의 표현("천하의 높은 산이 다 잠긴지라", 7:19)은 전통적으로 전 지구적 홍수로 해석되어 왔다. 그러나 일부 복음주의 학자들은 '온 땅'(에레츠)이라는 히브리어가 성경에서 종종 '그 지역 전체'를 가리키는 데도 사용된다는 점(예: 41:57 '온 세상'이 애굽과 그 주변 지역을 가리킴)을 근거로 메소포타미아 지역 전체를 뒤덮은 대규모 지역 홍수였을 가능성을 제기한다. 어느 견해를 택하든 본문의 신학적 핵심(죄에 대한 철저한 심판과 은혜로운 구원)은 동일하게 유지된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>고대 근동에 유사한 홍수 설화(길가메시 서사시 등)가 존재하는데, 이는 창세기 기록의 신빙성을 약화시키는가?</div>
+        <div class="deep-body">오히려 반대로 이해하는 견해가 지배적이다. 고대 근동 전역에 홍수 전승이 광범위하게 남아 있다는 사실 자체가 실제 대규모 홍수 사건이 고대인들의 집단 기억에 각인되었을 가능성을 지지한다. 다만 길가메시 서사시 등에서는 신들이 변덕과 소음 때문에 홍수를 일으키는 반면, 창세기는 도덕적 죄악에 대한 정의로운 심판이라는 신학적 깊이에서 근본적으로 다르다. 창세기는 유사한 역사적 사건에 대해 훨씬 더 일관되고 고결한 신학적 해석을 제공한다는 것이 복음주의 학자들의 일반적 입장이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8c-6 5-6 9-2 12a6 6 0 006-2 6 6 0 00-4-10z" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 29q10-6 20 0" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M29 24l6-4" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 8</div>
+      <h1>8장 · 물이 줄어들고 새 땅이 드러나다</h1>
+      <div class="chapter-sub">까마귀와 비둘기, 그리고 새로운 시작</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 8:1-22</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">8:1-14</div>
+        <div>
+          <div class="flow-title">하나님이 노아를 기억하시고</div>
+          <div class="flow-body">8:1 <b class="hl-quote">"하나님이 노아와 그와 함께 방주에 있는 모든 들짐승과 가축을 기억하사"</b>는 홍수 내러티브의 전환점이다. '기억하다'는 단순히 생각을 떠올린다는 뜻이 아니라 <b class="hl-term has-tip" data-tip="히브리어 '자카르'(זָכַר). 성경에서 하나님이 '기억하신다'는 것은 단순한 회상이 아니라 언약에 따른 적극적 개입과 행동을 의미한다(출 2:24 '하나님이... 그 언약을 기억하사' 참조).">언약적 개입과 행동</b>을 뜻한다. 노아는 까마귀를 내보내고, 이어 비둘기를 세 차례 내보내며 땅의 상태를 확인한다 — 두 번째 비둘기가 <b class="hl-quote">감람나무 새 잎사귀</b>를 물고 돌아온 것은 생명이 회복되고 있다는 최초의 증거였다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8:15-22</div>
+        <div>
+          <div class="flow-title">방주에서 나옴과 첫 제사</div>
+          <div class="flow-body">하나님의 명령으로 노아와 그 가족, 모든 생물이 방주에서 나온다. 노아는 나오자마자 가장 먼저 <b class="hl-term">제단을 쌓고 번제</b>를 드리는데(20절), 이는 구원받은 자의 마땅한 첫 반응이 감사와 예배임을 보여준다. 하나님은 그 향기를 받으시고 마음속으로 <b class="hl-insight has-insight" data-insight="6">다시는 사람으로 말미암아 땅을 저주하지 아니하리라</b>(21절)고 결심하시며, 계절과 낮과 밤의 항구적 질서를 약속하신다(22절).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">하나님의 기억 — 신실하심의 언어</div>
+        <div class="teach-body">'하나님이 노아를 기억하셨다'는 표현은 하나님이 그를 잊고 계셨다는 뜻이 아니라, 언약에 따라 적극적으로 개입하실 때가 되었다는 신학적 신호다. 동일한 표현이 이후 출애굽기 2:24(이스라엘의 부르짖음을 들으시고 언약을 기억하심)에서 반복되며, 하나님의 침묵이 결코 무관심이 아님을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">까마귀와 비둘기 — 인내로 확인하는 믿음</div>
+        <div class="teach-body">노아는 물이 빠졌다는 확신이 들 때까지 성급하게 방주를 떠나지 않고 여러 차례 신중히 확인한다. 이는 신앙이 성급한 확신이 아니라 하나님의 인도를 신중히 분별하며 기다리는 인내를 포함한다는 것을 보여준다. 비둘기가 물고 온 감람나무 잎사귀는 오늘날까지도 평화와 새로운 시작의 보편적 상징으로 남아 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">구원받은 자의 첫 반응은 예배</div>
+        <div class="teach-body">방주에서 나오자마자 노아가 가장 먼저 한 일은 정착이나 생계가 아니라 제단을 쌓는 것이었다(20절). 이는 구원의 은혜를 경험한 자의 마땅한 반응이 감사의 예배임을 보여주는 성경 전체의 반복되는 패턴(출애굽 후 이스라엘의 찬양, 눅 17:15-16의 사마리아 나병환자)의 첫 사례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">세상을 향한 하나님의 인내 — 죄에도 불구하고 지속되는 은혜</div>
+        <div class="teach-body">21절 "이는 사람의 마음이 계획하는 바가 어려서부터 악함이라"는 표현은 홍수 이전(6:5)과 거의 동일한 인간 죄성에 대한 진단이다. 그런데도 하나님은 다시는 온 땅을 물로 심판하지 않겠다고 약속하신다. 이는 인간이 변화되었기 때문이 아니라 순전히 하나님의 은혜로운 자기 결심에 근거한 약속이며, 은혜가 인간의 공로에 앞선다는 신학적 진리를 다시 확인시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">자연 질서의 항구성에 대한 약속</div>
+        <div class="teach-body">22절의 "땅이 있을 동안에는 심음과 거둠과 추위와 더위와 여름과 겨울과 낮과 밤이 쉬지 아니하리라"는 약속은 자연 세계의 안정성과 예측 가능성이 하나님의 신실하심에 근거하고 있음을 보여준다. 이는 인간이 농사짓고 계획하며 살아갈 수 있는 신학적 토대를 제공한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">까마귀는 안 돌아오고 비둘기만 몇 번씩 왔다 갔다 하는 게 재밌지 않아요? 성경이 굳이 이 디테일을 남긴 건, 노아가 '어차피 됐겠지'가 아니라 정말 신중하게 하나씩 확인해가며 기다렸다는 걸 보여주려는 것 같아요. 믿음이 성급함과는 다르다는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>까마귀는 왜 돌아오지 않고 비둘기만 세 번 보내졌는가?</div>
+        <div class="deep-body">까마귀는 잡식성이며 시체(홍수로 죽은 동물들의 사체)를 먹을 수 있어 방주로 돌아올 필요가 없었을 가능성이 크다. 반면 비둘기는 깨끗한 곳(정결한 새로 분류됨, 레 1:14 참조)에만 앉는 습성이 있어 마른 땅을 찾지 못하면 돌아오도록 되어 있었다. 본문은 이 차이를 통해 노아가 땅의 상태를 점진적이고 신중하게 확인해가는 과정을 자연스럽게 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>하나님이 '다시는 땅을 저주하지 않겠다'고 하셨는데, 이는 다시는 어떤 심판도 없다는 뜻인가?</div>
+        <div class="deep-body">이 약속은 구체적으로 '홍수로 말미암아' 온 땅의 생물을 멸하는 심판을 다시는 행하지 않겠다는 것이다(9:11에서 무지개 언약으로 확증됨). 그러나 이는 모든 형태의 심판이 종결되었다는 뜻은 아니다. 성경은 여전히 소돔과 고모라의 심판(19장), 그리고 궁극적으로 불로 이루어질 마지막 심판(벧후 3:6-7, '이제 하늘과 땅은... 불사르기 위하여 보호하신 바 되어')을 예고한다. 하나님의 자비와 심판은 성경 전체에서 함께 나란히 작동한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch9">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 34a17 17 0 0134 0" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 34a12 12 0 0124 0" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 9</div>
+      <h1>9장 · 노아 언약과 새로운 인류</h1>
+      <div class="chapter-sub">무지개, 새 계명, 그리고 함의 죄</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 9:1-29</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">9:1-17</div>
+        <div>
+          <div class="flow-title">복 주심과 무지개 언약</div>
+          <div class="flow-body">하나님은 노아와 그 아들들에게 "생육하고 번성하여 땅에 충만하라"(1절)며 창세기 1:28의 창조 명령을 갱신하신다. 이제 짐승에 대한 인간의 두려움과 육식이 허용되지만(2-3절), 피째 먹는 것은 금지되고(4절) 살인에 대한 엄중한 책임이 선언된다: <b class="hl-quote">"다른 사람의 피를 흘리면 그 사람의 피도 흘릴 것이니 이는 하나님이 자기 형상대로 사람을 지으셨음이니라"</b>(6절). 하나님은 다시는 홍수로 땅을 멸하지 않겠다는 <b class="hl-term">언약</b>을 세우시고 그 표징으로 <b class="hl-insight has-insight" data-insight="7">무지개</b>를 두신다(13절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9:18-29</div>
+        <div>
+          <div class="flow-title">노아의 취함과 함의 죄</div>
+          <div class="flow-body">노아는 포도나무를 심고 포도주에 취하여 벌거벗은 채 장막 안에 누웠다. 함은 아버지의 벌거벗음을 보고 밖으로 나가 형제들에게 알렸으나, 셈과 야벳은 얼굴을 돌린 채 뒷걸음쳐 들어가 아버지를 덮어드렸다. 노아는 깨어나 함의 아들 <b class="hl-term">가나안</b>을 저주하고, 셈과 야벳을 축복한다(25-27절) — 이는 훗날 이스라엘과 가나안 족속 간의 관계를 예견하는 예언적 선언으로 읽힌다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">살인 금지의 신학적 근거 — 하나님의 형상</div>
+        <div class="teach-body">9:6은 살인을 금하는 근거로 인간이 '하나님의 형상대로' 지음받았다는 사실을 명시적으로 든다. 이는 이후 십계명의 '살인하지 말라'(출 20:13)는 계명의 신학적 뿌리이며, 오늘날에도 인간 생명의 존엄성과 사형 제도, 낙태 등 생명윤리 논의에서 핵심적으로 인용되는 본문이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">무지개 — 하나님의 자기 기억을 위한 표징</div>
+        <div class="teach-body">13절에서 무지개는 인간이 기억하기 위한 표가 아니라 놀랍게도 <b>하나님 자신이</b> 그것을 보시고 언약을 기억하시기 위한 표로 제시된다("내가 무지개를 구름 속에 두었나니 이것이 나와 세상 사이의 언약의 증거니라", 13절, 16절 "내가 보고 나 하나님과 땅의 모든 육체를 가진 모든 생물 사이의 영원한 언약을 기억하리라"). 이는 언약의 신실함이 궁극적으로 인간의 기억력이 아니라 하나님의 성품에 달려 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">인류 역사상 최초의 명시적 '언약'</div>
+        <div class="teach-body">9:9-17에서 '언약'이라는 단어가 성경 최초로 명시적으로 반복 사용되며(6:18에서 이미 예고됨), 이는 하나님과 아브라함(15, 17장), 이스라엘(출 24장), 다윗(삼하 7장), 그리고 궁극적으로 새 언약(렘 31:31-34, 그리스도의 십자가)으로 이어지는 성경 전체 언약 신학의 원형이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">노아의 실패 — 구원받은 자도 여전히 죄인</div>
+        <div class="teach-body">방주에서 온 인류를 구원으로 이끈 의인 노아조차 포도주에 취해 수치를 당한다. 이는 구원받은 성도라 할지라도 여전히 죄와 씨름하는 연약한 존재임을 보여주며, 로마서 7장의 신자의 내적 갈등, 그리고 성경 인물들의 흠 있는 초상(다윗의 간음, 베드로의 부인 등)이 반복적으로 보여주는 인간의 실존적 진실이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">함의 죄와 셈·야벳의 존귀함 — 수치를 대하는 태도의 차이</div>
+        <div class="teach-body">함은 아버지의 수치를 목격하고 오히려 그것을 형제들에게 알리며 조롱하는 태도를 보인 반면, 셈과 야벳은 얼굴을 돌리고 아버지를 존중하며 덮어드렸다. 이는 타인의 허물과 수치를 대하는 성경적 태도의 모범(잠 17:9, "허물을 덮어 주는 자는 사랑을 구하는 자요")을 미리 보여주는 사건이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">9장의 무지개 이야기, 저는 볼 때마다 뭉클해요. '내가 무지개를 볼 때 언약을 기억하리라'고 하시잖아요. 우리가 하나님을 기억하는 게 아니라, 하나님이 스스로 기억하시겠다는 약속이에요. 우리의 구원이 우리 기억력에 달려 있지 않다는 게 얼마나 다행인지요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>노아가 함을 저주하지 않고 함의 아들 가나안을 저주한 이유는 무엇인가?</div>
+        <div class="deep-body">본문은 명시적 이유를 설명하지 않지만, 몇 가지 견해가 있다. 첫째, 이미 9:1에서 함과 그 자손 전체가 하나님의 복(생육하고 번성하라)을 받았기에, 노아가 그것을 직접 뒤집을 수 없었다는 견해. 둘째, '아버지의 죄가 자손에게 영향을 미친다'는 고대 사회의 집단적 책임 관념을 반영한다는 견해. 셋째, 이는 훗날 가나안 족속이 실제로 심각한 도덕적 부패에 빠지고(레 18장의 가나안의 성적 죄악들에 대한 경고 참조) 이스라엘에게 정복당하는 역사를 예견하는 예언적 선언으로 이해된다는 견해다. 어느 쪽이든 이 저주가 특정 인종 전체에 대한 영구적 저주라는 왜곡된 해석(노예제 정당화 등에 역사적으로 오용된 바 있음)은 본문의 문맥과 전혀 맞지 않는다는 것이 현대 복음주의 해석학의 일치된 입장이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>이 저주 본문이 역사적으로 노예제도를 정당화하는 데 오용된 사례를 어떻게 이해해야 하는가?</div>
+        <div class="deep-body">19세기 미국 등에서 이 본문(특히 '함의 저주'라는 왜곡된 명칭)이 아프리카계 사람들에 대한 노예제를 신학적으로 정당화하는 데 악용된 역사가 있다. 그러나 본문은 특정 인종이 아니라 특정 시대의 특정 족속(가나안)을 가리키며, 피부색이나 인종에 대한 언급은 전혀 없다. 이러한 왜곡된 해석은 성경 본문에 대한 심각한 오용이며, 갈라디아서 3:28의 "유대인이나 헬라인이나... 다 그리스도 예수 안에서 하나이니라"는 선언과 정면으로 배치된다는 것이 오늘날 성경학자들의 확고한 입장이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch10">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="16" fill="none" stroke="currentColor" stroke-width="2"/><path d="M8 24h32M24 8v32M12 13q12 8 24 0M12 35q12-8 24 0" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 10</div>
+      <h1>10장 · 열국 족보</h1>
+      <div class="chapter-sub">노아 후손들의 세계 지도</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 10:1-32</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">10:1-32</div>
+        <div>
+          <div class="flow-title">야벳, 함, 셈의 족보</div>
+          <div class="flow-body">흔히 <b class="hl-term has-tip" data-tip="창세기 10장을 가리키는 전통적 명칭. 노아의 세 아들(셈, 함, 야벳)로부터 나온 70개 민족의 목록으로, 고대 세계에 알려진 거의 모든 민족의 기원을 계보학적으로 정리한다.">열국 목록(Table of Nations)</b>이라 불리는 이 장은 야벳(북방·서방 민족들, 대략 오늘날 유럽·소아시아 지역), 함(남방 민족들, 애굽·가나안·구스 등), 셈(중동 지역 민족들, 이스라엘의 직계 조상 포함) 세 계열로 나뉘어 70개 민족의 기원을 계보학적으로 정리한다. 특별히 함의 후손 중 <b class="hl-quote">니므롯</b>은 <b class="hl-insight has-insight" data-insight="8">"세상에 첫 용사"</b>이자 "여호와 앞에서 특이한 사냥꾼"으로 소개되며 바벨, 니느웨 등 최초의 도시 제국들을 건설한 인물로 기록된다(8-12절).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">인류의 하나됨과 다양성</div>
+        <div class="teach-body">열국 족보는 모든 민족이 궁극적으로 노아라는 한 조상에게서 나왔음을 보여줌으로써, 인종적 우열이나 근본적 분리가 아니라 하나의 인류 가족이라는 성경적 인간관을 뒷받침한다. 이는 사도행전 17:26("인류의 모든 족속을 한 혈통으로 만드사")의 신학적 기초가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">니므롯 — 인간 권력욕의 초상</div>
+        <div class="teach-body">니므롯은 성경에서 최초로 '용사', '제국 건설자'로 묘사되는 인물이다. 그의 이름의 어원(반역하다)과 그가 세운 바벨이 다음 장(11장)에서 인간 교만의 상징이 되는 것은 우연이 아니다. 니므롯의 초상은 인간이 하나님을 떠나 스스로 이름을 내고 권력을 쌓으려는 시도의 원형적 사례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">계보를 통한 하나님의 세계 통치 확언</div>
+        <div class="teach-body">70개 민족이라는 숫자(전통적 유대 해석)는 온 세상 민족을 포괄하려는 문학적 의도를 반영하며, 이는 하나님이 이스라엘만이 아니라 온 열방의 하나님이심을 암시적으로 확증한다. 이 보편적 관심은 이후 아브라함 언약("땅의 모든 족속이 너로 말미암아 복을 얻을 것이라", 12:3)에서 명시적으로 확장된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">지루한 족보 속에 담긴 목적론적 서사</div>
+        <div class="teach-body">열국 족보는 정보의 나열처럼 보이지만, 사실상 셈의 계보(21-31절)로 초점이 좁혀지며 다음 장(11:10-32)의 셈-데라-아브람 계보로 자연스럽게 이어지는 문학적 다리 역할을 한다. 창세기는 온 세상(1-11장)에서 한 사람 아브라함(12장~)으로 서서히 렌즈를 좁혀가는 구조를 취한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">성경적 세계관에서 지리와 역사의 신학적 의미</div>
+        <div class="teach-body">이 장은 단순한 신화가 아니라 고대 근동의 실제 지리적·민족적 지식을 반영한 역사적 문서로 다뤄진다. 애굽, 앗수르, 가나안 등 실제 역사에 등장하는 민족들이 신학적 계보 속에 자리매김됨으로써, 성경의 하나님이 추상적 신이 아니라 실제 역사와 지리 속에서 활동하시는 분임을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">족보 장은 다들 건너뛰고 싶어 하는데, 니므롯 이야기만큼은 눈여겨보세요. 이 사람이 세운 도시 이름이 '바벨'이에요. 바로 다음 장에서 그 바벨탑 이야기가 나오거든요. 성경은 지루한 족보 속에도 다음 이야기로 가는 복선을 슬쩍 심어놔요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이 족보의 목적이 정확한 민족지학적 기록인가, 신학적 서사인가?</div>
+        <div class="deep-body">학자들은 이 목록이 순수한 혈통 계보라기보다 언어, 지역, 정치적 관계에 따른 고대의 분류 체계를 반영한다고 본다. 예를 들어 가나안이 함의 후손으로 분류된 것(셈어를 사용했음에도)은 혈통보다 지리적·정치적 관계(가나안이 애굽의 지배 아래 있었던 역사)를 반영하는 것으로 추정된다. 이는 고대 계보 문헌이 현대적 의미의 혈통 기록과는 다른 방식으로 작동했음을 보여주며, 본문의 신학적 목적(온 인류의 통일성과 하나님의 보편적 주권)을 이해하는 데 더 중요하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>니므롯이 세운 도시들이 훗날 이스라엘 역사에서 어떤 역할을 하는가?</div>
+        <div class="deep-body">니므롯이 세운 바벨(바벨론)과 니느웨(앗수르의 수도)는 훗날 각각 남유다와 북이스라엘을 멸망시키거나 포로로 사로잡는 제국의 수도가 된다(왕하 17장, 25장). 창세기 10장에서 이미 이 두 제국의 기원이 인간의 교만과 권력욕("세상에 첫 용사")에서 비롯되었음을 암시함으로써, 훗날 이스라엘을 심판하는 도구로 사용되는 이 제국들 자체도 결국 하나님의 심판 아래 있는 인간 교만의 산물임을 예견적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch11">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 41V15h12v26M14 15h20M20 15V9h8v6" fill="none" stroke="currentColor" stroke-width="2"/><line x1="14" y1="23" x2="34" y2="23" stroke="currentColor" stroke-width="1.5"/><line x1="14" y1="31" x2="34" y2="31" stroke="currentColor" stroke-width="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 11</div>
+      <h1>11장 · 바벨탑과 셈의 계보</h1>
+      <div class="chapter-sub">언어의 혼잡, 그리고 아브라함을 향한 다리</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 11:1-32</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">11:1-9</div>
+        <div>
+          <div class="flow-title">바벨탑 — 이름을 내려는 인간의 교만</div>
+          <div class="flow-body">온 땅의 언어가 하나였던 시절, 사람들은 시날 평지에 모여 <b class="hl-quote">"성읍과 탑을 건설하여 그 탑 꼭대기를 하늘에 닿게 하여 우리 이름을 내고 온 지면에 흩어짐을 면하자"</b>(4절)고 계획한다. 이는 1:28과 9:1의 "땅에 충만하라"는 명령에 정면으로 반하는 시도였다. 하나님은 내려오셔서 그들의 언어를 혼잡하게 하시고 그들을 온 지면에 흩으심으로써 <b class="hl-insight has-insight" data-insight="9">계획을 무너뜨리신다</b>(7-8절). 그 성읍의 이름이 <b class="hl-term has-tip" data-tip="히브리어로 '혼잡'을 뜻하는 '발랄'과 발음이 유사하다는 언어유희. 실제로 바벨(바빌론)이라는 이름은 아카드어로 '신의 문'이라는 뜻이었으나, 창세기는 이를 '혼잡'이라는 히브리어 언어유희로 재해석하여 조롱한다.">바벨</b>이 된 것은 여호와께서 거기서 온 땅의 언어를 혼잡하게 하셨기 때문이다(9절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11:10-32</div>
+        <div>
+          <div class="flow-title">셈의 계보와 아브람의 등장</div>
+          <div class="flow-body">11:10-26은 셈으로부터 데라까지 이어지는 계보를 나열하며 5장의 계보 패턴을 반복한다. 그러나 이번에는 '그가 죽었더라'는 후렴구가 사라지고, 대신 각 인물의 나이가 짧고 건조하게 나열되며 이야기의 속도가 급격히 빨라진다. 마침내 데라가 아브람, 나홀, 하란을 낳았고, 데라는 아브람과 그의 아내 사래, 조카 롯을 데리고 하란까지 이주한다(31절) — 다음 장에서 펼쳐질 아브라함 내러티브를 향한 <b class="hl-term">문학적 다리</b>다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">흩어짐을 거부한 교만 — 하나님의 명령에 대한 조직적 반역</div>
+        <div class="teach-body">바벨탑 사건의 본질은 단순한 건축이 아니라, 하나님이 반복해서 명하신 "땅에 충만하라, 흩어지라"(1:28, 9:1)는 명령을 인간이 조직적으로 거부하고 스스로 하나가 되어 이름을 내려 한 데 있다. 이는 개인의 죄(가인)에서 시작해 사회 전체의 죄(홍수 이전 세대)를 거쳐, 이제 온 인류가 조직적으로 연합하여 하나님께 대적하는 정치·종교적 반역의 정점을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">'이름을 내자'는 욕망과 하나님이 주시는 이름의 대조</div>
+        <div class="teach-body">바벨 건설자들은 스스로 "이름을 내자"고 했으나 실패했다. 반면 바로 다음 장에서 하나님은 아브람에게 "내가 네 이름을 창대하게 하리니"(12:2)라고 약속하신다. 인간이 스스로 쟁취하려는 영광과 하나님이 은혜로 주시는 영광의 대조는 성경 전체에서 반복되는 주제(마 23:12, "누구든지 자기를 높이는 자는 낮아지고 자기를 낮추는 자는 높아지리라")다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">언어의 혼잡과 오순절의 반전</div>
+        <div class="teach-body">바벨에서 언어가 혼잡해져 인류가 흩어진 사건은, 사도행전 2장 오순절 성령 강림 사건에서 극적으로 반전된다. 각기 다른 나라 방언을 쓰는 사람들이 성령의 능력으로 갈릴리 사람들이 전하는 복음을 '각각 자기의 방언으로' 알아듣는 장면(행 2:6-8)은, 바벨에서 흩어진 인류가 그리스도 안에서 다시 하나 되는 종말론적 회복을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">계보의 속도 변화 — 서사의 초점이 좁아짐</div>
+        <div class="teach-body">11:10-26의 계보는 5장과 달리 죽음을 강조하지 않고 신속하게 나열되며, 창세기 전체의 서사가 이제 온 인류(1-11장)에서 한 가족, 한 사람(아브람)으로 초점을 급격히 좁혀가고 있음을 문학적으로 보여준다. 이는 하나님의 구속 계획이 온 세상을 향하되, 특정한 한 사람과 그의 후손을 통해 구체적으로 실현되어 감을 보여주는 성경 전체 구속사의 패턴이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">원역사(1-11장)의 결론 — 실패의 반복과 은혜의 지속</div>
+        <div class="teach-body">창조-타락-가인의 살인-홍수-바벨로 이어지는 1-11장 전체는 인간의 반복되는 실패와 하나님의 지속되는 은혜라는 이중 리듬을 보여준다. 매 사건마다 인간은 실패하지만 하나님은 언제나 심판 중에도 구원의 길(가죽옷, 노아의 방주, 무지개 언약)을 예비하신다. 바벨탑 사건 직후 곧바로 아브람이 등장하는 것은, 하나님이 온 인류의 반복된 실패에도 불구하고 이제 한 사람을 통해 온 세상을 구원하실 새로운 계획을 시작하신다는 것을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">1-11장을 쭉 훑어보면 패턴이 보여요. 창조 → 타락 → 가인의 살인 → 온 땅의 부패 → 홍수 → 그리고 다시 바벨. 인간은 계속 실패하는데, 하나님은 매번 심판 중에도 구원의 길을 남겨두세요. 그리고 그 패턴의 정점에서, 바벨탑 무너진 바로 다음 장에 아브람이 등장해요. 이제부터 성경은 온 인류 이야기에서 한 사람의 이야기로 좁혀지기 시작해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>바벨탑 건설이 왜 그렇게 큰 죄로 여겨졌는가? 단순히 큰 건물을 짓는 것이 잘못인가?</div>
+        <div class="deep-body">본문의 문제는 건축 자체가 아니라 그 동기와 목적에 있다. "우리 이름을 내고 흩어짐을 면하자"는 표현은 하나님을 향한 의존을 거부하고 인간의 자율성과 통제력으로 안전과 영광을 확보하려는 시도를 보여준다. 탑이 '하늘까지 닿게'하려 했다는 표현도 신적 영역을 침범하려는 교만의 상징으로 이해된다. 이는 크기나 기술의 문제가 아니라 하나님 없이 인간 스스로 자신의 운명을 통제하려는 근본적 반역의 문제다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>언어의 혼잡이라는 심판이 오히려 인류에게 유익한 결과(다양한 문화의 발전 등)를 가져온 것은 아닌가?</div>
+        <div class="deep-body">이는 흥미로운 신학적 질문이다. 성경은 하나님의 심판이 종종 궁극적으로 하나님의 더 큰 목적과 은혜로 이어지는 패턴을 반복해서 보여준다(요셉의 형들의 악행이 이스라엘을 구원하는 결과로 이어진 것처럼, 창 50:20). 언어와 문화의 다양성은 심판의 직접적 결과였지만, 계시록 7:9에서 "각 나라와 족속과 백성과 방언에서 아무도 능히 셀 수 없는 큰 무리"가 함께 하나님을 찬양하는 종말론적 비전은, 다양성 자체가 소멸되는 것이 아니라 그리스도 안에서 다양성을 유지한 채 연합되는 회복을 그린다. 심판조차도 하나님의 최종적 구속 계획 안에서 의미를 갖는다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+<div class="final-footer" style="text-align:center; padding: 14mm 4vw 20mm; color:var(--ink-soft); font-size:9pt; letter-spacing:0.04em;">
+  기독교한국침례회 은혜교회
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "혼돈과 공허, 그리고 하나님의 신", "body": "2절의 '흑암이 깊음 위에 있고 하나님의 영은 수면 위에 운행하시니라'는 구절은 창조 이전의 상태를 위협적으로 그리지 않는다. 오히려 하나님의 영(루아흐, '바람/영/숨')이 이미 그 위에 임재하여 창조를 준비하고 계신 모습을 보여준다. 이는 고대 근동 신화들이 혼돈의 신(바다 괴물 등)과 창조신이 전쟁을 벌여 세계를 만든다는 서사와 대조적이다. 성경의 하나님께는 경쟁자가 없다 — 혼돈조차 그분의 통제 아래 있다."}, {"title": "\"결코 죽지 아니하리라\" — 절반의 거짓말", "body": "뱀의 말은 완전한 거짓말이 아니라는 점이 더 교묘하다. 아담과 하와는 그 날 즉시 육체적으로 죽지 않았다(둘 다 나중에 늙어 죽는다). 하지만 하나님이 경고하신 '죽음'은 단지 육체적 죽음만이 아니라 영적 죽음 — 하나님과의 관계 단절 — 을 포함했고, 이는 그 즉시 일어났다(하나님을 피해 숨음, 3:8). 뱀의 전략은 완전한 거짓이 아니라 '절반의 진실로 포장된 거짓'이라는 점에서 오늘날의 유혹과도 정확히 닮아 있다."}, {"title": "죄가 '문에 엎드려 있다'는 히브리어 이미지", "body": "이 구절의 히브리어는 문자적으로 죄를 마치 사냥감을 노리는 짐승처럼 묘사한다. 고대 근동 문헌에서 '문에 엎드림'은 침입자나 악한 영을 가리키는 관용적 표현으로도 쓰였다. 즉 죄는 추상적 개념이 아니라 능동적으로 기회를 노리는 실체로 그려지며, 동시에 인간에게는 그것을 '다스릴' 능력과 책임이 있다는 이중적 메시지를 전한다."}, {"title": "'하나님과 동행하다'라는 표현의 반복", "body": "이 표현은 창세기에서 에녹(5:22, 24)과 노아(6:9)에게만 사용된다. 두 사람 모두 극도로 타락한 시대 한가운데서 하나님과 동행한 인물이라는 공통점이 있다. 이는 신앙이 환경에 좌우되지 않고, 오히려 가장 어두운 시대에 가장 밝게 빛날 수 있음을 보여주는 성경의 반복적 패턴이다."}, {"title": "방주의 치수가 말해주는 것", "body": "방주의 규격(길이 300규빗, 너비 50규빗, 높이 30규빗, 약 135m x 22.5m x 13.5m)은 고대 조선술 기준으로 볼 때 안정성과 적재량을 고려한 매우 실용적인 비율이다. 실제로 근대 이전 대형 선박들도 유사한 길이 대 너비 비율(약 6:1)을 따랐다는 점이 지적되어 왔다. 본문은 신화적 과장이 아니라 구체적이고 실행 가능한 설계도를 제시하며, 노아에게 요구된 순종이 추상적 믿음이 아니라 수년에 걸친 구체적 노동이었음을 보여준다."}, {"title": "40일과 150일 — 두 개의 시간 척도", "body": "본문은 비가 내린 기간(40일)과 물이 땅에 넘친 기간(150일)을 구분해서 기록한다(7:12, 17, 24). 40이라는 숫자는 성경에서 시험과 심판의 기간을 상징적으로 나타내는 데 반복적으로 사용된다(모세의 40년 광야 생활, 이스라엘의 40년 광야 방랑, 예수님의 40일 금식). 이는 홍수 사건이 단순한 자연현상 기록이 아니라 신학적 의미가 가득 담긴 내러티브로 서술되고 있음을 보여준다."}, {"title": "방주를 떠나기까지 걸린 시간", "body": "본문의 연대기를 세밀히 계산하면 노아 가족은 방주 안에서 약 1년(371일 정도)을 보냈다. 물이 빠지기 시작한 것과 실제로 땅을 밟기까지의 간격이 상당히 길었다는 사실은, 구원 이후의 삶이라 해도 완전한 회복과 새로운 시작에는 인내가 필요하다는 것을 암시적으로 보여준다."}, {"title": "피를 먹지 말라는 계명의 신학적 의미", "body": "9:4의 '피째 먹지 말라'는 명령은 단순한 위생 규정이 아니다. 레위기 17:11은 이를 신학적으로 설명한다: \"육체의 생명은 피에 있음이라... 피가 죄를 속하느니라.\" 즉 피는 생명 자체를 상징하며, 생명의 주권이 오직 하나님께 있음을 인정하는 신학적 표지다. 이 원리는 신약에서 그리스도의 피가 속죄의 근거가 되는 신학(히 9:22)으로 발전한다."}, {"title": "\"여호와 앞에서 특이한 사냥꾼\"이라는 표현의 이중적 의미", "body": "니므롯에 대한 이 묘사(9절)는 표면적으로는 칭찬처럼 보이지만, 히브리어 관용구 '~앞에서'는 종종 반항적이거나 도전적인 태도를 암시하는 데도 사용된다(참고: 10:9의 반복 강조). 유대 전통 해석(미드라쉬 등)에서는 니므롯을 하나님께 정면으로 도전한 폭군적 인물로 이해해왔으며, 이는 바로 다음 장에서 바벨탑을 통해 하나님께 도전하는 인간의 모습과 자연스럽게 연결된다."}, {"title": "바벨탑의 실제 형태 — 지구라트", "body": "고고학적으로 시날(바빌로니아) 지역에서 발견된 지구라트(계단식 신전탑)들은 꼭대기에 신을 모시는 신전이 있었고, 하늘과 땅을 잇는 통로로 여겨졌다. 바벨탑 역시 이러한 지구라트 양식이었을 것으로 추정되며, 이는 단순한 건축물이 아니라 인간이 스스로 신에게 이르는 길을 만들려 한 종교적 프로젝트였음을 시사한다. 이는 훗날 하나님이 스스로 인간에게 내려오시는 성육신(요 1:14)과 정확히 반대되는 구조다."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+</body></html>

@@ -1,0 +1,927 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>야고보서 연구 — 은혜교회 성경공부 시리즈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+:root{
+  --navy:#5c2a35; --navy-soft:#7a4552; --gold:#b0793e; --gold-soft:#cf9d5f;
+  --cream:#faf6ef; --cream-deep:#f2e9db; --ink:#2c2622; --ink-soft:#6b6058;
+  --line:#e5dac8; --white:#ffffff;
+}
+html{ overflow-wrap:break-word; }
+body{
+  margin:0; background:var(--cream); color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size:15.5px; line-height:1.75; text-align:left;
+}
+b,strong{font-weight:700;}
+img{max-width:100%;}
+
+/* ===== TOP NAV (sticky, solid bg, no fixed, no blur) ===== */
+.quick-nav{
+  position:sticky; top:0; z-index:50; background:var(--navy);
+  display:flex; align-items:center; justify-content:space-between;
+  padding:12px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.18);
+}
+.qn-title{ color:var(--gold-soft); font-weight:700; font-size:14.5px; cursor:pointer; }
+.qn-links{ display:flex; gap:14px; }
+.qn-links a{ color:#e9d9c4; font-size:13.5px; cursor:pointer; font-weight:600; }
+
+/* ===== COVER ===== */
+.cover{
+  min-height:78vh; background:var(--navy); color:var(--white);
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center; padding:60px 24px;
+}
+.cover .brand{ font-size:12px; letter-spacing:0.18em; color:var(--gold-soft); font-weight:600; margin-bottom:14px; }
+.cover .eyebrow{ font-size:12.5px; letter-spacing:0.24em; color:#d8b98a; font-weight:600; text-transform:uppercase; margin-bottom:22px; }
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:2.5rem; font-weight:700; margin:0 0 16px; letter-spacing:-0.01em;
+}
+.cover .cover-sub{ font-size:15px; color:#e5d6c4; margin-bottom:30px; }
+.cover .cover-line{ width:54px; height:2px; background:var(--gold-soft); margin:0 auto 30px; }
+.cover .cover-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:12.5px; color:var(--gold-soft); letter-spacing:0.05em; }
+.cover .cover-note{ margin-top:40px; font-size:12px; color:#c8b8ab; }
+
+/* ===== INTRO / TOC ===== */
+.intro-page,.toc-page{ padding:34px 20px; max-width:720px; margin:0 auto; }
+.page-label{ font-size:11.5px; letter-spacing:0.18em; color:var(--gold); font-weight:700; text-transform:uppercase; }
+.intro-page h1,.toc-page h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:1.7rem; margin:6px 0 6px; color:var(--navy); }
+.intro-lead{ font-size:14.5px; color:var(--ink-soft); margin-bottom:24px; }
+.intro-block{ margin-bottom:22px; }
+.intro-block h3{ font-size:14.5px; color:var(--navy); border-left:3px solid var(--gold); padding-left:10px; margin-bottom:8px; }
+.intro-block p{ font-size:14.5px; text-align:left; word-break:keep-all; }
+
+.intro-outline{ display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+.oi{ background:var(--white); border:1px solid var(--line); border-radius:10px; padding:12px 14px; }
+.oi-tag{ font-size:11.5px; color:var(--gold); font-weight:700; margin-bottom:3px; }
+.oi-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--navy); font-size:15px; margin-bottom:4px; }
+.oi-body{ font-size:13.3px; color:var(--ink-soft); word-break:keep-all; }
+
+.toc-list{ display:flex; flex-direction:column; gap:10px; margin-top:14px; }
+.toc-item{
+  display:flex; align-items:center; gap:12px; background:var(--white); border:1px solid var(--line);
+  border-radius:10px; padding:13px 15px; cursor:pointer;
+}
+.toc-num{
+  width:34px; height:34px; min-width:34px; border-radius:50%; background:var(--navy); color:var(--gold-soft);
+  display:flex; align-items:center; justify-content:center; font-weight:700; font-size:14px;
+}
+.toc-text{ flex:1; }
+.toc-title{ font-weight:700; color:var(--navy); font-size:14.8px; }
+.toc-sub{ font-size:12.3px; color:var(--ink-soft); margin-top:2px; }
+.toc-arrow{ color:var(--gold); font-size:16px; }
+
+/* ===== CHAPTER ===== */
+.chapter{ max-width:720px; margin:0 auto; padding:8px 20px 10px; }
+.chapter-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 0 14px; border-bottom:2px solid var(--line); margin-bottom:20px; }
+.chapter-icon-badge{
+  width:52px; height:52px; min-width:52px; border-radius:14px; background:var(--navy);
+  display:flex; align-items:center; justify-content:center;
+}
+.chapter-icon{ color:var(--gold-soft); }
+.chapter-eyebrow{ font-size:11.5px; letter-spacing:0.16em; color:var(--gold); font-weight:700; }
+.chapter-head-text h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:1.32rem; color:var(--navy); margin:3px 0 5px; }
+.chapter-sub{ font-size:13px; color:var(--ink-soft); margin-bottom:9px; word-break:keep-all; }
+.ref-strip{ display:flex; gap:6px; flex-wrap:wrap; }
+.ref-item{ font-size:11.5px; background:var(--cream-deep); color:var(--navy-soft); padding:3px 9px; border-radius:20px; font-weight:600; }
+
+.sub{ margin-bottom:26px; }
+.sec-head{ display:flex; align-items:center; gap:9px; margin-bottom:4px; }
+.sec-num{ font-size:12px; font-weight:800; color:var(--gold-soft); border:1.5px solid var(--gold-soft); border-radius:50%; width:24px; height:24px; display:flex; align-items:center; justify-content:center; }
+.sec-head h2{ font-size:1.06rem; color:var(--navy); margin:0; }
+.sec-desc{ font-size:12.8px; color:var(--ink-soft); margin:0 0 14px 33px; }
+
+.flow{ display:flex; flex-direction:column; gap:14px; }
+.flow-item{ display:flex; gap:12px; }
+.flow-range{ min-width:64px; font-size:11.8px; color:var(--gold); font-weight:700; padding-top:2px; }
+.flow-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--navy); font-size:15px; margin-bottom:3px; }
+.flow-body{ font-size:14px; color:var(--ink); text-align:left; word-break:keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap:10px; }
+.teach-card{ background:var(--white); border:1px solid var(--line); border-left:3px solid var(--gold-soft); border-radius:8px; padding:13px 15px; }
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14.8px; font-weight:700; color:var(--navy); margin-bottom:5px; }
+.teach-body{ font-size:13.6px; color:var(--ink); text-align:left; word-break:keep-all; }
+
+.speech-bubble{ display:flex; gap:10px; align-items:flex-start; background:var(--cream-deep); border:1px solid var(--line); border-radius:12px; padding:14px 15px; margin:16px 0 4px; }
+.sb-avatar{ width:30px; height:30px; min-width:30px; border-radius:50%; background:var(--navy); color:var(--gold-soft); display:flex; align-items:center; justify-content:center; font-size:15px; }
+.sb-text{ font-size:13.6px; color:var(--navy-soft); line-height:1.7; word-break:keep-all; }
+.sb-text b{ color:var(--navy); }
+
+.deep-wrap{ background:var(--navy); border-radius:12px; padding:18px 16px; margin-top:6px; }
+.deep-wrap .sec-num{ color:var(--gold-soft); border-color:var(--gold-soft); }
+.deep-wrap h2{ color:var(--white); }
+.deep-wrap .sec-desc{ color:#d9c6b8; }
+.deep-item{ padding:13px 0; border-top:1px solid rgba(255,255,255,0.14); }
+.deep-item:first-of-type{ margin-top:6px; }
+.deep-title{ display:flex; align-items:flex-start; gap:8px; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14.8px; font-weight:700; color:var(--white); margin-bottom:8px; word-break:keep-all; }
+.deep-num{ display:flex; align-items:center; justify-content:center; width:22px; height:22px; min-width:22px; border:1px solid var(--gold-soft); color:var(--gold-soft); border-radius:50%; font-size:12px; font-weight:700; margin-top:1px; }
+.deep-body{ font-size:13.6px; color:#e3d9ea; padding-left:30px; text-align:left; word-break:keep-all; }
+.deep-body b{ color:var(--gold-soft); font-weight:600; }
+
+/* ===== HIGHLIGHTS ===== */
+.flow-body b.hl-term,.teach-body b.hl-term,.intro-block p b.hl-term,.sb-text b.hl-term{
+  background:#f1dfba; color:#7a5220; padding:1px 4px; border-radius:3px; font-weight:700;
+}
+.flow-body b.hl-quote,.teach-body b.hl-quote,.intro-block p b.hl-quote,.sb-text b.hl-quote{
+  background:#f2dcd3; color:#9a4632; padding:1px 4px; border-radius:3px; font-weight:700;
+}
+.flow-body b.hl-greek,.teach-body b.hl-greek,.intro-block p b.hl-greek,.sb-text b.hl-greek{
+  background:#d7ebe6; color:#235f56; padding:1px 4px; border-radius:3px; font-weight:700;
+}
+.deep-body b.hl-term,.verse-text b.hl-term{ background:rgba(216,176,115,0.28); color:#f3dfb8; padding:1px 4px; border-radius:3px; font-weight:700; }
+.deep-body b.hl-quote,.verse-text b.hl-quote{ background:rgba(224,122,105,0.26); color:#f0b8a8; padding:1px 4px; border-radius:3px; font-weight:700; }
+.deep-body b.hl-greek,.verse-text b.hl-greek{ background:rgba(110,196,188,0.26); color:#a9e6dd; padding:1px 4px; border-radius:3px; font-weight:700; }
+
+.flow-body b.hl-insight,.teach-body b.hl-insight,.intro-block p b.hl-insight,.sb-text b.hl-insight{
+  background:#d7ebf7; color:#1c5f85; padding:1px 4px; border-radius:3px; font-weight:700;
+}
+.deep-body b.hl-insight{ background:rgba(120,190,230,0.28); color:#bfe3f8; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.has-insight{ cursor:pointer; }
+b.has-insight:after{ content:"\25C6"; font-size:0.55em; margin-left:2px; vertical-align:super; opacity:0.85; }
+b.has-tip{ cursor:pointer; }
+b.has-tip:after{ content:"\24D8"; font-size:0.62em; margin-left:2px; }
+
+/* ===== INSIGHT POPUP ===== */
+#insightOverlay{
+  display:none; position:fixed; inset:0; background:rgba(20,12,10,0.55); z-index:200;
+  align-items:center; justify-content:center; padding:20px;
+}
+#insightOverlay.open{ display:flex; }
+#insightCard{
+  background:var(--white); border-radius:14px; max-width:480px; width:100%; max-height:80vh; overflow-y:auto;
+  padding:22px 20px 20px; position:relative;
+}
+.insight-close{ position:absolute; top:12px; right:14px; font-size:16px; color:var(--ink-soft); cursor:pointer; padding:4px; }
+.insight-eyebrow{ font-size:12px; color:var(--gold); font-weight:700; margin-bottom:6px; }
+#insightTitle{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:1.05rem; color:var(--navy); margin:0 0 12px; word-break:keep-all; }
+.insight-body{ font-size:13.8px; color:var(--ink); line-height:1.85; white-space:pre-line; word-break:keep-all; }
+
+#termTip{
+  display:none; position:absolute; z-index:210; max-width:280px; background:var(--navy); color:#f0e6d8;
+  font-size:12.6px; line-height:1.6; padding:11px 13px; border-radius:9px; box-shadow:0 6px 20px rgba(0,0,0,0.28);
+}
+.tip-close{ display:block; text-align:right; margin-top:6px; color:var(--gold-soft); font-size:12px; cursor:pointer; }
+
+/* ===== FLOATING NAV (fixed, bottom-right stack) ===== */
+.floating-nav{
+  position:fixed; right:16px; bottom:18px; z-index:80;
+  display:flex; flex-direction:column; gap:10px;
+}
+.floating-nav button{
+  width:48px; height:48px; border-radius:50%; border:none; cursor:pointer;
+  background:var(--navy); color:var(--gold-soft); font-size:19px;
+  display:flex; align-items:center; justify-content:center;
+  box-shadow:0 3px 10px rgba(0,0,0,0.28);
+  font-family:inherit; padding:0;
+}
+.floating-nav button.alt{ background:var(--white); color:var(--navy); border:1px solid var(--line); }
+
+.church-footer{
+  text-align:center; padding:34px 20px 40px; color:var(--ink-soft); font-size:12px; letter-spacing:0.04em;
+}
+.church-footer .cf-line{ width:34px; height:1.5px; background:var(--gold-soft); margin:0 auto 14px; }
+
+@media print{
+  .flow-body,.teach-body,.intro-block p,.deep-body,.sb-text,.chapter-sub{ text-align:justify; }
+  .quick-nav,.floating-nav,#insightOverlay,#termTip{ display:none !important; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <div class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 야고보서 연구</div>
+  <div class="qn-links">
+    <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차</a>
+  </div>
+</div>
+
+<div class="cover">
+  <div class="brand">은혜교회 성경공부 시리즈</div>
+  <div class="eyebrow">BIBLE STUDY · EPISTLE OF JAMES</div>
+  <h1>야고보서 연구</h1>
+  <div class="cover-sub">말이 아닌 삶으로 증명되는 믿음 — 전체 5장 성경 연구</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">약 1:1 – 5:20</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 5장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+</div>
+
+
+<div class="intro-page" id="intro">
+  <div class="page-label">Introduction</div>
+  <h1>야고보서 전체 서론</h1>
+  <p class="intro-lead">말로 하는 신앙을 넘어, 삶으로 증명되는 살아있는 믿음.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>야고보서의 저자는 전통적으로 <b class="hl-term has-tip" data-tip="예수님의 육신의 형제로, 처음에는 예수님을 메시아로 믿지 않았으나(요 7:5) 부활하신 예수님을 만난 후(고전 15:7) 예루살렘 교회의 지도자가 되었다. 사도행전 15장 예루살렘 공의회에서 최종 결론을 내리는 인물로 등장하며, 갈라디아서 2:9은 그를 베드로·요한과 함께 예루살렘 교회의 '기둥'으로 언급한다.">주의 형제 야고보</b>로 받아들여져 왔다. 그는 스스로를 "하나님과 주 예수 그리스도의 종"(1:1)이라고만 소개할 뿐 "주의 형제"라는 특권적 지위를 내세우지 않는데, 이는 오히려 이 서신의 겸손한 어조와 잘 어울린다. 야고보는 예루살렘 교회의 지도자로서 유대인 그리스도인들에게 깊은 존경을 받았으며, 유대 역사가 요세푸스에 따르면 AD 62년경 대제사장 안나스에 의해 순교했다고 전해진다. 이 연대는 야고보서가 신약 서신 중 <b class="hl-term">가장 이른 시기(AD 45–50년경)</b>에 기록되었을 가능성을 뒷받침하며, 예루살렘 공의회(AD 49년) 이전, 즉 이방인 선교를 둘러싼 신학 논쟁이 본격화되기 전에 쓰였을 것이라는 견해가 유력하다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>수신자와 정황</h3>
+    <p>수신자는 "흩어져 있는 열두 지파"(1:1)로, 문자적으로는 로마 제국 전역에 흩어진 유대인 그리스도인 디아스포라 공동체를 가리킨다. 이 표현은 동시에 옛 이스라엘의 정체성이 이제 <b class="hl-insight has-insight" data-insight="0">그리스도를 믿는 새로운 공동체 안에서 재정의되고 있음을 암시</b>하는 신학적 함의도 지닌다. 회당(συναγωγή, 쉬나고게)이라는 단어가 2:2에 그대로 사용된 것도 이 서신의 초기적·유대적 배경을 보여준다. 수신자들은 경제적 어려움과 부유한 자들의 착취(2:6, 5:1–6), 시험과 환난(1:2–4)을 겪고 있었으며, 믿음을 고백하면서도 실제 삶에서는 그 믿음이 열매로 이어지지 않는 이중적 태도(1:22–27, 2:14–26)의 문제도 안고 있었다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문체적 특징</h3>
+    <p>야고보서는 신약 서신 가운데 <b class="hl-term">지혜문학적 색채</b>가 가장 짙은 책이다. 바울 서신처럼 정교한 신학적 논증을 전개하기보다, 구약의 잠언이나 예수님의 산상수훈과 매우 유사한 방식으로 짧고 강렬한 윤리적 권면들을 연이어 제시한다. 실제로 학자들은 야고보서 전체에서 산상수훈의 반향을 30곳 이상 찾아내는데, 이는 야고보가 예수님의 가르침을 직접 들은 목격자로서 그 정신을 자신의 언어로 재진술하고 있음을 시사한다. 문체는 간결하고 명령형이 많으며(전체 108절 중 약 60개의 명령문), 자연에서 끌어온 생생한 비유(파도, 바람에 밀려 요동하는 것, 혀의 불, 거울, 안개, 농부의 인내)를 즐겨 사용한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p>야고보서를 관통하는 핵심 주제는 <b class="hl-term has-tip" data-tip="말로만 하는 신앙이 아니라 삶으로 증명되는 신앙. 야고보는 이것이 믿음으로 말미암은 구원(이신칭의)을 부정하는 것이 아니라, 참된 믿음은 반드시 행위의 열매를 맺는다는 것을 강조한다.">'온전한 신앙'(살아있는 믿음)</b>이다. 야고보는 "행함이 없는 믿음은 그 자체가 죽은 것"(2:17)이라고 선언하며, 신앙이 말과 지식의 차원에 머무르지 않고 실제 삶 — 가난한 자를 돌봄, 말을 절제함, 시험 중에도 인내함, 세상과 벗하지 않음 — 으로 나타나야 함을 반복해서 강조한다. 이는 바울의 이신칭의 교리와 충돌하는 것이 아니라, 참된 믿음이 무엇인지를 다른 각도(열매로 증명되는 믿음)에서 보완적으로 조명하는 것으로 이해된다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1장</div>
+        <div class="oi-title">시험과 말씀</div>
+        <div class="oi-body">시험 중의 인내, 지혜를 구함, 말씀을 듣고 행하는 자</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">2:1–13</div>
+        <div class="oi-title">차별과 율법</div>
+        <div class="oi-body">가난한 자를 차별하지 말라, 온 율법을 범하는 차별</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">2:14–26</div>
+        <div class="oi-title">믿음과 행함</div>
+        <div class="oi-body">행함이 없는 믿음은 죽은 것, 아브라함과 라합의 예</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">3장</div>
+        <div class="oi-title">혀와 지혜</div>
+        <div class="oi-body">혀를 길들임의 어려움, 위로부터 난 지혜와 세상적 지혜</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">4장</div>
+        <div class="oi-title">세상과 벗됨</div>
+        <div class="oi-body">다툼의 근원, 세상과 벗하는 것에 대한 경고, 겸손과 하나님의 뜻</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">5장</div>
+        <div class="oi-title">부자에 대한 경고와 인내·기도</div>
+        <div class="oi-body">부한 자들을 향한 심판 선언, 재림을 기다리는 인내, 기도의 능력</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 원어 배경, 신학적 논쟁, 해석사적 쟁점 등 확정적 답보다 함께 씨름할 가치가 있는 지점들을 다룬다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+      <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+        <div class="toc-num">1</div>
+        <div class="toc-text">
+          <div class="toc-title">시험을 이기는 지혜</div>
+          <div class="toc-sub">야고보서 1장 — 시험 중의 인내, 지혜를 구하는 기도, 말씀을 듣고 행하는 자</div>
+        </div>
+        <div class="toc-arrow">›</div>
+      </div>
+      <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+        <div class="toc-num">2</div>
+        <div class="toc-text">
+          <div class="toc-title">차별 없는 사랑과 살아있는 믿음</div>
+          <div class="toc-sub">야고보서 2장 — 사람을 차별하지 말라, 행함이 없는 믿음은 죽은 것</div>
+        </div>
+        <div class="toc-arrow">›</div>
+      </div>
+      <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+        <div class="toc-num">3</div>
+        <div class="toc-text">
+          <div class="toc-title">혀를 길들임과 두 가지 지혜</div>
+          <div class="toc-sub">야고보서 3장 — 말의 위력과 위험, 위로부터 난 지혜와 세상적 지혜</div>
+        </div>
+        <div class="toc-arrow">›</div>
+      </div>
+      <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+        <div class="toc-num">4</div>
+        <div class="toc-text">
+          <div class="toc-title">세상과 벗됨을 넘어 겸손으로</div>
+          <div class="toc-sub">야고보서 4장 — 다툼의 근원, 세상과의 벗됨, 겸손과 하나님을 향한 순종</div>
+        </div>
+        <div class="toc-arrow">›</div>
+      </div>
+      <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+        <div class="toc-num">5</div>
+        <div class="toc-text">
+          <div class="toc-title">인내와 기도로 맺는 결론</div>
+          <div class="toc-sub">야고보서 5장 — 부한 자들을 향한 심판 선언, 재림을 기다리는 인내, 기도의 능력</div>
+        </div>
+        <div class="toc-arrow">›</div>
+      </div>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l5 11 12 2-9 8 2 12-10-6-10 6 2-12-9-8 12-2Z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JAMES 1</div>
+      <h1>1장 · 시험을 이기는 지혜</h1>
+      <div class="chapter-sub">야고보서 1장 — 시험 중의 인내, 지혜를 구하는 기도, 말씀을 듣고 행하는 자</div>
+      <div class="ref-strip"><span class="ref-item">약 1:1–27</span><span class="ref-item">잠 2:6</span><span class="ref-item">마 7:24–27</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 요약합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">인사와 시험의 목적</div>
+          <div class="flow-body">야고보는 자신을 <b class="hl-term">"하나님과 주 예수 그리스도의 종"</b>으로 소개한 뒤 곧바로 본론에 들어간다. 여러 가지 시험을 만나거든 "온전히 기쁘게 여기라"는 역설적 명령으로 시작하는데, 이는 시험이 믿음의 <b class="hl-insight has-insight" data-insight="1">연단을 통해 인내를 만들어내고, 그 인내가 온전한 성숙에 이르게 하기 때문</b>이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–8절</div>
+        <div>
+          <div class="flow-title">지혜를 구하는 기도</div>
+          <div class="flow-body">지혜가 부족한 자는 <b class="hl-term">"모든 사람에게 후히 주시고 꾸짖지 아니하시는 하나님"</b>께 구하라고 권면한다. 다만 조건이 있다 — 조금도 의심하지 않고 믿음으로 구해야 한다. 의심하는 자는 바람에 밀려 요동하는 바다 물결 같아서 무엇을 받기를 생각하지 말라고 경고한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9–11절</div>
+        <div>
+          <div class="flow-title">가난한 자와 부한 자</div>
+          <div class="flow-body">낮은 형제는 자신의 높음을 자랑하고, 부한 자는 자신의 <b class="hl-term hl-quote">낮아짐</b>을 자랑하라는 역설적 권면이 이어진다. 부는 풀의 꽃과 같이 곧 시들어버릴 것이므로, 진정한 자랑거리는 세상적 지위가 아니라 하나님 앞에서의 위치임을 상기시킨다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–18절</div>
+        <div>
+          <div class="flow-title">시험과 유혹의 근원</div>
+          <div class="flow-body">시험을 참는 자는 복이 있으니 생명의 면류관을 얻는다. 그러나 야고보는 곧바로 시험의 근원을 명확히 구분한다 — <b class="hl-term">하나님은 결코 악으로 시험하지 않으시며</b>, 사람이 시험을 받는 것은 각 사람의 욕심에 끌려 미혹됨이라는 것이다. 욕심이 잉태하여 죄를 낳고, 죄가 장성하여 사망을 낳는 과정을 선명하게 제시한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">19–27절</div>
+        <div>
+          <div class="flow-title">말씀을 듣고 행하는 자</div>
+          <div class="flow-body">"듣기는 속히 하고 말하기는 더디 하며 성내기도 더디 하라"는 세 가지 실천적 권면 후, <b class="hl-insight has-insight" data-insight="2">말씀을 듣기만 하고 행하지 않는 자는 거울로 자기 얼굴을 보고 곧 잊어버리는 사람과 같다</b>는 유명한 비유가 이어진다. 경건의 진정성은 혀를 재갈 물리는 것, 고아와 과부를 돌보는 것, 세속에 물들지 않는 것으로 증명된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">시험을 기쁨으로 재해석하기</div>
+        <div class="teach-body">야고보는 시험을 <b class="hl-term">피해야 할 재앙</b>이 아니라 <b class="hl-term">성숙을 위한 연단</b>으로 재해석하라고 권한다. 이는 고통을 미화하라는 뜻이 아니라, 시험의 최종 목적지(인내 → 온전함)를 바라보며 그 과정 자체에 매몰되지 않게 하는 신앙적 관점의 전환이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">의심 없이 구하는 기도</div>
+        <div class="teach-body">지혜를 구하는 기도는 하나님의 성품(후히 주시고 꾸짖지 않으심)에 대한 믿음을 전제로 한다. 의심은 단순한 지적 회의가 아니라, 두 마음을 품고 요동하는 삶의 태도 전체를 가리킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">부와 가난에 대한 역설적 자랑</div>
+        <div class="teach-body">세상은 부를 자랑하고 가난을 감추라 하지만, 야고보는 정반대의 가치 기준을 제시한다. 부한 자의 참된 자랑은 그의 재산이 아니라 하나님 앞에서 자신이 낮아짐을 인정하는 겸손에 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">욕심에서 사망까지의 경로 인식하기</div>
+        <div class="teach-body">야고보는 죄의 기원을 하나님께 돌리지 않고 인간의 욕심에서 시작되는 내적 과정으로 정밀하게 추적한다. 욕심-죄-사망으로 이어지는 이 경로를 인식하는 것 자체가 죄를 미리 차단하는 영적 분별력이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">듣기만 하는 신앙에서 행하는 신앙으로</div>
+        <div class="teach-body">거울 비유는 말씀 앞에서의 자기기만을 정확히 짚어낸다. 말씀을 듣고 감동받는 것과 그 말씀대로 사는 것은 전혀 다른 문제이며, 야고보서 전체의 주제인 "행함 있는 믿음"이 이 장에서부터 예고된다.</div>
+      </div>
+    </div>
+    <div class="speech-bubble">
+      <div class="sb-avatar">💬</div>
+      <div class="sb-text">이번 장은 야고보서 전체의 서곡과도 같아요. 시험, 지혜, 부와 가난, 욕심과 죄, 그리고 듣고 행함이라는 다섯 가지 주제가 짧게 제시되는데, 이 각각이 이후 장들에서 더 깊이 펼쳐집니다. "말씀을 듣기만 하고 행하지 않는 자"에 대한 경고가 특히 이 서신 전체의 나침반 역할을 해요.</div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span><span>"하나님은 시험하지 않으신다"와 주기도문 "우리를 시험에 들게 하지 마시옵고"는 모순 아닌가</span></div>
+        <div class="deep-body">헬라어 <b class="hl-greek">페이라스모스(πειρασμός)</b>는 문맥에 따라 "시험/시련"(외부에서 오는 연단)과 "유혹"(내부에서 오는 죄로의 이끌림)을 모두 가리킬 수 있는 다의적 단어다. 1:2의 "여러 가지 시험"은 외부적 환난·연단을 뜻하는 반면, 1:13–14의 "시험을 받는다"는 내적 욕심에서 비롯된 유혹을 가리킨다. 즉 하나님은 연단을 위해 환난을 허락하실 수 있지만(욥기, 신 8:2 참고), 결코 사람을 죄악된 유혹으로 이끄시는 분은 아니라는 것이다. 같은 단어의 두 용법을 구분하지 않으면 신학적 혼란이 생긴다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span><span>"온전히 기쁘게 여기라"는 명령이 감정을 억누르는 위선적 신앙을 조장하지 않는가</span></div>
+        <div class="deep-body">이 권면을 고통을 부정하거나 감정을 억압하라는 뜻으로 읽으면 왜곡이 생긴다. 헬라어 <b class="hl-greek">카라(χαρά, 기쁨)</b>는 감정적 유쾌함이 아니라, 상황과 무관하게 지속되는 의지적·관점적 기쁨을 가리킨다. 야고보 자신도 이 기쁨의 근거를 감정이 아니라 목적(인내와 온전함에 이름, 4절)에 둔다. 시험의 고통 자체를 부정하는 것이 아니라, 그 고통이 향하는 목적지에 대한 확신이 현재의 고통을 견디는 틀을 제공한다는 뜻으로 이해하는 것이 본문에 더 충실하다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8c-8 0-16 6-16 16 0 12 16 20 16 20s16-8 16-20c0-10-8-16-16-16Z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JAMES 2</div>
+      <h1>2장 · 차별 없는 사랑과 살아있는 믿음</h1>
+      <div class="chapter-sub">야고보서 2장 — 사람을 차별하지 말라, 행함이 없는 믿음은 죽은 것</div>
+      <div class="ref-strip"><span class="ref-item">약 2:1–26</span><span class="ref-item">레 19:18</span><span class="ref-item">창 15:6</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 요약합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">회당에서의 차별 금지</div>
+          <div class="flow-body">"영광의 주 예수 그리스도에 대한 믿음"을 가진 자가 사람을 <b class="hl-term">외모로 차별</b>해서는 안 된다는 명령으로 시작한다. 금가락지를 낀 부자에게는 좋은 자리를 내주고 가난한 자에게는 서 있거나 발등상 아래 앉으라 하는 구체적 장면을 예로 들며, 이런 차별이 곧 <b class="hl-term hl-quote">"악한 생각으로 판단하는 자"</b>가 되는 것임을 지적한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–13절</div>
+        <div>
+          <div class="flow-title">차별의 논리적 모순</div>
+          <div class="flow-body">야고보는 날카로운 반전을 짚어낸다 — 오히려 세상에서 가난한 자를 하나님이 택하사 믿음에 부요하게 하셨는데, 신자들은 그 가난한 자를 업신여긴다는 것이다. 게다가 신자들을 법정으로 끌어가고 그리스도의 이름을 훼방하는 자는 다름 아닌 <b class="hl-insight has-insight" data-insight="3">그 부한 자들</b>이었다. 이웃 사랑의 법을 어기는 차별은 온 율법을 범하는 것과 같다고 결론짓는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14–17절</div>
+        <div>
+          <div class="flow-title">행함 없는 믿음의 무익함</div>
+          <div class="flow-body"><b class="hl-term">"믿음이 있노라 하고 행함이 없으면 무슨 유익이 있으리요"</b>라는 유명한 질문이 제기된다. 헐벗고 굶주린 형제에게 "평안히 가라, 배부르게 하라" 말만 하고 필요한 것을 채워주지 않으면 그 말이 무슨 유익이 있겠느냐는 실제적 비유로 논지를 확장한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">18–20절</div>
+        <div>
+          <div class="flow-title">믿음과 행함의 분리 불가능성</div>
+          <div class="flow-body">가상의 반론자를 등장시켜 "너는 믿음이 있고 나는 행함이 있다"는 식의 이분법을 반박한다. <b class="hl-insight has-insight" data-insight="4">귀신들도 하나님을 믿고 떤다</b>는 충격적인 비교를 통해, 지적 동의로서의 믿음만으로는 부족함을 강력하게 논증한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">21–26절</div>
+        <div>
+          <div class="flow-title">아브라함과 라합의 예</div>
+          <div class="flow-body">아브라함이 이삭을 제단에 바침으로 그 믿음이 행함과 함께 일하고 행함으로 믿음이 온전하게 되었다는 예, 그리고 기생 라합이 정탐꾼을 영접하고 다른 길로 보낸 행위로 의롭다 하심을 받았다는 예를 든다. <b class="hl-term hl-quote">"영혼 없는 몸이 죽은 것 같이 행함이 없는 믿음도 죽은 것"</b>이라는 결론적 선언으로 장을 맺는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">외모로 판단하지 않는 공동체</div>
+        <div class="teach-body">초대교회의 차별은 인종이 아니라 경제적 지위를 기준으로 나타났다. 오늘날에도 외모, 재력, 사회적 지위에 따라 은연중에 사람을 다르게 대우하는 습관을 점검하게 하는 본문이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">가난한 자를 향한 하나님의 특별한 관심</div>
+        <div class="teach-body">가난이 곧 영적 우월함을 뜻하는 것은 아니지만, 성경 전체에 걸쳐 하나님은 세상이 무시하는 자들을 향한 특별한 긍휼을 반복해서 보이신다. 이는 교회 공동체가 세상의 가치 서열을 그대로 답습해서는 안 됨을 상기시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">믿음의 실체는 행위로 검증된다</div>
+        <div class="teach-body">야고보의 논증은 믿음을 부정하는 것이 아니라, 참된 믿음이라면 반드시 나타날 수밖에 없는 결과(행함)를 통해 그 진정성을 검증하는 것이다. 자기 신앙을 스스로 점검할 실제적 기준이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">말로만 하는 사랑의 공허함</div>
+        <div class="teach-body">헐벗고 굶주린 형제에게 "평안히 가라"고 말만 하는 것에 대한 야고보의 비판은, 구체적 필요를 외면한 채 경건한 언어만 반복하는 신앙의 위선을 정면으로 겨냥한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">아브라함과 라합 — 극과 극의 두 인물의 공통점</div>
+        <div class="teach-body">믿음의 조상 아브라함과 이방인 창녀 라합이라는 전혀 다른 배경의 두 인물을 나란히 세운 것은, 행함으로 증명되는 믿음이 특정 계층이나 출신에 국한된 것이 아니라 누구에게나 요구되고 가능한 것임을 보여준다.</div>
+      </div>
+    </div>
+    <div class="speech-bubble">
+      <div class="sb-avatar">💬</div>
+      <div class="sb-text">이번 장은 야고보서에서 가장 유명하고 동시에 가장 오해받기 쉬운 본문이에요. "행함이 없는 믿음은 죽은 것"이라는 선언이 마치 구원이 행위로 얻어진다는 뜻처럼 들릴 수 있거든요. 하지만 야고보의 논지는 구원의 "근거"가 아니라 구원받은 믿음의 "증거"에 관한 것이라는 걸 놓치지 않는 게 중요해요.</div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span><span>바울은 "행위 없이 믿음으로 의롭다 함을 얻는다"(롬 3:28)고 하는데 야고보는 정반대로 말하는 것 아닌가</span></div>
+        <div class="deep-body">이 긴장은 신학사에서 오래 논의되어 온 주제다. 핵심은 두 저자가 "의롭다 하다(디카이오오)"와 "행함"이라는 같은 단어를 <b class="hl-term">다른 논쟁 상대를 향해, 다른 의미로</b> 사용하고 있다는 데 있다. 바울은 "율법의 행위"(할례, 정결법 등 유대 의식법 준수)로 구원을 얻으려는 유대주의자들을 반박하며 오직 믿음을 강조한다. 반면 야고보는 행위 없이도 구원받았다고 주장하며 실제 삶은 전혀 변화되지 않는 명목상의 신앙을 반박하며 행함을 강조한다. 즉 바울은 "구원의 근거가 무엇인가"를, 야고보는 "구원받은 믿음이 어떻게 드러나는가"를 다루고 있어 실제로는 상충하지 않는다는 것이 개혁주의를 포함한 주류 해석의 결론이다. 마르틴 루터가 한때 이 서신을 "지푸라기 서신"이라 부르며 낮게 평가했던 것은 이 긴장을 지나치게 문자적으로만 읽은 결과로 평가받는다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span><span>아브라함이 "행위로 의롭다 하심을 받았다"(21절)는 말과 창세기 15:6 "믿음을 의로 여기셨다"는 말은 시점이 다르지 않은가</span></div>
+        <div class="deep-body">정확한 지적이다. 창세기 15:6의 "믿음을 의로 여기셨다"는 사건은 아브라함이 자녀를 약속받는 초기 장면이고, 야고보가 인용하는 이삭을 제단에 바치는 사건(창 22장)은 그로부터 <b class="hl-greek">수십 년 후</b>에 일어난다. 야고보는 22절에서 이 순서를 정확히 알고 있다는 것을 스스로 드러낸다 — "행함이 그의 믿음과 함께 일하고 행함으로 믿음이 온전하게 되었다." 즉 창세기 15장의 믿음이 먼저 있었고(칭의의 근거), 창세기 22장의 행함은 그 믿음이 이미 참되었음을 훗날 증명하고 완성한 사건이라는 것이다. 순서상으로도 믿음이 행함보다 앞선다는 점에서, 야고보가 행위 구원을 주장하는 것이 아니라는 것을 본문 스스로가 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 24c0-8 6-14 14-14s14 6 14 14M10 24c0 8 6 14 14 14M10 24h28"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JAMES 3</div>
+      <h1>3장 · 혀를 길들임과 두 가지 지혜</h1>
+      <div class="chapter-sub">야고보서 3장 — 말의 위력과 위험, 위로부터 난 지혜와 세상적 지혜</div>
+      <div class="ref-strip"><span class="ref-item">약 3:1–18</span><span class="ref-item">잠 18:21</span><span class="ref-item">마 12:36–37</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 요약합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–2절</div>
+        <div>
+          <div class="flow-title">선생 됨의 무거운 책임</div>
+          <div class="flow-body">"내 형제들아 너희는 선생 된 우리가 더 큰 심판을 받을 줄 알고 선생이 되지 말라"는 경고로 시작한다. 모든 사람이 <b class="hl-term">말에 실수가 많다</b>는 인간의 보편적 한계를 인정하며, 말에 실수가 없는 자야말로 온몸을 능히 굴레 씌우는 온전한 사람이라는 높은 기준을 제시한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">3–5절</div>
+        <div>
+          <div class="flow-title">작지만 강력한 혀에 대한 비유</div>
+          <div class="flow-body">말의 재갈, 배의 키, 작은 불씨라는 세 가지 비유를 연쇄적으로 사용한다. 아무리 크고 강한 것도 <b class="hl-insight has-insight" data-insight="5">작은 도구 하나로 방향이 좌우된다</b>는 공통점을 통해, 혀의 크기와 그 영향력이 전혀 비례하지 않음을 강조한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6–8절</div>
+        <div>
+          <div class="flow-title">혀의 파괴적 능력</div>
+          <div class="flow-body">혀를 "불" 그리고 "불의의 세계"로 규정하며, 온몸을 더럽히고 삶의 수레바퀴를 불사르는 지옥에서 나오는 불이라는 강렬한 이미지를 사용한다. 온갖 짐승과 새와 벌레와 바다의 생물은 길들일 수 있지만 <b class="hl-term hl-quote">"혀는 능히 길들일 사람이 없나니 쉬지 아니하는 악이요 죽이는 독이 가득한 것"</b>이라 단언한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9–12절</div>
+        <div>
+          <div class="flow-title">찬송과 저주가 나오는 모순</div>
+          <div class="flow-body">같은 입에서 하나님을 찬송하기도 하고 하나님의 형상대로 지음 받은 사람을 저주하기도 하는 모순을 지적한다. 한 샘에서 단물과 쓴 물이 함께 나올 수 없듯, 이런 이중성은 근본적으로 <b class="hl-term">부조화</b>임을 자연의 비유로 논증한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–18절</div>
+        <div>
+          <div class="flow-title">두 가지 지혜의 대조</div>
+          <div class="flow-body">지혜 있는 자는 선행으로 그것을 증명하라고 권면한 뒤, 시기와 다툼이 있는 곳의 "땅 위의 것"이며 "정욕의 것"이며 "귀신의 것"인 지혜와, 위로부터 난 지혜를 선명하게 대조한다. <b class="hl-insight has-insight" data-insight="6">위로부터 난 지혜의 여덟 가지 특징</b>(성결, 화평, 관용, 양순, 긍휼과 선한 열매가 가득함, 편벽과 거짓이 없음)을 열거하며 장을 맺는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">가르치는 자리의 무게</div>
+        <div class="teach-body">말을 통해 영향력을 행사하는 자리(가르침, 설교, 리더십)는 더 큰 책임과 심판의 기준을 동반한다. 이는 오늘날 소셜미디어를 통해 누구나 쉽게 많은 사람에게 말할 수 있는 시대에 더욱 무겁게 다가오는 경고다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">작은 것이 만드는 큰 결과</div>
+        <div class="teach-body">재갈, 키, 불씨의 비유는 말 한마디가 관계와 공동체 전체의 방향을 바꿀 수 있음을 보여준다. 사소해 보이는 말 습관을 가볍게 여기지 말아야 할 이유다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">길들일 수 없는 혀 앞의 정직한 인정</div>
+        <div class="teach-body">야고보는 혀를 길들이는 쉬운 방법을 제시하지 않는다. 오히려 인간의 힘으로는 통제하기 어려운 영역임을 정직하게 인정하게 하는데, 이것이 오히려 하나님의 은혜와 성령의 도우심을 구하게 하는 출발점이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">찬송과 저주의 이중성 점검하기</div>
+        <div class="teach-body">예배 시간의 경건한 언어와 일상에서의 거친 말, 험담, 비난이 공존하는 이중성은 많은 신자들의 실제 모습이다. 이 본문은 신앙과 언어생활이 분리될 수 없음을 직시하게 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">지혜의 진위는 열매로 판별된다</div>
+        <div class="teach-body">위로부터 난 지혜와 세상적 지혜를 구별하는 기준은 지식의 양이나 화려한 언변이 아니라 화평, 관용, 긍휼 같은 성품의 열매다. 이는 2장의 "행함으로 증명되는 믿음"과 같은 논리 구조를 지혜에도 적용한 것이다.</div>
+      </div>
+    </div>
+    <div class="speech-bubble">
+      <div class="sb-avatar">💬</div>
+      <div class="sb-text">3장은 야고보서 안에서 가장 널리 인용되는 본문 중 하나예요. 혀를 다스리는 문제는 사실 마음을 다스리는 문제로 이어지는데, 이 장의 마지막 부분에서 지혜의 두 종류를 대조하는 게 그 이유를 보여줘요 — 결국 입에서 나오는 말은 그 사람 안에 어떤 지혜(혹은 정욕)가 자리 잡고 있는지를 드러내는 창문이라는 거죠.</div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span><span>혀를 "쉬지 아니하는 악"이라 부르면서 왜 곧바로 지혜에 관한 논의로 넘어갈까</span></div>
+        <div class="deep-body">언뜻 두 주제(혀, 지혜)가 별개처럼 보이지만 야고보의 논리에서는 긴밀히 연결된다. 야고보에게 <b class="hl-term">말은 마음의 상태를 드러내는 증상</b>이지 원인 그 자체가 아니다. 그래서 혀의 문제를 진단한 직후, 그 근본 원인인 "어떤 지혜(원리)로 사는가"의 문제로 자연스럽게 넘어가는 것이다. 시기와 다툼(세상적 지혜)이 마음에 자리 잡으면 반드시 거친 말과 비방으로 흘러나오고, 위로부터 난 지혜(화평, 관용, 긍휼)가 자리 잡으면 그에 걸맞은 말이 흘러나온다는 것이 이 장 전체의 숨은 논리다. 예수님의 "마음에 가득한 것을 입으로 말함이라"(마 12:34)는 가르침과도 정확히 맞닿아 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span><span>"말에 실수가 없는 자는 온전한 사람"(2절)이라면 완벽하지 않은 우리는 절대 도달할 수 없는 목표 아닌가</span></div>
+        <div class="deep-body">이 구절을 절망의 기준으로 읽으면 본문의 의도를 놓치게 된다. 야고보 스스로 "우리가 다 실수가 많으니"라고 <b class="hl-term">보편적 한계를 먼저 인정</b>한 뒤에 이 기준을 제시한다는 점이 중요하다. 즉 이것은 도달 가능한 완벽주의적 목표라기보다, 혀를 다스리는 일이 인격 전체의 성숙을 가늠하는 가장 민감한 지표임을 보여주는 수사적 장치에 가깝다. 헬라어 <b class="hl-greek">텔레이오스(τέλειος, 온전한)</b>는 결함 없는 완벽함이 아니라 "목적에 맞게 성숙한 상태"를 뜻하는 단어로, 이는 완벽을 요구한다기보다 말의 절제를 영적 성숙의 지속적 훈련 목표로 제시하는 것으로 이해하는 것이 문맥에 더 자연스럽다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6v10M24 32v10M6 24h10M32 24h10M12 12l7 7M29 29l7 7M36 12l-7 7M19 29l-7 7"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JAMES 4</div>
+      <h1>4장 · 세상과 벗됨을 넘어 겸손으로</h1>
+      <div class="chapter-sub">야고보서 4장 — 다툼의 근원, 세상과의 벗됨, 겸손과 하나님을 향한 순종</div>
+      <div class="ref-strip"><span class="ref-item">약 4:1–17</span><span class="ref-item">잠 3:34</span><span class="ref-item">마 6:24</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 요약합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–3절</div>
+        <div>
+          <div class="flow-title">다툼의 내적 근원</div>
+          <div class="flow-body">"너희 중에 싸움이 어디로부터 다툼이 어디로부터 나느냐"는 질문으로 시작해, 그 답을 외부 상황이 아니라 <b class="hl-term">지체 중에서 싸우는 정욕</b>에서 찾는다. 구하여도 얻지 못하는 것은 정욕으로 쓰려고 잘못 구하기 때문이라는 진단이 이어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4–6절</div>
+        <div>
+          <div class="flow-title">세상과의 벗됨은 하나님과의 원수 됨</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="7">"세상과 벗된 것이 하나님과 원수 됨을 알지 못하느냐"</b>는 매우 강한 표현이 등장한다. 세상과 벗이 되고자 하는 자는 스스로 하나님과 원수 되는 것이라 선언하며, 하나님은 "우리 안에 거하게 하신 성령을 시기하기까지 사모"하시고 겸손한 자에게 은혜를 주신다는 잠언 3:34 인용으로 뒷받침한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–10절</div>
+        <div>
+          <div class="flow-title">하나님께 복종하고 마귀를 대적하라</div>
+          <div class="flow-body">"하나님께 복종할지어다 마귀를 대적하라 그리하면 너희를 피하리라"는 이중 명령이 주어진다. 손을 깨끗이 하고 마음을 성결하게 하며, 슬퍼하고 애통하며 울라는 회개의 강한 언어가 이어진 후, <b class="hl-term hl-quote">"주 앞에서 낮추라 그리하면 주께서 너희를 높이시리라"</b>는 약속으로 마무리된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–12절</div>
+        <div>
+          <div class="flow-title">형제를 비방하지 말라</div>
+          <div class="flow-body">형제를 비방하거나 판단하는 것은 곧 <b class="hl-term">율법을 비방하고 판단하는 것</b>과 같다고 지적한다. 입법자와 재판관은 오직 한 분이신 하나님뿐인데, 이웃을 판단하는 자는 스스로 그 자리에 서려는 것이라는 논리다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–17절</div>
+        <div>
+          <div class="flow-title">내일 일을 자랑하는 교만에 대한 경고</div>
+          <div class="flow-body">"오늘이나 내일 어느 도시에 가서 일 년을 머물며 장사하여 이익을 보리라" 말하는 자들을 향해, 인생이 <b class="hl-insight has-insight" data-insight="8">잠깐 보이다가 없어지는 안개</b>와 같음을 상기시킨다. "주의 뜻이면 우리가 살기도 하고 이것저것을 하리라"는 겸손한 자세를 대안으로 제시하며, 선을 알고도 행하지 아니하면 죄라는 원리로 장을 맺는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">다툼의 뿌리를 내면에서 찾기</div>
+        <div class="teach-body">갈등의 원인을 상대방이나 상황 탓으로 돌리기 쉽지만, 야고보는 그 뿌리를 자신의 정욕에서 찾으라고 도전한다. 이는 관계의 회복이 자기 성찰에서 시작됨을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">세상과의 벗됨에 대한 단호한 재정의</div>
+        <div class="teach-body">세상의 가치 체계(성공, 명예, 물질적 풍요를 향한 무분별한 추구)에 동화되는 것이 단순한 취향의 문제가 아니라 영적 충성의 문제임을 직시하게 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">겸손을 통한 참된 높아짐</div>
+        <div class="teach-body">"낮추라 그리하면 높이시리라"는 원리는 자기를 비하하라는 뜻이 아니라, 자기 힘으로 지위를 쟁취하려는 태도를 내려놓고 하나님의 때와 방법을 신뢰하는 것이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">판단이 아닌 사랑으로 서로를 대하기</div>
+        <div class="teach-body">형제를 비방하는 습관은 스스로 하나님의 자리(입법자, 재판관)를 참칭하는 행위임을 인식하게 함으로써, 공동체 안에서의 언어와 태도를 재점검하게 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">안개 같은 인생 앞에서의 겸손한 계획</div>
+        <div class="teach-body">미래를 계획하지 말라는 뜻이 아니라, 모든 계획을 하나님의 주권 아래 겸손히 두라는 권면이다. "주의 뜻이면"이라는 태도는 통제에 대한 환상을 내려놓는 신앙적 자세다.</div>
+      </div>
+    </div>
+    <div class="speech-bubble">
+      <div class="sb-avatar">💬</div>
+      <div class="sb-text">4장은 3장의 두 지혜(세상적 지혜 vs 위로부터 난 지혜) 대조를 실제 삶의 문제(다툼, 세상과의 관계, 미래 계획)에 적용하는 장이에요. "낮추라 그리하면 높이시리라"는 짧은 구절이 이 장 전체, 나아가 야고보서 전체의 영적 원리를 압축해서 보여준다고 할 수 있어요.</div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span><span>"세상과 벗된 것이 하나님과 원수 됨"이라는 말은 세상 속에서 살아가는 모든 활동을 정죄하는 걸까</span></div>
+        <div class="deep-body">이 구절을 문자 그대로 세상과의 모든 접촉(직업, 문화, 사회 참여)을 죄악시하는 것으로 읽으면 지나친 확대해석이 된다. 여기서 "세상"으로 번역된 헬라어 <b class="hl-greek">코스모스(κόσμος)</b>는 물리적 창조 세계가 아니라, 하나님을 배제한 채 돌아가는 <b class="hl-term">가치 체계와 삶의 방식 전체</b>를 가리킨다. "벗"으로 번역된 단어 역시 단순한 접촉이 아니라 그 가치 체계와 동일시되어 사랑하고 추구하는 관계를 뜻한다. 즉 이 구절은 세상 속에서 살아가는 것 자체를 금하는 것이 아니라, 세상의 정욕과 경쟁 체제를 삶의 궁극적 기준으로 받아들이는 태도를 경고하는 것으로 이해하는 것이 요한일서 2:15–17과 같은 유사 본문의 맥락과도 일치한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span><span>2절의 "살인하며 다투고 싸우는도다"는 표현이 초기 그리스도인 공동체에 대한 묘사치고 너무 과격하지 않은가</span></div>
+        <div class="deep-body">이 표현이 실제 살인 사건을 가리키는지, 과장된 수사인지는 학자들 사이에서도 논쟁이 있다. 한 가지 유력한 해석은 <b class="hl-greek">포네우에테(φονεύετε, "살인하다")</b>가 문자적 살인이 아니라 예수님의 산상수훈 전통(마 5:21–22, 형제에게 노하는 자도 살인한 것과 같다는 가르침)을 반영하여, <b class="hl-term">미움과 분노의 극단적 결과를 강조하는 과장법</b>으로 쓰였다는 것이다. 다른 학자들은 초기 유대-로마 사회의 실제적 폭력(젤롯당의 정치적 암살 등)이 공동체에도 영향을 미쳤을 가능성을 제기하기도 한다. 어느 쪽이든, 야고보가 정욕에서 비롯된 다툼의 심각성을 결코 가볍게 여기지 않는다는 점만은 분명하다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8v32M14 18l10-10 10 10M14 38h20"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JAMES 5</div>
+      <h1>5장 · 인내와 기도로 맺는 결론</h1>
+      <div class="chapter-sub">야고보서 5장 — 부한 자들을 향한 심판 선언, 재림을 기다리는 인내, 기도의 능력</div>
+      <div class="ref-strip"><span class="ref-item">약 5:1–20</span><span class="ref-item">욥 5:11</span><span class="ref-item">말 4:2</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 요약합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">부한 자들을 향한 심판 선언</div>
+          <div class="flow-body">"부한 자들아 너희에게 임할 고생으로 말미암아 울고 통곡하라"는 강렬한 심판 신탁으로 5장이 열린다. 재물이 썩고 옷이 좀먹으며 금과 은에 녹이 슨 것이 오히려 그들을 고발하는 증거가 될 것이라 경고하고, <b class="hl-insight has-insight" data-insight="9">추수한 품꾼에게 삯을 주지 않은 것</b>과 사치와 방종으로 살진 것, 의인을 정죄하고 죽인 것을 구체적으로 고발한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–11절</div>
+        <div>
+          <div class="flow-title">재림을 기다리는 인내</div>
+          <div class="flow-body">"그러므로 형제들아 주께서 강림하시기까지 길이 참으라"는 권면과 함께, <b class="hl-term">농부가 이른 비와 늦은 비를 기다리듯</b> 인내하라는 비유가 제시된다. 선지자들의 고난과 인내를 본으로 삼고, 특별히 욥의 인내와 그 결말(주께서 자비하시고 긍휼히 여기시는 이심)을 상기시킨다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12절</div>
+        <div>
+          <div class="flow-title">맹세하지 말라</div>
+          <div class="flow-body">"오직 너희는 이것 저것에 맹세하지 말고 오직 너희가 그렇다고 하는 것은 그렇다 하고 아니라 하는 것은 아니라 하라"는 짧지만 단호한 명령이다. 이는 <b class="hl-insight has-insight" data-insight="10">예수님의 산상수훈 가르침(마 5:34–37)</b>을 그대로 반영한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–18절</div>
+        <div>
+          <div class="flow-title">기도의 능력</div>
+          <div class="flow-body">고난당하는 자는 기도하고, 즐거워하는 자는 찬송하며, 병든 자는 장로들을 청하여 기름을 바르고 기도할 것을 권면한다. <b class="hl-term hl-quote">"의인의 간구는 역사하는 힘이 큼이니라"</b>는 선언 뒤, 엘리야가 비가 오지 않기를 기도하매 3년 6개월 동안 비가 오지 않았고 다시 기도하매 비가 내렸다는 예를 든다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">19–20절</div>
+        <div>
+          <div class="flow-title">미혹된 자를 돌이키게 함</div>
+          <div class="flow-body">형제 중에 미혹되어 진리를 떠난 자를 누가 돌아서게 하면, 그 영혼을 사망에서 구원하며 허다한 죄를 덮을 것이라는 권면으로 서신 전체를 맺는다. 다른 서신들과 달리 <b class="hl-term">인사말이나 축도 없이</b> 갑작스럽게 끝나는 것이 특징적이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">불의한 부에 대한 하나님의 시선</div>
+        <div class="teach-body">야고보의 심판 신탁은 부 자체를 정죄하는 것이 아니라, 부당한 방법으로 축적되고 이웃에게 나누어지지 않는 부의 실체를 폭로한다. 오늘날에도 경제 정의에 대한 성경적 관심을 환기시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">농부의 인내로 배우는 기다림</div>
+        <div class="teach-body">이른 비와 늦은 비를 기다리는 농부의 인내는 조급함이 아니라, 결실의 때가 있다는 확신에 근거한 인내다. 재림을 기다리는 신자의 태도에 대한 실제적 본이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">정직한 언어로서의 신앙</div>
+        <div class="teach-body">맹세하지 말라는 명령은 진실성 자체가 습관이 되어야 함을 가르친다. 특별한 맹세나 서약 없이도 "예"와 "아니오"가 그대로 믿을 수 있는 삶을 살아가라는 요청이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">공동체 안에서의 기도와 돌봄</div>
+        <div class="teach-body">병든 자를 위한 장로들의 기도와 기름 부음은 개인의 신앙생활을 넘어 공동체적 돌봄으로서의 기도를 보여준다. 신앙은 결코 개인적 차원에만 머물지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">서로를 돌이키게 하는 책임</div>
+        <div class="teach-body">서신의 마지막 권면은 미혹된 형제를 방관하지 말고 적극적으로 찾아가 돌이키게 하라는 것이다. 이는 공동체 전체가 서로의 영적 상태에 책임을 지는 관계임을 보여주며 서신 전체를 마무리한다.</div>
+      </div>
+    </div>
+    <div class="speech-bubble">
+      <div class="sb-avatar">💬</div>
+      <div class="sb-text">야고보서의 마지막 장은 서신 전체에 흩어져 있던 주제들 — 부와 가난, 인내, 진실한 말, 기도 — 을 다시 한번 짚으며 마무리돼요. 특별히 축도나 마무리 인사 없이 갑작스럽게 끝나는 것이 인상적인데, 이는 이 서신이 처음부터 끝까지 신학적 사변보다 실천적 삶의 문제에 집중해왔다는 걸 다시 한번 보여줘요.</div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">함께 씨름할 가치가 있는 두 가지 지점.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span><span>병든 자를 위한 "기름을 바르며 기도"(14절)가 오늘날 병자성사나 신유 사역의 근거로 쓰이는데, 정확히 어떤 의미일까</span></div>
+        <div class="deep-body">이 구절의 해석은 크게 두 갈래로 나뉜다. 하나는 여기서 <b class="hl-greek">기름 부음(엘라이오)</b>이 당시 흔했던 <b class="hl-term">의료적 처치</b>(감람유는 고대 지중해 세계에서 상처와 질병에 흔히 쓰인 치료 수단이었다)를 가리키며, 신앙 공동체가 영적 돌봄과 실제적 돌봄을 함께 제공했다는 해석이다. 다른 하나는 기름 부음이 <b class="hl-term">상징적·의식적 행위</b>로서 하나님의 치유 능력을 구체적으로 신뢰하는 신앙적 행동을 나타낸다는 해석이다. 두 해석이 서로 배타적이지 않다는 견해도 유력한데, 실제적 돌봄(당시로서는 의료적 처치)과 영적 신뢰(기도)가 함께 결합된 통전적 돌봄으로 이해하는 것이 본문의 취지에 가장 부합한다는 것이다. 어느 해석을 택하든 본문의 핵심은 치유의 능력이 기름 자체가 아니라 "믿음의 기도"(15절)에 있다는 점에서는 일치한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span><span>"의인의 간구는 역사하는 힘이 큼이니라"면서 엘리야를 예로 드는데, 엘리야도 우리와 똑같은 성정을 가진 사람이라는 말은 왜 덧붙였을까</span></div>
+        <div class="deep-body">17절의 "엘리야는 우리와 성정이 같은 사람이로되"라는 삽입구는 매우 의도적이다. 열왕기상에서 엘리야는 갈멜산에서 바알 선지자들을 물리치는 초인적 위업을 이루는 인물로 그려지는데, 그런 엘리야조차 <b class="hl-term">평범한 인간의 연약함</b>(로뎀나무 아래서 죽기를 구했던 낙심, 왕상 19장)을 가진 사람이었다는 것을 야고보가 굳이 상기시키는 것이다. 이는 "기도의 능력이 특별한 영적 엘리트에게만 주어진 것이 아니라, 평범한 신자도 믿음으로 구할 때 동일하게 역사한다"는 격려의 메시지를 전하기 위함이다. 엘리야의 위대함이 아니라 그의 평범함을 강조함으로써, 독자들도 담대히 기도할 수 있다는 초대로 이 예화를 사용하고 있는 것이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="floating-nav">
+  <button onclick="goTo(event,'toc')" title="목차 가기">📑</button>
+  <button onclick="goTo(event,'top')" title="처음으로">⌃</button>
+  <button class="alt" id="homeBtn" title="자료실로 가기">🏠</button>
+</div>
+
+<div class="church-footer">
+  <div class="cf-line"></div>
+  기독교한국침례회 은혜교회
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "'흩어진 열두 지파'라는 말, 문자 그대로일까 상징일까", "body": "야고보는 편지를 받는 사람들을 '흩어져 있는 열두 지파'라고 부르는데, 이게 정말 이스라엘 열두 지파의 후손들에게만 보낸 편지라는 뜻일까요? 그렇게 보기엔 어려운 점이 있어요. 야고보서 안에는 예수님을 '영광의 주'(2:1)로 고백하는 명백한 그리스도인 공동체가 전제되어 있거든요.\n\n가장 설득력 있는 설명은 이거예요 — 야고보가 옛 이스라엘의 언어를 새로운 언약 공동체에 의도적으로 적용하고 있다는 것. 즉 그리스도를 믿는 유대인 신자들의 공동체(아마도 여전히 유대적 정체성이 강했던 초기 예루살렘 교회의 흩어진 지체들)를 가리키면서도, 동시에 '이스라엘'이라는 정체성이 이제 메시아 안에서 계속된다는 신학적 메시지를 담고 있는 거죠. 문자적 지시대상과 신학적 함의가 함께 작동하는 표현인 셈이에요."}, {"title": "시험을 '온전히 기쁘게' 여기라니, 감정을 억지로 꾸미라는 말일까", "body": "고통스러운 일을 당했는데 기뻐하라니, 언뜻 비현실적이거나 심지어 위선적으로 들릴 수 있어요. 슬픈데 슬프지 않은 척하라는 뜻일까요?\n\n야고보가 말하는 '기쁨'은 감정을 억누르거나 꾸며내라는 게 아니에요. 이건 상황이 아니라 그 상황이 향하는 목적지를 바라보는 관점의 문제예요. 시험(연단) → 인내 → 성숙이라는 과정이 있다는 걸 알면, 지금 당장의 고통 안에서도 그 과정 전체를 붙들 수 있다는 거죠. 마치 힘든 운동을 하는 사람이 근육통 자체를 즐기는 게 아니라, 그 과정이 만들어낼 결과(더 강해짐)를 바라보며 견디는 것과 비슷해요.\n\n그러니까 이건 감정의 부정이 아니라, 고통 속에서도 흔들리지 않는 더 깊은 소망을 붙잡으라는 초대에 가까워요."}, {"title": "거울을 보고 잊어버리는 사람 비유, 정확히 뭘 지적하는 걸까", "body": "거울로 자기 얼굴을 보고 돌아서면 곧 어떤 모습이었는지 잊어버리는 사람 — 이 비유가 겨냥하는 게 정확히 뭘까요? 단순히 '기억력이 나쁜 사람'을 말하는 게 아니에요.\n\n핵심은 '본 것'과 '변화된 삶' 사이의 단절이에요. 거울은 있는 그대로의 모습을 정직하게 비춰줘요. 말씀도 마찬가지로 우리의 실제 모습(부족함, 죄, 고쳐야 할 점)을 있는 그대로 드러내죠. 문제는 그 진단을 받고도 아무 조치를 취하지 않는 거예요. 얼굴에 뭐가 묻은 걸 보고도 닦지 않고 그냥 돌아서 버리는 것처럼요.\n\n그래서 야고보는 곧바로 대안을 제시해요 — '자유롭게 하는 온전한 율법을 들여다보고 있는 자'가 되라고요. 듣는 것 자체가 나쁜 게 아니라, 들은 것을 실행으로 옮기지 않는 그 단절이 문제라는 거죠. 이게 바로 이 서신 전체를 관통하는 '행함 있는 믿음'의 첫 예고편이에요."}, {"title": "부한 자들이 신자들을 핍박했다는 게 당시 상황과 맞을까", "body": "야고보서가 쓰인 시기, 팔레스타인의 유대인 대지주·상류층 계층은 로마 당국과 결탁하거나 사법 체계에 접근할 수 있는 힘을 가진 경우가 많았어요. 반면 초기 그리스도인 다수는 그 사회의 하층 노동자, 소작농이었죠.\n\n야고보가 지적하는 건 특정 개인이 아니라 이런 구조적 현실이에요 — 경제적 권력을 가진 계층이 그 힘을 이용해 신자들을 법정으로 끌고 가거나 억압할 수 있었던 상황이요. 그래서 회당 안에서까지 그런 부자들에게 좋은 자리를 내어주는 건, 신자 공동체가 자신들을 억압하는 바로 그 가치 체계를 교회 안에 그대로 들여오는 자기모순적 행동이었던 거예요."}, {"title": "귀신도 하나님을 믿는다는 비유, 너무 극단적인 비교 아닐까", "body": "야고보가 드는 예시가 꽤 충격적이에요 — '네가 하나님은 한 분이신 줄 믿느냐 잘하는도다 귀신들도 믿고 떠느니라.' 신앙을 귀신과 비교하다니 지나친 비약처럼 들릴 수 있어요.\n\n하지만 이건 정확히 계산된 논증이에요. 야고보의 상대는 '올바른 신학적 명제에 동의하는 것'만으로 믿음이 충분하다고 여기는 사람이에요. 그런데 귀신들도 하나님이 한 분이시라는 사실(당시 유대교의 핵심 신앙고백, 쉐마)을 정확히 알고 있고, 심지어 그 앞에서 떨기까지 해요 — 지적 동의를 넘어 감정적 반응까지 있는 거죠. 그런데도 귀신은 결코 하나님께 순종하거나 그분을 따르지 않아요.\n\n즉 야고보의 논점은 '믿음 = 올바른 명제에 대한 지적 동의'라는 정의 자체가 불충분하다는 거예요. 참된 믿음은 그 대상이신 하나님께 대한 신뢰와 순종의 관계로 이어져야 하고, 그것이 바로 행함으로 나타난다는 거죠."}, {"title": "말의 재갈, 배의 키, 불씨 — 이 세 비유가 각각 다른 걸 말하는 걸까", "body": "세 비유가 비슷해 보이지만 각각 조금씩 다른 측면을 강조해요.\n\n말의 재갈은 '작은 도구가 큰 몸 전체의 방향을 통제한다'는 걸 보여줘요 — 혀가 몸 전체를 좌우하는 힘을 가졌다는 거죠. 배의 키는 '거센 바람에도 아주 작은 키 하나로 방향을 정할 수 있다'는 걸 보여주는데, 이건 상황(바람, 압력)이 아무리 강해도 결국 방향을 결정하는 건 그 작은 조종 장치라는 뜻이에요. 그리고 불씨는 앞의 두 비유와 완전히 다른 성격이에요 — 재갈과 키는 '통제'라는 긍정적 가능성을 보여주지만, 불씨는 통제 불능의 파괴력, 작은 불씨 하나가 큰 숲 전체를 태워버리는 위험성을 경고하죠.\n\n그러니까 이 세 비유는 순서대로 '혀는 힘이 있다 → 그 힘은 방향을 결정한다 → 그런데 그 힘이 잘못 쓰이면 걷잡을 수 없이 파괴적이다'라는 논리적 흐름을 만들어내는 거예요."}, {"title": "세상적 지혜를 '귀신의 것'이라고까지 부르는 건 너무 과격한 표현 아닐까", "body": "시기와 다툼에서 나오는 지혜를 '땅 위의 것', '정욕의 것'을 넘어 '귀신의 것'이라고까지 부르는 건 확실히 강한 표현이에요. 단순히 '덜 성숙한 지혜' 정도가 아니라 아예 영적 기원 자체가 다르다고 선언하는 거죠.\n\n야고보의 요점은 이거예요 — 시기와 이기적 야심에서 비롯된 태도는 단지 실수나 미성숙의 문제가 아니라, 애초에 하나님 나라의 가치 체계와 정반대되는 영적 뿌리를 가지고 있다는 것. 참소자(고발자)라는 뜻을 가진 사탄의 성격 자체가 시기, 분열, 참소와 깊이 연결되어 있거든요.\n\n그렇다고 시기심을 느끼는 사람 개개인을 악마화하려는 게 아니에요. 오히려 이건 우리 안에 어느 정도씩 있는 시기와 다툼의 태도가 얼마나 심각한 영적 문제인지, 그리고 그것이 자연스럽거나 사소한 감정이 아니라 근본적으로 다뤄야 할 문제라는 걸 강조하려는 수사적 경고에 가까워요."}, {"title": "'세상과 벗됨'이라는 표현, 정확히 어떤 관계를 말하는 걸까", "body": "여기서 '세상'은 우리가 발 딛고 사는 물리적 세계나 사람들을 가리키는 게 아니에요. 하나님을 배제한 채 돌아가는 가치 체계 — 경쟁, 정욕, 자기중심적 성공 추구 같은 삶의 원리 전체를 뜻해요.\n\n그리고 '벗'이라는 단어도 단순한 접촉이나 사회생활을 말하는 게 아니라, 그 가치 체계를 사랑하고 그것을 삶의 궁극적 기준으로 삼는 깊은 동일시의 관계를 뜻하죠. 그러니까 세상 속에서 일하고 사람들과 관계 맺는 것 자체가 문제가 아니라, 그 세상의 논리(정욕, 경쟁, 물질적 성공)를 삶의 최종 기준으로 삼는 태도가 문제라는 거예요.\n\n요한일서 2장에서 '세상이나 세상에 있는 것들을 사랑하지 말라'고 하는 것과 정확히 같은 맥락이에요. 세상 안에 살되, 세상에 속하지는 말라는 신약 전체의 일관된 가르침이 여기서도 나타나는 거죠."}, {"title": "미래 계획을 세우는 것 자체가 잘못이라는 뜻일까", "body": "야고보가 상인들의 계획(어느 도시에 가서 장사하여 이익을 보리라)을 비판하는 걸 보면, 마치 계획 세우는 것 자체가 믿음 없는 행동처럼 들릴 수 있어요. 그럼 신자는 아무 계획도 세우면 안 되는 걸까요?\n\n그렇지 않아요. 야고보가 지적하는 건 계획 자체가 아니라, 그 계획을 마치 자기 힘으로 완전히 통제할 수 있다는 듯한 태도예요. '내일 일도 너희가 알지 못하는도다'라는 지적은 우리 삶이 근본적으로 우리 손에 있지 않다는 걸 상기시키는 거죠.\n\n그래서 대안으로 제시하는 게 '주의 뜻이면'이라는 태도예요. 이건 계획을 세우지 말라는 게 아니라, 모든 계획 앞에 하나님의 주권을 인정하는 겸손을 두라는 거예요. 실제로 이 표현(라틴어로 '데오 볼렌테', 헬라어로는 여기 나온 구절)은 초대교회부터 지금까지 신자들이 편지나 계획을 말할 때 실제로 덧붙이는 관용구로 자리 잡았어요. 계획은 세우되, 그 결과를 하나님께 겸손히 맡기라는 균형 잡힌 가르침인 셈이에요."}, {"title": "추수 품꾼의 삯을 주지 않았다는 게 실제로 얼마나 심각한 죄였을까", "body": "레위기 19:13과 신명기 24:14–15은 품꾼의 삯을 그날 해가 지기 전에 주라고 명령해요. 당시 날품팔이 노동자들은 그날 번 삯으로 그날 가족을 먹여 살려야 했기 때문에, 삯을 미루는 건 단순한 계약 위반이 아니라 그 가족의 생존을 위협하는 행위였어요.\n\n야고보는 여기서 훨씬 더 강한 이미지를 씁니다 — '너희 밭에 추수한 품꾼의 삯이 소리 지르며 추수한 자의 우는 소리가 만군의 주의 귀에 들렸느니라.' 이건 부당하게 착취당한 노동 그 자체가 마치 인격을 가진 것처럼 하나님께 직접 호소하는 소리를 낸다는 강렬한 표현이에요. 창세기 4:10에서 아벨의 피가 땅에서 하나님께 호소했다는 표현과 같은 문학적 전통에 서 있죠.\n\n즉 이건 단순한 근로계약 위반의 문제가 아니라, 하나님이 특별히 귀 기울이시는 사회적 약자를 향한 구조적 착취의 문제로 다뤄지고 있는 거예요."}, {"title": "맹세를 절대 하지 말라는 게 법정 선서 같은 것까지 다 금지하는 걸까", "body": "이 구절이 정말 모든 형태의 맹세(법정 선서, 결혼 서약 등)를 금지하는지는 교회사에서 계속 논쟁이 있었던 주제예요. 퀘이커교 등 일부 전통은 이를 문자 그대로 받아들여 법정에서도 맹세를 거부하기도 했죠.\n\n하지만 문맥을 보면 야고보의 핵심 관심은 맹세라는 '형식' 자체가 아니라, 그 형식이 필요해진 '이유'예요. 당시 사람들은 하늘로, 땅으로, 예루살렘으로 맹세하며 자기 말에 무게를 더하려 했는데, 이건 역설적으로 맹세 없는 일상적인 말은 신뢰할 수 없다는 걸 전제하는 관행이었어요.\n\n야고보(그리고 예수님의 산상수훈)가 요구하는 건 훨씬 더 근본적이에요 — 애초에 '예'가 항상 '예'이고 '아니오'가 항상 '아니오'인 사람이 되라는 것. 특별한 맹세로 신뢰도를 인위적으로 높일 필요가 없을 만큼, 평소의 말 자체가 이미 완전히 신뢰할 수 있는 삶을 살라는 요청인 거죠. 그러니 이건 법적 절차로서의 선서를 정죄한다기보다, 일상 언어의 진실성을 향한 훨씬 높은 기준을 제시하는 것으로 읽는 게 더 자연스러워요."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 10;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.getElementById('homeBtn').addEventListener('click', function(){
+  if (typeof goBackHome === 'function') { goBackHome(); }
+  else if (typeof backToHome === 'function') { backToHome(); }
+  else { window.location.href = '/'; }
+});
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕ 닫기';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

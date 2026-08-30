@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>요한3서 연구</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#5c2a35;
+  --navy-soft:#7a4552;
+  --gold:#b0793e;
+  --gold-soft:#cc9a5f;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e6d9d2;
+  --white:#ffffff;
+  --insight:#4fa3d1;
+}
+
+body{
+  margin:0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+b, strong{ font-weight:700; }
+.wrap{ max-width: 720px; margin: 0 auto; background: var(--white); min-height: 100vh; }
+
+/* ===== TOP BAR (sticky, solid bg - no blur, no fixed) ===== */
+.top-bar{
+  position: sticky; top: 0; z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 4vw;
+  display: flex; align-items: center; justify-content: flex-start; gap: 10px;
+}
+.top-bar .tb-title{
+  font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
+}
+/* ===== BOTTOM NAV (floating circular icon buttons, bottom-right, stacked) ===== */
+.bottom-nav{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.bottom-nav button{
+  width: 46px; height: 46px; border-radius: 50%; border: none;
+  background: var(--navy); color: var(--gold-soft);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: transform 0.15s, background 0.15s;
+}
+.bottom-nav button svg{ width: 20px; height: 20px; }
+.bottom-nav button:active{ background: var(--navy-soft); transform: scale(0.94); }
+.bottom-nav-spacer{ height: 0; }
+
+/* ===== COVER (gradient + pearl sheen) ===== */
+.cover{
+  position: relative;
+  overflow: hidden;
+  padding: 70px 7vw 50px;
+  color: var(--white);
+  text-align: center;
+}
+.cover::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.14) 22%, rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 15% 92%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%);
+  pointer-events:none;
+}
+.cover-inner{ position:relative; z-index:1; }
+.cover .eyebrow{
+  font-size: 11px; letter-spacing: 0.24em; color: var(--gold-soft);
+  font-weight: 700; text-transform: uppercase; margin-bottom: 20px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 32px; font-weight: 700; margin: 0 0 14px; letter-spacing: -0.01em;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.18);
+}
+.cover .cover-sub{ font-size: 14px; color:#f0e2e5; margin-bottom: 30px; line-height:1.7; }
+
+/* pearl divider: gold line + glossy pearl bead */
+.pearl-divider{ display:flex; align-items:center; justify-content:center; gap:9px; margin: 0 auto 30px; }
+.pearl-divider .pl-line{ width:34px; height:1.5px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+.pearl-divider .pl-line.r{ background: linear-gradient(90deg, var(--gold-soft), transparent); }
+.pearl-divider .pl-bead{
+  width:11px; height:11px; border-radius:50%; flex-shrink:0;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #f4eee2 26%, #d8c9b0 55%, #a9906f 100%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25), inset 0 0 2px rgba(255,255,255,0.6);
+}
+
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13px; color: var(--gold-soft); letter-spacing:0.04em;
+}
+.cover .cover-note{ margin-top: 40px; font-size: 12px; color:#e0c7cb; }
+
+/* ===== INTRO ===== */
+.intro-page{ padding: 34px 6vw 10px; }
+.page-label{ font-size: 11px; letter-spacing:0.2em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 6px;
+}
+.intro-lead{ font-size:15px; color:var(--ink-soft); margin-bottom: 26px; line-height:1.75; }
+.intro-block{ margin-bottom: 24px; }
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 16px; color: var(--navy-soft); font-weight:700; margin:0 0 10px;
+  padding-left: 10px; border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{ margin: 0 0 10px; text-align:left; font-size:15px; line-height:1.8; }
+.intro-block b{ color: var(--navy-soft); }
+.intro-outline{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+.intro-outline .oi{ background: var(--cream-deep); border-radius:8px; padding:14px 16px; border-top:3px solid var(--gold-soft); }
+.intro-outline .oi .oi-tag{ font-size:11px; color:var(--gold); font-weight:700; letter-spacing:0.05em; margin-bottom:5px; }
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight:700; color:var(--navy); font-size:14.5px; margin-bottom:4px;
+}
+.intro-outline .oi .oi-body{ font-size:13px; color:var(--ink-soft); line-height:1.65; }
+
+/* ===== TOC ===== */
+.toc-page{ padding: 34px 6vw 20px; }
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 20px;
+}
+.toc-item{
+  display:flex; flex-wrap:wrap; align-items:baseline; color:var(--ink);
+  padding: 14px 0; border-bottom:1px solid var(--line); cursor:pointer;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:14px; font-weight:700; color:var(--gold); width:26px; flex-shrink:0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:16px; font-weight:600; color:var(--navy);
+}
+.toc-sub{ font-size:12.5px; color:var(--ink-soft); margin-left:26px; flex-basis:100%; margin-top:3px; }
+
+/* ===== CHAPTER ===== */
+.chapter{ padding: 8px 6vw 10px; }
+.chapter-head{
+  margin: 18px 0 20px; padding-bottom:14px; border-bottom:2px solid var(--navy);
+  display:flex; align-items:flex-start; gap:12px;
+}
+.chapter-icon-badge{
+  flex-shrink:0; width:42px; height:42px; border-radius:50%;
+  background: var(--navy); color: var(--gold-soft);
+  display:flex; align-items:center; justify-content:center;
+}
+.chapter-icon-badge svg{ width:22px; height:22px; }
+.chapter-eyebrow{ font-size:11px; letter-spacing:0.16em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:4px; }
+.chapter-head h2.chtitle{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:20px; font-weight:700; color:var(--navy); margin:0 0 4px;
+}
+.chapter-head .chapter-sub{ font-size:13px; color:var(--ink-soft); }
+.ref-strip{ display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.ref-item{ font-size:11.5px; color:var(--navy-soft); padding:2px 9px; background:var(--cream-deep); border-radius:10px; }
+
+section.sub{ margin-bottom: 30px; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14px; color:var(--gold); font-weight:700; }
+h3.sech{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:18px; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:13px; margin:0 0 14px; }
+
+/* flow */
+.flow-item{ padding: 12px 0; border-top:1px solid var(--line); }
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:13px; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:16px; margin:2px 0 6px; }
+.flow-body{ color:var(--ink); font-size:15px; line-height:1.8; text-align:left; }
+
+/* teaching cards */
+.teach-card{
+  background: var(--cream-deep); border-radius:12px; padding:16px 17px; margin-bottom:14px;
+  border-left: 4px solid var(--gold-soft);
+}
+.teach-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; border-radius:50%; background:var(--navy); color:var(--gold-soft);
+  font-size:12px; font-weight:700; margin-right:8px;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--navy); font-size:16px; }
+.teach-body{ color:var(--ink); font-size:15px; line-height:1.8; margin-top:8px; text-align:left; }
+
+.speech-bubble{
+  display:flex; gap:10px; align-items:flex-start;
+  background: var(--white); border:1px solid var(--line); border-radius:12px;
+  padding:13px 15px; margin-top:10px;
+}
+.sb-avatar{
+  width:28px; height:28px; min-width:28px; border-radius:50%;
+  background: var(--navy); color:var(--gold-soft);
+  display:flex; align-items:center; justify-content:center; font-size:13px;
+}
+.sb-text{ font-size:14px; color:var(--navy-soft); line-height:1.75; }
+.sb-text b{ color:var(--navy); }
+
+/* deep questions */
+.deep-wrap{ background: var(--navy); border-radius:14px; padding:18px 17px 8px; color:var(--white); }
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h3.sech{ color:var(--white); }
+.deep-wrap .sec-desc{ color:#d9c3c8; }
+.deep-item{ margin-bottom:18px; }
+.deep-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--white); font-size:16px; margin-bottom:8px; display:flex; gap:8px; }
+.deep-num{
+  flex-shrink:0; width:22px; height:22px; border-radius:50%;
+  background: var(--gold-soft); color:var(--navy);
+  display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;
+}
+.deep-body{ font-size:14.5px; color:#e9dde0; line-height:1.8; text-align:left; padding-left:30px; }
+.verse-box{
+  margin: 10px 0 4px 30px; background: rgba(255,255,255,0.07);
+  border-left:2px solid var(--gold-soft); padding:10px 13px; border-radius:0 8px 8px 0;
+}
+.verse-ref{ font-size:11.5px; color:var(--gold-soft); margin-bottom:4px; font-weight:700; }
+.verse-text{ font-size:14.5px; color:#f0e4e6; line-height:1.7; }
+
+/* highlight terms */
+b.hl-term{ background:#f1dfba; color:#7a5220; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-quote{ background:#f2dcd3; color:#9a4632; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-greek{ background:#d7ebe6; color:#235f56; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-insight{ background:#d7ebf7; color:#1c5f85; padding:1px 4px; border-radius:3px; font-weight:700; cursor:pointer; }
+b.hl-insight:after{ content:"\25C6"; font-size:0.55em; margin-left:2px; vertical-align:super; opacity:0.85; }
+
+.deep-body b.hl-term, .verse-text b.hl-term{ background: rgba(216,176,115,0.28); color:#f3dfb8; }
+.deep-body b.hl-quote, .verse-text b.hl-quote{ background: rgba(224,122,105,0.26); color:#f0b8a8; }
+.deep-body b.hl-greek, .verse-text b.hl-greek{ background: rgba(110,196,188,0.26); color:#a9e6dd; }
+.deep-body b.hl-insight, .verse-text b.hl-insight{ background: rgba(120,190,230,0.28); color:#bfe3f8; }
+
+/* ===== INSIGHT POPUP MODAL ===== */
+#insightOverlay{
+  display:none; position:fixed; inset:0; z-index:800;
+  background: rgba(40,20,25,0.55); align-items:center; justify-content:center; padding:20px;
+}
+#insightOverlay.open{ display:flex; }
+#insightCard{
+  background: var(--white); max-width:440px; width:100%; max-height:78vh; overflow-y:auto;
+  border-radius:14px; padding:22px 20px 18px; box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  position:relative; border-top:5px solid var(--insight);
+}
+#insightCard .insight-eyebrow{ font-size:11px; letter-spacing:0.12em; color:var(--insight); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+#insightCard h4{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif; font-size:17px; color:var(--navy);
+  font-weight:700; margin:0 0 12px; line-height:1.4;
+}
+#insightCard .insight-body{ font-size:14px; line-height:1.82; color:var(--ink); white-space:pre-line; }
+#insightCard .insight-close{
+  position:absolute; top:12px; right:14px; width:26px; height:26px; border-radius:50%;
+  background: var(--cream-deep); color:var(--navy-soft);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:14px;
+}
+#insightCard .insight-close:active{ background: var(--line); }
+
+/* ===== TERM TOOLTIP ===== */
+#termTip{
+  display:none; position:absolute; z-index:500; max-width:260px;
+  background: var(--white); color:var(--ink); font-size:13px; line-height:1.6;
+  padding:11px 14px; border-radius:10px; border-top:4px solid var(--gold);
+  box-shadow:0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip .tip-close{
+  position:absolute; top:5px; right:8px; width:18px; height:18px; border-radius:50%;
+  background: var(--cream-deep); display:flex; align-items:center; justify-content:center;
+  color:var(--navy-soft); font-size:11px; cursor:pointer;
+}
+b.has-tip{ cursor:pointer; }
+
+.footer-brand{
+  text-align:center; padding: 26px 6vw 6px; font-size:12px; color:var(--ink-soft);
+}
+
+@media print{
+  .top-bar, .bottom-nav, #insightOverlay, #termTip{ display:none !important; }
+}
+</style>
+</head><body>
+<div class="wrap">
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">&#10005;</div><div class="insight-eyebrow">&#128172; 더 알아보기</div><h4 id="insightTitle"></h4><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="top-bar">
+  <div class="tb-title" onclick="goTo('top')">📖 요한3서 연구</div>
+</div>
+
+<div class="cover" style="background: linear-gradient(150deg, #43241d 0%, #82502f 100%);">
+  <div class="cover-inner">
+    <div class="eyebrow">BIBLE STUDY · 3 JOHN</div>
+    <h1>요한3서 연구</h1>
+    <div class="cover-sub">환대와 진리 안에서의 동역 — 짧지만 생생한 인물 이야기</div>
+    <div class="pearl-divider"><span class="pl-line"></span><span class="pl-bead"></span><span class="pl-line r"></span></div>
+    <div class="cover-range">요삼 1:1-14 · 구조 · 교훈 · 심화 질문</div>
+    <div class="cover-note">전 1장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>요한3서 연구 서론</h1>
+  <p class="intro-lead">가이오의 환대, 디오드레베의 교만, 데메드리오의 신뢰 — 세 인물이 보여주는 신앙의 두 길.</p>
+  <div class="intro-block"><h3>저자와 기록 시기</h3><p>요한3서 역시 자신을 '장로'라 칭하는 저자의 기록으로, 전통적으로 <b class='hl-term'>사도 요한</b>의 저작으로 여겨진다. 요한2서와 형식·어휘가 매우 유사하며, 비슷한 시기인 <b class='hl-term'>AD 85–95년경</b>에 기록된 것으로 추정된다.</p></div><div class="intro-block"><h3>수신자와 정황</h3><p>신약성경 중 가장 짧은 책으로(헬라어 원문 219단어), 개인인 <b class='hl-term'>가이오</b>에게 보내진 사적인 편지다. 요한2서가 거짓 교사를 향한 환대를 경계했다면, 요한3서는 반대로 <b class='hl-term'>참된 순회 전도자들에 대한 환대</b>를 장려하며, 이를 거부한 디오드레베의 사례를 통해 교회 내부의 권력 다툼 문제를 다룬다.</p></div><div class="intro-block"><h3>문체적 특징</h3><p>신약성경의 개인 서신 중 가장 사적이고 인간적인 어조를 지닌다. 추상적 교리 논쟁이 거의 없고, 대신 <b class='hl-term'>구체적인 인물들의 실명</b>(가이오, 디오드레베, 데메드리오)을 통해 선과 악의 구체적 모습을 생생하게 보여준다.</p></div><div class="intro-block"><h3>핵심 신학 주제</h3><p>이 편지는 <b class='hl-term'>환대(호스피탈리티)</b>가 초대교회 선교에서 갖는 실제적 중요성과, 리더십이 <b class='hl-term'>섬김이 아니라 지배</b>로 왜곡될 때의 위험을 대조적으로 보여준다. '악을 본받지 말고 선을 본받으라'는 짧은 권면이 편지 전체의 결론이다.</p></div>
+  <div class="intro-outline"><div class="oi"><div class="oi-tag">PART 1</div><div class="oi-title">가이오를 향한 칭찬 (1-8절)</div><div class="oi-body">영혼의 잘됨을 위한 기도, 나그네 형제를 향한 신실한 섬김</div></div><div class="oi"><div class="oi-tag">PART 2</div><div class="oi-title">디오드레베의 경고와 마무리 (9-14절)</div><div class="oi-body">으뜸 되기를 좋아하는 자의 교만, 데메드리오의 좋은 증거, 대면 만남에 대한 소망</div></div></div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-item" onclick="goTo('ch1')"><span class="toc-num">01</span><span class="toc-title">가이오의 환대와 디오드레베의 교만</span><span class="toc-sub">진리 안에서 행하는 사랑의 구체적 사례</span></div>
+</div>
+
+<div class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 1</div>
+      <h2 class="chtitle">가이오의 환대와 디오드레베의 교만</h2>
+      <div class="chapter-sub">진리 안에서 행하는 사랑의 구체적 사례</div>
+      <div class="ref-strip"><span class="ref-item">요삼 1:1-14</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-4절</div><div class="flow-title">가이오를 향한 사랑과 기쁨</div><div class="flow-body">장로는 '사랑하는 가이오'에게 편지하며, 그의 영혼이 잘됨 같이 범사에 잘되고 강건하기를 기도한다고 전한다. 형제들이 와서 가이오의 진실함(진리 안에서 행함)을 증언할 때 장로는 크게 기뻐하며, '내 자녀들이 진리 안에서 행한다 함을 듣는 것보다 더 기쁜 일이 없다'고 고백한다.</div></div><div class="flow-item"><div class="flow-range">5-8절</div><div class="flow-title">나그네 된 형제들을 위한 신실한 섬김</div><div class="flow-body">가이오는 나그네 된 형제들, 특히 낯선 순회 전도자들에게까지 신실하게 대접했다. 이들은 '주의 이름을 위하여' 나가서 이방인에게 아무것도 받지 않았으므로, 이런 자들을 영접하는 것이 마땅하며 그것이 진리를 위하여 함께 일하는 자가 되는 길이다.</div></div><div class="flow-item"><div class="flow-range">9-11절</div><div class="flow-title">디오드레베의 교만과 배척</div><div class="flow-body">장로는 교회에 편지를 썼으나 <b class="hl-insight" data-insight="0">으뜸 되기를 좋아하는 디오드레베</b>가 그것을 받아들이지 않았다고 전한다. 그는 악한 말로 장로 일행을 비방하고, 형제들을 접대하지도 않을뿐더러 접대하려는 자들까지 교회에서 내쫓았다. 장로는 '악한 것을 본받지 말고 선한 것을 본받으라'고 권면하며, '선을 행하는 자는 하나님께 속하고 악을 행하는 자는 하나님을 뵈옵지 못하였다'고 단언한다.</div></div><div class="flow-item"><div class="flow-range">12-14절</div><div class="flow-title">데메드리오에 대한 칭찬과 마무리</div><div class="flow-body">반면 데메드리오는 뭇 사람에게, 그리고 진리에게서까지 좋은 증거를 받은 자로 소개된다. 장로는 여기서도 종이와 먹으로 쓰기보다 속히 만나서 대면하여 이야기하기를 원한다고 전하며 편지를 맺는다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>영혼의 잘됨이 삶의 진짜 척도다</div><div class="teach-body">2절의 기도 — 영혼이 잘됨 같이 범사에 잘되기를 — 는 물질적 형통을 영적 성숙 다음에 둔다. 이는 이 구절을 물질적 축복의 근거 본문으로 오용하는 소위 '번영신학'적 해석과 거리를 두어야 할 이유를 보여준다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">이 구절이 종종 '너의 영혼이 잘되는 것처럼 물질도 잘될 것이다'는 식으로, 거의 축복 공식처럼 쓰이는 걸 본 적 있으실 거예요. 하지만 원래 흐름을 보면 이건 약속이 아니라 인사말 속의 기도예요. 그리고 강조점은 명백히 '영혼의 잘됨'에 있어요 — 물질적 형통이 영적 성숙을 뒤따라야지, 그 반대가 되어서는 안 된다는 뜻으로 읽는 게 훨씬 본문에 충실해요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>환대는 복음 사역의 실제적 동역이다</div><div class="teach-body">8절은 나그네 된 전도자를 영접하는 것이 '진리를 위하여 함께 일하는 자'가 되는 길이라고 말한다. 직접 나가서 전하지 못하는 사람도 환대를 통해 선교에 동참할 수 있다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>으뜸 되기를 좋아함은 신앙 공동체의 고질적 위험이다</div><div class="teach-body">디오드레베의 사례는 교회 안에서도 지위와 통제에 대한 욕망이 얼마든지 자랄 수 있음을 보여준다. 리더십은 섬김이지 지배가 아니라는 원칙이 반복적으로 요구되는 이유다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>악을 본받지 말고 선을 본받으라</div><div class="teach-body">11절의 간결한 권면은 요한3서 전체의 핵심 메시지를 압축한다. 신자는 나쁜 본을 흉내 내기보다, 눈에 보이는 좋은 본(가이오, 데메드리오)을 따라야 한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>좋은 평판은 하루아침에 만들어지지 않는다</div><div class="teach-body">12절에서 데메드리오는 '뭇 사람'과 '진리 자체'에게서 좋은 증거를 받았다고 소개된다. 이는 일관된 삶으로 오랜 시간에 걸쳐 쌓인 신뢰를 암시하며, 신뢰는 인격의 결실임을 보여준다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>디오드레베 사건이 보여주는 초기 교회 권위 구조의 긴장</div><div class="deep-body"><b class="hl-insight" data-insight="0">으뜸 되기를 좋아하는 디오드레베의 저항</b>은 사도적 권위(순회 장로)와 지역 교회의 자치성 사이에 있었을 초기 갈등의 흔적을 보여준다는 견해가 있다. 정확한 역사적 재구성은 불확실하지만, 본문이 그 갈등을 신학적 논쟁이 아니라 윤리적 실패(교만과 배척)로 규정한다는 점은 분명하다.</div><div class="verse-box"><div class="verse-ref">요삼 1:9-10</div><div class="verse-text">내가 두어 자를 교회에 썼으나 그들 중에 으뜸 되기를 좋아하는 디오드레베가 우리를 맞아들이지 아니하니 이러므로 내가 가면 그 행한 일을 잊지 아니하리라 그가 악한 말로 우리를 비방하고도 오히려 부족하여 자기도 형제들을 접대하지 아니하고 접대하고자 하는 자를 금하여 교회에서 내쫓는도다</div></div></div><div class="deep-item"><div class="deep-title"><span class="deep-num">2</span>가이오, 디오드레베, 데메드리오 — 세 인물의 대조가 주는 구조적 교훈</div><div class="deep-body">요한3서는 짧은 분량 안에 선한 본(가이오), 악한 본(디오드레베), 다시 선한 본(데메드리오)을 교차 배치하는 정교한 수사적 구조를 지닌다. 이 대조법은 독자에게 추상적 교훈이 아니라 구체적 인물을 통해 선택할 두 가지 길을 생생하게 보여준다.</div></div>
+    </div>
+  </section>
+</div>
+
+<div class="bottom-nav-spacer"></div>
+<div class="bottom-nav">
+  <button onclick="goTo('toc')" title="목차로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg></button>
+  <button onclick="goTo('top')" title="처음으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}" title="자료실로 가기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+</div>
+<div class="footer-brand">기독교한국침례회 은혜교회</div>
+</div>
+<script>
+var INSIGHTS_DATA = [{"title": "디오드레베는 어떤 인물이었을까 — 교회 정치의 초기 모습", "body": "9-10절에서 요한은 '으뜸 되기를 좋아하는' 디오드레베를 강하게 비판해요. 그는 장로(요한)의 사도적 권위를 인정하지 않고, 순회 선교사들을 접대하는 것을 거부했을 뿐 아니라 그들을 영접하려는 다른 성도들까지 교회에서 쫓아내려 했어요.\n\n이 짧은 구절은 신약성경에서 초대교회 내부의 권력 다툼을 보여주는 가장 생생한 사례 중 하나로 꼽혀요. 학자들은 디오드레베가 지역 교회의 지도자급 인물이었을 것으로 추정하는데, 정확히 어떤 직분이었는지, 그리고 그의 저항이 순수한 개인적 야심 때문이었는지 아니면 신학적 차이(예를 들어 지역 교회의 자율성을 주장하며 순회 사도적 권위에 저항한 것) 때문이었는지는 확실하지 않아요.\n\n중요한 건 요한이 그의 행동을 신학적 논쟁이 아니라 '악을 행하는' 윤리적 실패로 규정한다는 점이에요(11절). 아무리 그럴듯한 명분이 있어도, 형제를 배척하고 공동체를 분열시키는 행위 자체가 이미 하나님을 보지 못한 증거라는 거죠."}];
+
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){
+    var bar = document.querySelector('.top-bar');
+    var barH = bar ? bar.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - barH - 10;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+}
+
+document.addEventListener('click', function(e){
+  var closeBtn = e.target.closest('.insight-close');
+  if(closeBtn){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  var insTerm = e.target.closest('.hl-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    return;
+  }
+  if(e.target.id === 'insightOverlay'){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  var tip = document.getElementById('termTip');
+  var tipCloseBtn = e.target.closest('.tip-close');
+  if(tipCloseBtn){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var cb = document.createElement('span');
+    cb.className = 'tip-close';
+    cb.textContent = '\u2715';
+    tip.appendChild(cb);
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 260;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+  } else if(tip && !e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
