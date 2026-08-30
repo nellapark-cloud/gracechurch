@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<title>예수님이 직접 말씀하신 복음 | 은혜교회 신앙철학</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" />
+<style>
+  :root{
+    --bg:#f8f6f1;
+    --card:#ffffff;
+    --ink:#1a1a1a;
+    --ink-soft:#68675f;
+    --royal:#33508f;
+    --royal-soft:#e7ecf6;
+    --gold:#c79a2e;
+    --gold-soft:#f6ecd0;
+    --line:#e5e0d2;
+    --serif:'Noto Serif KR',serif;
+    --sans:'Pretendard Variable',Pretendard,-apple-system,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--serif);line-height:1.9;-webkit-font-smoothing:antialiased;}
+  ::selection{background:var(--gold-soft);}
+  img,svg{display:block;max-width:100%;}
+
+  .progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--royal),var(--gold));z-index:999;width:0%;transition:width .1s linear;}
+
+  /* top bar */
+  .topbar{position:sticky;top:0;z-index:60;background:rgba(248,246,241,.9);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);padding:14px 20px;}
+  .topbar-row{display:flex;align-items:center;gap:18px;max-width:1100px;margin:0 auto;}
+  .topbar .brand{font-family:var(--sans);font-weight:800;font-size:14px;color:var(--royal);white-space:nowrap;flex:none;}
+  .pillnav{display:flex;gap:8px;overflow-x:auto;-ms-overflow-style:none;scrollbar-width:none;}
+  .pillnav::-webkit-scrollbar{display:none;}
+  .pillnav a{
+    flex:none;font-family:var(--sans);font-size:12.5px;font-weight:600;color:var(--ink-soft);
+    text-decoration:none;padding:7px 14px;border-radius:999px;border:1px solid var(--line);
+    white-space:nowrap;transition:all .15s;
+  }
+  .pillnav a.active,.pillnav a:hover{background:var(--royal);color:#fff;border-color:var(--royal);}
+
+  /* hero */
+  .hero{max-width:760px;margin:0 auto;padding:64px 22px 40px;text-align:center;}
+  .crown{width:52px;height:40px;margin:0 auto 24px;}
+  .hero .kicker{font-family:var(--sans);font-size:12px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:var(--gold);margin-bottom:18px;}
+  .hero h1{font-family:var(--sans);font-weight:800;letter-spacing:-.02em;font-size:clamp(28px,7vw,48px);line-height:1.32;margin:0;color:var(--royal);}
+  .hero .sub{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:clamp(14.5px,2vw,17px);max-width:520px;margin:22px auto 0;}
+
+  /* timeline */
+  .timeline{max-width:820px;margin:32px auto 0;padding:0 22px 40px;position:relative;}
+  .timeline::before{
+    content:"";position:absolute;left:37px;top:8px;bottom:40px;width:2px;
+    background:linear-gradient(180deg,var(--gold) 0%,var(--royal) 100%);opacity:.35;
+  }
+  .step{position:relative;padding:0 0 48px 76px;}
+  .step:last-child{padding-bottom:0;}
+  .marker{
+    position:absolute;left:16px;top:2px;width:42px;height:42px;border-radius:50%;
+    background:var(--card);border:2px solid var(--gold);display:flex;align-items:center;justify-content:center;
+    font-family:var(--sans);font-weight:800;font-size:14px;color:var(--royal);z-index:1;
+    box-shadow:0 4px 14px -6px rgba(51,80,143,.3);
+  }
+  .chip{display:inline-block;font-family:var(--sans);font-size:11.5px;font-weight:700;letter-spacing:.08em;color:var(--royal);background:var(--royal-soft);padding:4px 12px;border-radius:999px;margin-bottom:12px;}
+  .card{background:var(--card);border-radius:16px;padding:26px 26px 24px;box-shadow:0 10px 30px -18px rgba(26,26,26,.18);border:1px solid var(--line);}
+  .card h2{font-family:var(--sans);font-weight:800;letter-spacing:-.01em;font-size:clamp(19px,3.6vw,24px);color:var(--royal);margin:0 0 16px;line-height:1.4;}
+  .card p{font-size:clamp(15px,1.9vw,16px);color:var(--ink);margin:0 0 16px;}
+  .card p:last-child{margin-bottom:0;}
+  strong.hl{color:var(--gold);font-weight:700;background:linear-gradient(transparent 60%,var(--gold-soft) 60%);}
+
+  blockquote{margin:20px 0;padding:18px 20px;background:var(--royal-soft);border-left:3px solid var(--royal);border-radius:0 8px 8px 0;font-style:italic;color:var(--royal);font-size:clamp(14.5px,1.9vw,15.5px);}
+  blockquote cite{display:block;margin-top:8px;font-style:normal;font-family:var(--sans);font-size:11.5px;letter-spacing:.06em;color:var(--ink-soft);}
+
+  .callout{margin:20px 0;padding:20px 22px;background:var(--gold-soft);border-radius:10px;}
+  .callout .lbl{font-family:var(--sans);font-size:11px;font-weight:700;letter-spacing:.14em;color:#8a6a1f;text-transform:uppercase;margin-bottom:10px;display:block;}
+  .callout p{margin-bottom:0;font-size:14.5px;}
+
+  .divider-word{text-align:center;font-family:var(--sans);color:var(--gold);letter-spacing:.32em;font-size:12px;font-weight:600;margin-top:8px;}
+
+  footer.credit{text-align:center;padding:48px 24px 64px;font-family:var(--sans);color:var(--ink-soft);font-size:13px;}
+  footer.credit .name{color:var(--royal);font-weight:700;margin-bottom:4px;}
+
+  @media (min-width:760px){
+    .timeline::before{left:calc(50% - 1px);}
+    .step{padding-left:0;display:grid;grid-template-columns:1fr 60px 1fr;column-gap:28px;align-items:start;}
+    .marker{position:relative;left:auto;top:0;grid-column:2;justify-self:center;margin:0;}
+    .step .content{grid-column:1;}
+    .step:nth-child(even) .content{grid-column:3;}
+    .step:nth-child(odd) .content{text-align:right;}
+    .step:nth-child(odd) .card{text-align:left;}
+  }
+  @media (min-width:1200px){
+    .timeline{max-width:960px;}
+    .hero{padding:88px 22px 48px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="progress" id="progress"></div>
+
+<div class="topbar">
+  <div class="topbar-row">
+    <nav class="pillnav" id="pillNav">
+      <a href="#s1" data-target="s1">첫 선포</a>
+      <a href="#s2" data-target="s2">하나님 나라</a>
+      <a href="#s3" data-target="s3">표적</a>
+      <a href="#s4" data-target="s4">비유</a>
+      <a href="#s5" data-target="s5">대속물</a>
+      <a href="#s6" data-target="s6">부활과 명령</a>
+      <a href="#s7" data-target="s7">하나의 복음</a>
+      <a href="#s8" data-target="s8">결론</a>
+    </nav>
+  </div>
+</div>
+
+<div class="hero">
+  <svg class="crown" viewBox="0 0 60 46" aria-hidden="true">
+    <path d="M4 40 L4 20 L16 30 L30 10 L44 30 L56 20 L56 40 Z" fill="none" stroke="#c79a2e" stroke-width="2.4" stroke-linejoin="round"/>
+    <circle cx="30" cy="10" r="3" fill="#c79a2e"/>
+    <circle cx="4" cy="20" r="2.6" fill="#c79a2e"/>
+    <circle cx="56" cy="20" r="2.6" fill="#c79a2e"/>
+    <line x1="4" y1="40" x2="56" y2="40" stroke="#c79a2e" stroke-width="2.4"/>
+  </svg>
+  <div class="kicker">THE GOSPEL OF JESUS · 그분 자신의 말씀</div>
+  <h1>예수님이 직접<br>말씀하신 복음</h1>
+  <p class="sub">복음은 바울의 편지에서 처음 시작된 것이 아니라, 예수님 자신의 입술에서 먼저 선포되었습니다</p>
+</div>
+
+<div class="timeline">
+
+  <div class="step" id="s1">
+    <div class="marker">01</div>
+    <div class="content"><div class="card">
+      <span class="chip">첫 선포</span>
+      <h2>예수님이 처음 외치신 말씀</h2>
+      <p>우리는 흔히 '복음'이라고 하면 바울이 로마서나 에베소서에서 정리한 신학적 진술을 떠올립니다. 십자가, 대속, 은혜, 믿음. 물론 이 모든 것이 복음의 핵심입니다. 하지만 복음이라는 단어를 세상에 처음 외치신 분은 바울이 아니라 <strong class="hl">예수님 자신</strong>이셨습니다. 마가복음은 예수님의 공생애 첫 설교를 이렇게 기록합니다.</p>
+      <blockquote>"때가 찼고 하나님의 나라가 가까이 왔으니 회개하고 복음을 믿으라"<cite>마가복음 1:14-15</cite></blockquote>
+      <p>이것이 예수님의 입에서 나온 첫 복음 선포입니다. 예수님은 여기서 자신의 죽음이나 부활을 아직 설명하지 않으셨습니다. 대신 <strong class="hl">"하나님의 나라가 가까이 왔다"</strong>는 선포로 복음을 시작하셨습니다.</p>
+    </div></div>
+  </div>
+
+  <div class="step" id="s2">
+    <div class="marker">02</div>
+    <div class="content"><div class="card">
+      <span class="chip">하나님 나라</span>
+      <h2>하나님 나라의 복음이란</h2>
+      <p>예수님이 선포하신 복음의 중심 단어는 <strong class="hl">'하나님의 나라'</strong>였습니다. 마태복음은 이것을 "천국"이라고도 표현합니다. 여기서 '나라'는 특정한 영토가 아니라 하나님의 다스림, 하나님의 통치를 뜻합니다.</p>
+      <blockquote>"예수께서 온 갈릴리에 두루 다니사... 천국 복음을 전파하시며 백성 중에 모든 병과 모든 약한 것을 고치시니"<cite>마태복음 4:23</cite></blockquote>
+      <p>유대인들은 오랫동안 하나님이 다시 왕으로 다스리시는 그날을 기다려왔습니다. "하나님 나라가 가까이 왔다"는 말은 곧 <strong class="hl">"너희가 기다려온 그 왕이 지금 여기 임했다"</strong>는 선언이었습니다.</p>
+    </div></div>
+  </div>
+
+  <div class="step" id="s3">
+    <div class="marker">03</div>
+    <div class="content"><div class="card">
+      <span class="chip">표적</span>
+      <h2>표적으로 보이신 복음</h2>
+      <p>예수님은 하나님 나라를 말로만 선포하지 않으셨습니다. 병자를 고치시고, 귀신을 쫓아내시고, 죄를 사하시는 행동으로 그 나라가 실제로 임했음을 보이셨습니다.</p>
+      <blockquote>"맹인이 보며 못 걷는 사람이 걸으며... 가난한 자에게 복음이 전파된다 하라"<cite>마태복음 11:4-5</cite></blockquote>
+      <p>병 고침과 귀신 쫓음은 <strong class="hl">하나님 나라가 어둠과 질병과 죽음의 세력을 물리치고 있다는 증거</strong>였습니다.</p>
+      <blockquote>"내가 만일 하나님의 손을 힘입어 귀신을 쫓아낸다면 하나님의 나라가 이미 너희에게 임하였느니라"<cite>누가복음 11:20</cite></blockquote>
+    </div></div>
+  </div>
+
+  <div class="step" id="s4">
+    <div class="marker">04</div>
+    <div class="content"><div class="card">
+      <span class="chip">비유</span>
+      <h2>비유로 가르치신 복음</h2>
+      <p>씨 뿌리는 자의 비유는 하나님 나라가 작게 시작해 반드시 자라난다는 것을 보여줍니다. 그중에서도 누가복음 15장의 탕자의 비유는 하나님 나라의 복음이 어떤 마음에서 흘러나오는지를 가장 선명하게 보여줍니다.</p>
+      <blockquote>"아직도 거리가 먼데 아버지가 보고 측은히 여겨 달려가 목을 안고 입을 맞추니"<cite>누가복음 15:20</cite></blockquote>
+      <p><strong class="hl">하나님 나라의 복음은 잃어버린 자를 찾아 나서는 하나님의 마음에서 시작</strong>됩니다.</p>
+    </div></div>
+  </div>
+
+  <div class="step" id="s5">
+    <div class="marker">05</div>
+    <div class="content"><div class="card">
+      <span class="chip">대속물</span>
+      <h2>자기 목숨을 대속물로 주신 왕</h2>
+      <p>예수님이 선포하신 하나님 나라는 사람들의 기대와는 다른 방식으로 임했습니다. 무력으로 다스리는 왕이 아니라, <strong class="hl">자기 목숨을 내어주는 왕</strong>으로 그 나라를 세우셨습니다.</p>
+      <blockquote>"인자가 온 것은 섬김을 받으려 함이 아니라 도리어 섬기려 하고 자기 목숨을 많은 사람의 대속물로 주려 함이니라"<cite>마가복음 10:45</cite></blockquote>
+      <p>'대속물'은 종이나 포로를 값을 치르고 자유롭게 하는 몸값을 뜻합니다. 하나님 나라와 십자가는 서로 다른 두 복음이 아니라, 왕이 다스리는 방식이 <strong class="hl">정복이 아니라 희생</strong>이었음을 보여주는 하나의 이야기입니다.</p>
+    </div></div>
+  </div>
+
+  <div class="step" id="s6">
+    <div class="marker">06</div>
+    <div class="content"><div class="card">
+      <span class="chip">부활과 명령</span>
+      <h2>다시 살아나셔서 주신 명령</h2>
+      <p>십자가에서 죽으신 예수님은 사흘 만에 부활하심으로 자신이 선포하신 하나님 나라가 죽음보다 강하다는 것을 증명하셨습니다.</p>
+      <blockquote>"하늘과 땅의 모든 권세를 내게 주셨으니 그러므로 너희는 가서 모든 민족을 제자로 삼아..."<cite>마태복음 28:18-19</cite></blockquote>
+      <p>왕의 통치는 이스라엘을 넘어 <strong class="hl">모든 민족</strong>에게 확장되어야 한다는 것이 부활하신 예수님의 마지막 명령이었습니다.</p>
+    </div></div>
+  </div>
+
+  <div class="step" id="s7">
+    <div class="marker">07</div>
+    <div class="content"><div class="card">
+      <span class="chip">하나의 복음</span>
+      <h2>예수님의 복음과 사도들의 복음</h2>
+      <div class="callout">
+        <span class="lbl">자주 하는 오해</span>
+        <p>"예수님의 하나님 나라 복음"과 "바울의 십자가 교리"가 서로 다르다는 주장은 성경 전체의 흐름을 잘못 읽은 것입니다. 예수님은 자신의 죽음을 <strong class="hl">"많은 사람을 위한 대속물"</strong>이라고 스스로 규정하셨고(막 10:45), 바울은 그 사건을 신학적으로 풀어 설명했을 뿐입니다.</p>
+      </div>
+      <blockquote>"내가 받은 것을 먼저 너희에게 전하였노니 이는 성경대로 그리스도께서 우리 죄를 위하여 죽으시고... 사흘 만에 다시 살아나사"<cite>고린도전서 15:3-4</cite></blockquote>
+    </div></div>
+  </div>
+
+  <div class="step" id="s8">
+    <div class="marker">08</div>
+    <div class="content"><div class="card">
+      <span class="chip">결론</span>
+      <h2>예수님 자신이 복음이시다</h2>
+      <p>예수님이 직접 말씀하신 복음을 한 문장으로 정리하면 이렇습니다. <strong class="hl">"기다려온 그 왕이 오셨고, 자기 목숨을 대속물로 내어주셨으며, 이제 죽음을 이기고 다스리신다."</strong> 이것은 지켜야 할 새로운 규칙이 아니라, 이미 일어난 사건에 대한 초대입니다.</p>
+      <p>예수님은 복음을 전하신 분일 뿐 아니라, 그 복음의 내용 자체이십니다. 그분이 곧 우리가 기다려온 소식입니다.</p>
+      <p class="divider-word">때가 찼고 하나님의 나라가 가까이 왔으니</p>
+    </div></div>
+  </div>
+
+</div>
+
+<footer class="credit">
+  <div class="name">기독교한국침례회 은혜교회</div>
+  <div>담임목사 박동준</div>
+</footer>
+
+<script>
+  var bar = document.getElementById('progress');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement;
+    var scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    bar.style.width = scrolled + '%';
+  });
+
+  var links = document.querySelectorAll('#pillNav a');
+  var sections = document.querySelectorAll('.step');
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          links.forEach(function(l){ l.classList.remove('active'); });
+          var match = document.querySelector('#pillNav a[data-target="'+entry.target.id+'"]');
+          if(match){ match.classList.add('active'); match.scrollIntoView({inline:'center', block:'nearest', behavior:'smooth'}); }
+        }
+      });
+    }, {rootMargin:'-40% 0px -50% 0px'});
+    sections.forEach(function(s){ obs.observe(s); });
+  }
+</script>
+
+</body>
+</html>

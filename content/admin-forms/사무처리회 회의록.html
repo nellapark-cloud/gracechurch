@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>사무처리회 회의록 - 은혜교회</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+  :root{
+    --navy:#1c2b45;
+    --navy-deep:#12192b;
+    --cream:#f7f3ea;
+    --gold:#b08d4f;
+    --gold-soft:#dcc79a;
+    --line:#c9beaa;
+    --ink:#2a2a28;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#e9e4d6;
+    font-family:'Noto Sans KR', sans-serif;
+    color:var(--ink);
+    padding:32px 16px;
+  }
+  .toolbar{
+    max-width:820px;
+    margin:0 auto 20px;
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+  }
+  .toolbar button{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:14px;
+    padding:10px 18px;
+    border-radius:6px;
+    border:1px solid var(--navy);
+    background:var(--navy);
+    color:var(--cream);
+    cursor:pointer;
+  }
+  .toolbar button:hover{opacity:0.85;}
+  .toolbar button.save-btn{background:var(--gold); border-color:var(--gold); color:var(--navy-deep); font-weight:700;}
+  .toolbar .token-reset{
+    align-self:center;
+    font-size:11.5px;
+    color:#8a8060;
+    text-decoration:underline;
+    cursor:pointer;
+    background:none;
+    border:none;
+    padding:0;
+  }
+  .save-status{
+    max-width:820px;
+    margin:-10px auto 16px;
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:13px;
+    text-align:right;
+    min-height:18px;
+  }
+  .save-status.ok{color:#2f7a4f;}
+  .save-status.err{color:#b23b3b;}
+
+  .sheet{
+    width:210mm;
+    min-height:297mm;
+    margin:0 auto;
+    background:#fffdf8;
+    border:1px solid var(--line);
+    box-shadow:0 6px 24px rgba(20,20,10,0.15);
+    padding:20mm 20mm 16mm;
+  }
+  .doc-no{
+    text-align:right;
+    font-size:12px;
+    color:#8a8060;
+  }
+  .doc-no input{
+    border:none;
+    border-bottom:1px dotted #999;
+    background:transparent;
+    font-size:12px;
+    width:140px;
+    text-align:right;
+    font-family:'Noto Sans KR',sans-serif;
+    color:#8a8060;
+  }
+  h1{
+    font-family:'Noto Serif KR', serif;
+    text-align:center;
+    font-size:30px;
+    letter-spacing:0.4em;
+    margin:6px 0 4px;
+    color:var(--navy-deep);
+  }
+  .subtitle{
+    text-align:center;
+    font-size:13px;
+    color:var(--gold);
+    letter-spacing:0.2em;
+    margin-bottom:32px;
+  }
+  .rule{
+    height:2px;
+    background:linear-gradient(90deg, transparent, var(--gold-soft), var(--gold), var(--gold-soft), transparent);
+    margin-bottom:32px;
+  }
+
+  table.info{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:8px;
+    font-size:14px;
+  }
+  table.info th{
+    width:110px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:10px 12px;
+    text-align:left;
+    font-weight:600;
+    color:var(--navy-deep);
+    font-family:'Noto Serif KR', serif;
+    font-size:13px;
+  }
+  table.info td{
+    border:1px solid var(--line);
+    padding:10px 12px;
+  }
+  table.info td input, table.info td textarea{
+    width:100%;
+    border:none;
+    background:transparent;
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:14px;
+    color:var(--ink);
+    outline:none;
+  }
+  table.info td textarea{resize:vertical; min-height:20px;}
+
+  .section-label{
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    color:var(--navy-deep);
+    margin:28px 0 10px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--gold-soft);
+    letter-spacing:0.05em;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .section-label .add-btn{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:11.5px;
+    color:var(--navy);
+    background:var(--cream);
+    border:1px solid var(--line);
+    border-radius:5px;
+    padding:4px 10px;
+    cursor:pointer;
+  }
+  .section-label .add-btn:hover{background:var(--gold-soft);}
+
+  table.agenda{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  table.agenda th{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:8px 10px;
+    font-weight:600;
+    color:var(--navy-deep);
+    font-family:'Noto Serif KR', serif;
+    font-size:12.5px;
+  }
+  table.agenda td{
+    border:1px solid var(--line);
+    padding:8px 10px;
+    vertical-align:top;
+  }
+  table.agenda td input, table.agenda td textarea{
+    width:100%;
+    border:none;
+    background:transparent;
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:13.5px;
+    color:var(--ink);
+    outline:none;
+    resize:vertical;
+  }
+  table.agenda td.num{width:34px; text-align:center; color:var(--gold); font-weight:600;}
+  table.agenda td.result{width:90px; text-align:center;}
+
+  .body-text{
+    font-size:14.5px;
+    line-height:2;
+    padding:6px 4px;
+    min-height:60px;
+    border:1px dashed var(--line);
+    background:#fffefb;
+    outline:none;
+  }
+
+  .notice{
+    font-size:11.5px;
+    color:#8a8060;
+    margin-top:18px;
+    line-height:1.7;
+  }
+
+  .sign-block{
+    margin-top:36px;
+  }
+  table.sign{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  table.sign th{
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:14px 10px 26px;
+    font-weight:600;
+    color:var(--navy-deep);
+    font-family:'Noto Serif KR', serif;
+    font-size:13px;
+    width:25%;
+  }
+  table.sign td{
+    border:1px solid var(--line);
+    padding:14px 10px 10px;
+    text-align:center;
+  }
+  table.sign td input{
+    border:none;
+    border-bottom:1px dotted #999;
+    background:transparent;
+    text-align:center;
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:13.5px;
+    width:80%;
+    outline:none;
+  }
+
+  .issue-block{
+    margin-top:28px;
+    text-align:center;
+  }
+  .issue-date{
+    font-family:'Noto Serif KR', serif;
+    font-size:14px;
+    color:var(--navy-deep);
+  }
+  .issue-date input{
+    border:none;
+    border-bottom:1px dotted #999;
+    background:transparent;
+    text-align:center;
+    font-family:'Noto Serif KR', serif;
+    font-size:14px;
+    width:46px;
+  }
+
+  @media print{
+    html, body{background:#fff; padding:0; margin:0; width:210mm;}
+    .toolbar{display:none;}
+    .sheet{
+      box-shadow:none; border:none; margin:0;
+      width:210mm; min-height:0;
+      padding:20mm 20mm 16mm;
+    }
+    .section-label .add-btn{display:none;}
+    input, textarea, .body-text{border:none !important;}
+    @page{size:A4; margin:0;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button class="token-reset" onclick="resetGhToken()">토큰 재설정</button>
+    <button onclick="addAgendaRow()">안건 행 추가</button>
+    <button onclick="window.print()">인쇄 / PDF 저장</button>
+    <button class="save-btn" onclick="saveToGitHub()">GitHub에 저장</button>
+  </div>
+  <div class="save-status" id="saveStatus"></div>
+
+  <div class="sheet">
+    <div class="doc-no">문서번호&nbsp;<input type="text" placeholder="예: 2026-사무처리회-01"></div>
+
+    <h1>사무처리회 회의록</h1>
+    <div class="subtitle">CHURCH BUSINESS MEETING MINUTES</div>
+    <div class="rule"></div>
+
+    <div class="section-label">1. 회의 개요</div>
+    <table class="info">
+      <tr><th>회&nbsp;&nbsp;차</th><td><input type="text" placeholder="예: 2026년 제2차"></td>
+          <th>일&nbsp;&nbsp;시</th><td><input type="text" placeholder="0000년 00월 00일(요일) 00:00"></td></tr>
+      <tr><th>장&nbsp;&nbsp;소</th><td><input type="text" placeholder="예: 본당 / 교육관 2층"></td>
+          <th>사&nbsp;회&nbsp;자</th><td><input type="text" placeholder="담임목사 박동준"></td></tr>
+      <tr><th>서&nbsp;&nbsp;기</th><td><input type="text" placeholder="서기 성명"></td>
+          <th>성원 여부</th><td><input type="text" placeholder="재적 00명 중 00명 출석 (정족수 충족)"></td></tr>
+      <tr><th>참석 범위</th><td colspan="3"><input type="text" placeholder="예: 입교인 전원 / 세례교인 이상"></td></tr>
+      <tr><th>참&nbsp;석&nbsp;자</th><td colspan="3"><textarea rows="2" placeholder="주요 참석자 또는 참석자 명단 요약 (별첨 출석부 참조 시 &quot;별첨 참조&quot;로 기재 가능)"></textarea></td></tr>
+    </table>
+
+    <div class="section-label">2. 개회 및 경건회</div>
+    <div class="body-text" contenteditable="true">
+      기도: / 찬양: / 말씀:
+    </div>
+
+    <div class="section-label">
+      <span>3. 안건 및 결의사항</span>
+      <button class="add-btn" onclick="addAgendaRow()">+ 행 추가</button>
+    </div>
+    <table class="agenda" id="agendaTable">
+      <thead>
+        <tr>
+          <th class="num">번호</th>
+          <th style="width:16%">안건</th>
+          <th style="width:14%">제안자</th>
+          <th>논의 내용</th>
+          <th class="result">결의 사항</th>
+        </tr>
+      </thead>
+      <tbody id="agendaBody">
+        <tr>
+          <td class="num">1</td>
+          <td><input type="text" placeholder="예: 2026년 하반기 예산안"></td>
+          <td><input type="text" placeholder="제안자"></td>
+          <td><textarea rows="2" placeholder="논의 내용 요약"></textarea></td>
+          <td class="result"><input type="text" placeholder="가결/부결/보류"></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="section-label">4. 특이사항 · 비고</div>
+    <div class="body-text" contenteditable="true"></div>
+
+    <p class="notice">
+      ※ 본 회의록은 사무처리회 결의 내용을 증빙하는 공식 문서이며, 서기 및 사회자의 서명(또는 날인) 후 교회 보관용 원본으로 관리합니다.
+    </p>
+
+    <div class="sign-block">
+      <table class="sign">
+        <tr>
+          <th>사&nbsp;회&nbsp;자</th>
+          <td><input type="text" placeholder="성명 / (인)"></td>
+          <th>서&nbsp;&nbsp;기</th>
+          <td><input type="text" placeholder="성명 / (인)"></td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="issue-block">
+      <div class="issue-date"><input type="text" placeholder="2026">년 <input type="text" placeholder="1">월 <input type="text" placeholder="1">일 작성</div>
+    </div>
+  </div>
+
+<script>
+  let agendaCount = 1;
+  function addAgendaRow(){
+    agendaCount++;
+    const tbody = document.getElementById('agendaBody');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td class="num">${agendaCount}</td>
+      <td><input type="text" placeholder=""></td>
+      <td><input type="text" placeholder=""></td>
+      <td><textarea rows="2" placeholder=""></textarea></td>
+      <td class="result"><input type="text" placeholder=""></td>`;
+    tbody.appendChild(tr);
+  }
+</script>
+
+<script>
+  /*
+    작성한 내용을 GitHub 저장소(content/admin-minutes/)에 새 파일로 커밋합니다.
+    - 원본 양식(이 파일)은 항상 빈 템플릿으로 남고, "저장"할 때마다
+      날짜·시간이 붙은 새 기록 파일이 만들어집니다.
+    - GitHub 개인 액세스 토큰(Fine-grained, 이 저장소 Contents 읽기/쓰기 권한)을
+      최초 1회 입력하면 이 브라우저에 저장되어 다음부터는 바로 저장됩니다.
+  */
+  const GH_OWNER = 'nellapark-cloud';
+  const GH_REPO = 'gracechurch';
+  const GH_BRANCH = 'main';
+  const GH_TOKEN_KEY = 'gc_gh_pat';
+  const FORM_TITLE = '사무처리회 회의록';
+
+  function getGhToken(){
+    let token = localStorage.getItem(GH_TOKEN_KEY);
+    if (!token){
+      token = window.prompt(
+        'GitHub 개인 액세스 토큰(PAT)을 입력하세요.\n' +
+        '이 저장소(gracechurch)에 대한 Contents 읽기/쓰기 권한만 있는\n' +
+        'Fine-grained 토큰을 만들어 사용하시길 권장합니다.\n' +
+        '(이 브라우저에만 저장되며, 다른 사람과 공유되지 않습니다)'
+      );
+      if (token) localStorage.setItem(GH_TOKEN_KEY, token.trim());
+    }
+    return token ? token.trim() : '';
+  }
+
+  function resetGhToken(){
+    localStorage.removeItem(GH_TOKEN_KEY);
+    setStatus('토큰을 지웠습니다. 다음 저장 시 다시 입력하게 됩니다.', 'ok');
+  }
+
+  function setStatus(msg, kind){
+    const el = document.getElementById('saveStatus');
+    el.textContent = msg;
+    el.className = 'save-status' + (kind ? ' ' + kind : '');
+  }
+
+  function pad2(n){ return String(n).padStart(2, '0'); }
+
+  function utf8ToBase64(str){
+    const bytes = new TextEncoder().encode(str);
+    let binary = '';
+    const chunk = 0x8000;
+    for (let i = 0; i < bytes.length; i += chunk){
+      binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+    }
+    return btoa(binary);
+  }
+
+  function buildSavedHtml(){
+    // 입력 중인 값들을 실제 HTML 속성/텍스트에 반영해서,
+    // 저장된 파일을 다시 열었을 때도 작성한 내용이 그대로 보이도록 합니다.
+    document.querySelectorAll('.sheet input').forEach((el) => {
+      el.setAttribute('value', el.value);
+    });
+    document.querySelectorAll('.sheet textarea').forEach((el) => {
+      el.textContent = el.value;
+    });
+    return '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+  }
+
+  async function saveToGitHub(){
+    const token = getGhToken();
+    if (!token){
+      setStatus('토큰이 없어 저장을 취소했습니다.', 'err');
+      return;
+    }
+
+    const now = new Date();
+    const dateStr = `${now.getFullYear()}-${pad2(now.getMonth()+1)}-${pad2(now.getDate())}`;
+    const timeStr = `${pad2(now.getHours())}-${pad2(now.getMinutes())}`;
+    const fileName = `${FORM_TITLE} ${dateStr} ${timeStr}.html`;
+    const path = `content/admin-minutes/${fileName}`;
+    const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${path.split('/').map(encodeURIComponent).join('/')}`;
+
+    setStatus('저장 중...', '');
+
+    try {
+      const html = buildSavedHtml();
+      const res = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'Accept': 'application/vnd.github+json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          message: `회의록 저장: ${fileName}`,
+          content: utf8ToBase64(html),
+          branch: GH_BRANCH
+        })
+      });
+
+      if (res.status === 401){
+        setStatus('토큰이 유효하지 않습니다. 토큰을 재설정해주세요.', 'err');
+        return;
+      }
+      if (!res.ok){
+        const err = await res.json().catch(() => ({}));
+        setStatus('저장 실패: ' + (err.message || res.status), 'err');
+        return;
+      }
+
+      setStatus(`저장 완료 — "${fileName}" (배포까지 약 1분 소요)`, 'ok');
+    } catch (e) {
+      setStatus('저장 중 오류가 발생했습니다: ' + e.message, 'err');
+    }
+  }
+</script>
+
+</body>
+</html>
