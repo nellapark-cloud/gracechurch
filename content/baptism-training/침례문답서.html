@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>침례문답서 | 은혜교회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css" />
+<style>
+  :root{
+    --navy:#1b2a4a;
+    --navy-deep:#101a30;
+    --cream:#faf6ee;
+    --cream-deep:#f1ead9;
+    --gold:#b8933f;
+    --gold-soft:#e7d5a8;
+    --ink:#2b2b2b;
+    --line:#e4dcc9;
+    --danger:#b3462c;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Noto Serif KR', serif;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.pretendard{
+    font-family:'Pretendard', sans-serif;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    background:linear-gradient(150deg, var(--navy-deep), var(--navy) 55%, #22355c);
+    color:var(--cream);
+    padding:72px 24px 56px;
+    text-align:center;
+  }
+  .hero .eyebrow{
+    font-family:'Pretendard', sans-serif;
+    letter-spacing:.35em;
+    font-size:12px;
+    color:var(--gold-soft);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:34px;
+    font-weight:700;
+    margin:0 0 14px;
+    letter-spacing:.02em;
+  }
+  .hero p{
+    font-size:15px;
+    color:#d9def0;
+    max-width:480px;
+    margin:0 auto;
+  }
+  .hero .meta{
+    margin-top:28px;
+    font-size:13px;
+    color:var(--gold-soft);
+    font-family:'Pretendard', sans-serif;
+  }
+
+  /* ---------- Layout ---------- */
+  .wrap{
+    max-width:720px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+  .intro{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:14px;
+    padding:26px 28px;
+    margin:-30px auto 40px;
+    max-width:672px;
+    font-size:15px;
+    color:#4a4638;
+  }
+
+  /* ---------- TOC ---------- */
+  .toc{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin:0 0 56px;
+  }
+  .toc a{
+    font-family:'Pretendard', sans-serif;
+    font-size:13px;
+    color:var(--navy);
+    text-decoration:none;
+    border:1px solid var(--line);
+    background:#fff;
+    padding:9px 18px;
+    border-radius:999px;
+    transition:all .15s ease;
+  }
+  .toc a:hover{
+    border-color:var(--gold);
+    color:var(--gold);
+  }
+
+  /* ---------- Section ---------- */
+  section{
+    margin-bottom:64px;
+    scroll-margin-top:24px;
+  }
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:14px;
+    margin-bottom:8px;
+  }
+  .section-num{
+    font-family:'Pretendard', sans-serif;
+    font-size:13px;
+    color:var(--gold);
+    letter-spacing:.15em;
+  }
+  section h2{
+    font-size:23px;
+    color:var(--navy);
+    margin:0;
+    font-weight:700;
+  }
+  .section-desc{
+    font-size:14px;
+    color:#6b6656;
+    border-left:3px solid var(--gold-soft);
+    padding-left:14px;
+    margin:18px 0 30px;
+  }
+
+  /* ---------- Candidate info ---------- */
+  .who-box{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:20px 22px;
+    margin-bottom:24px;
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+  }
+  .who-field{
+    flex:1;
+    min-width:140px;
+  }
+  .who-field label{
+    display:block;
+    font-family:'Pretendard', sans-serif;
+    font-size:12px;
+    color:var(--gold);
+    margin-bottom:6px;
+  }
+  .who-field input{
+    width:100%;
+    border:none;
+    border-bottom:1px solid var(--line);
+    padding:6px 2px;
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    background:transparent;
+    color:var(--ink);
+  }
+  .who-field input:focus{
+    outline:none;
+    border-bottom-color:var(--gold);
+  }
+
+  /* ---------- Question cards ---------- */
+  .q-item{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:22px 24px;
+    margin-bottom:16px;
+    transition:border-color .15s ease, box-shadow .15s ease;
+  }
+  .q-item.checked{
+    border-color:var(--gold-soft);
+    box-shadow:0 0 0 1px var(--gold-soft) inset;
+  }
+  .q-head{
+    display:flex;
+    align-items:flex-start;
+    gap:10px;
+  }
+  .q-num{
+    font-family:'Pretendard', sans-serif;
+    font-size:12px;
+    color:#fff;
+    background:var(--navy);
+    width:24px;height:24px;
+    border-radius:50%;
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    flex:none;
+    position:relative;
+    top:1px;
+  }
+  .q-text{
+    font-size:16px;
+    color:var(--ink);
+    font-weight:500;
+    flex:1;
+  }
+  .q-confirm{
+    flex:none;
+    display:flex;
+    align-items:center;
+    gap:6px;
+    font-family:'Pretendard', sans-serif;
+    font-size:12px;
+    color:#8a836c;
+    cursor:pointer;
+    white-space:nowrap;
+    padding-top:1px;
+  }
+  .q-confirm input{
+    width:16px;height:16px;
+    accent-color:var(--navy);
+    cursor:pointer;
+  }
+  .q-note{
+    margin-top:10px;
+    margin-left:34px;
+    font-size:13.5px;
+    color:#8a836c;
+  }
+  .ans-input, .ans-area{
+    display:block;
+    width:calc(100% - 34px);
+    margin:14px 0 0 34px;
+    border:none;
+    border-bottom:1px solid var(--line);
+    padding:6px 2px;
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    color:var(--ink);
+    background:transparent;
+    resize:none;
+  }
+  .ans-input:focus, .ans-area:focus{
+    outline:none;
+    border-bottom-color:var(--gold);
+  }
+  .ans-area{ min-height:52px; line-height:1.6; }
+
+  /* ---------- Call & response ---------- */
+  .cr-block{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:4px 0;
+    margin-bottom:18px;
+    overflow:hidden;
+  }
+  .cr-row{
+    display:flex;
+    gap:16px;
+    padding:16px 22px;
+  }
+  .cr-row + .cr-row{
+    border-top:1px dashed var(--line);
+  }
+  .cr-label{
+    font-family:'Pretendard', sans-serif;
+    font-size:12px;
+    font-weight:600;
+    white-space:nowrap;
+    padding:4px 10px;
+    border-radius:6px;
+    height:fit-content;
+  }
+  .cr-label.pastor{ background:var(--navy); color:var(--cream); }
+  .cr-label.candidate{ background:var(--gold-soft); color:var(--navy-deep); }
+  .cr-label.congregation{ background:var(--cream-deep); color:#7a6d47; border:1px solid var(--gold-soft); }
+  .cr-text{
+    font-size:15.5px;
+    color:var(--ink);
+    padding-top:2px;
+  }
+  .cr-text b{ color:var(--navy); }
+
+  .rite-line{
+    text-align:center;
+    font-size:17px;
+    font-weight:600;
+    color:var(--navy);
+    background:var(--cream-deep);
+    border:1px solid var(--gold-soft);
+    border-radius:12px;
+    padding:22px;
+    margin:24px 0;
+  }
+
+  /* ---------- Appendix ---------- */
+  .youth-box{
+    background:linear-gradient(135deg, #fff, var(--cream-deep));
+    border:1px solid var(--gold-soft);
+    border-radius:14px;
+    padding:24px 26px;
+  }
+  .youth-box h3{
+    font-size:16px;
+    color:var(--gold);
+    margin:0 0 14px;
+  }
+  .youth-pair{
+    margin-bottom:16px;
+    font-size:15px;
+  }
+  .youth-pair .orig{
+    color:#9a927a;
+    font-size:13px;
+    margin-bottom:4px;
+  }
+  .youth-pair .easy{
+    color:var(--navy);
+    font-weight:500;
+  }
+
+  /* ---------- Submit box ---------- */
+  .submit-box{
+    background:#fff;
+    border:1px solid var(--gold-soft);
+    border-radius:14px;
+    padding:26px 26px 24px;
+    margin-top:8px;
+  }
+  .submit-box h3{
+    font-size:17px;
+    color:var(--navy);
+    margin:0 0 8px;
+  }
+  .submit-note{
+    font-size:13.5px;
+    color:#8a836c;
+    margin:0 0 18px;
+  }
+  .progress-line{
+    font-family:'Pretendard', sans-serif;
+    font-size:12.5px;
+    color:var(--gold);
+    margin-bottom:18px;
+  }
+  .sig-label{
+    font-family:'Pretendard', sans-serif;
+    font-size:12px;
+    color:var(--gold);
+    margin-bottom:8px;
+    display:block;
+  }
+  .sig-wrap{
+    border:1px dashed var(--line);
+    border-radius:10px;
+    background:var(--cream);
+    position:relative;
+    touch-action:none;
+  }
+  #sigPad{
+    display:block;
+    width:100%;
+    height:140px;
+    border-radius:10px;
+  }
+  .sig-placeholder{
+    position:absolute;
+    top:50%; left:50%;
+    transform:translate(-50%,-50%);
+    font-family:'Pretendard', sans-serif;
+    font-size:12.5px;
+    color:#bcb49a;
+    pointer-events:none;
+  }
+  .sig-actions{
+    display:flex;
+    justify-content:flex-end;
+    margin-top:8px;
+  }
+  .sig-actions button{
+    font-family:'Pretendard', sans-serif;
+    font-size:12px;
+    color:#8a836c;
+    background:none;
+    border:none;
+    cursor:pointer;
+    text-decoration:underline;
+    padding:4px;
+  }
+  .confirm-final{
+    display:flex;
+    align-items:flex-start;
+    gap:8px;
+    margin:20px 0 8px;
+    font-size:14px;
+  }
+  .confirm-final input{
+    width:17px;height:17px;
+    margin-top:2px;
+    accent-color:var(--navy);
+    flex:none;
+  }
+  .send-btn{
+    width:100%;
+    font-family:'Pretendard', sans-serif;
+    font-size:15px;
+    font-weight:600;
+    color:#fff;
+    background:linear-gradient(135deg, var(--navy), var(--navy-deep));
+    border:none;
+    border-radius:10px;
+    padding:15px;
+    cursor:pointer;
+    margin-top:6px;
+    transition:opacity .15s ease;
+  }
+  .send-btn:disabled{
+    opacity:.45;
+    cursor:not-allowed;
+  }
+  .status-msg{
+    font-family:'Pretendard', sans-serif;
+    font-size:13px;
+    text-align:center;
+    margin-top:12px;
+    min-height:18px;
+  }
+  .status-msg.error{ color:var(--danger); }
+  .status-msg.ok{ color:#3d6b4a; }
+  .status-msg.busy{ color:#8a836c; }
+  .fallback-link{
+    display:none;
+    text-align:center;
+    margin-top:10px;
+  }
+  .fallback-link a{
+    font-family:'Pretendard', sans-serif;
+    font-size:13px;
+    color:var(--navy);
+    text-decoration:underline;
+  }
+  .no-capture{ }
+
+  footer{
+    text-align:center;
+    padding:40px 24px 60px;
+    font-family:'Pretendard', sans-serif;
+    font-size:12.5px;
+    color:#9a937d;
+  }
+
+  @media(max-width:480px){
+    .hero{padding:56px 20px 48px;}
+    .hero h1{font-size:27px;}
+    .intro{padding:22px;margin-top:-24px;}
+    .cr-row{flex-direction:column; gap:6px;}
+    .q-note,.ans-input,.ans-area{margin-left:0; width:100%;}
+    .q-head{flex-wrap:wrap;}
+    .q-confirm{margin-left:34px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">BAPTISM CATECHISM</div>
+  <h1>침례문답서</h1>
+  <p>침례를 앞둔 성도가 담임목사와 나누는 신앙의 확인과,<br>침례식 날 회중 앞에서 함께 나누는 고백을 담았습니다.</p>
+  <div class="meta">은혜교회 · 담임목사 박동준</div>
+</div>
+
+<div class="wrap">
+
+  <div class="intro">
+    이 문답서는 두 부분으로 이루어져 있습니다. <b>1부</b>는 침례식 전, 담임목사와 후보자가 조용히 마주 앉아 나누는 개인 신앙 문답입니다. 아래에서 직접 답을 적고 확인 체크를 한 뒤, 서명하여 담임목사님께 카카오톡으로 보내주시면 됩니다. <b>2부</b>는 침례식 당일, 회중 앞에서 담임목사와 후보자가 주고받는 공적 문답으로, 침례식 순서 중 그대로 낭독하시면 됩니다.
+  </div>
+
+  <div class="toc">
+    <a href="#part1">1부 · 개인 신앙 문답</a>
+    <a href="#part2">2부 · 침례식 공적 문답</a>
+    <a href="#appendix">부록 · 청소년 안내</a>
+  </div>
+
+  <!-- ===================== PART 1 ===================== -->
+  <section id="part1">
+    <div class="section-head">
+      <span class="section-num">PART 1</span>
+      <h2>침례 전 신앙 문답 — 개인 면담용</h2>
+    </div>
+    <p class="section-desc">
+      담임목사와 후보자가 개인적으로 만나 나누는 문답입니다. 정답을 맞히는 자리가 아니라, 지금까지의 믿음을 스스로 정리하고 목사님과 함께 확인하는 자리입니다. 편안한 마음으로, 솔직한 자신의 말로 답해주시고, 각 질문을 확인하셨으면 오른쪽 체크박스에 표시해주세요.
+    </p>
+
+    <div id="catechismForm">
+
+      <div class="who-box">
+        <div class="who-field">
+          <label>이름</label>
+          <input type="text" id="candidateName" placeholder="이름을 입력해주세요">
+        </div>
+        <div class="who-field">
+          <label>작성일</label>
+          <input type="text" id="submitDate" readonly>
+        </div>
+      </div>
+
+      <div class="progress-line" id="progressLine">0 / 10문항 확인됨</div>
+
+      <div class="q-item" data-q="1">
+        <div class="q-head">
+          <span class="q-num">1</span>
+          <span class="q-text">자신이 하나님 앞에 죄인이라는 사실을 인정하십니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <div class="q-note">스스로의 힘으로는 하나님과의 관계를 회복할 수 없는 존재임을 고백하는 질문입니다.</div>
+        <input type="text" class="ans-input" placeholder="답변을 입력해주세요">
+      </div>
+
+      <div class="q-item" data-q="2">
+        <div class="q-head">
+          <span class="q-num">2</span>
+          <span class="q-text">예수 그리스도께서 나의 죄를 위해 십자가에서 죽으시고, 사흘 만에 다시 살아나신 것을 믿으십니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <input type="text" class="ans-input" placeholder="답변을 입력해주세요">
+      </div>
+
+      <div class="q-item" data-q="3">
+        <div class="q-head">
+          <span class="q-num">3</span>
+          <span class="q-text">언제, 어떤 계기로 예수님을 자신의 구주와 주님으로 영접하게 되셨습니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <div class="q-note">짧게라도 자신의 말로 그 순간을 이야기해 주세요. 날짜가 분명하지 않아도 괜찮습니다.</div>
+        <textarea class="ans-area" rows="3" placeholder="답변을 입력해주세요"></textarea>
+      </div>
+
+      <div class="q-item" data-q="4">
+        <div class="q-head">
+          <span class="q-num">4</span>
+          <span class="q-text">지난날의 죄를 돌이키고, 앞으로 예수님을 따라 살기로 결단하셨습니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <input type="text" class="ans-input" placeholder="답변을 입력해주세요">
+      </div>
+
+      <div class="q-item" data-q="5">
+        <div class="q-head">
+          <span class="q-num">5</span>
+          <span class="q-text">침례가 나의 구원을 얻기 위한 조건이 아니라, 이미 받은 구원에 대한 순종의 고백이라는 것을 이해하고 계십니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <div class="q-note">침례는 구원의 통로가 아니라, 그리스도와 함께 죽고 함께 다시 살아났음을 세상에 알리는 표시입니다.</div>
+        <input type="text" class="ans-input" placeholder="답변을 입력해주세요">
+      </div>
+
+      <div class="q-item" data-q="6">
+        <div class="q-head">
+          <span class="q-num">6</span>
+          <span class="q-text">침례를 통해 그리스도와 함께 옛 사람이 죽고, 새로운 생명으로 다시 살아난다는 의미를 알고 계십니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <input type="text" class="ans-input" placeholder="답변을 입력해주세요">
+      </div>
+
+      <div class="q-item" data-q="7">
+        <div class="q-head">
+          <span class="q-num">7</span>
+          <span class="q-text">침례 이후, 은혜교회 목장 공동체의 일원으로 예배와 신앙생활을 이어가시겠습니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <input type="text" class="ans-input" placeholder="답변을 입력해주세요">
+      </div>
+
+      <div class="q-item" data-q="8">
+        <div class="q-head">
+          <span class="q-num">8</span>
+          <span class="q-text">가족이나 주변 사람들에게 자신의 신앙을 자연스럽게 나눌 마음의 준비가 되어 있습니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <input type="text" class="ans-input" placeholder="답변을 입력해주세요">
+      </div>
+
+      <div class="q-item" data-q="9">
+        <div class="q-head">
+          <span class="q-num">9</span>
+          <span class="q-text">(만 19세 미만인 경우) 부모님과 침례에 대해 충분히 이야기를 나누셨습니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <div class="q-note">청소년 후보자의 경우에만 확인합니다. 해당 사항이 없으면 체크만 해주세요.</div>
+        <input type="text" class="ans-input" placeholder="답변을 입력해주세요 (해당 없으면 비워두어도 됩니다)">
+      </div>
+
+      <div class="q-item" data-q="10">
+        <div class="q-head">
+          <span class="q-num">10</span>
+          <span class="q-text">지금 이 자리에서, 목사님께 나누고 싶은 마음이나 궁금한 점이 있습니까?</span>
+          <label class="q-confirm"><input type="checkbox" class="q-check">확인</label>
+        </div>
+        <div class="q-note">문답을 마무리하며 담임목사가 축복 기도로 시간을 마칩니다.</div>
+        <textarea class="ans-area" rows="3" placeholder="답변을 입력해주세요 (없으면 비워두어도 됩니다)"></textarea>
+      </div>
+
+      <div class="submit-box">
+        <h3>작성 완료 후 서명해주세요</h3>
+        <p class="submit-note">위 10가지 질문을 모두 확인하시고, 아래 서명란에 손가락(또는 마우스)으로 서명해주세요.</p>
+
+        <span class="sig-label">서명</span>
+        <div class="sig-wrap">
+          <canvas id="sigPad"></canvas>
+          <span class="sig-placeholder" id="sigPlaceholder">여기에 서명해주세요</span>
+        </div>
+        <div class="sig-actions no-capture">
+          <button type="button" id="clearSig">서명 지우기</button>
+        </div>
+
+        <label class="confirm-final">
+          <input type="checkbox" id="confirmAll">
+          <span>위 내용을 모두 솔직하게 작성하였으며, 담임목사님께 제출하는 것에 동의합니다.</span>
+        </label>
+
+        <button type="button" class="send-btn no-capture" id="sendBtn" disabled>카카오톡으로 문답서 보내기</button>
+        <div class="status-msg" id="statusMsg"></div>
+        <div class="fallback-link no-capture" id="fallbackLink">
+          <a href="#" id="downloadLink">파일이 자동으로 열리지 않으면 여기를 눌러 다운로드하세요</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===================== PART 2 ===================== -->
+  <section id="part2">
+    <div class="section-head">
+      <span class="section-num">PART 2</span>
+      <h2>침례식 공적 문답</h2>
+    </div>
+    <p class="section-desc">
+      침례식 순서 중, 후보자가 물 앞에 섰을 때 담임목사와 주고받는 문답입니다. 이름 부분(OOO)은 후보자의 이름으로 바꾸어 낭독합니다.
+    </p>
+
+    <div class="cr-block">
+      <div class="cr-row">
+        <span class="cr-label pastor">목사</span>
+        <span class="cr-text"><b>OOO</b> 형제(자매)님, 예수 그리스도께서 당신의 죄를 위해 십자가에서 죽으시고 다시 살아나신 구주와 주님이심을 믿습니까?</span>
+      </div>
+      <div class="cr-row">
+        <span class="cr-label candidate">후보자</span>
+        <span class="cr-text">예, 믿습니다.</span>
+      </div>
+    </div>
+
+    <div class="cr-block">
+      <div class="cr-row">
+        <span class="cr-label pastor">목사</span>
+        <span class="cr-text">그리스도의 십자가와 함께 옛 사람을 벗어버리고, 그의 부활과 함께 새 생명 가운데 살기를 원하십니까?</span>
+      </div>
+      <div class="cr-row">
+        <span class="cr-label candidate">후보자</span>
+        <span class="cr-text">예, 원합니다.</span>
+      </div>
+    </div>
+
+    <div class="cr-block">
+      <div class="cr-row">
+        <span class="cr-label pastor">목사</span>
+        <span class="cr-text">은혜교회의 지체로서 목장 공동체 안에서 함께 신앙생활하며, 주님이 맡기신 삶을 따라 살아가기로 결단하십니까?</span>
+      </div>
+      <div class="cr-row">
+        <span class="cr-label candidate">후보자</span>
+        <span class="cr-text">예, 결단합니다.</span>
+      </div>
+    </div>
+
+    <div class="cr-block">
+      <div class="cr-row">
+        <span class="cr-label pastor">목사</span>
+        <span class="cr-text">(회중을 향하여) 이제 이 형제(자매)를 그리스도 안에서 한 지체로 받아들이며, 우리 모두 함께 환영하겠습니까?</span>
+      </div>
+      <div class="cr-row">
+        <span class="cr-label congregation">회중</span>
+        <span class="cr-text">아멘! (박수로 환영)</span>
+      </div>
+    </div>
+
+    <div class="rite-line">
+      "나는 성부와 성자와 성령의 이름으로<br><b>OOO</b>에게 침례를 주노라."
+    </div>
+  </section>
+
+  <!-- ===================== APPENDIX ===================== -->
+  <section id="appendix">
+    <div class="section-head">
+      <span class="section-num">부록</span>
+      <h2>청소년 후보자를 위한 쉬운 안내</h2>
+    </div>
+    <p class="section-desc">
+      1부의 질문을 어린 후보자가 이해하기 쉬운 말로 풀어 놓았습니다. 문답 자체는 동일하게 진행하되, 필요할 때 이 표현으로 다시 설명해 주세요.
+    </p>
+
+    <div class="youth-box">
+      <h3>쉽게 풀어 쓴 질문들</h3>
+
+      <div class="youth-pair">
+        <div class="orig">Q1 — 자신이 죄인임을 인정하는가</div>
+        <div class="easy">나는 완벽하지 않고, 잘못한 것도 많다는 걸 스스로 알고 있나요?</div>
+      </div>
+
+      <div class="youth-pair">
+        <div class="orig">Q2·3 — 예수님을 구주로 믿고 영접했는가</div>
+        <div class="easy">예수님이 나 대신 십자가에서 돌아가시고 다시 살아나신 것을 믿고, 예수님을 내 마음에 주인으로 모신 적이 있나요? 언제였는지 이야기해 볼까요?</div>
+      </div>
+
+      <div class="youth-pair">
+        <div class="orig">Q5·6 — 침례의 의미</div>
+        <div class="easy">침례는 물에 들어갔다가 나오는 것으로, "예전의 나는 죽고 예수님과 함께 새 사람으로 다시 태어났어요"라고 사람들 앞에서 보여주는 거예요.</div>
+      </div>
+
+      <div class="youth-pair">
+        <div class="orig">Q7 — 침례 후 신앙생활</div>
+        <div class="easy">침례를 받은 다음에도 계속 교회에 나오고, 목장 친구들과 함께 신앙생활을 이어갈 수 있나요?</div>
+      </div>
+
+      <div class="youth-pair">
+        <div class="orig">Q9 — 부모님과의 대화</div>
+        <div class="easy">침례받는다는 것을 부모님도 알고 계시고, 응원해 주시나요?</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>은혜교회 · 침례문답서 · 담임목사 박동준</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" crossorigin="anonymous"></script>
+<script>
+(function(){
+  // ---- 작성일 자동 입력 ----
+  var today = new Date();
+  var y = today.getFullYear(), m = String(today.getMonth()+1).padStart(2,'0'), d = String(today.getDate()).padStart(2,'0');
+  document.getElementById('submitDate').value = y + '.' + m + '.' + d;
+
+  // ---- 서명 캔버스 ----
+  var canvas = document.getElementById('sigPad');
+  var ctx = canvas.getContext('2d');
+  var placeholder = document.getElementById('sigPlaceholder');
+  var drawing = false;
+  var hasSignature = false;
+  var ratio = window.devicePixelRatio || 1;
+
+  function resizeCanvas(){
+    var rect = canvas.getBoundingClientRect();
+    canvas.width = rect.width * ratio;
+    canvas.height = rect.height * ratio;
+    ctx.scale(ratio, ratio);
+    ctx.lineWidth = 2.2;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#1b2a4a';
+  }
+  resizeCanvas();
+  window.addEventListener('resize', function(){
+    var data = hasSignature ? canvas.toDataURL() : null;
+    resizeCanvas();
+    if(data){
+      var img = new Image();
+      img.onload = function(){ ctx.drawImage(img,0,0,canvas.width/ratio,canvas.height/ratio); };
+      img.src = data;
+    }
+  });
+
+  function getPos(e){
+    var rect = canvas.getBoundingClientRect();
+    var x, yPos;
+    if(e.touches && e.touches.length){
+      x = e.touches[0].clientX - rect.left;
+      yPos = e.touches[0].clientY - rect.top;
+    } else {
+      x = e.clientX - rect.left;
+      yPos = e.clientY - rect.top;
+    }
+    return {x:x, y:yPos};
+  }
+  function start(e){
+    drawing = true;
+    hasSignature = true;
+    placeholder.style.display = 'none';
+    var p = getPos(e);
+    ctx.beginPath();
+    ctx.moveTo(p.x, p.y);
+    e.preventDefault();
+    updateSendState();
+  }
+  function move(e){
+    if(!drawing) return;
+    var p = getPos(e);
+    ctx.lineTo(p.x, p.y);
+    ctx.stroke();
+    e.preventDefault();
+  }
+  function end(){ drawing = false; }
+
+  canvas.addEventListener('mousedown', start);
+  canvas.addEventListener('mousemove', move);
+  window.addEventListener('mouseup', end);
+  canvas.addEventListener('touchstart', start, {passive:false});
+  canvas.addEventListener('touchmove', move, {passive:false});
+  canvas.addEventListener('touchend', end);
+
+  document.getElementById('clearSig').addEventListener('click', function(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    hasSignature = false;
+    placeholder.style.display = 'block';
+    updateSendState();
+  });
+
+  // ---- 문항 체크 진행률 ----
+  var checks = Array.prototype.slice.call(document.querySelectorAll('.q-check'));
+  var progressLine = document.getElementById('progressLine');
+  function updateProgress(){
+    var checkedCount = checks.filter(function(c){ return c.checked; }).length;
+    progressLine.textContent = checkedCount + ' / ' + checks.length + '문항 확인됨';
+    checks.forEach(function(c){
+      var item = c.closest('.q-item');
+      if(item){ item.classList.toggle('checked', c.checked); }
+    });
+    updateSendState();
+  }
+  checks.forEach(function(c){ c.addEventListener('change', updateProgress); });
+  updateProgress();
+
+  // ---- 최종 전송 버튼 활성화 조건 ----
+  var nameInput = document.getElementById('candidateName');
+  var confirmAll = document.getElementById('confirmAll');
+  var sendBtn = document.getElementById('sendBtn');
+  var statusMsg = document.getElementById('statusMsg');
+
+  function updateSendState(){
+    var allChecked = checks.every(function(c){ return c.checked; });
+    var ready = nameInput.value.trim().length > 0 && allChecked && hasSignature && confirmAll.checked;
+    sendBtn.disabled = !ready;
+    if(!ready){
+      var missing = [];
+      if(!nameInput.value.trim()) missing.push('이름');
+      if(!allChecked) missing.push('문항 확인');
+      if(!hasSignature) missing.push('서명');
+      if(!confirmAll.checked) missing.push('최종 동의');
+      statusMsg.textContent = '';
+      statusMsg.className = 'status-msg';
+    }
+  }
+  nameInput.addEventListener('input', updateSendState);
+  confirmAll.addEventListener('change', updateSendState);
+  updateSendState();
+
+  // ---- PDF 생성 & 공유 ----
+  document.getElementById('sendBtn').addEventListener('click', function(){
+    var btn = this;
+
+    if(typeof html2canvas === 'undefined' || !window.jspdf || !window.jspdf.jsPDF){
+      statusMsg.className = 'status-msg error';
+      statusMsg.textContent = '문서 생성 기능을 불러오지 못했습니다. 인터넷 연결을 확인하시고 새로고침 후 다시 시도해주세요.';
+      return;
+    }
+
+    btn.disabled = true;
+    statusMsg.className = 'status-msg busy';
+    statusMsg.textContent = '문답서를 정리하는 중입니다...';
+
+    var target = document.getElementById('catechismForm');
+    var hideEls = target.querySelectorAll('.no-capture');
+    hideEls.forEach(function(el){ el.style.visibility = 'hidden'; });
+
+    html2canvas(target, {scale:2, backgroundColor:'#faf6ee', useCORS:true}).then(function(canvasImg){
+      hideEls.forEach(function(el){ el.style.visibility = ''; });
+
+      var imgData = canvasImg.toDataURL('image/png');
+      var jsPDF = window.jspdf.jsPDF;
+      var pdf = new jsPDF('p', 'mm', 'a4');
+      var pageWidth = 210, pageHeight = 297;
+      var imgWidth = pageWidth;
+      var imgHeight = canvasImg.height * imgWidth / canvasImg.width;
+      var heightLeft = imgHeight;
+      var position = 0;
+
+      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+      heightLeft -= pageHeight;
+      while(heightLeft > 0){
+        position = heightLeft - imgHeight;
+        pdf.addPage();
+        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+        heightLeft -= pageHeight;
+      }
+
+      var name = nameInput.value.trim() || '침례후보자';
+      var filename = '침례문답서_' + name + '.pdf';
+      var blob = pdf.output('blob');
+
+      var shared = false;
+      try{
+        var file = new File([blob], filename, {type:'application/pdf'});
+        if(navigator.canShare && navigator.canShare({files:[file]})){
+          navigator.share({
+            files:[file],
+            title:'침례문답서',
+            text: name + ' 성도님의 침례문답서입니다.'
+          }).then(function(){
+            statusMsg.className = 'status-msg ok';
+            statusMsg.textContent = '전송 화면이 열렸습니다. 카카오톡을 선택해 보내주세요.';
+          }).catch(function(){
+            statusMsg.className = 'status-msg';
+            statusMsg.textContent = '';
+          }).finally(function(){
+            btn.disabled = false;
+          });
+          shared = true;
+        }
+      } catch(err){ /* Web Share 미지원 브라우저 */ }
+
+      if(!shared){
+        var url = URL.createObjectURL(blob);
+        var link = document.getElementById('downloadLink');
+        link.href = url;
+        link.download = filename;
+        document.getElementById('fallbackLink').style.display = 'block';
+        statusMsg.className = 'status-msg error';
+        statusMsg.textContent = '이 브라우저에서는 자동 공유가 되지 않아 파일을 준비했습니다. 아래 링크로 다운로드한 뒤 카카오톡으로 직접 보내주세요.';
+        btn.disabled = false;
+      }
+    }).catch(function(){
+      hideEls.forEach(function(el){ el.style.visibility = ''; });
+      statusMsg.className = 'status-msg error';
+      statusMsg.textContent = '문답서 생성 중 문제가 발생했습니다. 다시 시도해주세요.';
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
