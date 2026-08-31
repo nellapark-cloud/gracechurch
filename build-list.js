@@ -8,6 +8,7 @@ const path = require('path');
 
 const categories = [
   { key: 'faith_philosophy', dir: 'content/faith-philosophy' },
+  { key: 'history_philosophy', dir: 'content/history-philosophy' },
   { key: 'common_questions', dir: 'content/common-questions' },
   { key: 'meeting_blessing', dir: 'content/meeting-blessing' },
   { key: 'bible_by_book-old', dir: 'content/bible-by-book/old-testament' },

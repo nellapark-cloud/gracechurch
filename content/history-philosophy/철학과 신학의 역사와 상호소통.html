@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>서양 철학사 &amp; 신학사 — 나란히 보는 사상의 흐름</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.css" />
+<style>
+  :root{
+    --paper:#F5F3ED;
+    --paper-deep:#EFECE3;
+    --ink:#26221F;
+    --ink-soft:#5C564F;
+    --line:#DCD6C9;
+    --phi:#31406B;        /* 철학: 인디고 네이비 */
+    --phi-soft:#EEF0F6;
+    --the:#7A2E3B;        /* 신학: 와인 버건디 */
+    --the-soft:#F7EDEE;
+    --cross:#A9822F;      /* 교차점: 금색 */
+    --cross-soft:#FAF3E2;
+    --card-bg:#FFFFFF;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Noto Serif KR', serif;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+  }
+
+  /* ---------- Header ---------- */
+  header.hero{
+    padding:76px 24px 48px;
+    text-align:center;
+    border-bottom:1px solid var(--line);
+    background:
+      radial-gradient(ellipse 900px 400px at 18% -10%, rgba(49,64,107,0.07), transparent 60%),
+      radial-gradient(ellipse 900px 400px at 82% -10%, rgba(122,46,59,0.07), transparent 60%);
+  }
+  header.hero h1{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-weight:700;
+    font-size:clamp(28px,4.4vw,44px);
+    letter-spacing:-0.02em;
+    margin:0 0 14px;
+  }
+  header.hero .amp{ color:var(--cross); }
+  header.hero p.sub{
+    max-width:560px;
+    margin:0 auto;
+    color:var(--ink-soft);
+    font-size:16px;
+  }
+  .legend{
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    margin-top:30px;
+    flex-wrap:wrap;
+  }
+  .legend .chip{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--ink-soft);
+  }
+  .legend .dot{ width:12px; height:12px; min-width:12px; flex:none; display:block; }
+
+  /* ---------- Sticky nav ---------- */
+  nav.eras{
+    position:sticky;
+    top:0;
+    z-index:20;
+    display:flex;
+    justify-content:center;
+    gap:2px;
+    background:rgba(245,243,237,0.92);
+    backdrop-filter:saturate(160%) blur(6px);
+    border-bottom:1px solid var(--line);
+    padding:0 12px;
+    overflow-x:auto;
+  }
+  nav.eras a{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--ink-soft);
+    text-decoration:none;
+    padding:14px 18px;
+    white-space:nowrap;
+    border-bottom:2px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  nav.eras a.active{
+    color:var(--ink);
+    border-bottom-color:var(--cross);
+  }
+
+  /* ---------- Era sections ---------- */
+  main{ max-width:1040px; margin:0 auto; padding:8px 20px 100px; }
+
+  section.era{ padding-top:56px; scroll-margin-top:54px; }
+
+  .era-band{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:28px;
+  }
+  .era-band .num{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    color:#fff;
+    background:var(--ink);
+    border-radius:999px;
+    width:30px; height:30px;
+    display:flex; align-items:center; justify-content:center;
+    flex:none;
+  }
+  .era-band h2{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-weight:700;
+    font-size:26px;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .era-band .range{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-size:14px;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+  .era-band::after{
+    content:'';
+    flex:1;
+    height:1px;
+    background:var(--line);
+    align-self:center;
+  }
+
+  .columns{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    align-items:start;
+  }
+  .col-head{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-weight:700;
+    font-size:14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    margin-bottom:14px;
+  }
+  .col-head .dot{ width:9px; height:9px; border-radius:50%; }
+  .col.phi .col-head{ color:var(--phi); }
+  .col.the .col-head{ color:var(--the); }
+  .col.phi .col-head .dot{ background:var(--phi); }
+  .col.the .col-head .dot{ background:var(--the); }
+
+  .card{
+    background:var(--card-bg);
+    border:1px solid var(--line);
+    border-left-width:3px;
+    border-radius:8px;
+    padding:14px 16px;
+    margin-bottom:10px;
+  }
+  .col.phi .card{ border-left-color:var(--phi); }
+  .col.the .card{ border-left-color:var(--the); }
+
+  .card .name{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    margin:0 0 2px;
+  }
+  .card .years{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-size:12px;
+    color:var(--ink-soft);
+    font-weight:500;
+  }
+  .card p{
+    margin:8px 0 0;
+    font-size:14.5px;
+    color:var(--ink);
+  }
+
+  .cross{
+    margin-top:18px;
+    background:var(--card-bg);
+    border:1px solid var(--line);
+    border-left-width:3px;
+    border-left-color:var(--cross);
+    border-radius:8px;
+    padding:14px 16px;
+  }
+  .cross .cross-head{
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-weight:700;
+    font-size:15px;
+    color:var(--cross);
+    margin-bottom:2px;
+    display:flex;
+    align-items:center;
+    gap:7px;
+  }
+  .cross .cross-head .dot{ width:9px; height:9px; border-radius:50%; background:var(--cross); }
+  .cross p{ margin:8px 0 0; font-size:14.5px; color:var(--ink); }
+  .cross p + p{ margin-top:8px; }
+
+  footer{
+    text-align:center;
+    padding:40px 20px 60px;
+    color:var(--ink-soft);
+    font-family:'PretendardVariable','Pretendard',sans-serif;
+    font-size:12.5px;
+    border-top:1px solid var(--line);
+  }
+
+  @media (max-width:720px){
+    .columns{ grid-template-columns:1fr; }
+    .col.the{ margin-top:6px; }
+    header.hero{ padding:56px 20px 36px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <h1>서양 철학사 <span class="amp">&amp;</span> 신학사</h1>
+  <p class="sub">두 이야기는 따로 흐르지 않았습니다. 같은 시대의 물음 앞에서, 철학은 이성으로 답을 찾고 신학은 계시로 답을 찾아왔습니다.</p>
+  <div class="legend">
+    <span class="chip"><svg class="dot" viewBox="0 0 12 12" width="12" height="12"><circle cx="6" cy="6" r="6" fill="var(--phi)"/></svg>철학사</span>
+    <span class="chip"><svg class="dot" viewBox="0 0 12 12" width="12" height="12"><circle cx="6" cy="6" r="6" fill="var(--the)"/></svg>신학사</span>
+    <span class="chip"><svg class="dot" viewBox="0 0 12 12" width="12" height="12"><circle cx="6" cy="6" r="6" fill="var(--cross)"/></svg>교차점</span>
+  </div>
+</header>
+
+<nav class="eras" id="eraNav">
+  <a href="#ancient">고대</a>
+  <a href="#medieval">중세</a>
+  <a href="#modern">근대</a>
+  <a href="#contemporary">현대</a>
+</nav>
+
+<main>
+
+  <!-- ================= 고대 ================= -->
+  <section class="era" id="ancient">
+    <div class="era-band">
+      <span class="num">1</span>
+      <h2>고대</h2>
+      <span class="range">BC 6세기 — AD 5세기</span>
+    </div>
+
+    <div class="columns">
+      <div class="col phi">
+        <div class="col-head"><span class="dot"></span>철학사</div>
+
+        <div class="card">
+          <p class="name">자연철학자들</p>
+          <p class="years">BC 6세기</p>
+          <p>탈레스를 비롯한 이들이 신화 대신 물, 불, 원자 같은 자연의 원리로 세계를 설명하기 시작했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">소크라테스</p>
+          <p class="years">BC 470 – 399</p>
+          <p>"너 자신을 알라." 문답법으로 사람들이 스스로 무지를 깨닫고 참된 앎을 찾도록 이끌었습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">플라톤</p>
+          <p class="years">BC 427 – 347</p>
+          <p>눈에 보이는 세계는 그림자일 뿐, 그 너머에 변치 않는 참된 실재(이데아)가 있다고 보았습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">아리스토텔레스</p>
+          <p class="years">BC 384 – 322</p>
+          <p>논리학과 형이상학을 체계화하고, 모든 사물에는 목적이 있다는 세계관을 제시했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">스토아 · 에피쿠로스학파</p>
+          <p class="years">BC 3세기 ~</p>
+          <p>거대한 체계보다 어떻게 마음의 평정을 얻고 잘 살 것인가를 고민한 실천 중심의 철학입니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">플로티노스 (신플라톤주의)</p>
+          <p class="years">205 – 270</p>
+          <p>모든 것이 근원인 '하나(the One)'로부터 흘러나온다고 보며, 이후 기독교 신학에 큰 영향을 남겼습니다.</p>
+        </div>
+      </div>
+
+      <div class="col the">
+        <div class="col-head"><span class="dot"></span>신학사</div>
+
+        <div class="card">
+          <p class="name">구약 정경의 형성</p>
+          <p class="years">~ BC 2세기</p>
+          <p>율법서, 예언서, 성문서가 차례로 정리되며 유대교의 경전으로 확정되어 갔습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">필론</p>
+          <p class="years">BC 20 – AD 50</p>
+          <p>헬라 철학과 유대 신앙을 연결하며, 하나님의 말씀을 '로고스' 개념으로 설명했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">초대교회와 사도들</p>
+          <p class="years">1세기</p>
+          <p>예수 그리스도의 부활을 선포하며 복음이 퍼져나갔고, 복음서와 서신들이 기록되었습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">변증가들</p>
+          <p class="years">2세기</p>
+          <p>유스티누스 등이 당대 헬라 철학의 언어를 빌려 기독교 신앙의 합리성을 변호했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">교부신학</p>
+          <p class="years">2 – 4세기</p>
+          <p>이레니우스, 오리게네스 등이 이단의 도전에 맞서 신앙의 내용을 체계적으로 정리했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">니케아 공의회</p>
+          <p class="years">325년</p>
+          <p>예수 그리스도가 성부와 동일한 본질임을 확정하며 삼위일체 교리의 뼈대를 세웠습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">아우구스티누스</p>
+          <p class="years">354 – 430</p>
+          <p>은혜와 원죄, 하나님 나라와 인간의 도성을 깊이 있게 풀어내며 서방신학의 기초를 놓았습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">칼케돈 공의회</p>
+          <p class="years">451년</p>
+          <p>그리스도가 완전한 신성과 완전한 인성을 동시에 지닌다는 이해를 공식적으로 확정했습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cross">
+      <div class="cross-head"><span class="dot"></span>교차점</div>
+      <p>필론이 다듬은 '로고스' 개념은 훗날 요한복음이 "태초에 말씀(로고스)이 계시니라"고 그리스도를 소개하는 언어가 되었습니다.</p>
+      <p>아우구스티누스는 플로티노스의 신플라톤주의를 통과하며 회심했고, 그 사유의 틀 위에서 은혜의 신학을 세워갔습니다.</p>
+    </div>
+  </section>
+
+  <!-- ================= 중세 ================= -->
+  <section class="era" id="medieval">
+    <div class="era-band">
+      <span class="num">2</span>
+      <h2>중세</h2>
+      <span class="range">5세기 — 15세기</span>
+    </div>
+
+    <div class="columns">
+      <div class="col phi">
+        <div class="col-head"><span class="dot"></span>철학사</div>
+
+        <div class="card">
+          <p class="name">보에티우스</p>
+          <p class="years">480 – 524</p>
+          <p>「철학의 위안」을 통해 고대 철학의 유산을 중세로 이어주는 다리 역할을 했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">안셀무스</p>
+          <p class="years">1033 – 1109</p>
+          <p>"이해를 추구하는 신앙"을 내세우며, 이성만으로 신 존재를 논증하려 시도했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">아벨라르</p>
+          <p class="years">1079 – 1142</p>
+          <p>찬반 논증을 나란히 놓고 검토하는 변증법적 방법으로 스콜라철학의 형식을 다졌습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">아리스토텔레스의 재발견</p>
+          <p class="years">12 – 13세기</p>
+          <p>아베로에스 등 이슬람 철학자들의 주석을 통해 아리스토텔레스 전집이 서방에 다시 소개되었습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">토마스 아퀴나스</p>
+          <p class="years">1225 – 1274</p>
+          <p>아리스토텔레스의 논리와 기독교 신앙을 하나의 체계로 종합한 「신학대전」을 남겼습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">둔스 스코투스 · 오캄</p>
+          <p class="years">13 – 14세기</p>
+          <p>하나님의 자유의지를 강조하고 보편 개념의 실재성에 의문을 던지며 스콜라철학에 균열을 냈습니다.</p>
+        </div>
+      </div>
+
+      <div class="col the">
+        <div class="col-head"><span class="dot"></span>신학사</div>
+
+        <div class="card">
+          <p class="name">수도원 운동</p>
+          <p class="years">6세기 ~</p>
+          <p>베네딕도 규칙을 따라 기도와 노동으로 신앙을 훈련하는 공동체들이 유럽 전역에 세워졌습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">스콜라 신학의 발전</p>
+          <p class="years">11 – 13세기</p>
+          <p>대학이 세워지며, 이성의 논리로 신앙의 진리를 정교하게 설명하려는 흐름이 자리 잡았습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">토마스 아퀴나스의 종합</p>
+          <p class="years">13세기</p>
+          <p>자연을 통해 알 수 있는 지식(자연신학)과 계시로만 알 수 있는 진리를 하나의 체계 안에 담았습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">신비주의 전통</p>
+          <p class="years">13 – 14세기</p>
+          <p>마이스터 에크하르트 등은 논증보다 하나님과의 직접적인 인격적 만남을 강조했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">중세 말 개혁의 조짐</p>
+          <p class="years">14 – 15세기</p>
+          <p>위클리프와 얀 후스가 성경의 권위를 앞세우며 교회의 부패를 지적하고 개혁을 외쳤습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cross">
+      <div class="cross-head"><span class="dot"></span>교차점</div>
+      <p>아퀴나스는 아리스토텔레스의 논리 체계를 빌려와 「신학대전」을 구성했습니다. 철학은 더 이상 신학의 도구가 아니라, 함께 진리를 향해가는 동반자로 자리매김했습니다.</p>
+      <p>오캄의 유명론이 이성의 한계를 드러내면서, 신앙의 자리를 다시 묻는 흐름이 생겨났고 이는 훗날 종교개혁의 토양이 되었습니다.</p>
+    </div>
+  </section>
+
+  <!-- ================= 근대 ================= -->
+  <section class="era" id="modern">
+    <div class="era-band">
+      <span class="num">3</span>
+      <h2>근대</h2>
+      <span class="range">16세기 — 19세기</span>
+    </div>
+
+    <div class="columns">
+      <div class="col phi">
+        <div class="col-head"><span class="dot"></span>철학사</div>
+
+        <div class="card">
+          <p class="name">르네상스 인문주의</p>
+          <p class="years">15 – 16세기</p>
+          <p>고전 문헌을 새롭게 연구하며 인간의 존엄과 가능성에 주목하는 분위기가 퍼졌습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">데카르트</p>
+          <p class="years">1596 – 1650</p>
+          <p>"나는 생각한다, 고로 존재한다." 의심할 수 없는 이성의 출발점 위에서 근대철학을 열었습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">스피노자 · 라이프니츠</p>
+          <p class="years">17세기</p>
+          <p>이성만으로 신과 세계, 존재 전체를 하나의 정연한 체계로 설명하려 했던 합리론자들입니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">로크 · 흄</p>
+          <p class="years">17 – 18세기</p>
+          <p>모든 지식은 경험에서 온다고 보았고, 흄은 한 걸음 더 나아가 인과율 자체를 의심했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">칸트</p>
+          <p class="years">1724 – 1804</p>
+          <p>「순수이성비판」에서 인간 이성이 알 수 있는 것과 없는 것의 경계를 분명히 그었습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">헤겔</p>
+          <p class="years">1770 – 1831</p>
+          <p>역사 전체를 절대정신이 모순과 화해를 거쳐 스스로를 실현해가는 과정으로 읽어냈습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">키에르케고르</p>
+          <p class="years">1813 – 1855</p>
+          <p>거대한 체계보다 '단독자'로서 개인이 내리는 신앙의 결단과 실존을 중요하게 여겼습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">니체</p>
+          <p class="years">1844 – 1900</p>
+          <p>"신은 죽었다." 전통적인 가치와 형이상학의 토대 전체에 급진적인 물음을 던졌습니다.</p>
+        </div>
+      </div>
+
+      <div class="col the">
+        <div class="col-head"><span class="dot"></span>신학사</div>
+
+        <div class="card">
+          <p class="name">종교개혁</p>
+          <p class="years">1517년 ~</p>
+          <p>루터의 95개조 반박문에서 시작해, "오직 성경·오직 믿음·오직 은혜"를 되찾은 운동입니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">칼빈과 개혁신학</p>
+          <p class="years">16세기</p>
+          <p>제네바에서 「기독교강요」를 통해 성경 중심의 신학을 체계적으로 정리해냈습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">반종교개혁</p>
+          <p class="years">16 – 17세기</p>
+          <p>트리엔트 공의회를 통해 로마가톨릭이 스스로를 정비하고 개혁의 도전에 응답했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">개신교 정통주의</p>
+          <p class="years">17세기</p>
+          <p>종교개혁의 통찰들을 정교한 교리 체계로 다듬어 정리한 시기입니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">경건주의</p>
+          <p class="years">17 – 18세기</p>
+          <p>슈페너 등은 딱딱한 교리 논쟁보다 살아있는 신앙의 체험과 실천을 강조했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">계몽주의와 자유주의 신학</p>
+          <p class="years">18 – 19세기</p>
+          <p>슐라이어마허는 신앙을 '절대 의존의 감정'으로 재정의하며 이성의 시대에 응답했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">근본주의의 태동</p>
+          <p class="years">19세기 말</p>
+          <p>자유주의 신학의 흐름에 맞서 성경의 권위와 핵심 교리를 지키려는 움직임이 일어났습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cross">
+      <div class="cross-head"><span class="dot"></span>교차점</div>
+      <p>칸트가 이성의 한계를 드러내자, 슐라이어마허는 신앙의 근거를 지식이 아닌 '감정과 체험'으로 옮겨갔습니다. 이것이 자유주의 신학의 출발점이 되었습니다.</p>
+      <p>키에르케고르가 되찾은 '단독자'의 실존적 신앙은, 다음 세기 신정통주의 신학이 다시 붙잡게 될 씨앗이었습니다.</p>
+    </div>
+  </section>
+
+  <!-- ================= 현대 ================= -->
+  <section class="era" id="contemporary">
+    <div class="era-band">
+      <span class="num">4</span>
+      <h2>현대</h2>
+      <span class="range">20세기 — 오늘</span>
+    </div>
+
+    <div class="columns">
+      <div class="col phi">
+        <div class="col-head"><span class="dot"></span>철학사</div>
+
+        <div class="card">
+          <p class="name">현상학</p>
+          <p class="years">20세기 초</p>
+          <p>후설은 선입견을 걷어내고 사물이 우리 의식에 드러나는 그대로를 기술하려 했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">실존주의</p>
+          <p class="years">20세기 중반</p>
+          <p>하이데거와 사르트르는 인간의 존재와 자유, 유한성의 문제를 정면으로 마주했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">분석철학</p>
+          <p class="years">20세기</p>
+          <p>비트겐슈타인은 철학의 많은 혼란이 언어의 오용에서 비롯된다고 보고 언어 분석에 집중했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">포스트모더니즘</p>
+          <p class="years">20세기 후반</p>
+          <p>푸코와 데리다는 하나의 절대적 진리나 거대한 체계에 대한 신뢰 자체에 의문을 제기했습니다.</p>
+        </div>
+      </div>
+
+      <div class="col the">
+        <div class="col-head"><span class="dot"></span>신학사</div>
+
+        <div class="card">
+          <p class="name">신정통주의</p>
+          <p class="years">20세기 초</p>
+          <p>칼 바르트는 자유주의 신학을 비판하며, 인간의 경험이 아닌 하나님의 말씀에서 다시 출발했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">본회퍼</p>
+          <p class="years">1906 – 1945</p>
+          <p>대가를 치르지 않는 '값싼 은혜'를 경계하며, 제자도와 현실 속 신앙의 참여를 촉구했습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">해방신학</p>
+          <p class="years">20세기 중반</p>
+          <p>라틴아메리카의 가난한 이들 곁에서, 억압받는 자를 향한 하나님의 관심을 신학의 언어로 풀어냈습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">복음주의 부흥</p>
+          <p class="years">20세기 중후반</p>
+          <p>세계 복음주의 운동이 확산되며 성경의 권위와 전도, 회심의 신앙이 다시 강조되었습니다.</p>
+        </div>
+        <div class="card">
+          <p class="name">포스트모던 시대의 신학</p>
+          <p class="years">20세기 후반 ~</p>
+          <p>절대적 체계보다 이야기와 공동체, 삶으로 드러나는 신앙의 자리를 다시 묻는 흐름들이 이어지고 있습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="cross">
+      <div class="cross-head"><span class="dot"></span>교차점</div>
+      <p>바르트의 신정통주의는 자유주의 신학에 대한 반작용이면서, 동시에 키에르케고르의 실존적 통찰을 신학 안으로 진지하게 받아들인 결과이기도 했습니다.</p>
+      <p>포스트모던 철학이 던진 '절대적 진리가 가능한가'라는 물음은, 오늘의 신학이 진리와 겸손, 확신과 대화의 균형을 다시 사고하게 만들고 있습니다.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  은혜교회 · 개인 참고용 자료 &nbsp;·&nbsp; 서양 철학사 &amp; 신학사 요약 정리
+</footer>
+
+<script>
+  const links = document.querySelectorAll('#eraNav a');
+  const sections = document.querySelectorAll('section.era');
+  const map = new Map();
+  links.forEach(a => map.set(a.getAttribute('href').slice(1), a));
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = map.get(entry.target.id);
+      if (!link) return;
+      if (entry.isIntersecting) {
+        links.forEach(a => a.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-45% 0px -50% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
