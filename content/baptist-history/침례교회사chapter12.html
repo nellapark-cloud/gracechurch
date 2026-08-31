@@ -121,6 +121,18 @@
   }
 
   @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after,.term:after{display:none;} }
+
+  .chapter-nav{display:flex;justify-content:space-between;gap:16px;margin-top:40px;flex-wrap:wrap;}
+  .chapter-nav a{flex:1;min-width:220px;display:flex;flex-direction:column;gap:6px;padding:18px 22px;border-radius:8px;text-decoration:none;font-family:'Noto Sans KR',sans-serif;transition:background .2s ease, transform .2s ease, box-shadow .2s ease;}
+  .chapter-nav a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(27,42,74,.12);}
+  .chapter-nav__prev{background:var(--cream-warm);border:1px solid var(--line);color:var(--navy);text-align:left;}
+  .chapter-nav__next{background:var(--navy);color:var(--cream);text-align:right;margin-left:auto;}
+  .chapter-nav small{font-size:11px;letter-spacing:.15em;opacity:.75;}
+  .chapter-nav strong{font-size:15.5px;font-weight:600;line-height:1.45;}
+  @media (max-width:600px){
+    .chapter-nav{flex-direction:column;}
+    .chapter-nav a{text-align:left !important;}
+  }
 </style>
 </head>
 <body>
@@ -223,6 +235,11 @@
         <li>나는 오늘 하나님께서 맡기신 자리에서 어떤 선교적 삶을 살아갈 수 있을까요?</li>
       </ol>
     </div>
+
+    <nav class="chapter-nav">
+      <a class="chapter-nav__prev" href="침례교회사chapter11.html"><small>← 이전 강</small><strong>11강. 영국에서 미국으로: 침례교의 확산</strong></a>
+      <a class="chapter-nav__next" href="침례교회사chapter13.html"><small>다음 강 보기 →</small><strong>13강. 아도니람 저드슨과 침례교 해외선교의 확장</strong></a>
+    </nav>
 
     <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제12강</footer>
   </main>

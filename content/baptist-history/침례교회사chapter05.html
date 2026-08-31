@@ -103,6 +103,18 @@
   }
 
   @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+
+  .chapter-nav{display:flex;justify-content:space-between;gap:16px;margin-top:40px;flex-wrap:wrap;}
+  .chapter-nav a{flex:1;min-width:220px;display:flex;flex-direction:column;gap:6px;padding:18px 22px;border-radius:8px;text-decoration:none;font-family:'Noto Sans KR',sans-serif;transition:background .2s ease, transform .2s ease, box-shadow .2s ease;}
+  .chapter-nav a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(27,42,74,.12);}
+  .chapter-nav__prev{background:var(--cream-warm);border:1px solid var(--line);color:var(--navy);text-align:left;}
+  .chapter-nav__next{background:var(--navy);color:var(--cream);text-align:right;margin-left:auto;}
+  .chapter-nav small{font-size:11px;letter-spacing:.15em;opacity:.75;}
+  .chapter-nav strong{font-size:15.5px;font-weight:600;line-height:1.45;}
+  @media (max-width:600px){
+    .chapter-nav{flex-direction:column;}
+    .chapter-nav a{text-align:left !important;}
+  }
 </style>
 </head>
 <body>
@@ -218,6 +230,11 @@
         <li>나는 양심을 따라 하나님께 순종할 용기가 있습니까?</li>
       </ol>
     </div>
+
+    <nav class="chapter-nav">
+      <a class="chapter-nav__prev" href="침례교회사chapter04.html"><small>← 이전 강</small><strong>4강. 침례와 세례는 무엇이 다른가</strong></a>
+      <a class="chapter-nav__next" href="침례교회사chapter06.html"><small>다음 강 보기 →</small><strong>6강. 일반침례교와 특수침례교</strong></a>
+    </nav>
 
     <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제5강</footer>
   </main>

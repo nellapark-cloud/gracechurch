@@ -91,6 +91,18 @@
   }
 
   @media print{ body{background:#fff;} header.cover{-webkit-print-color-adjust:exact;print-color-adjust:exact;} .person:after{display:none;} }
+
+  .chapter-nav{display:flex;justify-content:space-between;gap:16px;margin-top:40px;flex-wrap:wrap;}
+  .chapter-nav a{flex:1;min-width:220px;display:flex;flex-direction:column;gap:6px;padding:18px 22px;border-radius:8px;text-decoration:none;font-family:'Noto Sans KR',sans-serif;transition:background .2s ease, transform .2s ease, box-shadow .2s ease;}
+  .chapter-nav a:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(27,42,74,.12);}
+  .chapter-nav__prev{background:var(--cream-warm);border:1px solid var(--line);color:var(--navy);text-align:left;}
+  .chapter-nav__next{background:var(--navy);color:var(--cream);text-align:right;margin-left:auto;}
+  .chapter-nav small{font-size:11px;letter-spacing:.15em;opacity:.75;}
+  .chapter-nav strong{font-size:15.5px;font-weight:600;line-height:1.45;}
+  @media (max-width:600px){
+    .chapter-nav{flex-direction:column;}
+    .chapter-nav a{text-align:left !important;}
+  }
 </style>
 </head>
 <body>
@@ -153,6 +165,11 @@
         <li>제도나 전통보다 성경의 가르침을 다시 살피는 용기가 필요했던 나의 경험이 있다면 나누어 봅시다.</li>
       </ol>
     </div>
+
+    <nav class="chapter-nav">
+      
+      <a class="chapter-nav__next" href="침례교회사chapter02.html"><small>다음 강 보기 →</small><strong>2강. 침례교의 핵심 신앙은 어떻게 형성되었는가</strong></a>
+    </nav>
 
     <footer>기독교한국침례회 은혜교회 · 침례교회사 입문 제1강</footer>
   </main>
