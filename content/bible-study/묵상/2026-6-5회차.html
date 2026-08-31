@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목장 나눔 자료</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg: #f8f3f0;
+--warm-white: #fffcfa;
+--terra: #b05a35;
+--terra-light: #cc7a52;
+--terra-pale: #f4e8e1;
+--deep: #3d1a0c;
+--deep-light: #6b3520;
+--text: #1f0f07;
+--text-muted: #7a5242;
+--border: #e4cfc5;
+--section-bg: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background-color: var(--bg);
+background-image:
+radial-gradient(ellipse at 20% 10%, rgba(176,90,53,0.07) 0%, transparent 55%),
+radial-gradient(ellipse at 80% 90%, rgba(61,26,12,0.05) 0%, transparent 55%);
+font-family: 'Noto Sans KR', sans-serif;
+color: var(--text);
+min-height: 100vh;
+padding: 60px 20px;
+}
+
+.container {
+max-width: 780px;
+margin: 0 auto;
+}
+
+/* Header */
+.header {
+text-align: center;
+margin-bottom: 64px;
+animation: fadeDown 0.8s ease both;
+}
+
+.header-label {
+display: inline-block;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.3em;
+color: var(--terra);
+text-transform: uppercase;
+border: 1px solid var(--terra-pale);
+padding: 6px 20px;
+border-radius: 20px;
+margin-bottom: 24px;
+}
+
+.header h1 {
+font-family: 'Noto Serif KR', serif;
+font-size: clamp(28px, 5vw, 40px);
+font-weight: 700;
+color: var(--deep);
+letter-spacing: -0.01em;
+line-height: 1.3;
+margin-bottom: 12px;
+}
+
+.header-date {
+font-size: 13px;
+color: var(--text-muted);
+letter-spacing: 0.15em;
+margin-top: 10px;
+}
+
+.header-line {
+width: 48px;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--terra), transparent);
+margin: 20px auto 0;
+}
+
+/* Cards */
+.card {
+background: var(--section-bg);
+border-radius: 16px;
+margin-bottom: 36px;
+overflow: hidden;
+box-shadow: 0 2px 20px rgba(61,26,12,0.08), 0 1px 4px rgba(61,26,12,0.05);
+animation: fadeUp 0.7s ease both;
+border: 1px solid var(--border);
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+.card-header {
+background: linear-gradient(135deg, var(--deep) 0%, #5e2510 100%);
+padding: 28px 36px;
+position: relative;
+overflow: hidden;
+}
+
+.card-header::before {
+content: '';
+position: absolute;
+top: -30px; right: -30px;
+width: 120px; height: 120px;
+border-radius: 50%;
+background: rgba(255,255,255,0.04);
+}
+
+.card-header::after {
+content: '';
+position: absolute;
+bottom: -20px; left: 40px;
+width: 80px; height: 80px;
+border-radius: 50%;
+background: rgba(176,90,53,0.2);
+}
+
+.card-num {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.25em;
+color: var(--terra-light);
+margin-bottom: 8px;
+position: relative;
+z-index: 1;
+}
+
+.card-title {
+font-family: 'Noto Serif KR', serif;
+font-size: 20px;
+font-weight: 700;
+color: #fff;
+margin-bottom: 10px;
+position: relative;
+z-index: 1;
+}
+
+.card-verse {
+font-size: 13px;
+color: rgba(255,255,255,0.65);
+font-style: italic;
+position: relative;
+z-index: 1;
+line-height: 1.6;
+}
+
+.card-body {
+padding: 32px 36px;
+}
+
+/* Scripture quote */
+.scripture-block {
+border-left: 3px solid var(--terra);
+background: var(--terra-pale);
+padding: 16px 20px;
+margin-bottom: 28px;
+border-radius: 0 8px 8px 0;
+}
+
+.scripture-block p {
+font-family: 'Noto Serif KR', serif;
+font-size: 14px;
+color: var(--deep);
+line-height: 1.9;
+font-weight: 400;
+}
+
+/* Meditation */
+.meditation-title {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.2em;
+color: var(--terra);
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+
+.meditation-text {
+font-size: 15px;
+line-height: 2.0;
+color: var(--text);
+font-weight: 300;
+white-space: pre-line;
+}
+
+.meditation-text strong {
+color: var(--deep);
+font-weight: 600;
+}
+
+/* Divider */
+.divider {
+border: none;
+border-top: 1px solid var(--border);
+margin: 28px 0;
+}
+
+/* Question block */
+.question-block {
+background: var(--bg);
+border-radius: 12px;
+padding: 24px 28px;
+}
+
+.question-header {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 18px;
+}
+
+.question-icon {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--terra), var(--terra-light));
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 13px;
+color: white;
+flex-shrink: 0;
+}
+
+.question-header-text {
+font-family: 'Noto Serif KR', serif;
+font-size: 15px;
+font-weight: 600;
+color: var(--deep);
+}
+
+.question-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+
+.question-item {
+display: flex;
+gap: 12px;
+align-items: flex-start;
+}
+
+.question-badge {
+flex-shrink: 0;
+width: 22px;
+height: 22px;
+border-radius: 50%;
+background: var(--deep);
+color: white;
+font-size: 11px;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 1px;
+}
+
+.question-item p {
+font-size: 14px;
+line-height: 1.8;
+color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+text-align: center;
+margin-top: 56px;
+padding-top: 32px;
+border-top: 1px solid var(--border);
+animation: fadeUp 0.8s ease 0.6s both;
+}
+
+.footer-cross {
+font-size: 22px;
+color: var(--terra);
+margin-bottom: 12px;
+letter-spacing: 8px;
+}
+
+.footer-church {
+font-family: 'Noto Serif KR', serif;
+font-size: 14px;
+font-weight: 600;
+color: var(--deep);
+letter-spacing: 0.05em;
+margin-bottom: 6px;
+}
+
+.footer-author {
+font-size: 11px;
+color: var(--text-muted);
+letter-spacing: 0.1em;
+}
+
+/* Animations */
+@keyframes fadeDown {
+from { opacity: 0; transform: translateY(-20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+body { padding: 40px 16px; }
+.card-header { padding: 24px 24px; }
+.card-body { padding: 24px 24px; }
+.question-block { padding: 20px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+<div class="header-label">은혜교회 묵상나눔</div>
+<h1>말씀 묵상과 나눔</h1>
+<div class="header-date">2026 · 6-5</div>
+<div class="header-line"></div>
+</div>
+
+<!-- Card 1 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 01</div>
+<div class="card-title">시편 120편 2~3절</div>
+<div class="card-verse">"여호와여 거짓된 입술과 궤사한 혀에서 내 생명을 건지소서"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>여호와여 거짓된 입술과 궤사한 혀에서 내 생명을 건지소서 너 궤사한 혀여 무엇으로 네게 주며 무엇으로 네게 더할꼬</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">시편 120편은 순례의 시작을 알리는 노래입니다. 시인은 성전으로 올라가는 발걸음을 내딛기 전에 먼저 탄식합니다. 그를 둘러싼 세계에는 거짓된 말과 속이는 혀가 가득하기 때문입니다. "궤사한 혀"는 단순한 거짓말이 아니라 의도적으로 사람을 해치는 교활한 말을 뜻합니다. 그 말의 무게가 얼마나 무거웠으면 시인은 "내 생명을 건지소서"라고 기도했을까요? 말은 때로 칼보다 날카롭게 사람을 찌릅니다. 그러나 시인이 주목할 만한 것은 그 고통 속에서도 여호와께 기도했다는 사실입니다. 억울함을 사람에게 호소하지 않고, 하나님 앞에 가져간 것입니다. 우리도 말로 인한 상처를 받을 때, 혹은 내 입에서 나오는 말이 누군가를 해치지는 않았는지 돌아볼 때, 먼저 주님 앞에 나아가는 것이 지혜의 시작입니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>누군가의 말로 깊은 상처를 받은 경험이 있나요? 그때 하나님께 그 마음을 가져갔나요, 아니면 다른 방식으로 해결하려 했나요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>내가 무심코 내뱉은 말이 다른 사람에게 상처가 되었을 수도 있다는 생각을 해본 적이 있나요? 내 말의 습관에서 돌아보아야 할 부분은 무엇인가요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 02</div>
+<div class="card-title">시편 91편 14절</div>
+<div class="card-verse">"저가 나를 사랑한즉 내가 저를 건지리라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>하나님이 가라사대 저가 나를 사랑한즉 내가 저를 건지리라 저가 내 이름을 안즉 내가 저를 높이리라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">시편 91편은 하나님의 보호를 노래하는 위로의 시입니다. 그런데 14절에서 시의 화자가 바뀝니다. 지금까지 시인이 하나님을 노래했다면, 이제 하나님이 직접 말씀하십니다. 그 말씀의 핵심은 두 가지 조건과 두 가지 약속입니다. "나를 사랑하면 — 건지리라", "내 이름을 알면 — 높이리라". 여기서 '사랑'은 감정적인 애정만이 아니라 신뢰와 헌신을 포함하는 히브리어 '하샤크'입니다. 그리고 '이름을 안다'는 것은 단순한 지식이 아니라 인격적 관계 속에서 하나님을 경험하는 것을 의미합니다. 하나님은 그분을 사랑하고 그분을 아는 사람을 결코 버려두지 않으신다고 약속하십니다. 환난 속에서도 그분을 부르는 자에게 응답하시고, 영예롭게 하신다고 직접 선언하십니다. 오늘 나는 하나님을 얼마나 사랑하고, 얼마나 알고 있나요?</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>"하나님을 사랑한다"는 것이 내 삶에서 구체적으로 어떤 모습으로 나타나고 있나요? 감정을 넘어 신뢰와 헌신으로 나아가고 있나요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>하나님의 이름을 부르며 건짐을 경험한 순간이 있었나요? 그 경험이 나의 신앙에 어떤 흔적을 남겼는지 나눠봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 3 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 03</div>
+<div class="card-title">이사야 64장 5절</div>
+<div class="card-verse">"우리가 범죄하므로 주께서 진노하셨으며"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>주께서 기쁘게 의를 행하는 자와 주의 길에서 주를 기억하는 자를 선대하시거늘 우리가 범죄하므로 주께서 진노하셨으며 이 현상이 이미 오랬사오니 우리가 어찌 구원을 얻을 수 있으리이까</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">이사야의 이 기도는 깊은 회개의 고백입니다. 선지자는 먼저 하나님의 성품을 고백합니다. 의를 행하는 자, 주를 기억하는 자를 기쁘게 선대하시는 하나님. 그런데 그 선하신 하나님 앞에 우리의 모습이 드러납니다. 범죄하여 진노를 샀고, 그것이 이미 오래되었다는 고백입니다. "우리가 어찌 구원을 얻을 수 있으리이까"라는 탄식은 절망이 아니라, 인간의 한계를 솔직하게 인정하면서 오직 하나님의 은혜만을 바라보는 기도입니다. 자기 의로 구원을 이루려는 모든 시도를 포기하고, 주님 앞에 빈손으로 서는 것, 이것이 진정한 회개의 자리입니다. 우리가 오랫동안 붙들고 있던 죄의 습관이나 하나님과의 거리감이 있다면, 오늘 이 자리에서 그 고백을 드릴 수 있기를 바랍니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>"이 현상이 이미 오래됐다"는 고백처럼, 내 삶에서 오랫동안 해결되지 않은 채 남아 있는 죄의 영역이나 하나님과의 거리감이 있나요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>빈손으로 하나님 앞에 나아간다는 것이 내게 어떤 의미인가요? 내 힘과 의지가 아닌 은혜에만 기대어 본 경험을 나눠봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 4 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 04</div>
+<div class="card-title">마태복음 24장 34~35절</div>
+<div class="card-verse">"천지는 없어지겠으나 내 말은 없어지지 아니하리라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>내가 진실로 너희에게 말하노니 이 세대가 지나가기 전에 이 일이 다 이루리라 천지는 없어지겠으나 내 말은 없어지지 아니하리라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">예수님은 종말의 징조들을 말씀하신 후, 이 선언으로 마무리하십니다. "천지는 없어지겠으나 내 말은 없어지지 아니하리라." 이것은 단순한 예언의 확증이 아닙니다. 이 세상에서 영원한 것은 없다는 선언이면서 동시에, 주님의 말씀만은 그 어떤 변화 앞에서도 흔들리지 않는다는 약속입니다. 우리는 종종 세상의 변화 앞에서 불안해집니다. 국제 정세, 사회의 가치관, 가족의 상황, 건강과 경제 — 모든 것이 흔들리는 것처럼 느껴질 때가 있습니다. 그러나 주님의 말씀은 어제도, 오늘도, 영원히 동일하십니다. 그 말씀 위에 삶의 기초를 세운 사람은 어떤 폭풍이 와도 무너지지 않습니다. 오늘 내 삶의 닻은 어디에 내려져 있나요?</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>세상의 변화나 불확실한 상황 앞에서 흔들림을 느낄 때, 나는 무엇을 붙잡고 있나요? 말씀이 실제로 내 닻이 된 경험이 있다면 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>"말씀 위에 삶을 세운다"는 것이 내 일상에서 구체적으로 어떤 선택과 습관으로 나타나고 있나요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 5 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 05</div>
+<div class="card-title">야고보서 1장 27절</div>
+<div class="card-verse">"고아와 과부를 그 환난 중에 돌아보고 자기를 세속에 물들지 아니하는 이것이니라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>하나님 아버지 앞에서 정결하고 더러움이 없는 경건은 곧 고아와 과부를 그 환난 중에 돌아보고 또 자기를 지켜 세속에 물들지 아니하는 이것이니라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">야고보는 '경건'의 정의를 아주 실질적으로 내립니다. 하나님 앞에서 정결하고 더러움 없는 경건은 두 가지로 드러납니다. 하나는 밖을 향한 것 — 고아와 과부, 즉 사회에서 가장 약하고 소외된 이들을 환난 중에 돌아보는 것. 다른 하나는 안을 향한 것 — 자기 자신을 지켜 세속에 물들지 않는 것입니다. 경건은 예배당 안에서의 모습만으로 완성되지 않습니다. 예배가 끝나고 나의 삶의 자리에서, 내 곁에 있는 연약한 이들을 어떻게 대하는가, 세상의 가치관 앞에서 얼마나 자신을 지키는가 — 이것이 하나님이 기뻐하시는 경건의 실체입니다. 신앙이 삶으로 번역될 때, 그 경건은 하나님 앞에서 참되고 아름다운 것이 됩니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>내 주변에서 지금 환난 중에 있는 '고아와 과부' 같은 이웃은 누구인가요? 나는 그들을 어떻게 돌아보고 있나요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>"세속에 물들지 않는다"는 것이 내 삶에서 가장 어렵게 느껴지는 영역은 어디인가요? 그 안에서 어떻게 자신을 지켜가고 있나요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<div class="footer-cross">✦</div>
+<p class="footer-church">기독교한국침례회 은혜교회</p>
+<p class="footer-author">작성 · 박동준 목사</p>
+</div>
+
+</div>
+</body>
+</html>

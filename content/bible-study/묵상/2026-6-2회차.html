@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목장 나눔 자료</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+--cream: #f4f7f4;
+--warm-white: #f9fbf9;
+--green: #3d6b4f;
+--green-light: #5a8f6e;
+--green-pale: #ddeee4;
+--green-deep: #2a4d38;
+--text: #1c2e22;
+--text-muted: #5a7362;
+--border: #c8ddd0;
+--section-bg: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background-color: var(--cream);
+background-image:
+radial-gradient(ellipse at 15% 25%, rgba(61,107,79,0.07) 0%, transparent 55%),
+radial-gradient(ellipse at 85% 75%, rgba(42,77,56,0.06) 0%, transparent 55%);
+font-family: 'Noto Sans KR', sans-serif;
+color: var(--text);
+min-height: 100vh;
+padding: 60px 20px;
+}
+
+.container {
+max-width: 780px;
+margin: 0 auto;
+}
+
+/* Header */
+.header {
+text-align: center;
+margin-bottom: 64px;
+animation: fadeDown 0.8s ease both;
+}
+
+.header-label {
+display: inline-block;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.3em;
+color: var(--green);
+text-transform: uppercase;
+border: 1px solid var(--green-pale);
+padding: 6px 20px;
+border-radius: 20px;
+margin-bottom: 24px;
+}
+
+.header h1 {
+font-family: 'Noto Serif KR', serif;
+font-size: clamp(28px, 5vw, 40px);
+font-weight: 700;
+color: var(--green-deep);
+letter-spacing: -0.01em;
+line-height: 1.3;
+margin-bottom: 12px;
+}
+
+.header-date {
+font-size: 13px;
+color: var(--text-muted);
+letter-spacing: 0.15em;
+margin-top: 10px;
+}
+
+.header-line {
+width: 48px;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--green), transparent);
+margin: 20px auto 0;
+}
+
+/* Cards */
+.card {
+background: var(--section-bg);
+border-radius: 16px;
+margin-bottom: 36px;
+overflow: hidden;
+box-shadow: 0 2px 20px rgba(42,77,56,0.08), 0 1px 4px rgba(42,77,56,0.05);
+animation: fadeUp 0.7s ease both;
+border: 1px solid var(--border);
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+.card-header {
+background: linear-gradient(135deg, var(--green-deep) 0%, #3d6b4f 100%);
+padding: 28px 36px;
+position: relative;
+overflow: hidden;
+}
+
+.card-header::before {
+content: '';
+position: absolute;
+top: -30px; right: -30px;
+width: 120px; height: 120px;
+border-radius: 50%;
+background: rgba(255,255,255,0.04);
+}
+
+.card-header::after {
+content: '';
+position: absolute;
+bottom: -20px; left: 40px;
+width: 80px; height: 80px;
+border-radius: 50%;
+background: rgba(90,143,110,0.15);
+}
+
+.card-num {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.25em;
+color: #a8d4b8;
+margin-bottom: 8px;
+position: relative;
+z-index: 1;
+}
+
+.card-title {
+font-family: 'Noto Serif KR', serif;
+font-size: 20px;
+font-weight: 700;
+color: #fff;
+margin-bottom: 10px;
+position: relative;
+z-index: 1;
+}
+
+.card-verse {
+font-size: 13px;
+color: rgba(255,255,255,0.65);
+font-style: italic;
+position: relative;
+z-index: 1;
+line-height: 1.6;
+}
+
+.card-body {
+padding: 32px 36px;
+}
+
+/* Scripture quote */
+.scripture-block {
+border-left: 3px solid var(--green);
+background: var(--green-pale);
+padding: 16px 20px;
+margin-bottom: 28px;
+border-radius: 0 8px 8px 0;
+}
+
+.scripture-block p {
+font-family: 'Noto Serif KR', serif;
+font-size: 14px;
+color: var(--green-deep);
+line-height: 1.9;
+font-weight: 400;
+}
+
+/* Meditation */
+.meditation-title {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.2em;
+color: var(--green);
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+
+.meditation-text {
+font-size: 15px;
+line-height: 2.0;
+color: var(--text);
+font-weight: 300;
+white-space: pre-line;
+}
+
+.meditation-text strong {
+color: var(--green-deep);
+font-weight: 600;
+}
+
+/* Divider */
+.divider {
+border: none;
+border-top: 1px solid var(--border);
+margin: 28px 0;
+}
+
+/* Question block */
+.question-block {
+background: var(--cream);
+border-radius: 12px;
+padding: 24px 28px;
+}
+
+.question-header {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 18px;
+}
+
+.question-icon {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--green), var(--green-light));
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 13px;
+color: white;
+flex-shrink: 0;
+}
+
+.question-header-text {
+font-family: 'Noto Serif KR', serif;
+font-size: 15px;
+font-weight: 600;
+color: var(--green-deep);
+}
+
+.question-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+
+.question-item {
+display: flex;
+gap: 12px;
+align-items: flex-start;
+}
+
+.question-badge {
+flex-shrink: 0;
+width: 22px;
+height: 22px;
+border-radius: 50%;
+background: var(--green-deep);
+color: white;
+font-size: 11px;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 1px;
+}
+
+.question-item p {
+font-size: 14px;
+line-height: 1.8;
+color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+text-align: center;
+margin-top: 56px;
+padding-top: 32px;
+border-top: 1px solid var(--border);
+animation: fadeUp 0.8s ease 0.6s both;
+}
+
+.footer-cross {
+font-size: 24px;
+color: var(--green);
+margin-bottom: 12px;
+letter-spacing: 8px;
+}
+
+.footer-church {
+font-family: 'Noto Serif KR', serif;
+font-size: 14px;
+font-weight: 600;
+color: var(--green-deep);
+letter-spacing: 0.05em;
+margin-bottom: 6px;
+}
+
+.footer-author {
+font-size: 11px;
+color: var(--text-muted);
+letter-spacing: 0.1em;
+}
+
+/* Animations */
+@keyframes fadeDown {
+from { opacity: 0; transform: translateY(-20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+body { padding: 40px 16px; }
+.card-header { padding: 24px 24px; }
+.card-body { padding: 24px 24px; }
+.question-block { padding: 20px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+<div class="header-label">은혜교회 묵상나눔</div>
+<h1>말씀 묵상과 나눔</h1>
+<div class="header-date">2026 · 06 · 2</div>
+<div class="header-line"></div>
+</div>
+
+<!-- Card 1 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 01</div>
+<div class="card-title">예레미야애가 3장 22~23절</div>
+<div class="card-verse">"이것들이 아침마다 새로우니 주의 성실하심이 크시도소이다"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>여호와의 인자와 긍휼이 무궁하시므로 우리가 진멸되지 아니함이니이다 이것들이 아침마다 새로우니 주의 성실하심이 크시도소이다</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">예레미야애가는 예루살렘의 처절한 멸망을 노래하는 슬픔의 책입니다. 그 한가운데서 예레미야는 놀라운 고백을 합니다. 우리가 살아남은 것은 우리의 의로움이나 능력이 아니라, 오직 하나님의 인자와 긍휼이 다함이 없기 때문이라는 것입니다. '진멸되지 아니함'이라는 표현 속에는 깊은 겸손이 담겨 있습니다. 우리가 오늘도 이 자리에 있는 것은 하나님의 자비가 아침마다 새롭게 임하고 있기 때문입니다. 어제의 실수, 어제의 연약함, 어제의 상처는 오늘 아침 새롭게 부어지는 하나님의 긍휼 앞에 놓입니다. 오늘 하루를 시작하는 이 아침, 하나님의 성실하심이 다시 한번 우리 삶에 임하고 있음을 기억하며 새로운 소망으로 나아갈 수 있습니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>내가 '진멸되지 아니함'을 실감했던 순간이 있었나요? 하나님의 긍휼이 나를 붙잡아 주셨다고 느꼈던 경험을 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>"아침마다 새롭다"는 말씀이 오늘 나의 삶에 어떤 소망을 줍니까? 매일 아침을 새롭게 시작하기 위해 내가 할 수 있는 구체적인 한 가지는 무엇일까요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 02</div>
+<div class="card-title">시편 37편 4~6절</div>
+<div class="card-verse">"여호와를 기뻐하라 그가 네 마음의 소원을 네게 이루어 주시리로다"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>또 여호와를 기뻐하라 그가 네 마음의 소원을 네게 이루어 주시리로다 네 길을 여호와께 맡기라 그를 의지하면 그가 이루시고 네 의를 빛 같이 나타내시며 네 공의를 정오의 빛 같이 하시리로다</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">이 말씀은 단순히 '원하는 것을 달라고 하면 주신다'는 약속이 아닙니다. '여호와를 기뻐하는 것'이 선행되어야 한다는 순서에 주목해야 합니다. 하나님을 기뻐하는 자는 그 마음의 소원 자체가 하나님의 마음을 닮아가기 때문에, 하나님은 그 소원을 기꺼이 이루어 주십니다. 또한 '길을 맡기라'는 것은 내 계획과 방향을 하나님께 위탁하는 행위입니다. 이것은 수동적인 포기가 아니라, 가장 능동적인 믿음의 행위입니다. 내가 이루려 애쓰는 것이 아니라, 하나님이 이루신다는 신뢰 위에 내 삶을 세울 때, 그분은 우리의 의를 정오의 빛처럼 밝히 드러내실 것입니다. 지금 내 삶에서 아직 내 손에 꼭 쥐고 있는 것, 하나님께 맡기지 못하고 있는 것이 무엇인지 돌아보는 시간이 되길 바랍니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>"여호와를 기뻐하라"는 명령이 내게는 어떤 의미로 다가옵니까? 나는 무엇을 기뻐하며 살고 있는지 솔직하게 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>내 길을 여호와께 맡기는 것이 가장 어렵게 느껴지는 영역은 어디인가요? 그 영역을 하나님께 내어드리기 위해 어떤 기도를 드릴 수 있을까요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 3 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 03</div>
+<div class="card-title">마태복음 18장 19~20절</div>
+<div class="card-verse">"두세 사람이 내 이름으로 모인 곳에는 나도 그들 중에 있느니라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>진실로 다시 너희에게 이르노니 너희 중의 두 사람이 땅에서 합심하여 무엇이든지 구하면 하늘에 계신 내 아버지께서 그들을 위하여 이루게 하시리라 두세 사람이 내 이름으로 모인 곳에는 나도 그들 중에 있느니라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">예수님은 교회와 공동체의 기도에 특별한 약속을 주셨습니다. '합심하여'라는 말은 단순히 같은 내용을 기도하는 것이 아니라, 서로의 마음이 같은 방향으로 하나가 되어 나아간다는 의미입니다. 목장 공동체가 함께 모여 기도하는 것은 그래서 특별한 의미가 있습니다. 우리가 혼자 드리는 기도와 함께 드리는 기도는 모두 귀하지만, 함께 드릴 때 예수님이 그 자리에 임재하신다는 약속이 있습니다. 두세 사람이라는 작은 숫자에도 주목하십시오. 거대한 집회가 아니어도, 오늘 이 자리에서 함께 하나님의 이름으로 모인 우리 가운데 예수님이 계십니다. 이 사실이 우리의 모임을 단순한 친교의 시간이 아닌, 거룩한 예배의 자리로 만듭니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>함께 드린 기도를 통해 하나님의 응답을 경험한 적이 있나요? 혼자 기도할 때와 함께 기도할 때의 차이를 느낀 경험을 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>지금 이 목장이 '합심하여' 함께 구해야 할 기도 제목이 있다면 무엇인지 함께 나누고, 실제로 그 기도를 함께 드려봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 4 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 04</div>
+<div class="card-title">히브리서 10장 23~25절</div>
+<div class="card-verse">"모이기를 폐하는 어떤 사람들의 습관과 같이 하지 말고"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>또 약속하신 이는 미쁘시니 우리가 믿는 도리의 소망을 움직이지 말며 굳게 잡고 서로 돌아보아 사랑과 선행을 격려하며 모이기를 폐하는 어떤 사람들의 습관과 같이 하지 말고 오직 권하여 그 날이 가까움을 볼수록 더욱 그리하자</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">히브리서 기자는 어려운 상황 가운데 흔들리는 성도들에게 세 가지를 당부합니다. 첫째, 소망을 굳게 잡으라는 것입니다. 그 근거는 약속하신 이가 미쁘시다는 사실, 즉 하나님의 신실하심입니다. 둘째, 서로 돌아보아 사랑과 선행을 격려하라는 것입니다. 신앙은 혼자 지키는 것이 아니라 공동체 안에서 서로를 세워가는 것입니다. 셋째, 모이기를 힘쓰라는 것입니다. '그 날', 즉 주님의 재림이 가까울수록 더욱 모이라는 권면은 역설적입니다. 세상이 혼란할수록, 힘들수록 우리는 공동체로 모여야 합니다. 목장 모임은 단순한 소그룹 활동이 아니라, 주님의 날을 기다리는 성도들이 서로를 붙들며 함께 걸어가는 거룩한 여정입니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>신앙생활을 하면서 공동체의 모임이 나에게 어떤 힘이 되었나요? 혹은 모임에 나오기 어려웠던 시기가 있었다면, 그때 무엇이 다시 나오게 했나요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>"서로 돌아보아 사랑과 선행을 격려하라"는 말씀처럼, 내가 이 목장 안에서 더 구체적으로 실천할 수 있는 것은 무엇일까요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 5 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 05</div>
+<div class="card-title">골로새서 4장 6절</div>
+<div class="card-verse">"너희 말을 항상 은혜 가운데서 소금으로 맛을 냄과 같이 하라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>너희 말을 항상 은혜 가운데서 소금으로 맛을 냄과 같이 하라 그리하면 각 사람에게 마땅히 대답할 것을 알리라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">소금은 음식의 맛을 내는 동시에 부패를 막습니다. 바울이 우리의 말을 소금에 비유한 것은 의미심장합니다. 은혜 가운데 있는 말은 단순히 부드럽고 좋은 말이 아니라, 듣는 사람의 삶에 생명을 더하고 악한 것으로부터 보호하는 말입니다. '항상'이라는 단어는 특정 상황에서만이 아니라 일상의 모든 대화 속에서 이 원칙을 지키라는 뜻입니다. 우리가 하루에 주고받는 수많은 말들 — 가족과의 대화, 직장에서의 말, 소셜미디어에서 남기는 글 — 이 모든 것이 은혜의 자리가 될 수 있습니다. "각 사람에게 마땅히 대답할 것을 알리라"는 약속은, 은혜 안에 거할 때 하나님이 지혜로운 말을 주신다는 것입니다. 내 입술의 언어가 누군가에게 생명의 말이 될 수 있도록, 오늘 하루 말하기 전에 한 번 더 기도하는 훈련이 필요합니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>누군가의 말 한마디가 내 삶에 '소금' 같은 역할을 했던 경험이 있나요? 반대로 내 말이 누군가에게 상처가 되었던 순간을 돌아본다면 어떤 생각이 드나요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>일상의 어떤 대화 상황에서 '은혜로운 말'을 하기가 가장 어렵나요? 그 상황에서 말하기 전에 내가 실천할 수 있는 한 가지 습관을 나눠봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<p class="footer-church">기독교한국침례회 은혜교회</p>
+<p class="footer-author">작성 · 박동준 목사</p>
+</div>
+
+</div>
+</body>
+</html>
