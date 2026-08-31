@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목장 나눔 자료</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f3f5fb;
+    --warm-white: #fdfdff;
+    --navy: #2d4373;
+    --navy-light: #5578b8;
+    --navy-pale: #e9edf9;
+    --navy-deep: #1b2a4e;
+    --text: #1c2438;
+    --text-muted: #616a82;
+    --border: #dde3f2;
+    --section-bg: #ffffff;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background-color: var(--bg);
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(45,67,115,0.06) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(27,42,78,0.05) 0%, transparent 50%);
+    font-family: 'Noto Sans KR', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    padding: 60px 20px;
+  }
+
+  .container {
+    max-width: 780px;
+    margin: 0 auto;
+  }
+
+  /* Header */
+  .header {
+    text-align: center;
+    margin-bottom: 64px;
+    animation: fadeDown 0.8s ease both;
+  }
+
+  .header-label {
+    display: inline-block;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.3em;
+    color: var(--navy-light);
+    text-transform: uppercase;
+    border: 1px solid var(--navy-pale);
+    padding: 6px 20px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  .header h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(28px, 5vw, 40px);
+    font-weight: 700;
+    color: var(--navy-deep);
+    letter-spacing: -0.01em;
+    line-height: 1.3;
+    margin-bottom: 12px;
+  }
+
+  .header-date {
+    font-size: 13px;
+    color: var(--text-muted);
+    letter-spacing: 0.15em;
+    margin-top: 10px;
+  }
+
+  .header-line {
+    width: 48px;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--navy-light), transparent);
+    margin: 20px auto 0;
+  }
+
+  /* Cards */
+  .card {
+    background: var(--section-bg);
+    border-radius: 16px;
+    margin-bottom: 36px;
+    overflow: hidden;
+    box-shadow: 0 2px 20px rgba(27,42,78,0.07), 0 1px 4px rgba(27,42,78,0.05);
+    animation: fadeUp 0.7s ease both;
+    border: 1px solid var(--border);
+  }
+
+  .card:nth-child(1) { animation-delay: 0.1s; }
+  .card:nth-child(2) { animation-delay: 0.2s; }
+  .card:nth-child(3) { animation-delay: 0.3s; }
+  .card:nth-child(4) { animation-delay: 0.4s; }
+  .card:nth-child(5) { animation-delay: 0.5s; }
+
+  .card-header {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 100%);
+    padding: 28px 36px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card-header::before {
+    content: '';
+    position: absolute;
+    top: -30px; right: -30px;
+    width: 120px; height: 120px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.04);
+  }
+
+  .card-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; left: 40px;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    background: rgba(85,120,184,0.15);
+  }
+
+  .card-num {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.25em;
+    color: var(--navy-light);
+    margin-bottom: 8px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-verse {
+    font-size: 13px;
+    color: rgba(255,255,255,0.68);
+    font-style: italic;
+    position: relative;
+    z-index: 1;
+    line-height: 1.6;
+  }
+
+  .card-body {
+    padding: 32px 36px;
+  }
+
+  /* Scripture quote */
+  .scripture-block {
+    border-left: 3px solid var(--navy-light);
+    background: var(--navy-pale);
+    padding: 16px 20px;
+    margin-bottom: 28px;
+    border-radius: 0 8px 8px 0;
+  }
+
+  .scripture-block p {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    color: var(--navy-deep);
+    line-height: 1.9;
+    font-weight: 400;
+  }
+
+  /* Meditation */
+  .meditation-title {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    color: var(--navy-light);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  .meditation-text {
+    font-size: 15px;
+    line-height: 2.0;
+    color: var(--text);
+    font-weight: 300;
+    white-space: pre-line;
+  }
+
+  .meditation-text strong {
+    color: var(--navy-deep);
+    font-weight: 600;
+  }
+
+  /* Divider */
+  .divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 28px 0;
+  }
+
+  /* Question block */
+  .question-block {
+    background: var(--bg);
+    border-radius: 12px;
+    padding: 24px 28px;
+  }
+
+  .question-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+  }
+
+  .question-icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--navy), var(--navy-light));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .question-header-text {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy-deep);
+  }
+
+  .question-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .question-item {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  .question-badge {
+    flex-shrink: 0;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--navy-deep);
+    color: white;
+    font-size: 11px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+  }
+
+  .question-item p {
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-muted);
+  }
+
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 56px;
+    padding-top: 32px;
+    border-top: 1px solid var(--border);
+    animation: fadeUp 0.8s ease 0.5s both;
+  }
+
+  .footer-cross {
+    font-size: 24px;
+    color: var(--navy-light);
+    margin-bottom: 12px;
+    letter-spacing: 8px;
+  }
+
+  .footer-church {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy-deep);
+    letter-spacing: 0.05em;
+    margin-bottom: 6px;
+  }
+
+  .footer-author {
+    font-size: 11px;
+    color: var(--text-muted);
+    letter-spacing: 0.1em;
+  }
+
+  /* Animations */
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 600px) {
+    body { padding: 40px 16px; }
+    .card-header { padding: 24px 24px; }
+    .card-body { padding: 24px 24px; }
+    .question-block { padding: 20px 20px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-label">은혜교회 묵상나눔</div>
+    <h1>말씀 묵상과 나눔</h1>
+    <div class="header-date">2026 · 8-5</div>
+    <div class="header-line"></div>
+  </div>
+
+  <!-- Card 1 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 01</div>
+      <div class="card-title">시편 34편 1~3절</div>
+      <div class="card-verse">"내 영혼이 여호와를 자랑하리니 곤고한 자들이 이를 듣고 기뻐하리로다"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>내가 여호와를 항상 송축함이여 내 입술로 항상 주를 찬양하리이다 내 영혼이 여호와를 자랑하리니 곤고한 자들이 이를 듣고 기뻐하리로다 나와 함께 여호와를 광대하시다 하며 함께 그의 이름을 높이세</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">다윗이 이 고백을 남긴 순간은 화려한 왕궁이 아니라, 목숨을 부지하기 위해 원수 앞에서 미친 척하며 도망쳐야 했던 극한의 상황이었습니다. 가장 낮아진 자리에서, 다윗의 입술은 오히려 하나님을 향한 찬양으로 열렸습니다. 이것은 형편이 좋아졌기 때문에 터져 나온 감격이 아니라, 어떤 상황에서도 변하지 않는 하나님을 향한 신뢰의 고백입니다. "항상"이라는 단어가 두 번이나 반복되는 것은 우연이 아닙니다. 찬양은 상황에 대한 반응이 아니라 하나님이 어떤 분이신지에 대한 반응이기 때문입니다. 더 놀라운 것은, 다윗의 개인적인 찬양이 곤고한 자들에게 기쁨이 된다는 사실입니다. 한 사람의 진실한 고백은 결코 혼자만의 것으로 끝나지 않고, 같은 자리에서 눈물 흘리는 누군가에게 소망의 씨앗이 됩니다. 그래서 다윗은 마지막에 "나와 함께" 여호와를 높이자고 초대합니다. 찬양은 결국 혼자 부르는 노래가 아니라 함께 부르는 노래입니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>지금 내가 처한 상황이 좋을 때와 힘들 때, 나의 찬양과 감사는 얼마나 달라지나요?</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>나의 신앙 고백이나 삶의 나눔이 곁에 있는 누군가에게 위로와 기쁨이 되었던 경험이 있다면 나눠봅시다.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 2 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 02</div>
+      <div class="card-title">로마서 1장 16절</div>
+      <div class="card-verse">"내가 복음을 부끄러워하지 아니하노니"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>내가 복음을 부끄러워하지 아니하노니 이 복음은 모든 믿는 자에게 구원을 주시는 하나님의 능력이 됨이라 먼저는 유대인에게요 그리고 헬라인에게로다</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">바울이 이 편지를 쓴 로마는 복음을 전하기에 결코 만만한 곳이 아니었습니다. 황제를 신처럼 떠받들던 제국의 심장부에서, 십자가에 못 박혀 죽은 한 사람을 구원자로 전한다는 것은 조롱과 멸시를 자초하는 일이었습니다. 그럼에도 바울은 담대하게 "내가 복음을 부끄러워하지 아니하노니"라고 선언합니다. 그 이유는 복음이 단순한 지식이나 도덕적 가르침이 아니라 구원을 주시는 하나님의 능력이기 때문입니다. 능력이라는 단어는 실제로 사람을 변화시키고 살리는 힘을 의미합니다. 우리도 살아가며 신앙을 드러내는 것이 부담스럽고 부끄럽게 느껴지는 순간을 만납니다. 사람들의 시선, 무관심, 때로는 노골적인 비웃음 앞에서 우리의 입은 쉽게 닫힙니다. 그러나 복음이 부끄러운 것이 아니라 능력이라는 사실을 붙잡을 때, 우리는 다시 담대함을 얻습니다. 그리고 이 능력은 유대인과 헬라인의 구분 없이 모든 믿는 자에게 동일하게 주어지는 은혜입니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>신앙을 드러내거나 복음을 전하는 것이 부끄럽거나 망설여졌던 순간이 있었나요?</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>복음이 나의 삶에서 실제로 "능력"으로 나타났던 경험을 나눠봅시다.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 3 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 03</div>
+      <div class="card-title">고린도전서 10장 31~33절</div>
+      <div class="card-verse">"너희가 먹든지 마시든지 무엇을 하든지 다 하나님의 영광을 위하여 하라"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>그런즉 너희가 먹든지 마시든지 무엇을 하든지 다 하나님의 영광을 위하여 하라 유대인에게나 헬라인에게나 하나님의 교회에나 거치는 자가 되지 말고 나와 같이 모든 일에 모든 사람을 기쁘게 하여 자신의 유익을 구하지 아니하고 많은 사람의 유익을 구하여 그들로 구원을 받게 하라</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">바울은 여기서 매우 일상적인 행위, "먹든지 마시든지"를 언급하며 이야기를 시작합니다. 이는 신앙이 예배당 안에서의 특별한 순간에만 머무는 것이 아니라, 밥을 먹고 물을 마시는 지극히 평범한 일상 속에서도 실천되어야 함을 보여줍니다. 하나님의 영광을 위한다는 것은 거창한 사역이 아니라, 오늘 내가 하는 작은 선택들이 누구를 향하고 있는가의 문제입니다. 바울은 이어서 거치는 자가 되지 말라고 말하며, 신앙의 자유가 타인에게 걸림돌이 되어서는 안 된다고 가르칩니다. 더 나아가 그는 자신의 유익이 아니라 많은 사람의 유익을 구했던 자신의 삶을 본으로 제시합니다. 이는 나의 권리나 편함을 내려놓더라도, 그 선택이 다른 사람을 구원으로 이끄는 통로가 될 수 있다면 기꺼이 그렇게 하겠다는 결단입니다. 우리의 일상 속 작은 배려와 양보가 실은 누군가에게 복음의 통로가 될 수 있음을 기억해야 합니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>나의 자유로운 선택이 다른 사람에게 걸림돌이 될 수 있다는 것을 생각해 본 적이 있나요? 구체적인 예가 있다면 나눠봅시다.</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>나의 유익보다 다른 사람의 유익을 먼저 구했던 경험, 혹은 그렇게 하지 못해 아쉬웠던 경험을 나눠봅시다.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 4 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 04</div>
+      <div class="card-title">전도서 2장 16절</div>
+      <div class="card-verse">"지혜자의 죽음이 우매자의 죽음과 일반이로다"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>지혜자도 우매자와 함께 영원하도록 기억함을 얻지 못하나니 후일에는 모두 다 잊어버린 지 오랠 것임이라 오호라 지혜자의 죽음이 우매자의 죽음과 일반이로다</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">솔로몬은 이 책에서 놀랍도록 솔직합니다. 그는 인생에서 얻을 수 있는 지혜와 지식과 성취를 모두 경험한 사람이었지만, 결국 도달한 결론은 죽음 앞에서 지혜자와 우매자가 다르지 않다는 것이었습니다. 시간이 흐르면 사람들의 기억 속에서 우리 모두는 결국 잊혀집니다. 이 말씀은 얼핏 허무주의처럼 들리지만, 사실은 매우 중요한 질문을 우리에게 던집니다. 그렇다면 우리는 무엇을 위해 살아야 하는가라는 질문입니다. 세상의 성취와 지혜, 사람들의 인정과 기억은 결코 우리 삶의 궁극적인 의미가 될 수 없습니다. 전도서는 이 허무를 통과하게 함으로써 결국 우리를 하나님께로 이끕니다. 사람의 기억에서는 잊혀질지라도, 우리는 결코 잊지 않으시는 하나님 앞에 살고 있다는 사실이 우리의 진짜 소망입니다. 헛되고 헛된 이 세상의 기준이 아니라, 영원하신 하나님 안에서 나의 존재와 수고의 의미를 찾아야 합니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>세상의 성공이나 사람들의 인정이 내 삶의 의미가 되어버린 순간은 없었나요?</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>"사람에게는 잊혀져도 하나님은 나를 기억하신다"는 사실이 나에게 어떤 위로와 도전을 주나요?</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card 5 -->
+  <div class="card">
+    <div class="card-header">
+      <div class="card-num">PASSAGE 05</div>
+      <div class="card-title">데살로니가후서 2장 15~17절</div>
+      <div class="card-verse">"모든 선한 일과 말에 굳건하게 하시기를 원하노라"</div>
+    </div>
+    <div class="card-body">
+      <div class="scripture-block">
+        <p>그러므로 형제들아 굳건하게 서서 말로나 우리의 편지로 가르침을 받은 전통을 지키라 우리 주 예수 그리스도와 우리를 사랑하시고 영원한 위로와 좋은 소망을 은혜로 주신 하나님 우리 아버지께서 너희 마음을 위로하시고 모든 선한 일과 말에 굳건하게 하시기를 원하노라</p>
+      </div>
+      <div class="meditation-title">묵상</div>
+      <div class="meditation-text">데살로니가 교인들은 거짓된 가르침과 혼란스러운 소문들 속에서 흔들리고 있었습니다. 주의 날이 이미 이르렀다는 잘못된 주장이 퍼지면서 그들의 믿음은 크게 동요했습니다. 이런 상황에서 바울은 굳건하게 서서 전통을 지키라고 권면합니다. 여기서 전통이란 낡은 관습이 아니라, 사도들을 통해 전해진 참된 복음의 가르침을 의미합니다. 우리가 살아가는 시대에도 수많은 정보와 목소리들이 우리의 믿음을 흔들려고 합니다. 그러나 흔들리지 않는 견고함은 우리 자신의 의지나 노력에서 나오는 것이 아닙니다. 바울은 곧바로 이어서 하나님 우리 아버지께서 너희 마음을 위로하시고 굳건하게 하시기를 원한다고 기도합니다. 즉, 우리를 굳게 세우시는 분은 결국 영원한 위로와 좋은 소망을 은혜로 주시는 하나님이십니다. 흔들리는 세상 속에서 우리가 붙잡아야 할 것은 변하지 않는 진리의 말씀이며, 우리를 붙드시는 분은 하나님 자신이라는 사실입니다.</div>
+      <hr class="divider">
+      <div class="question-block">
+        <div class="question-header">
+          <div class="question-icon">Q</div>
+          <div class="question-header-text">나눔 질문</div>
+        </div>
+        <ul class="question-list">
+          <li class="question-item">
+            <div class="question-badge">1</div>
+            <p>요즘 나의 믿음을 가장 흔드는 것은 무엇인가요? (정보, 관계, 상황 등)</p>
+          </li>
+          <li class="question-item">
+            <div class="question-badge">2</div>
+            <p>흔들릴 때 나를 굳게 세워주신 하나님의 위로를 경험한 적이 있다면 나눠봅시다.</p>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="footer">
+    <p class="footer-church">기독교한국침례회 은혜교회</p>
+    <p class="footer-author">작성 · 박동준 목사</p>
+  </div>
+
+</div>
+</body>
+</html>
