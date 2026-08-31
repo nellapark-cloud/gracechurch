@@ -28,6 +28,7 @@ const categories = [
   { key: 'admin_minutes', dir: 'content/admin-minutes' },
   { key: 'officer_training', dir: 'content/servant-leaders' },
   { key: 'bible_study', dir: 'content/bible-study' },
+  { key: 'bible_study_meditation', dir: 'content/bible-study/묵상' },
 ];
 
 function langPriority(rawName) {
