@@ -619,6 +619,11 @@
     color: var(--muted);
     padding-left: 0.4rem;
   }
+  details.doc-group--nested.doc-group--accent summary{
+    font-size: 0.86rem;
+    font-weight: 700;
+    color: var(--gold);
+  }
 
   /* ---------- floating nav buttons ---------- */
   .float-nav{
@@ -839,11 +844,11 @@
     <details class="doc-group">
       <summary>신약<span class="count" id="count-bible_by_book-new"></span></summary>
       <ul class="doclist" id="list-bible_by_book-new"><li class="doclist__empty">불러오는 중...</li></ul>
-      <details class="doc-group doc-group--nested">
+      <details class="doc-group doc-group--nested doc-group--accent">
         <summary>로마서 장별 강해<span class="count" id="count-romans_chapters"></span></summary>
         <ul class="doclist" id="list-romans_chapters"><li class="doclist__empty">불러오는 중...</li></ul>
       </details>
-      <details class="doc-group doc-group--nested">
+      <details class="doc-group doc-group--nested doc-group--accent">
         <summary>에베소서 장별 강해<span class="count" id="count-ephesians_chapters"></span></summary>
         <ul class="doclist" id="list-ephesians_chapters"><li class="doclist__empty">불러오는 중...</li></ul>
       </details>
