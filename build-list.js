@@ -16,7 +16,7 @@ const categories = [
   { key: 'romans_chapters', dir: 'content/bible-by-book/new-testament/romans-chapters' },
   { key: 'bible_by_person', dir: 'content/bible-by-book/bible-by-person' },
   { key: 'bible_qt', dir: 'content/bible-by-book/qt' },
-  { key: 'newcomers', dir: 'content/newcomers' },
+  { key: 'newcomers', dir: 'content/newcomers', pin: ['함께 걷는 믿음의 첫걸음'] },
   { key: 'baptism_training', dir: 'content/baptism-training' },
   { key: 'mokjang', dir: 'content/mokjang' },
   { key: 'bulletin', dir: 'content/bulletin' },
@@ -51,7 +51,7 @@ function naturalCompare(a, b) {
   return a.localeCompare(b, 'ko');
 }
 
-function listDocs(dir, withFlags) {
+function listDocs(dir, withFlags, pin) {
   const full = path.join(__dirname, dir);
   let files = [];
   try {
@@ -96,12 +96,27 @@ function listDocs(dir, withFlags) {
     items.sort((a, b) => naturalCompare(a.title, b.title));
   }
   items.forEach((it) => { delete it._priority; });
+
+  if (pin && pin.length) {
+    // 지정한 제목의 자료를 목록 맨 앞으로 고정 노출 (macOS는 파일명을 NFD로
+    // 저장하므로 비교 전에 NFC로 정규화)
+    const normalizedPin = pin.map((p) => p.normalize('NFC'));
+    items.sort((a, b) => {
+      const pa = normalizedPin.indexOf(a.title.normalize('NFC'));
+      const pb = normalizedPin.indexOf(b.title.normalize('NFC'));
+      if (pa === -1 && pb === -1) return 0;
+      if (pa === -1) return 1;
+      if (pb === -1) return -1;
+      return pa - pb;
+    });
+  }
+
   return items;
 }
 
 const manifest = {};
-categories.forEach(({ key, dir }) => {
-  manifest[key] = listDocs(dir, key === 'meeting_blessing');
+categories.forEach(({ key, dir, pin }) => {
+  manifest[key] = listDocs(dir, key === 'meeting_blessing', pin);
 });
 
 fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
