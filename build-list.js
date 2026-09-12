@@ -20,7 +20,7 @@ const categories = [
   { key: 'newcomers', dir: 'content/newcomers', pin: ['함께 걷는 믿음의 첫걸음'] },
   { key: 'baptism_training', dir: 'content/baptism-training' },
   { key: 'mokjang', dir: 'content/mokjang' },
-  { key: 'bulletin', dir: 'content/bulletin' },
+  { key: 'bulletin', dir: 'content/bulletin', desc: true },
   { key: 'mokjang_sharing', dir: 'content/mokjang-sharing' },
   { key: 'baptist_history', dir: 'content/baptist-history' },
   { key: 'admin_sermons', dir: 'content/admin-sermons' },
@@ -52,7 +52,7 @@ function naturalCompare(a, b) {
   return a.localeCompare(b, 'ko');
 }
 
-function listDocs(dir, withFlags, pin) {
+function listDocs(dir, withFlags, pin, desc) {
   const full = path.join(__dirname, dir);
   let files = [];
   try {
@@ -93,6 +93,8 @@ function listDocs(dir, withFlags, pin) {
 
   if (withFlags) {
     items.sort((a, b) => a._priority - b._priority);
+  } else if (desc) {
+    items.sort((a, b) => naturalCompare(b.title, a.title));
   } else {
     items.sort((a, b) => naturalCompare(a.title, b.title));
   }
@@ -116,8 +118,8 @@ function listDocs(dir, withFlags, pin) {
 }
 
 const manifest = {};
-categories.forEach(({ key, dir, pin }) => {
-  manifest[key] = listDocs(dir, key === 'meeting_blessing', pin);
+categories.forEach(({ key, dir, pin, desc }) => {
+  manifest[key] = listDocs(dir, key === 'meeting_blessing', pin, desc);
 });
 
 fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
