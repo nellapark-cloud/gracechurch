@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에서와 야곱</title>
+<style>
+  @import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.css');
+
+  :root{
+    --ink: #262220;
+    --sub: #6b6560;
+    --bg: #FBFAF7;
+    --line: #E4E0D8;
+    --accent: #9C4A2E;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  header{
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow{
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h1{
+    font-size: 38px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height:1.2;
+    margin-bottom: 8px;
+  }
+
+  .hebrew{
+    font-size: 16px;
+    color: var(--sub);
+  }
+
+  .refs{
+    margin-top: 14px;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--sub);
+    background: rgba(156,74,46,0.07);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 44px;
+    margin-bottom: 14px;
+  }
+
+  h2 .num{
+    color: var(--accent);
+    font-weight: 600;
+    margin-right: 8px;
+    font-size: 17px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.9;
+    color: #3a3532;
+    margin-bottom: 16px;
+  }
+
+  ul{
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+
+  li{
+    font-size: 16px;
+    line-height: 1.85;
+    color: #3a3532;
+    margin-bottom: 10px;
+  }
+
+  strong{
+    color: var(--ink);
+    font-weight: 600;
+    background: linear-gradient(to bottom, transparent 65%, rgba(156,74,46,0.16) 65%);
+  }
+
+  .split{
+    display:flex;
+    gap: 14px;
+    margin: 18px 0 24px;
+  }
+
+  .split .col{
+    flex: 1;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    padding: 16px 16px 4px;
+    background: #fff;
+  }
+
+  .split .col h3{
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    color: var(--accent);
+    margin-bottom: 10px;
+  }
+
+  .split .col p{
+    font-size: 14.5px;
+    line-height: 1.75;
+  }
+
+  .table-wrap{
+    margin: 18px 0 24px;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+  }
+
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14.5px;
+  }
+
+  th{
+    background: rgba(156,74,46,0.08);
+    text-align: left;
+    padding: 10px 14px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--accent);
+  }
+
+  td{
+    padding: 9px 14px;
+    border-top: 1px solid var(--line);
+    color: #3a3532;
+  }
+
+  .quote-block{
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #4a453f;
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    margin: 18px 0 22px;
+  }
+
+  .note{
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--sub);
+    border-left: 2px solid var(--line);
+    padding: 4px 0 4px 16px;
+    margin: 20px 0;
+  }
+
+  footer{
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--sub);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding: 40px 20px 70px; }
+    h1{ font-size: 30px; }
+    .split{ flex-direction: column; }
+    table{ font-size: 13px; }
+    th, td{ padding: 8px 10px; }
+  }
+
+  /* --- 용어 팝업 --- */
+  .term{
+    position: relative;
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+    border-bottom: 1px dotted var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .popover{
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: 270px;
+    max-width: 78vw;
+    background: var(--ink);
+    color: #f2ede4;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 1.65;
+    padding: 14px 16px;
+    border-radius: 6px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    z-index: 20;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .popover .ptitle{
+    display:block;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: #d99a7c;
+    margin-bottom: 5px;
+  }
+
+  .popover::after{
+    content:"";
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+
+  .term.open .popover{ display:block; }
+
+  @media (max-width: 480px){
+    .popover{
+      position: fixed;
+      left: 5vw;
+      right: 5vw;
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      max-width: none;
+    }
+    .popover::after{ display:none; }
+    .term.open::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 19;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">성경인물묵상</div>
+    <h1>에서와 야곱</h1>
+    <div class="hebrew">태 속에서부터 다투던 두 민족, 장자의 명분을 팥죽 한 그릇에</div>
+    <div class="refs">등장 성구 · 창세기 25:19-34</div>
+  </header>
+
+  <h2><span class="num">01</span>태 속에서부터 다투다</h2>
+  <p>이삭이 리브가를 아내로 맞은 지 이십 년 만에, 이삭의 간구로 리브가가 잉태합니다(25:21). 그런데 태 속에서부터 아이들이 서로 싸우자 리브가는 괴로워하며 여호와께 묻고, 이런 응답을 받습니다.</p>
+  <div class="quote-block">"두 국민이 네 태중에 있구나 두 민족이 네 복중에서부터 나뉘리라 이 족속이 저 족속보다 강하겠고 큰 자가 어린 자를 섬기리라" (창세기 25:23)</div>
+  <p>이 신탁은 두 사람 이야기가 시작되기도 전에 이미 결말을 알려줍니다. 먼저 난 자가 나중 난 자를 섬긴다는 것은 당시 장자 상속 문화를 정면으로 뒤집는 선언입니다. 창세기 저자는 처음부터 독자에게, 이 이야기가 사람의 순서가 아니라 하나님의 택하심을 따라 흘러갈 것임을 미리 알려주는 셈입니다. 실제로 바울은 훗날 이 구절을 인용하며 "행위로 말미암지 않고 오직 부르시는 이로 말미암아 서게 하려 하사"(롬 9:11-12) 하나님의 주권적 선택을 설명하는 근거로 삼습니다.</p>
+
+  <h2><span class="num">02</span>에서와 야곱 — 이름에 담긴 예언</h2>
+  <p>먼저 나온 아이는 전신이 붉고 털이 옷과 같아 <span class="term" tabindex="0">에서<span class="popover"><span class="ptitle">에사브 (עֵשָׂו, Esav)</span>'털이 많은'이라는 뜻의 히브리어 '세아르'와 연관된 이름으로 추정된다. 그의 붉은 외모("아드모니")는 훗날 그의 별명 '에돔'(붉음)으로 다시 연결되며, 이는 그가 훗날 세울 에돔 족속의 이름이 된다.</span></span>라 이름 지어집니다. 뒤이어 나온 아우는 손으로 형의 발꿈치를 잡고 나왔다 하여 <span class="term" tabindex="0">야곱<span class="popover"><span class="ptitle">야아콥 (יַעֲקֹב, Ya'akov)</span>'발꿈치'를 뜻하는 '아케브'에서 왔다. 동시에 같은 어근에서 '속이다, 밀어내다'는 뜻의 동사 '아카브'도 파생되는데, 이 이중적 의미는 야곱의 평생을 예고한다 — 그는 문자 그대로 형의 발꿈치를 잡고 태어났고, 훗날 장자권과 축복을 '밀어내어' 취하는 자가 된다(27:36, 에서의 대사 참조).</span></span>이라 이름 지어집니다. 창세기 저자가 이름 짓는 방식은 결코 우연이 아닙니다 — 두 이름 모두 그들의 생애 전체를 압축해 미리 보여주는 예언적 이름입니다.</p>
+
+  <h2><span class="num">03</span>대조되는 두 삶의 방식</h2>
+  <p>아이들이 장성하자 두 사람의 길은 뚜렷이 갈립니다.</p>
+  <div class="quote-block">"그 아이들이 장성하매 에서는 익숙한 사냥꾼이었으므로 들사람이 되고 야곱은 조용한 사람이었으므로 장막에 거주하니" (창세기 25:27)</div>
+  <p>여기서 야곱을 가리켜 "조용한 사람"이라 옮긴 원어를 조금 더 들여다볼 필요가 있습니다. 이 단어는 히브리어 <span class="term" tabindex="0">탐<span class="popover"><span class="ptitle">탐 (תָּם)</span>일반적으로 '완전하다, 흠 없다, 온전하다'는 뜻으로 쓰이는 단어다. 같은 어근의 형용사형 '타밈'(תָּמִים)은 노아를 묘사할 때("당세에 완전한 자", 창 6:9)와 욥을 묘사할 때("온전하고 정직하여", 욥 1:1) 쓰인 바로 그 단어다.</span></span>인데, 단순히 성격이 얌전하다는 뜻이 아니라 노아와 욥을 묘사할 때 쓰인 것과 같은 계열의 단어입니다. 즉 본문은 야곱을 소극적이고 집안에만 머무는 사람으로 그리는 것이 아니라, 온전함·정직함이라는 인격적 자질을 지닌 사람으로 소개하고 있을 가능성이 있습니다. 물론 야곱의 이후 행적 — 장자권을 흥정하고 아버지를 속이는 모습 — 을 생각하면, 이 "온전함"이 그 즉시 발휘되지는 않습니다. 오히려 하나님이 부르신 사람이 처음부터 완성된 사람이 아니라, 평생에 걸쳐 다듬어져 간다는 것을 이 이름과 실제 삶 사이의 간격이 미리 암시하는 것으로 읽을 수도 있습니다.</p>
+  <p>또 한 가지 흥미로운 점은 "장막"이 히브리어 원문에서 단수가 아니라 복수 <span class="term" tabindex="0">오할림<span class="popover"><span class="ptitle">오할림 (אֹהָלִים)</span>'장막'을 뜻하는 '오헬'의 복수형. 유대 전통 해석(창세기 라바 등 미드라쉬)은 이 복수형을 근거로, 야곱이 단지 집안일을 돌보았을 뿐 아니라 셈과 에벨의 장막들 — 옛 언약의 가르침이 전수되던 자리 — 에서 말씀을 배우며 지냈다고 풀이하기도 한다.</span></span>으로 되어 있다는 것입니다. 이 복수형 때문에 유대 랍비 전통에서는 야곱을 단지 목축·가사를 돌본 사람이 아니라, 말씀과 언약의 전통을 가까이하며 배운 사람으로 해석하기도 합니다. 다만 이는 미드라쉬적 전통 해석이며, 평이한 독법으로는 정착 생활을 하는 목자의 삶을 가리키는 표현으로 보는 것이 일반적입니다. 어느 쪽이든 본문의 대비는 생활방식 자체의 우열이 아니라, 이어지는 사건에서 드러나는 두 사람의 마음가짐 차이를 향해 나아갑니다.</p>
+
+  <div class="split">
+    <div class="col">
+      <h3>에서 — 들사람</h3>
+      <p>사냥에 능숙하고 아버지의 입맛을 사로잡는 아들. 눈앞의 것에 강하게 이끌린다.</p>
+    </div>
+    <div class="col">
+      <h3>야곱 — 장막 사람</h3>
+      <p>조용하고 온전함(탐)을 지닌 아들. 어머니의 사랑을 받으며 계획하고 기다린다.</p>
+    </div>
+  </div>
+
+  <h2><span class="num">04</span>팥죽 한 그릇에 판 것</h2>
+  <p>어느 날 에서가 사냥에서 돌아와 심히 피곤한 채 야곱이 쑤던 팥죽을 요구합니다. 그러자 야곱은 조건을 내겁니다.</p>
+  <div class="quote-block">"야곱이 이르되 형의 장자의 명분을 오늘 내게 팔라... 에서가 이르되 내가 죽게 되었으니 이 장자의 명분이 내게 무엇이 유익하리요" (창세기 25:31-32)</div>
+  <p>여기서 에서의 말 "내가 죽게 되었으니"는 실제로 굶어 죽을 위기라기보다, 당장의 배고픔을 극단적으로 과장하는 표현에 가깝습니다. 그는 배고픔이라는 순간의 감각 앞에서 장자권이 지닌 영적·물질적 유익 전체를 무가치한 것으로 계산해 버립니다. 창세기 저자는 이 거래를 마무리하며 냉정한 한 문장으로 평가를 내립니다 — "에서가 장자의 명분을 가볍게 여김이었더라"(25:34). 이 평가는 야곱의 잔꾀보다 에서 자신의 마음가짐에 초점을 맞춥니다.</p>
+
+  <h2><span class="num">05</span>망령된 자 — 신약의 평가</h2>
+  <p>히브리서는 이 사건을 후대 성도들에게 경고로 되짚습니다.</p>
+  <div class="quote-block">"음행하는 자와 혹 한 그릇 음식을 위하여 장자의 명분을 판 에서와 같이 망령된 자가 있을까 살피라" (히브리서 12:16)</div>
+  <p>여기 쓰인 <span class="term" tabindex="0">망령된 자<span class="popover"><span class="ptitle">베벨로스 (βέβηλος)</span>헬라어로 '문지방을 넘어 성별된 것을 세속화하다'는 뜻의 어원에서 온 단어. 거룩하고 구별된 것을 아무렇지 않게 일상의 흥정거리로 취급하는 태도를 가리킨다. 개역개정은 이를 '망령된'으로 옮겼다.</span></span>라는 단어는 거룩한 것을 세속의 잣대로 취급하는 태도를 가리키는 헬라어 단어입니다. 히브리서 저자가 에서를 문제 삼는 지점은 사냥꾼이라는 직업이나 들에서 사는 생활방식이 아니라, 하나님이 그에게 맡기신 장자권 — 언약의 계승자로서의 신분과 축복 — 을 순간의 식욕과 맞바꿀 만큼 가볍게 여긴 마음입니다. 뒤이어 히브리서는 에서가 훗날 그 축복을 눈물로 구했으나 되돌릴 기회를 얻지 못했다고 덧붙입니다(12:17). 한 번의 가벼운 선택이 되돌릴 수 없는 결과로 이어진다는 엄중한 경고입니다.</p>
+
+  <h2><span class="num">06</span>복음과의 연결</h2>
+  <p>바울은 로마서에서 이 형제의 이야기를 인간의 공로가 아닌 하나님의 택하심을 설명하는 자리에 그대로 가져다 씁니다. "리브가가 우리 조상 이삭 한 사람으로 말미암아 잉태하였는데... 그 두 아이가 아직 나지도 아니하고 무슨 선이나 악을 행하지 아니한 때에... 큰 자가 어린 자를 섬기리라"(롬 9:10-12). 야곱이 택함 받은 것은 그가 에서보다 더 나은 사람이었기 때문이 아니라, 순전히 하나님의 은혜였습니다. 실제로 야곱의 이후 삶은 결코 흠 없는 자의 삶이 아니라, 속이고 도망치고 씨름하며 다듬어지는 자의 삶입니다. 이는 복음의 핵심과 정확히 맞닿습니다 — 하나님의 백성 됨은 우리의 자격이나 순서가 아니라, 값없이 주어지는 은혜로 시작됩니다(엡 2:8-9). 동시에 에서의 실패는 우리에게 반대편의 경고를 줍니다. 그리스도 안에서 우리에게 주어진 것 역시 순간의 만족과 맞바꿀 수 있는 하찮은 것이 아니라, 영원한 유익이 걸린 장자권과 같습니다.</p>
+
+  <h2><span class="num">07</span>우리의 현실과 설교적 교훈</h2>
+  <p>야곱의 이야기는 완벽한 사람의 이야기가 아니라, 온전함(탐)이라는 이름을 안고 태어났으나 그 이름값을 평생에 걸쳐 배워가야 했던 사람의 이야기입니다. 오늘 우리 역시 신앙의 자리에 '조용히' 머물러 있다고 해서 저절로 온전해지는 것은 아닙니다. 말씀과 언약의 자리(장막들)에 가까이 있는 것과, 실제로 그 말씀대로 살아내는 것 사이에는 여전히 다듬어져야 할 거리가 있습니다.</p>
+  <p>동시에 에서의 실패는 오늘 우리에게 묻습니다. 우리는 무엇을 '한 그릇 음식'과 맞바꾸고 있습니까. 예배의 자리, 말씀 앞에 머무는 시간, 하나님이 맡기신 소명 — 이 모든 것이 당장의 편함과 배고픔 앞에서 얼마나 쉽게 가벼운 것으로 계산되는지, 에서의 이야기는 조용히 그러나 분명하게 되묻습니다.</p>
+
+  <p class="note">다음엔 야곱이 장자의 축복을 가로채는 사건(창세기 27장), 혹은 브니엘에서 하나님과 씨름하는 야곱(창세기 32장)으로 이어갈 수 있다.</p>
+
+  <footer>
+    <span>GENESIS STUDY</span>
+    <span>עֵשָׂו — יַעֲקֹב</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.term').forEach(term => {
+    term.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = term.classList.contains('open');
+      document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+      if (!wasOpen) term.classList.add('open');
+    });
+    term.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); term.click(); }
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+  });
+</script>
+</body>
+</html>
