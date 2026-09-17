@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>자유의지와 죄의 문제 | 은혜교회 신앙철학</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<style>
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Pretendard';
+  src: url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Medium.woff2') format('woff2');
+  font-weight: 500;
+  font-display: swap;
+}
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&display=swap');
+
+:root{
+  --ivory:#faf6ef;
+  --ivory-deep:#f2ead9;
+  --ink:#2b241c;
+  --ink-soft:#5a5245;
+  --coral:#e8794a;
+  --coral-deep:#d05f30;
+  --coral-pale:#fbe4d6;
+  --line:#e6dcc9;
+  --card:#ffffff;
+}
+
+*{box-sizing:border-box; margin:0; padding:0;}
+
+body{
+  font-family:'Noto Serif KR', serif;
+  background:var(--ivory);
+  color:var(--ink);
+  line-height:1.85;
+  letter-spacing:-0.01em;
+  -webkit-font-smoothing:antialiased;
+}
+
+.wrap{
+  max-width:760px;
+  margin:0 auto;
+  padding:0 24px 120px;
+}
+
+/* Hero */
+.hero{
+  position:relative;
+  padding:88px 24px 72px;
+  text-align:center;
+  background:
+    radial-gradient(ellipse 60% 50% at 30% 0%, #fdf1e6 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 80% 20%, #fbe8e0 0%, transparent 60%),
+    var(--ivory-deep);
+  border-bottom:1px solid var(--line);
+  overflow:hidden;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  top:-40%; left:50%;
+  width:600px; height:600px;
+  background:radial-gradient(circle, rgba(232,121,74,0.10) 0%, transparent 70%);
+  transform:translateX(-50%);
+  pointer-events:none;
+}
+.eyebrow{
+  font-family:'Pretendard', sans-serif;
+  font-size:13px;
+  font-weight:600;
+  letter-spacing:0.14em;
+  color:var(--coral-deep);
+  text-transform:uppercase;
+  margin-bottom:18px;
+  position:relative;
+}
+.hero h1{
+  font-family:'Pretendard', sans-serif;
+  font-size:clamp(28px, 5vw, 40px);
+  font-weight:700;
+  line-height:1.4;
+  color:var(--ink);
+  margin-bottom:20px;
+  position:relative;
+}
+.hero h1 span{ color:var(--coral-deep); }
+.hero p.lead{
+  font-size:16.5px;
+  color:var(--ink-soft);
+  max-width:520px;
+  margin:0 auto;
+  position:relative;
+}
+
+/* Sections */
+section{
+  padding:56px 0 8px;
+  border-bottom:1px solid var(--line);
+}
+section:last-of-type{ border-bottom:none; }
+
+.q-block{
+  background:var(--ivory-deep);
+  border-radius:16px;
+  padding:24px 26px;
+  margin:36px 0;
+  border-left:4px solid var(--coral);
+}
+.q-block p{
+  font-family:'Pretendard', sans-serif;
+  font-size:15px;
+  color:var(--ink-soft);
+  font-weight:500;
+  line-height:1.75;
+}
+
+.step-num{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:36px; height:36px;
+  background:var(--coral);
+  color:#fff;
+  font-family:'Pretendard', sans-serif;
+  font-weight:700;
+  font-size:15px;
+  border-radius:50%;
+  margin-bottom:16px;
+}
+
+h2{
+  font-family:'Pretendard', sans-serif;
+  font-size:22px;
+  font-weight:700;
+  color:var(--ink);
+  margin-bottom:18px;
+  line-height:1.5;
+}
+
+p{
+  font-size:16.5px;
+  color:var(--ink);
+  margin-bottom:18px;
+}
+
+.hl{
+  background:linear-gradient(to bottom, transparent 60%, var(--coral-pale) 60%);
+  font-weight:600;
+  padding:0 2px;
+}
+
+.example-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px;
+  padding:22px 24px;
+  margin:24px 0;
+  box-shadow:0 2px 10px rgba(43,36,28,0.04);
+}
+.example-card .tag{
+  font-family:'Pretendard', sans-serif;
+  font-size:12.5px;
+  font-weight:600;
+  color:var(--coral-deep);
+  letter-spacing:0.04em;
+  margin-bottom:10px;
+  display:block;
+}
+.example-card p{ margin-bottom:0; font-size:15.5px; color:var(--ink-soft); }
+
+.divider-word{
+  text-align:center;
+  font-family:'Pretendard', sans-serif;
+  font-size:13px;
+  font-weight:600;
+  color:var(--ink-soft);
+  letter-spacing:0.1em;
+  margin:44px 0 8px;
+  opacity:0.6;
+}
+
+/* Conclusion */
+.conclusion{
+  background:linear-gradient(135deg, var(--coral-pale) 0%, var(--ivory-deep) 100%);
+  border-radius:20px;
+  padding:40px 30px;
+  margin:48px 0 0;
+  text-align:center;
+}
+.conclusion h2{
+  color:var(--coral-deep);
+}
+.conclusion p{
+  font-size:16.5px;
+}
+
+/* Talk guide */
+.guide-list{
+  counter-reset:guide;
+  margin:24px 0;
+}
+.guide-item{
+  counter-increment:guide;
+  position:relative;
+  padding:14px 0 14px 44px;
+  border-bottom:1px dashed var(--line);
+  font-size:15.5px;
+  color:var(--ink-soft);
+}
+.guide-item:last-child{ border-bottom:none; }
+.guide-item::before{
+  content:counter(guide);
+  position:absolute;
+  left:0; top:12px;
+  width:28px; height:28px;
+  background:var(--coral);
+  color:#fff;
+  border-radius:50%;
+  font-family:'Pretendard', sans-serif;
+  font-weight:700;
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.guide-item b{ color:var(--ink); font-weight:600; }
+
+footer{
+  text-align:center;
+  padding:56px 24px 40px;
+  font-family:'Pretendard', sans-serif;
+  font-size:13px;
+  color:var(--ink-soft);
+  opacity:0.7;
+}
+
+@media (max-width:600px){
+  .hero{ padding:64px 20px 52px; }
+  section{ padding:44px 0 4px; }
+  .wrap{ padding:0 18px 100px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">은혜교회 신앙철학</div>
+  <h1>자유의지, 그리고<br><span>죄를 허락하신 이유</span></h1>
+  <p class="lead">전지전능하신 하나님이 다 아셨다면, 왜 굳이 죄를 지을 수 있는 길을 열어두셨을까요.<br>비신자들이 가장 자주 던지는 이 질문에 함께 답을 찾아갑니다.</p>
+</div>
+
+<div class="wrap">
+
+<section>
+  <div class="q-block">
+    <p>"하나님이 자유의지를 주셔서 인간이 죄를 짓게 됐다면서요. 근데 하나님은 전지전능하시니 인간이 죄를 지을 걸 이미 다 알고 계셨을 거잖아요. 알면서도 그렇게 만드신 거면, 결국 하나님한테도 책임이 있는 거 아닌가요?"</p>
+  </div>
+  <p>신앙을 갖지 않은 분들에게서 정말 자주 듣는 질문입니다. 그리고 이 질문은 절대 가볍게 볼 게 아니에요. 오히려 이 질문 안에는 세 가지 서로 다른 질문이 섞여 있습니다. <span class="hl">"왜 죄를 짓게 하셨나"</span>, <span class="hl">"왜 애초에 그런 자유를 주셨나"</span>, <span class="hl">"다 아셨으면서 왜 막지 않으셨나"</span>. 이 셋을 하나씩 풀어드리면, 훨씬 명쾌하게 설명이 됩니다.</p>
+</section>
+
+<section>
+  <span class="step-num">1</span>
+  <h2>"짓게 하셨다"는 말부터 다시 봐야 합니다</h2>
+  <p>먼저 짚어드려야 할 게 있어요. 하나님은 인간이 죄를 짓도록 <b>만드신</b> 게 아니라, 죄를 지을 수도 있는 가능성을 <b>허락</b>하신 겁니다. 이 둘은 완전히 다른 이야기예요. 원인을 제공한 것과, 선택의 여지를 열어둔 것은 전혀 다른 차원의 책임 문제거든요.</p>
+
+  <div class="example-card">
+    <span class="tag">일상의 비유</span>
+    <p>부모가 스무 살 된 자녀에게 통금 없이 자유롭게 다닐 수 있도록 열쇠를 쥐여줬다고 해봅시다. 그런데 그 자녀가 나쁜 친구들과 어울리다 잘못된 길로 빠졌어요. 이때 "열쇠를 준 부모 책임이다"라고 말할 수 있을까요? 자유를 준 것과, 그 자유를 어떻게 쓸지는 전혀 다른 문제입니다. 책임은 그 자유를 오용한 쪽에 있는 거죠.</p>
+  </div>
+
+  <p>하나님도 마찬가지입니다. 인간에게 선택할 수 있는 자유를 주셨고, 그 자유 안에서 인간 스스로 하나님을 등지는 선택을 한 겁니다. 하나님이 죄의 저자가 아니라, 인간이 자유의 오용으로 죄의 문을 연 거예요.</p>
+</section>
+
+<section>
+  <span class="step-num">2</span>
+  <h2>그럼 왜 애초에 그런 위험한 자유를 주셨을까요</h2>
+  <p>여기가 사실 이 질문의 진짜 핵심입니다. 답은 간단하지만 깊어요. <span class="hl">진짜 사랑은 강요될 수 없기 때문</span>입니다.</p>
+  <p>만약 하나님이 인간을 처음부터 무조건 순종하고, 무조건 하나님을 사랑하도록 프로그래밍해서 만드셨다면 어떨까요. 그건 사랑이 아니라 그냥 기계적인 반응일 뿐이에요. "아니오"라고 말할 수 있는 가능성이 없다면, "예"라는 대답도 아무 의미가 없는 거죠.</p>
+
+  <div class="example-card">
+    <span class="tag">일상의 비유</span>
+    <p>결혼을 생각해보면 이해가 쉽습니다. 도망갈 수 없도록 강제로 묶여 있는 결혼과, 언제든 떠날 수 있음에도 스스로 남기로 선택한 결혼. 둘 중 어느 쪽이 진짜 사랑일까요? 당연히 후자입니다. 떠날 수 있는 가능성이 없다면, 남는다는 선택도 사랑이라 부를 수 없어요.</p>
+  </div>
+
+  <p>하나님은 로봇들의 정원이 아니라, 진짜로 사랑을 주고받을 수 있는 존재들과의 관계를 원하셨습니다. 그런데 진짜 사랑이 가능하려면, 그 사랑을 거부할 가능성도 함께 열려 있어야 해요. 사랑의 가능성과 배신의 가능성은 동전의 양면처럼 붙어 있는 겁니다.</p>
+</section>
+
+<section>
+  <span class="step-num">3</span>
+  <h2>다 아셨으면서 왜 막지 않으셨나 — 예지와 예정은 다릅니다</h2>
+  <p>이 부분이 사람들이 가장 헷갈려하는 지점이에요. 여기서 꼭 구분해야 할 게 있습니다. <span class="hl">"안다는 것"과 "그렇게 만든다는 것"은 완전히 다른 이야기</span>라는 점이에요.</p>
+
+  <div class="example-card">
+    <span class="tag">일상의 비유</span>
+    <p>부모가 자녀를 키우면서 "이 아이는 사춘기가 되면 분명 반항하고, 몇 번은 크게 부딪히겠구나" 하고 어느 정도 예상한다고 해봅시다. 그렇다고 그 부모가 자녀의 반항을 원인 제공한 걸까요? 아니죠. 미리 안다는 것과, 그 일을 일어나게 만든다는 것은 전혀 다른 문제입니다.</p>
+  </div>
+
+  <p>더 나아가면, 하나님은 우리처럼 시간 안에 갇혀 계신 분이 아닙니다. 우리는 과거-현재-미래를 순서대로 지나가지만, 하나님께는 모든 순간이 동시에 열려 있다고 신학자들은 설명합니다. 그래서 사실 "미리 아셨다"는 표현 자체가, 인간의 시간 개념을 하나님께 그대로 투영한 표현이에요. 아신다는 것과 강제하신다는 것 사이에는 근본적인 차이가 있습니다.</p>
+
+  <div class="example-card">
+    <span class="tag">일상의 비유</span>
+    <p>결말을 이미 알고 있는 소설가가 있다고 해봅시다. 그 소설가가 결말을 안다고 해서, 소설 속 등장인물들이 그 상황에서 내리는 선택들이 가짜가 되는 건 아니잖아요. 등장인물은 여전히 자기 안에서 진짜로 고민하고, 진짜로 선택합니다.</p>
+  </div>
+</section>
+
+<section>
+  <span class="step-num">4</span>
+  <h2>그래도 남는 질문 — "그냥 다 믿게 만들면 되잖아요"</h2>
+  <p>여기서 기독교가 다른 종교나 철학과 결정적으로 다른 지점이 나옵니다. 하나님은 죄의 가능성을 열어두셨지만, 그 문제를 그냥 내버려두지 않으셨어요. <span class="hl">십자가가 바로 그 답</span>입니다.</p>
+  <p>자유의지가 낳은 죄의 결과를, 하나님이 직접 짊어지셨습니다. 인간에게 자유를 준 대가를, 다른 누구도 아닌 하나님 스스로 치르신 거예요. 많은 철학과 종교들이 "왜 신은 악을 막지 않는가"라는 질문 앞에서 침묵하지만, 기독교는 여기에 분명한 답을 갖고 있습니다. <b>"신이 그 죄의 값을 대신 치렀다"</b>는 답이요.</p>
+</section>
+
+<div class="conclusion">
+  <h2>정리하면 이렇습니다</h2>
+  <p>하나님은 죄를 만드신 분이 아니라 자유를 허락하신 분이고, 그 자유는 진짜 사랑을 위해 반드시 필요했으며, 미리 아셨다는 것이 강제하셨다는 뜻은 아니고, 그리고 그 모든 결과를 하나님이 십자가에서 스스로 짊어지셨습니다.</p>
+</div>
+
+<div class="divider-word">비신자와 대화할 때 이런 순서로 풀어보세요</div>
+<div class="guide-list">
+  <div class="guide-item"><b>먼저 공감대부터.</b> "사랑은 자유 없이는 불가능하다"는 지점에서 시작하면, 논리 싸움이 아니라 함께 생각해보는 대화가 됩니다.</div>
+  <div class="guide-item"><b>예지와 예정을 구분해서.</b> "안다"와 "만든다"는 다르다는 걸 결혼이나 소설가 비유로 풀어주세요.</div>
+  <div class="guide-item"><b>마지막은 반드시 십자가로.</b> 하나님이 방관자가 아니라, 그 문제를 직접 해결하러 오신 분이라는 것으로 마무리하세요.</div>
+</div>
+
+</div>
+
+<footer>은혜교회 · 담임목사 박동준</footer>
+
+</body>
+</html>
