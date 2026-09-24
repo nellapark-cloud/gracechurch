@@ -20,8 +20,6 @@ const categories = [
   { key: 'newcomers', dir: 'content/newcomers', pin: ['함께 걷는 믿음의 첫걸음'] },
   { key: 'baptism_training', dir: 'content/baptism-training' },
   { key: 'mokjang', dir: 'content/mokjang' },
-  { key: 'bulletin', dir: 'content/bulletin', desc: true },
-  { key: 'mokjang_sharing', dir: 'content/mokjang-sharing' },
   { key: 'baptist_history', dir: 'content/baptist-history' },
   { key: 'admin_sermons', dir: 'content/admin-sermons' },
   { key: 'admin_personal', dir: 'content/admin-personal' },

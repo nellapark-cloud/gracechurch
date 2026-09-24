@@ -22,6 +22,8 @@ jobs:
         with:
           node-version: 20
       - run: node build-list.js
+      # 주보·목장 나눔지는 개인 정보가 많아 공개 사이트에 올리지 않음
+      - run: rm -rf content/bulletin content/mokjang-sharing
       - uses: actions/upload-pages-artifact@v3
         with:
           path: .
