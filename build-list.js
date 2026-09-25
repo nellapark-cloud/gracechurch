@@ -21,6 +21,7 @@ const categories = [
   { key: 'baptism_training', dir: 'content/baptism-training' },
   { key: 'mokjang', dir: 'content/mokjang' },
   { key: 'baptist_history', dir: 'content/baptist-history' },
+  { key: 'worship_training', dir: 'content/worship-training' },
   { key: 'admin_sermons', dir: 'content/admin-sermons' },
   { key: 'admin_personal', dir: 'content/admin-personal' },
   { key: 'admin_forms', dir: 'content/admin-forms' },
