@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light only">
+<title>예수를 믿어야 할 이유</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#FBFBFD; --paper:#FFFFFF; --ink:#1A1C2E; --sub:#555a70; --line:#E4E6EF;
+  --indigo:#34398A; --gold:#A8741F; --mark:rgba(245,205,120,.42);
+  --nt:#4B55B8; --nf:#8A5AB0; --sj:#2F7E86; --sp:#B5702A;
+  --fs:17px;
+  --sans:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+  --serif:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 70px);-webkit-text-size-adjust:100%}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg)!important;color:var(--ink)!important;font-family:var(--serif);font-size:var(--fs);line-height:1.95;word-break:keep-all;overflow-wrap:break-word}
+img,svg{max-width:100%}
+a{color:inherit}
+button{font-family:var(--sans);cursor:pointer}
+:focus-visible{outline:2px solid var(--indigo);outline-offset:3px;border-radius:6px}
+
+/* 상단 바 */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:rgba(251,251,253,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:760px;margin:0 auto;display:flex;align-items:center;gap:8px;padding:10px 16px}
+.tabs{display:flex;gap:4px;background:#EEEFF5;border-radius:999px;padding:4px;flex:1;max-width:420px}
+.tab{flex:1;border:0;background:transparent;border-radius:999px;padding:8px 10px;font-size:14px;font-weight:600;color:var(--sub);white-space:nowrap}
+.tab[aria-selected="true"]{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(26,28,46,.12)}
+.fsz{display:flex;gap:4px;margin-left:auto}
+.fsz button{border:1px solid var(--line);background:#fff;border-radius:10px;padding:6px 9px;font-size:13px;font-weight:600;color:var(--ink)}
+
+/* 히어로 */
+.hero{position:relative;overflow:hidden;padding:72px 22px 64px;text-align:center;
+  background:
+   radial-gradient(60% 70% at 15% 20%,#E9E3FF 0%,transparent 70%),
+   radial-gradient(55% 60% at 88% 18%,#FFE4D6 0%,transparent 70%),
+   radial-gradient(60% 70% at 70% 95%,#D9EEFF 0%,transparent 70%),
+   radial-gradient(50% 60% at 10% 100%,#E0F5EC 0%,transparent 70%),
+   #FDFCFF;}
+.hero svg{width:150px;height:auto;margin:0 auto 22px;display:block}
+.hero h1{font-family:var(--sans);font-weight:800;font-size:clamp(34px,8vw,54px);letter-spacing:-.035em;line-height:1.2;margin:0 0 16px;color:var(--ink)}
+.hero p{font-family:var(--sans);font-size:16px;color:var(--sub);margin:0 auto;max-width:30em;line-height:1.7}
+.hero.h2 h1{font-size:clamp(30px,7vw,46px)}
+
+.wrap{max-width:680px;margin:0 auto;padding:0 22px}
+.panel{display:none}
+.panel.on{display:block}
+
+/* 흐름 구분 */
+.move{margin:64px 0 8px;padding-top:28px;border-top:2px solid var(--ink)}
+.move small{display:block;font-family:var(--sans);font-size:13px;font-weight:700;color:var(--gold);margin-bottom:4px}
+.move h2{font-family:var(--sans);font-weight:800;font-size:26px;letter-spacing:-.02em;margin:0;line-height:1.35}
+
+.arg{margin:44px 0}
+.arg h3{font-family:var(--sans);font-weight:700;font-size:21px;letter-spacing:-.02em;line-height:1.45;margin:0 0 16px;display:flex;gap:12px;align-items:baseline}
+.arg h3 .n{flex:none;font-size:15px;font-weight:800;color:var(--indigo);background:#EDEEFA;border-radius:8px;width:30px;height:30px;display:inline-grid;place-items:center;transform:translateY(-2px)}
+p{margin:0 0 1.05em}
+mark{background:linear-gradient(transparent 55%,var(--mark) 55%);color:inherit;padding:0 1px}
+blockquote{margin:1.4em 0;padding:4px 0 4px 18px;border-left:3px solid var(--gold);color:#3a3d52;font-style:normal}
+
+.evid{list-style:none;padding:0;margin:18px 0}
+.evid li{padding:16px 0;border-top:1px solid var(--line)}
+.evid li:last-child{border-bottom:1px solid var(--line)}
+.evid b{font-family:var(--sans);display:block;font-size:16px;color:var(--indigo);margin-bottom:4px}
+
+/* 클릭 팝업 대상 */
+.t,.v{border:0;background:none;padding:0;font:inherit;color:inherit;cursor:pointer;border-bottom:1.5px dotted #9aa0c8;line-height:inherit}
+.v{margin-left:4px;color:var(--indigo);font-family:var(--sans);font-size:.88em;font-weight:600;border-bottom-color:var(--indigo)}
+
+.close-box{margin:56px 0 12px;padding:30px 26px;border-radius:22px;background:
+   radial-gradient(70% 90% at 0% 0%,#EFEAFF 0%,transparent 70%),
+   radial-gradient(70% 90% at 100% 100%,#FFEBDF 0%,transparent 70%),#fff;border:1px solid var(--line)}
+.close-box h2{font-family:var(--sans);font-weight:800;font-size:25px;margin:0 0 14px;letter-spacing:-.02em}
+.honest{margin:40px 0 20px;padding:24px 22px;border-radius:18px;background:#F3F4F8}
+.honest h3{font-family:var(--sans);font-size:18px;margin:0 0 10px}
+.honest dl{margin:0}
+.honest dt{font-family:var(--sans);font-weight:700;font-size:15px;margin-top:14px}
+.honest dd{margin:2px 0 0;font-size:.94em;color:#3d4055}
+
+/* 2부: 유형 */
+.lead{margin:44px 0 24px}
+.note{font-family:var(--sans);font-size:14.5px;line-height:1.75;color:var(--sub);background:#F3F4F8;border-radius:14px;padding:16px 18px;margin:0 0 30px}
+.group{margin:22px 0}
+.group h4{font-family:var(--sans);font-size:14px;font-weight:700;margin:0 0 8px;color:var(--sub);display:flex;align-items:center;gap:8px}
+.group h4 i{width:9px;height:9px;border-radius:50%;display:inline-block}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.type{border:1.5px solid var(--line);background:#fff;border-radius:14px;padding:12px 4px 10px;text-align:center;color:var(--ink);transition:border-color .15s,background .15s}
+.type b{display:block;font-size:17px;font-weight:800;letter-spacing:.02em}
+.type span{display:block;font-size:12px;color:var(--sub);margin-top:2px}
+.type[aria-pressed="true"]{border-color:var(--c);background:color-mix(in srgb,var(--c) 8%,#fff)}
+.type[aria-pressed="true"] b{color:var(--c)}
+
+.detail{margin:30px 0 20px;border-radius:22px;background:#fff;border:1px solid var(--line);overflow:hidden}
+.d-head{padding:26px 24px 20px;background:color-mix(in srgb,var(--c) 9%,#fff);border-bottom:1px solid var(--line)}
+.d-head .code{font-family:var(--sans);font-weight:800;font-size:32px;letter-spacing:.02em;color:var(--c);line-height:1}
+.d-head .nick{font-family:var(--sans);font-weight:700;font-size:18px;margin-top:8px}
+.d-head .who{font-family:var(--sans);font-size:14px;color:var(--sub);margin-top:4px}
+.d-body{padding:6px 24px 22px}
+.d-sec{padding:18px 0;border-bottom:1px solid var(--line)}
+.d-sec:last-child{border-bottom:0}
+.d-sec h5{font-family:var(--sans);font-size:14px;font-weight:700;color:var(--c);margin:0 0 6px}
+.d-sec p{margin:0;font-size:.96em}
+.say{margin-top:10px;padding:14px 16px;border-radius:14px;background:#F6F6FA;font-size:.95em}
+.say::before{content:"이렇게 말을 건네봅니다";display:block;font-family:var(--sans);font-size:12px;font-weight:700;color:var(--sub);margin-bottom:4px}
+.word{font-size:.95em}
+.word em{font-style:normal;font-family:var(--sans);font-weight:700;color:var(--c);margin-right:6px}
+.nav2{display:flex;justify-content:space-between;gap:8px;padding:0 24px 22px}
+.nav2 button{flex:1;border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px;font-size:14px;font-weight:600;color:var(--ink)}
+
+.common{margin:48px 0 20px}
+.common h2{font-family:var(--sans);font-weight:800;font-size:24px;margin:0 0 14px;letter-spacing:-.02em}
+
+footer{text-align:center;font-family:var(--sans);font-size:13px;color:var(--sub);padding:50px 20px 60px}
+
+/* 팝업 시트 */
+.dim{position:fixed;inset:0;background:rgba(20,22,40,.35);z-index:60;opacity:0;pointer-events:none;transition:opacity .2s}
+.dim.on{opacity:1;pointer-events:auto}
+.sheet{position:fixed;left:0;right:0;bottom:0;z-index:61;max-width:640px;margin:0 auto;background:#fff;border-radius:22px 22px 0 0;padding:14px 24px calc(28px + env(safe-area-inset-bottom,0px));transform:translateY(105%);transition:transform .25s ease;max-height:75vh;overflow-y:auto;box-shadow:0 -6px 30px rgba(20,22,40,.15)}
+.sheet.on{transform:none}
+.sheet .grip{width:40px;height:4px;border-radius:4px;background:#D6D8E3;margin:0 auto 14px}
+.sheet h6{font-family:var(--sans);font-size:17px;font-weight:800;margin:0 0 8px;color:var(--indigo)}
+.sheet p{font-size:16px;line-height:1.85;margin:0}
+.sheet .x{position:absolute;top:12px;right:14px;border:0;background:#F0F1F6;width:32px;height:32px;border-radius:50%;font-size:16px;color:var(--sub)}
+
+.top{position:fixed;right:16px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:30;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:#fff;box-shadow:0 2px 10px rgba(26,28,46,.12);font-size:18px;color:var(--ink)}
+
+@media (max-width:420px){
+  .tab{font-size:13px;padding:8px 6px}
+  .grid{gap:6px}
+  .type b{font-size:15px}
+  .type span{font-size:11px}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="bar"><div class="bar-in">
+  <div class="tabs" role="tablist">
+    <button class="tab" role="tab" aria-selected="true" data-p="p1">믿어야 할 이유</button>
+    <button class="tab" role="tab" aria-selected="false" data-p="p2">유형별로 전하기</button>
+  </div>
+  <div class="fsz">
+    <button id="fsDown" aria-label="글씨 작게">가−</button>
+    <button id="fsUp" aria-label="글씨 크게">가+</button>
+  </div>
+</div></div>
+
+<!-- ============ 1부 ============ -->
+<section class="panel on" id="p1">
+  <header class="hero">
+    <svg viewBox="0 0 160 110" fill="none" stroke="#34398A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <circle cx="80" cy="66" r="22" stroke="#A8741F"/>
+      <path d="M80 30v-12M52 42l-8-8M108 42l8-8M40 66H28M132 66h-12" stroke="#A8741F"/>
+      <path d="M8 92c22-18 44-22 72-10s50 8 72-8"/>
+      <path d="M8 104h144"/>
+    </svg>
+    <h1>예수를 믿어야 할<br>강력한 이유</h1>
+    <p>머리로 생각하고, 역사로 확인하고, 삶으로 마주하는 아홉 가지 이야기</p>
+  </header>
+
+  <div class="wrap">
+    <p style="margin-top:44px">그리스도인들이 오랫동안 제시해 온 가장 강력한 논증들을 차례로 쌓아갑니다. 이성에서 시작해 역사를 지나, 마지막에는 우리 삶의 가장 깊은 자리로 들어갑니다.</p>
+
+    <div class="move"><small>첫 번째 흐름</small><h2>머리로 생각해봅니다</h2></div>
+
+    <article class="arg">
+      <h3><span class="n">1</span>우주는 스스로를 설명하지 못합니다</h3>
+      <p>시작이 있는 것에는 원인이 있습니다. 현대 우주론은 우주에 시작이 있었다고 말합니다. 시간과 공간과 물질이 함께 시작되었다면, 그 원인은 시간과 공간과 물질 밖에 있어야 합니다. <mark>초월적이고, 비물질적이고, 엄청난 능력을 가진 존재가 필요합니다.</mark> 이것을 <button class="t" data-k="cosmo">우주론적 논증</button>이라고 부릅니다.</p>
+      <p>여기에 우주의 <button class="t" data-k="fine">미세조정</button>이 더해집니다. 중력 상수, <button class="t" data-k="lambda">우주 상수</button>, <button class="t" data-k="strong">강한 핵력</button>의 세기가 아주 조금만 달랐어도 별도, 원소도, 생명도 없었을 것입니다. 수많은 값이 동시에 생명이 가능한 좁은 범위에 맞춰져 있습니다. <mark>"우연"이라고 말하는 것보다 "설계"라고 말하는 쪽이 더 자연스러운 설명입니다.</mark> <button class="v" data-k="rom120">롬 1:20</button></p>
+    </article>
+
+    <article class="arg">
+      <h3><span class="n">2</span>선과 악은 진짜로 존재합니다</h3>
+      <p>아이를 재미로 괴롭히는 것이 "진짜로" 악하다는 것을 우리는 압니다. 취향이나 사회적 합의의 문제가 아니라는 것을요. 그런데 신이 없다면 도덕은 결국 진화의 부산물이거나 문화적 약속일 뿐입니다. 그러면 나치가 틀렸다고 말할 근거가 사라집니다.</p>
+      <p>우리가 객관적인 선을 확신한다면, <mark>그 기준을 세운 인격적인 입법자가 있다는 뜻입니다.</mark> 양심은 우리 안에 새겨진 그분의 흔적입니다. <button class="v" data-k="rom215">롬 2:15</button></p>
+    </article>
+
+    <article class="arg">
+      <h3><span class="n">3</span>우리 안에는 이 세상이 채울 수 없는 갈망이 있습니다</h3>
+      <p>배고픔에는 음식이, 목마름에는 물이 있습니다. <button class="t" data-k="lewis">C.S. 루이스</button>는 이렇게 물었습니다. 이 세상의 어떤 것으로도 채워지지 않는 갈망이 우리 안에 있다면, 그것은 우리가 다른 세상을 위해 지어졌다는 뜻이 아닐까?</p>
+      <p>성공해도, 사랑받아도, 원하던 것을 다 가져도 남는 그 공허함. <button class="t" data-k="aug">아우구스티누스</button>의 고백처럼 말입니다.</p>
+      <blockquote>"우리 마음은 주님 안에서 쉬기까지 쉼이 없습니다."</blockquote>
+      <p><mark>이 갈망 자체가 하나의 증거입니다.</mark> <button class="v" data-k="ecc311">전 3:11</button></p>
+    </article>
+
+    <div class="move"><small>두 번째 흐름</small><h2>역사로 확인해봅니다</h2></div>
+
+    <article class="arg">
+      <h3><span class="n">4</span>예수는 실제로 존재했고, 역사를 둘로 나눴습니다</h3>
+      <p>예수의 실존은 신앙의 문제가 아니라 역사학의 합의입니다. <button class="t" data-k="jos">요세푸스</button>, <button class="t" data-k="tac">타키투스</button> 같은 비기독교 기록도 그를 언급합니다. 다른 고대 종교의 창시자들과 비교해도, <mark>예수에 관한 기록은 사건과 훨씬 가까운 시기에 기록되었고 사본의 수도 압도적입니다.</mark></p>
+    </article>
+
+    <article class="arg">
+      <h3><span class="n">5</span>예수의 주장은 중립을 허락하지 않습니다</h3>
+      <p>예수는 단순히 도덕 교사로 머물지 않았습니다. 죄를 용서하는 권세가 있다고 했고<button class="v" data-k="mk25">막 2:5</button>, "나와 아버지는 하나"라고 했고<button class="v" data-k="jn1030">요 10:30</button>, "나로 말미암지 않고는 아버지께로 올 자가 없다"고 했습니다<button class="v" data-k="jn146">요 14:6</button>.</p>
+      <p>루이스의 <button class="t" data-k="tri">삼중 논증</button>이 여기서 나옵니다. 이런 주장을 한 사람은 셋 중 하나입니다. <mark>거짓말쟁이이거나, 정신 이상자이거나, 정말 주님이거나.</mark> 산상수훈을 가르치고, 원수를 사랑하고, 자기를 죽이는 사람들을 위해 기도한 사람을 거짓말쟁이나 미친 사람이라고 보기는 어렵습니다. "좋은 선생님"이라는 선택지는 예수 스스로 남겨두지 않았습니다.</p>
+    </article>
+
+    <article class="arg">
+      <h3><span class="n">6</span>부활, 모든 것이 걸린 사건</h3>
+      <p>기독교는 부활 하나에 운명을 걸었습니다. 바울은 "그리스도께서 다시 살아나지 않으셨으면 우리 믿음도 헛것"이라고 말했습니다<button class="v" data-k="co1514">고전 15:14</button>. <mark>그만큼 검증 가능한 역사적 주장입니다.</mark> 비판적 학자들도 대체로 인정하는 사실들이 있습니다.</p>
+      <ul class="evid">
+        <li><b>초기 증언</b><button class="v" data-k="co153">고린도전서 15:3~8</button>의 <button class="t" data-k="creed">초기 신조</button>는 예수 사후 몇 년 안에 형성된 것으로 봅니다. 전설이 자라나기에는 너무 이른 시기입니다. 500여 명이 동시에 보았다는 기록에 "그중 대다수가 아직 살아 있다"고 덧붙인 것은, 확인해 보라는 초대였습니다.</li>
+        <li><b>빈 무덤</b>첫 목격자가 여성들이었습니다. 당시 여성의 증언은 법정에서 인정받지 못했습니다. <mark>지어낸 이야기라면 절대 그렇게 쓰지 않았을 것입니다.</mark></li>
+        <li><b>제자들의 변화</b>스승이 처형되자 흩어져 숨었던 겁쟁이들이, 갑자기 목숨을 걸고 부활을 전하다 대부분 순교했습니다. 사람은 참이라고 믿는 거짓을 위해 죽을 수는 있어도, <mark>거짓인 줄 아는 것을 위해 죽지는 않습니다.</mark></li>
+        <li><b>회의론자의 회심</b>예수를 미쳤다고 여기던 동생 야고보, 교회를 박해하던 바울이 돌아섰습니다. 무엇이 그들을 바꿨을까요?</li>
+      </ul>
+      <p><mark>부활이 사실이라면, 예수의 모든 주장은 사실로 확증됩니다.</mark></p>
+    </article>
+
+    <div class="move"><small>세 번째 흐름</small><h2>삶으로 마주합니다</h2></div>
+
+    <article class="arg">
+      <h3><span class="n">7</span>복음만이 인간의 문제를 정직하게 진단하고 해결합니다</h3>
+      <p>거의 모든 종교와 철학의 구조는 같습니다. "이렇게 행하면 도달한다." 수행하고, 선을 쌓고, 계율을 지키라고 합니다.</p>
+      <p>기독교만 반대로 말합니다. 당신은 스스로 도달할 수 없다. 그래서 하나님이 내려오셨다. 이것이 <button class="t" data-k="grace">은혜</button>입니다. <mark>행위가 아니라 선물입니다.</mark> <button class="v" data-k="eph28">엡 2:8~9</button></p>
+      <p>이 진단이 정직한 이유는, 우리가 스스로를 알기 때문입니다. 알면서도 하지 못하는 선, 원하지 않으면서도 하는 악. 로마서 7장의 탄식은 모든 인간의 탄식입니다<button class="v" data-k="rom719">롬 7:19, 24</button>. 복음은 인간을 과대평가하지도("그냥 노력하면 된다") 과소평가하지도("그냥 동물이다") 않습니다. <mark>하나님의 형상이지만 깨어진 존재, 그래서 구원이 필요한 존재로 봅니다.</mark></p>
+      <p>그리고 십자가에서 정의와 사랑이 동시에 이루어집니다. 죄는 결코 가볍게 넘어가지 않지만, <mark>그 값은 하나님 자신이 치르셨습니다.</mark> <button class="v" data-k="rom58">롬 5:8</button></p>
+    </article>
+
+    <article class="arg">
+      <h3><span class="n">8</span>믿음은 역사와 삶 속에서 열매를 맺었습니다</h3>
+      <p>병원, 고아원, 보편 교육, 노예제 폐지 운동, "모든 인간은 존엄하다"는 생각 자체가 기독교 세계관에서 자라났습니다. 약자를 귀하게 여기는 윤리는 고대 세계에는 낯선 것이었습니다.</p>
+      <p>개인의 차원에서도 그렇습니다. 중독에서 벗어난 사람, 원수를 용서한 사람, 죽음 앞에서 평안했던 사람들. <mark>이 수많은 증언들은 무시하기 어려운 데이터입니다.</mark></p>
+    </article>
+
+    <article class="arg">
+      <h3><span class="n">9</span>죽음 앞에서 대답이 필요합니다</h3>
+      <p>모든 사람은 죽습니다. 이것만은 확실합니다. 그 앞에서 대부분의 세계관은 침묵하거나 체념을 권합니다. 예수는 "나는 부활이요 생명이니 나를 믿는 자는 죽어도 살겠고"라고 말한 뒤<button class="v" data-k="jn1125">요 11:25</button>, <mark>자기 무덤을 비움으로 그것을 보여주었습니다.</mark></p>
+    </article>
+
+    <div class="close-box">
+      <h2>그래서, 결론입니다</h2>
+      <p>이 논증들은 하나씩 떼어 보면 반박의 여지가 있습니다. 하지만 함께 모아 보면 하나의 방향을 가리킵니다. 우주에는 원인이 있고, 도덕에는 기준이 있고, 우리 마음에는 채워지지 않는 자리가 있고, 역사 속에 그 모든 것에 대답한다고 주장한 한 사람이 있었고, <mark>그는 무덤에서 나왔다는 증거를 남겼습니다.</mark></p>
+      <p style="margin:0">기독교는 "눈을 감고 뛰어내리라"고 말하지 않습니다. 빌립이 나다나엘에게 했던 말처럼 <mark>"와서 보라"</mark>고 말합니다<button class="v" data-k="jn146b">요 1:46</button>. 증거를 따라가 보고, 그다음에 그 인격을 신뢰하라는 것입니다.</p>
+    </div>
+
+    <div class="honest">
+      <h3>정직하게 마주할 질문들</h3>
+      <p style="font-size:.94em;margin:0">믿지 않는 분들이 흔히 던지는 반론도 있습니다. 이 질문들을 피하지 않을 때 믿음은 더 단단해집니다.</p>
+      <dl>
+        <dt>악과 고통은 왜 있는가</dt>
+        <dd>전능하고 선한 하나님이 왜 고통과 악을 허락하는가 하는 <button class="t" data-k="evil">악의 문제</button>입니다.</dd>
+        <dt>부활 목격은 다르게 설명할 수 없는가</dt>
+        <dd>일부 회의적 학자들은 부활 목격을 <button class="t" data-k="hallu">환각설</button>이나 집단 체험으로 설명하려 합니다.</dd>
+        <dt>우주의 원인이 곧 성경의 하나님인가</dt>
+        <dd>우주론적 논증이 창조주의 존재를 가리킬 수는 있어도, 기독교의 하나님까지 증명하지는 못한다는 지적이 있습니다.</dd>
+        <dt>왜 하필 기독교인가</dt>
+        <dd>세상에 종교가 이렇게 많은데 왜 기독교여야 하는지에 대한 질문입니다.</dd>
+      </dl>
+      <p style="font-size:.94em;margin:14px 0 0">대부분의 철학자와 역사학자들도 이 논증들을 결정적인 "증명"이라기보다, 믿음을 합리적인 선택으로 만들어 주는 근거로 봅니다.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2부 ============ -->
+<section class="panel" id="p2">
+  <header class="hero h2">
+    <svg viewBox="0 0 160 110" fill="none" stroke="#34398A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <rect x="50" y="18" width="60" height="84" rx="4"/>
+      <path d="M50 102V30c0-7 5-12 12-12" />
+      <circle cx="98" cy="62" r="3" fill="#A8741F" stroke="#A8741F"/>
+      <path d="M20 102h120"/>
+      <path d="M80 8v-2M122 30l6-4M38 30l-6-4" stroke="#A8741F"/>
+    </svg>
+    <h1>열여섯 개의 문,<br>한 분의 예수</h1>
+    <p>성격 유형에 따라 마음이 열리는 문은 다르지만, 그 문 너머에서 만나는 분은 같습니다</p>
+  </header>
+
+  <div class="wrap">
+    <div class="lead">
+      <p>사람마다 복음이 들어가는 길이 다릅니다. 어떤 사람은 논리로 설득되고, 어떤 사람은 따뜻한 관계 속에서 마음이 풀리고, 어떤 사람은 직접 경험해봐야 움직입니다. 예수님도 니고데모에게는 밤에 깊은 대화로, 사마리아 여인에게는 우물가의 일상 언어로, 삭개오에게는 이름을 불러 집에 찾아가는 방식으로 다가가셨습니다.</p>
+      <p><mark>전하는 방식은 사람에게 맞추되, 전하는 복음은 바꾸지 않습니다.</mark> 이것이 아래 내용의 대원칙입니다.</p>
+    </div>
+
+    <p class="note">MBTI는 사람을 이해하는 여러 도구 중 하나일 뿐, 과학적으로 확정된 분류는 아닙니다. 한 사람을 유형 안에 가두지 말고, 대화의 실마리를 찾는 참고로만 사용해봅니다. 마음을 여시는 분은 결국 성령님이십니다.</p>
+
+    <div class="group"><h4><i style="background:var(--nt)"></i>분석가형 · 생각이 열려야 마음이 열리는 사람</h4><div class="grid" data-g="nt"></div></div>
+    <div class="group"><h4><i style="background:var(--nf)"></i>외교관형 · 의미와 진정성을 찾는 사람</h4><div class="grid" data-g="nf"></div></div>
+    <div class="group"><h4><i style="background:var(--sj)"></i>관리자형 · 신뢰와 책임을 중요하게 여기는 사람</h4><div class="grid" data-g="sj"></div></div>
+    <div class="group"><h4><i style="background:var(--sp)"></i>탐험가형 · 직접 경험해봐야 움직이는 사람</h4><div class="grid" data-g="sp"></div></div>
+
+    <div class="detail" id="detail" aria-live="polite"></div>
+
+    <div class="common">
+      <h2>모든 유형에게 공통으로</h2>
+      <p>유형이 무엇이든 변하지 않는 것이 있습니다. 첫째, <mark>먼저 기도합니다.</mark> 전도는 설득 기술이 아니라 하나님이 여시는 문 앞에 서는 일이기 때문입니다. 둘째, <mark>말보다 먼저 삶으로 보여줍니다.</mark> 어떤 유형이든 위선 앞에서는 문을 닫고, 진실한 사랑 앞에서는 결국 문을 엽니다. 셋째, <mark>복음의 핵심은 흐리지 않습니다.</mark> 우리는 죄인이고, 예수님이 우리를 위해 죽으시고 다시 사셨으며, 그분을 믿는 사람은 은혜로 구원받는다는 사실입니다.</p>
+      <p style="margin:0">방법은 열여섯 가지일 수 있지만, 문은 하나입니다. "내가 문이니 누구든지 나로 말미암아 들어가면 구원을 얻고"<button class="v" data-k="jn109">요 10:9</button>.</p>
+    </div>
+  </div>
+</section>
+
+<footer>기독교한국침례회 은혜교회 · 담임목사 박동준</footer>
+
+<button class="top" id="toTop" aria-label="맨 위로">↑</button>
+
+<div class="dim" id="dim"></div>
+<div class="sheet" id="sheet" role="dialog" aria-modal="true" aria-labelledby="sh-t">
+  <div class="grip"></div>
+  <button class="x" id="shX" aria-label="닫기">✕</button>
+  <h6 id="sh-t"></h6>
+  <p id="sh-b"></p>
+</div>
+
+<script>
+const POP = {
+  cosmo:['우주론적 논증','존재하기 시작한 모든 것에는 원인이 있고, 우주도 존재하기 시작했으므로 우주에도 원인이 있다는 논증입니다. 중세 이슬람 철학자들과 토마스 아퀴나스를 거쳐, 오늘날에는 윌리엄 레인 크레이그가 대표적으로 발전시켰습니다.'],
+  fine:['미세조정','우주의 물리 상수들이 생명이 존재할 수 있는 아주 좁은 범위 안에 정확히 맞춰져 있다는 관찰입니다. 마치 수십 개의 다이얼이 모두 정확한 눈금에 맞춰져 있는 것과 같아서, 과학자들 사이에서도 설명이 필요한 현상으로 이야기됩니다.'],
+  lambda:['우주 상수','우주가 팽창하는 속도에 영향을 주는 값입니다. 이 값이 조금만 커도 우주는 너무 빨리 흩어져 별과 은하가 생기지 못하고, 조금만 작아도 우주는 금방 다시 쪼그라들었을 것이라고 봅니다.'],
+  strong:['강한 핵력','원자핵 안에서 양성자와 중성자를 붙잡아 두는 힘입니다. 이 힘이 몇 퍼센트만 약해도 수소 외의 원소가 만들어지지 않고, 조금만 강해도 수소가 거의 남지 않아 별이 오래 타지 못합니다.'],
+  lewis:['C.S. 루이스 (1898~1963)','옥스퍼드와 케임브리지의 영문학 교수. 무신론자였다가 30대에 회심했습니다. 『순전한 기독교』, 『나니아 연대기』 등을 썼고, 20세기 가장 영향력 있는 기독교 변증가로 꼽힙니다.'],
+  aug:['아우구스티누스 (354~430)','북아프리카 히포의 주교. 방탕한 젊은 시절을 보내다 회심했고, 그 과정을 『고백록』에 기록했습니다. 본문의 문장은 『고백록』 첫머리에 나오는 유명한 고백입니다.'],
+  jos:['요세푸스 (37~100년경)','1세기 유대인 역사가. 로마를 위해 『유대 고대사』를 썼는데, 여기서 예수의 동생 야고보를 가리켜 \u2018그리스도라 불리는 예수의 형제\u2019라고 언급합니다.'],
+  tac:['타키투스 (56~120년경)','로마의 대표적 역사가. 『연대기』에서 네로 황제의 그리스도인 박해를 기록하면서, 그 이름의 기원인 그리스도가 티베리우스 황제 때 총독 본디오 빌라도에게 처형당했다고 적었습니다. 기독교에 적대적인 사람의 기록이라 더 의미가 있습니다.'],
+  tri:['삼중 논증 (트릴레마)','C.S. 루이스가 『순전한 기독교』에서 제시한 논증입니다. 자신이 하나님이라고 주장한 사람은 \u2018거짓말쟁이(Liar)\u2019, \u2018정신 이상자(Lunatic)\u2019, \u2018주님(Lord)\u2019 중 하나라는 것으로, 영어 첫 글자를 따서 \u20183L 논증\u2019이라고도 부릅니다.'],
+  creed:['초기 신조','교회가 예배와 가르침에서 함께 암송하던 짧은 신앙 고백문입니다. 바울은 고린도전서 15장에서 이것을 \u2018내가 받은 것\u2019이라고 소개합니다. 많은 학자들이 바울이 이 내용을 예수 사후 몇 년 안에 예루살렘에서 전해 받았다고 봅니다.'],
+  grace:['은혜','받을 자격이 없는 사람에게 값없이 주어지는 호의입니다. 헬라어 \u2018카리스(χάρις)\u2019는 원래 \u2018선물\u2019, \u2018호의\u2019를 뜻합니다. 기독교 구원의 핵심은 사람이 쌓은 공로가 아니라 하나님이 먼저 주시는 이 은혜입니다.'],
+  evil:['악의 문제','\u2018하나님이 전능하다면 악을 없앨 수 있고, 선하다면 없애길 원할 텐데 왜 악이 존재하는가\u2019라는 오래된 질문입니다. 기독교는 자유의지, 고난을 통한 성숙, 그리고 하나님이 직접 고난 속으로 들어오신 십자가로 이 질문에 응답해 왔습니다.'],
+  hallu:['환각설','제자들이 본 부활한 예수는 슬픔이나 기대가 만든 환각이었다는 설명입니다. 이에 대해 환각은 보통 개인적 체험이라 수백 명이 동시에 같은 것을 보기 어렵고, 환각으로는 빈 무덤이 설명되지 않는다는 반론이 제기됩니다.'],
+  rom120:['로마서 1:20','창세로부터 그의 보이지 아니하는 것들 곧 그의 영원하신 능력과 신성이 그 만드신 만물에 분명히 보여 알게 되나니 그러므로 저희가 핑계치 못할지니라'],
+  rom215:['로마서 2:15','이런 이들은 율법의 행위가 마음에 새긴 것을 나타내어 그 양심이 증거가 되어 그 생각들이 서로 혹은 송사하며 혹은 변명하여'],
+  ecc311:['전도서 3:11','하나님이 모든 것을 지으시되 때를 따라 아름답게 하셨고 또 사람에게는 영원을 사모하는 마음을 주셨느니라'],
+  mk25:['마가복음 2:5','예수께서 저희 믿음을 보시고 중풍병자에게 이르시되 소자야 네 죄 사함을 받았느니라 하시니'],
+  jn1030:['요한복음 10:30','나와 아버지는 하나이니라'],
+  jn146:['요한복음 14:6','예수께서 가라사대 내가 곧 길이요 진리요 생명이니 나로 말미암지 않고는 아버지께로 올 자가 없느니라'],
+  co1514:['고린도전서 15:14','그리스도께서 다시 살지 못하셨으면 우리의 전파하는 것도 헛것이요 또 너희 믿음도 헛것이며'],
+  co153:['고린도전서 15:3~8','내가 받은 것을 먼저 너희에게 전하였노니 이는 성경대로 그리스도께서 우리 죄를 위하여 죽으시고 장사 지낸 바 되셨다가 성경대로 사흘 만에 다시 살아나사 게바에게 보이시고 후에 열두 제자에게와 그 후에 오백여 형제에게 일시에 보이셨나니 그중에 태반이나 지금까지 있고 어떤 이는 잠들었으며 그 후에 야고보에게 보이셨으며 그 후에 모든 사도에게와 맨 나중에 만삭되지 못하여 난 자 같은 내게도 보이셨느니라'],
+  eph28:['에베소서 2:8~9','너희가 그 은혜를 인하여 믿음으로 말미암아 구원을 얻었나니 이것이 너희에게서 난 것이 아니요 하나님의 선물이라 행위에서 난 것이 아니니 이는 누구든지 자랑치 못하게 함이니라'],
+  rom719:['로마서 7:19, 24','내가 원하는 바 선은 하지 아니하고 도리어 원치 아니하는 바 악은 행하는도다 … 오호라 나는 곤고한 사람이로다 이 사망의 몸에서 누가 나를 건져내랴'],
+  rom58:['로마서 5:8','우리가 아직 죄인 되었을 때에 그리스도께서 우리를 위하여 죽으심으로 하나님께서 우리에게 대한 자기의 사랑을 확증하셨느니라'],
+  jn1125:['요한복음 11:25','예수께서 가라사대 나는 부활이요 생명이니 나를 믿는 자는 죽어도 살겠고'],
+  jn146b:['요한복음 1:46','나다나엘이 가로되 나사렛에서 무슨 선한 것이 날 수 있느냐 빌립이 가로되 와 보라 하니라'],
+  jn109:['요한복음 10:9','내가 문이니 누구든지 나로 말미암아 들어가면 구원을 얻고 또는 들어가며 나오며 꼴을 얻으리라']
+};
+
+const TYPES = [
+ {c:'INTJ',g:'nt',nick:'전략가',who:'닮은 성경 인물 · 니고데모',
+  trait:'큰 그림과 체계를 중요하게 여기고, 스스로 납득해야 움직입니다. 감정적인 호소보다 논리의 설계도에 반응합니다.',
+  open:'성경 전체를 꿰뚫는 구속사의 설계도(창조-타락-구속-완성)와, 우주의 기원과 미세조정 같은 거시적 논증에서 마음이 열립니다. \u2018이 모든 것이 하나의 계획 안에 있다\u2019는 통일성이 강하게 다가옵니다.',
+  block:'감정적인 간증이나 분위기에 끌려가는 것을 경계합니다. 교회 안의 비합리적인 모습에 실망하기 쉽고, 결국 자기 지성만을 신뢰하려는 경향이 걸림돌이 됩니다.',
+  how:'어려운 질문을 환영하고, 깊이 있는 책을 함께 읽자고 제안해봅니다. 다만 지성으로 도달할 수 있는 곳은 문 앞까지이고, 그 문은 신뢰로 연다는 점을 부드럽게 짚어줍니다.',
+  say:'"당신이 설계하는 사람이라면, 이 우주의 설계도를 보고 설계자가 없다고 말할 수 있을까요? 니고데모도 밤에 예수님을 찾아가 가장 어려운 질문부터 했어요."',
+  word:['요한복음 3:3','사람이 거듭나지 아니하면 하나님의 나라를 볼 수 없느니라']},
+ {c:'INTP',g:'nt',nick:'논리술사',who:'닮은 성경 인물 · 도마',
+  trait:'끝없이 질문하고 개념을 분해해보는 탐구자입니다. 결론을 서두르지 않고, 모순이 없는지 끝까지 따져봅니다.',
+  open:'삼위일체, 은혜와 정의가 동시에 이루어지는 십자가처럼 \u2018처음엔 모순 같은데 파고들수록 정교한\u2019 기독교의 역설에 흥미를 느낍니다. 부활의 역사적 증거를 스스로 검토하는 과정도 좋아합니다.',
+  block:'모든 걸 다 알기 전까지 결정을 계속 미룹니다. 탐구 자체가 목적이 되어 헌신을 피하는 것이 가장 큰 걸림돌입니다.',
+  how:'답을 강요하지 말고 함께 탐구하는 동료가 되어줍니다. 그러면서 사람과의 관계도 모든 걸 다 알고 나서 시작하지 않는다는 점, 충분한 근거가 있을 때 신뢰로 한 걸음 내딛는 것이 합리적이라는 점을 나눠봅니다.',
+  say:'"도마도 직접 확인하기 전엔 못 믿겠다고 했잖아요. 예수님은 그 의심을 꾸짖기보다 손을 내밀어 확인하게 하셨어요. 당신의 질문도 환영받는 질문이에요."',
+  word:['요한복음 20:27','네 손가락을 이리 내밀어 내 손을 보고 네 손을 내밀어 내 옆구리에 넣어 보라 그리하여 믿음 없는 자가 되지 말고 믿는 자가 되라']},
+ {c:'ENTJ',g:'nt',nick:'통솔자',who:'닮은 성경 인물 · 사울(바울)',
+  trait:'목표를 세우고 사람을 이끄는 데 탁월합니다. 효율과 성취를 중요하게 여기고, 약한 모습을 보이기 싫어합니다.',
+  open:'인생의 궁극적 목적, 역사를 바꾼 복음의 영향력, 그리고 \u2018가장 강한 분이 가장 낮아지셨다\u2019는 섬기는 리더십의 역설에 반응합니다.',
+  block:'모든 것을 스스로 통제하려는 마음, 그리고 도움이 필요한 존재라고 인정하는 것이 가장 어렵습니다.',
+  how:'돌려 말하지 말고 명확하게 전합니다. 사울처럼 확신에 차서 달리던 사람도 방향이 틀렸다면 모든 성취가 무너진다는 점, 그리고 진짜 리더는 먼저 누군가를 따르는 사람이라는 점을 나눠봅니다.',
+  say:'"가장 큰 권위를 가진 분이 왜 제자들의 발을 씻으셨을까요? 당신이 이끄는 모든 것 위에, 당신을 이끄실 분이 필요하지 않을까요?"',
+  word:['마가복음 10:45','인자가 온 것은 섬김을 받으려 함이 아니라 도리어 섬기려 하고 자기 목숨을 많은 사람의 대속물로 주려 함이니라']},
+ {c:'ENTP',g:'nt',nick:'변론가',who:'닮은 성경 인물 · 아볼로',
+  trait:'토론을 즐기고 기존 생각에 도전하는 것을 좋아합니다. 재치 있고 빠르며, 새로운 관점에 흥미를 느낍니다.',
+  open:'반론을 환영하는 대화에서 마음이 열립니다. 부활의 역사적 증거를 두고 \u2018한번 반박해보라\u2019는 식의 지적인 도전이 오히려 진지하게 생각하게 만듭니다.',
+  block:'논쟁 자체를 즐기다가 결론에 도달하지 않습니다. 이기는 것에 집중하면 진리를 놓칩니다.',
+  how:'논쟁을 피하지 말고 기꺼이 받아줍니다. 다만 \u2018이 질문의 답이 맞다면 당신은 어떻게 할 건가요?\u2019라고 물어, 토론을 삶의 결단으로 연결해봅니다.',
+  say:'"좋아요, 부활의 증거를 마음껏 반박해봐요. 대신 반박이 안 되면, 그때는 진지하게 생각해보기로 해요. 공정하죠?"',
+  word:['사도행전 17:31','이는 정하신 사람으로 하여금 천하를 공의로 심판할 날을 작정하시고 이에 저를 죽은 자 가운데서 다시 살리신 것으로 모든 사람에게 믿을 만한 증거를 주셨음이니라']},
+
+ {c:'INFJ',g:'nf',nick:'옹호자',who:'닮은 성경 인물 · 사도 요한',
+  trait:'깊은 의미와 내면의 진실을 추구합니다. 사람의 마음을 잘 읽고, 이상적인 세상을 꿈꿉니다.',
+  open:'\u2018이 세상이 채울 수 없는 갈망\u2019 이야기에 깊이 공감합니다. 하나님이 사랑이시라는 요한의 고백, 그리고 인간의 상처와 회복을 다루는 구속의 이야기가 마음에 닿습니다.',
+  block:'자기 안의 영성만으로 충분하다고 생각하기 쉽습니다. 교회의 위선에 상처받은 경험이 있다면 쉽게 마음을 닫습니다.',
+  how:'표면적인 대화보다 한 사람과 깊이 대화하는 시간을 가집니다. 교회의 부족함은 솔직히 인정하되, 예수님은 그 부족한 사람들을 위해 오셨다는 점을 나눠봅니다.',
+  say:'"당신이 늘 찾던 그 깊은 의미, 그리고 채워지지 않던 그 자리에 이름이 있다면 어떨까요?"',
+  word:['요한일서 4:10','사랑은 여기 있으니 우리가 하나님을 사랑한 것이 아니요 오직 하나님이 우리를 사랑하사 우리 죄를 위하여 화목 제물로 그 아들을 보내셨음이니라']},
+ {c:'INFP',g:'nf',nick:'중재자',who:'닮은 성경 인물 · 베다니의 마리아',
+  trait:'진정성과 자기다움을 소중히 여깁니다. 감수성이 풍부하고 상처에 민감하며, 판단받는 것을 두려워합니다.',
+  open:'있는 그대로 받아주시는 사랑에서 마음이 열립니다. 탕자를 달려가 안아주는 아버지, 상한 갈대를 꺾지 않으시는 예수님의 모습이 깊이 닿습니다.',
+  block:'정죄받을까 봐 두려워하고, 딱딱한 교리나 규칙 목록에 거부감을 느낍니다.',
+  how:'먼저 충분히 들어줍니다. 교리를 설명하기보다 예수님이 약한 사람들을 어떻게 대하셨는지 이야기로 들려줍니다. 서두르지 않는 것이 가장 큰 배려입니다.',
+  say:'"예수님은 당신을 고치려고 먼저 오신 게 아니라, 먼저 찾으러 오셨어요. 있는 그대로 와도 괜찮아요."',
+  word:['이사야 42:3','상한 갈대를 꺾지 아니하며 꺼져가는 등불을 끄지 아니하고']},
+ {c:'ENFJ',g:'nf',nick:'선도자',who:'닮은 성경 인물 · 바나바',
+  trait:'사람을 돌보고 공동체를 세우는 데 기쁨을 느낍니다. 다른 사람의 성장을 돕는 따뜻한 리더입니다.',
+  open:'사랑의 공동체, 그리고 기독교가 역사 속에서 약자를 돌보며 인간의 존엄을 세워온 이야기에 공감합니다.',
+  block:'다른 사람의 기대를 채우다 스스로 지칩니다. 자신의 헌신과 선행으로 괜찮은 사람이 되려는 마음이 은혜를 받아들이는 데 걸림돌이 됩니다.',
+  how:'그가 쏟아온 수고를 먼저 알아주고, 그 역시 채움받아야 할 사람이라는 점을 짚어줍니다. 바나바가 \u2018위로의 아들\u2019이 될 수 있었던 것도 먼저 위로받았기 때문입니다.',
+  say:'"다른 사람을 그렇게 채워주는 당신은, 누가 채워주나요?"',
+  word:['마태복음 11:28','수고하고 무거운 짐 진 자들아 다 내게로 오라 내가 너희를 쉬게 하리라']},
+ {c:'ENFP',g:'nf',nick:'활동가',who:'닮은 성경 인물 · 베드로',
+  trait:'열정적이고 호기심이 많으며, 새로운 가능성에 설렙니다. 사람을 좋아하고 자유를 소중히 여깁니다.',
+  open:'신앙을 규칙이 아니라 모험으로 소개할 때 마음이 열립니다. 인생이 완전히 바뀐 사람들의 생생한 이야기(간증)에 강하게 반응합니다.',
+  block:'신앙을 자유를 빼앗는 틀로 여기기 쉽고, 관심이 금방 다른 곳으로 옮겨가기도 합니다.',
+  how:'나의 변화 이야기를 솔직하고 생동감 있게 나눕니다. 진짜 자유는 아무 규칙이 없는 것이 아니라, 제대로 된 목적에 붙들리는 것이라는 점을 나눠봅니다.',
+  say:'"베드로도 충동적이고 실수투성이였는데, 예수님은 그런 그에게 \u2018나를 따라오라\u2019고 하셨어요. 인생 최고의 모험, 한번 시작해볼래요?"',
+  word:['요한복음 10:10','내가 온 것은 양으로 생명을 얻게 하고 더 풍성히 얻게 하려는 것이라']},
+
+ {c:'ISTJ',g:'sj',nick:'현실주의자',who:'닮은 성경 인물 · 누가',
+  trait:'사실과 기록을 신뢰하고, 맡은 일을 성실하게 해냅니다. 검증되지 않은 것에는 쉽게 마음을 주지 않습니다.',
+  open:'성경의 역사적 신뢰성, 사본 증거, 그리고 약속을 끝까지 지키시는 신실한 하나님(언약)에서 마음이 열립니다. 누가가 \u2018모든 일을 근원부터 자세히 미루어 살핀\u2019 기록자였다는 점이 설득력 있게 다가옵니다.',
+  block:'스스로 성실하게 살아왔기에 구원이 필요 없다고 느끼기 쉽습니다(도덕주의). 증명되지 않는 부분은 받아들이기 어려워합니다.',
+  how:'감정보다 사실과 문서부터 차근차근 보여줍니다. 그다음, 성실함의 기준 자체가 어디서 왔는지, 그리고 그 기준 앞에 완벽한 사람은 없다는 점을 정직하게 나눠봅니다.',
+  say:'"누가복음은 의사였던 누가가 직접 조사해서 쓴 보고서예요. 오늘 처음부터 한번 차례대로 읽어볼래요?"',
+  word:['누가복음 1:3','그 모든 일을 근원부터 자세히 미루어 살핀 나도 … 차례대로 써 보내는 것이 좋은 줄 알았노니']},
+ {c:'ISFJ',g:'sj',nick:'수호자',who:'닮은 성경 인물 · 마르다',
+  trait:'조용히 다른 사람을 섬기고 돌봅니다. 책임감이 강하고, 관계 속의 작은 배려를 소중히 여깁니다.',
+  open:'하나님이 목자처럼 한 사람 한 사람을 돌보신다는 이야기, 그리고 인격적인 관계 속에서 마음이 열립니다.',
+  block:'늘 주는 쪽에 서 있어서 자신이 받을 자격이 없다고 느낍니다. 또 열심히 섬기는 것으로 인정받으려는 마음이 은혜를 가립니다.',
+  how:'오랜 시간 정성스러운 관계를 쌓습니다. 힘든 일이 있을 때 \u2018기도해줘도 될까요?\u2019라고 물어봅니다. 섬김 이전에 먼저 사랑받는 자리가 있다는 것을 알려줍니다.',
+  say:'"마르다가 바쁘게 섬기다 지쳤을 때, 예수님은 \u2018많은 일로 염려하는구나\u2019라며 먼저 그 마음을 알아주셨어요. 당신도 쉬어도 괜찮아요."',
+  word:['시편 23:1-2','여호와는 나의 목자시니 내가 부족함이 없으리로다 그가 나를 푸른 초장에 누이시며 쉴 만한 물가로 인도하시는도다']},
+ {c:'ESTJ',g:'sj',nick:'경영자',who:'닮은 성경 인물 · 가버나움의 백부장',
+  trait:'질서와 원칙을 세우고 일을 확실하게 실행합니다. 옳고 그름이 분명한 것을 좋아합니다.',
+  open:'도덕 논증, 하나님의 공의, 그리고 명확한 체계에서 마음이 열립니다. 죄가 그냥 넘어가지 않으면서도 용서가 이루어지는 십자가의 논리가 설득력 있게 다가옵니다.',
+  block:'자기 의로움, 그리고 약점을 드러내기 싫어하는 마음이 걸림돌이 됩니다.',
+  how:'정의라는 그의 언어로 복음을 설명합니다. 공정한 재판관은 죄를 눈감아줄 수 없고, 그래서 재판관 자신이 그 값을 치르신 것이 십자가라는 점을 명확하게 전합니다.',
+  say:'"공정한 재판관이라면 죄를 그냥 넘어갈 수 있을까요? 십자가는 정의가 무너지지 않으면서 용서가 이루어진 유일한 방법이에요."',
+  word:['로마서 3:26','곧 이때에 자기의 의로우심을 나타내사 자기도 의로우시며 또한 예수 믿는 자를 의롭다 하려 하심이니라']},
+ {c:'ESFJ',g:'sj',nick:'집정관',who:'닮은 성경 인물 · 루디아',
+  trait:'사람을 챙기고 모임의 분위기를 따뜻하게 만듭니다. 소속감과 조화를 소중히 여깁니다.',
+  open:'가족 같은 공동체의 따뜻함, 그리고 하나님이 우리를 자녀로 입양하신다는 이야기에서 마음이 열립니다.',
+  block:'다른 사람의 시선을 많이 의식하고, 신앙을 사교 모임처럼 여기다 복음의 핵심을 놓칠 수 있습니다.',
+  how:'식사나 소모임에 먼저 초대하고, 그 관계를 예수님과의 개인적인 만남으로 자연스럽게 이어줍니다. 공동체는 문이고, 목적지는 예수님이라는 점을 분명히 합니다.',
+  say:'"교회라는 모임보다 먼저, 예수님이라는 한 분을 만나는 거예요. 그분이 당신을 가족으로 부르세요."',
+  word:['요한일서 3:1','보라 아버지께서 어떠한 사랑을 우리에게 주사 하나님의 자녀라 일컬음을 얻게 하셨는고']},
+
+ {c:'ISTP',g:'sp',nick:'장인',who:'닮은 성경 인물 · 나다나엘',
+  trait:'직접 해보고 확인하는 실용주의자입니다. 말수가 적고, 긴 설명보다 실제로 작동하는지를 봅니다.',
+  open:'장황한 설명보다 \u2018직접 확인해보라\u2019는 초대에 반응합니다. 신앙이 실제 삶을 바꾸는 모습을 눈으로 볼 때 마음이 움직입니다.',
+  block:'종교적인 용어와 긴 설교에 금방 마음을 닫습니다. 억지로 끌려가는 느낌을 싫어합니다.',
+  how:'짧고 담백하게 말합니다. 설득하려 애쓰기보다 성경 한 권을 직접 읽어보라고 권하고, 삶으로 보여주며 기다립니다.',
+  say:'"나다나엘도 \u2018나사렛에서 무슨 좋은 게 나오겠어\u2019라고 했어요. 빌립은 딱 한마디 했죠. \u2018와서 봐.\u2019 마가복음이 제일 짧아요. 직접 읽고 판단해봐요."',
+  word:['시편 34:8','너희는 여호와의 선하심을 맛보아 알지어다 그에게 피하는 자는 복이 있도다']},
+ {c:'ISFP',g:'sp',nick:'모험가',who:'닮은 성경 인물 · 다윗',
+  trait:'아름다움과 감각을 소중히 여기는 예술가적 기질입니다. 조용하지만 깊이 느끼고, 강요받는 것을 싫어합니다.',
+  open:'창조 세계의 아름다움, 음악과 예술, 조용한 예배의 경험에서 마음이 열립니다. 목동이자 시인이었던 다윗의 시편이 깊이 공감됩니다.',
+  block:'설교조의 말, 규칙과 강요에 금방 거리를 둡니다.',
+  how:'말보다 함께 경험하는 자리를 만듭니다. 자연 속을 걷거나 찬양을 함께 듣고, 그 아름다움의 근원을 조용히 질문해봅니다.',
+  say:'"이 하늘, 이 노을 보면 무슨 생각이 들어요? 이 아름다움을 그린 분이 당신도 그리셨대요."',
+  word:['시편 19:1','하늘이 하나님의 영광을 선포하고 궁창이 그 손으로 하신 일을 나타내는도다']},
+ {c:'ESTP',g:'sp',nick:'사업가',who:'닮은 성경 인물 · 삭개오',
+  trait:'행동이 빠르고 현실 감각이 뛰어납니다. 지금 이 순간을 즐기고, 직설적인 대화를 좋아합니다.',
+  open:'돌려 말하지 않는 직설적인 도전에서 마음이 열립니다. 인생의 짧음, 위기의 순간처럼 현실적인 질문 앞에서 진지해집니다.',
+  block:'지금이 좋으니 나중에 생각하겠다고 미룹니다. 결과를 지금 당장 느끼지 못하면 우선순위에서 밀어냅니다.',
+  how:'짧고 분명하게 핵심을 던집니다. 삭개오가 예수님을 보려고 곧장 나무에 올라가고, 그날 바로 인생을 바꾼 것처럼 \u2018오늘\u2019의 결단을 강조합니다.',
+  say:'"인생 마지막 날, 뭐에 걸었으면 좋겠어요? 삭개오는 그날 바로 결정했어요. 예수님도 \u2018오늘\u2019 구원이 이 집에 이르렀다고 하셨고요."',
+  word:['누가복음 19:9','오늘 구원이 이 집에 이르렀으니']},
+ {c:'ESFP',g:'sp',nick:'연예인',who:'닮은 성경 인물 · 사마리아 여인',
+  trait:'밝고 에너지가 넘치며 사람들과 함께하는 것을 좋아합니다. 지금 이 순간의 즐거움을 소중히 여깁니다.',
+  open:'기쁨과 잔치의 이야기에서 마음이 열립니다. 예수님의 첫 기적이 잔치의 포도주였다는 것, 탕자가 돌아왔을 때 아버지가 잔치를 열었다는 이야기가 기독교에 대한 편견을 깹니다.',
+  block:'기독교를 지루한 금지 목록으로 생각하고, 깊고 무거운 대화를 피하려 합니다.',
+  how:'즐거운 자리에서 자연스럽게 이야기를 꺼냅니다. 신앙이 기쁨을 빼앗는 게 아니라 진짜 기쁨의 근원이라는 것을 삶의 밝음으로 보여줍니다.',
+  say:'"예수님 첫 기적이 뭔지 알아요? 잔치에 포도주가 떨어졌을 때 최고급 포도주를 만드신 거예요. 신앙은 잔치에 초대받는 거예요."',
+  word:['누가복음 15:24','이 내 아들은 죽었다가 다시 살아났으며 내가 잃었다가 다시 얻었노라 하니 저희가 즐거워하더라']}
+];
+
+const GC = {nt:'var(--nt)',nf:'var(--nf)',sj:'var(--sj)',sp:'var(--sp)'};
+
+/* 그리드 생성 */
+TYPES.forEach(function(t,i){
+  const b=document.createElement('button');
+  b.className='type'; b.style.setProperty('--c',GC[t.g]);
+  b.setAttribute('aria-pressed','false'); b.dataset.i=i;
+  b.innerHTML='<b>'+t.c+'</b><span>'+t.nick+'</span>';
+  b.addEventListener('click',function(){ showType(i,true); });
+  document.querySelector('.grid[data-g="'+t.g+'"]').appendChild(b);
+});
+
+function showType(i,scroll){
+  const t=TYPES[i]; const d=document.getElementById('detail');
+  d.style.setProperty('--c',GC[t.g]);
+  document.querySelectorAll('.type').forEach(function(x){x.setAttribute('aria-pressed',x.dataset.i==i?'true':'false');});
+  d.innerHTML=
+   '<div class="d-head"><div class="code">'+t.c+'</div><div class="nick">'+t.nick+'</div><div class="who">'+t.who+'</div></div>'+
+   '<div class="d-body">'+
+   '<div class="d-sec"><h5>이런 사람입니다</h5><p>'+t.trait+'</p></div>'+
+   '<div class="d-sec"><h5>마음이 열리는 지점</h5><p>'+t.open+'</p></div>'+
+   '<div class="d-sec"><h5>걸림돌이 되는 것</h5><p>'+t.block+'</p></div>'+
+   '<div class="d-sec"><h5>이렇게 전해봅니다</h5><p>'+t.how+'</p><div class="say">'+t.say+'</div></div>'+
+   '<div class="d-sec"><h5>함께 나눌 말씀</h5><p class="word"><em>'+t.word[0]+'</em>'+t.word[1]+'</p></div>'+
+   '</div>'+
+   '<div class="nav2"><button data-m="-1">이전 유형</button><button data-m="1">다음 유형</button></div>';
+  d.querySelectorAll('.nav2 button').forEach(function(b){
+    b.addEventListener('click',function(){ showType((i+Number(b.dataset.m)+TYPES.length)%TYPES.length,true); });
+  });
+  if(scroll){ d.scrollIntoView({behavior:'smooth',block:'start'}); }
+}
+showType(0,false);
+
+/* 탭 */
+document.querySelectorAll('.tab').forEach(function(tb){
+  tb.addEventListener('click',function(){
+    document.querySelectorAll('.tab').forEach(function(x){x.setAttribute('aria-selected',x===tb?'true':'false');});
+    document.querySelectorAll('.panel').forEach(function(p){p.classList.toggle('on',p.id===tb.dataset.p);});
+    window.scrollTo(0,0);
+    try{ sessionStorage.setItem('tab',tb.dataset.p); }catch(e){}
+  });
+});
+try{ const s=sessionStorage.getItem('tab'); if(s==='p2'){ document.querySelector('.tab[data-p="p2"]').click(); } }catch(e){}
+
+/* 글씨 크기 */
+let fs=17;
+try{ const v=parseInt(localStorage.getItem('fs'),10); if(v>=14&&v<=23) fs=v; }catch(e){}
+function applyFs(){ document.documentElement.style.setProperty('--fs',fs+'px'); try{localStorage.setItem('fs',fs);}catch(e){} }
+applyFs();
+document.getElementById('fsUp').onclick=function(){ if(fs<23){fs++;applyFs();} };
+document.getElementById('fsDown').onclick=function(){ if(fs>14){fs--;applyFs();} };
+
+/* 팝업 */
+const dim=document.getElementById('dim'), sheet=document.getElementById('sheet');
+function openPop(k){
+  const d=POP[k]; if(!d) return;
+  document.getElementById('sh-t').textContent=d[0];
+  document.getElementById('sh-b').textContent=d[1];
+  dim.classList.add('on'); sheet.classList.add('on');
+  document.getElementById('shX').focus();
+}
+function closePop(){ dim.classList.remove('on'); sheet.classList.remove('on'); }
+document.addEventListener('click',function(e){
+  const b=e.target.closest('.t,.v'); if(b){ openPop(b.dataset.k); }
+});
+dim.addEventListener('click',closePop);
+document.getElementById('shX').addEventListener('click',closePop);
+document.addEventListener('keydown',function(e){ if(e.key==='Escape') closePop(); });
+
+document.getElementById('toTop').onclick=function(){ window.scrollTo({top:0,behavior:'smooth'}); };
+</script>
+</body>
+</html>
