@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>말라기서, 어떻게요라고 묻는 백성 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="하나님과 말다툼하는 백성, 그리고 400년의 침묵 앞에 남긴 마지막 약속">
+<meta property="og:title" content="말라기서, 어떻게요라고 묻는 백성">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 05</div>
+  <h1>말라기서,<br><em>"어떻게요?"</em>라고<br>묻는 백성</h1>
+  <p class="sub">하나님과 말다툼하는 백성,<br>그리고 400년의 침묵 앞에 남긴 마지막 약속</p>
+  <div class="ref">말라기 1–4장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>말라기서는 우리 성경에서 <mark>구약의 마지막 책</mark>이에요. 그리고 이 책 이후로 하나님은 약 400년 동안 새로운 선지자를 통해 말씀하지 않으셨어요. 그래서 말라기서는 구약이 신약에게 건네는 마지막 인사 같은 책이에요.</p>
+    <p>그런데 이 마지막 책의 분위기가 참 독특해요. 하나님이 말씀하시면 백성이 계속 말대꾸를 해요. "어떻게요?", "우리가 언제요?" 마치 <span class="hl">하나님과 백성이 말다툼하는 대본</span> 같아요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>말라기서는 어떤 책일까?</h2>
+    <p>하나님의 말씀 → 백성의 "어떻게요?" → 하나님의 설명</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>말라기는 바벨론 포로에서 돌아와 성전을 다시 지은 뒤, 약 주전 5세기 중반에 활동했어요. 느헤미야와 비슷한 시대예요. 성전은 다시 섰지만 기대했던 영광은 오지 않았고, 사람들의 신앙은 <mark>형식만 남은 채 식어가고</mark> 있었어요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>말라기는 "나의 사자(메신저)"라는 뜻이에요. 3:1 "내가 내 사자를 보내리니"와 같은 단어예요.</div><div><b>독특한 형식</b>하나님의 선언 → 백성의 반문 → 하나님의 설명이 여섯 번 넘게 반복되는 논쟁 형식이에요.</div></div>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">백성이 하나님께 던진 "어떻게요?"</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">"주께서 어떻게 우리를 사랑하셨나이까" (1:2)</div><div class="mini-b">하나님의 첫마디 "내가 너희를 사랑하였노라"에 대한 대답이에요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">"우리가 어떻게 주의 이름을 멸시하였나이까" (1:6)</div><div class="mini-b">제사장들의 대답이에요. 자기들이 무엇을 잘못하는지 전혀 몰라요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">"우리가 어떻게 여호와를 괴롭혀 드렸나이까" (2:17)</div><div class="mini-b">"악을 행하는 자도 여호와의 눈에 좋게 보인다"고 말하면서요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">"우리가 어떻게 하여야 돌아가리이까" (3:7)</div><div class="mini-b">"내게로 돌아오라"는 초청에, 떠난 적이 없다는 듯 되묻는 말이에요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">"우리가 어떻게 주의 것을 도둑질하였나이까" (3:8)</div><div class="mini-b">십일조와 봉헌물 이야기로 이어지는 대답이에요.</div></div></div></div>
+
+  <div class="target"><p>말라기서 백성의 가장 큰 문제는 죄를 짓는 것보다, <span class="hl">자기가 무엇을 잘못하고 있는지 모른다는 것</span>이었어요. 그래서 매번 "어떻게요?"라고 물어요. 그런데 하나님은 그 무딘 백성과 끝까지 대화하시며, 하나하나 설명해 주세요. 그리고 400년의 침묵 전에 마지막 약속을 남기세요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>말대꾸 속에 숨은 이야기, 그리고 신약으로 이어지는 다리</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>"어떻게요?"</button><button class="chip" onclick="goTo('s2')"><b>2</b>총독에게 드려봐라</button><button class="chip" onclick="goTo('s3')"><b>3</b>성전 문을 닫아라</button><button class="chip" onclick="goTo('s4')"><b>4</b>나를 시험해 보라</button><button class="chip" onclick="goTo('s5')"><b>5</b>기념책</button><button class="chip" onclick="goTo('s6')"><b>6</b>저주로 끝나는 구약</button><button class="chip" onclick="goTo('s7')"><b>7</b>엘리야와 400년</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>성경에서 가장 서운한 대답,<br>"어떻게요?"</h2><div class="refs">말라기 1:2-3</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">하나님의 첫마디</div>"내가 너희를 사랑하였노라"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">백성의 대답</div>"주께서 어떻게 우리를 사랑하셨나이까"</div></div><p>구약의 마지막 책, 하나님의 첫마디는 <mark>"내가 너희를 사랑하였노라"</mark>예요. 오랜 역사 끝에 하나님이 가장 먼저 하고 싶으셨던 말이 이거였어요.</p>
+        <p>그런데 백성의 대답이 뭐였는지 아세요? <span class="hl">"어떻게요? 언제 우리를 사랑하셨는데요?"</span> 포로에서 돌아왔지만 삶은 여전히 팍팍하고, 기대했던 회복은 오지 않았으니 서운했던 거예요. 연인이 "사랑해"라고 했는데 "증거 대 봐"라고 답하는 느낌이죠. 😄</p>
+        <p>하나님은 화내지 않고 설명하세요. 야곱과 에서의 이야기를 꺼내시며, 이스라엘이 존재하는 것 자체가 하나님의 택하심과 사랑의 증거라고요. 사랑은 늘 있었는데, <span class="hl">백성의 눈이 그 사랑을 보지 못하고</span> 있었던 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님께 "언제 저를 사랑하셨어요?"라고 묻고 싶을 때, 이미 받은 사랑의 흔적들을 하나씩 세어봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>"그것을 너희 총독에게<br>드려 보라"</h2><div class="refs">말라기 1:7-8</div></div></div>
+    <div class="scene-body"><p>당시 제사장들은 하나님의 제단에 <mark>눈먼 짐승, 다리 저는 짐승, 병든 짐승</mark>을 올렸어요. 어차피 팔 수도 없고 쓸모도 없는 것들이었죠. 율법은 흠 없는 것을 드리라고 분명히 말했는데요(레 22:20).</p>
+        <p>그러자 하나님이 날카로운 한마디를 던지세요. <span class="hl">"이제 그것을 너희 총독에게 드려 보라. 그가 너를 기뻐하겠으며 너를 받아 주겠느냐"</span>(1:8).</p>
+        <p>쉽게 말하면 "그걸 도지사한테 선물로 가져가 봐라, 좋아하겠냐?"라는 거예요. 사람에게는 절대 드리지 않을 것을 하나님께는 아무렇지 않게 드리고 있었던 거죠. 하나님이 인간 윗사람보다 못한 대우를 받고 계셨어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님께 드리는 시간과 마음과 물질이, 사람에게 드리는 것보다 가볍지는 않은지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>"성전 문을 닫을 자가<br>있었으면 좋겠도다"</h2><div class="refs">말라기 1:10, 13</div></div></div>
+    <div class="scene-body"><p>말라기 1:10에는 성경에서 가장 충격적인 하나님의 말씀 중 하나가 나와요. <mark>"너희가 내 제단 위에 헛되이 불사르지 못하도록 너희 중에 성전 문을 닫을 자가 있었으면 좋겠도다."</mark></p>
+        <p>하나님이 직접 "차라리 누가 교회 문을 닫아 버렸으면 좋겠다"고 말씀하신 거예요. 마음 없는 예배를 계속 드리느니, <span class="hl">예배를 멈추는 편이 낫다</span>고 하실 정도였어요.</p>
+        <p>제사장들의 속마음은 13절에 나와요. <span class="hl">"이 일이 얼마나 번거로운고 하며 코웃음치고"</span>. 예배를 드리면서 한숨 쉬고, 코웃음 치고, "아 귀찮다"라고 하고 있었던 거예요. 하나님은 그 한숨과 코웃음까지 다 듣고 계셨어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나의 예배가 "번거로운 일"이 되어 있지는 않은지, 오늘 예배의 자리를 새 마음으로 준비합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>하나님이 "나를 시험해 보라"고<br>하신 유일한 곳</h2><div class="refs">말라기 3:8-12 · 신명기 6:16</div></div></div>
+    <div class="scene-body"><p>성경은 여러 번 "하나님을 시험하지 말라"고 말해요(신 6:16). 예수님도 광야에서 사탄에게 이 말씀으로 대답하셨죠(마 4:7). 그런데 말라기 3:10에서는 <mark>하나님이 직접 "나를 시험하여 보라"</mark>고 하세요.</p>
+        <p class="quote">"만군의 여호와가 이르노니 너희의 온전한 십일조를 창고에 들여 나의 집에 양식이 있게 하고 그것으로 나를 시험하여 내가 하늘 문을 열고 너희에게 복을 쌓을 곳이 없도록 붓지 아니하나 보라"(3:10)</p>
+        <p>백성이 "우리가 어떻게 하나님의 것을 도둑질했냐"고 묻자, 하나님은 십일조와 봉헌물을 말씀하세요. 그리고 <span class="hl">"믿고 한번 맡겨 봐라, 내가 어떻게 하는지 보라"</span>고 초대하세요. 이것은 복을 얻어내는 거래의 공식이라기보다, 신뢰를 회복하라는 하나님의 초대예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님께 드리는 것을 "손해"가 아니라 "신뢰의 표현"으로 바라보고 있는지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>하나님이 따로 적어 두시는<br>"기념책"</h2><div class="refs">말라기 3:16-17 · 에스더 6:1-3</div></div></div>
+    <div class="scene-body"><p>말라기서는 불평하는 백성으로 가득하지만, 그 속에 조용한 사람들이 있었어요. <mark>"그 때에 여호와를 경외하는 자들이 피차에 말하매 여호와께서 그것을 분명히 들으시고 여호와를 경외하는 자와 그 이름을 존중히 생각하는 자를 위하여 여호와 앞에 있는 기념책에 기록하셨느니라"</mark>(3:16).</p>
+        <p>당시 페르시아 왕들은 신하들의 공로를 <span class="hl">왕의 역대 일기</span>에 기록해 두었어요. 에스더서에서 잠 못 이루던 왕이 이 기록을 읽다가 모르드개의 공을 발견하는 장면이 바로 그거예요(에 6:1-3).</p>
+        <p>하나님도 그렇게 하세요. 모두가 "하나님 섬겨봐야 소용없다"고 할 때(3:14), 서로 하나님 이야기를 나누던 사람들의 대화를 <span class="hl">하나님이 따로 적어 두셨어요.</span> 목장 모임에서 나누는 믿음의 대화도 하나님 앞에서는 기록이 되고 있는 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 누군가와 하나님에 대해 나누는 대화가, 하나님의 기념책에 기록되고 있음을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>구약의 마지막 단어는<br>"저주"</h2><div class="refs">말라기 4:6 · 요한계시록 22:3, 21</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">구약의 마지막 (말 4:6)</div>"…두렵건대 내가 와서 저주로 그 땅을 칠까 하노라"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">신약의 마지막 (계 22:3, 21)</div>"다시 저주가 없으며" … "주 예수의 은혜가 모든 자들에게 있을지어다"</div></div><p>우리 성경 순서로 구약의 가장 마지막 단어는 히브리어 <span class="heb" data-tip="헤렘 — 완전히 바쳐진 것, 진멸, 저주. 말라기 4:6의 마지막 단어이다.">헤렘</span>, 곧 <mark>"저주"</mark>예요. 구약 39권이 이 무거운 단어로 끝나요.</p>
+        <p>그래서 유대인들은 회당에서 말라기서를 읽을 때 재밌는 방법을 써요. 마지막 절(4:6)까지 읽은 뒤, <span class="hl">바로 앞 절인 4:5를 한 번 더 읽고 마쳐요.</span> "보라 여호와의 크고 두려운 날이 이르기 전에 내가 선지자 엘리야를 너희에게 보내리니." 저주가 아니라 약속으로 끝내고 싶었던 거예요.</p>
+        <p>그런데 성경 전체를 보면, 하나님은 이미 더 좋은 결말을 준비해 두셨어요. 신약의 마지막 장은 <mark>"다시 저주가 없으며"</mark>(계 22:3)라고 선언하고, 성경의 가장 마지막 문장은 <span class="hl">"주 예수의 은혜가 모든 자들에게 있을지어다"</span>(계 22:21)예요. 저주로 끝난 구약이, 예수님을 통해 은혜로 끝나는 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 삶의 마지막 문장이 "저주"가 아니라 "은혜"가 되게 하신 예수님께 감사합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>400년의 침묵,<br>그리고 엘리야처럼 온 사람</h2><div class="refs">말라기 3:1 · 4:5-6 · 누가복음 1:17 · 마태복음 11:14</div></div></div>
+    <div class="scene-body"><p>말라기서의 마지막 약속은 이거예요. <mark>"내가 선지자 엘리야를 너희에게 보내리니 그가 아버지의 마음을 자녀에게로 돌이키게 하고 자녀들의 마음을 그들의 아버지에게로 돌이키게 하리라"</mark>(4:5-6).</p>
+        <p>그리고 하나님은 400년 동안 침묵하세요. 새로운 선지자도, 새로운 말씀도 없는 긴 시간이었어요. 유대인들은 지금도 유월절 식사 때 <span class="hl">엘리야를 위한 잔을 따로 채워 두고 문을 열어</span> 그가 오기를 기다리는 전통을 지켜요.</p>
+        <p>그런데 신약을 펼치면, 침묵이 깨지는 첫 장면에서 천사가 사가랴에게 말해요. 그 아들이 <span class="hl">"엘리야의 심령과 능력으로 … 아버지의 마음을 자식에게 돌아오게 하고"</span>(눅 1:17). 말라기의 마지막 문장을 그대로 인용한 거예요. 그 아들이 바로 <mark>침례 요한</mark>이에요. 예수님도 "오리라 한 엘리야가 곧 이 사람이라"(마 11:14)고 하셨어요.</p>
+        <p>구약은 "엘리야를 보내리라"로 끝나고, 신약은 "엘리야처럼 온 사람"으로 시작해요. <span class="hl">400년의 침묵은 끊어진 게 아니라, 약속이 익어가던 시간</span>이었어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님이 침묵하시는 것 같은 시간에도, 약속은 여전히 익어가고 있음을 믿고 기다립니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">구약의 마지막 페이지와<br>신약의 첫 페이지는 이어져 있다</div>
+    <p>말라기서는 "어떻게요?"라고 따지는 무딘 백성과, 그들과 끝까지 대화하시는 하나님의 이야기예요. 그리고 그 대화의 끝에서 하나님은 한 사람을 보내시겠다고 약속하셨어요.</p><p>400년 뒤, 그 약속은 광야에서 외치는 침례 요한으로, 그리고 그가 가리킨 예수 그리스도로 이루어졌어요.</p>
+    <div class="q">"내 이름을 경외하는 너희에게는<br>공의로운 해가 떠올라서 치료하는 광선을 비추리니" (4:2)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

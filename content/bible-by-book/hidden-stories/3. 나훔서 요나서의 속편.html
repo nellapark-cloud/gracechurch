@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>나훔서, 요나서의 속편 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="회개했던 니느웨, 100년 뒤 다시 돌아온 이야기 그리고 "위로"라는 이름의 선지자">
+<meta property="og:title" content="나훔서, 요나서의 속편">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 03</div>
+  <h1>나훔서,<br>요나서의 <em>속편</em></h1>
+  <p class="sub">회개했던 니느웨, 100년 뒤 다시 돌아온 이야기<br>그리고 "위로"라는 이름의 선지자</p>
+  <div class="ref">나훔 1–3장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>요나서를 읽고 나면 궁금해지는 게 있어요. "그래서 니느웨는 그 뒤로 어떻게 됐을까?" 그 대답이 바로 <mark>나훔서</mark>예요. 나훔서는 세 장 전체가 오직 한 도시, <span class="hl">니느웨</span>를 향한 말씀이에요.</p>
+    <p>요나서가 원수를 아끼시는 하나님의 긍휼을 보여줬다면, 나훔서는 그 긍휼을 짓밟은 도시에 임하는 하나님의 공의를 보여줘요. 두 책을 나란히 놓으면 놀라운 짝이 보여요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>나훔서는 어떤 책일까?</h2>
+    <p>요나서와 나란히 읽어야 보이는 책</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>나훔서는 요나 시대로부터 약 100년 뒤, 이집트의 도시 테베(노아몬)가 무너진 주전 663년과 니느웨가 멸망한 <mark>주전 612년 사이</mark>에 기록되었어요. 그 사이 앗수르는 북이스라엘을 멸망시켰고(주전 722년), 유다까지 짓누르며 세상에서 가장 잔혹한 제국이 되어 있었어요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>나훔은 "위로"라는 뜻이에요. 원수의 멸망이 고통받던 유다에게는 위로가 되었어요.</div><div><b>고향</b>엘고스 사람(1:1)이라고만 나오고, 정확한 위치는 알려져 있지 않아요.</div></div>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">나훔서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">한 도시만을 향한 책</div><div class="mini-b">다른 선지서들이 여러 나라를 다루는 것과 달리, 나훔서는 처음부터 끝까지 니느웨만 다뤄요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">시로 쓴 심판</div><div class="mini-b">1장은 히브리어 알파벳 순서를 부분적으로 따르는 시(부분 답관체)로 되어 있다는 견해가 많아요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">생생한 전쟁 장면</div><div class="mini-b">붉은 방패, 번쩍이는 병거, 거리를 달리는 말들까지, 성경에서 가장 영화 같은 전투 묘사가 나와요(2:3-4, 3:2-3).</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">유다를 향한 좋은 소식</div><div class="mini-b">"좋은 소식을 알리고 화평을 전하는 자의 발이 산 위에 있도다"(1:15)는 이사야 52:7, 로마서 10:15와 이어져요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">질문으로 끝나는 책</div><div class="mini-b">요나서처럼 나훔서도 질문으로 끝나요. 그런데 그 질문의 내용은 정반대예요.</div></div></div></div>
+
+  <div class="target"><p>나훔서는 "하나님은 노하기를 더디 하신다"는 말이 "영원히 노하지 않으신다"는 뜻이 아님을 보여줘요. <span class="hl">한 세대의 회개는 다음 세대의 면죄부가 아니에요.</span> 요나서와 나훔서는 함께 읽을 때, 긍휼과 공의가 모두 하나님의 진짜 얼굴이라는 걸 보여줘요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>요나서와 짝을 이루는 장면들, 그리고 역사가 증언하는 이야기</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>같은 고백, 다른 절반</button><button class="chip" onclick="goTo('s2')"><b>2</b>질문으로 끝나는 두 책</button><button class="chip" onclick="goTo('s3')"><b>3</b>노아몬이라는 거울</button><button class="chip" onclick="goTo('s4')"><b>4</b>사자 굴은 어디에</button><button class="chip" onclick="goTo('s5')"><b>5</b>강의 문이 열리고</button><button class="chip" onclick="goTo('s6')"><b>6</b>잊혀진 도시</button><button class="chip" onclick="goTo('s7')"><b>7</b>위로라는 이름</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>같은 신앙고백,<br>요나는 앞 절반 나훔은 뒤 절반</h2><div class="refs">출애굽기 34:6-7 · 요나 4:2 · 나훔 1:3</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">요나 4:2</div>"노하기를 더디하시며 인애가 크시사 뜻을 돌이켜 재앙을 내리지 아니하시는" → 니느웨는 용서받는다</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">나훔 1:3</div>"노하기를 더디 하시며 권능이 크시며 벌 받을 자를 결코 내버려두지 아니하시느니라" → 니느웨는 심판받는다</div></div><p>출애굽기 34:6-7은 하나님이 모세에게 직접 들려주신 <mark>하나님 자신에 대한 소개</mark>예요. 앞부분은 "자비롭고 은혜롭고 노하기를 더디 하고 인자가 많은" 하나님, 뒷부분은 "벌을 면제하지는 아니하는" 하나님이에요.</p>
+        <p>요나는 이 고백의 <span class="hl">앞 절반</span>을 인용해 니느웨의 용서에 불평했어요. 그리고 나훔은 같은 고백의 <span class="hl">뒤 절반</span>을 인용해 니느웨의 심판을 선포해요. 같은 도시, 같은 하나님, 같은 신앙고백인데, 회개한 도시에는 긍휼이, 다시 악해진 도시에는 공의가 임한 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님의 "노하기를 더디 하심"을 "괜찮다"는 뜻으로 오해하고 있지는 않은지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>성경에서 질문으로 끝나는<br>단 두 권의 책</h2><div class="refs">요나 4:11 · 나훔 3:19</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">요나서의 마지막 질문</div>"내가 이 큰 성읍 니느웨를 아끼는 것이 어찌 옳지 아니하냐" — 긍휼의 질문</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">나훔서의 마지막 질문</div>"네 악이 항상 누구에게 미치지 아니하였느냐" — 심판의 질문</div></div><p>성경 66권 가운데 <mark>질문으로 끝나는 책은 요나서와 나훔서, 딱 두 권</mark>이에요. 그리고 두 책은 모두 니느웨에 대한 책이에요.</p>
+        <p>요나서의 마지막 질문은 "내가 니느웨를 아끼는 것이 옳지 않으냐"였어요. 나훔서의 마지막 질문은 "네 잔인함을 당하지 않은 사람이 누가 있었느냐"예요. 나훔서는 이렇게 끝나요. 니느웨가 무너진다는 소식을 들은 사람들이 <span class="hl">모두 손뼉을 친다</span>고요(3:19).</p>
+        <p>한 도시를 두고 하나님이 던지신 두 개의 질문. 하나는 "내가 너를 아낀다"였고, 하나는 "네가 모두를 아프게 했다"였어요. 그 사이의 100년 동안 니느웨가 무엇을 선택했는지가 두 질문을 갈라놓았어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님의 긍휼을 경험한 뒤, 나는 그 은혜에 합당한 길을 계속 걷고 있는지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>"네가 노아몬보다 나으냐"<br>— 자기가 부순 도시를 거울로</h2><div class="refs">나훔 3:8-10</div></div></div>
+    <div class="scene-body"><p>나훔 3:8에서 하나님은 니느웨에게 묻으세요. <mark>"네가 어찌 노아몬보다 낫겠느냐."</mark> 노아몬은 이집트의 위대한 도시 테베예요. 나일강이 둘러싼 난공불락의 도시였고, 에디오피아와 애굽이 힘이 되어 주던 곳이었죠.</p>
+        <p>그런데 이 노아몬을 무너뜨린 게 누구였을까요? 바로 <span class="hl">앗수르</span>예요. 주전 663년 앗수르 왕 아슈르바니팔이 테베를 약탈했어요. 나훔은 니느웨에게 <span class="hl">"네가 직접 부순 그 도시를 봐라. 너도 그렇게 된다"</span>라고 말하는 거예요.</p>
+        <p>무너뜨리던 자가 무너지고, 포로로 끌고 가던 자가 끌려가는 반전. 니느웨는 자기가 한 일을 그대로 돌려받게 돼요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 다른 사람에게 한 말과 행동이 언젠가 나에게 돌아올 거울이라는 것을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>사자 사냥을 자랑하던 왕들에게<br>"사자 굴이 어디냐"</h2><div class="refs">나훔 2:11-13</div></div></div>
+    <div class="scene-body"><p>앗수르 왕들은 사자 사냥을 자기 힘의 상징으로 여겼어요. 니느웨의 궁전에서 발굴된 벽 부조에는 <mark>아슈르바니팔 왕이 사자를 사냥하는 장면</mark>이 생생하게 새겨져 있는데, 지금 영국 대영박물관에서 볼 수 있어요. 앗수르는 스스로를 사자처럼 여기며, 먹이를 찢어 새끼에게 먹이는 제국이었어요.</p>
+        <p>그런데 나훔은 바로 그 이미지로 조롱해요. <span class="hl">"이제 사자의 굴이 어디냐 젊은 사자가 먹을 곳이 어디냐"</span>(2:11). 사냥꾼을 자처하던 제국이 이제 사냥당하는 쪽이 된 거예요. 그들이 가장 자랑하던 상징이 그들의 몰락을 알리는 노래가 돼요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 가장 자랑하는 힘이 오히려 나를 무너뜨리는 약점이 될 수 있음을 생각해 봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>"강들의 문이 열리고<br>왕궁이 소멸되며"</h2><div class="refs">나훔 1:8 · 2:6</div></div></div>
+    <div class="scene-body"><p>나훔은 니느웨가 <mark>"넘치는 물로"</mark>(1:8) 진멸될 것이라고, 그리고 <mark>"강들의 수문이 열리고 왕궁이 소멸되며"</mark>(2:6)라고 예언했어요. 니느웨는 티그리스강 옆에 있었고, 여러 수로와 운하로 둘러싸인 도시였어요.</p>
+        <p>흥미롭게도 고대 그리스 역사가 <span class="hl">디오도로스</span>는 니느웨 포위전 때 큰 홍수가 나서 강물이 성벽 일부를 무너뜨렸고, 그 틈으로 적군이 들어갔다는 기록을 남겼어요. 불에 탄 흔적과 함께, 물에 의한 파괴를 암시하는 고고학 자료를 제시하는 학자들도 있어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 디오도로스의 기록은 후대의 전승이라 세부 내용에 대해서는 학자들 사이에 논의가 있습니다.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>사람이 가장 안전하다고 믿는 성벽도, 하나님 앞에서는 한순간에 열릴 수 있음을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>이름조차 잊혀진<br>세계 최대의 도시</h2><div class="refs">나훔 1:14 · 3:7</div></div></div>
+    <div class="scene-body"><p>나훔은 이렇게 예언했어요. <mark>"네 이름이 다시는 전파되지 않을 것이라"</mark>(1:14). 당시 니느웨는 세계에서 가장 크고 화려한 도시 중 하나였어요. 그 이름이 잊힌다는 건 상상하기 어려운 일이었죠.</p>
+        <p>그런데 니느웨가 무너진 지 약 200년 뒤, 그리스 장군 <span class="hl">크세노폰</span>이 1만 명의 군대를 이끌고 바로 그 자리를 지나갔어요. 그는 거대한 폐허를 보고 기록을 남겼지만, <span class="hl">그곳이 니느웨라는 사실조차 알지 못했어요.</span> 니느웨는 그 뒤로 2천 년 넘게 흙더미 아래 묻혀 있다가, 1840년대에 영국 고고학자들의 발굴로 다시 세상에 드러났어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상이 영원할 것처럼 자랑하는 것들 앞에서, 영원히 남는 것은 하나님의 말씀뿐임을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>심판의 책에 붙은<br>"위로"라는 이름</h2><div class="refs">나훔 1:1, 7, 15</div></div></div>
+    <div class="scene-body"><p>이 책을 쓴 선지자의 이름 <mark>나훔은 "위로"</mark>라는 뜻이에요. 온통 심판의 말씀으로 가득한 책의 저자 이름이 "위로"라니, 좀 이상하게 느껴지죠.</p>
+        <p>하지만 앗수르에게 짓밟히던 유다 사람들에게 이 책은 정말 위로였어요. "여호와는 선하시며 환난 날에 산성이시라"(1:7), 그리고 <span class="hl">"좋은 소식을 알리고 화평을 전하는 자의 발이 산 위에 있도다"</span>(1:15). 이 구절은 이사야를 거쳐 바울에게까지 이어져, 복음 전하는 자의 아름다운 발을 노래하는 말씀이 돼요(롬 10:15).</p>
+        <p>그리고 또 하나. 예수님이 갈릴리 사역의 중심으로 삼으신 마을 <span class="hl">가버나움</span>은 히브리어로 "크파르 나훔", 곧 <mark>"나훔의 마을"</mark>이라는 뜻이에요. "위로의 마을"에서 예수님은 병든 자를 고치시고 죄인을 용서하시며 진짜 위로를 전하셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 가버나움이 선지자 나훔의 이름에서 왔는지는 확실하지 않으며, 이름이 같다는 데서 오는 묵상적 연결입니다.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>고통 속에 있는 사람에게 "하나님은 환난 날의 산성"이라는 위로를 전하는 사람이 되기를 원합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">긍휼과 공의는<br>모두 하나님의 진짜 얼굴이다</div>
+    <p>요나서는 원수까지 아끼시는 하나님을 보여줬고, 나훔서는 끝까지 악을 선택한 자를 내버려두지 않으시는 하나님을 보여줘요. 두 책은 서로를 부정하지 않고, 서로를 완성해요.</p><p>그리고 이 두 얼굴이 가장 완전하게 만나는 곳이 십자가예요. 죄는 심판받고, 죄인은 용서받는 자리.</p>
+    <div class="q">"여호와는 선하시며 환난 날에 산성이시라<br>그는 자기에게 피하는 자들을 아시느니라" (1:7)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
