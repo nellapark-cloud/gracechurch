@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>베드로후서, 장막을 벗기 전에 쓴 편지 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="떠날 날을 앞둔 베드로가 기억하라며 남긴 마지막 편지에 숨은 이야기">
+<meta property="og:title" content="베드로후서, 장막을 벗기 전에 쓴 편지">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 27</div>
+  <h1>베드로후서,<br><em>장막</em>을 벗기 전에<br>쓴 편지</h1>
+  <p class="sub">떠날 날을 아는 어부가<br>“기억하라”며 남긴 마지막 부탁</p>
+  <div class="ref">베드로후서 1–3장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>사람은 떠날 날이 가까우면 정말 중요한 말만 남겨요. 베드로후서가 그런 편지예요. 베드로는 “나도 나의 장막을 벗어날 것이 임박한 줄을 앎이라”(1:14)고 말해요. 주님이 오래전에 알려 주신 대로 자기 삶이 곧 끝난다는 걸 알고 쓴 편지예요. 그래서 이 편지에는 “생각나게 하려 한다”, “기억하게 하려 한다”는 말이 자꾸 나와요.</p><p>세 장밖에 안 되는 짧은 편지인데, 읽다 보면 볼거리가 많아요. 변화산의 추억, 바람에 실려 가는 배, 말하는 나귀, 그리고 “바울 편지는 좀 어렵다”는 베드로의 솔직한 고백까지 나오거든요. 😄 떠나는 베드로가 마지막까지 붙들었던 것이 무엇이었는지, 그 이야기 속으로 들어가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>베드로후서는 어떤 책일까?</h2>
+    <p>떠나는 사도가 남긴 “기억하라”는 편지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>베드로는 “사랑하는 자들아 내가 이제 이 둘째 편지를 너희에게 쓰노니”(3:1)라고 해요. 첫째 편지를 받았던 소아시아 성도들에게 다시 보낸 편지로 보는 게 자연스러워요. 이번에는 바깥에서 오는 박해보다 교회 안으로 “가만히” 들어온 거짓 선생들이 문제였어요(2:1). 그들은 은혜를 방종의 핑계로 삼고, 주님이 다시 오신다는 약속이 어디 있느냐며 조롱했어요(3:3-4). 베드로는 순교를 앞둔 60년대 중반 무렵, 성도들이 사도들의 가르침과 주님의 약속을 붙들도록 이 편지를 썼어요.</p>
+    <div class="debate sans"><div><b>시므온 베드로</b>개역개정은 1:1을 “시몬 베드로”로 옮겼지만, 많은 헬라어 사본에는 히브리식 이름 “시므온”(쉬메온)으로 적혀 있어요. 신약에서 베드로를 이렇게 부른 곳은 여기와, 예루살렘 회의에서 야고보가 한 말(행 15:14)뿐이에요.</div><div><b>유다서와 닮은 2장</b>베드로후서 2장과 유다서는 내용과 순서가 놀랄 만큼 비슷해요. 가만히 들어온 거짓 선생, 범죄한 천사, 소돔과 고모라, 발람, 물 없는 샘과 구름… 둘 중 하나가 다른 하나를 참고했다고 보는 학자가 많아요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 베드로후서는 신약 가운데 저자 문제가 가장 많이 논의된 책이에요. 4세기 교회사가 유세비우스도 이 편지를 “논란이 있는 책” 가운데 하나로 분류했어요. 그러나 교회는 이 편지를 성경으로 받아들였고, 367년 아타나시우스가 밝힌 신약 27권 목록에도 들어 있어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">베드로후서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">기억하라</div><div class="mini-b">“생각나게 하려 한다”는 말이 거듭 나와요(1:12, 13, 15; 3:1-2). 새로운 가르침보다 이미 받은 진리를 붙들라는 편지예요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">그리스도를 아는 지식</div><div class="mini-b">편지는 “하나님과 우리 주 예수를 앎”(1:2)으로 시작해 “그를 아는 지식에서 자라 가라”(3:18)로 끝나요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">거짓 선생 경고</div><div class="mini-b">2장 전체가 교회 안에 들어온 거짓 선생들에 대한 경고예요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">다시 오실 주님</div><div class="mini-b">“약속이 어디 있느냐”는 조롱에 하나님의 오래 참으심으로 대답해요(3장).</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">바울 편지도 성경</div><div class="mini-b">바울의 편지를 “다른 성경”과 나란히 놓아요(3:15-16). 매우 이른 증거예요.</div></div></div></div>
+
+  <div class="target"><p>베드로후서의 중심에는 이 고백이 있어요. <span class="hl">“그의 신기한 능력으로 생명과 경건에 속한 모든 것을 우리에게 주셨으니”</span>(1:3). 거짓 선생들이 흔들어도, 주님의 약속이 더디게 느껴져도 흔들릴 이유가 없어요. 우리를 붙드는 것은 우리의 열심이 아니라 <mark>이미 모든 것을 주신 하나님의 능력과 약속</mark>이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>변화산의 초막부터 새 하늘과 새 땅까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>초막과 장막</button><button class="chip" onclick="goTo('s2')"><b>2</b>바람에 실린 배</button><button class="chip" onclick="goTo('s3')"><b>3</b>일곱 계단</button><button class="chip" onclick="goTo('s4')"><b>4</b>뜻밖의 의인</button><button class="chip" onclick="goTo('s5')"><b>5</b>말하는 나귀</button><button class="chip" onclick="goTo('s6')"><b>6</b>천 년이 하루</button><button class="chip" onclick="goTo('s7')"><b>7</b>형제 바울</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>“초막 셋을 짓자”던 사람이<br>자기 장막을 벗다</h2><div class="refs">베드로후서 1:12-15 · 마태복음 17:1-4 · 마가복음 9:6 · 누가복음 9:30-31 · 요한복음 21:18-19</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">변화산에서</div>“내가 여기서 <b>초막 셋</b>을 짓되”(마 17:4)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">베드로후서</div>“나도 나의 <b>장막을 벗어날</b> 것이 임박한 줄을 앎이라”(1:14)</div></div><p>변화산에서 예수님의 얼굴이 해같이 빛나고 모세와 엘리야가 나타났을 때, 베드로가 불쑥 말했어요. “주께서 만일 원하시면 내가 여기서 초막 셋을 짓되”(마 17:4). 마가는 한 줄을 덧붙여요. “이는 그들이 몹시 무서워하므로 그가 무슨 말을 할지 알지 못함이더라”(막 9:6). 😄 너무 떨려서 아무 말이나 나온 거예요. 영광스러운 순간을 천막 안에 붙잡아 두고 싶었나 봐요.</p><p>수십 년 뒤, 베드로는 자기 몸을 “장막”이라고 불러요. “내가 이 장막에 있을 동안에”(1:13), “나의 장막을 벗어날 것이 임박한 줄을 앎이라”(1:14). 장막은 잠시 머무는 천막이에요. 그리고 이 일은 “우리 주 예수 그리스도께서 내게 지시하신 것 같이”(1:14) 일어난다고 해요. 부활하신 주님이 갈릴리 바닷가에서 “네가 늙어서는 네 팔을 벌리리니”(요 21:18) 하시며, 베드로가 어떤 죽음으로 하나님께 영광을 돌릴지 알려 주셨던 일을 가리키는 것 같아요.</p><p>여기 숨은 단어가 하나 더 있어요. 1:15의 “내가 떠난 후에”에서 “떠남”은 <span class="heb" data-tip="엑소도스(exodos) — 밖으로 나감, 떠남. 출애굽기의 헬라어 이름이기도 하다. 누가복음 9:31에서는 ‘별세’로 번역되었다.">엑소도스</span>예요. 출애굽기의 헬라어 이름과 같은 말이에요. 그런데 이 단어가 변화산 장면에도 나와요. 모세와 엘리야가 예수님과 함께 “장차 예수께서 예루살렘에서 별세하실 것”(눅 9:31)을 이야기했는데, 이 “별세”가 바로 엑소도스예요. 변화산에서 들었던 주님의 “떠나심”을 이제 베드로가 자기 떠남에 쓰고 있어요. 주님의 십자가와 부활이 새 출애굽이었기에, 베드로의 죽음도 끝이 아니라 <mark>주님께로 나아가는 길</mark>이 돼요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ “내게 지시하신 것”이 요한복음 21:18-19를 가리킨다는 것은 많은 해석자의 견해예요. 베드로가 네로 황제 때 로마에서 순교했다는 것은 1세기 말 로마의 클레멘스가 고린도 교회에 보낸 편지 등 초대교회 기록에 근거한 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>이 땅의 삶이 잠시 머무는 장막임을 기억하며, 먼저 떠나 길을 여신 주님을 따라 오늘을 삽니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>지어낸 이야기가 아니다,<br>바람에 실린 배처럼 전해진 말씀</h2><div class="refs">베드로후서 1:16-21 · 사도행전 27:15-17</div></div></div>
+    <div class="scene-body"><p>베드로는 사도들이 전한 복음이 “교묘히 만든 이야기”(1:16)가 아니라고 해요. 여기 “이야기”는 <span class="heb" data-tip="뮈토스(mythos) — 이야기, 꾸며낸 이야기. 영어 myth(신화)가 이 말에서 나왔다.">뮈토스</span>예요. 영어 “신화(myth)”가 여기서 나왔어요. 신들이 산 위에 번쩍이며 나타나는 그리스 신화가 넘쳐 나던 시대였거든요. 베드로는 선을 그어요. “우리는 그의 크신 위엄을 친히 본 자라”(1:16). “이 소리는 우리가 그와 함께 거룩한 산에 있을 때에 하늘로부터 난 것을 들은 것이라”(1:18). 초막 셋 짓자던 그날, 베드로는 분명히 보고 들었어요.</p><p>그런데 베드로는 자기 경험보다 더 확실한 것이 있다고 해요. “또 우리에게는 더 확실한 예언이 있어 어두운 데를 비추는 등불과 같으니”(1:19). 바로 성경 말씀이에요. 그리고 성경이 어떻게 주어졌는지 이렇게 설명해요. “예언은 언제든지 사람의 뜻으로 낸 것이 아니요 오직 성령의 감동하심을 받은 사람들이 하나님께 받아 말한 것임이라”(1:21).</p><p>여기 “감동하심을 받은”은 <span class="heb" data-tip="페로(pherō) — 나르다, 실어 가다. 수동형은 ‘실려 가다, 밀려 가다’. 사도행전 27:15, 17에서 바람에 밀려가는 배를 묘사할 때 같은 동사가 쓰였다.">페로</span>라는 동사의 수동형이에요. “실려 가다, 밀려 가다”라는 뜻이에요. 사도행전 27장에서 바울이 탄 배가 광풍을 만나 “가는 대로 두고 쫓겨가다가”(행 27:15)라고 할 때 같은 동사가 쓰였어요. 😄 평생 배를 탄 어부다운 그림이에요. 돛단배가 바람에 실려 가듯, 선지자들은 성령에 실려 말씀을 전했어요. 배를 움직이는 건 사공의 팔이 아니라 바람이에요. 성경의 참 저자는 <mark>성령 하나님</mark>이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>성경이 사람이 꾸민 이야기가 아니라 성령께서 주신 말씀임을 믿고, 오늘도 어두운 데를 비추는 그 등불을 펴 읽습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>하나님이 넉넉히 채우시니,<br>믿음에 더하는 일곱 계단</h2><div class="refs">베드로후서 1:3-11</div></div></div>
+    <div class="scene-body"><div class="steps"><div><b>믿음</b>＋ 덕</div><div><b>덕</b>＋ 지식</div><div><b>지식</b>＋ 절제</div><div><b>절제</b>＋ 인내</div><div><b>인내</b>＋ 경건</div><div><b>경건</b>＋ 형제 우애</div><div class="last"><b>형제 우애</b>＋ 사랑</div></div><p>1장에는 계단처럼 이어지는 목록이 있어요. “너희가 더욱 힘써 너희 믿음에 덕을, 덕에 지식을, 지식에 절제를, 절제에 인내를, 인내에 경건을, 경건에 형제 우애를, 형제 우애에 사랑을 공급하라”(1:5-7). 믿음에서 시작해 사랑까지, 일곱 번 더하라고 해요. 😄 소리 내어 읽기만 해도 숨이 차요.</p><p>그런데 이 목록을 “열심히 쌓아 올려라”는 부담으로만 읽으면 앞 구절을 놓친 거예요. 바로 앞에서 베드로는 이렇게 말해요. “그의 신기한 능력으로 생명과 경건에 속한 모든 것을 우리에게 주셨으니”(1:3). 하나님이 이미 모든 것을 주셨고, 보배롭고 지극히 큰 약속으로 우리를 “신성한 성품에 참여하는 자”(1:4)가 되게 하셨어요. 계단의 출발점은 우리 노력이 아니라 하나님의 선물이에요.</p><p>“공급하라”라는 단어도 재밌어요. <span class="heb" data-tip="에피코레게오(epichorēgeō) — 넉넉히 대 주다. ‘코레고스’는 옛 그리스에서 연극 합창단의 비용을 아낌없이 대던 후원자를 가리켰다.">에피코레게오</span>는 옛 그리스에서 연극 합창단 비용을 통 크게 대던 후원자에게서 나온 말이에요. 그런데 11절에 같은 단어가 또 나와요. “우리 주 곧 구주 예수 그리스도의 영원한 나라에 들어감을 넉넉히 너희에게 주시리라”(1:11). 여기 “넉넉히 주시리라”가 같은 말이에요. 하나님이 먼저 통 크게 채워 주시고, 마지막에도 넉넉히 맞아 주세요. 계단의 처음과 끝에 <mark>후히 주시는 하나님</mark>이 계세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>생명과 경건에 속한 모든 것을 이미 주신 하나님께 감사하며, 받은 믿음 위에 사랑을 한 걸음씩 더합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>노아는 “여덟째”, 롯은 “의인”?<br>뜻밖의 구원 명단</h2><div class="refs">베드로후서 2:4-9 · 창세기 19:15-16 · 베드로전서 3:20</div></div></div>
+    <div class="scene-body"><p>2장에서 베드로는 하나님의 심판과 구원을 보여 주는 옛 이야기 셋을 들어요. 범죄한 천사들, 노아 때의 홍수, 소돔과 고모라예요. 먼저 천사들이에요. 하나님이 그들을 “지옥에 던져”(2:4) 두셨는데, 여기 “지옥에 던지다”는 <span class="heb" data-tip="타르타로오(tartaroō) — ‘타르타로스에 가두다’. 타르타로스는 그리스 사람들이 생각한 가장 깊은 심연. 신약에서 여기 한 번 나온다.">타르타로오</span>예요. 그리스 사람들이 가장 깊은 심연이라고 여긴 “타르타로스”에서 나온 말로, 신약에서 여기 한 번 나와요. 헬라 문화 속 성도들이 금방 알아들을 말로 하나님의 심판을 전한 거예요.</p><p>다음은 노아예요. 하나님이 “의를 전파하는 노아와 그 일곱 식구를 보존하시고”(2:5). 헬라어로 직역하면 “여덟째 사람 노아”예요. 베드로전서에서 “겨우 여덟 명”(벧전 3:20)이라고 했던 바로 그 숫자예요. 😄 베드로는 방주의 여덟 사람을 참 좋아했나 봐요.</p><p>가장 뜻밖인 건 롯이에요. 베드로는 두 절 안에서 롯을 세 번이나 “의로운” 사람이라고 불러요(2:7-8). 창세기의 롯을 기억하면 고개가 갸웃해져요. 좋아 보이는 땅을 골라 소돔까지 들어갔고, 천사들이 떠나라고 재촉하는데도 “지체”했어요(창 19:16). 그런데 창세기는 이어서 말해요. 천사들이 롯과 가족의 손을 잡아 성 밖으로 끌어냈는데, 그것은 “여호와께서 그에게 인자를 더하심이었더라”(창 19:16). 롯이 의인이 된 것은 그가 잘나서가 아니라 하나님이 긍휼로 붙드셨기 때문이에요.</p><p>그래서 베드로는 이렇게 결론을 내려요. “주께서 경건한 자는 시험에서 건지실 줄 아시고”(2:9). 이 명단의 주인공은 노아도 롯도 아니에요. <mark>건지실 줄 아시는 주님</mark>이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>지체하던 롯의 손을 붙잡아 끌어내신 하나님의 긍휼이 오늘 나를 붙들고 있음을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>선지자를 말린 나귀,<br>그리고 개와 돼지</h2><div class="refs">베드로후서 2:15-22 · 민수기 22:21-35 · 잠언 26:11 · 베드로전서 1:23</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">선지자 발람</div>돈을 받고 이스라엘을 <b>저주하러 가던</b> 선지자(민 22장)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">발람의 나귀</div>“말하지 못하는 나귀가 <b>사람의 소리로 말하여</b>”(2:16)</div></div><p>베드로는 거짓 선생들을 “브올의 아들 발람의 길”을 따르는 사람들이라고 해요(2:15). 발람은 모압 왕에게 돈을 받고 이스라엘을 저주하러 가던 선지자예요. 그런데 길을 막아선 여호와의 사자를 선지자는 못 보고 나귀가 봤어요. 발람이 나귀를 세 번이나 때리자 나귀가 입을 열었어요(민 22:28). 베드로는 이 장면을 이렇게 요약해요. “말하지 못하는 나귀가 사람의 소리로 말하여 이 선지자의 미친 행동을 저지하였느니라”(2:16). 😄 선지자가 나귀에게 설교를 들은 셈이에요.</p><p>이 한 줄에 아이러니가 가득해요. 하나님의 말씀을 전해야 할 선지자는 눈이 멀었고, 말 못 하는 짐승이 선지자를 가르쳤어요. 욕심에 눈이 가려지면 가장 영적인 척하는 사람도 나귀보다 못 보게 된다는 거예요. 거짓 선생들이 딱 그랬어요. 그들은 발람처럼 “불의의 삯을 사랑”(2:15)했어요.</p><p>2장 끝에는 동물이 더 나와요. “개가 그 토하였던 것에 돌아가고 돼지가 씻었다가 다시 더러운 구덩이에 누웠다”(2:22). 개 이야기는 잠언 26:11에서 왔고, 돼지 이야기는 당시 알려진 속담이었어요. 씻은 돼지가 진흙탕으로 돌아가는 건 겉만 씻겼지 속이 바뀌지 않았다는 뜻이에요. 겉이 아니라 속부터 새롭게 하시는 분은 <mark>썩지 아니할 씨, 곧 살아 있는 말씀으로 우리를 거듭나게 하시는 하나님</mark>이세요(벧전 1:23).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 돼지 속담은 구약에 없는 말이에요. 고대 근동의 지혜 문학에 비슷한 속담이 있었다고 보는 학자들이 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>욕심에 눈이 가려지지 않도록 말씀 앞에 서며, 겉이 아니라 속을 새롭게 하시는 주님께 나를 맡깁니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>하루가 천 년 같고,<br>더딘 것이 아니라 기다리시는 것</h2><div class="refs">베드로후서 3:3-13 · 시편 90:4 · 베드로전서 3:20 · 마태복음 24:43</div></div></div>
+    <div class="scene-body"><p>거짓 선생들은 이렇게 조롱했어요. “주께서 강림하신다는 약속이 어디 있느냐 조상들이 잔 후로부터 만물이 처음 창조될 때와 같이 그냥 있다”(3:4). 한마디로 “봐, 아무 일도 안 일어나잖아” 하는 거예요. 베드로는 먼저 기억을 되살려요. 세상은 “그냥 있던” 적이 없어요. 하나님의 말씀으로 창조되었고, 노아 때에는 물로 심판을 받았어요(3:5-6).</p><p>그리고 모세의 기도를 꺼내요. “주께는 하루가 천 년 같고 천 년이 하루 같다는 이 한 가지를 잊지 말라”(3:8). “하나님의 사람 모세의 기도”라는 표제가 붙은 시편 90편에서 온 말이에요. “주의 목전에는 천 년이 지나간 어제 같으며 밤의 한 순간 같을 뿐임이니이다”(시 90:4). 😄 우리 손목시계로 하나님의 약속을 재면 안 된다는 거예요.</p><p>그리고 가장 중요한 이유를 말해요. “주의 약속은 어떤 이들이 더디다고 생각하는 것 같이 더딘 것이 아니라 오직 너희를 대하여 오래 참으사 아무도 멸망하지 아니하고 다 회개하기에 이르기를 원하시느니라”(3:9). 하나님이 늦으시는 게 아니라, 한 사람이라도 더 돌아오기를 기다리고 계신 거예요. 베드로전서에서도 하나님은 노아 때 방주를 준비하는 동안 “오래 참고 기다리실” 분이었어요(벧전 3:20). 지금 우리가 사는 시간은 <mark>하나님이 참아 주시는 은혜의 시간</mark>이에요.</p><p>그렇다고 그날이 오지 않는 건 아니에요. “주의 날이 도둑 같이 오리니”(3:10). 도둑처럼 온다는 말은 예수님이 먼저 하신 말씀이에요(마 24:43). 오래 참으시는 하나님의 긍휼과 반드시 오실 주님의 약속, 베드로는 둘 다 붙들라고 해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>약속이 더디게 느껴질 때, 한 사람이라도 더 돌아오기를 기다리시는 하나님의 오래 참으심을 기억하며 깨어 있습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>“알기 어려운 것이 더러 있다”,<br>사랑하는 형제 바울</h2><div class="refs">베드로후서 3:14-18 · 갈라디아서 2:11-14 · 누가복음 22:32</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">안디옥에서 바울</div>“게바가 안디옥에 이르렀을 때에 책망 받을 일이 있기로 내가 그를 <b>대면하여 책망하였노라</b>”(갈 2:11)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">베드로후서</div>“우리가 <b>사랑하는 형제 바울</b>도 그 받은 지혜대로 너희에게 이같이 썼고”(3:15)</div></div><p>편지 끝에서 베드로가 바울 이야기를 해요. 첫마디가 “우리가 사랑하는 형제 바울”이에요. 두 사람에게는 껄끄러운 기억이 있었거든요. 안디옥에서 베드로가 이방인 성도들과 함께 먹다가 예루살렘에서 사람들이 오자 슬그머니 자리를 피했는데, 바울이 모든 사람 앞에서 베드로를 책망했어요(갈 2:11-14). 게다가 바울은 그 일을 편지에 적어서 온 교회가 읽게 했어요. 그런 바울을 베드로는 “사랑하는 형제”라고 불러요.</p><p>그러고는 아주 솔직한 한 마디를 덧붙여요. 바울의 편지 가운데 “알기 어려운 것이 더러 있으니”(3:16). 😄 로마서를 읽다가 머리를 긁어 본 성도라면 위로가 될 말이에요. 사도 베드로도 어렵다고 했거든요. 그런데 이어지는 말이 중요해요. 무식하고 굳세지 못한 사람들이 바울의 편지를 “다른 성경과 같이” 억지로 풀다가 멸망에 이른다고 해요. 베드로는 바울의 편지를 “성경”과 나란히 놓고 있어요. 교회가 바울 서신을 성경으로 받아들인 아주 이른 증거예요.</p><p>그리고 한 가지 더 있어요. 베드로는 “너희 굳센 데서 떨어질까 삼가라”(3:17)고 해요. 편지 처음에는 성도들이 “이미 있는 진리에 서 있다”(1:12)고 했지요. 이 “굳센”과 “서 있다”는 예수님이 “네 형제를 굳게 하라”(눅 22:32) 하실 때의 “스테리조”와 같은 뿌리의 말이에요. 베드로는 편지 처음부터 끝까지 형제들을 굳게 세우고 있어요. 그리고 마지막 부탁을 남겨요. “오직 우리 주 곧 구주 예수 그리스도의 은혜와 그를 아는 지식에서 자라 가라”(3:18). 우리를 굳게 하는 것은 <mark>예수 그리스도의 은혜</mark>예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 책망한 사람도 “사랑하는 형제”로 품게 하시는 주님의 은혜 안에서, 그분을 아는 지식에 날마다 자라 갑니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">떠나는 사도가 붙든 것은<br>주님의 약속이었다</div>
+    <p>베드로후서는 떠날 날을 아는 사람의 편지예요. 그런 사람이 마지막으로 남긴 말은 새로운 비법이 아니라 “기억하라”였어요. 변화산에서 본 영광, 성령에 실려 온 말씀, 롯의 손을 붙잡아 끌어내신 긍휼, 한 사람이라도 더 기다리시는 오래 참으심. 베드로가 붙든 것은 자기 경험이나 업적이 아니라 하나님이 하신 일과 하신 약속이었어요.</p><p>그래서 베드로는 두려움 없이 장막을 벗을 수 있었어요. 그리고 우리에게도 같은 소망을 가리켜요. “우리는 그의 약속대로 의가 있는 곳인 새 하늘과 새 땅을 바라보도다”(3:13). 우리의 장막도 언젠가 걷히겠지만, <mark>약속하신 주님</mark>은 반드시 오세요.</p>
+    <div class="q">“오직 우리 주 곧 구주 예수 그리스도의 은혜와<br>그를 아는 지식에서 자라 가라” (3:18)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

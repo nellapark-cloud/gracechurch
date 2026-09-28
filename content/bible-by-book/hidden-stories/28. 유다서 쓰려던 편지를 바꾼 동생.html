@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유다서, 쓰려던 편지를 바꾼 동생 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="구원 이야기를 쓰려다 힘써 싸우라는 편지를 쓴 예수님의 동생 유다, 그 짧은 편지에 숨은 이야기">
+<meta property="og:title" content="유다서, 쓰려던 편지를 바꾼 동생">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 28</div>
+  <h1>유다서,<br>쓰려던 편지를<br><em>바꾼</em> 동생</h1>
+  <p class="sub">구원 이야기를 쓰려다 “힘써 싸우라”고 쓴<br>예수님의 또 다른 동생</p>
+  <div class="ref">유다서 1–25절</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>유다서는 신약에서 가장 짧은 책 가운데 하나예요. 한 장, 스물다섯 절이 전부예요. 그런데 이 짧은 편지에는 사연이 있어요. 유다는 원래 성도들과 함께 얻은 구원에 관한 편지를 쓰고 싶었대요. 그런데 교회 안에 몰래 들어온 사람들 소식을 듣고, 급히 방향을 바꿔 “힘써 싸우라”는 편지를 썼어요(3절). 😄 따뜻한 안부 편지를 준비하다가 급하게 경고장을 쓰게 된 거예요.</p><p>그래서 유다서는 좀 무섭게 보여요. 심판 이야기, 타락한 천사, 소돔, 가인과 발람과 고라가 줄줄이 나오거든요. 그런데 끝까지 읽으면 반전이 있어요. 이 편지는 신약에서 가장 아름다운 찬송 가운데 하나로 끝나요. 미가엘 천사장, 에녹의 예언, 황제 앞에 선 손자들까지, 짧은 편지에 숨은 긴 이야기 속으로 들어가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>유다서는 어떤 책일까?</h2>
+    <p>믿음의 도를 지키라고 보낸 짧고 굵은 편지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>유다는 자기를 “예수 그리스도의 종이요 야고보의 형제”(1절)라고 소개해요. 예수님의 동생들 이름은 “야고보, 요셉, 시몬, 유다”(마 13:55)였어요. 그러니까 유다는 야고보서를 쓴 야고보의 동생이자, 예수님의 동생이에요. 형 야고보처럼 유다도 처음에는 예수님을 믿지 않았지만(요 7:5), 부활 뒤에는 다락방에서 함께 기도하는 사람이 되었어요(행 1:14). 편지를 받은 교회가 어디인지는 적혀 있지 않지만, 구약과 유대 전승을 잘 아는 성도들이었어요. 교회 안에 들어와 하나님의 은혜를 방종의 핑계로 삼는 사람들이 문제였어요(4절). 기록 시기는 60년대 무렵으로 많이 봐요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>“유다”는 구약의 “유다”와 같은 이름이에요. 레아가 넷째 아들을 낳고 “내가 이제는 여호와를 찬송하리로다” 하며 붙인 이름으로, “찬송”이라는 뜻이 담겨 있어요(창 29:35). 가룟 유다와 헷갈리지 않게 영어 성경은 이 편지의 저자를 Jude라고 따로 불러요.</div><div><b>셋씩 묶는 버릇</b>유다는 무엇이든 셋으로 묶어요. 부르심·사랑·지키심(1절), 긍휼·평강·사랑(2절), 이스라엘·천사·소돔(5-7절), 가인·발람·고라(11절)… 짧은 편지인데도 짜임새가 아주 촘촘해요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 신약에는 유다라는 이름의 사람이 여럿 나와요. 저자를 예수님의 동생 유다로 보는 것은 초대교회 이래의 전통적인 견해예요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">유다서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">가장 짧은 편지 중 하나</div><div class="mini-b">스물다섯 절이에요. 빌레몬서, 요한이서, 요한삼서와 함께 한 장짜리 책이에요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">셋씩 묶기</div><div class="mini-b">인사부터 경고까지 셋씩 묶어서 말해요. 외우기 쉽고 리듬이 살아 있어요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">구약 이야기 총출동</div><div class="mini-b">출애굽, 타락한 천사, 소돔, 가인, 발람, 고라, 에녹까지 한 장에 다 나와요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">성경 밖 전승 인용</div><div class="mini-b">에녹의 예언(14-15절), 미가엘과 모세의 시체 이야기(9절)처럼 유대 전승을 빌려 와요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">찬송으로 끝나는 편지</div><div class="mini-b">경고로 가득한 편지가 가장 아름다운 송영 가운데 하나로 끝나요(24-25절).</div></div></div></div>
+
+  <div class="target"><p>유다서의 중심에는 이 부탁이 있어요. <span class="hl">“사랑하는 자들아 너희는 너희의 지극히 거룩한 믿음 위에 자신을 세우며 성령으로 기도하며 하나님의 사랑 안에서 자신을 지키며”</span>(20-21절). 그런데 유다는 우리가 스스로를 지키라고만 하지 않아요. 편지 처음과 끝에서 성도는 이미 “지키심을 받은 자들”(1절)이고, 우리를 “능히 보호하사 거침이 없게”(24절) 하시는 분이 계세요. 우리를 끝까지 지키시는 분은 <mark>홀로 하나이신 하나님</mark>이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>쓰려던 편지부터 넘어지지 않게 하시는 분까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>바뀐 편지</button><button class="chip" onclick="goTo('s2')"><b>2</b>주? 예수?</button><button class="chip" onclick="goTo('s3')"><b>3</b>미가엘과 에녹</button><button class="chip" onclick="goTo('s4')"><b>4</b>고라 자손</button><button class="chip" onclick="goTo('s5')"><b>5</b>다섯 그림</button><button class="chip" onclick="goTo('s6')"><b>6</b>농부 손자들</button><button class="chip" onclick="goTo('s7')"><b>7</b>지키시는 분</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>“구원”을 쓰려다<br>“싸우라”를 쓴 편지</h2><div class="refs">유다서 1-4절 · 요한복음 7:5 · 사도행전 1:14</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">쓰고 싶었던 편지</div>성도들이 <b>함께 얻은 구원</b>에 관한 편지(3절)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">쓰게 된 편지</div>“단번에 주신 믿음의 도를 위하여 <b>힘써 싸우라</b>”(3절)</div></div><p>유다는 편지를 쓰게 된 사정을 솔직하게 털어놓아요. 원래는 성도들과 함께 누리는 구원에 관해 편지하려는 생각이 간절했대요. 그런데 “성도에게 단번에 주신 믿음의 도를 위하여 힘써 싸우라”는 편지로 권해야 할 필요를 느꼈다고 해요(3절). 이유는 4절에 나와요. “가만히 들어온 사람 몇이 있음이라.” 그들은 하나님의 은혜를 도리어 방탕한 것으로 바꾸고 주 예수 그리스도를 부인했어요.</p><p>“힘써 싸우라”는 <span class="heb" data-tip="에파고니조마이(epagōnizomai) — 온 힘을 다해 싸우다. 경기장의 시합(아곤)에서 나온 말로, 영어 agony(고뇌)가 같은 뿌리다. 신약에서 여기 한 번 나온다.">에파고니조마이</span>예요. 경기장에서 선수가 온 힘을 쏟는 모습에서 나온 말이에요. 그런데 싸우는 대상이 사람이 아니라, “믿음의 도”를 지키는 일이에요. 그리고 그 믿음은 “단번에” 주어졌어요. 새로 만들어 내거나 고쳐 쓸 것이 아니라, 하나님이 이미 한 번에 온전히 주신 복음을 지키는 거예요.</p><p>자기소개도 눈여겨볼 만해요. “예수 그리스도의 종이요 야고보의 형제인 유다”(1절). 😄 “예수님 동생”이라고 쓰면 한 방에 끝날 텐데, 형 야고보처럼 유다도 그 말을 안 해요. 한때 형을 믿지 않았던 동생이(요 7:5), 이제는 형을 “홀로 하나이신 주재 곧 우리 주 예수 그리스도”(4절)라고 불러요. 유다가 지키려던 것은 집안의 명예가 아니라 <mark>주님이 되신 예수 그리스도</mark>였어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>단번에 주신 복음을 내 입맛대로 고치지 않고, 나의 유일한 주님이신 예수 그리스도를 붙들고 지킵니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>애굽에서 백성을 건지신 분,<br>“주”일까 “예수”일까</h2><div class="refs">유다서 5-7절 · 고린도전서 10:1-4</div></div></div>
+    <div class="scene-body"><p>5절에서 유다는 첫 번째 옛이야기를 꺼내요. “주께서 백성을 애굽에서 구원하여 내시고 후에 믿지 아니하는 자들을 멸하셨으며.” 출애굽 이야기예요. 그런데 이 구절에는 재밌는 사본 이야기가 숨어 있어요. 손으로 베껴 전해진 헬라어 사본들을 보면 “주께서”라고 적힌 것이 많지만, 오래되고 중요한 사본 몇 개에는 <span class="hl">“예수께서”</span>라고 적혀 있어요.</p><p>그래서 오늘날 학자들이 널리 쓰는 헬라어 원문 성경(네슬레-알란트 28판)은 이 구절을 “예수께서”로 읽고, 영어 성경 가운데도 “예수께서 백성을 애굽 땅에서 구원하셨다”로 옮긴 번역이 있어요. 😄 출애굽 때 예수님이요? 하고 놀랄 수 있지만, 바울도 비슷한 말을 했어요. 광야의 이스라엘이 “다 같은 신령한 음료를 마셨으니 이는 그들을 따르는 신령한 반석으로부터 마셨으매 그 반석은 곧 그리스도시라”(고전 10:4).</p><p>어느 쪽으로 읽든 메시지는 같아요. 구원받은 백성이라도 믿지 않으면 광야에서 쓰러질 수 있다는 경고예요. 이어서 “자기 지위를 지키지 아니하고 자기 처소를 떠난 천사들”(6절)과 소돔과 고모라(7절)가 나와요. 하나님이 주신 자리를 떠나는 것이 얼마나 위험한지 보여 주는 세 장면이에요. 그런데 이 경고의 맨 앞에 나오는 말은 “구원하여 내시고”예요. 경고보다 먼저 있는 것은 <mark>먼저 건지시는 하나님의 은혜</mark>예요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 5절의 사본 문제는 학자들 사이에서 지금도 논의 중이에요. 개역개정은 “주께서”로 옮겼어요. 어느 사본을 따르든 성경의 가르침이 달라지는 것은 아니에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 죄의 애굽에서 건져 내신 주님의 은혜를 기억하며, 광야 같은 오늘도 믿음으로 그분을 따라갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>모세의 시체를 두고 다툰 천사장,<br>그리고 에녹의 예언</h2><div class="refs">유다서 8-10절 · 14-15절 · 신명기 34:5-6 · 스가랴 3:2 · 창세기 5:18-24</div></div></div>
+    <div class="scene-body"><p>9절에는 구약 어디에도 없는 장면이 나와요. “천사장 미가엘이 모세의 시체에 대하여 마귀와 다투어 변론할 때에.” 신명기는 모세가 죽자 하나님이 그를 모압 땅 골짜기에 장사하셨는데 “오늘까지 그의 묻힌 곳을 아는 자가 없느니라”(신 34:6)고만 말해요. 😄 모세의 장례 뒤에 천사와 마귀의 다툼이 있었다니, 궁금증이 폭발하는 장면이에요.</p><p>유다가 이 이야기를 꺼낸 이유는 미가엘의 태도 때문이에요. 천사장조차 마귀에게 감히 비방하는 판결을 쓰지 못하고 “주께서 너를 꾸짖으시기를 원하노라”(9절)라고만 했어요. 스가랴 3:2에서 여호와께서 사탄에게 하신 말씀 “여호와께서 너를 책망하노라”와 닮은 말이에요. 심판을 하나님께 맡긴 거예요. 그런데 거짓 선생들은 겁도 없이 “영광을 비방”했어요(8절).</p><p>14절에는 에녹이 나와요. “아담의 칠대 손 에녹.” 창세기 5장 족보를 세어 보면 아담, 셋, 에노스, 게난, 마할랄렐, 야렛, 에녹, 정확히 일곱째예요. “하나님과 동행하더니 하나님이 그를 데려가시므로 세상에 있지 아니하였더라”(창 5:24)는 바로 그 사람이에요. 유다가 인용한 에녹의 예언 “보라 주께서 그 수만의 거룩한 자와 함께 임하셨나니”(14절)는 유대인들이 읽던 「에녹1서」(1:9)에 나오는 말이에요.</p><p>그렇다고 유다가 그 책을 성경으로 여긴 건 아니에요. 바울도 아덴에서 헬라 시인의 말을 인용했고(행 17:28), 그레데 사람의 말을 인용하기도 했어요(딛 1:12). 알려진 말을 빌려 쓴 것이지, 그 책 전체를 인정한 것은 아니에요. 유다가 전하려는 핵심은 분명해요. 주님은 <mark>반드시 다시 오셔서 공의로 심판하실 분</mark>이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 미가엘과 모세의 시체 이야기는 3세기 교부 오리게네스가 「모세의 승천」이라는 유대 문헌에서 온 것이라고 밝혔어요. 이 문헌은 오늘날 일부만 남아 있어서 해당 장면은 전해지지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>판단과 심판을 주님께 맡기고, 나를 대적하는 사람 앞에서도 비방 대신 “주께서 하시기를 원합니다” 하고 기도합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>가인, 발람, 고라의 길,<br>그런데 고라의 아들들은 노래했다</h2><div class="refs">유다서 11절 · 민수기 16:31-33 · 26:11 · 역대상 6:31-37 · 시편 42:1</div></div></div>
+    <div class="scene-body"><div class="wp"><div><span class="pl">가인의 길</span> — 시기하여 아우를 죽인 길(창 4:8)</div><div><span class="pl">발람의 어그러진 길</span> — 삯을 위하여 달려간 길(민 22장)</div><div><span class="pl">고라의 패역</span> — 하나님이 세우신 모세와 아론에게 맞선 길(민 16장)</div></div><p>11절에서 유다는 또 셋을 묶어요. “화 있을진저 이 사람들이여, 가인의 길에 행하였으며 삯을 위하여 발람의 어그러진 길로 몰려 갔으며 고라의 패역을 따라 멸망을 받았도다.” 동사가 점점 세져요. 걸어가다가(행하였으며), 몰려가다가, 멸망해요. 😄 처음엔 슬슬 걷다가 나중엔 우르르 달려가 망하는 거예요. 죄는 그렇게 속도가 붙어요.</p><p>그런데 세 번째 이름 고라에 숨은 이야기가 있어요. 고라는 모세와 아론에게 반역하다가 땅이 입을 벌려 삼켜 버린 사람이에요(민 16:31-33). 그런데 민수기 26:11에 짧은 한 줄이 있어요. “그러나 고라의 아들들은 죽지 아니하였더라.” 아버지의 반역 속에서도 하나님은 그 자녀들을 살려 두셨어요.</p><p>그 후손들은 어떻게 되었을까요? 다윗 때 성전에서 찬송하는 직분을 맡은 헤만의 족보를 거슬러 올라가면 고라가 나와요(대상 6:31-37). 그리고 시편 가운데 열한 편에 “고라 자손의” 시라는 표제가 붙어 있어요. “하나님이여 사슴이 시냇물을 찾기에 갈급함 같이 내 영혼이 주를 찾기에 갈급하니이다”(시 42:1)도 고라 자손의 노래예요. 반역자의 이름이 찬송의 이름이 되었어요. 유다는 고라의 길을 경고하지만, 성경 전체는 <mark>반역자의 집안에서도 찬송을 일으키시는 하나님</mark>을 보여 줘요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>죄의 길에 속도가 붙기 전에 돌이키며, 반역자의 집안에서도 찬송이 나게 하신 하나님의 은혜를 노래합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>하늘·땅·바다를 다 동원한<br>다섯 개의 그림</h2><div class="refs">유다서 12-13절 · 베드로후서 2:13, 17 · 요한복음 15:5</div></div></div>
+    <div class="scene-body"><div class="wp"><div><span class="pl">애찬의 암초</span> — 물 밑에 숨어 배를 부수는 바위</div><div><span class="pl">물 없는 구름</span> — 비를 줄 듯하다가 바람에 불려 가는 구름</div><div><span class="pl">열매 없는 가을 나무</span> — 추수 때 빈손, 뿌리까지 뽑힌 나무</div><div><span class="pl">바다의 거친 물결</span> — 수치의 거품만 뿜어내는 파도</div><div><span class="pl">유리하는 별</span> — 제 길을 떠나 헤매는 별</div></div><p>12-13절에서 유다는 거짓 선생들을 다섯 가지 그림으로 그려요. 하늘(구름, 별), 땅(나무), 바다(암초, 물결)까지 온 세상을 다 동원했어요. 😄 스물다섯 절짜리 편지에 대하드라마 같은 스케일이에요.</p><p>첫 그림이 특히 섬뜩해요. “너희의 애찬에 암초요”(12절). 애찬은 초대교회 성도들이 함께 나누던 사랑의 식사예요. 그런데 “암초”는 <span class="heb" data-tip="스필라스(spilas) — 물 아래 숨은 바위, 암초. 소리가 비슷한 ‘스필로스’는 ‘얼룩, 점’이라는 뜻이다. 베드로후서 2:13은 같은 자리에서 ‘점과 흠’이라고 말한다.">스필라스</span>, 곧 물 밑에 숨어 있다가 배를 부수는 바위예요. 겉으로는 잔잔한 바다인데 그 아래서 배를 깨뜨려요. 교회 식탁에 함께 앉아 웃으며 먹는 사람이 사실은 공동체를 부수고 있었던 거예요. 재밌게도 베드로후서의 같은 자리에는 “점과 흠”(벧후 2:13)이라고 되어 있는데, 헬라어로 “점”(스필로스)과 “암초”(스필라스)는 소리가 아주 비슷해요.</p><p>나머지 그림에도 공통점이 있어요. 비를 줄 것 같은데 물이 없는 구름, 가을 추수 때 열매가 없는 나무, 요란한데 거품만 남기는 물결, 빛나 보이지만 길을 잃은 별. 모두 <span class="hl">겉과 속이 다른</span> 모습이에요. 약속만 있고 열매가 없어요. 그와 반대로 우리 주님은 약속하신 것을 반드시 이루시는 분이세요. 진짜 열매는 <mark>포도나무 되신 예수님께 붙어 있을 때</mark> 맺혀요(요 15:5).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ “스필라데스”를 “암초”로 볼지 “얼룩, 오점”으로 볼지는 번역에 따라 조금씩 달라요. 개역개정은 “암초”로 옮겼어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>겉모습보다 열매를 보시는 주님 앞에서, 말만 있는 구름이 아니라 주님께 붙어 열매 맺는 가지로 삽니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>황제 앞에 선<br>손에 굳은살 박인 손자들</h2><div class="refs">유다서 1절 · 17-21절 · 초대교회 전승</div></div></div>
+    <div class="scene-body"><p>유다의 가족 이야기가 교회사에 하나 남아 있어요. 2세기 교회사가 헤게십포스가 기록하고, 4세기 유세비우스가 『교회사』에 옮겨 적은 이야기예요. 로마 황제 도미티아누스(주후 81-96년 재위)는 다윗의 후손들이 왕권을 노릴까 봐 두려워했대요. 그래서 “주의 형제라 불리던 유다”의 손자들이 다윗의 후손이라는 이유로 황제 앞에 끌려갔어요.</p><p>황제가 재산이 얼마냐고 묻자, 그들은 두 사람이 함께 가진 작은 땅이 전부이고 직접 농사지어 세금을 내며 산다고 대답했어요. 그러면서 손을 내밀어 보였대요. 😄 쉬지 않고 일해서 굳은살이 딱딱하게 박인 농부의 손이었어요. 황제가 그리스도와 그분의 나라에 대해 묻자, 그 나라는 이 세상 나라가 아니라 하늘의 나라이며, 세상 끝에 주님이 영광 중에 오셔서 산 자와 죽은 자를 심판하실 때 임한다고 대답했대요. 황제는 그들을 하찮게 여겨 풀어 주었고, 교회에 대한 박해도 멈추게 했다고 해요.</p><p>이 이야기를 알고 유다서를 읽으면 17절이 새롭게 들려요. 유다는 “사랑하는 자들아” 하고 부르며, 우리 주 예수 그리스도의 사도들이 미리 한 말을 기억하라고 했어요. 할아버지 유다가 지키라고 했던 “단번에 주신 믿음의 도”를 손자들은 황제 앞에서도 그대로 고백했어요. 권력도 재산도 없었지만, 그들에게는 <mark>다시 오실 주님의 나라</mark>에 대한 소망이 있었어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 이 이야기는 헤게십포스의 기록이 유세비우스의 『교회사』(3권 19-20장)에 인용되어 전해지는 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상의 힘 앞에서도 부끄러워하지 않고, 다시 오실 주님의 나라를 소망하며 오늘 맡은 일을 성실히 합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>지키지 않은 천사, 스스로를 지키라,<br>그리고 지키시는 하나님</h2><div class="refs">유다서 1절 · 6절 · 13절 · 21-25절 · 스가랴 3:2</div></div></div>
+    <div class="scene-body"><div class="steps"><div><b>1절</b>“예수 그리스도를 위하여 지키심을 받은 자들”</div><div><b>6절</b>자기 지위를 “지키지 아니한” 천사들을 흑암에 “가두셨으며”</div><div><b>13절</b>영원히 “예비된” 캄캄한 흑암</div><div><b>21절</b>“하나님의 사랑 안에서 자신을 지키며”</div><div class="last"><b>24절</b>“능히 너희를 보호하사 거침이 없게 하시고”</div></div><p>유다서에는 “지키다”라는 말이 숨바꼭질하듯 반복돼요. <span class="heb" data-tip="테레오(tēreō) — 지키다, 보존하다, 가두어 두다. 유다서에 다섯 번 나온다(1절, 6절 두 번, 13절, 21절).">테레오</span>라는 동사예요. 개역개정에서는 “지키심을 받은”, “지키지 아니하고”, “가두셨으며”, “예비된”, “지키며”로 다르게 옮겨져서 잘 안 보이지만, 헬라어로는 다 같은 단어예요. 😄 유다가 숨겨 놓은 보물찾기예요.</p><p>이 단어를 따라가면 흐름이 보여요. 성도들은 처음부터 예수 그리스도를 위해 “지키심을 받은” 사람들이에요(1절). 반대로 자기 자리를 “지키지 않은” 천사들은 심판 날까지 흑암에 “지켜져” 있어요(6절). 그래서 성도들은 “하나님의 사랑 안에서 자신을 지키라”(21절)는 부탁을 받아요. 우리가 할 일은 하나님의 사랑이라는 울타리 밖으로 나가지 않는 거예요.</p><p>유다는 싸움만 말하지 않아요. 의심하는 자들을 긍휼히 여기고, “어떤 자를 불에서 끌어내어 구원하라”(23절)고 해요. 스가랴 3:2의 “이는 불에서 꺼낸 그슬린 나무가 아니냐”를 떠올리게 하는 말이에요. 9절에서 미가엘의 말도 같은 스가랴 3:2에서 왔지요. 유다는 원수는 하나님께 맡기고, 형제는 불에서 건져 내라고 말하고 있어요.</p><p>그리고 24절에서 마침내 주어가 바뀌어요. “능히 너희를 보호하사 거침이 없게 하시고 너희로 그 영광 앞에 흠이 없이 기쁨으로 서게 하실 이.” 결국 우리를 끝까지 지키시는 분은 우리가 아니라 <mark>능히 보호하시는 하나님</mark>이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님의 사랑 안에 머물며, 넘어질 것 같은 날에도 나를 능히 보호하시는 하나님을 신뢰합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">“찬송”이라는 이름의 동생,<br>찬송으로 편지를 맺다</div>
+    <p>유다서는 경고로 가득한 편지예요. 하지만 유다가 경고한 이유는 성도들이 넘어질까 봐서였어요. 그리고 편지 마지막에서 유다는 시선을 거짓 선생들에게서 거두어 하나님께로 돌려요. 싸우라는 편지가 찬송으로 끝나요. “찬송”이라는 뜻의 이름을 가진 사람답게요.</p><p>우리는 우리 힘으로 믿음을 지킬 수 없어요. 그래서 오히려 안심이에요. 우리를 부르시고, 사랑하시고, 지키시는 분이 계시거든요. 넘어지지 않게 붙드시고, 마침내 영광 앞에 기쁨으로 세우실 분, <mark>우리 구주 홀로 하나이신 하나님</mark>께 영광이 영원토록 있기를 찬송해요.</p>
+    <div class="q">“능히 너희를 보호하사 거침이 없게 하시고<br>너희로 그 영광 앞에 흠이 없이 기쁨으로 서게 하실 이” (24절)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
