@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>야고보서, 형을 주라고 부른 동생 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="예수님을 믿지 않던 동생이 주님의 종이 되어 쓴 야고보서에 숨은 이야기">
+<meta property="og:title" content="야고보서, 형을 주라고 부른 동생">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 25</div>
+  <h1>야고보서,<br>형을 <em>"주"</em>라고<br>부른 동생</h1>
+  <p class="sub">미쳤다며 형을 붙잡으러 갔던 동생이<br>"주 예수 그리스도의 종"이 되어 쓴 편지</p>
+  <div class="ref">야고보서 1–5장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>야고보서를 쓴 야고보는 예수님의 친동생이에요. 한 집에서 같이 자라고, 같은 밥을 먹고, 어쩌면 같은 목공소에서 일했을지도 몰라요. 그런데 이 동생이 편지 첫 줄에 자기를 이렇게 소개해요. "하나님과 주 예수 그리스도의 종 야고보는"(1:1). "예수의 동생"이라고 하면 누구나 알아줬을 텐데, 그 말은 한 번도 안 해요. 😄 형을 "주"라고, 자기를 "종"이라고 불러요.</p><p>이 편지는 다섯 장에 명령문이 쉰 개가 넘을 만큼 단도직입적이에요. "기쁘게 여기라", "행하는 자가 되라", "혀를 조심하라"… 그래서 잔소리 편지처럼 느껴질 수도 있어요. 그런데 가만히 읽으면 그 안에 형님의 목소리가 들려요. 산상수훈의 메아리, 금가락지 낀 손님, 바울과의 오해, 작은 불씨, 그리고 이른 비와 늦은 비까지요. 형을 믿지 않던 동생이 어떻게 이런 편지를 쓰게 됐는지, 그 이야기 속으로 들어가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>야고보서는 어떤 책일까?</h2>
+    <p>흩어진 성도들에게 보낸 "믿음의 실천 편지"</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>야고보는 예루살렘 교회의 기둥 같은 지도자였어요. 바울은 그를 "주의 형제 야고보"(갈 1:19)라고 부르고, 게바와 요한과 함께 "기둥 같이 여기는"(갈 2:9) 사람이라고 해요. 예루살렘 회의에서 이방인 성도 문제에 결론을 낸 사람도 야고보였어요(행 15:13-21). 이 편지는 "흩어져 있는 열두 지파"(1:1), 곧 여러 지역에 흩어져 사는 유대인 성도들에게 보낸 거예요. 가난과 차별, 부자들의 억압, 말다툼으로 힘들어하던 교회들이었어요. 신약 서신 가운데 가장 이른 편지로 보는 학자도 많아요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>"야고보"는 헬라어로 이아코보스, 곧 구약의 "야곱"이에요. 열두 아들을 낳아 열두 지파의 조상이 된 야곱처럼, 야고보는 "열두 지파"에게 편지를 써요. 이름부터 이스라엘의 냄새가 나요.</div><div><b>"지푸라기 서신"?</b>종교개혁자 루터는 1522년 신약 성경 서문에서 야고보서를 로마서나 갈라디아서에 비하면 "지푸라기 서신"이라고 불렀어요. 믿음보다 행함을 강조하는 것처럼 보였거든요. 그래도 루터는 이 책을 성경에서 빼지 않았어요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 신약에는 야고보라는 사람이 여럿 나와요. 세베대의 아들 야고보는 주후 44년 무렵 일찍 순교했기 때문에(행 12:2), 전통적으로 주의 형제 야고보를 저자로 봐요. 기록 연대는 40년대 중반부터 60년대 초까지 학자들의 견해가 나뉘어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">야고보서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">명령문 가득</div><div class="mini-b">108절에 명령문이 쉰 개가 넘어요. 거의 두 절에 한 번씩 "하라"가 나와요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">산상수훈의 메아리</div><div class="mini-b">예수님이 산 위에서 하신 말씀이 곳곳에 울려요. 형님의 설교를 동생이 다시 풀어낸 것 같아요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">그림 같은 비유</div><div class="mini-b">바다 물결, 들풀, 말 재갈, 배의 키, 작은 불, 샘물, 안개, 농부… 눈에 보이는 그림으로 말해요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">행함 있는 믿음</div><div class="mini-b">"행함이 없는 믿음은 그 자체가 죽은 것이라"(2:17). 살아 있는 믿음은 움직여요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">가난한 자의 편</div><div class="mini-b">차별받는 가난한 성도를 편들고, 품삯을 떼먹는 부자들을 엄하게 꾸짖어요(2:1-7; 5:1-6).</div></div></div></div>
+
+  <div class="target"><p>야고보서의 중심에는 이 말씀이 있어요. <span class="hl">"너희는 말씀을 행하는 자가 되고 듣기만 하여 자신을 속이는 자가 되지 말라"</span>(1:22). 그런데 야고보가 말하는 행함은 사람 자랑이 아니에요. "각양 좋은 은사와 온전한 선물이 다 위로부터 빛들의 아버지께로부터 내려오나니"(1:17). 모든 좋은 것은 하나님께로부터 와요. 행함은 그 은혜를 받은 사람의 <mark>살아 있는 반응</mark>이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>형을 믿지 않던 동생부터 이른 비와 늦은 비까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>형을 믿게 된 동생</button><button class="chip" onclick="goTo('s2')"><b>2</b>낙타 무릎</button><button class="chip" onclick="goTo('s3')"><b>3</b>이어지는 말 사슬</button><button class="chip" onclick="goTo('s4')"><b>4</b>형님의 설교</button><button class="chip" onclick="goTo('s5')"><b>5</b>금손가락 손님</button><button class="chip" onclick="goTo('s6')"><b>6</b>바울과 야고보</button><button class="chip" onclick="goTo('s7')"><b>7</b>작은 불과 늦은 비</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>"형이 미쳤다"던 동생이<br>형을 "영광의 주"라 부르기까지</h2><div class="refs">마가복음 3:21 · 요한복음 7:3-5 · 고린도전서 15:7 · 사도행전 1:14 · 야고보서 1:1 · 2:1</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">예수님 공생애 때</div>"이는 그 <b>형제들까지도</b> 예수를 <b>믿지 아니함</b>이러라"(요 7:5)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">야고보서 첫 줄</div>"하나님과 <b>주 예수 그리스도의 종</b> 야고보는"(1:1)</div></div><p>예수님의 동생들은 처음에 형을 믿지 않았어요. 예수님이 사역을 시작하시자 가족들은 "그가 미쳤다"며 붙잡으러 나왔어요(막 3:21). 초막절 때는 동생들이 형에게 유대로 올라가서 하는 일을 세상에 나타내 보라고 부추기기도 했어요. 요한은 그 이유를 짧게 적어요. "그 형제들까지도 예수를 믿지 아니함이러라"(요 7:5). 😄 솔직히 한집에서 같이 자란 형이 메시아라니, 믿기 쉽지 않았을 거예요.</p><p>그런데 무엇이 야고보를 바꿨을까요? 바울이 전하는 부활의 증인 명단에 한 줄이 있어요. "그 후에 야고보에게 보이셨으며"(고전 15:7). 부활하신 예수님이 믿지 않던 동생을 찾아가신 거예요. 그 만남에서 무슨 말이 오갔는지는 성경이 말하지 않아요. 하지만 그다음 장면은 나와요. 예수님이 승천하신 뒤 다락방에서 기도하던 무리 가운데 "예수의 아우들"(행 1:14)이 함께 있었어요.</p><p>그리고 몇 해 뒤 야고보는 편지를 써요. 자기를 "종"이라고 부르고, 형을 "영광의 주 곧 우리 주 예수 그리스도"(2:1)라고 불러요. 형이라는 관계보다 <mark>주님이라는 고백</mark>이 더 중요해진 거예요. 가장 가까이에서 예수님을 보고도 믿지 못했던 사람을, 부활의 주님이 찾아가 주님의 종으로 바꾸셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 예수님의 "형제들"(마 13:55)이 마리아가 낳은 친동생들인지, 요셉의 전처 소생인지, 사촌인지에 대해서는 교회사 속에서 견해가 나뉘어 왔어요. 개신교에서는 대체로 마리아와 요셉 사이에서 태어난 동생들로 봐요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>믿지 않던 동생을 찾아가신 부활의 주님이 나도 찾아와 주셨음을 기억하며, 예수님을 나의 주님으로 고백합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>"의인 야고보"의<br>낙타 무릎</h2><div class="refs">야고보서 5:16-18 · 열왕기상 18–19장</div></div></div>
+    <div class="scene-body"><p>야고보는 교회 밖에서도 존경받았어요. 1세기 유대 역사가 요세푸스는 『유대 고대사』에서 야고보의 죽음을 기록했어요. 주후 62년, 유대 총독 베스도가 죽고 새 총독이 아직 도착하지 않은 틈에, 대제사장 아나누스가 공회를 모아 "그리스도라 불리는 예수의 형제, 야고보라는 이름의 사람"을 돌로 치게 했다고요. 요세푸스에 따르면 이 일에 분개한 예루살렘 사람들이 아그립바 왕과 새 총독에게 호소했고, 결국 아나누스는 석 달 만에 대제사장 자리에서 쫓겨났어요.</p><p>2세기 교회사가 헤게십포스는 야고보가 "의인"이라는 별명으로 불렸다고 전해요. 그리고 재밌는 이야기를 하나 남겼어요. 야고보가 성전에 들어가 무릎 꿇고 백성의 용서를 구하며 얼마나 오래 기도했던지, <span class="hl">무릎이 낙타 무릎처럼</span> 굳은살로 딱딱해졌대요. 😄 그래서 "낙타 무릎 야고보"라는 별명이 생겼어요.</p><p>그 이야기를 알고 야고보서 5장을 읽으면 느낌이 달라요. "의인의 간구는 역사하는 힘이 큼이니라"(5:16). 그리고 엘리야를 예로 들어요. "엘리야는 우리와 성정이 같은 사람이로되 그가 비가 오지 않기를 간절히 기도한즉 삼 년 육 개월 동안 땅에 비가 오지 아니하고"(5:17). 엘리야도 우리처럼 두려워하고 지쳐서 로뎀 나무 아래 누웠던 사람이에요. 야고보가 말하려는 건 기도하는 사람이 대단하다는 게 아니에요. 기도를 들으시는 <mark>하나님이 대단하시다</mark>는 거예요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 요세푸스의 기록은 역사 자료로 널리 인정받아요. "낙타 무릎"과 성전 꼭대기에서 떨어뜨려졌다는 순교 장면은 헤게십포스의 기록이 교회사가 유세비우스의 책에 인용되어 전해진 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나와 성정이 같은 엘리야의 기도를 들으신 하나님이 오늘 나의 기도도 들으심을 믿고 무릎을 꿇습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>"문안" 다음에 "기쁨",<br>꼬리에 꼬리를 무는 말 사슬</h2><div class="refs">야고보서 1:1-8 · 4:8</div></div></div>
+    <div class="scene-body"><div class="steps"><div><b>1:1</b>"문안하노라" <span style="color:#8a97a3">— 카이레인</span></div><div><b>1:2</b>"온전히 기쁘게 여기라" <span style="color:#8a97a3">— 카라</span></div><div><b>1:4</b>"조금도 부족함이 없게" <span style="color:#8a97a3">— 레이포메노이</span></div><div class="last"><b>1:5</b>"지혜가 부족하거든 … 구하라" <span style="color:#8a97a3">— 레이페타이</span></div></div><p>야고보서 1장은 헬라어로 읽으면 말이 사슬처럼 이어져 있어요. 1절 끝 "문안하노라"는 <span class="heb" data-tip="카이레인(chairein) — 직역하면 &#x27;기뻐하라&#x27;. 헬라 편지에서 흔히 쓰던 인사말. 바로 다음 절의 &#x27;기쁨&#x27;(카라)과 같은 뿌리.">카이레인</span>, 곧 "기뻐하라"는 인사말이에요. 그러고 바로 2절이 "기쁨"(카라)으로 시작해요. 4절 끝이 "부족함이 없게"로 끝나면, 5절은 "부족하거든"으로 받아요. 5절이 "구하라"로 끝나면, 6절은 "구하고"로 이어요. 😄 앞 문장 꼬리를 뒤 문장이 물고 가는 끝말잇기예요.</p><p>이 사슬이 말하는 흐름은 이래요. 시험을 만나도 기뻐하세요. 시험은 인내를 만들고, 인내는 우리를 부족함 없는 사람으로 만들어요. 그런데 그 과정에서 지혜가 부족하면요? 하나님께 구하세요. 하나님은 "모든 사람에게 후히 주시고 꾸짖지 아니하시는"(1:5) 분이에요. 몇 번을 구해도 "또 왔니?" 하지 않으세요.</p><p>다만 한 가지 조건이 있어요. 의심하지 말고 믿음으로 구하래요. 의심하는 사람은 "두 마음을 품어 모든 일에 정함이 없는 자"(1:8)예요. "두 마음"은 <span class="heb" data-tip="딥쉬코스(dipsychos) — 디(둘) + 프쉬케(마음, 혼). &#x27;마음이 둘로 나뉜&#x27;. 야고보서 1:8과 4:8에만 나온다.">딥쉬코스</span>, 직역하면 "영혼이 둘인 사람"이에요. 한 발은 하나님께, 한 발은 세상에 걸친 사람은 바람에 밀리는 바다 물결처럼 이리저리 흔들려요. 그래서 4장에서 야고보는 이렇게 불러요. "하나님을 가까이하라 그리하면 너희를 가까이하시리라 … 두 마음을 품은 자들아 마음을 성결하게 하라"(4:8). 흔들리는 마음이 붙잡을 곳은 <mark>변함이 없으신 하나님</mark>(1:17)이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ "딥쉬코스"는 지금 남아 있는 헬라어 문헌 가운데 야고보서에서 처음 나타나는 단어예요. 야고보가 직접 만든 말인지는 확실하지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>시험 중에 지혜가 부족할 때, 꾸짖지 않고 후히 주시는 하나님께 한 마음으로 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>동생의 편지에서 들리는<br>형님의 산상수훈</h2><div class="refs">야고보서 1:2 · 2:5 · 5:2 · 5:12 · 마태복음 5–7장</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">형님 예수님</div>"오직 너희 말은 <b>옳다 옳다, 아니라 아니라</b> 하라"(마 5:37)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">동생 야고보</div>"그렇다 하는 것은 <b>그렇다</b> 하고 아니라 하는 것은 <b>아니라</b> 하여"(5:12)</div></div><p>야고보서는 예수님의 말씀을 직접 인용한다고 밝히지 않아요. 그런데 읽다 보면 어디서 많이 들은 말이 계속 나와요. 맹세하지 말라는 말(5:12), 시험 중에도 기뻐하라는 말(1:2과 마 5:11-12), 가난한 자가 나라를 상속한다는 말(2:5과 마 5:3), 재물이 좀먹는다는 말(5:2과 마 6:19), 비판하지 말라는 말(4:11-12과 마 7:1)까지요. 학자들은 야고보서에 산상수훈과 닮은 구절이 스무 곳 안팎이라고 해요.</p><p>이게 재밌는 이유가 있어요. 야고보서는 신약 서신 중에서 예수님의 이름이 두 번밖에 안 나오는 책이에요(1:1; 2:1). 😄 그래서 "예수님 이야기가 별로 없는 책"이라는 말도 들어요. 그런데 이름은 두 번이지만, 목소리는 처음부터 끝까지 들려요. 동생은 형님의 설교를 외워서 인용한 게 아니라, 그 말씀으로 <span class="hl">자기 삶이 빚어진</span> 사람처럼 써요.</p><p>한때 형을 믿지 않았던 동생이, 이제는 형님이 가르친 말씀을 흩어진 교회들에게 전하고 있어요. 산 위에서 하신 예수님의 말씀이 동생의 편지를 통해 온 세상 교회로 흘러간 거예요. 예수님의 말씀은 이렇게 <mark>사람을 바꾸고, 그 사람을 통해 흘러가요.</mark></p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>예수님의 말씀을 머리로만 기억하지 않고, 그 말씀이 내 말과 삶에 배어 나오도록 순종합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>교회 "회당"에 들어온<br>금손가락 손님</h2><div class="refs">야고보서 2:1-9</div></div></div>
+    <div class="scene-body"><p>2장에 짧은 촌극이 나와요. "만일 너희 회당에 금 가락지를 끼고 아름다운 옷을 입은 사람이 들어오고 또 더러운 옷을 입은 가난한 사람이 들어올 때에"(2:2). 부자에게는 "여기 좋은 자리에 앉으라", 가난한 사람에게는 "거기 서 있든지 내 발등상 아래에 앉으라"(2:3). 😄 안내 위원의 얼굴이 눈에 선해요.</p><p>여기 숨은 단어가 두 개 있어요. 먼저 "회당"이에요. 야고보는 성도들의 모임을 <span class="heb" data-tip="쉬나고게(synagōgē) — 함께 모인 곳, 회당. 신약에서 그리스도인의 모임을 이 단어로 부른 곳은 야고보서 2:2뿐이다.">쉬나고게</span>, 곧 회당이라고 불러요. 신약에서 교회 모임을 이 단어로 부른 곳은 여기뿐이에요. 유대인 성도들이 처음 모이던 초창기 교회의 모습이 살짝 보여요. 또 하나는 "금 가락지를 낀"이라는 말이에요. 헬라어로는 <span class="heb" data-tip="크뤼소닥튈리오스(chrysodaktylios) — 크뤼소스(금) + 닥튈로스(손가락). &#x27;금손가락의&#x27;. 성경 전체에서 여기 한 번만 나온다.">크뤼소닥튈리오스</span>, 직역하면 "금손가락"이에요. 성경 전체에서 여기 한 번 나오는 단어예요. 로마 사회에서 금반지는 높은 신분을 나타내는 표시이기도 했어요. 손가락마다 반지를 번쩍이며 들어온 손님이 떠올라요.</p><p>야고보는 이렇게 사람을 차별하면 "영광의 주 곧 우리 주 예수 그리스도"(2:1)를 믿는 믿음과 맞지 않는다고 해요. 영광의 주님은 부자의 옷이 아니라 가난한 사람의 모습으로 이 땅에 오셨어요. "하나님이 세상에서 가난한 자를 택하사 믿음에 부요하게 하시고"(2:5). 교회의 좋은 자리는 반지 낀 손이 아니라, <mark>주님이 택하신 사람</mark>을 위한 자리예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>옷차림이나 형편으로 사람을 대하지 않고, 영광의 주님이 사랑하시는 한 사람으로 이웃을 맞이합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>바울과 야고보는<br>정말 다른 말을 했을까?</h2><div class="refs">야고보서 2:14-26 · 로마서 4:1-5 · 창세기 15:6 · 22:1-19 · 히브리서 11:31</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">바울</div>"사람이 의롭다 하심을 얻는 것은 율법의 행위에 있지 않고 <b>믿음으로</b> 되는 줄"(롬 3:28)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">야고보</div>"사람이 <b>행함으로</b> 의롭다 하심을 받고 믿음으로만은 아니니라"(2:24)</div></div><p>이 두 구절을 나란히 놓으면 싸우는 것처럼 보여요. 😄 루터가 야고보서를 "지푸라기"라고 부른 것도 이 때문이었어요. 그런데 둘 다 아브라함을 예로 드는데, 보고 있는 장면이 달라요. 바울은 창세기 15장을 봐요. 아브라함이 아무것도 하기 전에 하나님의 약속을 믿자 "이것을 그의 의로 여기시고"(창 15:6). 야고보는 창세기 22장을 봐요. 여러 해가 지나 그 믿음이 이삭을 제단에 바치는 순종으로 드러난 장면이에요.</p><p>그리고 야고보도 창세기 15:6을 똑같이 인용해요(2:23). 믿음으로 의롭다 하심을 받은 것은 야고보도 인정해요. 다만 그 믿음이 진짜라면 반드시 삶으로 드러난다는 거예요. 야고보가 싸우는 상대는 바울이 아니라 입으로만 믿는다는 사람이에요. "귀신들도 믿고 떠느니라"(2:19). 귀신도 하나님이 한 분이신 줄은 알거든요. 바울이 말하는 행위는 구원을 얻으려는 행위이고, 야고보가 말하는 행함은 구원받은 사람에게서 나오는 열매예요.</p><p>재밌는 연결고리가 하나 더 있어요. 야고보가 아브라함 다음에 드는 예가 "기생 라합"(2:25)이에요. 히브리서 11:31도 라합을 믿음의 사람으로 소개했어요. 히브리서는 라합의 "믿음"을, 야고보서는 라합의 "행함"을 말해요. 같은 사람, 같은 사건이에요. 라합은 이스라엘의 하나님을 믿었기 때문에 정탐꾼을 숨겼어요. <mark>믿음과 행함은 한 사람 안에서 하나</mark>였어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 야고보가 바울의 가르침을 오해한 사람들을 염두에 두고 썼는지, 바울 서신과 상관없이 따로 썼는지는 학자들 사이에 논의가 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오직 믿음으로 받은 구원에 감사하며, 그 믿음이 오늘 내 손과 발로 드러나게 합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>작은 불씨 하나,<br>그리고 이른 비와 늦은 비</h2><div class="refs">야고보서 3:3-10 · 5:7-11 · 신명기 11:14</div></div></div>
+    <div class="scene-body"><p>3장에서 야고보는 혀를 세 가지로 그려요. 말의 입에 물리는 작은 재갈, 큰 배를 움직이는 작은 키, 그리고 작은 불씨예요. "보라 얼마나 작은 불이 얼마나 많은 나무를 태우는가"(3:5). 그리고 무서운 말이 이어져요. 혀는 "삶의 수레바퀴를 불사르나니 그 사르는 것이 지옥 불에서 나느니라"(3:6). 여기 "지옥"은 <span class="heb" data-tip="게엔나(geenna) — 예루살렘 남쪽 &#x27;힌놈의 골짜기&#x27;에서 온 말. 신약에 열두 번 나오는데, 열한 번은 복음서 속 예수님의 말씀이고 나머지 한 번이 야고보서 3:6이다.">게헨나</span>예요. 이 단어는 신약에 열두 번 나오는데, 열한 번은 복음서에서 예수님이 하신 말씀이고, 나머지 한 번이 여기예요. 신약에서 이 단어를 쓴 사람은 예수님과 동생 야고보뿐이에요.</p><p>야고보는 한 입의 모순도 꼬집어요. "이것으로 우리가 주 아버지를 찬송하고 또 이것으로 하나님의 형상대로 지음을 받은 사람을 저주하나니"(3:9). 😄 주일 아침 찬양하던 입으로, 예배 끝나고 주차장에서 누구 흉을 보면 안 된다는 거예요. 한 샘에서 단물과 쓴물이 같이 나올 수 없으니까요(3:11).</p><p>5장에서 야고보는 농부를 불러와요. "보라 농부가 땅에서 나는 귀한 열매를 바라고 길이 참아 이른 비와 늦은 비를 기다리나니"(5:7). 이스라엘 땅에는 가을에 씨 뿌릴 때 내리는 <span class="hl">이른 비</span>와, 봄에 이삭이 여물 때 내리는 <span class="hl">늦은 비</span>가 있어요. 둘 다 와야 추수를 할 수 있어요. 모세 때부터 하나님은 "너희의 땅에 이른 비, 늦은 비를 적당한 때에 내리시리니"(신 11:14)라고 약속하셨어요. 농부는 비를 만들 수 없어요. 약속하신 분을 믿고 기다릴 뿐이에요.</p><p>그리고 야고보는 말해요. "주의 강림이 가까우니라"(5:8). "보라 심판주가 문 밖에 서 계시니라"(5:9). 형님이 다시 오실 날을 동생은 문 앞에서 기다리고 있어요. 그 기다림이 헛되지 않은 이유는 하나예요. "주는 가장 자비하시고 긍휼히 여기시는 이시니라"(5:11). <mark>늦은 비는 반드시 와요.</mark></p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>찬송하는 입으로 사람을 살리는 말을 하며, 이른 비와 늦은 비를 약속하신 주님이 다시 오실 날을 참고 기다립니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">형을 믿지 못했던 동생이<br>형님의 말씀을 살아 냈다</div>
+    <p>야고보서는 잔소리 편지가 아니에요. 부활하신 주님을 만나 인생이 뒤집힌 사람이 쓴 편지예요. 한때 "형이 미쳤다"고 했던 동생이, 이제는 형을 "영광의 주"라고 부르며 무릎이 굳도록 기도했어요. 그래서 야고보는 "행하라"고 말할 자격이 있었어요. 자기가 먼저 그 말씀 앞에 무릎 꿇었으니까요.</p><p>야고보가 말하는 행함은 우리 힘으로 쌓는 공로가 아니에요. 위로부터, 빛들의 아버지께로부터 내려온 좋은 선물을 받은 사람의 자연스러운 반응이에요. 뿌리가 살아 있으면 열매가 맺히듯, <mark>영광의 주 예수 그리스도</mark>를 믿는 믿음은 살아서 움직여요.</p>
+    <div class="q">"너희는 말씀을 행하는 자가 되고<br>듣기만 하여 자신을 속이는 자가 되지 말라" (1:22)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
