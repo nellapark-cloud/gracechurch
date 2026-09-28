@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>로마서, 가 본 적 없는 교회에 보낸 편지 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="가장 위대한 신학 편지의 끝에 숨어 있는 사람들의 이야기">
+<meta property="og:title" content="로마서, 가 본 적 없는 교회에 보낸 편지">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 07</div>
+  <h1>로마서,<br><em>가 본 적 없는</em><br>교회에 보낸 편지</h1>
+  <p class="sub">가장 위대한 신학 편지의 끝에<br>숨어 있는 사람들의 이야기</p>
+  <div class="ref">로마서 1–16장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>로마서는 흔히 <mark>"성경의 요약"</mark>, "복음의 교과서"라고 불려요. 죄와 구원, 은혜와 믿음, 성령과 새 삶을 가장 체계적으로 설명하는 책이죠. 그래서 로마서를 읽으면 어렵고 무거운 신학책처럼 느껴질 때가 많아요.</p>
+    <p>그런데 로마서는 신학 논문이 아니라 <span class="hl">편지</span>예요. 편지를 쓴 사람, 받아 적은 사람, 들고 간 사람, 받아 읽은 사람들이 있었어요. 그 사람들의 흔적을 따라가면, 로마서가 전혀 다르게 보이기 시작해요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>로마서는 어떤 책일까?</h2>
+    <p>가 본 적 없는 교회에 보낸 복음의 소개서</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>바울은 약 주후 57년경, 고린도에 머물며 이 편지를 썼어요. 특이한 점은 <mark>로마 교회는 바울이 세운 교회도 아니고, 한 번도 가 본 적 없는 교회</mark>였다는 거예요(1:13, 15:22). 그래서 로마서는 "제가 전하는 복음은 이런 것입니다"라고 자신을 소개하는 편지이기도 해요. 그리고 로마를 거쳐 스페인까지 가려는 선교 계획도 담겨 있어요(15:24, 28).</p>
+    <div class="debate sans"><div><b>받아 적은 사람</b>더디오. 바울이 불러 주고 그가 받아 적었어요(16:22).</div><div><b>들고 간 사람</b>뵈뵈. 겐그레아 교회의 일꾼으로, 이 편지를 로마까지 전했어요(16:1-2).</div></div>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">로마서의 큰 흐름 다섯 부분</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">모두가 죄 아래 있다 (1–3장)</div><div class="mini-b">이방인도, 유대인도 예외 없이 하나님의 영광에 이르지 못했다고 말해요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">믿음으로 의롭다 하심 (3–5장)</div><div class="mini-b">율법의 행위가 아니라 예수 그리스도를 믿는 믿음으로 의롭게 된다고 선언해요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">죄에서 자유한 새 삶 (6–8장)</div><div class="mini-b">은혜 아래 있는 사람은 죄에 대해 죽고 그리스도 안에서 새 생명으로 살아요. 그리고 성령 안에서 정죄함이 없어요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">이스라엘은 어떻게 되는가 (9–11장)</div><div class="mini-b">하나님의 약속과 이스라엘의 미래를 깊이 고민하며, 결국 찬양으로 마무리해요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">복음으로 사는 삶 (12–16장)</div><div class="mini-b">몸으로 드리는 예배, 공동체의 사랑, 서로 다른 사람을 받아들이는 법, 그리고 긴 인사로 끝나요.</div></div></div></div>
+
+  <div class="target"><p>로마서의 위대한 신학은 결국 <span class="hl">사람들 사이에서 살아지는 복음</span>으로 끝나요. 1장부터 15장까지 치밀하게 설명한 복음이, 16장에서는 수십 명의 이름으로 살아 움직여요. 그래서 16장은 로마서의 부록이 아니라, 로마서가 그리는 교회의 실제 얼굴이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>16장의 이름들 속에 숨은 이야기, 그리고 역사를 바꾼 구절들</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>죄수로 간 로마</button><button class="chip" onclick="goTo('s2')"><b>2</b>끼어든 대필자</button><button class="chip" onclick="goTo('s3')"><b>3</b>편지를 든 뵈뵈</button><button class="chip" onclick="goTo('s4')"><b>4</b>루포의 어머니</button><button class="chip" onclick="goTo('s5')"><b>5</b>16장의 인물사전</button><button class="chip" onclick="goTo('s6')"><b>6</b>세 사람을 바꾼 편지</button><button class="chip" onclick="goTo('s7')"><b>7</b>"없다"로 시작해 "없다"로</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>"좋은 길을 얻어 가기를"<br>— 그리고 죄수로 도착하다</h2><div class="refs">로마서 1:10 · 15:22-28 · 사도행전 27–28장</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">바울의 기도 (1:10)</div>"하나님의 뜻 안에서 어떻게 하든지 이제 너희에게로 나아갈 좋은 길을 얻기를 구하노라"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">실제로 간 방법 (행 27–28장)</div>체포되어 황제에게 상소한 죄수로, 로마 군인의 호송을 받으며 난파선을 타고</div></div><p>바울은 로마서를 쓰면서 로마에 가게 해 달라고 기도했어요. "좋은 길을 얻기를" 구한다고요(1:10). 아마 자유로운 선교사로, 로마 성도들의 후원을 받아 스페인까지 가는 여정을 꿈꿨을 거예요.</p>
+        <p>하나님은 그 기도에 응답하셨어요. 다만 방식이 좀 달랐어요. 바울은 약 3년 뒤, <mark>로마 제국의 비용으로, 로마 군인의 호위를 받으며</mark> 로마에 도착해요. 죄수로요. 😄 중간에 폭풍도 만나고, 배가 난파되고, 독사에게 물리기까지 하면서요.</p>
+        <p>그런데 그 "죄수의 길"이 결국 <span class="hl">황제의 궁정 사람들에게까지 복음이 전해지는 길</span>이 됐어요(빌 1:13). 요나가 도망친 길에서 선원들이 하나님을 만났듯, 바울이 원치 않던 길에서도 하나님은 일하셨어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 기도한 "좋은 길"과 하나님이 여신 길이 다를 때, 그 길에서도 일하시는 하나님을 신뢰합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>편지 쓰다 말고<br>"저도요!" 하고 끼어든 사람</h2><div class="refs">로마서 16:22</div></div></div>
+    <div class="scene-body"><p>로마서 16장에서 바울은 여러 사람에게 문안을 전하다가, 갑자기 이런 문장이 나와요.</p>
+        <p class="quote">"이 편지를 기록하는 나 더디오도 주 안에서 너희에게 문안하노라"(16:22)</p>
+        <p>바울이 말로 불러 주고 옆에서 받아 적던 대필자 <mark>더디오가 갑자기 1인칭으로 끼어든 거예요.</mark> 몇 달 동안 바울의 말을 받아 적으며 "은혜", "믿음", "의롭다 하심"을 쓰던 그가, 마지막에 조심스럽게 손을 들고 "저도 인사 좀 할게요" 하는 장면이죠. 😄</p>
+        <p>신약 편지 가운데 <span class="hl">대필자가 자기 이름을 직접 남긴 곳은 여기뿐</span>이에요. 가장 위대한 신학 편지 속에 이름 없이 수고한 한 사람의 따뜻한 인사가 남아 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>눈에 잘 띄지 않는 자리에서 섬기는 사람들의 수고도 하나님이 기억하신다는 것을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>역사상 가장 중요한 편지를<br>배달한 여성, 뵈뵈</h2><div class="refs">로마서 16:1-2</div></div></div>
+    <div class="scene-body"><p>로마서 16장의 첫 이름은 <mark>뵈뵈</mark>예요. "겐그레아 교회의 일꾼인 우리 자매 뵈뵈를 너희에게 천거하노니"(16:1). 겐그레아는 고린도 옆 항구 도시예요.</p>
+        <p>고대에는 우체국이 없었어요. 편지는 믿을 만한 사람이 직접 들고 가야 했죠. 그리고 편지를 전하는 사람은 보통 그 편지를 <span class="hl">읽어 주고, 설명해 주는 역할</span>까지 했어요. 그러니까 로마 성도들이 로마서에 대해 처음 질문했을 때, 대답해 준 사람은 아마 뵈뵈였을 거예요.</p>
+        <p>바울은 그녀를 "일꾼"(<span class="heb" data-tip="디아코노스(diakonos) — 섬기는 자, 일꾼, 집사. 빌립보서 1:1, 디모데전서 3장의 '집사'와 같은 단어다.">디아코노스</span>)이라고 부르고, "여러 사람과 나의 보호자"가 되었다고 말해요. 그녀는 바울의 사역을 후원한 사람이기도 했어요. 역사상 가장 영향력 있는 편지가, <span class="hl">한 여성 일꾼의 손에 들려</span> 지중해를 건넜어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님의 말씀을 다른 사람에게 "전달하는" 일의 귀함을 생각하며, 나도 누군가에게 말씀을 전하는 사람이 됩니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>"그의 어머니는 곧 내 어머니"<br>— 십자가를 진 사람의 가족?</h2><div class="refs">로마서 16:13 · 마가복음 15:21</div></div></div>
+    <div class="scene-body"><p>로마서 16:13에서 바울은 이렇게 인사해요. <mark>"주 안에서 택하심을 입은 루포와 그의 어머니에게 문안하라 그의 어머니는 곧 내 어머니니라."</mark> 바울에게 어머니처럼 돌봐 준 분이 있었던 거예요.</p>
+        <p>그런데 이 이름이 다른 곳에도 나와요. 마가복음 15:21은 예수님의 십자가를 대신 진 사람을 이렇게 소개해요. <span class="hl">"알렉산더와 루포의 아버지인 구레네 사람 시몬."</span> 다른 복음서는 아들들 이름을 적지 않는데, 마가만 굳이 적었어요. 마가복음은 전통적으로 로마 성도들을 위해 쓴 복음서로 알려져 있어요. 즉 마가는 <mark>"여러분이 아는 그 루포 있죠? 그 아버지예요"</mark>라고 말하는 것일 수 있어요.</p>
+        <p>만약 같은 루포라면, 이야기는 이렇게 이어져요. 억지로 예수님의 십자가를 졌던 한 사람, 그 아들은 로마 교회의 택함받은 일꾼이 되었고, 그 아내는 바울의 어머니 같은 사람이 되었어요. <span class="hl">십자가를 진 하루가 온 가족의 인생을 바꾼 거예요.</span></p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 로마서의 루포와 마가복음의 루포가 같은 인물인지는 확실하지 않지만, 많은 주석가들이 그 가능성을 주목합니다.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>억지로 지게 된 것처럼 느껴지는 나의 십자가가, 하나님 안에서 우리 가족을 향한 은혜의 시작일 수 있음을 믿습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>지루한 이름 목록?<br>아니, 로마 사회의 단면도</h2><div class="refs">로마서 16:3-23</div></div></div>
+    <div class="scene-body"><p>로마서 16장은 이름만 줄줄이 나와서 건너뛰기 쉬운 장이에요. 그런데 자세히 보면 <mark>로마 사회의 모든 계층</mark>이 들어 있어요.</p>
+        <div class="wp">
+          <div><span class="pl">브리스가와 아굴라</span> — 바울을 위해 목숨까지 내놓은 부부. 아내 이름이 먼저 나올 때가 많아요(16:3).</div>
+          <div><span class="pl">아리스도불로의 권속</span> — 헤롯 대왕의 손자 가운데 같은 이름의 인물이 로마에 살았어요. 그 집안의 종들이 성도였을 가능성이 있어요(16:10).</div>
+          <div><span class="pl">나깃수의 가족</span> — 글라우디오 황제 때 막강한 권력을 가졌던 해방 노예 나르키수스의 집안 사람들로 보는 견해가 있어요(16:11).</div>
+          <div><span class="pl">에라스도</span> — "이 성의 재무관"(16:23). 1929년 고린도에서 "에라스투스가 자기 비용으로 이 길을 포장했다"는 비문이 발견됐어요.</div>
+        </div>
+        <p>이 목록에는 황실과 연결된 집안의 종들, 해방 노예, 부유한 관리, 여성 일꾼들, 유대인과 이방인이 섞여 있어요. 학자들은 이 가운데 <span class="hl">상당수가 당시 노예나 해방 노예에게 흔한 이름</span>이라고 봐요. 로마서 1–15장이 말하는 "차별이 없는 복음"이 16장에서 실제 사람들의 이름으로 살아 있는 거예요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 아리스도불로, 나깃수, 에라스도의 신원 연결은 가능성 있는 견해이며 확정된 사실은 아닙니다.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>우리 교회 명단의 이름 하나하나가, 하나님이 차별 없이 부르신 복음의 증거라는 것을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>한 편지가 바꾼<br>세 사람의 인생</h2><div class="refs">로마서 13:13-14 · 1:17</div></div></div>
+    <div class="scene-body"><div class="steps">
+          <div><b>386년</b><span class="hl">어거스틴</span> — 밀라노의 정원에서 "집어서 읽어라"라는 아이들 노랫소리를 듣고 성경을 폈는데, 눈에 들어온 구절이 로마서 13:13-14였어요. 방탕하던 그의 인생이 그 자리에서 바뀌었어요.</div>
+          <div><b>1515년경</b><span class="hl">마르틴 루터</span> — 로마서를 강의하며 1:17 "의인은 믿음으로 말미암아 살리라"를 붙잡았어요. 그는 "천국 문이 열리는 것 같았다"고 고백했고, 이것이 종교개혁으로 이어졌어요.</div>
+          <div><b>1738년</b><span class="hl">존 웨슬리</span> — 런던 올더스게이트 거리의 한 모임에서, 누군가 루터가 쓴 로마서 서문을 읽는 것을 듣다가 "마음이 이상하게 뜨거워지는" 경험을 했어요. 이것이 감리교 부흥의 출발점이 됐어요.</div>
+        </div>
+        <p>재밌는 건 이 세 사건이 <mark>한 줄로 이어져 있다</mark>는 거예요. 루터는 어거스틴을 깊이 존경한 수도사였고, 웨슬리는 루터가 쓴 로마서 서문을 듣다가 회심했어요. 로마서라는 한 편지가 천 년이 넘는 시간을 건너, 사람에서 사람으로 불씨를 옮긴 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 내가 읽는 로마서 한 구절이, 내 인생과 다른 누군가의 인생을 바꾸는 불씨가 될 수 있음을 기대합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>"없다"로 시작해서<br>"없다"로 끝나는 장</h2><div class="refs">로마서 8:1 · 8:39</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">로마서 8장의 첫 절</div>"그러므로 이제 그리스도 예수 안에 있는 자에게는 결코 정죄함이 없나니"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">로마서 8장의 마지막 절</div>"우리 주 그리스도 예수 안에 있는 하나님의 사랑에서 끊을 수 없으리라"</div></div><p>로마서 8장은 많은 사람들이 성경에서 가장 사랑하는 장으로 꼽아요. 그런데 이 장의 처음과 끝을 나란히 놓으면 재밌는 게 보여요. <mark>"없다"로 시작해서 "없다"로 끝나요.</mark></p>
+        <p>처음은 <span class="hl">정죄함이 없다</span>(8:1). 과거의 죄가 더 이상 나를 심판할 수 없다는 선언이에요. 끝은 <span class="hl">끊을 수 없다</span>(8:39). 앞으로 무슨 일이 있어도 하나님의 사랑에서 나를 떼어낼 수 없다는 선언이에요. 그 사이에는 사망도, 생명도, 천사도, 권세자도, 현재 일도, 장래 일도, 높음도, 깊음도 있어요. 무엇 하나 빠뜨리지 않고요.</p>
+        <p>그리고 두 "없다"를 붙잡고 있는 공통의 말이 있어요. <mark>"그리스도 예수 안에"</mark>. 로마서 8장은 그리스도 안에 있는 사람에게 <span class="hl">과거의 정죄도 없고, 미래의 끊어짐도 없다</span>고 말해요. 그래서 이 장 한가운데서 바울은 이렇게 외칠 수 있었어요. "하나님이 우리를 위하시면 누가 우리를 대적하리요"(8:31).</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 정죄하는 목소리 앞에서 8:1을, 나를 흔드는 두려움 앞에서 8:39를 붙잡습니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">가장 위대한 신학은<br>사람들의 이름으로 끝난다</div>
+    <p>로마서는 복음을 가장 깊이 설명한 편지이면서, 동시에 수많은 사람의 이름이 담긴 편지예요. 받아 적은 더디오, 들고 간 뵈뵈, 어머니 같던 루포의 어머니, 이름이 불린 수십 명의 성도들.</p><p>복음은 책 속의 이론이 아니라, 이 사람들 안에서 살아 움직였어요. 그리고 오늘 우리의 이름도 그 목록에 이어지고 있어요.</p>
+    <div class="q">"그러므로 이제 그리스도 예수 안에 있는 자에게는<br>결코 정죄함이 없나니" (8:1)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

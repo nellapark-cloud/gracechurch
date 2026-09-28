@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에베소서, 앉고 걷고 서는 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="숨 쉴 틈 없는 찬양으로 시작해 전신갑주로 끝나는 감옥 속 편지">
+<meta property="og:title" content="에베소서, 앉고 걷고 서는 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 06</div>
+  <h1>에베소서,<br><em>앉고</em> 걷고 서는 책</h1>
+  <p class="sub">숨 쉴 틈 없는 찬양으로 시작해<br>전신갑주로 끝나는 감옥 속 편지</p>
+  <div class="ref">에베소서 1–6장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>에베소서는 바울이 <mark>감옥에서 쓴 편지</mark>예요. 손목에는 쇠사슬이 채워져 있고, 곁에는 로마 병사가 지키고 있었을 거예요. 그런데 이 편지는 불평이 아니라 찬양으로 시작해요. 그것도 숨 쉴 틈 없이요.</p>
+    <p>교회가 무엇인지, 그리스도 안에서 우리가 누구인지를 가장 높은 곳에서 바라보게 하는 책이에요. 그리고 그 높은 이야기 속에 에베소라는 도시의 흔적과 재밌는 연결고리가 숨어 있어요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>에베소서는 어떤 책일까?</h2>
+    <p>하나님이 하신 일 → 우리가 살아갈 삶</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>바울은 에베소에서 <mark>3년 가까이</mark> 머물며 교회를 세웠어요(행 20:31). 그리고 몇 년 뒤, 로마 감옥에서(주후 60년경) 이 편지를 썼어요. 스스로를 "그리스도 예수의 일로 갇힌 자"(3:1), "쇠사슬에 매인 사신"(6:20)이라고 부르면서요.</p>
+    <div class="debate sans"><div><b>앞부분 1–3장</b>하나님이 그리스도 안에서 우리를 위해 하신 일. "~하셨다"가 중심이에요.</div><div><b>뒷부분 4–6장</b>그러므로 우리가 살아갈 삶. "~하라"가 중심이에요.</div></div>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">에베소서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">교리가 먼저, 명령은 나중</div><div class="mini-b">1–3장에는 명령이 거의 없어요. 하나님이 하신 일을 충분히 누린 뒤에야 "그러므로"(4:1)로 삶의 이야기가 시작돼요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">교회를 그리는 세 가지 그림</div><div class="mini-b">교회는 그리스도의 몸(1:23), 하나님의 성전(2:21), 그리스도의 신부(5:25-32)예요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">한 새 사람</div><div class="mini-b">유대인과 이방인 사이의 막힌 담이 허물어지고, 둘이 하나의 새 사람이 되었다고 말해요(2:14-15).</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">가정과 일터</div><div class="mini-b">남편과 아내, 부모와 자녀, 종과 상전까지, 복음이 가장 가까운 관계를 어떻게 바꾸는지 다뤄요(5:21–6:9).</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">하나님의 전신갑주</div><div class="mini-b">편지는 영적 전쟁을 위한 갑옷으로 끝나요(6:10-20).</div></div></div></div>
+
+  <div class="target"><p>에베소서의 순서는 복음의 순서예요. <span class="hl">먼저 은혜로 받고, 그다음에 그 은혜로 살아가요.</span> 우리가 무엇을 해야 하는지보다, 하나님이 이미 무엇을 하셨는지를 먼저 알 때 순종은 짐이 아니라 기쁨이 돼요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>원문 속 숨은 구조, 그리고 에베소라는 도시의 흔적</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>마침표 없는 찬양</button><button class="chip" onclick="goTo('s2')"><b>2</b>앉고 걷고 서라</button><button class="chip" onclick="goTo('s3')"><b>3</b>에베소가 없는 에베소서</button><button class="chip" onclick="goTo('s4')"><b>4</b>아데미 신전 옆의 성전</button><button class="chip" onclick="goTo('s5')"><b>5</b>막힌 담</button><button class="chip" onclick="goTo('s6')"><b>6</b>하나님의 시</button><button class="chip" onclick="goTo('s7')"><b>7</b>사슬에 매인 대사</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>마침표 없이 이어지는<br>202단어짜리 한 문장</h2><div class="refs">에베소서 1:3-14</div></div></div>
+    <div class="scene-body"><p>에베소서 1:3-14는 우리말 성경에서는 여러 문장으로 나뉘어 있지만, 헬라어 원문으로는 <mark>단 하나의 문장</mark>이에요. 단어 수로 약 202개. 신약에서 가장 긴 문장 가운데 하나예요.</p>
+        <p>바울은 감옥에서 하나님이 하신 일을 떠올리다가 <span class="hl">마침표를 찍을 틈도 없이</span> 찬양을 쏟아낸 거예요. 우리를 택하시고, 예정하시고, 속량하시고, 죄를 사하시고, 기업이 되게 하시고, 성령으로 인치시고… 멈출 수가 없었던 거죠. 😄</p>
+        <p>그리고 이 긴 문장 안에 같은 후렴이 세 번 나와요. <span class="hl">"그의 영광을 찬송하게"</span>(1:6, 12, 14). 첫 번째는 성부의 택하심 뒤에, 두 번째는 성자의 구속 뒤에, 세 번째는 성령의 인치심 뒤에요. 한 문장 안에 삼위 하나님의 찬양이 차례로 들어 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님이 나에게 하신 일을 떠올리며, 마침표 없이 이어지는 감사 기도를 드려 봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>앉고, 걷고, 서라<br>— 세 동사로 읽는 에베소서</h2><div class="refs">에베소서 2:6 · 4:1 · 6:11-14</div></div></div>
+    <div class="scene-body"><div class="steps">
+          <div><b>앉으라</b>"함께 하늘에 앉히시니"(2:6) — 그리스도 안에서 이미 얻은 자리</div>
+          <div><b>걸으라</b>"부르심에 합당하게 행하여"(4:1) — 그 자리에서 시작되는 삶</div>
+          <div class="last">서라 — "마귀의 간계를 능히 대적하기 위하여 … 서라"(6:11-14) — 끝까지 버티는 싸움</div>
+        </div>
+        <p>중국의 믿음의 지도자 <span class="hl">워치만 니</span>는 에베소서를 이 세 동사로 정리했어요. 그의 책 제목도 『앉으라 행하라 서라』예요. 우리말 성경의 "행하다"는 원래 <mark>"걷다"</mark>라는 뜻이에요. 에베소서에는 이 단어가 여러 번 나와요.</p>
+        <p>순서가 중요해요. 우리는 보통 열심히 걸어야(노력해야) 좋은 자리에 앉을 수 있다고 생각하죠. 그런데 에베소서는 <span class="hl">먼저 앉히시고, 그다음에 걷게 하세요.</span> 은혜로 받은 자리에서 출발하는 삶, 그게 복음의 순서예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 나는 "앉을 자리를 얻으려고" 걷고 있는지, "이미 앉혀 주신 자리에서" 걷고 있는지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>가장 오래된 사본에는<br>"에베소"가 없다?</h2><div class="refs">에베소서 1:1 · 6:21-22 · 사도행전 20:31</div></div></div>
+    <div class="scene-body"><p>에베소서 1:1은 "에베소에 있는 성도들"에게 편지를 보낸다고 말해요. 그런데 신기하게도 <mark>가장 오래된 사본 몇 개에는 "에베소에"라는 말이 빠져 있어요.</mark></p>
+        <p>이상한 점이 하나 더 있어요. 바울은 에베소에서 3년 가까이 살며 밤낮 눈물로 성도들을 가르쳤어요(행 20:31). 그런데 이 편지에는 <span class="hl">개인적인 인사가 거의 없어요.</span> 로마서처럼 이름을 줄줄이 부르지도 않고, 편지를 전하는 두기고 한 사람만 언급해요(6:21).</p>
+        <p>그래서 많은 학자들은 에베소서가 <span class="hl">에베소를 중심으로 아시아 여러 교회에 돌려 읽도록 쓴 회람 편지</span>였을 가능성을 이야기해요. 골로새서 4:16의 "라오디게아로부터 오는 편지"가 바로 이 편지라는 견해도 있어요. 그렇다면 에베소서는 처음부터 한 교회가 아니라 <mark>모든 교회를 위한 편지</mark>였던 셈이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 사본 차이와 회람 서신 견해는 학자들 사이의 논의이며, 전통적으로는 에베소 교회에 보낸 편지로 읽어 왔습니다.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>이 편지가 2천 년을 돌고 돌아 오늘 우리 교회에도 도착한 "회람 편지"라고 생각하며 읽어 봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>세계 7대 불가사의 옆에서<br>"너희가 성전이다"</h2><div class="refs">에베소서 2:19-22 · 사도행전 19:23-41</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">에베소의 자랑</div>아데미(아르테미스) 신전 — 대리석 기둥 127개, 고대 세계 7대 불가사의</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">바울의 선언</div>"너희도 성령 안에서 하나님이 거하실 처소가 되기 위하여 함께 지어져 가느니라"(2:22)</div></div><p>에베소는 <mark>아데미 신전</mark>으로 유명한 도시였어요. 파르테논 신전보다 몇 배나 큰, 고대 세계 7대 불가사의 가운데 하나였죠. 사도행전 19장에서는 은장색 데메드리오가 신전 모형 장사가 안 된다며 소동을 일으키고, 사람들이 극장에 모여 <span class="hl">"크다 에베소 사람의 아데미여"를 두 시간 동안</span> 외쳐요.</p>
+        <p>그런 도시의 성도들에게 바울은 말해요. 너희는 사도들과 선지자들의 터 위에, 그리스도를 모퉁잇돌로 삼아 <span class="hl">함께 지어져 가는 성전</span>이라고요(2:20-22). 대리석으로 지은 세계 최고의 신전 바로 옆에서, 하나님은 <mark>사람들로 지어지는 성전</mark>을 세우고 계셨어요.</p>
+        <p>에베소는 마술로도 유명해서, 신비한 주문을 "에베소 문자"라고 부를 정도였어요. 사도행전 19:19에서 마술책을 불태운 값이 은 오만이었다는 것도 그 배경이에요. 그래서 바울이 에베소서에서 "모든 통치와 권세와 능력과 주권" 위에 계신 그리스도를 강조하는 건(1:21), 이 도시 사람들에게 아주 구체적인 위로였어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>눈에 보이는 화려한 건물보다, 서로 연결되어 함께 지어져 가는 "사람의 성전"을 소중히 여깁니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>실제로 존재했던 "막힌 담"<br>— 그리고 에베소 사람 드로비모</h2><div class="refs">에베소서 2:14 · 사도행전 21:27-29</div></div></div>
+    <div class="scene-body"><p>에베소서 2:14은 그리스도께서 유대인과 이방인 사이의 <mark>"중간에 막힌 담"</mark>을 허무셨다고 말해요. 이건 단순한 비유가 아니었어요. 예루살렘 성전에는 실제로 이방인이 더 이상 들어갈 수 없는 경계 벽이 있었어요.</p>
+        <p>1871년, 그 벽에 붙어 있던 <span class="hl">경고 비석</span>이 발견됐어요. 헬라어로 이렇게 새겨져 있었죠. "이방인은 누구든지 성소 주위의 난간과 경계 안으로 들어오지 말라. 붙잡히는 자는 죽음을 자초하는 것이다." 이 비석은 지금 터키 이스탄불 고고학 박물관에 있어요.</p>
+        <p>그런데 더 놀라운 이야기가 있어요. 바울이 예루살렘에서 체포된 이유가 바로 이 담 때문이었어요. 사람들이 바울이 이방인을 성전 안으로 데려갔다고 오해했는데, 그 이방인이 누구였냐면 <mark>"에베소 사람 드로비모"</mark>(행 21:29)였어요. 바울은 에베소 사람 때문에 막힌 담 앞에서 체포되었고, 그 감옥에서 에베소 사람들에게 <span class="hl">"그 담은 이미 허물어졌다"</span>고 편지를 쓴 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나와 다른 사람 사이에 내가 아직 세워 두고 있는 "막힌 담"은 없는지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>우리는 하나님이 쓰신<br>"시(詩)"다</h2><div class="refs">에베소서 2:8-10</div></div></div>
+    <div class="scene-body"><p>에베소서 2:8-9은 은혜로 말미암아 믿음으로 구원받았다는, 복음의 핵심을 말해요. 그리고 바로 이어지는 10절. <mark>"우리는 그가 만드신 바라."</mark></p>
+        <p>여기서 "만드신 바"는 헬라어로 <span class="heb" data-tip="포이에마(poiēma) — 만들어진 것, 작품. 영어 poem(시)의 어원이다. 신약에서는 로마서 1:20과 에베소서 2:10에만 나온다.">포이에마</span>예요. 영어 단어 <span class="hl">poem(시)</span>이 바로 이 말에서 나왔어요. 신약 전체에서 딱 두 번 나오는데, 한 번은 하나님이 만드신 온 세상(롬 1:20), 한 번은 바로 우리예요.</p>
+        <p>하나님은 세상을 지으신 것처럼, 그리스도 안에서 우리를 <mark>새로 지으신 작품</mark>으로 보세요. 그리고 그 작품에는 목적이 있어요. "선한 일을 위하여 지으심을 받은 자니… 그 가운데서 행하게(걷게) 하려 하심이니라." 구원은 행위로 받는 게 아니지만, 구원받은 사람은 선한 일 속을 걷게 돼요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나는 실수투성이 초안이 아니라, 하나님이 공들여 쓰고 계신 시라는 것을 믿고 오늘을 살아갑니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>병사 옆에서 쓴 갑옷 이야기,<br>사슬에 매인 대사</h2><div class="refs">에베소서 6:10-20 · 사도행전 28:16, 30</div></div></div>
+    <div class="scene-body"><p>바울은 로마에서 <span class="hl">"자기를 지키는 한 군인과 함께"</span> 지냈어요(행 28:16). 아마 매일 로마 병사의 투구, 흉배, 허리띠, 방패, 칼, 신발을 눈앞에서 봤을 거예요. 그리고 그 모습을 보며 <mark>하나님의 전신갑주</mark>를 썼어요.</p>
+        <div class="steps">
+          <div><b>허리띠</b>진리 · <b>흉배</b>의 · <b>신발</b>평안의 복음</div>
+          <div><b>방패</b>믿음 · <b>투구</b>구원</div>
+          <div class="last">성령의 검, 곧 하나님의 말씀 — 갑주 가운데 유일한 공격 무기</div>
+        </div>
+        <p>그리고 바울은 자신을 이렇게 불러요. <span class="hl">"내가 이 일을 위하여 쇠사슬에 매인 사신이 된 것은"</span>(6:20). "사신"은 나라를 대표하는 대사예요. 고대에도 대사는 함부로 가둘 수 없는 존재였는데, 하나님 나라의 대사는 사슬에 매여 있었어요. 세상에서 가장 역설적인 직함이에요.</p>
+        <p>그런데 바울이 기도 부탁한 것은 풀려나는 게 아니었어요. <mark>"담대히 복음의 비밀을 알리게 하옵소서"</mark>(6:19). 사슬에 매인 대사의 소원은 자유가 아니라 복음이었어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 처한 제약과 "사슬" 속에서도, 나는 하나님 나라의 대사라는 사실을 기억합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">먼저 앉히시고,<br>그다음에 걷게 하신다</div>
+    <p>에베소서는 감옥에서 시작된 가장 높은 찬양이에요. 우리가 무엇을 하기 전에, 하나님이 먼저 우리를 택하시고 구원하시고 하늘에 앉히셨어요. 그리고 그 은혜의 자리에서 우리는 걷고, 싸우고, 서요.</p><p>바울은 이 편지 한가운데서 이렇게 기도했어요.</p>
+    <div class="q">"우리 가운데서 역사하시는 능력대로<br>우리가 구하거나 생각하는 모든 것에<br>더 넘치도록 능히 하실 이에게" (3:20)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
