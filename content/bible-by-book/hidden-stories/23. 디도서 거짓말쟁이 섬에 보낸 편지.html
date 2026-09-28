@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디도서, 거짓말쟁이 섬에 보낸 편지 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="거짓말쟁이로 소문난 그레데 섬에서 교회를 세우던 디도에게 보낸 편지에 숨은 이야기">
+<meta property="og:title" content="디도서, 거짓말쟁이 섬에 보낸 편지">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 23</div>
+  <h1>디도서,<br><em>거짓말쟁이</em> 섬에<br>보낸 편지</h1>
+  <p class="sub">"그레데인은 항상 거짓말쟁이"라던 섬에<br>거짓이 없으신 하나님을 전하다</p>
+  <div class="ref">디도서 1–3장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>디도서는 세 장짜리 짧은 편지예요. 받는 사람은 디도, 사역지는 지중해의 큰 섬 그레데예요. 그런데 이 편지에 사역지 사람들에 대한 평가가 좀 세게 나와요. "그레데인들은 항상 거짓말쟁이며 악한 짐승이며 배만 위하는 게으름뱅이라"(1:12). 😄 목회지 소개가 이 정도면, 디도는 편지를 받고 한숨부터 쉬었을지도 몰라요.</p><p>그런데 그 섬에 보낸 편지는 "거짓이 없으신 하나님"(1:2)으로 시작해요. 그리고 짧은 편지 안에 이야기들이 숨어 있어요. 사도행전에 한 번도 이름이 안 나오는 해결사 디도, 거짓말쟁이의 역설, 번갈아 불리는 두 "구주", 복음을 "화장"시키는 종들, 선생님이 된 은혜, "사람 사랑"이라는 단어, 그리고 승리의 도시에서 보낼 겨울까지요. 그 중심에 한 분이 계세요. <span class="hl">우리의 크신 하나님과 구주 예수 그리스도</span>예요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>디도서는 어떤 책일까?</h2>
+    <p>백 개의 도시를 가진 섬에서 교회를 세우는 목회자에게</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>바울은 디도를 그레데에 남겨 두었어요. "남은 일을 정리하고 내가 명한 대로 각 성에 장로들을 세우게 하려"(1:5)는 거였어요. 그레데 교회들에는 아직 지도자가 제대로 세워지지 않았고, 할례파 사람들이 더러운 이득을 위해 가르치며 가정들을 무너뜨리고 있었어요(1:10-11). 디도는 헬라인으로, 할례를 받지 않은 채 바울과 함께 예루살렘에 갔던 사람이에요(갈 2:1-3). 바울은 그를 "같은 믿음을 따라 나의 참 아들 된 디도"(1:4)라고 불러요. 전통적으로는 디모데전서와 비슷한 때, 주후 62–64년 무렵에 쓴 편지로 봐요.</p>
+    <div class="debate sans"><div><b>백 개의 도시를 가진 섬</b>그레데는 지중해에서 다섯 번째로 큰 섬이에요. 옛 시인 호메로스는 그레데를 "백 개의 도시를 가진 섬"이라고 노래했어요. 디도가 "각 성에" 장로를 세우는 일이 얼마나 큰일이었는지 짐작이 가요.</div><div><b>바울과 그레데의 인연</b>오순절 성령 강림 때 그 자리에 "그레데인"도 있었어요(행 2:11). 바울은 로마로 끌려가는 길에 그레데 남쪽의 미항에 들렀다가, 겨울을 날 항구로 옮기려다 큰 풍랑을 만났어요(행 27:8-14).</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 바울이 그레데에서 언제 디도와 함께 사역했는지는 사도행전에 나오지 않아요. 첫 번째 로마 감옥에서 풀려난 뒤의 일로 보는 것이 전통적인 견해예요. 저자에 대한 학자들의 논의는 디모데전서와 같아요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">디도서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">선한 일</div><div class="mini-b">짧은 세 장에 "선한 일"이 헬라어로 여섯 번 나와요. 믿음은 삶으로 드러나야 한다는 거예요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">세대별 권면</div><div class="mini-b">늙은 남자, 늙은 여자, 젊은 여자, 젊은 남자, 그리고 종까지(2:1-10). 교회 안의 누구도 빠지지 않아요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">두 번의 나타나심</div><div class="mini-b">은혜는 이미 "나타났고"(2:11), 영광은 앞으로 "나타날" 거예요(2:13). 그 사이를 사는 것이 교회예요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">중생의 씻음</div><div class="mini-b">"우리가 행한 바 의로운 행위로 말미암지 아니하고 오직 그의 긍휼하심을 따라"(3:5) 구원하셨어요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">다툼을 피하라</div><div class="mini-b">족보 이야기와 율법에 대한 다툼은 "무익한 것이요 헛된 것"(3:9). 논쟁보다 복음이에요.</div></div></div></div>
+
+  <div class="target"><p>디도서의 중심에는 이 말씀이 있어요. <span class="hl">"모든 사람에게 구원을 주시는 하나님의 은혜가 나타나"</span>(2:11). 거짓말쟁이로 소문난 섬에도, 게으르다고 손가락질받던 사람들에게도 은혜는 나타났어요. 그리고 그 은혜는 사람을 그대로 두지 않아요. 예수님이 자신을 주신 것은 우리를 <mark>"선한 일을 열심히 하는 자기 백성이 되게 하려 하심이라"</mark>(2:14).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>사도행전에 없는 해결사부터 승리의 도시에서 보낼 겨울까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>숨은 해결사 디도</button><button class="chip" onclick="goTo('s2')"><b>2</b>거짓말쟁이의 역설</button><button class="chip" onclick="goTo('s3')"><b>3</b>두 구주</button><button class="chip" onclick="goTo('s4')"><b>4</b>복음의 화장</button><button class="chip" onclick="goTo('s5')"><b>5</b>선생이 된 은혜</button><button class="chip" onclick="goTo('s6')"><b>6</b>사람 사랑</button><button class="chip" onclick="goTo('s7')"><b>7</b>니고볼리의 겨울</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>사도행전에 이름 한 번 안 나오는<br>바울의 해결사</h2><div class="refs">갈라디아서 2:1-3 · 고린도후서 2:13 · 7:6 · 8:6 · 디모데후서 4:10</div></div></div>
+    <div class="scene-body"><p>디도는 바울이 가장 믿고 맡긴 동역자 가운데 한 사람이었어요. 그런데 이상하게도 사도행전에는 디도의 이름이 한 번도 나오지 않아요. 디모데, 실라, 바나바, 아볼로, 브리스길라까지 다 나오는데 말이에요. 😄 디도는 바울의 편지 속에서만 활약하는 숨은 인물이에요.</p><p>편지 속 디도는 늘 어려운 일에 보내져요. 먼저 예루살렘에서 할례 문제로 논쟁이 붙었을 때, 할례받지 않은 이방인 신자로 바울과 함께 갔어요(갈 2:3). 그다음엔 바울과 사이가 틀어진 고린도 교회에 보내졌어요. 바울은 디도를 기다리다 드로아에서 마음이 편하지 못해 마게도냐로 건너갔고(고후 2:13), 디도가 좋은 소식을 들고 오자 "낙심한 자들을 위로하시는 하나님이 디도가 옴으로 우리를 위로하셨으니"(고후 7:6)라고 기뻐했어요. 고린도의 연보를 마무리하는 일도 디도가 맡았어요(고후 8:6).</p><p>그리고 이번엔 "그레데인은 항상 거짓말쟁이"라는 섬이에요. 그 뒤에는 달마디아, 오늘날 크로아티아 쪽 아드리아해 연안으로 갔어요(딤후 4:10). 가장 힘든 곳에 보내지는 사람, 그런데 가는 곳마다 교회가 세워지고 화해가 일어나는 사람이었어요. 이름이 크게 드러나지 않아도, 하나님은 디도 같은 사람을 통해 <mark>교회를 세우세요.</mark></p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 사도행전에 디도의 이름이 없는 이유는 알 수 없어요. 디도가 누가의 형제여서 누가가 일부러 이름을 뺐다는 견해도 있지만 추측이에요. 디도가 그레데 교회의 첫 감독이 되었다는 것은 교회사가 유세비우스가 전하는 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>이름이 드러나지 않는 자리에서도 주님의 교회를 세우는 일에 쓰임받는 것을 기쁨으로 여깁니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>거짓말쟁이 섬에<br>거짓이 없으신 하나님</h2><div class="refs">디도서 1:1-3 · 1:12-13</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">그레데 사람의 말</div>"그레데인들은 <b>항상 거짓말쟁이</b>"(1:12)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">디도서의 첫 문장</div>"<b>거짓이 없으신 하나님</b>이 영원 전부터 약속하신"(1:2)</div></div><p>그레데 사람들의 거짓말 평판은 꽤 유명했어요. 헬라어에는 "그레데 사람처럼 굴다"라는 뜻의 <span class="heb" data-tip="크레티조(krētizō) — &#x27;그레데 사람처럼 하다&#x27;. 그리스 사람들 사이에서 &#x27;거짓말하다, 속이다&#x27;라는 뜻으로 쓰였다.">크레티조</span>라는 동사가 있었는데, 뜻이 "거짓말하다"였어요. 😄 섬 이름이 거짓말의 대명사가 된 거예요.</p><p>바울이 인용한 "그레데인들은 항상 거짓말쟁이"라는 말은 그레데 출신 시인 에피메니데스의 말로 전해져요. 훗날 헬라 시인 칼리마코스도 제우스에게 바친 찬가에서 같은 말을 썼는데, 그 이유가 재밌어요. 그레데 사람들이 "제우스의 무덤이 우리 섬에 있다"고 했거든요. 신이 죽었다니, 헬라 사람들이 보기엔 거짓말이었던 거예요. 그레데 사람들은 죽은 신의 무덤을 자랑했지만, 복음은 죽었다가 다시 살아나신 분의 <span class="hl">빈 무덤</span>을 전해요.</p><p>여기 재밌는 말놀이도 있어요. 그레데 사람이 "그레데인은 항상 거짓말쟁이"라고 했다면, 그 말은 참말일까요, 거짓말일까요? 이게 그 유명한 "거짓말쟁이의 역설"이에요. 😄 바울은 이 골치 아픈 논리 문제를 한 줄로 정리해 버려요. "이 증언이 참되도다"(1:13).</p><p>그런데 바울은 이 편지를 그레데 사람들 험담으로 시작하지 않았어요. 첫 문장에 이미 이렇게 써 놓았어요. "이 영생은 거짓이 없으신 하나님이 영원 전부터 약속하신 것인데"(1:2). 사람은 거짓말해도 하나님은 거짓말하실 수 없는 분이에요. 거짓말쟁이의 섬에 필요한 건 더 정직한 사람이기 전에, <mark>거짓이 없으신 하나님의 약속</mark>이었어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 이 말을 에피메니데스의 것으로 보는 것은 2세기 말 교부 클레멘스 등의 기록에 기댄 전승이에요. 주전 3세기 시인 칼리마코스의 찬가에는 같은 구절이 실제로 나와요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>사람의 말은 흔들려도, 거짓이 없으신 하나님의 약속 위에 내 소망을 둡니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>번갈아 불리는 두 이름,<br>"구주 하나님"과 "구주 예수"</h2><div class="refs">디도서 1:3-4 · 2:10-13 · 3:4-6</div></div></div>
+    <div class="scene-body"><div class="steps"><div><b>1장</b>"우리 구주 하나님"(1:3) → "그리스도 예수 우리 구주"(1:4)</div><div><b>2장</b>"우리 구주 하나님"(2:10) → "구주 예수 그리스도"(2:13)</div><div class="last"><b>3장</b>"우리 구주 하나님"(3:4) → "우리 구주 예수 그리스도"(3:6)</div></div><p>디도서에는 "구주"라는 말이 여섯 번 나와요. 그런데 규칙이 있어요. 장마다 먼저 "우리 구주 하나님"이 나오고, 곧이어 "구주 예수 그리스도"가 나와요. 세 장에 걸쳐 세 번, 딱 짝을 맞춰서요. 😄 우연이라고 하기엔 너무 가지런해요.</p><p>바울이 말하고 싶은 건 분명해요. 우리를 구원하시는 분은 하나님이시고, 그 구원은 예수 그리스도를 통해 왔어요. 아버지와 아들이 한 구원을 이루세요. 그리고 2:13은 한 걸음 더 나가요. "우리의 크신 하나님과 구주 예수 그리스도의 영광이 나타나심을". 헬라어 문법으로 보면 이 구절은 "우리의 크신 하나님이시며 구주이신 예수 그리스도"로 읽을 수 있어요. 예수님을 "크신 하나님"이라고 부르는 거예요.</p><p>그레데는 제우스가 태어났다는 전설이 있는 섬이었어요. 신들의 이야기가 넘쳐 나던 곳이에요. 로마 황제들도 "구원자"라는 칭호로 불리던 시대였고요. 그런 곳에 바울은 누가 참 구주이신지 또박또박 새겨 넣어요. 진짜 구주는 한 분, <mark>우리를 대신하여 자신을 주신 예수 그리스도</mark>세요(2:14).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 2:13을 "크신 하나님과 구주 예수 그리스도" 두 분으로 읽을지, "크신 하나님이시며 구주이신 예수 그리스도" 한 분으로 읽을지에 대해 학자들 사이에 논의가 있어요. 많은 학자와 번역본이 한 분으로 읽어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 구원하신 분이 오직 하나님이시며, 그 구원이 크신 하나님이신 예수 그리스도를 통해 왔음을 고백합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>종들이 복음을<br>"화장"시키다</h2><div class="refs">디도서 2:9-10</div></div></div>
+    <div class="scene-body"><p>2장에서 바울은 나이와 처지에 따라 한 사람씩 권면해요. 마지막 차례는 종들이에요. 주인에게 순종하고, 말대꾸하지 말고, 훔치지 말라고요. 그리고 그 이유를 이렇게 말해요. "이는 범사에 우리 구주 하나님의 교훈을 <span class="heb" data-tip="코스메오(kosmeō) — 꾸미다, 단장하다, 질서 있게 정돈하다. 영어 cosmetic(화장품)이 이 말에서 나왔다.">빛나게</span> 하려 함이라"(2:10).</p><p>"빛나게 하다"는 코스메오라는 단어예요. 영어 "코스메틱", 곧 화장품이라는 말이 여기서 나왔어요. 😄 그러니까 바울은 종들이 복음을 "화장시킨다"고 말하는 거예요. 결혼식 날 신부를 단장하듯, 복음을 아름답게 꾸며서 사람들 앞에 내보이는 거죠.</p><p>그 시대에 종은 사회에서 가장 낮은 사람이었어요. 자기 목소리도, 재산도 거의 없었어요. 그런데 바울은 바로 그들에게 복음을 빛나게 할 힘이 있다고 해요. 설교를 잘해서가 아니라 정직하고 신실하게 사는 것으로요. 주인이 "이 사람은 예수 믿고 나서 달라졌다"고 말할 때, 복음은 가장 아름답게 보여요. 복음의 아름다움은 강단에서만이 아니라 <mark>부엌과 일터에서</mark> 드러나요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 내가 선 일터와 가정에서 정직하고 신실하게 살아, 우리 구주 하나님의 복음을 빛나게 합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>선생님이 되어<br>우리를 가르치는 은혜</h2><div class="refs">디도서 2:11-14</div></div></div>
+    <div class="scene-body"><p>"모든 사람에게 구원을 주시는 하나님의 은혜가 나타나 우리를 <span class="heb" data-tip="파이듀오(paideuō) — 아이(파이스)를 기르다, 가르치고 훈련하다. 영어 pedagogy(교육학)가 같은 뿌리에서 나왔다.">양육하시되</span>"(2:11-12). 여기 "양육하다"는 원래 아이를 기르고 가르친다는 말이에요. 영어 "페다고지(교육학)"가 같은 뿌리예요. 은혜가 선생님이 되어 우리를 가르친다는 거예요.</p><p>보통 우리는 은혜를 "용서"로만 생각해요. 잘못해도 봐주시는 것이요. 😄 그런데 바울은 은혜가 할 일이 더 남아 있다고 해요. 은혜는 우리를 앉혀 놓고 가르쳐요. 무엇을 버려야 하는지("경건하지 않은 것과 이 세상 정욕을 다 버리고"), 어떻게 살아야 하는지("신중함과 의로움과 경건함으로 이 세상에 살고")요. 율법이 "해라, 하지 마라"로 가르친다면, 은혜는 먼저 사랑받게 하고 그 사랑으로 살게 해요.</p><p>그리고 이 수업에는 시간표가 있어요. 은혜는 이미 "나타났고"(2:11), 영광은 앞으로 "나타날"(2:13) 거예요. 예수님이 처음 오신 날과 다시 오실 날 사이, 거기가 우리가 수업을 받는 교실이에요. 그 수업의 목표도 분명해요. 예수님이 우리를 대신하여 자신을 주신 것은 "선한 일을 열심히 하는 자기 백성이 되게 하려 하심이라"(2:14). 은혜는 우리를 <mark>예수님을 닮은 사람</mark>으로 길러 내요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>은혜를 용서로만 받지 않고, 날마다 나를 가르치고 길러 내는 선생님으로 모십니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>"사람 사랑"이라는 단어와<br>중생의 씻음</h2><div class="refs">디도서 3:3-7 · 사도행전 28:2 · 마태복음 19:28</div></div></div>
+    <div class="scene-body"><p>3장에서 바울은 먼저 우리의 옛 모습을 솔직하게 말해요. "우리도 전에는 어리석은 자요 순종하지 아니한 자요 속은 자요…"(3:3). 😄 그레데 사람만 문제가 아니었어요. 바울도, 디도도, 우리도 다 그랬어요. 그리고 반전이 와요. "우리 구주 하나님의 자비와 <span class="heb" data-tip="필란트로피아(philanthrōpia) — 사람(안트로포스)을 사랑함(필리아). 영어 philanthropy(자선, 박애)가 여기서 나왔다. 신약에서 사도행전 28:2와 디도서 3:4 두 곳에 나온다.">사람 사랑하심</span>을 나타내실 때에"(3:4).</p><p>"사람 사랑"은 필란트로피아라는 단어예요. 영어 "필랜스로피", 곧 자선이나 박애라는 말이 여기서 나왔어요. 이 단어는 신약에 딱 두 번 나오는데, 다른 한 번은 사도행전 28장이에요. 바울이 탄 배가 파선해 멜리데 섬에 떠밀려 왔을 때, 원주민들이 비 오고 추운 날 불을 피워 주며 베푼 "특별한 동정"이에요(행 28:2). 바울은 추위에 떨던 그 해변에서 사람의 친절을 맛봤고, 디도서에서는 하나님의 친절을 노래해요.</p><p>그 하나님의 사랑이 한 일은 이거예요. "우리가 행한 바 의로운 행위로 말미암지 아니하고 오직 그의 긍휼하심을 따라 중생의 씻음과 성령의 새롭게 하심으로 하셨나니"(3:5). "중생"은 <span class="hl">다시 태어남</span>이라는 뜻인데, 신약에 두 번 나와요. 예수님이 "세상이 새롭게 되어"(마 19:28)라고 하실 때는 온 세상이 새로 태어나는 날을, 여기서는 한 사람이 새로 태어나는 일을 말해요. 온 세상을 새롭게 하실 하나님이 먼저 우리를 새롭게 하셨어요. 그리고 그 일은 하나님이 "우리 구주 예수 그리스도를 통하여 성령을 우리에게 풍성히 부어 주사"(3:6) <mark>성령께서 이루신 일</mark>이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ "중생의 씻음"을 침례와 연결해 읽는 해석도 있지만, 본문이 강조하는 것은 씻기고 새롭게 하시는 분이 성령이시라는 점이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 의로운 행위가 아니라 하나님의 긍휼로 다시 태어났음을 기억하며, 나를 새롭게 하시는 성령을 의지합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>승리의 도시에서 보낼 겨울,<br>그리고 다시 만난 아볼로</h2><div class="refs">디도서 3:12-15 · 고린도전서 3:4-6</div></div></div>
+    <div class="scene-body"><p>편지 끝에 바울의 여행 계획이 나와요. "내가 아데마나 두기고를 네게 보내리니 그 때에 네가 급히 니고볼리로 내게 오라 내가 거기서 겨울을 지내기로 작정하였노라"(3:12). 디도가 그레데를 떠나면 누군가 대신 와야 했어요. 그래서 아데마나 두기고를 먼저 보낸다는 거예요. 바울은 교회를 비워 두지 않았어요.</p><p>니고볼리는 "승리의 도시"라는 뜻이에요. 로마의 옥타비아누스(훗날 아우구스투스 황제)가 주전 31년 악티움 해전에서 안토니우스와 클레오파트라를 이긴 것을 기념해 세운 도시예요. 😄 황제의 승리를 자랑하는 도시에서, 바울은 다른 승리를 전하며 겨울을 보내려 했어요. 죽음을 이기신 그리스도의 승리요.</p><p>그리고 13절에 반가운 이름이 나와요. "율법교사 세나와 및 아볼로를 급히 먼저 보내어 그들로 부족함이 없게 하고". 아볼로예요! 고린도 교회에서 "나는 바울에게", "나는 아볼로에게" 하며 편이 갈렸을 때(고전 3:4), 사람들은 두 사람을 경쟁자처럼 여겼어요. 그런데 몇 해가 지나 바울은 아볼로의 여행길을 챙기며 부족함이 없게 하라고 부탁해요. "나는 심었고 아볼로는 물을 주었으되 오직 하나님은 자라나게 하셨나니"(고전 3:6). 두 사람은 끝까지 <span class="hl">한 주인의 일꾼</span>이었어요.</p><p>바울은 바로 이어서 이렇게 덧붙여요. "또 우리 사람들도 열매 없는 자가 되지 않게 하기 위하여 필요한 것을 준비하는 좋은 일에 힘 쓰기를 배우게 하라"(3:14). 😄 거짓말쟁이, 게으름뱅이 소리를 듣던 섬의 교회가 이제는 복음 전하는 사람들의 여행 가방을 챙겨 주는 교회가 되는 거예요. <mark>은혜가 한 섬을 이렇게 바꿔요.</mark></p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 니고볼리라는 이름의 도시는 여러 곳에 있었어요. 바울이 말한 곳은 그리스 서북쪽 에피루스 지방의 니고볼리로 보는 견해가 가장 많아요. "율법교사 세나"는 성경에 여기만 나오는 사람이라, 유대 율법 교사였는지 로마법에 밝은 법률가였는지 알 수 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>복음을 위해 수고하는 사람들의 필요를 기쁘게 채우며, 경쟁이 아니라 한 주인의 일꾼으로 함께 섭니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">거짓말쟁이의 섬에<br>거짓 없는 은혜가 나타났다</div>
+    <p>디도서는 형편없는 평판을 가진 섬에 보낸 편지예요. 거짓말쟁이, 악한 짐승, 게으름뱅이. 그런데 바울은 그레데 사람들을 포기하지 않았어요. 오히려 "우리도 전에는" 그랬다고 말해요(3:3). 바울도, 디도도, 우리도 모두 은혜가 필요한 사람들이었어요.</p><p>그 은혜가 나타났어요. 그리고 은혜는 거짓말쟁이를 정직한 사람으로, 게으르던 사람을 선한 일에 힘쓰는 사람으로 바꿔요. 우리가 잘해서가 아니라, 거짓이 없으신 하나님이 영원 전부터 약속하셨고 <mark>우리의 크신 하나님이시며 구주이신 예수 그리스도</mark>께서 우리를 위해 자신을 주셨기 때문이에요.</p>
+    <div class="q">"모든 사람에게 구원을 주시는<br>하나님의 은혜가 나타나" (2:11)</div>
+  </section>
+
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

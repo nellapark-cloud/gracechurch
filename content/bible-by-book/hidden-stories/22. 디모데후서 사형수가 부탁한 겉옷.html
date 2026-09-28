@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>디모데후서, 사형수가 부탁한 겉옷과 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="순교를 앞둔 바울의 마지막 편지, 겉옷과 책을 부탁한 사도의 편지에 숨은 이야기">
+<meta property="og:title" content="디모데후서, 사형수가 부탁한 겉옷과 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 22</div>
+  <h1>디모데후서,<br>사형수가 부탁한<br><em>겉옷</em>과 책</h1>
+  <p class="sub">순교를 앞둔 바울이 남긴 마지막 편지,<br>그 끝에 적힌 소박한 부탁</p>
+  <div class="ref">디모데후서 1–4장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>디모데후서는 바울이 남긴 마지막 편지예요. 바울은 로마에서 사슬에 매여 있었고, 자기가 곧 죽는다는 걸 알고 있었어요. "나의 떠날 시각이 가까웠도다"(4:6). 그런데 이 편지는 비장한 유언으로만 끝나지 않아요. 마지막 장을 보면 "겨울 전에 어서 오라", "올 때 겉옷 좀 가져오라", "책도 꼭 챙기라" 같은 부탁이 나와요. 😄 위대한 사도의 마지막 편지에 심부름 목록이 들어 있는 거예요.</p><p>그 소박한 편지 안에 이야기들이 숨어 있어요. 할머니에서 손자까지 이어진 믿음, 로마를 샅샅이 뒤져 감옥을 찾아온 사람, "하나님이 숨을 내쉬신" 책, 제단에 부어지는 포도주, 같은 "사랑"을 서로 다른 곳에 쓴 두 사람, 한때 데려가지 않으려던 마가를 다시 부르는 바울, 그리고 1,500년 뒤 감옥에서 똑같은 부탁을 쓴 번역자까지요. 그 모든 이야기의 끝에서 바울은, 다 자기를 버렸지만 <span class="hl">"주께서 내 곁에 서서 나에게 힘을 주심"</span>을 고백해요(4:16-17).</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>디모데후서는 어떤 책일까?</h2>
+    <p>사슬에 매인 사도가 아들에게 남긴 마지막 편지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>이번 감옥은 처음과 달랐어요. 사도행전 끝에서 바울은 로마의 셋집에 머물며 찾아오는 사람들을 맞았어요(행 28:30). 그런데 디모데후서의 바울은 "죄인과 같이 매이는 데까지"(2:9) 고난을 받고 있고, 사람들이 찾아오기도 어려웠어요(1:17). 아시아의 많은 사람이 그를 떠났고(1:15), 곁에는 누가만 남았어요(4:11). 바울은 에베소에 있는 디모데에게 겨울이 오기 전에 서둘러 오라고 부탁해요(4:9, 21). 전통적으로는 네로 황제 때인 주후 64–67년 무렵에 쓴 편지로 봐요.</p>
+    <div class="debate sans"><div><b>바울의 마지막 편지</b>바울의 이름으로 된 열세 편지 가운데 가장 나중에 쓴 편지로 봐요. 전승에 따르면 바울은 이 편지를 쓰고 얼마 지나지 않아 로마에서 참수형으로 순교했다고 해요.</div><div><b>마지막 인사의 열일곱 사람</b>4장 끝(9-21절)에만 열일곱 명의 이름이 나와요. 떠난 사람, 남은 사람, 해를 끼친 사람, 문안하는 사람까지요. 외로운 감옥에서도 바울은 사람들을 한 명 한 명 기억했어요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 바울의 순교 시기와 방법은 성경에 나오지 않고 초대교회 전승에 기대요. 저자에 대한 학자들의 논의는 디모데전서와 같아요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">디모데후서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">부끄러워하지 말라</div><div class="mini-b">1장에만 "부끄러워하지"라는 말이 세 번 나와요(1:8, 12, 16). 사슬에 매인 사도를 부끄러워하지 말라는 거예요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">믿음의 대물림</div><div class="mini-b">외조모 로이스, 어머니 유니게, 그리고 디모데(1:5). 삼대에 걸친 믿음이에요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">세 가지 그림</div><div class="mini-b">병사, 경기하는 사람, 농부(2:3-6). 모두 끝까지 참고 견뎌야 열매를 얻는 사람들이에요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">모든 성경</div><div class="mini-b">"모든 성경은 하나님의 감동으로 된 것으로"(3:16). 성경의 권위를 말하는 대표 구절이에요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">마지막 경주</div><div class="mini-b">"나는 선한 싸움을 싸우고 나의 달려갈 길을 마치고 믿음을 지켰으니"(4:7).</div></div></div></div>
+
+  <div class="target"><p>디모데후서의 중심에는 이 부탁이 있어요. <span class="hl">"오직 하나님의 능력을 따라 복음과 함께 고난을 받으라"</span>(1:8). 바울은 매였지만 하나님의 말씀은 매이지 않았어요(2:9). 사람들은 떠났지만 주님은 곁에 서셨어요(4:17). 그래서 사형을 앞둔 사도가 두려움 대신 이렇게 말할 수 있었어요. <mark>"내가 믿는 자를 내가 알고 또한 내가 의탁한 것을 그 날까지 그가 능히 지키실 줄을 확신함이라"</mark>(1:12).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>할머니의 믿음부터 감옥 속 번역자의 편지까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>할머니의 믿음</button><button class="chip" onclick="goTo('s2')"><b>2</b>로마를 뒤진 사람</button><button class="chip" onclick="goTo('s3')"><b>3</b>하나님의 숨</button><button class="chip" onclick="goTo('s4')"><b>4</b>부어지는 포도주</button><button class="chip" onclick="goTo('s5')"><b>5</b>두 가지 사랑</button><button class="chip" onclick="goTo('s6')"><b>6</b>다시 부른 마가</button><button class="chip" onclick="goTo('s7')"><b>7</b>겉옷과 책</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>할머니에게서 손자에게로<br>이어진 거짓 없는 믿음</h2><div class="refs">디모데후서 1:5 · 3:14-15 · 사도행전 16:1-3</div></div></div>
+    <div class="scene-body"><p>"이 믿음은 먼저 네 외조모 로이스와 네 어머니 유니게 속에 있더니 네 속에도 있는 줄을 확신하노라"(1:5). 바울은 디모데의 믿음을 이야기하면서 할머니와 어머니의 이름을 불러요. 신약에서 "할머니"라는 단어가 나오는 곳은 여기 한 곳뿐이에요.</p><p>디모데의 집안 사정은 쉽지 않았어요. 어머니는 믿는 유대 여자였지만 아버지는 헬라인이었어요(행 16:1). 바울이 디모데를 데려갈 때 할례를 받게 한 것을 보면(행 16:3), 어릴 때 유대인의 관습대로 할례를 받지 못했던 것 같아요. 그런 집에서도 할머니와 어머니는 조용히 말씀을 가르쳤어요. "또 어려서부터 성경을 알았나니"(3:15). 여기 "어려서부터"의 <span class="heb" data-tip="브레포스(brephos) — 갓난아기, 젖먹이. 누가복음 2:12 &#x27;강보에 싸여 구유에 뉘어 있는 아기&#x27;에도 같은 단어가 쓰였다.">어려서</span>는 갓난아기를 가리키는 말이에요.</p><p>😄 아직 말도 못 하는 아기에게 성경을 읽어 주던 할머니를 떠올려 보세요. 그 작은 씨앗이 자라서 사도의 동역자, 에베소 교회의 목회자가 되었어요. 그리고 바울은 믿음이 그들 "속에 있더니" 네 속에도 있다고 해요. 믿음은 유전으로 물려받는 것이 아니에요. 할머니 안에, 어머니 안에, 그리고 디모데 안에 하나님이 <mark>한 사람씩 새로 심으신 것</mark>이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 디모데가 어릴 때 할례를 받지 못한 이유가 헬라인 아버지 때문이라는 것은 본문에서 짐작한 추정이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나에게 믿음을 전해 준 사람들을 기억하며, 내 곁의 다음 세대에게 말씀을 들려주는 자리에 섭니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>로마를 샅샅이 뒤져<br>감옥을 찾아낸 사람</h2><div class="refs">디모데후서 1:15-18 · 4:19</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">부겔로와 허모게네</div>아시아에서 바울을 <b>떠난 사람들</b>(1:15)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">오네시보로</div>"내가 사슬에 매인 것을 <b>부끄러워하지 아니하여</b>"(1:16)</div></div><p>1장 끝에는 두 부류의 사람이 나와요. 먼저 아시아에서 바울을 떠난 사람들이요. 바울은 그중 부겔로와 허모게네의 이름을 적어요(1:15). 😄 두 사람은 성경에 딱 이 한 번 나오는데, 그게 하필 "떠난 사람" 명단이에요. 이름이 이천 년 동안 남긴 했는데, 좋은 일로 남지는 못했어요.</p><p>그 반대편에 오네시보로가 있어요. "그가 나를 자주 유쾌하게 하고 내가 사슬에 매인 것을 부끄러워하지 아니하여 로마에 있을 때에 나를 부지런히 찾아와 만났음이라"(1:16-17). "부지런히 찾아와"라는 말을 보면, 바울이 갇힌 곳을 찾기가 쉽지 않았던 것 같아요. 큰 도시 로마에서 사형을 기다리는 죄수를 찾아다니는 건 위험한 일이기도 했어요. 그 죄수와 가까운 사이라는 게 알려지면 자기도 곤란해질 수 있었으니까요.</p><p>오네시보로라는 이름은 "유익을 가져오는 사람"이라는 뜻이에요. 빌레몬서의 오네시모("유익한 사람")와 뿌리가 같은 이름이에요. 그리고 이 사람은 이름값을 제대로 했어요. 에베소에서도 많이 섬겼고(1:18), 로마까지 와서 감옥 문을 두드렸어요. 모두가 떠날 때 찾아와 준 한 사람, 그 한 사람이 바울에게는 <mark>주님이 보내 주신 위로</mark>였어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 바울이 오네시보로 본인이 아니라 "오네시보로의 집"에 문안하고(4:19), 그가 "그 날에" 주의 긍휼을 입기를 구하는(1:18) 것을 보고, 그가 이미 세상을 떠났을 거라고 보는 학자들도 있어요. 추정이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>누군가 어려움 속에 갇혀 있을 때, 부끄러워하지 않고 먼저 찾아가는 한 사람이 되기를 구합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>모든 성경은<br>하나님이 숨을 내쉬신 것</h2><div class="refs">디모데후서 3:14-17 · 창세기 2:7</div></div></div>
+    <div class="scene-body"><p>"모든 성경은 하나님의 <span class="heb" data-tip="데오프뉴스토스(theopneustos) — &#x27;하나님&#x27;(데오스)과 &#x27;숨을 내쉬다&#x27;(프네오)를 합친 말. &#x27;하나님이 숨을 내쉬신&#x27;이라는 뜻. 신약에서 이 구절에만 나온다.">감동</span>으로 된 것으로"(3:16). 우리말로 "감동으로 된"이라고 옮긴 말은 헬라어로 한 단어인데, 신약 전체에 여기 딱 한 번 나와요. 뜻을 풀면 "하나님이 숨을 내쉬신"이에요. 성경은 하나님이 입김을 불어 내신 말씀이라는 거예요.</p><p>이 말은 창세기의 한 장면을 떠올리게 해요. 하나님이 흙으로 사람을 지으시고 "생기를 그 코에 불어넣으시니 사람이 생령이 되니라"(창 2:7). 흙덩이가 하나님의 숨으로 살아났듯, 성경도 하나님의 숨이 담겨 있어서 살아 있는 책이에요. 그래서 성경은 사람을 가르치고, 책망하고, 바르게 하고, 의로 교육해요(3:16). 😄 그런데 바울이 말한 "모든 성경"은 디모데가 갓난아기 때부터 읽던 구약이었어요. 신약은 아직 쓰이는 중이었거든요. 바울은 지금 그 신약의 한 권을 쓰고 있었고요.</p><p>죽음을 앞둔 바울이 아들 같은 디모데에게 남긴 것은 돈도, 조직도, 자기 명성도 아니었어요. <mark>성경</mark>이었어요. 사람은 떠나고 사도도 곧 떠나지만, 하나님의 숨이 담긴 말씀은 남아요. 그리고 그 말씀이 가리키는 곳은 한 분이에요. 성경은 "그리스도 예수 안에 있는 믿음으로 말미암아 구원에 이르는 지혜"(3:15)를 주는 책이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>성경을 읽을 때 종이 위의 글자가 아니라, 하나님의 숨결이 담긴 살아 있는 말씀으로 받습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>"드릴지라도"에서<br>"벌써 부어지고"로</h2><div class="refs">디모데후서 4:6-8 · 빌립보서 1:23 · 2:17 · 민수기 28:7</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">빌립보서 · 첫 번째 감옥</div>"내가 나를 관제로 <b>드릴지라도</b>"(2:17)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">디모데후서 · 마지막 감옥</div>"관제와 같이 내가 <b>벌써</b> 부어지고"(4:6)</div></div><p>관제는 구약 제사 때 제물 위에 포도주를 부어 드리던 예물이에요(민 28:7에서는 "전제"). 한 번 부은 포도주는 다시 담을 수 없어요. 바울은 자기 삶을 그렇게 하나님께 쏟아 드린다고 말해요. 그런데 몇 년 전 빌립보서를 쓸 때는 "드릴지라도"였어요. 그럴 수도 있다는 가정이었죠. 이제 디모데후서에서는 "벌써 부어지고" 있다고 해요. 가정이 현실이 된 거예요.</p><p>"나의 <span class="heb" data-tip="아날뤼시스(analysis) — 풀어 놓음. 배가 묶어 둔 밧줄을 풀고 떠나거나, 병사들이 천막 줄을 풀고 진을 거둘 때 쓰던 말. 빌립보서 1:23의 &#x27;떠나서&#x27;(아날뤼오)와 같은 뿌리다.">떠날</span> 시각이 가까웠도다"(4:6)라는 말도 재밌어요. "떠남"이라는 이 단어는 배가 부두에 묶어 둔 밧줄을 풀 때, 병사들이 천막을 걷을 때 쓰던 말이에요. 바울에게 죽음은 끝이 아니라 출항이었어요. 빌립보서에서 "떠나서 그리스도와 함께 있는 것"이 훨씬 더 좋다고 했을 때도(빌 1:23) 같은 뿌리의 말을 썼어요.</p><p>그리고 바울은 뒤를 돌아보며 말해요. "나는 선한 싸움을 싸우고 나의 달려갈 길을 마치고 믿음을 지켰으니"(4:7). 앞에는 "의의 면류관"이 기다리고 있어요. 여기 면류관은 왕이 쓰는 관이 아니라, 경주에서 이긴 선수에게 씌워 주던 <span class="hl">승리의 관</span>이에요. 😄 그런데 이 경주는 1등만 상을 받는 경기가 아니에요. "내게만 아니라 주의 나타나심을 사모하는 모든 자에게도니라"(4:8). 끝까지 주님을 기다린 사람은 <mark>모두가 받는 관</mark>이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 삶도 주님께 쏟아 드리는 관제가 되기를, 그리고 끝까지 주님의 나타나심을 사모하며 달려가기를 구합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>같은 "사랑"을<br>서로 다른 곳에 쓴 사람들</h2><div class="refs">디모데후서 4:8-11 · 골로새서 4:14 · 빌레몬서 1:24</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">4:8</div>주의 나타나심을 <b>사모하는</b> 모든 자</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">4:10</div>데마는 이 세상을 <b>사랑하여</b></div></div><p>4:8과 4:10은 두 절 떨어져 있는데, 헬라어로 똑같은 동사가 쓰였어요. <span class="heb" data-tip="아가파오(agapaō) — 사랑하다. 4:8의 &#x27;사모하는&#x27;과 4:10의 &#x27;사랑하여&#x27;는 모두 이 동사로 쓰였다.">아가파오</span>예요. 4:8의 "사모하는"은 원래 "사랑하는"이에요. 주님이 오실 날을 사랑하는 사람들이 있고, 바로 두 절 뒤에 이 세상을 사랑한 사람이 나와요. 데마예요.</p><div class="steps" style="margin:0;"><div><b>빌레몬서</b>"나의 동역자 마가, 아리스다고, 데마, 누가"(몬 1:24)</div><div><b>골로새서</b>"사랑을 받는 의사 누가와 또 데마가"(골 4:14)</div><div class="last"><b>디모데후서</b>"데마는 이 세상을 사랑하여 나를 버리고"(4:10)</div></div><p>데마는 원래 바울의 동역자였어요. 빌레몬서에서 바울은 그를 "나의 동역자"로 소개해요. 같은 때 쓴 골로새서에서는 조금 달라요. 누가에게는 "사랑을 받는 의사"라는 따뜻한 설명이 붙는데, 데마는 이름만 덩그러니 있어요. 그리고 몇 년 뒤 디모데후서에서는 "이 세상을 사랑하여 나를 버리고 데살로니가로 갔고"(4:10).</p><p>😄 흥미로운 건 빌레몬서의 그 명단이에요. 마가, 데마, 누가가 나란히 있었어요. 세월이 흘러 데마는 떠났고, 누가는 끝까지 곁에 남았고(4:11), 한때 떠났던 마가는 다시 돌아와요. 사랑은 방향이에요. 무엇을 사랑하느냐가 결국 어디로 가느냐를 정해요. 데마는 하루아침에 떠난 게 아니라 <mark>천천히 식어 갔는지도</mark> 몰라요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 골로새서에서 데마에게 설명이 붙지 않은 것이 그의 마음이 식기 시작한 표시라는 해석은 추정이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>이 세상보다 주님이 다시 오실 날을 더 사랑하고 있는지, 내 마음이 향한 방향을 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>데려가지 않겠다던 마가를<br>"유익하다"며 부르다</h2><div class="refs">디모데후서 4:11 · 2:21 · 사도행전 13:13 · 15:36-40 · 빌레몬서 1:11</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">사도행전 15장</div>마가를 데리고 가는 것이 <b>옳지 않다</b>(15:38)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">디모데후서 4장</div>"그가 나의 일에 <b>유익하니라</b>"(4:11)</div></div><p>1차 전도 여행 때 마가는 중간에 예루살렘으로 돌아가 버렸어요(행 13:13). 그래서 2차 전도 여행을 앞두고 바나바가 마가를 다시 데려가자고 했을 때, 바울은 반대했어요. 두 사람은 "심히 다투어" 결국 따로 떠났어요(행 15:39). 😄 초대교회 최고의 동역자 두 사람이 한 청년 때문에 갈라선 거예요.</p><p>그런데 15년쯤 뒤, 바울의 마지막 편지에 이런 말이 나와요. "네가 올 때에 마가를 데리고 오라 그가 나의 일에 유익하니라"(4:11). 여기 "유익하니라"는 <span class="heb" data-tip="유크레스토스(euchrēstos) — 아주 쓸모 있는. 신약에 세 번 나온다. 빌레몬서 1:11(오네시모), 디모데후서 2:21(주인의 쓰심에 합당한 그릇), 4:11(마가).">유크레스토스</span>예요. 빌레몬서에서 도망쳤던 종 오네시모가 "이제는 나와 네게 유익하므로"(몬 1:11)라고 할 때 쓴 바로 그 단어예요. 이 단어는 신약에 딱 세 번 나오는데, 나머지 한 번이 디모데후서 2:21이에요. "주인의 쓰심에 합당하며".</p><p>무익했다가 유익해진 사람들. 오네시모가 그랬고, 마가도 그랬어요. 그리고 바울도 변했어요. 한 번 실패한 사람을 다시 믿어 주는 사람이 되었어요. 그 마가가 훗날 마가복음을 썼다고 교회는 전해요. 하나님은 실패한 사람을 버리지 않으시고, 다시 빚어 <mark>주인의 쓰심에 합당한 그릇</mark>으로 만드세요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 1차 전도 여행과 디모데후서 사이의 기간은 대략적인 계산이에요. 마가복음을 이 마가가 썼다는 것은 초대교회 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>한 번 실패한 나를 다시 불러 쓰시는 주님을 기억하며, 나도 넘어진 사람에게 다시 손을 내밉니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>겉옷과 가죽 종이,<br>그리고 1,500년 뒤의 같은 부탁</h2><div class="refs">디모데후서 4:9-22</div></div></div>
+    <div class="scene-body"><p>이 편지의 가장 인간적인 한 줄이에요. "네가 올 때에 내가 드로아 가보의 집에 둔 겉옷을 가지고 오고 또 책은 특별히 가죽 종이에 쓴 것을 가져오라"(4:13). 그리고 조금 뒤에 "너는 겨울 전에 어서 오라"(4:21). 겨울이 오면 지중해에 배가 거의 다니지 않았어요. 그 전에 오지 못하면 봄까지 기다려야 했어요. 로마의 감옥은 춥고 습했고, 바울에게는 따뜻한 겉옷이 필요했어요. 😄 세상을 뒤집어 놓은 사도도 추위는 탔던 거예요.</p><p>그리고 책이요. 여기 "가죽 종이"는 헬라어 성경에 라틴어를 그대로 가져다 쓴 <span class="heb" data-tip="멤브라나(membrana) — 짐승 가죽을 얇게 다듬어 만든 양피지. 신약에서 이 구절에만 나오는 라틴어에서 온 말이다.">멤브라나</span>예요. 양피지로 만든 공책이나 두루마리를 가리켜요. 그 안에 무엇이 적혀 있었는지는 아무도 몰라요. 구약 성경의 사본이었을 거라고 보는 사람이 많아요. 사형을 앞둔 바울이 마지막까지 원한 것은 몸을 덮을 겉옷, 그리고 말씀이었어요.</p><p>그로부터 약 1,500년 뒤, 비슷한 편지가 또 한 통 쓰였어요. 성경을 영어로 번역했다는 이유로 붙잡힌 윌리엄 틴데일이 1535년 겨울, 벨기에 빌보르드 성의 감옥에서 라틴어로 쓴 편지예요. 머리가 너무 추우니 더 따뜻한 모자와 겉옷을 보내 달라고, 그리고 무엇보다 히브리어 성경과 문법책과 사전을 보내 달라고 부탁했어요. 공부하며 시간을 보내고 싶다고요. 틴데일은 이듬해 1536년 10월에 순교했어요. 두 사람 모두 추위 속에서 <mark>겉옷과 말씀</mark>을 구했고, 그 말씀을 위해 목숨을 드렸어요.</p><p>그리고 바울은 이 편지를 이렇게 맺어요. 처음 재판 때 모든 사람이 자기를 버렸지만 "주께서 내 곁에 서서 나에게 힘을 주심은"(4:17), 그리고 "주께서 나를 모든 악한 일에서 건져내시고 또 그의 천국에 들어가도록 구원하시리니"(4:18). 모두가 떠난 겨울 감옥에도 <span class="hl">곁에 서신 분</span>이 계셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 가죽 종이에 무엇이 적혀 있었는지는 알 수 없어요. 구약 사본, 바울 자신의 편지 사본, 개인 기록 등 여러 추측이 있어요. 참고로 4:21에 문안하는 "리노"를 2세기 교부 이레니우스는 사도들 다음으로 로마 교회를 맡은 감독으로 기록했는데, 같은 사람인지는 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>모두가 떠난 것 같은 추운 날에도 내 곁에 서 계신 주님을 기억하며, 무엇보다 그분의 말씀을 붙듭니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">모두가 떠난 자리에<br>주님이 곁에 서셨다</div>
+    <p>디모데후서는 쓸쓸한 편지예요. 떠난 사람들의 이름이 있고, 사슬이 있고, 다가오는 겨울과 죽음이 있어요. 그런데 이상하게도 이 편지를 덮으면 슬픔보다 힘이 남아요. 바울이 자기 형편보다 자기 곁에 서신 분을 보고 있었기 때문이에요.</p><p>바울은 매였지만 말씀은 매이지 않았어요. 바울은 떠났지만 디모데가 남았고, 디모데 뒤에는 또 다른 믿음의 사람들이 이어졌어요. 그 믿음의 줄은 이천 년을 건너 오늘 우리에게까지 와 있어요. 그리고 그 줄을 처음부터 끝까지 붙들고 계신 분은 한 분이세요. <mark>우리가 의탁한 것을 그 날까지 능히 지키시는 예수 그리스도</mark>예요.</p>
+    <div class="q">"나는 선한 싸움을 싸우고 나의 달려갈 길을 마치고<br>믿음을 지켰으니" (4:7)</div>
+  </section>
+
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
