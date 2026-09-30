@@ -77,6 +77,14 @@ section{margin-block:28px;padding:32px 28px 12px;background:var(--panel);border-
 .facts b{display:block;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;margin-bottom:2px}
 .facts span{font-family:var(--ui);font-size:12.5px;color:var(--muted);line-height:1.5;display:block}
 
+.map{margin:24px 0 8px}
+.map-frame{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:16px;overflow:hidden;background:var(--soft);box-shadow:0 8px 24px rgba(26,34,56,.08)}
+.map-frame::before{content:"지도를 불러오는 중입니다";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--ui);font-size:14px;color:var(--muted)}
+.map-frame iframe{position:relative;display:block;width:100%;height:100%;border:0}
+.map figcaption{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline;justify-content:space-between;margin-top:12px;font-family:var(--ui);font-size:14px;color:var(--muted);line-height:1.6}
+.map figcaption span{flex:1 1 280px;min-width:0}
+.map figcaption a{color:var(--sky);font-weight:700;text-decoration:none;white-space:nowrap}
+.map figcaption a:hover,.map figcaption a:focus-visible{text-decoration:underline}
 .note{position:relative;background:var(--soft);border-radius:16px;padding:20px 22px;margin:22px 0 18px;overflow:hidden}
 .note::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--grad)}
 .note h4{font-family:var(--display);font-weight:700;font-size:15px;color:var(--ink);margin:0 0 6px}
@@ -99,6 +107,8 @@ footer b{color:var(--ink);font-weight:700}
   .facts span{font-size:14px}
   .chip{font-size:14.5px;padding:7px 15px}
   nav.tabs a{font-size:15px;padding:7px 12px}
+  .map figcaption{font-size:15.5px}
+  .map-frame{aspect-ratio:1/1}
   section{padding:24px 18px 8px;border-radius:18px}
   .v{grid-template-columns:1fr;gap:8px}
   .ch-num{font-size:42px}
@@ -147,6 +157,15 @@ footer b{color:var(--ink);font-weight:700}
     <div><b>3년</b><span>바울이 에베소에서 사역한 기간</span></div>
     <div><b>약 41억 원</b><span>불태운 마술책의 값 (은 5만 드라크마, 오늘날 최저임금 기준)</span></div>
   </div>
+  <figure class="map">
+    <div class="map-frame">
+      <iframe title="에베소 유적 위치 (구글 지도)" src="https://maps.google.com/maps?q=37.9395,27.3417&amp;t=h&amp;z=12&amp;hl=ko&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+    </div>
+    <figcaption>
+      <span>에베소 유적은 오늘날 튀르키예 셀추크 근처에 있습니다. 지도를 보면 옛 항구 도시가 지금은 바다에서 약 5~6km 떨어진 내륙에 남아 있는 것을 확인할 수 있습니다.</span>
+      <a href="https://www.google.com/maps/search/?api=1&amp;query=Ephesus+Ancient+City" target="_blank" rel="noopener">구글 지도에서 크게 보기 ↗</a>
+    </figcaption>
+  </figure>
   <div class="note">
     <h4>이 편지는 정말 에베소에 보낸 것일까?</h4>
     <p>가장 오래된 사본들(P46, 시내 사본, 바티칸 사본)에는 1장 1절의 "에베소에 있는"이라는 말이 없습니다. 게다가 3년이나 함께 산 교회에 쓰면서 "너희 믿음을 들었다"(1:15), "너희가 들었을 터이라"(3:2)라고 말합니다. 그래서 많은 학자들은 이 편지가 에베소를 중심으로 아시아 여러 교회에 돌려 읽힌 회람 편지였다고 봅니다. 2세기의 마르키온은 이 편지를 "라오디게아서"라고 불렀는데, 골로새서 4:16에 나오는 "라오디게아로부터 오는 편지"가 바로 이것일 수도 있습니다.</p>
