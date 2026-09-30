@@ -45,10 +45,18 @@ function langPriority(rawName) {
 }
 
 function naturalCompare(a, b) {
-  // 제목 맨 앞의 숫자를 기준으로 정렬 (1, 2, 3 ... 10, 11, 12 순서가 되도록)
-  const numA = parseInt(a.match(/^\d+/), 10);
-  const numB = parseInt(b.match(/^\d+/), 10);
-  if (!isNaN(numA) && !isNaN(numB) && numA !== numB) return numA - numB;
+  // 제목 맨 앞의 번호를 기준으로 정렬 (1, 2, 3 ... 10, 11, 12 순서가 되도록)
+  // "49-1"처럼 붙임 번호가 있으면 49 바로 다음에 오도록 처리
+  const ma = a.match(/^(\d+)(?:-(\d+))?/);
+  const mb = b.match(/^(\d+)(?:-(\d+))?/);
+  if (ma && mb) {
+    const numA = parseInt(ma[1], 10);
+    const numB = parseInt(mb[1], 10);
+    if (numA !== numB) return numA - numB;
+    const subA = ma[2] ? parseInt(ma[2], 10) : 0;
+    const subB = mb[2] ? parseInt(mb[2], 10) : 0;
+    if (subA !== subB) return subA - subB;
+  }
   return a.localeCompare(b, 'ko');
 }
 

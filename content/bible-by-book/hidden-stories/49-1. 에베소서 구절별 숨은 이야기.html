@@ -1,0 +1,831 @@
+<title>에베소서의 숨은 이야기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<style>
+/* Layout: 에게해의 새벽빛 — 펄 그라데이션 바탕 위에 장별 흰 패널, 유리 질감 내비게이션. 밝은 단일 테마 */
+:root{
+  --bg1:#F6F9FC; --bg2:#EDF4F8; --bg3:#FBF4EE;
+  --panel:#FFFFFF;
+  --ink:#1A2238;
+  --muted:#5E6782;
+  --line:#E6EAF1;
+  --teal:#1C8C9E; --sky:#4F8FE0; --peach:#EE9E6A;
+  --grad:linear-gradient(120deg,var(--teal) 0%,var(--sky) 55%,var(--peach) 100%);
+  --soft:linear-gradient(120deg,#E6F4F6 0%,#E9F0FC 55%,#FCEEE4 100%);
+  --display:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  --body:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+  --ui:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{background:var(--bg1)}
+body{background:linear-gradient(170deg,var(--bg1) 0%,var(--bg2) 45%,var(--bg3) 100%) fixed;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:780px;margin:0 auto;padding-inline:20px}
+
+/* cover */
+.cover{position:relative;overflow:hidden;padding-block:72px 48px}
+.cover::before,.cover::after{content:"";position:absolute;border-radius:50%;filter:blur(60px);opacity:.55;pointer-events:none}
+.cover::before{width:420px;height:420px;background:#9FD8E0;top:-160px;left:-120px}
+.cover::after{width:380px;height:380px;background:#F9CDB0;top:-80px;right:-140px}
+.cover .wrap{position:relative}
+.series{display:inline-block;font-family:var(--ui);font-size:12.5px;font-weight:700;letter-spacing:.12em;color:var(--teal);background:rgba(255,255,255,.7);border:1px solid rgba(28,140,158,.18);padding:5px 12px;border-radius:999px}
+.cover h1{font-family:var(--display);font-weight:900;font-size:clamp(36px,8.5vw,60px);line-height:1.15;margin:18px 0 16px;letter-spacing:-.03em;text-wrap:balance;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover .lead{color:var(--muted);max-width:34em;margin:0;font-size:16px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:24px;font-family:var(--ui);font-size:13px;color:var(--muted)}
+.meta span{background:rgba(255,255,255,.75);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.meta b{color:var(--ink);font-weight:700}
+
+/* nav */
+nav.tabs{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:rgba(255,255,255,.72);-webkit-backdrop-filter:saturate(1.6) blur(14px);backdrop-filter:saturate(1.6) blur(14px);border-block:1px solid rgba(255,255,255,.9);box-shadow:0 4px 20px rgba(26,34,56,.05)}
+nav.tabs .wrap{display:flex;flex-wrap:wrap;justify-content:center;gap:4px;padding-block:10px}
+nav.tabs a{font-family:var(--ui);font-size:13.5px;font-weight:500;color:var(--muted);text-decoration:none;padding:6px 13px;border-radius:999px;white-space:nowrap;transition:background .2s,color .2s}
+nav.tabs a:hover,nav.tabs a:focus-visible{color:var(--ink);background:rgba(79,143,224,.08);outline:none}
+nav.tabs a.on{color:#fff;background:var(--grad);font-weight:700}
+
+/* filter */
+.filter{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding-block:28px 4px;font-family:var(--ui);font-size:13px}
+.filter span{color:var(--muted);margin-right:4px;font-weight:500}
+.chip{font:inherit;font-weight:500;border:1px solid var(--line);background:var(--panel);color:var(--muted);padding:6px 14px;border-radius:999px;cursor:pointer;transition:all .2s}
+.chip:hover{color:var(--ink);border-color:#CFD7E4}
+.chip:focus-visible{outline:2px solid var(--sky);outline-offset:2px}
+.chip[aria-pressed="true"]{background:var(--grad);color:#fff;border-color:transparent;box-shadow:0 4px 14px rgba(79,143,224,.25)}
+
+/* sections = white panels */
+section{margin-block:28px;padding:32px 28px 12px;background:var(--panel);border-radius:22px;box-shadow:0 1px 2px rgba(26,34,56,.04),0 12px 32px rgba(26,34,56,.06);scroll-margin-top:72px}
+.ch-head{display:grid;grid-template-columns:auto 1fr;gap:4px 18px;align-items:center;margin-bottom:12px;padding-bottom:18px}
+.ch-num{font-family:var(--display);font-weight:900;font-size:52px;line-height:1;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;grid-row:span 2}
+.ch-head h2{font-family:var(--display);font-weight:800;font-size:24px;margin:0;line-height:1.3;letter-spacing:-.02em;text-wrap:balance}
+.ch-head p{margin:0;color:var(--muted);font-size:14px;font-family:var(--ui)}
+
+.v{display:grid;grid-template-columns:72px 1fr;gap:18px;padding-block:22px;border-top:1px solid var(--line)}
+.ref{align-self:start;justify-self:start;font-family:var(--ui);font-size:13px;font-weight:700;color:var(--teal);background:var(--soft);font-variant-numeric:tabular-nums;padding:3px 10px;border-radius:8px;white-space:nowrap}
+.body{min-width:0}
+.v h3{font-family:var(--display);font-weight:700;font-size:17.5px;line-height:1.5;margin:0 0 8px;letter-spacing:-.01em;text-wrap:balance}
+.v p{margin:0}
+.v p+p{margin-top:10px}
+.gk{font-family:var(--ui);font-size:.88em;font-weight:500;color:#2F72C4;white-space:nowrap}
+.tag{display:inline-block;margin-top:12px;font-family:var(--ui);font-size:11.5px;font-weight:500;letter-spacing:.04em;color:var(--muted);background:#F3F5F9;border-radius:6px;padding:2px 9px}
+.v.hide{display:none}
+
+.intro p{margin:0 0 14px}
+.facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:24px 0 10px}
+.facts div{background:var(--soft);border-radius:14px;padding:16px 16px;min-width:0}
+.facts b{display:block;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;margin-bottom:2px}
+.facts span{font-family:var(--ui);font-size:12.5px;color:var(--muted);line-height:1.5;display:block}
+
+.note{position:relative;background:var(--soft);border-radius:16px;padding:20px 22px;margin:22px 0 18px;overflow:hidden}
+.note::before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--grad)}
+.note h4{font-family:var(--display);font-weight:700;font-size:15px;color:var(--ink);margin:0 0 6px}
+.note p{margin:0;font-size:15px}
+
+footer{padding-block:24px 56px;font-family:var(--ui);font-size:13px;color:var(--muted);text-align:center}
+footer b{color:var(--ink);font-weight:700}
+
+@media (max-width:520px){
+  .wrap{padding-inline:16px}
+  section{padding:24px 18px 8px;border-radius:18px}
+  .v{grid-template-columns:1fr;gap:8px}
+  .ch-num{font-size:42px}
+  .cover{padding-block:52px 36px}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<header class="cover">
+  <div class="wrap">
+    <div class="series">성경의 숨은 재밌는 이야기</div>
+    <h1>에베소서의 숨은 이야기</h1>
+    <p class="lead">아르테미스 신전이 서 있던 도시, 마술책이 불태워지던 광장, 감옥의 사슬 소리. 에베소서 여섯 장을 한 구절씩 걸으며 헬라어 단어 속 이야기와 그 시대의 풍경을 함께 만나 봅니다.</p>
+    <div class="meta"><span><b>6</b>장 155절</span><span>기록 · 주후 60~62년경 로마 감옥</span><span>전달자 · 두기고</span></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="장 목차">
+  <div class="wrap">
+    <a href="#intro">들어가며</a>
+    <a href="#ch1">1장</a><a href="#ch2">2장</a><a href="#ch3">3장</a>
+    <a href="#ch4">4장</a><a href="#ch5">5장</a><a href="#ch6">6장</a>
+    <a href="#outro">나가며</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<div class="filter" role="group" aria-label="이야기 종류">
+  <span>보기</span>
+  <button class="chip" id="f-all" data-f="all" aria-pressed="true">전체</button>
+  <button class="chip" id="f-hist" data-f="역사" aria-pressed="false">역사</button>
+  <button class="chip" id="f-lang" data-f="원어" aria-pressed="false">원어</button>
+  <button class="chip" id="f-cult" data-f="문화" aria-pressed="false">문화</button>
+  <button class="chip" id="f-deep" data-f="깊은 묵상" aria-pressed="false">깊은 묵상</button>
+</div>
+
+<!-- ========== 들어가며 ========== -->
+<section id="intro" class="intro">
+  <div class="ch-head"><div class="ch-num">序</div><h2>에베소라는 도시</h2><p>편지를 읽기 전에 먼저 거리를 걸어 봅니다</p></div>
+  <p>에베소는 로마 제국 아시아 속주의 수도였고, 로마·알렉산드리아·안디옥과 어깨를 나란히 하던 대도시였습니다. 항구에는 동방과 서방의 물건이 쏟아져 들어왔고, 도시 한가운데에는 고대 세계 7대 불가사의 중 하나인 아르테미스 신전이 서 있었습니다.</p>
+  <p>바울은 이 도시에서 약 3년을 머물렀습니다(행 20:31). 두란노 서원에서 날마다 강론했고, 그 사이에 마술사들이 자기 책을 모아 불태웠으며, 그 값이 은 오만이나 되었다고 사도행전은 기록합니다(행 19:19). 은 1드라크마는 노동자 하루 품삯이었으니, 5만 드라크마는 한 사람이 하루도 쉬지 않고 137년을 일해야 버는 돈입니다. 2026년 최저임금(시급 10,320원, 하루 8시간)으로 계산하면 약 41억 원에 이릅니다. 은장색 데메드리오가 일으킨 소동 때문에 2만 명 넘게 들어가는 대극장이 "크다 에베소 사람의 아데미여" 하는 외침으로 두 시간 동안 들끓기도 했습니다.</p>
+  <div class="facts">
+    <div><b>127</b><span>아르테미스 신전 기둥 수 (대 플리니우스 기록)</span></div>
+    <div><b>약 2만 5천</b><span>에베소 대극장 수용 인원</span></div>
+    <div><b>3년</b><span>바울이 에베소에서 사역한 기간</span></div>
+    <div><b>약 41억 원</b><span>불태운 마술책의 값 (은 5만 드라크마, 오늘날 최저임금 기준)</span></div>
+  </div>
+  <div class="note">
+    <h4>이 편지는 정말 에베소에 보낸 것일까?</h4>
+    <p>가장 오래된 사본들(P46, 시내 사본, 바티칸 사본)에는 1장 1절의 "에베소에 있는"이라는 말이 없습니다. 게다가 3년이나 함께 산 교회에 쓰면서 "너희 믿음을 들었다"(1:15), "너희가 들었을 터이라"(3:2)라고 말합니다. 그래서 많은 학자들은 이 편지가 에베소를 중심으로 아시아 여러 교회에 돌려 읽힌 회람 편지였다고 봅니다. 2세기의 마르키온은 이 편지를 "라오디게아서"라고 불렀는데, 골로새서 4:16에 나오는 "라오디게아로부터 오는 편지"가 바로 이것일 수도 있습니다.</p>
+  </div>
+</section>
+
+<!-- ========== 1장 ========== -->
+<section id="ch1">
+  <div class="ch-head"><div class="ch-num">1</div><h2>하늘에서 시작하는 찬송</h2><p>택하심 · 구속 · 인치심, 그리고 교회의 머리 되신 그리스도</p></div>
+
+  <article class="v" data-tag="역사"><div class="ref">1:1</div><div class="body">
+    <h3>주소가 빠진 편지</h3>
+    <p>앞에서 본 대로 초기 사본에는 수신지가 비어 있습니다. 편지를 필사해 여러 교회로 보낼 때 빈칸에 각 교회 이름을 넣었을 것이라는 추측도 있습니다. 누가 받든 "성도들과 신실한 자들"이면 이 편지의 주인이라는 뜻이니, 오늘 우리도 수신인 명단에 들어 있는 셈입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">1:2</div><div class="body">
+    <h3>두 문화의 인사를 한 줄에</h3>
+    <p>헬라 사람들의 편지 인사는 보통 <span class="gk">χαίρειν 카이레인</span>("기뻐하라, 안녕")이었습니다. 바울은 발음이 비슷한 <span class="gk">χάρις 카리스</span>(은혜)로 바꾸고, 여기에 유대인의 인사 "샬롬"(평강)을 붙였습니다. 이방인과 유대인을 한 몸으로 묶는 이 편지의 주제가 첫 인사에서부터 들립니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">1:3</div><div class="body">
+    <h3>202단어짜리 한 문장</h3>
+    <p>3절부터 14절까지는 헬라어로 단 하나의 문장입니다. 약 200여 단어가 쉼표 없이 이어지지요. 독일 고전학자 에두아르트 노르덴은 헬라어 문헌에서 가장 거대한 문장 덩어리라고 평했습니다. 바울이 문장을 끊지 못할 만큼 감격에 겨워 쏟아낸 찬송인 셈입니다.</p>
+    <p>또 "하늘에 속한"이라는 형용사(<span class="gk">ἐπουράνιος</span>) 자체는 고린도전서 15장, 히브리서 등에도 나오지만, "하늘에 속한 곳에서"(<span class="gk">ἐν τοῖς ἐπουρανίοις</span>)라는 장소 표현은 신약에서 에베소서에만 다섯 번 나옵니다(1:3, 1:20, 2:6, 3:10, 6:12). 이 편지의 무대는 처음부터 하늘입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">1:4</div><div class="body">
+    <h3>기초를 던져 놓기 전에</h3>
+    <p>"창세 전"의 "창세"(<span class="gk">καταβολή 카타볼레</span>)는 원래 "아래로 던져 놓음", 곧 건물의 기초를 놓는 일을 뜻합니다. 하나님이 우주의 주춧돌 하나 놓기 전에 이미 우리를 마음에 두셨다는 말입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">1:5</div><div class="body">
+    <h3>로마의 입양은 달랐다</h3>
+    <p>로마에서 입양(<span class="gk">υἱοθεσία 휘오데시아</span>)은 주로 성인을 대상으로 한 법적 절차였습니다. 입양되는 순간 이전의 빚은 모두 사라지고, 새 가문의 이름을 받으며, 친자와 똑같은 상속자가 되었습니다. 옥타비아누스가 율리우스 카이사르의 유언으로 입양되어 훗날 아우구스투스 황제가 된 이야기는 누구나 아는 사건이었습니다. 에베소 성도들은 이 단어를 들으며 가슴이 뛰었을 것입니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">1:6</div><div class="body">
+    <h3>"사랑하시는 자"라는 이름</h3>
+    <p>헬라어 <span class="gk">ἠγαπημένος 에가페메노스</span>는 헬라어 구약(칠십인역)에서 이스라엘의 애칭 "여수룬"을 옮길 때 쓰인 말입니다(신 32:15). 예수님 세례 때 들린 "내 사랑하는 아들"과도 울림이 닿아 있습니다. 우리는 "사랑받는 분 안에서" 은혜를 받았습니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">1:7</div><div class="body">
+    <h3>노예 시장의 단어, 속량</h3>
+    <p>"속량"(<span class="gk">ἀπολύτρωσις 아폴뤼트로시스</span>)은 몸값을 치르고 노예나 포로를 풀어 주는 일을 가리켰습니다. 에베소 같은 큰 항구 도시에서 노예 매매는 일상 풍경이었습니다. 그 값이 은이 아니라 "그의 피"였다는 데 이 구절의 무게가 있습니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">1:8–9</div><div class="body">
+    <h3>숨기는 비밀, 드러내는 비밀</h3>
+    <p>에베소 주변에는 입문한 사람만 비밀 의식을 알 수 있는 밀의(密儀) 종교가 가득했습니다. 그들에게 "비밀"(<span class="gk">μυστήριον 뮈스테리온</span>)은 소수만 아는 것이었습니다. 바울은 같은 단어를 쓰면서 정반대로 말합니다. 하나님의 비밀은 이제 모두에게 "알리신" 것이라고요.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">1:10</div><div class="body">
+    <h3>장부의 맨 위에 적는 합계</h3>
+    <p>"통일되게 하려 하심"(<span class="gk">ἀνακεφαλαιώσασθαι 아나케팔라이오사스타이</span>)에는 "머리"(<span class="gk">κεφαλή</span>)라는 말이 들어 있습니다. 옛사람들은 숫자를 모두 더한 뒤 그 합계를 칸 맨 위에 적었습니다. 흩어진 만물의 숫자를 다 더하면 그 맨 위에 적힐 이름이 그리스도라는 그림입니다. "경륜"(<span class="gk">οἰκονομία 오이코노미아</span>)은 집안 살림을 맡아 다스리는 일로, 오늘날 "이코노미"의 어원입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">1:11</div><div class="body">
+    <h3>제비로 나눈 땅</h3>
+    <p>"기업이 되었으니"의 뿌리는 제비(<span class="gk">κλῆρος 클레로스</span>)입니다. 여호수아 때 가나안 땅을 지파별로 제비 뽑아 나누던 장면이 배경에 있습니다. 이스라엘이 땅을 분깃으로 받았다면, 이제 우리는 하나님 자신의 분깃이 되었습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">1:12–13</div><div class="body">
+    <h3>"우리"와 "너희"가 만나는 자리</h3>
+    <p>12절의 "그리스도께 먼저 바라던 우리"는 유대인 신자, 13절의 "너희도"는 이방인 신자를 가리킨다고 많은 주석가들은 봅니다. 긴 찬송 한가운데서 두 무리가 차례로 등장하고, 곧 같은 성령의 인을 받습니다. 2장에서 터져 나올 "둘로 하나를 만드사"가 여기서 미리 들립니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">1:13</div><div class="body">
+    <h3>인장이 말해 주는 세 가지</h3>
+    <p>고대 세계에서 인(<span class="gk">σφραγίς 스프라기스</span>)은 세 가지를 뜻했습니다. 이것이 누구의 소유인지, 이것이 진품인지, 그리고 봉인이 풀릴 때까지 안전하다는 보증입니다. 편지와 계약서, 창고의 물건에 찍힌 밀랍 인장처럼, 성령은 우리 위에 찍힌 하나님의 도장입니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">1:14</div><div class="body">
+    <h3>계약금, 그리고 약혼반지</h3>
+    <p>"보증"(<span class="gk">ἀρραβών 아라본</span>)은 상거래에서 쓰던 계약금입니다. 나머지를 반드시 치르겠다는 약속으로 먼저 건네는 돈이지요. 재미있게도 현대 그리스어에서 이 단어(아라보나스)는 약혼, 약혼반지를 뜻합니다. 성령은 신랑이신 그리스도가 반드시 다시 오겠다며 끼워 준 반지입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">1:15–16</div><div class="body">
+    <h3>들은 믿음을 위한 기도</h3>
+    <p>찬송이 끝나자 바울은 곧바로 기도로 넘어갑니다. 에베소서 1장은 찬송, 3장은 무릎 꿇은 기도, 6장은 모든 기도로 끝납니다. 교리 설명이 아니라 예배 속에서 쓴 편지라는 점이 여기서 드러납니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">1:17</div><div class="body">
+    <h3>이미 가진 사람들을 위한 기도</h3>
+    <p>바울은 3~14절에서 "모든 신령한 복을 이미 주셨다"고 해 놓고, 곧바로 그것을 "알게 해 달라"고 기도합니다. 문제는 복이 없는 것이 아니라 가진 것을 모르는 것이라는 뜻입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">1:18</div><div class="body">
+    <h3>마음에도 눈이 있다</h3>
+    <p>성경에서 "마음"은 감정의 자리이기보다 생각하고 결정하는 인격의 중심입니다. 그래서 "마음의 눈"은 감성이 아니라 삶 전체를 보는 시력을 말합니다. 우리가 흔히 쓰는 "심안(心眼)"과 비슷하지만 훨씬 넓은 말입니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">1:19</div><div class="body">
+    <h3>힘을 뜻하는 네 단어를 한꺼번에</h3>
+    <p>이 한 절에 능력(<span class="gk">δύναμις</span>), 역사(<span class="gk">ἐνέργεια</span>), 위력(<span class="gk">κράτος</span>), 힘(<span class="gk">ἰσχύς</span>)이 모두 쌓여 있습니다. 헬라어로 "힘"을 뜻하는 단어를 거의 다 끌어온 것입니다. 알프레드 노벨이 "다이너마이트"라는 이름을 <span class="gk">δύναμις</span>에서 따왔지만, 바울이 말한 능력은 부수는 힘이 아니라 죽은 자를 일으키는 힘입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">1:20</div><div class="body">
+    <h3>신약이 가장 사랑한 구약 구절</h3>
+    <p>"하늘에서 자기의 오른편에 앉히사"는 시편 110:1을 떠올리게 합니다. 이 시편은 신약에서 가장 자주 인용되거나 암시되는 구약 본문입니다. 초대교회는 부활과 승천을 이 한 구절로 설명했습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">1:21</div><div class="body">
+    <h3>마술의 도시에 보낸 선언</h3>
+    <p>고대 세계에는 "에베소 문자"(Ephesia grammata)라는 유명한 주문이 있었습니다. 부적에 새기거나 소리 내어 외면 악령을 쫓는다고 믿던 여섯 마디 말입니다. 온갖 신과 영의 이름을 불러 대던 그 도시에 바울은 선언합니다. 그리스도는 "일컫는 모든 이름 위에" 계시다고요.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">1:22–23</div><div class="body">
+    <h3>머리와 몸, 그리고 충만</h3>
+    <p>22절은 시편 8:6을 인용합니다. 원래 인간에게 주신 다스림이 그리스도 안에서 이루어진 것이지요. 23절의 "충만"(<span class="gk">πλήρωμα 플레로마</span>)은 훗날 영지주의자들이 신비한 천상 세계를 부르는 말로 가져다 썼는데, 바울은 그 충만이 다름 아닌 교회라고 말합니다. 30명 모이는 작은 교회도 그리스도의 충만입니다.</p>
+    <span class="tag">원어</span></div></article>
+</section>
+
+<!-- ========== 2장 ========== -->
+<section id="ch2">
+  <div class="ch-head"><div class="ch-num">2</div><h2>무덤에서 성전까지</h2><p>죽었던 자가 살아나고, 원수였던 둘이 한 성전이 되다</p></div>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">2:1</div><div class="body">
+    <h3>아픈 것이 아니라 죽은 것</h3>
+    <p>바울은 우리가 병들었다거나 약했다고 하지 않고 "죽었다"(<span class="gk">νεκρός 네크로스</span>)고 말합니다. 약한 사람에게는 도움이 필요하지만, 죽은 사람에게는 부활이 필요합니다. 복음이 왜 "개선"이 아니라 "새 창조"인지가 여기서 시작됩니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">2:2</div><div class="body">
+    <h3>왜 하필 "공중"일까</h3>
+    <p>당시 유대인과 헬라인은 땅과 달 사이의 탁한 공기층(<span class="gk">ἀήρ 아에르</span>)을 영들이 머무는 곳으로 여겼습니다. 순수한 하늘(에테르)과 대비되는 곳이지요. 바울은 사람들이 두려워하던 그 세계관의 언어를 그대로 빌려, 그 권세마저 그리스도 아래 있음을 말합니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">2:3</div><div class="body">
+    <h3>"진노의 자녀"라는 히브리식 표현</h3>
+    <p>"~의 자녀"는 히브리 사람들이 성품이나 운명을 나타낼 때 쓰던 말투입니다. "우레의 아들"(보아너게), "평안의 아들"처럼요. "진노의 자녀"란 진노 아래 놓일 수밖에 없는 존재라는 뜻입니다. 바울은 "우리도"라고 말하며 자신을 빼지 않습니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">2:4</div><div class="body">
+    <h3>성경에서 가장 아름다운 두 단어</h3>
+    <p>"그러나 하나님은"(<span class="gk">ὁ δὲ θεός</span>). 1~3절의 어둠이 이 두 단어에서 뒤집힙니다. 많은 설교자들이 이 구절을 복음 전체의 경첩이라 불렀습니다. 우리 이야기가 "그러나"로 끝나는 것이 아니라, "그러나 하나님"으로 다시 시작됩니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">2:5–6</div><div class="body">
+    <h3>"함께"를 붙여 만든 단어들</h3>
+    <p>"함께 살리셨고, 함께 일으키사, 함께 하늘에 앉히시니". 헬라어로 세 동사 모두 "함께"(<span class="gk">σύν 쉰</span>)가 앞에 붙어 있습니다(쉬네조오포이에센, 쉬네게이렌, 쉬네카티센). 그리스도께 일어난 일이 우리에게도 그대로 일어났다는 것을 단어 모양 자체로 보여 줍니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">2:7</div><div class="body">
+    <h3>하나님의 전시회</h3>
+    <p>"나타내려 하심"(<span class="gk">ἐνδείκνυμι</span>)은 드러내 보여 준다는 말입니다. 구원받은 우리는 앞으로 올 모든 세대 앞에 걸릴 하나님의 은혜 전시품입니다. 작품이 훌륭할수록 칭찬은 작가에게 갑니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">2:8</div><div class="body">
+    <h3>"이것"은 무엇을 가리킬까</h3>
+    <p>"이것은 너희에게서 난 것이 아니요"에서 "이것"(<span class="gk">τοῦτο</span>)은 중성입니다. 그런데 "은혜"와 "믿음"은 둘 다 여성 명사입니다. 그래서 "이것"은 어느 한 단어가 아니라 은혜로 믿음을 통해 구원받는 사건 전체를 가리킨다고 보는 해석이 많습니다. 구원의 처음부터 끝까지 하나님의 선물이라는 뜻입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">2:9</div><div class="body">
+    <h3>명예의 사회에서 자랑을 내려놓다</h3>
+    <p>로마 사회는 명예와 체면으로 움직였습니다. 부자들은 신전과 공중목욕탕을 기부하고 자기 이름을 비문에 새겼습니다. 에베소 유적에도 그런 기부 비문이 가득합니다. 바울은 구원이라는 가장 큰 건물에는 우리 이름을 새길 자리가 없다고 말합니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">2:10</div><div class="body">
+    <h3>우리는 하나님의 시(詩)</h3>
+    <p>"만드신 바"(<span class="gk">ποίημα 포이에마</span>)는 영어 "poem"의 어원입니다. 신약에서 이 단어는 딱 두 번 나오는데, 한 번은 하나님이 지으신 온 세상(롬 1:20), 또 한 번이 바로 여기 우리입니다. 하나님은 우주와 우리를 같은 단어로 부르십니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">2:11</div><div class="body">
+    <h3>"손으로 만든"이라는 아이러니</h3>
+    <p>"손으로 육체에 행한 할례"의 "손으로 만든"(<span class="gk">χειροποίητος</span>)은 칠십인역에서 주로 우상을 가리킬 때 쓰던 말입니다. 유대인이 자랑하던 표를 바울은 은근히 우상과 같은 단어로 부릅니다. 겉의 표로는 사람을 하나님께 가까이 데려갈 수 없다는 뜻입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">2:12</div><div class="body">
+    <h3>"무신론자"가 된 그리스도인</h3>
+    <p>"하나님도 없는 자"의 헬라어는 <span class="gk">ἄθεοι 아테오이</span>, 곧 "무신론자"입니다. 신약에서 딱 한 번 나오는 말이지요. 놀랍게도 훗날 로마 사람들은 신상을 섬기지 않는 그리스도인들을 "무신론자"라고 불렀습니다. 서머나의 폴리갑이 순교할 때 군중은 "무신론자를 없애라"고 외쳤습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">2:13</div><div class="body">
+    <h3>"가까이 오다"는 개종의 언어</h3>
+    <p>랍비들은 이방인을 유대교로 개종시키는 일을 "가까이 데려온다"고 표현했습니다. 바울은 같은 말을 쓰되, 할례가 아니라 "그리스도의 피로" 가까워졌다고 말합니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">2:14</div><div class="body">
+    <h3>실제로 있었던 담, 그리고 바울이 갇힌 이유</h3>
+    <p>예루살렘 성전에는 이방인의 뜰과 안뜰을 가르는 낮은 돌 난간(소렉)이 있었습니다. 1871년 프랑스 학자 클레르몽-가노가 그 경고 비문을 발견했는데, 헬라어로 이방인이 이 선을 넘으면 죽음을 면치 못한다고 적혀 있습니다. 지금 이스탄불 고고학 박물관에 있습니다.</p>
+    <p>놀라운 사실이 있습니다. 바울이 체포된 것이 바로 에베소 사람 드로비모를 이 담 안으로 데리고 들어갔다는 누명 때문이었습니다(행 21:29). 그 담 때문에 감옥에 갇힌 사람이 감옥에서 "그 담을 허셨다"고 쓰고 있는 것입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">2:15</div><div class="body">
+    <h3>제3의 민족</h3>
+    <p>"한 새 사람"은 유대인을 이방인으로, 이방인을 유대인으로 바꾼 것이 아니라 전혀 새로운 인류를 만든 것입니다. 2세기 그리스도인들은 스스로를 유대인도 헬라인도 아닌 "제3의 종족"이라고 부르기도 했습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">2:16</div><div class="body">
+    <h3>십자가에서 죽은 또 하나</h3>
+    <p>"원수 된 것을 소멸하시고"를 직역하면 "적대감을 죽이시고"입니다. 십자가에서 죽은 것은 예수님만이 아니었습니다. 사람과 사람 사이의 미움도 거기서 함께 처형되었습니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">2:17</div><div class="body">
+    <h3>이사야의 평화 선포</h3>
+    <p>"먼 데 있는 너희와 가까운 데 있는 자들에게 평안을"은 이사야 57:19를 떠올리게 합니다. 원래 흩어진 이스라엘을 향한 말이었는데, 바울은 "먼 데 있는 자"를 이방인까지 넓혀 읽습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">2:18</div><div class="body">
+    <h3>왕 앞으로 안내받는 권리</h3>
+    <p>"나아감"(<span class="gk">προσαγωγή 프로사고게</span>)은 궁정에서 시종이 손님을 왕 앞으로 안내해 들이는 일을 가리켰습니다. 아무나 왕을 만날 수 없던 시대에, 우리는 성령의 안내로 아버지 앞에 설 수 있습니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">2:19</div><div class="body">
+    <h3>체류자에서 시민으로</h3>
+    <p>"외인"(<span class="gk">ξένοι</span>)은 잠시 머무는 외국인, "나그네"(<span class="gk">πάροικοι</span>)는 세금은 내지만 투표권도 재산권도 제한된 거류민이었습니다. 에베소 시민권은 대단한 특권이었지요. 바울은 이들이 하늘 도시의 "동일한 시민"이자 하나님 집의 "가족"이 되었다고 말합니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">2:20</div><div class="body">
+    <h3>모퉁잇돌일까, 머릿돌일까</h3>
+    <p><span class="gk">ἀκρογωνιαῖος 아크로고니아이오스</span>는 건물 모서리 기초에 놓아 벽의 방향을 정하는 돌이라는 해석과, 아치 꼭대기에서 전체를 잡아 주는 쐐기돌이라는 해석이 있습니다. 이사야 28:16을 배경으로 보면 기초돌에 가깝습니다. 어느 쪽이든 그 돌을 빼면 건물 전체가 무너집니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">2:21–22</div><div class="body">
+    <h3>아르테미스 신전 옆에서 들은 말</h3>
+    <p>에베소의 아르테미스 신전은 아테네 파르테논의 약 네 배 크기였고, 대 플리니우스에 따르면 높이 약 18미터짜리 기둥이 127개 서 있었습니다. 그 그늘 아래 사는 작은 교회에게 바울은 말합니다. "너희가 성전이다." 돌 위에 돌을 쌓은 신전이 아니라 사람 위에 사람이 "함께 지어져 가는" 성전입니다.</p>
+    <span class="tag">역사</span></div></article>
+</section>
+
+<!-- ========== 3장 ========== -->
+<section id="ch3">
+  <div class="ch-head"><div class="ch-num">3</div><h2>감옥에서 본 비밀</h2><p>이방인을 향한 비밀, 그리고 무릎 꿇은 기도</p></div>
+
+  <article class="v" data-tag="원어"><div class="ref">3:1</div><div class="body">
+    <h3>끊어진 문장</h3>
+    <p>"이러므로 그리스도 예수의 일로 너희 이방인을 위하여 갇힌 자 된 나 바울이…" 여기서 문장이 끊깁니다. 바울은 이야기를 멈추고 13절까지 긴 설명을 한 뒤, 14절에서야 "이러므로 내가 무릎을 꿇고"라며 다시 이어 갑니다. 말하다가 감격에 겨워 옆길로 새는 바울의 모습이 문법 속에 그대로 남아 있습니다.</p>
+    <p>또 그는 자신을 "네로의 죄수"가 아니라 "그리스도 예수의 갇힌 자"라고 부릅니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">3:2–3</div><div class="body">
+    <h3>맡겨진 살림</h3>
+    <p>"경륜"(<span class="gk">οἰκονομία</span>)이 다시 나옵니다. 1장에서는 하나님의 큰 살림살이였다면, 여기서는 바울에게 맡겨진 청지기 직분입니다. "내가 먼저 간단히 기록함"은 앞의 1~2장을 가리키는 것으로 보입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">3:4–5</div><div class="body">
+    <h3>구약이 몰랐던 것</h3>
+    <p>구약도 이방인의 구원을 말했습니다. 그런데 "다른 세대에서는 알리지 아니하셨다"는 비밀은 이방인이 유대인이 되지 않고도 똑같은 자격으로 한 몸이 된다는 것이었습니다. 예언자들도 그 정도까지는 보지 못했습니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">3:6</div><div class="body">
+    <h3>바울이 만든 단어</h3>
+    <p>"함께 상속자, 함께 지체, 함께 약속에 참여하는 자". 다시 "함께"(<span class="gk">σύν</span>)가 붙은 단어 세 개입니다. 그중 "함께 한 몸"(<span class="gk">σύσσωμος 쉬소모스</span>)은 바울 이전의 헬라어 문헌에서 발견되지 않습니다. 세상에 없던 관계를 말하려니 세상에 없던 단어가 필요했던 것입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">3:7</div><div class="body">
+    <h3>식탁 시중꾼</h3>
+    <p>"일꾼"(<span class="gk">διάκονος 디아코노스</span>)은 원래 식탁에서 시중드는 사람을 뜻했습니다. 오늘날 "집사"의 어원이기도 합니다. 가장 위대한 사도가 자신을 부르는 이름은 "시중드는 사람"이었습니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">3:8</div><div class="body">
+    <h3>"가장 작은 자보다 더 작은"</h3>
+    <p>바울은 "지극히 작은 자"(최상급)에 다시 비교급 어미를 붙여 <span class="gk">ἐλαχιστότερος</span>라는, 문법적으로 있을 수 없는 단어를 만들었습니다. "가장 작은 것보다 더 작은". 게다가 라틴어 이름 "파울루스"(Paulus) 자체가 "작은 자"라는 뜻입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">3:9</div><div class="body">
+    <h3>창조 때부터 감춰 둔 계획</h3>
+    <p>"만물을 지으신 하나님 속에 감추어졌던" 비밀. 교회는 계획이 틀어져 급히 만든 대안이 아니라, 창조 때부터 하나님 마음속에 있던 설계도였습니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">3:10</div><div class="body">
+    <h3>색실로 수놓은 지혜</h3>
+    <p>"각종 지혜"(<span class="gk">πολυποίκιλος 폴뤼포이킬로스</span>)는 여러 색실로 수놓은 천이나 꽃밭처럼 "다채로운"이라는 뜻입니다. 유대인과 이방인, 주인과 종, 남자와 여자가 한 몸을 이룬 교회는 하늘의 천사들이 구경하는 하나님의 자수 작품입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">3:11–12</div><div class="body">
+    <h3>시민만 가진 발언권</h3>
+    <p>"담대함"(<span class="gk">παρρησία 파레시아</span>)은 고대 아테네 민회에서 시민이 누리던 자유 발언권이었습니다. 노예나 외국인에게는 없던 권리지요. 2장에서 시민이 된 우리는 이제 하나님 앞에서 마음껏 말할 권리를 가졌습니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">3:13</div><div class="body">
+    <h3>내 고난이 너희 영광</h3>
+    <p>갇힌 사람이 밖에 있는 사람들을 위로합니다. 바울은 자기 사슬을 부끄러워하지 말고 오히려 영광으로 여기라고 말합니다. 그가 갇힌 이유가 바로 이방인을 향한 복음이었기 때문입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">3:14</div><div class="body">
+    <h3>서서 기도하던 사람들이 무릎을 꿇다</h3>
+    <p>유대인은 보통 서서 기도했습니다(막 11:25, 눅 18:11, 13). 무릎을 꿇는 것은 특별히 간절하거나 엄숙할 때였습니다. 1절에서 끊겼던 문장이 이제 무릎 꿇는 장면으로 다시 이어집니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">3:15</div><div class="body">
+    <h3>아버지(파테르)와 족속(파트리아)</h3>
+    <p>"아버지"(<span class="gk">πατήρ 파테르</span>) 앞에서 "각 족속"(<span class="gk">πατριά 파트리아</span>)에게 이름이 주어졌다는 말은 헬라어로 들으면 말놀이입니다. 모든 가문은 결국 한 아버지에게서 이름을 받았다는 뜻입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">3:16–17</div><div class="body">
+    <h3>손님이 아니라 집주인</h3>
+    <p>"계시게 하시옵고"(<span class="gk">κατοικῆσαι 카토이케사이</span>)는 잠시 머무는 것이 아니라 아예 짐을 풀고 눌러사는 것입니다. 잠깐 머무는 "나그네"(<span class="gk">παροικέω</span>)와 대비되는 단어지요. 그리스도는 가끔 들르는 손님이 아니라 우리 마음의 집주인이 되기 원하십니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">3:18</div><div class="body">
+    <h3>사랑의 네 방향과 십자가</h3>
+    <p>넓이, 길이, 높이, 깊이. 아우구스티누스는 이 네 방향에서 십자가의 모양을 보았습니다. 옆으로 뻗은 팔(넓이), 세로 기둥(길이), 위로 솟은 머리(높이), 땅에 박힌 발(깊이). 그리스도의 사랑은 십자가 모양으로 온 우주를 재고도 남습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">3:19</div><div class="body">
+    <h3>알 수 없는 것을 알게 해 달라</h3>
+    <p>"지식에 넘치는 그리스도의 사랑을 알고". 바울은 일부러 모순처럼 기도합니다. 다 알 수 없지만, 알면 알수록 더 넓어지는 사랑입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">3:20</div><div class="body">
+    <h3>넘치고, 넘어서, 더 넘치게</h3>
+    <p>"더 넘치도록"(<span class="gk">ὑπερεκπερισσοῦ</span>)은 "위로"(휘페르), "밖으로"(엨), "넘치게"(페리쑤)를 겹쳐 붙인 말입니다. 기존 단어로는 부족해서 넘침에 넘침을 덧댄 것입니다. 우리가 구하는 것보다, 생각하는 것보다 더 넘치게 일하시는 분을 표현하려고요.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">3:21</div><div class="body">
+    <h3>편지의 전반부가 닫히는 자리</h3>
+    <p>"대대로 영원무궁하기를". 원문을 직역하면 "모든 세대의, 세세의 세대까지"라는 겹겹의 표현입니다. 1~3장의 교리가 이 송영으로 마무리되고, 4장부터는 삶의 이야기가 시작됩니다.</p>
+    <span class="tag">원어</span></div></article>
+</section>
+
+<!-- ========== 4장 ========== -->
+<section id="ch4">
+  <div class="ch-head"><div class="ch-num">4</div><h2>부르심에 합당한 걸음</h2><p>하나 됨, 선물, 그리고 옛사람을 벗는 일</p></div>
+
+  <article class="v" data-tag="원어"><div class="ref">4:1</div><div class="body">
+    <h3>저울의 양쪽이 맞도록</h3>
+    <p>"합당하게"(<span class="gk">ἀξίως 악시오스</span>)는 저울 양쪽의 무게가 같은 상태를 떠올리게 하는 말입니다. 한쪽에는 받은 부르심이, 다른 쪽에는 우리의 걸음이 올라갑니다. 에베소서는 1~3장에 부르심을, 4~6장에 걸음을 싣고 정확히 3장씩 나뉘어 있습니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">4:2</div><div class="body">
+    <h3>악덕이 미덕이 되다</h3>
+    <p>"겸손"(<span class="gk">ταπεινοφροσύνη</span>)은 헬라 사회에서 칭찬받는 덕목이 아니었습니다. 노예처럼 비굴한 태도를 가리키는 말이었지요. 그리스도께서 종의 형체를 입으신 뒤로, 이 단어는 교회 안에서 으뜸가는 덕목이 되었습니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:3</div><div class="body">
+    <h3>뼈와 뼈를 잇는 인대</h3>
+    <p>"매는 줄"(<span class="gk">σύνδεσμος 쉰데스모스</span>)은 의학 용어로 인대, 힘줄을 가리키기도 했습니다. 하나 됨은 만들어 내는 것이 아니라 성령이 이미 이어 놓으신 것을 "지키는" 것입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">4:4–6</div><div class="body">
+    <h3>일곱 번의 "하나"</h3>
+    <p>몸도 하나, 성령도 하나, 소망도 하나, 주도 하나, 믿음도 하나, 침례도 하나, 하나님도 하나. 완전수 일곱 번의 "하나"가 이어집니다. 유대인이 매일 암송하던 쉐마, "여호와는 오직 유일한 여호와이시니"(신 6:4)의 메아리입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">4:7</div><div class="body">
+    <h3>하나 됨 속의 다양함</h3>
+    <p>일곱 번 "하나"를 말한 바로 다음 구절이 "우리 각 사람에게"로 시작합니다. 하나 됨은 모두가 똑같아지는 것이 아닙니다. 각자 다른 분량의 선물을 받아 한 몸을 이룹니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">4:8</div><div class="body">
+    <h3>시편을 바꿔 인용한 바울?</h3>
+    <p>시편 68:18 원문은 "선물들을 사람들에게서 받으시며"인데, 바울은 "사람들에게 선물을 주셨다"고 인용합니다. 실수가 아닙니다. 아람어 번역인 탈굼에도 이 구절을 "주셨다"로 읽는 전통이 있고, 유대 전통은 이 시편을 모세가 시내산에 올라 율법을 받아 백성에게 준 일로 풀었습니다. 바울은 더 높이 오르신 그리스도께서 성령과 사람들을 교회에 선물로 주셨다고 읽습니다.</p>
+    <p>로마의 개선 행진도 떠오릅니다. 승리한 장군은 포로를 끌고 행진하며 백성에게 전리품을 뿌렸습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">4:9–10</div><div class="body">
+    <h3>어디까지 내려가셨나</h3>
+    <p>"땅 아래 낮은 곳"이 음부(죽은 자의 세계)를 뜻하는지, 성육신으로 이 땅에 내려오신 것을 뜻하는지를 두고 교부 시대부터 해석이 나뉘었습니다. 분명한 것은 가장 낮은 곳까지 내려가신 분이 가장 높은 곳에 오르셔서 "만물을 충만하게" 하신다는 사실입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:11</div><div class="body">
+    <h3>목사와 교사는 한 사람?</h3>
+    <p>헬라어로 사도, 선지자, 복음 전하는 자에는 각각 관사가 붙는데, "목사와 교사"는 관사 하나로 묶여 있습니다. 그래서 가르치는 목자, 곧 한 직분의 두 얼굴로 보는 해석이 많습니다. 또 교회 지도자를 명사 "목자"(<span class="gk">ποιμήν 포이멘</span>)로 부르는 것은 신약에서 이곳이 유일합니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:12</div><div class="body">
+    <h3>그물을 깁고 뼈를 맞추다</h3>
+    <p>"온전하게 하여"(<span class="gk">καταρτισμός</span>)의 동사형은 야고보와 요한이 배에서 "그물을 깁는" 장면에 쓰였습니다(막 1:19). 의사들은 부러진 뼈를 제자리에 맞추는 일에 이 말을 썼습니다. 목회는 찢어진 그물을 깁고 어긋난 뼈를 맞춰, 성도가 스스로 섬기게 하는 일입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">4:13</div><div class="body">
+    <h3>개인이 아니라 공동체의 키</h3>
+    <p>"온전한 사람"은 단수입니다. 각자가 완벽해지는 그림이 아니라, 교회 전체가 한 사람처럼 그리스도의 키만큼 자라는 그림입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:14</div><div class="body">
+    <h3>조작된 주사위</h3>
+    <p>"사람의 속임수"의 <span class="gk">κυβεία 퀴베이아</span>는 주사위 놀이입니다. 속임수로 조작된 주사위를 굴리는 도박꾼처럼 교묘하게 사람을 흔드는 가르침을 가리킵니다. 항구 도시 에베소 사람들에게는 파도에 떠밀리는 배와 도박판이 모두 익숙한 풍경이었습니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:15</div><div class="body">
+    <h3>진리를 "하는" 사람</h3>
+    <p>"참된 것을 하여"(<span class="gk">ἀληθεύοντες 알레튜온테스</span>)는 "진리"를 동사로 만든 말입니다. 진리를 말하기만 하는 것이 아니라 진리로 살아 내는 것, 그것도 "사랑 안에서" 하는 것입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">4:16</div><div class="body">
+    <h3>고대 해부학 교실</h3>
+    <p>"마디", "연결", "분량대로 역사하여". 당시 의학자들이 몸을 설명하던 언어가 이 구절에 가득합니다. 머리에서 오는 공급이 마디마디를 거쳐 온몸을 키운다는 그림은, 한 사람도 없어서는 안 된다는 뜻입니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:17</div><div class="body">
+    <h3>헛됨이라는 이름</h3>
+    <p>"허망한 것"(<span class="gk">ματαιότης 마타이오테스</span>)은 칠십인역 전도서의 "헛되고 헛되다"에 쓰인 그 단어입니다. 에베소의 화려함 밑바닥에 흐르던 공허함을 바울은 전도서의 언어로 불렀습니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:18</div><div class="body">
+    <h3>굳은살이 박인 마음</h3>
+    <p>"굳어짐"(<span class="gk">πώρωσις 포로시스</span>)은 의학 용어로 골절 부위에 생기는 굳은 뼈나 굳은살을 가리켰습니다. 처음엔 아프던 죄가 반복되면 마음에 굳은살이 박여 더 이상 아무것도 느끼지 못하게 됩니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:19</div><div class="body">
+    <h3>통증을 잃어버린 사람</h3>
+    <p>"감각 없는 자"(<span class="gk">ἀπηλγηκότες</span>)는 "아픔을 더는 느끼지 못하게 된"이라는 뜻입니다. 통증은 몸이 보내는 경고인데, 그 경고가 꺼진 상태를 말합니다. 양심이 아프다는 것은 아직 살아 있다는 증거입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">4:20–21</div><div class="body">
+    <h3>과목이 아니라 사람을 배우다</h3>
+    <p>"너희는 그리스도를 그같이 배우지 아니하였느니라". 철학 학파에서는 가르침을 배웠지만, 교회는 한 사람을 배웁니다. 21절에서 바울은 "그리스도"라는 칭호 대신 "예수"라는 이름을 씁니다. 이 편지에서 드문 일로, 역사 속에 사셨던 그분의 삶 자체가 교과서라는 뜻입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">4:22–24</div><div class="body">
+    <h3>침례복을 갈아입던 초대교회</h3>
+    <p>"벗어 버리고… 입으라"는 옷 갈아입는 그림입니다. 3세기 초 히폴리투스의 『사도전승』에 따르면, 초대교회는 침례 받는 사람이 입던 옷을 벗고 물에 들어갔다가 나와서 새 옷을 입게 했습니다. 이 구절이 그 예식 속에서 살아 움직였던 것입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">4:25</div><div class="body">
+    <h3>스가랴에서 온 명령</h3>
+    <p>"각각 그 이웃과 더불어 참된 것을 말하라"는 스가랴 8:16의 인용입니다. 이유가 인상적입니다. "우리가 서로 지체가 됨이라." 내 손이 내 발을 속이지 않듯, 한 몸끼리는 거짓말할 수 없습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">4:26</div><div class="body">
+    <h3>해 지기 전 악수</h3>
+    <p>"분을 내어도 죄를 짓지 말라"는 시편 4:4 칠십인역의 인용입니다. 플루타르코스는 피타고라스 학파 사람들이 다투고 나면 해가 지기 전에 반드시 악수하고 화해했다고 전합니다. 유대인의 하루는 해 질 때 끝났으니, 분노를 다음 날로 넘기지 말라는 뜻입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:27</div><div class="body">
+    <h3>한 뼘의 자리</h3>
+    <p>"틈"(<span class="gk">τόπος 토포스</span>)은 "장소, 자리"입니다. 풀지 않은 분노는 마귀에게 발 디딜 자리 한 뼘을 내주는 일입니다. "마귀"(<span class="gk">διάβολος 디아볼로스</span>)는 "갈라놓는 자, 비방하는 자"라는 뜻이니, 하나 된 몸을 가르는 것이 그의 일입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">4:28</div><div class="body">
+    <h3>빼앗던 손이 주는 손으로</h3>
+    <p>"도둑질하지 말라"로 끝나지 않습니다. 수고하여 일하고, 나아가 "가난한 자에게 구제할 수 있도록". 빼앗던 사람이 주는 사람이 되는 것, 복음은 멈추게 하는 데서 그치지 않고 뒤집어 놓습니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">4:29</div><div class="body">
+    <h3>썩은 생선 같은 말</h3>
+    <p>"더러운 말"의 <span class="gk">σαπρός 사프로스</span>는 "썩은"이라는 뜻으로, 복음서에서 "나쁜 열매"(마 7:17)와 그물에서 버리는 "못된 물고기"(마 13:48)에 쓰인 단어입니다. 우리 입에서 나오는 말이 싱싱한지 상했는지 돌아보게 합니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">4:30</div><div class="body">
+    <h3>슬퍼하실 수 있는 분</h3>
+    <p>힘이나 기운은 슬퍼하지 않습니다. 성령이 "근심하신다"는 말은 성령이 인격이시라는 가장 분명한 증거 중 하나입니다. 이사야 63:10에서 이스라엘이 "주의 성령을 근심하게 하였다"는 말씀이 배경에 있습니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">4:31–32</div><div class="body">
+    <h3>용서의 기준점</h3>
+    <p>31절은 분노가 자라는 순서처럼 읽힙니다. 속으로 쓴 마음, 끓어오름, 폭발, 고함, 비방. 32절은 그 해독제를 줍니다. 용서의 기준은 상대가 한 일이 아니라 "하나님이 그리스도 안에서 너희를 용서하심과 같이"입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+</section>
+
+<!-- ========== 5장 ========== -->
+<section id="ch5">
+  <div class="ch-head"><div class="ch-num">5</div><h2>빛의 자녀, 성령의 충만</h2><p>디오니소스의 도시에서 부르는 새 노래, 그리고 가정</p></div>
+
+  <article class="v" data-tag="원어"><div class="ref">5:1</div><div class="body">
+    <h3>하나님을 흉내 내는 아이들</h3>
+    <p>"본받는 자"(<span class="gk">μιμηταί 미메타이</span>)는 영어 "mimic"의 어원입니다. 아이가 아빠 걸음걸이를 흉내 내듯, "사랑을 받는 자녀같이" 하나님을 따라 하라는 말입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">5:2</div><div class="body">
+    <h3>노아의 제단에서 온 향기</h3>
+    <p>"향기로운 제물"은 노아가 홍수 뒤에 드린 제사에서 하나님이 "그 향기를 받으셨다"(창 8:21)는 표현과 레위기 제사의 언어입니다. 레위기의 모든 제사가 가리키던 것이 그리스도의 자기 내어 줌이었습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">5:3</div><div class="body">
+    <h3>이름조차 부르지 말라</h3>
+    <p>음란은 에베소에서 종교와도 얽혀 있었습니다. 바울은 그것을 "하지 말라"를 넘어 "그 이름조차도 부르지 말라"고 합니다. 성도에게 합당하지 않다는 것이 이유입니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">5:4</div><div class="body">
+    <h3>아리스토텔레스가 칭찬한 말재주</h3>
+    <p>"희롱의 말"(<span class="gk">εὐτραπελία 유트라펠리아</span>)은 아리스토텔레스가 『니코마코스 윤리학』에서 미덕으로 칭찬한 재치 있는 말솜씨였습니다. 그런데 이 단어는 점차 아슬아슬한 농담과 저속한 입담을 가리키게 되었습니다. 바울은 그 자리에 "감사하는 말"을 놓습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">5:5–6</div><div class="body">
+    <h3>탐욕은 우상 숭배</h3>
+    <p>바울은 탐하는 자를 "우상 숭배자"라고 부릅니다. 아르테미스 은 신상을 팔아 돈을 벌던 데메드리오를 기억하는 에베소 사람들에게 이 말은 날카로웠을 것입니다. 우상은 신전에만 있지 않고 지갑 속에도 있습니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">5:7–8</div><div class="body">
+    <h3>어둠 "속에" 있던 게 아니라, 어둠 "이었다"</h3>
+    <p>바울은 "너희가 전에는 어둠 속에 있었다"가 아니라 "어둠이었다"고 말합니다. 그리고 지금은 "빛 안에" 있는 정도가 아니라 "주 안에서 빛"입니다. 환경이 바뀐 것이 아니라 존재가 바뀐 것입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">5:9–10</div><div class="body">
+    <h3>금속을 시험하듯</h3>
+    <p>"시험하여 보라"(<span class="gk">δοκιμάζοντες 도키마존테스</span>)는 금이나 은을 불에 넣어 진짜인지 가려내는 일, 동전이 위조인지 확인하는 일에 쓰던 말입니다. 무엇이 주를 기쁘시게 할지 삶 속에서 불에 넣어 보라는 것입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">5:11–13</div><div class="body">
+    <h3>빛은 폭로하고, 또 바꾼다</h3>
+    <p>"책망하라"는 드러내 밝힌다는 말입니다. 13절은 한 걸음 더 나아갑니다. 빛에 드러난 것은 빛이 된다고요. 빛의 목적은 망신이 아니라 변화입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">5:14</div><div class="body">
+    <h3>초대교회의 침례 찬송</h3>
+    <p>"잠자는 자여 깨어서 죽은 자들 가운데서 일어나라"는 구약 어디에도 똑같은 구절이 없습니다. 그래서 많은 학자들은 초대교회가 침례 때 부르던 찬송의 한 대목으로 봅니다. 2세기 말 알렉산드리아의 클레멘스는 이 노래의 더 긴 형태를 기록해 두었는데, 부활의 태양이신 그리스도를 노래하는 구절이 이어집니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">5:15–16</div><div class="body">
+    <h3>시장에서 기회를 사들이다</h3>
+    <p>"세월을 아끼라"를 직역하면 "때를 사들이라"(<span class="gk">ἐξαγοραζόμενοι τὸν καιρόν</span>)입니다. 아고라(시장)에서 좋은 물건이 나왔을 때 놓치지 않고 사들이는 모습이지요. 여기서 "때"는 흘러가는 시간(크로노스)이 아니라 결정적 기회(카이로스)입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">5:17</div><div class="body">
+    <h3>어리석음의 반대말</h3>
+    <p>바울은 어리석음의 반대를 "똑똑함"이 아니라 "주의 뜻이 무엇인가 이해하는 것"이라고 말합니다. 지혜는 아이큐가 아니라 방향의 문제입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">5:18</div><div class="body">
+    <h3>디오니소스가 입성한 도시</h3>
+    <p>플루타르코스는 마르쿠스 안토니우스가 에베소에 들어올 때 스스로 술의 신 디오니소스처럼 꾸몄고, 여인들은 바쿠스 신도처럼 차려입고 맞이했다고 기록합니다. 술에 취해 신이 들렸다고 믿는 디오니소스 숭배는 이 지역에 익숙했습니다. 바울은 포도주에 취하지 말고 "성령으로 충만하라"고 대비시킵니다.</p>
+    <p>"방탕"(<span class="gk">ἀσωτία 아소티아</span>)은 탕자가 재산을 "허랑방탕하게" 허비할 때 쓰인 단어입니다(눅 15:13).</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">5:19</div><div class="body">
+    <h3>총독이 들은 그리스도인의 노래</h3>
+    <p>주후 112년경, 비두니아 총독 소 플리니우스는 트라야누스 황제에게 편지를 보내 그리스도인들을 조사한 결과를 보고합니다. 그들은 정해진 날 동트기 전에 모여 그리스도를 신으로 모시며 번갈아 찬송을 부른다고요. 에베소서가 말한 "시와 찬송과 신령한 노래"가 로마 관리의 보고서에까지 남은 셈입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">5:20</div><div class="body">
+    <h3>"범사에" 감사</h3>
+    <p>감옥에 있는 사람이 "범사에 항상" 감사하라고 씁니다. 상황이 좋아서가 아니라 "우리 주 예수 그리스도의 이름으로" 하는 감사이기에 가능한 고백입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">5:21–22</div><div class="body">
+    <h3>22절에는 동사가 없다</h3>
+    <p>가장 오래된 사본들에서 22절은 "아내들은 자기 남편에게, 주께 하듯"이 전부입니다. "복종하라"는 동사가 없어서 21절의 "피차 복종하라"를 빌려 와야 문장이 됩니다. 곧 아내의 복종은 교회 전체가 서로 복종하는 큰 틀 안에 들어 있습니다. 게다가 21절은 18절 "성령으로 충만하라"에 딸린 분사로, 성령 충만의 열매로 이어져 있습니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">5:22–24</div><div class="body">
+    <h3>아리스토텔레스의 가정 규범을 뒤집다</h3>
+    <p>아리스토텔레스의 『정치학』 이래로 헬라 세계에는 남편과 아내, 아버지와 자녀, 주인과 종의 관계를 다룬 가정 규범이 있었습니다. 늘 윗사람에게만 말했고, 아랫사람은 명령받는 대상일 뿐이었지요. 바울은 먼저 아내와 자녀와 종에게 직접 말을 겁니다. 그들을 스스로 선택할 수 있는 인격으로 대한 것입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">5:25</div><div class="body">
+    <h3>남편에게 "사랑하라"고 명령한 문서</h3>
+    <p>고대의 가정 규범들은 남편에게 아내를 다스리라고는 했지만 "사랑하라"(<span class="gk">ἀγαπᾶτε</span>)고 명령하는 경우는 찾아보기 어렵습니다. 그것도 "그리스도께서 교회를 위하여 자신을 주심 같이", 곧 죽기까지 사랑하라는 기준입니다. 바울이 남편에게 쓴 분량이 아내에게 쓴 분량보다 세 배쯤 깁니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">5:26–27</div><div class="body">
+    <h3>신부의 목욕</h3>
+    <p>유대인과 헬라인 모두 결혼식 전에 신부가 정결하게 목욕하는 관습이 있었습니다. "물로 씻어"(<span class="gk">λουτρόν</span>)는 그 장면을 떠올리게 합니다. 보통은 신부 쪽에서 준비했지만, 여기서는 신랑이 직접 신부를 씻기고 단장시켜 자기 앞에 세웁니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">5:28–30</div><div class="body">
+    <h3>자기 몸처럼</h3>
+    <p>"양육하여 보호하기를"의 두 동사는 유모가 아이를 먹이고 품어 따뜻하게 하는 모습입니다(살전 2:7 참고). 그리스도가 교회를 이렇게 대하시고, 우리는 그 몸의 "지체"입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">5:31</div><div class="body">
+    <h3>에덴에서 온 결혼식 주례사</h3>
+    <p>창세기 2:24의 인용입니다. 예수님도 결혼을 말씀하실 때 이 구절로 돌아가셨습니다(마 19:5). 바울은 에덴의 첫 결혼이 처음부터 더 큰 결혼을 가리키는 그림이었다고 봅니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">5:32</div><div class="body">
+    <h3>한 단어가 만든 교리 논쟁</h3>
+    <p>"이 비밀이 크도다"의 "비밀"(<span class="gk">μυστήριον</span>)을 라틴어 불가타 성경은 "sacramentum"으로 옮겼습니다("sacramentum hoc magnum est"). 중세 교회는 이 구절을 결혼이 성례(聖禮)라는 근거로 삼았고, 종교개혁자들은 번역을 근거로 교리를 세웠다며 반박했습니다. 한 단어의 번역이 수백 년의 논쟁을 낳은 것입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">5:33</div><div class="body">
+    <h3>다시 땅으로</h3>
+    <p>그리스도와 교회라는 거대한 비밀을 말하던 바울은 "그러나"로 다시 부엌과 거실로 돌아옵니다. 가장 큰 신비가 가장 평범한 가정에서 실천됩니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+</section>
+
+<!-- ========== 6장 ========== -->
+<section id="ch6">
+  <div class="ch-head"><div class="ch-num">6</div><h2>사슬에 매인 대사의 전신 갑주</h2><p>가정과 일터, 그리고 보이지 않는 씨름</p></div>
+
+  <article class="v" data-tag="문화"><div class="ref">6:1–3</div><div class="body">
+    <h3>예배 자리에 앉아 있던 아이들</h3>
+    <p>바울은 자녀에게 직접 말합니다. 편지는 교회 모임에서 소리 내어 읽혔으니, 아이들도 그 자리에 앉아 있었다는 뜻입니다. 그리고 십계명 가운데 "약속 있는 첫 계명"(출 20:12)을 가져옵니다. 원래 "그 땅에서" 장수한다는 약속을 바울은 "땅에서"로 넓혀 이방인 아이들에게도 적용합니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">6:4</div><div class="body">
+    <h3>생사여탈권을 가진 아버지</h3>
+    <p>로마법의 "파트리아 포테스타스"(가부장권)는 아버지에게 자녀의 생사까지 결정할 권한을 주었습니다. 원치 않는 갓난아기를 내다 버리는 일도 흔했지요. 그런 세상에서 바울은 아버지에게 "노엽게 하지 말라"고 명령합니다. 권리보다 책임을 먼저 말한 것입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">6:5</div><div class="body">
+    <h3>교회 안의 종들</h3>
+    <p>당시 도시 인구의 상당수가 노예였고, 초대교회에도 많은 종들이 있었습니다. 바울은 종들에게 직접 말합니다. "성실한 마음"(<span class="gk">ἁπλότης 하플로테스</span>)은 "한 겹의, 나뉘지 않은" 마음입니다. 겉과 속이 두 겹이 아닌 마음이지요.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">6:6</div><div class="body">
+    <h3>"눈가림"이라는 신조어</h3>
+    <p>"눈가림만 하여"(<span class="gk">ὀφθαλμοδουλία 옵탈모둘리아</span>)는 "눈"과 "종노릇"을 합친 말로, 바울 이전의 문헌에서는 찾아볼 수 없습니다. 주인 눈이 있을 때만 일하는 태도를 딱 한 단어로 만들어 낸 것입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">6:7–8</div><div class="body">
+    <h3>진짜 고용주</h3>
+    <p>"사람들에게 하듯 하지 말고 주께 하듯". 종의 노동이 예배가 되는 순간입니다. 8절은 종이든 자유인이든 같은 기준으로 갚으신다고 말합니다. 법정에서는 차별받던 사람들이 하나님의 법정에서는 똑같이 섭니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">6:9</div><div class="body">
+    <h3>같은 가방에 들어 있던 빌레몬서</h3>
+    <p>주인들에게 "위협을 그치라, 너희 주인도 하늘에 계시다"고 합니다. 흥미롭게도 두기고가 이 편지와 골로새서를 들고 갈 때 도망쳤던 종 오네시모가 동행했습니다(골 4:7–9). 오네시모의 주인 빌레몬에게 보내는 편지도 같은 여행길에 있었지요. 이 구절은 이론이 아니라 실제 한 사람의 운명이 걸린 말이었습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">6:10</div><div class="body">
+    <h3>1장의 힘으로 돌아가다</h3>
+    <p>"주 안에서와 그 힘의 능력으로 강건하여지라". 1:19에서 쌓아 올렸던 힘의 단어들(능력, 위력, 힘)이 다시 등장합니다. 싸움의 힘은 우리 근육이 아니라 그리스도를 살리신 그 능력에서 옵니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">6:11</div><div class="body">
+    <h3>사슬 건너편의 병사</h3>
+    <p>로마에서 가택 연금 중이던 바울은 늘 병사 한 명과 함께 있었습니다(행 28:16). 사슬로 병사와 손목이 이어져 있었을 가능성이 큽니다. "전신 갑주"(<span class="gk">πανοπλία 파노플리아</span>)를 쓰는 바울의 눈앞에는 날마다 바뀌어 들어오는 로마 병사의 장비가 있었을 것입니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">6:12</div><div class="body">
+    <h3>전쟁이 아니라 씨름</h3>
+    <p>"씨름"(<span class="gk">πάλη 팔레</span>)은 레슬링입니다. 멀리서 활 쏘는 전투가 아니라 맞붙어 숨결이 닿는 싸움이지요. 에베소의 체육관에서 레슬링은 인기 종목이었습니다. "세상 주관자들"(<span class="gk">κοσμοκράτορες</span>)은 신약에서 이곳에만 나오는 말로, 당시 마술 문헌에서 별의 신들을 부를 때 쓰던 호칭입니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">6:13</div><div class="body">
+    <h3>공격이 아니라 서 있기</h3>
+    <p>이 단락에서 가장 많이 반복되는 동사는 "서다"(11, 13, 14절)입니다. 적진으로 돌격하라는 명령이 없습니다. 이미 그리스도가 이기신 자리를 빼앗기지 않고 "서 있는 것"이 성도의 싸움입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">6:14</div><div class="body">
+    <h3>이사야의 하나님이 입으셨던 갑옷</h3>
+    <p>병사는 허리띠(칭굴룸)부터 맸습니다. 긴 옷자락을 끌어올려 묶어야 움직일 수 있었고, 칼도 거기에 찼지요. 그런데 "의의 호심경"은 이사야 59:17에서 하나님이 직접 입으신 갑옷입니다. 우리가 입는 갑옷은 원래 하나님의 것이었습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">6:15</div><div class="body">
+    <h3>징 박힌 군화</h3>
+    <p>로마 병사의 샌들(칼리가)은 바닥에 쇠징을 촘촘히 박아 미끄러지지 않게 했습니다. 요세푸스는 예루살렘 성전 전투에서 한 백부장이 징 박힌 신발 때문에 매끄러운 돌바닥에 미끄러져 쓰러진 장면을 기록하기도 했습니다. 평안의 복음은 흔들리는 땅에서도 버티게 하는 징입니다. 전쟁 장비 한가운데 "평안"이 들어 있다는 것도 놀랍습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">6:16</div><div class="body">
+    <h3>문짝만 한 방패</h3>
+    <p>"방패"(<span class="gk">θυρεός 튀레오스</span>)는 "문"(<span class="gk">θύρα</span>)에서 온 말로, 사람 몸을 거의 가리는 큰 직사각형 방패입니다. 가죽을 씌운 방패를 물에 적셔 불화살을 끄기도 했다고 전해집니다. 로마 병사들은 이 방패를 서로 맞대어 거북 등딱지 모양(테스투도) 진형을 짰습니다. 믿음의 방패도 함께 들 때 가장 강합니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">6:17</div><div class="body">
+    <h3>짧은 칼, 입에서 나오는 말씀</h3>
+    <p>"검"(<span class="gk">μάχαιρα 마카이라</span>)은 긴 장검이 아니라 근접전에 쓰는 짧은 칼입니다. 12절의 씨름과 어울리지요. "하나님의 말씀"에 쓰인 <span class="gk">ῥῆμα 레마</span>는 입으로 말해진 말씀을 강조합니다. 광야에서 예수님이 "기록되었으되"로 시험을 물리치신 장면이 떠오릅니다.</p>
+    <span class="tag">원어</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">6:18</div><div class="body">
+    <h3>일곱 번째 무기</h3>
+    <p>갑주 목록에는 없지만 모든 것을 움직이게 하는 것이 기도입니다. "모든 기도, 항상, 모든 인내, 모든 성도". 이 한 절에 "모든"이 네 번 들어 있습니다. "깨어"(<span class="gk">ἀγρυπνέω</span>)는 잠을 쫓으며 보초를 서는 모습입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="깊은 묵상"><div class="ref">6:19</div><div class="body">
+    <h3>풀어 달라가 아니라 담대하게 해 달라</h3>
+    <p>갇힌 바울이 부탁한 기도 제목은 석방이 아니었습니다. 입을 열어 복음의 비밀을 "담대히"(<span class="gk">παρρησία</span>) 알리게 해 달라는 것이었습니다. 3:12에서 본 그 시민의 발언권입니다.</p>
+    <span class="tag">깊은 묵상</span></div></article>
+
+  <article class="v" data-tag="문화"><div class="ref">6:20</div><div class="body">
+    <h3>쇠사슬에 매인 대사</h3>
+    <p>"사슬에 매인 사신"(<span class="gk">πρεσβεύω ἐν ἁλύσει</span>). 고대에도 외교 사절은 해치거나 가두지 않는 것이 원칙이었습니다. 그런데 하늘 왕의 대사가 사슬에 묶여 있습니다. 게다가 <span class="gk">ἅλυσις</span>는 손목을 병사와 연결한 사슬을 가리키는 말입니다. 대사의 휘장 대신 사슬을 차고도 그는 여전히 대사였습니다.</p>
+    <span class="tag">문화</span></div></article>
+
+  <article class="v" data-tag="역사"><div class="ref">6:21–22</div><div class="body">
+    <h3>우편배달부 두기고</h3>
+    <p>고대에는 우체국이 없었으니, 믿을 만한 사람이 편지를 들고 걸어서 전했습니다. 두기고는 아시아 출신으로(행 20:4) 이 편지와 골로새서를 함께 들고 갔습니다. 두 편지의 이 대목은 헬라어로 거의 글자 그대로 같습니다. 편지를 전한 사람은 편지를 읽어 주고 바울의 근황을 설명하는 해설자 역할도 했습니다.</p>
+    <span class="tag">역사</span></div></article>
+
+  <article class="v" data-tag="원어"><div class="ref">6:23–24</div><div class="body">
+    <h3>마지막 단어, "썩지 않음"</h3>
+    <p>"변함없이"로 번역된 마지막 단어는 <span class="gk">ἀφθαρσία 아프타르시아</span>, "썩지 않음, 불멸"입니다. "하늘에 속한 복"으로 시작한 편지가 "썩지 않는 사랑"으로 끝납니다. 이 편지의 첫 단어와 마지막 단어 사이에 우리의 인생 전체가 들어 있습니다.</p>
+    <span class="tag">원어</span></div></article>
+</section>
+
+<!-- ========== 나가며 ========== -->
+<section id="outro" class="intro">
+  <div class="ch-head"><div class="ch-num">後</div><h2>그 후의 에베소</h2><p>편지가 도착한 다음 이야기</p></div>
+  <p>약 30년 뒤, 요한계시록 2장에서 예수님은 에베소 교회에 편지하십니다. 수고와 인내, 거짓 사도를 분별한 것을 칭찬하시지만 한마디를 덧붙이시지요. "처음 사랑을 버렸다." 에베소서는 "사랑"이라는 말이 유난히 자주 나오는 편지입니다. 그 사랑의 편지를 받은 교회가 한 세대 만에 사랑을 잃었다는 것은 오늘 우리에게도 깊은 경고입니다.</p>
+  <p>초대교회 전승은 사도 요한이 말년을 에베소에서 보냈다고 전합니다. 2세기 초에는 안디옥의 감독 이그나티우스가 순교하러 로마로 끌려가던 길에 에베소 교회에 편지를 썼습니다. 431년에는 이 도시에서 에베소 공의회가 열렸습니다.</p>
+  <div class="note">
+    <h4>옮겨진 촛대</h4>
+    <p>"만일 회개하지 아니하면 내가 네게 가서 네 촛대를 그 자리에서 옮기리라"(계 2:5). 번성하던 에베소 항구는 강에서 흘러든 토사로 점점 메워졌고, 오늘날 유적지는 바다에서 수 킬로미터 떨어진 내륙에 있습니다. 한때 세계를 호령하던 도시는 폐허로 남았지만, 그 도시에 보낸 편지는 지금도 전 세계 교회에서 읽히고 있습니다.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">성경의 숨은 재밌는 이야기 · 에베소서<br><b>기독교한국침례회 은혜교회</b> · 담임목사 박동준</div>
+</footer>
+
+<script>
+(function(){
+  var chips = document.querySelectorAll('.chip');
+  var items = document.querySelectorAll('.v');
+  chips.forEach(function(c){
+    c.addEventListener('click', function(){
+      var f = c.getAttribute('data-f');
+      chips.forEach(function(x){ x.setAttribute('aria-pressed', x === c ? 'true' : 'false'); });
+      items.forEach(function(v){
+        v.classList.toggle('hide', f !== 'all' && v.getAttribute('data-tag') !== f);
+      });
+    });
+  });
+  var links = document.querySelectorAll('nav.tabs a');
+  var secs = Array.prototype.map.call(links, function(a){ return document.querySelector(a.getAttribute('href')); });
+  function mark(){
+    var y = window.scrollY + 90, idx = 0;
+    secs.forEach(function(s, i){ if (s && s.offsetTop <= y) idx = i; });
+    links.forEach(function(a, i){ a.classList.toggle('on', i === idx); });
+  }
+  window.addEventListener('scroll', mark, {passive:true});
+  mark();
+})();
+</script>
