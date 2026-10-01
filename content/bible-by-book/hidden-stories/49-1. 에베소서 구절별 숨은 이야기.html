@@ -77,6 +77,12 @@ section{margin-block:28px;padding:32px 28px 12px;background:var(--panel);border-
 .facts b{display:block;font-family:var(--display);font-weight:800;font-size:22px;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;margin-bottom:2px}
 .facts span{font-family:var(--ui);font-size:12.5px;color:var(--muted);line-height:1.5;display:block}
 
+.photo{margin:22px 0 10px}
+.photo img{display:block;width:100%;max-width:100%;aspect-ratio:3/2;object-fit:cover;border-radius:16px;background:var(--soft);box-shadow:0 8px 24px rgba(26,34,56,.08)}
+.v .photo{margin:14px 0 4px}
+.photo figcaption{display:flex;flex-direction:column;gap:4px;margin-top:10px;font-family:var(--ui);font-size:14px;color:var(--muted);line-height:1.6}
+.photo figcaption a{color:var(--sky);font-size:12.5px;font-weight:500;text-decoration:none}
+.photo figcaption a:hover,.photo figcaption a:focus-visible{text-decoration:underline}
 .map{margin:24px 0 8px}
 .map-frame{position:relative;aspect-ratio:4/3;max-width:100%;border-radius:16px;overflow:hidden;background:var(--soft);box-shadow:0 8px 24px rgba(26,34,56,.08)}
 .map-frame::before{content:"지도를 불러오는 중입니다";position:absolute;inset:0;display:grid;place-items:center;font-family:var(--ui);font-size:14px;color:var(--muted)}
@@ -108,6 +114,8 @@ footer b{color:var(--ink);font-weight:700}
   .chip{font-size:14.5px;padding:7px 15px}
   nav.tabs a{font-size:15px;padding:7px 12px}
   .map figcaption{font-size:15.5px}
+  .photo figcaption{font-size:15.5px}
+  .photo figcaption a{font-size:13.5px}
   .map-frame{aspect-ratio:1/1}
   section{padding:24px 18px 8px;border-radius:18px}
   .v{grid-template-columns:1fr;gap:8px}
@@ -157,6 +165,10 @@ footer b{color:var(--ink);font-weight:700}
     <div><b>3년</b><span>바울이 에베소에서 사역한 기간</span></div>
     <div><b>약 41억 원</b><span>불태운 마술책의 값 (은 5만 드라크마, 오늘날 최저임금 기준)</span></div>
   </div>
+<figure class="photo">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ephesus_Theater.jpg?width=1280" alt="에베소 대극장 유적" loading="lazy" decoding="async">
+    <figcaption><span>에베소 대극장. 데메드리오의 소동 때 "크다 에베소 사람의 아데미여" 하는 외침이 두 시간 동안 울려 퍼진 곳입니다(행 19:34).</span><a href="https://commons.wikimedia.org/wiki/File:Ephesus_Theater.jpg" target="_blank" rel="noopener">사진: Wikimedia Commons · 촬영자·라이선스 보기 ↗</a></figcaption>
+  </figure>
   <figure class="map">
     <div class="map-frame">
       <iframe title="에베소 유적 위치 (구글 지도)" src="https://maps.google.com/maps?q=37.9395,27.3417&amp;t=h&amp;z=12&amp;hl=ko&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
@@ -320,6 +332,10 @@ footer b{color:var(--ink);font-weight:700}
   <article class="v" data-tag="문화"><div class="ref">2:9</div><div class="body">
     <h3>명예의 사회에서 자랑을 내려놓다</h3>
     <p>로마 사회는 명예와 체면으로 움직였습니다. 부자들은 신전과 공중목욕탕을 기부하고 자기 이름을 비문에 새겼습니다. 에베소 유적에도 그런 기부 비문이 가득합니다. 바울은 구원이라는 가장 큰 건물에는 우리 이름을 새길 자리가 없다고 말합니다.</p>
+    <figure class="photo">
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Efez_Celsus_Library_5_RB.jpg?width=1280" alt="에베소 셀수스 도서관 정면" loading="lazy" decoding="async">
+        <figcaption><span>셀수스 도서관. 바울보다 조금 뒤인 2세기 초, 아들이 아버지 셀수스를 기려 세운 건물입니다. 정면 곳곳에 기부자의 이름과 공적이 새겨져 있어, 명예와 기부를 자랑하던 에베소 사회를 잘 보여 줍니다.</span><a href="https://commons.wikimedia.org/wiki/File:Efez_Celsus_Library_5_RB.jpg" target="_blank" rel="noopener">사진: Wikimedia Commons · 촬영자·라이선스 보기 ↗</a></figcaption>
+      </figure>
     <span class="tag">문화</span></div></article>
 
   <article class="v" data-tag="원어"><div class="ref">2:10</div><div class="body">
@@ -827,6 +843,10 @@ footer b{color:var(--ink);font-weight:700}
   <div class="ch-head"><div class="ch-num">後</div><h2>그 후의 에베소</h2><p>편지가 도착한 다음 이야기</p></div>
   <p>약 30년 뒤, 요한계시록 2장에서 예수님은 에베소 교회에 편지하십니다. 수고와 인내, 거짓 사도를 분별한 것을 칭찬하시지만 한마디를 덧붙이시지요. "처음 사랑을 버렸다." 에베소서는 "사랑"이라는 말이 유난히 자주 나오는 편지입니다. 그 사랑의 편지를 받은 교회가 한 세대 만에 사랑을 잃었다는 것은 오늘 우리에게도 깊은 경고입니다.</p>
   <p>초대교회 전승은 사도 요한이 말년을 에베소에서 보냈다고 전합니다. 2세기 초에는 안디옥의 감독 이그나티우스가 순교하러 로마로 끌려가던 길에 에베소 교회에 편지를 썼습니다. 431년에는 이 도시에서 에베소 공의회가 열렸습니다.</p>
+<figure class="photo">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ephesus_Curetes_street.jpg?width=1280" alt="에베소 쿠레테스 거리 유적" loading="lazy" decoding="async">
+    <figcaption><span>쿠레테스 거리. 한때 신전과 기념비, 귀족의 저택이 늘어서 있던 에베소의 중심 거리입니다. 지금은 폐허가 된 이 길을 바울과 두기고도 걸었을 것입니다.</span><a href="https://commons.wikimedia.org/wiki/File:Ephesus_Curetes_street.jpg" target="_blank" rel="noopener">사진: Wikimedia Commons · 촬영자·라이선스 보기 ↗</a></figcaption>
+  </figure>
   <div class="note">
     <h4>옮겨진 촛대</h4>
     <p>"만일 회개하지 아니하면 내가 네게 가서 네 촛대를 그 자리에서 옮기리라"(계 2:5). 번성하던 에베소 항구는 강에서 흘러든 토사로 점점 메워졌고, 오늘날 유적지는 바다에서 수 킬로미터 떨어진 내륙에 있습니다. 한때 세계를 호령하던 도시는 폐허로 남았지만, 그 도시에 보낸 편지는 지금도 전 세계 교회에서 읽히고 있습니다.</p>
