@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>여호수아, 무너진 성벽에 붉은 줄이 남은 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="라합의 붉은 줄부터 세겜의 큰 돌까지, 여호수아서에 숨은 이야기">
+<meta property="og:title" content="여호수아, 무너진 성벽에 붉은 줄이 남은 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 38</div>
+  <h1>여호수아,<br>무너진 성벽에<br>붉은 <em>줄</em>이 남은 책</h1>
+  <p class="sub">여리고 성벽은 무너졌는데<br>한 창문에 매달린 줄은 끝까지 걸려 있었다</p>
+  <div class="ref">여호수아 1–24장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>여호수아서는 전쟁 이야기로 기억되기 쉬워요. 무너지는 여리고 성벽, 멈춘 해, 정복된 성읍들의 목록까지요. 그런데 조금만 천천히 읽어 보면 이 책의 진짜 주인공은 칼을 든 사람이 아니에요. 첫 장면에서 강하고 담대하라고 말씀하시는 분, 마지막 장면에서 “한 말씀도 땅에 떨어지지 않았다”는 고백을 받으시는 분, 바로 약속을 지키시는 하나님이세요.</p><p>그리고 그 약속은 생각지 못한 사람들에게까지 닿아요. 여리고의 기생 라합, 속임수로 찾아온 기브온 사람들, 이방 족속 출신으로 보이는 갈렙까지요. 창문에 걸린 붉은 줄, 요단 강이 멈춘 “아담” 성읍, 칼을 빼 든 이상한 사람, 아골 골짜기에 숨겨진 금덩이, 마른 떡과 해어진 가죽 부대, 여든다섯 살 노인의 부탁, 그리고 세겜의 큰 돌까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>여호수아서는 어떤 책일까?</h2>
+    <p>약속의 땅에 들어가 그 땅을 나누어 받은 이야기</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>여호수아서는 모세오경 바로 다음에 오는 책이에요. 모세가 느보 산에서 세상을 떠난 뒤, 그의 시종이었던 여호수아가 백성을 이끌고 요단 강을 건너요. 사십 년 광야 생활을 마친 둘째 세대가 마침내 약속의 땅에 발을 디딘 거예요. 여리고와 아이 성을 시작으로 가나안 남쪽과 북쪽을 차례로 얻고, 그 땅을 열두 지파에게 제비 뽑아 나누어 주고, 마지막으로 여호수아가 백성에게 “누구를 섬길지 오늘 택하라”고 호소해요. 유대 전통은 이 책을 여호수아가 기록했다고 전하고, 히브리 성경에서는 “앞선 예언서”의 첫 책으로 분류돼요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>“여호수아(예호슈아)”는 “여호와는 구원이시다”라는 뜻이에요. 원래 이름은 “호세아(구원)”였는데 모세가 이름을 바꿔 주었어요(민 13:16). 헬라어로 옮기면 “예수”가 돼요.</div><div><b>세 부분으로 된 책</b>1–12장은 땅을 얻는 이야기, 13–21장은 땅을 나누는 이야기, 22–24장은 언약을 새롭게 하는 이야기예요. 가운데 아홉 장은 지명이 빼곡한 “땅 문서”예요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 여호수아서의 저자와 기록 시기에 대해서는 학자들 사이에 여러 견해가 있어요. 책 안에는 “오늘까지”라는 표현이 자주 나와서, 사건 이후 시간이 조금 흐른 뒤에 정리된 부분이 있다고 보기도 해요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">여호수아서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">“강하고 담대하라”로 시작</div><div class="mini-b">첫 장에서만 네 번 나와요(1:6, 7, 9, 18). 그 이유는 늘 같아요. “여호와가 너와 함께 하느니라.”</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">출애굽의 거울</div><div class="mini-b">홍해처럼 요단이 갈라지고, 떨기나무처럼 신을 벗는 장면이 있고, 유월절을 지켜요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">돌로 남긴 기념들</div><div class="mini-b">요단의 열두 돌, 아골 골짜기의 돌무더기, 세겜의 큰 돌까지. “이 돌들은 무슨 뜻이냐”고 물으라고 세웠어요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">이방인을 품는 반전</div><div class="mini-b">라합과 기브온 사람들은 살고, 이스라엘 사람 아간은 무너져요. 혈통보다 믿음이 앞서요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">약속이 다 이루어졌다는 고백</div><div class="mini-b">“선한 일이 하나도 남음이 없이 다 응하였더라”(21:45). 이 책의 결론이에요.</div></div></div></div>
+
+  <div class="target"><p>여호수아서의 중심에는 이 말씀이 있어요. <span class="hl">“강하고 담대하라 두려워하지 말며 놀라지 말라 네가 어디로 가든지 네 하나님 여호와가 너와 함께 하느니라”</span>(1:9). 그리고 책은 이 고백으로 마무리돼요. “여호와께서 이스라엘 족속에게 말씀하신 선한 일이 하나도 남음이 없이 다 응하였더라”(21:45). 하나님의 모든 약속은 <mark>예수 그리스도 안에서 “예”가 되었어요</mark>(고후 1:20).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>창문에 걸린 붉은 줄부터 세겜의 큰 돌까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>붉은 줄</button><button class="chip" onclick="goTo('s2')"><b>2</b>멈춘 요단</button><button class="chip" onclick="goTo('s3')"><b>3</b>칼 든 사람</button><button class="chip" onclick="goTo('s4')"><b>4</b>아골 골짜기</button><button class="chip" onclick="goTo('s5')"><b>5</b>마른 떡</button><button class="chip" onclick="goTo('s6')"><b>6</b>85세의 부탁</button><button class="chip" onclick="goTo('s7')"><b>7</b>세겜의 돌</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>창문에 매단 붉은 “줄”은<br>히브리어로 “소망”과 같은 단어였다</h2><div class="refs">여호수아 2:1-21 · 6:22-25 · 마태복음 1:5 · 히브리서 11:31 · 야고보서 2:25</div></div></div>
+    <div class="scene-body"><p>여호수아는 요단을 건너기 전에 정탐꾼 두 사람을 여리고로 보내요. 그들이 숨어든 곳은 성벽에 붙은 기생 라합의 집이었어요(2:15). 왕의 신하들이 들이닥치자 라합은 정탐꾼들을 지붕 위 삼대 사이에 숨기고, 그들이 이미 성문을 나갔다고 둘러대요. 그리고 놀라운 고백을 해요. “너희의 하나님 여호와는 위로는 하늘에서도 아래로는 땅에서도 하나님이시니라”(2:11). 사십 년 전 홍해 소식을 듣고 온 성이 떨었지만, 그 소식을 믿음으로 받은 사람은 라합 한 사람이었어요.</p><p>정탐꾼들은 약속의 표시로 창문에 “붉은 줄”을 매라고 해요(2:18). 여기서 “줄”로 옮긴 히브리어 <span class="heb" data-tip="티크바(tiqvah) — 여호수아 2:18, 21에서는 ‘줄, 끈’이라는 뜻으로 쓰였다. 구약의 다른 곳에서는 거의 모두 ‘소망, 기대’라는 뜻이다(예: 렘 29:11의 ‘희망’, 호 2:15의 ‘소망의 문’).">티크바</span>는 구약의 다른 곳에서 거의 다 “소망”이라는 뜻으로 쓰여요. “줄”을 잡아당기듯 무언가를 간절히 기다리는 마음이 같은 단어에 담긴 거예요. 라합의 집 창문에 걸린 것은 붉은 끈이자, 이방 여인이 붙든 소망이었어요. 그 붉은 줄은 유월절 밤 문설주에 발랐던 붉은 피를 떠올리게 하기도 해요.</p><p>성벽이 무너지던 날, 성벽에 붙어 있던 라합의 집과 가족은 살아남아요(6:22-25). 이야기는 거기서 끝나지 않아요. 마태복음 1장의 예수님 족보에 이런 줄이 있어요. “살몬은 라합에게서 보아스를 낳고”(마 1:5). 여리고의 기생이 다윗 왕의 고조할머니가 되고, <mark>메시아의 족보에 이름을 올린 거예요</mark>. 히브리서는 그녀를 믿음의 사람으로(히 11:31), 야고보서는 믿음을 행함으로 보여 준 사람으로(약 2:25) 기억해요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 붉은 줄을 그리스도의 피와 연결하는 해석은 1세기 말 로마의 클레멘스가 쓴 편지에도 나오는 오래된 해석이에요. “줄”과 “소망”이 같은 단어라는 점을 여기에 연결하는 것은 해석의 영역이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 과거가 어떠했든, 창문에 소망의 줄을 매단 라합처럼 하나님의 약속을 붙드는 사람을 그리스도의 족보에 올리시는 은혜를 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>요단 강물은 “아담”이라는 성읍에서 멈췄고,<br>건넌 날은 어린 양을 고르는 날이었다</h2><div class="refs">여호수아 3:14-17 · 4:6-7, 19 · 5:10-12 · 출애굽기 12:3 · 마태복음 3:13-17</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">홍해</div>모세가 손을 내밀자 <b>밤새 동풍</b>이 불어 바다가 갈라졌어요(출 14:21).</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">요단</div>제사장들의 <b>발이 물가에 잠기자</b> 강물이 멈췄어요(수 3:15-16).</div></div><p>하필 요단 강물이 가장 불어나는 때였어요. “곡식 거두는 시기에는 요단이 항상 언덕에 넘치더라”(3:15). 하나님은 물이 빠지기를 기다리지 않으시고, 언약궤를 멘 제사장들에게 넘실대는 강으로 먼저 발을 디디라고 하세요. 발바닥이 물에 닿자 강물이 멈췄어요. 그런데 물이 어디서 멈췄는지가 재밌어요. 사르단 가까이에 있는 “아담”이라는 성읍 근처에서 한 곳에 쌓여 섰다고 해요(3:16). 온 백성이 건너는 동안 물을 막아 선 곳의 이름이 “아담”이었어요.</p><p>날짜도 그냥 적힌 게 아니에요. “첫째 달 십일에 백성이 요단에서 올라와”(4:19). 첫째 달 십일은 출애굽 때 유월절 어린 양을 골라 두던 바로 그날이에요(출 12:3). 그리고 나흘 뒤, 이스라엘은 길갈에서 약속의 땅의 첫 유월절을 지켜요(5:10). 그다음 날 그 땅의 소산을 먹었고, 그 이튿날 만나가 그쳤어요(5:12). 사십 년 동안 하루도 빠짐없이 내리던 “이게 뭐지?”가 그날로 멈춘 거예요. 😄</p><p>여호수아는 강 한가운데서 돌 열두 개를 가져와 길갈에 세우게 해요. 훗날 아이들이 “이 돌들은 무슨 뜻이냐” 물으면 이날을 들려주라고요(4:6-7). 그리고 천몇백 년 뒤, 같은 요단 강에서 예수님이 침례 요한에게 침례를 받으세요. 물에서 올라오실 때 하늘이 열리고 “이는 내 사랑하는 아들이요” 하는 음성이 들렸어요(마 3:16-17). 옛 여호수아는 백성을 강 건너 땅으로 이끌었지만, <mark>새 여호수아이신 예수님은 그 강에서 우리를 하나님 나라로 이끄는 길을 시작하셨어요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ “아담” 성읍은 오늘날 요르단의 다미야 근처로 봐요. 아랍 역사가들은 1267년 이 근처 강둑이 무너져 요단이 몇 시간 동안 막혔다고 기록했고, 1927년 지진 때도 비슷한 일이 있었다는 보고가 있어요. 하나님이 이런 자연 현상을 쓰셨는지는 본문이 말하지 않아요. 그 시간까지 정확히 맞추신 것이 기적이라는 점은 변하지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>물이 빠지기를 기다리기보다 약속을 믿고 한 발을 먼저 내딛으며, 그 길의 끝에 예수님이 서 계심을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>“너는 우리 편이냐, 적의 편이냐”,<br>칼을 든 그분의 대답은 “아니라”였다</h2><div class="refs">여호수아 5:13-15 · 6:1-20 · 출애굽기 3:5 · 히브리서 11:30</div></div></div>
+    <div class="scene-body"><p>여리고를 앞둔 밤, 여호수아가 성을 살피다가 칼을 빼 들고 서 있는 한 사람을 만나요. 장군답게 곧바로 물어요. “너는 우리를 위하느냐 우리의 적들을 위하느냐.” 그런데 대답이 뜻밖이에요. 첫마디가 “아니라”였어요. 그리고 자신은 여호와의 군대 대장으로 왔다고 말해요(5:14). 우리 편이냐 적의 편이냐는 질문에 “아니라”라고 하신 거예요. 😄 하나님은 누구의 편에 서서 따라오시는 분이 아니라, 모든 사람이 그분 편에 서야 하는 대장이셨어요.</p><p>여호수아가 엎드리자 그분이 말씀하세요. “네 발에서 신을 벗으라 네가 선 곳은 거룩하니라”(5:15). 사십 년 전 떨기나무 앞에서 모세가 들은 말씀과 거의 같아요(출 3:5). 이 전쟁의 지휘관은 여호수아가 아니라는 표시예요. 그래서 여리고 작전도 전쟁 같지 않아요. 군사들이 아무 말 없이 엿새 동안 하루 한 바퀴씩 성을 돌고, 일곱째 날에는 일곱 바퀴를 돌아요. 맨 앞에는 칼 대신 언약궤와 나팔을 든 제사장들이 섰어요.</p><p>그 나팔을 개역개정은 “양각 나팔”이라고 옮겼는데, 히브리어로는 <span class="heb" data-tip="쇼프로트 하요벨림(shofrot hayyovelim) — ‘숫양 뿔나팔들’. ‘요벨’은 레위기 25장에서 희년을 알리는 뿔나팔이자 ‘희년’이라는 이름의 뿌리다.">쇼프로트 하요벨림</span>, 곧 “요벨” 나팔이에요. 레위기 25장에서 희년을 알리던 바로 그 나팔이지요. 종을 놓아주고 땅을 돌려주던 해방의 나팔 소리와 함께 여리고 성벽이 무너졌어요(6:20). 히브리서는 이렇게 정리해요. “믿음으로 칠 일 동안 여리고를 도니 성이 무너졌으며”(히 11:30). 이 싸움의 승리는 사람의 힘이 아니라 <mark>군대 대장이신 주님</mark>께 있었어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 이 “여호와의 군대 대장”을 성육신 이전에 나타나신 그리스도로 보는 해석이 교회 안에 오래 있어 왔지만, 천사로 보는 견해도 있어요. 또 고고학자들은 여리고 성벽이 무너진 시기를 두고 오랫동안 논쟁해 왔어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님을 내 편으로 끌어들이려 하기보다, 신을 벗고 엎드려 그분의 편에 서는 사람이 됩니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>아간이 숨긴 금덩이와 “괴로움의 골짜기”,<br>그 골짜기는 훗날 “소망의 문”이 된다</h2><div class="refs">여호수아 7:1, 19-26 · 역대상 2:7 · 호세아 2:15 · 사도행전 5:1-11</div></div></div>
+    <div class="scene-body"><p>여리고에서 크게 이긴 이스라엘이 작은 성 아이에서 어이없이 패해요. 원인은 한 사람이었어요. 유다 지파 아간이 하나님께 바쳐야 할 물건을 몰래 챙겨 자기 장막 밑에 묻어 둔 거예요. 그가 고백한 목록은 이래요. “시날 산의 아름다운 외투 한 벌과 은 이백 세겔과 그 무게가 오십 세겔 되는 금덩이 하나”(7:21). 은 이백 세겔은 약 2.3kg으로 요즘 은값으로 수백만 원이고, 금 오십 세겔은 약 570g으로 요즘 금값으로 1억 원 안팎이에요. 외투 하나 때문에 온 이스라엘이 무너진 셈이에요.</p><p>아간이 했던 말에 순서가 있어요. “내가 보고 탐내어 가졌나이다”(7:21). 보고, 탐내고, 가졌다. 에덴동산에서 하와가 열매를 “보고… 탐스럽기도 한… 따먹고” 한 순서와 똑같아요(창 3:6). 결국 아간과 그 집은 심판을 받았고, 그곳에 큰 돌무더기가 쌓였어요. 그리고 그 골짜기 이름은 <span class="heb" data-tip="아코르(akhor) — ‘괴롭게 하다’라는 동사 ‘아카르’와 이어진 이름. 여호수아 7:25에서 ‘네가 어찌하여 우리를 괴롭게 하였느냐’라고 할 때 이 동사가 쓰였다. 역대상 2:7은 아간을 ‘아갈’, 곧 ‘괴롭게 한 자’라고 부른다.">아골</span>, “괴로움의 골짜기”가 되었어요(7:26). 역대상은 아예 아간의 이름을 한 글자 바꿔 “아갈”이라 부르며 이스라엘을 괴롭게 한 사람으로 기록해요(대상 2:7).</p><p>그런데 수백 년 뒤 호세아 선지자가 이 골짜기를 다시 불러내요. “아골 골짜기로 소망의 문을 삼아 주리니”(호 2:15). 여기서 “소망”이 바로 라합의 창문에 걸렸던 그 단어, “티크바”예요. 심판의 돌무더기가 쌓인 골짜기를 하나님은 소망의 문으로 바꾸시겠다고 약속하셨어요. 신약에도 아간을 꼭 닮은 장면이 있어요. 아나니아와 삽비라가 땅값 얼마를 “감추었다”(행 5:2)고 할 때 쓰인 헬라어 동사는, 칠십인역이 아간의 죄(수 7:1)를 옮길 때 쓴 단어와 같아요. 교회가 막 시작될 때도 하나님은 거룩함을 가볍게 여기지 않으셨어요. 그러나 그 거룩한 심판을 대신 받으신 분이 계셔서, <mark>우리의 괴로움의 골짜기가 소망의 문이 되었어요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 1세겔은 약 11.4g으로 계산했어요. 금과 은의 원화 가치는 시세에 따라 크게 달라지니 대략의 규모로만 봐 주세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>보고, 탐내고, 숨기는 내 마음을 하나님 앞에 정직하게 내놓고, 괴로움의 골짜기를 소망의 문으로 바꾸시는 은혜를 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>곰팡이 핀 떡에 속아 맺은 약속,<br>하나님은 해를 멈추시면서까지 지키셨다</h2><div class="refs">여호수아 9:3-27 · 10:6-14 · 사무엘하 21:1-2</div></div></div>
+    <div class="scene-body"><p>여리고와 아이 소식을 들은 기브온 사람들이 꾀를 내요. 해어진 전대와 찢어졌다가 기운 포도주 가죽 부대, 낡아서 기운 신, 마르고 곰팡이 난 떡을 챙겨 들고 여호수아를 찾아와요. “우리는 먼 나라에서 왔습니다.” 그리고 증거물을 내밀어요. 떠나던 날 집에서 따끈따끈했던 떡이 보시다시피 이렇게 말라서 곰팡이가 났다는 거예요(9:12). 사실 그들은 사흘 거리 이웃이었어요(9:16). 😄</p><p>성경은 이스라엘의 실수를 한 줄로 짚어요. “무리가 그들의 양식을 취하고 어떻게 할지를 여호와께 묻지 아니하고”(9:14). 떡 냄새는 맡아 봤는데 하나님께는 묻지 않은 거예요. 속은 걸 알았지만 이스라엘은 하나님의 이름으로 맹세했기에 약속을 깰 수 없었어요. 그런데 그 직후, 가나안 다섯 왕이 연합해서 기브온을 치러 와요. 이스라엘은 속아서 맺은 약속을 지키려고 밤새 행군해 기브온을 도우러 가요. 그리고 그날 여호수아가 외쳐요. “태양아 너는 기브온 위에 머무르라 달아 너도 아얄론 골짜기에서 그리할지어다”(10:12). “여호와께서 사람의 목소리를 들으신 이같은 날은 그 앞에도 없었고 그 뒤에도 없었나니”(10:14).</p><p>하나님은 속아서 한 약속조차 그 이름으로 맺은 것이면 귀하게 여기셨어요. 수백 년 뒤, 사울 왕이 이 맹세를 어기고 기브온 사람들을 죽였을 때 다윗 시대에 삼 년 기근이 들었어요(삼하 21:1-2). 맹세는 그만큼 무거웠어요. 기브온 사람들은 그 뒤 여호와의 제단을 위해 나무를 패고 물을 긷는 사람들이 되었어요(9:27). 저주받을 이웃이 하나님의 집에서 섬기는 사람들이 된 거예요. 사람의 약속도 이렇게 지켜 주신 하나님이라면, <mark>그리스도의 피로 맺으신 하나님의 언약</mark>은 얼마나 더 확실할까요(히 6:17-18).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 해가 머문 사건(10:13)은 “야살의 책”이라는 지금은 전해지지 않는 옛 노래책에도 기록되었다고 해요. 이 일이 어떤 방식으로 일어났는지에 대해서는 여러 해석이 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>보이는 증거만 따지다 하나님께 묻는 일을 건너뛰지 않고, 한 번 하신 약속을 끝까지 지키시는 하나님의 신실함을 붙듭니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>여든다섯 살 갈렙의 부탁,<br>“거인이 사는 그 산지를 내게 주소서”</h2><div class="refs">여호수아 14:6-15 · 15:13-14 · 창세기 15:19 · 23:19 · 민수기 14:24</div></div></div>
+    <div class="scene-body"><p>땅을 나누는 장면 한가운데 한 노인이 여호수아를 찾아와요. 사십오 년 전 열두 정탐꾼 가운데 여호수아와 함께 “올라가자”고 했던 갈렙이에요. 그가 말해요. “오늘 내가 팔십오 세로되 모세가 나를 보내던 날과 같이 오늘도 내가 여전히 강건하니”(14:10-11). 그리고 부탁해요. “그 날에 여호와께서 말씀하신 이 산지를 지금 내게 주소서”(14:12). 하필 그 땅은 거인 아낙 자손이 살던 헤브론이었어요. 사십오 년 전 열 명이 보고 “우리는 메뚜기 같다”며 벌벌 떨던 바로 그 사람들이에요. 😄 남들 같으면 평지를 달라고 할 나이에 가장 어려운 땅을 달라고 한 거예요.</p><p>숨은 이야기가 하나 더 있어요. 성경은 갈렙을 거듭 “그나스 사람 여분네의 아들”이라고 불러요(14:6, 14). 그런데 “그나스 족속”은 하나님이 아브라함에게 주시겠다고 하신 땅의 원주민 목록에 나오는 이름이에요(창 15:19). 그래서 갈렙의 집안이 원래는 이방 족속이었다가 유다 지파에 들어왔다고 보는 학자들이 많아요. 그렇다면 이방 출신 갈렙이 이스라엘 누구보다 하나님을 “온전히 따른” 사람이 된 거예요(14:14; 민 14:24).</p><p>갈렙이 받은 헤브론은 아브라함이 사라를 장사하려고 처음으로 땅을 산 곳이에요(창 23:19). 아브라함, 이삭, 야곱이 묻힌 조상들의 무덤이 있는 곳이지요. 약속을 처음 받은 사람들이 묻힌 땅을, 약속을 끝까지 믿은 사람이 받았어요. 훗날 헤브론은 도피성이 되었고(20:7), 다윗이 처음 왕이 된 도시가 되었어요(삼하 2:11). 그리고 그 다윗의 자손으로 <mark>참 왕이신 예수님</mark>이 오셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 갈렙 집안의 출신에 대해서는 학자들 사이에 견해가 나뉘어요. 본문이 그가 이방 출신이라고 직접 말하지는 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나이나 형편을 핑계 삼지 않고 하나님이 말씀하신 “그 산지”를 바라보며, 끝까지 주님을 온전히 따르기를 소원합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>“이 돌이 우리가 들은 말씀을 들었다”,<br>그리고 같은 곳에서 예수님이 물으신 예배</h2><div class="refs">여호수아 8:30-35 · 24:14-27 · 요한복음 4:5-6, 19-24</div></div></div>
+    <div class="scene-body"><p>여호수아는 생을 마치기 전 온 이스라엘을 세겜으로 불러 모아요. 아브라함이 가나안에 처음 들어와 제단을 쌓았던 곳이고(창 12:6-7), 야곱이 가족의 이방 신상을 땅에 묻었던 곳이에요(창 35:4). 그곳에서 여호수아가 말해요. “너희 조상들이 강 저쪽과 애굽에서 섬기던 신들을 치워 버리고… 너희가 섬길 자를 오늘 택하라 오직 나와 내 집은 여호와를 섬기겠노라”(24:14-15). 백성이 하나님을 섬기겠다고 대답하자 여호수아는 큰 돌을 가져다 상수리나무 아래 세우고 말해요. “이 돌이 우리에게 증거가 되리니.” 여호와께서 하신 모든 말씀을 이 돌이 다 들었다는 거예요(24:27). 돌을 증인으로 세운 거예요. 😄</p><p>세겜 양쪽에는 그리심 산과 에발 산이 마주 보고 서 있어요. 여호수아는 앞서 이곳 에발 산에 제단을 쌓고 율법을 돌에 기록하고, 백성을 두 산 앞에 나눠 세워 축복과 저주의 말씀을 낭독했어요(8:30-35). 두 산 사이 골짜기는 소리가 잘 울려 퍼지는 천연 원형 극장 같다고 해요.</p><p>그리고 천몇백 년 뒤, 바로 이 세겜 근처 수가 성의 야곱의 우물가에 예수님이 앉으세요(요 4:5-6). 사마리아 여인이 그리심 산을 가리키며 물어요. “우리 조상들은 이 산에서 예배하였는데 당신들의 말은 예배할 곳이 예루살렘에 있다 하더이다”(요 4:20). 여호수아가 “누구를 섬길지 택하라” 했던 바로 그 땅에서, 예수님은 대답하세요. “아버지께 참되게 예배하는 자들은 영과 진리로 예배할 때가 오나니 곧 이때라”(요 4:23). 섬길 분을 택하라던 여호수아의 질문에, <mark>참 예배의 길이신 예수님</mark>이 친히 오셔서 답하셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 1980년대 고고학자 아담 제르탈은 에발 산에서 큰 돌 구조물을 발견하고 여호수아의 제단일 수 있다고 주장했어요. 이에 대해서는 지금도 학자들 사이에 논쟁이 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>“오늘 택하라”는 부름 앞에 “나와 내 집은 여호와를 섬기겠노라” 고백하며, 영과 진리로 예배하는 자리로 나아갑니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">성벽은 무너졌지만<br>약속은 한 말씀도 땅에 떨어지지 않았다</div>
+    <p>여호수아서에는 무너지는 것이 많아요. 여리고 성벽이 무너지고, 아이 성 앞에서 이스라엘의 자신감이 무너지고, 거인들의 성읍이 무너져요. 그런데 끝까지 무너지지 않는 것이 하나 있어요. 하나님의 약속이에요. 늙은 여호수아는 마지막으로 이렇게 고백해요. “너희의 하나님 여호와께서 너희에 대하여 말씀하신 모든 선한 말씀이 하나도 틀리지 아니하고 다 너희에게 응하여”(23:14).</p><p>그런데 여호수아가 준 안식은 오래가지 못했어요. 바로 다음 책 사사기에서 백성은 다시 흔들려요. 그래서 히브리서는 “만일 여호수아가 그들에게 안식을 주었더라면 그 후에 다른 날을 말씀하지 아니하셨으리라”(히 4:8)고 말해요. 여기 “여호수아”는 헬라어로 “예수”예요. 옛 여호수아가 열어 준 땅은 그림자였고, <mark>참 안식은 새 여호수아이신 예수 그리스도 안에 있어요</mark>.</p>
+    <div class="q">“여호와께서 이스라엘 족속에게<br>말씀하신 선한 일이 하나도 남음이 없이<br>다 응하였더라” (21:45)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
