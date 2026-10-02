@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>전도서, "헛되다"를 서른여덟 번 외친 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="헛되고 헛되다를 외친 왕의 실험, 범사의 때, 세 겹 줄까지. 전도서에 숨은 이야기">
+<meta property="og:title" content="전도서, &quot;헛되다&quot;를 서른여덟 번 외친 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 53</div>
+  <h1>전도서,<br>"<em>헛되다</em>"를<br>서른여덟 번 외친 책</h1>
+  <p class="sub">해 아래 모든 것을 다 가져 본 사람이 내린 결론,<br>그런데 그 "헛됨"은 원래 "입김"이었다</p>
+  <div class="ref">전도서 1–12장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>전도서는 성경에서 가장 솔직한 책일지도 몰라요. 첫 마디가 "헛되고 헛되며 헛되고 헛되니 모든 것이 헛되도다"(1:2)예요. 😄 성경을 펼쳤는데 "다 소용없다"는 말이 쏟아져요. 돈도, 지혜도, 쾌락도, 일도, 명예도 해 아래서는 다 붙잡을 수 없는 바람 같다고 해요.</p><p>그런데 이 책은 허무주의 책이 아니에요. 모든 것을 다 해 본 사람이 "해 아래"에서는 답이 없다는 것을 정직하게 보여 주고, 마지막에 "해 위"에 계신 하나님을 가리켜요. 입김 같은 헛됨, 바람을 잡는 일, 왕의 실험실, 범사의 때, 세 겹 줄, 물 위에 던진 떡, 그리고 은 줄이 풀리는 날까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>전도서는 어떤 책일까?</h2>
+    <p>해 아래 인생의 한계를 정직하게 묻는 지혜서</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>전도서는 "다윗의 아들 예루살렘 왕 전도자의 말씀이라"로 시작해요(1:1). 교회와 유대 전통은 이 전도자를 솔로몬으로 받아 왔어요. 지혜와 부와 권력을 다 가진 왕이 그 모든 것을 실험해 보고 남긴 기록이에요. 전도서는 "해 아래"라는 말을 서른 번 가까이 써요. 하나님 없이 땅의 것만으로 인생을 설명하려 할 때 무엇이 남는지를 묻는 책이에요. 그리고 결론에서 "하나님을 경외하고 그의 명령들을 지킬지어다"로 맺어요(12:13).</p>
+    <div class="debate sans"><div><b>"전도자"라는 이름</b>히브리어로 "코헬렛", 곧 "회중을 모으는 사람"이에요. 헬라어 칠십인역은 이를 "에클레시아스테스"로 옮겼는데, "교회(에클레시아)"와 같은 뿌리예요.</div><div><b>서른여덟 번의 "헤벨"</b>"헛되다"로 옮긴 히브리어 "헤벨"이 전도서에 38번 나와요. 구약 전체 쓰임의 절반 가까이가 이 짧은 책에 몰려 있어요.</div></div>    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 전도서의 저자와 기록 시기에 대해서는, 솔로몬이 썼다는 전통적 견해와 후대의 지혜자가 솔로몬의 목소리로 썼다는 견해가 함께 있어요.</p>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">전도서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">헤벨</div><div class="mini-b">모든 것이 입김처럼 잡히지 않고 금세 사라진다는 탄식이 이어져요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">해 아래</div><div class="mini-b">하나님을 빼고 땅의 시선으로만 보면 인생이 어떻게 보이는지 정직하게 묘사해요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">왕의 실험</div><div class="mini-b">지혜, 쾌락, 사업, 재물을 차례로 시험해 보고 그 결과를 기록해요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">누리라는 권면</div><div class="mini-b">먹고 마시고 일하며 누리는 것을 하나님의 선물로 받으라는 말이 여러 번 나와요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">하나님 경외로 맺는 결론</div><div class="mini-b">"일의 결국을 다 들었으니 하나님을 경외하고"(12:13).</div></div></div></div>
+
+  <div class="target"><p>전도서의 결론은 이 말씀이에요. <span class="hl">"일의 결국을 다 들었으니 하나님을 경외하고 그의 명령들을 지킬지어다 이것이 모든 사람의 본분이니라"</span>(12:13). 바울은 피조물이 "허무한 데 굴복"하고 있다고 말하는데(롬 8:20), 이때 쓴 헬라어가 칠십인역 전도서의 "헛되다"와 같은 말이에요. 그 허무에서 우리를 건지시는 분이 <mark>부활하신 예수 그리스도</mark>세요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>입김 같은 헛됨부터 은 줄이 풀리는 날까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>입김과 아벨</button><button class="chip" onclick="goTo('s2')"><b>2</b>바람을 잡는 일</button><button class="chip" onclick="goTo('s3')"><b>3</b>왕의 실험</button><button class="chip" onclick="goTo('s4')"><b>4</b>범사에 기한이 있고</button><button class="chip" onclick="goTo('s5')"><b>5</b>세 겹 줄</button><button class="chip" onclick="goTo('s6')"><b>6</b>물 위에 던진 떡</button><button class="chip" onclick="goTo('s7')"><b>7</b>은 줄이 풀리기 전에</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>"헛되다"는 원래 "입김"이었다,<br>그리고 아벨의 이름</h2><div class="refs">전도서 1:2 · 창세기 4:2 · 시편 144:4</div></div></div>
+    <div class="scene-body"><p>"헛되고 헛되며 헛되고 헛되니 모든 것이 헛되도다"(1:2). 여기 "헛되다"는 히브리어 <span class="heb" data-tip="헤벨(hevel) — 입김, 숨, 김, 수증기. 겨울에 입에서 나오는 김처럼 눈에 보이지만 잡을 수 없고 금세 사라지는 것을 가리킨다.">헤벨</span>이에요. 원래 뜻은 "입김, 숨, 김"이에요. 추운 겨울날 입에서 나오는 하얀 김을 떠올려 보세요. 분명히 보이는데 손으로 잡을 수 없고, 금세 사라져요. 😄 전도서는 해 아래 모든 것이 그 입김 같다고 해요.</p><p>"헛되고 헛되며"는 히브리어로 "하벨 하발림", 곧 "입김 중의 입김"이에요. "노래 중의 노래(아가)"처럼 최상급 표현이에요. 세상에서 가장 덧없는 것보다 더 덧없다는 거예요. 시편도 같은 말을 써요. "사람은 헛것 같고 그의 날은 지나가는 그림자 같으니이다"(시 144:4).</p><p>그런데 성경에서 이 단어가 처음 나오는 곳이 어딘지 아세요? 사람 이름이에요. 아담과 하와의 둘째 아들 "아벨"이 히브리어로 "헤벨"이에요(창 4:2). 인류 최초의 죽음을 맞은 사람, 짧게 살다 간 그 사람의 이름이 "입김"이었어요. 전도서는 모든 인생이 아벨처럼 짧다고 말해요. 그런데 히브리서는 그 아벨을 이렇게 기억해요. "그가 죽었으나 그 믿음으로써 지금도 말하느니라"(히 11:4). 입김 같은 인생도 <mark>하나님을 향한 믿음으로 살면 사라지지 않아요</mark>.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>입김처럼 짧은 내 인생을 붙잡을 수 없는 것들에 쓰지 않고, 믿음으로 지금도 말하는 삶을 살기를 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>해는 뜨고 지고, 바람은 돌고 돌고,<br>"해 아래에는 새 것이 없나니"</h2><div class="refs">전도서 1:3-11</div></div></div>
+    <div class="scene-body"><p>"사람이 해 아래에서 수고하는 모든 수고가 자기에게 무엇이 유익한가"(1:3). 전도자는 자연을 관찰해요. "해는 뜨고 해는 지되 그 떴던 곳으로 빨리 돌아가고 바람은 남으로 불다가 북으로 돌아가며 이리 돌며 저리 돌아 바람은 그 불던 곳으로 돌아가고 모든 강물은 다 바다로 흐르되 바다를 채우지 못하며"(1:5-7). 😄 3천 년 전 사람이 바람과 물의 순환을 정확히 관찰한 거예요.</p><p>그리고 결론을 내려요. "이미 있던 것이 후에 다시 있겠고 이미 한 일을 후에 다시 할지라 해 아래에는 새 것이 없나니"(1:9). 끝없이 돌고 도는 쳇바퀴 같은 인생이에요. 전도서는 이런 인생을 자주 "바람을 잡으려는 것"이라고 불러요(1:14 등). 손을 쥐면 아무것도 잡히지 않는 바람이요.</p><p>그런데 "해 아래에는" 새 것이 없다는 말에는 숨은 뜻이 있어요. 그렇다면 해 위에는요? 해를 지으신 분에게는 새 것이 있어요. 이사야는 하나님의 말씀을 이렇게 전해요. "보라 내가 새 일을 행하리니"(사 43:19). 그리고 요한계시록 마지막에 보좌에 앉으신 이가 말씀하세요. "보라 내가 만물을 새롭게 하노라"(계 21:5). 해 아래 쳇바퀴를 끊을 수 있는 분은 <mark>해 위에서 새 일을 행하시는 하나님</mark>뿐이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>반복되는 일상에 지칠 때, 해 아래가 아니라 해 위에서 만물을 새롭게 하시는 하나님을 바라봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>궁전과 포도원과 연못과 노래하는 자들,<br>왕의 거대한 실험실</h2><div class="refs">전도서 2:1-11, 24-26</div></div></div>
+    <div class="scene-body"><p>전도자는 과학자처럼 실험을 해요. "나는 내 마음에 이르기를 자, 내가 시험삼아 너를 즐겁게 하리니 너는 낙을 누리라"(2:1). 그리고 실험 목록이 이어져요. 큰 사업을 일으키고, 집을 짓고, 포도원을 심고, 동산과 과원을 만들고, 숲에 물을 주려고 연못을 파고, 남녀 종들과 가축 떼를 거느리고, 은금과 왕들의 보배를 쌓고, 노래하는 남녀를 두었어요(2:4-8). 😄 돈으로 할 수 있는 건 다 해 본 거예요.</p><p>"무엇이든지 내 눈이 원하는 것을 내가 금하지 아니하며 무엇이든지 내 마음이 즐거워하는 것을 내가 막지 아니하였으니"(2:10). 그리고 실험 결과 보고서가 나와요. "그 후에 내가 생각해 본즉 내 손으로 한 모든 일과 내가 수고한 모든 수고가 다 헛되어 바람을 잡는 것이며 해 아래에서 무익한 것이로다"(2:11).</p><p>그런데 2장 끝에 다른 결론이 하나 더 있어요. "사람이 먹고 마시며 수고하는 것보다 그의 마음을 더 기쁘게 하는 것은 없나니 내가 이것도 본즉 하나님의 손에서 나오는 것이로다"(2:24). 같은 먹고 마심이라도 하나님 없이 붙잡으면 바람이지만, 하나님의 손에서 받으면 선물이 돼요. 전도서는 이 "누리라"는 말을 여러 번 되풀이해요. 행복은 더 많이 가지는 데 있지 않고 <mark>하나님의 손에서 받아 누리는 데</mark> 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>더 많이 가지려는 실험을 멈추고, 오늘의 밥상과 수고를 하나님의 손에서 온 선물로 감사히 누립니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>열네 쌍의 "때",<br>그리고 마음에 심어 두신 영원</h2><div class="refs">전도서 3:1-15</div></div></div>
+    <div class="scene-body"><p>"범사에 기한이 있고 천하만사가 다 때가 있나니"(3:1). 그리고 유명한 목록이 이어져요. "날 때가 있고 죽을 때가 있으며 심을 때가 있고 심은 것을 뽑을 때가 있으며"(3:2). 이렇게 서로 반대되는 짝이 열네 쌍, 모두 스물여덟 가지 "때"가 나와요. 히브리 사람들이 완전수로 여긴 7의 배수예요.</p><p>😄 이 구절은 1959년 미국 포크 가수 피트 시거가 노랫말 그대로 곡을 붙였고, 1965년 그룹 버즈가 불러 미국 음악 차트 1위에 오르기도 했어요. 성경 구절이 거의 그대로 대중가요 1위가 된 드문 경우예요. 전쟁이 한창이던 시대에 "평화할 때가 있느니라"(3:8)는 가사가 많은 사람의 마음을 울렸어요.</p><p>그런데 이 목록 뒤에 전도서에서 가장 깊은 구절이 나와요. "하나님이 모든 것을 지으시되 때를 따라 아름답게 하셨고 또 사람들에게는 영원을 사모하는 마음을 주셨느니라 그러나 하나님이 하시는 일의 시종을 사람으로 측량할 수 없게 하셨도다"(3:11). 사람은 때에 갇혀 살지만, 마음속에는 영원을 향한 그리움이 심겨 있어요. 해 아래 그 무엇으로도 채워지지 않는 그 빈자리를 채우실 분은 <mark>영원하신 하나님</mark>뿐이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>지금이 울 때인지 웃을 때인지 하나님의 때를 분별하고, 내 마음에 심어 두신 영원을 향한 갈망을 하나님께 가져갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>혼자보다 둘이, 둘보다 셋이,<br>"세 겹 줄은 쉽게 끊어지지 아니하느니라"</h2><div class="refs">전도서 4:7-12</div></div></div>
+    <div class="scene-body"><p>전도자는 혼자 사는 한 사람을 관찰해요. "어떤 사람은 아들도 없고 형제도 없이 홀로 있으나 그의 모든 수고에는 끝이 없도다"(4:8). 😄 일만 하고 돈은 쌓이는데 나눌 사람이 없어요. 그리고 그 사람도 결국 묻지요. "내가 누구를 위하여는 이같이 수고하고 나를 위하여는 행복을 누리지 못하게 하는가".</p><p>그래서 전도자는 이렇게 말해요. "두 사람이 한 사람보다 나음은 그들이 수고함으로 좋은 상을 얻을 것임이라 혹시 그들이 넘어지면 하나가 그 동무를 붙들어 일으키려니와 홀로 있어 넘어지고 붙들어 일으킬 자가 없는 자에게는 화가 있으리라"(4:9-10). 광야에서 밤에 둘이 누우면 따뜻하고, 강도를 만나면 둘이 맞설 수 있어요(4:11-12).</p><p>그리고 마지막 줄이 유명해요. "세 겹 줄은 쉽게 끊어지지 아니하느니라"(4:12). 둘이 낫다고 하다가 갑자기 "셋"이 나와요. 그래서 이 구절은 결혼식에서 자주 읽혀요. 남편과 아내 사이에 하나님이 함께 꼬여 들어가시면 쉽게 끊어지지 않는다고요. 고대 근동에서 줄은 가닥을 여러 겹 꼬아 만들수록 튼튼했어요. 우리 관계를 끝까지 붙드는 세 번째 가닥은 <mark>우리 가운데 함께하시는 하나님</mark>이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>혼자 버티는 수고를 내려놓고 함께 걸을 동무를 귀히 여기며, 우리 사이에 하나님을 세 번째 가닥으로 모십니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>"네 떡을 물 위에 던져라",<br>바람만 살피는 사람은 씨를 뿌리지 못한다</h2><div class="refs">전도서 11:1-6</div></div></div>
+    <div class="scene-body"><p>"너는 네 떡을 물 위에 던져라 여러 날 후에 도로 찾으리라"(11:1). 떡을 물에 던지면 퉁퉁 불어 버릴 텐데 무슨 뜻일까요? 😄 이 구절에는 두 가지 해석이 있어요. 하나는 바다 무역이에요. 곡식을 배에 실어 바다 건너로 보내면 시간이 걸려도 이익이 되어 돌아온다는 거예요. 다른 하나는 구제예요. 돌려받을 기대 없이 아낌없이 베풀면 언젠가 하나님이 갚아 주신다는 거예요.</p><p>바로 다음 절이 구제 쪽에 무게를 실어요. "일곱에게나 여덟에게 나눠 줄지어다 무슨 재앙이 땅에 임할는지 네가 알지 못함이니라"(11:2). 앞일을 모르니 오히려 지금 나누라는 거예요. 그리고 이렇게 덧붙여요. "풍세를 살펴보는 자는 파종하지 아니할 것이요 구름을 바라보는 자는 거두지 아니하리라"(11:4).</p><p>바람이 딱 좋아질 때까지, 구름이 완벽해질 때까지 기다리는 농부는 결국 씨를 못 뿌려요. 전도서는 미래를 다 알 수 없다는 사실을 핑계로 아무것도 하지 않는 것이 아니라, 그렇기 때문에 오늘 뿌리라고 말해요. "아침에 씨를 뿌리고 저녁에도 손을 놓지 말라 이것이 잘 될는지, 저것이 잘 될는지… 알지 못함이니라"(11:6). 열매를 맺게 하시는 분은 <mark>바람과 비를 다스리시는 하나님</mark>이세요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 11:1을 바다 무역으로 볼지 구제로 볼지는 주석가들 사이에 의견이 나뉘어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>조건이 완벽해지기를 기다리며 미루던 선한 일과 나눔을, 열매는 하나님께 맡기고 오늘 시작합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>맷돌 소리가 줄고 살구꽃이 피면,<br>"청년의 때에 너의 창조주를 기억하라"</h2><div class="refs">전도서 12:1-8, 13-14</div></div></div>
+    <div class="scene-body"><p>전도서는 이렇게 마무리돼요. "너는 청년의 때에 너의 창조주를 기억하라 곧 곤고한 날이 이르기 전에, 나는 아무 낙이 없다고 할 해들이 가깝기 전에"(12:1). 그리고 나이 듦을 그림 같은 비유로 그려요. 많은 주석가들은 이 단락을 늙어 가는 몸의 묘사로 읽어요.</p><p>"집을 지키는 자들이 떨 것이며"는 떨리는 손, "힘 있는 자들이 구부러질 것이며"는 굽은 다리, "맷돌질하는 자들이 적으므로 그칠 것이며"는 빠진 이, "창들로 내다보는 자가 어두워질 것이며"는 흐려진 눈으로 풀어요(12:3). 그리고 "살구나무가 꽃이 필 것이며"(12:5). 😄 살구꽃은 하얗게 피어요. 흰머리예요. "메뚜기도 짐이 될 것이며", 작은 것도 무겁게 느껴지는 때예요.</p><p>그리고 마지막 장면. "은 줄이 풀리고 금 그릇이 깨지고 항아리가 샘 곁에서 깨지고 바퀴가 우물 위에서 깨지고 흙은 여전히 땅으로 돌아가고 영은 그것을 주신 하나님께로 돌아가기 전에 기억하라"(12:6-7). 등불을 매단 은 줄이 끊어지는 것처럼 생명의 줄이 끊어지기 전에요. 전도서는 "헛되도다"로 한 번 더 외친 뒤(12:8), 결론을 내려요. "하나님을 경외하고 그의 명령들을 지킬지어다"(12:13). 입김 같은 인생을 붙들어 주는 것은 <mark>흙으로 돌아갈 우리를 영원히 기억하시는 창조주</mark>예요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 12:1-7을 늙음의 비유로 읽는 것은 오래된 해석이지만, 폭풍이나 몰락한 집의 모습으로 읽는 견해도 있어요. 각 비유가 무엇을 가리키는지도 학자마다 조금씩 달라요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나이 들어 은 줄이 풀리는 날이 오기 전에, 오늘 나를 지으신 창조주를 기억하며 그분 앞에서 하루를 삽니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">해 아래에서는 입김이지만<br>해 위의 하나님 안에서는 선물이다</div>
+    <p>전도서는 우리가 붙잡으려는 것들이 얼마나 쉽게 사라지는지 정직하게 보여 줘요. 돈도, 지혜도, 업적도 입김처럼 흩어져요. 이 책은 그 사실을 감추지 않고 그대로 마주하게 해요. 그래서 오히려 위로가 돼요. 허무를 느끼는 우리 마음이 이상한 게 아니라는 거니까요.</p><p>그러나 전도서는 거기서 멈추지 않아요. 해 아래에서 헛된 것들이 하나님의 손에서 받을 때는 선물이 되고, 영원을 사모하는 마음은 하나님을 향해 열려 있어요. 그리고 마침내 해 위에서 해 아래로 오신 분이 계세요. 입김 같은 인생을 사셨지만 죽음을 이기고 부활하신 <mark>예수 그리스도</mark>예요. 그분 안에서 우리의 수고는 헛되지 않아요(고전 15:58).</p>
+    <div class="q">"일의 결국을 다 들었으니<br>하나님을 경외하고 그의 명령들을 지킬지어다<br>이것이 모든 사람의 본분이니라" (12:13)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
