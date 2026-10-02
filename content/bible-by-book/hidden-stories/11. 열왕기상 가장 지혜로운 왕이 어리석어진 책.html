@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열왕기상, 가장 지혜로운 왕이 어리석어진 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="솔로몬의 지혜와 성전, 갈라진 나라, 갈멜 산의 불까지. 열왕기상에 숨은 이야기">
+<meta property="og:title" content="열왕기상, 가장 지혜로운 왕이 어리석어진 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 43</div>
+  <h1>열왕기상,<br>가장 <em>지혜로운</em> 왕이<br>어리석어진 책</h1>
+  <p class="sub">듣는 마음을 구한 왕이 듣지 않게 되었을 때,<br>하나님은 세미한 소리로 다시 말씀하셨다</p>
+  <div class="ref">열왕기상 1–22장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>열왕기상은 화려하게 시작해요. 하나님께 "듣는 마음"을 구한 젊은 왕, 온 세상에서 찾아오는 손님들, 금으로 덮인 성전. 이스라엘 역사의 황금기예요. 😄 그런데 책장을 넘길수록 그 금빛이 바래요. 가장 지혜로운 왕이 말년에는 이방 신들의 산당을 짓고, 그 아들 때에 나라는 둘로 쪼개져요.</p><p>그리고 나라가 가장 어두워졌을 때 한 사람이 불쑥 등장해요. 출신도 족보도 소개 없이, "디셉 사람 엘리야"라는 이름 하나로요. 듣는 마음을 구한 꿈, 시바 여왕의 수수께끼, 성전 입구의 두 기둥, 신명기가 금한 세 가지, 아론의 말을 그대로 따라 한 왕, 갈멜 산의 절뚝거림, 그리고 동굴 앞의 세미한 소리까지, 열왕기상의 숨은 이야기를 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>열왕기상은 어떤 책일까?</h2>
+    <p>솔로몬의 영광에서 갈라진 두 왕국까지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>열왕기상·하는 히브리어 성경에서 원래 한 권이었어요. 다윗이 죽고 솔로몬이 왕위에 오르는 때(주전 970년경)부터 시작해, 열왕기하 마지막에 유다가 바벨론에 망하고 여호야긴이 감옥에서 풀려나는 때(주전 561년경)까지 다뤄요. 그래서 이 책은 나라가 망한 뒤 포로 시대에 마지막으로 정리되었다고 봐요. 저자는 알 수 없지만, 유대 전통(탈무드)은 예레미야가 썼다고 전해요. 왜 나라가 망했는지, 그래도 하나님의 약속은 살아 있는지를 묻는 백성에게 주신 책이에요.</p>
+    <div class="debate sans"><div><b>출처를 밝힌 역사책</b>"솔로몬의 행장"(11:41), "이스라엘 왕 역대지략", "유다 왕 역대지략" 같은 왕실 기록을 참고했다고 밝혀요. 지금은 남아 있지 않은 자료들이에요.</div><div><b>성경이 적어 둔 기준 연도</b>"이스라엘 자손이 애굽 땅에서 나온 지 사백팔십 년… 솔로몬이 이스라엘 왕이 된 지 사 년 시브월"(6:1). 성전 건축 시작을 출애굽과 이어 놓은 귀한 연대 기록이에요.</div></div>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">열왕기상의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">솔로몬의 지혜와 성전</div><div class="mini-b">1–11장은 솔로몬의 지혜, 부, 그리고 7년에 걸친 성전 건축 이야기예요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">둘로 갈라진 나라</div><div class="mini-b">12장에서 북쪽 열 지파는 이스라엘, 남쪽은 유다로 나뉘어요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">왕마다 붙은 성적표</div><div class="mini-b">"여호와 보시기에 악을 행하여" 또는 "정직히 행하여". 왕들의 업적보다 하나님 앞의 모습으로 평가해요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">다윗이라는 기준</div><div class="mini-b">"그의 조상 다윗의 마음과 같지 아니하였으나"(15:3). 모든 왕은 다윗과 비교돼요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">엘리야의 등장</div><div class="mini-b">17장부터 왕보다 선지자가 이야기의 중심에 서요.</div></div></div></div>
+
+  <div class="target"><p>열왕기상의 중심에는 성전 봉헌 기도의 이 고백이 있어요. <span class="hl">"하나님이 참으로 땅에 거하시리이까 보소서 하늘과 하늘들의 하늘이라도 주를 용납하지 못하겠거든 하물며 내가 건축한 이 성전이오리이까"</span>(8:27). 솔로몬이 지은 성전은 무너졌지만, 하나님은 마침내 <mark>육신이 되어 우리 가운데 거하신 예수 그리스도</mark>로 오셨어요(요 1:14).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>듣는 마음을 구한 꿈부터 동굴 앞의 세미한 소리까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>듣는 마음</button><button class="chip" onclick="goTo('s2')"><b>2</b>시바 여왕</button><button class="chip" onclick="goTo('s3')"><b>3</b>야긴과 보아스</button><button class="chip" onclick="goTo('s4')"><b>4</b>말·아내·금</button><button class="chip" onclick="goTo('s5')"><b>5</b>두 금송아지</button><button class="chip" onclick="goTo('s6')"><b>6</b>갈멜 산</button><button class="chip" onclick="goTo('s7')"><b>7</b>세미한 소리</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>젊은 왕이 구한 것은<br>"듣는 마음"이었다</h2><div class="refs">열왕기상 3:5-28</div></div></div>
+    <div class="scene-body"><p>기브온에서 하나님이 꿈에 솔로몬에게 나타나 물으세요. "내가 네게 무엇을 줄꼬 너는 구하라"(3:5). 무엇이든 구할 수 있는 백지수표예요. 솔로몬은 장수도, 부도, 원수의 목숨도 구하지 않았어요. 대신 이렇게 구해요. "듣는 마음을 종에게 주사 주의 백성을 재판하여 선악을 분별하게 하옵소서"(3:9).</p><p>"듣는 마음"은 히브리어로 <span class="heb" data-tip="레브 쇼메아(lev shomea) — 직역하면 듣는 마음. 히브리어에서 마음(레브)은 감정보다 생각하고 결정하는 자리다. 쇼메아는 쉐마(들으라)와 같은 뿌리다.">레브 쇼메아</span>예요. "쇼메아"는 유대인이 날마다 암송하던 "쉐마 이스라엘(들으라 이스라엘아)"(신 6:4)과 같은 뿌리예요. 솔로몬이 구한 지혜는 머리 좋은 것이 아니라, 하나님의 말씀과 백성의 사정을 듣는 마음이었어요.</p><p>하나님은 그 대답을 기뻐하셔서 구하지 않은 부와 영광까지 주세요(3:13). 그리고 곧바로 그 지혜가 시험받아요. 한 아기를 두고 두 여인이 서로 자기 아이라고 다투자, 솔로몬은 "칼을 내게로 가져오라"고 해요(3:24). 😄 아기를 반으로 나누자는 말에 진짜 어머니의 마음이 드러났지요. 듣는 마음은 겉의 말 너머에 있는 진짜 마음을 듣는 지혜였어요. 그 지혜의 근원은 <mark>말씀하시는 하나님께 귀 기울이는 것</mark>이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>많은 것을 구하기 전에, 먼저 하나님의 말씀과 이웃의 마음을 듣는 마음을 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>시바 여왕이 가져온 수수께끼,<br>그리고 해마다 들어온 금 666달란트</h2><div class="refs">열왕기상 10:1-14 · 마태복음 12:42</div></div></div>
+    <div class="scene-body"><p>솔로몬의 소문을 들은 시바 여왕이 "어려운 문제로 그를 시험하고자" 찾아와요(10:1). "어려운 문제"는 히브리어로 수수께끼라는 뜻이에요. 삼손이 블레셋 사람들에게 냈던 그 수수께끼(삿 14:12)와 같은 말이에요. 시바는 오늘날 예멘 쪽 아라비아 남부로 보는 견해가 많은데, 유향과 향료 무역으로 부유했던 나라였어요. 여왕은 솔로몬의 지혜와 궁을 보고 "정신이 황홀하여"졌다고 해요(10:5). 😄</p><p>그런데 바로 이어서 이런 문장이 나와요. "솔로몬의 세입금의 무게가 금 육백육십육 달란트요"(10:14). 한 달란트를 약 34킬로그램으로 잡으면 해마다 금 22톤 넘게 들어온 셈이에요. 오늘 금 시세(2026년 10월 초, 1그램 약 18만 원)로 따지면 해마다 4조 원이 넘는 금이에요. 요한계시록의 짐승의 수(계 13:18)와 같은 숫자라서 눈길을 끌어요.</p><p>예수님은 이 여왕을 이렇게 기억하셨어요. "심판 때에 남방 여왕이 일어나… 그가 솔로몬의 지혜로운 말을 들으려고 땅 끝에서 왔음이거니와 솔로몬보다 더 큰 이가 여기 있으며"(마 12:42). 이방 여왕은 솔로몬의 지혜를 들으려 땅 끝에서 왔는데, 정작 이스라엘은 <mark>솔로몬보다 크신 지혜, 예수님</mark>을 눈앞에 두고도 듣지 않았어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 666이라는 숫자가 솔로몬의 말년 타락을 암시한다고 읽는 해석도 있지만, 열왕기의 저자가 요한계시록을 염두에 두었다는 뜻은 아니에요. 달란트의 무게도 시대마다 조금씩 달라서 금액은 대략적인 값이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상의 화려함에 마음을 빼앗기기보다, 솔로몬보다 크신 분의 말씀을 들으러 먼저 나아갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>성전 입구의 두 기둥,<br>"그가 세우리라"와 "그에게 능력이 있다"</h2><div class="refs">열왕기상 7:15-26 · 룻기 4:21</div></div></div>
+    <div class="scene-body"><p>솔로몬은 성전 현관 앞에 높이 열여덟 규빗(약 8미터)짜리 놋 기둥 두 개를 세웠어요. 그리고 이름을 붙였어요. "오른쪽 기둥을 세우고 그 이름을 야긴이라 하고 왼쪽의 기둥을 세우고 그 이름을 보아스라 하였으며"(7:21). 야긴은 "그가 세우리라", 보아스는 "그에게 능력이 있다"라는 뜻으로 풀어요.</p><p>성전에 들어가는 사람은 누구나 두 기둥 사이를 지나가야 했어요. 이 집을 세우시는 분도, 지키시는 능력도 하나님께 있다는 고백을 지나서 들어가는 거예요. 그런데 "보아스"는 솔로몬의 고조할아버지 이름이기도 해요(룻 4:21). 룻을 품었던 그 보아스지요. 우연히 들어간 밭에서 시작된 은혜가 성전 기둥의 이름으로 서 있었어요.</p><p>성전 마당에는 놋으로 만든 큰 물통, "바다"도 있었어요. "그 직경이 십 규빗이요 그 주위는 삼십 규빗 줄을 두를 만하며"(7:23). 😄 지름이 10이면 둘레는 31.4쯤 되어야 하는데 30이라서, "성경은 원주율을 3으로 계산했다"는 이야기가 유명해요. 하지만 그릇 두께가 한 손바닥(7:26)이었으니, 바깥 지름과 안쪽 둘레를 잰 것이라면 숫자가 거의 맞아요. 그 어떤 크고 정교한 성전도, 결국 <mark>세우시고 능력 주시는 하나님</mark>을 가리키는 표지판이었어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 야긴과 보아스라는 이름의 정확한 뜻과, 왜 그런 이름을 붙였는지에 대해서는 여러 해석이 있어요. "보아스"와 룻기의 보아스를 연결하는 것도 일부 주석가들의 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 삶의 문을 드나들 때마다 "그가 세우리라, 그에게 능력이 있다"는 고백을 지나 들어갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>신명기가 왕에게 금한 세 가지,<br>솔로몬은 셋 다 했다</h2><div class="refs">열왕기상 10:14-29 · 11:1-8 · 신명기 17:16-17</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">신명기 17:16-17</div>말을 많이 두지 말며 <b>아내를 많이 두지 말며</b> 은금을 많이 쌓지 말라</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">솔로몬</div>애굽에서 말을 들여오고 <b>후궁 칠백, 첩 삼백</b>, 은을 돌 같이 흔하게</div></div><p>신명기 17장에는 이스라엘이 장차 왕을 세울 때 그 왕이 하지 말아야 할 일이 적혀 있어요. 말을 많이 두지 말 것, 특히 애굽에서 들여오지 말 것. 아내를 많이 두지 말 것. 은금을 많이 쌓지 말 것(신 17:16-17). 그리고 율법책을 곁에 두고 평생 읽으라고 했어요(17:18-19).</p><p>그런데 솔로몬 이야기를 읽어 보면 이 세 가지가 차례로 나와요. "솔로몬의 말들은 애굽에서 들여왔으니"(10:28), "왕이 은을 돌 같이 흔하게 하고"(10:27), 그리고 "왕은 후궁이 칠백 명이요 첩이 삼백 명이라"(11:3). 😄 천 명의 아내라니, 이름을 다 외웠을지 모르겠어요. 아내들은 대부분 이웃 나라와 맺은 정략결혼으로 들어왔어요.</p><p>결과는 이렇게 기록돼요. "솔로몬의 나이가 많을 때에 그의 여인들이 그의 마음을 돌려 다른 신들을 따르게 하였으므로 왕의 마음이 그의 아버지 다윗의 마음과 같지 아니하여"(11:4). 가장 지혜로운 사람도 말씀을 떠나면 가장 어리석어질 수 있어요. 솔로몬의 지혜는 처음부터 그의 것이 아니라 하나님이 주신 것이었어요. 참된 지혜는 <mark>끝까지 하나님께 마음을 두는 것</mark>이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님이 주신 복이 오히려 내 마음을 하나님에게서 돌려놓지 않았는지 돌아봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>"이스라엘아 이는 너희의 신들이라",<br>여로보암이 따라 한 아론의 말</h2><div class="refs">열왕기상 12:1-33 · 출애굽기 32:4</div></div></div>
+    <div class="scene-body"><p>솔로몬이 죽자 백성은 그의 아들 르호보암에게 짐을 가볍게 해 달라고 청해요. 노인들은 들어주라고 조언했지만, 함께 자란 젊은 신하들의 말을 따른 르호보암은 이렇게 대답해요. "내 새끼손가락이 내 아버지의 허리보다 굵으니라… 내 아버지는 채찍으로 너희를 징계하였으나 나는 전갈 채찍으로 너희를 징계하리라"(12:10-11). 😄 이 한마디에 북쪽 열 지파가 떠나요.</p><p>북이스라엘의 첫 왕 여로보암은 백성이 예배하러 예루살렘에 가면 마음이 다시 유다로 돌아갈까 걱정했어요. 그래서 금송아지 둘을 만들어 남쪽 끝 벧엘과 북쪽 끝 단에 두고 이렇게 말해요. "이스라엘아 이는 너희를 애굽 땅에서 인도하여 올린 너희의 신들이라"(12:28).</p><p>어디서 들어 본 말이지요? 시내 산 아래서 아론이 금송아지를 만들고 한 말이 거의 그대로예요(출 32:4). 수백 년 전 광야의 죄를 왕이 나라 정책으로 다시 세운 거예요. 이후 북이스라엘 왕들은 거의 모두 "여로보암의 길로 행하여"라는 평가를 받아요. 정치적 계산이 예배를 바꾸자 나라 전체가 무너지기 시작했어요. 예배의 자리는 <mark>사람의 편의가 아니라 하나님이 정하시는 것</mark>이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 텔 단 유적에서는 여로보암 시대부터 쓰인 것으로 보이는 큰 제단 터가 발굴되었어요. 이곳이 금송아지를 두었던 산당이라고 보는 학자들이 많지만, 금송아지 자체는 발견되지 않았어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나의 편리함과 계산 때문에 하나님이 정하신 예배의 자리를 바꾸고 있지 않은지 돌아봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>갈멜 산의 질문,<br>"언제까지 두 사이에서 절뚝거리려느냐"</h2><div class="refs">열왕기상 18:17-40</div></div></div>
+    <div class="scene-body"><p>3년 넘는 가뭄 끝에 엘리야가 갈멜 산에서 바알 선지자 450명과 마주 서요. 그리고 백성에게 묻습니다. "너희가 어느 때까지 둘 사이에서 머뭇머뭇 하려느냐 여호와가 만일 하나님이면 그를 따르고 바알이 만일 하나님이면 그를 따를지니라"(18:21). "머뭇머뭇하다"는 히브리어 <span class="heb" data-tip="파사흐(pasach) — 다리를 절다, 절뚝거리다. 18:21의 머뭇머뭇하다와 18:26의 뛰놀다가 같은 동사다. 유월절(페사흐)과 소리가 같은 말이다.">파사흐</span>로, 원래 "다리를 절다"라는 뜻이에요. 두 갈래 길에 한 발씩 걸치고 절뚝거리는 모습이지요.</p><p>재밌는 건 이 단어가 몇 절 뒤에 또 나온다는 거예요. 바알 선지자들이 아침부터 낮까지 바알을 부르며 "제단 주위에서 뛰놀더라"(18:26). 여기 "뛰놀다"가 같은 동사예요. 백성은 믿음 사이에서 절뚝거리고, 바알 선지자들은 제단 주위에서 절뚝거리며 춤을 춰요. 엘리야는 그들을 놀려요. "큰 소리로 부르라 그는 신인즉 묵상하고 있는지 혹은 잠깐 나갔는지 혹은 길을 행하는지 혹은 잠이 들어서 깨워야 할 것인지"(18:27). 😄</p><p>엘리야는 제단에 물을 열두 통이나 부어요. 가뭄 3년째에 물을요. 그리고 짧게 기도하자 불이 내려 번제물과 나무와 돌과 흙까지 태우고 도랑의 물을 핥아요. 백성이 엎드려 외쳐요. "여호와 그는 하나님이시로다 여호와 그는 하나님이시로다"(18:39). 그런데 "엘리야"라는 이름의 뜻이 바로 "나의 하나님은 여호와"예요. 엘리야의 이름이 갈멜 산 백성의 고백이 되었어요. 절뚝거리는 믿음을 끝내는 것은 <mark>살아 계셔서 응답하시는 하나님</mark>이세요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ "잠깐 나갔는지"는 히브리어로 뜻이 분명하지 않은 말이라, 볼일을 보러 갔다는 뜻의 점잖은 표현으로 보는 주석가들도 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님과 세상 사이에 한 발씩 걸치고 절뚝거리지 않고, "여호와 그는 하나님이시로다" 고백하며 한 길을 걷습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>로뎀나무 아래 지친 선지자,<br>바람도 지진도 불도 아닌 "세미한 소리"</h2><div class="refs">열왕기상 19:1-18 · 출애굽기 33:21-23</div></div></div>
+    <div class="scene-body"><p>갈멜 산의 대승리 바로 다음 장에서 엘리야는 이세벨의 협박 한마디에 도망쳐요. 광야의 로뎀나무 아래 앉아 죽기를 구해요. "여호와여 넉넉하오니 지금 내 생명을 거두시옵소서"(19:4). 하나님은 설교 대신 먼저 천사를 보내 숯불에 구운 떡과 물 한 병을 주세요. 😄 그리고 다시 자게 하시고, 또 먹이세요. 지친 사람에게 하나님이 먼저 주신 것은 꾸중이 아니라 밥과 잠이었어요.</p><p>그 힘으로 엘리야는 사십 주야를 걸어 하나님의 산 호렙(시내 산)에 이르러 "굴"에 들어가요(19:9). 히브리어로는 "그 굴"이라고 정관사가 붙어 있어서, 옛날 모세가 하나님의 영광이 지나갈 때 숨었던 "반석 틈"(출 33:22)을 떠올리게 한다는 해석이 있어요. 모세처럼 사십 일, 모세처럼 호렙, 모세처럼 바위 틈이에요.</p><p>그리고 크고 강한 바람, 지진, 불이 지나가는데 "여호와께서 바람 가운데에 계시지 아니하며… 지진 가운데에도… 불 가운데에도 계시지 아니하더니 불 후에 세미한 소리가 있는지라"(19:11-12). "세미한 소리"는 직역하면 <span class="heb" data-tip="콜 데마마 닥카(qol demamah daqqah) — 소리, 고요함, 가는. 고요하고 가느다란 소리, 또는 고요의 소리라고 옮길 수 있다.">콜 데마마 닥카</span>, "고요하고 가느다란 소리"예요. 갈멜 산에서 불로 응답하신 하나님이, 지친 선지자에게는 속삭이듯 말씀하셨어요. 그리고 "나 혼자 남았다"는 엘리야에게 알려 주세요. "바알에게 무릎을 꿇지 아니한 칠천 명을 남기리니"(19:18). <mark>하나님은 우리가 모르는 곳에서도 일하고 계세요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ "그 굴"을 모세가 숨었던 반석 틈과 같은 곳으로 보는 것은 유대 전통과 일부 주석가들의 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>지쳐 "나 혼자 남았다" 싶을 때, 먼저 먹이시고 쉬게 하시는 하나님을 기억하며 고요한 소리에 귀를 기울입니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">하나님은 지진 속이 아니라<br>세미한 소리로 말씀하셨다</div>
+    <p>열왕기상은 "듣는 마음"을 구한 왕으로 시작해요. 그런데 그 왕이 말씀을 듣지 않게 되자 나라가 쪼개지고, 왕들은 금송아지와 바알 앞에서 절뚝거려요. 책의 마지막 장에서 아합 왕은 변장까지 하고 전쟁에 나갔지만 "한 사람이 무심코 활을 당겨" 쏜 화살에 맞아 죽어요(22:34). 하나님의 말씀은 우연처럼 보이는 화살 끝에서도 이루어졌어요.</p><p>그래도 하나님은 말씀을 멈추지 않으셨어요. 왕들이 듣지 않을 때 선지자를 보내셨고, 지친 선지자에게는 고요한 소리로 다시 말씀하셨어요. 그리고 마침내 <mark>솔로몬보다 크신 지혜, 말씀이 육신이 되어 오신 예수 그리스도</mark>를 보내셨어요.</p>
+    <div class="q">"여호와 그는 하나님이시로다<br>여호와 그는 하나님이시로다" (18:39)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
