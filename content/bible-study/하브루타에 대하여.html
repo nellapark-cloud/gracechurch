@@ -242,6 +242,24 @@ footer{margin-top:80px;border-top:1px solid var(--line);padding-block:34px 52px;
 footer b{color:var(--navy)}
 footer .credit{font-size:12px;margin-top:8px;opacity:.8}
 
+/* 용어 팝업 */
+.term{cursor:pointer;color:inherit;border-bottom:1.5px dotted var(--gold);padding-bottom:1px;transition:background .15s;border-radius:2px}
+.term:hover,.term:focus-visible{background:var(--gold-soft);outline:none}
+.term::after{content:'?';display:inline-grid;place-items:center;width:1.05em;height:1.05em;margin-left:.18em;border-radius:50%;background:var(--gold);color:var(--bg);font-family:var(--display);font-size:.58em;font-weight:800;vertical-align:.45em}
+.hint{font-family:var(--display);font-size:.8em;color:var(--muted);margin:1em 0 0}
+.hint .demo{border-bottom:1.5px dotted var(--gold)}
+.gl-back{position:fixed;inset:0;z-index:50;background:rgba(14,18,30,.5);backdrop-filter:blur(3px);display:grid;place-items:center;padding:20px}
+.gl-card{width:100%;max-width:480px;max-height:85vh;overflow:auto;background:var(--surface);border-radius:20px;box-shadow:0 30px 60px -20px rgba(0,0,0,.45);border:1px solid var(--line)}
+.gl-head{padding:24px 26px 18px;background:var(--hero);border-bottom:1px solid var(--line);position:relative}
+.gl-head h3{font-size:1.5em;font-weight:800;margin:0;padding-right:40px}
+.gl-orig{font-family:var(--body);font-size:1.15em;color:var(--navy-2);margin:.25em 0 0}
+.gl-lang{display:inline-block;margin-top:.6em;font-family:var(--display);font-size:.7em;font-weight:700;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:2px 10px}
+.gl-lang:empty{display:none}
+.gl-body{padding:20px 26px 26px;font-size:.95em;line-height:1.85}
+.gl-body p{margin:0 0 .8em}
+.gl-body p:last-child{margin:0}
+.gl-close{all:unset;cursor:pointer;position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--navy);font-family:var(--display);font-size:18px;border:1px solid var(--line)}
+.gl-close:focus-visible{outline:2px solid var(--gold)}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -252,8 +270,9 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
     <div class="eyebrow">은혜교회 말씀 배움 강의</div>
     <h1>하브루타에 대하여</h1>
     <p class="sub">짝과 함께 말씀을 묻고 배우는 길</p>
-    <p class="heb">חַבְרוּתָא · Chavruta</p>
+    <p class="heb"><span class="term" role="button" tabindex="0" data-term="chavruta">חַבְרוּתָא · Chavruta</span></p>
     <p class="lead">둘이 마주 앉아 같은 말씀을 읽고, 묻고, 설명하고, 따져 보는 공부. 유대인들이 수천 년 동안 말씀을 배워 온 방식이에요. 오늘은 하브루타가 무엇인지 이해하고, 목장과 가정에서 바로 해 볼 수 있도록 실제 방법까지 차근차근 익혀 봐요.</p>
+    <p class="hint">글 속에 <span class="demo">점선 밑줄</span>이 있는 낯선 단어는 누르면 뜻풀이가 열려요.</p>
     <div class="hero-map">
       <a href="#part1"><b>1부 · 하브루타 이해하기</b><span>뜻 · 성경적 뿌리 · 예시바 풍경 · 핵심 원리</span></a>
       <a href="#part2"><b>2부 · 하브루타 실제로 하기</b><span>준비 · 진행 8단계 · 유형 · 실습 · 문제 해결</span></a>
@@ -305,11 +324,11 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
   <section class="ch" id="meaning">
     <div class="ch-num">01</div>
     <h2>'공부법'이기 전에 '친구'라는 말이에요</h2>
-    <p>하브루타는 아람어로 <mark>'우정', '동반자 관계'</mark>라는 뜻이에요. 친구를 뜻하는 히브리어 <strong>하베르(חבר)</strong>에서 나온 말이죠.</p>
+    <p>하브루타는 <span class="term" role="button" tabindex="0" data-term="aramaic">아람어</span>로 <mark>'우정', '동반자 관계'</mark>라는 뜻이에요. 친구를 뜻하는 히브리어 <strong><span class="term" role="button" tabindex="0" data-term="chaver">하베르(חבר)</span></strong>에서 나온 말이죠.</p>
     <p>재미있는 건, 원래 이 말이 공부 방법이 아니라 <strong>함께 공부하는 짝</strong> 그 자체를 가리켰다는 거예요. 유대인 학생들은 "저 친구가 내 하브루타야"라고 말했어요. 그러니까 하브루타의 출발점은 기술이 아니라 <mark>관계</mark>예요. 말씀 앞에 함께 앉아 주는 한 사람이 있다는 것, 그게 하브루타의 시작이에요.</p>
     <figure class="w">
       <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Open_Torah_scroll.jpg?width=1400" alt="펼쳐진 토라 두루마리" loading="lazy">
-      <figcaption>펼쳐진 토라 두루마리. 하브루타는 언제나 이 말씀(본문)을 가운데 두고 이루어져요.</figcaption>
+      <figcaption>펼쳐진 <span class="term" role="button" tabindex="0" data-term="torah">토라</span> 두루마리. 하브루타는 언제나 이 말씀(본문)을 가운데 두고 이루어져요.</figcaption>
     </figure>
   </section>
 
@@ -322,17 +341,17 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
       <cite>잠언 27:17</cite>
     </div>
     <p>칼날을 혼자 두면 무뎌지잖아요. 그런데 다른 쇠에 대고 갈면 날이 서요. 생각도 똑같아요. 혼자 읽으면 내가 아는 만큼만 보이지만, 옆 사람이 "그건 왜 그렇게 생각해요?" 하고 물어 주면 미처 못 본 것이 드러나거든요.</p>
-    <p>유대인의 탈무드에도 <mark>두 학자가 서로를 날카롭게 한다</mark>, <mark>토라는 혼자가 아니라 함께할 때 얻어진다</mark>는 가르침이 담겨 있어요. 이런 전통이 쌓여 유대 학교인 <strong>예시바(Yeshiva)</strong>의 기본 공부 방식이 되었어요.</p>
+    <p>유대인의 <span class="term" role="button" tabindex="0" data-term="talmud">탈무드</span>에도 <mark>두 학자가 서로를 날카롭게 한다</mark>, <mark>토라는 혼자가 아니라 함께할 때 얻어진다</mark>는 가르침이 담겨 있어요. 이런 전통이 쌓여 유대 학교인 <strong><span class="term" role="button" tabindex="0" data-term="yeshiva">예시바(Yeshiva)</span></strong>의 기본 공부 방식이 되었어요.</p>
     <figure class="t">
       <img src="https://commons.wikimedia.org/wiki/Special:FilePath/First_page_of_the_first_tractate_of_the_Talmud_(Daf_Beis_of_Maseches_Brachos).jpg?width=1000" alt="탈무드 베라호트 첫 페이지" loading="lazy">
-      <figcaption>탈무드의 첫 장(베라호트 2a). 가운데 본문을 여러 랍비의 주석이 둘러싸고 있어요. 한 페이지 자체가 수백 년에 걸친 '대화'인 셈이에요.</figcaption>
+      <figcaption>탈무드의 첫 장(<span class="term" role="button" tabindex="0" data-term="berakhot">베라호트 2a</span>). 가운데 본문을 여러 <span class="term" role="button" tabindex="0" data-term="rabbi">랍비</span>의 <span class="term" role="button" tabindex="0" data-term="commentary">주석</span>이 둘러싸고 있어요. 한 페이지 자체가 수백 년에 걸친 '대화'인 셈이에요.</figcaption>
     </figure>
   </section>
 
   <section class="ch" id="scene">
     <div class="ch-num">03</div>
     <h2>도서관이 아니라 시장 같은 공부방</h2>
-    <p>예시바의 공부방을 <strong>베트 미드라쉬(Beit Midrash)</strong>, '배움의 집'이라고 불러요. 여기 들어가 보면 깜짝 놀라요. 수십, 수백 쌍이 마주 앉아 <mark>큰 소리로 본문을 읽고, 손짓하며 따지고, 웃고, 다시 책을 들여다봐요.</mark></p>
+    <p>예시바의 공부방을 <strong><span class="term" role="button" tabindex="0" data-term="beitmidrash">베트 미드라쉬(Beit Midrash)</span></strong>, '배움의 집'이라고 불러요. 여기 들어가 보면 깜짝 놀라요. 수십, 수백 쌍이 마주 앉아 <mark>큰 소리로 본문을 읽고, 손짓하며 따지고, 웃고, 다시 책을 들여다봐요.</mark></p>
     <p>우리가 떠올리는 조용한 도서관과는 정반대죠. 그 시끌벅적함이 바로 살아 있는 배움의 소리예요.</p>
     <div class="pair">
       <figure>
@@ -406,7 +425,7 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
     <p>그래서 두 사람이 아무리 열심히 이야기해도 본문을 떠나면 하브루타가 아니라 그냥 수다가 돼요. <mark>이 원칙 하나만 붙잡아도 절반은 성공</mark>이에요.</p>
 
     <h3>좋은 하브루타 안에서 오가는 세 쌍의 동작</h3>
-    <p>하브루타를 연구한 오릿 켄트(Orit Kent)는 좋은 하브루타 안에서 늘 세 쌍의 동작이 오간다고 정리했어요.</p>
+    <p>하브루타를 연구한 <span class="term" role="button" tabindex="0" data-term="kent">오릿 켄트(Orit Kent)</span>는 좋은 하브루타 안에서 늘 세 쌍의 동작이 오간다고 정리했어요.</p>
     <div class="moves">
       <div class="move"><div><b>듣기</b><span>짝의 말을 끝까지 들어요</span></div><i>↔</i><div><b>말하기</b><span>내 생각을 분명한 말로 꺼내요</span></div></div>
       <div class="move"><div><b>궁금해하기</b><span>여러 가능성을 열어 두어요</span></div><i>↔</i><div><b>초점 맞추기</b><span>그중 하나를 골라 깊이 파요</span></div></div>
@@ -552,8 +571,8 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
         <div class="step-top"><span class="step-n"></span><h3>짝 하브루타 · 본론</h3><span class="time">15~20분</span></div>
         <p>여기가 하브루타의 심장이에요. 아래 여섯 가지 흐름으로 진행돼요.</p>
         <ul class="sub-steps">
-          <li><span>①</span><div><b>역할 정하기</b><p>A는 <strong>설명자</strong>, B는 <strong>질문자</strong>. 5~7분 뒤 인도자가 종을 치면 교대해요. 한 사람만 계속 말하는 걸 막아 줘요.</p></div></li>
-          <li><span>②</span><div><b>설명자의 첫 대답</b><p>자기 생각과 그 <strong>근거(몇 절)</strong>를 함께 말해요.</p><p class="say">"저는 제사장이 정결 규정 때문에 지나갔다고 생각해요. 31절에 '피하여 지나가고'라고 했는데, 일부러 반대편 길로 갔다는 거잖아요."</p></div></li>
+          <li><span>①</span><div><b>역할 정하기</b><p>A는 <strong><span class="term" role="button" tabindex="0" data-term="roles">설명자</span></strong>, B는 <strong><span class="term" role="button" tabindex="0" data-term="roles">질문자</span></strong>. 5~7분 뒤 인도자가 종을 치면 교대해요. 한 사람만 계속 말하는 걸 막아 줘요.</p></div></li>
+          <li><span>②</span><div><b>설명자의 첫 대답</b><p>자기 생각과 그 <strong>근거(몇 절)</strong>를 함께 말해요.</p><p class="say">"저는 제사장이 <span class="term" role="button" tabindex="0" data-term="purity">정결 규정</span> 때문에 지나갔다고 생각해요. 31절에 '피하여 지나가고'라고 했는데, 일부러 반대편 길로 갔다는 거잖아요."</p></div></li>
           <li><span>③</span><div><b>질문자의 되묻기</b><p>동의하든 안 하든 <strong>최소 두 번은</strong> 되물어요.</p>
             <div class="chips">
               <span class="chip">본문 어디에서 그렇게 보여요?</span>
@@ -564,14 +583,14 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
               <span class="chip">만약 반대라면 어떻게 될까요?</span>
             </div></div></li>
           <li><span>④</span><div><b>설명자의 다듬기</b><p>생각을 <strong>고치거나, 보충하거나, 지켜요.</strong> 생각을 바꾸는 건 지는 게 아니라 배우는 거예요.</p></div></li>
-          <li><span>⑤</span><div><b>한 문장으로 정리</b><p>한 질문이 끝날 때마다 둘이 한 문장으로 정리해요.</p><p class="say">"우리는 제사장이 율법을 지키려다 사랑을 놓쳤다고 정리했어요."</p><p>끝까지 생각이 다르면 억지로 합치지 말고 "A는 이렇게, B는 이렇게 봤다"로 둘 다 적어요. 탈무드도 소수 의견까지 함께 기록해 두었어요.</p></div></li>
+          <li><span>⑤</span><div><b>한 문장으로 정리</b><p>한 질문이 끝날 때마다 둘이 한 문장으로 정리해요.</p><p class="say">"우리는 제사장이 율법을 지키려다 사랑을 놓쳤다고 정리했어요."</p><p>끝까지 생각이 다르면 억지로 합치지 말고 "A는 이렇게, B는 이렇게 봤다"로 둘 다 적어요. 탈무드도 <span class="term" role="button" tabindex="0" data-term="minority">소수 의견</span>까지 함께 기록해 두었어요.</p></div></li>
           <li><span>⑥</span><div><b>역할 바꿔 두 번째 질문</b><p>교대해서 두 번째 질문으로 같은 과정을 반복해요.</p></div></li>
         </ul>
       </article>
 
       <article class="step">
         <div class="step-top"><span class="step-n"></span><h3>모둠 나눔</h3><span class="time">10분</span></div>
-        <p>두 짝을 합쳐 <strong>4명 모둠</strong>을 만들고, 각 짝이 세 가지를 나눠요.</p>
+        <p>두 짝을 합쳐 <strong>4명 <span class="term" role="button" tabindex="0" data-term="modum">모둠</span></strong>을 만들고, 각 짝이 세 가지를 나눠요.</p>
         <div class="grid g3" style="margin-bottom:0">
           <div class="card tint-sky"><span class="lab">하나</span><p>우리가 고른 질문</p></div>
           <div class="card tint-mint"><span class="lab">둘</span><p>우리가 도달한 생각 (한 문장)</p></div>
@@ -581,11 +600,11 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
       </article>
 
       <article class="step">
-        <div class="step-top"><span class="step-n"></span><h3>쉬우르 · 인도자의 정리</h3><span class="time">8분</span></div>
+        <div class="step-top"><span class="step-n"></span><h3><span class="term" role="button" tabindex="0" data-term="shiur">쉬우르</span> · 인도자의 정리</h3><span class="time">8분</span></div>
         <p>한국식 하브루타에서 가장 많이 빠지는 단계예요. 그런데 <mark>교회 하브루타에서는 꼭 필요한 단계</mark>예요. 사람들의 생각을 모은 뒤, 본문이 실제로 말하는 바와 복음으로 붙잡아 주는 시간이거든요.</p>
         <div class="grid g2" style="margin-bottom:0">
           <div class="card"><span class="lab">하나</span><h4>좋은 질문 칭찬하기</h4><p>"오늘 ___님 질문이 정말 핵심을 찔렀어요."</p></div>
-          <div class="card"><span class="lab">둘</span><h4>본문 배경 보충하기</h4><p>몰라서 막혔던 부분을 채워요. 예: 사마리아인과 유대인의 관계, 여리고 길의 험함.</p></div>
+          <div class="card"><span class="lab">둘</span><h4>본문 배경 보충하기</h4><p>몰라서 막혔던 부분을 채워요. 예: <span class="term" role="button" tabindex="0" data-term="samaritan">사마리아인</span>과 유대인의 관계, 여리고 길의 험함.</p></div>
           <div class="card"><span class="lab">셋</span><h4>잘못된 해석 바로잡기</h4><p>"그렇게 볼 수도 있지만, 본문 흐름을 보면…" 하고 근거로 부드럽게 돌려요.</p></div>
           <div class="card"><span class="lab">넷</span><h4>그리스도 중심으로 모으기</h4><p>이 본문이 하나님의 뜻과 예수 그리스도를 어떻게 보여 주는지 한두 문장으로 묶어요.</p></div>
         </div>
@@ -664,7 +683,7 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
       <div class="panel-body">
         <div class="q" aria-expanded="false">
           <button type="button" id="q1" aria-controls="a1"><span class="tag">사실</span><span>율법교사는 처음에 무엇을 물었고, 예수님은 마지막에 무엇을 되물으셨나요?</span><span class="chev">＋</span></button>
-          <div class="ans" id="a1" hidden>율법교사는 "내 이웃이 누구니이까"(29절)라고 물었어요. 그런데 예수님은 "누가 강도 만난 자의 이웃이 되겠느냐"(36절)고 되물으세요. 질문의 방향이 '누가 내 이웃인가'에서 '내가 누구의 이웃이 되어 줄까'로 바뀌어요.</div>
+          <div class="ans" id="a1" hidden><span class="term" role="button" tabindex="0" data-term="lawyer">율법교사</span>는 "내 이웃이 누구니이까"(29절)라고 물었어요. 그런데 예수님은 "누가 강도 만난 자의 이웃이 되겠느냐"(36절)고 되물으세요. 질문의 방향이 '누가 내 이웃인가'에서 '내가 누구의 이웃이 되어 줄까'로 바뀌어요.</div>
         </div>
         <div class="q" aria-expanded="false">
           <button type="button" id="q2" aria-controls="a2"><span class="tag">상상</span><span>제사장과 레위인은 왜 그냥 지나갔을까요?</span><span class="chev">＋</span></button>
@@ -730,6 +749,18 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
 </div>
 </main>
 
+<div class="gl-back" id="gl" hidden>
+  <div class="gl-card" role="dialog" aria-modal="true" aria-labelledby="glTitle">
+    <div class="gl-head">
+      <h3 id="glTitle"></h3>
+      <p class="gl-orig" id="glOrig"></p>
+      <span class="gl-lang" id="glLang"></span>
+      <button type="button" class="gl-close" id="glClose" aria-label="닫기">✕</button>
+    </div>
+    <div class="gl-body" id="glBody"></div>
+  </div>
+</div>
+
 <footer>
   <div><b>기독교한국침례회 은혜교회</b> · 담임목사 박동준</div>
   <div class="credit">사진 출처: Wikimedia Commons</div>
@@ -775,6 +806,46 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
     links.forEach(function(a){a.classList.toggle('on',a===cur);});
   }
   window.addEventListener('scroll',mark,{passive:true});mark();
+
+  /* 용어 팝업 */
+  var GL={
+    chavruta:['하브루타','חַבְרוּתָא · Chavruta','아람어',['‘우정’, ‘동반자 관계’라는 뜻이에요.','원래는 함께 공부하는 짝을 가리키던 말인데, 지금은 짝을 지어 질문하고 토론하는 공부 방식 전체를 부르는 이름이 되었어요. 영어권에서는 하브루샤(chavrusa)라고도 써요.']],
+    aramaic:['아람어','Aramaic','언어',['예수님 당시 유대 땅에서 사람들이 일상적으로 쓰던 말이에요. 히브리어와 아주 가까운 친척 언어예요.','구약의 다니엘서와 에스라서 일부가 아람어로 기록되었고, 예수님의 말씀 ‘달리다굼’(막 5:41), ‘에바다’(막 7:34), ‘엘리 엘리 라마 사박다니’(막 15:34)도 아람어예요. 탈무드도 상당 부분이 아람어로 되어 있어요.']],
+    chaver:['하베르','חָבֵר','히브리어',['‘친구, 동료, 동반자’라는 뜻이에요.','같은 뿌리에서 ‘연결하다, 묶다’라는 뜻이 나와요. 서로에게 묶여 함께 가는 사람이라는 느낌이 담겨 있어요.']],
+    torah:['토라','תּוֹרָה','히브리어',['‘가르침, 법’이라는 뜻이에요.','좁게는 모세오경(창세기~신명기)을, 넓게는 하나님의 가르침 전체를 가리켜요. 회당에서는 지금도 손으로 쓴 두루마리 형태로 보관하고 읽어요.']],
+    talmud:['탈무드','תַּלְמוּד','히브리어 · ‘배움’',['유대인들이 입으로 전해 온 율법을 기록한 미쉬나(약 200년경)와, 그것을 두고 랍비들이 토론하고 해설한 게마라를 합친 책이에요. 바벨론 탈무드는 약 500년경에 완성되었어요.','우리가 흔히 아는 교훈 이야기책 ‘탈무드’는 그중 일부를 쉽게 옮긴 것이고, 실제 탈무드는 수십 권 분량의 방대한 토론 기록이에요.']],
+    yeshiva:['예시바','יְשִׁיבָה · Yeshiva','히브리어 · ‘앉음’',['토라와 탈무드를 공부하는 유대 전통 학교예요.','이름 자체가 ‘앉아 있는 곳’이라는 뜻이에요. 학생들은 하루 대부분을 짝과 마주 앉아 본문을 공부하며 보내요.']],
+    beitmidrash:['베트 미드라쉬','בֵּית מִדְרָשׁ · Beit Midrash','히브리어',['‘배움의 집’, ‘탐구의 집’이라는 뜻이에요.','예시바나 회당 안에 있는 공부방이에요. 책상이 마주 놓여 있고, 짝들이 소리 내어 읽고 토론해요. ‘미드라쉬’는 ‘찾다, 탐구하다’라는 뜻의 동사 ‘다라쉬’에서 온 말이에요.']],
+    berakhot:['베라호트 2a','בְּרָכוֹת · Berakhot','히브리어 · ‘축복들’',['탈무드의 첫 번째 권 이름이에요. 기도와 축복에 관한 내용을 다뤄요.','탈무드는 1쪽이 아니라 2a쪽에서 시작해요. ‘배움에는 끝이 없고, 누구도 처음부터 다 안다고 할 수 없다’는 뜻으로 설명하는 전통이 있어요. a는 앞면, b는 뒷면이에요.']],
+    rabbi:['랍비','רַבִּי · Rabbi','히브리어 · ‘나의 선생님’',['율법을 가르치는 선생님을 높여 부르는 말이에요.','복음서에서 제자들도 예수님을 ‘랍비’라고 불렀어요(요 1:38).']],
+    commentary:['주석','註釋','한자어',['본문의 뜻을 풀어 설명한 글이에요.','탈무드 한 페이지는 가운데 본문을 라쉬(11세기) 같은 랍비들의 주석이 빙 둘러싸는 모양이에요. 여러 시대의 선생들이 한 페이지 위에서 대화하는 셈이에요.']],
+    kent:['오릿 켄트','Orit Kent','인물',['미국의 유대 교육 연구자예요.','실제 하브루타 대화를 오랫동안 관찰하고 연구해서, 좋은 하브루타 안에는 세 쌍의 동작, 곧 듣기와 말하기, 궁금해하기와 초점 맞추기, 지지하기와 도전하기가 오간다고 정리했어요.']],
+    shiur:['쉬우르','שִׁעוּר · Shiur','히브리어 · ‘정해진 몫, 수업’',['랍비(교사)가 하는 강의 시간이에요.','짝 공부 앞뒤로 본문을 정리해 주는 시간이에요. 교회 하브루타에서는 인도자가 사람들의 생각을 모아 본문의 뜻과 복음으로 묶어 주는 시간이에요.']],
+    purity:['정결 규정','레위기 · 민수기','성경 용어',['무엇이 ‘부정’하고 무엇이 ‘정결’한지를 정한 구약의 규정이에요.','시체를 만지면 이레 동안 부정해지고(민 19:11), 제사장은 가까운 가족 외의 시신으로 몸을 더럽히지 말라고 했어요(레 21:1-3). 그래서 제사장이 쓰러진 사람을 죽은 줄 알고 피했을 수 있다는 해석이 나와요.']],
+    modum:['모둠','순우리말','',['여러 사람을 묶은 작은 무리를 뜻하는 우리말이에요.','학교에서 많이 쓰는 말이에요. 여기서는 두 짝을 합친 네 사람 그룹을 말해요.']],
+    lawyer:['율법교사','νομικός · 노미코스','헬라어',['모세의 율법을 연구하고 가르치던 전문가예요. 서기관과 거의 같은 사람들이에요.','누가복음 10장의 율법교사는 예수님을 시험하려고 질문했어요(눅 10:25).']],
+    samaritan:['사마리아인','Samaritan','성경 용어',['옛 북이스라엘 지역인 사마리아에 살던 사람들이에요.','앗수르에 정복된 뒤 이방인과 섞였다고 해서 유대인들은 이들을 업신여겼고, 사마리아인은 그리심산에 따로 성전을 세워 갈등이 아주 깊었어요(요 4:9). 그래서 비유의 주인공이 사마리아인이라는 건 듣는 사람들에게 큰 충격이었어요.']],
+    minority:['소수 의견','מַחֲלֹקֶת · 마할로케트','히브리어 · ‘논쟁’',['탈무드는 토론에서 채택되지 않은 의견도 지우지 않고 기록해 두었어요.','예를 들어 힐렐 학파와 샴마이 학파의 논쟁에서 대부분 힐렐의 의견을 따르지만, 샴마이의 의견도 함께 남겨 두었어요. 다른 생각도 배움의 한 부분으로 존중한다는 전통이에요.']],
+    roles:['설명자와 질문자','짝 하브루타의 두 역할','',['설명자는 자기 생각과 그 근거(몇 절)를 말해요. 질문자는 되물어서 그 생각을 더 날카롭게 만들어요.','시간을 정해 두 사람이 역할을 바꿔요. 그래야 한 사람만 계속 말하지 않고 둘 다 말하고 들을 수 있어요.']]
+  };
+  var gl=document.getElementById('gl'), glLast=null;
+  function openGl(key,from){
+    var d=GL[key]; if(!d) return;
+    document.getElementById('glTitle').textContent=d[0];
+    document.getElementById('glOrig').textContent=d[1];
+    document.getElementById('glLang').textContent=d[2];
+    var b=document.getElementById('glBody'); b.innerHTML='';
+    d[3].forEach(function(t){var p=document.createElement('p');p.textContent=t;b.appendChild(p);});
+    glLast=from; gl.hidden=false; document.getElementById('glClose').focus();
+  }
+  function closeGl(){gl.hidden=true; if(glLast) glLast.focus();}
+  document.querySelectorAll('.term').forEach(function(el){
+    el.addEventListener('click',function(){openGl(el.getAttribute('data-term'),el);});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openGl(el.getAttribute('data-term'),el);}});
+  });
+  document.getElementById('glClose').addEventListener('click',closeGl);
+  gl.addEventListener('click',function(e){if(e.target===gl) closeGl();});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!gl.hidden) closeGl();});
 
   /* 사진을 못 불러오면 감추기 */
   document.querySelectorAll('figure img').forEach(function(img){
