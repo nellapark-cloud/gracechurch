@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>하브루타에 대하여</title>
+<meta name="description" content="짝을 지어 질문하고 토론하며 말씀을 깊이 배우는 하브루타 — 뜻과 기원, 방법, 교회 적용까지">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<style>
+/* 레이아웃: 펄 그라데이션 히어로 → 사진과 글이 번갈아 흐르는 한 줄 읽기 칼럼 */
+:root{
+  --bg:#fbfaf6; --surface:#ffffff; --fg:#1f2433; --muted:#5f6577;
+  --navy:#1e2a4a; --gold:#b8913a; --gold-soft:#f4ead3; --line:#e6e2d8;
+  --display:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
+  --body:'Noto Serif KR','Nanum Myeongjo',serif;
+  --hero:radial-gradient(120% 90% at 10% 0%,#f3e9ff 0%,transparent 55%),radial-gradient(110% 90% at 95% 10%,#e3f1ff 0%,transparent 55%),radial-gradient(120% 100% at 50% 100%,#fdf0e1 0%,transparent 60%),#fbfaf6;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#14171f; --surface:#1c2030; --fg:#e8e6df; --muted:#a3a7b5;
+  --navy:#c9d4f0; --gold:#d9b665; --gold-soft:#2e2a1f; --line:#2c3142;
+  --hero:radial-gradient(120% 90% at 10% 0%,#2a2140 0%,transparent 55%),radial-gradient(110% 90% at 95% 10%,#1a2a3e 0%,transparent 55%),radial-gradient(120% 100% at 50% 100%,#2e2519 0%,transparent 60%),#14171f;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#14171f; --surface:#1c2030; --fg:#e8e6df; --muted:#a3a7b5;
+  --navy:#c9d4f0; --gold:#d9b665; --gold-soft:#2e2a1f; --line:#2c3142;
+  --hero:radial-gradient(120% 90% at 10% 0%,#2a2140 0%,transparent 55%),radial-gradient(110% 90% at 95% 10%,#1a2a3e 0%,transparent 55%),radial-gradient(120% 100% at 50% 100%,#2e2519 0%,transparent 60%),#14171f;
+  color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.9;word-break:keep-all}
+img{max-width:100%;display:block}
+.wrap{max-width:760px;margin:0 auto;padding-inline:20px}
+h1,h2,h3,.eyebrow,nav,.btn,figcaption,table{font-family:var(--display)}
+h1,h2,h3{text-wrap:balance;color:var(--navy);line-height:1.35}
+
+/* 히어로 */
+.hero{background:var(--hero);border-bottom:1px solid var(--line)}
+.hero .wrap{padding-block:72px 48px}
+.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--gold)}
+.hero h1{font-size:clamp(40px,8vw,64px);font-weight:800;margin:10px 0 6px;letter-spacing:-.02em}
+.hero .heb{font-family:var(--body);font-size:22px;color:var(--muted);margin:0}
+.hero p.lead{font-size:19px;max-width:34em;margin:22px 0 0}
+.hero-photo{margin-top:36px;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px -20px rgba(30,42,74,.45)}
+.hero-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
+
+/* 목차 */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+nav.toc ul{list-style:none;margin:0 auto;padding:10px 20px;max-width:760px;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center}
+nav.toc a{font-size:14px;color:var(--muted);text-decoration:none;padding:4px 2px}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--navy);outline:none;box-shadow:0 2px 0 var(--gold)}
+
+/* 본문 */
+section{padding-block:56px 8px}
+section h2{font-size:clamp(26px,4.4vw,34px);font-weight:800;margin:6px 0 18px}
+section h3{font-size:20px;font-weight:700;margin:28px 0 8px}
+p{margin:0 0 16px}
+mark{background:linear-gradient(transparent 58%,var(--gold-soft) 58%);color:inherit;padding:0 2px}
+strong{color:var(--navy)}
+
+figure{margin:28px 0}
+figure img{width:100%;border-radius:12px;object-fit:cover;background:var(--line)}
+figure.wide img{aspect-ratio:3/2}
+figure.tall img{aspect-ratio:4/5}
+figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
+.pair figure{margin:0;min-width:0}
+.pair img{aspect-ratio:1/1}
+@media (max-width:560px){.pair{grid-template-columns:1fr}}
+
+.verse{margin:26px 0;padding:22px 24px;border-left:3px solid var(--gold);background:var(--surface);border-radius:0 12px 12px 0}
+.verse p{font-size:19px;margin:0 0 6px}
+.verse cite{font-family:var(--display);font-style:normal;font-size:14px;color:var(--gold);font-weight:600}
+
+/* 진행 단계 */
+ol.steps{list-style:none;padding:0;margin:24px 0;display:grid;gap:12px;counter-reset:s}
+ol.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
+ol.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:18px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--bg)}
+ol.steps b{font-family:var(--display);color:var(--navy);display:block;font-size:17px}
+ol.steps span{font-size:16px;color:var(--muted);line-height:1.7}
+
+.table-box{overflow-x:auto;margin:22px 0}
+table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:440px}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.06em}
+td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
+
+.qgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0}
+.qcard{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+.qcard h4{font-family:var(--display);margin:0 0 4px;color:var(--navy);font-size:16px}
+.qcard p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.7}
+@media (max-width:560px){.qgrid{grid-template-columns:1fr}}
+
+.note{margin:24px 0;padding:20px 22px;border-radius:12px;background:var(--gold-soft)}
+.note h4{font-family:var(--display);margin:0 0 6px;color:var(--navy)}
+.note p:last-child{margin:0}
+
+/* 실습 예시 */
+.practice{margin:26px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
+.practice header{padding:16px 20px;background:var(--navy);color:var(--bg);font-family:var(--display);font-weight:700}
+.practice header small{display:block;font-weight:400;opacity:.8;font-size:13px}
+.q{border-top:1px solid var(--line)}
+.q button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:16px 20px;font-family:var(--body);font-size:16.5px;line-height:1.6}
+.q button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
+.tag{font-family:var(--display);font-size:12px;font-weight:700;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:2px 9px;white-space:nowrap}
+.chev{font-family:var(--display);color:var(--muted);transition:transform .2s}
+.q[aria-expanded="true"] .chev{transform:rotate(45deg)}
+.q .ans{padding:0 20px 18px 20px;font-size:15.5px;color:var(--muted);line-height:1.8}
+
+footer{margin-top:64px;border-top:1px solid var(--line);padding-block:32px 48px;text-align:center;font-family:var(--display);font-size:14px;color:var(--muted)}
+footer b{color:var(--navy)}
+footer .credit{font-size:12px;margin-top:10px;opacity:.8}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chev{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">은혜교회 말씀 배움 자료</div>
+    <h1>하브루타에 대하여</h1>
+    <p class="heb">חַבְרוּתָא · Chavruta</p>
+    <p class="lead">둘이 마주 앉아 같은 말씀을 읽고, 묻고, 설명하고, 따져 보는 공부. 유대인들이 수천 년 동안 말씀을 배워 온 방식이에요. 그 뜻과 뿌리, 진행 방법, 그리고 우리 목장과 가정에서 어떻게 쓸 수 있는지 차근차근 살펴봐요.</p>
+    <figure class="hero-photo">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hebron_yeshiva_students_in_Jerusalem.jpg?width=1400" alt="예루살렘 헤브론 예시바에서 공부하는 학생들" loading="eager">
+    </figure>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <ul>
+    <li><a href="#meaning">이름과 뜻</a></li>
+    <li><a href="#roots">성경적 뿌리</a></li>
+    <li><a href="#scene">예시바 풍경</a></li>
+    <li><a href="#method">진행 방식</a></li>
+    <li><a href="#principle">핵심 원리</a></li>
+    <li><a href="#korea">한국의 하브루타</a></li>
+    <li><a href="#church">교회 적용</a></li>
+  </ul>
+</nav>
+
+<main class="wrap">
+
+  <section id="meaning">
+    <div class="eyebrow">하나 · 이름과 뜻</div>
+    <h2>'공부법'이기 전에 '친구'라는 말이에요</h2>
+    <p>하브루타는 아람어로 <mark>'우정', '동반자 관계'</mark>라는 뜻이에요. 친구를 뜻하는 히브리어 <strong>하베르(חבר)</strong>에서 나온 말이죠.</p>
+    <p>재미있는 건, 원래 이 말이 공부 방법이 아니라 <strong>함께 공부하는 짝</strong> 그 자체를 가리켰다는 거예요. 유대인 학생들은 "저 친구가 내 하브루타야"라고 말했어요. 그러니까 하브루타의 출발점은 기술이 아니라 <mark>관계</mark>예요. 말씀 앞에 함께 앉아 주는 한 사람이 있다는 것, 그게 하브루타의 시작이에요.</p>
+    <figure class="wide">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Open_Torah_scroll.jpg?width=1200" alt="펼쳐진 토라 두루마리" loading="lazy">
+      <figcaption>펼쳐진 토라 두루마리. 하브루타는 언제나 이 말씀(본문)을 가운데 두고 이루어져요.</figcaption>
+    </figure>
+  </section>
+
+  <section id="roots">
+    <div class="eyebrow">둘 · 성경적 뿌리</div>
+    <h2>철이 철을 날카롭게 하듯</h2>
+    <p>하브루타의 정신을 가장 잘 보여주는 말씀으로 늘 이 구절이 꼽혀요.</p>
+    <div class="verse">
+      <p>철이 철을 날카롭게 하는 것 같이 사람이 그의 친구의 얼굴을 빛나게 하느니라</p>
+      <cite>잠언 27:17</cite>
+    </div>
+    <p>칼날을 혼자 두면 무뎌지잖아요. 그런데 다른 쇠에 대고 갈면 날이 서요. 생각도 똑같아요. 혼자 읽으면 내가 아는 만큼만 보이지만, 옆 사람이 "그건 왜 그렇게 생각해요?" 하고 물어 주면 미처 못 본 것이 드러나거든요.</p>
+    <p>유대인의 탈무드에도 <mark>"두 학자가 서로를 날카롭게 한다"</mark>, <mark>"토라는 혼자가 아니라 함께할 때 얻어진다"</mark>는 가르침이 담겨 있어요. 이런 전통이 쌓여 유대 학교인 <strong>예시바(Yeshiva)</strong>의 기본 공부 방식이 되었어요.</p>
+    <figure class="tall">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/First_page_of_the_first_tractate_of_the_Talmud_(Daf_Beis_of_Maseches_Brachos).jpg?width=1000" alt="탈무드 베라호트 첫 페이지" loading="lazy">
+      <figcaption>탈무드의 첫 장(베라호트 2a). 가운데 본문을 여러 랍비의 주석이 둘러싸고 있어요. 한 페이지 자체가 수백 년에 걸친 '대화'인 셈이에요.</figcaption>
+    </figure>
+  </section>
+
+  <section id="scene">
+    <div class="eyebrow">셋 · 예시바 풍경</div>
+    <h2>도서관이 아니라 시장 같은 공부방</h2>
+    <p>예시바의 공부방을 <strong>베트 미드라쉬(Beit Midrash)</strong>, '배움의 집'이라고 불러요. 여기 들어가 보면 깜짝 놀라요. 수십, 수백 쌍이 마주 앉아 <mark>큰 소리로 본문을 읽고, 손짓하며 따지고, 웃고, 다시 책을 들여다봐요.</mark></p>
+    <p>우리가 떠올리는 조용한 도서관과는 정반대죠. 그 시끌벅적함이 바로 살아 있는 배움의 소리예요.</p>
+    <div class="pair">
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Beit_Midrash_da_Yeshiv%C3%A1_Machon_Meir,_Jerusal%C3%A9m.jpg?width=900" alt="예루살렘 마콘 메이르 예시바의 베트 미드라쉬" loading="lazy">
+        <figcaption>예루살렘 마콘 메이르 예시바의 공부방</figcaption>
+      </figure>
+      <figure>
+        <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Beis_Medrash_of_Yeshivas_Kerem_B%27Yavne.jpg?width=900" alt="케렘 브야브네 예시바의 베트 미드라쉬" loading="lazy">
+        <figcaption>케렘 브야브네 예시바의 공부방</figcaption>
+      </figure>
+    </div>
+    <figure class="wide">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruzhiner_yeshiva,_Jerusalem.jpg?width=1200" alt="예루살렘의 한 예시바에서 공부하는 모습" loading="lazy">
+      <figcaption>책상마다 두 사람씩. 한 사람이 읽고 설명하면, 다른 사람이 묻고 반박해요.</figcaption>
+    </figure>
+  </section>
+
+  <section id="method">
+    <div class="eyebrow">넷 · 진행 방식</div>
+    <h2>전통 하브루타는 이렇게 흘러가요</h2>
+    <ol class="steps">
+      <li><div><b>본문을 소리 내어 읽기</b><span>토라나 탈무드의 한 단락을 둘이 함께 읽어요. 눈으로만이 아니라 입으로 읽는 게 중요해요.</span></div></li>
+      <li><div><b>질문하기</b><span>"이 단어는 왜 여기 있지?", "앞 구절이랑 안 맞는 것 같은데?" 본문에서 걸리는 것을 꺼내요.</span></div></li>
+      <li><div><b>설명하기</b><span>한 사람이 자기가 이해한 대로 풀어 설명하고, 다른 사람은 듣고 보완하거나 반박해요.</span></div></li>
+      <li><div><b>논쟁하기</b><span>나이나 지위와 상관없이 근거를 들어 따져요. 목소리가 커지기도 하지만, 싸움이 아니라 진리를 찾는 과정이에요.</span></div></li>
+      <li><div><b>쉬우르(Shiur) — 정리</b><span>짝 토론 뒤에 랍비(교사)의 강의를 들으며 정리하고, 다시 짝과 함께 확인해요.</span></div></li>
+    </ol>
+    <p>핵심은 <mark>정답을 듣는 것보다, 질문을 통해 스스로 이해에 도달하는 것</mark>이에요. 앞에 상대가 있으니 대충 아는 건 금방 드러나요. 그리고 남에게 설명해 보는 순간, 그 내용이 비로소 진짜 내 것이 되거든요.</p>
+  </section>
+
+  <section id="principle">
+    <div class="eyebrow">다섯 · 핵심 원리</div>
+    <h2>하브루타를 하브루타답게 만드는 다섯 가지</h2>
+    <div class="table-box">
+      <table>
+        <thead><tr><th>원리</th><th>의미</th></tr></thead>
+        <tbody>
+          <tr><td>질문</td><td>배움은 답이 아니라 질문에서 시작돼요</td></tr>
+          <tr><td>짝</td><td>1:1이라 숨을 곳이 없어요. 모두가 말하고 모두가 들어요</td></tr>
+          <tr><td>설명</td><td>가르쳐 보면 내가 아는지 모르는지가 드러나요</td></tr>
+          <tr><td>경청과 반박</td><td>상대의 생각을 존중하되, 근거로 맞서요</td></tr>
+          <tr><td>본문 중심</td><td>내 생각이 아니라 늘 본문으로 돌아와요</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="korea">
+    <div class="eyebrow">여섯 · 한국의 하브루타</div>
+    <h2>우리에게 익숙해진 하브루타</h2>
+    <p>2010년대 이후 하브루타는 한국에서 교육 방법으로 크게 알려졌어요. 학교, 가정, 교회에서 흔히 쓰는 흐름은 이래요.</p>
+    <p style="font-family:var(--display);font-weight:700;color:var(--navy);text-align:center;padding:14px;border:1px dashed var(--line);border-radius:12px">질문 만들기 → 짝 토론 → 모둠 토론 → 발표 → 정리(쉬우르)</p>
+    <h3>질문은 네 가지로 만들어요</h3>
+    <div class="qgrid">
+      <div class="qcard"><h4>사실 질문</h4><p>본문에 무엇이 쓰여 있나요? 누가, 언제, 어디서, 무엇을?</p></div>
+      <div class="qcard"><h4>상상 질문</h4><p>내가 그 자리에 있었다면 어떤 마음이었을까요?</p></div>
+      <div class="qcard"><h4>적용 질문</h4><p>이 말씀이 오늘 내 삶에서는 어떻게 살아날까요?</p></div>
+      <div class="qcard"><h4>종합 질문</h4><p>이 본문이 결국 말하고 싶은 한 가지는 무엇일까요?</p></div>
+    </div>
+    <div class="note">
+      <h4>함께 짚어 둘 것</h4>
+      <p>"유대인이 노벨상을 많이 받는 비결이 하브루타"라는 말을 자주 듣는데요, 이건 조금 과장된 설명이에요. 역사, 문화, 사회적 환경이 복잡하게 얽힌 결과거든요.</p>
+      <p>또 원래 하브루타는 <strong>경전 본문을 깊이 파고드는 신앙 공부</strong>예요. 그런데 한국에서는 본문 없이 의견만 나누는 토론 기법처럼 쓰이는 경우가 많아요. 본문이 빠지면 대화는 금방 얕아져요. 교회의 하브루타는 반드시 <mark>말씀 한가운데</mark>에서 시작해야 해요.</p>
+    </div>
+  </section>
+
+  <section id="church">
+    <div class="eyebrow">일곱 · 교회 적용</div>
+    <h2>목장과 가정에서 해 보는 성경 하브루타</h2>
+    <figure class="wide">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Open_Bible_with_pen_(4543060842).jpg?width=1200" alt="펜과 함께 펼쳐진 성경" loading="lazy">
+    </figure>
+    <h3>이렇게 해 보세요</h3>
+    <ol class="steps">
+      <li><div><b>짝은 두 사람이 기본</b><span>세 명이 넘어가면 말하는 사람만 계속 말하게 돼요. 목장 인원이 많으면 둘씩 나눠 앉아요.</span></div></li>
+      <li><div><b>본문은 짧게</b><span>한두 단락이면 충분해요. 짧아야 깊이 들어갈 수 있어요.</span></div></li>
+      <li><div><b>목자는 정답이 아니라 정리를 맡아요</b><span>마지막 쉬우르 시간에 본문의 핵심을 짚고, 하나님의 뜻과 그리스도의 복음으로 연결해 주세요.</span></div></li>
+      <li><div><b>길을 잃으면 본문으로</b><span>의견 다툼으로 흐를 때는 "본문은 뭐라고 하나요?" 한마디면 다시 돌아올 수 있어요.</span></div></li>
+    </ol>
+
+    <div class="practice">
+      <header>함께 연습해 봐요 — 선한 사마리아인<small>누가복음 10:25–37 · 질문을 누르면 생각해 볼 실마리가 열려요</small></header>
+      <div class="q" aria-expanded="false">
+        <button type="button" id="q1" aria-controls="a1"><span class="tag">사실</span><span>율법교사는 처음에 무엇을 물었고, 예수님은 마지막에 무엇을 되물으셨나요?</span><span class="chev">＋</span></button>
+        <div class="ans" id="a1" hidden>율법교사는 "내 이웃이 누구니이까"(29절)라고 물었어요. 그런데 예수님은 "누가 강도 만난 자의 이웃이 되겠느냐"(36절)고 되물으세요. 질문의 방향이 '누가 내 이웃인가'에서 '내가 누구의 이웃이 되어 줄까'로 바뀌어요.</div>
+      </div>
+      <div class="q" aria-expanded="false">
+        <button type="button" id="q2" aria-controls="a2"><span class="tag">상상</span><span>제사장과 레위인은 왜 그냥 지나갔을까요?</span><span class="chev">＋</span></button>
+        <div class="ans" id="a2" hidden>시체에 닿으면 부정해진다는 율법 규정, 강도가 근처에 있을지 모른다는 두려움, 바쁜 일정… 여러 이유를 상상해 볼 수 있어요. 그 이유들이 오늘 나를 멈추지 못하게 하는 이유와 얼마나 닮았는지도 함께 나눠 봐요.</div>
+      </div>
+      <div class="q" aria-expanded="false">
+        <button type="button" id="q3" aria-controls="a3"><span class="tag">적용</span><span>지금 내가 "내 이웃은 여기까지"라고 선을 긋고 있는 사람은 누구인가요?</span><span class="chev">＋</span></button>
+        <div class="ans" id="a3" hidden>이름을 떠올려 보는 게 좋아요. 그리고 이번 주에 그 사람에게 할 수 있는 작은 일 하나를 짝에게 말해 보세요. 말로 꺼내면 실천할 힘이 생겨요.</div>
+      </div>
+      <div class="q" aria-expanded="false">
+        <button type="button" id="q4" aria-controls="a4"><span class="tag">종합</span><span>강도 만난 자를 살린 사마리아인에게서 예수님의 어떤 모습이 보이나요?</span><span class="chev">＋</span></button>
+        <div class="ans" id="a4" hidden>죽어 가는 사람에게 먼저 다가와 상처를 싸매고, 자기 비용으로 끝까지 책임진 사마리아인. 죄로 쓰러진 우리를 찾아오셔서 대가를 치르시고 살리신 예수님의 모습이 겹쳐 보여요. 우리가 이웃이 될 수 있는 것도, 먼저 우리의 이웃이 되어 주신 그분 덕분이에요.</div>
+      </div>
+    </div>
+
+    <figure class="wide">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Reading_the_Bible.jpg?width=1200" alt="성경을 읽는 모습" loading="lazy">
+      <figcaption>가정에서는 식탁이 최고의 베트 미드라쉬예요. 부모와 자녀가 짝이 되어 한 구절로 질문을 주고받아 보세요.</figcaption>
+    </figure>
+
+    <p>하브루타의 목적은 말을 잘하는 사람이 되는 게 아니에요. 말씀 앞에 함께 앉아, 서로를 날카롭게 하며, <mark>결국 하나님의 뜻과 예수 그리스도의 가르침을 더 깊이 바라보게 되는 것</mark>. 그게 우리가 하브루타를 하는 이유예요.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div><b>기독교한국침례회 은혜교회</b> · 담임목사 박동준</div>
+  <div class="credit">사진 출처: Wikimedia Commons</div>
+</footer>
+
+<script>
+document.querySelectorAll('.q button').forEach(function(btn){
+  btn.addEventListener('click',function(){
+    var box=btn.parentElement, ans=document.getElementById(btn.getAttribute('aria-controls'));
+    var open=box.getAttribute('aria-expanded')==='true';
+    box.setAttribute('aria-expanded',open?'false':'true');
+    ans.hidden=open;
+  });
+});
+document.querySelectorAll('figure img').forEach(function(img){
+  img.addEventListener('error',function(){var f=img.closest('figure');if(f)f.style.display='none';});
+});
+</script>
+</body>
+</html>
