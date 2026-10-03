@@ -263,6 +263,14 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
 .gl-body p:last-child{margin:0}
 .gl-close{all:unset;cursor:pointer;position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:var(--surface);color:var(--navy);font-family:var(--display);font-size:18px;border:1px solid var(--line)}
 .gl-close:focus-visible{outline:2px solid var(--gold)}
+/* 자료 영상 */
+.video{margin:34px 0}
+.video-box{position:relative;width:100%;max-width:100%;aspect-ratio:16/9;border-radius:16px;overflow:hidden;background:#000;box-shadow:0 24px 48px -26px rgba(30,42,74,.55)}
+.video-box iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.video-label{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:10px}
+.video-label b{font-family:var(--display);font-size:.78em;font-weight:800;letter-spacing:.12em;color:var(--gold)}
+.video-label a{font-family:var(--display);font-size:.8em;color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+.video-label a:hover,.video-label a:focus-visible{color:var(--navy);border-color:var(--gold);outline:none}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
@@ -370,6 +378,12 @@ footer .credit{font-size:12px;margin-top:8px;opacity:.8}
       <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruzhiner_yeshiva,_Jerusalem.jpg?width=1400" alt="예루살렘의 한 예시바에서 공부하는 모습" loading="lazy">
       <figcaption>책상마다 두 사람씩. 한 사람이 읽고 설명하면, 다른 사람이 묻고 반박해요.</figcaption>
     </figure>
+    <div class="video">
+      <div class="video-label"><b>자료 영상 · 영상으로 보는 하브루타</b><a href="https://youtu.be/4nk0_9Z3ebw" target="_blank" rel="noopener">유튜브에서 크게 보기 ↗</a></div>
+      <div class="video-box">
+        <iframe src="https://www.youtube-nocookie.com/embed/4nk0_9Z3ebw?rel=0" title="하브루타 자료 영상" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </div>
   </section>
 
   <section class="ch" id="principle">
