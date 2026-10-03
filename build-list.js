@@ -23,6 +23,7 @@ const categories = [
   { key: 'mokjang', dir: 'content/mokjang' },
   { key: 'baptist_history', dir: 'content/baptist-history' },
   { key: 'worship_training', dir: 'content/worship-training' },
+  { key: 'events', dir: 'content/events', desc: true },
   { key: 'admin_sermons', dir: 'content/admin-sermons' },
   { key: 'admin_personal', dir: 'content/admin-personal' },
   { key: 'admin_forms', dir: 'content/admin-forms' },

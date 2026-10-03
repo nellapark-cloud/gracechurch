@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>세 교회 연합예배 & 윷놀이 준비안</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretendard@1.3.9/dist/web/static/pretendard.min.css" onerror="this.remove()">
+<style>
+:root{
+  --bg:#F7F8FB; --paper:#FFFFFF; --ink:#1F2438; --sub:#5E6378; --line:#E4E6EE;
+  --gold:#B98A3E; --hope:#2F8A7E; --grace:#2E3F7A; --rock:#9A5A3C;
+  --hero1:#F3E9F7; --hero2:#E4F0FA; --hero3:#FBF1E4;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#15171F; --paper:#1D2029; --ink:#ECEDF3; --sub:#A3A7B8; --line:#2E3240;
+  --gold:#D8AE63; --hope:#5DBBAE; --grace:#8E9FE0; --rock:#D69674;
+  --hero1:#2A2436; --hero2:#1F2A36; --hero3:#2E2A22;}}
+:root[data-theme="dark"]{
+  --bg:#15171F; --paper:#1D2029; --ink:#ECEDF3; --sub:#A3A7B8; --line:#2E3240;
+  --gold:#D8AE63; --hope:#5DBBAE; --grace:#8E9FE0; --rock:#D69674;
+  --hero1:#2A2436; --hero2:#1F2A36; --hero3:#2E2A22;}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif;
+  font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+.wrap{max-width:720px;margin:0 auto;padding:0 20px 64px}
+
+/* hero */
+.hero{position:relative;overflow:hidden;
+  background:radial-gradient(120% 90% at 10% 0%,var(--hero1),transparent 60%),
+             radial-gradient(100% 80% at 100% 20%,var(--hero2),transparent 60%),
+             radial-gradient(90% 70% at 50% 100%,var(--hero3),transparent 70%),var(--paper);
+  border-bottom:1px solid var(--line)}
+.hero-in{max-width:720px;margin:0 auto;padding:56px 20px 44px}
+.sticks{display:flex;gap:10px;margin-bottom:28px}
+.stick{width:18px;height:92px;border-radius:9px;border:1.5px solid var(--ink);position:relative}
+.stick.flat{background:var(--paper)}
+.stick.round{background:var(--ink)}
+.stick.flat::after{content:"";position:absolute;left:50%;top:22%;bottom:22%;border-left:1.5px dashed var(--gold);transform:translateX(-50%)}
+.hero h1{font-size:clamp(30px,7.5vw,44px);line-height:1.2;font-weight:800;letter-spacing:-.03em;margin:0 0 14px}
+.hero p{margin:0;color:var(--sub);font-size:17px}
+.churches{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chip{font-size:14px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line)}
+.chip i{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:7px;vertical-align:1px}
+.meta{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;margin-top:26px;font-size:15px}
+.meta dt{color:var(--sub)} .meta dd{margin:0;font-weight:600}
+
+/* sections */
+section{margin-top:48px}
+h2{font-size:22px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px}
+.lead{color:var(--sub);margin:0 0 20px;font-size:15px}
+h3{font-size:17px;font-weight:700;margin:0 0 6px}
+
+/* timeline */
+.tl{list-style:none;margin:0;padding:0;border-left:2px solid var(--line)}
+.tl li{position:relative;padding:0 0 22px 22px}
+.tl li::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--paper);border:2px solid var(--gold)}
+.tl li.main::before{background:var(--gold)}
+.tl time{font-weight:800;font-variant-numeric:tabular-nums;margin-right:10px}
+.tl span{color:var(--sub);font-size:15px;display:block}
+
+/* roles */
+.roles{display:grid;gap:14px}
+.role{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px 20px 18px;border-top:4px solid var(--c)}
+.role h3{color:var(--c);font-size:19px;display:flex;align-items:baseline;gap:10px}
+.role h3 small{font-size:13px;color:var(--sub);font-weight:600}
+.role dl{margin:10px 0 0;display:grid;grid-template-columns:52px 1fr;gap:6px 10px;font-size:15px}
+.role dt{color:var(--sub)} .role dd{margin:0}
+
+/* plain blocks */
+.block{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px}
+.block+.block{margin-top:12px}
+.block p{margin:0} .block p+p{margin-top:10px}
+ul.clean{margin:8px 0 0;padding-left:18px} ul.clean li{margin:4px 0}
+
+/* supplies checklist */
+.check{list-style:none;margin:0;padding:0;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.check li+li{border-top:1px solid var(--line)}
+.check label{display:flex;gap:12px;align-items:center;padding:14px 18px;cursor:pointer}
+.check input{width:20px;height:20px;accent-color:var(--gold);flex:none}
+.check input:checked+span{color:var(--sub);text-decoration:line-through}
+.check small{margin-left:auto;color:var(--sub);font-size:13px;white-space:nowrap}
+
+/* gifts */
+.gifts{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px}
+.gift{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}
+.gift b{display:block;font-size:15px;color:var(--gold);margin-bottom:4px}
+.gift p{margin:0;font-size:15px}
+
+.order{list-style:none;margin:0;padding:0;counter-reset:o;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.order li{counter-increment:o;display:flex;align-items:center;gap:14px;padding:13px 18px}
+.order li+li{border-top:1px solid var(--line)}
+.order li::before{content:counter(o);width:24px;height:24px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--sub);border:1px solid var(--line)}
+.order li span{font-weight:600}
+.order li small{margin-left:auto;color:var(--sub);font-size:13px}
+.order li.key::before{background:var(--gold);border-color:var(--gold);color:#fff}
+.order li small b{color:var(--ink);font-weight:700;margin-right:6px;font-size:14px}
+.prizes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.prize{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 12px;text-align:center}
+.prize b{display:block;font-size:14px;color:var(--sub);font-weight:600}
+.prize strong{display:block;font-size:clamp(20px,5.5vw,26px);font-weight:800;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.prize.p1{border-color:var(--gold);background:linear-gradient(180deg,var(--hero3),var(--paper))}
+.prize.p1 strong{color:var(--gold)}
+.mvp{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;margin-bottom:12px}
+.mvp-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0 12px}
+.mvp-row div{border:1px dashed var(--gold);border-radius:12px;padding:12px 14px}
+.mvp-row b{display:block;font-size:16px}
+.mvp-row span{font-size:14px;color:var(--sub)}
+.mvp h3 .tag{font-size:12px;font-weight:600;color:var(--gold);border:1px solid var(--gold);border-radius:999px;padding:1px 8px;margin-left:6px;vertical-align:2px}
+.mvp p{margin:0;font-size:15px;color:var(--sub)}
+.note{margin-top:14px;font-size:15px;color:var(--sub);padding-left:14px;border-left:3px solid var(--gold)}
+footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:var(--sub);font-size:14px;text-align:center}
+:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+@media print{.hero{background:none}.check input{appearance:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-in">
+    <div class="sticks" aria-hidden="true">
+      <div class="stick flat"></div><div class="stick flat"></div><div class="stick flat"></div><div class="stick round"></div>
+    </div>
+    <h1>세 교회가 함께하는<br>연합예배와 윷놀이</h1>
+    <p>한 자리에 모여 예배하고, 함께 웃으며 한 식구가 되는 날</p>
+    <div class="churches">
+      <span class="chip"><i style="background:var(--rock)"></i>반석샘물교회</span>
+      <span class="chip"><i style="background:var(--grace)"></i>은혜교회</span>
+      <span class="chip"><i style="background:var(--hope)"></i>희망교회</span>
+    </div>
+    <dl class="meta">
+      <dt>날짜</dt><dd>2026년 10월 11일 (주일)</dd>
+      <dt>시작</dt><dd>오전 11시 연합예배</dd>
+      <dt>장소</dt><dd>희망교회 (본당 · 아이들 공간 · 주방)</dd>
+    </dl>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section>
+    <h2>진행 순서</h2>
+    <p class="lead">예배를 중심에 두고, 식사와 윷놀이로 교제를 이어갑니다.</p>
+    <ol class="tl">
+      <li><time>10:30</time>도착과 접수<span>이름표를 나눠드려요</span></li>
+      <li class="main"><time>11:00</time>연합예배<span>약 60분, 광고 후 바로 식사로 이어져요</span></li>
+      <li><time>12:00</time>점심 식사<span>도시락과 커피·간식으로 교제하는 시간</span></li>
+      <li class="main"><time>13:30</time>윷놀이<span>아이들부터 어르신까지 모두 함께</span></li>
+      <li><time>15:30</time>시상과 마무리<span>상금과 MVP 시상, 단체사진</span></li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>예배 순서</h2>
+    <p class="lead">오전 11시, 간결하게 드려요.</p>
+    <ol class="order">
+      <li><span>환영</span></li>
+      <li><span>입례송</span></li>
+      <li><span>대표기도</span><small><b>박동준 목사</b> 은혜교회</small></li>
+      <li><span>경배와 찬양</span></li>
+      <li class="key"><span>설교</span><small><b>권수남 목사</b> 희망교회</small></li>
+      <li><span>회중기도</span></li>
+      <li><span>찬송</span></li>
+      <li><span>축도</span><small><b>최명신 목사</b> 반석샘물교회</small></li>
+      <li><span>광고</span></li>
+    </ol>
+    <p class="note">광고에서 윷놀이 시작 시간(13:30)을 알려주면 자연스럽게 식사로 이어져요.</p>
+  </section>
+
+
+  <section>
+    <h2>교회별 업무 분담</h2>
+    <div class="roles">
+      <div class="role" style="--c:var(--rock)">
+        <h3>반석샘물교회</h3>
+        <dl>
+          <dt>예배</dt><dd>축도 (최명신 목사)</dd>
+          <dt>행사</dt><dd>윷놀이 진행과 준비 일체, 상금과 MVP 선물, 시상, 도시락</dd>
+        </dl>
+      </div>
+      <div class="role" style="--c:var(--grace)">
+        <h3>은혜교회</h3>
+        <dl>
+          <dt>예배</dt><dd>예배 사회, 대표기도 (박동준 목사), 경배와 찬양 전반</dd>
+        </dl>
+      </div>
+      <div class="role" style="--c:var(--hope)">
+        <h3>희망교회 <small>장소 교회</small></h3>
+        <dl>
+          <dt>예배</dt><dd>설교 (권수남 목사)</dd>
+          <dt>행사</dt><dd>장소와 음향, 이름표, 커피와 간식</dd>
+        </dl>
+      </div>
+    </div>
+    <p class="note">반석샘물교회와 은혜교회는 30분쯤 일찍 와서 좌석 배치를 돕고, 끝난 뒤 뒷정리와 청소는 세 교회가 함께 마무리해요.</p>
+  </section>
+
+  <section>
+    <h2>식사</h2>
+    <div class="block">
+      <p>점심은 <b>한솥 도시락</b>으로 해요. 반석샘물교회가 참석 인원에 맞춰 준비해요. 11시 50분쯤 도착하도록 맞춰 두면 광고가 끝나자마자 바로 나눌 수 있어요.</p>
+      <p>커피와 간식도 희망교회에서 준비해요. 식사 후 13:30까지는 커피 한 잔과 함께 자유롭게 교제하면서 윷놀이 자리를 준비해요.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>윷놀이</h2>
+    <p class="lead">진행과 준비 일체를 반석샘물교회가 맡고, 아이들도 함께 참여해요.</p>
+    <div class="prizes">
+      <div class="prize p1"><b>1등</b><strong>15만원</strong></div>
+      <div class="prize"><b>2등</b><strong>10만원</strong></div>
+      <div class="prize"><b>3등</b><strong>8만원</strong></div>
+    </div>
+    <div class="mvp">
+      <h3>MVP상 <small class="tag">선물</small></h3>
+      <div class="mvp-row">
+        <div><b>최다 모</b><span>모를 가장 많이 던진 사람</span></div>
+        <div><b>최다 빽도</b><span>빽도를 가장 많이 던진 사람</span></div>
+      </div>
+      <p>반석샘물교회 심판이 던질 때마다 점수판에 기록해 두면 시상 때 바로 가릴 수 있어요.</p>
+    </div>
+    <div class="block">
+      <h3>팀은 섞어서</h3>
+      <p>교회 대항보다 세 교회 성도를 섞어 팀을 짜요. 아이들도 팀마다 고르게 나눠 넣으면 응원도 더 신나요.</p>
+    </div>
+    <div class="block">
+      <h3>미션 칸 넣기</h3>
+      <p>윷판 몇 칸에 작은 미션을 넣으면 훨씬 즐거워져요.</p>
+      <ul class="clean">
+        <li>찬양 한 소절 부르기</li>
+        <li>성경구절 하나 암송하기</li>
+        <li>다른 교회 성도와 악수하고 이름 외우기</li>
+      </ul>
+    </div>
+    <div class="block">
+      <h3>모두가 참여하도록</h3>
+      <p>어르신은 앉아서 던지실 수 있게 의자를 두고, 아이들은 부모님이나 짝꿍 어른과 함께 던져도 좋아요. 한 사람이 계속 던지지 않도록 순서를 돌려요.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>아이들 돌봄</h2>
+    <p class="lead">세 교회에서 한 명씩, 세 분이 한 팀으로 맡아요.</p>
+    <div class="block">
+      <ul class="clean">
+        <li>예배 시간에는 아이들 공간에서 함께 지내요</li>
+        <li>식사 시간에는 교대로 식사하며 아이들을 챙겨요</li>
+        <li>윷놀이 시간에는 아이들이 각 팀에 들어가 함께 놀 수 있도록 도와요</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>준비물</h2>
+    <p class="lead">담당 교회를 함께 적었어요. 눌러서 체크할 수 있어요.</p>
+    <ul class="check" id="checklist">
+      <li><label><input type="checkbox" data-k="yut"><span>윷놀이 준비물 일체 (윷, 윷판, 매트, 점수판, MVP 기록지)</span><small>반석샘물</small></label></li>
+      <li><label><input type="checkbox" data-k="prize"><span>상금 (15만원, 10만원, 8만원)과 MVP 선물</span><small>반석샘물</small></label></li>
+      <li><label><input type="checkbox" data-k="lunch"><span>한솥 도시락 (참석 인원만큼)</span><small>반석샘물</small></label></li>
+      <li><label><input type="checkbox" data-k="tag"><span>이름표</span><small>희망</small></label></li>
+      <li><label><input type="checkbox" data-k="snack"><span>커피와 간식</span><small>희망</small></label></li>
+      <li><label><input type="checkbox" data-k="mic"><span>마이크와 음향</span><small>희망</small></label></li>
+    </ul>
+  </section>
+
+
+  <section>
+    <h2>미리 챙길 것</h2>
+    <div class="block">
+      <p>행사 전 주중에 세 교회 담당자가 참석 인원을 확정해요. 인원이 정해지면 팀 구성과 도시락, 이름표 수량을 바로 맞출 수 있어요.</p>
+    </div>
+  </section>
+
+  <footer>반석샘물교회 · 은혜교회 · 희망교회 연합모임</footer>
+</main>
+
+<script>
+(function(){
+  var KEY='yut-checklist';
+  var saved={};
+  try{saved=JSON.parse(localStorage.getItem(KEY)||'{}')||{}}catch(e){saved={}}
+  document.querySelectorAll('#checklist input').forEach(function(el){
+    if(saved[el.dataset.k]) el.checked=true;
+    el.addEventListener('change',function(){
+      saved[el.dataset.k]=el.checked;
+      try{localStorage.setItem(KEY,JSON.stringify(saved))}catch(e){}
+    });
+  });
+})();
+</script>
+</body>
+</html>
