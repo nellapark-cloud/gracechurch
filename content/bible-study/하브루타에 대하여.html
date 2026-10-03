@@ -4,172 +4,333 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>하브루타에 대하여</title>
-<meta name="description" content="짝을 지어 질문하고 토론하며 말씀을 깊이 배우는 하브루타 — 뜻과 기원, 방법, 교회 적용까지">
+<meta name="description" content="짝과 함께 말씀을 묻고 배우는 하브루타 — 뜻과 뿌리부터 실제 진행 8단계, 유형, 실습 대본, 문제 해결까지">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap">
 <style>
-/* 레이아웃: 펄 그라데이션 히어로 → 사진과 글이 번갈아 흐르는 한 줄 읽기 칼럼 */
+/* 레이아웃: 펄 그라데이션 표지 → 1부(이해)·2부(실제) 두 막 구조, 한 줄 읽기 칼럼 + 넓은 카드 그리드 */
 :root{
-  --bg:#fbfaf6; --surface:#ffffff; --fg:#1f2433; --muted:#5f6577;
-  --navy:#1e2a4a; --gold:#b8913a; --gold-soft:#f4ead3; --line:#e6e2d8;
+  --bg:#fbfaf7; --surface:#ffffff; --sunk:#f4f2ec; --fg:#1d2232; --muted:#5d6376;
+  --navy:#1e2a4a; --navy-2:#2f3f6b; --gold:#b28a35; --gold-soft:#f5ecd6; --line:#e5e1d6;
+  --sky:#e7f0fb; --rose:#fbecef; --mint:#e6f4ee; --lilac:#efeafb;
   --display:'Pretendard','Apple SD Gothic Neo','Malgun Gothic',sans-serif;
   --body:'Noto Serif KR','Nanum Myeongjo',serif;
-  --hero:radial-gradient(120% 90% at 10% 0%,#f3e9ff 0%,transparent 55%),radial-gradient(110% 90% at 95% 10%,#e3f1ff 0%,transparent 55%),radial-gradient(120% 100% at 50% 100%,#fdf0e1 0%,transparent 60%),#fbfaf6;
+  --hero:radial-gradient(90% 80% at 0% 0%,#efe6ff 0%,transparent 60%),radial-gradient(80% 80% at 100% 0%,#dfeeff 0%,transparent 60%),radial-gradient(90% 90% at 60% 110%,#fdeedd 0%,transparent 60%),#fbfaf7;
+  --fs:18px;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#14171f; --surface:#1c2030; --fg:#e8e6df; --muted:#a3a7b5;
-  --navy:#c9d4f0; --gold:#d9b665; --gold-soft:#2e2a1f; --line:#2c3142;
-  --hero:radial-gradient(120% 90% at 10% 0%,#2a2140 0%,transparent 55%),radial-gradient(110% 90% at 95% 10%,#1a2a3e 0%,transparent 55%),radial-gradient(120% 100% at 50% 100%,#2e2519 0%,transparent 60%),#14171f;
+  --bg:#13161e; --surface:#1b1f2c; --sunk:#171a24; --fg:#e9e7e1; --muted:#a4a9b8;
+  --navy:#cdd7f2; --navy-2:#9fb1e0; --gold:#dcb868; --gold-soft:#2f2a1e; --line:#2b3040;
+  --sky:#1c2636; --rose:#2c1f25; --mint:#1b2b26; --lilac:#24203a;
+  --hero:radial-gradient(90% 80% at 0% 0%,#2a2140 0%,transparent 60%),radial-gradient(80% 80% at 100% 0%,#18283c 0%,transparent 60%),radial-gradient(90% 90% at 60% 110%,#2e2418 0%,transparent 60%),#13161e;
   color-scheme:dark}}
 :root[data-theme="dark"]{
-  --bg:#14171f; --surface:#1c2030; --fg:#e8e6df; --muted:#a3a7b5;
-  --navy:#c9d4f0; --gold:#d9b665; --gold-soft:#2e2a1f; --line:#2c3142;
-  --hero:radial-gradient(120% 90% at 10% 0%,#2a2140 0%,transparent 55%),radial-gradient(110% 90% at 95% 10%,#1a2a3e 0%,transparent 55%),radial-gradient(120% 100% at 50% 100%,#2e2519 0%,transparent 60%),#14171f;
+  --bg:#13161e; --surface:#1b1f2c; --sunk:#171a24; --fg:#e9e7e1; --muted:#a4a9b8;
+  --navy:#cdd7f2; --navy-2:#9fb1e0; --gold:#dcb868; --gold-soft:#2f2a1e; --line:#2b3040;
+  --sky:#1c2636; --rose:#2c1f25; --mint:#1b2b26; --lilac:#24203a;
+  --hero:radial-gradient(90% 80% at 0% 0%,#2a2140 0%,transparent 60%),radial-gradient(80% 80% at 100% 0%,#18283c 0%,transparent 60%),radial-gradient(90% 90% at 60% 110%,#2e2418 0%,transparent 60%),#13161e;
   color-scheme:dark}
+
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.9;word-break:keep-all}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:var(--fs);line-height:1.9;word-break:keep-all;-webkit-font-smoothing:antialiased}
 img{max-width:100%;display:block}
-.wrap{max-width:760px;margin:0 auto;padding-inline:20px}
-h1,h2,h3,.eyebrow,nav,.btn,figcaption,table{font-family:var(--display)}
-h1,h2,h3{text-wrap:balance;color:var(--navy);line-height:1.35}
-
-/* 히어로 */
-.hero{background:var(--hero);border-bottom:1px solid var(--line)}
-.hero .wrap{padding-block:72px 48px}
-.eyebrow{font-size:13px;font-weight:600;letter-spacing:.12em;color:var(--gold)}
-.hero h1{font-size:clamp(40px,8vw,64px);font-weight:800;margin:10px 0 6px;letter-spacing:-.02em}
-.hero .heb{font-family:var(--body);font-size:22px;color:var(--muted);margin:0}
-.hero p.lead{font-size:19px;max-width:34em;margin:22px 0 0}
-.hero-photo{margin-top:36px;border-radius:14px;overflow:hidden;box-shadow:0 18px 40px -20px rgba(30,42,74,.45)}
-.hero-photo img{width:100%;aspect-ratio:16/9;object-fit:cover}
-
-/* 목차 */
-nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
-nav.toc ul{list-style:none;margin:0 auto;padding:10px 20px;max-width:760px;display:flex;flex-wrap:wrap;gap:6px 14px;justify-content:center}
-nav.toc a{font-size:14px;color:var(--muted);text-decoration:none;padding:4px 2px}
-nav.toc a:hover,nav.toc a:focus-visible{color:var(--navy);outline:none;box-shadow:0 2px 0 var(--gold)}
-
-/* 본문 */
-section{padding-block:56px 8px}
-section h2{font-size:clamp(26px,4.4vw,34px);font-weight:800;margin:6px 0 18px}
-section h3{font-size:20px;font-weight:700;margin:28px 0 8px}
-p{margin:0 0 16px}
-mark{background:linear-gradient(transparent 58%,var(--gold-soft) 58%);color:inherit;padding:0 2px}
+.wrap{max-width:820px;margin:0 auto;padding-inline:20px}
+.wide-wrap{max-width:1040px;margin:0 auto;padding-inline:20px}
+h1,h2,h3,h4,nav,button,figcaption,table,.chip,.eyebrow,.time{font-family:var(--display)}
+h1,h2,h3,h4{text-wrap:balance;color:var(--navy);line-height:1.35;margin:0}
+p{margin:0 0 1em}
 strong{color:var(--navy)}
+mark{background:linear-gradient(transparent 56%,var(--gold-soft) 56%);color:inherit;padding:0 .1em}
+
+/* 표지 */
+.hero{background:var(--hero);border-bottom:1px solid var(--line)}
+.hero .wrap{padding-block:80px 52px}
+.eyebrow{font-size:.74em;font-weight:700;letter-spacing:.16em;color:var(--gold)}
+.hero h1{font-size:clamp(42px,8.4vw,72px);font-weight:800;letter-spacing:-.03em;margin:.18em 0 .1em}
+.hero .sub{font-family:var(--display);font-size:clamp(18px,2.6vw,23px);color:var(--navy-2);font-weight:500;margin:0}
+.hero .heb{font-size:1.1em;color:var(--muted);margin:.5em 0 0}
+.hero .lead{margin:1.4em 0 0;max-width:34em}
+.hero-map{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px}
+.hero-map a{display:block;text-decoration:none;color:inherit;padding:16px 18px;border-radius:14px;background:color-mix(in srgb,var(--surface) 72%,transparent);border:1px solid var(--line);backdrop-filter:blur(6px);transition:transform .2s,border-color .2s}
+.hero-map a:hover,.hero-map a:focus-visible{transform:translateY(-2px);border-color:var(--gold);outline:none}
+.hero-map b{font-family:var(--display);display:block;color:var(--navy);font-size:1.02em}
+.hero-map span{font-family:var(--display);font-size:.8em;color:var(--muted)}
+.hero-photo{margin-top:30px;border-radius:16px;overflow:hidden;box-shadow:0 24px 48px -26px rgba(30,42,74,.55)}
+.hero-photo img{width:100%;aspect-ratio:21/9;object-fit:cover}
+@media (max-width:560px){.hero-map{grid-template-columns:1fr}.hero-photo img{aspect-ratio:16/10}}
+
+/* 상단 내비게이션 */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1040px;margin:0 auto;padding:8px 20px;display:flex;align-items:center;gap:10px}
+.bar ul{list-style:none;margin:0;padding:0;display:flex;gap:4px 14px;flex-wrap:wrap;justify-content:center;flex:1;min-width:0}
+.bar a{font-size:14px;color:var(--muted);text-decoration:none;padding:6px 2px;white-space:nowrap}
+.bar a.part{font-weight:700;color:var(--gold)}
+.bar a:hover,.bar a:focus-visible,.bar a.on{color:var(--navy);outline:none;box-shadow:0 2px 0 var(--gold)}
+.zoom{display:flex;gap:4px;flex-shrink:0}
+.zoom button{all:unset;cursor:pointer;font-size:13px;font-weight:700;color:var(--navy);border:1px solid var(--line);border-radius:8px;padding:4px 9px;background:var(--surface)}
+.zoom button:focus-visible{outline:2px solid var(--gold)}
+
+/* 막(부) 구분 */
+.part-head{margin-top:72px;padding-block:44px;background:var(--navy);color:var(--bg);position:relative;overflow:hidden}
+.part-head::after{content:'';position:absolute;inset:0;background:radial-gradient(60% 120% at 100% 0%,color-mix(in srgb,var(--gold) 30%,transparent),transparent 70%);pointer-events:none}
+.part-head .wrap{position:relative;z-index:1}
+.part-head .eyebrow{color:var(--gold)}
+.part-head h2{color:var(--bg);font-size:clamp(30px,5vw,44px);font-weight:800;margin:.2em 0 .25em}
+.part-head p{font-family:var(--display);color:color-mix(in srgb,var(--bg) 80%,transparent);margin:0;font-size:.95em}
+
+/* 장 */
+section.ch{padding-block:64px 4px}
+.ch-num{font-family:var(--display);font-weight:800;font-size:.8em;color:var(--gold);letter-spacing:.06em}
+section.ch h2{font-size:clamp(27px,4.4vw,38px);font-weight:800;margin:.2em 0 .7em;letter-spacing:-.01em}
+section.ch h3{font-size:1.18em;font-weight:700;margin:1.8em 0 .6em}
+.kicker{font-family:var(--display);font-size:1.06em;color:var(--navy-2);font-weight:500;margin:-.3em 0 1.2em}
 
 figure{margin:28px 0}
-figure img{width:100%;border-radius:12px;object-fit:cover;background:var(--line)}
-figure.wide img{aspect-ratio:3/2}
-figure.tall img{aspect-ratio:4/5}
-figcaption{font-size:13.5px;color:var(--muted);margin-top:8px;line-height:1.6}
+figure img{width:100%;border-radius:14px;object-fit:cover;background:var(--sunk)}
+figure.w img{aspect-ratio:16/9}
+figure.t img{aspect-ratio:4/5;max-height:640px}
+figcaption{font-size:.76em;color:var(--muted);margin-top:8px;line-height:1.6}
 .pair{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:28px 0}
 .pair figure{margin:0;min-width:0}
 .pair img{aspect-ratio:1/1}
 @media (max-width:560px){.pair{grid-template-columns:1fr}}
 
-.verse{margin:26px 0;padding:22px 24px;border-left:3px solid var(--gold);background:var(--surface);border-radius:0 12px 12px 0}
-.verse p{font-size:19px;margin:0 0 6px}
-.verse cite{font-family:var(--display);font-style:normal;font-size:14px;color:var(--gold);font-weight:600}
+.verse{margin:28px 0;padding:26px 28px;background:var(--surface);border:1px solid var(--line);border-radius:16px;text-align:center}
+.verse p{font-size:1.2em;line-height:1.75;margin:0 0 .5em;color:var(--navy)}
+.verse cite{font-family:var(--display);font-style:normal;font-size:.8em;color:var(--gold);font-weight:700;letter-spacing:.06em}
 
-/* 진행 단계 */
-ol.steps{list-style:none;padding:0;margin:24px 0;display:grid;gap:12px;counter-reset:s}
-ol.steps li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:14px;align-items:start;padding:16px 18px;background:var(--surface);border:1px solid var(--line);border-radius:12px}
-ol.steps li::before{content:counter(s);font-family:var(--display);font-weight:800;font-size:18px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:var(--bg)}
-ol.steps b{font-family:var(--display);color:var(--navy);display:block;font-size:17px}
-ol.steps span{font-size:16px;color:var(--muted);line-height:1.7}
+.callout{margin:26px 0;padding:22px 24px;border-radius:14px;background:var(--gold-soft)}
+.callout h4{font-size:1em;margin-bottom:.4em}
+.callout p:last-child{margin:0}
+.callout.sky{background:var(--sky)}
 
-.table-box{overflow-x:auto;margin:22px 0}
-table{width:100%;border-collapse:collapse;font-size:15.5px;min-width:440px}
-th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--gold);font-weight:700;font-size:13px;letter-spacing:.06em}
+/* 카드 그리드 */
+.grid{display:grid;gap:14px;margin:24px 0}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:760px){.g3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.g2,.g3{grid-template-columns:1fr}}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px 22px;min-width:0}
+.card h4{font-size:1.02em;margin-bottom:.35em}
+.card p{font-size:.9em;color:var(--muted);line-height:1.75;margin:0}
+.card .lab{font-family:var(--display);font-size:.7em;font-weight:800;letter-spacing:.1em;color:var(--gold);display:block;margin-bottom:.4em}
+.card.tint-sky{background:var(--sky);border-color:transparent}
+.card.tint-rose{background:var(--rose);border-color:transparent}
+.card.tint-mint{background:var(--mint);border-color:transparent}
+.card.tint-lilac{background:var(--lilac);border-color:transparent}
+
+/* 세 주인공 */
+.trio{display:flex;justify-content:center;align-items:center;gap:0;margin:30px 0 10px;flex-wrap:wrap}
+.trio .p{width:140px;height:140px;border-radius:50%;display:grid;place-items:center;text-align:center;font-family:var(--display);font-weight:800;color:var(--navy);font-size:1.05em;border:2px solid var(--line);background:var(--surface);line-height:1.3}
+.trio .p small{display:block;font-weight:500;font-size:.68em;color:var(--muted)}
+.trio .p.text{background:var(--navy);color:var(--bg);border-color:var(--navy);width:160px;height:160px}
+.trio .p.text small{color:color-mix(in srgb,var(--bg) 75%,transparent)}
+.trio .link{font-family:var(--display);color:var(--gold);font-weight:800;font-size:1.4em;padding:0 10px}
+
+/* 짝 동작 */
+.moves{display:grid;gap:12px;margin:24px 0}
+.move{display:grid;grid-template-columns:1fr auto 1fr;gap:12px;align-items:stretch}
+.move div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px 18px;min-width:0}
+.move b{font-family:var(--display);color:var(--navy);display:block}
+.move span{font-size:.86em;color:var(--muted);line-height:1.6}
+.move i{font-style:normal;font-family:var(--display);color:var(--gold);font-weight:800;align-self:center;font-size:1.3em}
+@media (max-width:560px){.move{grid-template-columns:1fr}.move i{text-align:center;transform:rotate(90deg)}}
+
+/* 표 */
+.tbl{overflow-x:auto;margin:22px 0;border:1px solid var(--line);border-radius:14px;background:var(--surface)}
+table{width:100%;border-collapse:collapse;font-size:.88em;min-width:520px}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.65}
+tr:last-child td{border-bottom:0}
+th{color:var(--gold);font-weight:800;font-size:.82em;letter-spacing:.06em;background:var(--sunk)}
 td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
 
-.qgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:22px 0}
-.qcard{padding:18px;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
-.qcard h4{font-family:var(--display);margin:0 0 4px;color:var(--navy);font-size:16px}
-.qcard p{margin:0;font-size:15.5px;color:var(--muted);line-height:1.7}
-@media (max-width:560px){.qgrid{grid-template-columns:1fr}}
+/* 시간표 막대 */
+.timebar{display:flex;border-radius:12px;overflow:hidden;margin:22px 0 10px;min-height:66px;border:1px solid var(--line)}
+.timebar div{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:6px 4px;font-family:var(--display);font-size:12px;line-height:1.3;color:var(--navy);min-width:0;border-right:1px solid color-mix(in srgb,var(--bg) 60%,transparent)}
+.timebar div:last-child{border-right:0}
+.timebar b{font-size:13px}
+.timebar .hot{background:var(--navy);color:var(--bg)}
+.tb1{background:var(--lilac)}.tb2{background:var(--sky)}.tb3{background:var(--mint)}.tb5{background:var(--rose)}.tb6{background:var(--gold-soft)}.tb7{background:var(--sunk)}
+.timelist{display:none}
+@media (max-width:620px){.timebar{display:none}.timelist{display:block}}
 
-.note{margin:24px 0;padding:20px 22px;border-radius:12px;background:var(--gold-soft)}
-.note h4{font-family:var(--display);margin:0 0 6px;color:var(--navy)}
-.note p:last-child{margin:0}
+/* 진행 단계 */
+.steps{display:grid;gap:18px;margin:28px 0;counter-reset:st}
+.step{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:26px 26px 22px;position:relative}
+.step-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:12px}
+.step-n{counter-increment:st;width:48px;height:48px;border-radius:50%;background:var(--navy);color:var(--bg);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:1.1em;flex-shrink:0}
+.step-n::before{content:counter(st)}
+.step h3{margin:0;font-size:1.25em;flex:1;min-width:0}
+.time{font-size:.74em;font-weight:700;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:3px 12px;white-space:nowrap}
+.step.core{border:2px solid var(--navy)}
+.step.core .step-n{background:var(--gold)}
+.step > p:last-child{margin-bottom:0}
+.why{font-family:var(--display);font-size:.84em;color:var(--muted);background:var(--sunk);border-radius:10px;padding:10px 14px;margin:14px 0 0;line-height:1.6}
+.why b{color:var(--navy)}
+.sub-steps{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
+.sub-steps li{display:grid;grid-template-columns:34px 1fr;gap:12px;padding:14px 16px;background:var(--sunk);border-radius:12px}
+.sub-steps li > span{font-family:var(--display);font-weight:800;color:var(--gold);font-size:.95em}
+.sub-steps b{font-family:var(--display);color:var(--navy)}
+.sub-steps p{font-size:.92em;margin:.2em 0 0}
+.say{font-size:.92em;border-left:3px solid var(--gold);padding:6px 0 6px 14px;margin:10px 0 0;color:var(--navy-2);font-style:normal}
 
-/* 실습 예시 */
-.practice{margin:26px 0;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--surface)}
-.practice header{padding:16px 20px;background:var(--navy);color:var(--bg);font-family:var(--display);font-weight:700}
-.practice header small{display:block;font-weight:400;opacity:.8;font-size:13px}
+.promise{margin:16px 0 0;padding:20px 22px;border-radius:14px;background:var(--gold-soft)}
+.promise h4{margin-bottom:.6em}
+.promise ol{margin:0;padding-left:1.3em;font-size:.94em}
+.promise li{margin:.2em 0}
+
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin:14px 0 0}
+.chip{font-size:.82em;font-weight:600;color:var(--navy);background:var(--sky);border-radius:99px;padding:7px 14px;line-height:1.4}
+.chip.g{background:var(--mint)}
+
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:14px 0 0}
+.vs div{border-radius:12px;padding:12px 16px;font-size:.9em;line-height:1.6}
+.vs .no{background:var(--rose)}
+.vs .yes{background:var(--mint)}
+.vs b{font-family:var(--display);display:block;font-size:.85em}
+@media (max-width:560px){.vs{grid-template-columns:1fr}}
+
+/* 실습 탭 */
+.tabs{display:flex;gap:8px;margin:24px 0 0;flex-wrap:wrap}
+.tabs button{all:unset;cursor:pointer;font-weight:700;font-size:.88em;padding:10px 18px;border-radius:99px;border:1px solid var(--line);color:var(--muted);background:var(--surface)}
+.tabs button[aria-selected="true"]{background:var(--navy);color:var(--bg);border-color:var(--navy)}
+.tabs button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.panel{margin-top:16px;border:1px solid var(--line);border-radius:18px;background:var(--surface);overflow:hidden}
+.panel-head{padding:18px 24px;background:var(--sunk);border-bottom:1px solid var(--line)}
+.panel-head h4{margin:0}
+.panel-head span{font-family:var(--display);font-size:.8em;color:var(--muted)}
+.panel-body{padding:22px 24px}
+
+.script{display:grid;gap:14px}
+.line{display:grid;grid-template-columns:72px 1fr;gap:12px;align-items:start}
+.who{font-family:var(--display);font-weight:800;font-size:.78em;text-align:center;padding:6px 0;border-radius:8px;color:var(--navy)}
+.who.lead{background:var(--gold-soft)}
+.who.a{background:var(--sky)}
+.who.b{background:var(--mint)}
+.bubble{font-size:.95em;line-height:1.75;padding:12px 16px;border-radius:4px 14px 14px 14px;background:var(--sunk)}
+.bubble ul{margin:.3em 0 0;padding-left:1.2em}
+.stage{font-family:var(--display);font-size:.8em;color:var(--muted);text-align:center;margin:6px 0;letter-spacing:.04em}
+
 .q{border-top:1px solid var(--line)}
-.q button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:16px 20px;font-family:var(--body);font-size:16.5px;line-height:1.6}
-.q button:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
-.tag{font-family:var(--display);font-size:12px;font-weight:700;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:2px 9px;white-space:nowrap}
-.chev{font-family:var(--display);color:var(--muted);transition:transform .2s}
+.q:first-child{border-top:0}
+.q button{all:unset;box-sizing:border-box;width:100%;cursor:pointer;display:grid;grid-template-columns:auto 1fr auto;gap:12px;align-items:center;padding:16px 0;font-family:var(--body);font-size:.98em;line-height:1.6}
+.q button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.tag{font-family:var(--display);font-size:.7em;font-weight:800;color:var(--gold);border:1px solid var(--gold);border-radius:99px;padding:2px 10px;white-space:nowrap}
+.chev{font-family:var(--display);color:var(--muted);transition:transform .2s;font-size:1.2em}
 .q[aria-expanded="true"] .chev{transform:rotate(45deg)}
-.q .ans{padding:0 20px 18px 20px;font-size:15.5px;color:var(--muted);line-height:1.8}
+.q .ans{padding:0 0 18px;font-size:.9em;color:var(--muted);line-height:1.8}
 
-footer{margin-top:64px;border-top:1px solid var(--line);padding-block:32px 48px;text-align:center;font-family:var(--display);font-size:14px;color:var(--muted)}
+/* 문제 해결 */
+.fix{display:grid;gap:10px;margin:24px 0}
+.fix details{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:0 20px}
+.fix summary{cursor:pointer;list-style:none;font-family:var(--display);font-weight:700;color:var(--navy);padding:16px 0;display:flex;justify-content:space-between;gap:12px}
+.fix summary::-webkit-details-marker{display:none}
+.fix summary::after{content:'＋';color:var(--muted);transition:transform .2s}
+.fix details[open] summary::after{transform:rotate(45deg)}
+.fix summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.fix details p{font-size:.92em;color:var(--muted);margin:0 0 16px;line-height:1.75}
+
+/* 마무리 */
+.final{margin:30px 0;padding:34px 30px;border-radius:20px;background:var(--hero);border:1px solid var(--line);text-align:center}
+.final p{font-size:1.12em;color:var(--navy);line-height:1.8;margin:0}
+.rule{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:16px 20px;border-radius:14px;background:var(--surface);border:1px solid var(--line);margin:10px 0}
+.rule b{font-family:var(--display);font-size:1.6em;color:var(--gold);font-weight:800;min-width:2.6em;text-align:center}
+.rule p{margin:0;font-size:.95em}
+
+footer{margin-top:80px;border-top:1px solid var(--line);padding-block:34px 52px;text-align:center;font-family:var(--display);font-size:14px;color:var(--muted)}
 footer b{color:var(--navy)}
-footer .credit{font-size:12px;margin-top:10px;opacity:.8}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.chev{transition:none}}
+footer .credit{font-size:12px;margin-top:8px;opacity:.8}
+
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow">은혜교회 말씀 배움 자료</div>
+    <div class="eyebrow">은혜교회 말씀 배움 강의</div>
     <h1>하브루타에 대하여</h1>
+    <p class="sub">짝과 함께 말씀을 묻고 배우는 길</p>
     <p class="heb">חַבְרוּתָא · Chavruta</p>
-    <p class="lead">둘이 마주 앉아 같은 말씀을 읽고, 묻고, 설명하고, 따져 보는 공부. 유대인들이 수천 년 동안 말씀을 배워 온 방식이에요. 그 뜻과 뿌리, 진행 방법, 그리고 우리 목장과 가정에서 어떻게 쓸 수 있는지 차근차근 살펴봐요.</p>
+    <p class="lead">둘이 마주 앉아 같은 말씀을 읽고, 묻고, 설명하고, 따져 보는 공부. 유대인들이 수천 년 동안 말씀을 배워 온 방식이에요. 오늘은 하브루타가 무엇인지 이해하고, 목장과 가정에서 바로 해 볼 수 있도록 실제 방법까지 차근차근 익혀 봐요.</p>
+    <div class="hero-map">
+      <a href="#part1"><b>1부 · 하브루타 이해하기</b><span>뜻 · 성경적 뿌리 · 예시바 풍경 · 핵심 원리</span></a>
+      <a href="#part2"><b>2부 · 하브루타 실제로 하기</b><span>준비 · 진행 8단계 · 유형 · 실습 · 문제 해결</span></a>
+    </div>
     <figure class="hero-photo">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hebron_yeshiva_students_in_Jerusalem.jpg?width=1400" alt="예루살렘 헤브론 예시바에서 공부하는 학생들" loading="eager">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Hebron_yeshiva_students_in_Jerusalem.jpg?width=1600" alt="예루살렘 헤브론 예시바에서 공부하는 학생들" loading="eager">
     </figure>
   </div>
 </header>
 
-<nav class="toc" aria-label="목차">
-  <ul>
-    <li><a href="#meaning">이름과 뜻</a></li>
-    <li><a href="#roots">성경적 뿌리</a></li>
-    <li><a href="#scene">예시바 풍경</a></li>
-    <li><a href="#method">진행 방식</a></li>
-    <li><a href="#principle">핵심 원리</a></li>
-    <li><a href="#korea">한국의 하브루타</a></li>
-    <li><a href="#church">교회 적용</a></li>
-  </ul>
+<nav class="bar" aria-label="목차">
+  <div class="bar-in">
+    <ul>
+      <li><a class="part" href="#part1">1부</a></li>
+      <li><a href="#meaning">뜻</a></li>
+      <li><a href="#roots">뿌리</a></li>
+      <li><a href="#scene">풍경</a></li>
+      <li><a href="#principle">원리</a></li>
+      <li><a href="#korea">한국</a></li>
+      <li><a class="part" href="#part2">2부</a></li>
+      <li><a href="#basics">기본기</a></li>
+      <li><a href="#prep">준비</a></li>
+      <li><a href="#flow">진행 8단계</a></li>
+      <li><a href="#types">유형</a></li>
+      <li><a href="#practice">실습</a></li>
+      <li><a href="#fix">문제 해결</a></li>
+      <li><a href="#target">대상별</a></li>
+      <li><a href="#close">당부</a></li>
+    </ul>
+    <div class="zoom" aria-label="글자 크기">
+      <button type="button" id="zoomOut" aria-label="글자 작게">가−</button>
+      <button type="button" id="zoomIn" aria-label="글자 크게">가＋</button>
+    </div>
+  </div>
 </nav>
 
-<main class="wrap">
+<!-- ============ 1부 ============ -->
+<div class="part-head" id="part1">
+  <div class="wrap">
+    <div class="eyebrow">PART 1</div>
+    <h2>하브루타 이해하기</h2>
+    <p>하브루타는 어디서 왔고, 무엇이 하브루타를 하브루타답게 만들까요?</p>
+  </div>
+</div>
 
-  <section id="meaning">
-    <div class="eyebrow">하나 · 이름과 뜻</div>
+<main>
+<div class="wrap">
+
+  <section class="ch" id="meaning">
+    <div class="ch-num">01</div>
     <h2>'공부법'이기 전에 '친구'라는 말이에요</h2>
     <p>하브루타는 아람어로 <mark>'우정', '동반자 관계'</mark>라는 뜻이에요. 친구를 뜻하는 히브리어 <strong>하베르(חבר)</strong>에서 나온 말이죠.</p>
     <p>재미있는 건, 원래 이 말이 공부 방법이 아니라 <strong>함께 공부하는 짝</strong> 그 자체를 가리켰다는 거예요. 유대인 학생들은 "저 친구가 내 하브루타야"라고 말했어요. 그러니까 하브루타의 출발점은 기술이 아니라 <mark>관계</mark>예요. 말씀 앞에 함께 앉아 주는 한 사람이 있다는 것, 그게 하브루타의 시작이에요.</p>
-    <figure class="wide">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Open_Torah_scroll.jpg?width=1200" alt="펼쳐진 토라 두루마리" loading="lazy">
+    <figure class="w">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Open_Torah_scroll.jpg?width=1400" alt="펼쳐진 토라 두루마리" loading="lazy">
       <figcaption>펼쳐진 토라 두루마리. 하브루타는 언제나 이 말씀(본문)을 가운데 두고 이루어져요.</figcaption>
     </figure>
   </section>
 
-  <section id="roots">
-    <div class="eyebrow">둘 · 성경적 뿌리</div>
+  <section class="ch" id="roots">
+    <div class="ch-num">02</div>
     <h2>철이 철을 날카롭게 하듯</h2>
     <p>하브루타의 정신을 가장 잘 보여주는 말씀으로 늘 이 구절이 꼽혀요.</p>
     <div class="verse">
-      <p>철이 철을 날카롭게 하는 것 같이 사람이 그의 친구의 얼굴을 빛나게 하느니라</p>
+      <p>철이 철을 날카롭게 하는 것 같이<br>사람이 그의 친구의 얼굴을 빛나게 하느니라</p>
       <cite>잠언 27:17</cite>
     </div>
     <p>칼날을 혼자 두면 무뎌지잖아요. 그런데 다른 쇠에 대고 갈면 날이 서요. 생각도 똑같아요. 혼자 읽으면 내가 아는 만큼만 보이지만, 옆 사람이 "그건 왜 그렇게 생각해요?" 하고 물어 주면 미처 못 본 것이 드러나거든요.</p>
-    <p>유대인의 탈무드에도 <mark>"두 학자가 서로를 날카롭게 한다"</mark>, <mark>"토라는 혼자가 아니라 함께할 때 얻어진다"</mark>는 가르침이 담겨 있어요. 이런 전통이 쌓여 유대 학교인 <strong>예시바(Yeshiva)</strong>의 기본 공부 방식이 되었어요.</p>
-    <figure class="tall">
+    <p>유대인의 탈무드에도 <mark>두 학자가 서로를 날카롭게 한다</mark>, <mark>토라는 혼자가 아니라 함께할 때 얻어진다</mark>는 가르침이 담겨 있어요. 이런 전통이 쌓여 유대 학교인 <strong>예시바(Yeshiva)</strong>의 기본 공부 방식이 되었어요.</p>
+    <figure class="t">
       <img src="https://commons.wikimedia.org/wiki/Special:FilePath/First_page_of_the_first_tractate_of_the_Talmud_(Daf_Beis_of_Maseches_Brachos).jpg?width=1000" alt="탈무드 베라호트 첫 페이지" loading="lazy">
       <figcaption>탈무드의 첫 장(베라호트 2a). 가운데 본문을 여러 랍비의 주석이 둘러싸고 있어요. 한 페이지 자체가 수백 년에 걸친 '대화'인 셈이에요.</figcaption>
     </figure>
   </section>
 
-  <section id="scene">
-    <div class="eyebrow">셋 · 예시바 풍경</div>
+  <section class="ch" id="scene">
+    <div class="ch-num">03</div>
     <h2>도서관이 아니라 시장 같은 공부방</h2>
     <p>예시바의 공부방을 <strong>베트 미드라쉬(Beit Midrash)</strong>, '배움의 집'이라고 불러요. 여기 들어가 보면 깜짝 놀라요. 수십, 수백 쌍이 마주 앉아 <mark>큰 소리로 본문을 읽고, 손짓하며 따지고, 웃고, 다시 책을 들여다봐요.</mark></p>
     <p>우리가 떠올리는 조용한 도서관과는 정반대죠. 그 시끌벅적함이 바로 살아 있는 배움의 소리예요.</p>
@@ -183,103 +344,390 @@ footer .credit{font-size:12px;margin-top:10px;opacity:.8}
         <figcaption>케렘 브야브네 예시바의 공부방</figcaption>
       </figure>
     </div>
-    <figure class="wide">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruzhiner_yeshiva,_Jerusalem.jpg?width=1200" alt="예루살렘의 한 예시바에서 공부하는 모습" loading="lazy">
+    <figure class="w">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ruzhiner_yeshiva,_Jerusalem.jpg?width=1400" alt="예루살렘의 한 예시바에서 공부하는 모습" loading="lazy">
       <figcaption>책상마다 두 사람씩. 한 사람이 읽고 설명하면, 다른 사람이 묻고 반박해요.</figcaption>
     </figure>
   </section>
 
-  <section id="method">
-    <div class="eyebrow">넷 · 진행 방식</div>
-    <h2>전통 하브루타는 이렇게 흘러가요</h2>
-    <ol class="steps">
-      <li><div><b>본문을 소리 내어 읽기</b><span>토라나 탈무드의 한 단락을 둘이 함께 읽어요. 눈으로만이 아니라 입으로 읽는 게 중요해요.</span></div></li>
-      <li><div><b>질문하기</b><span>"이 단어는 왜 여기 있지?", "앞 구절이랑 안 맞는 것 같은데?" 본문에서 걸리는 것을 꺼내요.</span></div></li>
-      <li><div><b>설명하기</b><span>한 사람이 자기가 이해한 대로 풀어 설명하고, 다른 사람은 듣고 보완하거나 반박해요.</span></div></li>
-      <li><div><b>논쟁하기</b><span>나이나 지위와 상관없이 근거를 들어 따져요. 목소리가 커지기도 하지만, 싸움이 아니라 진리를 찾는 과정이에요.</span></div></li>
-      <li><div><b>쉬우르(Shiur) — 정리</b><span>짝 토론 뒤에 랍비(교사)의 강의를 들으며 정리하고, 다시 짝과 함께 확인해요.</span></div></li>
-    </ol>
-    <p>핵심은 <mark>정답을 듣는 것보다, 질문을 통해 스스로 이해에 도달하는 것</mark>이에요. 앞에 상대가 있으니 대충 아는 건 금방 드러나요. 그리고 남에게 설명해 보는 순간, 그 내용이 비로소 진짜 내 것이 되거든요.</p>
-  </section>
-
-  <section id="principle">
-    <div class="eyebrow">다섯 · 핵심 원리</div>
+  <section class="ch" id="principle">
+    <div class="ch-num">04</div>
     <h2>하브루타를 하브루타답게 만드는 다섯 가지</h2>
-    <div class="table-box">
-      <table>
-        <thead><tr><th>원리</th><th>의미</th></tr></thead>
-        <tbody>
-          <tr><td>질문</td><td>배움은 답이 아니라 질문에서 시작돼요</td></tr>
-          <tr><td>짝</td><td>1:1이라 숨을 곳이 없어요. 모두가 말하고 모두가 들어요</td></tr>
-          <tr><td>설명</td><td>가르쳐 보면 내가 아는지 모르는지가 드러나요</td></tr>
-          <tr><td>경청과 반박</td><td>상대의 생각을 존중하되, 근거로 맞서요</td></tr>
-          <tr><td>본문 중심</td><td>내 생각이 아니라 늘 본문으로 돌아와요</td></tr>
-        </tbody>
-      </table>
+    <div class="grid g3">
+      <div class="card tint-sky"><span class="lab">질문</span><h4>배움은 질문에서</h4><p>답을 먼저 듣지 않아요. 궁금한 것을 꺼내는 데서 시작해요.</p></div>
+      <div class="card tint-mint"><span class="lab">짝</span><h4>숨을 곳이 없어요</h4><p>1:1이라 모두가 말하고, 모두가 들어요.</p></div>
+      <div class="card tint-lilac"><span class="lab">설명</span><h4>가르치면 보여요</h4><p>남에게 설명해 보면 내가 아는지 모르는지가 드러나요.</p></div>
+      <div class="card tint-rose"><span class="lab">경청과 반박</span><h4>존중하되 따져요</h4><p>상대의 생각을 끝까지 듣고, 근거로 맞서요.</p></div>
+      <div class="card"><span class="lab">본문 중심</span><h4>늘 말씀으로</h4><p>내 생각이 아니라 본문으로 계속 돌아와요.</p></div>
+      <div class="card" style="background:var(--navy);border-color:var(--navy)"><span class="lab">목적</span><h4 style="color:var(--bg)">하나님의 뜻 발견</h4><p style="color:color-mix(in srgb,var(--bg) 78%,transparent)">말 잘하기가 아니라, 함께 말씀의 뜻을 발견하는 것이에요.</p></div>
     </div>
   </section>
 
-  <section id="korea">
-    <div class="eyebrow">여섯 · 한국의 하브루타</div>
+  <section class="ch" id="korea">
+    <div class="ch-num">05</div>
     <h2>우리에게 익숙해진 하브루타</h2>
     <p>2010년대 이후 하브루타는 한국에서 교육 방법으로 크게 알려졌어요. 학교, 가정, 교회에서 흔히 쓰는 흐름은 이래요.</p>
-    <p style="font-family:var(--display);font-weight:700;color:var(--navy);text-align:center;padding:14px;border:1px dashed var(--line);border-radius:12px">질문 만들기 → 짝 토론 → 모둠 토론 → 발표 → 정리(쉬우르)</p>
-    <h3>질문은 네 가지로 만들어요</h3>
-    <div class="qgrid">
-      <div class="qcard"><h4>사실 질문</h4><p>본문에 무엇이 쓰여 있나요? 누가, 언제, 어디서, 무엇을?</p></div>
-      <div class="qcard"><h4>상상 질문</h4><p>내가 그 자리에 있었다면 어떤 마음이었을까요?</p></div>
-      <div class="qcard"><h4>적용 질문</h4><p>이 말씀이 오늘 내 삶에서는 어떻게 살아날까요?</p></div>
-      <div class="qcard"><h4>종합 질문</h4><p>이 본문이 결국 말하고 싶은 한 가지는 무엇일까요?</p></div>
+    <div class="chips" style="justify-content:center;margin:20px 0 26px">
+      <span class="chip">질문 만들기</span><span class="chip">→</span><span class="chip">짝 토론</span><span class="chip">→</span><span class="chip">모둠 토론</span><span class="chip">→</span><span class="chip">발표</span><span class="chip">→</span><span class="chip g">정리(쉬우르)</span>
     </div>
-    <div class="note">
+    <div class="callout">
       <h4>함께 짚어 둘 것</h4>
       <p>"유대인이 노벨상을 많이 받는 비결이 하브루타"라는 말을 자주 듣는데요, 이건 조금 과장된 설명이에요. 역사, 문화, 사회적 환경이 복잡하게 얽힌 결과거든요.</p>
       <p>또 원래 하브루타는 <strong>경전 본문을 깊이 파고드는 신앙 공부</strong>예요. 그런데 한국에서는 본문 없이 의견만 나누는 토론 기법처럼 쓰이는 경우가 많아요. 본문이 빠지면 대화는 금방 얕아져요. 교회의 하브루타는 반드시 <mark>말씀 한가운데</mark>에서 시작해야 해요.</p>
     </div>
   </section>
 
-  <section id="church">
-    <div class="eyebrow">일곱 · 교회 적용</div>
-    <h2>목장과 가정에서 해 보는 성경 하브루타</h2>
-    <figure class="wide">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Open_Bible_with_pen_(4543060842).jpg?width=1200" alt="펜과 함께 펼쳐진 성경" loading="lazy">
-    </figure>
-    <h3>이렇게 해 보세요</h3>
-    <ol class="steps">
-      <li><div><b>짝은 두 사람이 기본</b><span>세 명이 넘어가면 말하는 사람만 계속 말하게 돼요. 목장 인원이 많으면 둘씩 나눠 앉아요.</span></div></li>
-      <li><div><b>본문은 짧게</b><span>한두 단락이면 충분해요. 짧아야 깊이 들어갈 수 있어요.</span></div></li>
-      <li><div><b>목자는 정답이 아니라 정리를 맡아요</b><span>마지막 쉬우르 시간에 본문의 핵심을 짚고, 하나님의 뜻과 그리스도의 복음으로 연결해 주세요.</span></div></li>
-      <li><div><b>길을 잃으면 본문으로</b><span>의견 다툼으로 흐를 때는 "본문은 뭐라고 하나요?" 한마디면 다시 돌아올 수 있어요.</span></div></li>
-    </ol>
+</div>
 
-    <div class="practice">
-      <header>함께 연습해 봐요 — 선한 사마리아인<small>누가복음 10:25–37 · 질문을 누르면 생각해 볼 실마리가 열려요</small></header>
-      <div class="q" aria-expanded="false">
-        <button type="button" id="q1" aria-controls="a1"><span class="tag">사실</span><span>율법교사는 처음에 무엇을 물었고, 예수님은 마지막에 무엇을 되물으셨나요?</span><span class="chev">＋</span></button>
-        <div class="ans" id="a1" hidden>율법교사는 "내 이웃이 누구니이까"(29절)라고 물었어요. 그런데 예수님은 "누가 강도 만난 자의 이웃이 되겠느냐"(36절)고 되물으세요. 질문의 방향이 '누가 내 이웃인가'에서 '내가 누구의 이웃이 되어 줄까'로 바뀌어요.</div>
-      </div>
-      <div class="q" aria-expanded="false">
-        <button type="button" id="q2" aria-controls="a2"><span class="tag">상상</span><span>제사장과 레위인은 왜 그냥 지나갔을까요?</span><span class="chev">＋</span></button>
-        <div class="ans" id="a2" hidden>시체에 닿으면 부정해진다는 율법 규정, 강도가 근처에 있을지 모른다는 두려움, 바쁜 일정… 여러 이유를 상상해 볼 수 있어요. 그 이유들이 오늘 나를 멈추지 못하게 하는 이유와 얼마나 닮았는지도 함께 나눠 봐요.</div>
-      </div>
-      <div class="q" aria-expanded="false">
-        <button type="button" id="q3" aria-controls="a3"><span class="tag">적용</span><span>지금 내가 "내 이웃은 여기까지"라고 선을 긋고 있는 사람은 누구인가요?</span><span class="chev">＋</span></button>
-        <div class="ans" id="a3" hidden>이름을 떠올려 보는 게 좋아요. 그리고 이번 주에 그 사람에게 할 수 있는 작은 일 하나를 짝에게 말해 보세요. 말로 꺼내면 실천할 힘이 생겨요.</div>
-      </div>
-      <div class="q" aria-expanded="false">
-        <button type="button" id="q4" aria-controls="a4"><span class="tag">종합</span><span>강도 만난 자를 살린 사마리아인에게서 예수님의 어떤 모습이 보이나요?</span><span class="chev">＋</span></button>
-        <div class="ans" id="a4" hidden>죽어 가는 사람에게 먼저 다가와 상처를 싸매고, 자기 비용으로 끝까지 책임진 사마리아인. 죄로 쓰러진 우리를 찾아오셔서 대가를 치르시고 살리신 예수님의 모습이 겹쳐 보여요. 우리가 이웃이 될 수 있는 것도, 먼저 우리의 이웃이 되어 주신 그분 덕분이에요.</div>
+<!-- ============ 2부 ============ -->
+<div class="part-head" id="part2">
+  <div class="wrap">
+    <div class="eyebrow">PART 2</div>
+    <h2>하브루타 실제로 하기</h2>
+    <p>준비부터 마무리까지, 목장에서 그대로 따라 할 수 있는 방법이에요.</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+  <section class="ch" id="basics">
+    <div class="ch-num">06</div>
+    <h2>시작 전에 알아 둘 기본기</h2>
+
+    <h3>하브루타의 세 주인공</h3>
+    <p>유대 전통에서는 하브루타에 사람이 둘이 아니라 <strong>셋</strong>이 있다고 말해요. 나, 짝, 그리고 <strong>본문</strong>이에요. 본문이 세 번째 대화 상대라는 뜻이죠.</p>
+    <div class="trio" aria-hidden="true">
+      <div class="p">나<small>묻고 설명하는 사람</small></div>
+      <span class="link">＋</span>
+      <div class="p text">본문<small>세 번째 대화 상대</small></div>
+      <span class="link">＋</span>
+      <div class="p">짝<small>듣고 되묻는 사람</small></div>
+    </div>
+    <p>그래서 두 사람이 아무리 열심히 이야기해도 본문을 떠나면 하브루타가 아니라 그냥 수다가 돼요. <mark>이 원칙 하나만 붙잡아도 절반은 성공</mark>이에요.</p>
+
+    <h3>좋은 하브루타 안에서 오가는 세 쌍의 동작</h3>
+    <p>하브루타를 연구한 오릿 켄트(Orit Kent)는 좋은 하브루타 안에서 늘 세 쌍의 동작이 오간다고 정리했어요.</p>
+    <div class="moves">
+      <div class="move"><div><b>듣기</b><span>짝의 말을 끝까지 들어요</span></div><i>↔</i><div><b>말하기</b><span>내 생각을 분명한 말로 꺼내요</span></div></div>
+      <div class="move"><div><b>궁금해하기</b><span>여러 가능성을 열어 두어요</span></div><i>↔</i><div><b>초점 맞추기</b><span>그중 하나를 골라 깊이 파요</span></div></div>
+      <div class="move"><div><b>지지하기</b><span>짝의 생각을 세워 줘요</span></div><i>↔</i><div><b>도전하기</b><span>"정말 그럴까요?" 하고 되물어요</span></div></div>
+    </div>
+    <div class="callout sky">
+      <p>한쪽으로만 기울면 문제가 생겨요. 지지만 하면 "좋네요, 좋네요"로 끝나고, 도전만 하면 싸움이 돼요. <strong>둘이 번갈아 오가야 날이 서요.</strong></p>
+    </div>
+  </section>
+
+  <section class="ch" id="prep">
+    <div class="ch-num">07</div>
+    <h2>준비하기</h2>
+
+    <h3>① 본문 고르기</h3>
+    <div class="grid g2">
+      <div class="card"><span class="lab">길이</span><h4>3~7절, 한 장면</h4><p>처음엔 한 단락이면 충분해요. 짧아야 깊이 들어가요.</p></div>
+      <div class="card"><span class="lab">좋은 본문</span><h4>대화·갈등·의외의 행동</h4><p>비유, 예수님과 사람들의 대화, 인물이 선택하는 장면이 특히 잘 돼요.</p></div>
+    </div>
+    <p style="font-family:var(--display);font-size:.9em;color:var(--muted);margin-bottom:.5em">추천 입문 본문</p>
+    <div class="chips" style="margin-top:0">
+      <span class="chip">선한 사마리아인 · 눅 10:25-37</span>
+      <span class="chip">마르다와 마리아 · 눅 10:38-42</span>
+      <span class="chip">삭개오 · 눅 19:1-10</span>
+      <span class="chip">탕자 비유 · 눅 15:11-32</span>
+      <span class="chip">가인과 아벨 · 창 4:1-16</span>
+      <span class="chip">요나 4장</span>
+      <span class="chip">수가성 여인 · 요 4장</span>
+    </div>
+    <p style="margin-top:1em">처음부터 로마서 같은 논리 본문은 피하는 게 좋아요. 익숙해진 뒤에 하면 오히려 아주 깊어져요.</p>
+
+    <h3>② 짝 정하기</h3>
+    <div class="grid g2">
+      <div class="card"><h4>기본은 2명</h4><p>홀수면 한 팀만 3명으로 해요.</p></div>
+      <div class="card"><h4>처음엔 편하게, 나중엔 섞어서</h4><p>나이, 신앙 연차, 성별이 다른 짝일수록 질문이 다양해져요.</p></div>
+      <div class="card"><h4>부부는 처음엔 따로</h4><p>집에서 하던 대화 패턴이 그대로 나오기 쉬워요.</p></div>
+      <div class="card"><h4>연차 차이가 크다면</h4><p>오래된 분께 "가르치지 말고 질문을 끌어내 주세요"라고 미리 부탁해요.</p></div>
+    </div>
+
+    <h3>③ 자리 배치</h3>
+    <p>두 사람이 <strong>마주 보거나 비스듬히 90도</strong>로 앉아요. 나란히 앉으면 대화가 잘 안 돼요. 본문은 <strong>한 사람당 한 장씩</strong>, 메모할 여백이 있게 인쇄하고, 펜과 포스트잇을 준비해요.</p>
+    <p>여러 짝이 한 방에 있으면 소리가 섞여 시끄러운데, <mark>그게 정상이에요.</mark> 오히려 조용하면 잘 안 되고 있다는 신호예요.</p>
+
+    <h3>④ 시간 계획 · 목장 60분 기준</h3>
+    <div class="timebar" role="img" aria-label="60분 진행 시간 배분">
+      <div class="tb1" style="flex:5"><b>5분</b>기도·약속</div>
+      <div class="tb2" style="flex:5"><b>5분</b>읽기</div>
+      <div class="tb3" style="flex:7"><b>7분</b>질문 만들기</div>
+      <div class="hot" style="flex:20"><b>20분</b>짝 하브루타</div>
+      <div class="tb5" style="flex:10"><b>10분</b>모둠 나눔</div>
+      <div class="tb6" style="flex:8"><b>8분</b>쉬우르</div>
+      <div class="tb7" style="flex:5"><b>5분</b>적용·기도</div>
+    </div>
+    <div class="timelist tbl">
+      <table style="min-width:0">
+        <tbody>
+          <tr><td>기도·약속</td><td>5분</td></tr>
+          <tr><td>본문 읽기</td><td>5분</td></tr>
+          <tr><td>질문 만들기</td><td>7분</td></tr>
+          <tr><td>짝 하브루타</td><td>20분</td></tr>
+          <tr><td>모둠 나눔</td><td>10분</td></tr>
+          <tr><td>쉬우르</td><td>8분</td></tr>
+          <tr><td>적용·기도</td><td>5분</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>처음 할 때는 짝 하브루타를 10~15분으로 짧게 시작하세요. 할 말이 없어 어색해지는 것보다 <mark>"아, 아쉽다" 하고 끝나는 게</mark> 다음 시간을 살려요.</p>
+  </section>
+
+  <section class="ch" id="flow">
+    <div class="ch-num">08</div>
+    <h2>실제 진행 8단계</h2>
+    <p class="kicker">하브루타의 심장은 5단계예요. 나머지 단계는 모두 그 시간을 잘 보내기 위한 준비와 마무리예요.</p>
+
+    <div class="steps">
+
+      <article class="step">
+        <div class="step-top"><span class="step-n"></span><h3>여는 기도와 약속</h3><span class="time">5분</span></div>
+        <p>말씀을 열기 전에 성령님의 조명을 구하는 기도로 시작해요. 그리고 약속을 짧게 함께 소리 내어 읽어요.</p>
+        <div class="promise">
+          <h4>우리의 하브루타 약속</h4>
+          <ol>
+            <li>짝의 말을 끊지 않아요.</li>
+            <li>"틀렸어요" 대신 "왜 그렇게 생각해요?"라고 물어요.</li>
+            <li>생각은 반박해도 사람은 존중해요.</li>
+            <li>모르면 "모르겠어요"라고 솔직히 말해요.</li>
+            <li>길을 잃으면 본문으로 돌아가요.</li>
+            <li>여기서 나눈 개인 이야기는 여기에 두고 가요.</li>
+          </ol>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-top"><span class="step-n"></span><h3>본문 세 번 읽기</h3><span class="time">5분</span></div>
+        <ul class="sub-steps">
+          <li><span>1회</span><div><b>인도자 낭독</b><p>인도자가 전체를 소리 내어 읽어요.</p></div></li>
+          <li><span>2회</span><div><b>짝끼리 한 절씩</b><p>번갈아 소리 내어 읽어요.</p></div></li>
+          <li><span>3회</span><div><b>혼자 조용히</b><p>눈에 걸리는 단어에 밑줄을 그어요.</p></div></li>
+        </ul>
+        <p class="why"><b>왜 소리 내어 읽나요?</b> 눈으로 읽으면 아는 이야기라고 넘어가는데, 입으로 읽으면 "어? 이런 말이 있었네?" 하는 게 보이거든요.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-top"><span class="step-n"></span><h3>혼자 질문 만들기</h3><span class="time">7분</span></div>
+        <p>짝과 이야기하기 전에 <strong>먼저 혼자</strong> 질문을 적어요. 최소 3개, 많으면 5~6개. 질문의 질보다 <mark>양이 먼저</mark>예요. 엉뚱한 질문도 괜찮아요.</p>
+        <p class="why"><b>왜 혼자 먼저인가요?</b> 바로 대화를 시작하면 말 잘하는 사람의 생각만 따라가게 되거든요.</p>
+        <h4 style="margin-top:1.4em">질문 씨앗</h4>
+        <div class="chips">
+          <span class="chip">왜 하필 ___일까?</span>
+          <span class="chip">___가 없었다면 어땠을까?</span>
+          <span class="chip">이 사람은 이때 무슨 마음이었을까?</span>
+          <span class="chip">이 단어는 왜 여기 있을까?</span>
+          <span class="chip">앞뒤 내용과 왜 이렇게 다를까?</span>
+          <span class="chip">내 생각과 다르다 싶은 곳은?</span>
+          <span class="chip">하나님은 왜 이렇게 하셨을까?</span>
+          <span class="chip">이 말씀이 오늘 나에게 하는 말은?</span>
+        </div>
+        <h4 style="margin-top:1.6em">질문의 네 가지 층</h4>
+        <div class="tbl">
+          <table>
+            <thead><tr><th>층</th><th>묻는 것</th><th>선한 사마리아인 예시</th></tr></thead>
+            <tbody>
+              <tr><td>사실</td><td>본문에 뭐라고 쓰여 있나?</td><td>강도 만난 사람 곁을 지나간 사람은 누구누구인가?</td></tr>
+              <tr><td>상상</td><td>그 자리에 있었다면?</td><td>제사장은 길을 건너며 무슨 생각을 했을까?</td></tr>
+              <tr><td>적용</td><td>내 삶에서는?</td><td>나는 요즘 누구를 피해 반대편으로 지나가고 있나?</td></tr>
+              <tr><td>종합</td><td>결국 무엇을 말하나?</td><td>예수님은 왜 질문의 방향을 뒤집으셨을까?</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="step">
+        <div class="step-top"><span class="step-n"></span><h3>함께 질문 고르기</h3><span class="time">3분</span></div>
+        <p>짝과 서로 만든 질문을 <strong>소리 내어 읽어 줘요.</strong> 그리고 둘이 의논해서 <strong>가장 이야기하고 싶은 질문 1~2개</strong>를 골라요.</p>
+        <div class="chips"><span class="chip g">답이 바로 안 나오는 질문</span><span class="chip g">둘 다 궁금한 질문</span><span class="chip g">본문에서 근거를 찾을 수 있는 질문</span></div>
+        <div class="vs">
+          <div class="no"><b>이런 질문은 짧게 끝나요</b>제사장은 나빴나?</div>
+          <div class="yes"><b>이런 질문이 깊이 들어가요</b>제사장은 왜 그냥 지나갔을까?</div>
+        </div>
+      </article>
+
+      <article class="step core">
+        <div class="step-top"><span class="step-n"></span><h3>짝 하브루타 · 본론</h3><span class="time">15~20분</span></div>
+        <p>여기가 하브루타의 심장이에요. 아래 여섯 가지 흐름으로 진행돼요.</p>
+        <ul class="sub-steps">
+          <li><span>①</span><div><b>역할 정하기</b><p>A는 <strong>설명자</strong>, B는 <strong>질문자</strong>. 5~7분 뒤 인도자가 종을 치면 교대해요. 한 사람만 계속 말하는 걸 막아 줘요.</p></div></li>
+          <li><span>②</span><div><b>설명자의 첫 대답</b><p>자기 생각과 그 <strong>근거(몇 절)</strong>를 함께 말해요.</p><p class="say">"저는 제사장이 정결 규정 때문에 지나갔다고 생각해요. 31절에 '피하여 지나가고'라고 했는데, 일부러 반대편 길로 갔다는 거잖아요."</p></div></li>
+          <li><span>③</span><div><b>질문자의 되묻기</b><p>동의하든 안 하든 <strong>최소 두 번은</strong> 되물어요.</p>
+            <div class="chips">
+              <span class="chip">본문 어디에서 그렇게 보여요?</span>
+              <span class="chip">다르게 볼 수도 있지 않을까요?</span>
+              <span class="chip">그렇다면 ___는 어떻게 설명해요?</span>
+              <span class="chip">좀 더 자세히 말해 줄 수 있어요?</span>
+              <span class="chip">그게 왜 중요하다고 생각해요?</span>
+              <span class="chip">만약 반대라면 어떻게 될까요?</span>
+            </div></div></li>
+          <li><span>④</span><div><b>설명자의 다듬기</b><p>생각을 <strong>고치거나, 보충하거나, 지켜요.</strong> 생각을 바꾸는 건 지는 게 아니라 배우는 거예요.</p></div></li>
+          <li><span>⑤</span><div><b>한 문장으로 정리</b><p>한 질문이 끝날 때마다 둘이 한 문장으로 정리해요.</p><p class="say">"우리는 제사장이 율법을 지키려다 사랑을 놓쳤다고 정리했어요."</p><p>끝까지 생각이 다르면 억지로 합치지 말고 "A는 이렇게, B는 이렇게 봤다"로 둘 다 적어요. 탈무드도 소수 의견까지 함께 기록해 두었어요.</p></div></li>
+          <li><span>⑥</span><div><b>역할 바꿔 두 번째 질문</b><p>교대해서 두 번째 질문으로 같은 과정을 반복해요.</p></div></li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <div class="step-top"><span class="step-n"></span><h3>모둠 나눔</h3><span class="time">10분</span></div>
+        <p>두 짝을 합쳐 <strong>4명 모둠</strong>을 만들고, 각 짝이 세 가지를 나눠요.</p>
+        <div class="grid g3" style="margin-bottom:0">
+          <div class="card tint-sky"><span class="lab">하나</span><p>우리가 고른 질문</p></div>
+          <div class="card tint-mint"><span class="lab">둘</span><p>우리가 도달한 생각 (한 문장)</p></div>
+          <div class="card tint-lilac"><span class="lab">셋</span><p>아직 풀리지 않은 질문</p></div>
+        </div>
+        <p class="why">목장이 작으면 이 단계를 건너뛰고 바로 전체 나눔으로 가도 돼요.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-top"><span class="step-n"></span><h3>쉬우르 · 인도자의 정리</h3><span class="time">8분</span></div>
+        <p>한국식 하브루타에서 가장 많이 빠지는 단계예요. 그런데 <mark>교회 하브루타에서는 꼭 필요한 단계</mark>예요. 사람들의 생각을 모은 뒤, 본문이 실제로 말하는 바와 복음으로 붙잡아 주는 시간이거든요.</p>
+        <div class="grid g2" style="margin-bottom:0">
+          <div class="card"><span class="lab">하나</span><h4>좋은 질문 칭찬하기</h4><p>"오늘 ___님 질문이 정말 핵심을 찔렀어요."</p></div>
+          <div class="card"><span class="lab">둘</span><h4>본문 배경 보충하기</h4><p>몰라서 막혔던 부분을 채워요. 예: 사마리아인과 유대인의 관계, 여리고 길의 험함.</p></div>
+          <div class="card"><span class="lab">셋</span><h4>잘못된 해석 바로잡기</h4><p>"그렇게 볼 수도 있지만, 본문 흐름을 보면…" 하고 근거로 부드럽게 돌려요.</p></div>
+          <div class="card"><span class="lab">넷</span><h4>그리스도 중심으로 모으기</h4><p>이 본문이 하나님의 뜻과 예수 그리스도를 어떻게 보여 주는지 한두 문장으로 묶어요.</p></div>
+        </div>
+        <p class="why"><b>8분을 넘기지 않아요.</b> 쉬우르는 설교가 아니에요. 길어지면 사람들이 애써 찾은 것을 덮어 버리게 돼요.</p>
+      </article>
+
+      <article class="step">
+        <div class="step-top"><span class="step-n"></span><h3>적용과 기도</h3><span class="time">5분</span></div>
+        <p>각자 이번 주에 실천할 <strong>한 가지</strong>를 짝에게 말해요. 구체적일수록 좋아요.</p>
+        <div class="vs">
+          <div class="no"><b>막연한 적용</b>이웃을 사랑하겠다</div>
+          <div class="yes"><b>구체적인 적용</b>옆집 할머니께 목요일에 반찬 하나 갖다 드리겠다</div>
+        </div>
+        <p style="margin-top:1em">짝끼리 <strong>서로를 위해 기도</strong>하고 마쳐요. 다음 모임 첫 순서로 "지난주 실천 어땠어요?"를 짝에게 물어보게 하면 실천율이 확 올라가요.</p>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="ch" id="types">
+    <div class="ch-num">09</div>
+    <h2>하브루타의 여러 유형</h2>
+    <p>같은 하브루타도 목적에 따라 방식을 바꿀 수 있어요. 돌아가며 써 보면 지루하지 않아요.</p>
+    <div class="grid g3">
+      <div class="card"><span class="lab">기본형</span><h4>질문 중심</h4><p>질문 만들고, 골라서, 토론해요. 대부분의 본문에 잘 맞아요.</p></div>
+      <div class="card"><span class="lab">찬반</span><h4>논쟁 중심</h4><p>찬반을 나눠 맡고 근거로 토론해요. "마르다가 잘못했나?" 같은 본문.</p></div>
+      <div class="card"><span class="lab">나란히</span><h4>비교 중심</h4><p>두 본문의 같은 점과 다른 점을 찾아요. 가인과 아벨, 사울과 다윗.</p></div>
+      <div class="card"><span class="lab">나눠서</span><h4>친구 가르치기</h4><p>본문을 반씩 나눠 공부한 뒤 서로 가르쳐요. 긴 본문, 서신서.</p></div>
+      <div class="card"><span class="lab">퀴즈</span><h4>문제 만들기</h4><p>본문으로 문제를 만들어 짝에게 내요. 주일학교, 청소년.</p></div>
+      <div class="card"><span class="lab">역할</span><h4>인물 되어 보기</h4><p>본문 속 두 인물을 맡아 그 입장에서 대화해요. 비유, 대화 장면.</p></div>
+    </div>
+  </section>
+
+  <section class="ch" id="practice">
+    <div class="ch-num">10</div>
+    <h2>함께 연습해 봐요</h2>
+    <p>실제 진행 모습을 대본으로 살펴보고, 질문 연습도 해 봐요.</p>
+
+    <div class="tabs" role="tablist">
+      <button type="button" role="tab" id="tab-a" aria-selected="true" aria-controls="pan-a">마르다와 마리아 · 진행 대본</button>
+      <button type="button" role="tab" id="tab-b" aria-selected="false" aria-controls="pan-b">선한 사마리아인 · 질문 연습</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="pan-a" aria-labelledby="tab-a">
+      <div class="panel-head"><h4>마르다와 마리아</h4><span>누가복음 10:38–42 · 다섯 절짜리 짧은 본문</span></div>
+      <div class="panel-body">
+        <div class="script">
+          <div class="stage">읽기</div>
+          <div class="line"><span class="who lead">인도자</span><div class="bubble">오늘은 다섯 절짜리 짧은 본문이에요. 제가 먼저 읽을게요. … 이제 짝끼리 한 절씩 번갈아 읽어 보세요. 마지막으로 조용히 한 번 더 읽으면서 마음에 걸리는 단어에 밑줄 그어 보세요.</div></div>
+          <div class="stage">질문 만들기</div>
+          <div class="line"><span class="who lead">인도자</span><div class="bubble">7분 동안 질문을 세 개 이상 적어 보세요. 엉뚱해도 좋아요.</div></div>
+          <div class="line"><span class="who a">참여자</span><div class="bubble">이런 질문들이 나왔어요.
+            <ul>
+              <li>마르다는 왜 마리아에게 직접 말하지 않고 예수님께 말했을까?</li>
+              <li>예수님은 왜 마르다 이름을 두 번 부르셨을까? (41절)</li>
+              <li>"많은 일"과 "한 가지"는 각각 무엇일까?</li>
+              <li>마르다의 섬김은 잘못된 걸까?</li>
+              <li>나는 마르다에 가까울까, 마리아에 가까울까?</li>
+            </ul></div></div>
+          <div class="stage">짝 하브루타</div>
+          <div class="line"><span class="who a">A 설명자</span><div class="bubble">저는 예수님이 섬김 자체를 나무라신 건 아니라고 봐요. 40절에 마르다가 '준비하는 일이 많아 마음이 분주하여'라고 했잖아요. 문제는 일이 아니라 분주한 마음이었던 것 같아요.</div></div>
+          <div class="line"><span class="who b">B 질문자</span><div class="bubble">그런데 예수님이 마리아가 '좋은 편을 택했다'고 하셨잖아요. 그럼 마르다는 나쁜 편을 택한 거 아니에요?</div></div>
+          <div class="line"><span class="who a">A 설명자</span><div class="bubble">음… 비교하시는 말씀 같아요. 섬김이 나쁜 게 아니라, 그 순간엔 말씀 듣는 게 먼저였다는 거죠.</div></div>
+          <div class="line"><span class="who b">B 질문자</span><div class="bubble">그럼 마르다는 언제 섬겨야 했을까요? 손님이 오셨는데 밥은 해야 하잖아요. 😄</div></div>
+          <div class="line"><span class="who a">A 설명자</span><div class="bubble">하하, 그러네요. 아마 먼저 앉아서 듣고, 그다음에 함께 준비했으면 마음이 달랐을 것 같아요.</div></div>
+          <div class="stage">쉬우르</div>
+          <div class="line"><span class="who lead">인도자</span><div class="bubble">여러분이 찾은 걸 보니 놀라워요. 당시에 랍비 발치에 앉는 건 제자의 자리였어요. 예수님은 마리아를 제자로 받아 주신 거예요. 그리고 마르다 이름을 두 번 부르신 건 꾸중이 아니라 다정한 부르심이었어요. 예수님은 우리의 분주한 섬김보다, 먼저 당신 곁에 앉는 우리를 원하세요.</div></div>
+          <div class="stage">적용</div>
+          <div class="line"><span class="who lead">인도자</span><div class="bubble">이번 주에 분주함을 멈추고 주님 앞에 앉을 시간 하나를 짝에게 말해 보세요.</div></div>
+        </div>
       </div>
     </div>
 
-    <figure class="wide">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Reading_the_Bible.jpg?width=1200" alt="성경을 읽는 모습" loading="lazy">
-      <figcaption>가정에서는 식탁이 최고의 베트 미드라쉬예요. 부모와 자녀가 짝이 되어 한 구절로 질문을 주고받아 보세요.</figcaption>
-    </figure>
-
-    <p>하브루타의 목적은 말을 잘하는 사람이 되는 게 아니에요. 말씀 앞에 함께 앉아, 서로를 날카롭게 하며, <mark>결국 하나님의 뜻과 예수 그리스도의 가르침을 더 깊이 바라보게 되는 것</mark>. 그게 우리가 하브루타를 하는 이유예요.</p>
+    <div class="panel" role="tabpanel" id="pan-b" aria-labelledby="tab-b" hidden>
+      <div class="panel-head"><h4>선한 사마리아인</h4><span>누가복음 10:25–37 · 질문을 누르면 생각해 볼 실마리가 열려요</span></div>
+      <div class="panel-body">
+        <div class="q" aria-expanded="false">
+          <button type="button" id="q1" aria-controls="a1"><span class="tag">사실</span><span>율법교사는 처음에 무엇을 물었고, 예수님은 마지막에 무엇을 되물으셨나요?</span><span class="chev">＋</span></button>
+          <div class="ans" id="a1" hidden>율법교사는 "내 이웃이 누구니이까"(29절)라고 물었어요. 그런데 예수님은 "누가 강도 만난 자의 이웃이 되겠느냐"(36절)고 되물으세요. 질문의 방향이 '누가 내 이웃인가'에서 '내가 누구의 이웃이 되어 줄까'로 바뀌어요.</div>
+        </div>
+        <div class="q" aria-expanded="false">
+          <button type="button" id="q2" aria-controls="a2"><span class="tag">상상</span><span>제사장과 레위인은 왜 그냥 지나갔을까요?</span><span class="chev">＋</span></button>
+          <div class="ans" id="a2" hidden>시체에 닿으면 부정해진다는 율법 규정, 강도가 근처에 있을지 모른다는 두려움, 바쁜 일정… 여러 이유를 상상해 볼 수 있어요. 그 이유들이 오늘 나를 멈추지 못하게 하는 이유와 얼마나 닮았는지도 함께 나눠 봐요.</div>
+        </div>
+        <div class="q" aria-expanded="false">
+          <button type="button" id="q3" aria-controls="a3"><span class="tag">적용</span><span>지금 내가 "내 이웃은 여기까지"라고 선을 긋고 있는 사람은 누구인가요?</span><span class="chev">＋</span></button>
+          <div class="ans" id="a3" hidden>이름을 떠올려 보는 게 좋아요. 그리고 이번 주에 그 사람에게 할 수 있는 작은 일 하나를 짝에게 말해 보세요. 말로 꺼내면 실천할 힘이 생겨요.</div>
+        </div>
+        <div class="q" aria-expanded="false">
+          <button type="button" id="q4" aria-controls="a4"><span class="tag">종합</span><span>강도 만난 자를 살린 사마리아인에게서 예수님의 어떤 모습이 보이나요?</span><span class="chev">＋</span></button>
+          <div class="ans" id="a4" hidden>죽어 가는 사람에게 먼저 다가와 상처를 싸매고, 자기 비용으로 끝까지 책임진 사마리아인. 죄로 쓰러진 우리를 찾아오셔서 대가를 치르시고 살리신 예수님의 모습이 겹쳐 보여요. 우리가 이웃이 될 수 있는 것도, 먼저 우리의 이웃이 되어 주신 그분 덕분이에요.</div>
+        </div>
+      </div>
+    </div>
   </section>
 
+  <section class="ch" id="fix">
+    <div class="ch-num">11</div>
+    <h2>자주 생기는 문제와 해결법</h2>
+    <p>눌러서 해결법을 확인하세요.</p>
+    <div class="fix">
+      <details><summary>질문을 못 만들어요</summary><p>질문 씨앗 카드를 나눠 주세요. 처음엔 사실 질문만 만들어도 충분히 칭찬해 주세요.</p></details>
+      <details><summary>한 사람만 계속 말해요</summary><p>설명자와 질문자 역할, 시간을 정하고 종으로 교대시키세요.</p></details>
+      <details><summary>대화가 2분 만에 끝나요</summary><p>"왜?"를 세 번 연달아 묻게 하세요. 세 번째 "왜?"에서 진짜 이야기가 나와요.</p></details>
+      <details><summary>개인 고민 상담으로 흘러요</summary><p>"좋은 이야기네요. 그 마음을 본문의 누구와 연결해 볼까요?"로 돌려 주세요.</p></details>
+      <details><summary>정답만 찾으려고 해요</summary><p>"오늘은 정답보다 좋은 질문을 찾는 날이에요"라고 미리 말해 주세요.</p></details>
+      <details><summary>엉뚱한 해석이 나와요</summary><p>그 자리에서 막지 말고, 쉬우르 때 본문 근거로 부드럽게 정리해 주세요.</p></details>
+      <details><summary>감정이 상하는 논쟁이 생겨요</summary><p>잠시 멈추고 "우리는 사람이 아니라 생각을 이야기하고 있어요" 약속을 다시 함께 읽어요.</p></details>
+      <details><summary>신앙 연차 차이로 위축돼요</summary><p>연차가 높은 분께 질문자 역할을 먼저 맡겨서, 먼저 듣게 하세요.</p></details>
+    </div>
+  </section>
+
+  <section class="ch" id="target">
+    <div class="ch-num">12</div>
+    <h2>대상별 적용 팁</h2>
+    <div class="grid g2">
+      <div class="card tint-sky"><span class="lab">목장 · 장년</span><p>주일 설교 본문으로 하면 설교가 두 번 들어가는 효과가 있어요. 목자님은 처음 몇 주는 짝에 들어가지 말고 돌아다니며 듣기만 하세요. 그게 쉬우르 재료가 돼요.</p></div>
+      <div class="card tint-lilac"><span class="lab">청년 · 청소년</span><p>논쟁 중심, 인물 되어 보기 유형을 특히 좋아해요. 휴대폰 메모에 질문을 적어도 괜찮고, 타이머를 화면에 띄우면 집중이 잘 돼요.</p></div>
+      <div class="card tint-mint"><span class="lab">주일학교</span><p>본문은 2~3절, 질문은 "왜?" 하나만 만들어도 충분해요. 문제 만들기, 그림 그려서 설명하기를 섞으면 좋아요.</p></div>
+      <div class="card tint-rose"><span class="lab">가정</span><p>저녁 식탁에서 10분, 성경 한 구절이면 충분해요. 부모가 먼저 질문하지 말고 아이의 질문을 기다려 주세요. 아이가 물으면 "너는 어떻게 생각해?"로 되물어 주세요.</p></div>
+    </div>
+    <figure class="w">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Reading_the_Bible.jpg?width=1400" alt="성경을 읽는 모습" loading="lazy">
+      <figcaption>가정에서는 식탁이 최고의 베트 미드라쉬예요.</figcaption>
+    </figure>
+  </section>
+
+  <section class="ch" id="close">
+    <div class="ch-num">13</div>
+    <h2>인도자를 위한 마지막 당부</h2>
+    <div class="rule"><b>3~4회</b><p>하브루타는 한 번에 잘되지 않아요. 보통 서너 번째부터 사람들이 질문하는 재미를 느끼기 시작해요.</p></div>
+    <div class="rule"><b>20%</b><p>인도자가 말을 많이 할수록 하브루타는 약해져요. 인도자의 말은 전체의 20%를 넘지 않게 해 보세요.</p></div>
+    <div class="rule"><b>끝은</b><p>그래도 끝은 반드시 말씀과 그리스도로 모아야 해요.</p></div>
+    <figure class="w">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Open_Bible_with_pen_(4543060842).jpg?width=1400" alt="펜과 함께 펼쳐진 성경" loading="lazy">
+    </figure>
+    <div class="final">
+      <p>하브루타의 목적은 서로의 생각을 듣는 데 있지 않아요.<br>말씀 앞에 함께 앉아 서로를 날카롭게 하며,<br><strong>함께 하나님의 뜻을 발견하고 예수 그리스도를 더 깊이 바라보는 것.</strong><br>그게 우리가 하브루타를 하는 이유예요.</p>
+    </div>
+  </section>
+
+</div>
 </main>
 
 <footer>
@@ -288,17 +736,51 @@ footer .credit{font-size:12px;margin-top:10px;opacity:.8}
 </footer>
 
 <script>
-document.querySelectorAll('.q button').forEach(function(btn){
-  btn.addEventListener('click',function(){
-    var box=btn.parentElement, ans=document.getElementById(btn.getAttribute('aria-controls'));
-    var open=box.getAttribute('aria-expanded')==='true';
-    box.setAttribute('aria-expanded',open?'false':'true');
-    ans.hidden=open;
+(function(){
+  /* 글자 크기 조절 */
+  var root=document.documentElement, size=18;
+  function apply(){root.style.setProperty('--fs',size+'px');}
+  document.getElementById('zoomIn').addEventListener('click',function(){size=Math.min(size+2,28);apply();});
+  document.getElementById('zoomOut').addEventListener('click',function(){size=Math.max(size-2,14);apply();});
+
+  /* 실습 탭 */
+  var tabs=document.querySelectorAll('.tabs button');
+  tabs.forEach(function(t){
+    t.addEventListener('click',function(){
+      tabs.forEach(function(o){
+        var on=(o===t);
+        o.setAttribute('aria-selected',on?'true':'false');
+        document.getElementById(o.getAttribute('aria-controls')).hidden=!on;
+      });
+    });
   });
-});
-document.querySelectorAll('figure img').forEach(function(img){
-  img.addEventListener('error',function(){var f=img.closest('figure');if(f)f.style.display='none';});
-});
+
+  /* 질문 펼치기 */
+  document.querySelectorAll('.q button').forEach(function(btn){
+    btn.addEventListener('click',function(){
+      var box=btn.parentElement, ans=document.getElementById(btn.getAttribute('aria-controls'));
+      var open=box.getAttribute('aria-expanded')==='true';
+      box.setAttribute('aria-expanded',open?'false':'true');
+      ans.hidden=open;
+    });
+  });
+
+  /* 현재 위치 표시 */
+  var links=document.querySelectorAll('.bar a[href^="#"]');
+  var targets=[];
+  links.forEach(function(a){var el=document.getElementById(a.getAttribute('href').slice(1));if(el)targets.push([a,el]);});
+  function mark(){
+    var y=window.scrollY+120, cur=null;
+    targets.forEach(function(p){if(p[1].offsetTop<=y)cur=p[0];});
+    links.forEach(function(a){a.classList.toggle('on',a===cur);});
+  }
+  window.addEventListener('scroll',mark,{passive:true});mark();
+
+  /* 사진을 못 불러오면 감추기 */
+  document.querySelectorAll('figure img').forEach(function(img){
+    img.addEventListener('error',function(){var f=img.closest('figure');if(f)f.style.display='none';});
+  });
+})();
 </script>
 </body>
 </html>
