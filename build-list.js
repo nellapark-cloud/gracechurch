@@ -69,6 +69,7 @@ function listDocs(dir, withFlags, pin, desc) {
       if (f.startsWith('.')) return false;
       if (f.toLowerCase().startsWith('example')) return false;
       if (/^readme(\.[a-z0-9]+)?$/i.test(f)) return false; // README 파일은 항상 목록에서 제외
+      if (/^og([-_.]|$)/i.test(f)) return false; // 링크 미리보기(OG) 이미지 파일은 목록에서 제외
       const stat = fs.statSync(path.join(full, f));
       return stat.isFile();
     });
