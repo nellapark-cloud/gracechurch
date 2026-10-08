@@ -32,6 +32,6 @@ with p.sync_playwright() as pw:
 PY
 cd "$R"
 git add "$D" "$HERE/data/$BOOK"
-git commit -q -m "${NAME} 세부 강해 ${N}장 추가"
+git -c user.name="nellapark-cloud" -c user.email="nellapark@gmail.com" commit -q -m "${NAME} 세부 강해 ${N}장 추가"
 git fetch -q origin main && git rebase -q origin/main && git push -q origin HEAD:main
 git log --oneline -1
