@@ -15,6 +15,7 @@ const categories = [
   { key: 'bible_by_book-new', dir: 'content/bible-by-book/new-testament' },
   { key: 'romans_chapters', dir: 'content/bible-by-book/new-testament/romans-chapters' },
   { key: 'romans_detailed', dir: 'content/bible-by-book/new-testament/romans-detailed' },
+  { key: 'revelation_detailed', dir: 'content/bible-by-book/new-testament/revelation-detailed' },
   { key: 'ephesians_chapters', dir: 'content/bible-by-book/new-testament/ephesians-chapters' },
   { key: 'bible_by_person', dir: 'content/bible-by-book/bible-by-person' },
   { key: 'bible_hidden_stories', dir: 'content/bible-by-book/hidden-stories' },
