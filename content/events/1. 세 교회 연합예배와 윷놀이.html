@@ -96,6 +96,7 @@ ul.clean{margin:8px 0 0;padding-left:18px} ul.clean li{margin:4px 0}
 .order li+li{border-top:1px solid var(--line)}
 .order li::before{content:counter(o);width:24px;height:24px;flex:none;border-radius:50%;display:grid;place-items:center;font-size:13px;font-weight:700;color:var(--sub);border:1px solid var(--line)}
 .order li span{font-weight:600}
+.order li span em{display:block;font-style:normal;font-weight:400;font-size:14px;color:var(--sub);line-height:1.5}
 .order li small{margin-left:auto;color:var(--sub);font-size:13px}
 .order li.key::before{background:var(--gold);border-color:var(--gold);color:#fff}
 .order li small b{color:var(--ink);font-weight:700;margin-right:6px;font-size:14px}
@@ -160,13 +161,13 @@ footer{margin-top:56px;padding-top:20px;border-top:1px solid var(--line);color:v
     <h2>예배 순서</h2>
     <p class="lead">오전 11시, 간결하게 드려요.</p>
     <ol class="order">
-      <li><span>환영</span></li>
-      <li><span>입례송</span></li>
+      <li><span>환영<em>환영곡 · 하나님의 사랑이</em></span></li>
+      <li><span>입례송<em>찬송가 21장 · 다 찬양하여라</em></span></li>
       <li><span>대표기도</span><small><b>박동준 목사</b> 은혜교회</small></li>
-      <li><span>경배와 찬양</span></li>
+      <li><span>경배와 찬양</span><small><b>김지성 리더</b> 은혜교회</small></li>
       <li class="key"><span>설교</span><small><b>권수남 목사</b> 희망교회</small></li>
       <li><span>회중기도</span></li>
-      <li><span>찬송</span></li>
+      <li><span>찬송<em>찬송가 208장 · 내 주의 나라와</em></span></li>
       <li><span>축도</span><small><b>최명신 목사</b> 반석샘물교회</small></li>
       <li><span>광고</span></li>
     </ol>
