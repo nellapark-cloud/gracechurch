@@ -81,6 +81,7 @@ figcaption{font-size:13px;color:var(--muted);padding:10px 14px}
 .people{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
 .people figure{margin:0}
 .people figure img{height:190px;object-position:top}
+.people .ph{height:190px}
 .people figcaption b{display:block;color:var(--navy);font-size:14px}
 
 /* QUOTE */
@@ -162,6 +163,26 @@ footer{text-align:center;font-family:'Pretendard';font-size:13px;color:var(--mut
 }
 @media print{nav{display:none}section{page-break-inside:avoid}}
 </style>
+<script>
+/* 사진 주소가 바뀌어 안 열리면, 위키백과에 등록된 대표 사진을 자동으로 찾아 넣고 그래도 없으면 이름 카드로 바꿉니다 */
+function imgFix(img){
+  function ph(){var d=document.createElement('div');d.className='ph';d.textContent=img.dataset.ph||img.alt;img.replaceWith(d);}
+  if(img.dataset.tried){ph();return;}
+  img.dataset.tried='1';
+  var list=(img.dataset.wiki||'').split('|').filter(Boolean);
+  (async function(){
+    for(var i=0;i<list.length;i++){
+      var k=list[i].indexOf(':'),lang=list[i].slice(0,k),title=list[i].slice(k+1);
+      try{
+        var j=await fetch('https://'+lang+'.wikipedia.org/w/api.php?action=query&format=json&origin=*&redirects=1&prop=pageimages&piprop=thumbnail&pithumbsize=600&titles='+encodeURIComponent(title)).then(function(r){return r.json();});
+        var pg=j.query&&j.query.pages?Object.values(j.query.pages)[0]:null;
+        if(pg&&pg.thumbnail&&pg.thumbnail.source){img.src=pg.thumbnail.source;return;}
+      }catch(e){}
+    }
+    ph();
+  })();
+}
+</script>
 </head>
 <body>
 
@@ -220,7 +241,7 @@ footer{text-align:center;font-family:'Pretendard';font-size:13px;color:var(--mut
   </div>
 
   <figure>
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_Cranach_d.%C3%84._-_Martin_Luther,_1528_(Veste_Coburg).jpg?width=900" alt="마르틴 루터 초상" onerror="this.outerHTML='<div class=ph>마르틴 루터 (1483–1546)</div>'">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_Cranach_d.%C3%84._-_Martin_Luther,_1528_(Veste_Coburg).jpg?width=900" alt="마르틴 루터 초상" style="object-position:50% 18%" data-wiki="en:Martin_Luther" data-ph="마르틴 루터 (1483–1546)" onerror="imgFix(this)">
     <figcaption>루카스 크라나흐가 그린 마르틴 루터(1528). 수도사이자 비텐베르크 대학의 성경학 교수였어요.</figcaption>
   </figure>
 
@@ -234,7 +255,7 @@ footer{text-align:center;font-family:'Pretendard';font-size:13px;color:var(--mut
   </div>
 
   <figure style="margin-top:30px">
-    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gutenberg_Bible,_Lenox_Copy,_New_York_Public_Library,_2009._Pic_01.jpg?width=900" alt="구텐베르크 성경" onerror="this.outerHTML='<div class=ph>구텐베르크 성경 (1455년경)</div>'">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gutenberg_Bible,_Lenox_Copy,_New_York_Public_Library,_2009._Pic_01.jpg?width=900" alt="구텐베르크 성경" data-wiki="en:Gutenberg_Bible" data-ph="구텐베르크 성경 (1455년경)" onerror="imgFix(this)">
     <figcaption>구텐베르크 성경(뉴욕 공립도서관 소장본). 인쇄술은 종교개혁의 ‘날개’가 되었어요.</figcaption>
   </figure>
 
@@ -265,10 +286,10 @@ footer{text-align:center;font-family:'Pretendard';font-size:13px;color:var(--mut
   </div>
 
   <div class="people" style="margin-top:26px">
-    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ulrich-Zwingli-1.jpg?width=500" alt="츠빙글리" onerror="this.outerHTML='<div class=ph>츠빙글리</div>'"><figcaption><b>울리히 츠빙글리</b>1484–1531 · 취리히</figcaption></figure>
-    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Calvin_Museum_Catharijneconvent_RMCC_s84_cropped.png?width=500" alt="칼뱅" onerror="this.outerHTML='<div class=ph>장 칼뱅</div>'"><figcaption><b>장 칼뱅</b>1509–1564 · 제네바</figcaption></figure>
-    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Knox_by_William_Holl.jpg?width=500" alt="존 녹스" onerror="this.outerHTML='<div class=ph>존 녹스</div>'"><figcaption><b>존 녹스</b>1514–1572 · 스코틀랜드</figcaption></figure>
-    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Wesley_by_George_Romney.jpg?width=500" alt="존 웨슬리" onerror="this.outerHTML='<div class=ph>존 웨슬리</div>'"><figcaption><b>존 웨슬리</b>1703–1791 · 감리교</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ulrich-Zwingli-1.jpg?width=500" alt="츠빙글리" data-wiki="en:Huldrych_Zwingli" data-ph="츠빙글리" onerror="imgFix(this)"><figcaption><b>울리히 츠빙글리</b>1484–1531 · 취리히</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Calvin_Museum_Catharijneconvent_RMCC_s84_cropped.png?width=500" alt="칼뱅" data-wiki="en:John_Calvin" data-ph="장 칼뱅" onerror="imgFix(this)"><figcaption><b>장 칼뱅</b>1509–1564 · 제네바</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Knox_by_William_Holl.jpg?width=500" alt="존 녹스" data-wiki="en:John_Knox|ko:존_녹스" data-ph="존 녹스" onerror="imgFix(this)"><figcaption><b>존 녹스</b>1514–1572 · 스코틀랜드</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Wesley_by_George_Romney.jpg?width=500" alt="존 웨슬리" data-wiki="en:John_Wesley" data-ph="존 웨슬리" onerror="imgFix(this)"><figcaption><b>존 웨슬리</b>1703–1791 · 감리교</figcaption></figure>
   </div>
 </section>
 
@@ -414,7 +435,7 @@ footer{text-align:center;font-family:'Pretendard';font-size:13px;color:var(--mut
     <div class="sec-no" style="margin-bottom:2px">참고 · NEVIUS METHOD</div>
     <h3 style="margin-top:4px">네비우스 선교정책이란?</h3>
     <figure class="portrait" style="margin:14px 0">
-      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Livingstone_Nevius.jpg?width=700" alt="존 네비우스" onerror="this.outerHTML='<div class=ph>존 L. 네비우스 (1829–1893)</div>'">
+      <img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Livingstone_Nevius.jpg?width=700" alt="존 네비우스" data-wiki="en:John_Livingstone_Nevius" data-ph="존 L. 네비우스 (1829–1893)" onerror="imgFix(this)">
       <figcaption>존 리빙스턴 네비우스. 중국 산둥에서 40년 가까이 사역한 미국 북장로교 선교사예요.</figcaption>
     </figure>
     <p><strong>존 네비우스(John L. Nevius, 1829–1893)</strong>는 중국 선교 현장에서 한 가지 문제를 깊이 고민했어요. 선교사가 돈을 주고 현지인 전도자를 고용하면 교회가 금방 커 보이지만, <mark>선교사의 돈이 끊기면 교회도 함께 무너진다</mark>는 것이었죠. 그래서 그는 처음부터 현지 교회가 스스로 서도록 돕는 방법을 정리해 1885~86년 『선교 사역의 방법』이라는 글로 발표했습니다.</p>
@@ -450,10 +471,10 @@ footer{text-align:center;font-family:'Pretendard';font-size:13px;color:var(--mut
   </div>
 
   <div class="people">
-    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Horace_Grant_Underwood.jpg?width=500" alt="언더우드" onerror="this.outerHTML='<div class=ph>언더우드</div>'"><figcaption><b>H. G. 언더우드</b>북장로교 · 연세대 설립</figcaption></figure>
-    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Henry_Gerhard_Appenzeller.jpg?width=500" alt="아펜젤러" onerror="this.outerHTML='<div class=ph>아펜젤러</div>'"><figcaption><b>H. G. 아펜젤러</b>북감리교 · 배재학당 설립</figcaption></figure>
-    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Horace_Newton_Allen.jpg?width=500" alt="알렌" onerror="this.outerHTML='<div class=ph>알렌</div>'"><figcaption><b>H. N. 알렌</b>의료선교 · 제중원</figcaption></figure>
-    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Malcolm_C._Fenwick.jpg?width=500" alt="펜윅" onerror="this.outerHTML='<div class=ph>말콤 펜윅</div>'"><figcaption><b>말콤 펜윅</b>독립선교 · 침례교의 뿌리</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Horace_Grant_Underwood.jpg?width=500" alt="언더우드" data-wiki="en:Horace_Grant_Underwood" data-ph="언더우드" onerror="imgFix(this)"><figcaption><b>H. G. 언더우드</b>북장로교 · 연세대 설립</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Henry_Gerhard_Appenzeller.jpg?width=500" alt="아펜젤러" data-wiki="ko:헨리_아펜젤러|ko:헨리_거하드_아펜젤러|ko:헨리_G._아펜젤러|en:Henry_Appenzeller" data-ph="아펜젤러" onerror="imgFix(this)"><figcaption><b>H. G. 아펜젤러</b>북감리교 · 배재학당 설립</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Horace_Newton_Allen.jpg?width=500" alt="알렌" data-wiki="en:Horace_Newton_Allen" data-ph="알렌" onerror="imgFix(this)"><figcaption><b>H. N. 알렌</b>의료선교 · 제중원</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Malcolm_C._Fenwick.jpg?width=500" alt="펜윅" data-wiki="ko:말콤_펜윅|ko:말콤_C._펜윅|en:Malcolm_C._Fenwick" data-ph="말콤 펜윅" onerror="imgFix(this)"><figcaption><b>말콤 펜윅</b>독립선교 · 침례교의 뿌리</figcaption></figure>
   </div>
 </section>
 
