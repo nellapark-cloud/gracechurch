@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>개신교 이야기</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+:root{
+  --navy:#1d2b4f; --navy2:#2f4170; --gold:#b8923a; --gold-soft:#f3e7cc;
+  --cream:#faf7f0; --paper:#ffffff; --ink:#2a2d35; --muted:#6b7080; --line:#e7e1d3;
+  --c-luther:#5b7bd5; --c-reformed:#2f8f83; --c-anglican:#9b6bc2; --c-baptist:#2a7fbf;
+  --c-method:#d07a3c; --c-holy:#c9a227; --c-pente:#d0546a; --c-ana:#7a8b5a;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--cream);color:var(--ink);font-family:'Noto Serif KR',serif;line-height:1.85;font-size:16.5px;word-break:keep-all}
+h1,h2,h3,h4,.sans,nav,table,.badge,.stat,.btn,figcaption,.tl-year{font-family:'Pretendard',-apple-system,sans-serif}
+img{max-width:100%;display:block}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:90px 20px 70px;text-align:center;
+  background:
+   radial-gradient(circle at 18% 22%,rgba(255,214,224,.85),transparent 45%),
+   radial-gradient(circle at 82% 18%,rgba(206,226,255,.9),transparent 45%),
+   radial-gradient(circle at 50% 95%,rgba(255,240,205,.9),transparent 55%),
+   radial-gradient(circle at 85% 80%,rgba(222,210,255,.7),transparent 45%),
+   #fbf8f3;}
+.hero::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);pointer-events:none}
+.hero .kicker{display:inline-block;font-family:'Pretendard';font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:700;border:1px solid var(--gold);padding:5px 14px;border-radius:30px;margin-bottom:22px;background:rgba(255,255,255,.6)}
+.hero h1{font-size:clamp(34px,7vw,60px);color:var(--navy);font-weight:800;letter-spacing:-.03em;line-height:1.2}
+.hero p.sub{margin-top:18px;color:#4a5068;font-size:clamp(15px,2.6vw,18px)}
+.hero .meta{margin-top:30px;font-family:'Pretendard';font-size:13px;color:var(--muted)}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:50;background:rgba(250,247,240,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav ul{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:4px;padding:10px 12px;max-width:1100px;margin:0 auto}
+nav a{display:block;text-decoration:none;color:var(--navy);font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:20px;transition:.2s}
+nav a:hover,nav a.on{background:var(--navy);color:#fff}
+
+/* LAYOUT */
+main{max-width:980px;margin:0 auto;padding:0 18px 80px}
+section{padding:70px 0 10px;scroll-margin-top:60px}
+.sec-head{margin-bottom:28px}
+.sec-no{font-family:'Pretendard';font-weight:800;color:var(--gold);font-size:14px;letter-spacing:.12em}
+.sec-head h2{font-size:clamp(25px,4.6vw,34px);color:var(--navy);font-weight:800;letter-spacing:-.02em;line-height:1.3;margin-top:4px}
+.sec-head .lead{color:var(--muted);margin-top:10px;font-size:15.5px}
+h3{font-size:21px;color:var(--navy);margin:36px 0 12px;font-weight:700;letter-spacing:-.01em}
+h3::before{content:"";display:inline-block;width:6px;height:18px;background:var(--gold);border-radius:3px;margin-right:9px;vertical-align:-2px}
+p{margin:12px 0}
+mark{background:linear-gradient(transparent 58%,#f7e2a6 58%);color:inherit;padding:0 2px}
+strong{color:var(--navy)}
+
+.card{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px;box-shadow:0 4px 18px rgba(29,43,79,.05)}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.g4{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+
+/* STATS */
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;text-align:center}
+.stat .num{font-size:30px;font-weight:800;color:var(--navy);letter-spacing:-.02em}
+.stat .num small{font-size:15px;font-weight:600;color:var(--gold);margin-left:2px}
+.stat .lbl{font-size:13.5px;color:var(--muted);margin-top:4px}
+
+/* CAUSE CARDS */
+.cause{position:relative;padding-top:28px}
+.cause .ic{position:absolute;top:-14px;left:20px;width:36px;height:36px;border-radius:12px;background:var(--navy);color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Pretendard';font-weight:800}
+.cause h4{font-size:17px;color:var(--navy);margin-bottom:6px}
+.cause p{font-size:15px;margin:0;color:#444}
+
+/* FIGURES */
+figure{margin:22px 0;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+figure img{width:100%;height:260px;object-fit:cover;background:#eee}
+figure.portrait img{height:300px;object-position:top}
+figcaption{font-size:13px;color:var(--muted);padding:10px 14px}
+.ph{height:200px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#eef1f8,#f8f1e3);color:var(--navy2);font-family:'Pretendard';font-weight:700;font-size:15px;text-align:center;padding:20px}
+.people{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px}
+.people figure{margin:0}
+.people figure img{height:190px;object-position:top}
+.people figcaption b{display:block;color:var(--navy);font-size:14px}
+
+/* QUOTE */
+.quote{border-left:4px solid var(--gold);background:var(--gold-soft);padding:18px 22px;border-radius:0 14px 14px 0;margin:22px 0;font-size:16px}
+.quote cite{display:block;margin-top:8px;font-style:normal;font-family:'Pretendard';font-size:13px;color:var(--muted)}
+.note{background:#eef2fa;border-radius:14px;padding:14px 18px;font-size:14.5px;color:#3c4766;margin:16px 0}
+.note b{font-family:'Pretendard'}
+
+/* TIMELINE */
+.tl{position:relative;margin:20px 0 10px;padding-left:28px}
+.tl::before{content:"";position:absolute;left:8px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--gold),var(--navy))}
+.tl-item{position:relative;margin-bottom:22px}
+.tl-item::before{content:"";position:absolute;left:-26px;top:7px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--gold)}
+.tl-item.big::before{background:var(--gold)}
+.tl-year{font-weight:800;color:var(--gold);font-size:15px}
+.tl-item h4{font-family:'Pretendard';font-size:17px;color:var(--navy);margin:2px 0 4px}
+.tl-item p{margin:0;font-size:15px;color:#4a4d57}
+
+/* TABLE */
+.tbl-wrap{overflow-x:auto;border-radius:16px;border:1px solid var(--line);background:var(--paper);margin:18px 0}
+table{width:100%;border-collapse:collapse;font-size:14.5px;min-width:620px}
+th{background:var(--navy);color:#fff;font-weight:600;padding:12px 14px;text-align:left;white-space:nowrap}
+td{padding:12px 14px;border-top:1px solid var(--line);vertical-align:top;line-height:1.6}
+tr:nth-child(even) td{background:#fcfaf5}
+td:first-child{font-weight:700;color:var(--navy);white-space:nowrap}
+.dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:7px;vertical-align:0}
+
+/* SOLA */
+.sola{text-align:center;padding:22px 16px}
+.sola .lat{font-family:'Pretendard';font-weight:800;color:var(--gold);font-size:13px;letter-spacing:.06em}
+.sola h4{font-family:'Pretendard';font-size:22px;color:var(--navy);margin:4px 0 8px}
+.sola p{font-size:14.5px;margin:0;color:#4a4d57}
+
+/* TABS */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:10px 0 18px;justify-content:center}
+.btn{border:1px solid var(--line);background:#fff;color:var(--navy);padding:8px 16px;border-radius:30px;font-size:14px;font-weight:700;cursor:pointer;transition:.2s}
+.btn.on{color:#fff;border-color:transparent}
+.pane{display:none;animation:fade .35s}
+.pane.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1}}
+.pane .card{border-top:5px solid var(--accent,var(--navy))}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.kv div{background:var(--cream);border-radius:12px;padding:10px 14px;font-size:14px}
+.kv b{display:block;font-family:'Pretendard';font-size:12px;color:var(--muted);font-weight:600}
+
+/* CHART */
+.chart-box{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:20px;margin:20px 0}
+.chart-box h4{font-family:'Pretendard';color:var(--navy);font-size:16px;margin-bottom:12px}
+.chart-box .src{font-family:'Pretendard';font-size:12px;color:var(--muted);margin-top:10px;line-height:1.5}
+.cv{position:relative;height:340px}
+.cv.tall{height:420px}
+
+/* DETAILS */
+details{background:var(--paper);border:1px solid var(--line);border-radius:14px;margin:10px 0;overflow:hidden}
+summary{cursor:pointer;list-style:none;padding:16px 20px;font-family:'Pretendard';font-weight:700;color:var(--navy);font-size:16px;display:flex;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary .n{flex:none;width:28px;height:28px;border-radius:50%;background:var(--gold);color:#fff;display:flex;align-items:center;justify-content:center;font-size:13px}
+summary::after{content:"+";margin-left:auto;font-size:22px;color:var(--gold);transition:.2s}
+details[open] summary::after{transform:rotate(45deg)}
+details .body{padding:0 20px 18px 60px;font-size:15.5px}
+
+/* SVG tree */
+.tree{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:14px;margin:20px 0}
+.tree svg{width:100%;height:auto;display:block}
+.tree text{font-family:'Pretendard'}
+
+.closing{background:linear-gradient(135deg,#1d2b4f,#33467a);color:#f4efe2;border-radius:22px;padding:40px 30px;margin-top:30px}
+.closing h3{color:#fff}
+.closing h3::before{background:var(--gold)}
+.closing strong{color:#f3d998}
+footer{text-align:center;font-family:'Pretendard';font-size:13px;color:var(--muted);padding:40px 20px;border-top:1px solid var(--line)}
+@media(max-width:600px){
+  body{font-size:15.5px}
+  section{padding-top:54px}
+  .card{padding:20px}
+  details .body{padding:0 18px 16px}
+  figure img{height:210px}
+  .cv{height:300px}.cv.tall{height:380px}
+}
+@media print{nav{display:none}section{page-break-inside:avoid}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <span class="kicker">PROTESTANTISM · 500 YEARS</span>
+  <h1>개신교 이야기</h1>
+  <p class="sub">종교개혁에서 오늘의 한국 교회까지 — 역사·특징·교단 한눈에 보기</p>
+  <p class="meta">기독교한국침례회 은혜교회 · 담임목사 박동준</p>
+</header>
+
+<nav><ul id="navlist">
+  <li><a href="#s1">한눈에</a></li>
+  <li><a href="#s2">왜 개혁인가</a></li>
+  <li><a href="#s3">종교개혁 연표</a></li>
+  <li><a href="#s4">개신교의 특징</a></li>
+  <li><a href="#s5">계보도</a></li>
+  <li><a href="#s6">세계 교단</a></li>
+  <li><a href="#s7">한국 전래</a></li>
+  <li><a href="#s8">한국 교단</a></li>
+  <li><a href="#s9">장로교가 큰 이유</a></li>
+  <li><a href="#s10">통계로 보기</a></li>
+</ul></nav>
+
+<main>
+
+<!-- 1 -->
+<section id="s1">
+  <div class="sec-head">
+    <div class="sec-no">01 · OVERVIEW</div>
+    <h2>개신교, 한눈에 보기</h2>
+    <p class="lead">기독교는 크게 세 줄기로 나뉩니다. 로마가톨릭, 동방정교회, 그리고 개신교예요.</p>
+  </div>
+  <p><strong>개신교(改新敎, Protestantism)</strong>는 1517년 마르틴 루터의 종교개혁에서 시작된 기독교의 한 흐름이에요. 영어 이름 ‘프로테스탄트’는 원래 ‘항의하는 사람들’이라는 뜻인데, 1529년 슈파이어 제국의회에서 루터를 지지하던 제후들이 개혁을 억누르는 결정에 공식 <mark>항의서(Protestatio)</mark>를 낸 데서 붙은 이름입니다. 한국에서 ‘개신교’라고 부르는 것은 <mark>“다시 새롭게 고친 가르침”</mark>이라는 뜻이고요. 무언가 새로운 종교를 만든 게 아니라, <strong>성경이 말하는 처음 복음으로 돌아가자</strong>는 운동이었다는 점이 핵심이에요.</p>
+
+  <div class="grid g4" style="margin-top:24px">
+    <div class="stat"><div class="num">1517<small>년</small></div><div class="lbl">95개조 반박문 게시</div></div>
+    <div class="stat"><div class="num">약 9<small>억 명</small></div><div class="lbl">전 세계 개신교인(오순절 포함 추정)</div></div>
+    <div class="stat"><div class="num">1885<small>년</small></div><div class="lbl">언더우드·아펜젤러 입국</div></div>
+    <div class="stat"><div class="num">19.7<small>%</small></div><div class="lbl">한국 개신교 인구 비율(2015 인구센서스)</div></div>
+  </div>
+
+  <div class="chart-box">
+    <h4>세계 기독교 3대 흐름 — 대략적인 신자 규모</h4>
+    <div class="cv"><canvas id="chWorld"></canvas></div>
+    <p class="src">※ 퓨리서치센터 등 국제 통계를 바탕으로 한 대략치(억 명). 오순절·독립교회를 어디에 넣느냐에 따라 개신교 규모는 8억~10억 명까지 달라집니다.</p>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2">
+  <div class="sec-head">
+    <div class="sec-no">02 · BACKGROUND</div>
+    <h2>왜 종교개혁이 일어났을까요?</h2>
+    <p class="lead">루터 한 사람의 용기만으로 역사가 바뀐 건 아니에요. 오랫동안 쌓인 문제와 시대의 변화가 한꺼번에 만났습니다.</p>
+  </div>
+
+  <figure>
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lucas_Cranach_d.%C3%84._-_Martin_Luther,_1528_(Veste_Coburg).jpg?width=900" alt="마르틴 루터 초상" onerror="this.outerHTML='<div class=ph>마르틴 루터 (1483–1546)</div>'">
+    <figcaption>루카스 크라나흐가 그린 마르틴 루터(1528). 수도사이자 비텐베르크 대학의 성경학 교수였어요.</figcaption>
+  </figure>
+
+  <div class="grid g2" style="margin-top:30px;row-gap:28px">
+    <div class="card cause"><div class="ic">1</div><h4>교회의 세속화와 부패</h4><p>중세 말 교황청은 거대한 정치·경제 권력이 되어 있었어요. 성직을 돈으로 사고팔거나(성직매매), 한 사람이 여러 교구를 겸직하며 수입만 챙기는 일이 흔했습니다.</p></div>
+    <div class="card cause"><div class="ic">2</div><h4>면벌부(면죄부) 판매</h4><p>성 베드로 대성당 건축비를 모으려고 “헌금함에 동전이 떨어지는 순간 연옥의 영혼이 튀어나온다”는 식의 선전까지 등장했어요. 루터가 정면으로 문제를 제기한 지점이 바로 여기입니다.</p></div>
+    <div class="card cause"><div class="ic">3</div><h4>‘원천으로’ — 인문주의</h4><p>르네상스 학자들은 “원천으로(Ad fontes)”를 외치며 라틴어 번역이 아닌 히브리어·헬라어 원문을 읽기 시작했어요. 에라스무스의 헬라어 신약(1516)이 루터에게 큰 도구가 되었습니다.</p></div>
+    <div class="card cause"><div class="ic">4</div><h4>인쇄술의 혁명</h4><p>구텐베르크의 금속활자(1450년경) 덕분에 루터의 글은 몇 주 만에 독일 전역에 퍼졌어요. 평신도가 자기 언어로 된 성경을 직접 손에 들 수 있게 되었죠.</p></div>
+    <div class="card cause"><div class="ic">5</div><h4>민족국가와 제후들</h4><p>로마로 빠져나가는 돈과 교황의 간섭에 불만이 컸던 독일 제후들, 왕권을 키우려던 군주들이 개혁자들을 보호했어요. 정치적 계산도 함께 작용한 셈입니다.</p></div>
+    <div class="card cause"><div class="ic">6</div><h4>개혁의 선구자들</h4><p>루터보다 100여 년 앞서 영국의 존 위클리프는 성경을 영어로 옮겼고, 체코의 얀 후스는 교황권을 비판하다 1415년 화형당했어요. 개혁의 씨앗은 이미 뿌려져 있었습니다.</p></div>
+  </div>
+
+  <figure style="margin-top:30px">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gutenberg_Bible,_Lenox_Copy,_New_York_Public_Library,_2009._Pic_01.jpg?width=900" alt="구텐베르크 성경" onerror="this.outerHTML='<div class=ph>구텐베르크 성경 (1455년경)</div>'">
+    <figcaption>구텐베르크 성경(뉴욕 공립도서관 소장본). 인쇄술은 종교개혁의 ‘날개’가 되었어요.</figcaption>
+  </figure>
+
+  <div class="quote">“우리 주님이시며 선생이신 예수 그리스도께서 ‘회개하라’고 말씀하셨을 때, 그분은 신자의 온 삶이 회개의 삶이 되기를 원하셨다.”
+    <cite>— 루터, 95개조 반박문 제1조</cite></div>
+  <p>95개조의 첫 문장이 ‘회개’라는 게 참 의미 있어요. 루터가 붙든 질문은 결국 하나였습니다. <mark>“죄인이 어떻게 거룩하신 하나님 앞에 의롭다 함을 받을 수 있는가?”</mark> 그리고 그는 로마서 1장 17절에서 답을 발견했어요. 의롭다 하심은 우리가 사거나 쌓는 것이 아니라, <strong>믿음으로 받는 하나님의 선물</strong>이라는 것이죠.</p>
+</section>
+
+<!-- 3 -->
+<section id="s3">
+  <div class="sec-head">
+    <div class="sec-no">03 · TIMELINE</div>
+    <h2>종교개혁 연표</h2>
+    <p class="lead">독일에서 시작된 불씨가 스위스·영국·네덜란드·스코틀랜드로 번져 간 과정입니다.</p>
+  </div>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-year">1380년대</div><h4>위클리프, 영어 성경</h4><p>“개혁의 새벽별”로 불리는 위클리프가 라틴어 성경을 영어로 옮겼어요.</p></div>
+    <div class="tl-item"><div class="tl-year">1415</div><h4>얀 후스 화형</h4><p>콘스탄츠 공의회에서 이단으로 정죄되어 순교합니다. 그를 따르던 후스파는 오늘날 모라비안 교회로 이어져요.</p></div>
+    <div class="tl-item big"><div class="tl-year">1517.10.31</div><h4>루터, 95개조 반박문</h4><p>비텐베르크 성채교회 문에 면벌부 문제를 토론하자는 95개조를 게시합니다. 이 날이 지금도 ‘종교개혁 기념일’이에요.</p></div>
+    <div class="tl-item"><div class="tl-year">1521</div><h4>보름스 제국의회</h4><p>“내 양심은 하나님의 말씀에 사로잡혀 있습니다”라며 주장 철회를 거부하고, 바르트부르크 성에 숨어 신약을 독일어로 번역합니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1523–25</div><h4>츠빙글리의 취리히 개혁 · 재침례파 등장</h4><p>스위스 취리히에서 츠빙글리가 개혁을 이끌고, 그보다 더 철저한 개혁을 원한 그레벨·만츠 등이 1525년 믿는 사람에게만 침례를 베풀며 재침례파가 시작돼요.</p></div>
+    <div class="tl-item"><div class="tl-year">1529–30</div><h4>‘프로테스탄트’ 이름 탄생 · 아우크스부르크 신앙고백</h4><p>슈파이어 항의서(1529), 루터파의 공식 신앙고백인 아우크스부르크 신앙고백(1530)이 나옵니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1534</div><h4>영국 수장령</h4><p>헨리 8세가 교황과 결별하고 영국 국교회(성공회)의 수장이 됩니다. 시작은 정치적이었지만 이후 크랜머 등을 통해 신학적 개혁이 진행돼요.</p></div>
+    <div class="tl-item big"><div class="tl-year">1536</div><h4>칼뱅, 『기독교 강요』</h4><p>제네바를 중심으로 한 칼뱅의 개혁은 프랑스·네덜란드·스코틀랜드로 퍼져 ‘개혁파(장로교)’의 뿌리가 됩니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1545–63</div><h4>트리엔트 공의회</h4><p>가톨릭이 자체 개혁(반종교개혁)에 나서며 개신교 교리를 공식적으로 거부합니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1555 · 1560</div><h4>아우크스부르크 화의 · 스코틀랜드 개혁</h4><p>제후가 영지의 종교를 정하는 원칙이 확정되고, 존 녹스가 스코틀랜드에 장로교회를 세웁니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1618–48</div><h4>30년 전쟁 · 베스트팔렌 조약</h4><p>유럽을 피로 물들인 종교전쟁이 끝나고 개혁파까지 공인되면서 종교개혁 시대가 마무리됩니다.</p></div>
+  </div>
+
+  <div class="people" style="margin-top:26px">
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Ulrich-Zwingli-1.jpg?width=500" alt="츠빙글리" onerror="this.outerHTML='<div class=ph>츠빙글리</div>'"><figcaption><b>울리히 츠빙글리</b>1484–1531 · 취리히</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Calvin_Museum_Catharijneconvent_RMCC_s84_cropped.png?width=500" alt="칼뱅" onerror="this.outerHTML='<div class=ph>장 칼뱅</div>'"><figcaption><b>장 칼뱅</b>1509–1564 · 제네바</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Knox_by_William_Holl.jpg?width=500" alt="존 녹스" onerror="this.outerHTML='<div class=ph>존 녹스</div>'"><figcaption><b>존 녹스</b>1514–1572 · 스코틀랜드</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/John_Wesley_by_George_Romney.jpg?width=500" alt="존 웨슬리" onerror="this.outerHTML='<div class=ph>존 웨슬리</div>'"><figcaption><b>존 웨슬리</b>1703–1791 · 감리교</figcaption></figure>
+  </div>
+</section>
+
+<!-- 4 -->
+<section id="s4">
+  <div class="sec-head">
+    <div class="sec-no">04 · CHARACTERISTICS</div>
+    <h2>개신교는 무엇이 다른가요?</h2>
+    <p class="lead">종교개혁자들의 고백은 흔히 ‘다섯 가지 오직(5 Solas)’으로 정리됩니다.</p>
+  </div>
+  <div class="grid g3">
+    <div class="card sola"><div class="lat">SOLA SCRIPTURA</div><h4>오직 성경</h4><p>교회 전통이나 교황이 아니라 성경이 신앙과 삶의 최종 권위예요.</p></div>
+    <div class="card sola"><div class="lat">SOLA GRATIA</div><h4>오직 은혜</h4><p>구원은 인간의 공로가 아니라 하나님이 값없이 베푸시는 은혜입니다.</p></div>
+    <div class="card sola"><div class="lat">SOLA FIDE</div><h4>오직 믿음</h4><p>그 은혜는 선행이 아닌 믿음으로 받아요. 선행은 구원의 ‘열매’지 ‘조건’이 아닙니다.</p></div>
+    <div class="card sola"><div class="lat">SOLUS CHRISTUS</div><h4>오직 그리스도</h4><p>하나님과 사람 사이의 중보자는 성인도 사제도 아닌 예수 그리스도 한 분이에요.</p></div>
+    <div class="card sola"><div class="lat">SOLI DEO GLORIA</div><h4>오직 하나님께 영광</h4><p>교회도 사람도 아닌 하나님만이 영광을 받으셔야 합니다.</p></div>
+    <div class="card sola" style="background:var(--gold-soft)"><div class="lat">PRIESTHOOD OF ALL</div><h4>만인제사장</h4><p>모든 신자가 그리스도를 통해 하나님께 직접 나아갈 수 있어요. 직업도 ‘소명’이 됩니다.</p></div>
+  </div>
+
+  <h3>가톨릭 · 정교회 · 개신교 비교</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>구분</th><th>로마가톨릭</th><th>동방정교회</th><th>개신교</th></tr>
+    <tr><td>최고 권위</td><td>성경 + 성전(전통) + 교도권(교황)</td><td>성경 + 거룩한 전통(7대 공의회)</td><td>오직 성경</td></tr>
+    <tr><td>구원관</td><td>은혜와 협력, 성례를 통한 의화</td><td>신화(神化, 테오시스) — 하나님을 닮아 감</td><td>은혜로, 믿음으로 의롭다 하심(칭의)</td></tr>
+    <tr><td>성례</td><td>7성사</td><td>7성사(신비)</td><td>2가지 — 침례와 성찬</td></tr>
+    <tr><td>성찬 이해</td><td>화체설(빵·포도주가 실체 변화)</td><td>신비로 고백(설명보다 경배)</td><td>공재설(루터)·영적 임재(칼뱅)·기념설(츠빙글리) 등</td></tr>
+    <tr><td>성직</td><td>교황–주교–사제, 사제 독신</td><td>총대주교 중심, 주교만 독신</td><td>목사(결혼 가능), 만인제사장</td></tr>
+    <tr><td>마리아·성인</td><td>공경과 전구(중재 기도)</td><td>깊은 공경, 이콘</td><td>존경하되 기도·중보의 대상 아님</td></tr>
+    <tr><td>예배 언어</td><td>오랫동안 라틴어 (1960년대 이후 자국어)</td><td>자국어 전통</td><td>처음부터 자국어 예배·자국어 성경</td></tr>
+    <tr><td>조직</td><td>하나의 세계 교회</td><td>나라별 자치 교회 연합</td><td>수많은 교단(교파)으로 다양</td></tr>
+  </table></div>
+  <div class="note"><b>왜 개신교는 교단이 이렇게 많을까요?</b> ‘오직 성경’을 붙들다 보니, 성경 해석이 갈리는 지점(침례 방식, 교회 정치, 성찬 이해 등)마다 양심에 따라 따로 모이게 되었어요. 약점처럼 보이지만, 국가나 한 기관이 신앙을 통제할 수 없게 만든 힘이기도 했습니다.</div>
+</section>
+
+<!-- 5 -->
+<section id="s5">
+  <div class="sec-head">
+    <div class="sec-no">05 · FAMILY TREE</div>
+    <h2>개신교 교파 계보도</h2>
+    <p class="lead">오늘날 수많은 교단은 크게 몇 개의 ‘뿌리’에서 갈라져 나왔어요.</p>
+  </div>
+  <div class="tree">
+  <svg viewBox="0 0 820 600" role="img" aria-label="개신교 교파 계보도">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0,0 L10,5 L0,10z" fill="#b8a77d"/></marker></defs>
+    <g stroke="#cfc3a3" stroke-width="2" fill="none" marker-end="url(#ar)">
+      <path d="M410,62 L410,98"/>
+      <path d="M410,140 C410,170 95,160 95,196"/>
+      <path d="M410,140 C410,170 255,160 255,196"/>
+      <path d="M410,140 L410,196"/>
+      <path d="M410,140 C410,170 565,160 565,196"/>
+      <path d="M410,140 C410,170 725,160 725,196"/>
+      <path d="M255,240 L255,296"/>
+      <path d="M410,240 L410,296"/>
+      <path d="M565,240 C565,330 360,330 340,396"/>
+      <path d="M565,240 L630,296"/>
+      <path d="M640,340 L640,396"/>
+      <path d="M640,440 L640,496"/>
+    </g>
+    <g stroke="#cbbf9f" stroke-width="1.6" stroke-dasharray="5 5" fill="none" marker-end="url(#ar)">
+      <path d="M95,240 C95,390 170,420 248,420"/>
+      <path d="M325,330 C380,385 520,385 573,330"/>
+    </g>
+    <rect x="320" y="18" width="180" height="44" rx="22" fill="#1d2b4f"/><text x="410" y="46" text-anchor="middle" fill="#fff" font-size="15" font-weight="700">중세 로마가톨릭</text>
+    <rect x="300" y="100" width="220" height="40" rx="20" fill="#b8923a"/><text x="410" y="126" text-anchor="middle" fill="#fff" font-size="15" font-weight="800">1517 종교개혁</text>
+    <g font-size="14" font-weight="700" text-anchor="middle">
+      <rect x="25" y="198" width="140" height="42" rx="12" fill="#7a8b5a"/><text x="95" y="224" fill="#fff">재침례파 1525</text>
+      <rect x="185" y="198" width="140" height="42" rx="12" fill="#5b7bd5"/><text x="255" y="224" fill="#fff">루터파 1517</text>
+      <rect x="340" y="198" width="140" height="42" rx="12" fill="#2f8f83"/><text x="410" y="224" fill="#fff">개혁파 1520s</text>
+      <rect x="495" y="198" width="140" height="42" rx="12" fill="#9b6bc2"/><text x="565" y="224" fill="#fff">성공회 1534</text>
+      <rect x="655" y="198" width="140" height="42" rx="12" fill="#8a8f9e"/><text x="725" y="224" fill="#fff">기타·연합교회</text>
+    </g>
+    <g font-size="13" font-weight="600" text-anchor="middle">
+      <rect x="185" y="298" width="140" height="42" rx="12" fill="#e7ecfa" stroke="#5b7bd5"/><text x="255" y="324" fill="#1d2b4f">경건주의·모라비안</text>
+      <rect x="340" y="298" width="140" height="42" rx="12" fill="#e2f2ef" stroke="#2f8f83"/><text x="410" y="324" fill="#1d2b4f">장로교·회중교회</text>
+      <rect x="575" y="298" width="130" height="42" rx="12" fill="#fbeee3" stroke="#d07a3c"/><text x="640" y="324" fill="#1d2b4f">감리교 1739</text>
+      <rect x="250" y="398" width="170" height="46" rx="12" fill="#e4f0f9" stroke="#2a7fbf"/><text x="335" y="418" fill="#1d2b4f">청교도·분리주의</text><text x="335" y="435" fill="#2a7fbf" font-size="12" font-weight="700">→ 침례교 1609</text>
+      <rect x="570" y="398" width="140" height="42" rx="12" fill="#fbf4dc" stroke="#c9a227"/><text x="640" y="424" fill="#1d2b4f">성결운동 19C</text>
+      <rect x="570" y="498" width="140" height="42" rx="12" fill="#fbe6ea" stroke="#d0546a"/><text x="640" y="524" fill="#1d2b4f">오순절 1906</text>
+    </g>
+    <g font-size="11.5" fill="#6b7080" text-anchor="middle">
+      <text x="95" y="258">메노나이트·아미시</text>
+      <text x="150" y="470">신자 침례 정신의 영향</text>
+      <text x="450" y="392">웨슬리 회심에 영향</text>
+    </g>
+    <text x="410" y="585" text-anchor="middle" font-size="12" fill="#6b7080">※ 실선: 직접적인 분화 · 점선: 사상적 영향</text>
+  </svg>
+  </div>
+  <div class="note"><b>침례교의 기원에 대하여</b> — 침례교는 1609년 영국 분리주의자 존 스미스와 토머스 헬위스가 네덜란드 암스테르담에서 신자의 침례를 회복하며 시작되었다고 보는 견해(영국 분리주의 기원설)가 가장 널리 받아들여져요. 그들이 그곳의 메노나이트(재침례파)와 교류한 만큼, 재침례파의 영향을 함께 보는 견해도 있습니다.</div>
+</section>
+
+<!-- 6 -->
+<section id="s6">
+  <div class="sec-head">
+    <div class="sec-no">06 · DENOMINATIONS</div>
+    <h2>세계 주요 교단의 역사와 특징</h2>
+    <p class="lead">버튼을 눌러 교단별 이야기를 살펴보세요.</p>
+  </div>
+  <div class="tabs" id="denTabs"></div>
+  <div id="denPanes"></div>
+
+  <h3>주요 교파 비교표</h3>
+  <div class="tbl-wrap"><table>
+    <tr><th>교파</th><th>시작</th><th>대표 인물</th><th>교회 정치</th><th>침례 방식</th><th>신학적 강조점</th></tr>
+    <tr><td><span class="dot" style="background:var(--c-luther)"></span>루터교</td><td>1517 독일</td><td>마르틴 루터</td><td>감독제·회중제 혼합</td><td>유아침례, 물 뿌림</td><td>이신칭의, 율법과 복음</td></tr>
+    <tr><td><span class="dot" style="background:var(--c-reformed)"></span>장로교</td><td>1536 제네바<br>1560 스코틀랜드</td><td>칼뱅, 녹스</td><td>장로제(당회·노회·총회)</td><td>유아침례, 물 뿌림</td><td>하나님의 주권, 언약신학</td></tr>
+    <tr><td><span class="dot" style="background:var(--c-anglican)"></span>성공회</td><td>1534 영국</td><td>크랜머</td><td>감독제(주교)</td><td>유아침례</td><td>공동기도서, 중도(Via Media)</td></tr>
+    <tr><td><span class="dot" style="background:var(--c-baptist)"></span>침례교</td><td>1609 암스테르담<br>1612 런던</td><td>스미스, 헬위스</td><td>회중제(지역교회 자치)</td><td>신자의 침례, 물에 잠김</td><td>신자의 교회, 정교분리·양심의 자유</td></tr>
+    <tr><td><span class="dot" style="background:var(--c-method)"></span>감리교</td><td>1739 영국<br>1784 미국</td><td>존·찰스 웨슬리</td><td>감독제(연회)</td><td>유아침례</td><td>은혜의 체험, 성화, 사회적 성결</td></tr>
+    <tr><td><span class="dot" style="background:var(--c-holy)"></span>성결교</td><td>19세기 미국</td><td>성결운동 지도자들</td><td>감독·장로 혼합</td><td>교단별 상이</td><td>사중복음(중생·성결·신유·재림)</td></tr>
+    <tr><td><span class="dot" style="background:var(--c-pente)"></span>오순절</td><td>1906 LA 아주사</td><td>시모어</td><td>교단별 다양</td><td>대체로 침수례</td><td>성령침례, 은사, 방언</td></tr>
+  </table></div>
+
+  <div class="chart-box">
+    <h4>세계 교파별 연합기구 규모 (대략치, 백만 명)</h4>
+    <div class="cv tall"><canvas id="chGlobalDen"></canvas></div>
+    <p class="src">※ 각 세계 연합기구(세계개혁교회커뮤니언, 세계감리교협의회, 성공회 공동체, 루터교세계연맹, 침례교세계연맹 등) 발표치를 반올림한 대략치입니다. 연합기구에 가입하지 않은 교회가 많아 실제 규모는 더 크며, 특히 오순절·은사주의 계열은 독립교회까지 합치면 수억 명으로 추산돼요. 미국 남침례회(SBC)는 침례교세계연맹을 탈퇴해 이 수치에 빠져 있습니다.</p>
+  </div>
+</section>
+
+<!-- 7 -->
+<section id="s7">
+  <div class="sec-head">
+    <div class="sec-no">07 · KOREA</div>
+    <h2>복음이 한국에 오기까지</h2>
+    <p class="lead">한국 교회의 독특한 점은, 선교사가 오기 전에 이미 성경이 먼저 들어와 있었다는 사실이에요.</p>
+  </div>
+  <div class="tl">
+    <div class="tl-item"><div class="tl-year">1832 · 1866</div><h4>귀츨라프 · 토머스 선교사</h4><p>독일인 귀츨라프가 서해안에 성경을 전했고, 토머스 선교사는 제너럴셔먼호를 타고 대동강에 왔다가 순교합니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1882</div><h4>로스 역 『예수셩교 누가복음젼서』</h4><p>만주의 스코틀랜드 선교사 존 로스와 서상륜 등 한국 청년들이 처음으로 한글 복음서를 펴냅니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1883–84</div><h4>소래교회 · 이수정의 마가복음</h4><p>서상륜·서경조 형제가 황해도 소래에 한국인 스스로의 첫 교회를 세웠고, 일본에서 이수정이 마가복음을 번역했어요.</p></div>
+    <div class="tl-item big"><div class="tl-year">1884–85</div><h4>알렌 · 언더우드 · 아펜젤러</h4><p>의료선교사 알렌(1884)에 이어 1885년 부활절, 장로교 언더우드와 감리교 아펜젤러가 제물포에 함께 도착합니다. 언더우드의 손에는 이수정의 마가복음이 들려 있었어요.</p></div>
+    <div class="tl-item"><div class="tl-year">1889</div><h4>펜윅 선교사 — 침례교의 시작</h4><p>캐나다 출신 말콤 펜윅이 독립선교사로 입국해 원산을 중심으로 사역하고, 1906년 ‘대한기독교회’를 조직합니다. 오늘날 기독교한국침례회의 뿌리예요.</p></div>
+    <div class="tl-item"><div class="tl-year">1890</div><h4>네비우스 선교정책 채택</h4><p>자립(스스로 재정)·자전(스스로 전도)·자치(스스로 운영)의 원칙. 한국 교회 성장의 비결로 꼽힙니다.</p></div>
+    <div class="tl-item big"><div class="tl-year">1907</div><h4>평양 대부흥 · 장로교 독노회</h4><p>장대현교회에서 시작된 회개운동이 전국으로 번졌고, 같은 해 첫 한국인 목사 7명이 안수받았어요. 1912년 조선예수교장로회 총회가 조직됩니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1919</div><h4>3·1운동</h4><p>민족대표 33인 중 16인이 개신교인이었어요. 교회는 민족과 고난을 함께한 공동체로 자리매김합니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1938</div><h4>신사참배 강요와 굴복</h4><p>장로교 총회가 신사참배를 결의하는 아픔이 있었지만, 주기철 목사처럼 끝까지 거부하다 순교한 이들이 있었어요. 펜윅의 후예인 동아기독교(침례교)는 거부를 이유로 1944년 교단이 강제 해산되고 지도자들이 투옥되었습니다.</p></div>
+    <div class="tl-item"><div class="tl-year">1950s</div><h4>해방 이후 분열</h4><p>신사참배 회개 문제, 성경관, 세계교회협의회(WCC) 가입 문제 등으로 장로교가 여러 교단으로 나뉩니다. (8장에서 자세히)</p></div>
+    <div class="tl-item"><div class="tl-year">1960–90s</div><h4>폭발적 성장</h4><p>산업화·도시화와 함께 대형 전도집회(1973 빌리 그레이엄, 1974 엑스플로)가 이어지며 세계가 놀랄 성장을 이룹니다.</p></div>
+  </div>
+
+  <div class="people">
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Horace_Grant_Underwood.jpg?width=500" alt="언더우드" onerror="this.outerHTML='<div class=ph>언더우드</div>'"><figcaption><b>H. G. 언더우드</b>북장로교 · 연세대 설립</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Henry_Gerhard_Appenzeller.jpg?width=500" alt="아펜젤러" onerror="this.outerHTML='<div class=ph>아펜젤러</div>'"><figcaption><b>H. G. 아펜젤러</b>북감리교 · 배재학당 설립</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Horace_Newton_Allen.jpg?width=500" alt="알렌" onerror="this.outerHTML='<div class=ph>알렌</div>'"><figcaption><b>H. N. 알렌</b>의료선교 · 제중원</figcaption></figure>
+    <figure><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Malcolm_C._Fenwick.jpg?width=500" alt="펜윅" onerror="this.outerHTML='<div class=ph>말콤 펜윅</div>'"><figcaption><b>말콤 펜윅</b>독립선교 · 침례교의 뿌리</figcaption></figure>
+  </div>
+</section>
+
+<!-- 8 -->
+<section id="s8">
+  <div class="sec-head">
+    <div class="sec-no">08 · KOREAN DENOMINATIONS</div>
+    <h2>우리나라 주요 교단과 특징</h2>
+    <p class="lead">한국에는 수백 개의 교단이 있지만, 실제 교인 대부분은 열 개 남짓한 주요 교단에 속해 있어요.</p>
+  </div>
+
+  <div class="chart-box">
+    <h4>한국 주요 교단 교인 수 (만 명, 대략치)</h4>
+    <div class="cv tall"><canvas id="chKoreaDen"></canvas></div>
+    <p class="src">※ 2023~2025년 각 교단 총회 보고 기준 대략치. 예장 통합은 2025년 말 기준 약 214만 명(통계위원회 발표). 교단마다 집계 방식(유아·비침례 교인·미등록 교인 포함 여부)이 달라 단순 비교에는 한계가 있고, 일부 교단은 자체 보고 수치가 실제보다 크다는 지적도 있어요. 매년 9월 총회 때 갱신됩니다.</p>
+  </div>
+
+  <div class="tbl-wrap"><table>
+    <tr><th>교단(약칭)</th><th>교파</th><th>시작</th><th>교인 수(약)</th><th>특징</th></tr>
+    <tr><td>예장 합동</td><td>장로교</td><td>1959 (뿌리 1912)</td><td>220만</td><td>보수 개혁주의, 총신대. 여성 목사 안수 불허. WCC 반대로 통합과 갈라짐</td></tr>
+    <tr><td>예장 통합</td><td>장로교</td><td>1959 (뿌리 1912)</td><td>214만</td><td>복음주의+에큐메니컬, 장신대. 1996년 여성 안수 허용. 69개 노회, 약 9,400개 교회</td></tr>
+    <tr><td>예장 백석</td><td>장로교</td><td>1978</td><td>약 200만(자체 보고)</td><td>‘개혁주의 생명신학’, 백석대. 여러 군소 교단과 연합하며 급성장</td></tr>
+    <tr><td>하나님의성회</td><td>오순절</td><td>1953</td><td>약 160만</td><td>순복음 계열, 여의도순복음교회(조용기 목사). 성령운동·신유·삼중축복</td></tr>
+    <tr><td>기독교대한감리회</td><td>감리교</td><td>1930 (뿌리 1885)</td><td>약 113만</td><td>감독제, 감신대·목원대. 웨슬리 전통, 사회참여</td></tr>
+    <tr><td>기독교대한성결교회</td><td>성결교</td><td>1907</td><td>약 39만</td><td>사중복음, 서울신대. 김상준·정빈의 복음전도관에서 시작</td></tr>
+    <tr><td>예장 고신</td><td>장로교</td><td>1952</td><td>약 38만</td><td>신사참배 거부 ‘출옥성도’ 중심, 고신대. 엄격한 개혁주의</td></tr>
+    <tr><td>기독교한국침례회</td><td>침례교</td><td>1889 (펜윅)</td><td>약 35만</td><td>회중제·지역교회 자치, 침신대(대전). 신자의 침례, 1990년대 여성 안수 허용</td></tr>
+    <tr><td>한국기독교장로회</td><td>장로교</td><td>1953</td><td>약 20만</td><td>진보, 한신대. 민주화·인권·통일운동에 앞장</td></tr>
+    <tr><td>예수교대한성결교회</td><td>성결교</td><td>1961</td><td>약 16만</td><td>성결교 분립 교단, 성결대</td></tr>
+    <tr><td>대한성공회 · 구세군 등</td><td>성공회 · 웨슬리안</td><td>1890 · 1908</td><td>수만 명</td><td>전례 중심(성공회), 자선냄비로 알려진 사회봉사(구세군)</td></tr>
+  </table></div>
+
+  <h3>교파별로 보면</h3>
+  <div class="chart-box">
+    <h4>한국 개신교 교파별 비중 (주요 교단 교인 수 합계 기준, 대략)</h4>
+    <div class="cv"><canvas id="chKoreaFamily"></canvas></div>
+    <p class="src">※ 위 표의 주요 교단 수치를 교파별로 묶은 대략적 비중. 군소 교단은 제외했지만, 대부분이 장로교 계열이라 실제 장로교 비중은 더 높아요.</p>
+  </div>
+
+  <h3>한국 장로교 분열 계보</h3>
+  <div class="tree">
+  <svg viewBox="0 0 820 400" role="img" aria-label="한국 장로교 분열 계보">
+    <g stroke="#cfc3a3" stroke-width="2" fill="none">
+      <path d="M410,62 L410,98"/>
+      <path d="M410,140 C410,170 120,165 120,198"/>
+      <path d="M410,140 C410,170 320,165 320,198"/>
+      <path d="M410,140 L410,180 C520,180 600,170 600,198"/>
+      <path d="M600,240 C600,270 520,270 520,298"/>
+      <path d="M600,240 C600,270 700,270 700,298"/>
+      <path d="M700,340 L700,350"/>
+    </g>
+    <g text-anchor="middle" font-family="Pretendard">
+      <rect x="300" y="18" width="220" height="44" rx="22" fill="#1d2b4f"/><text x="410" y="46" fill="#fff" font-size="15" font-weight="700">조선예수교장로회 1912</text>
+      <rect x="320" y="100" width="180" height="40" rx="20" fill="#b8923a"/><text x="410" y="126" fill="#fff" font-size="14" font-weight="700">해방 후 대한예수교장로회</text>
+      <rect x="40" y="198" width="160" height="56" rx="12" fill="#e2f2ef" stroke="#2f8f83"/><text x="120" y="222" fill="#1d2b4f" font-size="14" font-weight="700">고신 1952</text><text x="120" y="242" fill="#6b7080" font-size="11.5">신사참배 회개 문제</text>
+      <rect x="240" y="198" width="160" height="56" rx="12" fill="#f3ecfa" stroke="#9b6bc2"/><text x="320" y="222" fill="#1d2b4f" font-size="14" font-weight="700">기장 1953</text><text x="320" y="242" fill="#6b7080" font-size="11.5">성경관(김재준) 논쟁</text>
+      <rect x="510" y="198" width="180" height="42" rx="12" fill="#fff" stroke="#1d2b4f"/><text x="600" y="224" fill="#1d2b4f" font-size="13.5" font-weight="700">1959 WCC 가입 논쟁</text>
+      <rect x="440" y="298" width="160" height="42" rx="12" fill="#e7ecfa" stroke="#5b7bd5"/><text x="520" y="324" fill="#1d2b4f" font-size="14" font-weight="700">합동 (반대)</text>
+      <rect x="620" y="298" width="160" height="42" rx="12" fill="#e2f2ef" stroke="#2f8f83"/><text x="700" y="324" fill="#1d2b4f" font-size="14" font-weight="700">통합 (찬성)</text>
+      <text x="520" y="368" fill="#6b7080" font-size="11.5">→ 이후 대신·백석·합신·개혁 등 분립</text>
+    </g>
+  </svg>
+  </div>
+  <p>1959년 분열의 배경에는 WCC 가입 문제 외에도 총회신학교 교장이던 박형룡 박사를 둘러싼 이른바 ‘3천만 환 사건’(학교 부지 매입 과정의 사기 피해)이 얽혀 있었어요. 3천만 환은 1962년 화폐개혁(10환→1원) 기준으로 300만 원인데, 당시 물가를 감안하면 오늘날 <mark>대략 수십억 원 규모</mark>로 추정되는 큰돈이었습니다. 신학 논쟁과 교권 다툼, 지역 감정까지 겹치며 결국 한국 최대 교단이 둘로 나뉘게 됩니다.</p>
+</section>
+
+<!-- 9 -->
+<section id="s9">
+  <div class="sec-head">
+    <div class="sec-no">09 · WHY PRESBYTERIAN?</div>
+    <h2>한국에서 장로교가 가장 큰 이유</h2>
+    <p class="lead">세계적으로 보면 장로교는 손꼽히는 대교파가 아니에요. 그런데 한국에서는 개신교인의 약 3분의 2가 장로교인입니다. 왜 그럴까요?</p>
+  </div>
+
+  <details open><summary><span class="n">1</span>선교사 수와 파송 선교부가 압도적으로 많았어요</summary><div class="body">미국 북장로교·남장로교, 호주 장로교, 캐나다 장로교 — 무려 <strong>네 개의 장로교 선교부</strong>가 한국에 들어왔어요. 감리교는 미국 북·남감리교 두 곳이었고, 침례교·성결교는 독립 선교사나 작은 단체 중심이었습니다. 출발선부터 인력과 재정 차이가 컸던 셈이죠.</div></details>
+
+  <details><summary><span class="n">2</span>선교지 분할협정으로 넓은 지역을 맡았어요</summary><div class="body">선교사들은 중복 경쟁을 피하려고 지역을 나눴어요(교계예양). <strong>평안도·황해도·경북은 북장로교, 전라도는 남장로교, 경남은 호주 장로교, 함경도는 캐나다 장로교</strong>가 맡았고, 감리교는 경기 일부·충청·강원·평양 일부를 맡았습니다. 결과적으로 장로교가 한반도의 대부분, 특히 복음이 가장 뜨겁게 퍼진 서북 지역을 맡게 되었어요. 지금도 영남·호남에 장로교회가 압도적으로 많은 이유가 여기 있습니다.</div></details>
+
+  <details><summary><span class="n">3</span>네비우스 정책을 가장 철저하게 실행했어요</summary><div class="body">장로교 선교부는 1890년 네비우스 원칙을 공식 채택하고 <strong>사경회(성경공부 모임)</strong>를 전국에서 열었어요. 한국인 스스로 헌금해 예배당을 짓고, 스스로 전도하고, 스스로 다스리게 했죠. 선교사가 떠나도 무너지지 않는 ‘자립형 교회’가 빠르게 세워졌습니다.</div></details>
+
+  <details><summary><span class="n">4</span>평양 대부흥의 중심이 장로교였어요</summary><div class="body">1907년 평양 대부흥은 장로교회인 장대현교회에서 폭발했고, 길선주 장로(이후 첫 7인 목사 중 한 명)가 중심에 있었어요. 평양이 ‘동방의 예루살렘’이라 불릴 만큼 부흥의 열매가 장로교에 크게 맺혔습니다.</div></details>
+
+  <details><summary><span class="n">5</span>한국인의 정서와 맞는 교회 구조</summary><div class="body">장로가 당회를 이루어 목사와 함께 교회를 다스리는 <strong>장로제</strong>는, 마을 어른들이 공동체를 이끌던 한국의 전통적인 질서와 잘 어울렸다는 분석이 많아요. 평신도 지도자가 책임감을 갖고 교회를 세우는 구조였습니다.</div></details>
+
+  <details><summary><span class="n">6</span>월남 신자들과 전후 재건</summary><div class="body">해방과 6·25 전쟁 때 서북 지역(장로교 강세 지역)의 신자들이 대거 남쪽으로 내려와 서울·부산 등에 교회를 세웠어요. 영락교회처럼 피난민이 세운 교회들이 남한 장로교 성장의 큰 동력이 되었습니다.</div></details>
+
+  <details><summary><span class="n">7</span>분열조차 ‘확장’이 되었어요</summary><div class="body">아이러니하게도 잦은 분열은 교단마다 신학교를 세우고 경쟁적으로 개척하게 만들었어요. 그래서 장로교 이름을 단 교단만 수백 개에 이릅니다. 숫자는 커졌지만, 하나 됨을 잃은 아픔도 함께 남겼다는 점은 기억해야 해요.</div></details>
+
+  <div class="note" style="margin-top:20px"><b>그렇다면 순복음(오순절)은?</b> 1958년 천막교회로 시작한 조용기 목사의 사역은 성령운동, 구역(셀) 조직, 가난과 질병에 지친 서민들에게 주는 소망의 메시지로 폭발적으로 성장해, 여의도순복음교회는 한때 등록교인 70만 명이 넘는 세계 최대 단일교회가 되었어요. 한 교회의 성장이 교단 전체 규모를 끌어올린 독특한 사례입니다.</div>
+</section>
+
+<!-- 10 -->
+<section id="s10">
+  <div class="sec-head">
+    <div class="sec-no">10 · STATISTICS</div>
+    <h2>통계로 보는 한국 개신교</h2>
+    <p class="lead">성장의 시대를 지나, 지금 한국 교회는 어디쯤 와 있을까요?</p>
+  </div>
+
+  <div class="chart-box">
+    <h4>한국 3대 종교 인구 변화 (통계청 인구주택총조사, 만 명)</h4>
+    <div class="cv"><canvas id="chCensus"></canvas></div>
+    <p class="src">※ 종교 항목은 10년마다 조사됩니다. 2015년 조사에서 개신교(967만 명, 19.7%)가 처음으로 불교(762만 명)를 앞질러 최대 종교가 되었어요. 같은 해 무종교 인구가 56.1%로 처음 절반을 넘었습니다.</p>
+  </div>
+
+  <div class="chart-box">
+    <h4>성인 중 개신교인 비율 추이 (한국갤럽 「한국인의 종교」, %)</h4>
+    <div class="cv"><canvas id="chGallup"></canvas></div>
+    <p class="src">※ 한국갤럽 조사 기준. 2000년대까지 20%대를 유지하다 2021년 17%로 내려왔어요. 목회데이터연구소는 2050년 기독교인 비율이 12% 안팎까지 줄 수 있다고 전망합니다.</p>
+  </div>
+
+  <div class="chart-box">
+    <h4>예장 통합 교인 수 추이 (만 명)</h4>
+    <div class="cv"><canvas id="chTonghap"></canvas></div>
+    <p class="src">※ 예장 통합 통계위원회 발표. 2021년 말 약 236만 명 → 2025년 말 약 214만 명. 10년 사이 약 58만 명이 줄었고, 위원회는 사회적 신뢰 하락과 다음세대 전도의 어려움을 주된 원인으로 꼽았어요. 교단 중간 연도는 추세를 보여주기 위한 근사치입니다.</p>
+  </div>
+
+  <div class="closing">
+    <h3>맺으며 — 다시, 말씀 앞으로</h3>
+    <p>500년 전 개혁자들이 붙든 것은 교단의 이름도, 교회의 크기도 아니었어요. 그들의 질문은 언제나 <strong>“하나님은 성경에서 무엇이라 말씀하시는가?”</strong>였습니다. 그래서 종교개혁의 후예들은 스스로를 이렇게 불렀죠. <strong>“개혁된 교회는 늘 개혁되어야 한다(Ecclesia reformata, semper reformanda).”</strong></p>
+    <p>한국 교회는 세계가 놀랄 만큼 빠르게 자랐지만, 지금은 줄어드는 숫자 앞에 서 있어요. 하지만 교회의 소망은 처음부터 숫자에 있지 않았습니다. 오직 성경, 오직 은혜, 오직 믿음, 오직 그리스도 — <strong>그리고 오직 하나님께 영광.</strong> 그 처음 고백으로 돌아갈 때, 교회는 다시 살아났어요. 그것이 종교개혁의 역사가 오늘 우리에게 들려주는 이야기입니다.</p>
+  </div>
+</section>
+</main>
+
+<footer>기독교한국침례회 은혜교회 · 담임목사 박동준<br>통계는 각 교단·기관의 공개 자료를 바탕으로 한 대략치이며, 매년 갱신될 수 있습니다.</footer>
+
+<script>
+/* ===== Denomination tabs ===== */
+const DEN=[
+ {k:'루터교',c:'#5b7bd5',t:'루터교 (Lutheran)',y:'1517 · 독일',p:'마르틴 루터',g:'약 7,700만(LWF)',
+  b:'루터의 개혁에서 곧바로 태어난 가장 오래된 개신교회예요. 독일 북부와 스칸디나비아(덴마크·노르웨이·스웨덴·핀란드)에서는 오랫동안 국교회였습니다. <strong>이신칭의</strong>를 신학의 심장으로 여기고, 율법(죄를 깨닫게 함)과 복음(용서를 선포함)을 구분하는 것이 특징이에요. 성찬에서 그리스도의 몸이 빵과 “함께, 안에, 아래” 실제로 임재한다는 <strong>공재설</strong>을 믿고, 전례와 찬송(코랄) 전통이 풍성합니다. 바흐가 바로 루터교 음악가였어요. 오늘날은 유럽보다 오히려 에티오피아·탄자니아 등 아프리카에서 크게 성장 중입니다.'},
+ {k:'장로교',c:'#2f8f83',t:'장로교 · 개혁교회 (Reformed / Presbyterian)',y:'1520s 스위스 → 1560 스코틀랜드',p:'츠빙글리, 칼뱅, 녹스',g:'약 1억(WCRC 등)',
+  b:'츠빙글리와 칼뱅의 스위스 개혁에서 시작되어, 유럽 대륙에서는 ‘개혁교회’, 스코틀랜드와 영미권에서는 존 녹스 이후 ‘장로교회’라 불려요. 이름 그대로 <strong>장로(presbyter)</strong>들이 교회를 다스리는 정치 구조가 핵심인데, 개교회의 당회 → 지역의 노회 → 전국의 총회로 이어지는 대의 민주적 구조입니다. 신학적으로는 <strong>하나님의 절대 주권</strong>, 예정, 언약신학을 강조하고, 웨스트민스터 신앙고백(1647)을 표준 문서로 삼아요. 청교도를 통해 미국 건국 정신에도 큰 영향을 주었고, 한국은 세계에서 장로교인이 가장 많은 나라 가운데 하나입니다.'},
+ {k:'성공회',c:'#9b6bc2',t:'성공회 (Anglican)',y:'1534 · 영국',p:'헨리 8세, 토머스 크랜머',g:'약 8,500만',
+  b:'헨리 8세의 이혼 문제로 교황과 결별하면서 시작되었지만, 대주교 크랜머가 만든 <strong>『공동기도서』</strong>와 39개 신조를 통해 개신교 신학을 갖춘 교회가 되었어요. 가톨릭의 전례와 주교제를 유지하면서도 개신교 교리를 받아들인 <strong>‘중도(Via Media)’</strong>의 교회로 불립니다. 캔터베리 대주교를 중심으로 한 세계 성공회 공동체를 이루며, 대영제국을 따라 아프리카(특히 나이지리아·우간다)로 퍼져 지금은 아프리카 교인이 가장 많아요. 청교도, 감리교, 그리고 침례교의 일부 뿌리가 모두 이 성공회 안에서 개혁을 외치다 나왔습니다.'},
+ {k:'침례교',c:'#2a7fbf',t:'침례교 (Baptist)',y:'1609 암스테르담 · 1612 런던',p:'존 스미스, 토머스 헬위스, 존 번연, 스펄전',g:'약 5,000만(BWA) + SBC 약 1,200만',
+  b:'영국 국교회의 개혁이 부족하다고 여긴 분리주의자들이 박해를 피해 네덜란드로 건너가, 1609년 <strong>신앙을 고백한 사람에게만 침례를 베푸는 교회</strong>를 세운 데서 시작되었어요. 헬위스는 1612년 런던에 돌아와 영국 최초의 침례교회를 세우고, 왕에게 “누구의 양심도 강제할 수 없다”는 <strong>종교 자유</strong>를 주장하다 옥사합니다. 침례교의 특징은 ① 성경의 최종 권위 ② 신자의 침례(물에 온전히 잠기는 침수례) ③ 거듭난 신자로 이루어진 교회 ④ <strong>지역교회의 자치(회중제)</strong> ⑤ 만인제사장 ⑥ 정교분리와 양심의 자유예요. 『천로역정』의 존 번연, ‘설교의 황태자’ 스펄전, 근대 선교의 아버지 윌리엄 캐리, 마틴 루터 킹 목사 모두 침례교인이었습니다. 미국 남침례회(SBC)는 미국 최대 개신교단이에요.'},
+ {k:'감리교',c:'#d07a3c',t:'감리교 (Methodist)',y:'1739 영국 · 1784 미국',p:'존 웨슬리, 찰스 웨슬리, 조지 휫필드',g:'약 8,000만(WMC)',
+  b:'성공회 사제였던 존 웨슬리가 1738년 런던 올더스게이트에서 “마음이 이상하게 뜨거워지는” 회심을 경험한 뒤 시작한 부흥운동이에요. 규칙적이고 체계적인(method) 신앙생활을 한다고 해서 ‘메소디스트’라는 별명이 붙었죠. 웨슬리는 들판에서 광부와 노동자들에게 설교했고, 동생 찰스는 6,000곡이 넘는 찬송을 썼어요. 신학적으로는 누구나 구원받을 수 있다는 <strong>아르미니우스주의</strong>, 그리고 그리스도인이 사랑 안에서 온전해져 간다는 <strong>성화(그리스도인의 완전)</strong>를 강조합니다. 감독제와 연회 조직으로 미국 개척지에 순회 설교자를 보내며 폭발적으로 성장했어요.'},
+ {k:'성결교',c:'#c9a227',t:'성결교 (Holiness)',y:'19세기 중후반 · 미국',p:'피비 파머, 카우만 부부(동양선교회)',g:'나사렛교회·구세군 등',
+  b:'감리교 안에서 웨슬리의 ‘성결’ 가르침이 약해졌다고 느낀 이들이 일으킨 성결운동에서 나왔어요. 중생 이후에 마음이 깨끗해지는 <strong>두 번째 은혜(성결)</strong>를 강조하며, <strong>사중복음 — 중생·성결·신유·재림</strong>을 핵심으로 고백합니다. 미국 나사렛교회, 구세군 등이 이 계열이에요. 한국에는 카우만 부부의 동양선교회(OMS)를 통해 1907년 김상준·정빈이 서울 종로에 ‘복음전도관’을 열면서 들어왔고, 오늘날 기독교대한성결교회와 예수교대한성결교회로 이어집니다.'},
+ {k:'오순절',c:'#d0546a',t:'오순절 · 순복음 (Pentecostal)',y:'1901 토피카 · 1906 LA 아주사',p:'찰스 파햄, 윌리엄 시모어',g:'은사주의 포함 수억 명',
+  b:'1906년 미국 로스앤젤레스 아주사 거리의 작은 건물에서, 흑인 목회자 윌리엄 시모어를 중심으로 인종을 넘어선 부흥이 일어났어요. 사도행전 2장 오순절처럼 <strong>성령침례</strong>와 <strong>방언</strong>, 신유 등 은사를 강조하는 것이 특징입니다. 성결운동에서 갈라져 나왔고, 하나님의성회(Assemblies of God)가 대표 교단이에요. 20세기 기독교에서 가장 빠르게 성장한 흐름으로, 라틴아메리카·아프리카·아시아의 기독교 지형을 바꿔 놓았습니다. 한국에서는 1928년 메리 럼시 선교사를 시작으로, 1953년 기독교대한하나님의성회가 조직되었어요.'},
+ {k:'재침례파',c:'#7a8b5a',t:'재침례파 (Anabaptist)',y:'1525 · 스위스 취리히',p:'콘라트 그레벨, 메노 시몬스',g:'메노나이트 등 약 200만',
+  b:'츠빙글리보다 더 철저한 개혁을 원한 젊은이들이, 유아 때 받은 침례는 성경적이지 않다며 신앙을 고백한 성인에게 다시 침례를 베풀었어요. 그래서 반대자들이 ‘다시(Ana) 침례 주는 자들’이라 불렀죠. 가톨릭과 다른 개신교 양쪽에게 모두 박해받아 수많은 순교자를 냈습니다. <strong>신자의 교회, 정교분리, 비폭력·평화주의, 제자도</strong>를 강조했고, 메노 시몬스를 따르는 메노나이트, 미국의 아미시 등이 그 후예예요. 이들이 남긴 ‘자유교회’ 전통은 침례교를 비롯한 후대 교회에 깊은 영향을 주었습니다.'}
+];
+const tabs=document.getElementById('denTabs'),panes=document.getElementById('denPanes');
+DEN.forEach((d,i)=>{
+  const b=document.createElement('button');b.className='btn'+(i===0?' on':'');b.textContent=d.k;
+  if(i===0)b.style.background=d.c;
+  b.onclick=()=>{[...tabs.children].forEach(x=>{x.classList.remove('on');x.style.background='#fff'});b.classList.add('on');b.style.background=d.c;
+    [...panes.children].forEach(p=>p.classList.remove('on'));panes.children[i].classList.add('on')};
+  tabs.appendChild(b);
+  const p=document.createElement('div');p.className='pane'+(i===0?' on':'');
+  p.innerHTML='<div class="card" style="--accent:'+d.c+'"><h4 style="font-family:Pretendard;font-size:20px;color:#1d2b4f">'+d.t+'</h4>'+
+   '<div class="kv"><div><b>시작</b>'+d.y+'</div><div><b>대표 인물</b>'+d.p+'</div><div><b>세계 규모</b>'+d.g+'</div></div><p style="margin:0">'+d.b+'</p></div>';
+  panes.appendChild(p);
+});
+
+/* ===== Charts ===== */
+if(window.Chart){
+Chart.defaults.font.family="'Pretendard',sans-serif";
+Chart.defaults.color='#5a5f70';
+Chart.defaults.plugins.legend.labels.usePointStyle=true;
+const navy='#1d2b4f',gold='#b8923a';
+
+new Chart(document.getElementById('chWorld'),{type:'doughnut',
+ data:{labels:['로마가톨릭','개신교(오순절·독립교회 포함)','동방정교회','기타'],
+  datasets:[{data:[12.6,9.0,2.6,0.5],backgroundColor:['#9aa6c4','#b8923a','#c9b4d8','#d9d4c7'],borderWidth:2,borderColor:'#fff'}]},
+ options:{maintainAspectRatio:false,cutout:'58%',plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>' '+c.label+': 약 '+c.raw+'억 명'}}}}});
+
+new Chart(document.getElementById('chGlobalDen'),{type:'bar',
+ data:{labels:['오순절(하나님의성회 등)','개혁·장로교','성공회','감리교','루터교','침례교(BWA)','미국 남침례회','재침례파'],
+  datasets:[{data:[86,100,85,80,77,50,12,2],backgroundColor:['#d0546a','#2f8f83','#9b6bc2','#d07a3c','#5b7bd5','#2a7fbf','#5fa3d6','#7a8b5a'],borderRadius:8}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' 약 '+c.raw+'백만 명'}}},
+  scales:{x:{grid:{color:'#eee'},title:{display:true,text:'백만 명'}},y:{grid:{display:false}}}}});
+
+const kd=[['예장 합동',220,'#2f8f83'],['예장 통합',214,'#2f8f83'],['예장 백석',200,'#6fb3a9'],['하나님의성회',160,'#d0546a'],['기독교대한감리회',113,'#d07a3c'],['기독교대한성결교회',39,'#c9a227'],['예장 고신',38,'#2f8f83'],['기독교한국침례회',35,'#2a7fbf'],['한국기독교장로회',20,'#2f8f83'],['예수교대한성결교회',16,'#c9a227']];
+new Chart(document.getElementById('chKoreaDen'),{type:'bar',
+ data:{labels:kd.map(x=>x[0]),datasets:[{data:kd.map(x=>x[1]),backgroundColor:kd.map(x=>x[2]),borderRadius:8}]},
+ options:{indexAxis:'y',maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' 약 '+c.raw+'만 명'}}},
+  scales:{x:{grid:{color:'#eee'},title:{display:true,text:'만 명'}},y:{grid:{display:false}}}}});
+
+new Chart(document.getElementById('chKoreaFamily'),{type:'pie',
+ data:{labels:['장로교','오순절(순복음)','감리교','성결교','침례교'],
+  datasets:[{data:[692,160,113,55,35],backgroundColor:['#2f8f83','#d0546a','#d07a3c','#c9a227','#2a7fbf'],borderColor:'#fff',borderWidth:2}]},
+ options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>{const t=c.dataset.data.reduce((a,b)=>a+b,0);return ' '+c.label+': 약 '+Math.round(c.raw/t*100)+'%'}}}}}});
+
+new Chart(document.getElementById('chCensus'),{type:'bar',
+ data:{labels:['1995','2005','2015'],datasets:[
+  {label:'개신교',data:[876,862,968],backgroundColor:gold,borderRadius:6},
+  {label:'불교',data:[1032,1073,762],backgroundColor:'#9aa6c4',borderRadius:6},
+  {label:'천주교',data:[295,515,389],backgroundColor:'#c9b4d8',borderRadius:6}]},
+ options:{maintainAspectRatio:false,plugins:{legend:{position:'bottom'},tooltip:{callbacks:{label:c=>' '+c.dataset.label+': '+c.raw+'만 명'}}},scales:{y:{beginAtZero:true,grid:{color:'#eee'}},x:{grid:{display:false}}}}});
+
+new Chart(document.getElementById('chGallup'),{type:'line',
+ data:{labels:['1984','1989','1997','2004','2014','2021'],datasets:[{label:'개신교인 비율',data:[17,19,20,21,21,17],borderColor:navy,backgroundColor:'rgba(29,43,79,.08)',fill:true,tension:.35,pointBackgroundColor:gold,pointRadius:5}]},
+ options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' '+c.raw+'%'}}},scales:{y:{min:10,max:25,grid:{color:'#eee'},ticks:{callback:v=>v+'%'}},x:{grid:{display:false}}}}});
+
+new Chart(document.getElementById('chTonghap'),{type:'line',
+ data:{labels:['2015','2017','2019','2021','2023','2025'],datasets:[{label:'예장 통합 교인 수',data:[272,271,251,236,221,214],borderColor:'#2f8f83',backgroundColor:'rgba(47,143,131,.1)',fill:true,tension:.3,pointRadius:5,pointBackgroundColor:'#2f8f83'}]},
+ options:{maintainAspectRatio:false,plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>' 약 '+c.raw+'만 명'}}},scales:{y:{min:180,max:290,grid:{color:'#eee'}},x:{grid:{display:false}}}}});
+}
+
+/* ===== Nav highlight ===== */
+const links=[...document.querySelectorAll('nav a')];
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-45% 0px -50% 0px'});
+document.querySelectorAll('section').forEach(s=>io.observe(s));
+</script>
+</body>
+</html>
