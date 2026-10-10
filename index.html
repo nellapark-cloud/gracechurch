@@ -1215,7 +1215,7 @@
   });
 
   // 자료 목록(data/manifest.json)을 불러와 각 관에 렌더링
-  fetch('./data/manifest.json')
+  fetch('./data/manifest.json?v=' + Date.now(), { cache: 'no-store' })
     .then((res) => res.json())
     .then((manifest) => {
       Object.keys(manifest).forEach((key) => {
