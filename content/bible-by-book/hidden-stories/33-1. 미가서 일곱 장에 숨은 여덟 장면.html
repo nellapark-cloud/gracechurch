@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>미가서, 일곱 장에 숨은 여덟 장면 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="이름으로 끝나는 책, 지명 말놀이, 유엔 앞의 동상까지 — 미가서를 재밌게 읽는 여덟 가지 이야기">
+<meta property="og:title" content="미가서, 일곱 장에 숨은 여덟 장면">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 미가서 더 보기</div>
+  <h1>일곱 장짜리 책에 숨은<br><em>여덟 장면</em></h1>
+  <p class="sub">이름으로 끝나는 책, 지명 말놀이, 유엔 앞의 동상까지<br>미가서를 재밌게 읽는 여덟 가지 이야기</p>
+  <div class="ref">미가 1–7장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>미가서는 겨우 <mark>7장밖에 안 되는 짧은 책</mark>이에요. 그래서 소선지서를 통독할 때 금방 지나가 버리기 쉬워요. 그런데 천천히 들여다보면, 말놀이와 풍자, 그리고 수백 년을 건너 이어지는 연결고리가 곳곳에 숨어 있어요.</p>
+    <p>모레셋이라는 시골 마을에서 올라온 선지자가 남긴 여덟 가지 장면을 하나씩 만나 봅니다.</p>
+  </section>
+
+  <nav class="chips sans"><button class="chip" onclick="goTo('s1')"><b>1</b>이름으로 끝나는 책</button><button class="chip" onclick="goTo('s2')"><b>2</b>지명 말놀이</button><button class="chip" onclick="goTo('s3')"><b>3</b>술 이야기 설교자</button><button class="chip" onclick="goTo('s4')"><b>4</b>백 년 뒤 살린 설교</button><button class="chip" onclick="goTo('s5')"><b>5</b>작은 마을의 약속</button><button class="chip" onclick="goTo('s6')"><b>6</b>유엔 앞의 미가서</button><button class="chip" onclick="goTo('s7')"><b>7</b>올라가는 경매</button><button class="chip" onclick="goTo('s8')"><b>8</b>바다에 던지는 죄</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>자기 이름으로<br>책을 끝낸 선지자</h2><div class="refs">미가 1:1 · 7:18</div></div></div>
+    <div class="scene-body">
+      <p>'미가'라는 이름은 <span class="heb" data-tip="미카야후 — '미'(누가) + '카'(~와 같은) + '야후'(여호와). 곧 '누가 여호와와 같은가?'라는 질문형 이름이에요.">미카야후</span>를 줄인 말로, <mark>"누가 여호와와 같은가?"</mark>라는 뜻이에요. 이름 자체가 하나의 질문인 셈이죠.</p>
+      <p>그런데 책의 마지막 찬양(7:18)이 바로 "주와 같은 신이 어디 있으리이까"로 시작해요. 히브리어로는 <span class="heb" data-tip="미 엘 카모카 — 누가 주와 같은 하나님이십니까.">미 엘 카모카</span>. 선지자가 <span class="hl">자기 이름을 풀어 쓴 고백으로 책을 마무리</span>한 거예요.</p>
+      <p>평생 이름으로 던지던 질문에, 일곱 장의 설교 끝에서 스스로 답을 한 셈이에요. "정말 없습니다. 죄를 용서하시는 분은 주님밖에 없습니다."</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 삶이 마지막에 남기는 고백은 무엇일지, 내 이름이 하나님을 높이는 질문이 되고 있는지 돌아봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>동네 이름마다<br>숨겨 둔 말장난</h2><div class="refs">미가 1:10-15</div></div></div>
+    <div class="scene-body">
+      <p>미가 1장 후반부는 낯선 지명이 줄줄이 나와서 그냥 넘기기 쉬운 곳이에요. 그런데 히브리어로 읽으면 <mark>마을 이름 하나하나로 만든 말놀이</mark>예요. 우리말로 옮기면 이런 느낌이에요.</p>
+      <div class="wp">
+        <div><span class="pl">먼지마을(베들레아브라)</span> — 먼지를 뒤집어써라</div>
+        <div><span class="pl">예쁜마을(사빌)</span> — 벌거벗고 부끄러워하며 나가라</div>
+        <div><span class="pl">나옴마을(사아난)</span> — 나오지 못한다</div>
+        <div><span class="pl">쓴맛마을(마롯)</span> — 복을 기다리지만 쓴맛만 본다</div>
+        <div><span class="pl">말마을(라기스)</span> — 병거에 말이나 매어라, 곧 도망칠 준비를 하라</div>
+        <div><span class="pl">속임마을(악십)</span> — 왕들을 속이는 곳이 된다</div>
+      </div>
+      <p>마치 "울산에서 울고, 대구에서 대굴대굴 구른다"는 식이에요. 😄 게다가 첫머리의 "가드에 알리지 말라"는 다윗이 사울과 요나단의 죽음을 슬퍼하며 부른 애가(삼하 1:20)에서 가져온 표현이에요. 원수에게 들키고 싶지 않을 만큼 부끄러운 소식이라는 뜻이죠.</p>
+      <p>웃기려고 한 말장난이 아니에요. 사람들이 자랑하던 <span class="hl">동네 이름이 오히려 심판을 알리는 표지판</span>이 된 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 자랑으로 여기는 이름과 간판이 하나님 앞에서는 어떻게 읽힐지 돌아봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>술 이야기 해주는 설교자가<br>제일 인기</h2><div class="refs">미가 2:6, 11 · 3:5</div></div></div>
+    <div class="scene-body">
+      <div class="vs sans"><div class="vs-side vs-a"><div class="who">사람들이 막은 설교</div>"이런 예언 하지 마라"(2:6) — 죄를 지적하는 불편한 말씀</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">사람들이 원한 설교</div>"포도주와 독주에 대해 전하겠다"(2:11) — 듣기 좋은 말씀</div></div>
+      <p>미가가 죄를 지적하자 백성들은 "그런 설교 좀 그만해라"며 입을 막아요. 그러자 미가가 씁쓸하게 비꼬아요. 누가 거짓말로 <mark>"포도주와 독주 이야기를 해 주겠다"</mark>고 하면, 그 사람이 이 백성의 선지자가 될 거라고요. 😄</p>
+      <p>3장에서는 한술 더 떠요. 먹을 것을 주면 "평강!"을 외치고, 안 주면 전쟁을 선포하는 선지자들이 등장해요(3:5). <span class="hl">설교 내용이 사례비에 따라 달라지는</span> 거죠. 듣기 좋은 말만 찾는 모습은 그때나 지금이나 크게 다르지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나는 귀에 달콤한 말씀만 찾고, 나를 고치려는 말씀은 피하고 있지 않은지 돌아봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>백 년 뒤<br>예레미야를 살린 설교</h2><div class="refs">미가 3:12 · 예레미야 26:16-19</div></div></div>
+    <div class="scene-body">
+      <p>미가는 목숨을 건 설교를 했어요. <mark>시온이 밭처럼 갈아엎어지고 예루살렘이 돌무더기가 될 것</mark>이라고요(3:12). 성전이 있는 거룩한 도시가 무너진다는 말은, 당시로서는 신성모독처럼 들릴 수 있었어요.</p>
+      <p>약 백 년 뒤, 예레미야가 비슷한 설교를 했다가 사형당할 위기에 처해요. 그때 장로 몇 사람이 일어나 미가를 예로 들어요. <span class="hl">"히스기야 때 모레셋 사람 미가도 똑같은 말을 했다. 그때 왕이 그를 죽였느냐? 오히려 여호와를 두려워하고 회개하지 않았느냐?"</span>(렘 26:18-19)</p>
+      <p>그 말 덕분에 예레미야는 목숨을 건져요. 성경 안에서 <mark>선지자의 말씀을 이렇게 이름까지 밝혀 그대로 인용한 경우</mark>는 아주 드물어요. 백 년 전 설교 한 편이 후배 선지자의 목숨을 구한 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 순종하며 전하는 말씀 한 줄이, 먼 훗날 누군가를 살리는 씨앗이 될 수 있음을 믿습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>작은 마을의 큰 약속,<br>주소는 알면서 가지 않은 사람들</h2><div class="refs">미가 5:2 · 마태복음 2:1-12</div></div></div>
+    <div class="scene-body">
+      <p>미가는 유다 족속 중에 작고 보잘것없는 <mark>베들레헴에서 이스라엘을 다스릴 자가 나온다</mark>고 예언했어요(5:2). 예루살렘 같은 큰 도시가 아니라 시골 마을이라는 점이 시골 선지자 미가다워요.</p>
+      <p>약 700년 뒤, 동방박사들이 헤롯을 찾아와 "유대인의 왕으로 나신 분이 어디 계십니까?" 하고 물어요. 대제사장과 서기관들은 망설임 없이 이 구절을 읽어 줘요(마 2:5-6).</p>
+      <div class="vs sans"><div class="vs-side vs-a"><div class="who">성경 전문가들</div>주소를 정확히 알았지만, 한 사람도 가지 않았다</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">동방박사들</div>성경은 몰랐지만, 먼 길을 와서 경배했다</div></div>
+      <p>예루살렘에서 베들레헴까지는 걸어서 두세 시간 거리예요. 그런데 <span class="hl">성경 지식이 있던 사람들은 정작 베들레헴에 가지 않았어요.</span></p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>말씀을 아는 데서 멈추지 않고, 그 말씀을 따라 예수님께 찾아가는 사람이 되기를 원합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>유엔 앞에 서 있는<br>미가서</h2><div class="refs">미가 4:3-4 · 이사야 2:4</div></div></div>
+    <div class="scene-body">
+      <p>"칼을 쳐서 보습을 만들고 창을 쳐서 낫을 만들 것이며"(4:3). 이 구절은 이사야 2:4에도 거의 똑같이 나와요. 같은 시대 두 선지자가 같은 평화의 환상을 전한 거예요.</p>
+      <p>이 말씀을 표현한 동상이 지금 <mark>뉴욕 유엔 본부 정원</mark>에 서 있어요. 한 사람이 망치로 칼을 두드려 보습을 만드는 모습이에요. 놀랍게도 <span class="hl">1959년 무신론 국가였던 소련이 기증한 작품</span>이에요.</p>
+      <p>이어지는 4절, "각 사람이 자기 포도나무 아래와 자기 무화과나무 아래에 앉을 것이라"는 구절은 미국 초대 대통령 <span class="hl">조지 워싱턴</span>이 편지에서 즐겨 인용했어요. 1790년 뉴포트의 유대인 회당에 보낸 편지에서도 이 표현으로 종교의 자유와 평안을 약속했다고 해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 손에 들린 날 선 말과 다툼의 도구를, 사람을 살리고 열매 맺게 하는 도구로 바꾸어 봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>점점 올라가는 경매,<br>그리고 의외의 정답</h2><div class="refs">미가 6:6-8</div></div></div>
+    <div class="scene-body">
+      <p>백성들이 묻습니다. "내가 무엇을 가지고 여호와 앞에 나아갈까?" 그리고 스스로 답을 내놓는데, <mark>가격이 경매처럼 점점 올라가요.</mark></p>
+      <div class="steps">
+        <div><b>1</b>번제물로 드릴까?</div>
+        <div><b>2</b>일 년 된 송아지로?</div>
+        <div><b>3</b>숫양 천 마리면 기뻐하실까?</div>
+        <div><b>4</b>강물처럼 흐르는 기름 만 줄기는?</div>
+        <div><b>5</b>내 맏아들까지 드리면 될까?</div>
+        <div class="last">하나님의 대답: 공의를 행하고, 인자를 사랑하고, 겸손히 하나님과 함께 걷는 것</div>
+      </div>
+      <p>사람들은 하나님을 <span class="hl">더 비싼 값을 불러야 만족하시는 분</span>으로 생각했어요. 그런데 하나님의 답은 의외로 단순했어요. 가격표가 아니라 삶이었죠. 여기서 '인자'는 <span class="heb" data-tip="헤세드 — 언약에 근거한 변함없는 사랑, 끝까지 붙드는 신실한 사랑.">헤세드</span>, 끝까지 붙드는 사랑이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>더 많이 드리는 것으로 하나님과 함께 걷는 삶을 대신하려 하지 않았는지 돌아봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s8">
+    <div class="scene-head sans"><div class="num">8</div><div><h2>바다에 던지는 죄,<br>강가의 빵 부스러기</h2><div class="refs">미가 7:19</div></div></div>
+    <div class="scene-body">
+      <p>"우리의 모든 죄를 깊은 바다에 던지시리이다"(7:19). 미가서의 마지막을 장식하는 이 약속에서 유대인의 <span class="heb" data-tip="타슐리흐 — '네가 던질 것이다'라는 뜻의 히브리어. 미가 7:19의 '던지시리이다'에서 이름을 따왔어요.">타슐리흐</span>라는 풍습이 생겼어요.</p>
+      <p>유대인들은 새해(로쉬 하샤나, 나팔절)가 되면 강가나 바닷가로 나가 이 구절을 읽고, <mark>주머니를 털거나 빵 부스러기를 물에 던져요.</mark> 지난 한 해의 죄를 하나님이 바다 깊은 곳에 던지신다는 것을 몸으로 고백하는 거예요.</p>
+      <p>사람이 던진 건 아무리 멀리 던져도 다시 주울 수 있어요. 그런데 하나님이 던지시는 곳은 <span class="hl">아무도 닿을 수 없는 바다 깊은 곳</span>이에요. 다시는 꺼내 보지 않으시겠다는 약속이죠.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님이 이미 바다에 던지신 죄를, 내가 다시 건져 올려 붙들고 있지는 않은지 돌아봅니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">누가 주와 같으랴</div>
+    <p>미가서는 날카로운 심판의 말로 시작하지만, 결국 선지자 자신의 이름이 담긴 찬양으로 끝나요. 말장난 속에도, 풍자 속에도, 수백 년 뒤의 이야기 속에도 같은 하나님이 계셨어요.</p>
+    <p>죄를 바다 깊은 곳에 던지시고, 작은 마을에서 왕을 보내시는 하나님. 그분과 같은 분은 정말 어디에도 없어요.</p>
+    <div class="q">"주와 같은 신이 어디 있으리이까" (7:18)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다. 미가서의 큰 그림은 「미가서, 이름이 질문이 된 책」에서 함께 보실 수 있어요.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
