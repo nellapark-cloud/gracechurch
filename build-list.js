@@ -20,6 +20,7 @@ const categories = [
   { key: 'bible_by_person', dir: 'content/bible-by-book/bible-by-person' },
   { key: 'bible_hidden_stories', dir: 'content/bible-by-book/hidden-stories' },
   { key: 'bible_qt', dir: 'content/bible-by-book/qt' },
+  { key: 'bible_history', dir: 'content/bible-by-book/bible-history' },
   { key: 'newcomers', dir: 'content/newcomers', pin: ['함께 걷는 믿음의 첫걸음'] },
   { key: 'baptism_training', dir: 'content/baptism-training' },
   { key: 'mokjang', dir: 'content/mokjang' },
