@@ -9,7 +9,7 @@
 <meta property="og:site_name" content="은혜교회 — 말씀 코이노니아">
 <meta property="og:title" content="행사 큐시트">
 <meta property="og:description" content="은혜교회 행사 큐시트 (비밀번호 필요)">
-<title>은혜교회 큐시트</title>
+<title>행사 큐시트</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap">
@@ -88,7 +88,13 @@ tbody td{border-top:1px solid var(--line);vertical-align:top;padding:6px 6px}
 tbody tr:hover td{background:color-mix(in srgb,var(--field) 70%,transparent)}
 td.no{width:44px;text-align:center;font-family:var(--mono);font-weight:700;color:var(--muted);border-left:5px solid var(--c,var(--line));padding-top:12px}
 td.time{width:96px;font-family:var(--mono);padding-top:10px;white-space:nowrap}
-td.time .s{font-weight:700;font-size:15px}
+td.time .tin{width:100%;border:1px solid transparent;border-radius:6px;background:transparent;font-family:var(--mono);font-weight:700;font-size:15px;padding:2px 4px;margin:-3px 0 0 -5px}
+td.time .tin::placeholder{color:var(--fg);opacity:1}
+td.time .tin:hover{border-color:var(--line)}
+td.time .tin:focus{border-color:var(--focus);background:var(--paper);outline:none}
+td.time .tin.pinned{color:var(--gold)}
+td.time .pin{font-size:10px;color:var(--gold);font-family:var(--sans);font-weight:600}
+td.time .warn{font-size:10px;color:var(--danger);font-family:var(--sans);font-weight:600}
 td.time .e{color:var(--muted);font-size:12px}
 td.dur{width:62px}
 td.type{width:92px}
@@ -307,6 +313,9 @@ let store={current:null,sheets:{}};
 try{const raw=localStorage.getItem(KEY);if(raw)store=JSON.parse(raw)}catch(e){}
 if(!store.sheets||!Object.keys(store.sheets).length){const s=sample();store={current:s.id,sheets:{[s.id]:s}}}
 if(!store.sheets[store.current])store.current=Object.keys(store.sheets)[0];
+/* 미리 넣어 둔 행사: 처음 열 때 한 번만 목록에 추가 */
+const PRESETS=[];
+PRESETS.forEach(p=>{if(!store.sheets[p.id]){store.sheets[p.id]=p;store.current=p.id}});
 let D=store.sheets[store.current];
 
 const $=id=>document.getElementById(id);
@@ -343,19 +352,34 @@ function renderMeta(){
   $("legend").innerHTML=TYPES.map(([n,v])=>`<span><i style="background:var(${v})"></i>${n}</span>`).join("");
 }
 
-function renderTimes(){
-  let t=toMin(D.meta.start);let total=0;
-  D.rows.forEach((r,i)=>{
-    const tr=$("rows").children[i];if(!tr)return;
+const validT=s=>/^([01]?\d|2[0-3]):[0-5]\d$/.test(s||"");
+function compute(){
+  let t=toMin(D.meta.start);const out=[];
+  D.rows.forEach(r=>{
     const d=Math.max(0,parseInt(r.dur)||0);
-    tr.querySelector(".s").textContent=t==null?"—":fmt(t);
-    tr.querySelector(".e").textContent=t==null?"":"~ "+fmt(t+d);
-    if(t!=null)t+=d;total+=d;
+    let flag="";
+    if(validT(r.at)){const p=toMin(r.at);if(t!=null&&p<t)flag="앞 순서와 "+(t-p)+"분 겹침";else if(t!=null&&p>t)flag=(p-t)+"분 공백 뒤";t=p}
+    out.push({s:t,e:t==null?null:t+d,flag,pinned:validT(r.at)});
+    if(t!=null)t+=d;
   });
-  const st=toMin(D.meta.start);
-  $("s_start").textContent=st==null?"—":fmt(st);
-  $("s_end").textContent=st==null?"—":fmt(st+total);
-  $("s_total").textContent=dur(total);
+  return out;
+}
+function renderTimes(){
+  const c=compute();
+  c.forEach((x,i)=>{
+    const tr=$("rows").children[i];if(!tr)return;
+    const tin=tr.querySelector(".tin");
+    tin.placeholder=x.s==null?"--:--":fmt(x.s);
+    tin.classList.toggle("pinned",x.pinned);
+    tr.querySelector(".e").textContent=x.s==null?"":"~ "+fmt(x.e);
+    const f=tr.querySelector(".flag");
+    f.className="flag "+(x.flag.includes("겹침")?"warn":"pin");
+    f.textContent=x.pinned?(x.flag||"시각 고정"):"";
+  });
+  const first=c.find(x=>x.s!=null),last=[...c].reverse().find(x=>x.e!=null);
+  $("s_start").textContent=first?fmt(first.s):"—";
+  $("s_end").textContent=last?fmt(last.e):"—";
+  $("s_total").textContent=first&&last?dur(last.e-first.s):"—";
   $("s_count").textContent=D.rows.length;
 }
 
@@ -364,7 +388,7 @@ function renderRows(){
   tb.innerHTML=D.rows.map((r,i)=>`
   <tr data-i="${i}" style="--c:var(${typeVar(r.type)})">
     <td class="no">${i+1}</td>
-    <td class="time"><div class="s"></div><div class="e"></div></td>
+    <td class="time"><input class="tin${r.at?" pinned":""}" data-k="at" value="${esc(r.at||"")}" inputmode="numeric" maxlength="5" title="시작 시각을 직접 정하려면 입력 (예: 20:08), 비우면 자동 계산" aria-label="시작 시각"><div class="e"></div><div class="flag"></div></td>
     <td class="dur"><input class="cell num" data-k="dur" inputmode="numeric" value="${esc(r.dur)}" aria-label="소요 분"><div class="unit">분</div></td>
     <td class="type"><select class="cell tsel" data-k="type" aria-label="구분">${TYPES.map(([n])=>`<option${n===r.type?" selected":""}>${n}</option>`).join("")}</select></td>
     <td class="main"><textarea rows="1" class="cell big" data-k="title" placeholder="순서명">${esc(r.title)}</textarea><textarea rows="1" class="cell small" data-k="detail" placeholder="세부 내용">${esc(r.detail)}</textarea></td>
@@ -402,6 +426,7 @@ $("rows").addEventListener("input",e=>{
   const el=e.target,tr=el.closest("tr");if(!tr||!el.dataset.k)return;
   const r=D.rows[+tr.dataset.i];
   if(el.dataset.k==="dur"){el.value=el.value.replace(/[^0-9]/g,"");r.dur=el.value===""?0:+el.value;renderTimes()}
+  else if(el.dataset.k==="at"){el.value=el.value.replace(/[^0-9:]/g,"");if(/^\d{3,4}$/.test(el.value)&&!el.value.includes(":")&&el.value.length===4)el.value=el.value.slice(0,2)+":"+el.value.slice(2);r.at=validT(el.value)?el.value:"";renderTimes()}
   else r[el.dataset.k]=el.value;
   if(el.dataset.k==="type")tr.style.setProperty("--c",`var(${typeVar(el.value)})`);
   if(el.tagName==="TEXTAREA")grow(el);
@@ -451,10 +476,10 @@ function copyText(txt,ok){
   try{navigator.clipboard.writeText(txt).then(()=>toast(ok),fallback)}catch(e){fallback()}
 }
 $("tsvBtn").onclick=()=>{
-  let t=toMin(D.meta.start);
+  const c=compute();
   const clean=s=>String(s??"").replace(/[\t\n]+/g," ");
   const lines=[["No","시작","종료","분","구분","순서","세부 내용","담당","음향","영상·자막","조명·무대","비고"].join("\t")];
-  D.rows.forEach((r,i)=>{const d=+r.dur||0;lines.push([i+1,t==null?"":fmt(t),t==null?"":fmt(t+d),d,r.type,r.title,r.detail,r.owner,r.audio,r.video,r.light,r.note].map(clean).join("\t"));if(t!=null)t+=d});
+  D.rows.forEach((r,i)=>{const x=c[i];lines.push([i+1,x.s==null?"":fmt(x.s),x.e==null?"":fmt(x.e),+r.dur||0,r.type,r.title,r.detail,r.owner,r.audio,r.video,r.light,r.note].map(clean).join("\t"))});
   copyText(lines.join("\n"),"표를 복사했어요 · 엑셀이나 한글에 붙여넣으세요");
 };
 
