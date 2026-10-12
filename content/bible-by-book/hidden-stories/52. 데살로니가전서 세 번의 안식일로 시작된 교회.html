@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데살로니가전서, 세 번의 안식일로 시작된 교회 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="쫓기듯 떠난 바울이 걱정하며 써 보낸, 신약에서 가장 이른 편지 가운데 하나에 숨은 이야기">
+<meta property="og:title" content="데살로니가전서, 세 번의 안식일로 시작된 교회">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 18</div>
+  <h1>데살로니가전서,<br>세 번의 안식일로<br><em>시작된</em> 교회</h1>
+  <p class="sub">쫓기듯 떠난 바울이 걱정하며 써 보낸<br>신약에서 가장 이른 편지 가운데 하나</p>
+  <div class="ref">데살로니가전서 1–5장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>바울이 데살로니가에서 복음을 전한 기간은 사도행전에 "세 안식일"(행 17:2)로 기록되어 있어요. 그러고는 소동이 일어나 밤중에 도망치듯 그 도시를 떠나야 했어요. 갓 태어난 아기를 두고 나온 부모 같은 마음이었을 거예요. 그래서 이 편지에는 걱정과 그리움, 그리고 "잘 버텨 주었구나" 하는 안도가 가득해요.</p><p>그 편지 속에 재밌는 이야기들이 숨어 있어요. 성경을 의심하던 학자들을 머쓱하게 만든 돌비석, 메아리처럼 울려 퍼진 교회, 유모이면서 아버지이면서 고아가 된 사도, 공동묘지라는 말의 뿌리, 2세기 파피루스에 남은 슬픈 위로 편지, 그리고 로마의 선전 구호까지요. 그 흔적을 따라가면 한 분이 보여요. <span class="hl">하늘로부터 강림하실 예수님</span>이에요(1:10).</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>데살로니가전서는 어떤 책일까?</h2>
+    <p>갓 태어난 교회에 보낸 걱정과 소망의 편지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>데살로니가는 마게도냐 지방의 수도였어요. 로마로 이어지는 큰길 "에그나티아 가도"가 지나가는 항구 도시라 사람과 물건과 소문이 모이는 곳이었죠. 바울은 2차 전도여행 때 빌립보에서 매를 맞고 나온 뒤 이 도시에 와서 복음을 전했어요(행 17:1-9; 살전 2:2). 유대인들이 소동을 일으키자 성도들은 바울과 실라를 밤에 베뢰아로 보냈어요. 바울은 아덴을 거쳐 고린도에 이르렀고, 디모데가 데살로니가에 다녀와 좋은 소식을 전하자(3:6) 이 편지를 썼어요. 주후 50–51년 무렵으로 봐요.</p>
+    <div class="debate sans"><div><b>도시의 이름</b>주전 316년 무렵 마게도냐의 장군 카산드로스가 도시를 세우고, 아내의 이름을 붙였어요. 그 아내 데살로니게는 알렉산더 대왕의 이복누이였어요.</div><div><b>세 사람이 함께 보낸 편지</b>"바울과 실루아노와 디모데는"(1:1). 실루아노는 사도행전의 실라예요. 그래서 편지 곳곳에 "나"보다 "우리"가 훨씬 많이 나와요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 데살로니가전서를 바울의 편지 가운데 가장 먼저 쓴 편지로 보는 학자가 많아요. 다만 갈라디아서를 더 이르게 보는 견해도 있어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">데살로니가전서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">가장 이른 편지 가운데 하나</div><div class="mini-b">신약 성경 스물일곱 권 가운데 가장 먼저 쓰인 책 가운데 하나로 꼽혀요. 복음서들보다도 먼저 쓰였어요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">장마다 재림으로 끝나요</div><div class="mini-b">1장 10절, 2장 19절, 3장 13절, 4장 16–17절, 5장 23절. 다섯 장이 모두 주님이 오시는 날을 바라보며 마무리돼요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">믿음·소망·사랑</div><div class="mini-b">"믿음의 역사와 사랑의 수고와 소망의 인내"(1:3). 고린도전서 13장보다 몇 해 앞서 이 세 단어가 나란히 나와요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">부모 같은 목회자</div><div class="mini-b">유모처럼(2:7), 아버지처럼(2:11). 바울이 교회를 대하는 마음이 가장 따뜻하게 드러나는 편지예요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">짧고 굵은 명령들</div><div class="mini-b">"항상 기뻐하라 쉬지 말고 기도하라 범사에 감사하라"(5:16-18). 성경에서 가장 짧은 명령들이 나란히 서 있어요.</div></div></div></div>
+
+  <div class="target"><p>데살로니가전서의 중심에는 이 말씀이 있어요. <span class="hl">"너희가 어떻게 우상을 버리고 하나님께로 돌아와서 살아 계시고 참되신 하나님을 섬기며 또 죽은 자들 가운데서 다시 살리신 그의 아들이 하늘로부터 강림하심을 기다린다고"</span>(1:9-10). 돌아서고, 섬기고, 기다리는 것. 이 세 동사가 이 교회의 모습이에요. 그리고 그 기다림의 끝에는 이 약속이 있어요. <mark>"그리하여 우리가 항상 주와 함께 있으리라"</mark>(4:17).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>학자들을 머쓱하게 만든 돌비석부터 로마의 선전 구호까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>읍장들의 돌비석</button><button class="chip" onclick="goTo('s2')"><b>2</b>메아리처럼 울린 교회</button><button class="chip" onclick="goTo('s3')"><b>3</b>유모, 아버지, 고아</button><button class="chip" onclick="goTo('s4')"><b>4</b>사탄이 막은 길</button><button class="chip" onclick="goTo('s5')"><b>5</b>잠자는 곳이라는 이름</button><button class="chip" onclick="goTo('s6')"><b>6</b>주를 맞으러 나가다</button><button class="chip" onclick="goTo('s7')"><b>7</b>평안하다 안전하다</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>성경을 의심하던 학자들과<br>"읍장들"의 돌비석</h2><div class="refs">사도행전 17:5-9</div></div></div>
+    <div class="scene-body"><p>데살로니가에서 소동이 일어났을 때, 무리가 야손과 형제들을 끌고 간 곳은 "읍장들" 앞이었어요(행 17:6). 누가는 여기서 도시의 관리들을 <span class="heb" data-tip="폴리타르케스(politarchēs) — 도시(polis)의 다스리는 자(archōn). 마게도냐 도시들에서 쓰이던 관직 이름.">폴리타르케스</span>라고 불러요. 그런데 이 단어는 옛 그리스 문학 작품 어디에도 나오지 않는 말이었어요. 그래서 한때 일부 학자들은 "누가가 관직 이름을 잘못 썼다"며 사도행전의 정확성을 의심했어요.</p>
+        <p>그러다 데살로니가의 옛 성문 아치에 새겨진 비문이 알려졌어요. 거기에 바로 이 <mark>"폴리타르케스"</mark>들의 이름이 줄줄이 적혀 있었던 거예요. 이 비문은 19세기 후반 영국으로 옮겨져 지금 대영박물관에 있어요. 그 뒤로 마게도냐 지역에서 이 관직 이름이 나오는 비문이 여러 개 더 발견되었어요. 😄 성경을 고치려던 쪽이 오히려 고쳐진 셈이에요.</p>
+        <p>그 읍장들 앞에서 사람들이 한 고발도 재밌어요. "천하를 어지럽게 하던 이 사람들이 여기도 이르매"(행 17:6), "가이사의 명을 거역하여 말하되 다른 임금 곧 예수라 하는 이가 있다"(17:7). 비난하려고 한 말인데, 사실은 <span class="hl">복음이 무엇인지 정확히 짚은 말</span>이었어요. 예수님이 왕이시라는 소식이 로마 황제의 도시를 흔들고 있었던 거예요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 그 성문 비문은 바울 시대보다 조금 뒤인 주후 1–2세기의 것으로 봐요. 로마서 16:21의 "야손"이 데살로니가의 야손과 같은 사람인지는 알 수 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상이 뭐라 하든, 예수님이 나의 왕이시라는 고백을 오늘 내 삶에서 분명히 합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>마게도냐를 넘어<br>메아리처럼 울린 교회</h2><div class="refs">데살로니가전서 1:6-10</div></div></div>
+    <div class="scene-body"><p>데살로니가 교회는 태어난 지 몇 달 안 된 교회였어요. 그런데 바울은 이렇게 말해요. "주의 말씀이 너희에게로부터 마게도냐와 아가야에만 <span class="heb" data-tip="엑세케타이(exēchētai) — 소리가 울려 퍼지다. 영어 echo(메아리)와 같은 뿌리인 에코스(ēchos, 소리)에서 나온 말.">들릴</span> 뿐 아니라 하나님을 향하는 너희 믿음의 소문이 각처에 퍼졌으므로"(1:8).</p>
+        <p>여기서 "들리다"로 옮긴 말은 <mark>소리가 크게 울려 퍼지는 것</mark>을 가리켜요. 영어 echo(메아리)와 뿌리가 같은 말이에요. 나팔 소리나 천둥소리가 골짜기를 따라 퍼져 나가는 모습이죠. 에그나티아 가도를 오가는 상인과 여행자들이 이 교회 이야기를 여기저기 퍼뜨렸을 거예요. 😄 바울이 가는 곳마다 "그 이야기 우리도 들었어요" 하는 바람에 바울이 따로 설명할 필요가 없었대요(1:8-9).</p>
+        <p>그런데 무엇이 그렇게 소문이 났을까요? 대단한 건물도, 많은 숫자도 아니었어요. "많은 환난 가운데서 성령의 기쁨으로 말씀을 받아"(1:6), 우상을 버리고 하나님께로 돌아온 것이었어요(1:9). 살아 계신 하나님을 만난 사람들의 <span class="hl">바뀐 삶 자체</span>가 메아리가 되었던 거예요.</p>
+        
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 말보다 먼저, 하나님께로 돌아선 나의 삶이 주변에 복음의 메아리가 되기를 구합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>유모이자 아버지,<br>그리고 고아가 된 사도</h2><div class="refs">데살로니가전서 2:7-17</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">2:7</div>"유모가 자기 자녀를 <b>기름</b>과 같이"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">2:11</div>"<b>아버지</b>가 자기 자녀에게 하듯"</div></div><p>2장에서 바울은 자기를 세 가지 모습으로 그려요. 먼저 유모예요. "유모가 자기 자녀를 기름과 같이 하였으니"(2:7). 여기서 유모는 남의 아이를 맡아 젖을 먹이는 사람이지만, "자기 자녀"라고 했으니 <mark>자기 아이에게 젖을 먹이는 엄마</mark>의 모습이에요. 다음은 아버지예요. "아버지가 자기 자녀에게 하듯 너희 각 사람에게 권면하고 위로하고 경계하노라"(2:11). 엄마처럼 품고, 아빠처럼 가르친 거예요.</p>
+        <p>재밌는 건 2장 7절의 옛 사본 이야기예요. 어떤 사본에는 "유순한 자"(<span class="heb" data-tip="에피오이(ēpioi) — 온화한, 부드러운.">에피오이</span>)로, 어떤 사본에는 "어린아이"(<span class="heb" data-tip="네피오이(nēpioi) — 어린아이들. 앞 단어가 ν(n)으로 끝나서, 글자 하나가 겹쳐 쓰였는지 빠졌는지에 따라 두 읽기가 갈린다.">네피오이</span>)로 적혀 있어요. 헬라어로 글자 하나 차이예요. 😄 사도가 "우리는 너희 가운데서 어린아이처럼 되었다"고 했는지, "부드러운 사람이 되었다"고 했는지를 두고 지금도 학자들이 고민해요.</p>
+        <p>그리고 세 번째 모습이 나와요. "우리가 잠시 너희를 <span class="heb" data-tip="아포르파니스텐테스(aporphanisthentes) — 고아가 되다, 부모나 자식을 잃다. 영어 orphan(고아)과 같은 뿌리.">떠난</span> 것은"(2:17). 이 "떠나다"는 <span class="hl">고아가 되다</span>라는 뜻의 말이에요. 쫓겨나 교회와 헤어진 바울은 자기가 부모를 잃은 아이처럼 느껴졌던 거예요. 엄마였고 아빠였던 사도가, 헤어지고 나니 고아가 된 거죠. 그만큼 이 교회를 사랑했어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 2:7의 두 가지 읽기 가운데 어느 것이 원래 글인지는 학자들 사이에 의견이 나뉘어요. 한글 개역개정은 "유순한 자"로 옮겼어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님께 받은 그 따뜻한 사랑으로, 내 곁의 믿음의 식구들을 엄마처럼 품고 아빠처럼 세워 줍니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>"사탄이 막았도다"<br>그리고 "이제는 살리라"</h2><div class="refs">데살로니가전서 2:18 – 3:10</div></div></div>
+    <div class="scene-body"><p>바울은 데살로니가에 다시 가고 싶었어요. "나 바울은 한번 두번 가고자 하였으나 사탄이 우리를 <span class="heb" data-tip="엥콥토(enkoptō) — 끊어서 막다. 길을 파헤치거나 가로막아 못 지나가게 하는 모습에서 나온 말.">막았도다</span>"(2:18). 이 "막다"는 <mark>길을 끊어서 못 지나가게 하는 것</mark>을 가리키는 말이에요. 바울처럼 믿음이 큰 사람도 길이 막히는 경험을 했다는 게 오히려 위로가 돼요.</p>
+        <p>그래서 바울은 다른 길을 택해요. "우리가 참다 못하여 우리만 아덴에 머물기를 좋게 생각하고"(3:1) 디모데를 보냈어요. 😄 "참다 못하여"가 두 번이나 나와요(3:1, 3:5). 걱정이 얼마나 컸는지 보이죠. 바울은 혼자 아덴에 남았어요. 우상이 가득한 그 도시에서 마음이 격분했던(행 17:16) 바로 그때였어요.</p>
+        <p>그리고 디모데가 돌아와 소식을 전해요. 교회가 믿음과 사랑 안에 굳게 서 있고, 바울을 간절히 보고 싶어 한다고요(3:6). 그 소식을 들은 바울의 대답이 이거예요. <span class="hl">"그러므로 너희가 주 안에 굳게 선즉 우리가 이제는 살리라"</span>(3:8). 교회가 살아 있다는 소식이 곧 바울이 살아갈 힘이었어요. 길은 사탄이 막았지만, 하나님은 교회를 지키고 계셨던 거예요.</p>
+        
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 계획이 막힐 때에도, 내가 갈 수 없는 곳을 지키고 계신 하나님을 신뢰합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>"자는 자들"<br>공동묘지라는 이름의 비밀</h2><div class="refs">데살로니가전서 4:13-18</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">2세기 파피루스 편지</div>"이런 일 앞에서는 <b>아무것도 할 수 없으니</b> 서로 위로하십시오"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">데살로니가전서 4:18</div>"주와 함께 있으리라… <b>이러한 말로</b> 서로 위로하라"</div></div><p>데살로니가 교회에는 슬픈 질문이 생겼어요. 주님이 오시기 전에 먼저 죽은 성도들은 어떻게 되느냐는 거였죠. 바울은 이렇게 답해요. "형제들아 <span class="hl">자는 자들</span>에 관하여는 너희가 알지 못함을 원하지 아니하노니 이는 소망 없는 다른 이와 같이 슬퍼하지 않게 하려 함이라"(4:13).</p>
+        <p>그리스도인들은 죽음을 "잠"이라 불렀어요. 잠은 깨어나는 게 전제니까요. 그래서 초대교회는 성도들을 묻는 곳을 <span class="heb" data-tip="코이메테리온(koimētērion) — 잠자는 곳, 침실. 동사 코이마오(자다)에서 나온 말. 라틴어를 거쳐 영어 cemetery(공동묘지)가 되었다.">코이메테리온</span>, 곧 <mark>"잠자는 곳"</mark>이라고 불렀어요. 이 말이 영어 cemetery(공동묘지)의 뿌리가 되었어요. 공동묘지라는 이름 안에 "다시 깨어날 사람들이 자는 곳"이라는 소망이 숨어 있는 거예요.</p>
+        <p>"소망 없는 다른 이"가 어떤 모습이었는지 보여 주는 유물도 있어요. 이집트 옥시링쿠스에서 발견된 2세기 파피루스 편지예요. 이레네라는 여인이 아들을 잃은 부부에게 보낸 위로 편지인데, 함께 울었다고 말한 뒤 이렇게 맺어요. 이런 일 앞에서는 아무것도 할 수 없으니 서로 위로하라고요. 바울도 "서로 위로하라"고 말해요. 그런데 그 앞에 붙은 말이 전혀 달라요. "그리하여 우리가 항상 주와 함께 있으리라 그러므로 <mark>이러한 말로</mark> 서로 위로하라"(4:17-18).</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 이레네의 편지는 바울 시대보다 한 세기쯤 뒤의 것이에요. 당시 이방 세계의 슬픔을 보여 주는 예로 학자들이 자주 인용해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>먼저 떠난 사랑하는 이들을 떠올릴 때, 다시 살리실 주님을 바라보며 소망 있는 슬픔으로 웁니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>주를 "맞으러" 나가는<br>도시의 환영 행렬</h2><div class="refs">데살로니가전서 4:16-17 · 사도행전 28:15 · 마태복음 25:6</div></div></div>
+    <div class="scene-body"><p>4장 17절은 이렇게 말해요. "우리 살아남은 자들도 그들과 함께 구름 속으로 끌어 올려 공중에서 주를 <span class="heb" data-tip="아판테시스(apantēsis) — 맞으러 나감. 황제나 장군 같은 귀한 손님이 도시에 올 때, 시민들이 성 밖으로 나가 맞이하고 함께 성으로 모시고 들어오는 일을 가리키던 말.">영접하게</span> 하시리니". 여기서 "영접"으로 옮긴 말은 그 시대 사람들에게 익숙한 장면을 떠올리게 했어요. 황제나 장군 같은 귀한 분이 도시에 오면, 시민 대표들이 <mark>성 밖으로 나가 맞이한 뒤 함께 성 안으로 모시고 들어오는</mark> 환영 행렬이에요.</p>
+        <p>성경의 다른 곳에도 이 단어가 나와요. 바울이 죄수로 로마에 갈 때, 로마의 형제들이 소식을 듣고 압비오 광장과 트레이스 타베르네까지 "맞으러" 나왔어요(행 28:15). 그리고 예수님의 열 처녀 비유에서도 "신랑이로다 맞으러 나오라"(마 25:6)고 외쳐요. 신랑을 맞으러 나간 사람들은 신랑과 함께 잔칫집으로 들어가요.</p>
+        <p>또 하나, "끌어 올려"라는 말은 라틴어 성경에서 "라피에무르"로 옮겨졌어요. 여기서 "휴거"를 가리키는 영어 rapture가 나왔어요. 하지만 바울이 강조하는 건 그 방식보다 결과예요. 먼저 잠든 성도와 살아 있는 성도가 <span class="hl">함께</span>, 오시는 왕을 맞으러 나가고, 그 뒤로는 "항상 주와 함께" 있는 거예요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 4:17의 "영접"을 환영 행렬의 모습과 연결하는 것은 여러 주석가들의 해석이에요. 주님을 맞은 뒤 어디로 가는지에 대해서는 신학적 견해가 다양해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오실 왕을 맞으러 나갈 그날을 기다리며, 오늘도 주님과 함께 걷는 삶을 연습합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>"평안하다, 안전하다"<br>로마의 구호 앞에서</h2><div class="refs">데살로니가전서 5:1-11 · 5:27</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">로마가 약속한 것</div>"팍스 에트 세쿠리타스"<br>평화와 안전</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">바울이 전한 것</div>"그들이 평안하다, 안전하다 할 그 때에 <b>멸망이 갑자기</b>"(5:3)</div></div><p>5장에서 바울은 주의 날이 "밤에 도둑 같이" 온다고 말해요(5:2). 그리고 이렇게 덧붙여요. "그들이 <span class="hl">평안하다, 안전하다</span> 할 그 때에 임신한 여자에게 해산의 고통이 이름과 같이 멸망이 갑자기 그들에게 이르리니"(5:3).</p>
+        <p>그런데 "평안과 안전"은 그 시대 로마가 즐겨 내세우던 말이었어요. 로마의 평화, 곧 <mark>팍스 로마나</mark>가 온 세상에 안전을 가져다준다는 거였죠. 로마의 동전과 비문에도 "평화"와 "안전"이 새겨졌어요. 로마의 은혜를 입은 도시 데살로니가 사람들에게 이 말은 아주 익숙하게 들렸을 거예요. 바울은 사람이 만든 평안은 한순간에 무너질 수 있다고 말하는 거예요.</p>
+        <p>그래서 바울은 성도들에게 다른 갑옷을 입으라고 해요. "믿음과 사랑의 호심경을 붙이고 구원의 소망의 투구를 쓰자"(5:8). 1장 3절의 믿음, 사랑, 소망이 여기서 갑옷이 되어 다시 나와요. 그리고 편지를 맺으며 아주 엄하게 부탁해요. "내가 주를 힘입어 너희를 명하노니 모든 형제에게 이 편지를 읽어 주라"(5:27). 😄 편지 한 통 읽어 달라는 부탁에 이렇게 엄숙한 말을 붙인 건, 이 말씀을 한 사람도 빠짐없이 들어야 했기 때문이에요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 5:3의 "평안하다, 안전하다"가 로마의 선전 구호를 겨냥한 말인지에 대해서는 학자들 사이에 의견이 나뉘어요. 예레미야 6:14의 "평강하다 평강하다 하나 평강이 없도다"를 떠올리게 한다고 보는 견해도 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상이 약속하는 안전에 기대지 않고, 믿음과 사랑과 소망의 갑옷을 입고 주님의 날을 기다립니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">세 번의 안식일로 시작해<br>영원히 주와 함께</div>
+    <p>바울이 데살로니가에 머문 시간은 길지 않았어요. 쫓겨나듯 떠났고, 다시 가려 해도 길이 막혔어요. 그런데 그 짧은 시간에 뿌려진 말씀이 온 마게도냐에 메아리처럼 퍼졌어요. 교회를 세우시고 지키신 분이 바울이 아니라 하나님이셨기 때문이에요.</p><p>이 편지는 장마다 주님이 오시는 날을 바라보며 끝나요. 그 기다림은 불안한 기다림이 아니라 <mark>환영 행렬을 준비하는 기다림</mark>이에요. 먼저 잠든 사람도, 지금 살아 있는 사람도, 모두 함께 오시는 왕을 맞으러 나갈 거예요. 그래서 오늘 우리는 항상 기뻐하고, 쉬지 않고 기도하고, 범사에 감사할 수 있어요.</p>
+    <div class="q">"그리하여 우리가<br>항상 주와 함께 있으리라" (4:17)</div>
+  </section>
+
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

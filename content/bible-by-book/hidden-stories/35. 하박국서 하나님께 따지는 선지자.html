@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>하박국서, 하나님께 따지는 선지자 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content=""어느 때까지니이까"로 시작해 "그럴지라도"로 끝나는 믿음의 여정">
+<meta property="og:title" content="하박국서, 하나님께 따지는 선지자">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 04</div>
+  <h1>하박국서,<br>하나님께 <em>따지는</em> 선지자</h1>
+  <p class="sub">"어느 때까지니이까"로 시작해<br>"그럴지라도"로 끝나는 믿음의 여정</p>
+  <div class="ref">하박국 1–3장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>보통 선지서는 선지자가 하나님의 말씀을 <mark>백성에게</mark> 전하는 책이에요. 그런데 하박국서는 달라요. 선지자가 백성이 아니라 <span class="hl">하나님께</span> 말을 걸어요. 그것도 따지면서요. "하나님, 언제까지 보고만 계실 겁니까?"</p>
+    <p>그래서 하박국서는 이렇게 불리기도 해요. <span class="hl">"하나님과의 대화록"</span>. 질문하고, 답을 듣고, 다시 따지고, 기다리고, 마침내 노래하는 한 사람의 이야기예요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>하박국서는 어떤 책일까?</h2>
+    <p>질문 → 대답 → 질문 → 대답 → 찬양</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>하박국은 바벨론(갈대아)이 떠오르던 주전 7세기 말, 유다가 무너지기 직전에 활동했어요. 나라 안에는 불의가 가득했고, 밖에서는 더 무서운 제국이 몰려오고 있었죠. 이 책은 <mark>하박국의 두 번의 질문과 하나님의 두 번의 대답, 그리고 마지막 찬양</mark>으로 짜여 있어요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>하박국은 "껴안다"와 관련된 이름으로 봐요. 루터는 그를 "하나님을 끌어안고 매달린 사람"으로 풀었어요.</div><div><b>책의 흐름</b>1장 두 번의 따짐 → 2장 하나님의 대답 → 3장 기도와 찬양</div></div>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">하박국서의 흐름 다섯 단계</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">첫 번째 따짐 (1:2-4)</div><div class="mini-b">"어느 때까지 부르짖어도 듣지 않으십니까? 왜 불의를 보게 하십니까?"</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">첫 번째 대답 (1:5-11)</div><div class="mini-b">"내가 바벨론을 일으켜 유다를 심판하겠다." 대답이 질문보다 더 충격적이에요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">두 번째 따짐 (1:12-2:1)</div><div class="mini-b">"아니, 더 악한 바벨론을 쓰신다고요? 그게 공정합니까?" 그리고 파수대에 올라가 기다려요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">두 번째 대답 (2:2-20)</div><div class="mini-b">"의인은 믿음으로 살리라." 그리고 바벨론을 향한 다섯 번의 "화 있을진저".</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">기도와 찬양 (3장)</div><div class="mini-b">상황은 하나도 바뀌지 않았는데, 하박국은 "그럴지라도 나는 여호와로 즐거워하리라"고 노래해요.</div></div></div></div>
+
+  <div class="target"><p>하박국서의 놀라운 점은, <span class="hl">하나님께 따지는 것을 성경이 막지 않는다</span>는 거예요. 하박국은 하나님을 떠나서 불평하지 않고, 하나님 앞에서 불평했어요. 그리고 그 정직한 씨름의 끝에서 누구보다 깊은 믿음의 고백에 도착했어요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>대화 속에 숨은 반전, 그리고 교회 역사를 바꾼 한 구절</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>하나님께 따지다</button><button class="chip" onclick="goTo('s2')"><b>2</b>더 황당한 대답</button><button class="chip" onclick="goTo('s3')"><b>3</b>고대의 빌보드</button><button class="chip" onclick="goTo('s4')"><b>4</b>613개가 1개로</button><button class="chip" onclick="goTo('s5')"><b>5</b>말 못하는 우상</button><button class="chip" onclick="goTo('s6')"><b>6</b>선지서 속 악보</button><button class="chip" onclick="goTo('s7')"><b>7</b>어느 때까지 → 그럴지라도</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>백성에게 말하지 않고<br>하나님께 따지는 선지자</h2><div class="refs">하박국 1:2-4</div></div></div>
+    <div class="scene-body"><p>하박국서의 첫마디는 이거예요. <mark>"여호와여 내가 부르짖어도 주께서 듣지 아니하시니 어느 때까지리이까"</mark>(1:2). 히브리어로 <span class="heb" data-tip="아드 아나 — 어느 때까지입니까. 시편 13편 등 탄식시에서 자주 쓰이는 표현이다.">아드 아나</span>, "언제까지요?"라는 말은 시편의 탄식시에서 자주 나오는 표현이에요.</p>
+        <p>다른 선지자들은 "여호와께서 이렇게 말씀하셨다"로 시작하는데, 하박국은 "하나님, 왜 가만히 계세요?"로 시작해요. 폭력과 불의가 가득한데 왜 보고만 계시냐고요. <span class="hl">선지자가 백성 대신 하나님을 향해 설교하는 셈</span>이에요. 😄</p>
+        <p>그런데 하나님은 이 질문을 꾸짖지 않으세요. 오히려 대답해 주세요. 하박국서는 정직한 질문이 믿음의 반대가 아니라, 믿음의 한 형태일 수 있다는 걸 보여줘요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>마음속에 담아둔 "하나님, 왜요?"라는 질문을 하나님을 떠나서가 아니라 하나님 앞에 가지고 나아갑니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>질문보다 더 황당한<br>하나님의 대답</h2><div class="refs">하박국 1:5-6 · 사도행전 13:41</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">하박국의 기대</div>"유다의 악인들을 벌해 주세요, 정의를 세워 주세요"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">하나님의 대답</div>"내가 더 사납고 빠른 바벨론을 일으켜 유다를 치게 하겠다"</div></div><p>하박국은 유다 안의 불의를 해결해 달라고 기도했어요. 그런데 하나님의 대답은 <mark>"내가 갈대아 사람을 일으켜 너희를 치겠다"</mark>였어요. 표범보다 빠르고 저녁 이리보다 사나운 바벨론을요(1:8).</p>
+        <p>하나님도 이 대답이 믿기 어렵다는 걸 아셨어요. 그래서 이렇게 시작하세요. <span class="hl">"너희의 생전에 내가 한 일을 행할 것이라 누가 너희에게 말할지라도 너희가 믿지 아니하리라"</span>(1:5).</p>
+        <p>이 구절은 약 600년 뒤 바울의 설교에 다시 등장해요. 비시디아 안디옥 회당에서 바울은 예수님의 부활을 전한 뒤 이 구절을 인용하며 경고해요(행 13:41). 하나님은 사람이 상상하지 못하는 방식으로 일하신다는 걸, 가장 놀라운 방식인 <span class="hl">십자가와 부활</span>로 보여주신 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 기대한 방식과 다르게 응답하시는 하나님을, 그래도 신뢰할 수 있는지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>"달려가면서도 읽을 수 있게"<br>— 고대의 광고판</h2><div class="refs">하박국 2:1-3</div></div></div>
+    <div class="scene-body"><p>두 번째로 따진 하박국은 이렇게 말해요. <mark>"내가 내 파수하는 곳에 서며 성루에 서리라 … 그가 내게 무엇을 말씀하실는지 기다리고 바라보며"</mark>(2:1). 따지고 끝내는 게 아니라, 성벽 위 망대에 올라가 대답을 기다려요.</p>
+        <p>그러자 하나님이 말씀하세요. "이 묵시를 기록하여 판에 명백히 새기되 <span class="hl">달려가면서도 읽을 수 있게 하라</span>"(2:2). 크게, 분명하게, 지나가는 사람도 한눈에 읽을 수 있게 쓰라는 거예요. 말하자면 <mark>고대의 고속도로 광고판</mark>이에요. 😄</p>
+        <p>그리고 덧붙이세요. "비록 더딜지라도 기다리라 지체되지 않고 반드시 응하리라"(2:3). 하나님의 대답은 늦어 보여도 늦지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>기도하고 나서 바로 자리를 뜨지 않고, 파수꾼처럼 하나님의 대답을 기다리는 사람이 되기를 원합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>율법 613개를<br>한 문장으로 줄이면</h2><div class="refs">하박국 2:4 · 로마서 1:17 · 갈라디아서 3:11 · 히브리서 10:38</div></div></div>
+    <div class="scene-body"><p>하박국 2:4의 <mark>"의인은 그의 믿음으로 말미암아 살리라"</mark>는 구약에서 가장 영향력 있는 구절 중 하나예요. 신약에서 세 번이나 인용되고(롬 1:17, 갈 3:11, 히 10:38), 16세기에 <span class="hl">마르틴 루터</span>가 이 말씀을 붙잡으면서 종교개혁의 불씨가 됐어요.</p>
+        <p>그런데 유대인들도 이 구절을 특별하게 여겼어요. 유대 문헌 탈무드에는 이런 이야기가 나와요. 모세가 받은 계명은 <span class="hl">613개</span>였는데, 다윗은 이것을 11개로(시 15편), 이사야는 6개로(사 33:15), 미가는 3개로(미 6:8), 이사야는 다시 2개로(사 56:1) 줄였고, 마지막으로 <mark>하박국이 단 1개로 줄였다</mark>. "의인은 믿음으로 살리라."</p>
+        <p>유대 랍비들조차 율법 전체의 핵심을 "믿음"이라는 한 단어에서 찾았던 거예요. 앞에서 본 미가 6:8도 이 목록에 들어 있다는 게 재밌어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 탈무드 마코트 23b-24a에 나오는 랍비 심라이의 설명입니다.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>수많은 신앙의 규칙보다 먼저, 하나님을 믿고 의지하는 그 한 가지를 붙잡고 있는지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>말 못하는 우상,<br>잠잠해야 할 온 땅</h2><div class="refs">하박국 2:18-20</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">우상 앞에서</div>나무에게 "깨라", 돌에게 "일어나라" 말하지만 아무 대답이 없다</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">하나님 앞에서</div>"온 땅은 그 앞에서 잠잠할지니라" — 사람이 입을 다문다</div></div><p>하나님은 바벨론을 향해 다섯 번 <mark>"화 있을진저"</mark>를 선포하세요(2:6-20). 약탈, 탐욕, 폭력, 술 취함… 그리고 마지막 다섯 번째 화는 우상 숭배예요.</p>
+        <p>"나무에게 깨라 하며 말하지 못하는 돌에게 일어나라 하는 자에게 화 있을진저"(2:19). 사람들은 말을 걸고 소리쳐도, <span class="hl">우상은 한마디도 못 해요.</span> 금과 은으로 입혔지만 그 안에는 생기가 전혀 없어요.</p>
+        <p>그리고 바로 다음 절에서 장면이 확 뒤집혀요. <mark>"오직 여호와는 그 성전에 계시니 온 땅은 그 앞에서 잠잠할지니라"</mark>(2:20). 우상 앞에서는 사람이 떠들고 우상이 잠잠한데, 하나님 앞에서는 온 땅이 잠잠해요. 누가 진짜 살아 있는 신인지 침묵이 말해줘요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 하나님 앞에서 내 말을 멈추고, 잠잠히 그분의 음성을 기다리는 시간을 가져봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>선지서 안에 들어 있는<br>찬양 악보</h2><div class="refs">하박국 3:1, 3, 9, 13, 19</div></div></div>
+    <div class="scene-body"><p>하박국 3장은 선지서 가운데 아주 특별한 장이에요. <mark>시편처럼 음악 지시어가 붙어 있는 노래</mark>이기 때문이에요.</p>
+        <p>시작은 "시기오놋에 맞춘 선지자 하박국의 기도라"(3:1)예요. "시기오놋"은 음악 양식이나 곡조를 가리키는 말로 보이는데, 시편 7편 제목에 나오는 "식가욘"과 같은 계열이에요. 중간중간 시편처럼 <span class="hl">"셀라"</span>가 세 번 나오고(3:3, 9, 13), 마지막 절은 이렇게 끝나요. <mark>"이 노래는 지휘하는 사람을 위하여 내 수금에 맞춘 것이니라"</mark>(3:19).</p>
+        <p>즉 하박국 3장은 성전 예배에서 실제로 불렀을 가능성이 있는 <span class="hl">찬양곡</span>이에요. 하나님께 따지던 선지자가 결국 예배 인도자의 자리에서 노래로 책을 마친 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 탄식과 질문도 결국 하나님을 향한 찬양으로 바뀔 수 있음을 믿으며 노래합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>"어느 때까지"에서<br>"그럴지라도"까지</h2><div class="refs">하박국 1:2 · 3:17-19</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">책의 첫 고백 (1:2)</div>"어느 때까지리이까" — 상황이 바뀌기를 요구한다</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">책의 마지막 고백 (3:17-18)</div>"그럴지라도 나는 여호와로 말미암아 즐거워하리라" — 상황은 그대로, 사람이 바뀌었다</div></div><p>하박국 3:17을 천천히 세어 보면, <mark>여섯 가지를 잃어요.</mark></p>
+        <div class="steps">
+          <div><b>1</b>무화과나무가 무성하지 못하며</div>
+          <div><b>2</b>포도나무에 열매가 없으며</div>
+          <div><b>3</b>감람나무에 소출이 없으며</div>
+          <div><b>4</b>밭에 먹을 것이 없으며</div>
+          <div><b>5</b>우리에 양이 없으며</div>
+          <div><b>6</b>외양간에 소가 없을지라도</div>
+          <div class="last">나는 여호와로 말미암아 즐거워하며 나의 구원의 하나님으로 말미암아 기뻐하리로다</div>
+        </div>
+        <p>농경 사회에서 이건 <span class="hl">생계 전부가 무너진 상황</span>이에요. 그런데 하박국은 바로 그 자리에서 기뻐하겠다고 노래해요. 1장에서 "언제까지요?"라고 따지던 사람이, 3장에서는 아무것도 바뀌지 않았는데 "그럴지라도"라고 고백해요.</p>
+        <p>하박국서에서 바뀐 것은 상황이 아니라 <mark>하박국 자신</mark>이었어요. 그리고 하나님은 그를 "사슴 발 같게 하사 높은 곳으로 다니게"(3:19) 하세요. 험한 바위산도 가볍게 뛰어다니는 사슴처럼요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 내 삶에서 "없는 것"들을 하나씩 떠올려 보고, 그 끝에 "그럴지라도"라고 고백해 봅니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">상황이 바뀌지 않아도<br>사람은 바뀔 수 있다</div>
+    <p>하박국은 하나님께 따졌고, 기다렸고, 들었고, 마침내 노래했어요. 하나님은 그의 질문을 막지 않으셨고, 그 질문을 믿음의 길로 바꾸셨어요.</p><p>오늘 "어느 때까지"라고 묻는 분이 있다면, 하박국서는 그 질문의 끝에 이런 고백이 기다리고 있다고 말해줘요.</p>
+    <div class="q">"그럴지라도 나는 여호와로 말미암아 즐거워하며<br>나의 구원의 하나님으로 말미암아 기뻐하리로다" (3:18)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

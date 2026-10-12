@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>갈라디아서, 큰 글자로 쓴 편지 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="감사 인사도 건너뛰고 곧장 본론으로 들어간, 바울의 가장 뜨거운 자유 선언 이야기">
+<meta property="og:title" content="갈라디아서, 큰 글자로 쓴 편지">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 15</div>
+  <h1>갈라디아서,<br><em>큰 글자</em>로<br>쓴 편지</h1>
+  <p class="sub">인사말도 짧게 끝내고 곧장 본론으로 들어간<br>바울의 가장 뜨거운 자유 선언</p>
+  <div class="ref">갈라디아서 1–6장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>바울의 편지는 보통 "내가 너희를 생각할 때마다 하나님께 감사하노라" 같은 따뜻한 감사로 시작해요. 그런데 갈라디아서에는 그 감사가 없어요. 인사가 끝나자마자 바로 "이같이 속히 떠나 다른 복음을 따르는 것을 내가 <mark>이상하게 여기노라</mark>"(1:6) 하고 본론으로 들어가요. 편지를 받아 든 갈라디아 성도들, 첫 줄부터 좀 뜨끔했을 거예요. 😄</p>
+    <p>그 뜨거운 편지 속에 재밌는 이야기들이 숨어 있어요. 영어 단어 "history"의 뿌리가 된 보름간의 방문, 안디옥 식탁에서 벌어진 사도들의 정면충돌, 아이를 학교에 데려다주던 노예, 사라와 하갈의 뒤집힌 족보, 그리고 편지 끝에 삐뚤빼뚤 큰 글씨로 쓴 친필까지요. 그 흔적을 따라가면 한 분이 보여요. <span class="hl">나를 사랑하사 나를 위하여 자기 자신을 버리신 하나님의 아들</span>이에요(2:20).</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>갈라디아서는 어떤 책일까?</h2>
+    <p>은혜의 복음을 지키려고 쓴 자유의 선언문</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>바울은 1차 전도여행 때 소아시아 한가운데의 갈라디아 지방에 교회들을 세웠어요(행 13–14장). 그런데 바울이 떠난 뒤 어떤 사람들이 들어와 "예수님을 믿는 것만으로는 부족하다, 할례를 받고 율법을 지켜야 진짜 하나님의 백성이 된다"고 가르쳤어요. 성도들이 흔들린다는 소식을 들은 바울은 급하게 펜을 들었어요. 이 편지는 믿음으로 의롭게 된다는 복음을 지키기 위한 <mark>바울의 가장 뜨거운 편지</mark>예요. 쓴 시기는 대략 주후 48년에서 55년 사이로 봐요.</p>
+    <div class="debate sans"><div><b>"갈라디아"라는 이름</b>주전 3세기에 유럽의 켈트족(갈리아 사람들)이 소아시아로 건너와 자리 잡았어요. 그래서 붙은 이름이 갈라디아예요. 프랑스의 옛 이름 "갈리아"와 뿌리가 같아요.</div><div><b>교회사가 사랑한 편지</b>마르틴 루터는 "갈라디아서는 내가 약혼한 편지, 나의 아내 같은 편지"라고 했어요. 침례교 전통의 존 번연도 루터의 갈라디아서 주석을 읽고 큰 위로를 얻었다고 고백했어요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 갈라디아 교회들이 남쪽 지역(비시디아 안디옥, 이고니온, 루스드라, 더베)인지 북쪽 켈트족 지역인지는 학자들 사이에 의견이 나뉘어요. 그래서 기록 연대도 조금씩 다르게 봐요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">갈라디아서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">감사 인사가 없는 편지</div><div class="mini-b">교회에 보낸 바울의 편지 가운데 인사 뒤에 감사나 찬송이 빠진 유일한 편지예요. 그만큼 급하고 절박했어요(1:6).</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">바울의 자서전</div><div class="mini-b">1–2장에는 다메섹 이후 아라비아, 삼 년 후 예루살렘 방문, 십사 년 후의 일까지 바울의 인생이 직접 나와요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">아브라함에게로 거슬러 올라가다</div><div class="mini-b">"아브라함이 하나님을 믿으매 그것을 그에게 의로 정하셨다"(3:6, 창 15:6). 율법보다 약속이 사백삼십 년 먼저였어요(3:17).</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">성령의 열매 아홉 가지</div><div class="mini-b">사랑, 희락, 화평, 오래 참음, 자비, 양선, 충성, 온유, 절제(5:22-23). 많은 성도가 외우는 목록이 이 편지에 있어요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">친필로 쓴 큰 글자</div><div class="mini-b">"내 손으로 너희에게 이렇게 큰 글자로 쓴 것을 보라"(6:11). 대필자가 받아 적다가 마지막에 바울이 직접 펜을 잡았어요.</div></div></div></div>
+
+  <div class="target"><p>갈라디아서의 중심에는 바울의 이 고백이 있어요. <span class="hl">"내가 그리스도와 함께 십자가에 못 박혔나니 그런즉 이제는 내가 사는 것이 아니요 오직 내 안에 그리스도께서 사시는 것이라"</span>(2:20). 우리를 의롭게 하는 건 내가 지킨 규칙이 아니라 십자가에서 이루신 그리스도의 일이에요. 그래서 바울은 외쳐요. <mark>"그리스도께서 우리를 자유롭게 하려고 자유를 주셨으니"</mark>(5:1).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>보름간의 방문부터 큰 글자의 친필까지, 자유의 편지에 숨은 이야기들</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>천사라도 안 돼요</button><button class="chip" onclick="goTo('s2')"><b>2</b>보름간의 방문</button><button class="chip" onclick="goTo('s3')"><b>3</b>안디옥의 식탁</button><button class="chip" onclick="goTo('s4')"><b>4</b>학교 가는 길의 노예</button><button class="chip" onclick="goTo('s5')"><b>5</b>뒤집힌 족보</button><button class="chip" onclick="goTo('s6')"><b>6</b>일은 여럿, 열매는 하나</button><button class="chip" onclick="goTo('s7')"><b>7</b>큰 글자와 흔적</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>천사가 와서 말해도<br>안 되는 복음</h2><div class="refs">갈라디아서 1:6-9 · 3:1</div></div></div>
+    <div class="scene-body"><p>편지의 첫 장부터 바울은 아주 센 말을 해요. "우리나 혹은 <span class="hl">하늘로부터 온 천사라도</span> 우리가 너희에게 전한 복음 외에 다른 복음을 전하면 저주를 받을지어다"(1:8). 그리고 다음 절에서 같은 말을 한 번 더 해요(1:9). 바울 자신이 와서 말을 바꿔도, 날개 달린 천사가 내려와서 말해도 안 된다는 거예요. 😄 복음은 전하는 사람의 권위가 아니라 복음 자체의 내용이 중요하다는 뜻이에요.</p>
+        <p>재밌는 건 6절과 7절에 나오는 두 개의 "다른"이에요. 한글로는 둘 다 "다른 복음"인데, 헬라어로는 단어가 달라요. 6절은 <span class="heb" data-tip="헤테로스(heteros) — 종류가 다른 것. 영어 hetero-(이성의, 다른 종류의)의 뿌리.">헤테로스</span>, 곧 <mark>종류가 전혀 다른 것</mark>이고, 7절 "다른 복음은 없나니"는 <span class="heb" data-tip="알로스(allos) — 같은 종류 가운데 또 하나. '또 다른 하나'라는 뜻.">알로스</span>, 곧 <mark>같은 종류의 또 하나</mark>예요. 그러니까 바울의 말은 이래요. "너희가 따라가는 건 종류가 전혀 다른 가르침이야. 복음이라는 이름을 붙일 수 있는 두 번째 복음은 없어."</p>
+        <p>3장에서는 이렇게까지 말해요. "어리석도다 갈라디아 사람들아 누가 너희를 <span class="heb" data-tip="바스카이노(baskainō) — 흘기는 눈으로 홀리다, 마법을 걸다. 당시 사람들이 두려워하던 '악한 눈' 미신과 관련된 말.">꾀더냐</span>"(3:1). "누가 너희한테 마법이라도 걸었냐"는 말이에요. 예수 그리스도의 십자가가 눈앞에 밝히 보이듯 전해졌는데, 어떻게 거기서 눈을 돌릴 수 있냐는 거예요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 6–7절의 두 단어를 뚜렷이 구별하는 해석은 여러 주석가들이 따르지만, 당시 헬라어에서 두 단어가 섞여 쓰이기도 했다고 보는 학자들도 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>새롭고 그럴듯한 가르침보다, 처음 들었던 십자가의 복음에 붙어 있는지 돌아봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>"history"의 뿌리가 된<br>보름간의 방문</h2><div class="refs">갈라디아서 1:13-24 · 사도행전 9:26-28</div></div></div>
+    <div class="scene-body"><p>다메섹에서 예수님을 만난 바울은 곧바로 예루살렘으로 가지 않았어요. "아라비아로 갔다가 다시 다메섹으로 돌아갔노라"(1:17). 여기서 아라비아는 오늘의 사우디아라비아가 아니라, 다메섹 남쪽과 동쪽에 있던 <span class="hl">나바테아 왕국</span>을 가리켜요. 교회를 박해하던 사람이 광야에서 무엇을 했는지 성경은 자세히 말하지 않아요.</p>
+        <p>그리고 이런 말이 나와요. "그 후 삼 년 만에 내가 게바를 <span class="heb" data-tip="히스토레사이(historēsai) — 찾아가 알아보다, 직접 보고 듣다. 영어 history(역사)의 뿌리가 되는 말.">방문하려고</span> 예루살렘에 올라가서 그와 함께 십오 일을 머무는 동안"(1:18). 이 "방문하다"라는 헬라어가 바로 영어 <mark>history</mark>(역사)의 뿌리예요. 그냥 인사차 들른 게 아니라, 직접 만나서 묻고 듣고 알아보는 방문이라는 뜻이에요.</p>
+        <p>보름 동안 바울과 베드로는 무슨 이야기를 나눴을까요? 갈릴리 바닷가에서 부르신 날, 물 위를 걸었던 밤, 닭이 울던 새벽, 부활하신 주님이 "네가 나를 사랑하느냐" 물으시던 아침. 예수님과 삼 년을 함께한 베드로에게서, 예수님을 박해하던 바울이 <span class="hl">예수님의 이야기</span>를 들었을 거예요. 그렇게 보면 교회의 역사는 예수님을 전해 듣는 그 보름에서부터 이어진 셈이에요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ "방문하다"라는 단어와 history의 어원 관계는 사실이지만, 보름 동안 두 사람이 나눈 대화 내용은 성경에 나오지 않아요. 위의 대화 장면은 추정이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>다른 사람의 신앙 경험보다 먼저, 복음서에 기록된 예수님의 이야기를 직접 듣고 배우는 시간을 갖습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>안디옥 식탁에서 벌어진<br>사도들의 정면충돌</h2><div class="refs">갈라디아서 2:11-16 · 사도행전 10:9-16 · 베드로후서 3:15</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">욥바의 베드로 (행 10장)</div>"하나님께서 깨끗하게 하신 것을 네가 속되다 하지 말라"는 환상을 <b>세 번</b> 보았어요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">안디옥의 베드로 (갈 2장)</div>예루살렘에서 사람들이 오자 이방인과 먹던 식탁에서 <b>슬그머니 물러났어요.</b></div></div><p>안디옥 교회에서는 유대인 성도와 이방인 성도가 한 식탁에서 함께 밥을 먹었어요. 베드로도 그랬어요. 그런데 야고보에게서 온 어떤 사람들이 도착하자, 베드로는 그들의 눈치를 보며 이방인들과의 식탁에서 떠났어요(2:12). 다른 유대인들도 따라 했고, 심지어 이방인 선교의 동역자였던 <span class="hl">바나바마저</span> "그들의 외식에 유혹되었느니라"(2:13).</p>
+        <p>베드로는 누구보다 이 일을 잘 알던 사람이에요. 몇 해 전 욥바의 지붕 위에서 부정한 짐승이 담긴 보자기 환상을 세 번이나 보았고, 그 뒤 이방인 고넬료의 집에 들어가 복음을 전했거든요(행 10장). 그러니 바울은 참지 않았어요. "내가 그를 <mark>대면하여 책망하였노라</mark>"(2:11). 뒤에서 수군거린 게 아니라 모든 사람 앞에서 얼굴을 맞대고 말했어요.</p>
+        <p>그 이유는 밥상 예절이 아니라 복음이었어요. 누구와 함께 먹느냐가 곧 "사람이 무엇으로 의롭게 되느냐"를 보여 주거든요. "사람이 의롭게 되는 것은 율법의 행위로 말미암음이 아니요 <span class="hl">예수 그리스도를 믿음으로 말미암는</span> 줄 알므로"(2:16).</p>
+        <p>그런데 이야기는 여기서 끝나지 않아요. 세월이 흐른 뒤, 베드로는 자기 편지에서 바울을 이렇게 불러요. "우리 사랑하는 형제 바울"(벧후 3:15). 얼굴을 붉히며 부딪쳤던 두 사도가 끝까지 한 복음 안에서 형제로 남은 거예요. 😄</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>복음 앞에서 사람의 눈치를 보며 물러서는 나를 돌아보고, 부딪친 뒤에도 형제를 형제로 부르게 하시는 은혜를 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>아이를 학교에 데려다주던<br>노예, 율법</h2><div class="refs">갈라디아서 3:15-4:7</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">초등교사 아래</div>학교 가는 길을 지키는 <b>엄한 보호자</b> 아래 있는 어린아이</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">아들의 영을 받은 뒤</div>하나님을 <b>"아빠 아버지"</b>라 부르는 상속자</div></div><p>바울은 율법을 이렇게 설명해요. "이같이 율법이 우리를 그리스도에게로 인도하는 <span class="heb" data-tip="파이다고고스(paidagōgos) — 아이(파이스)를 이끄는(아고) 사람. 영어 pedagogy(교육학)의 뿌리. 개역한글에서는 '몽학선생'으로 옮겼다.">초등교사</span>가 되어"(3:24). 옛 번역으로는 "몽학선생"이에요. 그런데 이 사람은 사실 선생님이 아니었어요. 로마 시대의 넉넉한 집에서는 <mark>노예 한 사람을 붙여서</mark> 아이를 학교까지 데려다주고, 숙제와 행동을 감시하게 했어요. 그 노예가 바로 파이다고고스예요.</p>
+        <p>이 보호자는 꽤 엄했어요. 잘못하면 회초리도 들었죠. 아이에게는 고마우면서도 무서운 사람이었을 거예요. 😄 하지만 아이가 자라서 성인이 되면 더 이상 보호자가 따라다니지 않아요. 바울의 말이 바로 그거예요. "믿음이 온 후로는 우리가 초등교사 아래에 있지 아니하도다"(3:25). 율법은 나쁜 것이 아니라, 우리를 <span class="hl">그리스도께 데려다주는 역할</span>을 한 거예요.</p>
+        <p>그리고 바울은 약속의 날을 이렇게 말해요. "때가 차매 하나님이 그 아들을 보내사 여자에게서 나게 하시고 율법 아래에 나게 하신 것은"(4:4). 그리고 그 아들의 영을 우리 마음에 보내셔서 "아빠 아버지"라고 부르게 하셨어요(4:6). "아빠"는 예수님이 겟세마네에서 쓰신 아람어 그대로예요(막 14:36). 감시받던 아이가, <mark>아버지 품에 안기는 아들</mark>이 된 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>규칙을 지켜야 인정받는 아이처럼 살지 않고, 그리스도 안에서 하나님을 "아빠 아버지"라 부르는 자녀로 삽니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>사라와 하갈,<br>뒤집힌 족보</h2><div class="refs">갈라디아서 4:21-31 · 창세기 16장, 21:1-10</div></div></div>
+    <div class="scene-body"><p>갈라디아 성도들을 흔들던 사람들은 아마 이렇게 말했을 거예요. "우리는 아브라함과 사라의 진짜 자손이야. 할례를 받아야 이삭 쪽에 서는 거라고." 그런데 바울은 그 이야기를 <mark>완전히 뒤집어서</mark> 들려줘요.</p>
+        <p>아브라함에게는 두 아들이 있었어요. 여종 하갈에게서 난 이스마엘과, 약속을 따라 사라에게서 난 이삭이에요. 바울은 이 두 여인이 두 언약을 보여 준다고 해요. 그리고 깜짝 놀랄 말을 해요. "이 하갈은 아라비아에 있는 <span class="hl">시내 산</span>으로서 지금 있는 예루살렘과 같은 곳이니"(4:25). 율법을 받은 시내 산을 여종 하갈 쪽에 세운 거예요. 율법으로 의롭게 되려는 사람은 핏줄은 사라의 자손이어도 실은 종의 자리에 서 있다는 거죠. 유대인 듣기에는 정말 충격적인 말이었어요.</p>
+        <p>반대로 믿음으로 사는 사람은 누구든지 이삭 쪽이에요. "오직 위에 있는 예루살렘은 자유자니 곧 우리 어머니라"(4:26). "형제들아 너희는 <mark>이삭과 같이 약속의 자녀</mark>라"(4:28). 할례를 받지 않은 이방인 성도들이, 약속의 아들 이삭의 형제가 된 거예요. 족보를 정하는 건 혈통이 아니라 하나님의 약속이에요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 바울이 1장 17절에서 다녀온 "아라비아"와 4장 25절의 "아라비아에 있는 시내 산"을 연결해서, 바울이 그때 시내 산 근처를 찾아갔을 거라고 보는 학자들도 있어요. 확실한 근거가 있는 이야기는 아니에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 무엇을 지켜서가 아니라 하나님의 약속으로 자녀가 되었음을 기억하며, 종의 마음이 아닌 자녀의 마음으로 하나님께 나아갑니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>육체의 일은 여럿,<br>성령의 열매는 하나</h2><div class="refs">갈라디아서 5:16-26</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">육체의 일 (5:19-21)</div>음행부터 방탕함까지 <b>열다섯 가지</b>를 나열하고 "또 그와 같은 것들"이라고 덧붙여요. "일"은 <b>복수</b>예요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">성령의 열매 (5:22-23)</div>사랑부터 절제까지 <b>아홉 가지</b>인데, "열매"는 <b>단수</b>예요.</div></div><p>5장에는 두 개의 목록이 나란히 나와요. 하나는 "육체의 일"이고, 하나는 "성령의 열매"예요. 그런데 헬라어로 읽으면 재밌는 차이가 보여요. 육체의 "일"은 <span class="heb" data-tip="에르가(erga) — '일들, 행위들'. 여러 개가 흩어져 있는 모습.">복수</span>로 쓰였는데, 성령의 "열매"는 <span class="heb" data-tip="카르포스(karpos) — '열매'. 아홉 가지를 나열하면서도 단수를 썼다.">단수</span>로 쓰였어요. "열매들"이 아니라 "열매"예요.</p>
+        <p>육체의 일은 서로 따로 놀아요. 분쟁, 시기, 분냄, 당 짓는 것, 분열함… 사람을 쪼개고 흩어 놓죠. 그런데 성령의 열매는 <mark>한 송이 포도처럼</mark> 붙어 있어요. 사랑은 있는데 오래 참음은 없는 열매, 희락은 있는데 온유는 없는 열매는 없다는 거예요. 성령님이 맺으시는 열매는 한 분 그리스도의 성품을 닮아 가는 하나의 열매예요.</p>
+        <p>그리고 목록 끝에 바울은 살짝 웃음이 나는 한 마디를 붙여요. "이같은 것을 <span class="hl">금지할 법이 없느니라</span>"(5:23). 😄 율법 이야기로 다투던 사람들에게, "사랑하고 온유한 걸 막는 법은 세상 어디에도 없지 않냐"고 말하는 거예요. 열매는 억지로 붙여서 맺히는 게 아니라 나무에 붙어 있을 때 맺혀요. "만일 우리가 성령으로 살면 또한 성령으로 행할지니"(5:25).</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>아홉 가지를 하나씩 애써 채우려 하기보다, 성령님을 따라 걸으며 그리스도를 닮은 한 송이 열매가 맺히기를 구합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>삐뚤빼뚤 큰 글자와<br>몸에 새긴 흔적</h2><div class="refs">갈라디아서 4:13-15 · 6:11-18</div></div></div>
+    <div class="scene-body"><p>바울은 편지를 대개 대필자에게 받아 적게 했어요. 로마서에는 대필자 더디오가 직접 인사를 남기기도 했죠(롬 16:22). 그리고 편지 끝에는 바울이 직접 펜을 들어 몇 줄을 써서, 진짜 자기 편지라는 표시를 했어요(살후 3:17). 그런데 갈라디아서에서는 이렇게 말해요. "내 손으로 너희에게 이렇게 <mark>큰 글자로</mark> 쓴 것을 보라"(6:11).</p>
+        <p>왜 큰 글자였을까요? 가장 가슴 아픈 추측은 눈이에요. 바울은 갈라디아에 처음 갔을 때 "육체의 약함으로" 복음을 전했다고 하고(4:13), 성도들이 할 수만 있었다면 "너희의 눈이라도 빼어 나에게 주었으리라"(4:15)고 해요. 눈이 나빠서 글씨가 커졌을 수도 있어요. 아니면 중요한 말에 밑줄을 긋듯, 일부러 크고 굵게 쓴 것일 수도 있고요.</p>
+        <p>그리고 편지는 이 말로 끝나요. "내가 내 몸에 <span class="heb" data-tip="스티그마(stigma) — 불에 달군 쇠로 찍은 낙인. 당시 노예나 병사의 몸에 주인의 표시로 새겼다. 영어 stigma의 뿌리.">예수의 흔적</span>을 지니고 있노라"(6:17). 그 시대 노예의 몸에는 주인의 이름을 낙인으로 찍기도 했어요. 할례를 자랑하는 사람들에게, 바울은 매 맞고 돌에 맞은 몸의 상처를 보여 줘요. 그리고 고백해요. "내게는 우리 주 예수 그리스도의 <span class="hl">십자가 외에 결코 자랑할 것이 없으니</span>"(6:14).</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 바울이 큰 글자를 쓴 이유와, 4장의 "육체의 약함"이 눈병이었는지는 성경이 분명히 말하지 않아요. 여러 추측 가운데 하나예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>몸에 할례를 새기는 대신 예수의 흔적을 지니고 살았던 바울처럼, 내 삶의 자랑을 십자가 하나에 둡니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">율법의 멍에를 벗기신 분,<br>나를 위해 자신을 버리신 그리스도</div>
+    <p>갈라디아서는 감사 인사도 건너뛸 만큼 급한 편지였어요. 천사가 와도 안 된다고, 사도의 얼굴 앞에서라도 할 말은 해야 한다고, 율법은 우리를 데려다준 보호자였을 뿐이라고 바울은 온 힘을 다해 외쳐요. 그리고 마지막에는 큰 글자로 직접 서명까지 했어요.</p><p>그렇게 지키려 한 건 바울 자신의 체면이 아니라 <mark>은혜의 복음</mark>이었어요. 우리가 무엇을 더해야 완성되는 복음이 아니라, 예수 그리스도께서 이미 십자가에서 다 이루신 복음이요. 그래서 이 편지는 오늘도 규칙과 눈치에 지친 사람들에게 자유를 선언해요.</p>
+    <div class="q">"그리스도께서 우리를<br>자유롭게 하려고 자유를 주셨으니<br>그러므로 굳건하게 서서<br>다시는 종의 멍에를 메지 말라" (5:1)</div>
+  </section>
+
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

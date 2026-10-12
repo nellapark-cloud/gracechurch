@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>침례문답서 | 은혜교회</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1b2a41;
+    --navy-deep:#101c2e;
+    --cream:#f7f2e7;
+    --cream-dim:#ede5d3;
+    --gold:#b08d3f;
+    --gold-soft:#d9c188;
+    --ink:#26272b;
+    --line: rgba(27,42,65,0.14);
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:'Noto Sans KR', sans-serif;
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,.serif{font-family:'Noto Serif KR', serif;}
+
+  /* Hero */
+  .hero{
+    background:linear-gradient(160deg, var(--navy-deep), var(--navy) 60%, #223a58);
+    color:var(--cream);
+    padding:72px 24px 56px;
+    text-align:center;
+    position:relative;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; left:0; right:0; bottom:0;
+    height:6px;
+    background:linear-gradient(90deg, transparent, var(--gold-soft), transparent);
+  }
+  .hero .eyebrow{
+    letter-spacing:0.35em;
+    font-size:12px;
+    color:var(--gold-soft);
+    text-transform:uppercase;
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(30px, 5vw, 44px);
+    font-weight:700;
+    margin:0 0 14px;
+  }
+  .hero p{
+    font-size:15px;
+    color:rgba(247,242,231,0.78);
+    max-width:520px;
+    margin:0 auto;
+  }
+
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+
+  /* TOC */
+  .toc{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    margin:40px auto 48px;
+    padding:34px 26px 26px;
+    max-width:712px;
+    box-shadow:0 6px 20px rgba(16,28,46,0.06);
+  }
+  .toc h2{font-size:14px; letter-spacing:0.12em; color:var(--navy); margin:0 0 12px;}
+  .toc ol{margin:0; padding-left:20px; font-size:14.5px; color:#4b4b4f;}
+  .toc li{margin-bottom:6px;}
+  .toc a{color:var(--navy); text-decoration:none; border-bottom:1px solid transparent;}
+  .toc a:hover{border-bottom-color:var(--gold);}
+
+  section.part{padding:16px 0 56px;}
+  .part-head{
+    display:flex; align-items:baseline; gap:14px;
+    border-bottom:2px solid var(--navy);
+    padding-bottom:14px; margin-bottom:8px;
+  }
+  .part-head .num{
+    font-family:'Noto Serif KR', serif;
+    font-size:13px; color:var(--gold); font-weight:700;
+    letter-spacing:0.08em;
+  }
+  .part-head h2{font-size:22px; color:var(--navy); margin:0;}
+  .part-sub{font-size:14px; color:#6b6b70; margin:10px 0 28px;}
+
+  /* Q&A card - private examination */
+  .qa{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:22px 24px;
+    margin-bottom:16px;
+  }
+  .qa .q{
+    font-weight:600; color:var(--navy);
+    display:flex; gap:10px; margin-bottom:8px;
+  }
+  .qa .q .tag{
+    flex-shrink:0;
+    background:var(--navy); color:var(--cream);
+    font-size:11px; font-weight:700;
+    border-radius:5px; padding:2px 7px;
+    height:fit-content;
+  }
+  .qa .hint{font-size:13.5px; color:#6b6b70; margin-left:38px;}
+
+  .checkbox-row{
+    display:flex; gap:22px; margin:14px 0 0 38px;
+    font-size:14px; color:#4b4b4f;
+  }
+  .checkbox-row span{display:flex; align-items:center; gap:6px;}
+  .checkbox-row .box{
+    width:15px; height:15px; border:1.5px solid var(--navy); border-radius:3px; display:inline-block;
+  }
+
+  .note-field{
+    margin:14px 0 0 38px;
+    border-bottom:1px dashed var(--line);
+    padding-bottom:6px;
+    min-height:22px;
+  }
+
+  /* Liturgy (call and response) */
+  .liturgy{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:10px;
+    padding:6px 4px;
+    margin-bottom:22px;
+    overflow:hidden;
+  }
+  .line{
+    display:grid;
+    grid-template-columns:84px 1fr;
+    gap:16px;
+    padding:16px 20px;
+    border-bottom:1px solid var(--line);
+    align-items:start;
+  }
+  .line:last-child{border-bottom:none;}
+  .line.pastor{background:var(--cream);}
+  .line.candidate{background:#fff;}
+  .line.congregation{background:var(--cream-dim);}
+  .speaker{
+    font-family:'Noto Serif KR', serif;
+    font-size:13px; font-weight:700; color:var(--navy);
+    padding-top:2px;
+  }
+  .line.candidate .speaker{color:var(--gold);}
+  .line.congregation .speaker{color:#6b6b70;}
+  .line p{margin:0; font-size:15.5px;}
+  .line.candidate p{font-weight:500;}
+
+  .declare{
+    margin:20px 0;
+    padding:26px 24px;
+    background:var(--navy);
+    color:var(--cream);
+    border-radius:10px;
+    text-align:center;
+    font-family:'Noto Serif KR', serif;
+    font-size:17px;
+    line-height:2;
+  }
+  .declare .small{
+    display:block; font-family:'Noto Sans KR',sans-serif;
+    font-size:12px; letter-spacing:0.2em; color:var(--gold-soft);
+    margin-bottom:10px; text-transform:uppercase;
+  }
+
+  /* Highlightable term -> popup */
+  .term{
+    color:var(--gold);
+    font-weight:700;
+    cursor:pointer;
+    border-bottom:1.5px dotted var(--gold);
+  }
+  .term.deep{color:var(--navy); border-bottom-color:var(--navy);}
+
+  .overlay{
+    display:none;
+    position:fixed; inset:0;
+    background:rgba(16,20,28,0.55);
+    z-index:200;
+    align-items:center; justify-content:center;
+    padding:20px;
+  }
+  .overlay.show{display:flex;}
+  .popup{
+    background:#fff;
+    max-width:440px; width:100%;
+    border-radius:12px;
+    padding:26px 26px 22px;
+    box-shadow:0 20px 50px rgba(0,0,0,0.25);
+    position:relative;
+  }
+  .popup h4{margin:0 0 10px; color:var(--navy); font-size:17px;}
+  .popup p{margin:0; font-size:14.5px; color:#3d3d40;}
+  .popup .close{
+    position:absolute; top:14px; right:16px;
+    border:none; background:none; font-size:18px; color:#999; cursor:pointer;
+  }
+
+  /* Signature block */
+  .sign-block{
+    display:flex; justify-content:space-between; gap:24px;
+    margin-top:36px; padding-top:24px; border-top:1px solid var(--line);
+    font-size:14px; color:#4b4b4f; flex-wrap:wrap;
+  }
+  .sign-block div{flex:1; min-width:160px;}
+  .sign-line{border-bottom:1px solid var(--ink); height:34px; margin-top:6px;}
+
+  footer{
+    text-align:center; padding:40px 24px 60px;
+    font-size:12.5px; color:#8b8b90;
+  }
+
+  /* Floating buttons */
+  .floaters{
+    position:fixed; right:20px; bottom:20px;
+    display:flex; flex-direction:column; gap:10px;
+    z-index:150;
+  }
+  .fbtn{
+    width:48px; height:48px; border-radius:50%;
+    background:var(--navy); color:var(--cream);
+    border:none; box-shadow:0 6px 16px rgba(16,28,46,0.3);
+    font-size:18px; cursor:pointer;
+    display:flex; align-items:center; justify-content:center;
+  }
+  .fbtn:active{transform:scale(0.94);}
+
+  @media (max-width:520px){
+    .line{grid-template-columns:64px 1fr; padding:14px 16px;}
+    .checkbox-row{flex-direction:column; gap:8px;}
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">기독교한국침례회 · 은혜교회</div>
+  <h1>침례문답서</h1>
+  <p>침례를 앞둔 성도의 신앙을 확인하고, 침례식 예식 중 온 회중 앞에서 신앙을 고백하는 문답을 담았습니다.</p>
+</div>
+
+<div class="toc" id="toc">
+  <h2>목차</h2>
+  <ol style="list-style:none; padding-left:0;">
+    <li><a href="#part1">침례 전 신앙 문답 (목사님과의 면담용)</a></li>
+    <li><a href="#part2">침례식 공적 문답 (예식 중 낭독용)</a></li>
+  </ol>
+</div>
+
+<div class="wrap">
+
+  <section class="part" id="part1">
+    <div class="part-head">
+      <span class="num">PART 1</span>
+      <h2>침례 전 신앙 문답</h2>
+    </div>
+    <p class="part-sub">침례식 전, 담임목사님이 후보자와 개별 면담하며 확인하는 문답입니다. 각 항목에 대한 후보자의 응답과 확인 여부를 기록해 주세요.</p>
+
+    <div class="qa">
+      <div class="q"><span class="tag">문 1</span> 예수 그리스도를 자신의 죄를 대속하신 구주로 믿으십니까?</div>
+      <div class="hint">회개와 <span class="term" data-term="justification">칭의</span>의 은혜를 스스로의 언어로 고백할 수 있는지 확인합니다.</div>
+      <div class="checkbox-row">
+        <span><span class="box"></span> 확인함</span>
+        <span><span class="box"></span> 추가 대화 필요</span>
+      </div>
+      <div class="note-field"></div>
+    </div>
+
+    <div class="qa">
+      <div class="q"><span class="tag">문 2</span> 이전의 죄된 삶을 회개하고, 그리스도 안에서 새로운 삶을 살기로 결심하셨습니까?</div>
+      <div class="hint">회심의 시점과 이후의 삶의 변화를 간단히 나눌 수 있는지 확인합니다.</div>
+      <div class="note-field"></div>
+    </div>
+
+    <div class="qa">
+      <div class="q"><span class="tag">문 3</span> 침례가 무엇을 의미하는지 알고 계십니까?</div>
+      <div class="hint">침례가 그리스도의 죽음·장사·부활과의 <span class="term deep" data-term="union">연합</span>을 상징하는 것이며, 구원을 얻는 수단이 아니라 이미 받은 구원에 대한 순종의 고백임을 이해하는지 확인합니다.</div>
+      <div class="checkbox-row">
+        <span><span class="box"></span> 확인함</span>
+        <span><span class="box"></span> 추가 설명 필요</span>
+      </div>
+    </div>
+
+    <div class="qa">
+      <div class="q"><span class="tag">문 4</span> 앞으로 지역 교회의 지체로서 신앙생활에 신실하게 참여하실 것을 다짐하십니까?</div>
+      <div class="hint">목장 참여, 예배 출석, 섬김 등 공동체적 삶에 대한 헌신 의지를 확인합니다.</div>
+      <div class="note-field"></div>
+    </div>
+
+    <div class="qa" style="background:var(--cream);">
+      <div class="q"><span class="tag" style="background:var(--gold);">청소년</span> 만 19세 미만 후보자를 위한 안내</div>
+      <div class="hint">위 문답 외에, 보호자(부모)의 동의와 인지 여부를 확인하고, 신앙 이해의 수준에 맞추어 눈높이 대화로 진행합니다. 어려운 신학 용어보다 본인의 언어로 설명하도록 돕습니다.</div>
+    </div>
+
+    <div class="sign-block">
+      <div>후보자 성명<div class="sign-line"></div></div>
+      <div>면담 일자<div class="sign-line"></div></div>
+      <div>확인 목사<div class="sign-line"></div></div>
+    </div>
+  </section>
+
+  <section class="part" id="part2">
+    <div class="part-head">
+      <span class="num">PART 2</span>
+      <h2>침례식 공적 문답</h2>
+    </div>
+    <p class="part-sub">침례식 예식 중, 온 회중이 지켜보는 가운데 담임목사와 후보자가 주고받는 공적 신앙고백입니다.</p>
+
+    <div class="liturgy">
+      <div class="line pastor">
+        <div class="speaker">목사</div>
+        <p>사랑하는 ○○○ 형제(자매)여, 오늘 이 자리에서 온 성도들 앞에 그대의 신앙을 고백하려 합니다.</p>
+      </div>
+      <div class="line pastor">
+        <div class="speaker">목사</div>
+        <p>그대는 예수 그리스도를 살아계신 하나님의 아들이시며, 자신의 구주로 믿으십니까?</p>
+      </div>
+      <div class="line candidate">
+        <div class="speaker">후보자</div>
+        <p>예, 믿습니다.</p>
+      </div>
+      <div class="line pastor">
+        <div class="speaker">목사</div>
+        <p>그대는 자신의 죄를 회개하고, 그리스도 안에서 새 사람으로 살아가기로 결심하셨습니까?</p>
+      </div>
+      <div class="line candidate">
+        <div class="speaker">후보자</div>
+        <p>예, 결심하였습니다.</p>
+      </div>
+      <div class="line pastor">
+        <div class="speaker">목사</div>
+        <p>그대는 이 침례가 그리스도의 죽으심과 장사되심과 부활하심에 연합하는 표요, 이미 받은 구원에 순종하여 응답하는 것임을 믿고 받으십니까?</p>
+      </div>
+      <div class="line candidate">
+        <div class="speaker">후보자</div>
+        <p>예, 믿고 받습니다.</p>
+      </div>
+      <div class="line pastor">
+        <div class="speaker">목사</div>
+        <p>사랑하는 성도 여러분, 오늘 ○○○ 형제(자매)의 고백을 함께 들으셨습니다. 이 지체를 그리스도의 몸 된 지체로 받아들이고, 함께 돌보며 세워가시겠습니까?</p>
+      </div>
+      <div class="line congregation">
+        <div class="speaker">회중</div>
+        <p>예, 그렇게 하겠습니다.</p>
+      </div>
+    </div>
+
+    <div class="declare">
+      <span class="small">침례 선언</span>
+      ○○○ 형제(자매)여,<br>
+      그대의 고백한 믿음을 따라<br>
+      성부와 성자와 성령의 이름으로<br>
+      그대에게 침례를 베푸노라.
+    </div>
+
+  </section>
+
+</div>
+
+<footer>
+  기독교한국침례회 은혜교회 · 담임목사 박동준
+</footer>
+
+<div class="floaters">
+  <button class="fbtn" onclick="location.hash='top'; window.scrollTo({top:0, behavior:'smooth'});" title="처음으로">↑</button>
+  <button class="fbtn" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'});" title="목차">≡</button>
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="popup">
+    <button class="close" onclick="closePopup()">✕</button>
+    <h4 id="popupTitle"></h4>
+    <p id="popupBody"></p>
+  </div>
+</div>
+
+<script>
+  const terms = {
+    justification: {
+      title: "칭의(稱義)",
+      body: "그리스도를 믿는 믿음으로 죄인이 하나님 앞에서 의롭다 인정받는 것을 말합니다. 이는 우리의 행위가 아니라 그리스도께서 이루신 십자가의 공로에 근거합니다(롬 3:24-26)."
+    },
+    union: {
+      title: "그리스도와의 연합",
+      body: "침례는 물속에 잠기고 다시 올라오는 행위를 통해, 신자가 그리스도의 죽음과 장사되심과 부활에 연합했음을 몸으로 나타내는 상징입니다(롬 6:3-4). 침례교회는 이를 구원의 조건이 아니라, 이미 일어난 구원에 대한 순종의 고백으로 이해합니다."
+    }
+  };
+
+  document.querySelectorAll('.term').forEach(el=>{
+    el.addEventListener('click', ()=>{
+      const key = el.dataset.term;
+      const data = terms[key];
+      if(!data) return;
+      document.getElementById('popupTitle').textContent = data.title;
+      document.getElementById('popupBody').textContent = data.body;
+      document.getElementById('overlay').classList.add('show');
+    });
+  });
+  function closePopup(){ document.getElementById('overlay').classList.remove('show'); }
+  document.getElementById('overlay').addEventListener('click', (e)=>{
+    if(e.target.id==='overlay') closePopup();
+  });
+</script>
+
+</body>
+</html>

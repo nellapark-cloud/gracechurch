@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>요한계시록, 덮개를 벗긴 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="숨기려고 쓴 암호문이 아니라 예수 그리스도를 드러내려고 쓴 성경의 마지막 책, 요한계시록에 숨은 이야기">
+<meta property="og:title" content="요한계시록, 덮개를 벗긴 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 32</div>
+  <h1>요한계시록,<br>덮개를 <em>벗긴</em><br>책</h1>
+  <p class="sub">숨기려고 쓴 암호문이 아니라<br>예수 그리스도를 드러내려고 쓴 성경의 마지막 책</p>
+  <div class="ref">요한계시록 1–22장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>요한계시록 하면 많은 분들이 긴장부터 하세요. 짐승, 용, 666, 무서운 재앙… 😄 “목사님, 계시록은 좀 어려워서 건너뛰었어요” 하는 말도 자주 들어요. 그런데 이 책의 첫 단어가 재밌어요. “계시”라는 말은 원래 “덮개를 벗기다”라는 뜻이에요. 숨기려고 쓴 책이 아니라, 가려져 있던 것을 보여 주려고 쓴 책이라는 거예요.</p><p>그럼 무엇을 보여 줄까요? 첫 절이 답해요. “예수 그리스도의 계시라”(1:1). 요한계시록은 미래의 사건표이기 전에, 지금 하늘 보좌에서 다스리시는 예수 그리스도를 보여 주는 책이에요. 밧모섬의 노사도, 불에 타면서도 “86년 동안 그분을 섬겼다”고 고백한 제자, 미지근한 물, 황제의 호칭, 사자인 줄 알았던 어린양, 666, 그리고 에덴으로 돌아온 마지막 장까지, 성경의 마지막 책에 숨은 이야기로 들어가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>요한계시록은 어떤 책일까?</h2>
+    <p>박해받는 교회에 하늘 문을 열어 보여 준 책</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>요한계시록은 자기를 “나 요한”(1:9)이라고 소개하는 사람이 썼어요. 초대교회는 이 요한을 사도 요한으로 받아들였어요. 그는 “하나님의 말씀과 예수의 증언으로 말미암아” 에게해의 작은 섬 밧모에 있었다고 해요(1:9). 복음을 전하다가 유배된 거예요. 2세기 이레니우스는 요한이 이 환상을 본 때가 로마 황제 도미티아누스(81-96년 재위) 통치 끝 무렵이라고 전해요. 그래서 기록 시기를 95년 무렵으로 많이 봐요. 그때 아시아 지방의 교회들은 황제를 “주”로 섬기라는 압박과, 가난과, 교회 안의 타협으로 흔들리고 있었어요. 요한은 그 일곱 교회에 보내는 편지로 이 책을 썼어요(1:4, 11).</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>헬라어 제목은 <span class="heb" data-tip="아포칼륍시스(apokalypsis) — ‘떨어지게 하다(아포)’와 ‘덮다(칼륍토)’가 합쳐진 말. 덮개를 벗겨 드러냄. 요한계시록 1:1의 첫 단어다.">아포칼륍시스</span>, “덮개를 벗김”이에요. 영어로는 단수로 Revelation이에요. 😄 “Revelations”라고 부르는 분들이 많은데, 여러 계시가 아니라 한 분 예수 그리스도의 계시예요.</div><div><b>일곱의 책</b>일곱 교회, 일곱 금 촛대, 일곱 인, 일곱 나팔, 일곱 대접… “일곱”이 쉰 번 넘게 나와요. 성도에게 주는 “복이 있다”는 말씀도 딱 일곱 번이에요(1:3; 14:13; 16:15; 19:9; 20:6; 22:7, 14).</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 저자를 사도 요한으로 보는 것은 2세기 순교자 유스티누스와 이레니우스 이래의 전통적인 견해예요. 3세기 알렉산드리아의 디오니시우스는 문체가 요한복음과 다르다며 의문을 제기했어요. 기록 시기를 네로 황제 때인 60년대로 보는 견해도 있어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">요한계시록의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">신약의 예언서</div><div class="mini-b">스스로를 “예언의 말씀”(1:3)이라고 불러요. 신약에서 유일하게 책 전체가 예언서예요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">구약으로 짠 책</div><div class="mini-b">구약을 “기록되었으되” 하고 직접 인용하는 곳은 없지만, 다니엘·에스겔·이사야·출애굽기를 떠올리게 하는 표현이 수백 곳이에요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">그림으로 말하는 책</div><div class="mini-b">숫자, 색깔, 짐승, 도시 같은 상징으로 이야기해요. 문자 그대로보다 그림이 가리키는 뜻을 읽어야 해요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">찬송의 책</div><div class="mini-b">하늘 예배 장면이 가득해요. 신약에서 “할렐루야”가 나오는 곳은 19장 한 장뿐이에요(19:1, 3, 4, 6).</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">성경의 마지막 장</div><div class="mini-b">창세기에서 잃어버린 생명나무가 마지막 장에서 다시 나타나요. 성경 전체 이야기가 여기서 완성돼요.</div></div></div></div>
+
+  <div class="target"><p>요한계시록의 중심에는 이 말씀이 있어요. <span class="hl">“두려워하지 말라 나는 처음이요 마지막이니 곧 살아 있는 자라 내가 전에 죽었었노라 볼지어다 이제 세세토록 살아 있어 사망과 음부의 열쇠를 가졌노니”</span>(1:17-18). 계시록은 무서운 일들을 보여 주지만, 그보다 먼저 역사의 처음과 마지막을 쥐고 계신 분을 보여 줘요. 성도가 두려워하지 않을 이유는 세상이 조용해서가 아니라, <mark>죽음의 열쇠를 가지신 예수 그리스도</mark>가 다스리시기 때문이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>밧모섬의 노사도부터 에덴으로 돌아온 마지막 장까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>누구의 계시</button><button class="chip" onclick="goTo('s2')"><b>2</b>서머나와 폴리갑</button><button class="chip" onclick="goTo('s3')"><b>3</b>미지근한 물</button><button class="chip" onclick="goTo('s4')"><b>4</b>우리 주 하나님</button><button class="chip" onclick="goTo('s5')"><b>5</b>사자와 어린양</button><button class="chip" onclick="goTo('s6')"><b>6</b>666</button><button class="chip" onclick="goTo('s7')"><b>7</b>에덴으로</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>“요한의 계시”가 아니라<br>“예수 그리스도의 계시”</h2><div class="refs">요한계시록 1:1-3 · 9-18 · 요한복음 13:23</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">마지막 만찬 자리</div>“예수의 <b>품에 의지하여</b> 누웠는지라”(요 13:23)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">밧모섬</div>“그의 발 앞에 엎드러져 <b>죽은 자 같이</b> 되매”(계 1:17)</div></div><p>우리는 이 책을 “요한계시록”이라고 부르지만, 책이 스스로 붙인 제목은 따로 있어요. “예수 그리스도의 계시라”(1:1). 요한은 받아 적은 사람이고, 보여 주시는 분도, 보여 주시는 내용도 예수 그리스도세요. 😄 그러니 계시록을 펼 때 “짐승이 누구지?”보다 먼저 물어야 할 질문은 “예수님이 어떤 분으로 보이시지?”예요.</p><p>밧모섬은 에베소 앞바다의 작고 거친 섬이에요. 사랑하는 교회들과 바다로 갈라진 채 유배된 노사도에게 “주의 날”(1:10), 곧 주일에 예수님이 나타나셨어요. 눈은 불꽃 같고, 얼굴은 해가 힘 있게 비치는 것 같았어요(1:14-16). 그 순간 요한은 “죽은 자 같이” 엎드러졌어요. 60여 년 전 마지막 만찬 자리에서 예수님 품에 기대어 앉았던 바로 그 제자가요. 친구처럼 가까웠던 예수님이 영광의 주님으로 서 계셨던 거예요.</p><p>그런데 예수님이 하신 첫 행동이 참 따뜻해요. “그가 오른손을 내게 얹고 이르시되 두려워하지 말라”(1:17). 옛날 갈릴리에서 하시던 그 손길, 그 말씀 그대로예요. 그리고 이 책은 처음부터 교회에서 소리 내어 읽도록 쓰였어요. “이 예언의 말씀을 읽는 자와 듣는 자들과… 지키는 자는 복이 있나니”(1:3). 한 사람이 읽고, 온 교회가 들었어요. 계시록은 암호를 푸는 전문가를 위한 책이 아니라, 주일에 함께 모여 <mark>살아 계신 예수 그리스도</mark>를 바라보는 성도들을 위한 책이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 요한이 밧모에 유배되었다가 도미티아누스가 죽은 뒤 에베소로 돌아왔다는 이야기는 이레니우스, 알렉산드리아의 클레멘스, 유세비우스(『교회사』 3권 18, 23장)가 전하는 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>요한계시록을 펼 때 무서운 장면보다 먼저, 내게 오른손을 얹으시며 “두려워하지 말라” 하시는 예수 그리스도를 바라봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>“죽도록 충성하라”,<br>그리고 서머나의 노감독</h2><div class="refs">요한계시록 2:8-11 · 요한복음 19:39 · 「폴리갑의 순교」</div></div></div>
+    <div class="scene-body"><p>일곱 교회 가운데 책망을 한 마디도 듣지 않은 교회는 둘뿐이에요. 서머나와 빌라델비아예요. 서머나 교회에 예수님은 자신을 이렇게 소개하세요. “처음이며 마지막이요 죽었다가 살아나신 이”(2:8). 그리고 말씀하세요. “내가 네 환난과 궁핍을 알거니와 실상은 네가 부요한 자니라”(2:9). “네가 죽도록 충성하라 그리하면 내가 생명의 관을 네게 주리라”(2:10).</p><p>서머나라는 이름에도 재밌는 뜻이 있어요. 헬라어로 “스뮈르나”는 몰약이라는 뜻이에요. 몰약은 향기로운 수지인데, 장례 때 시신에 바르는 데 쓰였어요. 니고데모가 예수님의 장례를 위해 가져온 것도 몰약이었지요(요 19:39). 게다가 서머나 도시는 기원전 600년 무렵 무너져 수백 년 동안 폐허처럼 지내다가 다시 세워진 도시였어요. 😄 “죽었다가 살아나신 이”라는 소개가 서머나 사람들에게는 남다르게 들렸을 거예요.</p><p>그리고 이 편지는 수십 년 뒤 한 사람의 삶으로 이루어져요. 서머나의 감독 폴리갑이에요. 이레니우스에 따르면 폴리갑은 사도 요한에게 배운 제자였어요. 155년 무렵, 나이 많은 폴리갑이 체포되어 경기장에 끌려갔어요. 관리들은 “카이사르는 주님이시다”라고 한마디만 하라고 달랬고, 총독은 그리스도를 욕하면 놓아주겠다고 했어요. 폴리갑이 대답했어요. <span class="hl">“나는 86년 동안 그분을 섬겼지만, 그분은 한 번도 나를 해롭게 하신 적이 없습니다. 그런데 나를 구원하신 나의 왕을 어떻게 모독할 수 있겠습니까?”</span> 그는 화형을 당했어요. 요한이 받아 적은 “죽도록 충성하라”는 말씀을, 요한의 제자가 서머나에서 그대로 살아 낸 거예요. 그가 충성할 수 있었던 이유는 자기 결심이 아니라 <mark>한 번도 자신을 버리지 않으신 왕</mark>이 계셨기 때문이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 폴리갑의 마지막 이야기는 서머나 교회가 남긴 「폴리갑의 순교」(8-9장)에 기록되어 있어요. 순교 연도는 155-156년으로 많이 보지만 조금 늦게 보는 견해도 있어요. 몰약과 도시 역사를 편지와 연결하는 것은 학자들의 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>가난하고 힘든 자리에서도 “실상은 부요한 자”라 불러 주시는 주님을 신뢰하며, 한 번도 나를 해롭게 하지 않으신 나의 왕께 끝까지 충성합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>부자 도시의 미지근한 물,<br>그리고 교회 문 밖의 예수님</h2><div class="refs">요한계시록 3:14-22 · 골로새서 4:13-16</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">서머나 교회</div>“환난과 궁핍을 알거니와 <b>실상은 부요한 자</b>니라”(2:9)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">라오디게아 교회</div>“나는 부자라 하나 <b>가난한 것과 눈 먼 것</b>을 알지 못하도다”(3:17)</div></div><p>일곱 번째 교회 라오디게아는 칭찬을 한 마디도 듣지 못했어요. “네가 차지도 아니하고 뜨겁지도 아니하도다… 미지근하여… 내 입에서 너를 토하여 버리리라”(3:15-16). 😄 “토하여 버리리라”는 정말 “뱉어 버리겠다”는 말이에요. 그런데 이 “미지근한 물”에는 동네 사정이 숨어 있어요.</p><p>라오디게아에서 북쪽으로 10km쯤 가면 히에라볼리가 있어요(골 4:13). 뜨거운 온천이 솟아나 병을 고치려는 사람들이 찾아오던 도시예요. 동쪽으로 조금 가면 골로새가 있는데, 산에서 내려오는 시원한 물로 유명했어요. 그런데 라오디게아에는 좋은 샘이 없어서 멀리서 수로로 물을 끌어왔어요. 도착한 물은 석회가 많고 미지근했어요. 지금도 라오디게아 유적에는 석회가 두껍게 앉은 수도관이 남아 있어요. 뜨거운 물은 병을 고치고, 찬물은 목을 시원하게 하는데, 미지근한 물은 어디에도 쓸모가 없었던 거예요.</p><p>라오디게아는 부자 도시였어요. 로마 역사가 타키투스는 60년 무렵 큰 지진이 났을 때 라오디게아가 로마의 도움 없이 “자기 힘으로” 도시를 다시 세웠다고 기록했어요. 부드러운 검은 양털로도 유명했어요. 그래서 예수님이 “흰 옷을 사서 입어”(3:18) 하신 말씀이 뼈아프게 들려요. 그리고 가장 놀라운 장면이 이어져요. “볼지어다 내가 문 밖에 서서 두드리노니”(3:20). 이 말씀은 전도할 때 많이 쓰지만, 원래는 교회에 하신 말씀이에요. 예수님이 교회 문 밖에 서 계셨던 거예요. 그래도 주님은 문을 부수지 않으시고 두드리세요. 그리고 문을 열면 <mark>함께 먹는 친구가 되어 주시는 분</mark>이세요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ “차든지 뜨겁든지”를 이웃 도시의 온천물과 찬물에 빗대어 읽는 것은 20세기 중반 이후 널리 받아들여진 해석이지만, 논의가 있어요. 라오디게아 근처에 의학교가 있어서 “안약”(3:18)이 그것과 관련 있다는 견해도 있지만 확실하지는 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>“나는 부족한 것이 없다”는 마음으로 주님을 문 밖에 세워 두고 있지 않은지 돌아보고, 두드리시는 주님께 오늘 문을 엽니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>황제가 탐낸 호칭,<br>“우리 주 하나님”</h2><div class="refs">요한계시록 3:20 · 4:1-11 · 19:6</div></div></div>
+    <div class="scene-body"><p>3장이 끝나고 4장이 열리면 장면이 확 바뀌어요. “이 일 후에 내가 보니 하늘에 열린 문이 있는데”(4:1). 😄 바로 앞에서 예수님은 닫힌 교회 문 밖에서 두드리고 계셨는데, 이번에는 하늘 문이 활짝 열려 있어요. 땅에서 흔들리는 교회에게 하나님은 먼저 하늘 보좌를 보여 주세요. 계시록에서 “보좌”라는 말은 40번 넘게 나와요. 이 책의 진짜 주인공은 짐승이 아니라 보좌에 앉으신 분이에요.</p><p>보좌 둘레의 이십사 장로들은 “자기의 관을 보좌 앞에 드리며” 이렇게 찬양해요. <span class="hl">“우리 주 하나님이여 영광과 존귀와 권능을 받으시는 것이 합당하오니”</span>(4:11). 그런데 이 호칭에 숨은 이야기가 있어요. 로마 역사가 수에토니우스에 따르면, 요한이 밧모에 있던 때의 황제 도미티아누스는 자기 이름으로 나가는 공문을 “우리 주 하나님께서 이렇게 명하신다”로 시작하게 했고, 사람들이 자기를 “주님이요 하나님”이라고 부르게 했대요. 라틴어로 “도미누스 에트 데우스 노스테르”예요.</p><p>그러니 장로들의 찬송은 그냥 예쁜 찬양이 아니었어요. 황제가 자기에게 붙인 그 호칭을, 하늘의 예배는 오직 보좌에 앉으신 하나님께 돌려 드린 거예요. 그리고 그 이유도 분명히 말해요. “주께서 만물을 지으신지라.” 황제는 사람이 만든 왕좌에 앉았지만, 하나님은 만물을 지으신 분이세요. 로마에 굴복한 왕이 황제 앞에 왕관을 내려놓기도 했듯이, 장로들은 자기 관을 보좌 앞에 내려놓아요. 이 땅에서 누가 “주”라고 주장하든, 참된 왕좌는 하나예요. “할렐루야 주 우리 하나님 곧 전능하신 이가 <mark>통치하시도다</mark>”(19:6).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 도미티아누스의 호칭 이야기는 수에토니우스의 『황제 열전』(도미티아누스 13장)에 나와요. 요한계시록 4:11이 이 호칭을 의식하고 쓴 것인지는 학자들의 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 삶에서 “주님” 자리를 차지하려는 것들 앞에서, 만물을 지으신 하나님만이 나의 주 하나님이심을 고백하며 내 관을 그분 앞에 내려놓습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>사자라고 들었는데<br>돌아보니 어린양이었다</h2><div class="refs">요한계시록 5:1-10 · 13:11 · 창세기 49:9-10 · 요한복음 1:29</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">요한이 들은 것</div>“유대 지파의 <b>사자</b> 다윗의 뿌리가 이겼으니”(5:5)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">요한이 본 것</div>“한 <b>어린 양</b>이 서 있는데 일찍이 죽임을 당한 것 같더라”(5:6)</div></div><p>5장에서 하나님의 오른손에 일곱 인으로 봉한 두루마리가 있어요. 그런데 그것을 펼 자격이 있는 이가 하늘에도 땅에도 없었어요. 요한은 “크게 울었”어요(5:4). 그러자 장로 한 사람이 말해요. “울지 말라 유대 지파의 사자 다윗의 뿌리가 이겼으니.” 창세기 49장에서 야곱이 유다를 “사자 새끼”라고 축복한 이래로, 사자는 메시아의 힘을 나타내는 그림이었어요. 요한은 눈물을 닦고 우렁찬 사자를 보려고 고개를 돌렸어요.</p><p>그런데 요한이 본 것은 사자가 아니었어요. <span class="hl">어린양</span>이었어요. 그것도 “일찍이 죽임을 당한 것 같은” 어린양이요. 😄 이 책에서 가장 큰 반전이에요. 사자는 무엇으로 이겼을까요? 이빨과 발톱이 아니라, 죽임을 당함으로 이겼어요. 그런데 그 어린양은 누워 있지 않고 “서 있어요.” 죽임을 당한 흔적을 지닌 채 살아 계세요. 십자가와 부활이 한 그림에 담겨 있어요. 오래전 침례 요한이 예수님을 보고 외친 말이 이렇게 하늘 보좌 앞에서 이루어져요. “보라 세상 죄를 지고 가는 하나님의 어린 양이로다”(요 1:29).</p><p>여기서 “어린양”은 <span class="heb" data-tip="아르니온(arnion) — 어린양. 요한계시록에 스물아홉 번 나오는데, 13:11의 짐승을 빼면 모두 예수 그리스도를 가리킨다.">아르니온</span>이에요. 계시록에서 예수님을 부르는 가장 중요한 이름이에요. 그래서 13장에 나오는 가짜가 더 섬뜩해요. 땅에서 올라온 짐승은 “어린 양 같이 두 뿔이 있고 용처럼 말을 하더라”(13:11). 겉모습은 어린양을 흉내 내지만, 입에서는 용의 말이 나와요. 진짜 어린양은 <mark>자기 피로 사람들을 사서 하나님께 드리신 분</mark>이에요(5:9).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 요한복음 1:29의 “어린 양”은 헬라어로 “암노스”라서 계시록의 “아르니온”과 단어는 달라요. 가리키는 분은 같아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>힘으로 이기려는 세상 속에서, 죽임을 당하심으로 이기신 어린양 예수님을 따라 섬김과 희생의 길을 걸어갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>666, 그리고 어떤 사본의 616</h2><div class="refs">요한계시록 13:16-18 · 14:1 · 22:4</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">짐승을 따르는 사람들</div>오른손이나 이마에 <b>짐승의 이름이나 수</b>(13:16-17)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">어린양을 따르는 사람들</div>이마에 <b>어린양과 아버지의 이름</b>(14:1)</div></div><p>요한계시록에서 가장 유명한 숫자는 아마 666일 거예요. “지혜가 여기 있으니 총명한 자는 그 짐승의 수를 세어 보라 그것은 사람의 수니 그의 수는 육백육십육이니라”(13:18). 이 숫자 때문에 바코드, 신용카드, 컴퓨터 칩까지 온갖 이야기가 나왔지요. 그런데 요한은 “세어 보라”고 했어요. 첫 독자들이 셀 수 있는 수였다는 뜻이에요.</p><p>당시 히브리어와 헬라어는 글자가 숫자를 겸했어요. 그래서 이름의 글자 값을 더해 숫자로 바꾸는 놀이가 흔했어요. 폼페이 유적의 벽에는 이런 낙서도 남아 있어요. “나는 그녀를 사랑한다. 그녀의 숫자는 545.” 😄 이름을 숫자로 숨긴 연애편지예요. 그런데 “네로 황제”를 히브리 글자로 쓰면(נרון קסר) 그 값을 더한 수가 정확히 666이 돼요. 더 재밌는 건, 옛 사본 가운데 이 구절을 <span class="hl">616</span>으로 적은 것들이 있다는 거예요. 2세기의 이레니우스도 그런 사본을 알고 있었고, 이집트에서 발견된 3-4세기 무렵 파피루스 조각에도 616이 적혀 있어요. 그런데 네로의 라틴어식 이름을 히브리 글자로 쓰면 글자 하나가 빠지면서 616이 돼요.</p><p>그러니 666은 먼 미래의 기계 번호라기보다, 하나님을 대적하며 스스로 신이 되려는 권력의 이름이에요. 그리고 계시록은 그 반대편 사람들도 보여 줘요. 어린양과 함께 선 사람들의 “이마에는 어린 양의 이름과 그 아버지의 이름을 쓴 것이 있도다”(14:1). 마지막 장에서도 “그의 이름도 그들의 이마에 있으리라”(22:4)고 해요. 중요한 질문은 “칩을 받았나?”가 아니라 “나는 누구의 이름을 달고 사는가?”예요. 성도의 이마에는 <mark>어린양 예수님의 이름</mark>이 있어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 666을 네로와 연결하는 해석은 널리 알려졌지만 학자들 사이에 여러 견해가 있어요. 616 사본에 대해서는 이레니우스의 『이단 반박』 5권 30장 1절, 옥시링쿠스 파피루스(P115)를 참고했어요. 후대의 한 유대-그리스도교 문헌은 “예수”의 헬라어 이름 값이 888이라고 적었는데, 요한계시록이 직접 말한 것은 아니에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>두려운 숫자에 마음을 빼앗기기보다, 내 생각과 손이 누구의 이름에 속해 있는지 돌아보고 어린양의 이름을 달고 삽니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>성경의 마지막 장에서<br>에덴으로 돌아오다</h2><div class="refs">요한계시록 21:1-5 · 22:1-5, 20-21 · 창세기 1-3장 · 고린도전서 16:22</div></div></div>
+    <div class="scene-body"><div class="steps"><div><b>창 1:1</b>하늘과 땅을 창조 → <b>계 21:1</b>새 하늘과 새 땅</div><div><b>창 1:5</b>어둠을 밤이라 부르심 → <b>계 22:5</b>“다시 밤이 없겠고”</div><div><b>창 3:8</b>하나님의 얼굴을 피해 숨음 → <b>계 22:4</b>“그의 얼굴을 볼 터이요”</div><div><b>창 3:17</b>“땅은 저주를 받고” → <b>계 22:3</b>“다시 저주가 없으며”</div><div class="last"><b>창 3:24</b>생명나무 길을 막으심 → <b>계 22:2</b>강 좌우에 생명나무</div></div><p>성경은 동산에서 시작해서 도성으로 끝나요. 그런데 그 도성 한가운데 다시 동산이 있어요. 창세기 3장에서 사람은 죄 때문에 생명나무에서 쫓겨났어요. 그룹과 불칼이 그 길을 지켰지요(창 3:24). 그 뒤로 생명나무는 잠언의 비유 속에 이름만 몇 번 나오다가, 에베소 교회에 약속으로 주어지고(계 2:7), 마침내 마지막 장에서 눈앞에 다시 나타나요. “강 좌우에 생명나무가 있어 열두 가지 열매를 맺되… 그 나무 잎사귀들은 만국을 치료하기 위하여 있더라”(22:2). 😄 성경 전체가 한 바퀴 돌아 처음 자리로 돌아온 거예요. 그것도 더 좋게요.</p><p>21:1의 한 구절도 눈에 들어와요. “바다도 다시 있지 않더라.” 밧모섬에 갇힌 요한에게 바다는 사랑하는 교회들과 자기를 갈라놓은 벽이었어요. 성경에서 바다는 혼돈과 두려움을 뜻하기도 하고요. 그 바다가 없는 곳, 하나님이 “모든 눈물을 그 눈에서 닦아 주시”는 곳(21:4)을 요한은 보았어요. 그곳의 중심은 황금 길이 아니라 “하나님과 그 어린 양의 보좌”(22:3)예요.</p><p>그리고 성경의 마지막 기도가 나와요. “아멘 주 예수여 오시옵소서”(22:20). 바울도 고린도전서 끝에 아람어로 같은 기도를 남겼어요. “마라나타”(고전 16:22 참조), “우리 주여, 오시옵소서.” 초대교회 성도들이 모일 때마다 드리던 기도예요. 그리고 성경의 가장 마지막 말은 심판도 경고도 아닌 은혜예요. “주 예수의 은혜가 모든 자들에게 있을지어다 아멘”(22:21). 에덴에서 잃어버린 모든 것을 되찾아 주시는 분은 <mark>만물을 새롭게 하시는 어린양 예수 그리스도</mark>세요(21:5).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ “바다가 다시 없다”를 요한의 유배 생활과 연결하는 것은 묵상적인 읽기예요. 본문의 중심 뜻은 혼돈과 악이 사라진 새 창조에 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>눈물과 저주가 끝나는 날을 소망하며, 오늘도 초대교회 성도들처럼 “아멘 주 예수여 오시옵소서” 하고 기도합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">성경의 마지막 책,<br>그 마지막 말은 “은혜”</div>
+    <p>요한계시록은 무섭게 보이지만, 사실은 박해받고 흔들리는 성도들에게 보낸 위로의 책이에요. 황제가 “주 하나님”을 자처하고, 교회는 가난하고, 어떤 교회는 미지근해졌을 때, 하나님은 하늘 문을 열고 보여 주셨어요. 보좌는 비어 있지 않고, 죽임당하신 어린양이 이기셨다고요.</p><p>우리는 계시록의 모든 그림을 다 풀지 못할 수도 있어요. 그래도 괜찮아요. 이 책이 보여 주려는 것은 결국 한 분이에요. 처음이요 마지막이시고, 죽었다가 살아나셨고, 속히 오시겠다고 약속하신 <mark>예수 그리스도</mark>예요. 그분이 오실 때 우리는 에덴보다 더 좋은 곳에서 그분의 얼굴을 보게 될 거예요.</p>
+    <div class="q">“이것들을 증언하신 이가 이르시되<br>내가 진실로 속히 오리라 하시거늘<br>아멘 주 예수여 오시옵소서” (22:20)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

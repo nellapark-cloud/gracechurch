@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>시편, 탄식이 찬양으로 바뀌어 가는 노래책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="150편의 노래 속에 숨은 구조와 말놀이, 그리고 십자가의 외침. 시편에 숨은 이야기">
+<meta property="og:title" content="시편, 탄식이 찬양으로 바뀌어 가는 노래책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 51</div>
+  <h1>시편,<br>탄식이 <em>찬양</em>으로<br>바뀌어 가는 책</h1>
+  <p class="sub">"어찌 나를 버리셨나이까"로 울던 노래가<br>"호흡이 있는 자마다 찬양할지어다"로 끝나기까지</p>
+  <div class="ref">시편 1–150편</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>시편은 성경에서 가장 긴 책이고, 가장 많이 읽히는 책이에요. 종교개혁자 칼뱅은 시편을 "영혼의 모든 부분을 해부한 책"이라고 불렀고, 루터는 "작은 성경"이라고 불렀어요. 기쁨, 감사, 두려움, 분노, 절망, 후회까지, 사람이 느낄 수 있는 거의 모든 감정이 시편 안에 있어요. 😄 하나님 앞에서 이렇게까지 솔직해도 되나 싶을 만큼요.</p><p>그런데 150편을 처음부터 끝까지 따라가 보면 흐름이 보여요. 앞쪽에는 탄식이 많고, 뒤로 갈수록 찬양이 많아져요. 그리고 마지막 다섯 편은 모두 "할렐루야"로 시작하고 끝나요. 시편의 정문인 1편, 아무도 뜻을 모르는 "셀라", 176절짜리 알파벳 시, 십자가 위에서 들린 22편, 나를 쫓아오는 선하심, 바벨론 강가의 수금, 그리고 할렐루야 오케스트라까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>시편은 어떤 책일까?</h2>
+    <p>천 년에 걸쳐 모인 이스라엘의 기도와 노래</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>시편은 150편의 노래와 기도를 모은 책이에요. 가장 오래된 노래는 모세의 기도(90편)로 보고, 가장 늦은 노래는 바벨론 포로 시대 이후의 것(137편 등)이라, 천 년에 가까운 세월이 담겨 있어요. 표제에 다윗의 이름이 붙은 시가 73편이고, 아삽, 고라 자손, 솔로몬, 헤만, 에단의 이름도 나와요. 히브리어 제목은 "테힐림", 곧 "찬양들"이에요. 신약에서 가장 많이 인용된 구약 책이기도 해요.</p>
+    <div class="debate sans"><div><b>다섯 권으로 된 책</b>1–41편, 42–72편, 73–89편, 90–106편, 107–150편의 다섯 권으로 나뉘고, 각 권 끝에는 "아멘 아멘" 같은 송영이 붙어 있어요. 모세오경 다섯 권을 본뜬 구조로 보는 해석이 많아요.</div><div><b>"다윗의 기도가 끝나니라"</b>72편 마지막 절은 "이새의 아들 다윗의 기도가 끝나니라"예요(72:20). 그런데 그 뒤에도 다윗의 시가 나와요. 시편이 여러 단계에 걸쳐 모였다는 흔적으로 봐요.</div></div>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">시편의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">다섯 권의 구조</div><div class="mini-b">모세오경처럼 다섯 권으로 나뉘어 각 권이 찬양으로 끝나요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">가장 많은 것은 탄식</div><div class="mini-b">개인과 공동체의 탄식시가 시편에서 가장 큰 비중을 차지해요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">표제와 음악 지시</div><div class="mini-b">"인도자를 따라", "현악에 맞춘" 같은 머리말이 붙은 시가 많아요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">알파벳 시</div><div class="mini-b">119편, 25편, 34편, 145편 등은 히브리어 알파벳 순서로 줄을 시작해요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">메시아를 노래한 시</div><div class="mini-b">2편, 22편, 110편 등은 신약에서 예수님을 가리키는 말씀으로 인용돼요.</div></div></div></div>
+
+  <div class="target"><p>시편 22편은 십자가 위에서 들렸어요. <span class="hl">"내 하나님이여 내 하나님이여 어찌 나를 버리셨나이까"</span>(22:1). 예수님은 가장 깊은 고통의 순간에 시편으로 기도하셨어요(마 27:46). 시편은 우리의 기도책이면서, 동시에 <mark>우리를 위해 버림받으신 예수 그리스도</mark>의 기도책이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>시편의 정문부터 할렐루야 오케스트라까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>복 있는 사람</button><button class="chip" onclick="goTo('s2')"><b>2</b>셀라</button><button class="chip" onclick="goTo('s3')"><b>3</b>119편과 117편</button><button class="chip" onclick="goTo('s4')"><b>4</b>시편 22편</button><button class="chip" onclick="goTo('s5')"><b>5</b>나를 쫓는 선하심</button><button class="chip" onclick="goTo('s6')"><b>6</b>바벨론 강가</button><button class="chip" onclick="goTo('s7')"><b>7</b>할렐루야 오케스트라</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>시편의 정문,<br>"복 있는 사람"은 사실 복수형이다</h2><div class="refs">시편 1:1-6 · 2:12</div></div></div>
+    <div class="scene-body"><p>시편 1편은 150편 전체로 들어가는 정문이에요. 표제도 없이 이렇게 시작해요. "복 있는 사람은 악인들의 꾀를 따르지 아니하며 죄인들의 길에 서지 아니하며 오만한 자들의 자리에 앉지 아니하고"(1:1). 따르고, 서고, 앉고. 악에 점점 깊이 빠져드는 세 단계예요. 처음엔 지나가다 귀를 기울이고, 다음엔 멈춰 서고, 마지막엔 아예 눌러앉아요.</p><p>"복 있는"은 히브리어 <span class="heb" data-tip="아쉬레(ashrei) — 복되도다, 행복하도다. 문법적으로 복수형이라 직역하면 그 사람의 복들이여, 그 사람은 얼마나 행복한가라는 감탄이 된다.">아쉬레</span>인데, 문법적으로 복수형이에요. 직역하면 "오, 그 사람의 행복들이여!" 하는 감탄이에요. 😄 복이 하나가 아니라 겹겹이라는 거예요. 그리고 2편 마지막 절이 같은 말로 끝나요. "그에게 피하는 모든 사람은 다 복이 있도다"(2:12). 1편과 2편이 "아쉬레"로 감싸여 시편의 대문을 이루고 있어요.</p><p>복 있는 사람은 "여호와의 율법을 즐거워하여 그의 율법을 주야로 묵상하는도다"(1:2). "묵상하다"는 이사야 31:4에서 사자가 먹이를 앞에 두고 "으르렁거리는" 소리에 쓰인 말이에요. 조용히 생각만 하는 것이 아니라 말씀을 입으로 웅얼거리며 곱씹는 거예요. 그런 사람은 "시냇가에 심은 나무"가 돼요(1:3). "심은"은 다른 데서 옮겨 심었다는 뜻이에요. 메마른 땅에서 물가로 옮겨 심어 주신 분, 그분이 <mark>우리를 생명의 물가로 옮기신 하나님</mark>이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상의 꾀를 따르고, 서고, 앉는 길을 돌아보고, 말씀을 주야로 곱씹으며 물가에 심긴 나무로 자라기를 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>일흔한 번 나오는데 아무도 뜻을 모르는 말,<br>"셀라"</h2><div class="refs">시편 3:2, 4, 8 · 46:3, 7, 11 · 하박국 3:3</div></div></div>
+    <div class="scene-body"><p>시편을 읽다 보면 문장 끝에 뜬금없이 "셀라"라는 말이 붙어 있어요. "많은 사람이 나를 가리켜 말하기를 그는 하나님께 구원을 받지 못한다 하나이다 (셀라)"(3:2). 시편에만 71번, 하박국 3장에 3번 나와요. 그런데 놀랍게도 아무도 이 말의 정확한 뜻을 몰라요. 😄</p><p>가장 널리 받아들여지는 설명은 음악 지시어라는 거예요. 노래를 잠시 멈추라는 "쉼표"일 수도 있고, 악기 간주를 넣으라는 표시일 수도 있고, "소리를 높이라"는 뜻일 수도 있어요. 헬라어 칠십인역은 "디아프살마", 곧 "현악기 간주" 정도로 옮겼어요. 그래서 많은 성도들은 "셀라"가 나오면 "잠시 멈춰 생각하라"는 뜻으로 읽어요.</p><p>시편 46편에는 "셀라"가 세 번 나와요. "바닷물이 솟아나고 뛰놀든지 그것이 넘침으로 산이 흔들릴지라도 (셀라)"(46:3). 그리고 두 번은 같은 후렴 뒤에 나와요. "만군의 여호와께서 우리와 함께 하시니 야곱의 하나님은 우리의 피난처시로다 (셀라)"(46:7, 11). 산이 흔들리는 순간에도 잠시 멈춰 숨을 고르게 하는 말, 그 멈춤 속에서 <mark>우리와 함께하시는 하나님</mark>을 기억하게 해요. 루터가 "내 주는 강한 성이요"를 지을 때 바탕이 된 시도 46편이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ "셀라"의 어원과 뜻에 대해서는 여러 학설이 있을 뿐 정해진 답이 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>바쁘게 흘러가는 하루 속에 "셀라"의 쉼표를 두고, 잠시 멈춰 나와 함께하시는 하나님을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>176절짜리 알파벳 노래와<br>두 절짜리 가장 짧은 노래</h2><div class="refs">시편 119:1-176 · 117:1-2 · 로마서 15:11</div></div></div>
+    <div class="scene-body"><p>시편 119편은 성경에서 가장 긴 장이에요. 176절이나 돼요. 그런데 아무렇게나 긴 게 아니라 정교하게 짜여 있어요. 히브리어 알파벳 22글자마다 8절씩 할당되어, 첫째 연 여덟 절은 모두 "알렙"으로, 둘째 연은 "베트"로 시작해요. 22 곱하기 8, 정확히 176절이에요. 😄 우리말로 치면 "가"로 여덟 줄, "나"로 여덟 줄씩 쓴 셈이에요.</p><p>그리고 거의 모든 절에 "말씀"을 가리키는 낱말이 들어 있어요. 율법, 증거, 법도, 율례, 계명, 규례, 말씀, 약속 등 여덟 가지 낱말이 번갈아 가며 나와요. 하나님의 말씀을 이렇게도 불러 보고 저렇게도 불러 보며 176절 동안 사랑을 고백하는 거예요. "주의 말씀은 내 발에 등이요 내 길에 빛이니이다"(119:105)도 여기 있어요.</p><p>반대로 가장 짧은 장은 바로 앞의 117편이에요. 단 두 절이에요. "너희 모든 나라들아 여호와를 찬양하며 너희 모든 백성들아 그를 찬송할지어다 우리에게 향하신 여호와의 인자하심이 크고 여호와의 진실하심이 영원함이로다 할렐루야". 가장 짧은 시가 이스라엘이 아니라 "모든 나라"를 부르고 있어요. 바울은 이 구절을 인용해 이방인들도 하나님을 찬양하게 되었다고 말해요(롬 15:11). 가장 긴 노래는 말씀을, 가장 짧은 노래는 <mark>온 열방을 향한 하나님의 사랑</mark>을 노래해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님의 말씀을 여러 이름으로 불러 보며 사랑을 고백하고, 모든 나라를 향하신 그 인자하심을 함께 찬양합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>십자가 위에서 들린 시편,<br>"어찌 나를 버리셨나이까"</h2><div class="refs">시편 22:1-31 · 마태복음 27:35-46 · 요한복음 19:24, 30</div></div></div>
+    <div class="scene-body"><p>예수님은 십자가 위에서 크게 외치셨어요. "엘리 엘리 라마 사박다니". "나의 하나님, 나의 하나님, 어찌하여 나를 버리셨나이까"(마 27:46). 이 외침은 시편 22편 첫 절을 예수님의 모국어인 아람어로 부르신 거예요.</p><p>그런데 22편을 계속 읽으면 소름이 돋아요. "나를 보는 자는 다 나를 비웃으며 입술을 비쭉거리고 머리를 흔들며 말하되 그가 여호와께 의탁하니 구원하실 걸"(22:7-8). 마태는 십자가 아래 대제사장들이 거의 같은 말로 조롱했다고 기록해요(마 27:39-43). "내 겉옷을 나누며 속옷을 제비 뽑나이다"(22:18)는 로마 군인들이 그대로 했고, 요한은 이 구절을 직접 인용해요(요 19:24). 다윗이 천 년 전에 부른 노래가 골고다에서 그대로 재현되었어요.</p><p>22편은 탄식으로 시작하지만 찬양으로 끝나요. "땅의 모든 끝이 여호와를 기억하고 돌아오며"(22:27). 그리고 마지막 구절은 이래요. "와서 그의 공의를 태어날 백성에게 전함이여 주께서 이를 행하셨다 할 것이로다"(22:31). "주께서 이를 행하셨다". 많은 설교자들은 예수님이 십자가에서 마지막으로 하신 말씀, "다 이루었다"(요 19:30)를 이 구절과 함께 읽어요. 첫 절을 외치신 예수님은 이 시편 전체를, 버림받음에서 승리까지를 <mark>십자가에서 이루셨어요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 22:16 "내 수족을 찔렀나이다"는 히브리어 마소라 본문에서 "사자처럼 내 수족을"로 읽히기도 해요. 칠십인역과 사해 지역에서 나온 사본은 "찔렀다(팠다)"에 가까운 읽기를 보여 줘요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님께 버림받은 것 같은 날에도 탄식을 기도로 올리며, 나 대신 버림받으신 예수님 덕분에 내가 버림받지 않음을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>나를 "쫓아오는" 선하심과 인자하심,<br>목자의 시편 23편</h2><div class="refs">시편 23:1-6 · 요한복음 10:11</div></div></div>
+    <div class="scene-body"><p>"여호와는 나의 목자시니 내게 부족함이 없으리로다"(23:1). 양을 치던 소년이었던 다윗이 하나님을 목자로 고백한 노래예요. 목자는 양을 "푸른 풀밭에 누이시며 쉴 만한 물 가로 인도하시는도다"(23:2). 양은 배가 부르고 두려움이 없어야 눕는다고 해요. 목자가 곁에 있어야 비로소 눕는 거예요.</p><p>"내가 사망의 음침한 골짜기로 다닐지라도"(23:4). "사망의 음침한"은 히브리어 한 단어 <span class="heb" data-tip="찰마웨트(tsalmavet) — 짙은 어둠, 죽음의 그림자. 그림자(첼)와 죽음(마웨트)이 합쳐진 말로 풀이되어 왔다.">찰마웨트</span>로, "죽음의 그림자"라는 뜻으로 풀어 왔어요. 이스라엘 광야에는 실제로 해가 거의 들지 않는 깊고 좁은 골짜기들이 있어요. 그 골짜기에서도 "주께서 나와 함께 하심이라"고 고백해요.</p><p>그리고 마지막 절이 놀라워요. "내 평생에 선하심과 인자하심이 반드시 나를 따르리니"(23:6). "따르다"는 히브리어 "라다프"인데, 성경에서 대개 원수가 "쫓아오다, 추격하다"라는 뜻으로 쓰여요. 😄 평생 원수에게 쫓겨 다니던 다윗이 이제는 하나님의 선하심과 인자하심이 자기를 끝까지 쫓아온다고 고백해요. 도망쳐도 따라잡는 사랑이에요. 예수님은 말씀하셨어요. "나는 선한 목자라 선한 목자는 양들을 위하여 목숨을 버리거니와"(요 10:11). <mark>끝까지 우리를 쫓아오시는 목자</mark>세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 하나님을 놓칠 때에도 그분의 선하심과 인자하심이 나를 끝까지 쫓아오고 있음을 믿고 목자의 곁에 눕습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>바벨론 강가에 걸어 둔 수금,<br>분노까지 하나님께 가져간 노래</h2><div class="refs">시편 137:1-9</div></div></div>
+    <div class="scene-body"><p>"우리가 바벨론의 여러 강변 거기에 앉아서 시온을 기억하며 울었도다 그 중의 버드나무에 우리가 우리의 수금을 걸었나니"(137:1-2). 예루살렘이 무너지고 포로로 끌려간 사람들의 노래예요. 바벨론 사람들이 놀리듯 말했어요. "시온의 노래 중 하나를 노래하라"(137:3). 그들은 대답해요. "우리가 이방 땅에서 어찌 여호와의 노래를 부를까"(137:4).</p><p>찬양하던 손이 수금을 나뭇가지에 걸었어요. 노래할 수 없을 만큼 슬펐던 거예요. 그러면서도 고백해요. "예루살렘아 내가 너를 잊을진대 내 오른손이 그의 재주를 잊을지로다"(137:5). 수금 타는 연주자의 오른손에 걸고 한 맹세예요. 😄 1978년에는 이 시편의 앞부분으로 만든 팝송이 전 세계에서 크게 유행하기도 했어요.</p><p>그런데 이 시편의 마지막 절은 성경에서 가장 읽기 힘든 구절 가운데 하나예요. 바벨론의 어린아이들을 바위에 메어치는 자가 복이 있다고 해요(137:9). 성경에 왜 이런 말이 있을까요? 많은 주석가들은 이렇게 설명해요. 이것은 그들이 당한 끔찍한 일을 그대로 하나님 앞에 쏟아 놓은 정직한 탄식이고, 복수를 스스로 하지 않고 하나님께 맡기는 기도라고요. 시편은 분노까지 하나님께 가져가라고 가르쳐요. 그리고 그 분노는 마침내 <mark>원수를 위해 기도하신 십자가의 예수님</mark>(눅 23:34) 앞에서 녹아요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 137편 마지막 절 같은 "저주 시편"을 어떻게 읽어야 하는지는 교회사 내내 많은 논의가 있었어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>슬퍼서 노래할 수 없는 날에는 그 슬픔을, 화가 나는 날에는 그 분노를 숨기지 않고 하나님께 정직하게 가져갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>다섯 편 연속 "할렐루야",<br>호흡이 있는 자마다</h2><div class="refs">시편 146–150편</div></div></div>
+    <div class="scene-body"><p>시편의 마지막 다섯 편(146–150편)은 모두 "할렐루야"로 시작해서 "할렐루야"로 끝나요. "할렐루"는 "너희는 찬양하라", "야"는 하나님의 이름 "여호와"의 줄임말이에요. 탄식으로 가득하던 시편이 마지막에는 쉬지 않는 찬양으로 끝나요.</p><p>마지막 150편은 짧지만 "찬양하라"가 열 번 넘게 쏟아져요. 그리고 거의 오케스트라 편성표 같아요. "나팔 소리로 찬양하며 비파와 수금으로 찬양할지어다 소고 치며 춤 추어 찬양하며 현악과 퉁소로 찬양할지어다 큰 소리 나는 제금으로 찬양하며 높은 소리 나는 제금으로 찬양할지어다"(150:3-5). 관악기, 현악기, 타악기, 춤까지 다 나와요. 😄 큰 소리 나는 제금과 높은 소리 나는 제금까지 따로 챙겼어요.</p><p>그리고 시편 전체의 마지막 절. "호흡이 있는 자마다 여호와를 찬양할지어다 할렐루야"(150:6). 악기가 없어도 숨만 쉬면 찬양할 수 있어요. 시편은 "어찌 나를 버리셨나이까"라는 탄식을 지나 이 마지막 할렐루야에 이르러요. 우리 삶도 그렇게 흘러가요. 그리고 요한계시록에서 하늘의 큰 무리가 다시 이 말을 외쳐요. "할렐루야 구원과 영광과 능력이 우리 하나님께 있도다"(계 19:1). <mark>모든 탄식의 끝은 할렐루야</mark>예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 내 숨이 붙어 있는 한, 탄식 중에도 마지막 할렐루야를 바라보며 하나님을 찬양합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">모든 감정을 하나님 앞으로<br>가져가는 법을 가르치는 책</div>
+    <p>시편은 착한 말만 골라 담은 기도책이 아니에요. "어찌 나를 버리셨나이까", "언제까지니이까", "내 원수를 갚아 주소서" 같은 날것의 외침이 가득해요. 하나님은 그 솔직한 기도들을 성경에 남겨 두셨어요. 우리도 그렇게 기도해도 된다는 뜻이에요.</p><p>그리고 시편은 그 모든 탄식을 할렐루야로 이끌어 가요. 탄식을 지우는 것이 아니라 탄식을 지나서 찬양에 이르게 해요. 그 길을 먼저 걸으신 분이 계세요. 십자가에서 22편으로 기도하시고 부활로 할렐루야를 이루신 <mark>예수 그리스도</mark>예요.</p>
+    <div class="q">"호흡이 있는 자마다<br>여호와를 찬양할지어다<br>할렐루야" (150:6)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사무엘하, 왕이 가장 많이 운 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="이스라엘의 정상에 오른 다윗, 그런데 가장 자주 우는 왕. 사무엘하에 숨은 이야기">
+<meta property="og:title" content="사무엘하, 왕이 가장 많이 운 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 42</div>
+  <h1>사무엘하,<br>왕이 가장 <em>많이</em><br>운 책</h1>
+  <p class="sub">정상에 오른 다윗의 이야기인데,<br>정작 가장 자주 나오는 것은 그의 눈물</p>
+  <div class="ref">사무엘하 1–24장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>사무엘하는 다윗이 마침내 왕이 되는 책이에요. 헤브론에서 유다의 왕이 되고, 예루살렘을 빼앗아 수도로 삼고, 언약궤를 모셔 오고, 사방의 원수를 물리쳐요. 이스라엘 역사에서 가장 빛나는 시절이지요. 그런데 이상하게도 이 책을 천천히 읽으면 다윗이 웃는 장면보다 우는 장면이 훨씬 많아요. 😄 사울과 요나단 때문에, 아브넬 때문에, 죽어 가는 아기 때문에, 그리고 아들 압살롬 때문에 울어요.</p><p>이 책은 11장을 경첩으로 둘로 접혀 있어요. 앞의 열 장은 올라가는 이야기이고, 밧세바 사건이 있는 11장부터는 내려가는 이야기예요. 가장 높은 자리에 앉은 사람도 하나님의 은혜 없이는 설 수 없다는 것을 보여 주는 책이에요. 활의 노래, 물길로 들어간 예루살렘, 새 수레와 춤, "집"이라는 말놀이, 다리 저는 왕자의 식탁, 한 암양 새끼, 그리고 "내 아들 압살롬아"까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>사무엘하는 어떤 책일까?</h2>
+    <p>다윗 왕국의 빛과 그림자를 정직하게 보여 주는 책</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>사무엘하는 원래 사무엘상과 한 권이었어요. 사울이 길보아 산에서 죽은 직후부터 다윗의 노년까지, 대략 주전 1010년에서 970년 무렵의 이야기예요. 다윗은 헤브론에서 7년 6개월, 예루살렘에서 33년, 모두 40년을 다스렸어요(5:4-5). 이 책은 영웅을 미화하지 않아요. 왕의 간음과 살인, 그 뒤에 집안에 몰아친 칼부림까지 그대로 적어요. 고대 근동의 왕실 기록은 대개 왕의 업적만 새겼는데, 성경은 왕의 죄까지 기록했어요.</p>
+    <div class="debate sans"><div><b>11장이 경첩</b>1–10장은 다윗이 올라가는 이야기, 11–24장은 무너지고 다시 일어서는 이야기예요. 그 한가운데에 밧세바 사건이 있어요.</div><div><b>돌에 새겨진 "다윗의 집"</b>1993–94년 이스라엘 북쪽 텔 단에서 주전 9세기 아람어 비석 조각이 나왔어요. 거기에 "다윗의 집(BYTDWD)"이라는 글자가 있었어요. 성경 밖에서 다윗의 이름이 확인된 첫 기록이에요.</div></div>    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 다윗의 통치 연대(주전 1010–970년경)는 학자들이 추정한 대략적인 연대예요.</p>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">사무엘하의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">다윗 왕국의 시작</div><div class="mini-b">헤브론에서 유다의 왕이 되고, 7년 반 뒤 온 이스라엘의 왕이 돼요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">예루살렘, 다윗성</div><div class="mini-b">여부스 사람의 성을 빼앗아 수도로 삼고 언약궤를 모셔 와요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">다윗 언약</div><div class="mini-b">7장에서 하나님은 다윗의 집과 나라와 왕위를 영원히 세우겠다고 약속하세요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">죄 뒤에 따라온 칼</div><div class="mini-b">"칼이 네 집에서 영원토록 떠나지 아니하리라"(12:10)는 말씀대로 집안에 비극이 이어져요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">노래로 맺는 책</div><div class="mini-b">22장의 감사 노래는 시편 18편과 거의 같고, 23장에는 다윗의 마지막 말이 나와요.</div></div></div></div>
+
+  <div class="target"><p>사무엘하의 중심에는 이 약속이 있어요. <span class="hl">"네 집과 네 나라가 내 앞에서 영원히 보전되고 네 왕위가 영원히 견고하리라"</span>(7:16). 천사 가브리엘은 마리아에게 그 아기를 이렇게 소개했어요. "주 하나님께서 그 조상 다윗의 왕위를 그에게 주시리니… 그 나라가 무궁하리라"(눅 1:32-33). 다윗에게 하신 약속은 <mark>다윗의 자손 예수 그리스도</mark>에게서 이루어져요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>활의 노래부터 아라우나의 타작마당까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>활의 노래</button><button class="chip" onclick="goTo('s2')"><b>2</b>물길과 식탁</button><button class="chip" onclick="goTo('s3')"><b>3</b>새 수레와 춤</button><button class="chip" onclick="goTo('s4')"><b>4</b>집 이야기</button><button class="chip" onclick="goTo('s5')"><b>5</b>한 암양 새끼</button><button class="chip" onclick="goTo('s6')"><b>6</b>압살롬의 머리털</button><button class="chip" onclick="goTo('s7')"><b>7</b>아라우나의 타작마당</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>적을 위해 지은 노래,<br>"어찌 그리 용사들이 엎드러졌는고"</h2><div class="refs">사무엘하 1:17-27 · 여호수아 10:13</div></div></div>
+    <div class="scene-body"><p>평생 자기를 쫓던 사울이 죽었다는 소식을 들었을 때, 다윗은 기뻐하지 않았어요. 옷을 찢고 저녁때까지 울며 금식했어요(1:11-12). 그리고 노래를 지어 유다 자손에게 가르치라고 했어요. 이름하여 "활 노래"예요(1:18). 이 노래는 "야살의 책에 기록되었다"고 하는데, 여호수아가 해와 달을 멈추게 한 기록도 같은 책에 있었다고 해요(수 10:13). 😄 아쉽게도 이 책은 지금 남아 있지 않아요.</p><p>노래에는 같은 후렴이 세 번 나와요. "어찌 그리 용사들이 엎드러졌는고"(1:19, 25, 27). 다윗은 사울을 "사랑스럽고 아름다운 자"라 부르고(1:23), 이스라엘 딸들에게 사울을 위해 울라고 해요. 자기를 죽이려던 사람의 좋은 점만 노래한 거예요. 그리고 요나단을 향해서는 이렇게 고백해요. "내 형 요나단이여 내가 그대를 애통함은… 그대가 나를 사랑함이 기이하여 여인의 사랑보다 더하였도다"(1:26).</p><p>원수의 죽음 앞에서 우는 이 노래는 훗날 예수님의 말씀을 떠올리게 해요. "너희 원수를 사랑하며 너희를 박해하는 자를 위하여 기도하라"(마 5:44). 다윗의 눈물은 <mark>원수까지 품으시는 하나님의 마음</mark>을 미리 보여 줘요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ "야살의 책"은 이스라엘의 옛 영웅 노래들을 모은 책으로 보이지만, 정확히 어떤 책이었는지는 알 수 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 아프게 한 사람의 몰락 앞에서 기뻐하지 않고, 그 사람의 좋은 점을 기억하는 마음을 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>맹인과 다리 저는 자도 막는다던 성,<br>그리고 다리 저는 왕자의 자리</h2><div class="refs">사무엘하 5:6-9 · 9:1-13</div></div></div>
+    <div class="scene-body"><p>예루살렘은 원래 여부스 사람의 성이었어요. 높은 언덕 위 요새라서 그들은 큰소리를 쳤어요. "네가 결코 이리로 들어오지 못하리라 맹인과 다리 저는 자라도 너를 물리치리라"(5:6). 😄 우리 성은 장님과 절름발이만 세워 둬도 지킬 수 있다는 거예요.</p><p>다윗은 이렇게 말해요. "누구든지 여부스 사람을 치거든 물 긷는 데로 올라가서"(5:8). "물 긷는 데"는 히브리어 <span class="heb" data-tip="친노르(tsinnor) — 물길, 수로. 구약에서 여기와 시편 42:7에만 나오는 드문 말이다. 성 안으로 물을 끌어들이던 지하 통로를 가리켰을 것으로 본다.">친노르</span>예요. 성 밖 기혼 샘에서 성 안으로 물을 길어 올리던 통로로 들어갔다는 뜻으로 많이들 풀어요. 1867년 영국 탐험가 찰스 워렌이 기혼 샘 위에서 수직 통로를 발견하면서, 이 "워렌의 수갱"이 바로 그 물길이라는 주장이 오랫동안 인기를 끌었어요.</p><p>그런데 진짜 반전은 9장에 있어요. 다윗은 묻습니다. "사울의 집에 아직도 남은 사람이 있느냐 내가 요나단으로 말미암아 그에게 은총을 베풀리라"(9:1). 그렇게 찾아낸 사람이 요나단의 아들 므비보셋이었어요. 다섯 살 때 유모가 안고 도망치다 떨어뜨려 두 발을 절게 된 사람이에요(4:4). 그는 왕 앞에서 자신을 "죽은 개 같은 나"라고 불렀어요(9:8). 다윗은 그를 왕의 아들처럼 늘 자기 식탁에서 먹게 해요. 9장의 마지막 문장이 이래요. "그는 두 발을 다 절더라"(9:13). 다리 저는 사람을 막던 성에서, <mark>다리 저는 사람이 왕의 식탁에 앉았어요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 최근 발굴로 워렌의 수갱은 다윗 시대보다 뒤에 쓰였다는 견해가 많아졌어요. "친노르"가 정확히 무엇을 가리키는지도 학자들 사이에 의견이 갈려요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>"죽은 개 같은" 나를 찾아와 아들의 식탁에 앉혀 주신 왕의 은혜를 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>블레셋의 수레에 실은 언약궤,<br>그리고 온 힘을 다해 춘 춤</h2><div class="refs">사무엘하 6:1-23 · 사무엘상 6:7 · 역대상 15:13-15</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">블레셋의 방법</div><b>새 수레</b>에 싣고 소가 끌게 함(삼상 6:7)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">하나님의 방법</div>레위인이 채에 꿰어 <b>어깨에 멤</b>(민 4:15)</div></div><p>다윗은 왕이 되자 20년 동안 잊혀 있던 언약궤를 예루살렘으로 모셔 오려 해요. 그런데 방법이 이상했어요. "하나님의 궤를 새 수레에 싣고"(6:3). 어디서 많이 본 장면이지요? 블레셋 사람들이 궤를 돌려보낼 때 쓴 방법이 바로 새 수레였어요(삼상 6:7). 하나님은 원래 레위인들이 채에 꿰어 어깨에 메고 옮기라고 하셨어요(민 4:15).</p><p>소들이 뛰자 웃사가 손을 뻗어 궤를 붙들었다가 그 자리에서 죽어요(6:6-7). 다윗은 두려워 석 달 동안 궤를 오벧에돔의 집에 둬요. 나중에 역대기는 다윗의 반성을 이렇게 기록해요. "우리가 규례대로 그에게 구하지 아니하였음이라"(대상 15:13). 두 번째에는 레위인들이 궤를 메었고, 여섯 걸음마다 제사를 드리며 올라갔어요(6:13).</p><p>그리고 다윗은 "여호와 앞에서 힘을 다하여 춤을 추는데 그 때에 다윗이 베 에봇을 입었더라"(6:14). 왕복이 아니라 제사장들이 입는 소박한 베옷이었어요. 창문으로 보던 아내 미갈은 그를 업신여겼지만, 다윗은 대답해요. "내가 이보다 더 낮아져서 스스로 천하게 보일지라도"(6:22). 하나님 앞에서 왕은 체면을 내려놓았어요. 예배의 중심은 <mark>사람의 체면이 아니라 하나님의 영광</mark>이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>편리한 세상의 방법이 아니라 하나님이 정하신 길로 예배하고, 그분 앞에서 체면을 내려놓고 기뻐합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>하나님께 집을 지어 드리려던 왕,<br>도리어 집을 선물로 받다</h2><div class="refs">사무엘하 7:1-17 · 누가복음 1:32-33</div></div></div>
+    <div class="scene-body"><p>궁에 살게 된 다윗이 나단 선지자에게 말해요. "볼지어다 나는 백향목 궁에 거주하거늘 하나님의 궤는 휘장 가운데에 있도다"(7:2). 나는 좋은 집에 사는데 하나님은 천막에 계시니, 하나님께 성전을 지어 드리겠다는 거예요. 참 갸륵한 마음이지요.</p><p>그런데 하나님의 대답은 뜻밖이었어요. "너는 나를 위하여 내가 살 집을 건축하겠느냐… 여호와가 너를 위하여 집을 이루고"(7:5, 11). 여기서 "집"은 히브리어 <span class="heb" data-tip="바이트(bayit) — 집. 건물로서의 집, 그리고 한 사람의 집안·가문·왕조를 함께 뜻한다. 사무엘하 7장에 열다섯 번 가까이 되풀이된다.">바이트</span>예요. 이 말은 건물로서의 집도 되고, 대대로 이어지는 집안, 곧 왕조도 돼요. 다윗은 돌로 된 집을 지어 드리려 했는데, 하나님은 영원히 무너지지 않는 집안을 지어 주시겠다는 거예요. 😄 받으려고 간 게 아니라 드리러 갔는데 더 큰 것을 받아 온 셈이지요.</p><p>다윗은 하나님 앞에 앉아 이렇게 기도해요. "주 여호와여 나는 누구이오며 내 집은 무엇이기에 나를 여기까지 이르게 하셨나이까"(7:18). 이 약속은 솔로몬을 넘어 천 년 뒤 베들레헴의 아기에게서 이루어져요. 다윗이 지으려던 성전보다 크신 분, <mark>스스로 성전이 되신 예수 그리스도</mark>(요 2:19-21)가 그 영원한 집의 주인이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님께 무언가를 해 드리려다가도, 먼저 나를 위해 집을 지으시는 하나님의 은혜 앞에 "나는 누구이오며" 고백합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>그 해 봄, 왕은 예루살렘에 남았다<br>그리고 "한 암양 새끼"</h2><div class="refs">사무엘하 11:1-27 · 12:1-13 · 시편 51편 · 마태복음 1:6</div></div></div>
+    <div class="scene-body"><p>11장은 이렇게 시작해요. "그 해가 돌아와 왕들이 출전할 때가 되매… 다윗은 예루살렘에 그대로 있더라"(11:1). 싸움터에 있어야 할 왕이 궁 지붕 위를 거닐고 있었어요. 거기서 밧세바를 보았고, 그 남편 우리아를 전쟁터 맨 앞에서 죽게 했어요. 다윗은 요압에게 이런 말을 전해요. "이 일로 걱정하지 말라"(11:25). 직역하면 "이 일이 네 눈에 악하게 보이지 않게 하라"예요.</p><p>그런데 11장의 마지막 문장이 무서워요. "다윗이 행한 그 일이 여호와 보시기에 악하였더라"(11:27). 직역하면 "여호와의 눈에 악하였다"예요. 사람의 눈에는 덮을 수 있었지만, 하나님의 눈에는 덮이지 않았어요. 아이러니하게도 이방 사람 헷 족속 우리아가 이스라엘의 왕보다 더 신실했어요. "언약궤와 이스라엘과 유다가 야영 중에 있고… 내가 어찌 내 집으로 가서 먹고 마시고 내 처와 같이 자리이까"(11:11).</p><p>하나님은 나단을 보내 "한 암양 새끼" 비유를 들려주세요(12:1-4). 부자가 손님을 대접하려고 가난한 사람의 하나뿐인 어린 양을 빼앗았다는 이야기에, 다윗은 화를 내며 그 사람은 죽어 마땅하다고 해요. 나단이 말해요. "당신이 그 사람이라"(12:7). 다윗은 핑계 대지 않았어요. "내가 여호와께 죄를 범하였노라"(12:13). 시편 51편은 이때의 회개 기도예요. 그리고 마태는 예수님의 족보에 이렇게 적어요. "다윗은 우리야의 아내에게서 솔로몬을 낳고"(마 1:6). 그 죄를 지우지 않은 채, <mark>그 족보를 통해 구원자를 보내신 은혜</mark>예요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 마태복음 1:6은 밧세바의 이름을 쓰지 않고 "우리야의 아내"라고만 적어요. 그 이유를 두고 여러 해석이 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>사람의 눈을 피하는 데 마음 쓰지 않고, "당신이 그 사람이라"는 말씀 앞에서 핑계 없이 "내가 죄를 범하였나이다" 고백합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>왕의 저울로 이백 세겔,<br>그 머리털이 걸린 상수리나무</h2><div class="refs">사무엘하 14:25-26 · 18:9-18, 33</div></div></div>
+    <div class="scene-body"><p>다윗의 아들 압살롬은 "온 이스라엘 가운데에서 압살롬 같이 아름다움으로 크게 칭찬 받는 자가 없었으니"(14:25). 특히 머리털이 자랑이었어요. 해마다 깎았는데 "그의 머리털을 달아 본즉 그 머리털이 왕의 저울로 이백 세겔이었더라"(14:26). 한 세겔을 약 11.4그램으로 잡으면 2.3킬로그램쯤이에요. 😄 1년 동안 자란 머리털이 2리터 생수 한 병보다 무거웠던 거예요.</p><p>그 압살롬이 아버지를 몰아내려 반란을 일으켰다가 패해 도망쳐요. 노새를 타고 큰 상수리나무 아래로 지나가다 "그의 머리가 상수리나무에 걸리매 그가 공중과 그 땅 사이에 달리고"(18:9). 자랑하던 머리가 덫이 되었어요. 성경은 머리털이 걸렸다고 직접 말하지는 않지만, 14장의 머리털 이야기가 이 장면을 위해 준비된 것처럼 읽혀요.</p><p>압살롬은 살아 있을 때 아들이 없어 자기 이름을 남기려고 비석을 세웠어요. "압살롬의 기념비"(18:18)예요. 그런데 그는 그 비석이 아니라 숲속 구덩이 돌무더기 아래 묻혔어요(18:17). 소식을 들은 다윗은 성문 다락에 올라가 울며 외쳐요. "내 아들 압살롬아 내 아들 내 아들 압살롬아 내가 너를 대신하여 죽었더면"(18:33). 다윗은 반역한 아들 대신 죽을 수 없었어요. 하지만 하나님은 반역한 우리를 대신해 <mark>아들을 죽음에 내어 주셨어요</mark>(롬 5:8).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 예루살렘 기드론 골짜기에 있는 "압살롬의 무덤"이라는 유명한 기념물은 1세기 무렵에 세워진 것으로, 성경의 압살롬과는 관계가 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 자랑하는 것이 나를 거는 덫이 되지 않도록, 내 이름이 아니라 나를 대신해 죽으신 분의 이름을 높입니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>"값 없이는 드리지 않겠다",<br>타작마당 하나에 담긴 성전 터</h2><div class="refs">사무엘하 24:18-25 · 역대하 3:1 · 창세기 22:2</div></div></div>
+    <div class="scene-body"><p>사무엘하의 마지막 장에서 다윗은 인구 조사를 했다가 하나님의 징계를 받아요. 전염병이 예루살렘에 이르렀을 때, 하나님은 "여부스 사람 아라우나의 타작마당"에서 천사의 손을 멈추게 하세요(24:16). 선지자 갓은 다윗에게 그곳에 제단을 쌓으라고 해요.</p><p>아라우나는 땅도, 번제할 소도, 땔감으로 쓸 타작 기구도 다 그냥 드리겠다고 해요. 그때 다윗이 한 말이 유명해요. "아니라 내가 값을 주고 네게서 사리라 값 없이는 내 하나님 여호와께 번제를 드리지 아니하리라"(24:24). 다윗은 은 오십 세겔을 주었어요. 약 570그램이니, 오늘 은 시세(2026년 10월 초, 1그램 약 2,700원)로 150만 원쯤이에요. 물론 그 시절 은의 값어치는 지금보다 훨씬 컸어요.</p><p>이 타작마당이 바로 훗날 솔로몬이 성전을 지은 자리예요. "솔로몬이 예루살렘 모리아 산에 여호와의 전 건축하기를 시작하니 그 곳은 전에 여호와께서 그의 아버지 다윗에게 나타나신 곳이요 여부스 사람 오르난의 타작마당에 다윗이 정한 곳이라"(대하 3:1). 아브라함이 이삭을 바치려던 모리아 산(창 22:2)과 같은 이름이에요. 값을 치른 제단 위에 하나님의 집이 섰고, 그곳 가까이에서 <mark>값을 다 치르신 어린 양</mark>이 우리를 위해 죽으셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 역대상 21:25는 다윗이 그 "터"를 금 육백 세겔에 샀다고 적어요. 사무엘하의 은 오십 세겔은 타작마당과 소 값, 역대상의 금은 성전 터 전체의 값이라고 보는 해석이 많아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>아무 대가 없는 예배가 아니라, 내 시간과 마음과 물질의 값을 치르는 예배를 드립니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">정상에 선 왕도<br>은혜 없이는 설 수 없었다</div>
+    <p>사무엘하는 다윗을 영웅으로만 그리지 않아요. 원수를 위해 울던 사람이 남의 아내를 빼앗고, 언약궤 앞에서 춤추던 왕이 충신을 죽게 해요. 그런데 이 책은 다윗이 무너진 자리에서 끝나지 않아요. 그는 "내가 죄를 범하였노라" 고백했고, 하나님은 그 죄를 덮지는 않으시되 약속은 거두지 않으셨어요.</p><p>그래서 다윗의 진짜 이야기는 다윗의 업적이 아니라 하나님의 신실하심이에요. "네 집과 네 나라가… 영원히 보전되리라"는 약속은 다윗이 잘해서가 아니라 하나님이 하나님이시기 때문에 지켜졌어요. 그 약속의 끝에 <mark>다윗의 자손, 우리 왕 예수 그리스도</mark>가 계세요.</p>
+    <div class="q">"내가 값을 주고 네게서 사리라<br>값 없이는 내 하나님 여호와께<br>번제를 드리지 아니하리라" (24:24)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

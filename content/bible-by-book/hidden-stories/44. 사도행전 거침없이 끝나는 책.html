@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사도행전, 거침없이 끝나는 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="예루살렘에서 로마까지, 아무도 막지 못한 복음의 여행 이야기">
+<meta property="og:title" content="사도행전, 거침없이 끝나는 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 12</div>
+  <h1>사도행전,<br><em>거침없이</em><br>끝나는 책</h1>
+  <p class="sub">예루살렘에서 로마까지,<br>아무도 막지 못한 복음의 여행 이야기</p>
+  <div class="ref">사도행전 1–28장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>사도행전은 성경에서 제일 박진감 넘치는 책이에요. 불의 혀 같은 것이 내려오고, 감옥 문이 저절로 열리고, 극장에 사람들이 가득 몰려들어 소리를 지르고, 배가 풍랑에 부서지고, 손에 독사가 매달려요. 😄 영화로 만들면 액션 장르에 들어갈 책이에요.</p>
+    <p>그런데 그 속을 들여다보면 더 재미있는 것들이 숨어 있어요. 바벨탑을 뒤집는 오순절, 이사야서 세 장 뒤에 숨은 약속, 성경과 유대 역사가의 기록이 딱 맞아떨어지는 장면, 헬라 시인의 시 한 구절, 그리고 책 전체를 꿰뚫는 <mark>"막다"라는 단어</mark>까지요. 그 흔적을 따라가면 한 분이 보여요. <span class="hl">하늘에 오르셨지만 성령으로 여전히 일하시는 예수님</span>이요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>사도행전은 어떤 책일까?</h2>
+    <p>누가가 쓴 두 권짜리 이야기의 두 번째 권</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>사도행전은 이렇게 시작해요. "데오빌로여 내가 먼저 쓴 글에는 무릇 예수께서 행하시며 가르치시기를 시작하심부터"(1:1). 여기서 "먼저 쓴 글"이 바로 누가복음이에요. 누가복음이 예수님이 <mark>"시작하신"</mark> 일을 적었다면, 사도행전은 하늘에 오르신 예수님이 성령으로 <span class="hl">계속하시는</span> 일을 적은 책이에요. 예수님의 승천부터 바울이 로마의 셋집에서 복음을 전하기까지, 대략 30년의 이야기가 담겨 있어요.</p>
+    <div class="debate sans"><div><b>슬쩍 나오는 "우리"</b>16장 10절에서 갑자기 "우리가 곧 마게도냐로 떠나기를 힘쓰니"라며 주어가 "그들"에서 "우리"로 바뀌어요. 이런 "우리 구절"은 16장, 20–21장, 27–28장에 나와요. 누가가 그때부터 바울 곁에 함께 있었다는 흔적이에요.</div><div><b>1장 8절이 곧 목차</b>예수님은 "예루살렘과 온 유대와 사마리아와 땅 끝까지" 증인이 되리라 하셨어요. 책도 그대로 흘러가요. 예루살렘(1–7장), 유대와 사마리아(8–12장), 땅끝을 향해(13–28장).</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 그리스 델포이에서 발견된 비문 덕분에 고린도에서 바울을 재판한 갈리오 총독(18:12)의 재임 시기를 대략 주후 51–52년으로 볼 수 있어서, 바울의 여행 연대를 맞추는 중요한 기준이 돼요. 사도행전의 기록 연대는 60년대 초부터 80년대까지 여러 견해가 있어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">사도행전의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">사실은 "성령행전"</div><div class="mini-b">예루살렘의 오순절(2장) 뒤에도 사마리아(8:17), 이방인 고넬료의 집(10:44), 에베소(19:6)에서 성령이 임하세요. 복음이 새 경계를 넘을 때마다 성령이 먼저 가 계셨어요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">설교가 가득한 책</div><div class="mini-b">베드로의 오순절 설교(2장), 가장 긴 스데반의 설교(7장), 바울의 회당 설교(13장)와 아덴 설교(17장). 책의 상당 부분이 설교예요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">물가마다 침례</div><div class="mini-b">길가의 에디오피아 내시(8:38), 고넬료의 집(10:48), 강가의 루디아(16:15), 한밤중의 빌립보 간수(16:33). 믿은 사람들은 곧바로 침례를 받았어요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">세 번 들려주는 회심</div><div class="mini-b">다메섹 길에서 바울이 예수님을 만난 이야기가 9장, 22장, 26장에 세 번 나와요. 누가가 그만큼 중요하게 여긴 사건이에요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">"그리스도인"이라는 이름</div><div class="mini-b">"제자들이 안디옥에서 비로소 그리스도인이라 일컬음을 받게 되었더라"(11:26). 오늘 우리가 쓰는 이름이 처음 생긴 곳이에요.</div></div></div></div>
+
+  <div class="target"><p>사도행전의 핵심은 예수님이 하늘에 오르시기 직전에 하신 약속에 담겨 있어요. <span class="hl">"오직 성령이 너희에게 임하시면 너희가 권능을 받고 예루살렘과 온 유대와 사마리아와 땅 끝까지 이르러 내 증인이 되리라"</span>(1:8). 주인공은 베드로도 바울도 아니에요. 증인들을 보내시고 붙드시고 이끄시는 <mark>부활하신 예수님과 그분의 영</mark>이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>오순절의 다락방부터 멜리데 섬의 모닥불까지, 누가가 숨겨 둔 이야기들</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>뒤집힌 바벨</button><button class="chip" onclick="goTo('s2')"><b>2</b>일어서신 예수님</button><button class="chip" onclick="goTo('s3')"><b>3</b>이사야 56장</button><button class="chip" onclick="goTo('s4')"><b>4</b>문 앞의 로데</button><button class="chip" onclick="goTo('s5')"><b>5</b>알지 못하는 신</button><button class="chip" onclick="goTo('s6')"><b>6</b>두 시간의 함성</button><button class="chip" onclick="goTo('s7')"><b>7</b>손에 매달린 독사</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>바벨탑을 뒤집은<br>오순절 아침</h2><div class="refs">사도행전 2:1-41 · 창세기 11:1-9 · 출애굽기 32:28</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">바벨 (창 11장)</div>하늘까지 올라가려던 사람들의 말을 하나님이 혼잡하게 하시고, 온 땅으로 <b>흩으셨어요.</b></div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">오순절 (행 2장)</div>하늘에서 내려오신 성령으로, 흩어졌던 사람들이 "각각 자기의 방언으로" 듣고 <b>모였어요.</b></div></div><p>바벨에서 사람들은 "우리 이름을 내고"(창 11:4) 하늘에 닿으려고 탑을 쌓았어요. 하나님은 그들의 언어를 혼잡하게 하셔서 온 땅에 흩으셨죠. 그런데 오순절 아침, 반대 방향의 일이 일어나요. 사람이 하늘로 올라간 게 아니라 <mark>성령이 하늘에서 내려오셨어요.</mark> 그리고 "천하 각국으로부터" 온 사람들이(2:5) 제자들의 말을 "우리 각 사람이 난 곳 방언으로" 들었어요(2:8).</p>
+        <p>재밌는 건, 하나님이 언어를 하나로 되돌리지 않으셨다는 거예요. 모든 사람에게 한 언어를 쓰게 하신 게 아니라, <span class="hl">각자의 언어로 똑같은 복음을 듣게 하셨어요.</span> 다른 말을 쓰는 채로 한 백성이 되게 하신 거예요. 그 와중에 어떤 사람들은 "새 술에 취하였다"고 조롱했고, 베드로는 "때가 제삼 시니"(2:15), 아침 아홉 시밖에 안 됐다고 해명해야 했어요. 😄</p>
+        <p>그날 베드로의 설교를 듣고 침례를 받은 사람이 <mark>"삼천"</mark>이었어요(2:41). 이 숫자에서 떠오르는 장면이 하나 있어요. 시내산 아래에서 백성이 금송아지를 만들었을 때, "이 날에 백성 중에 삼천 명 가량이 죽임을 당한지라"(출 32:28). 율법이 돌판에 새겨지던 때에는 삼천 명이 죽었는데, 성령이 마음에 임하시던 날에는 삼천 명이 살아났어요. 바울의 말처럼 "율법 조문은 죽이는 것이요 영은 살리는 것"(고후 3:6)이에요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 오순절(칠칠절)을 시내산에서 율법을 받은 날로 기념하는 전통은 후대 유대 문헌에 분명하게 나타나요. 오순절의 삼천 명을 출애굽기 32장과 연결하는 것은 여러 설교자와 주석가들의 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 이름을 높이려던 탑을 내려놓고, 서로 다른 사람들을 한 백성으로 모으시는 성령님을 찬양합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>앉아 계시던 예수님이<br>일어서신 순간</h2><div class="refs">사도행전 7:54–8:1 · 누가복음 23:34, 46</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">십자가의 예수님 (눅 23장)</div>"아버지 저들을 사하여 주옵소서" · "아버지 내 영혼을 아버지 손에 부탁하나이다"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">돌에 맞는 스데반 (행 7장)</div>"주 예수여 내 영혼을 받으시옵소서" · "주여 이 죄를 그들에게 돌리지 마옵소서"</div></div><p>성경은 여러 번 예수님이 하나님 우편에 <mark>"앉아"</mark> 계신다고 말해요. 베드로도 오순절 설교에서 "내 우편에 앉아 있으라"는 시편 110편을 인용했어요(2:34). 일을 다 마치신 왕의 자리예요. 그런데 스데반이 돌에 맞기 직전 하늘을 보았을 때는 달랐어요. "인자가 하나님 우편에 <span class="hl">서 계신 것</span>을 보노라"(7:56).</p>
+        <p>왜 서 계셨을까요? 성경은 이유를 말하지 않지만, 많은 설교자들이 이렇게 읽어 왔어요. 땅의 법정에서 억울한 판결을 받는 증인을 위해 하늘의 변호인이 일어나셨다고, 혹은 먼저 오는 순교자를 맞으러 일어나셨다고요. 이름 "스데반"은 헬라어로 <span class="heb" data-tip="스테파노스(stephanos) — 승리자에게 씌우는 관, 면류관.">스테파노스</span>, 곧 <mark>"면류관"</mark>이라는 뜻이에요.</p>
+        <p>스데반의 마지막 두 기도는 십자가 위 예수님의 기도를 그대로 닮았어요. 자기 영혼을 맡기고, 죽이는 사람들을 용서해 달라고 구해요. 그리고 누가는 슬쩍 한 사람을 무대에 세워요. "증인들이 옷을 벗어 <span class="hl">사울이라 하는 청년</span>의 발 앞에 두니라"(7:58). "사울은 그가 죽임 당함을 마땅히 여기더라"(8:1).</p>
+        <p>그 사울이 훗날 바울이 되었어요. 그는 평생 그 장면을 잊지 못했던 것 같아요. 여러 해가 지나 예루살렘 군중 앞에서 "주의 증인 스데반이 피를 흘릴 때에 내가 곁에 서서 찬성하고"(22:20)라고 고백하거든요. 스데반이 "이 죄를 그들에게 돌리지 마옵소서" 기도했을 때, 그 "그들" 속에 <mark>사울도 있었어요.</mark></p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 예수님이 "서 계신" 이유는 본문이 설명하지 않아서 여러 해석이 있어요. "스데반이 기도하지 않았다면 교회는 바울을 얻지 못했을 것"이라는 말이 아우구스티누스의 말로 전해져요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>억울하고 외로운 자리에서도 하늘에서 일어나 나를 보시는 예수님을 바라보며, 나를 아프게 한 사람을 위해 기도합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>이사야서를 조금만 더 읽으면<br>만나는 약속</h2><div class="refs">사도행전 8:26-39 · 신명기 23:1 · 이사야 53:7-8 · 56:3-5</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">신명기 23:1</div>몸이 상한 사람은 "여호와의 총회에 들어오지 못하리라"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">이사야 56:4-5</div>"고자들"에게 "아들이나 딸보다 나은 기념물과 이름을 주며 영원한 이름을 주어"</div></div><p>광야 길을 달리는 마차에 한 사람이 타고 있었어요. "에디오피아 여왕 간다게의 모든 국고를 맡은 관리인 내시"였어요(8:27). 오늘로 치면 한 나라의 재무장관쯤 되는 사람이에요. 그는 예배하러 먼 길을 와서 예루살렘에 갔다가 돌아가는 중이었어요. 그런데 율법에 따르면 그는 여호와의 총회에 들어갈 수 없는 사람이었어요(신 23:1). 수천 리를 왔지만 <mark>문 밖에서 돌아가는 길</mark>이었던 거예요.</p>
+        <p>그 마차 안에서 그는 이사야 53장을 소리 내어 읽고 있었어요. "그가 도살자에게로 가는 양과 같이 끌려갔고"(8:32). 빌립은 "이 글에서 시작하여 예수를 가르쳐 복음을 전"했어요(8:35). 그런데 숨은 이야기는 여기부터예요. 이사야서를 세 장만 더 넘기면 56장이 나와요. 거기서 하나님은 이렇게 약속하세요. "고자도 말하기를 나는 마른 나무라 하지 말라." 그리고 그들에게 <span class="hl">아들이나 딸보다 나은 이름, 끊어지지 않는 영원한 이름</span>을 주시겠다고요(사 56:3-5).</p>
+        <p>자기 이름을 이을 자녀를 가질 수 없고, 성전 문 앞에서 돌아서야 했던 사람에게 이보다 더 기쁜 말씀이 있을까요? 길가에 물이 보이자 그가 물었어요. "보라 물이 있으니 내가 침례를 받음에 무슨 <span class="heb" data-tip="콜뤼오(kōlyō) — 막다, 금하다. 사도행전에서 복음이 새 경계를 넘을 때마다 되풀이되는 단어다(8:36, 10:47, 11:17).">거리낌</span>이 있느냐"(8:36). 막을 것이 없었어요. 그는 침례를 받고 <mark>"기쁘게 길을 가니라"</mark>(8:39).</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 여기서 "에디오피아"는 오늘날의 에티오피아가 아니라 이집트 남쪽 나일강 상류의 누비아 왕국(지금의 수단 지역)을 가리켜요. "간다게"는 그 나라 여왕을 부르는 칭호였어요. 이 내시가 고국에 돌아가 복음을 전했다는 이야기는 이레네우스가 전하는 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>"나는 마른 나무"라고 여기던 자리에도 영원한 이름을 주시는 하나님을 믿고, 기쁘게 내 길을 갑니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>기도하던 사람들이<br>믿지 못한 기도 응답</h2><div class="refs">사도행전 12:1-24</div></div></div>
+    <div class="scene-body"><p>헤롯 왕이 야고보를 칼로 죽이고 베드로까지 감옥에 가두었어요. 교회는 베드로를 위해 "간절히 하나님께 기도"했어요(12:5). 그날 밤 천사가 베드로를 깨워 쇠사슬을 풀고 감옥 밖으로 이끌었어요. 베드로는 마가 요한의 어머니 마리아의 집으로 갔어요. 거기에 <mark>"여러 사람이 모여 기도하고 있더라"</mark>(12:12).</p>
+        <p>여기서부터가 성경에서 손꼽히게 웃긴 장면이에요. 😄 문을 두드리자 로데라는 여자아이가 나왔어요. 베드로 목소리인 걸 알고는 너무 기뻐서 <span class="hl">문도 안 열고</span> 안으로 달려 들어가 외쳤어요. "베드로가 대문 밖에 서 있어요!" 기도하던 사람들의 대답은 이랬어요. "네가 미쳤다." 아이가 끝까지 참말이라고 하자, "그러면 그의 천사라"(12:15). 그동안 베드로는 밖에서 계속 문을 두드리고 있었어요(12:16).</p>
+        <p>"로데"는 헬라어로 <mark>"장미"</mark>라는 뜻이에요. 기도하던 어른들은 응답이 문 앞에 와 있는데도 믿지 못했고, 장미라는 이름의 어린 여종이 제일 먼저 믿었어요. 그런데 이 이야기는 우리에게 위로도 돼요. 반쯤 믿으며 드린 기도에도 하나님은 응답하셨으니까요.</p>
+        <p>그리고 이 장은 헤롯의 최후로 끝나요. 가이사랴에서 왕복을 입고 연설하자 백성들이 "이것은 신의 소리요 사람의 소리가 아니라" 외쳤고, 헤롯이 그 영광을 하나님께 돌리지 않자 주의 사자가 치니 벌레에게 먹혀 죽었어요(12:21-23). 유대 역사가 요세푸스도 이 사건을 기록했어요. 헤롯 아그립바 1세가 가이사랴에서 햇빛에 번쩍이는 <span class="hl">은으로 짠 옷</span>을 입고 나타나자 사람들이 그를 신이라 불렀고, 그가 이를 물리치지 않은 뒤 심한 복통에 시달리다 닷새 만에 죽었다고요(주후 44년 무렵). 그리고 누가는 한 줄을 덧붙여요. "하나님의 말씀은 흥왕하여 더하더라"(12:24). 교회를 칼로 누르던 왕은 사라지고, <mark>말씀은 자랐어요.</mark></p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>믿음이 부족한 기도에도 문 앞까지 응답을 보내 주시는 하나님께, 오늘도 포기하지 않고 기도합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>"알지 못하는 신"과<br>헬라 시인의 시 한 줄</h2><div class="refs">사도행전 17:16-34</div></div></div>
+    <div class="scene-body"><p>철학의 도시 아덴(아테네)에 간 바울은 "성에 우상이 가득한 것"을 보고 마음이 격분했어요(17:16). 광장에서 사람들과 토론하자 에피쿠로스와 스토아 철학자들이 그를 이렇게 불렀어요. "이 <span class="heb" data-tip="스페르몰로고스(spermologos) — 원래 '씨앗을 쪼아 먹는 새'라는 말. 여기저기서 주워들은 말을 떠벌리는 사람을 비웃을 때 썼다.">말쟁이</span>가 무슨 말을 하고자 하느냐"(17:18). 원래 뜻은 <mark>"씨앗 쪼아 먹는 새"</mark>예요. 여기저기서 주워들은 걸 떠드는 사람이라는 놀림이었어요. 😄</p>
+        <p>그런데 바울은 화내지 않고 그들이 가진 것에서 이야기를 시작했어요. "알지 못하는 신에게라 새긴 단도 보았으니 그런즉 너희가 알지 못하고 위하는 그것을 내가 너희에게 알게 하리라"(17:23). 옛 헬라 여행가 파우사니아스의 기록에도 아테네에 "알지 못하는 신들"을 위한 제단이 있었다는 말이 나와요. 혹시라도 빠뜨린 신이 있을까 봐 이름 없는 제단까지 세워 둔 도시였던 거예요.</p>
+        <p>그리고 바울은 성경 대신 그들의 시인을 인용해요. "너희 시인 중 어떤 사람들의 말과 같이 <span class="hl">우리가 그의 소생이라</span>"(17:28). 이 구절은 주전 3세기 시인 아라투스의 시에 나오는 말이에요. 재밌게도 아라투스는 바울의 고향 다소가 있는 길리기아 출신이에요. 바울은 어릴 적 고향에서 들었을지도 모르는 시 한 줄로, 그들이 막연히 더듬어 찾던 분이 바로 <mark>천지를 지으시고 예수님을 죽은 자 가운데서 살리신 하나님</mark>이라고 전했어요(17:24, 31).</p>
+        <p>반응은 반반이었어요. 부활 이야기에 어떤 사람은 조롱했고, 어떤 사람은 "다시 듣겠다"고 했어요(17:32). 그런데 몇 사람이 믿었는데, 누가는 그 이름을 적어 두었어요. 아레오바고 관리 디오누시오와 다마리라는 여자예요(17:34). 수많은 철학자 속에서 <span class="hl">두 사람의 이름</span>이 남았어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 17:28 앞부분 "우리가 그를 힘입어 살며 기동하며 있느니라"는 크레타의 시인 에피메니데스에게서 온 말로 보는 학자들이 있지만 확실하지는 않아요. 바울이 본 제단이 어떤 제단이었는지도 정확히는 알 수 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>이웃이 막연히 더듬어 찾는 그분이 바로 예수님을 살리신 하나님이심을, 그들이 알아듣는 말로 전합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>왜 모였는지도 모르고<br>두 시간을 외친 사람들</h2><div class="refs">사도행전 19:17-41</div></div></div>
+    <div class="scene-body"><p>에베소에는 세계 7대 불가사의로 꼽히던 거대한 아데미(아르테미스) 신전이 있었어요. 신전 덕분에 먹고사는 사람도 많았죠. 그런데 바울이 전한 복음이 퍼지자 마술을 하던 사람들이 자기 책을 가져와 모든 사람 앞에서 불살랐어요. 그 책값이 <mark>"은 오만"</mark>이었어요(19:19). 은 한 드라크마를 하루 품삯으로 치면, 일꾼 한 사람이 백 년 넘게 일해야 모을 돈이에요.</p>
+        <p>그러자 은장색 데메드리오가 동료 장인들을 모았어요. 그의 연설을 들어 보면 속마음이 보여요. 먼저 "우리의 풍족한 생활이 이 생업에 있는데"(19:25), 그다음에야 여신의 위엄을 걱정해요. 😄 바울이 "손으로 만든 것들은 신이 아니라"(19:26)고 하니 장사가 안 되게 생긴 거예요.</p>
+        <p>흥분한 무리는 "크다 에베소 사람의 아데미여"를 외치며 연극장으로 몰려갔어요(19:28-29). 발굴된 에베소의 대극장은 2만 명이 넘게 들어가는 큰 극장이에요. 그런데 누가는 이렇게 적어요. "모인 무리가 분란하여 <span class="hl">태반이나 어찌하여 모였는지 알지 못하더라</span>"(19:32). 이유도 모르고 모인 사람들이 한목소리로 같은 구호를 <mark>두 시간이나</mark> 외쳤어요(19:34). 결국 시의 서기장이 나와서 "이러다가 우리가 소요 사건으로 책망받을 위험이 있다"고 달래서야 흩어졌어요(19:40).</p>
+        <p>두 시간 동안 "크다 아데미여"를 외친 목소리는 극장을 가득 채웠어요. 그런데 누가는 그 소동 바로 앞에 한 문장을 적어 두었어요. "이와 같이 주의 말씀이 힘이 있어 흥왕하여 세력을 얻으니라"(19:20). 오늘날 그 거대한 신전 터에는 <span class="hl">다시 세운 기둥 하나</span>만 서 있어요. 큰 것은 아데미가 아니었어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상이 한목소리로 외치는 "크다"에 휩쓸리지 않고, 참으로 크신 주님의 말씀을 붙듭니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>살인자에서 신으로,<br>하루아침에 바뀐 평판</h2><div class="refs">사도행전 14:8-19 · 27:13–28:10</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">루스드라 (14장)</div>처음엔 "신들이 내려오셨다"며 제물을 바치려다가, 나중엔 <b>돌로 쳤어요.</b></div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">멜리데 (28장)</div>처음엔 "이 사람은 살인한 자로다" 하다가, 나중엔 <b>"신이라"</b> 했어요.</div></div><p>로마로 호송되던 배가 "유라굴로"라는 광풍을 만나 열나흘을 떠밀려 다녔어요(27:14, 27). 배에는 276명이 타고 있었어요(27:37). 모두가 먹지 못하고 절망했을 때, 죄수 바울이 일어나 떡을 가져다 "모든 사람 앞에서 하나님께 축사하고 떼어 먹기를 시작"했어요(27:35). 모두가 힘을 얻었고, 배는 부서졌지만 한 사람도 잃지 않고 멜리데 섬에 닿았어요.</p>
+        <p>이 항해 기록은 아주 자세해요. 1848년 스코틀랜드의 요트 항해가 제임스 스미스는 직접 그 바다를 조사한 뒤, 바람 방향과 떠밀려 간 거리, 수심을 재는 장면까지 <mark>실제 바다 사정과 잘 들어맞는다</mark>는 책을 펴내기도 했어요. 배를 타 본 사람이 옆에서 적은 기록이라는 거예요. 이 장면이 "우리 구절"이거든요.</p>
+        <p>비에 젖어 추운 해변에서 섬 사람들이 불을 피워 줬어요. 바울이 나뭇가지를 모아 불에 넣는데, 독사가 나와 그 손을 물었어요(28:3). 사람들은 수군거렸어요. "진실로 이 사람은 살인한 자로다 바다에서는 구조를 받았으나 <span class="heb" data-tip="디케(dikē) — 공의, 정의. 헬라 세계에서는 죄인을 끝까지 쫓아가 벌하는 '정의의 여신'의 이름이기도 했다.">공의</span>가 그를 살지 못하게 함이로다"(28:4). 그런데 바울이 독사를 불에 떨어 버리고 멀쩡하자, 한참을 기다리던 사람들이 말을 바꿨어요. "그를 신이라"(28:6). 😄</p>
+        <p>몇 해 전 루스드라에서는 거꾸로였어요. 사람들이 바나바를 제우스, 바울을 헤르메스라 부르며 제사하려다가(14:12), 며칠 뒤엔 바울을 돌로 쳐서 성 밖에 버렸어요(14:19). 사람들의 평판은 하루에도 살인자와 신 사이를 오갔어요. 바울은 어느 쪽에도 흔들리지 않았어요. 그가 붙든 것은 풍랑 속에서 들은 한 마디였어요. "바울아 두려워하지 말라 <span class="hl">네가 가이사 앞에 서야 하겠고</span>"(27:24). 복음을 로마까지 가져가시겠다는 약속이었어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 28:4의 "공의"를 정의의 여신 디케로 읽는 것은 여러 학자들의 해석이에요. 바울이 난파한 정확한 해안 위치는 몰타 섬 안에서도 여러 후보지가 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>사람들의 칭찬과 비난 사이에서 흔들리지 않고, 풍랑 속에서도 나를 끝까지 데려가시겠다는 주님의 약속을 붙듭니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">"누가 막겠느냐"로 이어지다<br>"거침없이"로 끝나는 책</div>
+    <p>사도행전에는 "막다"라는 단어가 중요한 순간마다 나와요. 내시는 "내가 침례를 받음에 무슨 거리낌이 있느냐"(8:36) 물었고, 베드로는 이방인 고넬료의 집에서 "누가 능히 물로 침례 베풂을 금하리요"(10:47), 또 "내가 누구이기에 능히 하나님을 막겠느냐"(11:17)라고 했어요. 복음이 새 경계를 넘을 때마다, 막을 수 있느냐는 질문이 나온 거예요.</p><p>그리고 사도행전의 헬라어 원문은 마지막 단어가 <mark>"거침없이"</mark>예요. 바울은 쇠사슬에 매인 채 셋집에 갇혀 있었지만, "담대하게 거침없이" 하나님의 나라를 전했어요(28:31). 바울이 재판을 어떻게 받았는지 누가는 말하지 않고 책을 끝내요. 이야기가 끝나지 않았기 때문이에요. 하늘에 오르신 예수님이 성령으로 하시는 일은, 오늘 우리가 사는 곳에서도 거침없이 이어지고 있어요.</p>
+    <div class="q">"담대하게 거침없이<br>하나님의 나라를 전파하며<br>주 예수 그리스도에 관한<br>모든 것을 가르치더라" (28:31)</div>
+  </section>
+
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

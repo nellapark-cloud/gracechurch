@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목장 나눔 자료 · 2026-06-3</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg: #eef1f6;
+--warm-white: #f7f9fc;
+--accent: #4a6fa5;
+--accent-light: #6b8fc2;
+--accent-pale: #dce6f4;
+--deep: #1e3456;
+--deep-light: #3a5780;
+--text: #1a2a3e;
+--text-muted: #5a6e87;
+--border: #c8d6e8;
+--section-bg: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background-color: var(--bg);
+background-image:
+radial-gradient(ellipse at 15% 15%, rgba(74,111,165,0.08) 0%, transparent 55%),
+radial-gradient(ellipse at 85% 85%, rgba(30,52,86,0.06) 0%, transparent 55%);
+font-family: 'Noto Sans KR', sans-serif;
+color: var(--text);
+min-height: 100vh;
+padding: 60px 20px;
+}
+
+.container {
+max-width: 780px;
+margin: 0 auto;
+}
+
+/* Header */
+.header {
+text-align: center;
+margin-bottom: 64px;
+animation: fadeDown 0.8s ease both;
+}
+
+.header-label {
+display: inline-block;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.3em;
+color: var(--accent);
+text-transform: uppercase;
+border: 1px solid var(--accent-pale);
+padding: 6px 20px;
+border-radius: 20px;
+margin-bottom: 24px;
+}
+
+.header h1 {
+font-family: 'Noto Serif KR', serif;
+font-size: clamp(28px, 5vw, 40px);
+font-weight: 700;
+color: var(--deep);
+letter-spacing: -0.01em;
+line-height: 1.3;
+margin-bottom: 12px;
+}
+
+.header-date {
+font-size: 13px;
+color: var(--text-muted);
+letter-spacing: 0.15em;
+margin-top: 10px;
+}
+
+.header-line {
+width: 48px;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--accent), transparent);
+margin: 20px auto 0;
+}
+
+/* Cards */
+.card {
+background: var(--section-bg);
+border-radius: 16px;
+margin-bottom: 36px;
+overflow: hidden;
+box-shadow: 0 2px 20px rgba(30,52,86,0.08), 0 1px 4px rgba(30,52,86,0.05);
+animation: fadeUp 0.7s ease both;
+border: 1px solid var(--border);
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+.card-header {
+background: linear-gradient(135deg, var(--deep) 0%, #2e4f7a 100%);
+padding: 28px 36px;
+position: relative;
+overflow: hidden;
+}
+
+.card-header::before {
+content: '';
+position: absolute;
+top: -30px; right: -30px;
+width: 120px; height: 120px;
+border-radius: 50%;
+background: rgba(255,255,255,0.04);
+}
+
+.card-header::after {
+content: '';
+position: absolute;
+bottom: -20px; left: 40px;
+width: 80px; height: 80px;
+border-radius: 50%;
+background: rgba(74,111,165,0.15);
+}
+
+.card-num {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.25em;
+color: var(--accent-light);
+margin-bottom: 8px;
+position: relative;
+z-index: 1;
+}
+
+.card-title {
+font-family: 'Noto Serif KR', serif;
+font-size: 20px;
+font-weight: 700;
+color: #fff;
+margin-bottom: 10px;
+position: relative;
+z-index: 1;
+}
+
+.card-verse {
+font-size: 13px;
+color: rgba(255,255,255,0.65);
+font-style: italic;
+position: relative;
+z-index: 1;
+line-height: 1.6;
+}
+
+.card-body {
+padding: 32px 36px;
+}
+
+/* Scripture quote */
+.scripture-block {
+border-left: 3px solid var(--accent);
+background: var(--accent-pale);
+padding: 16px 20px;
+margin-bottom: 28px;
+border-radius: 0 8px 8px 0;
+}
+
+.scripture-block p {
+font-family: 'Noto Serif KR', serif;
+font-size: 14px;
+color: var(--deep);
+line-height: 1.9;
+font-weight: 400;
+}
+
+/* Meditation */
+.meditation-title {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.2em;
+color: var(--accent);
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+
+.meditation-text {
+font-size: 15px;
+line-height: 2.0;
+color: var(--text);
+font-weight: 300;
+white-space: pre-line;
+}
+
+.meditation-text strong {
+color: var(--deep);
+font-weight: 600;
+}
+
+/* Divider */
+.divider {
+border: none;
+border-top: 1px solid var(--border);
+margin: 28px 0;
+}
+
+/* Question block */
+.question-block {
+background: var(--bg);
+border-radius: 12px;
+padding: 24px 28px;
+}
+
+.question-header {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 18px;
+}
+
+.question-icon {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--accent), var(--accent-light));
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 13px;
+color: white;
+flex-shrink: 0;
+}
+
+.question-header-text {
+font-family: 'Noto Serif KR', serif;
+font-size: 15px;
+font-weight: 600;
+color: var(--deep);
+}
+
+.question-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+
+.question-item {
+display: flex;
+gap: 12px;
+align-items: flex-start;
+}
+
+.question-badge {
+flex-shrink: 0;
+width: 22px;
+height: 22px;
+border-radius: 50%;
+background: var(--deep);
+color: white;
+font-size: 11px;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 1px;
+}
+
+.question-item p {
+font-size: 14px;
+line-height: 1.8;
+color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+text-align: center;
+margin-top: 56px;
+padding-top: 32px;
+border-top: 1px solid var(--border);
+animation: fadeUp 0.8s ease 0.6s both;
+}
+
+.footer-cross {
+font-size: 24px;
+color: var(--accent);
+margin-bottom: 12px;
+letter-spacing: 8px;
+}
+
+.footer-church {
+font-family: 'Noto Serif KR', serif;
+font-size: 14px;
+font-weight: 600;
+color: var(--deep);
+letter-spacing: 0.05em;
+margin-bottom: 6px;
+}
+
+.footer-author {
+font-size: 11px;
+color: var(--text-muted);
+letter-spacing: 0.1em;
+}
+
+/* Animations */
+@keyframes fadeDown {
+from { opacity: 0; transform: translateY(-20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+body { padding: 40px 16px; }
+.card-header { padding: 24px 24px; }
+.card-body { padding: 24px 24px; }
+.question-block { padding: 20px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+<div class="header-label">은혜교회 묵상나눔</div>
+<h1>말씀 묵상과 나눔</h1>
+<div class="header-date">2026 · 06-3</div>
+<div class="header-line"></div>
+</div>
+
+<!-- Card 1: 시편 23편 4절 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 01</div>
+<div class="card-title">시편 23편 4절</div>
+<div class="card-verse">"내가 사망의 음침한 골짜기로 다닐지라도 해를 두려워하지 않을 것은 주께서 나와 함께 하심이라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>내가 사망의 음침한 골짜기로 다닐지라도 해를 두려워하지 않을 것은 주께서 나와 함께 하심이라 주의 지팡이와 막대기가 나를 안위하시나이다</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">다윗은 '사망의 음침한 골짜기'를 피해가는 것이 아니라, 그 안을 걸으면서도 두려워하지 않는다고 고백합니다. 이 말씀의 핵심은 골짜기의 부재가 아니라, 골짜기 안에서의 동행입니다. 믿음은 고난이 없는 삶을 보장받는 것이 아니라, 고난의 한가운데에서 주님이 함께하신다는 확신 위에 서는 것입니다.
+
+지팡이는 양을 인도하고 위험으로부터 보호하는 도구이며, 막대기는 길을 잃은 양을 이끄는 목자의 손길입니다. 주님은 우리가 가장 어두운 길을 걸을 때에도 그 두 손을 거두지 않으십니다. 오늘 내 삶에 두렵고 어두운 골짜기가 있다면, 그것은 주님이 나를 떠나신 증거가 아니라, 주님의 지팡이와 막대기가 더욱 가까이 다가오는 자리입니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>지금 혹은 과거에 '사망의 음침한 골짜기' 같은 시간을 보낸 적이 있나요? 그 때 주님의 동행을 어떻게 경험했는지 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>두려움이 밀려올 때 나는 주로 어떻게 반응하나요? 말씀이 말하는 '두려워하지 않음'이 내 삶에서 어떻게 가능할지 함께 이야기해봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 2: 빌립보서 2장 5~7절 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 02</div>
+<div class="card-title">빌립보서 2장 5~7절</div>
+<div class="card-verse">"너희 안에 이 마음을 품으라 곧 그리스도 예수의 마음이니"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>너희 안에 이 마음을 품으라 곧 그리스도 예수의 마음이니 그는 근본 하나님의 본체시나 하나님과 동등됨을 취할 것으로 여기지 아니하시고 오히려 자기를 비워 종의 형체를 가지사 사람들과 같이 되셨고</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">바울이 빌립보 교회에 권면하는 이 말씀의 중심은 '케노시스(kenosis)', 즉 자기 비움입니다. 하나님이신 예수님이 그 영광을 붙들지 않으시고 스스로 내려놓으셨습니다. 이것은 약해짐이 아니라, 사랑으로 선택된 낮아짐입니다.
+
+우리는 흔히 더 높아지고, 더 인정받고, 더 가지려 합니다. 그러나 예수님은 반대 방향을 보여주셨습니다. 그리스도의 마음을 '품는다'는 것은 단순한 감정의 변화가 아니라, 내 삶의 방향 자체를 그분의 방식으로 돌이키는 것입니다. 자신을 비울 때 비로소 이웃을 담을 수 있고, 낮아질 때 진정한 섬김이 시작됩니다. 오늘 내 안에 무엇이 채워져 있는지, 그리고 무엇을 비워야 하는지 말씀 앞에서 정직하게 돌아보아야 합니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>'자기를 비운다'는 것이 내 일상에서 가장 어렵게 느껴지는 순간은 언제인가요? 구체적인 상황과 함께 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>그리스도의 마음을 품기 위해 내가 오늘 실천할 수 있는 작은 '낮아짐'은 무엇일까요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 3: 요한복음 13장 34~35절 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 03</div>
+<div class="card-title">요한복음 13장 34~35절</div>
+<div class="card-verse">"새 계명을 너희에게 주노니 서로 사랑하라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>새 계명을 너희에게 주노니 서로 사랑하라 내가 너희를 사랑한 것 같이 너희도 서로 사랑하라 너희가 서로 사랑하면 이로써 모든 사람이 너희가 내 제자인 줄 알리라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">예수님은 십자가를 앞두신 마지막 밤, 제자들에게 '새 계명'을 주셨습니다. 사랑하라는 명령은 이미 율법에도 있었지만, 여기서 '새롭다'고 하신 이유는 그 기준이 다르기 때문입니다. "내가 너희를 사랑한 것 같이" — 이것이 핵심입니다. 우리가 서로 사랑해야 하는 이유와 방식의 출발점은, 예수님이 먼저 우리를 사랑하신 그 사랑입니다.
+
+예수님의 사랑은 자격을 보지 않고, 조건을 달지 않고, 대가를 요구하지 않는 사랑이었습니다. 그 사랑이 우리가 받은 사랑이기 때문에, 우리 역시 그 사랑으로 서로를 사랑해야 합니다. 그리고 그 사랑이 공동체 안에서 흘러넘칠 때, 세상은 그것을 통해 우리가 예수님의 제자임을 알게 됩니다. 교회는 교리로만 증명되는 것이 아니라, 사랑으로 살아있음이 드러납니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>예수님의 사랑을 기준으로 삼을 때, 지금 내가 가장 사랑하기 어려운 사람이나 상황이 있다면 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>우리 목장(공동체) 안에서 서로 사랑하는 것이 구체적으로 어떤 모습이어야 할지 함께 이야기해봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 4: 역대상 17장 19절 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 04</div>
+<div class="card-title">역대상 17장 19절</div>
+<div class="card-verse">"주께서 주의 종을 위하여 주의 뜻대로 이 모든 큰 일을 행하사"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>여호와여 주께서 주의 종을 위하여 주의 뜻대로 이 모든 큰 일을 행하사 이 모든 큰 일을 알게 하셨나이다</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">다윗은 하나님께 성전을 지어드리겠다고 계획했지만, 하나님은 오히려 다윗을 위해 큰 일을 행하셨다는 약속을 주십니다. 이 말씀은 그 약속을 받은 다윗의 기도 응답입니다. 다윗은 자신의 공로나 의지가 아니라, 오직 "주의 뜻대로" 하나님께서 행하신 것임을 고백합니다.
+
+우리는 종종 내가 하나님을 위해 무언가를 해드려야 한다고 생각하지만, 말씀은 그 방향을 뒤집습니다. 하나님은 우리의 작은 헌신과 계획보다 훨씬 크신 뜻 안에서 일하고 계십니다. 내 계획이 꺾이고 방향이 바뀌는 순간에도, 그것이 하나님의 더 크고 선한 뜻의 일부일 수 있습니다. 다윗의 기도처럼, 우리도 "주의 뜻대로 이루어지이다"라고 고백하는 것이 진정한 신앙의 고백입니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>내 계획이나 기대와 다르게 하나님이 일하셨던 경험이 있나요? 그 과정에서 하나님의 뜻을 어떻게 발견했는지 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>"주의 뜻대로"라는 고백이 내 삶에서 가장 어렵게 느껴지는 영역은 어디인가요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 5: 사무엘상 15장 22절 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 05</div>
+<div class="card-title">사무엘상 15장 22절</div>
+<div class="card-verse">"순종이 제사보다 낫고 듣는 것이 숫양의 기름보다 나으니"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>사무엘이 이르되 여호와께서 번제와 다른 제사를 그의 목소리를 청종하는 것을 좋아하심 같이 좋아하시겠나이까 순종이 제사보다 낫고 듣는 것이 숫양의 기름보다 나으니</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">사울은 하나님의 명령을 부분적으로 따르면서, 그 어긴 부분을 제사로 대신하려 했습니다. 그러나 사무엘은 그것이 하나님이 원하시는 것이 아님을 선명하게 선언합니다. 하나님은 화려한 예배보다 온전한 순종을 더 기뻐하신다는 것입니다.
+
+이 말씀은 우리에게도 날카롭게 다가옵니다. 우리는 때로 하나님의 말씀에 온전히 순종하는 대신, 더 편한 방식의 신앙 행위로 그것을 대체하려는 유혹을 받습니다. 예배당에 앉아있는 것이 삶의 순종을 대신할 수 없고, 헌금이 관계의 회복을 대신할 수 없습니다. 하나님이 원하시는 것은 형식 안에 담긴 진심, 그리고 말씀에 대한 귀 기울임과 삶으로의 응답입니다. '듣는 것'이 먼저이고, 그 들음이 삶을 바꾸는 순종으로 이어질 때 우리의 예배는 온전해집니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>나는 하나님의 말씀에 '부분적으로만' 순종했던 경험이 있나요? 그때 내 마음 안에 어떤 핑계나 합리화가 있었는지 솔직하게 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>신앙생활 중 '제사(형식)'에 치우치고 '순종(본질)'을 놓쳤던 부분이 있다면 무엇인가요? 어떻게 균형을 찾을 수 있을까요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<div class="footer-cross">✦</div>
+<p class="footer-church">기독교한국침례회 은혜교회</p>
+<p class="footer-author">작성 · 박동준 목사</p>
+</div>
+
+</div>
+</body>
+</html>

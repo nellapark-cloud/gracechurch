@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>요엘, 메뚜기 떼 뒤에 부어진 영 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="네 종류의 메뚜기, 옷이 아니라 마음을 찢으라, 만민에게 부어 주시는 영까지. 요엘서에 숨은 이야기">
+<meta property="og:title" content="요엘, 메뚜기 떼 뒤에 부어진 영">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 61</div>
+  <h1>요엘,<br><em>메뚜기</em> 떼 뒤에<br>부어진 영</h1>
+  <p class="sub">온 땅을 갉아 먹은 메뚜기 떼의 기억 위에,<br>"내 영을 만민에게 부어 주리니"라는 약속이 내려앉다</p>
+  <div class="ref">요엘 1–3장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>요엘서는 메뚜기 떼 이야기로 시작해요. 하늘을 새까맣게 덮고 날아온 메뚜기 떼가 포도나무와 무화과나무와 곡식을 모조리 먹어 치웠어요. 😮 농사를 짓던 사람들에게 메뚜기 떼는 전쟁보다 무서운 재앙이었어요. 요엘은 그 재앙을 보며 더 큰 "여호와의 날"을 경고해요.</p><p>그런데 요엘서는 메뚜기로 끝나지 않아요. 옷이 아니라 마음을 찢으라는 부름, 메뚜기가 먹은 햇수를 갚아 주시겠다는 약속, 그리고 성령을 모든 사람에게 부어 주시겠다는 놀라운 예언이 이어져요. 베드로는 오순절 첫 설교에서 바로 이 책을 펼쳤어요. 네 종류의 메뚜기, 행진하는 군대, 찢은 마음, 갚아 주신 햇수, 만민에게 부어진 영, 거꾸로 된 예언, 그리고 여호사밧 골짜기까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>요엘은 어떤 책일까?</h2>
+    <p>메뚜기 재앙을 통해 여호와의 날과 성령의 시대를 바라본 책</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>요엘은 "브두엘의 아들"이라고만 소개되어 있어요(1:1). 다른 선지서들과 달리 어느 왕 때 활동했는지 적혀 있지 않아요. 그래서 요엘이 언제 활동했는지는 학자들 사이에 의견이 크게 갈려요. 주전 9세기로 보는 견해부터 포로 이후로 보는 견해까지 있어요. 하지만 책의 메시지는 시대를 넘어 분명해요. 재앙 앞에서 하나님께 돌아오라는 것, 그리고 하나님은 회복하시고 그분의 영을 부어 주신다는 것이에요.</p>
+    <div class="debate sans"><div><b>날짜가 없는 책</b>요엘서에는 왕의 이름도 연도도 나오지 않아요. 그래서 오히려 어느 시대에나 읽힐 수 있는 메시지가 되었어요.</div><div><b>장 구분이 다른 책</b>히브리어 성경은 요엘을 4장으로 나눠요. 우리 성경 2:28-32가 히브리어 성경에서는 3장 전체이고, 우리 3장이 히브리어 4장이에요.</div></div>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">요엘의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">메뚜기 재앙</div><div class="mini-b">실제 메뚜기 떼의 피해를 생생하게 묘사해요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">여호와의 날</div><div class="mini-b">메뚜기 재앙보다 더 큰 하나님의 심판 날을 경고해요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">마음을 찢는 회개</div><div class="mini-b">겉모습이 아니라 마음으로 하나님께 돌아오라고 불러요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">성령의 부으심</div><div class="mini-b">모든 사람에게 하나님의 영을 부어 주시겠다고 약속하세요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">열방의 심판과 회복</div><div class="mini-b">마지막 장은 열방의 심판과 시온의 회복을 노래해요.</div></div></div></div>
+
+  <div class="target"><p>요엘서의 가장 큰 약속은 이것이에요. <span class="hl">"그 후에 내가 내 영을 만민에게 부어 주리니 너희 자녀들이 장래 일을 말할 것이며 너희 늙은이는 꿈을 꾸며 너희 젊은이는 이상을 볼 것이며"</span>(2:28). 오순절에 성령이 임하시자 베드로는 "이는 곧 선지자 요엘을 통하여 말씀하신 것이니"라고 선포했어요(행 2:16). 그 영은 <mark>부활하신 예수 그리스도께서 보내신 성령</mark>이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>네 종류의 메뚜기부터 여호사밧 골짜기까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>네 종류의 메뚜기</button><button class="chip" onclick="goTo('s2')"><b>2</b>행진하는 군대</button><button class="chip" onclick="goTo('s3')"><b>3</b>마음을 찢으라</button><button class="chip" onclick="goTo('s4')"><b>4</b>갚아 주신 햇수</button><button class="chip" onclick="goTo('s5')"><b>5</b>만민에게 부어진 영</button><button class="chip" onclick="goTo('s6')"><b>6</b>거꾸로 된 예언</button><button class="chip" onclick="goTo('s7')"><b>7</b>여호사밧 골짜기</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>팥중이, 메뚜기, 느치, 황충,<br>네 이름으로 부른 메뚜기 떼</h2><div class="refs">요엘 1:1-12</div></div></div>
+    <div class="scene-body"><p>요엘은 노인들에게 묻는 것으로 시작해요. "늙은 자들아 너희는 들을지어다… 너희의 날에나 너희 조상들의 날에 이런 일이 있었느냐"(1:2). 아무도 본 적 없는 재앙이었어요. 그리고 이렇게 묘사해요. "팥중이가 남긴 것을 메뚜기가 먹고 메뚜기가 남긴 것을 느치가 먹고 느치가 남긴 것을 황충이 먹었도다"(1:4).</p><p>네 가지 이름이 나와요. 이것이 네 종류의 곤충일까요, 아니면 한 메뚜기의 성장 단계일까요? 많은 학자들은 날개 없는 애벌레에서 날개 달린 성충까지 메뚜기가 자라는 단계를 가리킨다고 봐요. 😮 알에서 깬 새끼들이 기어 다니며 먹고, 자라서 뛰며 먹고, 마지막엔 날아다니며 먹었다는 거예요. 한 번 지나가는 게 아니라 계속 몰려와서 다 먹어 치웠어요.</p><p>이런 재앙은 실제로 이 지역에서 반복되었어요. 1915년 봄 예루살렘 일대를 덮친 메뚜기 떼는 미국 내셔널 지오그래픽 잡지에 사진과 함께 자세히 기록되었는데, 몇 달 만에 들판과 과수원이 껍질까지 벗겨졌다고 해요. 요엘서의 묘사가 과장이 아니었던 거예요. 그 앞에서 요엘은 말해요. "포도주를 마시는 자들아 너희는 깨어 울지어다"(1:5). 재앙은 우리가 잠든 영혼을 깨우는 <mark>하나님의 경종</mark>이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 네 가지 이름이 성장 단계인지 서로 다른 종류인지에 대해서는 학자들 사이에 의견이 갈려요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 삶의 들판이 갉아 먹힌 것 같을 때, 그것을 하나님 앞에서 깨어나는 기회로 삼습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>말처럼 달리고, 성벽을 기어오르고,<br>도둑처럼 창으로 들어오는 군대</h2><div class="refs">요엘 2:1-11 · 요한계시록 9:7</div></div></div>
+    <div class="scene-body"><p>2장에서 메뚜기 떼는 군대처럼 묘사돼요. "그의 모양은 말 같고 그 달리는 것은 기병 같으며"(2:4). 😄 재밌게도 메뚜기 머리를 가까이서 보면 정말 말 머리처럼 생겼어요. 그래서 이탈리아어로 메뚜기를 "작은 말(카발레타)", 독일어로는 "풀밭의 말(호이퍼트)"이라고 불러요. 요한계시록 9:7도 "황충들의 모양은 전쟁을 위하여 준비한 말들 같고"라고 해요.</p><p>그리고 그 군대의 행진이 생생해요. "그들이 용사 같이 달리며 무사 같이 성을 기어오르며 각기 자기의 길로 나아가되 그 줄을 이탈하지 아니하며"(2:7). "성중에 뛰어 들어가며 성 위에 달리며 집에 기어오르며 도둑 같이 창으로 들어가며"(2:9). 실제 메뚜기 떼는 벽도 기어오르고 창틈으로 들어왔어요. 문을 닫아도 막을 수 없었어요.</p><p>그런데 그 군대의 대장이 누구인지 나와요. "여호와께서 그의 군대 앞에서 소리를 지르시고"(2:11). 메뚜기 떼는 하나님이 보내신 군대였어요. 그리고 묻습니다. "여호와의 날이 크고 심히 두렵도다 당할 자가 누구이랴". 😮 메뚜기 떼도 막을 수 없는데 그날을 누가 감당할까요? 요엘은 바로 다음 절에서 그 대답을 줘요. 우리가 그날을 견디는 길은 <mark>하나님께로 돌아가는 것</mark>뿐이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>막을 수 없는 재앙 앞에서 성벽과 문을 의지하기보다, 그 모든 것을 다스리시는 하나님께로 돌아갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>"옷을 찢지 말고 마음을 찢으라",<br>그리고 "누가 알겠느냐"</h2><div class="refs">요엘 2:12-17 · 출애굽기 34:6 · 요나 3:9</div></div></div>
+    <div class="scene-body"><p>"여호와의 말씀에 너희는 이제라도 금식하고 울며 애통하고 마음을 다하여 내게로 돌아오라 하셨나니 너희는 옷을 찢지 말고 마음을 찢고 너희의 하나님 여호와께로 돌아올지어다"(2:12-13). 이스라엘 사람들은 슬프거나 회개할 때 옷을 찢었어요. 그런데 하나님은 옷이 아니라 마음을 찢으라고 하세요. 😮 겉모습의 회개가 아니라 속의 회개를 원하신 거예요.</p><p>그리고 돌아와야 할 이유를 말씀하세요. "그는 은혜로우시며 자비로우시며 노하기를 더디하시며 인애가 크시사 뜻을 돌이켜 재앙을 내리지 아니하시나니"(2:13). 이 말은 시내 산에서 하나님이 모세에게 자신을 소개하신 말씀(출 34:6)을 그대로 가져온 거예요. 구약 곳곳에서 되풀이되는 하나님의 "자기소개서"예요.</p><p>그리고 이런 말이 붙어요. "주께서 혹시 마음과 뜻을 돌이키시고… 누가 알겠느냐"(2:14). 😊 요나서에서 니느웨 왕도 똑같은 말을 했어요. "하나님이 뜻을 돌이키시고… 누가 알겠느냐"(욘 3:9). 회개는 하나님을 조종하는 버튼이 아니에요. 결과를 장담할 수 없지만, 은혜로우신 하나님을 믿고 돌아가는 거예요. 그리고 하나님은 그 마음을 외면하지 않으세요. 찢어진 마음을 받으시는 분, <mark>상한 심령을 멸시하지 않으시는 하나님</mark>(시 51:17)이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>옷을 찢는 시늉이 아니라 마음을 찢는 회개로, 은혜로우시며 자비로우신 하나님께 돌아갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>"메뚜기가 먹은 햇수를<br>너희에게 갚아 주리니"</h2><div class="refs">요엘 2:18-27</div></div></div>
+    <div class="scene-body"><p>백성이 돌아오자 하나님의 대답이 달라져요. "그 때에 여호와께서 자기 땅을 위하여 질투하시며 그의 백성을 불쌍히 여기실 것이라"(2:18). 그리고 곡식과 새 포도주와 기름을 주시고, 이른 비와 늦은 비를 내려 주시겠다고 하세요(2:19, 23).</p><p>그리고 이 책에서 가장 위로가 되는 약속이 나와요. "내가 전에 너희에게 보낸 큰 군대 곧 메뚜기와 느치와 황충과 팥중이가 먹은 햇수대로 너희에게 갚아 주리니"(2:25). 😢 메뚜기가 갉아 먹은 것은 곡식만이 아니었어요. 그 때문에 굶주리고 고생한 세월이었어요. 하나님은 곡식이 아니라 "햇수"를 갚아 주시겠다고 하세요.</p><p>잃어버린 시간을 되돌려 주시겠다는 거예요. 그리고 이렇게 덧붙이세요. "너희가 이스라엘 가운데에 있어 너희 하나님 여호와가 되고 다른 이가 없는 줄을 너희가 알 것이라 내 백성이 영원히 수치를 당하지 아니하리로다"(2:27). 우리 삶에도 메뚜기가 먹어 치운 것 같은 세월이 있어요. 실패, 방황, 아픔으로 날려 버린 것 같은 시간이요. 하나님은 그 세월까지도 <mark>회복하시는 하나님</mark>이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>방황과 실패로 잃어버린 것 같은 내 세월을 하나님께 맡기고, 그 햇수를 갚아 주시는 은혜를 기대합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>아들과 딸, 늙은이와 젊은이, 남종과 여종,<br>모세의 소원이 이루어지다</h2><div class="refs">요엘 2:28-32 · 민수기 11:29 · 사도행전 2:14-21</div></div></div>
+    <div class="scene-body"><p>"그 후에 내가 내 영을 만민에게 부어 주리니 너희 자녀들이 장래 일을 말할 것이며 너희 늙은이는 꿈을 꾸며 너희 젊은이는 이상을 볼 것이며 그 때에 내가 또 내 영을 남종과 여종에게 부어 줄 것이며"(2:28-29). 구약 시대에 하나님의 영은 주로 선지자, 왕, 사사 같은 특별한 사람들에게 임했어요. 그런데 요엘은 모든 사람에게 부어 주시는 날을 예언해요.</p><p>아들과 딸, 남자와 여자. 늙은이와 젊은이, 나이를 넘어서. 그리고 남종과 여종, 신분까지 넘어서요. 😮 수백 년 전 모세가 했던 소원이 생각나요. 진영 안에서 두 사람이 예언하자 여호수아가 막으려 했을 때 모세가 말했어요. "여호와께서 그의 영을 그의 모든 백성에게 주사 다 선지자가 되게 하시기를 원하노라"(민 11:29). 요엘은 그 소원이 이루어질 날을 내다봤어요.</p><p>그리고 오순절, 120명의 제자들 위에 불의 혀처럼 성령이 임했어요. 사람들이 "새 술에 취하였다"고 조롱하자 베드로가 일어나 말해요. "때가 제 삼 시니 너희 생각과 같이 이 사람들이 취한 것이 아니라 이는 곧 선지자 요엘을 통하여 말씀하신 것이니"(행 2:15-16). 😄 아침 아홉 시라 술 마실 시간이 아니라는 거예요. 베드로는 요엘의 "그 후에"를 "말세에"로 바꿔 인용해요(행 2:17). 성령이 오심으로 마지막 때가 시작되었다는 거예요. 그 영은 <mark>부활하여 승천하신 예수님이 부어 주신 성령</mark>이에요(행 2:33).</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>성령이 특별한 몇 사람이 아니라 나에게도 부어지셨음을 믿고, 나이와 신분을 넘어 함께 꿈꾸는 교회를 이룹니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>"보습을 쳐서 칼을 만들지어다",<br>이사야와 미가를 거꾸로 뒤집은 예언</h2><div class="refs">요엘 3:9-10 · 이사야 2:4 · 미가 4:3</div></div></div>
+    <div class="scene-body"><p>이사야와 미가에는 유명한 평화의 예언이 있어요. "그들이 그들의 칼을 쳐서 보습을 만들고 그들의 창을 쳐서 낫을 만들 것이며"(사 2:4; 미 4:3). 전쟁 무기를 녹여 농기구로 만드는 평화의 날이에요. 뉴욕 유엔 본부 앞에는 칼을 쳐서 보습을 만드는 사람의 동상도 있어요.</p><p>그런데 요엘 3장은 이 말을 정반대로 뒤집어요. "너희는 이것을 뭇 나라에 공포할지어다 너희는 전쟁을 준비하고 용사를 격려하고… 너희는 보습을 쳐서 칼을 만들지어다 낫을 쳐서 창을 만들지어다 약한 자도 이르기를 나는 강하다 할지어다"(3:9-10). 😮 농기구를 녹여 무기를 만들라고요!</p><p>이것은 열방을 향한 하나님의 도전이에요. 하나님의 백성을 괴롭힌 나라들아, 가진 것을 다 녹여 무기를 만들어 덤벼 보라는 거예요. 그래도 하나님을 이길 수 없다는 거예요. 요엘의 "칼"과 이사야의 "보습"은 순서가 있어요. 먼저 하나님이 악을 심판하시고, 그다음에 영원한 평화가 와요. 칼을 쳐서 보습을 만드는 그 평화는 <mark>평강의 왕 예수 그리스도</mark>께서 다시 오실 때 완성돼요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상이 칼을 들 때에도 두려워하지 않고, 마침내 모든 칼이 보습이 될 평강의 왕의 날을 기다립니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>"여호와께서 심판하신다"는 이름의 골짜기,<br>그리고 성전에서 흘러나오는 샘</h2><div class="refs">요엘 3:1-2, 12-18 · 에스겔 47:1</div></div></div>
+    <div class="scene-body"><p>하나님은 열방을 "여호사밧 골짜기"로 모아 심판하시겠다고 하세요(3:2, 12). 여호사밧은 유다 왕의 이름이기도 하지만, 원래 뜻이 "여호와께서 심판하신다"예요. 😮 이 골짜기의 이름 자체가 메시지예요. 같은 장면에서 이 골짜기를 "판결 골짜기"라고도 불러요. "사람이 많음이여 판결 골짜기에 사람이 많음이여 판결 골짜기에 여호와의 날이 가까움이로다"(3:14).</p><p>이 골짜기가 실제로 어디인지는 성경에 나오지 않아요. 그런데 후대 유대인과 그리스도인들은 예루살렘 성전 산과 감람산 사이의 기드론 골짜기를 "여호사밧 골짜기"로 여기게 되었어요. 그래서 마지막 심판과 부활의 날에 가장 먼저 일어나기를 바라며 감람산 비탈에 무덤을 쓰기 시작했어요. 지금도 감람산에는 수많은 무덤이 빼곡하게 늘어서 있어요.</p><p>그런데 요엘서의 마지막 장면은 심판이 아니라 회복이에요. "그 날에 산들이 단 포도주를 떨어뜨릴 것이며 작은 산들이 젖을 흘릴 것이며 유다 모든 시내가 물을 흘릴 것이며 여호와의 성전에서 샘이 흘러 나와서 싯딤 골짜기에 대리라"(3:18). 메뚜기가 다 갉아 먹었던 땅에 포도주와 젖이 흘러넘쳐요. 성전에서 흘러나오는 샘은 에스겔이 본 생명수 강(겔 47장)과 같아요. 심판의 골짜기 너머에 <mark>생명수를 주시는 주님</mark>이 계세요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ "여호사밧 골짜기"를 기드론 골짜기와 동일시하는 것은 4세기 무렵부터 나타난 후대 전통이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>심판하시는 하나님 앞에 정직하게 서고, 그 너머에서 생명수를 흘려보내실 회복의 날을 기다립니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">갉아 먹힌 땅 위에<br>부어진 영</div>
+    <p>요엘서는 메뚜기 떼가 모든 것을 먹어 치운 땅에서 시작해요. 아무것도 남지 않은 들판, 바칠 제물조차 없는 성전. 요엘은 그 폐허 앞에서 더 큰 하나님의 날을 바라보며 옷이 아니라 마음을 찢으라고 외쳤어요.</p><p>그리고 하나님은 돌아온 백성에게 메뚜기가 먹은 햇수를 갚아 주시고, 상상도 못 한 선물을 약속하셨어요. 바로 하나님의 영이에요. 오순절에 그 약속이 이루어졌고, 지금 우리 안에도 그 영이 계세요. 갉아 먹힌 우리 삶에 생명을 부어 주시는 분, <mark>성령을 보내신 예수 그리스도</mark>세요.</p>
+    <div class="q">"누구든지 여호와의 이름을 부르는 자는<br>구원을 얻으리니" (2:32)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

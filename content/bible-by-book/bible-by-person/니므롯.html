@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>니므롯</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --ink: #262220;
+    --sub: #6b6560;
+    --bg: #FBFAF7;
+    --line: #E4E0D8;
+    --accent: #9C4A2E;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  header{
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h1{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height:1.2;
+    margin-bottom: 8px;
+  }
+
+  .hebrew{
+    font-family: 'EB Garamond', serif;
+    font-size: 17px;
+    color: var(--sub);
+  }
+
+  .refs{
+    margin-top: 14px;
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--sub);
+    background: rgba(156,74,46,0.07);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 44px;
+    margin-bottom: 14px;
+  }
+
+  h2 .num{
+    color: var(--accent);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 8px;
+    font-size: 17px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.9;
+    color: #3a3532;
+    margin-bottom: 16px;
+  }
+
+  ul{
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+
+  li{
+    font-size: 16px;
+    line-height: 1.85;
+    color: #3a3532;
+    margin-bottom: 10px;
+  }
+
+  strong{
+    color: var(--ink);
+    font-weight: 600;
+    background: linear-gradient(to bottom, transparent 65%, rgba(156,74,46,0.08) 65%);
+  }
+
+  .quote-block{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    line-height: 1.85;
+    color: #4a453f;
+    border-left: 2px solid var(--accent);
+    padding: 4px 0 4px 18px;
+    margin: 18px 0 22px;
+  }
+
+  .note{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--sub);
+    border-left: 2px solid var(--line);
+    padding: 4px 0 4px 16px;
+    margin: 20px 0;
+  }
+
+  footer{
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: var(--sub);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding: 40px 20px 70px; }
+    h1{ font-size: 32px; }
+  }
+
+  /* --- 용어 팝업 --- */
+  .term{
+    position: relative;
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+    border-bottom: 1px dotted var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .popover{
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: 270px;
+    max-width: 78vw;
+    background: var(--ink);
+    color: #f2ede4;
+    font-family: 'Noto Serif KR', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 1.65;
+    padding: 14px 16px;
+    border-radius: 6px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    z-index: 20;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .popover .ptitle{
+    display:block;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: #d99a7c;
+    margin-bottom: 5px;
+  }
+
+  .popover::after{
+    content:"";
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+
+  .term.open .popover{ display:block; }
+
+  @media (max-width: 480px){
+    .popover{
+      position: fixed;
+      left: 5vw;
+      right: 5vw;
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      max-width: none;
+    }
+    .popover::after{ display:none; }
+    .term.open::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 19;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">성경인물묵상</div>
+    <h1>니므롯</h1>
+    <div class="hebrew">נִמְרוֹד — 세상에 첫 용사, 첫 제국 건설자</div>
+    <div class="refs">등장 성구 · 창세기 10:8-12 · 대상 1:10 · 미가 5:6</div>
+  </header>
+
+  <h2><span class="num">01</span>이름과 첫 소개</h2>
+  <p>니므롯은 함의 아들 구스의 아들로 소개된다. 히브리어 이름 <span class="term" tabindex="0">니므롯<span class="popover"><span class="ptitle">니므롯 (נִמְרוֹד)</span>정확한 어원은 불확실하지만, '반역하다'를 뜻하는 히브리어 어근 '마라드(מָרַד)'와 연관 짓는 해석이 오래전부터 있었다. 이 경우 이름 자체에 '반역자'라는 뉘앙스가 담기게 되는데, 본문이 명시적으로 그렇게 말하지는 않는다는 점에서 신중한 해석이 필요하다.</span></span>(נִמְרוֹד)은 정확한 뜻이 불확실하지만, 전통적으로 '반역'을 뜻하는 어근과 연관 짓는 해석이 있어왔다. 성경은 그를 "세상에 첫 용사"이자 "여호와 앞에서 특이한 사냥꾼"으로 소개하는데(10:8-9), 이 표현이 반복되는 것으로 보아 고대 이스라엘 사람들에게 꽤 잘 알려진 속담이나 관용구였을 가능성이 있다.</p>
+
+  <h2><span class="num">02</span>제국의 시작</h2>
+  <p>니므롯의 나라는 <span class="term" tabindex="0">시날<span class="popover"><span class="ptitle">시날 (שִׁנְעָר)</span>메소포타미아 남부, 즉 수메르-바빌로니아 지역을 가리키는 고대 지명. 창세기 11장 바벨탑 사건의 배경도 "시날 평지"로 명시되어(11:2), 니므롯의 나라 이야기와 지리적으로 정확히 겹친다.</span></span> 땅의 바벨, 에렉, 악갓, 갈레 같은 도시들에서 시작되었다고 기록된다(10:10). 이는 성경에서 '바벨'이라는 이름이 처음 등장하는 대목이기도 하다. 이후 그는 앗수르로 나아가 니느웨, 르호보딜, 갈라 등을 건설한 것으로 서술되는데(10:11), 이는 훗날 이스라엘을 멸망시키는 앗수르 제국의 기원을 미리 짚어두는 서술로 읽힌다.</p>
+  <p>즉 니므롯은 성경에서 '나라(왕국)'라는 개념이 처음 언급되는 인물이며, 그의 활동 무대가 바로 다음 장에서 펼쳐질 바벨탑 사건의 지리적 배경과 정확히 일치한다.</p>
+
+  <h2><span class="num">03</span>후대 전승에서의 니므롯</h2>
+  <p>흥미롭게도 창세기 본문은 니므롯을 바벨탑 건설과 직접 연결하지 않는다. 그러나 유대 전승(요세푸스의 「유대고대사」 등)과 이후 여러 주석 전통에서는 니므롯을 바벨탑 건설을 주도한 폭군, 혹은 하나님께 도전한 인물로 각색해왔다. 이런 해석은 그의 이름이 '반역'과 연관된다는 전통적 어원 풀이, 그리고 그의 나라가 바벨에서 시작되었다는 지리적 단서에서 비롯된 것으로 보이지만, 창세기 본문 자체가 명시하는 내용은 아니라는 점에 유의할 필요가 있다.</p>
+  <p>미가 5:6은 훗날 앗수르를 가리켜 "니므롯의 땅"이라 부르는데, 이는 니므롯이 후대까지 앗수르 제국과 동일시되는 상징적 인물로 기억되었음을 보여준다.</p>
+
+  <h2><span class="num">04</span>신학적 의미</h2>
+  <p>니므롯 이야기는 짧지만, 창세기의 큰 흐름 속에서 중요한 전환점 역할을 한다. 노아 이후 흩어져야 할 인류가(9:1, "땅에 충만하라") 오히려 한곳에 권력을 집중시키는 제국을 세우기 시작했다는 암시이기 때문이다. 이는 바로 다음 장의 바벨탑 이야기 — 사람들이 "우리 이름을 내고 온 지면에 흩어짐을 면하자"(11:4)며 하나님의 명령을 거스르는 사건 — 을 예비하는 서사적 다리 역할을 한다.</p>
+
+  <p class="note">다음엔 이 바벨탑 사건으로 곧장 이어가거나, 니므롯의 나라와 대비되는 아브라함의 부르심(창 12장)으로 넘어갈 수 있다.</p>
+
+  <footer>
+    <span>GENESIS STUDY</span>
+    <span>נמרוד — גבור ציד לפני יהוה</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.term').forEach(term => {
+    term.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = term.classList.contains('open');
+      document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+      if (!wasOpen) term.classList.add('open');
+    });
+    term.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); term.click(); }
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+  });
+</script>
+</body>
+</html>

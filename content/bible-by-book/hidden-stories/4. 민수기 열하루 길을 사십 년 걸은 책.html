@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>민수기, 열하루 길을 사십 년 걸은 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="열하루 길을 사십 년 걸은 광야 이야기, 민수기에 숨은 이야기">
+<meta property="og:title" content="민수기, 열하루 길을 사십 년 걸은 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 36</div>
+  <h1>민수기,<br>열하루 길을<br><em>사십 년</em> 걸은 책</h1>
+  <p class="sub">두 번 세어 보니 숫자는 거의 같았는데,<br>그 사이 한 세대가 통째로 바뀌어 있었다</p>
+  <div class="ref">민수기 1–36장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>레위기를 겨우 넘기면 성경 통독의 두 번째 고비가 기다려요. 민수기 1장부터 지파별 숫자가 줄줄이 나오거든요. 오만 구천삼백, 사만 육천오백… 😄 그런데 이 숫자 뒤에는 성경에서 가장 아픈 이야기와 가장 웃긴 이야기가 함께 숨어 있어요. 원망하는 백성, 말하는 나귀, 하룻밤에 꽃 핀 지팡이, 장대에 달린 뱀까지요.</p><p>신명기는 이렇게 말해요. “호렙 산에서 세일 산을 지나 가데스 바네아까지 열하루 길이었더라”(신 1:2). 걸어서 열하루면 닿을 거리였어요. 그런데 이스라엘은 그 길을 사십 년 동안 걸었어요. 민수기는 그 사십 년의 기록이에요. 그리고 그 긴 광야에서도 하나님은 한 번도 약속을 거두지 않으셨어요. 은 두루마리에 남은 축복, 애굽의 마늘이 그리운 백성, 여호수아의 새 이름, 살구꽃 핀 지팡이, 놋뱀, 발람의 나귀, 도피성까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>민수기는 어떤 책일까?</h2>
+    <p>광야에서 무너진 한 세대, 그리고 약속을 이어받은 다음 세대</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>민수기는 모세오경의 네 번째 책이에요. 교회는 전통적으로 모세가 기록했다고 받아 왔어요. 이야기는 출애굽 “둘째 해 둘째 달 첫째 날”(1:1) 시내 광야에서 시작해서, 마흔째 해에 요단 강 동쪽 모압 평지에서 끝나요. 약 서른여덟 해가 이 책에 들어 있어요. 원래 계획은 시내산에서 곧장 약속의 땅으로 들어가는 것이었어요. 그런데 가데스에서 정탐꾼들의 보고를 듣고 백성이 “애굽으로 돌아가자”(14:4)고 하는 바람에, 그 세대는 광야에서 사십 년을 맴돌다 죽어요. 민수기는 불신의 대가와, 그럼에도 끝까지 백성을 먹이고 이끄신 하나님의 신실하심을 함께 보여 주는 책이에요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>히브리어 이름은 1:1의 한 단어 “베미드바르”, 곧 “광야에서”예요. 칠십인역은 “숫자들(아리트모이)”이라고 불렀고, 우리말 “민수기(民數記)”도 “백성의 수를 센 기록”이라는 뜻이에요. 두 번의 인구조사가 책의 뼈대거든요.</div><div><b>두 번의 인구조사</b>1장의 첫 세대는 603,550명(1:46), 26장의 둘째 세대는 601,730명(26:51)이에요. 숫자는 거의 같은데, 첫 명단에 있던 사람은 갈렙과 여호수아 두 사람만 남았어요(26:64-65).</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 민수기의 큰 숫자를 두고, “천(엘레프)”이라는 말이 “가문”이나 “부대”를 뜻할 수도 있다는 해석이 있어요. 학자들 사이에 여러 견해가 있으며, 여기서는 본문의 숫자를 그대로 따랐어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">민수기의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">성막을 가운데 둔 진영</div><div class="mini-b">열두 지파가 동서남북으로 성막을 둘러싸고 진을 쳤어요(2장). 하나님이 늘 한가운데 계셨어요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">원망의 책</div><div class="mini-b">음식, 물, 지도자, 약속의 땅까지. 광야에서 백성은 계속 불평해요(11, 14, 16, 20, 21장).</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">구름 기둥을 따라 걷는 길</div><div class="mini-b">구름이 떠오르면 출발하고, 머물면 이틀이든 한 해든 머물렀어요(9:22).</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">이방 선지자의 축복</div><div class="mini-b">저주하러 온 발람의 입에서 오히려 축복이 네 번 터져 나와요(23–24장).</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">세대 교체</div><div class="mini-b">옛 세대가 광야에서 쓰러진 자리에서, 새 세대가 약속의 땅을 바라보며 서요(26–36장).</div></div></div></div>
+
+  <div class="target"><p>민수기의 중심에는 발람의 입에서 나온 이 고백이 있어요. <span class="hl">“하나님은 사람이 아니시니 거짓말을 하지 않으시고 인생이 아니시니 후회가 없으시도다”</span>(23:19). 사람은 사십 년 동안 흔들렸지만, 하나님의 약속은 한 번도 흔들리지 않았어요. 바울은 광야 이야기를 두고 “말세를 만난 우리를 깨우치기 위하여 기록되었느니라”(고전 10:11)고 했고, 그 모든 약속이 <mark>그리스도 안에서 “예”가 된다</mark>고 말해요(고후 1:20).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>은 두루마리의 축복부터 도피성까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>은 두루마리</button><button class="chip" onclick="goTo('s2')"><b>2</b>애굽의 마늘</button><button class="chip" onclick="goTo('s3')"><b>3</b>메뚜기와 새 이름</button><button class="chip" onclick="goTo('s4')"><b>4</b>살구꽃 지팡이</button><button class="chip" onclick="goTo('s5')"><b>5</b>놋뱀</button><button class="chip" onclick="goTo('s6')"><b>6</b>발람의 나귀</button><button class="chip" onclick="goTo('s7')"><b>7</b>도피성</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>예루살렘 무덤에서 나온 은 두루마리에<br>아론의 축복이 새겨져 있었다</h2><div class="refs">민수기 6:22-27 · 누가복음 24:50-51</div></div></div>
+    <div class="scene-body"><p>“여호와는 네게 복을 주시고 너를 지키시기를 원하며 여호와는 그의 얼굴을 네게 비추사 은혜 베푸시기를 원하며 여호와는 그 얼굴을 네게로 향하여 드사 평강 주시기를 원하노라”(6:24-26). 예배 마지막에 목사님이 손을 들고 하는 바로 그 축도의 뿌리예요. 하나님이 아론과 그 아들들에게 이렇게 백성을 축복하라고 직접 가르쳐 주신 말씀이에요.</p><p>히브리어로 읽으면 이 축복에는 계단 같은 모양이 있어요. 첫 줄은 세 단어, 둘째 줄은 다섯 단어, 셋째 줄은 일곱 단어예요. 복이 한 줄씩 점점 넓어지다가 마지막 단어 <span class="heb" data-tip="샬롬(shalom) — 평강, 평화. 싸움이 없는 상태를 넘어 모든 것이 온전하고 채워진 상태를 말한다. 아론의 축복은 이 단어로 끝난다.">샬롬</span>으로 끝나요. 그리고 하나님은 덧붙이세요. “그들은 이같이 내 이름으로 이스라엘 자손에게 축복할지니 내가 그들에게 복을 주리라”(6:27). 축복하는 사람은 제사장이지만, 복을 주시는 분은 하나님이세요.</p><p>1979년, 예루살렘 힌놈 골짜기 근처 “케테프 힌놈”의 옛 무덤에서 손가락만 한 은 두루마리 두 개가 발견됐어요. 조심스럽게 펼쳐 보니 바로 이 아론의 축복이 새겨져 있었어요. 주전 7세기 말에서 6세기 초, 바벨론이 예루살렘을 무너뜨리기 전의 것으로 보는데, 지금까지 발견된 성경 본문 가운데 가장 오래된 것이에요. 누군가 이 축복을 부적처럼 몸에 지니고 다녔던 거예요. 그리고 신약의 마지막 장면 하나가 이 축복과 겹쳐요. 부활하신 예수님은 승천하실 때 “손을 들어 그들에게 축복하시더니 축복하실 때에 그들을 떠나 하늘로 올려지시니”(눅 24:50-51). <mark>예수님의 마지막 모습은 축복하시는 대제사장의 모습</mark>이었어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 은 두루마리의 연대와 판독에는 학자들의 세밀한 논의가 이어져 왔어요. 두루마리는 현재 이스라엘 박물관에 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>예배의 마지막 축도를 흘려듣지 않고, 손을 들어 나를 축복하며 올라가신 예수님의 얼굴이 오늘 나를 향해 있음을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>애굽의 마늘이 그리웠던 백성,<br>그리고 오순절에 이루어진 모세의 소원</h2><div class="refs">민수기 11:4-6, 24-34 · 요엘 2:28 · 사도행전 2:16-18</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">백성의 기억</div>“애굽에 있을 때에는 <b>값 없이</b> 생선과 오이와 참외와 부추와 파와 마늘들을 먹은 것이 생각나거늘”(11:5)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">실제 애굽 생활</div>“어려운 노동으로 그들의 생활을 괴롭게 하니”(출 1:14)</div></div><p>광야에서 만나를 먹던 백성이 울기 시작해요. 고기가 먹고 싶다는 거예요. 그리고 애굽 시절 메뉴를 줄줄이 읊어요. 생선, 오이, 참외, 부추, 파, 마늘. 😄 압권은 “값 없이”라는 말이에요. 종으로 매 맞으며 벽돌을 굽던 시절이 기억 속에서 “공짜로 잘 먹던 시절”이 되어 있었어요. 그리고 불평해요. “이 만나 외에는 보이는 것이 아무것도 없도다”(11:6). 하늘에서 내린 떡이 지겨운 반찬이 된 거예요.</p><p>재밌게도 헬라의 역사가 헤로도토스는, 피라미드를 쌓던 일꾼들이 무와 양파와 마늘을 먹었다는 기록이 피라미드에 새겨져 있었다고 전해요. 백성이 그리워한 마늘은 정말 노예의 밥상이었던 셈이에요. 하나님은 메추라기를 보내 주셨지만, 욕심껏 거두어 쌓던 백성 위에 재앙이 내렸어요. 그곳 이름이 “기브롯 핫다아와”, 곧 <span class="heb" data-tip="기브롯 핫다아와(qivrot hatta'avah) — ‘탐욕의 무덤들’. 고기를 탐하던 백성을 거기 장사했기 때문에 붙은 이름이다(11:34).">탐욕의 무덤</span>이 되었어요(11:34).</p><p>그런데 같은 장에 전혀 다른 장면이 숨어 있어요. 짐이 너무 무거웠던 모세를 위해 하나님이 칠십 장로에게 영을 나눠 주셨어요. 그런데 진영에 남아 있던 엘닷과 메닷도 예언을 해요. 여호수아가 말려야 한다고 하자 모세가 대답해요. “여호와께서 그의 영을 그의 모든 백성에게 주사 다 선지자가 되게 하시기를 원하노라”(11:29). 이 소원은 수백 년 뒤 요엘의 예언이 되고(욜 2:28), 오순절에 이루어져요. 베드로가 외쳤어요. “하나님이 이르시되 말세에 내가 내 영을 모든 육체에 부어 주리니”(행 2:17). <mark>모세가 바라던 일을 부활하신 예수님이 성령으로 이루셨어요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 헤로도토스의 기록(『역사』 2권)은 그가 애굽에서 들은 이야기를 옮긴 것이라 그대로 믿기는 어려워요. 다만 마늘과 양파가 애굽 일꾼들의 흔한 음식이었다는 것은 여러 자료로 알 수 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>종살이하던 과거를 “좋았던 시절”로 착각하지 않고, 오늘 내게 주신 만나와 모든 성도에게 부어 주신 성령을 감사합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>스스로를 “메뚜기”라 부른 정탐꾼들,<br>그리고 “여호수아”라는 새 이름</h2><div class="refs">민수기 13:16, 23-33 · 14:6-9, 34 · 히브리서 4:8</div></div></div>
+    <div class="scene-body"><p>가나안에 보낸 정탐꾼 열두 명이 사십 일 만에 돌아와요. 에스골 골짜기에서 벤 포도송이를 “둘이 막대기에 꿰어 메고” 왔어요(13:23). 포도 한 송이를 두 사람이 멜 정도였던 거예요. 😄 이 장면은 지금 이스라엘 관광부의 로고로 쓰이고 있어요. 그런데 열 명의 보고는 이렇게 끝나요. “우리는 스스로 보기에도 메뚜기 같으니 그들이 보기에도 그와 같았을 것이니라”(13:33). 가나안 사람들은 한마디도 안 했는데, 스스로 메뚜기가 되어 버렸어요.</p><p>갈렙과 여호수아만 다르게 말했어요. “그들은 우리의 먹이라… 여호와는 우리와 함께 하시느니라 그들을 두려워하지 말라”(14:9). 같은 땅, 같은 거인을 보고도 한쪽은 자기를 메뚜기로 봤고, 한쪽은 하나님을 봤어요. 백성은 열 명의 말을 믿었고, 결과는 무거웠어요. 정탐한 “사십 일의 하루를 일 년으로 쳐서” 사십 년 동안 광야에 머물게 된 거예요(14:34).</p><p>여기에 작은 이름 이야기가 숨어 있어요. 정탐꾼 명단에서 에브라임 지파 대표의 원래 이름은 “호세아”, 곧 “구원”이었어요. 그런데 “모세가 눈의 아들 호세아를 여호수아라 불렀더라”(13:16). <span class="heb" data-tip="예호슈아(yehoshua) — ‘여호와는 구원이시다’. 헬라어로 옮기면 ‘예수(이에수스)’가 된다. 칠십인역은 여호수아를 이 이름으로 불렀다.">여호수아</span>는 “여호와는 구원이시다”라는 뜻이고, 헬라어로 옮기면 “예수”예요. 그래서 히브리서 4:8의 “여호수아가 그들에게 안식을 주었더라면”에서 “여호수아”는 헬라어로 “예수”라고 적혀 있어요. 여호수아는 백성을 땅으로 이끌었지만 참 안식을 주지는 못했어요. <mark>같은 이름을 가지신 예수님이 참 안식으로 이끄세요</mark>.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>문제 앞에서 나를 메뚜기처럼 작게 보기보다, 나와 함께 하시는 하나님을 보며 예수님이 주시는 안식을 향해 걸어갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>마른 지팡이에서 하룻밤 사이<br>살구꽃이 피었다</h2><div class="refs">민수기 17:1-10 · 예레미야 1:11-12 · 출애굽기 25:33 · 히브리서 9:4</div></div></div>
+    <div class="scene-body"><p>고라의 반역 뒤에도 백성의 원망은 그치지 않았어요. “왜 꼭 아론만 제사장이냐?” 하나님은 각 지파 지도자에게 지팡이를 하나씩 내라고 하시고, 이름을 적어 회막 안 증거궤 앞에 두게 하세요. 모두 나무에서 잘라 낸 지 오래된 마른 지팡이였어요. 다음 날 아침, 모세가 들어가 보니 “레위 집을 위하여 낸 아론의 지팡이에 움이 돋고 순이 나고 꽃이 피어서 살구 열매가 열렸더라”(17:8). 하룻밤 사이에 싹, 순, 꽃, 열매가 한꺼번에 나온 거예요.</p><p>이 “살구”(개역개정 번역)는 사실 아몬드 나무예요. 이스라엘에서 한겨울이 끝날 무렵 가장 먼저 꽃을 피우는 나무라서, 히브리어로 <span class="heb" data-tip="샤케드(shaqed) — 아몬드 나무(개역개정은 ‘살구나무’로 번역). ‘깨어 있다, 지켜보다’라는 동사 ‘샤카드’와 소리가 같아서 ‘깨어 있는 나무’라는 느낌을 준다.">샤케드</span>, “깨어 있는 나무”라는 이름을 얻었어요. 예레미야가 부름받을 때 하나님이 보여 주신 것도 이 나무였어요. “살구나무 가지를 보나이다.” 그러자 하나님이 말씀하세요. “내가 내 말을 지켜 그대로 이루려 함이라”(렘 1:11-12). “살구나무(샤케드)”와 “지켜(쇼케드)”의 말놀이예요. 성막 등잔대의 잔도 “살구꽃 형상”이었어요(출 25:33).</p><p>하나님은 이 지팡이를 증거궤 앞에 두어 반역하는 자들에게 표징이 되게 하셨어요(17:10). 히브리서는 언약궤 안에 만나 항아리, 언약의 돌판과 함께 “아론의 싹 난 지팡이”가 있었다고 말해요(히 9:4). 죽은 나무에 생명을 일으키신 분이 참 제사장을 세우신다는 표시였어요. 그리고 이 표시는 무덤에서 살아나신 분, <mark>부활로 영원한 대제사장이 되신 예수님</mark>에게서 완성돼요(히 7:16).</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>마른 지팡이 같은 내 삶에도 하룻밤에 꽃을 피우실 수 있는 하나님, 말씀을 지켜 이루시는 하나님을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>살리던 놋뱀이<br>수백 년 뒤 “놋 조각”이 되었다</h2><div class="refs">민수기 21:4-9 · 열왕기하 18:4 · 요한복음 3:14-15</div></div></div>
+    <div class="scene-body"><p>에돔 땅을 돌아가느라 길이 길어지자 백성이 또 원망해요. “우리 마음이 이 하찮은 음식을 싫어하노라”(21:5). 만나를 “하찮은 음식”이라고 부른 거예요. 그러자 불뱀들이 백성을 물었어요. 여기서 “불뱀”은 히브리어로 <span class="heb" data-tip="사라프(saraph) — ‘불타다’에서 온 말. 민수기 21:6의 ‘불뱀’에 쓰였고, 이사야 6장에서 하나님의 보좌를 둘러싼 ‘스랍’도 같은 단어다.">사라프</span>인데, 이사야 6장에서 하나님의 보좌를 둘러싼 “스랍”과 같은 단어예요. 물리면 불에 덴 듯 타는 고통이 있었다는 뜻으로 보여요.</p><p>하나님의 해결책은 이상했어요. 뱀을 없애 주신 게 아니라, 놋으로 뱀을 만들어 장대 위에 달게 하셨어요. “뱀에게 물린 자가 놋뱀을 쳐다본즉 모두 살더라”(21:9). 약을 바르거나 제물을 드리라는 게 아니라, 그냥 쳐다보라는 거예요. 히브리어로 뱀은 “나하쉬”, 놋은 “네호셰트”라서, 이 장면 자체가 소리로 엮여 있어요.</p><p>그런데 수백 년이 지나 이 놋뱀이 다시 등장해요. 백성이 그 놋뱀에게 분향하며 섬기고 있었던 거예요. 히스기야 왕은 그것을 부수고 “느후스단”이라 불렀어요(왕하 18:4). “놋 조각” 정도의 뜻이에요. 😄 살리는 도구가 우상이 되자, 하나님 앞에서는 한낱 놋쇠에 불과했어요. 예수님은 이 장면을 니고데모에게 들려주셨어요. “모세가 광야에서 뱀을 든 것 같이 인자도 들려야 하리니 이는 그를 믿는 자마다 영생을 얻게 하려 하심이니라”(요 3:14-15). 살리는 힘은 놋뱀에 있지 않았어요. <mark>십자가에 들리신 예수님을 바라보는 믿음</mark>에 있었어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>은혜의 도구를 섬기지 않고, 십자가에 들리신 예수님만 바라봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>나귀가 선지자보다 먼저 보았고,<br>요르단 땅에서 발람의 이름이 발견되었다</h2><div class="refs">민수기 22:21-35 · 23:19 · 24:17 · 베드로후서 2:15-16 · 요한계시록 2:14</div></div></div>
+    <div class="scene-body"><p>모압 왕 발락이 큰돈을 주고 유프라테스 강가의 유명한 점술가 발람을 불러요. 이스라엘을 저주해 달라는 거예요. 발람이 나귀를 타고 가는데, 칼을 든 여호와의 사자가 길을 막아요. 나귀는 보는데 “선지자”는 못 봐요. 😄 나귀가 세 번 비켜서자 발람은 나귀를 때리고, 마침내 “여호와께서 나귀 입을 여시니” 나귀가 말해요. “내가 당신에게 무엇을 하였기에 나를 이같이 세 번을 때리느냐”(22:28). 발람은 놀라지도 않고 나귀와 말다툼을 해요. 베드로는 이 장면을 두고 “말하지 못하는 나귀가 사람의 소리로 말하여 이 선지자의 미친 행동을 저지하였느니라”(벧후 2:16)고 했어요.</p><p>발락은 발람을 세 번이나 산 위에 데려가 저주하게 하지만, 발람의 입에서는 번번이 축복이 나와요. 발락이 화가 나서 원수를 저주하라고 불렀더니 “세 번 그들을 축복하였도다”(24:10) 하고 소리치자, 발람은 한 번 더 예언해요. “한 별이 야곱에게서 나오며 한 규가 이스라엘에게서 일어나서”(24:17). 이스라엘에서 일어날 왕에 대한 예언이에요. 동방에서 별을 보고 찾아온 박사들을 떠올리게 하는 구절이에요.</p><p>1967년 요르단의 데이르 알라에서 발굴단이 무너진 건물 벽의 회반죽 조각에 적힌 글을 찾아냈어요. 거기에 “브올의 아들 발람, 신들의 선견자”라는 이름이 나와요. 주전 8세기쯤의 글이에요. 성경 밖에서도 발람은 유명한 선견자로 기억되고 있었던 거예요. 하지만 신약은 발람을 돈을 사랑한 선지자로 기억해요(벧후 2:15). 그는 입으로는 축복했지만, 결국 모압이 이스라엘을 넘어뜨릴 꾀를 알려 주었어요(민 31:16, 계 2:14). <mark>축복을 저주로 바꿀 수 있는 사람은 없고, 하나님은 원수의 입으로도 약속을 지키세요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 데이르 알라 비문 속 발람과 민수기의 발람을 같은 인물로 볼지에 대해서는 학자들 사이에 논의가 있어요. 또 24:17의 “별”을 마태복음 2장의 별과 연결하는 것은 교회의 오랜 해석으로, 마태가 이 구절을 직접 인용하지는 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나귀보다 둔해진 내 영적인 눈을 돌아보고, 누구도 뒤집을 수 없는 하나님의 축복 아래 내가 있음을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>도피성의 문은<br>대제사장이 죽어야 열렸다</h2><div class="refs">민수기 35:9-28 · 여호수아 20:1-9 · 히브리서 6:18-20</div></div></div>
+    <div class="scene-body"><p>민수기의 거의 마지막 장에 여섯 개의 도시가 나와요. 요단 강 동쪽에 셋, 서쪽에 셋. “도피성”이에요. 실수로 사람을 죽인 사람이 피해자의 가족, 곧 “피를 보복하는 자”에게 쫓길 때 이 성으로 도망가면 살 수 있었어요. 재판을 받아 고의가 아니라고 인정되면 그는 도피성 안에서 보호받았어요(35:24-25). 성 밖으로 나오면 다시 위험했어요.</p><p>그런데 도피성에는 이상한 규정이 하나 붙어 있어요. 그 사람이 언제 집으로 돌아갈 수 있을까요? 대제사장이 죽기까지는 도피성에 머물러야 했어요. 그리고 “대제사장이 죽은 후에는 그 살인자가 자기 소유의 땅으로 돌아갈 수 있느니라”(35:28). 죄 지은 사람이 죽어야 끝나는 게 아니라, 대제사장이 죽어야 자유가 선포됐어요. 한 사람의 죽음이 다른 사람을 집으로 돌려보낸 거예요.</p><p>히브리서는 우리를 이렇게 불러요. “앞에 있는 소망을 얻으려고 피난처를 찾은 우리”(히 6:18). 그리고 곧바로 그 소망이 “영원히 멜기세덱의 반차를 따르는 대제사장이 되어” 들어가신 예수님이라고 말해요(히 6:20). 우리의 대제사장은 한 번 죽으셨고, 그 죽음으로 우리는 집으로 돌아갈 자유를 얻었어요. 그리고 그분은 다시 사셔서 <mark>영원한 피난처가 되어 주세요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 유대 전승(탈무드)에는 도피성으로 가는 길을 넓게 닦고 갈림길마다 “도피(미클라트)”라는 표지판을 세웠다는 이야기가 있어요. 또 히브리서 6:18의 “피난처를 찾은”을 도피성과 연결하는 것은 많은 주석가들의 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>죄책감에 쫓길 때 나를 받아 주는 피난처가 예수님이심을 기억하고, 그분의 죽음으로 얻은 자유 안에서 삽니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">열하루 길을 사십 년 걸었어도,<br>구름 기둥은 한 번도 떠나지 않았다</div>
+    <p>민수기는 솔직한 책이에요. 하나님의 백성이 얼마나 쉽게 원망하고, 얼마나 쉽게 과거를 미화하고, 얼마나 쉽게 약속 앞에서 뒷걸음질 치는지 숨기지 않아요. 한 세대가 통째로 광야에 묻혔어요. 그런데 그 사십 년 내내 만나는 한 번도 끊기지 않았고, 구름 기둥과 불 기둥은 한 번도 떠나지 않았어요. 두 번째 인구조사의 숫자가 첫 번째와 거의 같다는 것은, 하나님이 광야에서도 다음 세대를 조용히 길러 오셨다는 뜻이기도 해요.</p><p>바울은 광야의 이스라엘이 “다 같은 신령한 음료를 마셨으니 이는 그들을 따르는 신령한 반석으로부터 마셨으매 그 반석은 곧 그리스도시라”(고전 10:4)고 말해요. 원망하던 백성 곁에서 물을 내던 그 반석이 그리스도셨다는 거예요. 광야 같은 우리 인생길에서도 <mark>끝까지 함께 걸으시는 분은 예수 그리스도</mark>세요.</p>
+    <div class="q">“하나님은 사람이 아니시니<br>거짓말을 하지 않으시고<br>인생이 아니시니 후회가 없으시도다” (23:19)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

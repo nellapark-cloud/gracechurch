@@ -1,0 +1,2361 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>사사기 — 은혜교회 성경공부 시리즈</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#faf5ec;
+  --cream-deep:#f1e6d3;
+  --navy:#2b241d;
+  --navy-soft:#4a3c2d;
+  --gold:#b5702f;
+  --gold-soft:#d99a52;
+  --ink:#2a241d;
+  --ink-soft:#6b5f4f;
+  --line:#e2d3b8;
+  --white:#ffffff;
+}
+
+*{ box-sizing: border-box; }
+html, body{ margin:0; padding:0; }
+body{
+  background: var(--white);
+  color: var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 15.5px;
+  line-height: 1.75;
+  -webkit-text-size-adjust: 100%;
+}
+b, strong{ font-weight:700; }
+img{ max-width:100%; }
+
+/* ===== COVER — 책마다 다른 톤의 그라데이션 + 펄 효과 ===== */
+.cover{
+  min-height: 50vh;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(217,154,82,0.30), transparent 52%),
+    radial-gradient(circle at 82% 18%, rgba(181,112,47,0.22), transparent 50%),
+    radial-gradient(circle at 70% 85%, rgba(217,154,82,0.16), transparent 55%),
+    linear-gradient(150deg, #1a1510 0%, #2b241d 32%, #4a3c2d 60%, #241d16 100%);
+  color: var(--white);
+  display:flex; flex-direction:column; justify-content:center; align-items:center;
+  text-align:center;
+  padding: 7vh 7vw;
+}
+.cover .eyebrow{
+  font-size: 12px; letter-spacing:0.28em; color: var(--gold-soft);
+  font-weight:700; text-transform:uppercase; margin-bottom:20px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 34px; font-weight:700; margin:0 0 12px; letter-spacing:-0.01em;
+}
+.cover .cover-sub{ font-size:14px; color:#d8c6ac; margin-bottom:20px; }
+.cover .cover-line{ width:48px; height:2px; background:var(--gold-soft); margin:0 auto 22px; }
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:13px; color:var(--gold-soft); letter-spacing:0.05em;
+}
+.cover .cover-note{ margin-top:24px; font-size:12px; color:#a89a82; }
+
+/* ===== INTRO ===== */
+.intro-page{ padding: 10vw 6vw 6vw; max-width:640px; margin:0 auto; }
+.page-label{ font-size:11px; letter-spacing:0.2em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+.intro-page h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:26px; color:var(--navy); font-weight:700; margin:0 0 14px; }
+.intro-page .intro-lead{ font-size:15px; color:var(--ink-soft); margin-bottom:28px; line-height:1.7; }
+.intro-block{ margin-bottom:24px; }
+.intro-block h3{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:16px; color:var(--navy-soft); font-weight:700; margin:0 0 8px; padding-left:10px; border-left:3px solid var(--gold-soft); }
+.intro-block p{ margin:0 0 8px; text-align:left; word-break:keep-all; }
+.intro-block b{ color:var(--navy-soft); }
+.intro-outline{ display:flex; flex-direction:column; gap:10px; margin-top:8px; }
+.oi{ background:var(--cream); border:1px solid var(--line); border-radius:8px; padding:12px 14px; }
+.oi-tag{ font-family:"Noto Serif CJK KR",serif; font-size:12px; color:var(--gold); font-weight:700; margin-bottom:4px; }
+.oi-title{ font-weight:700; color:var(--navy); font-size:15px; margin-bottom:4px; }
+.oi-body{ font-size:13px; color:var(--ink-soft); line-height:1.6; }
+
+/* ===== TOC ===== */
+.toc-page{ padding: 8vw 6vw; max-width:640px; margin:0 auto; }
+.toc-page h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:24px; color:var(--navy); font-weight:700; margin:0 0 18px; }
+.toc-list{ display:flex; flex-direction:column; }
+.toc-item{
+  display:flex; align-items:baseline; gap:10px; text-decoration:none; color:var(--ink);
+  padding:12px 4px; border-bottom:1px solid var(--line); cursor:pointer;
+}
+.toc-num{ font-family:"Noto Serif CJK KR",serif; font-size:14px; font-weight:700; color:var(--gold); width:24px; flex-shrink:0; }
+.toc-text{ display:flex; flex-direction:column; gap:2px; min-width:0; }
+.toc-title{ font-family:"Noto Serif CJK KR",serif; font-size:15px; font-weight:600; color:var(--navy); }
+.toc-sub{ font-size:12px; color:var(--ink-soft); }
+
+/* ===== CHAPTER ===== */
+.chapter{ padding: 9vw 6vw 4vw; max-width:640px; margin:0 auto; }
+.chapter-head{ margin-bottom:22px; padding-bottom:16px; border-bottom:2px solid var(--navy); display:flex; align-items:flex-start; gap:12px; }
+.chapter-icon-badge{ flex-shrink:0; width:42px; height:42px; border-radius:50%; background:var(--navy); color:var(--gold-soft); display:flex; align-items:center; justify-content:center; }
+.chapter-icon-badge .chapter-icon{ width:58%; height:58%; }
+.chapter-head-text{ flex:1; min-width:0; }
+.chapter-eyebrow{ font-size:11px; letter-spacing:0.18em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:6px; }
+.chapter-head h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:21px; font-weight:700; color:var(--navy); margin:0 0 6px; }
+.chapter-head .chapter-sub{ font-size:13px; color:var(--ink-soft); line-height:1.5; }
+.chapter-head .ref-strip{ display:flex; gap:6px; flex-wrap:wrap; margin-top:10px; }
+.chapter-head .ref-item{ font-size:11px; color:var(--navy-soft); padding:3px 10px; background:var(--cream-deep); border-radius:10px; }
+
+section.sub{ margin-bottom:26px; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:8px; }
+.sec-num{ font-family:"Noto Serif CJK KR",serif; font-size:12px; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:17px; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:12.5px; margin:0 0 12px; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{ display:flex; flex-direction:column; gap:6px; padding:12px 0; border-top:1px solid var(--line); }
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR",serif; font-size:12px; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:15px; }
+.flow-body{ color:var(--ink); font-size:14px; line-height:1.75; text-align:left; word-break:keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap:10px; }
+.teach-card{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft); border-radius:6px; padding:14px 15px; }
+.teach-title{ font-family:"Noto Serif CJK KR",serif; font-size:14.5px; font-weight:700; color:var(--navy); margin-bottom:6px; }
+.teach-body{ font-size:13.5px; color:var(--ink); text-align:left; word-break:keep-all; line-height:1.7; }
+
+.speech-bubble{ display:flex; gap:12px; align-items:flex-start; background:var(--cream-deep); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin:20px 0 8px; }
+.speech-bubble .sb-avatar{ width:32px; height:32px; min-width:32px; border-radius:50%; background:var(--navy); color:var(--gold-soft); display:flex; align-items:center; justify-content:center; font-size:15px; }
+.speech-bubble .sb-text{ font-size:13.5px; color:var(--navy-soft); line-height:1.7; }
+
+.deep-wrap{ background:var(--navy); border-radius:12px; padding:20px 18px; margin-top:10px; }
+.deep-wrap .sec-num{ color:var(--gold-soft); }
+.deep-wrap h2{ color:var(--white); }
+.deep-wrap .sec-desc{ color:#c4b7a2; }
+.deep-item{ padding:14px 0; border-top:1px solid rgba(255,255,255,0.14); }
+.deep-item:first-of-type{ margin-top:6px; }
+.deep-num{ display:inline-flex; align-items:center; justify-content:center; width:22px; height:22px; border:1px solid var(--gold-soft); color:var(--gold-soft); border-radius:50%; font-size:12px; font-weight:700; margin-right:8px; flex-shrink:0; }
+.deep-title{ display:flex; align-items:center; font-family:"Noto Serif CJK KR",serif; font-size:14.5px; font-weight:700; color:var(--white); margin-bottom:8px; }
+.deep-body{ font-size:13.5px; color:#e2d6c2; padding-left:30px; text-align:left; word-break:keep-all; line-height:1.75; }
+.deep-body b{ color:var(--gold-soft); font-weight:600; }
+
+/* ===== HIGHLIGHT SYSTEM ===== */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background:#f1dfba; color:#7a5220; padding:1px 4px; border-radius:3px; font-weight:700;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background:#f2dcd3; color:#9a4632; padding:1px 4px; border-radius:3px; font-weight:700;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background:#d7ebe6; color:#235f56; padding:1px 4px; border-radius:3px; font-weight:700;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.deep-body b.hl-term, .hinge-note b.hl-term{ background:rgba(216,176,115,0.28); color:#f3dfb8; padding:1px 4px; border-radius:3px; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.deep-body b.hl-quote{ background:rgba(224,122,105,0.26); color:#f0b8a8; padding:1px 4px; border-radius:3px; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+.deep-body b.hl-greek{ background:rgba(110,196,188,0.26); color:#a9e6dd; padding:1px 4px; border-radius:3px; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background:#d7ebf7; color:#1c5f85; padding:1px 4px; border-radius:3px; font-weight:700;
+  text-decoration:underline; text-underline-offset:2px; text-decoration-thickness:1.5px;
+}
+.deep-body b.hl-insight{ background:rgba(120,190,230,0.28); color:#bfe3f8; padding:1px 4px; border-radius:3px; font-weight:700; text-decoration:underline; text-underline-offset:2px; }
+b.has-insight{ cursor:pointer; }
+b.has-insight:after{ content:"\25C6"; font-size:0.55em; margin-left:2px; vertical-align:super; opacity:0.85; }
+b.has-tip{ cursor:pointer; }
+b.has-tip:after{ content:"\24D8"; font-size:0.65em; margin-left:2px; vertical-align:super; opacity:0.75; }
+
+/* ===== TERM TOOLTIP ===== */
+#termTip{
+  display:none; position:absolute; z-index:500; max-width:280px;
+  background:var(--white); color:var(--ink); font-size:13px; line-height:1.65;
+  padding:12px 15px; border-radius:10px; border-top:4px solid var(--gold);
+  box-shadow:0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip .tip-close{ position:absolute; top:6px; right:9px; width:20px; height:20px; border-radius:50%; background:var(--cream-deep); display:flex; align-items:center; justify-content:center; color:var(--navy-soft); font-size:12px; cursor:pointer; }
+
+/* ===== INSIGHT POPUP ===== */
+#insightOverlay{ display:none; position:fixed; inset:0; z-index:800; background:rgba(20,16,10,0.6); align-items:center; justify-content:center; padding:20px; }
+#insightOverlay.open{ display:flex; }
+#insightCard{ background:var(--white); max-width:460px; width:100%; max-height:80vh; overflow-y:auto; border-radius:16px; padding:24px 22px 20px; box-shadow:0 20px 60px rgba(0,0,0,0.4); position:relative; border-top:5px solid #4fa3d1; }
+#insightCard .insight-close{ position:absolute; top:14px; right:16px; width:28px; height:28px; border-radius:50%; background:var(--cream-deep); display:flex; align-items:center; justify-content:center; color:var(--navy-soft); font-size:14px; cursor:pointer; }
+#insightCard .insight-eyebrow{ font-size:11px; letter-spacing:0.14em; color:#4fa3d1; font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+#insightCard h3{ font-family:"Noto Serif CJK KR","Noto Serif KR",serif; font-size:16.5px; color:var(--navy); font-weight:700; margin:0 0 12px; line-height:1.5; }
+#insightCard .insight-body{ font-size:13.5px; color:var(--ink); line-height:1.8; white-space:pre-line; }
+
+/* ===== FLOATING NAV — 플로팅만, 하단 정적 버튼 없음 ===== */
+.floating-nav{
+  position:fixed; right:14px; bottom:16px; z-index:400;
+  display:flex; flex-direction:column; gap:8px; align-items:flex-end;
+}
+.floating-nav button{
+  display:flex; align-items:center; gap:6px; font-family:inherit;
+  background:var(--navy); color:var(--gold-soft); border:1px solid var(--gold-soft);
+  border-radius:24px; padding:10px 15px; font-size:12.5px; font-weight:600;
+  box-shadow:0 4px 16px rgba(0,0,0,0.3); cursor:pointer;
+}
+.floating-nav button:active{ transform:scale(0.96); }
+.floating-nav .fn-icon{ font-size:13px; }
+
+/* ===== FOOTER / BRANDING ===== */
+.book-footer{ max-width:640px; margin:0 auto; padding:8vw 6vw 16vw; text-align:center; }
+.book-footer .ff-line{ width:40px; height:2px; background:var(--gold-soft); margin:0 auto 16px; }
+.book-footer .ff-org{ font-size:12px; letter-spacing:0.12em; color:var(--ink-soft); }
+
+@media print{
+  .flow-body, .teach-body, .intro-block p, .sb-text, .deep-body{ text-align: justify; }
+  .floating-nav{ display:none; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">&#10005;</div><div class="insight-eyebrow">&#128172; 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="floating-nav">
+  <button onclick="goTo(event,'toc')"><span class="fn-icon">&#128214;</span>목차 가기</button>
+  <button onclick="goTo(event,'top')"><span class="fn-icon">&#8593;</span>처음으로</button>
+  <button onclick="goBackHomeSafe()"><span class="fn-icon">&#127968;</span>자료실로 가기</button>
+</div>
+
+<div class="cover">
+  <div class="eyebrow">은혜교회 성경공부 시리즈 · JUDGES</div>
+  <h1>사사기</h1>
+  <div class="cover-sub">왕이 없던 시대, 반복되는 범죄와 은혜의 순환</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">삿 1:1 – 21:25</span>&nbsp;&nbsp;&middot;&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 21장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>사사기 전체 서론</h1>
+  <p class="intro-lead">정복에서 혼돈으로 — 왕 없는 시대, 반복되는 은혜의 기록.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>사사기의 저자는 명시되지 않으나, 유대 전통은 <b class="hl-term has-tip" data-tip="사무엘상에서 마지막 사사이자 최초의 선지자적 역할을 겸했던 인물. 유대 전통은 그를 사사기의 저자로 여긴다.">사무엘</b>을 저자로 여겨왔다. 책 전체에 다섯 차례 반복되는 <b class="hl-term">"그 때에는 이스라엘에 왕이 없었더라"</b>는 표현은 이 책이 왕정이 시작된 이후, 아마도 사울이나 다윗 왕조 초기에 편집되었음을 시사한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>역사적 배경</h3>
+    <p>여호수아의 죽음 이후부터 사무엘과 사울이 등장하기 전까지, 대략 <b class="hl-term">주전 1200~1050년경</b>의 기간을 다룬다. 가나안 정복이 완료되지 않은 채 지파들이 각자의 영역에서 원주민과 뒤섞여 살아가던 불안정한 정착 초기 시대다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문체적 특징과 구조</h3>
+    <p>사사기는 크게 세 부분으로 나뉜다. 1~2장은 <b class="hl-term">서론</b>으로 미완성 정복과 순환 구조를 제시하고, 3~16장은 <b class="hl-term">여섯 명의 주요 사사</b>(옷니엘, 에훗, 드보라, 기드온, 입다, 삼손)의 이야기를 중심으로 전개되며, 17~21장은 <b class="hl-term">결론부</b>로 중심 지도력 부재가 낳은 도덕적·종교적 붕괴를 적나라하게 보여준다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p>2장에 명시된 <b class="hl-term">범죄–징계–부르짖음–구원</b>의 순환 구조가 책 전체를 관통한다. 이 순환은 단순 반복이 아니라 매번 더 심화되는 나선형 하강으로 그려지며, 마지막 결론구 <b class="hl-quote">"사람이 각기 자기의 소견에 옳은 대로 행하였더라"</b>는 왕 없는 시대의 총체적 위기를 요약한다. 동시에 매 순환마다 하나님이 백성의 부르짖음에 신실하게 응답하신다는 점에서, 이 책은 인간의 반복된 실패와 하나님의 반복된 은혜를 나란히 보여준다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 원어 배경과 해석사적 논쟁 등 함께 씨름할 가치가 있는 지점들을 다룬다.</p>
+  </div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-text">
+        <span class="toc-title">미완성 정복 — 남은 자들과의 동거</span>
+        <span class="toc-sub">여호수아 사후, 가나안 족속을 다 쫓아내지 못한 지파들</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-text">
+        <span class="toc-title">보김의 책망과 사사기의 순환 구조</span>
+        <span class="toc-sub">여호와의 사자의 책망, 여호수아의 죽음, '다른 세대'의 등장</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-text">
+        <span class="toc-title">옷니엘, 에훗, 삼갈 — 첫 사사들</span>
+        <span class="toc-sub">이스라엘을 시험하기 위해 남겨진 족속들, 세 사사의 짧은 이야기</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-text">
+        <span class="toc-title">드보라와 바락, 여인의 손에 넘겨진 시스라</span>
+        <span class="toc-sub">가나안 왕 야빈과 그의 군대장관 시스라, 야엘의 결정적 일격</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-text">
+        <span class="toc-title">드보라의 노래</span>
+        <span class="toc-sub">히브리 시가 문학의 걸작, 승전을 기념하는 노래</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-text">
+        <span class="toc-title">기드온의 부르심과 양털 표징</span>
+        <span class="toc-sub">미디안의 압제, 여호와의 사자의 부르심, 바알 제단 파괴</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch7')" onkeydown="if(event.key==='Enter')goTo(event,'ch7')">
+      <span class="toc-num">07</span>
+      <span class="toc-text">
+        <span class="toc-title">삼백 용사와 미디안의 궤멸</span>
+        <span class="toc-sub">숫자를 줄이시는 하나님, 항아리와 횃불의 기습</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch8')" onkeydown="if(event.key==='Enter')goTo(event,'ch8')">
+      <span class="toc-num">08</span>
+      <span class="toc-text">
+        <span class="toc-title">기드온의 응징과 몰락의 씨앗</span>
+        <span class="toc-sub">숙곳과 브누엘 응징, 왕위 거절과 에봇 제작</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch9')" onkeydown="if(event.key==='Enter')goTo(event,'ch9')">
+      <span class="toc-num">09</span>
+      <span class="toc-text">
+        <span class="toc-title">아비멜렉의 왕권 찬탈과 요담의 우화</span>
+        <span class="toc-sub">형제 칠십 명 살해, 요담의 저주 섞인 우화, 비참한 최후</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch10')" onkeydown="if(event.key==='Enter')goTo(event,'ch10')">
+      <span class="toc-num">10</span>
+      <span class="toc-text">
+        <span class="toc-title">돌라와 야일, 다시 시작된 압제</span>
+        <span class="toc-sub">짧게 기록된 두 사사, 암몬의 압제와 이스라엘의 통회</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch11')" onkeydown="if(event.key==='Enter')goTo(event,'ch11')">
+      <span class="toc-num">11</span>
+      <span class="toc-text">
+        <span class="toc-title">입다의 서원과 그의 딸</span>
+        <span class="toc-sub">기생의 아들 입다, 길르앗 장로들의 청빙, 암몬과의 외교, 비극적 서원</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch12')" onkeydown="if(event.key==='Enter')goTo(event,'ch12')">
+      <span class="toc-num">12</span>
+      <span class="toc-text">
+        <span class="toc-title">십볼렛 사건과 세 명의 사사</span>
+        <span class="toc-sub">에브라임과의 내분, 입다의 죽음, 입산·엘론·압돈</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch13')" onkeydown="if(event.key==='Enter')goTo(event,'ch13')">
+      <span class="toc-num">13</span>
+      <span class="toc-text">
+        <span class="toc-title">나실인으로 태어난 삼손</span>
+        <span class="toc-sub">마노아 부부에게 나타난 여호와의 사자, 삼손의 출생 예고</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch14')" onkeydown="if(event.key==='Enter')goTo(event,'ch14')">
+      <span class="toc-num">14</span>
+      <span class="toc-text">
+        <span class="toc-title">딤나의 결혼과 수수께끼</span>
+        <span class="toc-sub">이방 여인과의 혼인, 사자와 벌집, 수수께끼 내기</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch15')" onkeydown="if(event.key==='Enter')goTo(event,'ch15')">
+      <span class="toc-num">15</span>
+      <span class="toc-text">
+        <span class="toc-title">여우 삼백 마리와 나귀 턱뼈</span>
+        <span class="toc-sub">삼손의 개인적 보복전, 유다 지파의 배신, 나귀 턱뼈의 승리</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch16')" onkeydown="if(event.key==='Enter')goTo(event,'ch16')">
+      <span class="toc-num">16</span>
+      <span class="toc-text">
+        <span class="toc-title">들릴라와 무너진 다곤 신전</span>
+        <span class="toc-sub">들릴라의 배신, 힘의 상실, 마지막 순간의 회복과 죽음</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch17')" onkeydown="if(event.key==='Enter')goTo(event,'ch17')">
+      <span class="toc-num">17</span>
+      <span class="toc-text">
+        <span class="toc-title">미가의 신상과 사설 제사장</span>
+        <span class="toc-sub">은 신상을 만든 미가, 떠돌이 레위인을 제사장으로 고용하다</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch18')" onkeydown="if(event.key==='Enter')goTo(event,'ch18')">
+      <span class="toc-num">18</span>
+      <span class="toc-text">
+        <span class="toc-title">단 지파의 이주와 우상의 북행</span>
+        <span class="toc-sub">기업을 찾지 못한 단 지파, 라이스 정복, 미가의 신상을 탈취하다</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch19')" onkeydown="if(event.key==='Enter')goTo(event,'ch19')">
+      <span class="toc-num">19</span>
+      <span class="toc-text">
+        <span class="toc-title">레위인의 첩과 기브아의 참상</span>
+        <span class="toc-sub">떠나간 첩, 환대의 규범, 기브아의 끔찍한 폭력</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch20')" onkeydown="if(event.key==='Enter')goTo(event,'ch20')">
+      <span class="toc-num">20</span>
+      <span class="toc-text">
+        <span class="toc-title">이스라엘과 베냐민의 내전</span>
+        <span class="toc-sub">온 지파의 소집, 베냐민의 완강한 거부, 참혹한 동족상잔</span>
+      </span>
+    </div>
+    <div class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch21')" onkeydown="if(event.key==='Enter')goTo(event,'ch21')">
+      <span class="toc-num">21</span>
+      <span class="toc-text">
+        <span class="toc-title">베냐민의 존속과 "각기 소견에 옳은 대로"</span>
+        <span class="toc-sub">베냐민 지파를 위한 신부 확보, 사사기의 결론적 선언</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 1</div>
+      <h1>1장 · 미완성 정복 — 남은 자들과의 동거</h1>
+      <div class="chapter-sub">여호수아 사후, 가나안 족속을 다 쫓아내지 못한 지파들</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 1:1-36</span><span class="ref-item">수 23:12-13</span><span class="ref-item">미완성 정복</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-20절</div>
+        <div>
+          <div class="flow-title">유다와 시므온의 연합 정복</div>
+          <div class="flow-body">여호수아가 죽은 후 이스라엘이 <b class="hl-term">"누가 먼저 올라가서 싸우리이까"</b>라고 여호와께 묻자, 유다 지파가 지명된다. 유다는 시므온과 연합하여 브세스에서 아도니베섹을 사로잡고, 그의 엄지손가락과 엄지발가락을 자르니 그가 <b class="hl-quote">"내가 이전에 칠십 왕의 엄지손가락과 엄지발가락을 잘라 상 아래에서 먹게 하였더니 하나님이 내가 행한 대로 내게 갚으셨도다"</b>라고 고백한다. 유다는 예루살렘·헤브론·드빌을 차례로 정복한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">21-26절</div>
+        <div>
+          <div class="flow-title">산지의 성공과 평지의 실패 조짐</div>
+          <div class="flow-body">베냐민 지파는 여부스 족속을 예루살렘에서 <b class="hl-insight has-insight" data-insight="0">쫓아내지 못하여</b> 그들이 오늘까지 함께 거주하게 되었다는 서술이 처음 등장한다. 요셉 족속은 벧엘을 정탐꾼의 도움으로 함락시키지만, 이는 이미 완전한 정복이 아니라 협상과 타협의 그림자를 드리운다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">27-36절</div>
+        <div>
+          <div class="flow-title">"쫓아내지 못하였다"의 반복</div>
+          <div class="flow-body">므낫세·에브라임·스불론·아셀·납달리·단 지파에 이르기까지, 본문은 <b class="hl-term">"쫓아내지 못하였으므로 가나안 족속이 그 땅에 거주하였더라"</b>는 후렴구를 여섯 번 가까이 반복한다. 정복이 완성이 아니라 타협으로 끝나는 이 패턴이 사사기 전체 비극의 씨앗이 된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 순종은 부분적일 때 이미 불순종이다</div>
+        <div class="teach-body">여호수아 23장의 명령은 가나안 족속을 온전히 쫓아내라는 것이었다. 1장의 반복되는 "쫓아내지 못하였으므로"는 능력 부족이 아니라 결단 부족을 완곡하게 표현한 것으로 읽힌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 아도니베섹의 고백 — 하나님의 공의는 되갚음으로 나타난다</div>
+        <div class="teach-body">이방 왕조차 자신이 행한 잔인함이 그대로 자신에게 돌아왔음을 인정한다. 이는 사사기 전체에 흐르는 인과응보적 신학의 첫 사례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 타협은 단번에 오지 않고 서서히 쌓인다</div>
+        <div class="teach-body">본문은 한 지파의 완전한 실패가 아니라, 여러 지파의 작은 타협들이 누적되는 구조로 서술된다. 오늘의 신앙도 큰 배교보다 반복된 작은 타협에서 무너지는 경우가 많다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 함께 거주함의 대가는 뒤늦게 드러난다</div>
+        <div class="teach-body">1장에서는 "함께 거주하였더라"는 표현이 담담하게 서술되지만, 이 동거가 낳을 우상숭배와 혼합주의의 열매는 이후 장들에서 본격적으로 드러난다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 지도자의 부재가 곧바로 위기는 아니다</div>
+        <div class="teach-body">여호수아의 죽음 직후 이스라엘은 여전히 여호와께 묻고 전쟁에 나선다. 위기는 지도자 부재 자체가 아니라, 다음 세대가 여호와를 아는 지식을 잃어가는 과정에서 서서히 찾아온다(2장에서 본격화).</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">타협은 늘 '이 정도면 충분하다'는 얼굴로 찾아와요. 1장의 반복되는 '쫓아내지 못하였다'는 사실 '쫓아내지 않았다'에 가깝다는 걸 기억하면 좋겠어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>'쫓아내지 못하였다'는 정말 능력의 문제였을까?</div>
+        <div class="deep-body">히브리어 본문은 원인을 명시하지 않는다. 유다 지파는 <b class="hl-term">"철 병거가 있으므로"</b>(19절) 평지 주민을 쫓아내지 못했다고 하는데, 이는 여호와께서 여리고 성벽을 무너뜨리신 능력과 대조된다. 문제는 무기의 열세가 아니라 믿음의 열세였다는 해석이 지배적이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>왜 사사기는 정복 실패의 책임을 개별 지파에 흩어 서술했을까?</div>
+        <div class="deep-body">여호수아서가 통일된 이스라엘의 승리를 강조했다면, 사사기 1장은 지파별로 흩어진 실패를 나열함으로써 이후 사사기 전체를 관통할 '지파 간 연합의 붕괴'와 '중앙 지도력의 부재'라는 주제를 문학적으로 예비한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 2</div>
+      <h1>2장 · 보김의 책망과 사사기의 순환 구조</h1>
+      <div class="chapter-sub">여호와의 사자의 책망, 여호수아의 죽음, '다른 세대'의 등장</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 2:1-23</span><span class="ref-item">순환 구조의 서문</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-5절</div>
+        <div>
+          <div class="flow-title">보김에서의 책망</div>
+          <div class="flow-body">여호와의 사자가 길갈에서 <b class="hl-insight has-insight" data-insight="1">보김</b>으로 올라와, 이스라엘이 가나안 족속과 언약하고 그들의 제단을 헐지 않은 것을 책망한다. 백성이 소리 높여 울며 그곳에서 여호와께 제사를 드린다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6-10절</div>
+        <div>
+          <div class="flow-title">여호수아의 죽음과 다른 세대</div>
+          <div class="flow-body">여호수아가 110세로 죽어 딤낫헤레스에 장사된 후, <b class="hl-term">"여호와를 알지 못하며 여호와께서 이스라엘을 위하여 행하신 일도 알지 못하는 다른 세대"</b>가 일어난다. 신앙의 전수 실패가 사사기 전체 비극의 근본 원인으로 제시된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11-23절</div>
+        <div>
+          <div class="flow-title">사사기의 순환 구조 선언</div>
+          <div class="flow-body">이스라엘이 바알들을 섬기자 여호와의 진노로 대적의 손에 팔리고, 부르짖으면 사사를 세워 구원하시나 사사가 죽으면 다시 <b class="hl-term">"그 조상들보다 더욱 타락하여"</b> 우상을 섬긴다. 이 <b class="hl-term">범죄–징계–부르짖음–구원</b>의 사이클이 사사기 전체를 관통하는 틀로 명시적으로 제시된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 신앙은 저절로 상속되지 않는다</div>
+        <div class="teach-body">여호수아 세대의 신앙 경험이 다음 세대에게 자동으로 전달되지 않았다. "알지 못하는 다른 세대"라는 표현은 신앙 교육과 전수의 실패를 명확히 지목한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 눈물이 곧 회개는 아니다</div>
+        <div class="teach-body">보김에서 백성은 울었지만, 이후 사사기 전체에서 같은 죄가 반복된다. 감정적 통곡과 실제적 돌이킴은 다른 차원의 일이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 하나님의 진노는 버림이 아니라 사랑의 표현이다</div>
+        <div class="teach-body">본문은 여호와의 진노를 백성을 향한 무관심이 아니라, 그들을 돌이키기 위한 능동적 개입으로 서술한다. 대적에게 파심조차 궁극적으로는 회복을 향한 조치다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 사사는 반복되는 구원자이지 영구적 해법이 아니다</div>
+        <div class="teach-body">사사가 살아있는 동안만 안정이 유지된다는 서술은, 사사기가 궁극적으로 더 나은 왕과 지도자를 향한 갈망을 남겨두고 있음을 암시한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ '더욱 타락하여'라는 나선형 하강</div>
+        <div class="teach-body">순환은 단순 반복이 아니라 매번 이전보다 심해지는 나선형 하강으로 묘사된다. 이는 사사기 후반부(17-21장)의 극심한 도덕적 붕괴를 예비한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">사사기를 읽는 열쇠는 이 2장에 다 들어있어요. 범죄, 징계, 부르짖음, 구원 — 이 네 박자를 기억하면 이후 모든 사사 이야기가 왜 비슷한 듯 다른지 이해하기 쉬워집니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>여호와께서 가나안 족속을 '남겨두신' 이유는 무엇일까?</div>
+        <div class="deep-body">22-23절은 남은 족속들이 이스라엘을 시험하여 <b class="hl-term">"여호와의 도를 지켜 행하는지"</b> 알게 하려는 목적이라고 설명한다. 이는 시험이 벌이 아니라 신앙의 진정성을 드러내는 기회로 제시된다는 점에서, 고난의 목적론에 대한 사사기 특유의 관점을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>사사기의 순환 구조는 결정론적인가, 아니면 회개의 여지를 남기는가?</div>
+        <div class="deep-body">순환이 반복될수록 심화된다는 점에서 비관적으로 읽힐 수 있지만, 매 순환마다 하나님이 '부르짖음'에 응답하여 사사를 세우신다는 점은 은혜가 계속 작동하고 있음을 보여준다. 사사기는 인간의 반복된 실패와 하나님의 반복된 신실하심을 나란히 놓는 책이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 3</div>
+      <h1>3장 · 옷니엘, 에훗, 삼갈 — 첫 사사들</h1>
+      <div class="chapter-sub">이스라엘을 시험하기 위해 남겨진 족속들, 세 사사의 짧은 이야기</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 3:1-31</span><span class="ref-item">옷니엘·에훗·삼갈</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-11절</div>
+        <div>
+          <div class="flow-title">옷니엘 — 첫 사사의 표준 패턴</div>
+          <div class="flow-body">이스라엘이 바알과 아세라를 섬기자 여호와께서 메소포타미아 왕 구산 리사다임의 손에 8년간 파셨고, 백성이 부르짖자 갈렙의 조카 <b class="hl-term">옷니엘</b>에게 여호와의 영이 임하여 그를 사사로 세우신다. 이 짧은 이야기는 이후 모든 사사 내러티브의 '표준형'을 제시한다: 범죄–징계–부르짖음–사사 등장–구원–평온.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12-30절</div>
+        <div>
+          <div class="flow-title">에훗과 모압 왕 에글론</div>
+          <div class="flow-body">이스라엘이 다시 범죄하여 모압 왕 에글론에게 18년간 압제당하자, <b class="hl-insight has-insight" data-insight="2">왼손잡이</b> 에훗이 조공을 바치러 가는 척 접근해 짧은 칼로 심히 비만한 에글론을 찔러 죽이고 모압 군사 만 명을 물리친다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">31절</div>
+        <div>
+          <div class="flow-title">삼갈 — 한 절짜리 사사</div>
+          <div class="flow-body">삼갈은 단 한 절로 소개되는데, <b class="hl-term">소 모는 막대기</b>로 블레셋 사람 육백 명을 죽여 이스라엘을 구원했다고만 기록된다. 정식 무기가 아니라 일상 도구가 구원의 수단이 되었다는 점이 인상적이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 옷니엘은 반복될 패턴의 청사진이다</div>
+        <div class="teach-body">3장 초반의 옷니엘 이야기는 의도적으로 짧고 정형화되어 있다. 이후 등장할 모든 사사 이야기를 이 틀 위에서 비교하며 읽게 하려는 문학적 장치다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 약점처럼 보이는 것이 하나님의 도구가 된다</div>
+        <div class="teach-body">에훗의 왼손잡이 특성과 삼갈의 소 모는 막대기는 모두 세상의 기준으로는 '변방'에 속한 자원이다. 하나님은 화려한 군사력이 아니라 이런 것들을 통해서도 구원을 이루신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 지리적 압제자의 다양성</div>
+        <div class="teach-body">메소포타미아, 모압, 블레셋으로 이어지는 압제자의 변화는 이스라엘이 사방에서 위협받는 취약한 상태였음을 보여준다. 가나안 정착 초기의 불안정성이 배경에 깔려 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 짧은 서술도 하나님의 구원 역사다</div>
+        <div class="teach-body">삼갈의 이야기는 단 한 절뿐이지만 '이스라엘을 구원하였더라'는 동일한 결론에 도달한다. 분량의 많고 적음이 하나님 앞에서의 의미를 결정하지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 평온의 기간은 늘 한시적이다</div>
+        <div class="teach-body">옷니엘 이후 "땅이 평온한 지 사십 년"이라는 표현이 반복되지만, 매번 그 평온 뒤에는 새로운 범죄가 뒤따른다. 평화는 결과가 아니라 계속 지켜내야 할 상태로 그려진다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">삼갈 이야기를 읽을 때마다 놀라요. 단 한 절인데 '이스라엘을 구원하였더라'는 말이 옷니엘의 긴 이야기와 똑같이 붙어있거든요. 하나님께는 분량이 중요한 게 아닌가 봐요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>에훗의 암살은 오늘날의 윤리 기준으로 어떻게 평가해야 할까?</div>
+        <div class="deep-body">본문은 에훗의 속임수와 암살을 도덕적으로 문제 삼지 않고 오히려 <b class="hl-term">여호와께서 세우신 구원자</b>의 행위로 서술한다. 이는 사사기가 고대 근동 전쟁 서사의 관습 속에서 기록되었으며, 신학적 초점이 개별 행위의 윤리적 정당성보다 '하나님이 이스라엘을 구원하셨다'는 사실 자체에 있음을 보여준다. 다만 이후 사사들의 도덕적 타락이 점진적으로 심화된다는 점에서, 사사기가 이런 폭력을 이상화하기보다 시대의 어두움을 반영하는 것으로 읽는 해석도 유력하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>삼갈은 이스라엘 사람이었을까?</div>
+        <div class="deep-body">삼갈의 이름과 '아낫의 아들'이라는 표현이 가나안식이라는 점에서 일부 학자들은 그가 이스라엘 출신이 아닐 가능성을 제기한다. 만약 그렇다면, 하나님이 언약 백성의 경계를 넘어서도 구원을 베푸신다는 사사기 특유의 열린 신학적 메시지로 읽을 수 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 4</div>
+      <h1>4장 · 드보라와 바락, 여인의 손에 넘겨진 시스라</h1>
+      <div class="chapter-sub">가나안 왕 야빈과 그의 군대장관 시스라, 야엘의 결정적 일격</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 4:1-24</span><span class="ref-item">여선지자 드보라</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-10절</div>
+        <div>
+          <div class="flow-title">드보라의 소환과 바락의 주저</div>
+          <div class="flow-body">이스라엘이 다시 범죄하여 가나안 왕 야빈과 그의 철 병거 구백 대를 지닌 군대장관 <b class="hl-term">시스라</b>에게 20년간 압제당한다. 여선지자 <b class="hl-term">드보라</b>가 바락을 불러 다볼산에 만 명을 모아 시스라와 싸우라 명하지만, 바락은 <b class="hl-quote">"당신이 나와 함께 가면 가려니와 당신이 나와 함께 가지 아니하면 나는 가지 아니하겠노라"</b>며 주저한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11-16절</div>
+        <div>
+          <div class="flow-title">기손 강가의 전투</div>
+          <div class="flow-body">이스라엘 군대가 다볼산에서 내려오자 여호와께서 시스라의 철 병거 군대를 <b class="hl-term">기손 강</b> 앞에서 혼란에 빠뜨리시고(아마도 폭우로 인한 진창), 시스라의 온 군대가 칼에 엎드러진다. 시스라는 병거를 버리고 도보로 도망한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">17-24절</div>
+        <div>
+          <div class="flow-title">야엘의 장막에서</div>
+          <div class="flow-body">도망친 시스라는 겐 사람 헤벨의 아내 <b class="hl-insight has-insight" data-insight="3">야엘</b>의 장막으로 피신하나, 그녀는 그를 안심시켜 재운 뒤 장막 말뚝을 그의 관자놀이에 박아 죽인다. 드보라의 예언대로 승리의 영광이 여인에게 돌아간다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 하나님은 사회적 위계를 뛰어넘어 일하신다</div>
+        <div class="teach-body">여선지자, 사사, 그리고 결정적 승리를 거둔 야엘까지 모두 여성이라는 점은 고대 가부장 사회에서 파격적인 서술이다. 하나님의 구원 역사는 인간이 기대하는 자격 조건에 매이지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 순종의 지연은 영광의 상실로 이어진다</div>
+        <div class="teach-body">바락은 결국 순종하지만 드보라 없이는 나가지 않겠다는 조건을 달았고, 그 대가로 최종 승리의 영예를 다른 이에게 넘긴다. 늦은 순종도 순종이지만 대가가 따른다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 철 병거도 하나님 앞에서는 무력하다</div>
+        <div class="teach-body">구백 대의 철 병거는 당대 최강의 군사 기술이었지만, 기손 강가의 진창 앞에서 무용지물이 된다. 인간의 군사적 우위는 하나님의 개입 앞에서 절대적이지 않다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 환대의 규범을 뒤집는 야엘</div>
+        <div class="teach-body">고대 근동에서 장막 환대는 신성한 의무였다. 야엘은 그 환대의 틀 안에서 시스라를 안심시킨 뒤 결정적 일격을 가하는데, 이는 도덕적으로 복잡한 본문이지만 사사기는 이를 이스라엘 구원의 사건으로 기록한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 여선지자 드보라의 통합적 리더십</div>
+        <div class="teach-body">드보라는 재판관, 예언자, 군사 전략가의 역할을 동시에 수행한다. 사사기에서 가장 온전한 형태의 지도력을 보여주는 인물 중 하나다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">바락의 망설임이 나쁘게만 보이진 않아요. 오히려 그는 하나님의 임재(드보라)를 붙들고 싶어했던 거죠. 다만 그 붙듦이 순종을 대신할 순 없었다는 게 이 본문의 냉정한 교훈이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>야엘의 행위는 배신인가, 구원의 도구인가?</div>
+        <div class="deep-body">야엘의 남편 헤벨은 야빈 왕과 화친 관계에 있었기에(4:17), 시스라를 죽인 것은 표면적으로 자기 진영에 대한 배신처럼 보인다. 그러나 5장 드보라의 노래는 야엘을 <b class="hl-term">"여인 중에 가장 복을 받을 자"</b>로 찬양한다. 이는 사사기가 인간의 사회적·정치적 충성보다 하나님의 구원 목적을 우선시하는 관점을 보여준다는 해석이 지배적이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>기손 강가의 '혼란'은 자연 현상이었을까, 초자연적 개입이었을까?</div>
+        <div class="deep-body">본문은 구체적 메커니즘을 설명하지 않지만, 드보라의 노래(5:4, 20-21)는 하늘이 물을 쏟고 별들이 시스라와 싸웠다고 시적으로 묘사한다. 다수 학자는 갑작스러운 폭우로 기손 강이 범람하여 철 병거들이 진창에 빠졌을 가능성을 제시하며, 이를 자연적 기상 현상을 통한 하나님의 섭리적 개입으로 이해한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 5</div>
+      <h1>5장 · 드보라의 노래</h1>
+      <div class="chapter-sub">히브리 시가 문학의 걸작, 승전을 기념하는 노래</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 5:1-31</span><span class="ref-item">고대 히브리 시가</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-11절</div>
+        <div>
+          <div class="flow-title">서언 — 지도자들이 앞장설 때</div>
+          <div class="flow-body">드보라와 바락이 함께 부르는 이 노래는 <b class="hl-quote">"이스라엘의 영솔자들이 영솔하였고 백성이 즐거이 헌신하였으니 여호와를 찬송하라"</b>는 선언으로 시작된다. 시내산에서의 여호와의 강림을 회상하며 노래의 신학적 기초를 놓는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12-23절</div>
+        <div>
+          <div class="flow-title">지파별 참여와 불참의 대비</div>
+          <div class="flow-body">노래는 전쟁에 적극 참여한 지파(스불론, 납달리 등)와 참여하지 않은 지파(르우벤, 길르앗, 단, 아셀)를 날카롭게 대조한다. 특히 르우벤에 대해서는 <b class="hl-term">"마음에 크게 살핌이 있었도다"</b>라며 결단하지 못한 것을 반복해서 지적한다. 메로스 주민은 여호와의 전쟁에 나오지 않았다는 이유로 저주받는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">24-31절</div>
+        <div>
+          <div class="flow-title">야엘 찬양과 시스라 어머니의 헛된 기다림</div>
+          <div class="flow-body">야엘은 <b class="hl-term">"장막에 있는 여인 중에 가장 복을 받을 자"</b>로 찬양받으며, 그녀가 시스라를 죽이는 장면이 생생하게 재현된다. 노래는 대조적으로 시스라의 어머니가 창가에서 아들의 귀환을 기다리며 부질없는 희망을 품는 장면으로 극적 아이러니를 완성한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 예배와 승리는 함께 노래된다</div>
+        <div class="teach-body">드보라의 노래는 군사적 승리를 종교적 찬양의 언어로 승화시킨다. 이스라엘의 신앙은 삶의 모든 영역, 심지어 전쟁의 기억까지도 예배의 대상으로 삼는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 연합하지 않은 지파에 대한 공적 책망</div>
+        <div class="teach-body">노래는 특정 지파의 불참을 공개적으로 지적한다. 공동체의 위기 앞에서 개별 지파(개인)의 선택이 전체의 운명에 영향을 미친다는 연대 책임의 신학이 드러난다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ '마음에 크게 살핌'의 위험성</div>
+        <div class="teach-body">르우벤 지파는 악하지 않았지만 결단하지 못하고 망설였다. 사사기는 명백한 악행뿐 아니라 우유부단한 방관도 심각한 문제로 다룬다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 시적 기억이 신학적 기억이 된다</div>
+        <div class="teach-body">산문(4장)과 시(5장)로 같은 사건을 두 번 서술하는 것은 고대 근동 문학의 전형적 기법이다. 시는 사건의 사실을 넘어 그 의미와 정서를 공동체에 각인시키는 역할을 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 승리 뒤의 슬픔까지 끌어안는 노래</div>
+        <div class="teach-body">시스라 어머니의 헛된 기다림을 묘사하는 마지막 장면은 승자의 노래 속에서도 패자의 인간적 비극을 외면하지 않는다. 성경의 전쟁 서사가 단순한 승리주의로 환원되지 않음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">드보라의 노래에서 제일 마음에 남는 건 시스라 어머니 장면이에요. 승리를 노래하면서도 적장의 어머니가 창가에서 기다리는 모습을 그려낸다는 게, 이 노래가 단순한 자축이 아니라는 걸 보여줘요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>히브리 시가로서 드보라의 노래는 어떤 문학적 위치를 갖는가?</div>
+        <div class="deep-body">다수 구약학자들은 드보라의 노래(삿 5장)를 히브리 성경에서 가장 오래된 시가 문학 중 하나로 평가한다. 고졸한 문법 형태와 어휘가 다른 본문과 구별되며, 산문으로 기록된 4장보다 시기적으로 먼저 구전되었을 가능성이 제기된다. 이는 사사기가 다양한 시기의 자료를 편집해 구성되었다는 편집사적 논의와 연결된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>메로스에 대한 저주는 무엇을 의미하는가?</div>
+        <div class="deep-body">메로스는 성경 다른 곳에서 언급되지 않는 지명으로, 정확한 위치가 불확실하다. 여호와의 사자가 직접 저주를 선언했다는 점(23절)에서, 이는 단순한 군사적 비겁함을 넘어 언약 공동체의 연대 의무를 저버린 것에 대한 신적 심판으로 이해된다. 익명에 가까운 이 작은 마을에 대한 저주는, 참여의 크기가 아니라 부름에 응답했는지 여부가 중요함을 역설적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 6</div>
+      <h1>6장 · 기드온의 부르심과 양털 표징</h1>
+      <div class="chapter-sub">미디안의 압제, 여호와의 사자의 부르심, 바알 제단 파괴</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 6:1-40</span><span class="ref-item">기드온의 부르심</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-10절</div>
+        <div>
+          <div class="flow-title">미디안의 메뚜기떼 같은 압제</div>
+          <div class="flow-body">이스라엘이 다시 범죄하여 <b class="hl-term">미디안</b>에게 7년간 압제당한다. 미디안·아말렉·동방 사람들이 메뚜기떼처럼 몰려와 곡식을 노략하니, 이스라엘 백성은 산에 굴을 파고 숨어 지낸다. 백성이 부르짖자 여호와께서 먼저 한 선지자를 보내어 그들의 불순종을 책망하신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11-24절</div>
+        <div>
+          <div class="flow-title">포도주 틀에서 밀을 타작하는 기드온</div>
+          <div class="flow-body">여호와의 사자가 기드온에게 나타나 <b class="hl-quote">"큰 용사여 여호와께서 너와 함께 계시도다"</b>라 부르시나, 기드온은 자신의 가문이 므낫세 중에 극히 약하고 자신이 아버지 집에서 가장 작은 자라며 반문한다. 여호와께서 함께하시겠다 약속하시고, 기드온이 드린 제물을 불로 사르시는 표징을 보이신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">25-40절</div>
+        <div>
+          <div class="flow-title">바알 제단 파괴와 양털 표징</div>
+          <div class="flow-body">기드온은 밤에 아버지의 바알 제단을 헐고 아세라 상을 찍어 여호와께 제단을 쌓는다. 이후 미디안과의 전쟁을 앞두고 <b class="hl-insight has-insight" data-insight="4">양털 표징</b>을 두 차례 구하여 여호와의 뜻을 재차 확인한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 두려움 속에서도 부르심은 임한다</div>
+        <div class="teach-body">기드온이 포도주 틀에서 몰래 밀을 타작하고 있을 때 — 가장 위축되고 숨어있는 순간에 — 하나님의 부르심이 임한다. 부르심은 준비된 완벽한 상태를 기다리지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② '나는 부족하다'는 고백과 소명은 공존할 수 있다</div>
+        <div class="teach-body">기드온의 자기 비하는 거짓 겸손이 아니라 실제 인식이었을 가능성이 크다. 그러나 하나님은 그의 부족함을 부인하지 않으시고 "내가 반드시 너와 함께 하리니"라는 약속으로 응답하신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 개혁은 가장 가까운 곳, 자기 집에서 시작된다</div>
+        <div class="teach-body">기드온의 첫 사역은 미디안과의 전쟁이 아니라 자기 아버지의 바알 제단을 헐어버리는 일이었다. 공동체적 개혁은 종종 가장 사적이고 두려운 자리에서 먼저 요구된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 밤에 행하는 순종도 순종이다</div>
+        <div class="teach-body">기드온은 가족과 마을 사람들이 두려워 낮이 아닌 밤에 제단을 헐었다. 완벽하게 담대하지 못한 순종이라도 하나님은 그것을 받으시고 그다음 걸음으로 인도하신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 확신은 과정을 통해 자란다</div>
+        <div class="teach-body">제물을 사르는 불, 첫 번째 양털, 두 번째 양털로 이어지는 반복된 표징 요청은 기드온의 믿음이 단번에 완성되지 않고 단계적으로 성장했음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">양털 표징 이야기를 읽을 때마다 위로가 돼요. 하나님은 기드온의 반복된 의심에 짜증내지 않으시고 계속 응답해주셨거든요. 우리의 더딘 믿음도 그렇게 받아주시는 분이라 믿어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>양털 표징 요청은 믿음의 부족을 보여주는가, 신중한 확인인가?</div>
+        <div class="deep-body">본문 자체는 기드온의 요청을 명시적으로 비판하지 않는다. 그러나 이미 불의 표징(6:21)과 사자의 직접적인 말씀을 받은 뒤에도 다시 두 차례나 표징을 구했다는 점에서, 많은 주석가들은 이를 연약한 믿음의 표지로 읽는다. 동시에 하나님이 그 요청을 두 번 다 들어주셨다는 사실은, 믿음의 성장 과정에서 인간적 확인 욕구를 하나님이 정죄하지 않고 품어주신다는 목회적 읽기를 가능케 한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>기드온이라는 이름과 여룹바알이라는 이름의 관계는?</div>
+        <div class="deep-body">바알 제단을 헌 사건 이후 마을 사람들은 기드온을 <b class="hl-term">여룹바알</b>('바알이 그와 다투게 하라')이라 부르기 시작한다(6:32). 이는 조롱의 의미로 붙여진 이름이지만 동시에 바알이 스스로를 지키지 못했다는 신학적 조롱을 담고 있어, 이후 기드온의 정체성을 이해하는 데 중요한 이중적 이름으로 자리 잡는다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 7</div>
+      <h1>7장 · 삼백 용사와 미디안의 궤멸</h1>
+      <div class="chapter-sub">숫자를 줄이시는 하나님, 항아리와 횃불의 기습</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 7:1-25</span><span class="ref-item">삼백 용사</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-8절</div>
+        <div>
+          <div class="flow-title">삼만 이천에서 삼백으로</div>
+          <div class="flow-body">여호와께서 기드온에게 <b class="hl-quote">"백성이 너무 많은즉 내가 그들의 손에 미디안을 넘겨주지 아니하리니"</b>라 말씀하시고, 두려워 떠는 자를 돌려보내게 하여 만 명이 남는다. 다시 물 마시는 방식으로 <b class="hl-insight has-insight" data-insight="5">삼백 명</b>만을 선별하신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9-15절</div>
+        <div>
+          <div class="flow-title">적진의 꿈 이야기를 엿듣다</div>
+          <div class="flow-body">여호와께서 두려워하는 기드온을 격려하시고자 미디안 진영으로 내려가 보라 명하신다. 기드온은 한 미디안 병사가 <b class="hl-term">보리떡 한 덩이가 미디안 진을 무너뜨리는</b> 꿈 이야기를 하는 것을 엿듣고, 그 해몽이 자신의 승리를 가리킨다는 것을 확신하며 경배한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16-25절</div>
+        <div>
+          <div class="flow-title">항아리와 횃불, 나팔 소리의 기습</div>
+          <div class="flow-body">기드온은 삼백 명을 세 대로 나누어 각각 나팔과 빈 항아리 속에 횃불을 숨겨 들게 하고, 밤중에 진영을 포위하여 일제히 나팔을 불고 항아리를 깨뜨린다. 미디안 군대는 혼란에 빠져 서로 칼로 치며 도망하고, 이스라엘은 대승을 거둔다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 하나님은 때로 자원을 줄여서 일하신다</div>
+        <div class="teach-body">군대를 3만 2천에서 300으로 줄이신 것은 인간의 상식과 정반대다. 이는 승리의 원천이 병력의 규모가 아니라 하나님 자신임을 명백히 하려는 의도적 조치다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 두려움은 부끄러운 것이 아니라 다뤄져야 할 것이다</div>
+        <div class="teach-body">2만 2천 명이 두려워 돌아갔다는 사실을 본문은 정죄하지 않고 담담히 기록한다. 동시에 하나님은 남은 자들에게도 여전히 두려움이 있음을 아시고 적진의 소리를 들려주어 격려하신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 하나님의 은혜는 연약한 자의 확신까지 배려한다</div>
+        <div class="teach-body">기드온이 여전히 두려워하자 하나님은 그를 책망하지 않고 오히려 "내려가기를 두려워하거든 부라와 함께 내려가라"며 확신을 얻을 기회를 친히 마련해 주신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 전략의 창의성도 하나님이 주시는 은사다</div>
+        <div class="teach-body">항아리와 횃불, 나팔을 이용한 기습은 정면 대결이 아니라 심리전이었다. 이는 무력의 크기가 아니라 지혜와 순종이 승리의 통로가 될 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 승리는 이스라엘의 칼이 아니라 서로를 치는 적군의 혼란으로 온다</div>
+        <div class="teach-body">22절은 미디안 사람들이 '여호와께서 그들로 온 진영에서 각각 그 동지를 치게 하시므로' 자멸했다고 기록한다. 궁극적 승리의 주체가 누구인지를 분명히 한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">삼백 용사 이야기의 핵심은 전략이 아니라 숫자를 줄이신 이유예요. '내 손이 나를 구원하였다'고 자랑할 여지를 아예 없애버리신 거죠. 승리 뒤에 숨은 이 배려가 참 마음에 와닿아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>물 마시는 방식으로 선별한 기준은 실제 군사적 근거가 있었을까?</div>
+        <div class="deep-body">본문은 선별 기준의 군사적 합리성을 설명하지 않는다. 전통적 해석은 손으로 떠 마신 자들이 경계 태세를 유지한 신중한 자들이라 보지만, 반대로 무릎 꿇고 마신 자들이 오히려 갈증에 흔들리지 않는 절제된 자들이라는 해석도 있다. 본문의 침묵 자체가 핵심일 수 있다 — 선택의 이유는 인간에게 설명되지 않고, 오직 하나님의 주권적 결정으로 남겨진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>보리떡 꿈은 왜 하필 보리떡이었을까?</div>
+        <div class="deep-body">보리는 밀보다 값싸고 하급으로 여겨지던 곡물로, 이스라엘 같은 '보잘것없는' 민족을 상징한다는 해석이 있다. 미디안 병사 자신의 꿈과 해몽 속에서 적군조차 이스라엘의 승리를 예견하고 두려워한다는 설정은, 하나님이 대적의 마음까지 주관하신다는 점을 강조하는 문학적 장치로 읽힌다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 8</div>
+      <h1>8장 · 기드온의 응징과 몰락의 씨앗</h1>
+      <div class="chapter-sub">숙곳과 브누엘 응징, 왕위 거절과 에봇 제작</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 8:1-35</span><span class="ref-item">기드온의 말년</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-21절</div>
+        <div>
+          <div class="flow-title">숙곳·브누엘 응징과 두 왕의 처형</div>
+          <div class="flow-body">에브라임 사람들이 자신들을 전쟁에 부르지 않았다며 기드온과 다투나 그는 지혜로운 답변으로 노를 가라앉힌다. 그러나 도망하는 미디안 왕들을 추격하며 도움을 거절했던 <b class="hl-term">숙곳과 브누엘</b>에게는 잔혹하게 보복한다. 결국 미디안 왕 세바와 살문나를 사로잡아 처형한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">22-27절</div>
+        <div>
+          <div class="flow-title">왕위 거절과 에봇 제작</div>
+          <div class="flow-body">백성이 <b class="hl-quote">"당신이 우리를 미디안의 손에서 구원하셨으니 당신과 당신의 아들과 손자가 우리를 다스리소서"</b>라 청하자 기드온은 <b class="hl-quote">"내가 너희를 다스리지 아니하겠고 내 아들도 너희를 다스리지 아니할 것이요 여호와께서 너희를 다스리시리라"</b>며 거절한다. 그러나 그는 전리품 금으로 <b class="hl-insight has-insight" data-insight="6">에봇</b>을 만들어 온 이스라엘이 그것을 우상처럼 위하게 된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">28-35절</div>
+        <div>
+          <div class="flow-title">평온의 끝과 아비멜렉의 등장 예고</div>
+          <div class="flow-body">미디안이 진압되어 땅이 사십 년간 평온하나, 기드온이 죽자 이스라엘은 다시 바알들을 음란하게 섬긴다. 기드온에게 첩에게서 난 아들 <b class="hl-term">아비멜렉</b>이 소개되며 다음 장의 비극을 예고한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 옳은 신학적 선언도 삶으로 이어지지 않으면 무너진다</div>
+        <div class="teach-body">기드온은 "여호와께서 다스리시리라"는 정확한 신학을 선언했지만, 곧이어 우상이 될 에봇을 만든다. 말의 정통성과 삶의 실천 사이의 간극이 얼마나 위험한지 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 승리는 겸손을 시험하는 자리이기도 하다</div>
+        <div class="teach-body">왕위 제안을 거절한 겸손은 칭찬받을 만하지만, 이후 그의 행보(많은 아내와 첩, 화려한 전리품 활용)는 권력과 부에 서서히 물들어가는 모습을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 도움을 거절한 자에 대한 보복의 딜레마</div>
+        <div class="teach-body">숙곳과 브누엘에 대한 잔혹한 응징은 기드온의 정당한 분노와 과도한 폭력 사이의 경계를 흐리게 한다. 사사기는 이런 복잡한 도덕적 지점을 판단 없이 서술함으로써 독자에게 숙고를 요청한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 한 세대의 신실함이 다음 세대를 보장하지 않는다</div>
+        <div class="teach-body">기드온이 살아있는 동안 유지된 평온은 그의 죽음과 동시에 무너진다. 이는 2장에서 제시된 순환 구조가 여전히 작동하고 있음을 재확인시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 축첩과 다처는 이미 균열의 조짐이다</div>
+        <div class="teach-body">기드온에게 '많은 아내'와 첩에게서 난 아들 아비멜렉이 있었다는 서술은 다음 장 비극의 원인을 미리 심어놓는다. 사사들의 개인적 삶의 흠결이 공동체적 재앙으로 이어지는 패턴이 반복된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">기드온의 인생을 보면서 느끼는 건, 위대한 순종의 순간과 이후의 실책이 한 사람 안에 공존할 수 있다는 거예요. 우리도 어제의 믿음이 오늘의 안전을 자동으로 보장하지 않는다는 걸 기억해야겠어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>기드온이 만든 에봇은 실제로 어떤 형태였을까?</div>
+        <div class="deep-body">본문은 에봇의 정확한 형태를 설명하지 않는다. 제사장이 착용하는 예복(출 28장)이었을 수도, 신탁을 얻기 위한 독립된 상(像)이었을 수도 있다. 중요한 것은 그것이 애초 의도가 무엇이었든 결과적으로 <b class="hl-term">우상숭배의 대상</b>이 되었다는 점이며, 이는 좋은 의도로 시작된 종교적 상징물도 오용될 수 있음을 경고한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>숙곳과 브누엘에 대한 보복은 정당했는가?</div>
+        <div class="deep-body">숙곳과 브누엘 지도자들은 아직 승리가 확정되지 않은 시점에서 기드온을 돕기를 거부했다는 점에서 실제적 위험이 있었다. 그러나 승리 후 가시와 찔레로 징벌하고 망대를 헐어 사람들을 죽인 방식은 전쟁법적 정당방위를 넘어서는 잔혹함으로 평가되기도 한다. 사사기는 이 행위에 대한 명시적 판단을 유보한 채, 독자가 기드온의 인물상 전체를 통해 판단하도록 열어둔다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch9">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 9</div>
+      <h1>9장 · 아비멜렉의 왕권 찬탈과 요담의 우화</h1>
+      <div class="chapter-sub">형제 칠십 명 살해, 요담의 저주 섞인 우화, 비참한 최후</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 9:1-57</span><span class="ref-item">아비멜렉의 왕권</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-6절</div>
+        <div>
+          <div class="flow-title">형제 칠십 명 살해</div>
+          <div class="flow-body">기드온의 첩의 아들 <b class="hl-term">아비멜렉</b>이 외가인 세겜 사람들을 부추겨 은을 얻고, 이를 이용해 자객을 사서 기드온의 아들(자기 형제) 칠십 명을 한 바위 위에서 죽인다. 오직 막내 요담만이 숨어 살아남는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7-21절</div>
+        <div>
+          <div class="flow-title">요담의 우화</div>
+          <div class="flow-body">살아남은 요담은 그리심산 꼭대기에서 <b class="hl-insight has-insight" data-insight="7">나무들이 왕을 구하는 우화</b>를 던져 세겜 사람들의 배은망덕을 신랄하게 비판하고, 아비멜렉과 세겜 사이에 서로를 삼킬 불이 있을 것이라 저주한 뒤 도망한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">22-57절</div>
+        <div>
+          <div class="flow-title">세겜의 배반과 아비멜렉의 비참한 최후</div>
+          <div class="flow-body">삼 년 후 하나님이 아비멜렉과 세겜 사람들 사이에 악한 영을 보내시어 서로 배반하게 하신다. 세겜은 파괴되고, 아비멜렉은 데베스 성 망대를 공격하다 한 여인이 던진 <b class="hl-term">맷돌 위짝</b>에 머리가 깨져, 자기 무기 든 자에게 찔러 죽여달라 청하며 죽는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 권력을 향한 야망은 형제조차 도구로 만든다</div>
+        <div class="teach-body">칠십 형제 살해는 사사기 전체에서 가장 잔혹한 장면 중 하나다. 왕권에 대한 집착이 혈연의 유대마저 파괴할 수 있음을 극단적으로 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 열매 맺는 자는 권력을 탐하지 않는다</div>
+        <div class="teach-body">요담의 우화에서 감람나무·무화과나무·포도나무는 자기 본연의 유익한 일에 충실하기에 왕위를 사양한다. 진정한 유익을 끼치는 삶과 권력욕은 종종 반비례한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 아무것도 주지 못하는 자가 가장 권력을 탐한다</div>
+        <div class="teach-body">가시나무는 그늘조차 제대로 주지 못하면서 왕이 되겠다 나선다. 요담의 풍자는 아비멜렉의 공허함을 정확히 겨냥한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 하나님은 인간의 배신 구조 속에서도 심판을 이루신다</div>
+        <div class="teach-body">23절은 '하나님이 악한 영을 아비멜렉과 세겜 사람들 사이에 보내셨다'고 명시한다. 인간의 정치적 배반조차 하나님의 공의로운 심판의 도구로 사용된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 수치스러운 죽음을 피하려는 마지막 자존심</div>
+        <div class="teach-body">아비멜렉이 여인의 손에 죽었다는 오명을 피하려 자기 병기 든 자에게 죽여달라 청하는 장면은, 권력에 눈멀었던 인물의 마지막 순간까지도 헛된 명예에 집착했음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">요담의 우화는 정치 풍자의 걸작이에요. 열매 맺는 나무들은 다 거절하고, 아무 쓸모없는 가시나무만 왕이 되겠다 나서는 장면 — 오늘날에도 곱씹을 만한 통찰이라고 생각해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>아비멜렉 내러티브는 사사기의 다른 사사 이야기들과 어떻게 다른가?</div>
+        <div class="deep-body">아비멜렉은 사사로 명시적으로 불리지 않으며, 그의 통치는 여호와의 부르심이 아니라 스스로의 찬탈로 시작된다. 학자들은 이 장을 이스라엘에 왕정이 도입될 경우 벌어질 수 있는 위험을 미리 경고하는 반(反)왕정적 내러티브로 해석하며, 이는 사무엘상에서 백성이 왕을 요구할 때의 긴장과 연결된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>'여인이 던진 맷돌'로 죽는다는 것은 고대에 어떤 의미였을까?</div>
+        <div class="deep-body">고대 근동에서 여인의 손에 죽는 것은 전사에게 극도의 수치로 여겨졌다(참조: 삼하 11:21에서 이 사건이 다시 언급됨). 아비멜렉이 이를 피하려 애쓰는 장면은 명예 문화 속에서 죽음의 방식이 삶의 방식만큼이나 중요하게 여겨졌음을 보여주는 동시에, 결국 그 수치를 완전히 피하지 못했다는 점에서 서사적 아이러니를 완성한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch10">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 10</div>
+      <h1>10장 · 돌라와 야일, 다시 시작된 압제</h1>
+      <div class="chapter-sub">짧게 기록된 두 사사, 암몬의 압제와 이스라엘의 통회</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 10:1-18</span><span class="ref-item">암몬의 압제 시작</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-5절</div>
+        <div>
+          <div class="flow-title">돌라와 야일</div>
+          <div class="flow-body">아비멜렉 이후 잇사갈 사람 <b class="hl-term">돌라</b>가 23년간, 길르앗 사람 <b class="hl-term">야일</b>이 22년간 사사로 활동한다. 야일에게는 아들 삼십 명이 있어 삼십 나귀를 탔고 삼십 성읍을 가졌다는 서술은 그의 부유함과 지역적 영향력을 보여준다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6-9절</div>
+        <div>
+          <div class="flow-title">우상숭배의 확대와 암몬·블레셋의 이중 압제</div>
+          <div class="flow-body">이스라엘은 바알과 아스다롯뿐 아니라 아람, 시돈, 모압, 암몬, 블레셋의 신들까지 <b class="hl-term">섬기며 여호와를 버린다</b>. 여호와의 진노로 블레셋과 암몬의 손에 팔려 18년간 압제당하며, 암몬은 요단 동편을 넘어 유다·베냐민·에브라임까지 침공한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">10-18절</div>
+        <div>
+          <div class="flow-title">냉정한 응답과 백성의 진정한 통회</div>
+          <div class="flow-body">백성이 부르짖으나 여호와는 <b class="hl-insight has-insight" data-insight="8">"가서 너희가 택한 신들에게 부르짖어 너희 환난 때에 그들이 너희를 구원하게 하라"</b>며 냉정히 응답하신다. 백성이 이방 신들을 진정으로 제거하고 통회하자, 본문은 여호와께서 <b class="hl-term">"이스라엘의 곤고로 말미암아 마음에 근심하시니라"</b>고 기록한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 짧은 기록도 하나님의 신실하심의 증거다</div>
+        <div class="teach-body">돌라와 야일은 극적인 사건 없이 짧게 기록되지만, 그들의 재임 기간 동안 이스라엘에 안정이 있었다는 사실 자체가 하나님의 계속된 돌보심을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 죄의 범위가 넓어질수록 회개의 진정성이 요구된다</div>
+        <div class="teach-body">이번에는 다섯 이방 신을 섬긴 것으로 기록되어, 이전보다 더 광범위한 배교였음을 보여준다. 그만큼 형식적 부르짖음이 아니라 실제적 회개(신들을 제거함)가 요구된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 하나님의 냉정한 응답은 거부가 아니라 직면의 초대다</div>
+        <div class="teach-body">"택한 신들에게 부르짖으라"는 응답은 백성으로 하여금 자신들의 선택이 얼마나 무익했는지 스스로 깨닫게 하시려는 목회적 전략으로 읽을 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 형식적 부르짖음과 실질적 통회는 구별된다</div>
+        <div class="teach-body">본문은 백성이 단지 울부짖은 것을 넘어 "이방 신들을 제거하고 여호와를 섬겼다"고 구체적 행동을 명시한다. 진정한 회개는 감정을 넘어 행동의 변화를 요구한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 하나님의 마음에도 근심이 있다</div>
+        <div class="teach-body">"마음에 근심하시니라"는 표현은 심판자 하나님 안에 백성을 향한 깊은 연민이 공존함을 보여준다. 사사기의 하나님은 냉정한 재판관만이 아니라 아파하시는 아버지이기도 하다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">여호와께서 '가서 너희가 택한 신들에게 부르짖으라' 하신 장면, 처음 읽으면 매정하게 느껴지는데 다시 읽으면 사랑하는 이가 반복해서 상처받는 선택을 할 때 느끼는 그 답답함과 닮았다는 생각이 들어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>'여호와께서 마음에 근심하시니라'는 표현을 신학적으로 어떻게 이해해야 할까?</div>
+        <div class="deep-body">히브리어 표현은 하나님이 인간의 고통 앞에서 감정적으로 반응하시는 모습을 생생하게 그린다. 이는 하나님의 불변성(무감정성, impassibility)을 강조하는 일부 고전 신학 전통과 긴장을 이루는 본문으로, 성경이 하나님을 묘사할 때 추상적 속성보다 관계적·인격적 언어를 선호한다는 점을 보여주는 대표적 사례로 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>암몬의 침공이 요단 서편까지 확대된 것은 어떤 의미가 있을까?</div>
+        <div class="deep-body">이전까지 사사기의 압제는 주로 특정 지역에 국한되었으나, 암몬의 침공은 유다·베냐민·에브라임까지 위협한다(10:9). 이는 이스라엘의 영적 타락이 확산될수록 위협의 범위도 함께 확산된다는 사사기의 신학적 패턴을 지리적으로 보여주는 대목이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch11">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 11</div>
+      <h1>11장 · 입다의 서원과 그의 딸</h1>
+      <div class="chapter-sub">기생의 아들 입다, 길르앗 장로들의 청빙, 암몬과의 외교, 비극적 서원</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 11:1-40</span><span class="ref-item">입다의 딸</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-11절</div>
+        <div>
+          <div class="flow-title">쫓겨난 자에서 지도자로</div>
+          <div class="flow-body">입다는 기생의 아들이라는 이유로 형제들에게 쫓겨나 돕 땅에서 잡류와 함께 지내다가, 암몬과의 전쟁이 급박해지자 길르앗 장로들이 그를 찾아와 <b class="hl-term">우두머리</b>로 삼기를 청한다. 입다는 승리 후 자신이 계속 지도자로 남을 것을 조건으로 수락한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12-28절</div>
+        <div>
+          <div class="flow-title">암몬 왕과의 외교적 논쟁</div>
+          <div class="flow-body">입다는 전쟁에 앞서 암몬 왕에게 사신을 보내 이스라엘의 땅 소유권이 정당하다는 것을 역사적·법적으로 상세히 논증한다. 출애굽부터 광야 여정, 모압과의 관계까지 조목조목 인용하며 협상을 시도하나 암몬 왕은 듣지 않는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">29-40절</div>
+        <div>
+          <div class="flow-title">서원과 딸의 죽음</div>
+          <div class="flow-body">여호와의 영이 입다에게 임하고, 그는 전쟁에 나가며 <b class="hl-insight has-insight" data-insight="9">비극적 서원</b>을 한다. 크게 승리하고 돌아왔을 때 그를 맞이한 것은 소고를 잡고 춤추며 나온 무남독녀 딸이었다. 딸은 두 달의 유예를 구해 산에서 처녀로 죽는 것을 애곡한 뒤, 입다는 서원대로 행한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 배척받은 자가 하나님의 도구로 쓰임받을 수 있다</div>
+        <div class="teach-body">형제들에게 쫓겨났던 입다가 정작 위기의 순간 지도자로 부름받는다. 사람들이 버린 자를 하나님이 사용하시는 패턴이 사사기 전체에 반복된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 신앙적 논증과 외교적 지혜는 함께 갈 수 있다</div>
+        <div class="teach-body">입다의 암몬 왕에 대한 응답은 역사적 근거를 치밀하게 제시하는 외교문서에 가깝다. 그는 단순한 전사가 아니라 언약 역사에 대한 깊은 이해를 지닌 지도자였다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 성급한 서원의 위험성</div>
+        <div class="teach-body">입다의 서원은 전쟁에 나가는 절박함 속에서 나온 것이지만, 그 대상을 구체적으로 헤아리지 못한 성급함이 돌이킬 수 없는 비극을 낳는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 딸의 순종은 비극 속에서도 존엄을 지킨다</div>
+        <div class="teach-body">입다의 딸은 아버지의 서원을 원망하기보다 오히려 그것을 받아들이며 다만 처녀로 죽는 것을 애곡할 시간을 구한다. 비극적 상황 속에서도 자신의 존엄과 슬픔을 표현할 여지를 스스로 만들어낸다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 사사기는 영웅의 흠결을 미화하지 않는다</div>
+        <div class="teach-body">입다는 승리한 사사이지만 본문은 그의 서원이 낳은 비극을 가감 없이 기록한다. 사사기의 인물들은 완전한 모범이 아니라 은혜와 결함이 뒤섞인 현실적 인간으로 그려진다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">입다의 이야기는 읽을 때마다 마음이 무거워요. 성경이 이 사건을 미화하지 않고 있는 그대로, 그 슬픔까지 담아 기록했다는 점이 오히려 이 본문의 정직함을 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>입다는 실제로 딸을 번제로 드렸을까, 아니면 평생 독신으로 봉헌했을까?</div>
+        <div class="deep-body">본문은 <b class="hl-term">"그가 서원한 대로 딸에게 행하니라"</b>(11:39)고만 기록하여 해석의 여지를 남긴다. 일부 학자는 레위기의 인신 제사 금지(레 18:21, 20:2-5)에 비추어 이를 문자적 번제가 아니라 평생 결혼하지 않고 성막에서 봉사하는 봉헌으로 해석한다. 그러나 다수 견해는 '딸이 자신의 처녀로 죽음을 애곡했다'는 문맥과 서원의 표현('번제물로 드리겠나이다')을 근거로 문자적 죽음으로 본다. 이는 본문이 의도적으로 남겨둔 해석적 긴장으로 여겨진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>이 사건에 대해 성경은 왜 명시적인 도덕적 판단을 내리지 않는가?</div>
+        <div class="deep-body">사사기는 반복적으로 인물의 행위를 서술하되 직접적인 평가를 자제하는 서술 기법을 사용한다. 이는 독자로 하여금 '이스라엘에 왕이 없으므로 각기 소견에 옳은 대로 행하였다'는 사사기의 결론적 주제(17:6, 21:25)를 스스로 확인하게 만드는 문학적 전략으로 이해된다 — 입다의 성급한 서원 역시 왕이 없던 시대, 중심 잡힌 신학적 지도력이 부재했던 시대의 산물로 읽을 수 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch12">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 12</div>
+      <h1>12장 · 십볼렛 사건과 세 명의 사사</h1>
+      <div class="chapter-sub">에브라임과의 내분, 입다의 죽음, 입산·엘론·압돈</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 12:1-15</span><span class="ref-item">십볼렛</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-7절</div>
+        <div>
+          <div class="flow-title">에브라임의 불만과 십볼렛 사건</div>
+          <div class="flow-body">에브라임 사람들이 암몬과의 전쟁에 자신들을 부르지 않았다며 입다를 위협하자, 입다는 오히려 자신이 먼저 도움을 청했으나 그들이 오지 않았다고 반박하며 전쟁을 벌인다. 패주하는 에브라임 사람들을 <b class="hl-insight has-insight" data-insight="10">십볼렛 발음 시험</b>으로 가려내어 사만 이천 명이 죽는다. 입다는 6년간 사사로 지내다 죽는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8-15절</div>
+        <div>
+          <div class="flow-title">입산, 엘론, 압돈</div>
+          <div class="flow-body">입산은 베들레헴 출신으로 아들 삼십과 딸 삼십을 두었고 7년간, 엘론은 스불론 사람으로 10년간, 압돈은 아들 사십과 손자 삼십이 나귀 칠십을 탔다고 기록되며 8년간 사사로 활동한다. 세 사람 모두 극적 사건 없이 짧게 서술된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 외부의 적보다 내부의 분열이 더 치명적일 수 있다</div>
+        <div class="teach-body">암몬을 물리친 직후 곧바로 같은 민족인 에브라임과의 내전이 벌어진다. 승리 뒤에 찾아오는 내부 갈등이 얼마나 파괴적인지를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 자존심 다툼이 사만 이천의 생명을 앗아갈 수 있다</div>
+        <div class="teach-body">에브라임의 불만은 처음엔 협력 요청의 누락이라는 사소해 보이는 사안에서 시작되지만, 결국 대규모 살육으로 번진다. 다뤄지지 않은 자존심의 상처가 얼마나 커질 수 있는지 경고한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 정체성의 표지가 무기가 될 때</div>
+        <div class="teach-body">십볼렛 사건은 언어와 발음이라는 정체성의 표지가 생사를 가르는 냉혹한 도구로 사용된 사례다. 공동체 내부의 '우리와 그들' 구분이 얼마나 위험할 수 있는지 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 화려하지 않은 지도자도 하나님의 백성을 이끈다</div>
+        <div class="teach-body">입산·엘론·압돈은 극적 사건 없이 짧게 기록되지만, 그들의 재임 기간에도 이스라엘은 유지되었다. 모든 지도력이 극적일 필요는 없다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 자녀와 재산의 번성이 신앙의 깊이를 보장하지 않는다</div>
+        <div class="teach-body">압돈의 많은 자손과 나귀는 물질적 번영을 보여주지만, 사사기 전체 흐름에서 이런 번영이 다음 세대의 영적 침체를 막지는 못했다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">십볼렛 사건을 읽으면 마음이 서늘해져요. 발음 하나로 생사가 갈렸다는 건, 우리가 만드는 '우리 편/남의 편' 구분이 때로 얼마나 잔인한 결과를 낳을 수 있는지 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>에브라임 지파는 왜 사사기에서 반복적으로 불만을 제기하는가?</div>
+        <div class="deep-body">에브라임은 여호수아의 출신 지파로서 가나안 정착 초기 중심적 위상을 지녔던 지파다(기드온 이야기 8:1에서도 유사한 불만이 등장). 학자들은 에브라임의 반복된 불만을 지파 간 주도권 경쟁의 표출로 해석하며, 이는 이후 왕정 시대 북이스라엘(에브라임 중심)과 남유다의 분열을 예비하는 신학적·정치적 복선으로 읽히기도 한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>'십볼렛' 사건은 실제 언어학적으로 신빙성이 있는가?</div>
+        <div class="deep-body">히브리어 셈어 방언 연구에서 요단 동편과 서편 방언 간 마찰음(sibilant) 발음 차이가 실제로 존재했을 가능성은 언어학적으로 그럴듯하게 받아들여진다. 이 일화는 성경에서 방언 차이가 실제 역사적 사건의 세부 묘사로 사용된 드문 사례로, 고대 이스라엘 지파들 사이에 이미 상당한 언어적 분화가 있었음을 시사하는 자료로도 주목받는다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch13">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 13</div>
+      <h1>13장 · 나실인으로 태어난 삼손</h1>
+      <div class="chapter-sub">마노아 부부에게 나타난 여호와의 사자, 삼손의 출생 예고</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 13:1-25</span><span class="ref-item">삼손의 출생</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1절</div>
+        <div>
+          <div class="flow-title">40년 블레셋 압제의 시작</div>
+          <div class="flow-body">이스라엘이 다시 여호와의 목전에 악을 행하여 여호와께서 그들을 <b class="hl-term">블레셋 사람의 손에 40년간</b> 넘기신다. 이는 사사기에서 가장 긴 압제 기간으로, 이후 등장할 삼손 이야기의 무게를 예비한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">2-14절</div>
+        <div>
+          <div class="flow-title">여호와의 사자의 예고</div>
+          <div class="flow-body">단 지파 소라 사람 마노아의 아내는 임신하지 못하는 자였는데, 여호와의 사자가 나타나 아들을 낳을 것이며 그가 태어나면서부터 <b class="hl-insight has-insight" data-insight="11">나실인</b>이 되어 블레셋 사람의 손에서 이스라엘을 구원하기 시작할 것이라 예고한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15-25절</div>
+        <div>
+          <div class="flow-title">마노아의 제사와 삼손의 성장</div>
+          <div class="flow-body">마노아가 사자에게 제물을 드리자 사자는 불꽃과 함께 하늘로 올라가고, 마노아 부부는 하나님을 보았으니 죽으리라 두려워하나 아내가 <b class="hl-term">"만일 여호와께서 우리를 죽이려 하셨더면..."</b>이라 지혜롭게 안심시킨다. 아이가 태어나 삼손이라 이름하니 여호와께서 그에게 복을 주시고 여호와의 영이 그를 움직이기 시작하신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 불임의 고통 가운데 임하는 하나님의 계획</div>
+        <div class="teach-body">마노아의 아내는 오랫동안 아이를 갖지 못하는 고통 속에 있었지만, 그 침묵의 시간 자체가 특별한 부르심을 예비하는 과정이었다. 성경에서 반복되는 '불임 후 특별한 아들' 패턴이 여기서도 나타난다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 부르심은 종종 본인의 선택 이전에 시작된다</div>
+        <div class="teach-body">삼손의 나실인 됨은 그가 태어나기도 전에 이미 결정되었다. 이는 하나님의 부르심이 인간의 자발적 결단보다 먼저 임할 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 두려움 속에서 발휘되는 신학적 통찰</div>
+        <div class="teach-body">하나님을 보았다는 두려움 앞에서 마노아의 아내는 오히려 논리적이고 침착한 신앙적 추론으로 남편을 안심시킨다. 위기의 순간에 드러나는 그녀의 성숙한 신앙이 돋보인다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 규례의 준수는 관계의 표지다</div>
+        <div class="teach-body">나실인 규례(포도주 금지, 부정한 것 금지, 삭도 금지)는 규칙 자체가 목적이 아니라 하나님과의 특별한 관계를 삶으로 표현하는 상징이었다. 이후 삼손이 이 규례들을 하나씩 어기게 되는 과정이 그의 영적 쇠락과 나란히 간다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 40년이라는 긴 압제가 예비한 필요</div>
+        <div class="teach-body">사사기에서 가장 긴 압제 기간이 삼손 이야기의 배경이 된다는 사실은, 심각한 위기일수록 하나님이 특별한 방식으로 준비하신 구원자를 보내신다는 패턴을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">삼손 이야기를 시작하기 전에 이 13장을 꼭 기억해야 해요. 그의 힘은 머리카락 자체가 아니라, 그 머리카락이 상징하는 하나님과의 서원 관계에서 나왔다는 걸요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>삼손은 왜 다른 사사들과 달리 군대를 이끈 기록이 없을까?</div>
+        <div class="deep-body">옷니엘, 드보라, 기드온 등은 모두 군대를 소집해 조직적 전쟁을 이끌었지만, 삼손은 홀로 행동하며 개인적 힘과 게릴라식 보복을 통해 블레셋을 괴롭힌다. 이는 삼손 내러티브가 공동체적 구원 서사보다 개인의 은사와 그 오용이라는 주제에 초점을 맞추고 있음을 시사하며, 이스라엘 공동체 전체의 영적 침체가 이미 조직적 저항조차 불가능한 수준에 이르렀다는 암시로도 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>'여호와의 영이 그를 움직이기 시작하셨더라'는 표현은 무엇을 의미하는가?</div>
+        <div class="deep-body">히브리어 원문의 이 표현은 소라와 에스다올 사이 마하네단에서 삼손에게 임한 특별한 영적 자극을 가리킨다. 이는 이후 14-16장에서 삼손이 보여줄 초인적 힘의 근원이 그 자신의 능력이 아니라 여호와의 영의 임재였음을 처음부터 명시하는 신학적 장치로 기능한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch14">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 14</div>
+      <h1>14장 · 딤나의 결혼과 수수께끼</h1>
+      <div class="chapter-sub">이방 여인과의 혼인, 사자와 벌집, 수수께끼 내기</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 14:1-20</span><span class="ref-item">삼손의 첫 결혼</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-9절</div>
+        <div>
+          <div class="flow-title">딤나 여인과 사자 사건</div>
+          <div class="flow-body">삼손이 딤나에서 블레셋 여인을 보고 부모의 반대에도 <b class="hl-quote">"내가 그 여자를 좋아하오니 나를 위하여 그를 데려오소서"</b>라 요구한다. 딤나로 가는 길에 젊은 사자가 그를 위협하자 여호와의 영이 임하여 맨손으로 사자를 찢어 죽이는데, 나중에 그 사체에 벌떼가 꿀을 만든 것을 보고 손으로 떠먹는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">10-14절</div>
+        <div>
+          <div class="flow-title">수수께끼 내기</div>
+          <div class="flow-body">혼인 잔치에서 삼손은 블레셋 청년 서른 명에게 <b class="hl-term">"먹는 자에게서 먹는 것이 나오고 강한 자에게서 단 것이 나왔느니라"</b>는 수수께끼를 내며 옷 서른 벌을 걸고 내기한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15-20절</div>
+        <div>
+          <div class="flow-title">아내의 배신과 수수께끼의 풀림</div>
+          <div class="flow-body">청년들은 삼손의 아내를 위협해 답을 캐내게 하고, 그녀가 이레 동안 울며 조르자 결국 삼손이 답을 알려준다. 청년들이 정답을 맞히자 삼손은 격분하여 아스글론 사람 서른 명을 쳐 죽여 옷을 빼앗아 값을 치르고, 아내는 그의 친구에게 주어진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 눈에 보이는 것을 따르는 판단의 위험성</div>
+        <div class="teach-body">"내가 그 여자를 좋아하오니"라는 삼손의 표현은 원어로 '내 눈에 좋다'는 뜻이다. 이는 사사기 마지막에 반복될 '자기 소견에 옳은 대로'라는 표현과 정확히 같은 어근으로, 삼손의 삶 전체가 자기중심적 판단의 패턴을 보여준다는 문학적 신호다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 하나님은 인간의 잘못된 선택 안에서도 계획을 이루신다</div>
+        <div class="teach-body">4절은 삼손의 결혼 요구가 '여호와께로부터 나온 것'이라 밝힌다. 블레셋과 다투게 할 기회를 찾으시는 하나님의 섭리가 인간의 미숙한 선택 배후에서도 작동하고 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 나실인 규례를 스쳐 지나가듯 어기다</div>
+        <div class="teach-body">사자의 사체에서 나온 꿀을 먹는 것은 부정한 것을 만지지 말라는 나실인 규례에 저촉될 소지가 있다. 삼손은 이런 경계를 대수롭지 않게 넘나든다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 관계의 압박이 신의를 무너뜨릴 수 있다</div>
+        <div class="teach-body">삼손의 아내는 자기 백성의 압박과 눈물로 남편을 설득해 비밀을 캐낸다. 관계 안에서의 정직함이 외부 압력 앞에서 얼마나 쉽게 흔들릴 수 있는지 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 분노가 폭력의 악순환을 만든다</div>
+        <div class="teach-body">수수께끼에서 진 삼손은 분노로 무고한 아스글론 사람들을 죽인다. 개인적 굴욕이 무관한 이들에게 폭력으로 번지는 패턴이 이후 삼손 이야기 내내 반복된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">삼손의 삶을 보면 힘은 넘치는데 자기 절제는 부족했다는 게 계속 드러나요. 은사와 인격이 함께 자라지 않으면 어떤 위험이 있는지, 이 사람을 통해 배우게 돼요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>부모의 반대에도 이방 여인을 택한 삼손의 결정을 어떻게 봐야 할까?</div>
+        <div class="deep-body">율법은 이스라엘이 가나안 족속과 통혼하는 것을 금했지만(신 7:3), 블레셋은 가나안 원주민이 아닌 해양 민족이라는 점에서 엄밀한 적용 범위에 대한 논쟁이 있다. 다만 본문의 문맥상 부모의 우려는 신앙적 정당성을 갖는 것으로 서술되며, 삼손의 고집은 이후 그의 삶 전체를 관통하는 자기중심적 패턴의 첫 사례로 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>삼손의 수수께끼는 문학적으로 어떤 기능을 하는가?</div>
+        <div class="deep-body">"먹는 자에게서 먹는 것이 나오고 강한 자에게서 단 것이 나왔다"는 수수께끼는 삼손 개인의 경험(사자·꿀)에 근거해 외부인은 풀 수 없는 구조로 설계되었다. 이는 이후 들릴라 사건(16장)에서 반복될 '비밀을 캐내려는 시도와 배신'이라는 모티프를 예고하는 문학적 전조로 기능한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch15">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 15</div>
+      <h1>15장 · 여우 삼백 마리와 나귀 턱뼈</h1>
+      <div class="chapter-sub">삼손의 개인적 보복전, 유다 지파의 배신, 나귀 턱뼈의 승리</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 15:1-20</span><span class="ref-item">삼손의 보복</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-8절</div>
+        <div>
+          <div class="flow-title">여우 삼백 마리와 블레셋 밭의 소각</div>
+          <div class="flow-body">삼손이 아내를 찾아가나 장인이 이미 그녀를 친구에게 주었다는 말을 듣고 격분하여, 여우 삼백 마리를 잡아 꼬리와 꼬리를 매고 그 사이에 횃불을 달아 블레셋의 곡식과 감람원을 불태운다. 블레셋 사람들은 이에 대한 보복으로 삼손의 아내와 장인을 불태워 죽인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9-13절</div>
+        <div>
+          <div class="flow-title">유다 지파의 배신적 협조</div>
+          <div class="flow-body">블레셋이 유다 땅에 진을 치자, 유다 사람 삼천 명은 삼손과 대적하기는커녕 오히려 그를 결박하여 블레셋에 넘겨주려 한다. 삼손은 자신을 죽이지 않겠다는 약속을 받고 순순히 결박당한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14-20절</div>
+        <div>
+          <div class="flow-title">나귀 턱뼈로 천 명을 죽이다</div>
+          <div class="flow-body">여호와의 영이 삼손에게 강하게 임하자 그를 묶은 밧줄이 불탄 삼과 같이 끊어지고, 그는 새 나귀 턱뼈 하나를 주워 블레셋 사람 천 명을 죽인다. 목마름에 죽어가던 그가 부르짖자 여호와께서 샘을 터뜨려 그를 살리신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 개인적 상처가 공동체적 재앙으로 확산된다</div>
+        <div class="teach-body">삼손의 사적 보복은 곡물 파괴, 배우자 살해, 대규모 살육으로 끝없이 확대된다. 다뤄지지 않은 분노가 어떻게 눈덩이처럼 커지는지 보여주는 경고성 서사다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 위협 앞에서 동족을 팔아넘기는 비겁함</div>
+        <div class="teach-body">유다 사람들이 삼손을 결박해 넘기려는 장면은 압제 앞에서 공동체적 연대가 무너진 비참한 현실을 드러낸다. 이는 5장 드보라의 노래에서 참여하지 않은 지파들에 대한 책망과 같은 결을 지닌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 하찮은 도구로 이루시는 큰 승리</div>
+        <div class="teach-body">나귀 턱뼈는 무기로서 하찮은 물건이지만, 여호와의 영이 임하자 천 명을 물리치는 도구가 된다. 삼갈의 소 모는 막대기(3:31)와 같은 패턴이 반복된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 승리 직후의 극심한 갈증과 하나님의 응답</div>
+        <div class="teach-body">천 명을 물리친 승리의 절정 직후 삼손은 목말라 죽을 지경에 이른다. 큰 승리 뒤에 찾아오는 인간적 연약함을 하나님이 외면하지 않고 채워주신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 결박 속에서도 순종하는 뜻밖의 모습</div>
+        <div class="teach-body">삼손이 유다 사람들에게 순순히 결박당하는 장면은 그의 충동적 이미지와 대조적으로, 동족의 손에 넘겨지는 것 자체는 저항하지 않는 모습을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">유다 지파가 삼손을 넘기려는 장면이 유독 마음 아파요. 압제가 길어지면 저항보다 순응이 더 안전해 보이는 순간이 오는데, 그 순응이 결국 공동체를 더 병들게 하는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>삼손의 보복 방식은 사사로서 정당한 사역이었을까, 사적 복수였을까?</div>
+        <div class="deep-body">본문은 삼손의 행위 동기를 '아내와 장인' 문제로 인한 개인적 분노로 명확히 서술한다(15:3, 7). 다른 사사들이 공동체를 대표해 조직적으로 싸운 것과 달리, 삼손의 전투는 대부분 사적 원한에서 촉발된다. 그럼에도 불구하고 이 모든 것이 결과적으로 블레셋을 이스라엘에게서 약화시켰다는 점에서, 하나님이 인간의 불완전한 동기까지도 구원 역사에 사용하신다는 신학적 읽기가 가능하다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>'레히'라는 지명과 나귀 턱뼈 사건의 언어유희는 무엇인가?</div>
+        <div class="deep-body">히브리어에서 '레히'(턱뼈)와 지명 '라맛레히'는 발음상 연결되며, 본문은 이 지명 유래 설화(etiology)로 사건을 마무리한다(15:17,19). 고대 근동 문헌에서 흔히 나타나는 이런 지명 유래 서술은 구전 전승이 실제 지리적 기억과 결합되어 성경 내러티브로 정착된 과정을 보여주는 사례로 연구된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch16">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 16</div>
+      <h1>16장 · 들릴라와 무너진 다곤 신전</h1>
+      <div class="chapter-sub">들릴라의 배신, 힘의 상실, 마지막 순간의 회복과 죽음</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 16:1-31</span><span class="ref-item">삼손의 최후</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-3절</div>
+        <div>
+          <div class="flow-title">가사의 기생과 성문 사건</div>
+          <div class="flow-body">삼손이 가사의 기생에게 갔다가 성 사람들이 밤에 그를 죽이려 매복하나, 그는 한밤중에 일어나 성문의 문짝과 문설주와 빗장을 통째로 뽑아 헤브론 앞산 꼭대기로 옮긴다. 초인적 힘의 마지막 과시가 이어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4-22절</div>
+        <div>
+          <div class="flow-title">들릴라의 배신과 힘의 근원을 캐내다</div>
+          <div class="flow-body">삼손은 소렉 골짜기의 여인 <b class="hl-term">들릴라</b>를 사랑하게 되고, 블레셋 방백들에게 매수된 그녀는 그의 힘의 비밀을 캐묻는다. 세 번의 거짓 답변 끝에 삼손은 결국 진실을 말하고, 그녀는 그의 머리를 밀게 하여 <b class="hl-insight has-insight" data-insight="12">힘을 잃은 삼손</b>을 블레셋에 넘긴다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">23-31절</div>
+        <div>
+          <div class="flow-title">다곤 신전의 붕괴와 삼손의 마지막</div>
+          <div class="flow-body">블레셋 사람들은 삼손의 두 눈을 빼고 놋줄로 결박해 옥에서 맷돌을 돌리게 한다. 다곤 신전 낙성 축제에서 조롱거리로 세워진 그는 <b class="hl-quote">"내가 블레셋 사람과 함께 죽기를 원하노라"</b>며 두 기둥을 힘써 밀어 신전을 무너뜨리고, 살아서 죽인 자보다 죽으면서 죽인 자가 더 많았다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 반복된 거짓말 속에서도 계속 사랑을 시험받는 관계</div>
+        <div class="teach-body">삼손은 세 번이나 거짓 답변으로 들릴라를 속이면서도 계속 그녀에게 돌아간다. 건강하지 못한 관계의 패턴을 반복하는 인간의 연약함이 노골적으로 드러난다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 조금씩 무너지는 경계가 결국 전부를 잃게 한다</div>
+        <div class="teach-body">삼손은 나실인 규례를 하나씩 가볍게 넘기다가 마지막 경계선(머리카락)마저 내어준다. 작은 타협의 누적이 치명적 결과로 이어짐을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 힘의 진짜 근원은 외적 표지가 아니라 하나님의 임재다</div>
+        <div class="teach-body">머리카락이 잘린 후에도 다시 자라났다는 사실(16:22)은 힘의 회복 가능성을 암시하지만, 진짜 회복은 머리카락이 아니라 겸손한 부르짖음과 하나님의 응답을 통해 온다(16:28).</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 실패한 인생에도 마지막 회개와 쓰임이 있다</div>
+        <div class="teach-body">눈이 뽑히고 조롱거리가 된 상황에서도 삼손은 마지막으로 여호와께 부르짖으며 힘을 구한다. 처참한 실패의 자리에서도 하나님께 돌이킬 여지는 남아있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 죽음으로 완성된 부르심</div>
+        <div class="teach-body">삼손은 살아서보다 죽으면서 더 많은 블레셋 사람을 죽였다. 그의 삶 전체가 실패로 얼룩졌음에도, 그의 죽음은 이스라엘을 블레셋의 손에서 구원하기 '시작'하라는 애초의 소명(13:5)을 완성한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">삼손이 힘을 잃었다는 사실을 스스로 깨닫지 못했다는 구절이 제일 무섭더라고요. 우리도 하나님의 임재가 떠난 걸 모른 채 예전 방식대로 살아갈 수 있다는 거잖아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>삼손의 이야기는 실패의 서사인가, 신실하심의 서사인가?</div>
+        <div class="deep-body">삼손의 삶은 반복된 자기중심적 선택과 도덕적 실패로 점철되어 있지만, 히브리서 11장은 그를 믿음의 영웅 명단에 포함시킨다(히 11:32). 이는 사사기가 완벽한 인물이 아니라, 흠결 많은 인간을 통해서도 구원 역사를 이루시는 하나님의 신실하심을 강조하는 책이라는 점을 뒷받침한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>다곤 신전의 붕괴는 신학적으로 무엇을 상징하는가?</div>
+        <div class="deep-body">다곤은 블레셋의 주요 신으로, 삼손의 마지막 행위는 개인적 복수를 넘어 여호와와 다곤 사이의 대결이라는 신학적 상징성을 지닌다. 자기 신을 위해 세운 신전이 오히려 그 신전에 갇힌 자를 통해 무너진다는 점에서, 이는 우상의 무력함과 여호와의 주권을 극적으로 대조하는 사사기 전체의 신학적 결론을 시각적으로 완성한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch17">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 17</div>
+      <h1>17장 · 미가의 신상과 사설 제사장</h1>
+      <div class="chapter-sub">은 신상을 만든 미가, 떠돌이 레위인을 제사장으로 고용하다</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 17:1-13</span><span class="ref-item">종교적 혼합주의</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-6절</div>
+        <div>
+          <div class="flow-title">미가의 은 신상 제작</div>
+          <div class="flow-body">에브라임 산지 사람 미가는 자신이 어머니의 은 천백 개를 훔쳤다가 돌려주자, 어머니는 오히려 그 은을 여호와께 드리겠다며 은장색에게 부어 신상을 만들게 하고 미가의 집에 둔다. 미가는 자기 아들 중 하나를 제사장으로 세운다. <b class="hl-insight has-insight" data-insight="13">"그 때에는 이스라엘에 왕이 없으므로 사람이 각기 자기의 소견에 옳은 대로 행하였더라"</b>는 후렴구가 처음 등장한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7-13절</div>
+        <div>
+          <div class="flow-title">떠돌이 레위인을 제사장으로 고용</div>
+          <div class="flow-body">유다 베들레헴 출신의 한 레위 청년이 거할 곳을 찾아 방황하다 미가의 집에 이르자, 미가는 그를 <b class="hl-term">"내 아버지, 내 제사장"</b>이라 부르며 은 열과 의복과 음식으로 고용한다. 미가는 <b class="hl-quote">"레위 사람이 내 제사장이 되었으니 이제 여호와께서 내게 복 주실 줄을 아노라"</b>며 안심한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 종교적 열심이 곧 참된 신앙은 아니다</div>
+        <div class="teach-body">미가의 어머니는 은을 여호와께 '거룩히 구별하여' 드렸다고 말하지만, 결과물은 신상(우상)이었다. 열심과 진정성이 있어도 형식이 하나님의 명령을 벗어나면 우상숭배가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 개인이 임의로 제사장을 세우는 위험성</div>
+        <div class="teach-body">제사장직은 아론 계열에게 주어진 여호와의 규정이었으나(민 3장), 미가는 자기 아들, 이후 레위인을 임의로 고용한다. 종교 제도의 정당성이 개인의 편의에 따라 좌우되는 무질서가 시작된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 신앙의 상품화 — 복을 '보장받으려는' 심리</div>
+        <div class="teach-body">미가는 레위인을 제사장으로 고용한 것 자체로 여호와의 복을 확신한다. 이는 하나님과의 관계를 거래적 보증 장치로 축소시키는 왜곡된 신앙관을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 방황하는 레위인이 상징하는 시대의 혼란</div>
+        <div class="teach-body">본래 성막 봉사를 위해 지파들 가운데 흩어져 살아야 했던 레위인이 정처 없이 떠돌다 돈을 위해 고용된다는 사실은, 이스라엘의 종교 제도 전체가 얼마나 붕괴되었는지를 상징적으로 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ '왕이 없으므로'라는 진단의 시작</div>
+        <div class="teach-body">17장에서 처음 등장하는 이 후렴구는 이후 사사기의 마지막 다섯 장 전체를 관통하며, 중심 잡힌 지도력의 부재가 낳는 총체적 도덕적·종교적 혼란을 예고한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">미가 이야기를 보면서 느끼는 건, 종교적 열심과 형식이 있다고 해서 그것이 하나님이 기뻐하시는 예배는 아니라는 거예요. 방향이 틀리면 열심조차 우상숭배가 될 수 있어요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>'왕이 없으므로'라는 표현은 사사기가 왕정을 옹호하기 위해 쓰였다는 뜻일까?</div>
+        <div class="deep-body">다수 학자는 이 표현을 근거로 사사기가 다윗 왕조(혹은 최소 사울 이후)의 관점에서 편집되었으며, 중앙집권적 지도력의 부재가 낳은 혼란을 부각시켜 왕정의 필요성을 암시하는 신학적·정치적 목적을 지녔다고 본다. 그러나 열왕기가 보여주듯 왕정 자체도 이상적 해법이 아니었다는 점에서, 이 표현의 궁극적 지향점은 인간 왕이 아니라 참된 왕이신 여호와께 대한 순종의 회복이라는 해석이 신학적으로 더 설득력 있게 받아들여진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>미가의 어머니가 등장하는 것은 어떤 의미가 있을까?</div>
+        <div class="deep-body">본문에서 미가의 아버지는 언급되지 않고 어머니만 등장하여 신상 제작을 주도한다. 이는 가정 내 신앙 전수의 책임이 흐트러진 상태(2장에서 지적된 '다른 세대'의 신앙 무지)를 구체적 가정사를 통해 보여주는 사례로, 사사기 후반부가 거대한 국가적 사건이 아니라 한 가정의 작은 타협에서부터 이야기를 시작한다는 점이 문학적으로 의미심장하다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch18">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 18</div>
+      <h1>18장 · 단 지파의 이주와 우상의 북행</h1>
+      <div class="chapter-sub">기업을 찾지 못한 단 지파, 라이스 정복, 미가의 신상을 탈취하다</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 18:1-31</span><span class="ref-item">단 지파의 이주</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-10절</div>
+        <div>
+          <div class="flow-title">정탐꾼을 보내는 단 지파</div>
+          <div class="flow-body">단 지파는 아직 <b class="hl-term">기업을 分配받지 못하여</b> 거할 땅을 구하고자 다섯 용사를 정탐꾼으로 보낸다. 이들은 미가의 집에 들렀다가 그의 레위인 제사장을 만나고, 이후 라이스라는 평화롭고 안전하지만 방비 없는 땅을 발견하고 돌아와 침공을 권한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11-26절</div>
+        <div>
+          <div class="flow-title">미가의 신상과 제사장을 탈취하다</div>
+          <div class="flow-body">단 지파 육백 명이 무장하고 행군하며 미가의 집에 들러 신상과 에봇, 드라빔을 탈취하고 레위 제사장까지 함께 데려간다. 미가가 뒤쫓아 항의하나 힘에서 밀려 <b class="hl-quote">"너희가 내가 만든 신들과 제사장을 빼앗아 갔으니 이제 내게 오히려 무엇이 남았느냐"</b>며 탄식하고 돌아선다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">27-31절</div>
+        <div>
+          <div class="flow-title">라이스 정복과 단 지파의 우상숭배 정착</div>
+          <div class="flow-body">단 지파는 평온하고 방비 없는 라이스 사람들을 쳐서 멸하고 성읍을 불사른 후 재건하여 <b class="hl-term">단</b>이라 이름한다. 그들은 탈취한 신상을 세워 대대로 섬기니, 이는 이후 북이스라엘 왕국의 우상숭배 중심지 중 하나로 이어지는 뿌리가 된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 정당한 필요(땅)조차 잘못된 방법으로 채워질 수 있다</div>
+        <div class="teach-body">단 지파의 기업 부족은 실제 문제였지만, 그 해결 방식은 무방비한 이웃을 기습해 멸망시키는 폭력이었다. 정당한 목적이 수단의 정당성을 보장하지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 도둑질한 신상도 얼마든지 '신성한 것'처럼 취급될 수 있다</div>
+        <div class="teach-body">단 지파는 훔친 우상을 아무 거리낌 없이 자신들의 예배 대상으로 삼는다. 출처의 부정함이 종교적 열심 앞에서 아무 문제가 되지 않는 왜곡된 신앙 풍토를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 약한 자를 이용해 이익을 취하는 구조적 폭력</div>
+        <div class="teach-body">미가는 육백 명의 무장 세력 앞에서 자기 재산(신상)과 고용한 제사장을 속수무책으로 빼앗긴다. 힘의 논리가 옳고 그름을 대체하는 시대의 단면이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 평온함이 반드시 안전을 뜻하지는 않는다</div>
+        <div class="teach-body">라이스 사람들은 안전하고 평화롭게 살고 있었지만 방비가 없어 순식간에 멸망당한다. 외적 평온에 안주하는 것의 위험성을 냉정하게 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 한 개인의 타협이 한 지파 전체의 제도적 죄로 확대된다</div>
+        <div class="teach-body">미가 한 사람의 우상 제작이 결국 단 지파 전체의 공식적 예배 체계로 자리 잡고, 훗날 여로보암의 국가적 우상숭배(왕상 12:29)로까지 이어진다. 작은 타협이 세대를 넘어 구조화되는 무서운 패턴이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">단 지파 이야기를 읽으며 생각해요. 필요는 진짜였는데, 그 필요를 채우는 방식이 틀렸을 때 그 죄가 몇 세대 뒤까지 이어질 수 있다는 걸요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>단 지파의 우상숭배는 왜 훗날 여로보암의 금송아지와 연결되는가?</div>
+        <div class="deep-body">열왕기상 12:29에서 여로보암은 북이스라엘 왕국을 세운 후 벧엘과 '단'에 금송아지를 세운다. 단이 이미 사사기 18장에서부터 우상숭배의 거점으로 자리 잡았다는 사실은, 이 지역의 종교적 혼합주의가 우연이 아니라 오랜 역사적 뿌리를 지녔음을 보여주며, 사사기와 열왕기 사이의 신학적 연속성을 드러내는 중요한 연결고리로 다뤄진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>미가의 마지막 탄식('내게 오히려 무엇이 남았느냐')은 무엇을 의미하는가?</div>
+        <div class="deep-body">이 탄식은 표면적으로 재산 손실에 대한 것이지만, 신학적으로는 우상에게 정체성과 안전을 의탁했던 사람이 결국 그 우상마저 지켜내지 못하는 허무함을 압축적으로 보여준다. 우상은 그것을 만든 자조차 보호하지 못한다는 사사기 전체의 반복된 메시지(6장 바알, 9장 요담의 우화 등)와 공명한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch19">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 19</div>
+      <h1>19장 · 레위인의 첩과 기브아의 참상</h1>
+      <div class="chapter-sub">떠나간 첩, 환대의 규범, 기브아의 끔찍한 폭력</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 19:1-30</span><span class="ref-item">기브아 사건</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-10절</div>
+        <div>
+          <div class="flow-title">떠났다 돌아온 첩과 화해의 여정</div>
+          <div class="flow-body">에브라임 산지의 한 레위 사람에게 첩이 있었는데, 그녀가 남편을 떠나 베들레헴 친정으로 갔다가 남편이 찾아와 화해한다. 장인의 극진한 환대로 여러 날 지체한 후, 저녁 무렵 그들은 여부스(예루살렘)를 지나쳐 이스라엘 땅인 기브아에서 밤을 지내기로 한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11-21절</div>
+        <div>
+          <div class="flow-title">기브아에서의 위태로운 환대</div>
+          <div class="flow-body">기브아 광장에서 아무도 그들을 영접하지 않다가, 마침 그 성읍에 거하던 한 노인이 그들을 자기 집으로 맞아들여 환대한다. 노인은 <b class="hl-term">"평안을 위하나이다... 다만 거리에서는 자지 마소서"</b>라며 여행자들을 위험으로부터 보호하려 애쓴다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">22-30절</div>
+        <div>
+          <div class="flow-title">베냐민 불량배들의 폭력과 첩의 죽음</div>
+          <div class="flow-body">성읍의 불량배들이 집을 둘러싸고 나그네를 겁탈하려 하자, 이는 <b class="hl-insight has-insight" data-insight="14">창세기 소돔 이야기</b>와 소름 끼치게 닮은 장면이다. 결국 레위인은 자기 첩을 밖으로 내보내고, 그녀는 밤새 폭행당해 죽는다. 레위인은 그녀의 시체를 열두 조각으로 나누어 이스라엘 온 지역에 보내 이 참상을 알린다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 언약 백성이 이방보다 더 타락할 수 있다는 경고</div>
+        <div class="teach-body">이 사건이 소돔 이야기를 의도적으로 반향한다는 것은, 언약 백성이라는 신분이 자동으로 도덕적 우위를 보장하지 않는다는 냉정한 진실을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 환대의 의무와 그 한계</div>
+        <div class="teach-body">노인은 나그네를 보호하려는 선한 의도를 지녔지만, 그 보호를 위해 여성을 대신 내어주는 방식을 택한다. 본문은 이를 미화하지 않고, 오히려 그 시대 환대 윤리의 한계와 여성에 대한 폭력의 구조적 정당화를 냉정하게 드러낸다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 침묵하는 다수의 책임</div>
+        <div class="teach-body">기브아 광장에서 처음엔 아무도 나그네를 맞아들이지 않았다는 서술은, 공동체적 환대와 배려가 무너진 사회 분위기를 암시한다. 폭력은 갑자기 나타나지 않고 무관심이 자라난 토양 위에서 자란다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 말할 수 없는 폭력 앞에서의 침묵하지 않기</div>
+        <div class="teach-body">레위인이 시체를 열두 조각으로 나누어 보낸 행위는 잔혹하지만, 동시에 은폐되고 묻힐 뻔한 참상을 이스라엘 전체에 반드시 알리려는 절박한 몸부림이었다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 사사기의 가장 어두운 밑바닥</div>
+        <div class="teach-body">이 사건은 사사기 전체에서 가장 참혹한 장면으로, '왕이 없으므로 각기 소견에 옳은 대로 행하였다'는 결론이 도달할 수 있는 최악의 상태를 구체적으로 형상화한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 본문은 읽기가 정말 힘들어요. 그런데 성경이 이런 어두운 이야기를 감추지 않고 기록했다는 사실 자체가, 인간이 왕(중심된 질서와 신앙) 없이 얼마나 무너질 수 있는지를 있는 그대로 보여주려는 의도라고 생각해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>본문이 여성에 대한 폭력을 미화 없이 서술하는 방식을 어떻게 읽어야 할까?</div>
+        <div class="deep-body">사사기 19장은 이 폭력을 정당화하거나 영웅적으로 그리지 않는다. 오히려 노인의 제안, 레위인의 선택, 성읍 사람들의 폭력 모두를 담담하고 냉정한 어조로 서술함으로써, 독자가 이 사건의 참혹함과 그 책임 소재를 스스로 판단하도록 만든다. 현대 성서학은 이 본문을 고대 가부장 사회에서 여성이 처했던 구조적 취약성을 성경이 은폐하지 않고 정면으로 드러낸 텍스트로 중요하게 다룬다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>소돔 이야기와의 병행은 어떤 신학적 목적을 갖는가?</div>
+        <div class="deep-body">창세기 19장에서 소돔은 명백히 이방의 죄악 도시였고 하나님의 심판으로 멸망했다. 사사기 19장이 같은 구조를 이스라엘 내부(그것도 언약 백성의 성읍)에 적용함으로써, 저자는 '외부의 악'만이 아니라 '내부의 부패'가 동일한 심판을 자초할 수 있음을 경고한다. 이는 다음 장(20장)에서 실제로 이스라엘 전체가 베냐민 지파를 심판하는 내전으로 이어지는 신학적 근거가 된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch20">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 20</div>
+      <h1>20장 · 이스라엘과 베냐민의 내전</h1>
+      <div class="chapter-sub">온 지파의 소집, 베냐민의 완강한 거부, 참혹한 동족상잔</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 20:1-48</span><span class="ref-item">베냐민 내전</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-11절</div>
+        <div>
+          <div class="flow-title">미스바 총회와 이스라엘의 결의</div>
+          <div class="flow-body">레위인의 보고를 들은 이스라엘 온 지파가 단에서부터 브엘세바까지, 그리고 길르앗 땅에서까지 <b class="hl-term">한 사람같이</b> 미스바에 모여 사건의 전말을 듣고, 기브아를 향해 함께 올라가 이 악행을 갚기로 결의한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12-25절</div>
+        <div>
+          <div class="flow-title">베냐민의 완강한 거부와 이스라엘의 두 차례 패배</div>
+          <div class="flow-body">이스라엘이 베냐민 지파에 악한 자들을 내어달라 요구하나 베냐민은 오히려 자기 지파를 결집해 맞선다. 첫째 날과 둘째 날 전투에서 이스라엘은 도합 사만 명을 잃는 참패를 당하면서도 여호와께 묻고 다시 나아간다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">26-48절</div>
+        <div>
+          <div class="flow-title">매복 전략과 베냐민의 궤멸</div>
+          <div class="flow-body">이스라엘이 금식하며 번제와 화목제를 드리고 다시 여호와께 묻자 여호와께서 승리를 약속하신다. 매복 전략을 통해 기브아를 불태우고 베냐민 군대를 궤멸시키니, 베냐민 지파는 육백 명만 남고 거의 전멸에 이른다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 공동체적 연대는 강력한 힘이지만 파괴적으로도 작동할 수 있다</div>
+        <div class="teach-body">이스라엘이 '한 사람같이' 연합한 모습은 5장에서 참여하지 않았던 지파들에 대한 책망과 대조적으로 긍정적이다. 그러나 그 연합의 결과가 동족 거의 전체의 궤멸이라는 점에서 비극적이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 정당한 분노도 두 차례의 패배 앞에 겸손히 물어야 한다</div>
+        <div class="teach-body">이스라엘은 명백히 정당한 명분(악행에 대한 심판)을 가지고도 두 번이나 패배한다. 이는 명분의 정당성이 곧바로 승리를 보장하지 않으며, 반복해서 하나님께 묻는 겸손이 필요함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 죄를 감싸는 공동체적 결속의 위험성</div>
+        <div class="teach-body">베냐민 지파가 명백한 악행자를 내어주기를 거부하고 오히려 지파적 자존심으로 맞선 것은, 잘못된 연대(집단 정체성 방어)가 정의를 가로막을 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 심판의 결과가 낳는 또 다른 위기</div>
+        <div class="teach-body">베냐민 지파가 거의 전멸에 이른 결과는 다음 장(21장)에서 '이스라엘 한 지파가 오늘 이스라엘 중에서 끊어지게 되었으니 어찌할꼬'라는 새로운 위기로 이어진다. 정당한 심판조차 후속적 돌봄 없이는 새로운 상처를 낳는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 내전의 참혹함은 왕 없는 시대의 필연적 귀결이다</div>
+        <div class="teach-body">이스라엘 전체가 동족을 상대로 벌인 이 참혹한 전쟁은, 사사기 후반부가 그리는 '왕이 없으므로'의 결과가 개인의 타락을 넘어 공동체 전체의 붕괴로 확대될 수 있음을 극적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 내전 이야기를 읽으면서, 정당한 분노와 그 분노가 낳는 참혹한 결과 사이의 긴장을 계속 생각하게 돼요. 옳은 일을 하면서도 그 방식과 규모에 대해 계속 하나님께 물어야 하는 이유가 여기 있는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이스라엘이 두 번이나 패배한 이유를 본문은 왜 설명하지 않는가?</div>
+        <div class="deep-body">본문은 이스라엘의 패배 원인을 명시하지 않은 채, 다만 그들이 계속 여호와께 나아가 물었다는 사실만 기록한다. 이는 정당한 명분을 가진 싸움에서도 하나님의 뜻과 때를 인간이 완전히 통제할 수 없다는 신학적 긴장을 보여주며, 승리가 명분의 정당성이 아니라 전적으로 하나님의 주권에 달려있음을 강조하려는 서술 전략으로 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>이 내전은 사사기 전체 구조에서 어떤 절정의 역할을 하는가?</div>
+        <div class="deep-body">17-21장은 '왕이 없으므로 각기 소견에 옳은 대로 행하였다'는 주제를 네 개의 사건(미가의 우상, 단 지파의 이주, 기브아 사건, 베냐민 내전)을 통해 점진적으로 심화시키며, 20장의 대규모 동족상잔은 그 절정에 해당한다. 이는 사사기가 단순히 개별 사사들의 무용담 모음이 아니라, 중심 잡힌 지도력 없이는 언약 공동체 전체가 자기 파괴에 이를 수 있다는 하나의 통일된 신학적 메시지를 향해 구성되었음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch21">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 4v28"/><path d="M13 16h22"/><path d="M19 32h10v10h-10z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">JUDGES 21</div>
+      <h1>21장 · 베냐민의 존속과 "각기 소견에 옳은 대로"</h1>
+      <div class="chapter-sub">베냐민 지파를 위한 신부 확보, 사사기의 결론적 선언</div>
+      <div class="ref-strip">
+        <span class="ref-item">삿 21:1-25</span><span class="ref-item">사사기의 결론</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 정리합니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1-15절</div>
+        <div>
+          <div class="flow-title">맹세의 딜레마와 야베스 길르앗 처녀들</div>
+          <div class="flow-body">이스라엘은 미스바에서 베냐민에게 자기 딸을 아내로 주지 않기로 맹세했었는데, 정작 베냐민이 거의 전멸하자 <b class="hl-term">"이스라엘 중에 한 지파가 끊어지게 되었으니 어찌할꼬"</b>라며 뒤늦게 후회한다. 미스바 총회에 불참했던 야베스 길르앗을 응징하여 그곳의 처녀 사백 명을 베냐민 생존자들에게 준다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16-25절</div>
+        <div>
+          <div class="flow-title">실로의 딸들을 납치하도록 허용하다</div>
+          <div class="flow-body">그래도 신부가 부족하자, 장로들은 베냐민 생존자들에게 실로의 축제에서 춤추는 처녀들을 <b class="hl-term">납치</b>하도록 눈감아 주는 편법을 제안한다. 이렇게 베냐민 지파는 가까스로 존속하게 되고, 사사기는 <b class="hl-insight has-insight" data-insight="15">"그 때에 이스라엘에 왕이 없으므로 사람이 각기 자기의 소견에 옳은 대로 행하였더라"</b>는 문장으로 끝을 맺는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 성급한 맹세가 낳는 연쇄적 딜레마</div>
+        <div class="teach-body">미스바에서의 성급한 맹세(딸을 베냐민에게 주지 않기로 함)는 이후 지파 하나가 사라질 위기 앞에서 스스로를 옭아매는 족쇄가 된다. 이는 입다의 서원(11장)과 마찬가지로, 하나님의 뜻을 헤아리지 않은 성급한 언약의 위험성을 반복해서 경고한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 문제 해결을 위해 또 다른 폭력을 사용하는 악순환</div>
+        <div class="teach-body">야베스 길르앗 응징과 실로의 딸들 납치는 모두 이전 문제(맹세, 지파 존속)를 해결하기 위해 또 다른 폭력과 여성에 대한 착취를 동원한다. 왕이 없는 시대의 도덕적 붕괴가 해결책조차 병들게 만든다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 지파적 연대감과 도덕적 정당성의 어긋남</div>
+        <div class="teach-body">이스라엘은 베냐민 지파가 완전히 사라지는 것을 막으려는 선한 동기를 지녔지만, 그 실행 방식은 처음의 정당한 심판(20장)만큼이나 문제적이다. 좋은 목적이 방법의 정당성을 자동으로 보장하지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 결론구는 책 전체를 되돌아보게 하는 열쇠다</div>
+        <div class="teach-body">"각기 소견에 옳은 대로 행하였더라"는 문장은 옷니엘부터 시작된 사사기 전체가 결국 이 총체적 도덕적 무질서로 귀결되었음을 요약한다. 개별 사사들의 신실함과 결함이 뒤섞인 서사 전체가 이 한 문장 아래 재해석된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 왕정에 대한 갈망과 그 한계에 대한 예고</div>
+        <div class="teach-body">이 결론은 사무엘상에서 이스라엘이 인간 왕을 요구하는 장면으로 자연스럽게 연결되지만, 이후 역사는 인간 왕 자체가 궁극적 해법이 아니었음을 보여준다. 사사기는 결국 참된 왕이신 하나님께로 돌아가야 할 필요성을 독자에게 남겨둔다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">사사기의 마지막 문장을 읽을 때마다, 이 책 전체가 왜 이렇게 어둡고 혼란스러운 이야기들로 가득한지 이해하게 돼요. 중심(왕)이 없으면 각자의 소견이 기준이 되고, 그 결과가 얼마나 참혹할 수 있는지를 21장 전체가 생생하게 보여주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>실로의 딸들을 납치하도록 허용한 것을 성경은 승인하는가?</div>
+        <div class="deep-body">본문은 이 사건을 명령이나 승인으로 서술하지 않고, 장로들이 고안해낸 편법으로만 기록한다. 사사기의 서술 기법(도덕적 판단을 직접 내리지 않고 사실을 나열하는 방식)을 고려할 때, 이는 오히려 왕이 없는 시대에 인간이 스스로 옳다고 여기는 방식으로 문제를 해결하려 할 때 벌어지는 왜곡을 보여주는 또 하나의 사례로 읽는 것이 지배적 해석이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>'왕이 없으므로'라는 결론은 사사기를 어떻게 읽어야 하는지에 대한 열쇠를 제공하는가?</div>
+        <div class="deep-body">이 결론구는 사사기 전체를 단순한 영웅담 모음이 아니라, 중앙집권적이고 신실한 지도력의 부재가 낳는 총체적 위기에 대한 신학적 성찰로 읽게 만든다. 동시에 사사기는 그 결론이 '인간 왕만 세우면 해결된다'는 단순한 결론으로 이어지지 않도록, 기드온의 왕위 거절(8:23)과 아비멜렉의 실패한 왕권 찬탈(9장)을 통해 이미 인간 왕정의 한계를 경고해두었다. 궁극적으로 사사기는 독자를 참된 왕이신 여호와께 대한 순종이라는 질문 앞에 세워둔 채 마무리된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="book-footer">
+  <div class="ff-line"></div>
+  <div class="ff-org">기독교한국침례회 은혜교회</div>
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "여부스 족속과 '함께 거주하였더라'의 시작", "body": "베냐민 지파가 예루살렘의 여부스 족속을 쫓아내지 못했다는 이 짧은 언급은 사사기 전체에 반복될 후렴구의 첫 사례다.\n\n실제로 예루살렘이 완전히 이스라엘의 손에 들어가는 것은 훨씬 후, 다윗 시대(삼하 5장)에 이르러서였다. 즉 사사기 1장의 이 실패는 단순한 과거의 사건이 아니라, 이후 수백 년간 이어질 미완성 정복의 상징이 된다.\n\n'함께 거주하였더라'는 담담한 표현 뒤에는, 이스라엘의 심장부가 될 도성조차 온전히 정결하게 되지 못한 채 이방 문화와 뒤섞여 시작되었다는 무거운 현실이 놓여 있다."}, {"title": "여호와의 사자가 '보김'(우는 자)이라 이름한 이유", "body": "여호와의 사자가 길갈에서 보김으로 올라와 이스라엘의 언약 불이행을 책망하자 백성이 소리 높여 울었고, 그래서 그곳 이름이 '보김'(우는 곳)이 되었다.\n\n이 눈물은 단순한 감상이 아니라 책망 앞에서의 통곳이다. 그런데 흥미로운 건, 울음 자체가 회개의 완성이 아니라는 점이다. 사사기 전체를 보면 이스라엘은 계속해서 같은 죄로 돌아간다.\n\n보김의 눈물은 진정한 돌이킴 없는 감정적 반응이 반복될 수 있음을 보여주는 경고이기도 하다."}, {"title": "에훗의 '왼손잡이'가 갖는 전략적 의미", "body": "베냐민이라는 지파 이름 자체가 '오른손의 아들'이라는 뜻인데, 정작 에훗은 왼손잡이였다는 아이러니가 있다.\n\n고대 근동에서 칼은 보통 오른쪽 허벅지에 차고 왼손으로 뽑아 오른손으로 휘두르는 것이 관례였다. 에글론 왕의 경호원들은 이 관례에 따라 에훗의 오른쪽만 수색했을 가능성이 크다.\n\n에훗은 왼손잡이라는, 당시로서는 약점처럼 보일 수 있는 특징을 오히려 결정적 기습 무기로 사용한다. 하나님은 세상이 약점이라 부르는 것을 통해서도 구원을 이루신다는 사사기 특유의 반전 모티프가 여기서 시작된다."}, {"title": "여인의 손에 죽은 시스라 — 드보라의 예언이 성취되다", "body": "드보라는 바락에게 시스라와의 전쟁을 명하면서, 이 전쟁의 영광이 바락에게 돌아가지 않고 '여인의 손에' 시스라가 팔릴 것이라 예언한다.\n\n바락이 드보라 없이는 나가지 않겠다고 주저했기 때문에 이 예언이 주어졌는데, 실제로 이루어진 것은 두 겹으로 흥미롭다. 드보라라는 여선지자가 군사 지도력을 발휘한 것 자체가 이미 이례적인데, 최종적으로 시스라를 죽인 것은 전사가 아니라 야엘이라는 이름 없는 여인이었다.\n\n고대 가부장 사회에서 이 이야기는 하나님이 인간의 기대와 사회적 위계를 뒤집어 일하신다는 점을 강하게 각인시킨다."}, {"title": "기드온의 양털 표징 — 믿음인가 의심인가", "body": "기드온은 여호와의 사자를 만나고도, 또 하늘에서 불이 제물을 사른 것을 보고도 여전히 확신하지 못해 양털 표징을 두 번이나 요청한다.\n\n첫 번째는 양털만 이슬에 젖고 땅은 마르게 해달라는 것이었고, 두 번째는 반대로 땅만 젖고 양털은 마르게 해달라는 것이었다. 자연 현상으로도 설명 가능한 첫 번째보다 훨씬 더 부자연스러운 두 번째 요청을 통해 기드온은 자신의 의심을 극한까지 밀어붙인다.\n\n흥미로운 건 하나님이 이 반복된 요구에 화내지 않고 두 번 다 들어주셨다는 점이다. 이는 연약한 믿음을 향한 하나님의 인내와, 확신은 단번에 오지 않고 여러 단계를 거쳐 자라날 수 있음을 보여준다."}, {"title": "삼백 용사 선별 — 손으로 물을 움켜 핥은 자들", "body": "기드온의 군대는 처음 3만 2천 명이었다가, 두려운 자를 돌려보내자 만 명이 남고, 물을 마시는 방식으로 다시 걸러내자 최종 삼백 명만 남는다.\n\n무릎을 꿇고 얼굴을 물에 대고 마신 사람들은 돌려보내지고, 손으로 물을 움켜 개처럼 핥아 마신 삼백 명만 선택된다. 이 기준의 정확한 군사적 의미는 본문에 명시되어 있지 않지만, 전통적으로 손으로 물을 떠 마신 사람들이 주변 경계를 유지하며 마신, 더 신중하고 전투태세를 갖춘 사람들이었다는 해석이 있다.\n\n그러나 본문의 진짜 핵심은 선별 기준의 합리성이 아니라, 하나님이 '이스라엘 사람이 자긍하여 이르기를 내 손이 나를 구원하였다 할까 함이니라'며 의도적으로 숫자를 줄이셨다는 점이다. 승리의 공로가 인간에게 돌아가지 않도록 하시려는 것이 핵심 메시지다."}, {"title": "기드온이 만든 에봇 — 사사의 몰락은 어떻게 시작되는가", "body": "전쟁에서 승리한 기드온은 백성들의 요청에도 왕이 되기를 거절하며 '여호와께서 너희를 다스리시리라'고 선언한다. 그런데 바로 다음 구절에서 그는 전리품 금으로 에봇을 만들어 자기 성읍에 두었고, 온 이스라엘이 그것을 음란하게 위하여 그와 그 집에 올무가 되었다.\n\n에봇은 원래 제사장이 하나님의 뜻을 묻는 데 쓰는 거룩한 도구였다. 기드온이 만든 이 에봇이 정확히 어떤 형태였는지는 알 수 없지만, 결과적으로 그것은 우상숭배의 대상이 되었다.\n\n왕위를 거절한 겸손과 우상을 만든 실책이 같은 사람 안에서 나란히 일어난다는 것은, 한 번의 옳은 결정이 이후의 모든 실책을 막아주지 않는다는 냉정한 현실을 보여준다."}, {"title": "요담의 우화 — 나무들이 왕을 구하다", "body": "요담은 그리심산 꼭대기에서 세겜 사람들을 향해 우화를 던진다. 감람나무, 무화과나무, 포도나무는 모두 자신의 유익한 열매 맺는 일을 버리고 나무들 위에 요동하러 가지 않겠다며 왕이 되기를 거절한다.\n\n결국 마지막으로 가시나무에게 청하자, 가시나무는 '너희가 참으로 나를 세워 너희 위에 왕으로 삼겠거든 와서 내 그늘에 피하라 그리하지 아니하면 불이 가시나무에서 나와서 레바논의 백향목을 사르리라'고 응답한다.\n\n이 우화는 열매 맺는 유익한 존재들은 권력을 탐하지 않는 반면, 아무 열매도 맺지 못하고 그늘조차 제대로 주지 못하는 가시나무 같은 존재가 오히려 권력을 탐한다는 신랄한 정치적 풍자다. 아비멜렉을 가시나무에 빗댄 것이다."}, {"title": "여호와께서 '가서 너희가 택한 신들에게 부르짖으라' 하신 이유", "body": "이스라엘이 또다시 부르짖자, 여호와는 곧바로 구원자를 세우지 않으시고 오히려 그들이 섬기던 다른 신들에게 가서 부르짖어 구원을 받아보라며 냉정하게 반응하신다.\n\n이는 하나님의 무관심이 아니라, 이스라엘이 얼마나 반복적으로 언약을 저버렸는지를 스스로 직면하게 하시려는 의도로 읽힌다. 백성이 이방 신들을 버리고 여호와만을 섬기며 진심으로 통회하자, 본문은 '여호와께서 이스라엘의 곤고로 말미암아 마음에 근심하시니라'고 기록한다.\n\n이 표현은 심판자이신 하나님 안에 백성의 고통에 반응하는 깊은 연민이 함께 있음을 보여주는 사사기에서 가장 인간적인 신 묘사 중 하나다."}, {"title": "입다의 서원 — 반드시 지켜야 했던 것일까", "body": "입다는 암몬과의 전쟁에 나가며 '내가 암몬 자손에게서 평안히 돌아올 때에 누구든지 내 집 문에서 나와서 나를 영접하는 그는 여호와께 돌릴 것이니 내가 그를 번제물로 드리겠나이다'라고 서원한다.\n\n전쟁에서 승리하고 돌아왔을 때 그를 맞이한 것은 다름 아닌 그의 무남독녀 딸이었다. 입다는 옷을 찢으며 슬퍼하지만 '내가 여호와를 향하여 입을 열었으니 능히 돌이키지 못하리라'며 서원을 이행한다.\n\n이 본문은 성경에서 가장 논쟁적인 구절 중 하나다. 서원의 신성함을 지나치게 절대시한 입다의 신학적 판단 오류로 보는 해석이 우세하지만, 본문이 이 행위를 명시적으로 승인하거나 정죄하지 않는다는 점에서 오늘날까지 해석자들 사이에 깊은 논쟁이 이어진다."}, {"title": "십볼렛 — 발음 하나로 갈린 생사", "body": "입다와의 전쟁에서 패한 에브라임 사람들이 요단강 나루터로 도망하자, 길르앗 사람들은 강을 건너려는 자마다 '십볼렛'이라 말해보라 시킨다.\n\n에브라임 방언에는 '쉬(sh)' 발음이 없었기 때문에 그들은 이를 '십볼렛' 대신 '십볼렛'과 비슷하지만 다른 '십볼렛'(스)으로 발음할 수밖에 없었고, 그 미묘한 발음 차이만으로 에브라임 사람임이 드러나 죽임을 당했다. 이 사건으로 사만 이천 명이 죽었다고 기록된다.\n\n방언이라는, 개인이 선택할 수 없는 특징이 생사를 가르는 기준이 되었다는 사실은 지파 간 내분이 얼마나 잔혹한 수준까지 치달았는지를 극명하게 보여준다."}, {"title": "나실인 서원 — 삼손에게 처음부터 지워진 특별한 부르심", "body": "여호와의 사자는 마노아의 아내에게 나타나, 태어날 아들이 태어나면서부터 하나님께 바쳐진 나실인이 될 것이라 예고한다. 포도주와 독주를 마시지 말고 부정한 것을 먹지 말며 삭도를 머리에 대지 말라는 것이 나실인의 규례였다(민 6장 참조).\n\n특이한 점은 이 나실인 서원이 삼손 자신의 결단이 아니라 태어나기도 전에 이미 그에게 지워졌다는 것이다. 다른 나실인들은 스스로 서원했지만 삼손은 평생, 심지어 태중에서부터 나실인으로 정해진 특별한 존재였다.\n\n이 배경은 이후 삼손이 머리카락을 잘리며 힘을 잃는 사건의 신학적 무게를 이해하는 데 핵심적이다. 그의 힘의 근원은 머리카락 자체가 아니라 그 머리카락이 상징하는 하나님과의 서원 관계였다."}, {"title": "삼손의 진짜 상실 — 머리카락이 아니라 임재", "body": "머리카락이 잘린 후 블레셋 사람들이 삼손을 잡으러 왔을 때, 그는 평소처럼 '내가 나가서 전과 같이 몸을 떨치리라' 생각했지만 '여호와께서 이미 자기를 떠나신 줄을 깨닫지 못하였더라'고 본문은 기록한다.\n\n이 구절이 핵심이다. 삼손이 힘을 잃은 진짜 원인은 머리카락이 잘린 물리적 사실이 아니라, 나실인 서원을 상징하던 그 머리카락을 스스로 포기함으로써 하나님과의 관계 자체를 저버린 것이었다. 머리카락은 원인이 아니라 표지였을 뿐이다.\n\n삼손이 이 사실을 깨닫지 못했다는 서술은, 우리도 하나님의 임재가 떠난 것을 스스로 알아차리지 못한 채 예전의 방식으로 살아가려 할 수 있다는 뼈아픈 경고를 남긴다."}, {"title": "'그 때에는 이스라엘에 왕이 없으므로' — 사사기 후반부의 후렴구", "body": "17장부터 21장까지, 본문은 반복해서 '그 때에는 이스라엘에 왕이 없었더라'는 문구를 삽입한다. 미가의 신상 이야기, 단 지파의 이주, 레위인의 첩 사건, 베냐민 내전 — 이 네 개의 독립된 이야기 모두 앞뒤로 이 표현에 감싸여 있다.\n\n이는 단순히 정치 체제의 공백을 지적하는 것이 아니다. 사사기의 결론부는 '왕이 없다'는 사실을 '각기 소견에 옳은 대로 행하였다'는 도덕적 무질서와 직접 연결시킨다.\n\n흥미로운 건 사사기가 쓰인 시점(아마도 왕정 초기)에서 이 표현은 미래의 왕정을 향한 은근한 기대를 담고 있다는 점이다. 그러나 이후 열왕기가 보여주듯, 왕이 생긴다고 저절로 문제가 해결되지는 않는다 — 진짜 필요한 것은 인간 왕이 아니라 마음의 회복이었다."}, {"title": "소돔과의 병행 — 기브아 사건이 창세기 19장을 반향하는 이유", "body": "레위인의 첩이 겁탈당하는 기브아 사건은 창세기 19장 소돔 이야기와 놀랍도록 유사한 구조를 지닌다. 나그네를 환대하는 노인, 그를 겁탈하려는 성읍 사람들의 무리, 대신 내어주는 여인 — 이 모티프들이 거의 그대로 반복된다.\n\n이 병행은 우연이 아니라 의도된 문학적 장치로 여겨진다. 창세기에서 소돔은 이방 성읍으로서 멸망당했지만, 사사기 19장의 기브아는 다름 아닌 이스라엘 베냐민 지파의 성읍이다.\n\n저자는 이 병행을 통해 신랄한 메시지를 던진다: 언약 백성 이스라엘이 한때 심판받은 소돔과 다를 바 없는 수준까지 타락했다는 것이다. 이는 사사기 후반부가 그려내는 도덕적 붕괴의 밑바닥을 보여주는 가장 어두운 장면이다."}, {"title": "사사기의 마지막 문장 — 시대를 요약하는 결론", "body": "사사기는 '그 때에 이스라엘에 왕이 없으므로 사람이 각기 자기의 소견에 옳은 대로 행하였더라'는 문장으로 끝난다. 이 결론구는 단순한 시대적 배경 설명이 아니라, 사사기 전체 21장을 관통하는 저자의 신학적 진단이다.\n\n옷니엘의 신실함으로 시작된 책이 어떻게 베냐민 거의 전멸이라는 참혹한 내전으로 끝나게 되었는가를 되돌아보게 만드는 문장이다. 왕이 없다는 것은 정치 체제의 공백만이 아니라, 궁극적으로는 참 왕이신 여호와께 대한 순종이 무너졌다는 의미로 읽힌다.\n\n이 결론은 사무엘상에서 이스라엘이 왕을 요구하는 장면으로 이어지는 다리 역할을 하지만, 동시에 인간 왕정 자체도 궁극적 해법이 아니라는 것을 이후 열왕기 역사가 보여주게 된다. 진짜 필요한 것은 마음의 회복이었다."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var top = el.getBoundingClientRect().top + window.pageYOffset - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '\u2715';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

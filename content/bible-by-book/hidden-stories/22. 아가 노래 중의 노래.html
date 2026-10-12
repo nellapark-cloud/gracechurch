@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아가, 노래 중의 노래 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="신랑과 신부의 사랑 노래, 아가서에 숨은 이야기. 노래 중의 노래가 성경에 있는 이유">
+<meta property="og:title" content="아가, 노래 중의 노래">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 54</div>
+  <h1>아가,<br>노래 중의<br><em>노래</em></h1>
+  <p class="sub">신랑과 신부의 사랑 노래가 왜 성경에 있을까,<br>"사랑은 죽음 같이 강하다"고 노래하는 책</p>
+  <div class="ref">아가 1–8장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>아가는 성경에서 가장 낯선 책 가운데 하나예요. 율법도 예언도 역사도 없이, 처음부터 끝까지 신랑과 신부가 서로를 그리워하고 칭찬하는 사랑 노래예요. 😄 "네 머리털은 염소 떼 같고 네 이는 털 깎인 양 떼 같구나" 같은 칭찬이 나와요. 지금 그렇게 말했다간 큰일 날 칭찬이지요.</p><p>그래서 교회 역사 내내 사람들은 이 책을 어떻게 읽어야 할지 고민했어요. 남녀의 사랑을 하나님이 지으신 선물로 노래한 책일까요, 하나님과 그 백성의 사랑을 그린 비유일까요? 노래 중의 노래, 검지만 아름다운 신부, 샤론의 수선화, 작은 여우, 이상한 칭찬, 문을 두드리는 사랑, 그리고 여호와의 불까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>아가는 어떤 책일까?</h2>
+    <p>사랑을 하나님의 선물로 노래한 시</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>아가는 "솔로몬의 아가라"로 시작해요(1:1). 솔로몬은 노래를 천다섯 편이나 지었다고 해요(왕상 4:32). 이 책은 신부(술람미 여인), 신랑, 그리고 "예루살렘 딸들"이 번갈아 노래하는 형식이에요. 포도원과 정원, 꽃과 향료, 비둘기와 노루와 사슴 같은 자연의 이미지가 가득해요. 유대인은 지금도 유월절에 회당에서 아가를 읽어요. 출애굽을 하나님과 이스라엘의 첫사랑으로 기억하기 때문이에요.</p>
+    <div class="debate sans"><div><b>"노래 중의 노래"</b>히브리어 제목 "쉬르 하쉬림"은 "노래들의 노래", 곧 가장 아름다운 노래라는 뜻이에요. "왕 중의 왕", "거룩한 것 중에 거룩한 것(지성소)"처럼 최상급 표현이에요.</div><div><b>아키바의 변호</b>2세기 유대 랍비 아키바는 이 책이 성경에 들어갈 수 있는지 논쟁이 일자 이렇게 말했다고 해요. "모든 성문서가 거룩하지만 아가서는 지성소다."</div></div>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">아가의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">사랑의 대화</div><div class="mini-b">신랑과 신부가 주고받는 노래로 이루어져 있어요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">자연의 언어</div><div class="mini-b">꽃, 열매, 향료, 짐승의 이미지로 사랑을 노래해요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">"사랑하는 자"</div><div class="mini-b">신부가 신랑을 부르는 "나의 사랑하는 자"라는 말이 계속 되풀이돼요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">세 번 반복되는 경고</div><div class="mini-b">"사랑이 원하기 전에는 흔들지 말며 깨우지 말지니라"(2:7; 3:5; 8:4).</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">두 가지 읽기</div><div class="mini-b">부부의 사랑을 노래한 시로, 동시에 하나님과 그 백성의 사랑을 비추는 노래로 읽혀 왔어요.</div></div></div></div>
+
+  <div class="target"><p>아가의 절정은 이 고백이에요. <span class="hl">"사랑은 죽음 같이 강하고… 많은 물도 이 사랑을 끄지 못하겠고 홍수라도 삼키지 못하나니"</span>(8:6-7). 바울은 부부의 사랑을 말하다가 "이 비밀이 크도다 나는 그리스도와 교회에 대하여 말하노라"(엡 5:32)고 했어요. 죽음보다 강한 사랑은 <mark>십자가에서 우리를 위해 죽으신 예수 그리스도의 사랑</mark>이에요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>노래 중의 노래부터 여호와의 불까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>노래 중의 노래</button><button class="chip" onclick="goTo('s2')"><b>2</b>검지만 아름다운</button><button class="chip" onclick="goTo('s3')"><b>3</b>샤론의 수선화</button><button class="chip" onclick="goTo('s4')"><b>4</b>작은 여우</button><button class="chip" onclick="goTo('s5')"><b>5</b>이상한 칭찬</button><button class="chip" onclick="goTo('s6')"><b>6</b>문을 두드리는 사랑</button><button class="chip" onclick="goTo('s7')"><b>7</b>여호와의 불</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>성경에 들어갈 수 있을까 논쟁된 책,<br>"아가서는 지성소다"</h2><div class="refs">아가 1:1-4 · 열왕기상 4:32</div></div></div>
+    <div class="scene-body"><p>아가서에는 하나님의 이름도, 기도도, 율법도 직접 나오지 않아요. 그래서 1세기 무렵 유대 학자들 사이에서 이 책을 거룩한 책으로 받아들일지 논쟁이 있었다고 해요. 어떤 사람들은 잔칫집에서 유행가처럼 흥얼거리기도 했대요. 😄</p><p>그때 존경받던 랍비 아키바가 나서서 말했다고 전해져요(미쉬나 야다임 3:5). "온 세상이 이스라엘에 아가서가 주어진 날만큼 가치 있던 적이 없다. 모든 성문서가 거룩하지만 아가서는 지성소다." 지성소는 성전에서 가장 거룩한 곳이에요. 아키바는 이 사랑 노래가 하나님과 이스라엘 사이의 가장 깊은 사랑을 담고 있다고 보았어요.</p><p>교회도 이 책을 사랑했어요. 3세기 오리겐은 아가를 그리스도와 교회, 그리스도와 영혼의 사랑으로 읽는 긴 주석을 썼어요. 12세기 수도원장 클레르보의 베르나르는 아가서로 설교를 시작했는데, 86편을 설교하고도 겨우 3장 1절까지밖에 가지 못했어요. 😄 그만큼 한 구절 한 구절을 곱씹은 거예요. 이 책이 성경에 있다는 것 자체가, <mark>하나님이 사랑을 얼마나 귀하게 여기시는지</mark> 보여 줘요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>사랑을 가볍게 여기지 않고, 하나님이 주신 사랑을 거룩하고 귀한 선물로 대합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>"내가 비록 검으나 아름다우니",<br>햇볕에 그을린 포도원지기 신부</h2><div class="refs">아가 1:5-6</div></div></div>
+    <div class="scene-body"><p>신부가 예루살렘 딸들에게 말해요. "예루살렘 딸들아 내가 비록 검으나 아름다우니 게달의 장막 같을지라도 솔로몬의 휘장과도 같구나"(1:5). 게달은 광야의 유목민이에요. 그들의 장막은 검은 염소 털로 짜서 시커멓지요. 그런데 신부는 자기가 그 장막처럼 검지만, 동시에 솔로몬의 궁전 휘장처럼 아름답다고 해요.</p><p>왜 검어졌을까요? 이유가 이어져요. "내가 햇볕에 쬐어서 거무스름할지라도 흘겨보지 말 것은 내 어머니의 아들들이 나에게 노하여 포도원지기로 삼았음이라 나의 포도원을 내가 지키지 못하였구나"(1:6). 😄 오빠들이 시켜서 하루 종일 땡볕 아래 포도원을 지키느라 얼굴이 탔다는 거예요. 귀하게 자란 궁궐 여인들의 하얀 얼굴과 비교되었을 거예요.</p><p>그런데 신랑은 그런 그녀를 이렇게 불러요. "여인 중에 어여쁜 자야"(1:8). 세상이 흘겨보는 그을린 얼굴을 신랑은 가장 아름답다고 해요. 많은 주석가들은 이 장면에서 교회의 모습을 봐요. 우리는 죄와 수고로 그을려 있지만, 그리스도께서는 우리를 "티나 주름 잡힌 것이나 이런 것들이 없이" 영광스러운 신부로 세우세요(엡 5:27). <mark>신랑의 눈에 신부는 아름다워요</mark>.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>그을리고 흠 많은 나를 "어여쁜 자야"라고 불러 주시는 신랑의 시선 앞에서, 세상의 흘겨봄에 주눅 들지 않습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>"나는 샤론의 수선화요",<br>그런데 이 말을 한 사람은 신부였다</h2><div class="refs">아가 2:1-2</div></div></div>
+    <div class="scene-body"><p>"나는 샤론의 수선화요 골짜기의 백합화로다"(2:1). 찬송가와 복음성가에서 이 구절은 예수님을 노래하는 말로 자주 쓰여요. "샤론의 꽃 예수"처럼요. 그런데 아가를 자세히 읽어 보면, 이 말을 한 사람은 대부분 신랑이 아니라 신부라고 봐요. 😄</p><p>샤론은 지중해 해안의 평야예요. 봄이면 들꽃이 흐드러지게 피는 곳이었어요. 그러니 "샤론의 수선화"는 사실 겸손한 말일 수 있어요. "저는 들판 어디에나 피는 흔한 들꽃이에요" 하는 신부의 고백이지요. 바로 다음 절에서 신랑이 대답해요. "여자들 중에 나의 사랑은 가시나무 가운데 백합화 같도다"(2:2). 흔한 들꽃이라는 신부를 신랑은 가시밭 가운데 핀 단 하나의 백합이라고 높여 줘요.</p><p>그렇다고 이 구절을 예수님께 적용하는 것이 틀린 건 아니에요. 교회는 오래전부터 아가서 전체를 그리스도와 교회의 사랑으로 읽어 왔고, 그 안에서 신랑과 신부의 말이 서로를 비추기도 해요. 그래도 원래 문맥을 알면 더 따뜻해요. 스스로를 들꽃이라 여기는 우리를 <mark>가시밭의 백합처럼 귀히 여기시는 신랑</mark>이 계시다는 것이요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 2:1의 꽃이 정확히 어떤 꽃인지는 분명하지 않아요. 수선화, 크로커스, 장미 등으로 다양하게 번역돼요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 흔한 들꽃처럼 여길 때에도, 나를 가시밭의 백합으로 불러 주시는 주님의 사랑을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>꽃 핀 포도원을 허는<br>작은 여우들</h2><div class="refs">아가 2:10-15</div></div></div>
+    <div class="scene-body"><p>신랑이 신부를 부르는 봄노래가 아름다워요. "나의 사랑, 나의 어여쁜 자야 일어나서 함께 가자 겨울도 지나고 비도 그쳤고 지면에는 꽃이 피고 새가 노래할 때가 이르렀는데 비둘기의 소리가 우리 땅에 들리는구나"(2:10-12). 이스라엘의 겨울 우기가 끝나고 들판이 꽃으로 뒤덮이는 봄의 풍경이에요.</p><p>그런데 그 봄노래 끝에 갑자기 이런 말이 나와요. "우리를 위하여 여우 곧 포도원을 허는 작은 여우를 잡으라 우리의 포도원에 꽃이 피었음이라"(2:15). 😄 큰 늑대도 사자도 아니고 "작은 여우"예요. 여우는 포도원 담 밑으로 굴을 파고 들어와 어린 포도 순과 열매를 갉아 먹었어요. 막 꽃이 핀 포도원에는 작은 여우가 가장 위험했어요.</p><p>많은 설교자들은 이 구절을 관계를 무너뜨리는 작은 것들로 읽어요. 큰 죄보다 작은 말 한마디, 작은 무관심, 작은 불평이 사랑의 포도원을 허물어요. 사랑이 막 꽃필 때일수록 작은 여우를 미리 잡아야 해요. 우리와 주님 사이의 사랑도 그래요. <mark>주님과의 첫사랑</mark>(계 2:4)을 갉아 먹는 작은 여우는 무엇인지 돌아보게 해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나와 하나님 사이, 나와 가족 사이의 꽃 핀 포도원을 갉아 먹는 작은 여우가 무엇인지 찾아 잡습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>"네 이는 털 깎인 암양 같고",<br>지금 들으면 놀랄 칭찬</h2><div class="refs">아가 4:1-7</div></div></div>
+    <div class="scene-body"><p>신랑이 신부를 칭찬하는 4장은 오늘 우리 귀에 정말 재밌게 들려요. 😄 "네 머리털은 길르앗 산기슭에 누운 염소 떼 같구나 네 이는 목욕장에서 나오는 털 깎인 암양 곧 새끼 없는 것은 하나도 없이 각각 쌍태를 낳은 양 같구나"(4:1-2). "네 목은 무기를 두려고 건축한 다윗의 망대 곧 방패 천 개, 용사의 모든 방패가 달린 망대 같고"(4:4).</p><p>지금 누군가에게 "당신 이는 양 떼 같고 목은 망대 같아요"라고 하면 칭찬으로 들리지 않겠지요. 하지만 그 시대 사람들의 눈으로 보면 아름다워요. 길르앗 산비탈을 따라 검은 염소 떼가 물결치듯 내려오는 모습은 길게 흘러내린 검은 머리카락이에요. 목욕하고 막 나온 하얀 양들이 짝을 지어 나란히 선 모습은 하나도 빠지지 않고 가지런한 하얀 이예요. 망대는 보석 목걸이를 건 우아하고 곧은 목이에요.</p><p>이런 식으로 사랑하는 사람의 몸을 머리부터 차례로 칭찬하는 노래는 고대 근동과 아랍 지역에 오래 이어진 시 형식이었다고 해요. 그리고 칭찬의 결론은 이래요. "나의 사랑 너는 어여쁘고 아무 흠이 없구나"(4:7). 흠 많은 우리를 흠 없다고 부르실 수 있는 분은 <mark>자기 피로 우리를 깨끗하게 하신 그리스도</mark>뿐이에요(엡 5:25-27).</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>사랑하는 사람에게 그 사람만의 아름다움을 구체적으로 말해 주고, 나를 "흠이 없다" 하시는 주님의 은혜를 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>문을 두드리는 사랑하는 자,<br>"발을 씻었으니 어찌 다시 더럽히랴"</h2><div class="refs">아가 5:2-8 · 요한계시록 3:20</div></div></div>
+    <div class="scene-body"><p>밤이 깊었어요. 신부는 잠자리에 들었는데 마음은 깨어 있었어요. 그때 문 두드리는 소리가 들려요. "나의 누이, 나의 사랑, 나의 비둘기, 나의 완전한 자야 문을 열어 다오 내 머리에는 이슬이, 내 머리털에는 밤이슬이 가득하였다 하는구나"(5:2). 밤이슬을 맞으며 신랑이 찾아왔어요.</p><p>그런데 신부의 대답이 이래요. "내가 옷을 벗었으니 어찌 다시 입겠으며 내가 발을 씻었으니 어찌 다시 더럽히랴마는"(5:3). 😄 이미 씻고 누웠는데 일어나기 귀찮다는 거예요. 잠깐 머뭇거린 사이, 신랑이 문틈으로 손을 들이밀었다가 거둬요. 신부가 서둘러 일어나 문을 열었을 때는 "그는 벌써 물러갔네"(5:6). 신부는 밤거리를 헤매며 그를 찾아요.</p><p>많은 성도들은 이 장면에서 요한계시록의 말씀을 떠올려요. "볼지어다 내가 문 밖에 서서 두드리노니 누구든지 내 음성을 듣고 문을 열면 내가 그에게로 들어가 그와 더불어 먹고 그는 나와 더불어 먹으리라"(계 3:20). 주님은 지금도 밤이슬을 맞으며 우리 마음 문을 두드리세요. 편안함 때문에 문 열기를 미루지 않도록, <mark>두드리시는 주님의 음성</mark>에 바로 일어나야 해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>"이미 씻고 누웠다"며 미루던 주님의 부르심에 오늘 바로 일어나 마음 문을 엽니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>죽음 같이 강한 사랑,<br>그 불꽃의 이름은 "여호와의 불"</h2><div class="refs">아가 8:6-7 · 로마서 8:38-39</div></div></div>
+    <div class="scene-body"><p>아가의 절정은 8장이에요. "너는 나를 도장 같이 마음에 품고 도장 같이 팔에 두라"(8:6). 고대에는 끈에 꿰어 목에 걸거나 팔에 차는 도장이 있었어요. 자기 신분을 나타내는 가장 소중한 물건이라 늘 몸에 지니고 다녔지요. 신부는 자기를 그렇게 신랑의 마음과 팔에 새겨 달라고 해요.</p><p>그리고 이어지는 고백. "사랑은 죽음 같이 강하고 질투는 스올 같이 잔인하며 불길 같이 일어나니 그 기세가 여호와의 불과 같으니라 많은 물도 이 사랑을 끄지 못하겠고 홍수라도 삼키지 못하나니"(8:6-7). 여기 "여호와의 불"은 히브리어 <span class="heb" data-tip="샬헤베트야(shalhevetyah) — 불꽃, 거센 불길. 끝의 야를 하나님의 이름(여호와의 줄임말)으로 보면 여호와의 불꽃이 되고, 최상급 표현으로 보면 가장 거센 불꽃이 된다.">샬헤베트야</span>예요. 끝의 "야"를 하나님의 이름 "여호와"의 줄임말로 보면, 아가서 전체에서 하나님의 이름이 나오는 유일한 자리예요.</p><p>😄 하나님의 이름을 끝까지 숨겨 두었다가 사랑이 가장 뜨거워지는 순간에 살짝 드러낸 셈이에요. 사람의 사랑이 가장 강할 때, 그 불꽃은 하나님에게서 온 것이라는 고백이에요. 그리고 신약은 그 불이 무엇인지 보여 줘요. 바울은 이렇게 노래했어요. "사망이나 생명이나… 그 어떤 피조물이라도 우리를 우리 주 그리스도 예수 안에 있는 하나님의 사랑에서 끊을 수 없으리라"(롬 8:38-39). 많은 물도 끄지 못하는 사랑, <mark>죽음보다 강한 십자가의 사랑</mark>이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ "샬헤베트야"의 "야"를 하나님의 이름으로 볼지, 단순히 "아주 큰"이라는 최상급 표현으로 볼지는 학자들 사이에 의견이 갈려요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 도장처럼 마음에 새기신 주님의 사랑, 많은 물도 끄지 못하는 그 사랑 안에 오늘도 머뭅니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">사랑은 죽음보다 강하다</div>
+    <p>아가는 사랑을 부끄러워하지 않아요. 하나님은 사람을 남자와 여자로 지으시고 서로 사랑하게 하셨어요. 그 사랑을 정직하고 아름답게 노래한 책이 성경 한가운데 있다는 것은, 하나님이 우리 삶의 가장 깊은 감정까지 귀하게 여기신다는 뜻이에요.</p><p>그리고 아가는 그 사랑 너머의 더 큰 사랑을 비춰요. 밤이슬을 맞으며 문을 두드리는 신랑, 그을린 신부를 어여쁘다 하는 신랑, 죽음보다 강한 사랑. 그 모든 노래는 결국 한 분을 가리켜요. 신부인 교회를 위해 자기 몸을 내주신 <mark>신랑 예수 그리스도</mark>예요.</p>
+    <div class="q">"많은 물도 이 사랑을 끄지 못하겠고<br>홍수라도 삼키지 못하나니" (8:7)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

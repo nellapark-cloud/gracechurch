@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>신명기, 강을 건너지 못한 설교자의 마지막 설교 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="요단 강 앞에서 멈춘 모세의 고별 설교, 신명기에 숨은 이야기">
+<meta property="og:title" content="신명기, 강을 건너지 못한 설교자의 마지막 설교">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 37</div>
+  <h1>신명기,<br>강을 건너지 못한<br><em>설교자의</em> 마지막 설교</h1>
+  <p class="sub">요단 강 앞에서 멈춘 백이십 세의 모세가<br>강을 건널 다음 세대에게 남긴 말씀</p>
+  <div class="ref">신명기 1–34장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>신명기는 한 편의 긴 고별 설교예요. 요단 강 건너편 모압 평지, 사십 년 광야 길의 마지막 달에 백이십 세 모세가 백성 앞에 서요. 청중은 대부분 광야에서 태어난 둘째 세대예요. 홍해를 건넌 부모 세대는 거의 다 광야에 묻혔어요. 모세는 이 젊은 세대에게 하나님이 어떤 분이신지, 그동안 어떤 일을 하셨는지, 앞으로 어떻게 살아야 하는지를 다시 들려줘요. 그런데 정작 설교자 자신은 그 강을 건너지 못해요.</p><p>신명기는 예수님이 가장 사랑하신 책 가운데 하나예요. 광야에서 마귀의 시험을 받으실 때 세 번 모두 신명기로 대답하셨고, 가장 큰 계명을 물었을 때도 신명기로 대답하셨어요. 이천 년 넘게 암송된 쉐마, 예수님의 세 번 대답, “너희가 가장 작아서 택했다”는 고백, 곡식 떠는 소의 입, 왕이 베껴 쓴 율법과 모세와 같은 선지자, 나무에 달린 자, 그리고 아무도 모르는 모세의 무덤까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>신명기는 어떤 책일까?</h2>
+    <p>약속의 땅 문턱에서 다시 들려준 언약의 말씀</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>신명기는 모세오경의 마지막 책이에요. 교회는 전통적으로 모세가 기록했다고 받아 왔고, 모세의 죽음을 기록한 마지막 장은 다른 사람이 덧붙였다고 봐요. 때는 “마흔째 해 열한째 달 그 달 첫째 날”(1:3), 곳은 요단 강 동쪽 모압 평지예요. 모세는 세 번의 설교(1–4장, 5–26장, 27–30장)로 광야 사십 년을 돌아보고, 십계명과 율법을 다시 풀어 주고, 언약을 새롭게 맺어요. 그리고 여호수아에게 지도자 자리를 넘기고, 노래와 축복을 남기고, 느보 산에 올라 약속의 땅을 바라본 뒤 세상을 떠나요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>히브리어 이름은 1:1의 “데바림”, 곧 “말씀들”이에요. “신명기(申命記)”는 “거듭 알린 명령”이라는 뜻인데, 칠십인역 이름 “듀테로노미온(둘째 율법)”에서 왔어요. 그런데 이 이름은 17:18의 “이 율법서의 등사본(복사본)”을 “이 둘째 율법”으로 옮긴 데서 생겼어요.</div><div><b>반복되는 두 단어</b>“오늘”과 “기억하라”예요. 광야의 과거를 기억하되, 언약은 “오늘” 너희와 맺는 것이라고 거듭 말해요(5:3; 26:16-18). 하나님의 말씀은 늘 현재형이에요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 신명기의 구조가 고대 근동, 특히 히타이트의 왕과 속국 사이의 조약 형식(서문, 역사, 규정, 복과 저주)과 닮았다는 연구가 있어요. 또 유대 전승(탈무드)은 모세의 죽음을 다룬 마지막 여덟 절을 여호수아가 기록했다고 전해요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">신명기의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">모세의 고별 설교</div><div class="mini-b">책 거의 전체가 모세가 직접 백성에게 하는 말이에요. 설교로 된 책이에요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">십계명이 두 번째로</div><div class="mini-b">출애굽기 20장에 이어 5장에서 다시 나와요. 안식일 계명의 이유가 “애굽에서 종 되었음을 기억하라”로 달라져 있어요(5:15).</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">사랑의 책</div><div class="mini-b">하나님이 이스라엘을 사랑하셨고(7:8), 이스라엘도 하나님을 마음을 다해 사랑하라고 해요(6:5).</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">약한 사람을 기억하는 법</div><div class="mini-b">고아와 과부와 나그네가 거듭 나와요. 이유는 늘 같아요. “너도 애굽에서 종이었음을 기억하라.”</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">생명을 택하라는 초대</div><div class="mini-b">복과 저주, 생명과 죽음을 앞에 두고 “생명을 택하라”고 호소해요(30:19).</div></div></div></div>
+
+  <div class="target"><p>신명기의 중심에는 이 말씀이 있어요. <span class="hl">“이스라엘아 들으라 우리 하나님 여호와는 오직 유일한 여호와이시니 너는 마음을 다하고 뜻을 다하고 힘을 다하여 네 하나님 여호와를 사랑하라”</span>(6:4-5). 예수님은 가장 큰 계명이 무엇이냐는 질문에 이 말씀으로 대답하셨어요(막 12:29-30). 그리고 그 사랑이 먼저 어디서 왔는지를 요한은 이렇게 말해요. <mark>“하나님이 우리를 사랑하사 우리 죄를 위하여 화목 제물로 그 아들을 보내셨음이라”</mark>(요일 4:10).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>이천 년 넘게 암송된 쉐마부터 아무도 모르는 무덤까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>들으라, 쉐마</button><button class="chip" onclick="goTo('s2')"><b>2</b>세 번의 대답</button><button class="chip" onclick="goTo('s3')"><b>3</b>가장 적어서</button><button class="chip" onclick="goTo('s4')"><b>4</b>소의 입</button><button class="chip" onclick="goTo('s5')"><b>5</b>왕의 필사본</button><button class="chip" onclick="goTo('s6')"><b>6</b>나무에 달린 자</button><button class="chip" onclick="goTo('s7')"><b>7</b>모세의 무덤</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>이천 년 넘게 매일 아침저녁<br>암송된 여섯 단어</h2><div class="refs">신명기 6:4-9 · 마가복음 12:28-30 · 고린도전서 8:6</div></div></div>
+    <div class="scene-body"><p>“이스라엘아 들으라 우리 하나님 여호와는 오직 유일한 여호와이시니”(6:4). 히브리어로는 여섯 단어예요. 첫 단어를 따서 <span class="heb" data-tip="쉐마(shema) — ‘들으라’. 신명기 6:4의 첫 단어로, 유대인들이 아침저녁으로 암송하는 신앙고백 전체를 가리키는 이름이 되었다.">쉐마</span>라고 불러요. 유대인들은 지금도 아침저녁으로 이 말씀을 암송하고, 세상을 떠날 때 마지막으로 입에 담으려 하는 고백이기도 해요. 성경의 신앙은 “보라”보다 “들으라”로 시작해요. 하나님은 눈에 보이는 우상이 아니라 말씀으로 자신을 알리시는 분이거든요.</p><p>모세는 이 말씀을 어떻게 간직하라고 했을까요? “네 손목에 매어 기호를 삼으며 네 미간에 붙여 표로 삼고 또 네 집 문설주와 바깥 문에 기록할지니라”(6:8-9). 유대인들은 이 말씀을 글자 그대로 지켜서, 작은 가죽 상자에 말씀을 넣어 이마와 팔에 매고(테필린), 문설주에 작은 통을 붙였어요(메주자). 예수님 당시 바리새인들이 “경문 띠를 넓게” 했다는 것(마 23:5)도 바로 이 상자 이야기예요. 😄 1902년 애굽에서 구입된 “내쉬 파피루스”에는 십계명과 쉐마가 함께 적혀 있는데, 사해 사본이 발견되기 전까지 가장 오래된 히브리어 성경 조각이었어요.</p><p>한 서기관이 예수님께 가장 큰 계명을 묻자, 예수님은 바로 이 쉐마로 대답하셨어요. “첫째는 이것이니 이스라엘아 들으라 주 곧 우리 하나님은 유일한 주시라”(막 12:29). 그리고 바울은 쉐마의 “한 하나님, 한 주”를 이렇게 풀어요. “한 하나님 곧 아버지가 계시니… 또한 한 주 곧 예수 그리스도께서 계시니”(고전 8:6). 오직 한 분이신 하나님을 고백하던 쉐마 안에 <mark>주님이신 예수 그리스도</mark>가 계셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 히브리어 사본에서는 6:4의 첫 단어 마지막 글자와 마지막 단어 마지막 글자를 크게 써 왔어요. 두 글자를 이으면 “증인(에드)”이 된다는 유대 전통의 해석이 있어요. 내쉬 파피루스는 주전 2세기에서 1세기 무렵의 것으로 봐요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하루를 시작하고 마칠 때 “들으라” 하시는 하나님의 음성 앞에 서며, 한 분이신 주 예수 그리스도를 마음을 다해 사랑합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>광야에서 시험받으신 예수님의<br>세 번 대답은 모두 신명기였다</h2><div class="refs">신명기 6:13, 16 · 8:2-4 · 마태복음 4:1-11</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">이스라엘</div>광야 <b>사십 년</b>. 떡 때문에 원망하고, 맛사에서 하나님을 시험하고, 금송아지에 절했어요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">예수님</div>광야 <b>사십 일</b>. 세 번의 시험을 모두 말씀으로 이기셨어요.</div></div><p>침례를 받으신 예수님은 성령에 이끌려 광야로 가셔서 사십 일을 금식하세요. 그리고 마귀가 세 번 시험해요. 돌로 떡을 만들라, 성전 꼭대기에서 뛰어내리라, 내게 절하면 천하를 주겠다. 예수님은 세 번 모두 “기록되었으되”로 대답하세요. 그런데 그 세 구절이 전부 신명기 6–8장에서 나왔어요.</p><p>첫째 대답은 “사람이 떡으로만 살 것이 아니요 하나님의 입으로부터 나오는 모든 말씀으로 살 것이라”(마 4:4, 신 8:3)예요. 모세가 만나를 두고 한 말이에요. 둘째는 “주 너의 하나님을 시험하지 말라”(마 4:7, 신 6:16)인데, 원래 문장은 “너희가 맛사에서 시험한 것 같이” 시험하지 말라예요. 물이 없다고 따지던 그 광야 사건이지요. 셋째는 “주 너의 하나님께 경배하고 다만 그를 섬기라”(마 4:10, 신 6:13)예요.</p><p>우연이 아니에요. 모세는 신명기 8:2에서 하나님이 이스라엘을 광야 사십 년 동안 “낮추시며 너를 시험하사” 그 마음을 알려 하셨다고 말해요. 이스라엘은 그 시험에서 번번이 넘어졌어요. 이제 “하나님의 아들”이신 예수님이 같은 광야에 들어가셔서, 이스라엘이 넘어졌던 바로 그 자리에서 이기셨어요. 그것도 이스라엘에게 주셨던 말씀으로요. 신명기는 모세의 설교였는데, <mark>그 설교를 온전히 살아 내신 분은 예수님</mark>이셨어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>시험 앞에서 내 힘이 아니라 광야에서 이기신 예수님을 의지하며, 그분이 붙드신 말씀을 오늘 내 입에 둡니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>“너희가 커서가 아니라 가장 작아서,<br>착해서가 아니라 사랑해서”</h2><div class="refs">신명기 7:6-8 · 9:4-6 · 8:4 · 요한일서 4:10, 19</div></div></div>
+    <div class="scene-body"><p>약속의 땅을 앞둔 백성은 이렇게 생각하기 쉬웠어요. “우리가 뭔가 대단하니까 하나님이 우리를 고르셨겠지.” 모세는 그 생각을 두 번 깨뜨려요. 첫 번째는 크기예요. “여호와께서 너희를 기뻐하시고 너희를 택하심은 너희가 다른 민족보다 수효가 많기 때문이 아니니라 너희는 오히려 모든 민족 중에 가장 적으니라”(7:7). 😄 이유를 설명하다가 “사실 너희가 제일 작다”고 말해 버리는 거예요.</p><p>두 번째는 착함이에요. “네가 알 것은 네 하나님 여호와께서 네게 이 아름다운 땅을 기업으로 주신 것이 네 공의로 말미암음이 아니니라 너는 목이 곧은 백성이니라”(9:6). 크지도 않고, 착하지도 않았어요. 그러면 도대체 왜 택하셨을까요? 모세의 대답은 단순해요. “여호와께서 다만 너희를 사랑하심으로 말미암아, 또는 너희의 조상들에게 하신 맹세를 지키려 하심으로”(7:8). 사랑하시니까 사랑하신 거예요. 이유는 하나님 쪽에 있었어요.</p><p>그 사랑은 광야에서 아주 작은 곳까지 미쳤어요. “이 사십 년 동안에 네 의복이 해어지지 아니하였고 네 발이 부르트지 아니하였느니라”(8:4). 사십 년 동안 신발 한 켤레로 걸어도 발이 부르트지 않게 하신 하나님이세요. 요한은 이 사랑의 순서를 이렇게 말해요. “사랑은 여기 있으니 우리가 하나님을 사랑한 것이 아니요 하나님이 우리를 사랑하사”(요일 4:10). 그리고 <mark>“우리가 사랑함은 그가 먼저 우리를 사랑하셨음이라”</mark>(요일 4:19).</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 커서도 착해서도 아니라 오직 사랑하셔서 나를 부르신 하나님 앞에서, 자랑 대신 감사를 드립니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>곡식 떠는 소의 입까지 챙긴 법,<br>바울은 그 소에게서 사역자를 보았다</h2><div class="refs">신명기 22:6-7 · 23:15-16 · 24:19-22 · 25:4 · 고린도전서 9:9-10 · 마태복음 10:29-31</div></div></div>
+    <div class="scene-body"><p>신명기 후반부에는 뜻밖에 작은 규정들이 가득해요. 길에서 새 둥지를 보면 어미 새와 새끼를 함께 잡지 말라(22:6-7). 추수할 때 밭에 떨어진 곡식 단을 다시 주우러 가지 말고 나그네와 고아와 과부를 위해 남겨 두라(24:19). 그리고 이런 규정도 있어요. “곡식을 떠는 소에게 망을 씌우지 말지니라”(25:4). 하루 종일 곡식을 밟는 소가 중간중간 곡식을 주워 먹지 못하게 입마개를 씌우지 말라는 거예요. 소의 간식까지 챙기신 거지요. 😄</p><p>도망친 종에 대한 규정은 더 놀라워요. “종이 그의 주인을 피하여 네게로 도망하거든 너는 그의 주인에게 돌려주지 말고”(23:15). 비슷한 시대의 함무라비 법전은 도망친 종을 숨겨 준 사람을 사형에 처한다고 했어요. 신명기는 반대로, 도망친 종이 원하는 곳에서 살게 하고 압제하지 말라고 해요(23:16). 이 모든 규정 뒤에는 같은 이유가 붙어 있어요. “너는 애굽 땅에서 종 되었던 것을 기억하라”(24:22).</p><p>천몇백 년 뒤 바울이 이 소를 다시 불러내요. 고린도 교회에 복음 전하는 사람이 교회의 도움을 받는 게 마땅하다고 말하면서요. “모세의 율법에 곡식을 밟아 떠는 소에게 망을 씌우지 말라 기록하였으니 하나님께서 어찌 소들을 위하여 염려하심이냐 오로지 우리를 위하여 말씀하심이 아니냐”(고전 9:9-10). 소를 먹이시는 하나님이 사람을 더 돌보신다는 거예요. 예수님도 같은 논리로 말씀하셨어요. 참새 한 마리도 아버지께서 허락하지 않으시면 땅에 떨어지지 않으니 <mark>“너희는 많은 참새보다 귀하니라”</mark>(마 10:29-31).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 함무라비 법전(주전 18세기 무렵)은 16조에서 도망친 노예를 숨겨 준 사람을 사형에 처한다고 규정해요. 신명기 23:15의 “종”이 다른 나라에서 도망쳐 온 종을 가리키는지에 대해서는 해석이 나뉘어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>소의 입과 참새 한 마리까지 돌보시는 하나님이 나를 더 귀히 여기심을 믿고, 내 곁의 약한 사람을 그 눈으로 봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>왕에게 내린 숙제는 “율법을 직접 베껴 쓰라”,<br>그리고 모세와 같은 선지자</h2><div class="refs">신명기 17:14-20 · 18:15-19 · 34:10 · 사도행전 3:22 · 마태복음 17:5</div></div></div>
+    <div class="scene-body"><p>신명기 17장은 이스라엘에 훗날 왕이 생길 것을 내다보고 왕이 지킬 규칙을 줘요. 말을 많이 두지 말고, 아내를 많이 두지 말고, 은금을 많이 쌓지 말라(17:16-17). 그리고 숙제가 하나 있어요. “그가 왕위에 오르거든 이 율법서의 등사본을 레위 사람 제사장 앞에서 책에 기록하여”(17:18). 왕이 직접 율법을 베껴 쓰고, 평생 곁에 두고 날마다 읽으라는 거예요. 😄 헬라어 번역자들이 이 “등사본(복사본)”을 “둘째 율법(듀테로노미온)”으로 옮기는 바람에, 이 책의 이름이 “신명기”가 되었어요.</p><p>바로 다음 장에는 더 큰 약속이 나와요. “네 하나님 여호와께서 너희 가운데 너희 형제 중에서 나와 같은 선지자 하나를 너를 위하여 일으키시리니 너희는 그의 말을 들을지니라”(18:15). 그런데 신명기의 마지막 장은 이렇게 말해요. “그 후에는 이스라엘에 모세와 같은 선지자가 일어나지 못하였나니”(34:10). 책이 기다림으로 끝나는 거예요. 그래서 예수님 시대 사람들은 침례 요한에게 “네가 그 선지자냐”(요 1:21) 하고 물었어요.</p><p>베드로는 성전 문 앞에서 이 약속을 예수님께 적용해요(행 3:22). 그리고 변화산에서 모세와 엘리야가 예수님과 이야기할 때, 구름 속에서 음성이 들렸어요. “이는 내 사랑하는 아들이요… <mark>너희는 그의 말을 들으라</mark>”(마 17:5). 신명기 18:15의 “그의 말을 들을지니라”가 하늘에서 다시 울린 거예요. 모세가 기다리던 그 선지자, 말씀을 베껴 쓰는 왕이 아니라 말씀 자체이신 왕이 오셨어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>말씀을 곁에 두고 날마다 읽으라는 왕의 숙제를 내 숙제로 받고, 모세보다 크신 예수님의 말씀을 듣습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>“나무에 달린 자는 저주를 받았다”,<br>그 저주를 대신 받으신 분</h2><div class="refs">신명기 21:22-23 · 요한복음 19:31 · 사도행전 5:30 · 갈라디아서 3:13</div></div></div>
+    <div class="scene-body"><p>신명기에 이런 규정이 있어요. 죽을 죄를 지어 사형당한 사람의 시체를 나무에 달았을 경우, “그 시체를 나무 위에 밤새도록 두지 말고 그 날에 장사하여”라. 그 이유가 이어져요. “나무에 달린 자는 하나님께 저주를 받았음이니라”(21:23). 나무에 달렸다는 것 자체가 하나님과 사람 앞에서 가장 부끄럽고 버림받은 표시였어요.</p><p>그래서 초대교회가 “십자가에 달린 메시아”를 전했을 때 유대인들에게는 말이 안 되는 이야기였어요. 메시아가 어떻게 저주받은 자리에 달릴 수 있냐는 거예요. 바울이 “유대인에게는 거리끼는 것”(고전 1:23)이라고 한 이유가 여기 있어요. 베드로도 산헤드린 앞에서 일부러 이 표현을 썼어요. “너희가 나무에 달아 죽인 예수를 하나님이 살리시고”(행 5:30).</p><p>그런데 바울은 바로 이 신명기 구절에서 복음의 핵심을 찾아내요. “그리스도께서 우리를 위하여 저주를 받은 바 되사 율법의 저주에서 우리를 속량하셨으니 기록된 바 나무에 달린 자마다 저주 아래에 있는 자라 하였음이라”(갈 3:13). 예수님이 저주받은 자리에 달리신 것은 그분의 죄 때문이 아니라 우리의 저주를 대신 지시려고였어요. 요한복음은 예수님이 돌아가신 날, 유대인들이 안식일 전에 시체를 치워 달라고 요청했다고 기록해요(요 19:31). 신명기의 규정이 골고다에서 그대로 지켜진 거예요. <mark>저주의 나무가 우리에게는 생명의 나무</mark>가 되었어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 신명기 21:22는 원래 이미 처형된 사람의 시체를 나무에 달아 보이는 관습을 다뤄요. 사해 사본 가운데 “성전 두루마리”는 이 구절을 산 채로 나무에 매다는 처형과 연결해 읽는데, 이는 당시 일부 유대인들의 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 받아야 할 저주를 나무 위에서 대신 받으신 예수님을 기억하며, 더 이상 정죄 아래 살지 않습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>하나님이 직접 묻으신 모세,<br>그리고 변화산에서 밟은 약속의 땅</h2><div class="refs">신명기 32:48-52 · 34:1-12 · 유다서 1:9 · 마태복음 17:1-3</div></div></div>
+    <div class="scene-body"><p>설교를 마친 모세는 느보 산 비스가 꼭대기에 올라가요. 하나님이 약속의 땅을 북쪽 끝부터 남쪽 끝까지 보여 주세요. 그리고 말씀하세요. “내가 네 눈으로 보게 하였거니와 너는 그리로 건너가지 못하리라”(34:4). 므리바에서 반석을 두 번 친 일 때문이었어요(32:51, 민 20:12). 사십 년을 인도한 지도자가 문턱에서 멈춰 선 거예요. 그래도 성경은 그가 백이십 세에 “눈이 흐리지 아니하였고 기력이 쇠하지 아니하였더라”(34:7)고 적어요.</p><p>그다음 문장이 신비로워요. “모압 땅에 있는 골짜기에 장사되었고 오늘까지 그의 묻힌 곳을 아는 자가 없느니라”(34:6). 히브리어로 “장사되었고”는 “그가 그를 묻었다”예요. 문맥상 하나님이 직접 모세를 장사하셨다고 읽는 해석이 많아요. 무덤이 알려지지 않은 덕분에, 모세의 무덤이 순례지나 숭배의 장소가 될 일도 없었어요. 유다서에는 천사장 미가엘이 모세의 시체를 두고 마귀와 다투었다는 이야기도 나와요(유 1:9).</p><p>그런데 이야기는 거기서 끝나지 않아요. 천몇백 년 뒤, 예수님이 제자 세 명을 데리고 높은 산에 오르셨을 때 모세와 엘리야가 나타나 예수님과 이야기해요(마 17:3). 살아서는 건너지 못했던 모세가, 마침내 약속의 땅 한가운데 산에 선 거예요. 😄 그것도 약속의 진짜 주인이신 분 곁에요. 누가복음은 그때 나눈 대화가 예수님이 예루살렘에서 이루실 “별세”(엑소도스)에 관한 것이었다고 말해요(눅 9:31). 모세가 이끌지 못한 마지막 출애굽을 <mark>예수 그리스도께서 이루셨어요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 34:6의 “그가 그를 장사하였다”를 “사람들이 그를 장사하였다”는 뜻으로 읽을 수도 있다는 견해가 있어요. 변화산의 위치(다볼 산, 헤르몬 산 등)는 확실하지 않지만, 어느 쪽이든 약속의 땅 안이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 인생에서 건너지 못한 강이 있더라도, 모세를 끝내 약속의 땅에 세우신 하나님과 참 출애굽을 이루신 예수님을 신뢰합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">강을 건너지 못한 설교자의 말씀이<br>강을 건널 사람들의 양식이 되었다</div>
+    <p>모세는 요단 강을 건너지 못했어요. 하지만 그의 마지막 설교는 강을 건넜어요. 여호수아가 그 말씀을 붙들고 땅에 들어갔고, 요시야 왕은 성전에서 발견된 율법책을 읽고 나라를 새롭게 했고, 예수님은 광야에서 그 말씀으로 이기셨어요. 모세는 설교 끝에 이렇게 호소했어요. “내가 생명과 사망과 복과 저주를 네 앞에 두었은즉 너와 네 자손이 살기 위하여 생명을 택하고”(30:19).</p><p>그리고 모세는 그 말씀이 멀리 있지 않다고 말했어요. “오직 그 말씀이 네게 매우 가까워서 네 입에 있으며 네 마음에 있은즉”(30:14). 바울은 이 구절을 그대로 가져와 이렇게 풀어요. “말씀이 네게 가까워 네 입에 있으며 네 마음에 있다 하였으니 곧 우리가 전파하는 믿음의 말씀이라”(롬 10:8). 하늘에 올라가지 않아도, 바다를 건너지 않아도 되는 말씀, <mark>우리 곁에 오신 말씀이 예수 그리스도</mark>세요.</p>
+    <div class="q">“이스라엘아 들으라<br>우리 하나님 여호와는<br>오직 유일한 여호와이시니” (6:4)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

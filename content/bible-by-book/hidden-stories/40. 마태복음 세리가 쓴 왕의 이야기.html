@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>마태복음, 세리가 쓴 왕의 이야기 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="돈을 세던 손으로 하늘나라를 기록한 사람, 그가 소개하는 약속의 왕 예수">
+<meta property="og:title" content="마태복음, 세리가 쓴 왕의 이야기">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 08</div>
+  <h1>마태복음,<br><em>세리가 쓴</em><br>왕의 이야기</h1>
+  <p class="sub">돈을 세던 손으로 하늘나라를 기록한 사람,<br>그가 소개하는 약속의 왕 예수</p>
+  <div class="ref">마태복음 1–28장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>신약성경을 처음부터 읽겠다고 마음먹은 분들이 가장 먼저 만나는 벽이 있어요. 바로 마태복음 1장의 족보예요. "누가 누구를 낳고, 누가 누구를 낳고…" 여기서 조용히 성경을 덮은 분들, 꽤 많으실 거예요. 😄</p>
+    <p>그런데 마태복음은 그 족보부터 이미 <mark>숨은 이야기로 가득한 책</mark>이에요. 누가 이름을 올렸는지, 누가 빠졌는지, 어떤 문장이 갑자기 바뀌는지를 보면, 마태가 첫 장부터 <span class="hl">예수님이 어떤 왕이신지</span>를 조용히 말하고 있다는 걸 알게 돼요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>마태복음은 어떤 책일까?</h2>
+    <p>구약의 약속과 신약을 잇는 다리</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>마태복음 본문에는 저자 이름이 적혀 있지 않지만, 초대교회는 처음부터 이 복음서를 <mark>예수님의 열두 제자 중 한 사람, 세리였던 마태</mark>의 책으로 받아들였어요. 기록 시기는 학자들 사이에 의견이 나뉘지만 대체로 1세기 후반으로 봐요. 구약을 잘 아는 유대인 성도들을 많이 염두에 두고 쓴 책이라, 구약 인용과 암시가 신약 어느 책보다 촘촘해요. 그래서 신약의 맨 앞자리에 놓여 <span class="hl">구약과 신약을 잇는 다리</span> 역할을 해요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>마태는 히브리 이름 "맛디디야"에서 온 말로, "여호와의 선물"이라는 뜻이에요. 마가와 누가는 그를 "레위"라고도 불러요(막 2:14, 눅 5:27).</div><div><b>다섯 편의 긴 설교</b>예수님의 가르침이 다섯 덩어리로 묶여 있고, 매번 "예수께서 이 말씀을 마치시매" 같은 문장으로 끝나요(7:28, 11:1, 13:53, 19:1, 26:1).</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 2세기 초 파피아스는 "마태가 히브리 말로 말씀들을 모아 기록했다"고 전했어요(유세비우스 『교회사』 3.39). 이 말이 지금의 마태복음을 가리키는지는 학자들 사이에 논의가 있어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">마태복음의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">"이루려 하심이라"</div><div class="mini-b">"이는 선지자로 하신 말씀을 이루려 하심이라"는 문장이 열 번 정도 되풀이돼요. 예수님은 구약이 기다려 온 바로 그분이라는 거예요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">"천국"이라는 말</div><div class="mini-b">다른 복음서가 "하나님의 나라"라고 할 때, 마태는 주로 "천국(하늘나라)"이라고 써요. 서른 번이 넘게 나오는데, 이 표현은 마태복음에만 있어요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">다섯 편의 설교</div><div class="mini-b">산상수훈(5–7장), 파송 설교(10장), 천국 비유(13장), 공동체 설교(18장), 마지막 때 설교(24–25장). 가르치시는 왕의 모습이 선명해요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">마태복음에만 있는 장면들</div><div class="mini-b">동방박사의 방문, 물 위를 걸은 베드로, 물고기 입의 동전, 양과 염소의 비유, 빌라도 아내의 꿈. 모두 마태만 기록했어요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">"교회"라는 단어</div><div class="mini-b">네 복음서 가운데 "교회"(에클레시아)라는 말이 나오는 곳은 마태복음뿐이에요(16:18, 18:17).</div></div></div></div>
+
+  <div class="target"><p>마태복음의 핵심은 한 문장이에요. <span class="hl">예수님은 구약이 약속한 다윗의 자손, 참 왕이시고, 그 왕은 우리와 함께 계시는 하나님이시다.</span> 책은 "아브라함과 다윗의 자손 예수 그리스도"(1:1)로 시작해서, "내가 세상 끝날까지 너희와 항상 함께 있으리라"(28:20)로 끝나요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>족보부터 마지막 명령까지, 마태가 숨겨 둔 이야기들</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>족보의 네 여인</button><button class="chip" onclick="goTo('s2')"><b>2</b>길을 아는 사람들</button><button class="chip" onclick="goTo('s3')"><b>3</b>새 모세</button><button class="chip" onclick="goTo('s4')"><b>4</b>세리의 동전 이야기</button><button class="chip" onclick="goTo('s5')"><b>5</b>여섯 번의 꿈</button><button class="chip" onclick="goTo('s6')"><b>6</b>하루 세 번의 기도</button><button class="chip" onclick="goTo('s7')"><b>7</b>임마누엘</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>왕의 족보에 이름을 올린<br>뜻밖의 네 여인</h2><div class="refs">마태복음 1:1-17</div></div></div>
+    <div class="scene-body"><p>고대의 족보는 보통 아버지에서 아들로만 이어져요. 그런데 마태의 족보에는 <mark>여인 네 명의 이름</mark>이 끼어 있어요. 다말(1:3), 라합(1:5), 룻(1:5), 그리고 이름 대신 "우리야의 아내"(1:6)로 불린 밧세바예요.</p>
+        <p>이 네 사람, 하나같이 사연이 있어요. 다말은 시아버지 유다와 얽힌 부끄러운 이야기의 주인공이고, 라합은 여리고의 기생이었고, 룻은 이스라엘이 꺼리던 모압 여인이었고, 밧세바는 다윗의 가장 큰 죄와 연결된 사람이에요. 게다가 대부분 <span class="hl">이방 사람이거나 이방 사람과 얽힌 여인들</span>이에요. 특히 라합이 보아스의 어머니라는 사실은 구약에도 없고 마태복음에만 나와요.</p>
+        <p>그리고 다섯 번째 여인, 마리아에 이르면 문장이 갑자기 바뀌어요. 계속 "누가 누구를 낳고"로 이어지다가, 16절에서는 "요셉이 예수를 낳고"가 아니라 <mark>"마리아에게서 그리스도라 칭하는 예수가 나시니라"</mark>라고 써요. 족보의 문법이 여기서 멈추는 거예요. 이분은 사람의 계보로만 설명할 수 없는 분이라는 뜻이죠.</p>
+        <p>왕의 족보가 흠 없는 영웅들의 명단이 아니라, <span class="hl">은혜로 이름이 올라간 사람들의 명단</span>이라는 걸 마태는 첫 장부터 보여 줘요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 마태는 족보를 14대씩 세 묶음으로 나눴어요(1:17). 히브리어 "다윗"(דוד)의 글자를 숫자로 바꾸면 4+6+4=14가 된다는 점에서, 다윗의 왕통을 강조하려는 의도로 보는 학자들이 있지만 확정된 해석은 아니에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>부끄러운 과거가 있는 나의 이름도 예수님의 은혜 안에서 하나님 나라의 명단에 올라 있음을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>길을 아는 사람들은 안 가고,<br>모르는 사람들은 찾아왔다</h2><div class="refs">마태복음 2:1-12 · 27:54 · 28:19</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">예루살렘의 성경 전문가들</div>대제사장과 서기관들은 "베들레헴"이라고 정답을 바로 말했어요(2:4-6). 그러나 아무도 가지 않았어요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">동방에서 온 박사들</div>성경도 잘 모르는 이방인들이 별 하나 보고 먼 길을 와서 엎드려 경배했어요(2:11).</div></div><p>동방박사 이야기는 성탄절마다 듣는 익숙한 이야기예요. 그런데 이 장면의 진짜 아이러니는 따로 있어요. 헤롯이 "그리스도가 어디서 나겠느냐" 묻자, 성경 전문가들은 미가서 5:2를 인용하며 <mark>정확한 주소를 알려 줘요.</mark> 베들레헴은 예루살렘에서 멀지 않은 거리예요. 그런데 그들 중 누구도 가 보지 않았어요.</p>
+        <p>하나 더요. 우리는 흔히 박사가 "세 명"이라고 생각하는데, 성경에는 몇 명인지 나오지 않아요. 선물이 황금, 유향, 몰약 세 가지라서 세 명으로 굳어진 거예요. 😄 이름까지 붙은 전통은 훨씬 뒤에 생겼어요.</p>
+        <p>마태복음은 이렇게 <span class="hl">이방인의 경배로 시작해서</span>, 십자가 앞에서 "이는 진실로 하나님의 아들이었도다"(27:54)라고 고백하는 로마 백부장을 지나, "모든 민족을 제자로 삼아"(28:19)라는 명령으로 끝나요. 유대인을 위해 쓴 복음서가 처음부터 온 세상을 향해 문을 열어 두고 있었던 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>말씀을 아는 것에서 멈추지 않고, 아는 그 길을 따라 예수님께 직접 나아가 엎드립니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>예수님은 모세의 길을<br>다시 걸으셨다</h2><div class="refs">마태복음 2:13-23 · 3:13-4:2 · 5:1</div></div></div>
+    <div class="scene-body"><p>마태복음 앞부분을 출애굽기와 나란히 놓으면 신기한 일이 벌어져요. <mark>예수님의 어린 시절이 모세의 삶과 겹쳐 보이거든요.</mark></p>
+        <div class="wp">
+          <div><span class="pl">왕의 학살</span> — 바로가 히브리 사내아이를 죽이라 했듯(출 1:22), 헤롯은 베들레헴의 두 살 아래 사내아이를 죽였어요(2:16).</div>
+          <div><span class="pl">애굽에서 부르심</span> — "애굽으로부터 내 아들을 불렀다"(2:15, 호 11:1). 원래 이스라엘의 출애굽을 말하던 구절이에요.</div>
+          <div><span class="pl">같은 말씀</span> — "아기의 목숨을 찾던 자들이 죽었느니라"(2:20)는 하나님이 모세에게 하신 말씀(출 4:19)과 거의 똑같아요.</div>
+          <div><span class="pl">물과 광야</span> — 이스라엘이 홍해를 건너 광야로 갔듯, 예수님은 요단강에서 침례를 받으시고 광야로 가셨어요.</div>
+          <div><span class="pl">사십 주야</span> — 마태만 "사십 일을 밤낮으로" 금식하셨다고 써요(4:2). 모세가 시내산에서 보낸 "사십 주 사십 야"(출 34:28)를 떠올리게 하죠.</div>
+          <div><span class="pl">산 위의 말씀</span> — 모세가 산에서 율법을 받았듯, 예수님은 "산에 올라가 앉으시니"(5:1) 가르치기 시작하셨어요.</div>
+        </div>
+        <p>그런데 차이가 있어요. 모세는 산에서 하나님의 말씀을 <span class="hl">받아서</span> 전했지만, 예수님은 산에서 "… 너희가 들었으나 <mark>나는 너희에게 이르노니</mark>"(5:21-22)라고 직접 말씀하세요. 모세보다 크신 분, 율법을 완전하게 하러 오신 분(5:17)이라는 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>광야 사십 년 동안 실패한 이스라엘의 길을 끝까지 순종으로 걸으신 예수님이 나의 구원자이심을 믿습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>세리만 기억한<br>동전 이야기</h2><div class="refs">마태복음 9:9 · 10:3 · 17:24-27</div></div></div>
+    <div class="scene-body"><p>마태는 세관에 앉아 있다가 예수님의 "나를 따르라" 한마디에 일어났어요(9:9). 당시 세리는 로마를 위해 동족에게 세금을 걷던 사람이라 <mark>배신자, 죄인 취급</mark>을 받았어요. 그런데 열두 제자 명단에서 다른 복음서는 그냥 "마태"라고 쓰는데, 마태복음만 굳이 <span class="hl">"세리 마태"</span>라고 적어요(10:3). 자기 부끄러운 과거를 스스로 달아 둔 거예요.</p>
+        <p>그리고 세리 출신답게(?) 마태복음에만 있는 돈 이야기가 있어요. 가버나움에서 성전세 걷는 사람들이 베드로에게 "너의 선생은 반 세겔을 내지 아니하느냐" 물어요(17:24). 예수님은 베드로에게 바다에 낚시를 던지라고 하시고, <mark>처음 올라오는 물고기 입에서 한 세겔을 꺼내</mark> "나와 너를 위하여 주라"고 하세요(17:27). 한 세겔은 딱 두 사람 몫의 성전세예요. 세금 계산이 정확하죠. 😄</p>
+        <p>평생 남의 돈을 세며 살던 사람이, 성전의 주인이신 예수님이 제자의 몫까지 대신 내 주시는 장면을 기록했어요. 마태는 이 장면을 쓰며 <span class="hl">자기 빚을 대신 갚아 주신 예수님</span>을 떠올리지 않았을까요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 감추고 싶은 과거까지 아시고도 "나를 따르라" 부르신 예수님의 은혜를 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>여섯 번의 꿈,<br>마지막 꿈은 무시당했다</h2><div class="refs">마태복음 1:20 · 2:12-22 · 27:19-24</div></div></div>
+    <div class="scene-body"><p>신약에서 "꿈"(<span class="heb" data-tip="오나르(onar) — 꿈. 신약성경 전체에서 이 단어는 마태복음에만 나오며, 모두 여섯 번 쓰였다.">오나르</span>)이라는 단어는 <mark>마태복음에만, 딱 여섯 번</mark> 나와요. 그리고 그 배치가 아주 절묘해요.</p>
+        <div class="steps">
+          <div><b>1</b>요셉 — 마리아를 아내로 데려오라(1:20)</div>
+          <div><b>2</b>박사들 — 헤롯에게 돌아가지 말라(2:12)</div>
+          <div><b>3</b>요셉 — 아기를 데리고 애굽으로 피하라(2:13)</div>
+          <div><b>4</b>요셉 — 이스라엘 땅으로 돌아가라(2:19-20)</div>
+          <div><b>5</b>요셉 — 갈릴리로 가라(2:22)</div>
+          <div class="last"><b>6</b>빌라도의 아내 — "저 옳은 사람에게 아무 상관도 하지 마옵소서"(27:19)</div>
+        </div>
+        <p>처음 다섯 번의 꿈은 모두 <span class="hl">아기 예수님을 지키는 꿈</span>이었고, 꿈을 꾼 사람들은 그대로 순종했어요. 그런데 여섯 번째 꿈은 예수님의 재판 한가운데, 이방인 여인에게 주어져요. 그녀는 예수님을 "옳은 사람"이라고 불러요.</p>
+        <p>하지만 이번에는 아무도 듣지 않았어요. 빌라도는 물을 가져다가 손을 씻으며 "이 사람의 피에 대하여 나는 무죄하니"라고 말해요(27:24). 이 장면도 마태복음에만 있어요. 그런데 <mark>손을 씻는다고 책임이 씻기지는 않았어요.</mark> 그리고 놀랍게도, 사람들이 무시한 그 길 위에서 하나님은 온 세상을 구원하는 일을 이루셨어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님이 말씀하실 때 요셉처럼 순종하고, 빌라도처럼 손만 씻으며 책임을 피하지 않습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>초대교회가 하루 세 번<br>드린 기도</h2><div class="refs">마태복음 6:5-13 · 『디다케』 8장</div></div></div>
+    <div class="scene-body"><p>1873년, 콘스탄티노플의 한 도서관에서 정교회 성직자 브리엔니오스가 오래된 사본 하나를 찾아내요. 그 안에 들어 있던 문서가 10년 뒤인 1883년에 세상에 공개됐어요. 『디다케』, 곧 <mark>"열두 사도의 가르침"</mark>이라는 짧은 책이에요. 초대교회가 새신자를 어떻게 가르치고, 침례와 성찬을 어떻게 했는지 보여 주는 귀한 기록이에요.</p>
+        <p>이 책 8장에 재밌는 말이 나와요. "위선자들처럼 기도하지 말고, 주님이 복음에서 명하신 대로 이렇게 기도하라." 그리고 <span class="hl">마태복음의 주기도문</span>을 그대로 옮겨 놓은 뒤 이렇게 덧붙여요. <mark>"하루에 세 번 이렇게 기도하라."</mark></p>
+        <p>같은 장에는 이런 말도 있어요. 위선자들은 월요일과 목요일에 금식하니, 너희는 수요일과 금요일에 금식하라고요. 😄 마태복음 6장에서 예수님이 "외식하는 자와 같이 되지 말라"고 하신 말씀을, 초대교회 성도들은 요일까지 바꿔 가며 진지하게 붙잡았던 거예요. 그만큼 마태복음은 초대교회가 <span class="hl">가장 많이 읽고, 외우고, 가르친 복음서</span>였어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 『디다케』의 기록 시기는 1세기 말에서 2세기 초 사이로 보는 견해가 많지만, 정확한 연대는 학자들 사이에 논의가 있어요. 또 『디다케』의 주기도문 끝에는 "권세와 영광이 영원히 아버지께 있사옵나이다"라는 송영이 붙어 있는데, 마태복음의 가장 오래된 사본들 가운데는 이 송영이 없는 것들도 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>습관처럼 외우던 주기도문을, 오늘은 한 구절 한 구절 아버지께 드리는 진짜 기도로 드립니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>"임마누엘"로 시작해서<br>"항상 함께"로 끝나다</h2><div class="refs">마태복음 1:23 · 18:20 · 28:16-20</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">책의 시작 (1:23)</div>"그의 이름은 임마누엘이라 하리라 … 하나님이 우리와 함께 계시다 함이라"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">책의 마지막 (28:20)</div>"볼지어다 내가 세상 끝날까지 너희와 항상 함께 있으리라"</div></div><p>마태복음은 <mark>"함께"라는 말로 책 전체를 감싸고</mark> 있어요. 1장에서 천사가 알려 준 이름 임마누엘, "하나님이 우리와 함께 계시다". 그리고 28장 마지막 절, 예수님이 직접 하신 약속 "내가 너희와 항상 함께 있으리라". 한가운데에도 있어요. "두세 사람이 내 이름으로 모인 곳에는 나도 그들 중에 있느니라"(18:20).</p>
+        <p>그런데 이 마지막 장면에 숨은 한 줄이 있어요. 부활하신 예수님을 갈릴리 산에서 뵌 제자들이 경배하는데, <span class="hl">"아직도 의심하는 자들이 있더라"</span>(28:17). 예수님은 그들을 골라내지 않으셨어요. 오히려 그 사람들까지 포함해서 "모든 민족을 제자로 삼아 … 침례를 베풀라"고 보내셨어요.</p>
+        <p>완벽한 믿음을 가진 사람들이 아니라, <mark>흔들리는 제자들에게 "항상 함께 있으리라"</mark>는 약속이 주어진 거예요. 이 약속은 그들의 믿음이 아니라, 임마누엘이신 예수님 자신에게 달려 있으니까요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>믿음이 흔들리는 날에도, 세상 끝날까지 나와 함께하시겠다는 예수님의 약속을 붙잡습니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">족보로 시작한 책이<br>"모든 민족"으로 끝난다</div>
+    <p>마태복음은 아브라함과 다윗의 자손으로 오신 왕의 이야기예요. 그 왕의 족보에는 기생과 이방 여인이 있었고, 그 왕의 제자 중에는 세리가 있었고, 그 왕의 마지막 명령을 받은 사람 중에는 의심하던 제자들도 있었어요.</p><p>세리 마태는 그 왕을 만나 세관을 떠났고, 평생 하나의 이야기를 전했어요. 하나님이 우리와 함께 계신다는 이야기요. 그 이야기는 지금 이 페이지를 읽는 우리에게까지 이어지고 있어요.</p>
+    <div class="q">"볼지어다 내가 세상 끝날까지<br>너희와 항상 함께 있으리라" (28:20)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

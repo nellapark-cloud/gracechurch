@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>느헤미야, 왕의 술잔을 들던 사람이 성벽을 쌓은 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="페르시아 왕의 술 맡은 관원이 52일 만에 예루살렘 성벽을 쌓은 이야기, 느헤미야에 숨은 이야기">
+<meta property="og:title" content="느헤미야, 왕의 술잔을 들던 사람이 성벽을 쌓은 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 48</div>
+  <h1>느헤미야,<br>왕의 <em>술잔</em>을 들던 사람이<br>성벽을 쌓은 책</h1>
+  <p class="sub">넉 달을 기도하고 한순간 화살기도를 쏜 사람,<br>52일 만에 무너진 성벽을 다시 세우다</p>
+  <div class="ref">느헤미야 1–13장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>느헤미야는 페르시아 왕궁에서 잘나가던 사람이었어요. 왕의 술잔을 맡은 관원, 오늘로 치면 왕의 최측근 비서실장쯤 돼요. 그런 사람이 무너진 고향 성벽 소식을 듣고 주저앉아 울어요. 그리고 넉 달을 기도한 끝에 왕 앞에서 입을 열고, 예루살렘으로 가서 52일 만에 성벽을 다시 쌓아요.</p><p>느헤미야서는 1인칭으로 쓴 회고록이라 생생해요. 😄 조롱하는 적들 앞에서 이를 악물고, 빚에 시달리는 백성 편에 서고, 마지막에는 말 안 듣는 사람들 머리털까지 뽑아요. 그리고 기도할 때마다 "내 하나님이여 나를 기억하소서"라고 덧붙여요. 화살기도, 밤의 순찰, 여우 한 마리, 성벽 명단, 빚과 이자, 수문 앞의 말씀 집회, 그리고 남의 머리털을 뽑은 총독까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>느헤미야는 어떤 책일까?</h2>
+    <p>성벽을 쌓고 공동체를 다시 세운 지도자의 회고록</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>느헤미야는 페르시아 왕 아닥사스다 1세의 술 맡은 관원이었어요. 아닥사스다 20년(주전 445년), 예루살렘 성벽이 무너지고 문들이 불탔다는 소식을 듣고 유다 총독으로 파견되어 성벽 재건을 이끌어요. 에스라보다 13년쯤 늦게 왔고, 두 사람은 함께 백성을 말씀으로 세웠어요(8장). 느헤미야는 12년 동안 총독으로 일한 뒤 페르시아로 돌아갔다가 다시 와서 두 번째 개혁을 해요(13장). 히브리어 성경에서는 에스라서와 한 권이었어요.</p>
+    <div class="debate sans"><div><b>술 맡은 관원</b>왕이 마실 포도주를 관리하고 먼저 맛보는 사람이에요. 독살 위험이 큰 시대라 왕이 가장 믿는 사람에게 맡겼어요. 왕 가까이에서 정치적 영향력도 컸어요.</div><div><b>파피루스에 남은 적의 이름</b>이집트 엘레판틴 섬에서 나온 주전 407년 파피루스 편지에 "사마리아 총독 산발랏"의 아들들 이름이 나와요. 느헤미야를 끈질기게 방해한 바로 그 산발랏이에요.</div></div>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">느헤미야의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">기도하는 지도자</div><div class="mini-b">책 곳곳에 짧은 기도가 갑자기 끼어들어요. 일하다가도 하나님께 말을 걸어요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">52일의 성벽</div><div class="mini-b">반대와 조롱 속에서 무너진 성벽을 52일 만에 다시 쌓아요(6:15).</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">함께 쌓은 성벽</div><div class="mini-b">3장에는 성벽 구간마다 누가 쌓았는지 이름이 하나하나 적혀 있어요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">말씀 앞의 공동체</div><div class="mini-b">8장에서 온 백성이 새벽부터 정오까지 서서 율법 낭독을 들어요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">"나를 기억하소서"</div><div class="mini-b">"내 하나님이여 나를 기억하사"라는 기도가 여러 번 되풀이되며 책을 닫아요.</div></div></div></div>
+
+  <div class="target"><p>느헤미야서의 중심에는 이 말씀이 있어요. <span class="hl">"근심하지 말라 여호와로 인하여 기뻐하는 것이 너희의 힘이니라"</span>(8:10). 성벽보다 먼저 세워져야 할 것은 하나님 안에서 기뻐하는 마음이었어요. 그 기쁨의 근원은 <mark>우리의 무너진 삶을 다시 세우시는 예수 그리스도</mark>세요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>넉 달의 기도부터 남의 머리털을 뽑은 총독까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>화살기도</button><button class="chip" onclick="goTo('s2')"><b>2</b>밤의 순찰</button><button class="chip" onclick="goTo('s3')"><b>3</b>여우와 52일</button><button class="chip" onclick="goTo('s4')"><b>4</b>성벽 명단</button><button class="chip" onclick="goTo('s5')"><b>5</b>빚과 이자</button><button class="chip" onclick="goTo('s6')"><b>6</b>수문 앞 광장</button><button class="chip" onclick="goTo('s7')"><b>7</b>머리털 이야기</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>넉 달을 기도한 사람,<br>왕 앞에서 쏜 한순간의 화살기도</h2><div class="refs">느헤미야 1:1-2:8</div></div></div>
+    <div class="scene-body"><p>"아닥사스다 왕 제이십년 기슬르월에"(1:1) 느헤미야는 예루살렘 소식을 들어요. "예루살렘 성은 허물어지고 성문들은 불탔다"(1:3). 그는 "앉아서 울고 수일 동안 슬퍼하며 하늘의 하나님 앞에 금식하며 기도하여"(1:4). 그리고 2장은 "아닥사스다 왕 제이십년 니산월에"로 시작해요(2:1). 기슬르월에서 니산월까지, 넉 달이에요. 느헤미야는 넉 달 동안 기도하며 때를 기다렸어요.</p><p>드디어 그날, 왕이 묻습니다. "네가 병이 없거늘 어찌하여 얼굴에 수심이 있느냐". 느헤미야는 "크게 두려워하여" 말해요(2:2). 페르시아 왕 앞에서 우울한 얼굴을 보이는 것은 위험한 일이었어요. 그리고 왕이 다시 묻습니다. "그러면 네가 무엇을 원하느냐".</p><p>그 순간 느헤미야가 한 일이 이래요. "내가 곧 하늘의 하나님께 묵도하고 왕에게 아뢰되"(2:4-5). 😄 왕의 질문과 자기 대답 사이, 몇 초도 안 되는 틈에 하나님께 기도를 쏘아 올렸어요. 흔히 "화살기도"라고 부르는 장면이에요. 넉 달의 긴 기도가 있었기에 한순간의 짧은 기도가 가능했어요. 왕은 허락했고 느헤미야는 고백해요. "내 하나님의 선한 손이 나를 도우시므로 왕이 허락하고"(2:8). 진짜 왕은 <mark>왕의 마음을 움직이시는 하나님</mark>이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>평소에 오래 기도하며 때를 기다리고, 결정적인 순간에는 짧게라도 먼저 하나님께 묻는 습관을 기릅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>아무에게도 말하지 않은 밤의 순찰,<br>짐승이 지나갈 수 없던 길</h2><div class="refs">느헤미야 2:11-20</div></div></div>
+    <div class="scene-body"><p>예루살렘에 도착한 느헤미야는 사흘을 조용히 지내요. 그리고 밤에 몇 사람만 데리고 나가요. "내 하나님께서 예루살렘을 위하여 무엇이든지 할 수 있도록 내 마음에 주신 것을 내가 아무에게도 말하지 아니하고"(2:12). 계획을 떠벌리기 전에 먼저 현장을 봤어요.</p><p>골짜기 문으로 나가 성벽을 따라 돌다가 샘문과 왕의 못에 이르렀는데, 더 이상 갈 수가 없었어요. "탄 짐승이 지나갈 곳이 없는지라"(2:14). 😄 무너진 돌무더기가 길을 다 막고 있었던 거예요. 결국 그는 걸어서 골짜기를 따라 올라가며 성벽을 살폈어요.</p><p>그리고 지도자들을 모아 말해요. "우리가 당한 곤경은 너희도 보고 있는 바라… 자, 예루살렘 성을 건축하여 다시 수치를 당하지 말자"(2:17). 백성은 "일어나 건축하자" 하고 "힘을 내어 이 선한 일을 하려" 해요(2:18). 반대자들이 비웃자 느헤미야는 대답해요. "하늘의 하나님이 우리를 형통하게 하시리니 그의 종들인 우리가 일어나 건축하려니와"(2:20). 무너진 것을 정직하게 보는 데서 <mark>하나님이 주시는 회복</mark>이 시작돼요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>무너진 내 삶의 성벽을 밤에 조용히 돌아보듯 정직하게 살피고, "일어나 건축하자" 하나님께 힘을 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>"여우가 올라가도 무너지리라"던 성벽,<br>52일 만에 완공되다</h2><div class="refs">느헤미야 4:1-23 · 6:15-16</div></div></div>
+    <div class="scene-body"><p>공사가 시작되자 반대자 산발랏과 도비야가 비웃어요. 도비야의 조롱이 걸작이에요. "그들이 건축하는 돌 성벽은 여우가 올라가도 곧 무너지리라"(4:3). 😄 여우 한 마리 무게도 못 버틸 허술한 담이라는 거예요.</p><p>느헤미야는 대꾸하지 않고 기도해요. "우리 하나님이여 들으시옵소서 우리가 업신여김을 당하나이다"(4:4). 그리고 계속 쌓아요. "이는 백성이 마음 들여 일을 하였음이니라"(4:6). 적들이 공격하려 하자 일하는 방식을 바꿔요. "짐을 나르는 자는 한 손으로 일을 하며 한 손에는 병기를 잡았는데"(4:17). 느헤미야와 사람들은 밤에도 옷을 벗지 않았고 물 길으러 갈 때도 무기를 들었어요(4:23).</p><p>그리고 마침내 이 문장이 나와요. "성벽 역사가 오십이 일 만인 엘룰월 이십오일에 끝나매"(6:15). 140년 넘게 무너져 있던 성벽이 두 달도 안 되어 섰어요. 가장 놀라운 것은 그다음 구절이에요. "우리의 모든 대적과 주위에 있는 이방 족속들이 이를 듣고 다 두려워하여 크게 낙담하였으니 이는 이 역사를 우리 하나님께서 이루신 것을 앎이니라"(6:16). 원수들까지 인정했어요. 이 일은 사람이 아니라 <mark>하나님이 이루신 일</mark>이라고요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>"여우가 올라가도 무너진다"는 조롱 앞에서 대꾸하기보다 기도하며, 한 손에는 일을, 한 손에는 믿음을 붙듭니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>금장색과 향품 장사도, 딸들도<br>이름을 걸고 쌓은 성벽</h2><div class="refs">느헤미야 3:1-32 · 요한복음 5:2</div></div></div>
+    <div class="scene-body"><p>느헤미야 3장은 성벽을 누가 어느 구간을 쌓았는지 적은 긴 명단이에요. 대충 넘기기 쉬운 장인데, 자세히 보면 재밌는 사람들이 많아요. 맨 처음 나오는 사람은 대제사장 엘리아십과 제사장들이에요. 그들은 "양문을 건축하여"(3:1). 성전에 바칠 양들이 드나드는 문이었어요. 훗날 예수님이 38년 된 병자를 고치신 베데스다 못이 바로 이 "양문 곁"에 있었어요(요 5:2).</p><p>그다음에는 직업도 다양해요. "금장색 할해야의 아들 웃시엘", "향품 장사 하나냐"(3:8). 😄 금은방 사장님과 향수 가게 주인이 돌을 날랐어요. 그리고 이런 구절도 있어요. "예루살렘 지방의 절반을 다스리는 할로헤스의 아들 살룸과 그의 딸들이 중수하였고"(3:12). 딸들도 함께 성벽을 쌓았어요.</p><p>물론 빠진 사람들도 있었어요. "드고아 사람들이 중수하였으나 그 귀족들은 그들의 주인들의 공사를 분담하지 아니하였으며"(3:5). 귀족들은 목에 힘을 주고 손을 보태지 않았어요. 성경은 그것까지 기록해 두었어요. 각자 "자기 집 맞은편"을 쌓았다는 말도 여러 번 나와요(3:10, 23, 28). 내 집 앞부터 쌓으니 성벽 전체가 이어졌어요. 하나님은 <mark>이름 없이 돌 하나를 나른 사람까지 기억하세요</mark>.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님 나라의 일에 "나는 귀족이라" 빠지지 않고, 내 집 앞부터 내가 맡은 한 구간을 성실히 쌓습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>성벽 안에서 터진 또 다른 위기,<br>빚과 이자 앞에 선 총독</h2><div class="refs">느헤미야 5:1-19</div></div></div>
+    <div class="scene-body"><p>성벽을 쌓는 동안 바깥 적보다 더 큰 문제가 안에서 터져요. 가난한 백성이 부르짖어요. "우리는 밭과 포도원과 집이라도 저당 잡히고 이 흉년에 곡식을 얻자 하고"(5:3), 심지어 "우리 자녀를 종으로 파는도다"(5:5). 같은 동족인 귀족과 관리들이 비싼 이자를 받고 있었던 거예요.</p><p>느헤미야는 "크게 노하여" 귀족들을 꾸짖고(5:6-7), 그들이 받던 "백분의 일"을 돌려주라고 해요(5:11). 한 달에 1퍼센트, 1년이면 12퍼센트쯤 되는 이자로 봐요. 율법은 가난한 동족에게 이자를 받지 말라고 했어요(출 22:25; 레 25:36). 귀족들은 "우리가 돌려보내고 그들에게서 아무것도 요구하지 아니하리이다"라고 약속해요(5:12).</p><p>그런데 느헤미야가 남을 꾸짖을 수 있었던 이유가 있었어요. 그는 12년 동안 총독으로 있으면서 "총독의 녹을 먹지 아니하였느니라"(5:14). 오히려 자기 상에서 "유다 사람들과 민장들 백오십 명"을 날마다 먹였어요(5:17). 😄 월급은 안 받고 밥값은 자기가 냈어요. "이는 이 백성의 부역이 중함이었더라"(5:18). 그리고 기도해요. "내 하나님이여 내가 이 백성을 위하여 행한 모든 일을 기억하사 내게 은혜를 베푸시옵소서"(5:19). 지도자의 권위는 <mark>자기 몫을 내려놓는 섬김</mark>에서 나와요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 권리와 몫을 다 챙기기 전에, 형편이 어려운 이웃의 짐이 얼마나 무거운지 먼저 살핍니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>나무 강단 위의 학자,<br>새벽부터 정오까지 서서 들은 말씀</h2><div class="refs">느헤미야 8:1-18</div></div></div>
+    <div class="scene-body"><p>성벽이 완공되고 일곱째 달이 되자 "모든 백성이 일제히 수문 앞 광장에 모여" 에스라에게 율법책을 가져오라고 청해요(8:1). 백성이 먼저 말씀을 구한 거예요. 에스라는 "새벽부터 정오까지" 읽었고, 백성은 그동안 "귀를 기울였는데"(8:3). 대여섯 시간이에요. 😄 게다가 에스라가 책을 펴자 "모든 백성이 일어서니라"(8:5). 서서 들었어요.</p><p>에스라는 "나무 강단"에 서서 읽었어요(8:4). 성경에 처음 나오는 설교단이에요. 레위인들은 백성 사이를 다니며 "하나님의 율법책을 낭독하고 그 뜻을 해석하여 백성에게 그 낭독하는 것을 다 깨닫게 하니"(8:8). 포로 생활 동안 히브리어보다 아람어에 익숙해진 백성을 위해 아람어로 풀어 준 것이라고 보는 학자가 많아요. 훗날 유대 회당에서 성경을 읽고 아람어로 풀어 주던 전통(탈굼)의 시작으로 보기도 해요.</p><p>말씀을 깨달은 백성이 울기 시작하자, 느헤미야와 에스라가 말해요. "오늘은 우리 주의 성일이니 근심하지 말라 여호와로 인하여 기뻐하는 것이 너희의 힘이니라"(8:10). 그리고 초막절을 지키는데, 성경은 "눗의 아들 여호수아 때로부터 그 날까지 이스라엘 자손이 이같이 행함이 없었으므로 이에 크게 즐거워하며"라고 기록해요(8:17). 무너진 공동체를 세운 것은 성벽이 아니라 <mark>깨달은 말씀과 그 말씀이 주는 기쁨</mark>이었어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 8:8의 "해석하여"를 아람어 번역으로 볼지, 단락을 나누어 뜻을 풀어 준 것으로 볼지는 학자들 사이에 의견이 갈려요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>말씀 앞에 서서 깨닫는 기쁨을 사모하고, 회개의 눈물 뒤에 주시는 "여호와로 인한 기쁨"을 나의 힘으로 삼습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>자기 머리털을 뜯은 에스라,<br>남의 머리털을 뽑은 느헤미야</h2><div class="refs">느헤미야 13:1-31 · 에스라 9:3</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">에스라 9:3</div>"내가 이 일을 듣고… <b>머리털과 수염을 뜯으며</b>"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">느헤미야 13:25</div>"그들 중 몇 사람을 때리고 <b>그들의 머리털을 뽑고</b>"</div></div><p>느헤미야는 12년 총독 임기를 마치고 페르시아로 돌아갔다가 얼마 뒤 다시 예루살렘에 와요. 그런데 그 사이에 공동체가 엉망이 되어 있었어요. 대제사장 엘리아십이 원수 도비야에게 성전 창고 방을 내주었고, 레위인들은 몫을 받지 못해 밭으로 돌아갔고, 안식일에는 장사꾼들이 성문을 드나들었어요.</p><p>느헤미야는 행동파였어요. "내가 심히 근심하여 도비야의 세간을 그 방 밖으로 다 내어 던지고"(13:8). 😄 원수의 이삿짐을 성전 밖으로 던져 버렸어요. 안식일 전날 해가 지면 성문을 닫게 하고, 성 밖에서 밤을 지새우는 장사꾼들에게 "다시 이같이 하면 내가 너희를 잡으리라"고 경고했어요(13:21).</p><p>그리고 이방 신을 섬기는 이웃들과 결혼해 자녀들이 유다 말도 못 하게 된 것을 보고 이렇게 해요. "내가 그들을 책망하고 저주하며 그들 중 몇 사람을 때리고 그들의 머리털을 뽑고"(13:25). 같은 문제 앞에서 에스라는 자기 머리털을 뜯었는데(스 9:3), 느헤미야는 남의 머리털을 뽑았어요. 😄 두 사람은 달랐지만 하나님은 둘 다 쓰셨어요. 느헤미야서의 마지막 문장은 이 기도예요. "내 하나님이여 나를 기억하사 복을 주옵소서"(13:31). 끝까지 그가 의지한 것은 자기 열심이 아니라 <mark>기억하시는 하나님</mark>이었어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나와 다른 방식으로 섬기는 사람도 하나님이 쓰신다는 것을 인정하고, 내 열심보다 나를 기억하시는 하나님을 의지합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">무너진 성벽보다 먼저<br>무너진 마음을 다시 세운 사람</div>
+    <p>느헤미야는 52일 만에 성벽을 쌓았지만, 그의 책은 성벽 완공으로 끝나지 않아요. 그다음에 말씀 집회가 있고, 회개 기도가 있고, 언약 갱신이 있고, 다시 무너지는 사람들과의 씨름이 있어요. 돌담은 52일이면 충분했지만, 사람의 마음은 평생 다시 쌓아야 했어요.</p><p>그래서 느헤미야는 일하다가도 기도했고, 끝까지 "나를 기억하소서"라고 구했어요. 그 기도의 응답은 결국 우리를 잊지 않으시고 찾아오신 분, <mark>무너진 우리를 위해 친히 성전이 되신 예수 그리스도</mark>세요.</p>
+    <div class="q">"근심하지 말라<br>여호와로 인하여 기뻐하는 것이<br>너희의 힘이니라" (8:10)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

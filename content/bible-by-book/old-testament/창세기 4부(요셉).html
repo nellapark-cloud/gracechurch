@@ -1,0 +1,2090 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>창세기 연구 — 4부 요셉 이야기(37-50장)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a9184;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#20304d;
+  --navy-soft:#3c5273;
+  --gold:#b8863b;
+  --gold-soft:#d8b073;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e2d9c6;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #c9d0e0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #8b96ad;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#b9c2d4; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#d8ddea; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#c9d0e0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fa3c7; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#c9d0e0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#c9d0e0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* hl-insight = 더 깊은 설명이 필요한 구절 (하늘색), 클릭 시 팝업 */
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+/* clickable (has a glossary tip) */
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(20,28,42,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(250,246,239,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+/* Screen-friendly rules above are now the default (baseline) so that any
+   viewer — including ones that don't evaluate @media correctly — shows a
+   clean, readable layout. Printing restores the compact A4-tuned look. */
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 창세기 연구 · 4부</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+<div class="cover">
+  <div class="eyebrow">은혜교회 성경공부 시리즈</div>
+  <h1>창세기 연구</h1>
+  <div class="cover-sub">채색옷에서 애굽의 관까지 — 4부 요셉 이야기(37–50장)</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">창 37:1 – 50:26</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">
+    전 14장 · 구조 · 신학적·목회적 교훈 · 심화 질문<br/><br/>
+    <span style="color:#d8b073;">■</span> 핵심 신학 용어　
+    <span style="color:#e07a69;">■</span> 성경 본문 인용　
+    <span style="color:#6ec4bc;">■</span> 원어(히브리어)　
+    <span style="color:#78bee6;">■</span> 더 알아보기(탭하여 열람)
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>창세기 4부 서론 — 요셉 이야기(창 37-50장)</h1>
+  <p class="intro-lead">배신에서 용서까지, 창세기 전체를 매듭짓는 구속사의 이야기.</p>
+
+  <div class="intro-block">
+    <h3>3부에서 4부로 — 씨름하는 자에서 섭리를 노래하는 자로</h3>
+    <p>3부가 야곱 개인의 정체성 전환(이스라엘)을 다루었다면, 4부는 그 야곱의 아들 <b class="hl-term">요셉</b>을 통해 온 가족, 나아가 온 세상이 구원받는 과정을 그린다. 창세기의 다른 어떤 부분보다도 매끄럽고 통일된 하나의 긴 서사(37-50장 전체가 사실상 하나의 이야기)로 구성되어 있으며, 창세기 전체를 관통하는 신학 — 인간의 죄와 하나님의 주권적 선하심이 함께 작동하는 섭리 — 이 가장 명료하게 표현되는 곳이다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>섭리 신학의 절정 — 50:20</h3>
+    <p>"당신들은 나를 해하려 하였으나 하나님은 그것을 선으로 바꾸사"(50:20)라는 요셉의 고백은 비단 이 이야기만이 아니라 창세기 전체(타락, 가인의 살인, 바벨탑, 아브라함과 야곱의 거짓과 속임수)를 관통하는 핵심 주제를 한 문장으로 응축한다. 인간의 반복된 죄에도 불구하고 하나님의 구속사적 계획은 결코 좌절되지 않는다는 것이 창세기 전체가 가르치는 가장 중요한 진리이며, 요셉 이야기는 그것을 가장 선명하게 드러낸다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>유다의 변화 — 창세기에서 가장 극적인 인물호</h3>
+    <p>동생을 팔자고 제안했던(37장) 유다가, 다말을 통한 자기 인식(38장)을 거쳐, 마침내 베냐민을 위해 자신을 대신 내놓는(44장) 희생적 인물로 변화하는 과정은 창세기 전체에서 가장 극적인 성장 이야기다. 이 유다 지파에서 다윗과 그리스도가 나신다는 것(49:10)은 결코 우연이 아니라, 창세기가 신약 전체를 향해 의도적으로 놓아가는 신학적 다리다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>열린 결말 — 출애굽기를 향한 다리</h3>
+    <p>창세기는 완결된 결말이 아니라 "애굽에서 입관되었더라"(50:26)는 미해결의 긴장으로 끝난다. 요셉의 마지막 유언("내 해골을 여기서 메고 올라가겠다 하라")은 아직 성취되지 않은 약속(가나안 귀환)을 향해 열려 있으며, 이는 출애굽기의 첫 장면으로 곧바로 이어지는 성경 전체의 연속된 거대한 이야기의 시작을 예비한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관 (4부, 37-50장)</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">37-39장</div>
+        <div class="oi-title">배신과 밑바닥</div>
+        <div class="oi-body">채색옷과 팔려감, 유다와 다말의 삽입 이야기, 보디발의 집에서의 유혹과 억울한 감금.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">40-41장</div>
+        <div class="oi-title">감옥에서 궁정으로</div>
+        <div class="oi-body">두 관원장의 꿈, 잊혀짐, 그리고 바로의 꿈 해석을 통한 극적인 승격.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">42-45장</div>
+        <div class="oi-title">형제들과의 재회와 시험</div>
+        <div class="oi-body">알아보지 못한 형들, 베냐민을 향한 시험, 유다의 탄원, 그리고 마침내 밝혀지는 정체.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">46-50장</div>
+        <div class="oi-title">애굽 정착과 창세기의 마침</div>
+        <div class="oi-body">온 가족의 이주, 야곱의 마지막 축복과 죽음, 요셉의 완전한 용서와 창세기의 열린 결말.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 다루며, <b class="hl-term">③깊이 생각해볼 문제</b>는 해석사적 논쟁과 난해 구절을 다룬다. 골드로 표시된 용어와 하늘색으로 표시된 구절은 탭하여 추가 설명을 확인할 수 있다.</p>
+  </div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents · 4부</div>
+  <h1>목차 — 요셉 이야기 (37-50장)</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch37')" onkeydown="if(event.key==='Enter')goTo(event,'ch37')">
+      <span class="toc-num">37</span>
+      <span class="toc-title">요셉과 채색옷</span>
+      <span class="toc-sub">편애, 꿈, 그리고 팔려간 형제</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch38')" onkeydown="if(event.key==='Enter')goTo(event,'ch38')">
+      <span class="toc-num">38</span>
+      <span class="toc-title">유다와 다말</span>
+      <span class="toc-sub">이야기 속의 이야기, 그리고 예상치 못한 계보</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch39')" onkeydown="if(event.key==='Enter')goTo(event,'ch39')">
+      <span class="toc-num">39</span>
+      <span class="toc-title">보디발의 집과 감옥</span>
+      <span class="toc-sub">형통함, 유혹, 그리고 억울한 감금</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch40')" onkeydown="if(event.key==='Enter')goTo(event,'ch40')">
+      <span class="toc-num">40</span>
+      <span class="toc-title">두 관원장의 꿈</span>
+      <span class="toc-sub">옥에서도 이어지는 은사와 잊혀짐</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch41')" onkeydown="if(event.key==='Enter')goTo(event,'ch41')">
+      <span class="toc-num">41</span>
+      <span class="toc-title">바로의 꿈과 요셉의 승격</span>
+      <span class="toc-sub">이 년의 기다림 끝에 찾아온 부름</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch42')" onkeydown="if(event.key==='Enter')goTo(event,'ch42')">
+      <span class="toc-num">42</span>
+      <span class="toc-title">형들의 첫 방문</span>
+      <span class="toc-sub">알아보지 못한 형들, 시험</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch43')" onkeydown="if(event.key==='Enter')goTo(event,'ch43')">
+      <span class="toc-num">43</span>
+      <span class="toc-title">베냐민과 함께 두 번째 방문</span>
+      <span class="toc-sub">유다의 보증, 그리고 잔치</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch44')" onkeydown="if(event.key==='Enter')goTo(event,'ch44')">
+      <span class="toc-num">44</span>
+      <span class="toc-title">은잔과 유다의 탄원</span>
+      <span class="toc-sub">베냐민을 위해 자신을 내놓은 유다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch45')" onkeydown="if(event.key==='Enter')goTo(event,'ch45')">
+      <span class="toc-num">45</span>
+      <span class="toc-title">요셉이 자기를 알림</span>
+      <span class="toc-sub">울음과 화해, 그리고 하나님의 큰 그림</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch46')" onkeydown="if(event.key==='Enter')goTo(event,'ch46')">
+      <span class="toc-num">46</span>
+      <span class="toc-title">애굽으로 내려가는 야곱</span>
+      <span class="toc-sub">약속의 재확인과 온 가족의 이주</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch47')" onkeydown="if(event.key==='Enter')goTo(event,'ch47')">
+      <span class="toc-num">47</span>
+      <span class="toc-title">고센 정착과 흉년의 관리</span>
+      <span class="toc-sub">이방 땅에서의 정착과 지혜로운 통치</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch48')" onkeydown="if(event.key==='Enter')goTo(event,'ch48')">
+      <span class="toc-num">48</span>
+      <span class="toc-title">에브라임과 므낫세의 축복</span>
+      <span class="toc-sub">엇갈린 손, 그리고 지파로 입양된 손자들</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch49')" onkeydown="if(event.key==='Enter')goTo(event,'ch49')">
+      <span class="toc-num">49</span>
+      <span class="toc-title">야곱의 마지막 축복</span>
+      <span class="toc-sub">열두 아들을 향한 예언적 유언</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch50')" onkeydown="if(event.key==='Enter')goTo(event,'ch50')">
+      <span class="toc-num">50</span>
+      <span class="toc-title">야곱의 장례와 요셉의 마지막</span>
+      <span class="toc-sub">완전한 용서, 그리고 창세기의 마침</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num"></span>
+    </a>
+  </div>
+</div>
+
+<section class="chapter" id="ch37">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 40V16l10-8 10 8v24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/><path d="M14 22l10 6 10-6" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 37</div>
+      <h1>37장 · 요셉과 채색옷</h1>
+      <div class="chapter-sub">편애, 꿈, 그리고 팔려간 형제</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 37:1-36</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">37:1-11</div>
+        <div>
+          <div class="flow-title">편애와 꿈으로 인한 미움</div>
+          <div class="flow-body">야곱은 라헬의 아들 <b class="hl-term">요셉</b>을 다른 아들들보다 더 사랑하여 <b class="hl-term has-tip" data-tip="히브리어 원문은 '긴 소매 옷' 또는 '여러 색깔의 옷'으로 다양하게 해석된다. 전통적으로 '채색옷'으로 번역되어 왔으며, 노동에 적합하지 않은 특별한 신분의 옷으로 형들의 질투를 크게 자극했다.">채색옷</b>을 지어 입힌다(3절). 요셉은 형들이 자기에게 절하는 꿈, 해와 달과 열한 별이 자기에게 절하는 꿈을 잇달아 꾸고 이를 형들과 아버지에게 그대로 이야기하여, 형들의 미움을 더욱 키운다. 본문은 담담히 <b class="hl-quote">"그 형들은 그를 미워하여 그에게 편안하게 말할 수 없었더라"</b>(4절)고 서술한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">37:12-36</div>
+        <div>
+          <div class="flow-title">팔려가는 요셉</div>
+          <div class="flow-body">아버지의 심부름으로 형들을 찾아간 요셉을 본 형들은 그를 죽이려 하지만, <b class="hl-term">르우벤</b>이 은밀히 살려두려는 의도로 구덩이에 던지자고 제안한다. 그러나 유다의 제안으로 형제들은 요셉을 <b class="hl-insight has-insight" data-insight="0">은 이십 개</b>에 미디안(이스마엘) 상인들에게 팔아넘긴다(28절). 형제들은 채색옷에 염소 피를 묻혀 아버지에게 가져가 요셉이 죽었다고 속이고, 야곱은 "내 아들의 옷이라 악한 짐승이 그를 잡아먹었도다"(33절)라며 위로받기를 거절한 채 오랫동안 슬퍼한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">편애가 반복되는 세대의 저주</div>
+        <div class="teach-body">야곱이 요셉을 편애한 것은 자신의 부모(이삭과 리브가의 편애, 25:28)에서 학습된 패턴의 반복이다. 이는 가정 안의 죄악된 패턴이 의식적 성찰 없이는 세대를 넘어 그대로 전수될 수 있음을 다시 한번 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">꿈을 지혜롭게 나누지 못한 미숙함</div>
+        <div class="teach-body">요셉의 꿈 자체는 하나님이 주신 진실한 계시였지만(이후 정확히 성취됨), 그것을 이미 자신을 미워하는 형들에게 아무 여과 없이 전한 것은 청소년기의 미숙함을 보여준다. 이는 진실한 계시라 해도 그것을 나누는 지혜와 겸손이 함께 필요하다는 실천적 교훈을 준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">질투가 낳는 극단적 폭력</div>
+        <div class="teach-body">형들의 미움은 대화 단절("편안하게 말할 수 없었더라")에서 시작해 살해 모의, 그리고 인신매매로까지 확대된다. 이는 다뤄지지 않은 질투와 분노가 얼마나 빠르게 극단적 죄악으로 확대될 수 있는지를 경고하며, 야고보서 3:16("시기와 다툼이 있는 곳에는 요란과 모든 악한 일이 있음이라")의 원리를 생생하게 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">보이지 않는 하나님의 손 — 서사의 전환점</div>
+        <div class="teach-body">이 비극적 사건 전체는 표면적으로 인간의 악행처럼만 보이지만, 창세기 50:20에서 요셉 자신이 이를 "하나님이 선으로 바꾸사... 오늘과 같이 많은 백성의 생명을 구원하게 하시려" 하신 일이라고 회고적으로 해석한다. 이는 하나님의 섭리가 가장 어두운 인간의 죄악 한가운데서도 은밀히 구속사적 계획을 이루어가심을 보여주는 요셉 내러티브 전체의 신학적 핵심이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">슬픔을 억누르지 않는 아버지의 사랑</div>
+        <div class="teach-body">야곱이 "위로받기를 거절하고"(35절) 오래도록 슬퍼한 것은, 자녀를 향한 부모의 사랑과 상실의 고통이 억지로 봉합될 수 없는 것임을 보여준다. 이는 이후 46장에서 요셉과 재회할 때의 감격을 훨씬 더 깊이 이해하게 하는 정서적 배경이 된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">37장은 요셉 이야기의 시작이지만, 사실 이 순간에는 아무도 하나님의 손길을 보지 못해요. 형들의 눈에는 그냥 미운 동생을 처리하는 것처럼 보였을 거예요. 그런데 창세기 마지막 장(50:20)에 가서야, 요셉 자신의 입을 통해 이 모든 것의 진짜 의미가 드러나요. 지금 당장은 이해되지 않는 고통도, 하나님의 더 큰 그림 안에서는 다른 의미를 가질 수 있다는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요셉이 형들에 대해 나쁜 소문을 아버지에게 전하는 것(2절)과 꿈을 계속 이야기하는 것은 그의 성격적 결함으로 볼 수 있는가?</div>
+        <div class="deep-body">본문은 요셉을 완벽한 인물로 이상화하지 않는다. 그가 형들의 잘못을 아버지께 고하고(2절, 히브리어 표현은 '나쁜 보고를 가져오다'로 다소 부정적 뉘앙스를 담을 수 있다) 꿈 이야기를 반복해서 나눈 것은, 그가 아직 성숙하지 못한 어린 나이(17세)의 자기중심적 면모를 지녔을 가능성을 보여준다. 다만 이후 요셉의 삶 전체(보디발의 집, 감옥, 총리로서의 지혜)를 통해 그가 급속히 성숙해가는 인물로 그려진다는 점에서, 37장의 요셉은 완성된 성품이 아니라 시작점으로 이해하는 것이 균형 잡힌 해석이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>형제들이 요셉을 죽이지 않고 판 것(유다의 제안)은 도덕적으로 더 나은 선택이었는가?</div>
+        <div class="deep-body">유다는 "우리가 그를 죽이고 그의 피를 덮어둔들 무엇이 유익할까... 그를 팔고 그에게 우리 손을 대지 말자"(26-27절)라며 살인보다 인신매매를 제안한다. 이는 표면적으로 완전한 살인보다는 '덜 나쁜' 선택처럼 보이지만, 결국 자신들의 손에 직접 피를 묻히지 않으면서도 동생을 노예로 팔아넘기는 것 역시 심각한 죄악이며, 이는 이후 42:21에서 형제들 스스로도 "우리가 아우의 일로 말미암아 범죄하였도다... 그가 우리에게 애걸할 때에 그 마음의 괴로움을 보고도 듣지 아니하였으므로"라며 뒤늦게 깊이 뉘우치는 것으로 확인된다. 이는 최악을 피했다는 것이 곧 선함을 의미하지 않는다는 도덕적 통찰을 준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch38">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="4" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 14l6 6M34 14l-6 6M14 34l6-6M34 34l-6-6" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 38</div>
+      <h1>38장 · 유다와 다말</h1>
+      <div class="chapter-sub">이야기 속의 이야기, 그리고 예상치 못한 계보</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 38:1-30</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">38:1-11</div>
+        <div>
+          <div class="flow-title">유다의 가정과 다말의 불행</div>
+          <div class="flow-body">유다는 가나안 여인과 결혼해 세 아들(엘, 오난, 셀라)을 두는데, 장남 엘은 <b class="hl-quote">"여호와가 보시기에 악하므로 여호와께서 그를 죽이시니"</b>(7절)라는 짧지만 무거운 심판을 받는다. 당시 관습(<b class="hl-term has-tip" data-tip="고대 근동의 결혼 관습. 남편이 자녀 없이 죽으면 그 형제가 과부와 결혼하여 죽은 형제의 이름으로 후사를 잇게 하는 제도. 신명기 25:5-10에서 율법으로 명문화된다.">계대결혼(레비레이트 혼인)</b>)에 따라 둘째 오난이 형수 다말과 관계를 갖지만 후사를 남기지 않으려 <b class="hl-term">고의로 씨를 땅에 쏟는데</b>, 이 역시 하나님이 악하게 보시고 그도 죽인다. 유다는 셋째 셀라를 다말에게 주기를 미루며 그녀를 친정으로 돌려보낸다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">38:12-30</div>
+        <div>
+          <div class="flow-title">다말의 계략과 유다의 인정</div>
+          <div class="flow-body">셀라가 장성해도 유다가 약속을 지키지 않자, 다말은 창녀로 변장하여 길에서 유다를 유혹해 그의 <b class="hl-term">도장과 끈과 지팡이</b>를 담보로 받고 임신한다. 석 달 후 다말이 행음하여 임신했다는 소식에 유다가 그녀를 불태우라 명하자, 다말은 그 담보물을 내보이며 <b class="hl-insight has-insight" data-insight="1">"이 물건 임자로 말미암아 임신하였나이다"</b>(25절)라고 밝힌다. 유다는 "그는 나보다 옳도다 내가 그를 내 아들 셀라에게 주지 아니하였음이로다"(26절)라며 자신의 잘못을 인정한다. 다말은 쌍둥이 베레스와 세라를 낳는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">삽입된 이야기의 문학적 기능</div>
+        <div class="teach-body">이 장은 요셉 이야기의 흐름을 갑자기 끊고 유다에게 초점을 옮기는데, 이는 우연한 삽입이 아니라 정교한 문학적 대조 장치다. 37장에서 형들이 아버지를 속인 것처럼, 38장에서는 유다가 다말에게 속으며 정확히 대칭되는 훈육을 받는다 — 두 장 모두 '속임과 증거물의 인정'이라는 동일한 모티프(채색옷/도장과 지팡이)를 공유한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">자신의 잘못을 인정하는 유다의 성숙</div>
+        <div class="teach-body">유다가 "그는 나보다 옳도다"라며 스스로의 잘못(셀라를 다말에게 주기로 한 약속을 어긴 것)을 공개적으로 인정하는 장면은, 27장에서 아버지를 속였던 야곱의 아들이 이제 자신의 죄를 정직하게 대면하는 성숙의 첫걸음을 보여준다. 이는 이후 44장에서 유다가 베냐민을 위해 자신을 대신 내놓는 희생적 리더십으로 발전하는 인물호의 시작점이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">소외된 여성의 정의를 향한 용기 있는 행동</div>
+        <div class="teach-body">다말은 당시 사회에서 철저히 무력한 위치(과부, 자녀 없음, 시댁에서 버려짐)에 있었지만, 자신의 정당한 권리(계대결혼을 통한 후사)를 되찾기 위해 위험을 무릅쓴 용기 있는 행동에 나선다. 성경은 그녀의 방법(위장, 유혹)을 명시적으로 승인하지는 않지만, 유다 자신의 입을 통해 그녀가 궁극적으로 "나보다 옳다"고 평가받는다는 점은 주목할 만하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">메시아 계보에 편입된 뜻밖의 이름</div>
+        <div class="teach-body">이 다소 불편한 이야기에서 태어난 베레스는 놀랍게도 마태복음 1:3에서 예수 그리스도의 족보에 명시적으로 등장한다. 이는 하나님의 구속사가 인간이 보기에 흠결 있고 부끄러운 사건들까지도 포함하여, 오직 은혜로 그 계보를 이루어가심을 보여주는 강력한 사례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님의 심판이 실제 역사 속에서 작동함</div>
+        <div class="teach-body">엘과 오난의 죽음이 명시적으로 "여호와께서... 죽이시니"라고 기록되는 것은, 하나님의 도덕적 심판이 추상적 개념이 아니라 실제 역사와 개인의 삶 속에서 구체적으로 작동한다는 것을 성경 저자가 분명히 하려는 의도를 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">38장, 처음 읽으면 '이게 왜 여기 있지?' 싶은 장이에요. 요셉 이야기 한가운데 뜬금없이 유다 이야기가 끼어드니까요. 근데 나중에 마태복음 족보를 보면 다 이해가 돼요. 다말에게서 난 베레스가 바로 예수님의 족보에 들어가거든요. 성경은 부끄러운 이야기도 숨기지 않고, 오히려 그 안에서 구원의 계보를 이어가시는 하나님을 보여줘요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>왜 창세기 저자는 요셉 이야기 한가운데(37장과 39장 사이)에 이 별개의 유다 이야기를 삽입했는가?</div>
+        <div class="deep-body">여러 문학적·신학적 기능이 제안된다: 첫째, 시간의 경과(요셉이 애굽에서 성장하는 데 걸리는 시간, 대략 13-20년)를 서사적으로 채우는 기능. 둘째, 앞서 언급한 대로 37장의 속임수 모티프를 유다에게도 반복시켜 형제들 모두가 훈육의 과정을 거치고 있음을 보여주는 기능. 셋째, 결정적으로 이 장은 유다 지파(훗날 다윗과 그리스도가 나오는 지파)의 계보적 기원을 확립하는 신학적으로 중요한 기능을 한다 — 요셉 이야기가 실질적 주인공이지만, 성경 전체 구속사의 계보적 중심은 결국 유다 지파에 있다는 것을 이 장이 미리 예비하는 것이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>오난의 죄(38:9)를 근거로 특정 형태의 피임을 죄로 규정하는 해석이 역사적으로 있었는데, 이는 본문에 대한 정당한 해석인가?</div>
+        <div class="deep-body">본문 자체가 명시하는 오난의 죄의 핵심은 피임 방법 자체가 아니라, 계대결혼의 의무(죽은 형을 위해 후사를 세우는 것)를 의도적으로 회피하면서도 그 의무에 따르는 신체적 관계의 이익은 취하려 한 이기적이고 기만적인 태도에 있다("자기 형에게 상속자를 얻게 아니하려고", 9절). 대다수 현대 복음주의 주석가들은 이 본문을 일반적인 피임 전체에 대한 보편적 금지로 확대 해석하는 것은 본문의 구체적 맥락(계대결혼이라는 특수한 고대 근동의 사회적 의무)을 벗어난 과잉 해석이라고 본다. 본문의 핵심 죄는 피임의 방법이 아니라 의무 회피와 형수에 대한 기만적 태도에 있다는 것이 신중한 해석의 결론이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch39">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="12" y="14" width="24" height="24" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M18 14v-4h12v4" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="18" y1="26" x2="30" y2="26" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 39</div>
+      <h1>39장 · 보디발의 집과 감옥</h1>
+      <div class="chapter-sub">형통함, 유혹, 그리고 억울한 감금</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 39:1-23</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">39:1-6</div>
+        <div>
+          <div class="flow-title">형통한 종 요셉</div>
+          <div class="flow-body">애굽으로 팔려간 요셉은 바로의 신하 <b class="hl-term">보디발</b>의 집 종이 되는데, 본문은 반복적으로 <b class="hl-quote">"여호와께서 요셉과 함께 하시므로 그가 형통한 자가 되어"</b>(2절)라고 서술한다. 보디발은 요셉의 형통함이 여호와로 말미암은 것을 보고 그를 가정 총무로 삼아 자기 소유를 다 그의 손에 맡긴다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">39:7-23</div>
+        <div>
+          <div class="flow-title">유혹의 거절과 억울한 누명</div>
+          <div class="flow-body">보디발의 아내가 반복해서 요셉을 유혹하지만, 요셉은 <b class="hl-insight has-insight" data-insight="2">"내가 어찌 이 큰 악을 행하여 하나님께 죄를 지으리이까"</b>(9절)라며 단호히 거절한다. 그녀는 결국 그의 옷을 붙잡고 거짓 증거로 그를 모함하고, 요셉은 억울하게 감옥에 갇힌다. 그러나 감옥에서도 <b class="hl-quote">"여호와께서 요셉과 함께 하시고"</b>(21절)라는 동일한 후렴구가 반복되며, 간수장이 옥중의 모든 사무를 그에게 맡긴다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">환경이 아니라 하나님이 형통을 결정하신다</div>
+        <div class="teach-body">이 장에서 요셉의 지위는 자유인에서 노예로, 신뢰받는 총무에서 죄수로 극적으로 곤두박질치지만, 본문은 매 상황마다 동일하게 "여호와께서 요셉과 함께 하시므로"라는 후렴구를 반복한다. 이는 외적 환경의 극적 변화와 무관하게 하나님의 임재와 그로 인한 참된 형통이 지속될 수 있음을 보여주는 강력한 신학적 메시지다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">유혹 앞에서의 명확한 도덕적 경계</div>
+        <div class="teach-body">요셉의 거절은 단지 발각의 두려움이나 보디발에 대한 의리가 아니라, 궁극적으로 "하나님께 죄를 지으리이까"라는 신학적 근거에 뿌리내리고 있다. 이는 성적 유혹에 대한 저항이 궁극적으로 하나님과의 관계에 대한 신실함의 문제임을 보여주며, 도피("그가 옷을 그 손에 버려두고 도망하여 나가매", 12절)라는 구체적 행동을 취했다는 점도 주목할 만하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">선을 행해도 억울한 대가를 치를 수 있음</div>
+        <div class="teach-body">요셉은 도덕적으로 완전히 옳은 선택을 했음에도 불구하고 그 결과로 억울하게 감옥에 갇힌다. 이는 성경이 '선을 행하면 항상 즉각적으로 보상받는다'는 단순한 인과응보 신학을 가르치지 않으며, 오히려 의로운 자도 부당한 고난을 겪을 수 있다는 현실적이고 정직한 신앙관을 제시한다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">고난 중에도 자기 위치에서 성실함</div>
+        <div class="teach-body">요셉은 억울한 감옥 안에서도 자포자기하지 않고 다시 신뢰받는 위치로 성장한다. 이는 그가 처한 상황이 아니라 그의 성품(성실함, 하나님을 향한 신뢰)이 그의 삶의 궤적을 결정한다는 것을 보여주며, 어떤 낮은 자리에서도 하나님이 주신 기회를 성실하게 감당하는 것이 이후 더 큰 사명으로 이어지는 통로가 될 수 있음을 시사한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">고난이 성품을 다듬는 하나님의 방식</div>
+        <div class="teach-body">요셉이 겪는 반복적 시련(형제들의 배신, 억울한 누명, 오랜 감금)은 훗날 그가 애굽의 총리가 되었을 때 형들을 다시 만나 지혜롭고 성숙하게 대응할 수 있는 인격적 기초를 놓는 과정으로 이해된다. 시편 105:19은 이 시기를 "그의 말씀이 응할 때까지... 여호와의 말씀이 그를 단련하였도다"라고 묘사하며, 고난이 하나님의 사람을 연단하는 도구였음을 확인한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장에서 제일 마음에 남는 건 '여호와께서 요셉과 함께 하시므로'라는 말이 반복된다는 거예요. 노예가 되었을 때도, 감옥에 갇혔을 때도 똑같이요. 상황은 계속 나빠지는데, 하나님의 임재라는 상수는 변하지 않아요. 우리 삶의 환경이 아무리 요동쳐도, 그 안에 계신 하나님은 변하지 않으신다는 게 이 장의 가장 큰 위로인 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>본문이 요셉의 잘생긴 외모(6절, "용모가 빼어나고 아름다운 자")를 언급하는 것이 이후 사건에서 어떤 문학적 역할을 하는가?</div>
+        <div class="deep-body">이 언급은 단순한 배경 정보가 아니라, 바로 이어지는 보디발 아내의 유혹 사건에 대한 직접적 복선으로 기능한다. 흥미롭게도 이는 창세기에서 그의 어머니 라헬에 대한 묘사(29:17, "얼굴이 곱고 아리따우니")와 거의 동일한 히브리어 표현을 사용하며, 요셉이 어머니의 아름다움을 물려받았다는 것을 암시적으로 연결한다. 이러한 신체적 매력이 축복(총애받음)이자 동시에 시험(유혹의 대상이 됨)의 근원이 될 수 있다는 인간 실존의 복잡성을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>요셉이 겪은 이 모든 부당한 고난에 대해, 성경은 왜 그의 분노나 하나님을 향한 원망을 전혀 기록하지 않는가?</div>
+        <div class="deep-body">본문 자체는 요셉의 내면적 감정 상태를 거의 서술하지 않아, 이 침묵을 어떻게 해석할지는 논쟁적이다. 일부 해석자들은 이를 요셉의 이례적인 신앙적 성숙과 인내의 증거로 본다. 그러나 시편 105:18("그의 발이 차꼬에 상하며 그의 몸이 쇠사슬에 매였으니")과 이후 요셉 자신의 발언들(45장, 50장)을 종합해 보면, 그가 이 과정에서 실제로 깊은 고통과 씨름했으되(정형화된 애가 형식으로 기록되지 않았을 뿐) 궁극적으로 그 고통을 하나님에 대한 신뢰 안에서 소화해냈다고 보는 것이 더 균형 잡힌 이해로 여겨진다. 성경 내러티브의 절제된 서술 방식이 반드시 감정의 부재를 의미하지는 않는다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch40">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="22" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="32" cy="22" r="7" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 29v6M32 29v6" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 40</div>
+      <h1>40장 · 두 관원장의 꿈</h1>
+      <div class="chapter-sub">옥에서도 이어지는 은사와 잊혀짐</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 40:1-23</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">40:1-19</div>
+        <div>
+          <div class="flow-title">떡 굽는 관원장과 술 맡은 관원장의 꿈</div>
+          <div class="flow-body">바로의 술 맡은 관원장과 떡 굽는 관원장이 죄를 지어 요셉이 있는 감옥에 갇히게 된다. 두 사람이 같은 날 밤 각각 꿈을 꾸고 근심하자, 요셉은 <b class="hl-quote">"해석은 하나님께 있지 아니하니이까 청하건대 내게 이르소서"</b>(8절)라며 자신의 능력이 아니라 하나님께로부터 오는 해석임을 명확히 한다. 술 맡은 관원장에게는 <b class="hl-insight has-insight" data-insight="3">사흘 안에 복직</b>될 것을(12-13절), 떡 굽는 관원장에게는 사흘 안에 처형될 것을(18-19절) 정확히 해석해준다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">40:20-23</div>
+        <div>
+          <div class="flow-title">잊혀진 요셉</div>
+          <div class="flow-body">바로의 생일에 실제로 두 해석이 정확히 그대로 성취되지만, 복직된 술 맡은 관원장은 <b class="hl-quote">"요셉을 기억하지 못하고 그를 잊었더라"</b>(23절) — 요셉이 신신당부했던 부탁("당신이 잘 되시거든... 나를 기억하여... 나를 이 집에서 나가게 하소서", 14절)에도 불구하고 즉시 잊혀지는 냉정한 결말이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">은사를 겸손하게 하나님께 돌림</div>
+        <div class="teach-body">요셉은 꿈 해석이라는 뛰어난 능력을 지녔음에도 그것을 자기 소유로 주장하지 않고 "해석은 하나님께 있지 아니하니이까"라며 즉시 그 근원을 하나님께로 돌린다. 이는 특별한 은사를 받은 자가 마땅히 가져야 할 겸손한 태도의 모범이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">낮은 자리에서도 다른 사람을 살피는 마음</div>
+        <div class="teach-body">요셉 자신도 억울하게 갇힌 죄수였지만, 다른 사람들(관원장들)의 근심을 알아채고 먼저 다가가 "어찌하여 오늘 당신들의 얼굴에 근심의 빛이 있나이까"(7절)라고 묻는다. 이는 자신의 고통 속에서도 타인을 향한 관심과 섬김을 잃지 않는 성숙한 인격을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">인간의 망각과 하나님의 기억하심의 대조</div>
+        <div class="teach-body">술 맡은 관원장은 요셉을 즉시 잊어버리지만, 이는 이야기의 끝이 아니다. 41:9에서 바로가 곤경에 처했을 때에야 비로소 그는 "내가 오늘 내 죄를 기억하나이다"라며 요셉을 기억해낸다. 인간의 망각과 무관하게, 하나님의 때는 정확히 예비되고 있었다는 것을 이 지연이 오히려 강조한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">응답 없는 기다림 속에서의 인내</div>
+        <div class="teach-body">요셉의 정당한 부탁이 즉시 응답받지 못하고 잊혀진 채로 시간이 흐른다(41:1에서 "만 이 년 후에"라고 명시됨). 이는 하나님의 사람이라 해도 정당한 요청이 즉각 응답받지 못하는 긴 기다림의 시기를 겪을 수 있다는 것을 정직하게 보여주며, 이 지연 자체가 이후 하나님의 완벽한 타이밍(바로의 꿈과 정확히 맞물리는 시점)을 위한 섭리였음이 드러난다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">작은 신실함이 큰 사명의 준비 과정</div>
+        <div class="teach-body">관원장들의 꿈 해석이라는 작은 사건은 그 자체로는 요셉에게 즉각적 유익을 주지 못했지만, 결국 41장에서 바로의 꿈을 해석하는 훨씬 더 큰 사명으로 이어지는 다리 역할을 한다. 이는 작아 보이는 신실한 섬김이 하나님의 더 큰 계획 안에서 예비적 역할을 할 수 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">이 장 마지막 문장, '요셉을 기억하지 못하고 그를 잊었더라'는 참 아프게 다가와요. 정당한 도움을 요청했는데 그냥 잊혀지는 거니까요. 근데 성경 전체를 보면, 사람에게 잊혀지는 것과 하나님께 잊혀지는 것은 전혀 다른 문제라는 걸 알게 돼요. 사람은 잊어도, 하나님의 때는 정확히 다가오고 있었거든요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요셉이 자신의 억울한 상황을 벗어나기 위해 관원장에게 도움을 요청한 것(14-15절)은 하나님에 대한 신뢰 부족을 보여주는 것인가?</div>
+        <div class="deep-body">이는 신학적으로 흥미로운 균형점을 보여준다. 요셉은 자신의 형통이 궁극적으로 하나님께로부터 온다는 것을 분명히 알고 고백하면서도(8절), 동시에 인간적으로 가능한 수단(관원장에게 도움을 요청하는 것)을 사용하는 것을 주저하지 않는다. 이는 하나님을 향한 신뢰와 인간적 지혜/노력이 상호 배타적이지 않다는 것을 보여주며, 수동적 운명론이 아니라 하나님을 신뢰하면서도 합당한 방법을 적극적으로 모색하는 성경적 균형을 보여주는 사례로 이해될 수 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>술 맡은 관원장이 요셉을 잊은 것에 대해 성경은 그를 어떻게 평가하는가?</div>
+        <div class="deep-body">본문은 이 망각에 대해 명시적 도덕적 비난을 가하지 않고 담담히 사실만을 서술한다. 그러나 이 서술 자체가 인간의 은혜를 저버리는 배은망덕함에 대한 암묵적 논평으로 기능한다고 보는 해석이 일반적이다. 동시에 이 지연은 궁극적으로 요셉에게 유익하게 작용한다 — 만약 그가 즉시 풀려났다면, 하나님이 예비하신 훨씬 더 큰 사명(애굽 전체의 총리)의 자리에는 이르지 못했을 수도 있다는 점에서, 이 '잊혀짐'조차 섭리적 지연으로 재해석될 수 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch41">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30q8-16 16-16t16 16" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 30v6M20 30v6M28 30v6M36 30v6" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 41</div>
+      <h1>41장 · 바로의 꿈과 요셉의 승격</h1>
+      <div class="chapter-sub">이 년의 기다림 끝에 찾아온 부름</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 41:1-57</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">41:1-36</div>
+        <div>
+          <div class="flow-title">바로의 꿈과 해석</div>
+          <div class="flow-body">바로가 살진 일곱 암소를 파리한 일곱 암소가 삼키는 꿈과, 무성한 일곱 이삭을 마른 일곱 이삭이 삼키는 꿈을 연이어 꾸지만 애굽의 어떤 점술가도 해석하지 못한다. 그제야 술 맡은 관원장이 요셉을 기억해내고, 요셉은 바로 앞에 서서 <b class="hl-quote">"이는 하나님이 그 행하실 일을 바로에게 보이심이니이다"</b>(28절)라며 일곱 해 풍년 후 일곱 해 흉년이 올 것을 해석하고, <b class="hl-insight has-insight" data-insight="4">지혜롭고 명철한 사람을 세워 곡물을 저축</b>하는 구체적 정책까지 제안한다(33-36절).</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">41:37-57</div>
+        <div>
+          <div class="flow-title">애굽의 총리가 된 요셉</div>
+          <div class="flow-body">바로는 요셉의 지혜에 감탄하여 <b class="hl-quote">"이 사람과 같이 하나님의 영에 감동된 사람을 우리가 어찌 찾을 수 있으리요"</b>(38절)라며 그를 애굽 전국의 총리로 세우고, 자기의 인장 반지와 세마포 옷, 금 사슬을 그에게 준다. 삼십 세의 요셉은 애굽 여인 아스낫과 결혼하여 므낫세('잊어버리게 하다')와 에브라임('번성하다')을 낳으며, 예언대로 일곱 해 풍년과 흉년이 정확히 임하는 가운데 그의 정책 덕분에 애굽뿐 아니라 온 세상이 그에게로 와서 곡식을 산다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">이 년의 기다림이 완벽한 때를 위한 것이었음</div>
+        <div class="teach-body">요셉이 관원장에게 잊혀진 지 정확히 이 년 후(1절)에야 바로가 꿈을 꾸고, 그 시점에 술 맡은 관원장이 요셉을 기억해낸다. 이 정확한 타이밍은 우연이 아니라, 하나님이 인간의 시간표가 아니라 자신만의 완벽한 때에 계획을 성취하신다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">해석을 넘어선 실천적 지혜</div>
+        <div class="teach-body">요셉은 단지 꿈을 해석하는 데 그치지 않고, 그 해석에 기반한 구체적이고 실천적인 정책(오분의 일 저축 제도)까지 제안한다. 이는 참된 영적 통찰이 추상적 지식에 머물지 않고 실제적이고 지혜로운 행동으로 이어져야 함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">하나님께 영광을 돌리는 리더십</div>
+        <div class="teach-body">바로 앞이라는 절대 권력자 앞에서도 요셉은 "내가 아니라 하나님이 바로에게 편안한 대답을 하시리이다"(16절)라며 시종일관 모든 영광을 하나님께 돌린다. 이는 높은 지위에 오를수록 자기 자랑이 아니라 겸손한 인정이 더욱 중요해진다는 원리를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">과거의 고통을 재해석하는 이름들</div>
+        <div class="teach-body">요셉이 두 아들에게 붙인 이름(므낫세 '하나님이 내게 내 모든 고난과 아버지의 온 집 일을 잊어버리게 하셨다', 에브라임 '하나님이 나를 내가 수고한 땅에서 번성하게 하셨다')은, 그가 겪은 모든 고난(형제의 배신, 노예생활, 억울한 감금)이 이제 하나님의 은혜 안에서 새로운 의미로 재해석되고 있음을 보여준다. 다만 '잊어버리게 하셨다'는 이름조차 이후 형제들을 만났을 때 결코 완전히 잊지 않았음을 보여주는 서사와 흥미로운 긴장을 이룬다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">이방 나라를 통한 하나님의 보편적 섭리</div>
+        <div class="teach-body">요셉이 애굽이라는 이방 제국의 총리가 되어 온 세상(가나안을 포함, 이는 곧 야곱의 가족을 포함한다는 것을 암시)을 기근에서 구원하는 도구가 된다는 것은, 하나님의 구원 계획이 이스라엘이라는 특정 민족에 국한되지 않고 이방 나라와 그 정치 체제를 통해서도 실현될 수 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">요셉이 노예로 팔려간 게 열일곱 살, 총리가 된 게 서른 살이에요. 무려 십삼 년이라는 시간이 걸렸어요. 그 사이에 그가 얼마나 많은 밤을 억울함과 씨름했을지 우리는 다 알 수 없죠. 근데 이 장에 이르러서야 비로소 그 모든 시간이 헛되지 않았다는 게 드러나요. 하나님의 시간표는 우리의 조급함과 다르게 움직이지만, 결코 늦지 않아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>바로가 이방의 왕임에도 요셉을 통해 나타난 이스라엘의 하나님의 능력을 그렇게 즉각적으로 인정한 것을 어떻게 이해해야 하는가?</div>
+        <div class="deep-body">애굽의 다신교적 세계관 속에서 바로 자신도 신적 존재로 숭배받던 상황을 고려하면, 그가 "하나님의 영에 감동된 사람"(38절)이라며 요셉의 하나님을 인정한 것은 주목할 만한 사건이다. 이는 아비멜렉(20장, 26장)의 경우처럼, 하나님의 일반 계시와 능력이 언약 백성 밖의 통치자들에게도 인식될 수 있음을 보여주는 반복적 패턴의 연장선이다. 다만 바로가 이를 배타적 유일신 신앙으로까지 완전히 받아들였다고 단정하기는 어려우며, 실용적 필요(꿈의 정확한 해석과 위기관리 능력에 대한 실질적 인정)와 결합된 제한적 인정으로 이해하는 것이 본문에 더 충실한 해석일 수 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>요셉이 애굽 여인과 결혼한 것(45절)은 아브라함이 이삭의 아내를 가나안 여인 중에서 구하지 말라 했던 원칙(24장)과 배치되지 않는가?</div>
+        <div class="deep-body">본문은 이에 대해 명시적 평가를 내리지 않는다. 다만 문맥상 요셉은 이미 애굽 사회에 완전히 통합된 총리로서 정치적·사회적 필요에 따라 결혼했을 가능성이 있으며, 이는 아브라함의 원칙(가나안의 우상숭배 문화로부터 후손을 지키려는 의도)과는 다른 상황(애굽이라는 전혀 다른 문화적 맥락, 그리고 요셉 자신이 이미 확고한 신앙의 정체성을 지닌 성인이었다는 점)일 수 있다. 다만 흥미롭게도 이 결혼에서 태어난 에브라임과 므낫세는 이후 48장에서 야곱에 의해 정식으로 이스라엘의 지파로 입양되며, 이는 이방인과의 결합에서 난 후손도 하나님의 언약 공동체 안으로 온전히 받아들여질 수 있음을 보여주는 포용적 신학으로 이해될 수 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch42">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 20h28l-4 18H14z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M16 20l2-8h12l2 8" fill="none" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 42</div>
+      <h1>42장 · 형들의 첫 방문</h1>
+      <div class="chapter-sub">알아보지 못한 형들, 시험</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 42:1-38</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">42:1-24</div>
+        <div>
+          <div class="flow-title">곡식을 사러 온 형들과 정탐꾼 누명</div>
+          <div class="flow-body">가나안에도 기근이 임하자 야곱은 베냐민을 제외한 열 아들을 애굽으로 곡식을 사러 보낸다. 그들이 요셉 앞에 엎드리는 순간, 이는 정확히 <b class="hl-quote">요셉이 어릴 적 꾼 꿈</b>의 성취였다(37:7 참조). 요셉은 형들을 알아보지만 <b class="hl-insight has-insight" data-insight="5">형들은 그를 알아보지 못하고</b>(8절), 요셉은 그들을 정탐꾼이라 몰아붙이며 시므온을 인질로 잡아두고 막내 베냐민을 데려오라 요구한다. 형들은 이 곤경 속에서 서로 "우리가 아우의 일로 말미암아 범죄하였도다"(21절)라며 뒤늦게 양심의 가책을 토로하고, 이를 몰래 엿듣던 요셉은 돌아서서 운다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">42:25-38</div>
+        <div>
+          <div class="flow-title">돈과 함께 돌려보내짐과 야곱의 두려움</div>
+          <div class="flow-body">요셉은 그들의 자루에 곡식과 함께 돈을 몰래 다시 넣어 돌려보내는데, 이를 발견한 형제들은 두려움에 떤다(28절). 가나안으로 돌아와 아버지에게 자초지종을 고하자, 야곱은 <b class="hl-quote">"너희가 나로 자식을 잃게 하도다... 이러한 일이 다 내게로 돌아오는도다"</b>(36절)라며 베냐민을 보내기를 거절한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">뒤늦은 양심의 각성</div>
+        <div class="teach-body">형들이 이십여 년 만에 처음으로 요셉을 팔았던 죄를 직접적으로 언급하며 회개의 언어를 사용하는 것(21절)은, 시간이 지나도 처리되지 않은 죄책감이 여전히 마음 깊은 곳에 남아 있다가 위기의 순간 표면으로 떠오를 수 있음을 보여준다. 이는 진정한 회개로 나아가는 과정의 시작이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">요셉의 시험이 지닌 목적 — 복수가 아닌 확인</div>
+        <div class="teach-body">요셉이 형들에게 가혹하게 대하는 것은 단순한 복수심이 아니라(그는 형들 몰래 눈물을 흘린다), 그들이 진정으로 변화되었는지, 특히 아버지의 편애를 받는 또 다른 동생(베냐민)을 대하는 태도가 예전과 달라졌는지를 확인하려는 시험의 성격을 지닌다. 이는 이후 44장에서 더욱 명확해진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">죄의 대가가 돌고 도는 것에 대한 두려움</div>
+        <div class="teach-body">형제들은 돈이 자루에서 다시 발견되자 "하나님이 어찌하여 우리에게 이 일을 행하셨는가"(28절)라며 극심한 두려움을 느낀다. 이는 오랫동안 억눌러온 죄책감이 조그마한 일에도 즉각 하나님의 심판으로 해석될 만큼 예민하게 살아있었음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">야곱의 반복되는 상실의 고통</div>
+        <div class="teach-body">야곱의 반응("너희가 나로 자식을 잃게 하도다")은 요셉을 잃은 상처가 수십 년이 지나도 여전히 아물지 않았음을 보여준다. 그는 시므온의 억류와 베냐민을 향한 요구가 마치 요셉을 잃었던 그 고통의 반복인 것처럼 느끼며 극도로 방어적이 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">보이지 않는 하나님의 큰 그림 안에서 진행되는 사건들</div>
+        <div class="teach-body">형제들의 곤경, 요셉의 시험, 야곱의 두려움 — 이 모든 것이 표면적으로는 혼란과 고통처럼 보이지만, 독자는 이미 요셉이 총리라는 것을 알고 있기에 이 모든 사건이 궁극적으로 가족의 회복과 구원을 향해 나아가고 있음을 안다. 이는 당사자들이 이해하지 못하는 순간에도 하나님의 더 큰 계획이 진행되고 있을 수 있다는 것을 독자에게 상기시키는 극적 아이러니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">형들이 이십 년도 더 지난 일을 갑자기 다시 떠올리며 '우리가 아우의 일로 범죄하였도다'라고 말하는 장면, 저는 이게 참 현실적이라고 생각해요. 처리되지 않은 죄책감은 사라지지 않고 마음 깊은 곳에 계속 남아 있다가, 어떤 위기의 순간에 갑자기 다시 떠오르곤 하죠. 진짜 회개는 그 순간을 피하지 않고 정직하게 마주하는 데서 시작되는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요셉이 형들에게 자신의 정체를 즉시 밝히지 않고 이렇게 복잡한 시험 과정을 거치게 한 것은 정당한가, 아니면 과도한 것인가?</div>
+        <div class="deep-body">본문은 요셉의 정확한 심리적 동기를 완전히 설명하지 않지만, 여러 단서(형들 몰래 우는 것, 시므온을 인질로만 잡고 나머지는 풀어주는 것, 돈을 몰래 돌려주는 것)는 이것이 단순한 복수가 아니라 신중한 확인의 과정임을 시사한다. 특히 베냐민을 향한 그들의 태도(자신이 겪었던 것과 같은 배신을 반복할 것인지)를 시험하는 것은, 그가 형제들을 완전히 신뢰하고 관계를 회복하기 전에 실제 성품의 변화를 확인하려는 지혜로운 신중함으로 이해될 수 있다. 이는 완전한 성급한 용서가 아니라, 진정한 화해를 위한 필요한 과정으로 읽는 것이 균형 잡힌 해석이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>돈이 자루에 다시 들어있는 것을 형제들이 하나님의 심판의 징조로 즉각 해석하는 것(28절)은 무엇을 보여주는가?</div>
+        <div class="deep-body">이는 그들이 오랫동안 짊어져 온 죄책감이 얼마나 깊이 그들의 세계관을 형성했는지를 보여준다. 정상적 상황이라면 돈이 돌아온 것은 오히려 좋은 소식(공짜 곡식)으로 받아들여질 수도 있었지만, 그들은 즉시 이것을 자신들의 과거 죄에 대한 하나님의 심판적 개입으로 해석한다. 이는 처리되지 않은 죄책감이 이후의 모든 경험을 처벌에 대한 두려움의 렌즈로 왜곡해서 보게 만들 수 있다는 심리적·영적 통찰을 제공하며, 동시에 이 두려움 자체가 그들을 결국 진실한 회개로 이끄는 하나님의 섭리적 도구로 작용하고 있음을 암시한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch43">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="16" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 40c0-8 5-14 12-14s12 6 12 14" fill="none" stroke="currentColor" stroke-width="1.8"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 43</div>
+      <h1>43장 · 베냐민과 함께 두 번째 방문</h1>
+      <div class="chapter-sub">유다의 보증, 그리고 잔치</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 43:1-34</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">43:1-15</div>
+        <div>
+          <div class="flow-title">유다의 보증과 야곱의 승낙</div>
+          <div class="flow-body">기근이 심해지자 다시 곡식을 사러 가야 하는데, <b class="hl-term">유다</b>가 나서서 "내가 그를 위하여 담보가 되오리니 아버지께서 내 손에서 그를 찾으소서"(9절)라며 베냐민에 대한 전인격적 책임을 자원한다. 이는 37장에서 요셉을 팔자고 제안했던 바로 그 유다가 이제는 동생을 위해 자신의 목숨을 담보로 내놓는 극적인 변화를 보여준다. 야곱은 마침내 승낙하며 예물과 갑절의 돈을 챙겨 보낸다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">43:16-34</div>
+        <div>
+          <div class="flow-title">요셉의 집에서의 잔치</div>
+          <div class="flow-body">형제들은 요셉의 집으로 인도되자 지난번 돈 문제로 두려워하지만, 청지기는 그들을 안심시킨다. 요셉은 베냐민을 보고 <b class="hl-insight has-insight" data-insight="6">감정이 복받쳐 골방으로 들어가 운다</b>(30절). 잔치에서 요셉은 형제들을 나이 순서대로 정확히 앉히는데(33절, 그가 그들을 정확히 알고 있음을 암시하는 극적 장치) 형제들은 놀라워한다. 베냐민에게는 다른 형제들보다 다섯 배나 많은 음식을 주는데도, 이번에는 형제들 사이에 예전과 같은 질투의 기색이 보이지 않는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">유다의 극적인 변화 — 속이는 자에서 보증하는 자로</div>
+        <div class="teach-body">37장에서 동생을 팔자고 제안했던 유다가 이제는 동생을 위해 "내 손에서 그를 찾으소서"라며 전적인 책임을 자원하는 것은, 창세기 전체에서 가장 극적인 인물 변화 중 하나다. 이는 38장의 다말 사건을 통한 자기 인식의 각성이 실제 삶의 변화로 이어졌음을 보여주는 열매다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">희생적 리더십의 모범</div>
+        <div class="teach-body">유다의 보증("내가 영영히 아버지께 죄인이 되리이다", 9절)은 이후 44장에서 실제로 베냐민 대신 자신이 노예가 되겠다고 자원하는 것으로 완성된다. 이러한 자기희생적 리더십은 훗날 유다 지파에서 나올 그리스도(대속적 희생을 통한 구원)의 예표로 신학적으로 읽힌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">감정을 억누르면서도 여전히 살아있는 사랑</div>
+        <div class="teach-body">요셉이 베냐민을 보고 골방에 가서 눈물을 흘리는 장면은, 그가 형들을 시험하는 냉정한 총리의 가면 뒤에서도 여전히 깊은 가족애를 간직하고 있음을 보여준다. 이는 정의로운 시험과 인간적인 사랑이 동시에 공존할 수 있음을 보여주는 인상적인 장면이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">과거의 두려움이 서서히 신뢰로 바뀌어감</div>
+        <div class="teach-body">돈 문제로 여전히 두려워하던 형제들이 청지기의 설명("너희 하나님, 너희 아버지의 하나님이 재물을 너희 자루에 넣어 주신 것이니라", 23절)을 통해 안심하게 되는 과정은, 신뢰가 단번에 회복되지 않고 여러 작은 확인의 경험을 통해 점진적으로 쌓여간다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">변화의 증거 — 사라진 질투</div>
+        <div class="teach-body">베냐민이 다섯 배 많은 음식을 받는데도 형제들 사이에 질투의 기색이 없다는 서술(34절)은 은근하지만 중요한 신호다. 이는 37장에서 요셉에 대한 편애가 극심한 질투와 폭력으로 이어졌던 것과 대조적으로, 이제 형제들이 실제로 어느 정도 성숙했을 가능성을 암시하며 다음 장(44장)의 최종 시험을 위한 복선이 된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">유다의 변화, 정말 놀랍지 않아요? 동생을 은 이십 개에 팔자고 제안했던 바로 그 사람이, 이제는 '내 손에서 그를 찾으소서'라며 자기 목숨을 걸겠다고 해요. 사람이 이렇게 바뀔 수 있다는 게, 그리고 그 변화가 다음 장에서 훨씬 더 극적으로 완성된다는 게 참 감동적이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>야곱이 처음에는 베냐민을 보내기를 거부하다가(42:38) 결국 승낙한 이유는 무엇인가?</div>
+        <div class="deep-body">본문은 두 가지 요인을 제시한다 — 첫째, 기근이라는 실존적 위기("만일 지체하지 아니하였더면 우리가 벌써 두 번 갔다 왔으리이다", 43:10)가 그를 압박했고, 둘째, 유다의 진지하고 전적인 보증(자신의 전 존재를 걸고 책임지겠다는 서원)이 아버지의 마음을 움직였다. 이는 위기 속에서도 신뢰할 만한 사람의 진실한 보증이 두려움을 극복하게 하는 힘이 될 수 있음을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>요셉이 형제들을 나이 순서대로 정확히 앉힌 것(33절)에 형제들이 놀란 이유는 무엇이며, 이는 요셉의 정체를 의심하게 할 만한 단서였는가?</div>
+        <div class="deep-body">본문은 형제들이 이를 "서로 이상히 여겼더라"고만 기록하며 그들이 실제로 요셉의 정체를 의심했다고 명시하지는 않는다. 이는 아마도 그들이 이 애굽 총리의 놀라운 지혜와 신비로운 능력(꿈 해석 등 이미 알려진 명성) 정도로 치부했을 가능성이 크며, 자신들이 팔아버린 동생이 이런 위치에 있으리라고는 상상조차 하지 못했을 심리적 배경(강한 확증 편향)이 작용했을 것으로 이해된다. 이는 다음 장(45장)에서 요셉이 마침내 정체를 밝혔을 때 형제들이 그토록 경악하고 말을 잃는 반응(45:3, "그 형들이 그 앞에서 놀라서 대답하지 못하더라")과도 자연스럽게 연결된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch44">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 10v20a6 6 0 0012 0V10" fill="none" stroke="currentColor" stroke-width="1.8"/><ellipse cx="24" cy="10" rx="6" ry="3" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 44</div>
+      <h1>44장 · 은잔과 유다의 탄원</h1>
+      <div class="chapter-sub">베냐민을 위해 자신을 내놓은 유다</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 44:1-34</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">44:1-13</div>
+        <div>
+          <div class="flow-title">은잔을 이용한 마지막 시험</div>
+          <div class="flow-body">요셉은 청지기에게 자신의 <b class="hl-term">은잔</b>을 베냐민의 자루에 몰래 넣게 하고, 형제들이 떠난 후 뒤쫓아가 잔을 훔쳤다는 누명을 씌운다. 형제들은 결백을 확신하며 "누구에게서 발견되든지 그는 죽을 것이요"(9절)라고 자신 있게 말하지만, 정작 그 잔이 <b class="hl-insight has-insight" data-insight="7">베냐민의 자루에서 발견</b>되자(12절) 그들은 옷을 찢으며 절망한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">44:14-34</div>
+        <div>
+          <div class="flow-title">유다의 탄원과 자기희생의 제안</div>
+          <div class="flow-body">형제들이 다시 요셉 앞에 엎드리자, 유다가 나서서 길고 감동적인 탄원을 한다 — 아버지가 이미 요셉을 잃은 슬픔에서 벗어나지 못했으며, 베냐민마저 잃으면 "아버지께서 그 아들이 없음을 보고 죽으리니"(31절)라고 호소하며, <b class="hl-quote">"주의 종으로 그 아이를 대신하여 있어서 내 주의 종이 되게 하시고 그 아이는 그의 형제들과 함께 올려보내소서"</b>(33절)라며 자신이 대신 노예가 되겠다고 자원한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">진정한 회개의 증거 — 반복하지 않는 죄</div>
+        <div class="teach-body">유다는 20여 년 전 요셉(라헬의 아들)을 헐값에 팔아넘겼던 바로 그 사람이지만, 이제 또 다른 라헬의 아들(베냐민)이 위험에 처하자 완전히 다른 선택을 한다. 참된 회개는 단지 말로 뉘우치는 것이 아니라, 동일한 유혹의 상황에서 실제로 다르게 행동하는 것으로 증명된다는 성경적 진리를 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">대속적 희생의 결정적 예표</div>
+        <div class="teach-body">유다의 제안("나를 대신 잡으시고 그를 놓아주소서")은 성경 전체에서 가장 명확한 대속의 예표 중 하나로 꼽힌다. 죄 없는(적어도 이 사건에서는) 자가 다른 사람의 자리에서 형벌을 대신 짊어지겠다고 자원하는 이 장면은, 유다 지파에서 나실 그리스도가 죄인들을 위해 스스로 십자가를 지신 사건의 생생한 예표로 신학자들에 의해 오랫동안 읽혀왔다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">아버지를 향한 진실한 사랑</div>
+        <div class="teach-body">유다의 탄원은 자신이나 베냐민을 위한 것이기 이전에, 근본적으로 늙은 아버지의 고통을 염려하는 마음에서 비롯된다("아버지의 생명과 그의 생명이 서로 결탁되었거늘", 30절). 이는 가족을 향한 희생적 사랑이 회개와 변화의 실질적 동력이 될 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">완전한 시험의 통과</div>
+        <div class="teach-body">요셉이 설계한 이 마지막 시험(베냐민이 누명을 쓰고 홀로 남겨지는 상황)은, 형제들이 예전처럼 총애받는 동생을 버리고 자신들만 안전하게 떠날 것인지, 아니면 그를 위해 희생할 것인지를 묻는 결정적 질문이었다. 유다의 응답은 이 시험을 완전히 통과했음을 보여주며, 다음 장에서 요셉이 마침내 정체를 밝히는 결정적 계기가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">공동체적 책임감의 성숙</div>
+        <div class="teach-body">유다는 단지 베냐민 한 사람만을 위해서가 아니라, 온 가족(아버지와 형제들 전체)의 안녕을 위해 자신을 내놓는다. 이는 개인주의적 자기 보호를 넘어 공동체 전체를 향한 책임감으로 성장한 성숙한 리더십의 모습이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">유다의 탄원, 저는 성경에서 가장 감동적인 연설 중 하나라고 생각해요. '나를 대신 잡으시고 그를 놓아주소서.' 이 짧은 문장 안에 이십 년 전의 죄에 대한 진짜 회개와, 아버지를 향한 진실한 사랑, 그리고 동생을 위한 희생이 다 담겨 있어요. 사람이 이렇게까지 변할 수 있다는 게, 그리고 그 변화가 바로 다음 장에서 완전한 화해로 이어진다는 게 정말 아름다워요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요셉이 은잔을 이용한 이 시험을 설계한 것은 지나치게 잔인하고 조작적인 것은 아닌가?</div>
+        <div class="deep-body">현대 독자의 관점에서 이 시험은 상당히 극적이고 심리적으로 가혹하게 느껴질 수 있다. 그러나 문맥상 이는 요셉이 형제들의 진정한 성품 변화(특히 총애받는 동생을 버릴 것인지)를 확인할 다른 방법이 없었던 상황에서, 신뢰를 재건하기 위한 마지막이자 결정적인 검증 과정으로 이해된다. 그가 형들 앞에서 지속적으로 눈물을 흘리는 것(43:30, 그리고 곧이어 45:2)은 이 과정이 냉정한 복수가 아니라 여전히 깊은 애정과 갈망(진정한 화해에 대한) 속에서 이루어지고 있음을 보여준다. 다만 본문 자체가 이 방법론에 대한 명시적 도덕적 평가를 내리지 않기에, 이는 독자가 씨름해야 할 열린 질문으로 남는다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>유다의 자기희생 제안이 그리스도의 대속과 정확히 일치하는 예표라고 볼 수 있는가, 아니면 지나친 신학적 확대 해석인가?</div>
+        <div class="deep-body">신중한 해석은 유다의 행위를 그리스도 대속의 '완벽한 예표'로 절대화하기보다, 성경 전체에 흐르는 대속적 희생이라는 신학적 패턴의 초기 사례로 이해하는 것이다. 몇 가지 중요한 차이도 있다 — 유다는 죄 없는 희생자가 아니라 오히려 과거 요셉에게 죄를 지은 당사자이며, 그의 제안은 실제로 실행되지 않는다(베냐민은 풀려나고 유다도 대신 잡히지 않는다). 그럼에도 이 장면이 담고 있는 핵심 원리 — 사랑하는 자를 위해 자신을 대신 내어놓으려는 자발적 희생 — 은 신약에서 그리스도의 사역을 이해하는 신학적 언어와 깊이 공명하며, 많은 성경신학자들이 이를 정당한 모형론적 연결로 받아들인다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch45">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 24h14M26 24h14" stroke="currentColor" stroke-width="2"/><path d="M16 16l-8 8 8 8M32 16l8 8-8 8" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 45</div>
+      <h1>45장 · 요셉이 자기를 알림</h1>
+      <div class="chapter-sub">울음과 화해, 그리고 하나님의 큰 그림</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 45:1-28</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">45:1-15</div>
+        <div>
+          <div class="flow-title">정체를 밝히는 요셉</div>
+          <div class="flow-body">더 이상 참지 못한 요셉은 모든 애굽 사람을 물리치고 <b class="hl-quote">"내가 요셉이라 내 아버지께서 아직 살아 계시니이까"</b>(3절)라며 크게 울며 정체를 밝힌다. 놀라 말을 잃은 형들에게 그는 놀랍도록 은혜로운 신학적 해석을 제시한다: <b class="hl-insight has-insight" data-insight="8">"나를 이 곳에 판 자는 당신들이 아니요 하나님이시라... 당신들은 나를 이 곳에 팔았으나 하나님은 그것을 선으로 바꾸사"</b>(5-8절, 그리고 50:20에서 다시 확증됨). 그는 형제들과 입 맞추며 소리 내어 울고, 형제들도 그제야 그와 말하게 된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">45:16-28</div>
+        <div>
+          <div class="flow-title">바로의 환대와 야곱에게 전해진 소식</div>
+          <div class="flow-body">바로는 요셉의 형제들의 소식을 듣고 기뻐하며 온 가족을 애굽으로 초청하고 최선의 땅을 내어주겠다 약속한다. 요셉은 형제들을 예물과 함께 돌려보내며 <b class="hl-quote">"당신들은 길에서 다투지 말라"</b>(24절)는 인간적인 당부까지 잊지 않는다. 야곱은 처음에는 "요셉이 지금까지 살아 있어 애굽 땅 총리가 되었다"는 소식을 믿지 못하다가, 마침내 확신하며 <b class="hl-quote">"족하도다 내 아들 요셉이 지금까지 살아 있으니 내가 죽기 전에 가서 그를 보리라"</b>(28절)라고 외친다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">요셉의 신학적 해석 — 인간의 악을 넘어선 하나님의 선하신 계획</div>
+        <div class="teach-body">5-8절은 창세기 전체, 나아가 성경 신학 전체에서 가장 중요한 섭리 신학의 구절 중 하나다. 요셉은 형제들의 악행을 결코 축소하거나 무시하지 않으면서도("당신들이 나를... 팔았으나"), 동시에 그 악행 배후에서 일하신 하나님의 선하신 주권("하나님은 그것을 선으로 바꾸사")을 함께 고백한다. 이는 인간의 죄에 대한 책임과 하나님의 섭리적 주권이 서로 모순되지 않고 함께 성립할 수 있음을 보여주는 성숙한 신학적 균형이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">진정한 용서 — 원한을 넘어선 은혜</div>
+        <div class="teach-body">요셉은 형들을 정죄하거나 복수하지 않고 오히려 그들을 위로한다("당신들 자신을 원망하지 마소서", 5절). 이는 값싼 눈감아줌이 아니라, 자신이 겪은 극심한 고통을 하나님의 더 큰 목적 안에서 재해석함으로써 도달한 깊은 영적 성숙에서 나온 진정한 용서다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">울음으로 표현되는 회복된 관계</div>
+        <div class="teach-body">요셉이 소리 내어 울고(2절, 애굽 사람들과 바로의 궁에까지 들릴 정도였다) 형제들과 입 맞추며 우는 장면은, 오랜 세월의 상처와 오해가 마침내 정직한 감정의 표현과 함께 녹아내리는 화해의 순간을 생생하게 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">아버지를 향한 지속적 그리움</div>
+        <div class="teach-body">요셉이 가장 먼저 물은 것은 "내 아버지께서 아직 살아 계시니이까"였다. 이는 그의 모든 성공과 지위에도 불구하고, 아버지를 향한 사랑과 그리움이 결코 사라지지 않았음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">이방 왕의 자발적 환대 — 하나님의 백성을 향한 복</div>
+        <div class="teach-body">바로가 자발적으로 야곱의 온 가족을 애굽 최고의 땅에 정착시키겠다고 제안하는 것은, 아브라함 언약("너를 축복하는 자에게는 내가 복을 내리고", 12:3)이 이방 나라의 통치자를 통해서도 구체적으로 성취되고 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">'나를 이 곳에 판 자는 당신들이 아니요 하나님이시라' — 이 말이 얼마나 큰 은혜인지 몰라요. 형들의 죄를 없던 일로 만드는 게 아니라, 그 죄까지도 품고 넘어서는 더 큰 하나님의 계획을 보는 눈이거든요. 우리 삶에도 이해할 수 없는 고통의 순간들이 있지만, 언젠가는 요셉처럼 그 모든 것을 다른 시선으로 돌아볼 수 있는 날이 올 수 있다는 소망을 이 장면이 주는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요셉이 형제들의 죄를 하나님의 주권 안에서 재해석한 것("당신들이 아니요 하나님이시라")은 형제들의 도덕적 책임을 완전히 면제하는 것인가?</div>
+        <div class="deep-body">본문을 세밀히 읽으면 요셉은 결코 형제들의 책임을 부정하지 않는다 — "당신들이 나를 이 곳에 팔았으나"(5절)라는 표현은 그들의 실제 행위와 책임을 명시적으로 인정한다. 그가 강조하는 것은 그 죄악된 행위에도 불구하고, 혹은 바로 그 행위를 통해서도 하나님이 더 큰 선한 목적을 이루셨다는 것이다. 이는 신학적으로 '이중적 행위성'(하나님의 주권적 섭리와 인간의 도덕적 책임이 동일한 사건 안에서 함께 작동함)이라는 성경 전체에 흐르는 원리를 보여주는 대표적 사례이며, 사도행전 2:23("하나님께서 정하신 뜻과 미리 아신 대로 내준 바 되었거늘 너희가... 죽였으나")에서 그리스도의 십자가 사건에 대해서도 동일한 신학적 구조가 적용된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>요셉이 이 모든 고난을 겪고도 이렇게 신속하고 완전하게 용서할 수 있었던 근거는 무엇인가?</div>
+        <div class="deep-body">본문 자체는 심리적 과정을 상세히 설명하지 않지만, 몇 가지 단서가 있다 — 첫째, 그가 이름 지은 므낫세('하나님이 나로 내 모든 고난을 잊어버리게 하셨다', 41:51)는 이미 오래전부터 그가 고통을 하나님 안에서 처리해왔음을 암시한다. 둘째, 42-44장에 걸친 형제들과의 여러 만남에서 그가 반복적으로 눈물을 흘렸다는 사실은, 이 순간의 용서가 갑작스러운 충동이 아니라 오랜 시간에 걸쳐 내면에서 무르익어온 과정의 결실이었음을 보여준다. 그의 신학적 확신(하나님이 이 모든 것을 선으로 바꾸셨다는 인식)이 그를 원한이 아니라 감사와 은혜의 자리로 이끈 근본적 동력으로 이해된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch46">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30h32l-4-8H12z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><line x1="24" y1="8" x2="24" y2="22" stroke="currentColor" stroke-width="1.6"/><line x1="14" y1="30" x2="14" y2="40" stroke="currentColor" stroke-width="1.6"/><line x1="34" y1="30" x2="34" y2="40" stroke="currentColor" stroke-width="1.6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 46</div>
+      <h1>46장 · 애굽으로 내려가는 야곱</h1>
+      <div class="chapter-sub">약속의 재확인과 온 가족의 이주</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 46:1-34</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">46:1-7</div>
+        <div>
+          <div class="flow-title">브엘세바에서의 확증</div>
+          <div class="flow-body">야곱은 애굽으로 내려가는 길에 브엘세바에서 하나님께 제사를 드리는데, 하나님은 밤 환상 중에 <b class="hl-quote">"애굽으로 내려가기를 두려워하지 말라 내가 거기서 너를 큰 민족이 되게 하리라... 내가 반드시 너를 인도하여 다시 올라올 것이며"</b>(3-4절)라고 약속하신다. 이는 15장에서 아브라함에게 이미 예언된 400년 종살이(15:13)의 시작을 알리는 동시에, 그 귀환까지 이미 보증하시는 언약의 재확인이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">46:8-34</div>
+        <div>
+          <div class="flow-title">애굽에 이른 야곱의 가족과 요셉과의 재회</div>
+          <div class="flow-body">본문은 애굽으로 내려간 야곱 가족의 명단을 <b class="hl-insight has-insight" data-insight="9">모두 칠십 명</b>으로 상세히 기록한다(27절). 요셉은 마차를 타고 고센까지 마중 나와 아버지를 만나 <b class="hl-quote">"아버지의 목을 어긋맞추어 안고 얼마 동안 우니"</b>(29절), 야곱은 "네가 지금까지 살아 있고 내가 네 얼굴을 보았으니 지금 죽어도 원이 없도다"(30절)라고 말한다. 요셉은 형제들에게 바로 앞에서 자신들을 목축업자로 소개하도록 미리 지혜롭게 준비시킨다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">두려움 속에서도 구체적으로 응답하시는 하나님</div>
+        <div class="teach-body">야곱은 평생의 터전인 가나안을 떠나는 것에 대해 두려움을 느꼈을 것이다("두려워하지 말라"는 명령 자체가 이를 암시한다). 하나님은 그 두려움을 아시고 구체적인 약속(큰 민족이 될 것, 반드시 다시 인도하여 올라올 것)으로 직접 응답하신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">400년 예언의 시작 — 장기적 섭리의 첫걸음</div>
+        <div class="teach-body">이 애굽으로의 이주는 15:13에서 아브라함에게 이미 예고된 오랜 여정(400년 이방 종살이, 이후 큰 재물을 이끌고 나옴)의 실제 출발점이다. 이는 하나님의 계획이 한 세대의 시야를 훨씬 뛰어넘는 장구한 시간에 걸쳐 신실하게 성취되어감을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">재회의 감격 — 오랜 상실 끝의 회복</div>
+        <div class="teach-body">야곱과 요셉의 재회 장면("내가 네 얼굴을 보았으니 지금 죽어도 원이 없도다")은 창세기 전체에서 가장 감동적인 순간 중 하나로, 수십 년간의 슬픔과 그리움이 완전히 해소되는 절정을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">지혜로운 준비 — 고센 정착을 위한 전략</div>
+        <div class="teach-body">요셉이 형제들에게 목축업자임을 미리 밝히도록 준비시킨 것(34절, 애굽 사람들이 목축을 가증히 여겼다는 배경과 함께)은, 그가 가족을 고센이라는 독립된 지역에 정착시켜 애굽 문화에 완전히 동화되지 않고 별도의 정체성을 유지하도록 지혜롭게 계획한 것으로 이해된다. 이는 훗날 이스라엘이 애굽에서도 독자적 민족 정체성을 유지하며 번성할 수 있었던 실제적 기초가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">작은 무리에서 큰 민족으로 — 겨자씨 같은 시작</div>
+        <div class="teach-body">애굽으로 내려간 야곱의 가족이 겨우 칠십 명이었다는 사실(27절)은, 이후 출애굽기 1:7에서 이 작은 무리가 "생육이 중다하고 번식하고 창성하고 심히 강대하여 온 땅에 가득하게 되었더라"고 폭발적으로 성장하는 것과 극적으로 대비된다. 이는 하나님의 약속이 작고 미미해 보이는 시작에서도 반드시 성취됨을 보여주는 강력한 사례다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">야곱의 마지막 말, '내가 네 얼굴을 보았으니 지금 죽어도 원이 없도다' — 이 말에 얼마나 많은 세월의 그리움이 담겨 있을지 상상해보세요. 이십 년도 더 넘게 아들이 죽었다고 믿으며 슬퍼했던 아버지가, 이제 그 아들의 얼굴을 다시 보게 된 거예요. 성경에서 가장 눈물겨운 재회 장면 중 하나라고 생각해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>하나님이 야곱에게 애굽으로 내려가라고 명시적으로 확증하신 것은, 애굽에서의 이후 400년 노예 생활(출애굽기의 배경)을 미리 아시고도 그렇게 인도하신 것인가?</div>
+        <div class="deep-body">본문의 신학적 함의는 그렇다 — 하나님은 이미 아브라함에게 이 긴 여정(400년 종살이 포함)을 예고하셨고(15:13-16), 이제 야곱에게도 이 여정이 궁극적으로 "큰 민족"이 되는 과정이며 결국 "다시 인도하여 올라올 것"이라는 약속으로 그 전체 그림을 미리 보여주신다. 이는 하나님의 섭리가 단기적으로는 고난(노예생활)처럼 보이는 과정도 장기적 구속사의 필수적 단계로 포함할 수 있음을 보여주며, 인간이 당장은 이해할 수 없는 고난의 여정도 하나님의 더 큰 계획 안에서는 의미를 지닐 수 있다는 신학적 위로를 제공한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>애굽 명단에 기록된 '칠십 명'이라는 숫자는 정확한 것인가, 아니면 상징적 숫자인가?</div>
+        <div class="deep-body">이 숫자에 대해서는 본문 자체의 명단(8-27절)을 세밀히 계산하는 것과 관련해 사소한 논쟁들이 있으며(일부는 요셉과 그 아들들을 포함하는지 여부에 따라 계산이 약간 달라질 수 있음을 지적한다), 사도행전 7:14에서 스데반이 인용하는 칠십오 명이라는 숫자(칠십인역 헬라어 구약 전승을 따른 것으로 추정됨)와의 차이도 학자들 사이에서 논의된다. 그러나 이러한 세부적 차이와 무관하게, 본문의 핵심 신학적 요점은 '작은 무리'(70명 안팎)가 이후 거대한 민족으로 성장한다는 극적 대비에 있으며, 이 숫자 자체의 상징적 완전성(70이 성경에서 자주 완전함과 총체성을 상징하는 숫자로 쓰인다는 점)도 함께 고려할 만하다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch47">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 34c4-14 12-22 16-22s12 8 16 22" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="6" y1="34" x2="42" y2="34" stroke="currentColor" stroke-width="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 47</div>
+      <h1>47장 · 고센 정착과 흉년의 관리</h1>
+      <div class="chapter-sub">이방 땅에서의 정착과 지혜로운 통치</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 47:1-31</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">47:1-12</div>
+        <div>
+          <div class="flow-title">바로 앞에 선 야곱</div>
+          <div class="flow-body">요셉은 형제들을 바로에게 소개하고, 바로는 그들에게 고센 땅에 거주하며 자신의 가축을 다스리게 허락한다. 야곱도 바로 앞에 서서 그를 축복하는데, 바로의 질문("네 나이가 얼마냐")에 야곱은 <b class="hl-quote">"내 나그네 길의 세월이 백삼십 년이니이다 내 나이가 얼마 못되니 우리 조상의 나이에 미치지 못하나 험악한 세월을 보내었나이다"</b>(9절)라고 답하며, 자신의 긴 인생을 나그네의 여정, 그리고 험악함(요셉의 상실, 라헬의 죽음, 디나 사건 등 수많은 고난)으로 회고한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">47:13-31</div>
+        <div>
+          <div class="flow-title">요셉의 경제 정책과 야곱의 마지막 부탁</div>
+          <div class="flow-body">기근이 심해지자 요셉은 돈, 가축, 마지막으로 땅까지 곡식과 교환받아 바로의 소유로 만드는 정책을 시행하는데, 오직 <b class="hl-insight has-insight" data-insight="10">제사장들의 토지</b>만은 예외로 남긴다(22절). 백성들은 목숨을 건진 것에 감사하며 스스로 바로의 종이 되기를 자원한다. 야곱은 죽음이 가까워지자 요셉에게 자신을 애굽이 아닌 조상들의 땅(막벨라 굴)에 장사해 달라고 <b class="hl-term">맹세</b>시킨다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">나그네로서의 인생 — 험악하지만 의미 있는 여정</div>
+        <div class="teach-body">야곱의 자기 성찰("내 나그네 길의 세월... 험악한 세월")은 그의 삶이 결코 순탄하지 않았음을 정직하게 인정하는 겸손한 고백이다. 그러나 그는 동시에 이 여정 전체가 여전히 언약의 하나님과 함께한 순례였음을 암시하며, 히브리서 11:13-16의 "땅에서는 외국인과 나그네"라는 믿음의 조상들에 대한 신학적 평가와 맞닿는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">위기 속에서 발휘되는 지혜로운 통치</div>
+        <div class="teach-body">요셉의 토지 국유화 정책은 현대적 관점에서 논쟁적일 수 있지만, 당시 문맥에서는 백성 전체를 기근에서 살리기 위한 실제적이고 효과적인 위기관리였다. 그의 통치는 단지 개인적 성공이 아니라 온 나라의 생존을 책임지는 공적 지혜의 실천이었다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">거룩한 것에 대한 존중 — 제사장 토지의 예외</div>
+        <div class="teach-body">요셉이 제사장의 토지만은 국유화 대상에서 제외한 것(22절, 26절)은, 이방 종교 체제라 할지라도 종교적 영역에 대한 존중을 실천적으로 보여준 사례이며, 이는 훗날 이스라엘 자체의 토지법에서 레위 지파에게 별도의 기업을 주지 않고 특별히 대우하는 원리(민 18:20-24)와 흥미로운 평행을 이룬다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">고향 땅에 대한 변함없는 소망</div>
+        <div class="teach-body">야곱이 애굽에서 풍요롭게 정착했음에도 불구하고 죽어서는 반드시 가나안 막벨라 굴에 묻히기를 원한 것은, 그의 궁극적 소망이 애굽의 번영이 아니라 하나님이 약속하신 땅에 있었음을 보여준다. 이는 히브리서 11:16의 "더 나은 본향... 하늘에 있는 것을 사모하는" 믿음의 조상들의 태도를 예표적으로 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">위기 속 생존에 대한 백성들의 감사</div>
+        <div class="teach-body">애굽 백성들이 스스로 "우리는 왕의 종이 되겠나이다"(25절)라며 자원하는 것은, 극한 위기(생사가 걸린 기근) 속에서 생존 자체가 얼마나 큰 감사의 조건이 될 수 있는지를 보여준다. 이는 풍요로운 시대에는 당연하게 여겨지는 것들이 위기 속에서는 얼마나 소중한 것인지를 일깨운다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">야곱이 바로 앞에서 자기 인생을 '험악한 세월'이라고 요약하는 게 참 솔직하다고 생각해요. 성공한 노년의 모습으로 보일 수도 있었을 텐데, 그는 자신이 겪은 고난을 부정하지 않아요. 그런데도 여전히 조상들의 땅에 묻히고 싶다는 소망을 놓지 않죠. 힘든 인생이었지만, 그 모든 여정이 결국 약속의 땅을 향한 순례였다는 걸 그는 알고 있었던 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요셉의 토지 국유화 정책은 백성을 착취하는 것으로 볼 수 있는가, 아니면 정당한 위기관리였는가?</div>
+        <div class="deep-body">이는 해석이 엇갈리는 지점이다. 한편으로 이 정책은 애굽 백성 전체를 왕의 소작인으로 만들어 이후 애굽의 강력한 중앙집권적 왕정 체제의 경제적 기초를 놓았다는 점에서, 장기적으로 권력 집중과 불평등을 심화시킨 것으로 비판적으로 읽을 수도 있다(실제로 이러한 강력한 왕정 체제가 이후 출애굽기에서 이스라엘을 노예로 삼는 파라오의 권력 기반이 되었다는 점도 아이러니하게 지적된다). 다른 한편으로, 본문 자체는 이를 백성이 자발적으로 감사하며 받아들인 것으로 묘사하며("당신이 우리를 살리셨사오니", 25절), 당장의 생존을 위한 불가피하고 합리적인 위기 대응으로 제시한다. 창세기 저자는 이에 대해 명시적 도덕적 평가를 내리지 않으며, 이는 독자가 신중하게 판단해야 할 복합적인 정치경제적 사안으로 남아 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>야곱이 자신을 가나안에 장사해 달라고 그토록 강력히 맹세시킨 것(29-31절)은 단지 개인적 소망인가, 아니면 더 깊은 신학적 의미가 있는가?</div>
+        <div class="deep-body">이는 단순한 개인적 향수를 넘어서는 신학적 행위로 이해된다. 야곱의 이 요청은 그의 온 가족(그리고 훗날 이스라엘 전체)에게 애굽이 결코 최종 목적지가 아니라 일시적 체류지임을, 그리고 하나님이 약속하신 가나안 땅이 여전히 궁극적 소망의 대상임을 상징적으로 각인시키는 행위다. 이는 이후 50:24-25에서 요셉 자신도 동일한 요청(자신의 뼈를 가나안으로 가져가 달라는)을 하는 것으로 이어지며, 궁극적으로 출애굽기 13:19에서 실제로 성취된다 — 이러한 반복적 요청들은 이스라엘 백성이 애굽에서 아무리 오래 머물러도 결코 그 땅을 자신들의 최종 정체성으로 삼지 않도록 하는 신학적 장치로 기능한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch48">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="16" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="32" cy="20" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M16 26v6M32 26v6M20 12l6 6M28 12l-6 6" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 48</div>
+      <h1>48장 · 에브라임과 므낫세의 축복</h1>
+      <div class="chapter-sub">엇갈린 손, 그리고 지파로 입양된 손자들</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 48:1-22</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">48:1-12</div>
+        <div>
+          <div class="flow-title">손자들을 아들로 입양함</div>
+          <div class="flow-body">병든 야곱은 요셉과 그의 두 아들 므낫세와 에브라임을 맞이하며, 놀랍게도 <b class="hl-quote">"이제 네 두 아들 에브라임과 므낫세는 내 것이라 르우벤과 시므온처럼 내 것이 될 것이요"</b>(5절)라며 그들을 자신의 친아들처럼 정식으로 입양하여 이스라엘 지파의 반열에 세운다. 이는 요셉이 두 몫의 유업(장자권에 해당하는)을 받게 되는 실질적 조치였다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">48:13-22</div>
+        <div>
+          <div class="flow-title">엇갈린 손의 축복</div>
+          <div class="flow-body">요셉은 장자 므낫세를 야곱의 오른손 쪽에, 차자 에브라임을 왼손 쪽에 의도적으로 배치하지만, 야곱은 <b class="hl-insight has-insight" data-insight="11">팔을 엇바꾸어</b> 오른손을 에브라임에게, 왼손을 므낫세에게 얹는다(14절). 요셉이 이를 아버지의 실수로 여겨 바로잡으려 하자, 야곱은 <b class="hl-quote">"나도 안다 내 아들아 나도 안다... 그의 아우가 그보다 큰 자가 되고"</b>(19절)라며 의도적인 선택이었음을 밝힌다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">이방 혈통과 섞인 자손도 온전히 언약 공동체로 받아들여짐</div>
+        <div class="teach-body">에브라임과 므낫세는 애굽 여인 아스낫에게서 난 아들들이었지만(41:50), 야곱은 이들을 조금의 망설임도 없이 자신의 친아들과 동등하게 입양하여 이스라엘 열두 지파의 반열에 세운다. 이는 언약 공동체가 순수 혈통주의가 아니라 하나님의 은혜로운 선택과 포용에 근거함을 보여주는 중요한 신학적 선례다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">인간의 관습을 뒤집는 하나님의 선택 — 다시 반복되는 패턴</div>
+        <div class="teach-body">장자가 아니라 차자를 앞세우는 이 선택은, 창세기 전체에서 반복되는 패턴(가인 대신 아벨, 이스마엘 대신 이삭, 에서 대신 야곱)의 연장선이다. 이는 하나님의 선택이 인간 사회의 관습적 서열(장자 우선)에 매이지 않고, 자신의 자유로운 주권적 뜻대로 이루어짐을 거듭 확인시켜준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">영적 분별력 — 눈이 어두워도 흐려지지 않는 예언적 통찰</div>
+        <div class="teach-body">이삭의 경우(27장)와 달리, 눈이 어두운(10절) 야곱은 오히려 명확한 영적 분별력으로 의도적으로 손을 엇바꾼다. 이는 육체적 시력의 약화가 반드시 영적 통찰력의 약화를 의미하지 않으며, 오히려 노년의 지혜와 하나님과의 오랜 동행이 더 깊은 분별력을 낳을 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">장자권 축복이 두 몫으로 나뉘어 요셉에게 전해짐</div>
+        <div class="teach-body">이 사건을 통해 요셉은 실질적으로 장자의 몫(두 지파로 나뉜 유업)을 받게 되는데, 이는 훗날 역대상 5:1-2에서 명시적으로 확인된다 — 르우벤이 아버지의 침상을 더럽힌 죄(35:22)로 인해 장자권을 상실했고, 그 몫이 요셉에게 넘어갔다는 것이다. 이는 34장, 35장, 37장에 흩어져 있던 여러 사건들이 이 48장에서 신학적으로 수렴되는 지점이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">이스라엘이라는 이름으로 자손을 축복함</div>
+        <div class="teach-body">야곱은 축복 기도에서 자신을 지키신 하나님, "나를 모든 환난에서 건지신 여호와의 사자"(16절)를 언급하며 그 복이 손자들에게 이어지기를 구한다. 이는 그가 32장의 얍복강 씨름 경험(하나님과의 인격적 만남)을 자신의 정체성 전체의 핵심으로 삼고 후손에게 물려주고 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">손을 일부러 엇바꾸는 이 장면, 참 인상적이에요. 눈은 어두운데 오히려 그 어둠 속에서 더 정확하게 보는 것 같거든요. 나이 들고 몸이 약해져도, 하나님과 오래 동행한 사람에게는 오히려 더 깊어지는 영적 분별력이 있는 것 같아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>야곱이 이미 시력을 잃었는데(10절) 어떻게 의도적으로 정확히 손을 엇바꿀 수 있었는가?</div>
+        <div class="deep-body">본문은 이를 명시적으로 설명하지 않지만, 이는 그가 육체적 시력이 아니라 하나님이 주신 영적 분별(예언적 통찰)을 통해 이 선택을 했다는 것을 암시하는 것으로 일반적으로 이해된다. 앞서 25:23에서 리브가가 받은 예언("큰 자가 어린 자를 섬기리라")과 유사하게, 이는 인간의 자연적 시력이나 논리를 초월하는 하나님이 주신 계시적 지혜의 사례로 읽히며, 창세기 저자가 이를 통해 야곱의 노년이 여전히 하나님과 깊이 동행하는 시기였음을 강조하려는 의도로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>에브라임이 므낫세보다 축복받은 것이 이후 이스라엘 역사에서 실제로 성취되었는가?</div>
+        <div class="deep-body">실제로 에브라임 지파는 이후 이스라엘 역사에서 므낫세보다 훨씬 더 두드러진 위상을 갖게 된다 — 여호수아가 에브라임 지파 출신이었고(민 13:8), 북이스라엘 왕국이 분열 이후 종종 '에브라임'이라는 이름 자체로 대표되어 불릴 정도로(특히 예언서들, 예: 호세아서에서 에브라임이 북이스라엘 전체를 가리키는 관용적 표현으로 반복 사용됨) 그 정치적·상징적 비중이 컸다. 이는 야곱의 예언적 축복(19절)이 이후 실제 역사 속에서 구체적으로 성취되었음을 보여주는 사례로 이해된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch49">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l-4 16h-8l14 14-6-16 8-6-4-8z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 49</div>
+      <h1>49장 · 야곱의 마지막 축복</h1>
+      <div class="chapter-sub">열두 아들을 향한 예언적 유언</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 49:1-33</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">49:1-28</div>
+        <div>
+          <div class="flow-title">열두 아들 각각을 향한 예언적 축복</div>
+          <div class="flow-body">야곱은 임종을 앞두고 아들들을 모아 각자에게 예언적 축복(과 일부는 책망)을 선포한다. 르우벤은 아버지의 침상을 더럽힌 죄로 "탁월치 못하리로다"(4절)라는 심판을, 시므온과 레위는 세겜에서의 잔인함으로 "내가 그들을... 나누며 흩으리로다"(7절)라는 심판을 받는다. 그러나 <b class="hl-term">유다</b>에게는 <b class="hl-insight has-insight" data-insight="12">"규가 유다를 떠나지 아니하며... 실로가 오시기까지 이르리니"</b>(10절)라는 결정적인 메시아적 예언이 주어지며, 요셉에게는 "위로 하늘의 복과 아래로 땅에 있는 복"(25절)이라는 가장 풍성한 축복이 선언된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">49:29-33</div>
+        <div>
+          <div class="flow-title">매장에 대한 마지막 명령</div>
+          <div class="flow-body">야곱은 아들들에게 자신을 막벨라 굴, 곧 아브라함과 사라, 이삭과 리브가, 그리고 레아가 묻힌 조상들의 매장지에 장사하라고 명하고, 말을 마친 후 "그 발을 침상에 모으고 기운이 끊어져 자기 백성에게로 돌아갔더라"(33절).</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">과거의 죄가 미래의 축복에 실제로 영향을 미침</div>
+        <div class="teach-body">르우벤(35:22의 죄), 시므온과 레위(34장의 학살)에 대한 심판적 예언은, 과거의 구체적 행동들이 잊히지 않고 결국 후손과 지파의 운명에 실질적 영향을 미친다는 것을 보여준다. 이는 죄에는 반드시 실제적 결과가 따른다는 성경 전체의 일관된 가르침을 확증한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">유다를 향한 메시아 예언 — 구속사의 결정적 이정표</div>
+        <div class="teach-body">"규가 유다를 떠나지 아니하며"라는 예언은 성경 전체에서 메시아가 유다 지파에서 나올 것을 예고하는 가장 초기의 명시적 예언 중 하나로, 이후 다윗 왕조(삼하 7장)와 궁극적으로 예수 그리스도(마 1:1-3, 계 5:5의 "유다 지파의 사자")에게서 성취된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">레위의 저주가 훗날 축복으로 전환됨</div>
+        <div class="teach-body">레위 지파에 대한 심판("흩으리로다")은 표면적으로 부정적이지만, 흥미롭게도 이후 출애굽기 32:26-29에서 레위 지파가 금송아지 사건 때 하나님 편에 서는 결정적 헌신을 보임으로써, 이 '흩어짐'은 저주가 아니라 오히려 제사장 지파로서 온 이스라엘에 흩어져 섬기는 특별한 소명으로 전환된다. 이는 심판조차 회개와 헌신을 통해 새로운 의미로 재해석될 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">각 사람의 고유한 성품과 역사에 따른 개별적 예언</div>
+        <div class="teach-body">야곱의 축복은 획일적이지 않고, 각 아들의 실제 성품과 과거 행적(르우벤의 성급함, 유다의 사자 같은 용맹함, 잇사갈의 근면함, 단의 교활함 등)에 정확히 맞춰 개별화되어 있다. 이는 하나님이 각 사람을 고유한 존재로 아시고 그에 맞게 다루신다는 신학적 통찰을 반영한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">평온한 죽음 — 완성된 삶의 마무리</div>
+        <div class="teach-body">"자기 백성에게로 돌아갔더라"는 표현은 죽음을 단순한 끝이 아니라 먼저 간 조상들과의 재결합으로 이해하는 성경적 죽음관을 보여준다. 야곱은 파란만장했던 생애("험악한 세월", 47:9) 끝에 마침내 모든 아들에게 축복을 전하고 평안히 눈을 감는다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">야곱의 마지막 말들을 보면, 그가 자녀들을 정말 있는 그대로 보고 있었다는 걸 알 수 있어요. 잘한 것도, 못한 것도 다 기억하고 그대로 말해요. 그런데 그 안에 유다를 향한 메시아 예언이 숨어 있다는 게 놀랍죠. 창세기 3:15의 원시복음에서 시작된 구원의 약속이, 이렇게 구체적으로 한 지파를 향해 좁혀지고 있는 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>야곱의 이 마지막 말들은 단순한 축복인가, 아니면 진정한 예언인가? 그리고 이것이 실제 역사에서 어떻게 성취되었는가?</div>
+        <div class="deep-body">본문 자체가 이를 "후일에 당할 일"(1절)에 대한 예언으로 명시적으로 소개한다. 실제 이스라엘 역사를 살펴보면 상당수의 예언이 구체적으로 성취되었음이 확인된다 — 르우벤 지파는 실제로 이스라엘 역사에서 지도적 위치를 갖지 못했고, 시므온과 레위 지파는 각각 독립된 영토 없이 흩어져 배치되었으며(시므온은 유다 지파 영토 안에, 레위는 제사장 지파로 전국에 분산), 유다 지파는 실제로 이스라엘의 지도적 왕조(다윗 왕가)를 배출했다. 이러한 역사적 성취는 이 예언이 단순한 아버지의 개인적 소망이 아니라 하나님이 주신 실제 계시로 이해되어야 함을 뒷받침한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"실로가 오시기까지"(10절)라는 난해한 표현은 정확히 무엇을 가리키는가?</div>
+        <div class="deep-body">이는 성경에서 가장 해석이 분분한 메시아 예언 중 하나다. '실로'의 정확한 히브리어 원문과 의미에 대해 여러 해석이 있다 — 한 견해는 이를 '그에게 속한 것'이라는 뜻으로 읽어 메시아 자신을 가리킨다고 보며, 다른 견해는 지명(가나안 정복 후 성막이 세워진 실로)을 가리킨다고 보고, 또 다른 견해는 '평화를 가져오는 자'라는 뜻의 메시아 칭호로 이해한다. 유대교와 기독교의 전통적 해석 대다수는 이를 메시아 예언으로 이해해왔으며, 신약은 이 유다 지파를 향한 규(통치권)의 약속이 궁극적으로 그리스도에게서 성취된다고 해석한다(계 5:5). 정확한 어원학적 논쟁과 무관하게, 이 구절이 유다 지파에게 주어진 지속적이고 궁극적인 통치권에 대한 예언이라는 것은 폭넓게 인정된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch50">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="16" width="20" height="22" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="M14 24h20" stroke="currentColor" stroke-width="1.4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">GENESIS 50</div>
+      <h1>50장 · 야곱의 장례와 요셉의 마지막</h1>
+      <div class="chapter-sub">완전한 용서, 그리고 창세기의 마침</div>
+      <div class="ref-strip">
+        <span class="ref-item">창 50:1-26</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 따라 핵심 장면을 살펴봅니다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">50:1-14</div>
+        <div>
+          <div class="flow-title">성대한 장례와 조상들의 땅으로의 귀환</div>
+          <div class="flow-body">요셉은 아버지의 죽음에 통곡하며, 애굽의 관습대로 시신에 <b class="hl-term">향 재료</b>를 넣게 하고 애굽 전체가 칠십 일간 애도한다. 바로의 허락을 받아 요셉은 온 애굽의 고관들과 함께 성대한 행렬로 야곱을 가나안 막벨라 굴까지 옮겨 조상들 곁에 장사한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">50:15-26</div>
+        <div>
+          <div class="flow-title">완전한 용서와 요셉의 죽음</div>
+          <div class="flow-body">아버지가 죽자 형들은 요셉이 이제 보복할까 두려워하지만, 요셉은 눈물을 흘리며 <b class="hl-insight has-insight" data-insight="13">"당신들은 나를 해하려 하였으나 하나님은 그것을 선으로 바꾸사... 오늘과 같이 많은 백성의 생명을 구원하게 하시려 하셨나니"</b>(20절)라는 창세기 전체를 요약하는 신학적 선언으로 그들을 안심시킨다. 요셉은 110세로 죽으며, 마지막으로 "하나님이 반드시 당신들을 돌보시고... 내 해골을 여기서 메고 올라가겠다 하라"(24-25절)는 유언을 남기고 애굽에서 입관된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">용서는 일회적 사건이 아니라 지속되는 실천</div>
+        <div class="teach-body">요셉이 45장에서 이미 형들을 용서했음에도, 아버지의 죽음 이후 형들이 다시 두려워하며 용서를 재확인받으려 한다는 것은, 진정한 용서와 신뢰의 회복이 단번에 완결되지 않고 시간이 지나며 여러 번 재확인되고 다져지는 과정일 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">창세기 전체를 요약하는 신학적 정점</div>
+        <div class="teach-body">50:20("당신들은 나를 해하려 하였으나 하나님은 그것을 선으로 바꾸사")은 비단 요셉 이야기뿐 아니라 창세기 전체(타락, 가인의 살인, 바벨탑, 아브라함의 거짓말, 야곱의 속임수 등 반복된 인간의 죄)를 관통하는 핵심 신학을 한 문장으로 응축한다 — 인간의 죄가 아무리 심각해도 하나님의 주권적 선하심을 궁극적으로 좌절시킬 수 없다는 것이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">보복이 아닌 축복 — 완전히 다른 세계관의 선택</div>
+        <div class="teach-body">요셉이 실제로 형들을 해할 수 있는 모든 권력을 갖고 있었음에도(애굽의 총리로서) 그렇게 하지 않고 오히려 그들과 그 자녀들을 "기르리이다"(21절)라며 돌보기를 약속하는 것은, 힘을 가진 자가 그 힘을 보복이 아니라 은혜로 사용하는 성경적 리더십의 정점을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">약속의 땅을 향한 끝나지 않는 소망</div>
+        <div class="teach-body">요셉이 자신의 뼈를 훗날 가나안으로 옮겨달라고 유언한 것(25절)은, 그가 애굽에서 최고의 지위와 풍요를 누렸음에도 불구하고 결코 그곳을 자신의 최종 정체성이나 안식처로 여기지 않았음을 보여준다. 이 유언은 실제로 약 400년 후 출애굽기 13:19에서 문자 그대로 성취된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">창세기에서 출애굽기로 — 미완성으로 남겨진 이야기</div>
+        <div class="teach-body">창세기는 완결된 결말이 아니라 "애굽에서 입관되었더라"(26절)는 다소 미완의 느낌을 주는 문장으로 끝난다. 이는 창세기가 그 자체로 완결된 이야기가 아니라, 출애굽기에서 이어질 훨씬 더 큰 구속사(노예된 이스라엘의 해방과 시내산 언약)를 향해 열려 있는 서사임을 의도적으로 보여주는 문학적 장치다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">창세기의 마지막 장까지 왔네요. 창조에서 시작해서 요셉의 관으로 끝나는 이 긴 여정이요. 50:20 이 한 구절이 정말 창세기 전체를, 어쩌면 성경 전체를 요약하는 것 같아요 — '당신들은 나를 해하려 하였으나 하나님은 그것을 선으로 바꾸사.' 우리 삶의 가장 어두운 순간들도, 결국 하나님의 손 안에서는 다른 이야기가 될 수 있다는 소망이요. 그리고 이 이야기는 여기서 끝나지 않아요. 출애굽기로, 그리고 결국 우리에게까지 이어지는 훨씬 더 큰 이야기의 시작일 뿐이니까요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>요셉이 형들에게 반복적으로 용서를 확인시켜주는 것에서, 우리는 용서와 신뢰 회복의 관계에 대해 무엇을 배울 수 있는가?</div>
+        <div class="deep-body">이 장면은 용서(가해자를 향한 원한을 내려놓는 내적 결단)와 신뢰 회복(관계의 완전한 정상화)이 서로 다른 시간표를 가질 수 있음을 보여준다. 요셉은 이미 오래전에 진심으로 용서했지만, 형들의 죄책감과 두려움은 아버지라는 완충 장치(그들이 무의식적으로 요셉이 아버지를 봐서 참아왔다고 생각했을 가능성, 15절 "아버지가 죽었으니 요셉이 혹시 우리를 미워하여...")가 사라지자 다시 표면화된다. 요셉의 인내심 있는 반복적 확인은, 상처받은 관계의 완전한 회복이 한 번의 용서 선언으로 자동 완성되지 않고 지속적인 신뢰의 재확인을 필요로 할 수 있음을 보여주는 실제적 통찰을 제공한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>창세기가 이렇게 미완의 느낌을 주는 결말(애굽에서의 입관)로 끝나는 것이 신학적으로 의도된 것이라면, 이는 창세기 전체를 어떻게 다시 읽게 만드는가?</div>
+        <div class="deep-body">이는 창세기가 폐쇄된 완결편이 아니라 열린 서곡(prologue)임을 보여준다. 창조에서 시작해 아브라함의 부르심, 언약의 확립, 그리고 마침내 요셉을 통해 이스라엘 온 가족이 애굽에 정착하는 이 모든 이야기는, 궁극적으로 출애굽기에서 펼쳐질 훨씬 더 큰 구원 사건(노예 해방, 시내산 언약, 성막)을 위한 필수적 준비 단계였다는 것이다. 창세기를 읽을 때 이 열린 결말을 인식하는 것은, 개별 사건들(아브라함의 언약, 요셉의 고난과 승격 등)을 그 자체로 완결된 이야기가 아니라 하나님의 훨씬 더 크고 지속적인 구속사적 계획의 한 장(chapter)으로 이해하게 하며, 이는 궁극적으로 신약의 그리스도 사건, 그리고 계시록의 종말론적 완성까지 이어지는 성경 전체의 거대한 서사 구조를 예비적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+<div class="final-footer" style="text-align:center; padding: 14mm 4vw 20mm; color:var(--ink-soft); font-size:9pt; letter-spacing:0.04em;">
+  기독교한국침례회 은혜교회
+</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "은 이십 개 — 노예의 값과 훗날의 메아리", "body": "요셉이 팔린 값(은 이십 개, 28절)은 레위기 27:5에 규정된 5-20세 소년의 몸값 시세(은 이십 세겔)와 정확히 일치하며, 이는 이 거래가 당시 실제 노예 시장의 정확한 시세를 반영하고 있음을 보여준다. 흥미롭게도 훗날 예수님을 배신한 유다가 받은 돈이 은 삼십(마 26:15)이라는 점에서, 많은 신학자들은 요셉이 형제들에게 팔린 사건을 그리스도가 자기 백성에게 배신당하고 팔리신 사건의 예표로 함께 읽어왔다 — 두 사건 모두 가장 가까운 사람들에 의한 배신, 은을 대가로 한 거래, 그리고 궁극적으로 그 배신이 오히려 많은 사람을 구원하는 결과로 이어진다는 극적인 반전 구조를 공유한다."}, {"title": "도장과 끈과 지팡이 — 고대 근동의 신분증", "body": "유다가 다말에게 담보로 준 도장(인장)과 끈, 지팡이는 단순한 소지품이 아니라 고대 근동에서 개인의 신원을 확인하는 결정적 증표였다. 인장은 오늘날의 서명이나 신분증과 같은 법적 효력을 지녔으며, 지팡이 역시 개인마다 독특한 문양이 새겨져 소유자를 특정할 수 있었다. 다말이 이 세 가지를 모두 확보한 것은 우발적 행운이 아니라, 어떤 상황에서도 반박 불가능한 법적 증거를 마련하려 한 매우 치밀하고 의도적인 전략이었음을 보여준다."}, {"title": "\"내가 어찌 이 큰 악을 행하여 하나님께 죄를 지으리이까\"의 신학적 무게", "body": "요셉의 이 거절은 주목할 만한 신학적 구조를 지닌다 — 그는 이 죄가 보디발에 대한 배신(9절 전반부, \"내 주인이... 내게 아무것도 금하지 아니하였고 오직 당신뿐이라\")이라는 인간관계적 차원과, 동시에 궁극적으로 하나님께 대한 죄라는 신학적 차원 둘 다를 인식하고 있다. 이는 훗날 다윗이 밧세바와의 죄를 고백하며 \"내가 주께만 범죄하여\"(시 51:4)라고 고백하는 것과 흥미로운 대조를 이룬다 — 다윗의 죄는 실제로는 여러 사람(우리아, 밧세바 등)에게 해를 끼쳤음에도 궁극적으로 하나님께 대한 죄로 수렴되는 반면, 요셉은 죄를 짓기 전에 이미 이 이중적 차원(인간관계와 하나님과의 관계)을 명확히 인식하고 유혹을 거절했다는 점에서 두드러진다."}, {"title": "꿈 해석에서 드러나는 고대 애굽의 문화적 세부사항", "body": "요셉이 두 관원장의 꿈을 해석하는 방식(포도나무 세 가지 = 사흘, 떡 광주리 세 개 = 사흘)은 숫자와 상징을 정교하게 연결하는 고대 근동의 꿈 해석 전통과 유사한 형식을 취하면서도, 그 해석의 근원을 이방의 점술이 아니라 명시적으로 이스라엘의 하나님께 돌린다는 점에서 근본적으로 구별된다. 애굽은 실제로 고대 세계에서 꿈 해석과 마술적 점술이 매우 발달한 문화였고(41:8에서 바로가 '점술가와 현인'을 부르는 장면이 이를 확인해준다), 이런 문화적 배경 속에서 요셉이 오직 하나님만을 해석의 근원으로 선언하는 것은 이방 종교와의 명확한 신학적 대조를 이루는 의도적 서술로 이해된다."}, {"title": "오분의 일 저축 정책의 실제적 지혜", "body": "요셉이 제안한 정책(풍년 동안 소산의 오분의 일을 저축하는 것, 34절)은 단순한 종교적 신탁이 아니라 매우 실용적이고 지속 가능한 경제 정책으로 평가된다. 20%라는 비율은 칠 년 풍년 동안 저축하면 칠 년 흉년을 충분히 대비할 수 있는 합리적 계산에 기반하며, 이는 요셉이 영적 통찰력뿐 아니라 뛰어난 행정적·경제적 지혜까지 겸비한 인물이었음을 보여준다. 실제로 애굽의 이 곡물 저장 시스템 덕분에 훗날 가나안 땅 전체가 기근에서 살아남게 되는 구속사적으로 결정적인 결과로 이어진다."}, {"title": "요셉의 꿈이 정확히 성취되는 순간의 극적 아이러니", "body": "형들이 요셉 앞에 엎드리는 장면(42:6)은 37장에서 그가 꾸었던 꿈(형들의 곡식 단이 자신의 단에 절하는 꿈, 37:7)의 문자적 성취다. 흥미로운 것은 이 성취가 형들이 전혀 의도하거나 인식하지 못한 상태에서, 그리고 요셉 자신도 처음부터 계획한 것이 아니라 자연스러운 기근이라는 상황 속에서 이루어진다는 점이다. 이는 하나님이 주신 계시(꿈)가 인간의 어떤 의도적 조작 없이도, 역사의 자연스러운 흐름 속에서 정확히 성취될 수 있음을 보여주는 강력한 신학적 증언으로 읽힌다."}, {"title": "베냐민이 받은 '다섯 배'라는 숫자의 상징성", "body": "고대 근동 문화에서 손님에게 특별한 몫을 더 주는 것은 존귀와 애정의 표시였지만, 다섯 배라는 파격적인 비율은 명백히 요셉이 베냐민을 시험하기 위한 의도적 장치였을 가능성이 크다. 이는 정확히 37장에서 요셉 자신이 아버지의 편애(채색옷)로 인해 형들의 질투를 샀던 상황을 인위적으로 재현하는 것으로, 형제들이 이번에는 그 노골적인 편애 앞에서 어떻게 반응하는지를 시험하려는 요셉의 치밀한 심리적 테스트로 이해된다. 형제들이 이번에는 질투하지 않았다는 사실은 이 시험을 통과했다는 중요한 신호로 읽힌다."}, {"title": "요셉이 굳이 '은잔으로 점을 친다'(5절, 15절)고 언급하는 것의 의미", "body": "청지기와 요셉 자신이 이 잔을 점술 도구로 언급하는 것은 다소 의아하게 느껴질 수 있다(이스라엘 신앙은 점술을 명백히 금지한다, 신 18:10-12). 그러나 문맥상 이는 요셉이 애굽 총리로서 대외적으로 취하고 있는 페르소나(애굽 문화에 완전히 동화된 인물로 형제들에게 보이기 위한 위장)의 일부로 이해하는 것이 일반적이다. 즉 이는 요셉 자신의 실제 신앙 행위가 아니라, 형제들에게 자신의 정체를 완전히 숨기고 총리로서의 위압적 권위를 극대화하기 위한 전략적 연출로 해석된다."}, {"title": "\"당신들은 나를 이곳에 팔았으나 하나님은 나를 당신들보다 앞서 보내셨나이다\"의 정교한 신학", "body": "7-8절에서 요셉은 세 번에 걸쳐 \"나를 보내신 것은... 하나님이시라\"는 표현을 반복하며 문학적으로 강조한다. 이 구절의 히브리어 구조는 인간의 행위(팔다)와 하나님의 행위(보내다)를 의도적으로 같은 사건에 대한 두 가지 서로 다른 언어로 병치시킨다. 이는 성경 전체에서 반복되는 섭리 신학의 정교한 표현 방식으로, 동일한 역사적 사건이 인간의 관점에서는 죄악된 배신으로, 하나님의 관점에서는 구원을 위한 파송으로 동시에 진실하게 묘사될 수 있음을 보여주는 신학적으로 매우 정교한 구절이다."}, {"title": "애굽 사람들이 목축업자를 가증히 여겼다는 배경(34절)의 역사적 근거", "body": "고대 애굽의 종교와 문화에서 양과 염소를 신성시하는 지역적 숭배 전통이 존재했고, 이 때문에 유목 문화권 사람들(특히 서아시아 지역의 셈족 유목민들)이 애굽 사회에서 사회적으로 낮은 지위나 이질적 존재로 취급받았을 가능성이 역사학적으로 제기된다. 요셉이 이러한 문화적 정황을 정확히 이해하고 형제들을 미리 준비시킨 것은, 그가 애굽 사회에 대한 깊은 이해를 바탕으로 가족을 애굽의 정치·종교 중심부로부터 의도적으로 분리된 고센이라는 지역에 안전하게 정착시키려 한 치밀한 전략이었음을 보여준다."}, {"title": "\"내 나이가 얼마 못되니 우리 조상의 나이에 미치지 못하나\"라는 야곱의 겸손한 자기 인식", "body": "야곱은 130세라는 놀라운 나이에도 불구하고 아브라함(175세)과 이삭(180세)에 비해 자신의 수명이 짧다고 겸손하게 인정한다. 이는 단순한 수명 비교를 넘어, 야곱이 자신의 삶 전체(형을 속인 죄, 20년의 고된 타향살이, 라헬의 이른 죽음, 디나의 비극, 요셉을 잃은 이십여 년의 슬픔)를 돌아보며 조상들보다 훨씬 더 많은 시련과 고난으로 점철된 삶을 살았다는 정직한 자기 평가를 담고 있는 것으로 읽힌다. 이는 창세기가 족장들의 삶을 단순히 미화하지 않고, 그들 스스로의 입을 통해서도 인생의 고단함을 인정하게 하는 정직한 문학적 특징을 잘 보여주는 구절이다."}, {"title": "\"에브라임과 므낫세와 같이 되게 하시리라\"는 축복문의 후대 관습", "body": "20절에서 야곱은 \"이스라엘이 너로 말미암아 축복하기를 하나님이 네게 에브라임과 같고 므낫세와 같게 하시리라 하리라\"고 선언하는데, 이는 놀랍게도 오늘날까지 유대교 전통 안에서 부모가 안식일 저녁마다 아들을 축복할 때 사용하는 표준적 축복문('하나님께서 너를 에브라임과 므낫세같이 되게 하시기를')으로 이어지고 있다. 이는 창세기의 한 장면이 수천 년이 지난 오늘날까지도 실제 신앙 공동체의 살아있는 예전적 관습으로 지속되고 있음을 보여주는 인상적인 사례다."}, {"title": "\"유다는 사자 새끼로다\"(9절)라는 이미지의 지속적 반향", "body": "야곱이 유다를 사자에 비유한 이 이미지는 성경 전체에서 계속 반향을 일으킨다. 이스라엘 왕정 시대 다윗 왕가의 상징으로 사자가 널리 사용되었고, 궁극적으로 요한계시록 5:5에서 예수 그리스도는 명시적으로 \"유다 지파의 사자... 다윗의 뿌리\"로 불리며 이 창세기의 예언을 직접 성취하는 존재로 선언된다. 이는 창세기 49장의 짧은 한 구절이 성경 전체를 관통하며 수천 년 후 요한계시록에서까지 그 완전한 의미를 드러내는, 성경의 놀라운 내적 통일성을 보여주는 사례로 자주 인용된다."}, {"title": "\"애굽에서 입관되었더라\"는 마지막 문장이 남기는 의도적 긴장", "body": "창세기의 마지막 단어(히브리어 원문 순서로도)는 '애굽에서'이며, 이는 결코 우연한 배치가 아니다. 이스라엘의 조상 요셉의 관이 약속의 땅이 아니라 이방 땅 애굽에 남겨진 채로 창세기가 끝난다는 사실은, 독자에게 명백한 미해결의 긴장을 남긴다 — 언약의 땅에 대한 약속(아브라함부터 시작된)이 아직 완전히 성취되지 않았다는 것이다. 이 의도적으로 남겨진 긴장은 정확히 출애굽기의 첫 문장(\"야곱과 함께 각각 자기 가족을 데리고 애굽에 이른 이스라엘 아들들의 이름은 이러하니\")으로 곧바로 이어지며, 두 책이 하나의 연속된 거대한 이야기의 앞뒤 부분임을 문학적으로 확증한다."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+</body></html>

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>아담의 행동 — 신학적 의미</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --ink: #262220;
+    --sub: #6b6560;
+    --bg: #FBFAF7;
+    --line: #E4E0D8;
+    --accent: #9C4A2E;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  header{
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h1{
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height: 1.2;
+    margin-bottom: 8px;
+  }
+
+  .subtitle{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--sub);
+  }
+
+  .refs{
+    margin-top: 14px;
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--sub);
+    background: rgba(156,74,46,0.07);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 44px;
+    margin-bottom: 14px;
+  }
+
+  h2 .num{
+    color: var(--accent);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 8px;
+    font-size: 17px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.9;
+    color: #3a3532;
+    margin-bottom: 16px;
+  }
+
+  ul{
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+
+  li{
+    font-size: 16px;
+    line-height: 1.85;
+    color: #3a3532;
+    margin-bottom: 10px;
+  }
+
+  strong{
+    color: var(--ink);
+    font-weight: 600;
+    background: linear-gradient(to bottom, transparent 65%, rgba(156,74,46,0.08) 65%);
+  }
+
+  .closing{
+    margin-top: 40px;
+    padding: 20px 22px;
+    background: rgba(156,74,46,0.06);
+    border-left: 2px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    font-size: 16px;
+    line-height: 1.9;
+    color: #3a3532;
+  }
+
+  .next{
+    margin-top: 40px;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 15px;
+    color: var(--sub);
+  }
+
+  footer{
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: var(--sub);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding: 40px 20px 70px; }
+    h1{ font-size: 30px; }
+  }
+
+  /* --- 용어 팝업 --- */
+  .term{
+    position: relative;
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+    border-bottom: 1px dotted var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .popover{
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: 270px;
+    max-width: 78vw;
+    background: var(--ink);
+    color: #f2ede4;
+    font-family: 'Noto Serif KR', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 1.65;
+    padding: 14px 16px;
+    border-radius: 6px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    z-index: 20;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .popover .ptitle{
+    display:block;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: #d99a7c;
+    margin-bottom: 5px;
+  }
+
+  .popover::after{
+    content:"";
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+
+  .term.open .popover{ display:block; }
+
+  @media (max-width: 480px){
+    .popover{
+      position: fixed;
+      left: 5vw;
+      right: 5vw;
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      max-width: none;
+    }
+    .popover::after{ display:none; }
+    .term.open::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 19;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">성경인물묵상</div>
+    <h1>아담</h1>
+    <div class="subtitle">최초의 사람, 그리고 그 행동이 남긴 신학적 의미</div>
+    <div class="refs">등장 성구 · 창세기 1–5장 · 롬 5:12-21 · 고전 15:22, 45</div>
+  </header>
+
+  <h2><span class="num">01</span>아담은 누구인가</h2>
+  <p>아담(אָדָם)은 창세기 1~5장에 등장하는 최초의 인간입니다. 히브리어로 '사람', '인류'를 뜻하는 보통명사이기도 하며, 흙을 뜻하는 '아다마(אֲדָמָה)'와 발음이 비슷해 창세기 2장 7절은 이 둘을 의도적으로 연결합니다 — 사람은 땅에서 취해졌기에 '아담'이라 불린다는 언어유희입니다.</p>
+  <p>창세기 1장에서는 하나님이 자신의 <span class="term" tabindex="0">형상<span class="popover"><span class="ptitle">하나님의 형상 (Imago Dei)</span>창세기 1:26-27에서 하나님이 사람을 "자기 형상대로" 지었다는 표현. 외모가 닮았다는 뜻이 아니라, 인간이 하나님을 대신해 세상을 다스리고 돌보는 대리자적 지위·존엄성을 지닌다는 의미로 읽힌다. 기독교 인간론에서 모든 인간의 존엄성을 뒷받침하는 핵심 개념이다.</span></span>대로 사람을 창조하며 등장하고, 2장에서는 하나님이 흙으로 사람을 빚어 코에 생기를 불어넣어 <span class="term" tabindex="0">생령<span class="popover"><span class="ptitle">생령 (living being)</span>히브리어 '네페쉬 하야(נֶפֶשׁ חַיָּה)'의 번역. '네페쉬'는 흔히 '영혼'으로 오해되지만 본래는 숨쉬는 생명체, 즉 몸을 지닌 살아있는 존재 전체를 가리킨다. 동물에게도 같은 표현이 쓰인다(창 1:24). 즉 아담은 몸과 분리된 '영혼'을 받은 것이 아니라, 흙(몸)과 생기(숨)가 합쳐져 하나의 살아있는 존재가 된 것이다.</span></span>이 되게 하십니다. 에덴동산에 놓여 이를 경작하고 지키는 역할을 맡고, 동물들에게 이름을 지어주며, 자신의 갈빗대로 지어진 하와를 아내로 맞습니다.</p>
+  <p>하나님은 선악을 알게 하는 나무의 열매만은 먹지 말라 명하셨지만, 아담과 하와는 뱀의 유혹에 넘어가 그 열매를 먹고 맙니다. 그 결과 두 사람은 에덴에서 추방되고, 이후 가인·아벨·셋을 비롯한 자녀를 낳으며 인류의 계보가 시작됩니다. 이 타락 사건이 아담이라는 인물을 신학적으로 가장 무게 있게 만드는 지점입니다.</p>
+
+  <h2><span class="num">02</span>하나님과의 관계 — 신뢰의 붕괴</h2>
+  <p>아담의 핵심 행동은 단순한 "규칙 위반"이 아니라, 하나님이 정한 경계를 신뢰하지 않고 스스로 선악을 판단하는 존재가 되려 한 것입니다. 뱀의 유혹 핵심은 "너희가 그것을 먹는 날에는… 하나님과 같이 되어 선악을 알 줄 하나님이 아심이니라"(3:5)였습니다. 즉 유혹의 본질은 쾌락이 아니라 <strong>자율성</strong>이었습니다 — 하나님께 의존하지 않고 스스로 선악의 기준이 되고자 하는 욕망입니다.</p>
+  <p>그 결과로 나타나는 첫 반응이 상징적입니다. 전에는 하나님과 동산에서 자유롭게 동행하던 두 사람이, 이제는 "하나님의 소리를 듣고 낯을 피하여 숨습니다"(3:8). 죄의 즉각적 결과는 벌이 아니라 <strong>관계의 단절과 숨음</strong>입니다. 이어서 하나님이 "네가 어디 있느냐" 물으실 때 아담은 "하와가 주어서 먹었다"며 책임을 하와에게, 나아가 은근히 하나님께("하나님이 주신 여자")로 돌립니다. 이는 죄가 단순히 개별 행동이 아니라 관계 자체를 왜곡시키는 힘임을 보여줍니다 — 하나님과의 관계뿐 아니라 부부 관계까지 말입니다.</p>
+
+  <h2><span class="num">03</span>세상에 미친 영향 — 확산되는 균열</h2>
+  <p>창세기는 이 균열이 아담 개인에서 끝나지 않고 확산됨을 보여줍니다. 땅이 저주받아 노동이 고되어지고(경제), 해산의 고통이 커지며(생명의 재생산), 부부 사이에 지배와 종속이 들어옵니다(관계). 그리고 곧바로 이어지는 이야기가 가인이 아벨을 죽이는 사건입니다 — 형제 살해입니다. 창세기 저자는 이를 통해 하나의 불신이 어떻게 폭력과 사회적 붕괴로까지 번지는지 서사적으로 보여주고 있습니다.</p>
+  <p>바울은 로마서 5장에서 이를 신학적으로 정리해, 아담을 통해 죄와 사망이 온 인류에게 들어왔다고 표현합니다 — 다만 이 해석을 <span class="term" tabindex="0">원죄<span class="popover"><span class="ptitle">원죄 (Original Sin)</span>아담의 타락으로 인해 모든 인류가 죄의 성향을 물려받고 태어난다는 기독교 교리. 특히 아우구스티누스 이후 서방 신학에서 체계화되었다.</span></span> 교리로 체계화하는 정도는 전통마다 다릅니다 — 유대교와 <span class="term" tabindex="0">동방 정교회<span class="popover"><span class="ptitle">동방 정교회 (Eastern Orthodoxy)</span>기독교의 3대 전통(가톨릭·개신교·정교회) 중 하나. 아담의 죄를 '유전된 죄책'보다는 '죽음이라는 결과의 상속'으로 이해하는 경향이 있어, 서방(가톨릭·개신교) 전통의 원죄 개념과 강조점이 다르다.</span></span>는 서방 기독교만큼 "유전된 죄책"으로 강하게 읽지 않습니다.</p>
+
+  <h2><span class="num">04</span>오늘날 우리와의 연속성</h2>
+  <p>본문이 겨냥하는 것은 사실 "그때 그 사람"이 아니라 반복되는 인간의 패턴입니다.</p>
+  <ul>
+    <li><strong>자율성에 대한 유혹</strong> — 선악의 기준을 스스로 정하고 싶은 욕구는 지금도 동일합니다. "내가 옳다고 느끼면 그게 옳다"는 사고방식의 원형이 여기 있습니다.</li>
+    <li><strong>책임 전가</strong> — 잘못했을 때 즉각 남 탓, 상황 탓으로 돌리는 반응은 아담의 "하와가 줘서"와 구조적으로 같습니다.</li>
+    <li><strong>숨음과 수치심</strong> — 잘못한 뒤 하나님(혹은 진실, 혹은 관계)으로부터 숨으려는 본능입니다. 종교적 언어로는 이를 죄책이라 부르지만, 심리적으로도 익숙한 패턴입니다.</li>
+    <li><strong>급한 만족 vs. 신뢰의 기다림</strong> — "보암직도 하고 먹음직도 하고 지혜롭게 할 만큼 탐스럽기도 한"(3:6) 열매 앞에서 기다리지 못하는 조급함입니다.</li>
+  </ul>
+
+  <div class="closing">
+    결국 창세기가 아담을 통해 던지는 질문은 "그는 왜 그랬는가"보다 "우리는 지금도 왜 이렇게 반응하는가"에 가깝습니다. 이 때문에 아담은 단순한 과거 인물이 아니라, 히브리어 이름 자체가 이미 암시하듯 — 인류 전체를 비추는 거울로 기능합니다.
+  </div>
+
+  <div class="next">다음엔 하와의 시각에서 이 사건을 다시 들여다보거나, 원죄 교리가 유대교·동방정교·서방기독교에서 어떻게 다르게 발전했는지 비교해볼 수 있습니다.</div>
+
+  <footer>
+    <span>GENESIS STUDY</span>
+    <span>אדם — כי עפר אתה ואל עפר תשוב</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.term').forEach(term => {
+    term.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = term.classList.contains('open');
+      document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+      if (!wasOpen) term.classList.add('open');
+    });
+    term.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); term.click(); }
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+  });
+</script>
+</body>
+</html>

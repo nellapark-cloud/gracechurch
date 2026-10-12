@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>열왕기하, 무너진 왕국 끝에 남은 식탁 한 자리 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="엘리사의 기적부터 두 왕국의 멸망, 감옥에서 풀려난 왕까지. 열왕기하에 숨은 이야기">
+<meta property="og:title" content="열왕기하, 무너진 왕국 끝에 남은 식탁 한 자리">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 44</div>
+  <h1>열왕기하,<br>무너진 왕국 끝에<br>남은 <em>식탁</em> 한 자리</h1>
+  <p class="sub">두 나라가 차례로 무너지는 책인데,<br>마지막 장면은 감옥에서 풀려난 왕의 저녁 식사</p>
+  <div class="ref">열왕기하 1–25장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>열왕기하는 슬픈 책이에요. 북이스라엘은 앗수르에게, 남유다는 바벨론에게 차례로 무너져요. 성전은 불타고, 왕은 눈이 뽑힌 채 끌려가요. 그런데 이 책에는 다른 성경책보다 고고학 발굴로 확인된 이야기가 유난히 많아요. 😄 비석과 석판과 터널과 바벨론의 배급표까지, 땅속에서 나온 증거들이 열왕기하의 장면들과 하나씩 맞물려요.</p><p>그리고 이 책의 마지막 장면은 뜻밖이에요. 나라가 망하고 37년이 지난 어느 날, 바벨론 감옥에 갇혀 있던 유다 왕 여호야긴이 풀려나 바벨론 왕의 식탁에 앉게 돼요. 모든 것이 무너진 끝에 남은 식탁 한 자리예요. 떨어진 겉옷, 요단 강의 일곱 번, 비석에 새겨진 예후, 사마리아 사람의 기원, 바위를 뚫은 터널, 성전에서 찾은 책, 그리고 바벨론의 배급표까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>열왕기하는 어떤 책일까?</h2>
+    <p>엘리사의 시대부터 두 왕국의 멸망까지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>열왕기하는 열왕기상에 바로 이어지는 책이에요. 주전 850년 무렵 엘리야가 하늘로 올라가는 장면에서 시작해, 주전 722년 북이스라엘이 앗수르에게 망하고(17장), 주전 586년 예루살렘이 바벨론에게 무너지는(25장) 이야기까지 다뤄요. 마지막 구절은 주전 561년 무렵의 일이에요. 그 사이에 엘리사의 기적, 예후의 피 묻은 개혁, 히스기야와 요시야의 개혁이 이어지지만, 결국 두 나라 모두 하나님의 경고를 듣지 않아 무너졌어요.</p>
+    <div class="debate sans"><div><b>땅속에서 나온 왕들</b>모압 왕 메사의 비석(3:4), 예후가 엎드린 검은 오벨리스크(9–10장), 히스기야의 실로암 터널 비문(20:20), 산헤립의 점토 기둥(18–19장) 등 성경 밖 기록이 유난히 많아요.</div><div><b>꺼지지 않은 등불</b>"여호와께서 그의 종 다윗을 위하여 유다 멸하기를 즐겨하지 아니하셨으니 이는 그와 그의 자손에게 항상 등불을 주겠다고 말씀하셨음이더라"(8:19).</div></div>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">열왕기하의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">엘리사의 기적</div><div class="mini-b">물이 고쳐지고, 기름이 넘치고, 죽은 아이가 살아나고, 쇠도끼가 떠올라요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">두 왕국의 멸망</div><div class="mini-b">북이스라엘은 주전 722년, 남유다는 주전 586년에 무너져요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">개혁한 왕들</div><div class="mini-b">히스기야와 요시야는 우상을 부수고 말씀으로 돌아가요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">고고학과 맞물린 책</div><div class="mini-b">비석, 오벨리스크, 터널, 바벨론 문서가 본문과 연결돼요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">희망으로 닫는 책</div><div class="mini-b">감옥에서 풀려난 다윗의 자손으로 책이 끝나요.</div></div></div></div>
+
+  <div class="target"><p>열왕기하의 어둠 속에서도 이 약속은 꺼지지 않아요. <span class="hl">"그와 그의 자손에게 항상 등불을 주겠다"</span>(8:19). 나라는 무너졌지만 다윗의 자손은 살아남았고, 그 족보 끝에서 <mark>세상의 빛이신 예수 그리스도</mark>가 오셨어요(요 8:12).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>떨어진 겉옷부터 바벨론의 배급표까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>엘리야의 겉옷</button><button class="chip" onclick="goTo('s2')"><b>2</b>나아만</button><button class="chip" onclick="goTo('s3')"><b>3</b>예후와 오벨리스크</button><button class="chip" onclick="goTo('s4')"><b>4</b>사마리아의 기원</button><button class="chip" onclick="goTo('s5')"><b>5</b>히스기야 터널</button><button class="chip" onclick="goTo('s6')"><b>6</b>요시야와 책</button><button class="chip" onclick="goTo('s7')"><b>7</b>여호야긴의 식탁</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>하늘로 올라간 선지자,<br>땅에 떨어진 겉옷</h2><div class="refs">열왕기하 2:1-15 · 13:14 · 신명기 21:17</div></div></div>
+    <div class="scene-body"><p>엘리야가 하늘로 올라가기 직전, 엘리사에게 묻습니다. "내가 너를 위하여 무엇을 하랴 구하라". 엘리사가 대답해요. "당신의 성령이 하는 역사가 갑절이나 내게 있게 하소서"(2:9). 욕심 같지만, 신명기에서 "갑절"은 맏아들이 받는 상속 몫이었어요(신 21:17). 엘리사는 엘리야의 맏아들처럼 그 사역을 이어받게 해 달라고 구한 거예요.</p><p>불병거와 불말이 나타나 두 사람을 갈라놓고, 엘리야는 회오리바람을 타고 하늘로 올라가요. 엘리사는 외쳐요. "내 아버지여 내 아버지여 이스라엘의 병거와 그 마병이여"(2:12). 그리고 남은 것은 엘리야에게서 떨어진 겉옷이었어요. 엘리사는 그 겉옷으로 요단 강을 치며 외쳐요. "엘리야의 하나님 여호와는 어디 계시니이까"(2:14). 강물이 갈라졌어요.</p><p>재밌게도 수십 년 뒤 엘리사가 죽을병에 걸렸을 때, 이스라엘 왕 요아스가 와서 울며 똑같이 외쳐요. "내 아버지여 내 아버지여 이스라엘의 병거와 그 마병이여"(13:14). 😄 엘리사가 엘리야에게 했던 말을 이제 왕이 엘리사에게 해요. 군대보다 하나님의 사람이 나라를 지킨다는 고백이에요. 사람은 떠나도 <mark>엘리야의 하나님은 어디에나 계세요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 엘리사의 기적이 엘리야의 기적보다 두 배쯤 많다는 계산도 있지만, 무엇을 하나의 기적으로 세느냐에 따라 숫자가 달라져요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>믿음의 선배가 떠난 자리에서 "그분의 하나님은 어디 계시니이까" 외치며, 그 하나님을 내 하나님으로 붙듭니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>작은 소녀의 말 한마디,<br>장군의 살이 "작은 아이"처럼 되다</h2><div class="refs">열왕기하 5:1-19 · 누가복음 4:27</div></div></div>
+    <div class="scene-body"><p>아람의 군대 장관 나아만은 "큰 용사"였지만 나병 환자였어요(5:1). 그의 집에는 이스라엘에서 포로로 잡혀 온 "작은 소녀"가 종으로 있었어요(5:2). 고향을 잃은 아이가 자기를 끌고 온 집 주인을 위해 말해요. "우리 주인이 사마리아에 계신 선지자 앞에 계셨으면 좋겠나이다".</p><p>그런데 엘리사는 나와 보지도 않고 사환을 시켜 "요단 강에 가서 몸을 일곱 번 씻으라"고만 전해요. 나아만은 화가 나요. "다메섹 강 아바나와 바르발은 이스라엘의 모든 강물보다 낫지 아니하냐"(5:12). 😄 우리 동네 강이 더 깨끗하다는 거예요. 그래도 종들의 설득에 요단 강에 일곱 번 몸을 담그자 "그의 살이 어린 아이의 살 같이 회복되어 깨끗하게 되었더라"(5:14).</p><p>여기 히브리어로 보면 놀라운 연결이 있어요. 5:2의 "작은 소녀"는 <span class="heb" data-tip="나아라 케탄나(na`arah qetannah) — 작은 소녀. 5:14의 어린 아이(나아르 카톤)와 같은 두 단어의 여성형이다.">나아라 케탄나</span>, 5:14의 "어린 아이"는 그 남성형 "나아르 카톤"이에요. 큰 장군이 작은 소녀의 말을 들었더니, 그 몸이 작은 아이처럼 새로워진 거예요. 예수님은 고향 나사렛에서 이 이야기를 꺼내셨어요. "선지자 엘리사 때에 이스라엘에 많은 나병환자가 있었으되 그 중의 한 사람도 깨끗함을 얻지 못하고 오직 수리아 사람 나아만뿐이었느니라"(눅 4:27). 은혜는 <mark>낮아져 씻는 사람</mark>에게 와요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>"우리 동네 강이 더 낫다"는 자존심을 내려놓고, 말씀이 이르는 대로 낮아져 씻기를 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>비석에 새겨진 유일한 이스라엘 왕의 모습,<br>"미치게 모는" 예후</h2><div class="refs">열왕기하 9:1-37 · 10:28-31</div></div></div>
+    <div class="scene-body"><p>엘리사는 젊은 선지자를 보내 군대 장관 예후에게 몰래 기름을 붓게 해요. 예후는 곧장 병거를 몰고 이스르엘로 달려가요. 망대의 파수꾼이 멀리서 보고 말해요. "그 병거 모는 것이 님시의 손자 예후의 모는 것 같이 미치게 모나이다"(9:20). 😄 성경에 기록된 첫 난폭 운전자예요.</p><p>예후는 아합의 집안과 이세벨을 무너뜨리고 바알 숭배자들을 없애요. 그런데 성경의 평가는 냉정해요. "예후가 이스라엘 중에서 바알을 멸하였으나… 벧엘과 단에 있는 금송아지를 섬기는 죄에서는 떠나지 아니하였더라"(10:28-29). 남의 우상은 부숴도 자기 나라의 우상은 그대로 두었어요.</p><p>1846년 영국 고고학자 레이어드가 앗수르 옛 도시 님루드에서 검은 돌기둥 하나를 발견했어요. 앗수르 왕 살만에셀 3세의 "검은 오벨리스크"예요. 거기에 한 사람이 땅에 엎드려 앗수르 왕에게 절하는 그림과 함께 "오므리의 아들 예후의 조공"이라는 글이 새겨져 있었어요. 지금까지 발견된 것 가운데 이스라엘 왕의 모습을 새긴 유일한 그림이에요. 그런데 "오므리의 아들"이라니요? 예후는 바로 그 오므리의 집안을 무너뜨린 사람이었어요. 😄 앗수르 사람들에게는 그냥 "오므리 나라의 왕"이었던 거예요. 열심만으로는 부족했어요. 예후의 개혁이 멈춘 자리는 <mark>자기 이익과 맞닿은 우상</mark> 앞이었어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 검은 오벨리스크는 지금 런던 대영박물관에 있어요. 그림 속 인물이 예후 본인인지, 예후가 보낸 사신인지에 대해서는 학자들 사이에 의견이 갈려요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>남의 잘못은 열심히 고치면서, 내 삶에 그대로 남겨 둔 금송아지는 없는지 돌아봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>사마리아가 무너진 날,<br>그리고 "사마리아 사람"이 생겨난 이유</h2><div class="refs">열왕기하 17:5-41 · 요한복음 4:9</div></div></div>
+    <div class="scene-body"><p>주전 722년, 앗수르는 3년 동안 포위한 끝에 북이스라엘의 수도 사마리아를 함락해요(17:5-6). 성경은 한 장 전체를 들여 그 이유를 설명해요. "이스라엘 자손이… 그 하나님 여호와께 죄를 범하고 또 다른 신들을 경외하며"(17:7). 북이스라엘의 이백여 년 역사가 이렇게 끝나요.</p><p>앗수르에는 독특한 정책이 있었어요. 정복한 나라 백성을 다른 땅으로 옮기고, 그 자리에 또 다른 나라 사람들을 데려다 살게 했어요. 반란을 막으려는 계산이었지요. "앗수르 왕이 바벨론과 구다와 아와와 하맛과 스발와임에서 사람을 옮겨다가 이스라엘 자손을 대신하여 사마리아 여러 성읍에 두매"(17:24). 그 사람들은 남은 이스라엘 사람들과 섞여 살았어요. 그 결과가 이 문장이에요. "그들이 여호와도 경외하고 또한 자기들의 신들도 섬겼더라"(17:33).</p><p>이것이 신약 시대 "사마리아 사람"의 기원이에요. 유대인은 그들을 피가 섞이고 신앙도 섞인 사람들이라며 상대하지 않았어요. 그래서 우물가의 여인이 놀라 물었지요. "당신은 유대인으로서 어찌하여 사마리아 여자인 나에게 물을 달라 하나이까"(요 4:9). 칠백 년 동안 이어진 그 담을 <mark>예수님이 우물가에서 허무셨어요</mark>. 그리고 사마리아 사람들은 고백했어요. "이는 참으로 세상의 구주신 줄 앎이라"(요 4:42).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 사마리아 공동체 스스로는 자신들이 북이스라엘의 남은 자손이며 모세의 율법을 지켜 왔다고 말해요. 오늘날에도 그리심 산 근처에 작은 사마리아 공동체가 남아 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>여호와도 경외하고 다른 것도 함께 섬기는 섞인 마음이 아닌지 돌아보고, 담을 넘어 찾아오신 구주를 예배합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>바위를 뚫어 맞닿은 두 곡괭이,<br>그리고 "새장 속의 새"</h2><div class="refs">열왕기하 18:13-19:37 · 20:20 · 역대하 32:30</div></div></div>
+    <div class="scene-body"><p>앗수르 왕 산헤립이 유다의 견고한 성읍들을 차례로 무너뜨리고 예루살렘을 포위해요. 그 전에 히스기야는 대비를 해 두었어요. "히스기야의 남은 사적과… 저수지와 수도를 만들어 물을 성으로 끌어들인 일"(20:20). 역대하는 더 자세히 적어요. 기혼의 윗샘물을 막아 다윗 성 서쪽으로 곧게 끌어들였다고요(대하 32:30).</p><p>1880년, 예루살렘 실로암 못 근처 터널에서 놀던 아이들이 벽에 새겨진 글을 발견했어요. "실로암 비문"이에요. 양쪽 끝에서 곡괭이로 바위를 파 들어가던 일꾼들이 서로의 목소리를 듣고, 마침내 "곡괭이와 곡괭이가 맞닿아" 물이 흘렀다는 내용이에요. 길이 약 533미터의 이 터널은 지금도 물이 흐르고, 무릎까지 물에 잠긴 채 걸어서 지나갈 수 있어요. 😄</p><p>산헤립 쪽 기록도 남아 있어요. 그의 원정을 새긴 점토 기둥에는 이렇게 쓰여 있어요. "유다 사람 히스기야는… 새장 속의 새처럼 그의 왕도 예루살렘에 가두었다." 그런데 성읍 46개를 빼앗았다고 자랑하면서도, 예루살렘을 함락했다는 말은 끝내 없어요. 성경은 그 이유를 이렇게 기록해요. 히스기야가 성전에 올라가 편지를 펴 놓고 기도했고(19:14-19), 그 밤에 여호와의 사자가 앗수르 진영을 치셨어요(19:35). <mark>새장 속에 갇힌 것 같던 성을 지키신 분은 하나님</mark>이셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 실로암 비문은 지금 튀르키예 이스탄불 고고학 박물관에 있어요. 산헤립의 점토 기둥(테일러 프리즘 등)은 대영박물관 등에 있어요. 앗수르 군대가 물러간 구체적인 이유를 두고는 학자들 사이에 여러 설명이 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>사방이 막혀 새장 속에 갇힌 것 같을 때, 히스기야처럼 그 사정을 하나님 앞에 펴 놓고 기도합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>성전 청소하다 찾은 율법책,<br>삼백 년 전 이름이 불린 왕</h2><div class="refs">열왕기하 22:1-23:25 · 열왕기상 13:2</div></div></div>
+    <div class="scene-body"><p>요시야는 여덟 살에 왕이 되었어요. 왕이 된 지 열여덟 해째에 성전을 수리하던 중 대제사장 힐기야가 놀라운 것을 발견해요. "내가 여호와의 성전에서 율법책을 발견하였노라"(22:8). 므낫세 왕 시대 55년 동안 우상이 성전을 차지하는 사이, 하나님의 말씀이 성전 안에서 잊혀 있었던 거예요. 😄 교회 대청소를 하다가 먼지 쌓인 성경을 찾은 셈이에요.</p><p>서기관이 책을 읽자 왕은 옷을 찢어요(22:11). 그리고 여선지자 훌다에게 사람을 보내 하나님의 뜻을 물어요. 요시야는 백성을 모아 언약을 새롭게 하고, 성전과 온 땅에서 우상을 없애요. 그리고 북쪽 벧엘까지 올라가 여로보암이 세운 제단을 헐어요(23:15).</p><p>그런데 그 장면을 읽을 때 소름 돋는 연결이 있어요. 약 300년 전 여로보암이 벧엘 제단 곁에 서 있을 때, 유다에서 온 하나님의 사람이 이렇게 외쳤어요. "다윗의 집에 요시야라 이름하는 아들을 낳으리니 그가 네 위에 분향하는 산당 제사장을 네 위에서 제물로 바칠 것이요"(왕상 13:2). 삼백 년 전에 이름까지 불린 왕이에요. 성경은 요시야를 이렇게 평가해요. "요시야와 같이 마음을 다하며 성품을 다하며 힘을 다하여 여호와를 향하여 모세의 모든 율법을 따라 행한 임금은 요시야 전에도 없었고 그 후에도 그와 같은 자가 없었더라"(23:25). <mark>하나님의 말씀은 잊혀도 사라지지 않아요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 요시야 때 발견된 율법책이 신명기였다고 보는 학자가 많지만, 성경은 어떤 책이었는지 정확히 말하지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 삶의 성전 한구석에 먼지 덮인 채 잊힌 말씀은 없는지 돌아보고, 다시 펴서 읽으며 마음을 찢습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>바벨론 배급표에 적힌 이름,<br>"유다 왕 여야긴"</h2><div class="refs">열왕기하 25:27-30 · 마태복음 1:11-12</div></div></div>
+    <div class="scene-body"><p>주전 586년, 예루살렘 성벽이 무너지고 성전이 불타요. 시드기야 왕은 아들들이 죽는 것을 눈앞에서 본 뒤 두 눈이 뽑혀 바벨론으로 끌려가요(25:7). 열왕기하는 거기서 끝날 것 같지만, 마지막 네 절이 더 있어요.</p><p>"유다의 왕 여호야긴이 사로잡혀 간 지 삼십칠 년 곧 바벨론의 왕 에윌므로닥이 즉위한 원년 십이월 그 달 이십칠일에 유다의 왕 여호야긴을 옥에서 내놓아… 그 지위를 바벨론에 그와 함께 있는 모든 왕의 지위보다 높이고 그 죄수의 의복을 벗게 하고 그의 일평생에 항상 왕의 앞에서 양식을 먹게 하였고"(25:27-29). 열여덟 살에 끌려간 왕이 쉰다섯이 되어 감옥에서 나왔어요.</p><p>그리고 1930년대, 바벨론 옛 궁터에서 나온 점토판들을 해독하던 학자들이 깜짝 놀랐어요. 왕궁에서 포로들에게 나눠 준 기름 배급 목록에 "유다 땅의 왕 야우키누"와 그의 아들들 이름이 적혀 있었던 거예요. 열왕기하가 말한 "왕의 앞에서 먹는 양식"이 바벨론 행정 문서에 남아 있었던 셈이에요. 😄 마태는 이 여호야긴(여고냐)을 예수님의 족보에 올려요(마 1:11-12). 모든 것이 무너진 자리에 남은 한 사람, 그 식탁에서 <mark>다윗의 등불은 꺼지지 않고 예수님께로 이어졌어요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 이 점토판들(바이드너 문서)은 1899–1917년 독일 발굴단이 바벨론에서 발굴했고, 1939년에 내용이 발표되었어요. 배급표의 연대는 여호야긴이 풀려나기 전으로, 포로 상태에서도 왕으로 대우받았음을 보여 줘요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>모든 것이 무너진 것 같은 자리에서도, 다윗에게 하신 등불의 약속을 끝까지 지키시는 하나님을 바라봅니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">나라는 무너졌지만<br>등불은 꺼지지 않았다</div>
+    <p>열왕기하는 정직한 책이에요. 하나님이 선지자들을 거듭 보내셨지만 왕들과 백성이 듣지 않았고, 그래서 나라가 무너졌다고 숨김없이 말해요. 히스기야와 요시야 같은 좋은 왕들도 그 흐름을 끝내 되돌리지는 못했어요. 사람의 개혁에는 끝이 있었어요.</p><p>그런데 책의 마지막 장면은 감옥 문이 열리고, 죄수의 옷을 벗고, 왕의 식탁에 앉는 장면이에요. 다윗에게 "등불"을 약속하신 하나님은 그 약속을 끝까지 지키셨어요. 그리고 때가 차매, 그 다윗의 자손으로 <mark>우리의 죄수 옷을 벗기시고 아버지의 식탁에 앉히시는 예수 그리스도</mark>가 오셨어요.</p>
+    <div class="q">"그의 일평생에 항상<br>왕의 앞에서 양식을 먹게 하였고" (25:29)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

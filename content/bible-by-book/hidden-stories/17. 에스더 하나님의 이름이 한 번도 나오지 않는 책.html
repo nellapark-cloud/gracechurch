@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>에스더, 하나님의 이름이 한 번도 나오지 않는 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="하나님의 이름이 한 번도 나오지 않는 책, 그런데 반전마다 하나님이 계신 에스더에 숨은 이야기">
+<meta property="og:title" content="에스더, 하나님의 이름이 한 번도 나오지 않는 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 49</div>
+  <h1>에스더,<br>하나님의 <em>이름</em>이<br>한 번도 없는 책</h1>
+  <p class="sub">기도도, 성전도, 하나님의 이름도 나오지 않는데,<br>모든 장면마다 하나님의 손이 보인다</p>
+  <div class="ref">에스더 1–10장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>에스더서에는 신기한 특징이 있어요. 열 장 동안 "하나님"이라는 말이 한 번도 안 나와요. 기도한다는 말도, 성전도, 율법도 직접 나오지 않아요. 😄 그래서 옛날 어떤 사람들은 이 책이 성경에 들어가도 되는지 고민하기도 했어요. 그런데 이상하게도 이 책을 읽고 나면 하나님이 안 계셨다고 말할 수가 없어요.</p><p>왕비가 쫓겨나는 것도, 고아 소녀가 왕후가 되는 것도, 모르드개가 엿들은 음모도, 왕이 잠 못 이룬 밤도 다 우연처럼 보이는데, 그 우연들이 줄줄이 이어져 한 민족을 살려요. 숨어 계신 하나님, 180일의 잔치, 열두 달의 미용, 1조 원짜리 뇌물, "이 때를 위함이 아닌지", 잠 못 이룬 밤, 그리고 뒤집힌 날까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>에스더는 어떤 책일까?</h2>
+    <p>페르시아 왕궁에서 일어난 반전 드라마</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>에스더서는 페르시아 제국의 겨울 수도 수산 궁에서 일어난 이야기예요. 왕 아하수에로는 역사에서 크세르크세스 1세(재위 주전 486–465년)로 알려진 왕이에요. 에스라서 6장(성전 완공)과 7장(에스라의 귀환) 사이, 고향으로 돌아가지 않고 페르시아에 남아 살던 유다 사람들의 이야기예요. 아각 사람 하만이 유다 민족을 모두 없애려 하자, 왕후가 된 에스더와 그 사촌 모르드개를 통해 민족이 구원받아요. 이 일을 기념하는 절기가 오늘날까지 유대인이 지키는 부림절이에요.</p>
+    <div class="debate sans"><div><b>숨어 계신 하나님</b>히브리어 본문에는 하나님의 이름이 한 번도 없어요. 그래서 헬라어 칠십인역은 모르드개와 에스더의 기도 등 여러 단락을 덧붙였어요. 이 부분은 개신교 성경에는 들어 있지 않아요.</div><div><b>역사 속 아하수에로</b>헤로도토스의 『역사』에 나오는 크세르크세스예요. 1:3의 "제삼년" 대잔치는 그리스 원정을 준비하던 때와 겹치고, 에스더가 왕후가 된 "제칠년"(2:16)은 원정에서 패하고 돌아온 무렵이에요.</div></div>    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 페르세폴리스에서 나온 행정 점토판에 수산의 관리 "마르두카"라는 이름이 나와요. 모르드개와 같은 사람인지는 학자들 사이에 의견이 갈려요.</p>  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">에스더의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">하나님의 이름이 없는 책</div><div class="mini-b">그런데 모든 장면마다 하나님의 섭리가 보이도록 짜여 있어요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">잔치로 짜인 이야기</div><div class="mini-b">왕의 잔치로 시작해 부림절 잔치로 끝나요. 중요한 일은 늘 잔치 자리에서 일어나요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">뒤집기의 연속</div><div class="mini-b">높아지려던 사람은 낮아지고 낮은 사람은 높아져요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">부림절의 기원</div><div class="mini-b">하만이 날짜를 정하려 던진 "부르(제비)"에서 절기 이름이 나왔어요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">용기 있는 결단</div><div class="mini-b">"죽으면 죽으리이다"(4:16). 한 여인의 결단이 민족을 살려요.</div></div></div></div>
+
+  <div class="target"><p>에스더서의 중심에는 모르드개의 이 질문이 있어요. <span class="hl">"네가 왕후의 자리를 얻은 것이 이 때를 위함이 아닌지 누가 알겠느냐"</span>(4:14). 우리가 지금 서 있는 자리도 우연이 아니에요. 하나님은 보이지 않을 때도 일하시고, 마침내 <mark>자기 백성을 위해 목숨을 내놓으신 왕, 예수 그리스도</mark>를 보내셨어요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>숨어 계신 하나님부터 뒤집힌 날까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>숨어 계신 하나님</button><button class="chip" onclick="goTo('s2')"><b>2</b>180일 잔치</button><button class="chip" onclick="goTo('s3')"><b>3</b>열두 달의 단장</button><button class="chip" onclick="goTo('s4')"><b>4</b>1조 원짜리 제안</button><button class="chip" onclick="goTo('s5')"><b>5</b>이 때를 위하여</button><button class="chip" onclick="goTo('s6')"><b>6</b>잠 못 이룬 밤</button><button class="chip" onclick="goTo('s7')"><b>7</b>뒤집힌 날</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>"내가 반드시 내 얼굴을 숨기리라",<br>에스더라는 이름에 숨은 말놀이</h2><div class="refs">에스더 1–10장 · 신명기 31:18</div></div></div>
+    <div class="scene-body"><p>에스더서에 하나님의 이름이 없다는 것을 옛 유대 랍비들도 잘 알았어요. 그래서 이런 질문을 던졌어요. "에스더는 모세오경 어디에 나오는가?" 그리고 이렇게 대답했어요. 신명기 31:18, "그 때에 내가 반드시 내 얼굴을 숨기리라". 여기서 "숨기리라"가 히브리어로 <span class="heb" data-tip="아스티르(astir) — 내가 숨기리라. 히브리어 자음이 에스더(에스테르)와 매우 비슷하다. 탈무드(훌린 139b)는 이 말놀이로 에스더를 설명한다.">아스티르</span>인데, "에스더(에스테르)"와 소리가 거의 같아요. 😄</p><p>하나님이 얼굴을 숨기신 것처럼 보이는 시대, 그것이 에스더서의 배경이에요. 백성은 포로 땅에 남아 있었고, 성전은 멀리 있었고, 선지자의 음성도 들리지 않았어요. 그런데 하나님이 숨어 계신다는 것은 안 계신다는 뜻이 아니었어요.</p><p>중세 유대 학자들은 히브리어 본문 몇 곳(1:20; 5:4, 13; 7:7)에서 연속된 단어들의 첫 글자나 끝 글자를 이으면 하나님의 이름 네 글자(YHWH)가 나온다는 것을 찾아냈어요. 일부 히브리어 사본은 그 글자들을 크게 써서 표시하기도 했어요. 의도된 것인지 우연인지는 알 수 없지만, 그 발견이 이 책의 성격을 잘 보여 줘요. 이름은 숨어 있어도 <mark>하나님은 이야기 전체에 계세요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ YHWH가 숨어 있다는 머리글자 배열은 흥미로운 발견이지만, 저자가 의도한 것이라는 증거는 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하나님이 침묵하시는 것 같은 시간에도, 그분이 얼굴을 숨기신 채 일하고 계심을 믿습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>180일 동안의 자랑,<br>그리고 온 제국에 보낸 우스운 조서</h2><div class="refs">에스더 1:1-22</div></div></div>
+    <div class="scene-body"><p>아하수에로 왕은 즉위 3년에 "여러 날 곧 백팔십 일 동안에 그의 영화로운 나라의 부함과 위엄의 혁혁함을 나타내니라"(1:4). 반년 동안 자랑 잔치를 연 거예요. 😄 그 뒤에 다시 수산 백성 모두를 위해 7일 잔치를 열어요. 궁궐 뜰에는 흰색, 푸른색 휘장과 금 은 걸상, 화반석 바닥이 깔렸어요(1:6). 수산에서 발굴된 페르시아 궁전 유적도 실제로 화려한 기둥과 채색 벽돌로 유명해요.</p><p>잔치 마지막 날, 술에 취한 왕이 왕후 와스디를 불러 손님들 앞에 미모를 자랑하려 해요. 와스디는 거절해요. 왕은 체면을 구겼고, 신하들은 다른 집 아내들도 남편 말을 안 들을까 걱정해요. 그래서 나온 결론이 이래요. 와스디를 폐하고, 온 제국 127개 지방에 조서를 보내 "남편이 자기의 집을 주관하게 하라"(1:22). 😄 그것도 "각 지방의 문자와 각 백성의 언어로" 번역해서요.</p><p>세계 최대 제국이 내린 첫 번째 명령이 "남편 말을 잘 들으라"였다니요. 성경은 이 장면을 조용히 웃으며 들려줘요. 땅의 왕은 화려하지만 아내 하나 다스리지 못했어요. 그런데 바로 이 우스운 사건이 에스더가 왕후가 되는 길을 열어요. <mark>세상 왕의 실수조차 하나님의 계획 안에 있었어요</mark>.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 헤로도토스는 크세르크세스가 그리스 원정 전에 대규모 회의를 열었다고 기록해요. 1장의 잔치를 그 준비 모임과 연결하는 학자들도 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>세상의 화려한 권세에 주눅 들지 않고, 그 권세의 실수까지 쓰시는 하나님의 손을 바라봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>몰약으로 여섯 달, 향품으로 여섯 달,<br>그런데 에스더는 아무것도 더 구하지 않았다</h2><div class="refs">에스더 2:1-20</div></div></div>
+    <div class="scene-body"><p>새 왕후를 뽑기 위해 온 나라의 처녀들이 수산 궁으로 모였어요. 그중에 모르드개가 키운 사촌 동생, 부모를 잃은 고아 하닷사가 있었어요. "에스더라고도 하는 하닷사"(2:7). 하닷사는 히브리어로 "도금양(머틀) 나무"라는 뜻이고, 에스더는 페르시아 말로 "별"과 관련된 이름이라고 보는 견해가 많아요.</p><p>왕 앞에 나가기 전 준비 기간이 재밌어요. "여섯 달은 몰약 기름을 쓰고 여섯 달은 향품과 여자에게 쓰는 다른 물품을 써서"(2:12). 😄 열두 달 동안 미용 관리를 받은 거예요. 그리고 왕에게 나갈 때는 원하는 것을 무엇이든 가지고 갈 수 있었어요(2:13).</p><p>그런데 에스더는 이렇게 했어요. "에스더가 차례대로 왕에게 나아갈 때에 궁녀를 주관하는 내시 헤개가 정한 것 외에는 다른 것을 구하지 아니하였으나 모든 보는 자가 에스더를 사랑하더라"(2:15). 더 많이 꾸미려 하지 않고 조언을 들었어요. 그리고 모르드개가 시킨 대로 자기 민족을 밝히지 않았어요(2:10). 고아 소녀가 왕후가 된 이 이야기는 시작부터 <mark>낮은 자를 높이시는 하나님</mark>의 방식을 닮았어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 더 돋보이게 하려고 애쓰기보다, 지혜로운 조언에 귀 기울이며 하나님이 높이시는 때를 기다립니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>은 만 달란트, 제국 1년 세입의 3분의 2</h2><div class="refs">에스더 3:1-15 · 사무엘상 15:8-9</div></div></div>
+    <div class="scene-body"><p>왕의 총리가 된 하만은 모르드개가 자기에게 절하지 않자 분노해요. 그리고 모르드개 한 사람이 아니라 그의 민족 전체를 없애기로 해요. 하만은 "아각 사람"이었고(3:1), 모르드개는 "베냐민 자손… 기스의 증손"이었어요(2:5). 사울 왕(기스의 아들)이 살려 두었던 아말렉 왕 아각(삼상 15장)과, 사울 집안의 후손이 수백 년 뒤 페르시아 왕궁에서 다시 맞서는 셈이에요.</p><p>하만은 날짜를 정하려고 "부르 곧 제비"를 뽑아요(3:7). "부르"는 아카드어(바벨론·앗수르 말)로 "제비, 주사위"라는 뜻이에요. 앗수르에서는 "야할리의 푸루"라는 글자가 새겨진 점토 주사위가 발견되기도 했어요. 여기서 "부림절"이라는 이름이 나왔어요(9:26). 제비는 열두째 달 아달월에 떨어졌어요. 하만으로서는 거의 1년을 기다려야 하는 날짜였어요. 그 1년이 에스더에게는 구원을 준비할 시간이 되었어요.</p><p>그리고 하만은 왕에게 제안해요. "내가 은 일만 달란트를 왕의 일을 맡은 자의 손에 맡겨 왕의 금고에 드리리이다"(3:9). 한 달란트를 약 34킬로그램으로 잡으면 은 340톤, 오늘 은 시세로 9천억 원이 넘어요. 헤로도토스는 페르시아 제국 전체의 1년 세입을 은 약 1만 4천 5백 달란트로 기록했어요. 😄 하만은 제국 1년 수입의 3분의 2를 내놓겠다고 한 거예요. 미움이 사람을 얼마나 어리석게 만드는지 보여 줘요. 그러나 제비를 던지는 것은 사람이지만, <mark>그 일을 작정하시는 분은 여호와</mark>세요(잠 16:33).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 금액은 은 시세(2026년 10월 초)로 단순 계산한 참고값이에요. 헤로도토스(『역사』 3권)의 세입 기록도 대략적인 숫자예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 안에 작은 미움이 자라 큰 어리석음이 되지 않도록 돌아보고, 제비의 결과까지 다스리시는 하나님을 신뢰합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>"다른 데로 말미암아" 구원이 오겠지만<br>"이 때를 위함이 아닌지 누가 알겠느냐"</h2><div class="refs">에스더 4:1-17</div></div></div>
+    <div class="scene-body"><p>하만의 조서가 내려지자 모르드개는 굵은 베옷을 입고 재를 덮어써요. 에스더에게 왕에게 나아가 민족을 위해 간청하라고 전해요. 그런데 에스더는 망설여요. 부름 없이 왕에게 나아가는 사람은 왕이 금 규를 내밀지 않으면 죽게 되어 있었고, 자기는 30일 동안 부름을 받지 못했다고요(4:11).</p><p>그때 모르드개가 보낸 대답이 에스더서의 심장이에요. "네가 만일 이 때에 잠잠하여 말이 없으면 유다인은 다른 데로 말미암아 놓임과 구원을 얻으려니와 너와 네 아버지 집은 멸망하리라 네가 왕후의 자리를 얻은 것이 이 때를 위함이 아닌지 누가 알겠느냐"(4:14). 하나님의 이름은 없지만, "다른 데로 말미암아"라는 말 속에 확신이 있어요. 구원은 반드시 온다는 확신이요.</p><p>재밌게도 "다른 데"의 "데"는 히브리어로 "장소(마콤)"인데, 훗날 유대 랍비들은 "그 장소(하마콤)"를 하나님을 부르는 이름으로 쓰기도 했어요. 에스더는 결단해요. "당신은 가서 수산에 있는 유다인을 다 모으고 나를 위하여 금식하되 사흘 동안 밤낮으로 먹지도 말고 마시지도 마소서… 죽으면 죽으리이다"(4:16). 금식이 있는 곳에는 기도가 있었을 거예요. 이름은 없어도 하나님을 향한 몸짓은 분명했어요. 에스더가 목숨을 걸고 왕 앞에 섰듯, <mark>예수님은 목숨을 내놓고 우리를 위해 하나님 앞에 서셨어요</mark>.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>지금 내가 서 있는 자리가 "이 때를 위함"일지 모른다는 마음으로, 침묵하지 않고 해야 할 말과 일을 합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>왕이 잠 못 이룬 그 밤,<br>이야기 전체가 뒤집히다</h2><div class="refs">에스더 6:1-14</div></div></div>
+    <div class="scene-body"><p>에스더서 한가운데에 이 짧은 문장이 있어요. "그 날 밤에 왕이 잠이 오지 아니하므로"(6:1). 하필 그 밤, 하만은 모르드개를 매달 장대를 세워 놓고 아침 일찍 왕에게 허락을 받으러 오려던 참이었어요.</p><p>잠이 안 오던 왕은 궁중 일기를 읽게 해요. 😄 지루한 기록으로 잠을 청하려 했던 걸까요? 그런데 하필 펼친 곳이 몇 년 전 모르드개가 왕을 죽이려는 음모를 알려 목숨을 구한 기록이었어요(2:21-23). 왕이 묻습니다. "이 일에 대하여 무슨 존귀와 관작을 모르드개에게 베풀었느냐". 아무 상도 주지 않았다는 대답이 돌아와요.</p><p>바로 그때 하만이 뜰에 들어와요. 왕이 묻습니다. "왕이 존귀하게 하기를 원하시는 사람에게 어떻게 하여야 하겠느냐". 하만은 속으로 "왕이 존귀하게 하기를 원하시는 자는 나 외에 누구리요" 하고 생각해요(6:6). 😄 그래서 왕의 옷, 왕의 말, 왕관까지 요구하는데, 왕의 대답은 "유다 사람 모르드개에게 그같이 하되"(6:10). 하만은 모르드개를 말에 태우고 성 거리를 돌며 외쳐야 했어요. 우연히 잠 못 이룬 밤, 우연히 펼친 기록, 우연히 들어온 하만. 이 모든 "우연" 뒤에 <mark>졸지도 주무시지도 않으시는 하나님</mark>(시 121:4)이 계셨어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 많은 학자들은 에스더서가 6장의 이 밤을 중심으로 앞뒤 사건들이 서로 대칭을 이루도록 짜여 있다고 봐요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나의 잠 못 이루는 밤까지 쓰시는 하나님을 믿고, 아무도 알아주지 않던 작은 선행도 하나님은 잊지 않으심을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>높이 쉰 규빗의 장대,<br>슬픔이 기쁨으로 "뒤집힌" 날</h2><div class="refs">에스더 5:14 · 7:9-10 · 9:1, 20-28</div></div></div>
+    <div class="scene-body"><p>하만은 아내와 친구들의 조언대로 모르드개를 매달 "높이가 오십 규빗 되는 나무"를 세워요(5:14). 약 22미터, 아파트 7층 높이예요. 😄 온 수산 사람이 볼 수 있게 하려는 거였어요. 그런데 에스더의 두 번째 잔치에서 하만의 음모가 드러나고, 내시 하르보나가 그 장대 이야기를 꺼내요. 왕은 "하만을 그 나무에 달라"고 명령해요(7:9). 남을 매달려고 세운 나무에 자기가 달렸어요.</p><p>하만의 조서는 페르시아 법이라 취소할 수 없었어요. 그래서 왕은 유다 사람들이 그날 스스로 목숨을 지킬 수 있게 하는 새 조서를 내려요. 그리고 하만이 제비로 뽑은 바로 그 아달월 13일에 일이 정반대로 일어나요. 성경은 이날을 이렇게 요약해요. "이 달 이 날에 유다인이 슬픔이 변하여 기쁨이 되고 애통이 변하여 길한 날이 되었으니"(9:22).</p><p>"변하여"는 히브리어 <span class="heb" data-tip="나하파크(nahafakh) — 뒤집히다, 바뀌다. 9:1에서도 일이 뒤집혀 유다인이 대적을 이기게 되었다고 할 때 쓰였다.">나하파크</span>, "뒤집히다"예요(9:1에도 나와요). 에스더서는 처음부터 끝까지 뒤집기의 책이에요. 쫓겨난 왕후 자리에 고아가, 총리 자리에 모르드개가, 장대에는 하만이, 애통의 날에는 잔치가. 유대인은 지금도 부림절에 에스더서를 낭독하며 하만의 이름이 나올 때마다 소리를 내어 그 이름을 지워요. 😄 그리고 "가난한 자를 구제"했어요(9:22). 이 모든 뒤집기는 가장 큰 뒤집기를 미리 보여 줘요. 저주의 나무가 <mark>생명의 나무가 된 십자가</mark>예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 삶의 애통이 기쁨으로 뒤집히는 날을 바라며, 그 기쁨을 가난한 이웃과 나누는 잔치로 이어 갑니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">이름이 보이지 않아도<br>하나님은 그 자리에 계셨다</div>
+    <p>에스더서에는 기적이 없어요. 홍해가 갈라지지도, 하늘에서 불이 내리지도 않아요. 대신 잠 못 이룬 왕, 엿들은 음모, 제비의 날짜, 잔치의 순서 같은 평범한 일들이 이어져요. 그런데 그 평범한 일들이 하나로 엮여 한 민족을 살렸어요. 하나님은 기적으로만 일하시지 않고, 우리 일상의 우연 속에서도 일하세요.</p><p>우리 삶에도 하나님의 이름이 보이지 않는 날이 있어요. 기도가 응답되지 않는 것 같고, 하나님이 숨어 계신 것 같은 날이요. 에스더서는 그런 날에도 하나님이 일하고 계신다고 말해요. 그리고 그 하나님은 마침내 숨지 않으시고 <mark>우리 가운데 얼굴을 보이신 예수 그리스도</mark>로 오셨어요.</p>
+    <div class="q">"네가 왕후의 자리를 얻은 것이<br>이 때를 위함이 아닌지<br>누가 알겠느냐" (4:14)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

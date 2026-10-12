@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>침례교, 짧고 핵심적으로</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<style>
+:root{
+  --bg:#FBF8F1; --paper:#FFFFFF; --ink:#1F2A44; --ink-soft:#4A5470; --muted:#7A8196;
+  --gold:#B08A3E; --gold-soft:#EFE3C8; --line:#E6E0D2;
+  --hl-y:#FFF0A8; --hl-b:#D6ECFA; --hl-b-ink:#1D5B85; --hl-p:#FBDDE8; --hl-p-ink:#9A2F5A;
+  --hero-a:#EDE6F7; --hero-b:#F8E7EC; --hero-c:#E2F2EE; --hero-d:#E3EDF9;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#141926; --paper:#1B2233; --ink:#EDEAE2; --ink-soft:#C3C7D3; --muted:#8C93A6;
+    --gold:#D6B46A; --gold-soft:#3A331F; --line:#2C3448;
+    --hl-y:#5A4E14; --hl-b:#1E3B52; --hl-b-ink:#A9D6F5; --hl-p:#4A2334; --hl-p-ink:#F4B6CD;
+    --hero-a:#2A2540; --hero-b:#3A2632; --hero-c:#1F3634; --hero-d:#1F2C44;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141926; --paper:#1B2233; --ink:#EDEAE2; --ink-soft:#C3C7D3; --muted:#8C93A6;
+  --gold:#D6B46A; --gold-soft:#3A331F; --line:#2C3448;
+  --hl-y:#5A4E14; --hl-b:#1E3B52; --hl-b-ink:#A9D6F5; --hl-p:#4A2334; --hl-p-ink:#F4B6CD;
+  --hero-a:#2A2540; --hero-b:#3A2632; --hero-c:#1F3634; --hero-d:#1F2C44;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;font-size:17px;line-height:1.9;word-break:keep-all}
+.sans,h1,h2,h3,.year,.tag,.chip{font-family:"Pretendard","Apple SD Gothic Neo","Malgun Gothic",system-ui,sans-serif}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:88px 24px 72px;text-align:center;
+  background:
+    radial-gradient(60% 80% at 15% 20%,var(--hero-a),transparent 70%),
+    radial-gradient(55% 70% at 85% 25%,var(--hero-b),transparent 70%),
+    radial-gradient(60% 80% at 30% 95%,var(--hero-c),transparent 70%),
+    radial-gradient(50% 70% at 80% 90%,var(--hero-d),transparent 70%),
+    var(--bg)}
+.hero svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:60px;opacity:.55}
+.hero .from{font-size:14px;color:var(--muted);letter-spacing:.02em;margin:0 0 18px}
+.hero h1{font-size:clamp(36px,7vw,60px);font-weight:800;letter-spacing:-.03em;line-height:1.15;margin:0}
+.hero p.lead{max-width:30em;margin:20px auto 0;color:var(--ink-soft);font-size:17px}
+
+main{max-width:760px;margin:0 auto;padding:0 22px 40px}
+section{padding-top:64px}
+h2{font-size:28px;font-weight:800;letter-spacing:-.02em;margin:0 0 6px;display:flex;align-items:baseline;gap:12px}
+h2 .n{color:var(--gold);font-size:18px;font-weight:700}
+.sub{color:var(--muted);margin:0 0 30px;font-size:15px}
+
+/* highlights */
+mark{background:linear-gradient(transparent 45%,var(--hl-y) 45%);color:inherit;padding:0 1px}
+.who{background:var(--hl-b);color:var(--hl-b-ink);border:0;border-radius:4px;padding:0 5px;font:inherit;font-weight:600;cursor:pointer}
+.who:hover,.who:focus-visible{outline:2px solid var(--hl-b-ink);outline-offset:1px}
+.term{background:var(--hl-p);color:var(--hl-p-ink);border-radius:4px;padding:0 5px;font-weight:600}
+
+/* timeline */
+.era{font-family:"Pretendard",system-ui,sans-serif;font-size:14px;font-weight:700;color:var(--gold);
+  margin:34px 0 10px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.era:first-of-type{margin-top:0}
+.tl{list-style:none;margin:0;padding:0;position:relative}
+.tl::before{content:"";position:absolute;left:62px;top:10px;bottom:10px;width:2px;background:var(--gold-soft)}
+.tl li{display:grid;grid-template-columns:52px 1fr;gap:26px;padding:12px 0;position:relative}
+.tl li::after{content:"";position:absolute;left:57px;top:23px;width:12px;height:12px;border-radius:50%;
+  background:var(--bg);border:2px solid var(--gold)}
+.year{font-weight:800;font-size:17px;color:var(--ink);text-align:right;padding-top:2px}
+.tl h3{font-size:18px;font-weight:700;margin:0 0 2px;letter-spacing:-.01em}
+.tl p{margin:0;color:var(--ink-soft)}
+
+/* features */
+.feats{display:grid;gap:0;border-top:1px solid var(--line)}
+.feat{display:grid;grid-template-columns:170px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.feat h3{font-size:18px;font-weight:700;margin:0;line-height:1.5}
+.feat p{margin:0;color:var(--ink-soft)}
+
+.closing{margin-top:64px;padding:40px 28px;text-align:center;background:var(--paper);
+  border:1px solid var(--line);border-radius:18px}
+.closing .q{font-family:"Pretendard",system-ui,sans-serif;font-size:clamp(22px,4.2vw,30px);font-weight:800;
+  letter-spacing:-.02em;line-height:1.45;margin:0}
+.closing .q span{color:var(--gold)}
+.closing p.s{color:var(--muted);margin:14px 0 0;font-size:15px}
+
+.legend{display:flex;flex-wrap:wrap;gap:8px 16px;justify-content:center;margin:26px 0 0;font-size:13px;color:var(--muted)}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:14px;height:10px;border-radius:3px;display:inline-block}
+
+/* related video */
+.video-wrap{margin-top:20px;padding:20px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+.video-wrap video{display:block;width:100%;border-radius:12px;background:#000}
+.video-wrap p.s{margin:14px 0 0;color:var(--muted);font-size:14px;text-align:center}
+
+footer{text-align:center;color:var(--muted);font-size:14px;padding:40px 20px 56px;font-family:"Pretendard",system-ui,sans-serif}
+footer strong{color:var(--ink);font-weight:700}
+
+/* popup */
+.pop{position:fixed;inset:0;display:none;align-items:flex-end;justify-content:center;
+  background:rgba(20,25,38,.35);padding:20px;z-index:10}
+.pop.open{display:flex}
+.card{background:var(--paper);color:var(--ink);max-width:520px;width:100%;border-radius:18px;padding:26px 26px 22px;
+  box-shadow:0 20px 50px rgba(20,25,38,.25);margin-bottom:max(20px,env(safe-area-inset-bottom,0px));
+  animation:up .22s ease-out}
+@media (min-width:640px){.pop{align-items:center}}
+@keyframes up{from{transform:translateY(14px);opacity:0}to{transform:none;opacity:1}}
+@media (prefers-reduced-motion:reduce){.card{animation:none}html{scroll-behavior:auto}}
+.card h4{font-family:"Pretendard",system-ui,sans-serif;font-size:21px;font-weight:800;margin:0}
+.card .life{font-family:"Pretendard",system-ui,sans-serif;color:var(--gold);font-size:14px;font-weight:600;margin:2px 0 12px}
+.card p{margin:0;color:var(--ink-soft);font-size:16px}
+.card button{margin-top:18px;font-family:"Pretendard",system-ui,sans-serif;font-size:15px;font-weight:600;
+  background:var(--ink);color:var(--bg);border:0;border-radius:10px;padding:10px 18px;cursor:pointer;width:100%}
+
+@media (max-width:600px){
+  body{font-size:16px}
+  .hero{padding:68px 20px 60px}
+  .feat{grid-template-columns:1fr;gap:6px}
+  .tl::before{left:50px}
+  .tl li{grid-template-columns:42px 1fr;gap:22px}
+  .tl li::after{left:45px}
+  .year{font-size:15px}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <p class="from sans">기독교한국침례회 은혜교회</p>
+  <h1>침례교,<br>짧고 핵심적으로</h1>
+  <p class="lead">성경대로 믿고, 스스로 고백하고, 자유롭게 모인 교회. 400년 침례교의 걸음과 믿음을 한눈에 살펴봅니다.</p>
+  <svg viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 34 C 150 10, 300 58, 450 34 S 750 10, 900 34 S 1100 56, 1200 30 L1200 60 L0 60Z" fill="var(--bg)"/>
+  </svg>
+</header>
+
+<main>
+
+<section id="history">
+  <h2><span class="n">1</span>침례교의 역사</h2>
+  <p class="sub">파란색 이름을 누르면 인물 설명이 열립니다.</p>
+
+  <div class="era">영국에서의 시작</div>
+  <ol class="tl">
+    <li><div class="year">1609</div><div>
+      <h3>암스테르담, 첫 침례교회</h3>
+      <p>영국 국교회와 완전히 갈라선 분리주의자 <button class="who" data-p="smyth">존 스미스</button>와 <button class="who" data-p="helwys">토마스 헬위스</button>가 네덜란드로 건너가 <span class="term">신자의 침례</span>를 시행했습니다. <mark>믿음을 고백한 사람에게 침례를 베푸는 교회가 이때 처음 세워졌습니다.</mark></p>
+    </div></li>
+    <li><div class="year">1612</div><div>
+      <h3>런던, 영국 첫 침례교회</h3>
+      <p>헬위스는 영국으로 돌아와 런던 스피탈필즈에 교회를 세웠습니다. 국왕에게 <mark>“양심과 신앙은 왕이 다스릴 수 없다”</mark>며 종교의 자유를 요구했다가 감옥에 갇혀 그곳에서 생을 마쳤습니다.</p>
+    </div></li>
+    <li><div class="year">1644</div><div>
+      <h3>제1런던신앙고백</h3>
+      <p>칼빈주의 성향의 특수침례교가 신앙고백을 발표하며 <span class="term">침수례</span>를 분명히 밝혔습니다. 알미니안 성향의 일반침례교와 함께 <mark>초기 침례교는 두 흐름으로 자라났습니다.</mark></p>
+    </div></li>
+  </ol>
+
+  <div class="era">미국과 세계로</div>
+  <ol class="tl">
+    <li><div class="year">1638</div><div>
+      <h3>프로비던스, 미국 첫 침례교회</h3>
+      <p><button class="who" data-p="williams">로저 윌리엄스</button>가 로드아일랜드에 교회를 세웠습니다. 그가 세운 식민지는 <mark>어떤 신앙도 강요받지 않는 자유의 땅</mark>이 되었습니다.</p>
+    </div></li>
+    <li><div class="year">1792</div><div>
+      <h3>근대 선교의 문이 열리다</h3>
+      <p>영국 침례교 목사 <button class="who" data-p="carey">윌리엄 캐리</button>가 침례교선교회를 세우고 인도로 떠났습니다. <mark>근대 세계선교는 침례교에서 시작되었습니다.</mark></p>
+    </div></li>
+    <li><div class="year">1845</div><div>
+      <h3>남침례회 조직</h3>
+      <p>대각성운동과 서부 개척 속에서 크게 성장한 미국 침례교는 남침례회(SBC)를 조직했고, 이후 세계 선교를 이끄는 교단이 되었습니다.</p>
+    </div></li>
+  </ol>
+
+  <div class="era">한국 침례교</div>
+  <ol class="tl">
+    <li><div class="year">1889</div><div>
+      <h3>펜윅 선교사의 내한</h3>
+      <p>캐나다 출신 평신도 선교사 <button class="who" data-p="fenwick">말콤 펜윅</button>이 조선에 들어와 원산을 중심으로 복음을 전했습니다.</p>
+    </div></li>
+    <li><div class="year">1906</div><div>
+      <h3>대한기독교회에서 동아기독교로</h3>
+      <p>대한기독교회로 출발해 1921년 동아기독교로 이름을 바꾸었습니다. 일제 강점기에 <mark>신사참배를 끝까지 거부하다가</mark> 지도자들이 투옥되고 1944년 교단이 강제로 해산되었습니다.</p>
+    </div></li>
+    <li><div class="year">1949</div><div>
+      <h3>대한기독교침례회로 재건</h3>
+      <p>해방 후 미국 남침례회와 협력하며 다시 일어섰습니다. 분열과 재통합을 거쳐 <mark>1976년 지금의 이름인 기독교한국침례회가 되었습니다.</mark></p>
+    </div></li>
+  </ol>
+</section>
+
+<section id="marks">
+  <h2><span class="n">2</span>침례교의 핵심 특징</h2>
+  <p class="sub">침례교를 침례교답게 만드는 여덟 가지 믿음입니다.</p>
+
+  <div class="feats">
+    <div class="feat"><h3 class="sans">성경의 최종 권위</h3>
+      <p>신조나 전통보다 <mark>성경을 신앙과 삶의 유일한 최종 기준</mark>으로 삼습니다.</p></div>
+    <div class="feat"><h3 class="sans">신자의 침례</h3>
+      <p>스스로 믿음을 고백한 사람에게만 침례를 베풀고, 물에 완전히 잠기는 <span class="term">침수례</span>를 따릅니다. 유아세례는 시행하지 않습니다.</p></div>
+    <div class="feat"><h3 class="sans">중생한 신자들의 교회</h3>
+      <p>교회는 <mark>거듭난 사람들이 자발적으로 모인 공동체</mark>라고 믿습니다.</p></div>
+    <div class="feat"><h3 class="sans">개교회 자치</h3>
+      <p>각 지역교회는 독립적이며 <span class="term">회중정치</span>로 중요한 일을 성도들이 함께 결정합니다. 교단은 협력체이지 상위 치리기관이 아닙니다.</p></div>
+    <div class="feat"><h3 class="sans">만인제사장</h3>
+      <p>모든 신자가 <mark>다른 중재자 없이 그리스도를 통해 하나님께 직접 나아갑니다.</mark></p></div>
+    <div class="feat"><h3 class="sans">두 가지 직분</h3>
+      <p>성경이 말하는 교회의 직분을 목사와 집사로 봅니다.</p></div>
+    <div class="feat"><h3 class="sans">두 가지 규례</h3>
+      <p>침례와 주의 만찬을 은혜를 전달하는 성례가 아니라, 주님이 명하신 순종과 기념의 <span class="term">규례</span>로 지킵니다.</p></div>
+    <div class="feat"><h3 class="sans">종교의 자유와 정교분리</h3>
+      <p>국가는 양심과 신앙에 간섭할 수 없다고 믿습니다. <mark>침례교가 인류 역사에 남긴 가장 큰 공헌 가운데 하나입니다.</mark></p></div>
+  </div>
+
+  <div class="closing">
+    <p class="q">성경대로, 스스로 고백하고,<br><span>자유롭게 모인 교회</span></p>
+    <p class="s">침례교가 400년 동안 지켜 온 교회의 모습입니다.</p>
+  </div>
+
+  <div class="legend sans" aria-label="표시 안내">
+    <span><i style="background:var(--hl-y)"></i>핵심 문장</span>
+    <span><i style="background:var(--hl-b)"></i>인물</span>
+    <span><i style="background:var(--hl-p)"></i>핵심 용어</span>
+  </div>
+</section>
+
+<section id="related-video">
+  <h2><span class="n">3</span>관련 영상</h2>
+  <p class="sub">침례교에 관해 함께 보면 좋은 영상입니다.</p>
+
+  <div class="video-wrap">
+    <video controls preload="metadata" playsinline>
+      <source src="침례교 약사 관련 영상.mp4" type="video/mp4">
+      브라우저가 video 태그를 지원하지 않습니다.
+    </video>
+    <p class="s">재생이 안 되면 파일을 새로고침하거나 다시 접속해 주세요.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <strong>기독교한국침례회 은혜교회</strong><br>담임목사 박동준
+</footer>
+
+<div class="pop" id="pop" role="dialog" aria-modal="true" aria-labelledby="popName">
+  <div class="card">
+    <h4 id="popName"></h4>
+    <div class="life" id="popLife"></div>
+    <p id="popText"></p>
+    <button type="button" id="popClose">닫기</button>
+  </div>
+</div>
+
+<script>
+var PEOPLE = {
+  smyth:{name:'존 스미스',life:'John Smyth · 1570년경–1612',text:'영국 국교회 사제였다가 분리주의자가 된 목회자입니다. 성경을 연구하며 유아세례가 성경적이지 않다는 결론에 이르렀고, 1609년 암스테르담에서 스스로에게 먼저 침례를 행한 뒤 성도들에게 침례를 베풀어 첫 침례교회를 세웠습니다.'},
+  helwys:{name:'토마스 헬위스',life:'Thomas Helwys · 1575년경–1616년경',text:'스미스와 함께 첫 침례교회를 세운 평신도 지도자입니다. 1612년 영국으로 돌아와 런던에 첫 침례교회를 세웠고, 제임스 1세에게 모든 사람의 종교의 자유를 요구하는 책을 보냈다가 투옥되어 옥중에서 세상을 떠났습니다.'},
+  williams:{name:'로저 윌리엄스',life:'Roger Williams · 1603년경–1683',text:'영국 출신 목회자로, 매사추세츠에서 신앙의 자유를 주장하다 추방되었습니다. 로드아일랜드에 프로비던스를 세우고 누구도 신앙 때문에 박해받지 않는 사회를 만들었으며, 1638년 미국 첫 침례교회 설립에 참여했습니다.'},
+  carey:{name:'윌리엄 캐리',life:'William Carey · 1761–1834',text:'구두 수선공 출신의 영국 침례교 목사입니다. 1792년 침례교선교회 설립을 이끌고 인도로 건너가 40여 년을 사역하며 성경을 여러 언어로 번역했습니다. 근대 선교의 아버지로 불립니다.'},
+  fenwick:{name:'말콤 펜윅',life:'Malcolm C. Fenwick · 1863–1935',text:'캐나다 출신의 독립 선교사입니다. 1889년 조선에 와서 원산을 중심으로 사역했고, 대한기독교회를 세워 한국 침례교의 뿌리가 되었습니다. 토착 지도자를 세우고 순회 전도에 힘쓴 것이 특징입니다.'}
+};
+var pop=document.getElementById('pop'), lastBtn=null;
+function openP(id,btn){var d=PEOPLE[id];if(!d)return;lastBtn=btn;
+  document.getElementById('popName').textContent=d.name;
+  document.getElementById('popLife').textContent=d.life;
+  document.getElementById('popText').textContent=d.text;
+  pop.classList.add('open');document.getElementById('popClose').focus();}
+function closeP(){pop.classList.remove('open');if(lastBtn)lastBtn.focus();}
+document.querySelectorAll('.who').forEach(function(b){b.addEventListener('click',function(){openP(b.dataset.p,b);});});
+document.getElementById('popClose').addEventListener('click',closeP);
+pop.addEventListener('click',function(e){if(e.target===pop)closeP();});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&pop.classList.contains('open'))closeP();});
+</script>
+</body>
+</html>

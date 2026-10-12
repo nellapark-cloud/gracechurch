@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빌레몬서, 이름값을 하게 된 도망자 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content=""쓸모 있는 사람"이라는 이름의 도망친 종이 형제가 되어 돌아간 이야기, 가장 짧은 바울 서신에 숨은 이야기">
+<meta property="og:title" content="빌레몬서, 이름값을 하게 된 도망자">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 20</div>
+  <h1>빌레몬서,<br><em>이름값</em>을 하게 된<br>도망자</h1>
+  <p class="sub">"쓸모 있는 사람"이라는 이름의 종이<br>형제가 되어 주인에게 돌아간 이야기</p>
+  <div class="ref">빌레몬서 1장 (1–25절)</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>빌레몬서는 한 장짜리 편지예요. 성경을 넘기다 보면 디도서와 히브리서 사이에서 휙 지나가기 쉬워요. 그런데 이 짧은 편지 안에 한 사람의 인생이 통째로 들어 있어요. 주인에게 손해를 끼치고 도망친 종이, 감옥에서 바울을 만나 예수님을 믿고, 이제 주인에게 돌아가는 이야기예요. 😄 이 편지를 들고 주인 집 문 앞에 선 그 사람의 심장은 얼마나 뛰었을까요.</p><p>그 짧은 편지 속에 재밌는 이야기들이 숨어 있어요. 온 교회 앞에서 읽힌 개인 편지, 세 번 되풀이되는 "마음", 이름을 가지고 한 말놀이, "아마도"라는 한 단어에 담긴 하나님의 섭리, 바울이 친필로 쓴 차용증, 비슷한 시대 로마 귀족의 편지와의 비교, 그리고 50년 뒤 에베소 교회의 감독 이름까지요. 그 흔적을 따라가면 한 분이 보여요. <span class="hl">우리의 빚을 자기 앞으로 계산하신 예수 그리스도</span>예요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>빌레몬서는 어떤 책일까?</h2>
+    <p>도망친 종 한 사람을 위해 쓴 가장 짧은 바울 서신</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>빌레몬은 골로새에 사는 부유한 그리스도인이었어요. 자기 집을 교회 모임 장소로 내어 줄 만큼 넉넉했고(2절), 바울을 통해 믿음을 갖게 된 사람이었어요(19절). 그의 종 오네시모가 주인에게 손해를 끼치고 도망쳤다가(18절), 감옥에 갇힌 바울을 만나 그리스도인이 되었어요(10절). 바울은 오네시모를 다시 빌레몬에게 돌려보내며 이 편지를 써요. 골로새서와 같은 때에, 같은 사람들 편으로 보냈어요(골 4:7-9). 로마에 갇혀 있던 주후 60–62년 무렵으로 보는 경우가 많아요.</p>
+    <div class="debate sans"><div><b>가장 짧은 바울 서신</b>스물다섯 절, 헬라어로 약 335단어예요. 바울의 이름으로 된 열세 편지 가운데 가장 짧아요. 한 번 소리 내어 읽는 데 3분이면 충분해요.</div><div><b>개인 편지이면서 교회 편지</b>빌레몬 한 사람에게 보낸 편지 같지만, 받는 사람에 압비아와 아킵보와 "네 집에 있는 교회"(2절)까지 들어 있어요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 바울이 갇혀 있던 곳을 로마가 아니라 에베소로 보는 학자들도 있어요. 오네시모가 정말 도망친 것인지, 주인과의 문제를 풀기 위해 일부러 주인의 친구인 바울을 찾아간 것인지에 대해서도 의견이 나뉘어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">빌레몬서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">명령 대신 간청</div><div class="mini-b">"마땅한 일로 명할 수도 있으나 도리어 사랑으로써 간구하노라"(8-9절). 사도의 권위를 내려놓고 부탁해요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">이름으로 한 말놀이</div><div class="mini-b">"오네시모"는 "유익한 사람"이라는 뜻이에요. 바울은 이 이름을 가지고 재치 있게 말을 풀어요(11절).</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">종 이상, 형제로</div><div class="mini-b">"종 이상으로 곧 사랑 받는 형제로 둘 자라"(16절). 신분의 벽을 넘는 복음의 힘을 보여 줘요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">친필 차용증</div><div class="mini-b">"나 바울이 친필로 쓰노니 내가 갚으려니와"(19절). 남의 빚을 자기가 갚겠다고 서명해요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">열린 결말</div><div class="mini-b">"네가 내가 말한 것보다 더 행할 줄을 아노라"(21절). 빌레몬이 어떻게 했는지는 편지에 나오지 않아요.</div></div></div></div>
+
+  <div class="target"><p>빌레몬서의 중심에는 이 말씀이 있어요. <span class="hl">"이 후로는 종과 같이 대하지 아니하고 종 이상으로 곧 사랑 받는 형제로 둘 자라"</span>(16절). 복음은 한 사람의 신분을 바꾸기 전에 관계를 바꿨어요. 주인과 종이 주 안에서 형제가 되었어요. 그리고 그 일을 가능하게 한 바울의 말은 예수님이 우리에게 하신 일을 그대로 닮았어요. <mark>"그것을 내 앞으로 계산하라"</mark>(18절).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>온 교회 앞에서 읽힌 개인 편지부터 에베소 감독의 이름까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>온 교회가 듣는 편지</button><button class="chip" onclick="goTo('s2')"><b>2</b>세 번 나오는 "마음"</button><button class="chip" onclick="goTo('s3')"><b>3</b>무익한 자가 유익한 자로</button><button class="chip" onclick="goTo('s4')"><b>4</b>"아마도"의 섭리</button><button class="chip" onclick="goTo('s5')"><b>5</b>내 앞으로 계산하라</button><button class="chip" onclick="goTo('s6')"><b>6</b>로마 귀족의 편지</button><button class="chip" onclick="goTo('s7')"><b>7</b>에베소의 감독 오네시모</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>개인 편지를<br>온 교회 앞에서 읽다</h2><div class="refs">빌레몬서 1:1-3 · 21-22 · 골로새서 4:17</div></div></div>
+    <div class="scene-body"><p>편지 첫머리를 보면 받는 사람이 꽤 많아요. "빌레몬과 자매 압비아와 우리와 함께 병사 된 아킵보와 <span class="hl">네 집에 있는 교회</span>에게"(1-2절). 압비아는 빌레몬의 아내, 아킵보는 아들일 거라고 보는 사람이 많아요. 그리고 빌레몬의 집에 모이는 교회 식구들 모두가 이 편지를 함께 들었어요.</p>
+        <p>생각해 보면 빌레몬 입장에서는 난감한 편지예요. 😄 도망쳤던 종이 돌아와 서 있고, 교회 식구들이 다 모인 자리에서 바울의 편지가 읽혀요. "그를 형제로 받아 달라"는 부탁을 모두가 듣고 있어요. 게다가 끝에는 이런 말도 있어요. "오직 너는 나를 위하여 숙소를 마련하라"(22절). 바울이 직접 와서 확인하겠다는 거예요.</p>
+        <p>하지만 이건 빌레몬을 압박하려는 게 아니에요. 한 사람을 용서하고 받아들이는 일은 그 사람 혼자만의 일이 아니라 <mark>교회 공동체가 함께 짊어지는 일</mark>이라는 거예요. 참고로 아킵보는 같은 날 골로새 교회에서 읽힌 골로새서에서도 이름이 불려요. "아킵보에게 이르기를 주 안에서 받은 직분을 삼가 이루라"(골 4:17). 아킵보는 그날 두 번이나 공개적으로 이름이 불린 셈이에요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 압비아와 아킵보가 빌레몬의 가족이라는 것은 본문에 나오지 않는 추정이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>용서와 화해가 나 혼자만의 일이 아니라, 주님의 교회가 함께 지는 사랑의 짐임을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>편지에 세 번 나오는<br>"마음"이라는 단어</h2><div class="refs">빌레몬서 1:7 · 12 · 20</div></div></div>
+    <div class="scene-body"><div class="steps"><div><b>7절</b>"성도들의 <u>마음</u>이 너로 말미암아 평안함을 얻었으니"</div><div><b>12절</b>"그는 내 <u>심복</u>이라"</div><div class="last"><b>20절</b>"내 <u>마음</u>이 그리스도 안에서 평안하게 하라"</div></div><p>이 짧은 편지에 같은 단어가 세 번 나와요. <span class="heb" data-tip="스플랑크나(splanchna) — 원래 심장, 간, 창자 같은 몸 안의 장기. 사람의 가장 깊은 감정이 있는 곳을 가리키는 말로 쓰였다. "불쌍히 여기다"(스플랑크니조마이)도 같은 뿌리.">스플랑크나</span>라는 말인데, 원래는 몸속의 장기, 곧 <mark>"속 깊은 곳"</mark>을 가리켜요. 우리말로 "애간장이 탄다"고 할 때의 그 간장 같은 말이에요. 예수님이 무리를 보시고 "불쌍히 여기셨다"(마 9:36)고 할 때의 말도 같은 뿌리예요.</p>
+        <p>바울은 이 단어로 편지를 짜요. 먼저 7절에서 빌레몬을 칭찬해요. "성도들의 마음이 너로 말미암아 평안함을 얻었으니". 그다음 12절에서 오네시모를 소개해요. "그는 내 심복이라". 여기 "심복"이 바로 같은 단어예요. 오네시모는 바울의 <span class="hl">애간장</span>이라는 거예요. 그리고 20절에서 마무리해요. "내 마음이 그리스도 안에서 평안하게 하라".</p>
+        <p>😄 바울의 논리가 보이죠? "너는 성도들의 마음을 시원하게 해 주는 사람이야. 그런데 오네시모는 내 마음 그 자체야. 그러니 내 마음도 시원하게 해 줘." 7절과 20절에는 "평안하게 하다"라는 말까지 똑같이 쓰였어요. 칭찬이 부탁이 되고, 부탁이 사랑이 되는 편지예요.</p>
+        
+      <div class="reflect sans"><div class="rl">돌아보기</div>나로 말미암아 다른 성도들의 마음이 시원해지고 있는지 돌아보고, 주님의 마음으로 한 사람을 품습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>무익하던 "유익한 사람"이<br>이름값을 하다</h2><div class="refs">빌레몬서 1:10-11</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">그가 전에는</div>"네게 <b>무익하였으나</b>"<br>(아크레스톤)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">이제는</div>"나와 네게 <b>유익하므로</b>"<br>(유크레스톤)</div></div><p>"오네시모"라는 이름은 "유익한", "쓸모 있는"이라는 뜻이에요. 그 시대에 종들에게 흔히 붙이던 이름이었어요. 주인들이 "쓸모 있게 일하라"는 뜻으로 지어 준 거죠. 그런데 이 오네시모는 이름과 정반대였어요. 손해를 끼치고 도망쳤거든요. 😄 이름값을 전혀 못 한 거예요.</p>
+        <p>그래서 바울은 이렇게 써요. "그가 전에는 네게 <span class="heb" data-tip="아크레스톤(achrēston) — 쓸모없는. 크레스토스(쓸모 있는)에 부정의 뜻인 a를 붙인 말.">무익하였으나</span> 이제는 나와 네게 <span class="heb" data-tip="유크레스톤(euchrēston) — 아주 쓸모 있는. 크레스토스에 좋다는 뜻인 eu를 붙인 말.">유익하므로</span>"(11절). 이름의 뜻을 가지고 한 <mark>말놀이</mark>예요. 쓸모없던 "쓸모 있는 사람"이 이제야 이름값을 하게 되었다는 거죠.</p>
+        <p>그리고 재밌는 게 하나 더 있어요. 10절을 헬라어 순서대로 읽으면 이래요. "내가 너에게 간구한다, 나의 아들을 위하여, 내가 갇힌 중에서 낳은, <span class="hl">오네시모</span>를." 이름을 맨 마지막에 둬요. 빌레몬이 그 이름을 듣고 얼굴이 굳기 전에, 먼저 "내 아들", "갇힌 중에서 낳은" 사람이라고 소개한 거예요. 바울은 오네시모를 도망친 종이 아니라 <mark>믿음으로 낳은 아들</mark>로 먼저 보게 했어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ "쓸모 있는"(크레스토스)과 "그리스도"(크리스토스)의 발음이 그 시대에 비슷하게 들렸기 때문에, 이 말놀이 안에 "그리스도 안에서 쓸모 있게 되었다"는 뜻까지 담겼다고 보는 견해도 있어요. 추정이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>쓸모없다고 여겨지던 나를 그리스도 안에서 쓸모 있는 사람으로 새롭게 하신 은혜를 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>"아마도"라는 한 단어에<br>담긴 하나님의 손길</h2><div class="refs">빌레몬서 1:15-16 · 창세기 50:20</div></div></div>
+    <div class="scene-body"><p>15절에서 바울은 아주 조심스럽게 말해요. "<span class="hl">아마</span> 그가 잠시 동안 떠나게 된 것은 너로 하여금 그를 영원히 두게 함이리니". 오네시모가 "도망쳤다"고 하지 않고 "떠나게 되었다"고 해요. 헬라어로는 수동태예요. 오네시모가 스스로 떠난 것 같지만, 그 뒤에 <mark>보이지 않는 손</mark>이 있었을지도 모른다는 거예요.</p>
+        <p>이 장면은 요셉의 이야기를 떠올리게 해요. 형들에게 팔려 간 요셉은 나중에 이렇게 말했어요. "당신들은 나를 해하려 하였으나 하나님은 그것을 선으로 바꾸사"(창 50:20). 사람의 잘못과 실패도 하나님의 손에서는 선을 이루는 재료가 돼요. 잠시 잃은 종이 영원한 형제로 돌아왔어요.</p>
+        <p>그런데 바울이 "아마"라고 말한 게 참 좋아요. 😄 사도도 하나님의 섭리를 함부로 단정하지 않았어요. 남의 아픔 앞에서 "다 하나님의 뜻이야"라고 쉽게 말하지 않은 거예요. 대신 조심스럽게, 그러나 믿음으로 말해요. 하나님이 이 일도 <span class="hl">선으로 바꾸고 계실지 모른다</span>고요.</p>
+        
+      <div class="reflect sans"><div class="rl">돌아보기</div>지나간 실패와 헤어짐 속에서도 선을 이루시는 하나님의 손길을 조심스럽게, 그러나 믿음으로 바라봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>"내 앞으로 계산하라"<br>바울이 쓴 친필 차용증</h2><div class="refs">빌레몬서 1:17-19</div></div></div>
+    <div class="scene-body"><p>17–19절은 이 편지의 절정이에요. "네가 나를 동역자로 알진대 그를 영접하기를 내게 하듯 하고 그가 만일 네게 불의를 하였거나 네게 빚진 것이 있으면 그것을 <span class="heb" data-tip="엘로가오(ellogaō) — 장부에 올리다, 누구의 계정으로 달아 두다. 상업 장부에서 쓰던 말. 로마서 5:13의 &quot;죄를 죄로 여기지 아니하였느니라&quot;에도 같은 단어가 쓰였다.">내 앞으로 계산하라</span>". 이 말은 <mark>장부에 누구 앞으로 달아 두라</mark>는 상업 용어예요. 오네시모의 빚을 바울의 계정으로 옮기라는 거예요.</p>
+        <p>그리고 바울은 펜을 직접 잡아요. "나 바울이 친필로 쓰노니 내가 갚으려니와"(19절). 그 시대의 차용증은 빚진 사람이 자기 손으로 "내가 갚겠다"고 써서 서명했어요. 바울이 편지 한가운데에 <span class="hl">친필 차용증</span>을 써 준 거예요. 😄 그러고는 바로 한마디를 덧붙여요. "네가 이 외에 네 자신이 내게 빚진 것은 내가 말하지 아니하노라". 말하지 않는다면서 다 말했어요. 빌레몬도 바울에게 영혼의 빚을 진 사람이었으니까요.</p>
+        <p>종교개혁자 마르틴 루터는 빌레몬서 서문에서 이 장면을 이렇게 풀었어요. 그리스도께서 하나님 아버지 앞에서 우리를 위해 하신 일을, 바울이 빌레몬 앞에서 오네시모를 위해 하고 있다고요. 그리고 이렇게 덧붙였어요. <mark>우리는 모두 그리스도의 오네시모</mark>라고요. 우리의 빚을 자기 앞으로 계산하시고, "그를 나처럼 받아 달라"고 아버지께 말씀하신 분이 예수님이세요.</p>
+        
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 갚을 수 없던 빚을 자기 앞으로 계산하신 예수님을 바라보며, 나도 누군가의 짐을 대신 지는 사랑을 구합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>비슷한 부탁,<br>전혀 다른 두 편지</h2><div class="refs">빌레몬서 1:8-21</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">플리니우스가 사비니아누스에게</div>"그의 <b>눈물</b>과 너의 <b>너그러움</b>을 생각해서 이번만 용서해 주게"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">바울이 빌레몬에게</div>"<b>사랑 받는 형제</b>로 둘 자라… 그것을 <b>내 앞으로</b> 계산하라"</div></div><p>빌레몬서와 자주 비교되는 편지가 있어요. 로마의 귀족이자 문필가인 소(小) 플리니우스가 2세기 초 친구 사비니아누스에게 보낸 편지예요. 사비니아누스의 해방 노예가 주인을 화나게 하고는 플리니우스를 찾아와 울며 용서를 빌었어요. 플리니우스는 친구에게 편지를 써서 그를 용서해 달라고 부탁해요.</p>
+        <p>겉보기엔 아주 비슷한 부탁이에요. 그런데 내용을 보면 달라요. 플리니우스는 그 사람의 <span class="hl">눈물과 뉘우침</span>, 그리고 친구의 너그러운 성품에 호소해요. 자기가 그 해방 노예를 따끔하게 꾸짖었다는 말도 해요. 😄 그리고 다음에 또 이러면 다시는 편들지 않겠다고 겁도 줬대요. 용서는 해 주되, 위아래는 분명하게 남아 있는 편지예요.</p>
+        <p>바울은 오네시모가 얼마나 뉘우쳤는지를 늘어놓지 않아요. 대신 그가 <mark>누구가 되었는지</mark>를 말해요. 내 아들, 내 심복, 주 안에서 사랑 받는 형제요. 그리고 그의 빚을 자기가 지겠다고 해요. 플리니우스의 편지는 주인의 너그러움에 기대요. 바울의 편지는 그리스도 안에서 새로 생긴 관계에 기대요. 복음은 용서를 베푸는 데서 멈추지 않고, <span class="hl">가족을 만들어요.</span></p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 플리니우스의 편지는 그의 서간집 9권 21번 편지예요. 바울 시대보다 40년쯤 뒤의 것이지만, 당시 사회에서 이런 부탁이 어떻게 오갔는지 보여 주는 좋은 비교 자료로 학자들이 자주 인용해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>누군가를 용서할 때, 봐주는 데서 멈추지 않고 그리스도 안에서 한 가족으로 받아들입니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>50년 뒤 에베소 교회의<br>감독 오네시모</h2><div class="refs">빌레몬서 1:21 · 골로새서 4:9</div></div></div>
+    <div class="scene-body"><p>빌레몬서는 열린 결말로 끝나요. "나는 네가 순종할 것을 확신하므로 네게 썼노니 네가 <span class="hl">내가 말한 것보다 더 행할 줄</span>을 아노라"(21절). 빌레몬이 오네시모를 받아들였는지, 더 나아가 그를 자유롭게 해 주었는지 성경은 말하지 않아요. 그런데 몇 가지 흔적이 남아 있어요.</p>
+        <p>먼저 이 편지가 사라지지 않고 남았다는 사실이에요. 만약 빌레몬이 부탁을 거절했다면, 이 편지를 소중히 간직해 교회들에 돌릴 이유가 없었을 거예요. 그리고 같은 때 보낸 골로새서에서 바울은 오네시모를 "신실하고 사랑을 받는 형제"(골 4:9)라고 소개하며, 두기고와 함께 교회 소식을 전하는 사람으로 세워요.</p>
+        <p>그리고 약 50년 뒤, 순교를 앞두고 로마로 끌려가던 안디옥의 감독 이그나티우스가 에베소 교회에 편지를 써요. 주후 110년 무렵이에요. 그 편지 첫머리에서 그는 에베소 교회의 감독을 칭찬하는데, 그 이름이 <mark>오네시모</mark>예요. 이그나티우스는 그를 말로 다 할 수 없는 사랑의 사람이라고 불렀어요. 만약 이 사람이 빌레몬서의 오네시모라면, 도망친 종이 에베소 교회의 목자가 된 거예요. 그리고 바울의 편지들을 모아 교회에 전하는 일에 그가 앞장섰을지도 모른다고 보는 학자도 있어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 이그나티우스가 말한 에베소의 감독 오네시모가 빌레몬서의 오네시모와 같은 사람인지는 확인할 수 없어요. 오네시모는 흔한 이름이었어요. 그가 바울 서신을 모으는 일에 참여했다는 것도 일부 학자들의 추정이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>한 사람의 과거보다 그 안에서 일하실 하나님을 더 크게 보며, 오늘 내 곁의 "오네시모"를 형제로 맞이합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">무익하던 한 사람이<br>그리스도 안에서 유익한 형제가 되다</div>
+    <p>빌레몬서는 교회사에서 큰 사건을 다룬 책이 아니에요. 도망친 종 한 사람, 속상한 주인 한 사람, 그리고 그 사이에 선 감옥의 사도 한 사람의 이야기예요. 그런데 그 작은 이야기 안에 복음 전체가 들어 있어요. 빚진 사람이 있고, 그 빚을 대신 지는 사람이 있고, 그래서 다시 가족이 되는 이야기예요.</p><p>우리는 모두 오네시모예요. 하나님께 쓸모없던 사람, 빚지고 도망쳤던 사람이에요. 그런 우리를 예수님이 찾아오셔서 자기 아들로 삼으시고, 아버지 앞에 서서 말씀하셨어요. <mark>"그를 나처럼 받아 주십시오. 그의 빚은 내 앞으로 계산하십시오."</mark> 그 은혜로 우리는 이제야 이름값을 하는 사람이 되었어요.</p>
+    <div class="q">"그가 전에는 네게 무익하였으나<br>이제는 나와 네게 유익하므로" (11절)</div>
+  </section>
+
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

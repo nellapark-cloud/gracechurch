@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>목장 나눔 자료</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+--bg: #f1f5f0;
+--warm-white: #f8fbf7;
+--green: #4a7c59;
+--green-light: #6a9e78;
+--green-pale: #d8eade;
+--dark: #1e2d24;
+--dark-mid: #3a5442;
+--text: #1e2d24;
+--text-muted: #5a7365;
+--border: #c4d9c8;
+--section-bg: #ffffff;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+background-color: var(--bg);
+background-image:
+radial-gradient(ellipse at 15% 15%, rgba(74,124,89,0.08) 0%, transparent 55%),
+radial-gradient(ellipse at 85% 85%, rgba(30,45,36,0.06) 0%, transparent 55%);
+font-family: 'Noto Sans KR', sans-serif;
+color: var(--text);
+min-height: 100vh;
+padding: 60px 20px;
+}
+
+.container {
+max-width: 780px;
+margin: 0 auto;
+}
+
+/* Header */
+.header {
+text-align: center;
+margin-bottom: 64px;
+animation: fadeDown 0.8s ease both;
+}
+
+.header-label {
+display: inline-block;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.3em;
+color: var(--green);
+text-transform: uppercase;
+border: 1px solid var(--green-pale);
+padding: 6px 20px;
+border-radius: 20px;
+margin-bottom: 24px;
+}
+
+.header h1 {
+font-family: 'Noto Serif KR', serif;
+font-size: clamp(28px, 5vw, 40px);
+font-weight: 700;
+color: var(--dark);
+letter-spacing: -0.01em;
+line-height: 1.3;
+margin-bottom: 12px;
+}
+
+.header-date {
+font-size: 13px;
+color: var(--text-muted);
+letter-spacing: 0.15em;
+margin-top: 10px;
+}
+
+.header-line {
+width: 48px;
+height: 2px;
+background: linear-gradient(90deg, transparent, var(--green), transparent);
+margin: 20px auto 0;
+}
+
+/* Cards */
+.card {
+background: var(--section-bg);
+border-radius: 16px;
+margin-bottom: 36px;
+overflow: hidden;
+box-shadow: 0 2px 20px rgba(30,45,36,0.07), 0 1px 4px rgba(30,45,36,0.05);
+animation: fadeUp 0.7s ease both;
+border: 1px solid var(--border);
+}
+
+.card:nth-child(1) { animation-delay: 0.1s; }
+.card:nth-child(2) { animation-delay: 0.2s; }
+.card:nth-child(3) { animation-delay: 0.3s; }
+.card:nth-child(4) { animation-delay: 0.4s; }
+.card:nth-child(5) { animation-delay: 0.5s; }
+
+.card-header {
+background: linear-gradient(135deg, var(--dark) 0%, #2e5038 100%);
+padding: 28px 36px;
+position: relative;
+overflow: hidden;
+}
+
+.card-header::before {
+content: '';
+position: absolute;
+top: -30px; right: -30px;
+width: 120px; height: 120px;
+border-radius: 50%;
+background: rgba(255,255,255,0.04);
+}
+
+.card-header::after {
+content: '';
+position: absolute;
+bottom: -20px; left: 40px;
+width: 80px; height: 80px;
+border-radius: 50%;
+background: rgba(74,124,89,0.15);
+}
+
+.card-num {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.25em;
+color: var(--green-light);
+margin-bottom: 8px;
+position: relative;
+z-index: 1;
+}
+
+.card-title {
+font-family: 'Noto Serif KR', serif;
+font-size: 20px;
+font-weight: 700;
+color: #fff;
+margin-bottom: 10px;
+position: relative;
+z-index: 1;
+}
+
+.card-verse {
+font-size: 13px;
+color: rgba(255,255,255,0.65);
+font-style: italic;
+position: relative;
+z-index: 1;
+line-height: 1.6;
+}
+
+.card-body {
+padding: 32px 36px;
+}
+
+/* Scripture quote */
+.scripture-block {
+border-left: 3px solid var(--green);
+background: var(--green-pale);
+padding: 16px 20px;
+margin-bottom: 28px;
+border-radius: 0 8px 8px 0;
+}
+
+.scripture-block p {
+font-family: 'Noto Serif KR', serif;
+font-size: 14px;
+color: var(--dark);
+line-height: 1.9;
+font-weight: 400;
+}
+
+/* Meditation */
+.meditation-title {
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 0.2em;
+color: var(--green);
+text-transform: uppercase;
+margin-bottom: 14px;
+}
+
+.meditation-text {
+font-size: 15px;
+line-height: 2.0;
+color: var(--text);
+font-weight: 300;
+white-space: pre-line;
+}
+
+.meditation-text strong {
+color: var(--dark-mid);
+font-weight: 600;
+}
+
+/* Divider */
+.divider {
+border: none;
+border-top: 1px solid var(--border);
+margin: 28px 0;
+}
+
+/* Question block */
+.question-block {
+background: var(--bg);
+border-radius: 12px;
+padding: 24px 28px;
+}
+
+.question-header {
+display: flex;
+align-items: center;
+gap: 10px;
+margin-bottom: 18px;
+}
+
+.question-icon {
+width: 28px;
+height: 28px;
+border-radius: 50%;
+background: linear-gradient(135deg, var(--green), var(--green-light));
+display: flex;
+align-items: center;
+justify-content: center;
+font-size: 13px;
+color: white;
+flex-shrink: 0;
+}
+
+.question-header-text {
+font-family: 'Noto Serif KR', serif;
+font-size: 15px;
+font-weight: 600;
+color: var(--dark-mid);
+}
+
+.question-list {
+list-style: none;
+display: flex;
+flex-direction: column;
+gap: 14px;
+}
+
+.question-item {
+display: flex;
+gap: 12px;
+align-items: flex-start;
+}
+
+.question-badge {
+flex-shrink: 0;
+width: 22px;
+height: 22px;
+border-radius: 50%;
+background: var(--dark);
+color: white;
+font-size: 11px;
+font-weight: 600;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 1px;
+}
+
+.question-item p {
+font-size: 14px;
+line-height: 1.8;
+color: var(--text-muted);
+}
+
+/* Footer */
+.footer {
+text-align: center;
+margin-top: 56px;
+padding-top: 32px;
+border-top: 1px solid var(--border);
+animation: fadeUp 0.8s ease 0.6s both;
+}
+
+.footer-cross {
+font-size: 24px;
+color: var(--green);
+margin-bottom: 12px;
+letter-spacing: 8px;
+}
+
+.footer-church {
+font-family: 'Noto Serif KR', serif;
+font-size: 14px;
+font-weight: 600;
+color: var(--dark);
+letter-spacing: 0.05em;
+margin-bottom: 6px;
+}
+
+.footer-author {
+font-size: 11px;
+color: var(--text-muted);
+letter-spacing: 0.1em;
+}
+
+/* Animations */
+@keyframes fadeDown {
+from { opacity: 0; transform: translateY(-20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeUp {
+from { opacity: 0; transform: translateY(24px); }
+to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+body { padding: 40px 16px; }
+.card-header { padding: 24px 24px; }
+.card-body { padding: 24px 24px; }
+.question-block { padding: 20px 20px; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+
+<!-- Header -->
+<div class="header">
+<div class="header-label">은혜교회 묵상나눔</div>
+<h1>말씀 묵상과 나눔</h1>
+<div class="header-date">2026 · 5-5</div>
+<div class="header-line"></div>
+</div>
+
+<!-- Card 1 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 01</div>
+<div class="card-title">누가복음 1장 36~37절</div>
+<div class="card-verse">"대저 하나님의 모든 말씀은 능하지 못하심이 없느니라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>보라 네 친족 엘리사벳도 늙어서 아들을 배었느니라 본래 임신하지 못한다고 알려진 이가 이미 여섯 달이 되었나니 대저 하나님의 모든 말씀은 능하지 못하심이 없느니라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">천사는 마리아에게 엘리사벳의 임신 소식을 전하며 이 말씀을 덧붙입니다. 본래 임신할 수 없었던 이가 이미 여섯 달이 되었다는 것은, 하나님의 능력이 인간의 한계를 훌쩍 넘어서심을 보여주는 살아있는 증거였습니다. "하나님의 모든 말씀은 능하지 못하심이 없다"는 선언은 단순한 위로가 아니라, 역사 속에서 끊임없이 확인되어 온 하나님의 본성에 대한 고백입니다.
+
+우리는 종종 오래된 문제, 변하지 않는 상황, 이미 포기해버린 꿈들 앞에서 하나님의 능력마저 제한하려 합니다. 그러나 하나님은 우리의 '불가능'이라는 틀 안에 갇히지 않으십니다. 엘리사벳의 태중에서 자란 생명처럼, 하나님은 지금 이 순간에도 우리가 보지 못하는 곳에서 일하고 계십니다. 오늘 우리의 기도와 기대가 다시 열릴 수 있기를 바랍니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>내 삶에서 '불가능하다'고 포기하고 있는 기도 제목이 있나요? 그것을 하나님 앞에 다시 내어놓을 수 있을까요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>"하나님의 말씀은 능하지 못하심이 없다"는 고백이 내 삶의 어떤 상황에서 실제로 힘이 된 경험이 있다면 나눠봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 2 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 02</div>
+<div class="card-title">시편 73편 28절</div>
+<div class="card-verse">"하나님께 가까이 함이 내게 복이라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>하나님께 가까이 함이 내게 복이라 내가 주 여호와를 나의 피난처로 삼아 주의 모든 행적을 전파하리이다</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">시편 73편의 시인은 악인의 번영을 보며 하나님을 의심했고, 심한 내적 갈등 속에서 흔들렸습니다. 그러나 하나님의 성소에 들어가는 순간, 그의 관점은 완전히 바뀌었습니다. 그 결론이 바로 이 한 절입니다. "하나님께 가까이 함이 내게 복이라."
+
+세상은 복을 성취, 건강, 관계, 물질로 정의하지만, 시인은 복의 본질이 하나님과의 거리에 달려 있음을 깨닫습니다. 그분을 피난처로 삼는다는 것은 세상의 폭풍 속에서 가장 안전한 자리를 찾는 것이며, 그분의 행적을 전파한다는 것은 그 은혜를 혼자만 간직하지 않겠다는 결단입니다. 복을 받기 위해 하나님께 나아가는 것이 아니라, 하나님께 나아가는 것 자체가 복임을 오늘 다시 기억하면 좋겠습니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>요즘 나에게 '복'은 무엇인가요? 시편 기자의 고백과 비교할 때 어떤 차이가 있나요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>삶의 혼란 속에서 하나님께 가까이 나아갔을 때 관점이 바뀐 경험이 있다면 나눠봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 3 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 03</div>
+<div class="card-title">사무엘상 16장 7절</div>
+<div class="card-verse">"나 여호와는 중심을 보느니라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>여호와께서 사무엘에게 이르시되 그의 용모와 키를 보지 말라 내가 이미 그를 버렸노라 내가 보는 것은 사람과 같지 아니하니 사람은 외모를 보거니와 나 여호와는 중심을 보느니라 하시더라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">하나님이 사무엘에게 이새의 아들 중에서 왕을 선택하라 하셨을 때, 사무엘은 키가 크고 당당한 엘리압을 보고 '이 사람이로다'라고 생각했습니다. 그러나 하나님은 단호하게 말씀하셨습니다. "내가 보는 것은 사람과 같지 아니하니."
+
+사람은 외모와 조건을 봅니다. 그러나 하나님은 중심, 곧 마음을 보십니다. 이 말씀은 우리가 세상과 다른 기준으로 살아야 함을 도전합니다. 우리는 종종 자신을 평가할 때도, 타인을 바라볼 때도, 눈에 보이는 것에 지나치게 의존합니다. 하나님이 중심을 보신다는 것은 두려운 일이기도 하지만, 동시에 놀라운 위로이기도 합니다. 세상이 무시하고 지나치는 사람도, 하나님은 그 중심을 보시고 부르십니다. 오늘 내 중심은 어디를 향하고 있는지 돌아보게 됩니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>나는 사람이나 상황을 판단할 때 주로 무엇을 봅니까? 하나님의 시선을 따르기 어려웠던 경험이 있다면 나눠봅시다.</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>하나님이 내 '중심'을 보신다는 사실이 지금 내게 위로가 되나요, 도전이 되나요? 그 이유는 무엇인가요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 4 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 04</div>
+<div class="card-title">로마서 12장 9~11절</div>
+<div class="card-verse">"사랑에는 거짓이 없나니 악을 미워하고 선에 속하라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>사랑에는 거짓이 없나니 악을 미워하고 선에 속하라 형제를 사랑하여 서로 우애하고 존경하기를 서로 먼저 하며 부지런하여 게으르지 말고 열심을 품고 주를 섬기라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">바울은 그리스도인의 삶을 추상적인 신학으로만 제시하지 않습니다. 그는 구체적이고 실천적인 언어로 말합니다. 사랑에는 거짓이 없어야 하고, 악을 미워하며, 선에 속해야 합니다. 형제를 사랑하되 우애하고, 서로 먼저 존경해야 합니다. 그리고 부지런히 열심을 품고 주를 섬겨야 합니다.
+
+이 세 절 안에는 수동적인 감정이 아니라 능동적인 의지와 선택이 담겨 있습니다. 진정한 사랑은 느낌이 올 때 행동하는 것이 아니라, 느낌이 없어도 선택하는 것입니다. 특히 '서로 먼저 존경한다'는 표현이 인상적입니다. 내가 존경받을 자격이 있는지를 따지기 전에, 먼저 상대를 존경하는 사람이 되라는 부르심입니다. 공동체는 이런 사람들이 모일 때 아름다워집니다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>"거짓 없는 사랑"을 실천하기 위해 내가 버려야 할 것이 있다면 무엇인가요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>공동체(목장, 가정, 직장) 안에서 '서로 먼저 존경'하는 것이 가장 어렵게 느껴지는 순간은 언제인가요?</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Card 5 -->
+<div class="card">
+<div class="card-header">
+<div class="card-num">PASSAGE 05</div>
+<div class="card-title">에베소서 5장 1~3절</div>
+<div class="card-verse">"너희는 하나님을 본받는 자가 되고 사랑 가운데서 행하라"</div>
+</div>
+<div class="card-body">
+<div class="scripture-block">
+<p>그러므로 사랑을 받는 자녀 같이 너희는 하나님을 본받는 자가 되고 그리스도께서 너희를 사랑하신 것 같이 너희도 사랑 가운데서 행하라 그는 우리를 위하여 자신을 버리사 향기로운 제물과 희생제물로 하나님께 드리셨느니라</p>
+</div>
+<div class="meditation-title">묵상</div>
+<div class="meditation-text">"하나님을 본받는 자"가 되라는 명령은 너무 거대해서 두렵게 느껴질 수도 있습니다. 그러나 바울은 그 방법을 바로 제시합니다. 그리스도께서 우리를 사랑하신 것같이 사랑 가운데 행하라는 것입니다. 하나님을 본받는 것은 우리 스스로의 힘으로 완전해지는 것이 아니라, 이미 우리를 향해 부어진 그리스도의 사랑을 흘려보내는 것에서 시작됩니다.
+
+예수님은 우리를 위해 자신을 버리셨습니다. 그것이 향기로운 제물이었습니다. 우리의 삶도 그처럼, 나를 낮추고 내어주는 선택들이 모여 하나님 앞에 향기로운 예배가 됩니다. 이 말씀은 거룩함이 특별한 사람들만의 것이 아니라, 사랑하기로 선택하는 모든 사람의 일상 안에 있음을 알려줍니다. 오늘 내 삶의 어느 자리에서 그 향기가 날 수 있을지 생각해봅시다.</div>
+<hr class="divider">
+<div class="question-block">
+<div class="question-header">
+<div class="question-icon">Q</div>
+<div class="question-header-text">나눔 질문</div>
+</div>
+<ul class="question-list">
+<li class="question-item">
+<div class="question-badge">1</div>
+<p>그리스도께서 나를 사랑하신 방식을 떠올릴 때, 내가 가장 감동받는 부분은 무엇인가요?</p>
+</li>
+<li class="question-item">
+<div class="question-badge">2</div>
+<p>나의 일상 중 어떤 순간이 '향기로운 제물'이 될 수 있을까요? 구체적으로 나눠봅시다.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Footer -->
+<div class="footer">
+<p class="footer-church">기독교한국침례회 은혜교회</p>
+<p class="footer-author">작성 · 박동준 목사</p>
+</div>
+
+</div>
+</body>
+</html>

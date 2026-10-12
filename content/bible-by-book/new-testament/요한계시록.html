@@ -1,0 +1,2596 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>요한계시록 연구 — 전권 합본</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center { content: counter(page); font-family: "Noto Sans CJK KR"; font-size: 9pt; color: #9a9184; }
+}
+@page :first { margin: 0; @bottom-center { content: ''; } }
+@page toc { @bottom-center { content: ''; } }
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#f7f2e7;
+  --cream-deep:#efe6d2;
+  --night:#1e3f66;
+  --night-soft:#2f5a8c;
+  --gold:#b8863b;
+  --gold-soft:#d9b36a;
+  --crimson:#7c2430;
+  --crimson-soft:#a94a4f;
+  --ink:#241f1a;
+  --ink-soft:#6b6459;
+  --line:#e0d5b8;
+  --white:#ffffff;
+}
+
+body{
+  margin:0; background:var(--white); color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt; line-height: 1.75;
+}
+b, strong { font-weight: 700; }
+
+/* ===== COVER (밤하늘 · 별 · 영광) ===== */
+.cover{
+  break-after: page; height: 297mm;
+  background:
+    radial-gradient(1.5px 1.5px at 8% 20%, rgba(217,179,106,0.9) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 22% 65%, rgba(217,179,106,0.7) 50%, transparent 51%),
+    radial-gradient(1px 1px at 35% 15%, rgba(255,255,255,0.6) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 48% 80%, rgba(217,179,106,0.8) 50%, transparent 51%),
+    radial-gradient(1px 1px at 63% 30%, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 78% 55%, rgba(217,179,106,0.7) 50%, transparent 51%),
+    radial-gradient(1px 1px at 88% 20%, rgba(255,255,255,0.6) 50%, transparent 51%),
+    radial-gradient(1.5px 1.5px at 92% 75%, rgba(217,179,106,0.8) 50%, transparent 51%),
+    radial-gradient(1px 1px at 15% 90%, rgba(255,255,255,0.5) 50%, transparent 51%),
+    radial-gradient(ellipse at 50% 30%, #2f5a8c 0%, #1e3f66 55%, #142a47 100%);
+  color: var(--white);
+  display: flex; flex-direction: column; justify-content: center; text-align: center; padding: 0 20mm;
+}
+.cover .eyebrow{ font-size: 11pt; letter-spacing: 0.28em; color: var(--gold-soft); font-weight: 600; text-transform: uppercase; margin-bottom: 22px; }
+.cover h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size: 42pt; font-weight: 700; margin: 0 0 16px; letter-spacing: -0.01em; }
+.cover .cover-sub{ font-size: 13pt; color: #d7e3f2; font-weight: 400; margin-bottom: 40px; }
+.cover .cover-line{ width: 60px; height: 2px; background: var(--gold-soft); margin: 0 auto 40px; }
+.cover .cover-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size: 12pt; color: var(--gold-soft); letter-spacing: 0.05em; }
+.cover .cover-note{ margin-top: 60px; font-size: 9.5pt; color: #9fb8d6; }
+
+/* ===== INTRO ===== */
+.intro-page{ break-after: page; padding-top: 4mm; }
+.page-label{ font-size: 10pt; letter-spacing: 0.2em; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+.intro-page h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size: 22pt; color: var(--night); font-weight: 700; margin: 0 0 4mm; }
+.intro-page .intro-lead{ font-size: 11pt; color: var(--ink-soft); margin-bottom: 8mm; line-height: 1.7; }
+.intro-block{ margin-bottom: 7mm; break-inside: avoid; }
+.intro-block h3{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size: 13pt; color: var(--night-soft); font-weight: 700; margin: 0 0 3mm; padding-left: 10px; border-left: 3px solid var(--gold-soft); }
+.intro-block p{ margin: 0 0 2.5mm; text-align: justify; word-break: keep-all; }
+.intro-block b{ color: var(--night-soft); }
+
+.intro-outline{ display: flex; gap: 4mm; margin-top: 3mm; flex-wrap: wrap; }
+.intro-outline .oi{ flex: 1 1 220px; background: var(--cream-deep); border-radius: 5px; padding: 4mm 4.5mm; border-top: 3px solid var(--gold-soft); }
+.intro-outline .oi .oi-tag{ font-size: 8.5pt; color: var(--gold); font-weight: 700; letter-spacing: 0.05em; margin-bottom: 2mm; }
+.intro-outline .oi .oi-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight: 700; color: var(--night); font-size: 10.5pt; margin-bottom: 1.5mm; }
+.intro-outline .oi .oi-body{ font-size: 9pt; color: var(--ink-soft); line-height: 1.6; }
+
+/* ===== TOC ===== */
+.toc-page{ page: toc; break-after: page; }
+.toc-page h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size: 22pt; color: var(--night); font-weight: 700; margin: 0 0 10mm; }
+.toc-list{ display: block; }
+.toc-item{ display: flex; align-items: baseline; text-decoration: none; color: var(--ink); padding: 3.2mm 0; border-bottom: 1px solid var(--line); break-inside: avoid; }
+.toc-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size: 10.5pt; font-weight: 700; color: var(--gold); width: 16mm; flex-shrink: 0; }
+.toc-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size: 11.5pt; font-weight: 600; color: var(--night); flex-shrink: 0; }
+.toc-sub{ font-size: 9pt; color: var(--ink-soft); margin-left: 6px; flex-shrink: 1; }
+.toc-fill{ flex: 1; border-bottom: 1px dotted var(--ink-soft); margin: 0 3mm 1.5mm; opacity: 0.5; }
+.toc-page-num{ font-size: 10pt; color: var(--night-soft); font-weight: 600; flex-shrink: 0; }
+.toc-page-num::after{ content: target-counter(attr(href), page); }
+
+/* ===== CHAPTER ===== */
+.chapter{ break-before: page; }
+.chapter-head{ margin-bottom: 6mm; padding-bottom: 4mm; border-bottom: 2px solid var(--night); display: flex; align-items: flex-start; gap: 4mm; }
+.chapter-icon-badge{ flex-shrink: 0; width: 13mm; height: 13mm; border-radius: 50%; background: var(--night); color: var(--gold-soft); display: flex; align-items: center; justify-content: center; }
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{ font-size: 9pt; letter-spacing: 0.2em; color: var(--gold); font-weight: 700; text-transform: uppercase; margin-bottom: 2mm; }
+.chapter-head h1{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size: 19pt; font-weight: 700; color: var(--night); margin: 0 0 2mm; }
+.chapter-head .chapter-sub{ font-size: 9.5pt; color: var(--ink-soft); }
+.chapter-head .ref-strip{ display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm; }
+.chapter-head .ref-item{ font-size: 8pt; color: var(--night-soft); padding: 2px 8px; background: var(--cream-deep); border-radius: 10px; }
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--night); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{ display:grid; grid-template-columns: 22mm 1fr; gap: 4mm; padding: 3mm 0; border-top:1px solid var(--line); break-inside: avoid; }
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--night); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--night-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{ background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft); border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid; }
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--night); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{ background: var(--night); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm; position: relative; overflow: hidden; }
+.deep-wrap::before{
+  content:''; position:absolute; inset:0; pointer-events:none;
+  background:
+    radial-gradient(1.2px 1.2px at 10% 15%, rgba(217,179,106,0.5) 50%, transparent 51%),
+    radial-gradient(1px 1px at 30% 70%, rgba(255,255,255,0.35) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 60% 25%, rgba(217,179,106,0.4) 50%, transparent 51%),
+    radial-gradient(1px 1px at 85% 60%, rgba(255,255,255,0.3) 50%, transparent 51%),
+    radial-gradient(1.2px 1.2px at 95% 10%, rgba(217,179,106,0.4) 50%, transparent 51%);
+}
+.deep-wrap > *{ position: relative; }
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#bcd2e8; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{ display:inline-flex; align-items:center; justify-content:center; width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft); border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm; }
+.deep-title{ display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--white); margin-bottom: 2.5mm; }
+.deep-body{ font-size:9.6pt; color:#e2ecf6; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#d3e1ee; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{ margin: 3mm 0 3mm 7.5mm; background: rgba(216,176,115,0.1); border:1px solid rgba(216,176,115,0.35); border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid; }
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(216,176,115,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{ display:inline-block; font-size:7.5pt; color:var(--night); background:var(--gold-soft); padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px; }
+
+.split-table{ margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr; border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid; }
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(216,176,115,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#8fb0d1; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#d3e1ee; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{ margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#d3e1ee; background:rgba(255,255,255,0.06); border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid; }
+.hinge-note b{ color: var(--gold-soft); }
+
+.speech-bubble{ display: flex; gap: 3mm; align-items: flex-start; background: var(--cream-deep); border: 1px solid var(--line); border-radius: 12px; padding: 4mm 5mm; margin: 5mm 0 2mm; break-inside: avoid; }
+.speech-bubble .sb-avatar{ width: 8mm; height: 8mm; min-width: 8mm; border-radius: 50%; background: var(--night); color: var(--gold-soft); display: flex; align-items: center; justify-content: center; font-size: 10pt; }
+.speech-bubble .sb-text{ font-size: 9.3pt; color: var(--night-soft); line-height: 1.7; }
+.speech-bubble .sb-text b{ color: var(--night); }
+
+/* ===== HIGHLIGHT SYSTEM (고정 4색 체계) ===== */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{ background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{ background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{ background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{ background: rgba(216,176,115,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{ background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{ background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{ background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{ background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700; text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px; }
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{ content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85; }
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{ content: "\24D8"; font-size: 0.65em; margin-left: 2px; vertical-align: super; opacity: 0.75; }
+
+#termTip{ display: none; position: absolute; z-index: 500; max-width: 280px; background: var(--white); color: var(--ink); font-size: 13px; line-height: 1.65; padding: 12px 15px; border-radius: 10px; border-top: 4px solid var(--gold); box-shadow: 0 6px 24px rgba(0,0,0,0.22); }
+#termTip::before{ content: ""; position: absolute; top: -5px; left: 16px; width: 12px; height: 12px; background: var(--white); box-shadow: -2px -2px 3px rgba(0,0,0,0.04); transform: rotate(45deg); }
+#termTip .tip-close{ position: absolute; top: 6px; right: 9px; width: 20px; height: 20px; border-radius: 50%; background: var(--cream-deep); display: flex; align-items: center; justify-content: center; color: var(--night-soft); font-size: 12px; cursor: pointer; }
+#termTip .tip-close:hover{ background: var(--line); }
+
+#insightOverlay{ display: none; position: fixed; inset: 0; z-index: 800; background: rgba(12,8,25,0.6); align-items: center; justify-content: center; padding: 24px; }
+#insightOverlay.open{ display: flex; }
+#insightCard{ background: var(--white); max-width: 480px; width: 100%; max-height: 80vh; overflow-y: auto; border-radius: 14px; padding: 26px 26px 22px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); position: relative; border-top: 5px solid #4fa3d1; }
+#insightCard .insight-eyebrow{ font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; }
+#insightCard h3{ font-family:"Noto Serif CJK KR","Noto Serif KR",serif; font-size: 18px; color: var(--night); font-weight: 700; margin: 0 0 12px; line-height: 1.4; }
+#insightCard .insight-body{ font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line; }
+#insightCard .insight-close{ position: absolute; top: 14px; right: 16px; width: 28px; height: 28px; border-radius: 50%; background: var(--cream-deep); color: var(--night-soft); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 15px; }
+#insightCard .insight-close:hover{ background: var(--line); }
+
+.church-footer{ margin-top: 16mm; padding-top: 6mm; border-top: 1px solid var(--line); text-align: center; font-size: 9pt; color: var(--ink-soft); letter-spacing: 0.04em; }
+
+.bottom-nav{ display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 14mm 0 4mm; padding: 0 4vw; }
+.bottom-nav a{ display: inline-flex; align-items: center; gap: 6px; text-decoration: none; color: var(--night); background: var(--cream-deep); border: 1px solid var(--line); border-radius: 20px; padding: 10px 18px; font-size: 14px; font-weight: 600; cursor: pointer; }
+.bottom-nav a:hover{ background: var(--line); }
+.bottom-nav a.primary{ background: var(--night); color: var(--gold-soft); border-color: var(--night); }
+.bottom-nav a.primary:hover{ background: var(--night-soft); }
+@media print{ .bottom-nav{ display: none !important; } }
+
+html{ background:#ddd; scroll-behavior: smooth; width: 100%; }
+body{ max-width: 880px; margin: 0 auto; background: var(--white); box-shadow: 0 0 24px rgba(0,0,0,0.12); font-size: 16px; line-height: 1.85; width: 100%; overflow-wrap: break-word; word-wrap: break-word; }
+img, svg{ max-width: 100%; }
+.ref-item, .greek-tag, .toc-num, .deep-num{ overflow-wrap: anywhere; }
+.cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+.cover h1{ font-size: 34pt; }
+.intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+.intro-page h1, .toc-page h1{ font-size: 24px; }
+.intro-lead{ font-size: 15px; }
+.intro-block h3{ font-size: 16px; }
+.intro-block p{ font-size: 15.5px; line-height: 1.85; }
+.intro-outline .oi-title{ font-size: 13px; }
+.intro-outline .oi-body{ font-size: 12.5px; }
+.toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+.toc-title{ white-space: normal; font-size: 15px; }
+.toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+.toc-fill{ display: none; }
+.toc-num{ font-size: 13px; }
+.toc-page-num{ font-size: 13px; }
+.chapter-eyebrow{ font-size: 11px; }
+.chapter-head h1{ font-size: 25px; }
+.chapter-head .chapter-sub{ font-size: 13.5px; }
+.chapter-head .ref-item{ font-size: 11px; }
+h2{ font-size: 19px; }
+.sec-num{ font-size: 13px; }
+.sec-desc{ font-size: 13.5px; }
+.flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+.flow-range{ font-size: 12.5px; }
+.flow-title{ font-size: 16px; }
+.flow-body{ font-size: 15px; line-height: 1.8; }
+.teach-title{ font-size: 16px; }
+.teach-body{ font-size: 15px; line-height: 1.8; }
+.teach-card{ padding: 4mm 5mm; }
+.deep-title{ font-size: 16px; }
+.deep-body{ font-size: 15px; line-height: 1.8; }
+.view{ font-size: 13px; }
+.split-table{ grid-template-columns: 1fr; }
+.split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+.split-event{ font-size: 15px; }
+.split-detail{ font-size: 13px; }
+.verse-text{ font-size: 16px; }
+.verse-ref{ font-size: 11.5px; }
+.hinge-note{ font-size: 13.5px; }
+.sb-text{ font-size: 14.5px; }
+
+/* 모바일 화면에서 양쪽 정렬(justify)은 한글 어절 간격을 부자연스럽게 벌어지게 만들므로
+   화면에서는 좌측 정렬을 기본으로 하고, 인쇄시에만 justify로 되돌린다. */
+.intro-block p, .flow-body, .teach-body, .deep-body{ text-align: left; }
+.verse-box, .split-table, .hinge-note{ margin-left: 0; }
+.deep-body, .view-list{ padding-left: 0; }
+* { min-width: 0; }
+
+.quick-nav{ position: sticky; top: 0; z-index: 50; background: var(--cream); border-bottom: 1px solid var(--line); padding: 10px 4vw; display: flex; align-items: center; justify-content: space-between; gap: 10px; font-size: 13px; }
+.quick-nav .qn-title{ font-weight: 700; color: var(--night); white-space: nowrap; text-decoration: none; }
+.quick-nav .qn-links{ display: flex; gap: 6px; }
+.quick-nav .qn-toc-link{ color: var(--night-soft); text-decoration: none; font-size: 13px; padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px; white-space: nowrap; }
+.quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+.floating-nav{ display: none; }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+@media print{
+  .intro-block p, .flow-body, .teach-body, .deep-body{ text-align: justify; }
+  html{ background: var(--white); }
+  body{ max-width: none; margin: 0; box-shadow: none; font-size: 10.3pt; line-height: 1.75; }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style>
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 요한계시록</a>
+  <div class="qn-links">
+    <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차</a>
+    <a class="qn-toc-link" role="button" tabindex="0" id="backHomeBtnTop" onclick="if(typeof goBackHome==='function'){goBackHome();}else if(typeof backToHome==='function'){backToHome();}else{window.location.href='/';}">자료실</a>
+  </div>
+</div>
+
+
+<div class="cover">
+  <div class="eyebrow">BIBLE STUDY · REVELATION</div>
+  <h1>요한계시록 연구</h1>
+  <div class="cover-sub">밧모섬의 환상에서 생명수의 강까지 — 전체 22장 심화 성경 연구</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">계 1:1 – 22:21</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 22장 · 구조 · 신학적·목회적 교훈 · 심화 질문 · 원어와 상징 해설</div>
+</div>
+
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>요한계시록 전체 서론</h1>
+  <p class="intro-lead">감추어진 것을 드러내는 책, 어린양의 최종 승리를 증언하다.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>저자는 스스로를 <b class="hl-term">"요한"</b>이라 밝히며(1:1, 1:4, 1:9, 22:8), 초대교회 전통(이레니우스, 유스티누스 등)은 이를 사도 요한으로 받아들여 왔다. 근래 일부 학자는 문체 차이를 근거로 별도의 "요한"(장로 요한 등)을 제안하기도 하나, 다수 견해는 여전히 사도 요한 저작설을 지지한다. 기록 시기는 <b class="hl-term">도미티아누스 황제 치하(AD 95–96년경)</b>로 보는 견해가 유력한데, 이레니우스의 명시적 증언과 더불어 황제숭배가 소아시아 교회들에 실제적 압박이 되었던 이 시기의 정황이 본문의 어조와 잘 들어맞는다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>수신자와 정황</h3>
+    <p>수신자는 소아시아의 <b class="hl-term">일곱 교회</b>(에베소·서머나·버가모·두아디라·사데·빌라델비아·라오디게아)로 명시된다(1:11). 이 교회들은 로마 황제숭배 강요, 유대 회당과의 갈등, 그리고 경제적 압박(우상에게 바쳐진 시장의 상품, 동업조합의 종교적 의무)이라는 삼중의 압력 속에 놓여 있었다. 요한계시록은 이 실제적 압박 속에서 신앙을 타협하지 말고 끝까지 신실하라는 목회적 권면을 그 근본 목적으로 삼는다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문체적 특징 — 묵시문학이라는 장르</h3>
+    <p>요한계시록은 스스로를 <b class="hl-term has-tip" data-tip="헬라어 아포칼륍시스. &#x27;가리개를 벗기다&#x27;라는 뜻으로, 감추어진 하늘의 실재를 드러내 보여주는 문학 장르를 가리킨다.">계시(아포칼륍시스)</b>이자 <b class="hl-term">예언</b>이자 <b class="hl-term">편지</b>라는 세 장르를 동시에 지닌 독특한 책이다. 다니엘, 에스겔의 환상 문학과 신구약 중간기 유대 묵시문학이 공유하는 관습 — 상징적 숫자, 짐승과 별의 이미지, 천상과 지상을 오가는 이중 무대 — 을 적극적으로 사용한다. 구약 인용과 암시가 신약 어느 책보다도 밀도 높게(500회 이상으로 추정) 짜여 있어, 구약을 배경으로 놓지 않고는 온전히 읽어낼 수 없는 책이다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p>이 책 전체를 관통하는 중심은 <b class="hl-term has-tip" data-tip="계시록 5장에서 처음 등장하는 핵심 기독론적 이미지. 정복하는 사자를 기대했던 자리에 죽임당한 어린양이 나타나는 반전을 통해, 그리스도의 승리가 힘이 아니라 희생을 통해 이루어졌음을 보여준다.">죽임당하신 어린양</b>이 곧 승리하신 사자시라는 반전의 기독론이다. 하늘의 보좌(4-5장)를 중심에 놓고, 재앙(인·나팔·대접)과 짐승의 박해, 바벨론의 심판을 거쳐 마침내 새 하늘과 새 땅에서 완성되는 이 책의 궤적은 <b class="hl-term">창세기의 첫 동산에서 시작된 이야기가 계시록의 새 예루살렘에서 완결되는</b> 성경 전체의 큰 원을 이룬다. 성도의 승리는 힘의 대결이 아니라 "어린양의 피와 자기가 증언하는 말씀"(12:11)으로 정의된다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1 – 3장</div>
+        <div class="oi-title">인자의 환상과 일곱 교회</div>
+        <div class="oi-body">밧모섬의 요한, 영광의 그리스도 환상, 소아시아 일곱 교회에 보내는 칭찬과 책망의 편지.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">4 – 11장</div>
+        <div class="oi-title">보좌, 어린양, 인과 나팔</div>
+        <div class="oi-body">하늘 보좌와 봉인된 두루마리, 어린양의 등장, 일곱 인과 일곱 나팔의 재앙, 두 증인.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">12 – 14장</div>
+        <div class="oi-title">여자와 용, 두 짐승</div>
+        <div class="oi-body">메시아 탄생을 둘러싼 우주적 전쟁, 바다와 땅에서 올라온 두 짐승, 어린양과 함께한 144,000.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">15 – 18장</div>
+        <div class="oi-title">일곱 대접과 바벨론의 멸망</div>
+        <div class="oi-body">최종적 재앙인 일곱 대접, 큰 음녀 바벨론의 정체와 심판, 삼중 애곡.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">19 – 22장</div>
+        <div class="oi-title">혼인잔치에서 새 예루살렘까지</div>
+        <div class="oi-body">어린양의 혼인잔치, 백마 탄 자의 승리, 천년왕국과 최후의 심판, 새 하늘과 새 땅, 생명수의 강.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 원어 배경, 상징 해석, 해석사적 논쟁 등 확정적 답보다 함께 씨름할 가치가 있는 지점들을 다룬다. 요한계시록은 상징의 밀도가 높은 책인 만큼, 다른 어느 권보다 원어·상징 팝업과 깊이 질문의 비중을 높여 구성하였다. 개인 묵상은 물론 소그룹·설교 준비 자료로도 사용할 수 있다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">예수 그리스도의 계시</span>
+      <span class="toc-sub">서언과 인사, 일곱 촛대 사이의 인자 환상</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch1"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-title">네 교회에 보내는 편지</span>
+      <span class="toc-sub">에베소, 서머나, 버가모, 두아디라</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch2"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-title">세 교회에 보내는 편지</span>
+      <span class="toc-sub">사데, 빌라델비아, 라오디게아</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch3"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch4')" onkeydown="if(event.key==='Enter')goTo(event,'ch4')">
+      <span class="toc-num">04</span>
+      <span class="toc-title">하늘 보좌의 환상</span>
+      <span class="toc-sub">하늘 문이 열리고 보좌 앞으로 이끌리다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch4"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch5')" onkeydown="if(event.key==='Enter')goTo(event,'ch5')">
+      <span class="toc-num">05</span>
+      <span class="toc-title">어린양과 봉인된 두루마리</span>
+      <span class="toc-sub">오직 어린양만이 두루마리를 열기에 합당하시다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch5"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch6')" onkeydown="if(event.key==='Enter')goTo(event,'ch6')">
+      <span class="toc-num">06</span>
+      <span class="toc-title">여섯 인의 개봉</span>
+      <span class="toc-sub">네 말과 순교자의 부르짖음, 우주적 격변</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch6"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch7')" onkeydown="if(event.key==='Enter')goTo(event,'ch7')">
+      <span class="toc-num">07</span>
+      <span class="toc-title">인침받은 자들과 셀 수 없는 큰 무리</span>
+      <span class="toc-sub">여섯째 인과 일곱째 인 사이의 막간</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch7"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch8')" onkeydown="if(event.key==='Enter')goTo(event,'ch8')">
+      <span class="toc-num">08</span>
+      <span class="toc-title">일곱째 인과 첫 네 나팔</span>
+      <span class="toc-sub">하늘의 고요함과 나팔 재앙의 시작</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch8"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch9')" onkeydown="if(event.key==='Enter')goTo(event,'ch9')">
+      <span class="toc-num">09</span>
+      <span class="toc-title">다섯째·여섯째 나팔</span>
+      <span class="toc-sub">황충의 재앙과 이만만의 마병대</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch9"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch10')" onkeydown="if(event.key==='Enter')goTo(event,'ch10')">
+      <span class="toc-num">10</span>
+      <span class="toc-title">힘센 천사와 작은 두루마리</span>
+      <span class="toc-sub">재앙 시리즈 사이의 두 번째 막간</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch10"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch11')" onkeydown="if(event.key==='Enter')goTo(event,'ch11')">
+      <span class="toc-num">11</span>
+      <span class="toc-title">두 증인과 일곱째 나팔</span>
+      <span class="toc-sub">성전 측량, 두 증인의 죽음과 부활, 나팔 재앙의 완성</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch11"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch12')" onkeydown="if(event.key==='Enter')goTo(event,'ch12')">
+      <span class="toc-num">12</span>
+      <span class="toc-title">해를 입은 여자와 용</span>
+      <span class="toc-sub">메시아 탄생을 둘러싼 우주적 전쟁</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch12"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch13')" onkeydown="if(event.key==='Enter')goTo(event,'ch13')">
+      <span class="toc-num">13</span>
+      <span class="toc-title">바다에서 나온 짐승과 땅에서 나온 짐승</span>
+      <span class="toc-sub">정치 권력과 거짓 종교의 결탁, 육백육십육</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch13"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch14')" onkeydown="if(event.key==='Enter')goTo(event,'ch14')">
+      <span class="toc-num">14</span>
+      <span class="toc-title">시온산의 어린양과 추수</span>
+      <span class="toc-sub">144,000의 새 노래, 세 천사의 선포, 알곡과 포도의 추수</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch14"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch15')" onkeydown="if(event.key==='Enter')goTo(event,'ch15')">
+      <span class="toc-num">15</span>
+      <span class="toc-title">일곱 재앙을 가진 일곱 천사</span>
+      <span class="toc-sub">대접 재앙 직전의 하늘 예배</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch15"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch16')" onkeydown="if(event.key==='Enter')goTo(event,'ch16')">
+      <span class="toc-num">16</span>
+      <span class="toc-title">일곱 대접의 재앙</span>
+      <span class="toc-sub">하나님의 진노가 남김없이 쏟아지다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch16"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch17')" onkeydown="if(event.key==='Enter')goTo(event,'ch17')">
+      <span class="toc-num">17</span>
+      <span class="toc-title">큰 음녀 바벨론의 정체</span>
+      <span class="toc-sub">짐승을 탄 음녀와 그 심판의 예고</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch17"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch18')" onkeydown="if(event.key==='Enter')goTo(event,'ch18')">
+      <span class="toc-num">18</span>
+      <span class="toc-title">바벨론의 멸망</span>
+      <span class="toc-sub">큰 성이 무너지고, 애곡과 상인들의 통곡</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch18"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch19')" onkeydown="if(event.key==='Enter')goTo(event,'ch19')">
+      <span class="toc-num">19</span>
+      <span class="toc-title">어린양의 혼인잔치와 백마 탄 자</span>
+      <span class="toc-sub">하늘의 할렐루야와 만왕의 왕의 출현</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch19"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch20')" onkeydown="if(event.key==='Enter')goTo(event,'ch20')">
+      <span class="toc-num">20</span>
+      <span class="toc-title">천년왕국과 백보좌 심판</span>
+      <span class="toc-sub">용의 결박, 첫째 부활, 최후의 심판</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch20"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch21')" onkeydown="if(event.key==='Enter')goTo(event,'ch21')">
+      <span class="toc-num">21</span>
+      <span class="toc-title">새 하늘과 새 땅</span>
+      <span class="toc-sub">새 예루살렘이 하늘에서 내려오다</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch21"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch22')" onkeydown="if(event.key==='Enter')goTo(event,'ch22')">
+      <span class="toc-num">22</span>
+      <span class="toc-title">생명수 강과 마지막 초청</span>
+      <span class="toc-sub">생명나무, 재림의 확증, 그리고 마지막 초청</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch22"></span>
+    </a>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40V22"/><path d="M24 22c-3.5 2.5-3.5 6.5 0 9c3.5-2.5 3.5-6.5 0-9Z"/><path d="M15 40h18"/><path d="M24 6l1.6 3.6L29 11l-3.4 1.4L24 16l-1.6-3.6L19 11l3.4-1.4Z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 1</div>
+      <h1>1장 · 예수 그리스도의 계시</h1>
+      <div class="chapter-sub">요한계시록 1장 — 서언과 인사, 일곱 촛대 사이의 인자 환상</div>
+      <div class="ref-strip"><span class="ref-item">계 1:1–20</span><span class="ref-item">단 7·10장</span><span class="ref-item">겔 1장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–3절</div>
+        <div>
+          <div class="flow-title">이 책의 제목과 복 있는 자</div>
+          <div class="flow-body">이 책은 스스로를 <b class="hl-quote">"예수 그리스도의 계시"</b>라 소개한다. 헬라어 <b class="hl-greek has-tip" data-tip="아포칼륍시스라 읽는다. &#x27;가리개를 벗기다, 드러내다&#x27;라는 뜻의 헬라어. 감추어진 것을 열어 보인다는 의미의 문학 장르명이자 이 책의 제목이다.">ἀποκάλυψις</b>(아포칼륍시스)는 &#39;베일을 벗기다&#39;라는 뜻으로, 이 책이 세상을 혼란케 하려는 암호문이 아니라 <b class="hl-term">감추어진 것을 드러내려는</b> 책임을 먼저 알려준다. 계시의 전달 경로도 명시된다 — 하나님에게서 예수 그리스도에게, 천사를 통해 요한에게, 그리고 종들에게. 이 예언의 말씀을 읽고 듣고 지키는 자에게 복이 있다는 선언으로 책 전체의 목적이 실천적 순종에 있음을 밝힌다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4–8절</div>
+        <div>
+          <div class="flow-title">삼중 인사와 그리스도 송영</div>
+          <div class="flow-body">전형적인 서신 형식으로 아시아의 일곱 교회에 인사한다. <b class="hl-term">"이제도 계시고 전에도 계셨고 장차 오실 이"</b>라는 하나님의 이름과 <b class="hl-term">일곱 영</b>(온전한 성령), 그리고 <b class="hl-quote">"신실한 증인으로 죽은 자들 가운데서 먼저 나시고 땅의 임금들의 머리가 되신"</b> 예수 그리스도가 삼위로 나란히 언급된다. 곧이어 그리스도께서 자기 피로 우리를 사랑하시고 나라와 제사장으로 삼으셨다는 송영이 터져 나오며, <b class="hl-quote">"볼지어다 그가 구름을 타고 오시리라"</b>는 재림 선포와 <b class="hl-term has-tip" data-tip="헬라어 알파와 오메가. 그리스 알파벳의 처음과 끝 글자로, 하나님이 역사의 시작과 끝, 곧 모든 것의 주권자이심을 상징한다.">알파와 오메가</b> 자기 선언으로 서언이 마무리된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9–11절</div>
+        <div>
+          <div class="flow-title">밧모섬의 요한과 명령</div>
+          <div class="flow-body">요한은 자신을 사도가 아니라 <b class="hl-term">"환난과 나라와 참음에 동참하는 자"</b>로 소개하며, 하나님의 말씀과 예수의 증거로 인해 <b class="hl-term">밧모섬</b>에 유배되어 있었다고 밝힌다. 주의 날에 성령에 감동되어 나팔 같은 큰 음성을 듣고, 보는 것을 두루마리에 써서 에베소·서머나·버가모·두아디라·사데·빌라델비아·라오디게아, 아시아의 일곱 교회에 보내라는 명령을 받는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–20절</div>
+        <div>
+          <div class="flow-title">일곱 촛대 사이의 인자 환상</div>
+          <div class="flow-body">돌이켜 보니 일곱 금 촛대 사이에 <b class="hl-insight has-insight" data-insight="0">인자 같은 이</b>가 서 계셨다. 발까지 끌리는 옷, 흰 머리, 불꽃 같은 눈, 빛나는 발, 많은 물소리 같은 음성, 좌우에 날선 검이 나오는 입, 해같이 빛나는 얼굴 — 다니엘 7장과 10장의 이미지를 총동원한 이 묘사 앞에 요한은 죽은 자같이 엎드러진다. 그리스도는 오른손을 얹으시며 <b class="hl-quote">"두려워하지 말라 나는 처음이요 마지막이니 곧 살아 있는 자라 내가 전에 죽었었노라 볼지어다 이제 세세토록 살아 있어</b> <b class="hl-insight has-insight" data-insight="1">사망과 음부의 열쇠를 가졌노니</b>"라고 말씀하시며, 오른손의 일곱 별은 일곱 교회의 사자요 일곱 촛대는 일곱 교회라고 풀이해 주신다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 계시는 감추기 위함이 아니라 드러내기 위함이다</div>
+        <div class="teach-body">"아포칼륍시스"라는 제목 자체가 이 책의 성격을 규정한다. 요한계시록은 소수만 푸는 암호가 아니라, 읽고 듣고 지키는 모든 이에게 복을 약속하는 실천적 예언서다. 상징의 난해함에 압도되기 전에, 이 책의 목적이 순종과 소망임을 기억할 필요가 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 그리스도는 역사의 처음이자 끝이다</div>
+        <div class="teach-body">"알파와 오메가"라는 자기 선언은 로마 황제숭배가 판을 치던 시대에 누가 참된 주권자인지를 선언하는 정치적으로도 담대한 고백이었다. 오늘의 혼란한 역사 속에서도 그리스도가 시작과 끝을 붙들고 계신다는 확신은 신자에게 실제적인 위로가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 고난 중에 있는 자가 계시를 받는다</div>
+        <div class="teach-body">요한은 성공한 사도가 아니라 유배당한 죄수의 자리에서 이 환상을 받는다. 하나님의 계시는 화려한 자리가 아니라 종종 환난과 참음의 자리에서 임한다는 것은, 오늘날 고난 중에 있는 신자들에게도 소망의 근거가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 예배의 자리에서 만나는 그리스도</div>
+        <div class="teach-body">요한이 "주의 날에" 성령에 감동되었다는 진술은 이 환상이 예배의 정황 속에서 주어졌음을 암시한다. 그리스도는 일상의 예배 가운데서도 자신을 드러내시는 분이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 두려움 앞에 놓이는 위로의 손</div>
+        <div class="teach-body">압도적인 영광의 환상 앞에 엎드러진 요한에게 그리스도는 정죄가 아니라 오른손을 얹어 "두려워하지 말라" 하신다. 심판자의 위엄과 목자의 다정함이 한 분 안에 공존한다는 것이 이 책 전체를 관통하는 그리스도 이해의 핵심이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">요한계시록을 어렵게 만드는 건 사실 상징 그 자체가 아니라, 그 상징들이 전부 구약의 이미지에서 왔다는 걸 놓치고 읽기 때문이에요. 1장의 인자 환상만 봐도 다니엘 7장과 10장이 그대로 겹쳐 있죠. 구약을 배경으로 놓고 읽으면 훨씬 선명해집니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"일곱 영"(4절)은 무슨 뜻일까</div>
+        <div class="deep-body">숫자 &#39;일곱&#39;이 성령을 일곱으로 나눈다는 뜻은 아니다. 히브리적 사고에서 일곱은 완전수이며, 이 표현은 이사야 11:2의 메시아 위에 임하는 영의 일곱 가지 특성(스가랴 4:2, 10의 일곱 등불·일곱 눈과도 연결)을 배경으로 <b class="hl-term">성령의 온전하심과 충만하심</b>을 가리키는 표현으로 널리 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>요한계시록은 언제, 왜 기록되었나</div>
+        <div class="deep-body">전통적으로 두 가지 견해가 있다. 하나는 네로 황제 치하(AD 60년대), 다른 하나는 도미티아누스 황제 치하(AD 90년대)로 보는 견해다. 다수 학자들은 이레니우스의 증언에 근거해 <b class="hl-term">도미티아누스 말년(AD 95–96년경)</b>을 지지하는데, 이 시기 황제숭배 강요가 소아시아 교회들에 실제적 압박이 되었다는 정황이 본문의 어조와 잘 들어맞는다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>묵시문학이라는 장르를 어떻게 읽어야 할까</div>
+        <div class="deep-body">요한계시록은 예언(1:3)이면서 동시에 <b class="hl-term">묵시문학(apocalyptic literature)</b>이라는 독특한 장르에 속한다. 다니엘, 에스겔의 환상 문학과 신구약 중간기 유대 묵시문학들이 공유하는 관습 — 상징적 숫자, 짐승과 별의 이미지, 천상과 지상의 이중 무대 — 을 이해하지 못하면 본문을 문자적 사건 예측 목록으로 오독하기 쉽다. 상징은 모호함이 아니라 <b class="hl-term">당대 독자에게는 오히려 선명했던 약속된 코드</b>였음을 기억해야 한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="13" width="28" height="22" rx="2"/><path d="M10 15l14 12 14-12"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 2</div>
+      <h1>2장 · 네 교회에 보내는 편지</h1>
+      <div class="chapter-sub">요한계시록 2장 — 에베소, 서머나, 버가모, 두아디라</div>
+      <div class="ref-strip"><span class="ref-item">계 2:1–29</span><span class="ref-item">민 25장 · 31장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–7절</div>
+        <div>
+          <div class="flow-title">에베소 — 첫사랑을 잃은 교회</div>
+          <div class="flow-body">수고와 인내, 거짓 사도를 분별해낸 진리 수호를 칭찬받지만, <b class="hl-quote">"처음 사랑을 버렸느니라"</b>는 책망이 뒤따른다. 회개하고 처음 행위를 가지라는 권면과 함께, 이기는 자에게는 <b class="hl-term">낙원에 있는 생명나무의 열매</b>를 주겠다는 약속이 주어진다. 교리적 순수함이 사랑을 대체할 수 없다는 균형 잡힌 평가가 돋보인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8–11절</div>
+        <div>
+          <div class="flow-title">서머나 — 고난받는 교회</div>
+          <div class="flow-body">유일하게 책망이 없는 교회다. 환난과 궁핍 중에도 실상은 부요하다는 역설적 평가를 받으며, <b class="hl-insight has-insight" data-insight="2">"자칭 유대인이라 하는 자들의 비방"</b>과 장차 십 일 동안의 환난, 옥에 던져질 일까지 예고받는다. 그러나 <b class="hl-quote">"네가 죽도록 충성하라 그리하면 내가 생명의 관을 네게 주리라"</b>는 약속과 <b class="hl-term">둘째 사망의 해를 받지 않으리라</b>는 확증이 함께 주어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–17절</div>
+        <div>
+          <div class="flow-title">버가모 — 타협 속의 교회</div>
+          <div class="flow-body"><b class="hl-quote">"사탄의 권좌가 있는 곳"</b>에서도 이름을 굳게 잡았음을 칭찬받지만, 발람의 교훈(우상 제물과 음행으로 이스라엘을 넘어뜨린 민수기 31:16의 사건)과 니골라 당의 교훈을 따르는 자들을 용납한 것이 책망받는다. 회개하지 않으면 그리스도의 입의 검으로 싸우겠다는 경고와 함께, 이기는 자에게는 <b class="hl-term">감추었던 만나</b>와 새 이름 쓴 흰 돌을 주겠다는 약속이 이어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">18–29절</div>
+        <div>
+          <div class="flow-title">두아디라 — 거짓 선지자를 용납한 교회</div>
+          <div class="flow-body">사랑과 믿음, 섬김과 인내가 이전보다 더 많아졌다고 칭찬받지만, 스스로 선지자라 하는 <b class="hl-term has-tip" data-tip="구약 아합 왕의 왕비였던 이세벨(왕상 16-21장)의 이름을 빌려, 우상숭배와 음행으로 교회를 미혹하는 거짓 여선지자를 상징적으로 지칭하는 표현.">이세벨</b>을 용납해 그 교훈을 따르는 자들을 회개할 기회를 주었음에도 방치한 것이 책망된다. 회개치 않는 자들에게는 큰 환난이, 이기고 그리스도의 일을 끝까지 지키는 자에게는 <b class="hl-term">만국을 다스리는 권세</b>와 새벽 별이 약속된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 바른 교리와 첫사랑은 함께 가야 한다</div>
+        <div class="teach-body">에베소는 거짓 사도를 정확히 분별하는 신학적 분별력을 가졌지만 사랑을 잃었다. 정통성이 사랑을 대체하는 순간 교회는 등불이 옮겨지는 위기에 처한다는 경고는, 오늘의 교회에도 여전히 유효한 균형점이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 물질적 궁핍이 영적 빈곤을 뜻하지 않는다</div>
+        <div class="teach-body">서머나는 세상 기준으로 가난했지만 그리스도의 눈에는 부요했다. 반대로 뒤에 등장할 라오디게아는 부요하다 자부했지만 실상 가난했다. 부와 신앙의 상태는 결코 정비례하지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 타협은 종종 관용이라는 이름으로 온다</div>
+        <div class="teach-body">버가모와 두아디라는 명백한 배교가 아니라 &#39;용납&#39;을 통해 타협에 빠졌다. 거짓 가르침을 향한 침묵은 종종 사랑과 포용이라는 이름으로 정당화되지만, 그리스도의 평가는 다르다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 회개의 기회는 은혜이자 마지막 경고다</div>
+        <div class="teach-body">두아디라의 이세벨에게 "회개할 기회를 주었으되 회개하고자 하지 아니하는도다"라는 구절은, 심판이 갑작스러운 것이 아니라 오래 참으심 뒤에 오는 것임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 일곱 편지 모두 "이기는 자"에게 약속하신다</div>
+        <div class="teach-body">각 편지의 결론은 예외 없이 &#39;이기는 자&#39;에게 주어지는 종말론적 약속으로 끝난다. 그리스도인의 삶은 완벽함이 아니라 끝까지 붙드는 인내와 신실함으로 평가된다는 것이 일곱 편지 전체의 공통된 틀이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">일곱 편지는 전부 똑같은 틀을 가지고 있어요 — ①받는 교회 ②그리스도의 자기소개(1장 환상에서 가져온 이미지) ③칭찬 ④책망 ⑤권면 ⑥귀 있는 자는 들을지어다 ⑦이기는 자에게 주는 약속. 이 틀을 알고 읽으면 일곱 편지가 훨씬 입체적으로 다가와요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>일곱 교회는 실제 역사적 교회인가, 일곱 시대의 상징인가</div>
+        <div class="deep-body">두 견해가 병존한다. <b class="hl-term">역사적 견해</b>는 이 일곱 교회가 AD 1세기 소아시아에 실재했던 구체적 교회들이며, 각 편지가 그 교회의 실제 상황(에베소의 상업적 번영, 서머나의 항구도시적 국제성 등)을 정확히 반영한다고 본다. 반면 일부 <b class="hl-term">세대주의적 해석</b>은 일곱 교회를 교회사의 일곱 시대로 도식화하는데, 이는 본문 자체의 근거보다는 후대의 도식이라는 비판을 받는다. 다수 학자는 전자를 지지하되, 일곱이라는 완전수가 &#39;모든 시대 모든 교회&#39;를 향한 대표성도 함께 지닌다고 본다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"네 처음 사랑"(2:4)은 그리스도를 향한 사랑인가, 성도 간의 사랑인가</div>
+        <div class="deep-body">전통적으로 그리스도를 향한 개인적 사랑으로 읽혀왔지만, 에베소서 1:15의 "성도를 향한 사랑"이라는 표현과 겹쳐 읽으면 공동체적 사랑(형제 사랑)일 가능성도 함께 제기된다. 본문 자체는 대상을 특정하지 않으며, 오히려 <b class="hl-term">하나님 사랑과 이웃 사랑이 분리될 수 없다</b>는 신약의 일관된 원리 위에서 두 해석이 상호 배타적이지 않다고 보는 것이 더 설득력 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="14" y="8" width="20" height="32" rx="2"/><path d="M27 24h4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 3</div>
+      <h1>3장 · 세 교회에 보내는 편지</h1>
+      <div class="chapter-sub">요한계시록 3장 — 사데, 빌라델비아, 라오디게아</div>
+      <div class="ref-strip"><span class="ref-item">계 3:1–22</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">사데 — 살았다 하는 이름은 있으나 죽은 교회</div>
+          <div class="flow-body"><b class="hl-quote">"네가 살았다 하는 이름은 가졌으나 죽은 자로다"</b>라는 충격적 진단으로 시작한다. 칭찬 없이 곧바로 책망이 이어지는 유일한 편지로, 남은 바 죽게 된 것을 굳건하게 하라는 권면과 함께 도둑같이 임할 재림의 경고가 주어진다. 그러나 사데 중에도 옷을 더럽히지 않은 소수가 있어, 그들은 흰 옷을 입고 그리스도와 함께 다니게 될 것이며 생명책에서 그 이름을 지우지 않겠다는 약속을 받는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–13절</div>
+        <div>
+          <div class="flow-title">빌라델비아 — 열린 문 앞의 작은 교회</div>
+          <div class="flow-body">작은 능력을 가지고도 말씀을 지키고 그리스도의 이름을 배반하지 않은 것을 칭찬받는 두 번째 무흠 교회다. <b class="hl-insight has-insight" data-insight="3">"내가 네 앞에 열린 문을 두었으되 능히 닫을 사람이 없으리라"</b>는 약속과, 시험의 때에 지키시겠다는 보호의 약속이 함께 주어진다. 이기는 자는 하나님 성전의 기둥이 되어 다시는 나가지 아니하고, 하나님의 이름과 새 예루살렘의 이름, 그리스도의 새 이름이 그 위에 기록될 것이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14–22절</div>
+        <div>
+          <div class="flow-title">라오디게아 — 미지근하여 뱉어질 교회</div>
+          <div class="flow-body">가장 신랄한 책망을 받는 마지막 편지다. <b class="hl-quote">"네가 차지도 아니하고 뜨겁지도 아니하니 내 입에서 너를 토하여 버리리라"</b>는 경고와, 부요하다 자부하지만 실상 곤고하고 가련하고 가난하고 눈멀고 벌거벗었다는 정면 진단이 이어진다. 그러나 편지는 심판만으로 끝나지 않는다 — <b class="hl-quote">"내가 문 밖에 서서 두드리노니 누구든지 내 음성을 듣고 문을 열면 내가 그에게로 들어가 그와 더불어 먹고 그는 나와 더불어 먹으리라"</b>는, 신약 전체에서 가장 잘 알려진 초청의 말씀으로 이어진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 명성과 실상은 다를 수 있다</div>
+        <div class="teach-body">사데는 "살았다 하는 이름"을 가졌으나 죽은 교회였다. 외적 평판이 영적 실상을 보장하지 않는다는 이 냉정한 진단은, 활동이 활발해 보이는 공동체일수록 스스로에게 던져야 할 질문이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 작은 능력도 신실함 앞에서는 열린 문이 된다</div>
+        <div class="teach-body">빌라델비아는 큰 능력이 아니라 작은 능력을 가지고도 말씀을 지켰다. 규모가 아니라 신실함이 하나님이 여시는 문의 조건이라는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 미지근함은 뜨거움과 차가움보다 위험할 수 있다</div>
+        <div class="teach-body">라오디게아의 문제는 노골적 배교가 아니라 안일한 무관심이었다. 뜨겁지도 차갑지도 않은 상태가 오히려 가장 다루기 어려운 영적 상태로 그려진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 물질적 자족이 영적 자각을 가로막을 수 있다</div>
+        <div class="teach-body">라오디게아는 실제로 부유한 상업도시였고, 스스로 부족함이 없다고 여겼다. 그러나 그리스도의 시선에서는 정반대였다. 물질적 풍요가 영적 결핍을 가리는 커튼이 될 수 있다는 경고다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 심판의 편지도 초청으로 끝난다</div>
+        <div class="teach-body">가장 신랄한 책망을 받은 라오디게아조차 문 밖에서 두드리시는 그리스도의 초청으로 편지가 마무리된다. 일곱 편지 전체의 결론은 정죄가 아니라 회개를 향한 열린 문이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"내가 문 밖에 서서 두드리노니"는 흔히 불신자에게 전도할 때 쓰는 말씀으로 알려져 있는데, 원래 문맥은 이미 교회 안에 있는 라오디게아 신자들을 향한 말씀이에요. 그리스도께서 자기 교회 밖에 서 계시게 만든 건 다름 아닌 미지근함이었다는 점이 오싹하죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>라오디게아의 "차지도 뜨겁지도 않다"는 비유, 실제 지리적 배경이 있을까</div>
+        <div class="deep-body">있다. 라오디게아 인근 히에라볼리에는 온천이, 골로새에는 차가운 샘물이 있었는데, 라오디게아 자체는 수로를 통해 물을 끌어오는 동안 미지근하게 식어버린 물을 마셔야 했다. 뜨거운 물은 치료에, 찬물은 갈증 해소에 유용하지만 미지근한 물은 <b class="hl-term">마시자마자 토하고 싶게 만드는</b> 실용적으로 무용한 물이었다. 그리스도의 비유는 이 지역 주민이라면 누구나 아는 실제 경험에서 나온 것이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>사데는 왜 유독 칭찬 없이 시작할까</div>
+        <div class="deep-body">일곱 편지 중 사데만이 유일하게 칭찬 없이 곧장 책망으로 시작한다. 사데는 역사적으로 견고한 요새 도시였으나 두 차례(BC 6세기, BC 3세기)나 방심 때문에 함락당한 도시였다. 그리스도의 <b class="hl-quote">"내가 도둑같이 이르리니"</b>라는 경고는 이 도시의 역사적 트라우마를 정확히 겨냥한 표현으로, 영적 방심이 곧 몰락으로 이어진다는 메시지를 그 도시 주민들에게는 특히 뼈아프게 전달했을 것이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch4">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 33a15 15 0 0 1 30 0"/><rect x="18" y="21" width="12" height="14" rx="2"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 4</div>
+      <h1>4장 · 하늘 보좌의 환상</h1>
+      <div class="chapter-sub">요한계시록 4장 — 하늘 문이 열리고 보좌 앞으로 이끌리다</div>
+      <div class="ref-strip"><span class="ref-item">계 4:1–11</span><span class="ref-item">겔 1장 · 사 6장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–3절</div>
+        <div>
+          <div class="flow-title">열린 문과 보좌</div>
+          <div class="flow-body"><b class="hl-quote">"이리로 올라오라 이 후에 마땅히 일어날 일들을 내가 네게 보이리라"</b>는 음성과 함께 요한은 성령에 감동되어 하늘로 이끌린다. 그곳에는 보좌가 있고 그 위에 앉으신 이의 모습이 <b class="hl-term">벽옥과 홍보석</b> 같으며, 보좌 주위에는 <b class="hl-term">녹보석 같은 무지개</b>가 둘러 있다. 보좌에 앉으신 이는 형상으로 묘사되지 않고 오직 빛과 보석의 광채로만 표현되는데, 이는 하나님을 형상화하지 않는 성경적 전통을 그대로 잇는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4–6a절</div>
+        <div>
+          <div class="flow-title">이십사 장로와 일곱 영</div>
+          <div class="flow-body">보좌를 둘러싼 <b class="hl-insight has-insight" data-insight="4">이십사 보좌</b>에 흰 옷 입고 금관 쓴 이십사 장로가 앉아 있다. 보좌로부터 번개와 음성과 우렛소리가 나며, 보좌 앞에는 하나님의 일곱 영인 일곱 등불이 켜져 있고, 수정과 같은 유리 바다가 펼쳐진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6b–8절</div>
+        <div>
+          <div class="flow-title">네 생물의 찬양</div>
+          <div class="flow-body">보좌 사방에는 <b class="hl-term has-tip" data-tip="사자·송아지·사람·독수리의 얼굴을 지니고 앞뒤에 눈이 가득한 네 존재. 에스겔 1장의 그룹 환상과 이사야 6장의 스랍 환상이 결합된 형태로, 만물을 대표하는 최고위 천사적 존재로 이해된다.">네 생물</b>이 있어 앞뒤로 눈이 가득하고, 각각 사자·송아지·사람·날아가는 독수리의 형상을 지녔다. 이들은 밤낮 쉬지 않고 <b class="hl-quote">"거룩하다 거룩하다 거룩하다 주 하나님 곧 전능하신 이여 전에도 계셨고 이제도 계시고 장차 오실 이시라"</b>라는 삼중 송영을 부른다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9–11절</div>
+        <div>
+          <div class="flow-title">이십사 장로의 경배와 면류관</div>
+          <div class="flow-body">네 생물이 영광과 존귀와 감사를 돌릴 때마다 이십사 장로들은 보좌 앞에 엎드려 자기의 면류관을 보좌 앞에 던지며 <b class="hl-quote">"우리 주 하나님이여 영광과 존귀와 권능을 받으시는 것이 합당하오니 주께서 만물을 지으신지라 만물이 주의 뜻대로 있었고 지으심을 받았나이다"</b> 고백한다. 창조주 되심에 근거한 이 경배는 5장에서 이어질 구속주 경배의 기초를 놓는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 보좌가 모든 환상의 중심이다</div>
+        <div class="teach-body">요한계시록에는 &#39;보좌&#39;라는 단어가 40회 넘게 등장하며, 그 절반 가까이가 4-5장에 집중된다. 어떤 짐승과 재앙이 등장하든, 이 책의 진짜 중심은 언제나 하늘의 보좌라는 것을 4장이 먼저 세워 놓는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 예배가 심판보다 먼저 온다</div>
+        <div class="teach-body">요한계시록의 재앙 시리즈(인·나팔·대접)가 시작되기 전, 책 전체는 먼저 하늘의 예배 장면으로 독자를 데려간다. 심판의 서사를 이해하려면 먼저 예배의 자리에 서야 한다는 문학적 배치다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 창조 자체가 경배의 근거다</div>
+        <div class="teach-body">이십사 장로의 찬양은 구속이 아니라 창조에 근거한다. "만물을 지으신지라"는 고백은, 하나님을 향한 예배가 그분이 무엇을 해 주셨는가 이전에 그분이 누구시며 무엇을 지으셨는가에서 시작됨을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 피조 세계 전체가 예배자로 부름받는다</div>
+        <div class="teach-body">네 생물의 형상(사자·송아지·사람·독수리)은 각각 야생·가축·인간·하늘의 대표격으로, 피조 세계 전체가 하나님을 예배하도록 지어졌다는 상징적 총화로 읽힌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 면류관을 던지는 겸손</div>
+        <div class="teach-body">이십사 장로는 받은 면류관을 자기 것으로 붙들지 않고 보좌 앞에 던진다. 신자가 받는 어떤 영예와 상급도 결국 근원되신 이 앞에 돌려드리는 것이 마땅한 반응임을 보여주는 그림이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">4장에는 이상하게도 "예수"나 "그리스도"라는 이름이 한 번도 안 나와요. 이 장의 초점은 온전히 창조주 하나님께 맞춰져 있고, 5장에 가서야 어린양이 등장하죠. 이 순서 자체가 신학적으로 중요해요 — 구속을 말하기 전에 먼저 창조주의 보좌를 세우는 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이십사 장로는 누구를 가리킬까</div>
+        <div class="deep-body">크게 세 견해가 있다. ①구약 12지파와 신약 12사도를 합한 구속받은 백성 전체를 대표하는 인물들이라는 견해, ②천사적 존재로서 하늘 회의의 일원이라는 견해, ③둘을 굳이 배타적으로 나눌 필요 없이 <b class="hl-term">하나님 백성 전체를 대표하는 상징적 존재</b>로 보는 견해다. 흰 옷과 금관, 보좌에 "앉아" 있다는 묘사(통치에 참여하는 지위)는 구속받은 백성을 대표한다는 첫 번째 견해에 무게를 더한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>네 생물과 이십사 장로, 예배의 순서가 왜 반복될까(8-11절)</div>
+        <div class="deep-body">네 생물의 찬양과 장로들의 찬양이 이어지는 구조는 단순한 반복이 아니라 <b class="hl-term">콜과 리스폰스(call and response)</b> 형식의 전례적 패턴으로 읽힌다. 초대교회의 예배가 하늘의 이 패턴을 본떠 형성되었을 가능성도 제기되며, 오늘날 교독문이나 응답송의 전통적 뿌리로 이해하는 학자들도 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch5">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="10" y="16" width="28" height="18" rx="2"/><path d="M10 24h28"/><circle cx="24" cy="24" r="4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 5</div>
+      <h1>5장 · 어린양과 봉인된 두루마리</h1>
+      <div class="chapter-sub">요한계시록 5장 — 오직 어린양만이 두루마리를 열기에 합당하시다</div>
+      <div class="ref-strip"><span class="ref-item">계 5:1–14</span><span class="ref-item">사 53장 · 창 49장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">아무도 열 수 없는 두루마리</div>
+          <div class="flow-body">보좌에 앉으신 이의 오른손에 안팎으로 쓰이고 <b class="hl-term">일곱 인</b>으로 봉한 두루마리가 있다. 힘센 천사가 <b class="hl-quote">"누가 이 두루마리를 펴며 그 인을 떼기에 합당하냐"</b> 외치지만 하늘과 땅과 땅 아래에서 능히 펴거나 볼 자가 없어 요한은 크게 운다. 이 눈물은 단순한 감상이 아니라, 하나님의 구속 계획이 영원히 봉인된 채로 남을지도 모른다는 절망에 가까운 반응이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–7절</div>
+        <div>
+          <div class="flow-title">사자이자 어린양이신 그리스도</div>
+          <div class="flow-body">한 장로가 <b class="hl-quote">"울지 말라 유대 지파의 사자 다윗의 뿌리가 이겼으니 그 두루마리와 그 일곱 인을 떼시리라"</b>고 위로한다. 그러나 요한이 돌아보니 정작 나타나신 것은 사자가 아니라 <b class="hl-insight has-insight" data-insight="5">일찍이 죽임을 당한 것 같은 어린양</b>이었다. 일곱 뿔과 일곱 눈을 지닌 이 어린양은 온 땅에 보내심을 받은 하나님의 일곱 영을 가지시고, 나아가 보좌에 앉으신 이의 오른손에서 두루마리를 취하신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8–10절</div>
+        <div>
+          <div class="flow-title">어린양께 드리는 새 노래</div>
+          <div class="flow-body">어린양이 두루마리를 취하시자 네 생물과 이십사 장로가 각각 거문고와 향이 가득한 금 대접(성도의 기도)을 가지고 엎드려 <b class="hl-quote">"새 노래"</b>를 부른다 — <b class="hl-quote">"두루마리를 가지시고 그 인봉을 떼기에 합당하시도다 일찍이 죽임을 당하사 각 족속과 방언과 백성과 나라 가운데서 사람들을 피로 사서 하나님께 드리시고 그들로 우리 하나님 앞에서 나라와 제사장들을 삼으셨으니"</b>. 4장의 창조 찬양이 여기서 구속 찬양으로 확장된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–14절</div>
+        <div>
+          <div class="flow-title">수많은 천사와 만물의 경배</div>
+          <div class="flow-body">천천이요 만만인 무수한 천사들의 음성이 <b class="hl-quote">"죽임을 당하신 어린양은 능력과 부와 지혜와 힘과 존귀와 영광과 찬송을 받으시기에 합당하도다"</b>라고 화답하고, 이어 하늘과 땅과 땅 아래와 바다 위의 모든 피조물이 <b class="hl-quote">"보좌에 앉으신 이와 어린양에게 찬송과 존귀와 영광과 권능을 세세토록 돌릴지어다"</b>라는 우주적 송영으로 이 장은 절정에 이른다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 승리는 정복이 아니라 희생을 통해 온다</div>
+        <div class="teach-body">장로는 "사자가 이겼다"고 말하지만 실제로 등장하는 것은 "죽임당한 어린양"이다. 이 반전이 요한계시록 기독론의 핵심이다 — 그리스도의 승리는 군사적 정복이 아니라 십자가의 희생을 통해 성취되었다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 아무도 자격이 없다는 절망이 복음의 배경이다</div>
+        <div class="teach-body">요한의 눈물은 인류 전체가 스스로는 하나님의 구속 계획을 열 자격이 없다는 냉정한 현실을 보여준다. 그 절망의 자리에 오직 어린양만이 대안으로 등장하신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 구속은 만민을 향한 것이다</div>
+        <div class="teach-body">새 노래는 "각 족속과 방언과 백성과 나라 가운데서" 사람들을 사셨다고 노래한다. 어린양의 피는 특정 민족이나 계층에 국한되지 않고 온 인류를 향해 열려 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 기도는 하늘의 예배 요소로 상달된다</div>
+        <div class="teach-body">이십사 장로가 든 향이 가득한 금 대접이 "성도의 기도"로 설명된다(8절). 지상에서 드리는 성도의 기도가 하늘 예배의 실제 구성 요소로 여겨진다는 것은 기도의 무게에 대해 다시 생각하게 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 경배의 파장이 우주 전체로 확장된다</div>
+        <div class="teach-body">네 생물과 장로들의 경배(8-10절)에서 시작해 무수한 천사(11-12절)를 거쳐 마침내 모든 피조물(13절)로 경배의 원이 점점 넓어지는 문학적 구조는, 어린양의 통치가 우주적임을 시각적으로 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">"보라 유대 지파의 사자가 이겼다"는 말을 듣고 고개를 돌렸는데 어린양이 서 있더라 — 이 장면이 요한계시록 전체를 이해하는 열쇠라고 해도 과언이 아니에요. 계시록의 짐승과 전쟁 이미지에 압도되기 쉽지만, 진짜 주인공은 정복하는 사자가 아니라 죽임당한 어린양이라는 걸 5장이 먼저 못박아 두는 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>두루마리의 내용은 무엇일까</div>
+        <div class="deep-body">본문은 두루마리의 구체적 내용을 명시하지 않는다. 유력한 견해는 이 두루마리가 이후 6장부터 전개될 인·나팔·대접 심판, 곧 <b class="hl-term">하나님의 구속 계획과 심판의 전체 각본</b>을 담고 있다는 것이다. "안팎으로 썼다"(1절)는 표현은 에스겔 2:9-10의 두루마리를 연상시키며, 그 내용이 애가와 애곡과 재앙임을 암시한다. 다만 이 두루마리를 로마 상속법의 유언장(testament) 형식으로 보아 그리스도가 만유의 상속자 되심을 확증하는 문서로 읽는 견해도 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"일곱 뿔과 일곱 눈"(6절)은 무엇을 상징할까</div>
+        <div class="deep-body">뿔은 구약에서 일관되게 <b class="hl-term">힘과 권능</b>의 상징이며, 눈은 스가랴 4:10의 "온 땅을 두루 감찰하시는 여호와의 눈"을 배경으로 <b class="hl-term">전지(全知)하심</b>을 가리킨다. 일곱이라는 완전수와 결합되어, 죽임당한 것처럼 연약해 보이는 어린양이 실은 완전한 능력과 완전한 지혜, 곧 성령의 충만한 임재(일곱 영, 4:5과 연결)를 지니신 분임을 역설적으로 선언한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch6">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="15"/><path d="M24 9v30M9 24h30"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 6</div>
+      <h1>6장 · 여섯 인의 개봉</h1>
+      <div class="chapter-sub">요한계시록 6장 — 네 말과 순교자의 부르짖음, 우주적 격변</div>
+      <div class="ref-strip"><span class="ref-item">계 6:1–17</span><span class="ref-item">슥 1·6장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–8절</div>
+        <div>
+          <div class="flow-title">네 인과 네 말</div>
+          <div class="flow-body">어린양이 인을 하나씩 떼실 때마다 네 생물이 차례로 <b class="hl-quote">"오라"</b> 외치며 네 마리 말이 등장한다. <b class="hl-term">흰 말</b>은 이기고 또 이기려는 자를, <b class="hl-term">붉은 말</b>은 땅에서 화평을 제하여 서로 죽이게 하는 자를, <b class="hl-term">검은 말</b>은 저울을 든 자로 기근을, <b class="hl-insight has-insight" data-insight="6">청황색 말</b>은 사망이라는 이름을 가진 자로 검과 흉년과 사망과 땅의 짐승들로 땅 사분의 일을 죽일 권세를 각각 받는다. 정복·전쟁·기근·죽음이라는 네 재앙이 순차적으로 풀려난다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9–11절</div>
+        <div>
+          <div class="flow-title">다섯째 인 — 순교자의 부르짖음</div>
+          <div class="flow-body">하나님의 말씀과 그 증거로 죽임을 당한 영혼들이 제단 아래서 <b class="hl-quote">"거룩하고 참되신 대주재여 땅에 거하는 자들을 심판하여 우리 피를 갚아 주지 아니하시기를 어느 때까지 하시려나이까"</b> 부르짖는다. 그들에게 흰 두루마기가 주어지고, 그들의 동무 종들과 형제들도 자기처럼 죽임을 당해 그 수가 차기까지 <b class="hl-term">잠시 쉬라</b>는 응답이 주어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–17절</div>
+        <div>
+          <div class="flow-title">여섯째 인 — 우주적 격변</div>
+          <div class="flow-body">큰 지진과 함께 해가 검은 털로 짠 상복 같이 검어지고 달은 온통 피 같이 되며, 하늘의 별들이 무화과나무가 흔들려 설익은 열매 떨어지듯 땅에 떨어진다. 하늘은 두루마리가 말리는 것 같이 떠나가고, 땅의 임금들과 강대한 자들까지 굴과 산의 바위 틈에 숨어 <b class="hl-quote">"우리에게 떨어져 보좌에 앉으신 이의 낯과 어린양의 진노에서 우리를 가리라 그들의 진노의 큰 날이 이르렀으니 누가 능히 서리요"</b>라고 부르짖는다. 이 물음은 7장의 답변을 기다리며 열린 채로 남는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 재앙은 무작위가 아니라 어린양의 손에서 풀려난다</div>
+        <div class="teach-body">인을 떼시는 분이 다름 아닌 5장의 그 어린양이라는 사실이 중요하다. 세상의 혼란과 재앙조차 궁극적으로 그리스도의 주권 아래 있다는 것이 요한계시록의 일관된 신학이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 흰 말도 반드시 선한 능력만은 아니다</div>
+        <div class="teach-body">전통적으로 흰 말을 그리스도(19장의 백마와 연결)로 읽는 해석도 있지만, 문맥상 정복욕에 이끌린 제국주의적 침략으로 보는 해석이 더 널리 받아들여진다. 흰색이라는 색채만으로 선악을 단정할 수 없다는 해석학적 신중함이 필요하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 순교자의 질문은 하나님을 향한 신실한 항변이다</div>
+        <div class="teach-body">"어느 때까지"라는 부르짖음은 불신앙의 반항이 아니라 시편의 탄식시 전통(시 13, 79편 등)을 잇는 신실한 항변이다. 고난 중에 하나님께 정직하게 묻는 것은 믿음의 결핍이 아니다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 기다림에도 목적이 있다</div>
+        <div class="teach-body">순교자들에게 주어진 "잠시 쉬라"는 응답은 무의미한 지연이 아니라, 동무 종들의 수가 차기까지라는 목적을 가진 기다림이다. 하나님의 시간표는 인간의 조급함과 다르게 움직인다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 심판 앞에서 참으로 두려운 것은 무엇인가</div>
+        <div class="teach-body">땅의 왕들이 두려워한 것은 재앙 자체가 아니라 "보좌에 앉으신 이의 낯과 어린양의 진노"였다. 요한계시록이 궁극적으로 겨냥하는 두려움의 대상은 자연재해가 아니라 하나님과의 대면이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">네 말 탄 자를 "요한계시록의 네 기사"라고 부르는데, 이 이미지는 사실 스가랴 6장의 네 병거 환상에서 이미 나온 그림이에요. 요한계시록은 새로운 이미지를 창작하기보다 구약의 이미지를 재배열해서 쓰는 경우가 훨씬 많다는 걸 기억하면 좋아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>네 인의 재앙은 미래의 특정 사건인가, 역사 전체의 패턴인가</div>
+        <div class="deep-body">해석에 따라 크게 갈린다. <b class="hl-term">미래론적 해석</b>은 이를 종말 직전 특정 시기에 문자적으로 발생할 사건으로 본다. <b class="hl-term">역사적/이상주의적 해석</b>은 전쟁·기근·죽음이 인류 역사 전체에 반복되어 온 패턴이며, 인을 떼는 행위 자체가 이 반복되는 고난이 하나님의 주권 밖에 있지 않음을 보여주는 상징이라고 본다. 예수님이 마태복음 24장에서 "전쟁과 전쟁 소문", "기근과 지진"을 "재난의 시작"(해산의 고통)이라 하신 것과 병행된다는 점에서, 후자의 해석이 본문의 목회적 취지에 더 잘 부합한다는 평가가 많다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>여섯째 인의 우주적 격변, 문자적 천체 붕괴인가</div>
+        <div class="deep-body">해·달·별의 붕괴 이미지는 요한계시록 고유의 창작이 아니라 이사야 13:10, 34:4, 요엘 2:31 등 구약 예언서에서 반복되는 <b class="hl-term">"여호와의 날" 관용구</b>다. 구약 문맥에서 이 표현은 대개 특정 나라(바벨론, 에돔 등)를 향한 하나님의 역사적 심판을 묘사하는 상징 언어로 쓰였다. 따라서 이를 문자적 천체 물리 현상의 예언으로 읽기보다, <b class="hl-term">세상 질서 전체를 뒤흔드는 하나님의 결정적 개입</b>을 나타내는 예언자적 관용 표현으로 이해하는 것이 문헌적으로 더 정확하다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch7">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40V14"/><path d="M24 14c-7 3-11 9-12 17"/><path d="M24 14c7 3 11 9 12 17"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 7</div>
+      <h1>7장 · 인침받은 자들과 셀 수 없는 큰 무리</h1>
+      <div class="chapter-sub">요한계시록 7장 — 여섯째 인과 일곱째 인 사이의 막간</div>
+      <div class="ref-strip"><span class="ref-item">계 7:1–17</span><span class="ref-item">겔 9장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–8절</div>
+        <div>
+          <div class="flow-title">땅과 바다와 나무를 붙드는 네 천사</div>
+          <div class="flow-body">네 천사가 땅의 사방 바람을 붙잡아 바람이 불지 못하게 하는 동안, 살아 계신 하나님의 인을 가진 또 다른 천사가 <b class="hl-quote">"우리가 우리 하나님의 종들의 이마에 인 치기까지 땅이나 바다나 나무들을 해하지 말라"</b> 외친다. 이스라엘 <b class="hl-insight has-insight" data-insight="7">열두 지파</b> 중에서 각 지파 일만 이천씩 <b class="hl-term">십사만 사천</b>이 인침을 받는다. 6장 끝의 "누가 능히 서리요"라는 물음에 대한 첫 번째 답이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9–12절</div>
+        <div>
+          <div class="flow-title">셀 수 없는 큰 무리의 환상</div>
+          <div class="flow-body">이어 요한은 시선을 옮겨 <b class="hl-quote">"각 나라와 족속과 백성과 방언에서 아무도 능히 셀 수 없는 큰 무리"</b>가 흰 옷을 입고 손에 종려 가지를 들고 보좌와 어린양 앞에 서서 <b class="hl-quote">"구원하심이 보좌에 앉으신 우리 하나님과 어린양에게 있도다"</b>라고 외치는 것을 본다. 천사들과 장로들과 네 생물이 다시 엎드려 화답하며 4-5장의 예배가 확장된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–17절</div>
+        <div>
+          <div class="flow-title">이들은 누구이며 어디서 왔는가</div>
+          <div class="flow-body">한 장로가 이 흰 옷 입은 자들이 누구냐고 물으며 <b class="hl-quote">"이는 큰 환난에서 나오는 자들인데 어린양의 피에 그 옷을 씻어 희게 하였느니라"</b>라고 스스로 답한다. 그러므로 이들은 하나님의 보좌 앞에서 밤낮 성전에서 그를 섬기며, 다시는 주리거나 목마르지 아니하고 해나 아무 뜨거운 기운도 상하지 아니하니, 이는 보좌 가운데 계신 어린양이 그들의 목자가 되사 생명수 샘으로 인도하시고 하나님이 그들의 눈에서 모든 눈물을 씻어 주실 것이기 때문이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 재앙 가운데도 하나님은 자기 백성을 먼저 인치신다</div>
+        <div class="teach-body">네 바람이 풀려나기 전, 하나님은 먼저 인치는 시간을 확보하신다. 심판이 아무리 임박해도 하나님의 백성을 향한 보호는 언제나 재앙보다 앞선다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 셀 수 있는 무리와 셀 수 없는 무리가 결국 하나다</div>
+        <div class="teach-body">144,000(셀 수 있는, 완전한 질서)과 셀 수 없는 큰 무리(무한한 확장)는 대립하는 두 그룹이 아니라, 같은 구원받은 백성을 서로 다른 각도에서 그린 하나의 상(像)으로 읽힌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 흰 옷은 스스로 얻은 것이 아니라 씻긴 것이다</div>
+        <div class="teach-body">"어린양의 피에 그 옷을 씻어 희게 하였느니라"는 역설적 표현 — 피로 씻어서 희게 된다 — 은 구원이 인간의 공로가 아니라 전적으로 그리스도의 희생에 근거함을 압축해서 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 환난을 통과한 자에게 주어지는 위로의 목록</div>
+        <div class="teach-body">주림도 목마름도 뜨거움도 없고, 목자 되신 어린양이 생명수로 인도하시며 모든 눈물을 씻어 주신다는 이 목록은 21장 새 예루살렘의 약속을 미리 예고하는 위로의 청사진이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 예배는 인침받은 자들의 정체성 표현이다</div>
+        <div class="teach-body">144,000과 큰 무리 모두 결국 보좌와 어린양 앞에서의 예배로 귀결된다. 인침받았다는 것의 실제 내용은 결국 하나님을 예배하는 존재로 회복되었다는 것이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">144,000을 문자적으로 특정 소수만 구원받는다는 뜻으로 오해하는 경우가 많은데, 바로 뒤에 "셀 수 없는 큰 무리"가 나온다는 걸 놓치면 안 돼요. 같은 장 안에서 완전한 질서(144,000)와 무한한 확장(셀 수 없는 무리)을 나란히 보여주는 게 핵심이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>144,000은 문자적 숫자인가 상징인가</div>
+        <div class="deep-body">본문의 열두 지파 목록(4-8절)은 창세기나 민수기의 지파 목록과 순서·구성이 미묘하게 다르다(단 지파가 빠지고 요셉과 므낫세가 별도로 언급됨). 이런 변형은 이 숫자가 <b class="hl-term">문자적 인구조사가 아니라 상징적 완전성</b>을 나타냄을 시사한다. 12(지파의 수)×12(사도의 수, 또는 완전수의 자승)×1000(큰 수를 나타내는 관용적 배수)이라는 구조 자체가, 하나님 백성 전체의 완전하고 온전한 수를 상징적으로 표현하는 숫자 조합이라는 해석이 지배적이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"큰 환난"(14절)은 특정 미래의 사건인가</div>
+        <div class="deep-body">헬라어 원문에 정관사가 붙어 "그 큰 환난"으로 읽히는 이 표현을 두고, 미래에 임할 특정한 단일 대환난 시기로 보는 견해와, 그리스도인이 세상에서 통과하는 <b class="hl-term">모든 시대의 박해와 고난 전체</b>를 가리키는 표현으로 보는 견해가 나뉜다. 요한복음 16:33의 "세상에서는 너희가 환난을 당하나"라는 예수의 말씀과의 연속성을 고려할 때, 후자로 읽어도 본문의 위로가 훼손되지 않는다는 점이 자주 지적된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch8">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 20l17-7v22l-17-7Z"/><path d="M26 13l11-3M26 35l11 3"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 8</div>
+      <h1>8장 · 일곱째 인과 첫 네 나팔</h1>
+      <div class="chapter-sub">요한계시록 8장 — 하늘의 고요함과 나팔 재앙의 시작</div>
+      <div class="ref-strip"><span class="ref-item">계 8:1–13</span><span class="ref-item">출 9-10장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–5절</div>
+        <div>
+          <div class="flow-title">일곱째 인 — 반 시간의 고요와 성도의 기도</div>
+          <div class="flow-body">일곱째 인을 떼실 때 하늘이 <b class="hl-insight has-insight" data-insight="8">반 시간쯤 고요</b>해진다. 일곱 천사에게 일곱 나팔이 주어지고, 또 다른 천사가 많은 향을 가지고 제단 곁에 서서 모든 성도의 기도와 함께 하나님 앞으로 올려 드린다. 그 후 천사가 향로에 제단의 불을 담아 땅에 쏟으니 우렛소리와 음성과 번개와 지진이 일어난다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6–9절</div>
+        <div>
+          <div class="flow-title">첫째·둘째 나팔</div>
+          <div class="flow-body">첫째 천사가 나팔을 불자 피 섞인 우박과 불이 땅에 쏟아져 땅의 삼분의 일과 수목의 삼분의 일, 각종 푸른 풀이 타 버린다. 둘째 천사가 나팔을 불자 불 붙는 큰 산 같은 것이 바다에 던져져 바다의 삼분의 일이 피가 되고, 바다 가운데 생물의 삼분의 일이 죽으며 배들의 삼분의 일이 깨진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">10–13절</div>
+        <div>
+          <div class="flow-title">셋째·넷째 나팔과 독수리의 경고</div>
+          <div class="flow-body">셋째 천사의 나팔에 <b class="hl-term">쑥</b>이라 하는 큰 별이 떨어져 강들과 물 샘의 삼분의 일이 쓴 물이 되어 많은 사람이 죽는다. 넷째 천사의 나팔에 해와 달과 별들의 삼분의 일이 타격을 받아 낮과 밤의 삼분의 일이 어두워진다. 이어 공중에 날아가는 독수리가 큰 소리로 <b class="hl-quote">"땅에 사는 자들에게 화, 화, 화가 있으리니 이는 세 천사가 불어야 할 나팔 소리를 인함이로다"</b> 외치며 남은 세 나팔이 훨씬 더 무거운 재앙임을 예고한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 반 시간의 고요는 폭풍 전의 긴장이다</div>
+        <div class="teach-body">요한계시록에서 유일하게 등장하는 이 침묵의 순간은, 뒤이어 펼쳐질 나팔 재앙의 무게를 강조하는 문학적 정지 화면과 같다. 소리가 없는 그 반 시간이 오히려 가장 무겁게 다가온다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 성도의 기도가 심판의 도화선과 나란히 놓인다</div>
+        <div class="teach-body">천사가 성도의 기도를 향과 함께 올려 드린 직후, 바로 그 제단의 불이 땅에 쏟아져 심판이 시작된다(3-5절). 순교자들의 기도(6:10)와 심판의 시작이 문학적으로 긴밀히 연결되어 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 나팔 재앙은 출애굽 재앙의 반향이다</div>
+        <div class="teach-body">피가 되는 물, 불과 우박, 어두워지는 하늘 — 이 모든 이미지는 출애굽기의 열 재앙을 강하게 연상시킨다. 하나님은 새로운 재앙을 창작하시는 것이 아니라, 이집트를 심판하시고 자기 백성을 건지셨던 그 익숙한 패턴을 다시 사용하신다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 재앙에도 한계(삼분의 일)가 있다</div>
+        <div class="teach-body">나팔 재앙은 반복해서 "삼분의 일"이라는 한계 안에 머문다. 이는 심판이 무자비한 전멸이 아니라, 여전히 회개의 여지를 남겨둔 경고적 성격을 지님을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 자연 질서의 붕괴는 회개를 촉구하는 신호다</div>
+        <div class="teach-body">땅과 바다와 물과 하늘에 차례로 임하는 재앙은 피조 세계 전체가 인간의 죄로 인해 신음하고 있다는 로마서 8:22의 진리를 극적으로 시각화한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">나팔 재앙을 읽을 때 출애굽기를 옆에 펴 놓고 비교해보면 정말 놀라워요. 피가 된 물, 우박과 불, 어두워진 하늘 — 거의 그대로예요. 하나님이 새 재앙을 발명하신 게 아니라, "내가 예전에 이집트를 어떻게 심판했는지 기억하느냐"고 다시 상기시키시는 느낌이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>인 재앙과 나팔 재앙, 대접 재앙은 순차적인가 반복적인가</div>
+        <div class="deep-body">요한계시록 해석사에서 가장 논쟁적인 구조 문제 중 하나다. <b class="hl-term">순차적 해석</b>은 인·나팔·대접이 시간 순서대로 전개되는 하나의 연속된 사건으로 본다. <b class="hl-term">반복적(재현적) 해석</b>은 세 시리즈가 같은 종말론적 현실을 강도를 더해가며 세 번 반복해서 그리는 문학적 장치라고 본다. 일곱째 인이 열리자 일곱 나팔이 나오고(8:1-2), 일곱째 나팔이 불리자 일곱 대접이 나오는(11:15-19, 15:1) 구조는 후자, 즉 <b class="hl-term">포개어지는 나선형 구조</b>를 지지하는 유력한 문학적 단서로 자주 지적된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"쑥"이라는 별 이름(11절), 왜 하필 쓴 나물일까</div>
+        <div class="deep-body">쑥(헬라어 앱신토스)은 구약에서 반복적으로 <b class="hl-term">언약을 배신한 결과로 임하는 하나님의 심판</b>을 상징하는 단어로 쓰인다(신 29:18, 렘 9:15, 암 5:7 등 — "정의를 쑥으로 바꾸다"). 이 익숙한 예언적 비유를 별의 이름으로 사용함으로써, 요한은 물이 쓰게 변하는 재앙이 단순한 자연재해가 아니라 언약을 저버린 세상에 대한 예언자적 심판 언어의 연장임을 알린다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch9">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="21" cy="26" rx="12" ry="7"/><path d="M33 22c4-5 9-6 10-3c1 3-4 6-8 5"/><circle cx="16" cy="24" r="1.2" fill="currentColor" stroke="none"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 9</div>
+      <h1>9장 · 다섯째·여섯째 나팔</h1>
+      <div class="chapter-sub">요한계시록 9장 — 황충의 재앙과 이만만의 마병대</div>
+      <div class="ref-strip"><span class="ref-item">계 9:1–21</span><span class="ref-item">욜 1-2장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–12절</div>
+        <div>
+          <div class="flow-title">다섯째 나팔 — 무저갱의 황충</div>
+          <div class="flow-body">하늘에서 땅에 떨어진 별(타락한 존재로 이해됨)이 <b class="hl-term">무저갱</b>의 열쇠를 받아 이를 열자 큰 화덕의 연기 같은 것이 올라와 해와 공기가 어두워진다. 연기 가운데서 나온 <b class="hl-insight has-insight" data-insight="9">황충</b>은 전갈의 권세를 지녔으나, 풀이나 나무가 아니라 이마에 하나님의 인침이 없는 사람들만 다섯 달 동안 해할 권세를 받는다. 사람 얼굴에 여자의 머리털, 사자의 이, 철 흉갑, 병거 소리, 전갈 꼬리를 지닌 이 존재들의 왕은 히브리어로 <b class="hl-term has-tip" data-tip="히브리어로 &#x27;멸망&#x27;, 헬라어로는 아볼루온(파괴자)이라 불리는 무저갱의 사자. 재앙을 다스리는 존재로 등장한다.">아바돈</b>, 헬라어로 아볼루온(멸망자)이라 불린다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–19절</div>
+        <div>
+          <div class="flow-title">여섯째 나팔 — 이만만의 마병대</div>
+          <div class="flow-body">금 제단 네 뿔에서 나온 음성이 유브라데 강에 결박된 네 천사를 놓아 주라 명하고, 이들은 그 년 월 일 시에 맞추어 사람 삼분의 일을 죽이기 위해 예비된 자들이다. 마병대의 수는 <b class="hl-term">이만만(2억)</b>이며, 불빛과 자줏빛과 유황빛 흉갑을 두르고 사자 머리 같은 말들의 입에서 불과 연기와 유황이 나와 사람 삼분의 일이 죽는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">20–21절</div>
+        <div>
+          <div class="flow-title">회개하지 않는 남은 자들</div>
+          <div class="flow-body">이 재앙에 죽지 않고 남은 사람들도 오히려 손으로 행한 일을 회개하지 아니하고, 여전히 귀신과 보거나 듣거나 다니지도 못하는 금·은·동·목석의 우상에게 절하기를 그치지 않는다. 살인과 복술과 음행과 도둑질도 회개하지 않는다. 재앙의 강도가 아니라 인간 마음의 완악함이 이 두 나팔 재앙의 진짜 결론으로 제시된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 재앙에도 하나님이 정하신 경계가 있다</div>
+        <div class="teach-body">황충에게조차 "다섯 달"이라는 시한과, 인침받은 자를 해하지 못한다는 제한이 주어진다. 아무리 무서운 재앙도 하나님의 허락과 한계를 벗어나지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 어둠의 세력도 결국 하나님의 통치 아래 있다</div>
+        <div class="teach-body">무저갱을 여는 열쇠, 네 천사를 결박하고 놓아주는 명령, 마병대의 수와 시간까지 모두 하나님의 주권적 허락 안에서 움직인다. 악의 활동조차 궁극적으로 하나님의 손을 벗어나지 못한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 재앙의 목적은 파괴가 아니라 회개다</div>
+        <div class="teach-body">9장의 재앙들은 사람을 즉시 전멸시키지 않고 고통과 두려움을 통해 회개를 촉구하는 성격을 띤다. 그러나 그 목적이 번번이 좌절되는 것이 이 장의 비극이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 두려운 재앙도 마음을 바꾸지 못할 수 있다</div>
+        <div class="teach-body">삼분의 일이 죽는 대재앙 앞에서도 남은 자들은 회개하지 않는다. 이는 인간의 완악함이 외적 재앙의 강도가 아니라 마음의 상태에 있음을 냉정하게 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 우상숭배와 도덕적 타락은 함께 간다</div>
+        <div class="teach-body">21절의 죄 목록(살인·복술·음행·도둑질)이 우상숭배(20절) 바로 뒤에 이어지는 것은, 하나님을 향한 예배의 왜곡이 결국 인간관계의 파괴로 이어진다는 성경 전체의 일관된 통찰을 반영한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">9장의 황충 묘사는 사실 요엘 1-2장의 메뚜기 재앙을 크게 확대해서 재구성한 거예요. 요엘서도 메뚜기 떼를 "말과 같고 병거 소리 같다"고 묘사하는데, 계시록은 여기에 전갈의 독침 같은 초자연적 위협을 더해 훨씬 강렬한 이미지로 그려냅니다.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>황충은 문자적 곤충인가, 악한 영적 세력의 상징인가</div>
+        <div class="deep-body">이마에 인침 없는 사람만 해하고 다섯 달이라는 초자연적 시한을 지니며, 죽이지 않고 고통만 준다는 점(5절)은 문자적 곤충의 습성과 맞지 않는다. 대다수 학자들은 이를 <b class="hl-term">인간의 마음과 정신을 갉아먹는 영적·악마적 세력</b>의 상징적 묘사로 읽는다. 요한계시록의 짐승 이미지 대부분이 그렇듯, 낯선 괴물의 창작이 아니라 구약(욜 1-2장)의 익숙한 재앙 이미지를 초자연적 차원으로 확장한 것으로 이해하는 것이 일반적이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"그 년 월 일 시에"(15절), 왜 이렇게 구체적으로 표현할까</div>
+        <div class="deep-body">이 독특한 사중 시간 표현(년·월·일·시)은 이 재앙이 우연이나 혼돈이 아니라 <b class="hl-term">하나님이 미리 정하신 정확한 시각표</b>에 따라 움직인다는 것을 강조하는 문학적 장치다. 아무리 파괴적인 사건이라도 하나님의 섭리 밖에서 임의로 일어나는 것은 없다는 요한계시록 전체의 신학이 이 한 구절에 압축되어 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch10">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 30a16 16 0 0 1 32 0"/><rect x="17" y="26" width="14" height="10" rx="1.5"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 10</div>
+      <h1>10장 · 힘센 천사와 작은 두루마리</h1>
+      <div class="chapter-sub">요한계시록 10장 — 재앙 시리즈 사이의 두 번째 막간</div>
+      <div class="ref-strip"><span class="ref-item">계 10:1–11</span><span class="ref-item">겔 2-3장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">힘센 천사의 강림</div>
+          <div class="flow-body">구름을 옷 입고 머리 위에 무지개가 있으며 얼굴은 해 같고 발은 불기둥 같은 힘센 천사가 하늘에서 내려온다. 오른발은 바다를, 왼발은 땅을 밟고 사자가 부르짖는 것 같이 외치니 일곱 우레가 그 소리를 발한다. 요한이 그 내용을 기록하려 하자 <b class="hl-quote">"일곱 우레가 말한 것을 인봉하고 기록하지 말라"</b>는 하늘의 음성이 그를 제지한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–7절</div>
+        <div>
+          <div class="flow-title">지체하지 아니하리라는 맹세</div>
+          <div class="flow-body">천사가 하늘을 향해 오른손을 들고 영원히 살아 계신 이를 가리켜 맹세하되 <b class="hl-insight has-insight" data-insight="10">"지체하지 아니하리니"</b>, 일곱째 천사가 소리 내는 그 날에 하나님의 그 비밀이 선지자들에게 전하신 복음과 같이 이루어지리라고 선포한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8–11절</div>
+        <div>
+          <div class="flow-title">작은 두루마리를 먹으라</div>
+          <div class="flow-body">요한은 천사의 손에 있는 펴 놓인 작은 두루마리를 받아 먹으라는 명령을 받는다. <b class="hl-quote">"네 입에는 꿀 같이 달지만 네 배에서는 쓰게 되리라"</b>는 예고 그대로, 두루마리는 입에서는 달고 배에서는 쓰다. 이어 <b class="hl-quote">"네가 많은 백성과 나라와 방언과 임금에게 다시 예언하여야 하리라"</b>는 재파송의 명령이 주어진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 모든 계시가 다 전해지는 것은 아니다</div>
+        <div class="teach-body">일곱 우레의 말은 인봉되어 기록되지 않는다. 하나님은 요한에게조차 모든 것을 다 알리지 않으신다 — 계시에는 인간이 감당할 수 있는 한계와 하나님이 정하신 침묵의 영역이 있다는 겸손한 인식을 요구한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 하나님의 계획에는 지체가 없다</div>
+        <div class="teach-body">"지체하지 아니하리라"는 천사의 맹세는, 재앙과 심판이 더디게 느껴지는 것 같아도 실은 하나님의 정확한 시간표 안에서 진행되고 있음을 확증한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 말씀은 달콤함과 쓴맛을 함께 지닌다</div>
+        <div class="teach-body">두루마리가 입에는 달지만 배에서는 쓰다는 묘사는, 하나님의 말씀을 받는 것이 위로와 소망(꿀맛)이면서 동시에 심판과 고난의 예언을 전해야 하는 무거운 책임(쓴맛)임을 함께 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 예언자의 사명은 반복해서 주어진다</div>
+        <div class="teach-body">"네가 다시 예언하여야 하리라"는 명령은 요한의 사명이 이 환상으로 끝나지 않고 계속되어야 함을 보여준다. 소명은 한 번의 체험으로 완결되지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 심판의 선포도 궁극적으로는 복음이다</div>
+        <div class="teach-body">"하나님의 그 비밀이 이루어지리라"는 선언이 "선지자들에게 전하신 복음과 같이"라는 표현과 함께 등장한다. 무서운 심판의 서사 전체가 결국 복음이라는 큰 틀 안에 있다는 것을 잊지 말아야 한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">두루마리를 먹으라는 이 장면은 에스겔 3장에서 그대로 가져온 거예요. 에스겔도 두루마리를 먹었을 때 입에는 꿀 같이 달았다고 하죠. 하나님의 말씀을 받는다는 게 단순히 정보를 얻는 게 아니라 온몸으로 삼켜서 자기 것으로 만드는 일이라는 이미지가 참 생생해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>힘센 천사는 그리스도 자신인가</div>
+        <div class="deep-body">구름·무지개·해 같은 얼굴·불기둥 같은 발이라는 묘사가 1장 인자 환상 및 4장의 무지개 이미지와 겹쳐, 일부 학자는 이 천사를 그리스도의 현현으로 본다. 그러나 이 존재가 자신을 "천사"로 지칭하고(1절, 헬라어 앙겔로스) 다른 대목에서 그리스도가 명확히 어린양으로 구별되어 등장한다는 점에서, 다수 견해는 이를 <b class="hl-term">하나님의 위임을 받은 강력한 천사적 존재</b>로 보되 그리스도의 영광을 반사하는 존재로 이해한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>바다와 땅을 동시에 밟는 자세, 무슨 의미일까</div>
+        <div class="deep-body">오른발은 바다, 왼발은 땅을 밟는 이 자세는 <b class="hl-term">우주 전체에 대한 주권</b>을 상징하는 고대 근동의 관용적 표현으로 이해된다. 이후 13장에서 바다와 땅에서 각각 짐승이 올라오는 장면과 대조하면, 10장의 이 이미지는 참 주권자가 누구인지를 미리 확정해 두는 문학적 복선으로도 읽힌다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch11">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 40V17"/><ellipse cx="14" cy="14" rx="5" ry="6"/><path d="M34 40V17"/><ellipse cx="34" cy="14" rx="5" ry="6"/><path d="M9 40h30"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 11</div>
+      <h1>11장 · 두 증인과 일곱째 나팔</h1>
+      <div class="chapter-sub">요한계시록 11장 — 성전 측량, 두 증인의 죽음과 부활, 나팔 재앙의 완성</div>
+      <div class="ref-strip"><span class="ref-item">계 11:1–19</span><span class="ref-item">슥 4장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">성전을 측량하고 두 증인이 예언하다</div>
+          <div class="flow-body">요한은 지팡이 같은 갈대를 받아 하나님의 성전과 제단, 그 안에서 경배하는 자들을 측량하되 성전 바깥 마당은 이방인에게 주어졌으니 측량하지 말라는 명령을 받는다. <b class="hl-term">두 증인</b>이 굵은 베옷을 입고 <b class="hl-term">일천이백육십 일</b> 동안 예언하는데, 이들은 <b class="hl-insight has-insight" data-insight="11">두 감람나무와 두 촛대</b>로 불리며 불을 내려 원수를 삼키고 비를 그치게 하며 물을 피로 변하게 하는 권세를 지닌다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–10절</div>
+        <div>
+          <div class="flow-title">두 증인의 죽음과 조롱</div>
+          <div class="flow-body">이들이 증언을 마칠 때 무저갱에서 올라오는 짐승이 그들과 싸워 이기고 그들을 죽인다. 시체는 큰 성 길에 사흘 반 동안 버려진 채 장사되지도 못하고, 땅에 거하는 자들은 오히려 기뻐하고 즐거워하며 서로 예물을 보낸다 — <b class="hl-quote">"이 두 선지자가 땅에 거하는 자들을 괴롭게 한 까닭이라"</b>는 이유에서다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–14절</div>
+        <div>
+          <div class="flow-title">생기가 들어가 다시 서다</div>
+          <div class="flow-body">사흘 반 후 하나님께로부터 생기가 그들 속에 들어가매 두 증인이 발로 일어서니, 구경하는 자들이 크게 두려워한다. 두 증인은 <b class="hl-quote">"이리로 올라오라"</b>는 하늘의 큰 음성과 함께 구름을 타고 하늘로 올라가고, 바로 그 시각 큰 지진이 나서 성 십분의 일이 무너지고 칠천 명이 죽자 그 남은 자들이 두려워하며 영광을 하늘의 하나님께 돌린다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15–19절</div>
+        <div>
+          <div class="flow-title">일곱째 나팔 — 하늘의 큰 소리와 성전 지성소</div>
+          <div class="flow-body">일곱째 천사가 나팔을 불자 하늘에 큰 음성들이 나서 <b class="hl-quote">"세상 나라가 우리 주와 그 그리스도의 나라가 되어 그가 세세토록 왕 노릇 하시리로다"</b> 선포한다. 이십사 장로가 엎드려 경배하며 하나님의 진노의 때, 죽은 자를 심판하시며 종들에게 상 주시고 땅을 망하게 하는 자들을 멸망시키실 때가 이르렀다고 노래한다. 하늘에 있는 하나님의 성전이 열리며 언약궤가 보이고 번개와 음성과 우렛소리와 지진과 큰 우박이 뒤따른다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 하나님은 예배하는 자들을 안전히 측량하신다</div>
+        <div class="teach-body">성전 안뜰(예배자)은 측량되어 보호받지만 바깥 마당(이방인의 손에 넘어간 영역)은 측량에서 제외된다. 세상의 혼란 속에서도 하나님이 자기 백성의 경계를 정확히 아신다는 확신을 준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 신실한 증언은 죽음 이후에도 끝나지 않는다</div>
+        <div class="teach-body">두 증인은 죽임을 당하지만 사흘 반 만에 다시 일어선다. 신실한 증언의 결말은 세상이 조롱하며 기뻐하는 죽음이 아니라 하나님이 세우시는 부활이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 세상은 참 예언자를 불편해하고 거짓 평화를 즐긴다</div>
+        <div class="teach-body">두 증인이 살아있는 동안 세상은 그들을 "괴롭게 한 자"로 여기다가, 그들이 죽자 예물을 주고받으며 기뻐한다. 진리를 말하는 소수는 종종 다수에게 불편한 존재로 여겨진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 두려움이 회개로 이어질 수도 있다</div>
+        <div class="teach-body">지진 후 남은 자들이 "두려워하며 영광을 하늘의 하나님께 돌렸다"는 표현은, 앞선 9장의 회개하지 않는 자들과 대조적으로 재앙이 실제로 회개를 낳는 드문 사례로 읽힌다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 일곱째 나팔은 종결이 아니라 확증이다</div>
+        <div class="teach-body">나팔 재앙의 정점은 새로운 재앙이 아니라 "세상 나라가 우리 주의 나라가 되었다"는 통치권의 선포다. 요한계시록의 재앙 서사는 궁극적으로 하나님 나라의 도래를 향해 수렴한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">두 증인의 이야기는 예수님의 죽음과 부활 패턴을 그대로 반복해요 — 신실한 증언, 죽음, 조롱, 사흘(반)의 시간, 그리고 부활과 승천. 그리스도를 따르는 증인의 삶이 결국 그리스도 자신의 삶의 패턴을 되풀이한다는 걸 보여주는 셈이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>두 증인은 실제 두 인물인가, 교회 전체의 상징인가</div>
+        <div class="deep-body">모세와 엘리야(하늘에서 비를 그치게 함은 엘리야, 물을 피로 바꿈은 모세와 연결) 두 특정 인물의 재림으로 보는 견해가 전통적으로 있어 왔다. 그러나 "두 촛대"(2:1, 5절과 연결되어 교회를 가리키는 계시록 고유 상징)로 지칭된다는 점과, &#39;둘&#39;이 성경적으로 <b class="hl-term">유효한 증언의 최소 단위</b>(신 19:15, "두세 증인의 입으로 확정하리라")를 나타낸다는 점에서, 다수 학자는 두 증인을 세상 속에서 예언자적 증언을 감당하는 <b class="hl-term">교회 전체를 상징하는 인물</b>로 읽는다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"큰 성"(8절)은 예루살렘인가 로마인가, 아니면 상징적 도시인가</div>
+        <div class="deep-body">본문은 이 성을 "영적으로 하면 소돔이라고도 하고 애굽이라고도 하니 곧 그들의 주께서 십자가에 못 박히신 곳"이라 명시한다(8절). 지리적으로는 예루살렘을 가리키지만, "영적으로"라는 표현과 소돔·애굽이라는 이중 별칭은 이 성이 <b class="hl-term">하나님을 대적하고 그분의 증인들을 박해하는 세상 체제 전체</b>를 대표하는 상징적 명칭으로 확장되어 쓰이고 있음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch12">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 28l4-16 6 10 6-14 6 14 6-10 4 16Z"/><path d="M8 28h32"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 12</div>
+      <h1>12장 · 해를 입은 여자와 용</h1>
+      <div class="chapter-sub">요한계시록 12장 — 메시아 탄생을 둘러싼 우주적 전쟁</div>
+      <div class="ref-strip"><span class="ref-item">계 12:1–17</span><span class="ref-item">창 3:15</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">해를 입은 여자와 붉은 용</div>
+          <div class="flow-body">하늘에 큰 이적이 나타난다 — 해를 옷 입고 발 아래 달을 두고 열두 별의 관을 쓴 여자가 해산의 고통 중에 있다. 또 다른 이적으로 <b class="hl-insight has-insight" data-insight="12">일곱 머리와 열 뿔을 가진 큰 붉은 용</b>이 하늘 별 삼분의 일을 꼬리로 끌어다가 땅에 던지고, 여자가 아들을 낳으면 삼키려고 그 앞에 지켜 선다. 여자는 장차 철장으로 만국을 다스릴 <b class="hl-term">아들</b>을 낳고, 아이는 하나님 보좌 앞으로 올려지며 여자는 광야로 도망하여 일천이백육십 일 동안 하나님이 예비하신 곳에서 양육받는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–12절</div>
+        <div>
+          <div class="flow-title">하늘에서의 전쟁과 용의 패배</div>
+          <div class="flow-body">미가엘과 그의 천사들이 용과 싸우고 용과 그 사자들도 싸우나 이기지 못하여 하늘에서 쫓겨난다. <b class="hl-term has-tip" data-tip="옛 뱀 곧 마귀라고도 하고 사탄이라고도 하는 자, 온 천하를 꾀는 자. 계시록 12:9에서 이렇게 정의된다.">옛 뱀 곧 마귀라고도 하고 사탄이라고도 하는 자</b>가 땅으로 내쫓기니, 하늘에서 큰 음성이 <b class="hl-quote">"우리 형제들을 참소하던 자가 쫓겨났고 우리 형제들이 어린양의 피와 자기가 증언하는 말씀으로써 그를 이겼으니"</b>라고 선포한다. 그러나 이 승리 선언과 함께 <b class="hl-quote">"땅과 바다는 화 있을진저 마귀가 자기의 때가 얼마 못 된 줄을 알므로 크게 분내어 너희에게 내려갔음이라"</b>는 경고가 뒤따른다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–17절</div>
+        <div>
+          <div class="flow-title">용의 추격과 여자의 남은 자손</div>
+          <div class="flow-body">땅으로 내쫓긴 용은 아들을 낳은 여자를 박해하지만, 여자는 큰 독수리의 두 날개를 받아 광야 자기 곳으로 날아가 뱀의 낯을 피해 한 때와 두 때와 반 때를 양육받는다. 용이 입에서 물을 강 같이 토하여 여자를 물에 떠내려가게 하려 하나 땅이 여자를 도와 그 물을 삼킨다. 용이 여자에게 분노하여 돌아서서 <b class="hl-term">그 여자의 남은 자손</b> 곧 하나님의 계명을 지키며 예수의 증거를 가진 자들과 싸우려고 바다 모래 위에 선다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 창세기 3:15의 예언이 우주적 전쟁으로 확장된다</div>
+        <div class="teach-body">여자의 후손이 뱀의 머리를 상하게 한다는 원시복음(창 3:15)이 12장에서 메시아의 탄생과 사탄의 패배라는 우주적 드라마로 완전히 펼쳐진다. 요한계시록은 결국 창세기의 첫 예언에 대한 최종 답변이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 사탄의 무기는 참소이지 물리력이 아니다</div>
+        <div class="teach-body">사탄은 "우리 형제들을 참소하던 자"로 정의된다(10절). 그의 핵심 전략은 폭력적 정복이라기보다 신자를 향한 정죄와 고발이며, 이는 오늘날에도 죄책감과 정죄의 형태로 신자를 공격하는 방식과 다르지 않다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 승리의 방식이 명시된다</div>
+        <div class="teach-body">"어린양의 피와 자기가 증언하는 말씀으로써 그를 이겼으니 그들은 죽기까지 자기 생명을 아끼지 아니하였도다"(11절) — 신자의 승리는 힘의 대결이 아니라 그리스도의 피를 신뢰하는 것과 신실한 증언, 그리고 죽음도 두려워하지 않는 헌신으로 이루어진다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 패배한 원수는 더 위험해질 수 있다</div>
+        <div class="teach-body">사탄은 하늘에서 쫓겨났기에 오히려 "자기의 때가 얼마 남지 않은 줄 알고 크게 분내어" 활동한다. 원수의 패배가 확정되었다는 사실이 남은 시간의 공격을 가볍게 만들지는 않는다는 현실적 경고다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 하나님의 백성은 결코 완전히 버려지지 않는다</div>
+        <div class="teach-body">여자가 광야에서 하나님이 예비하신 곳에서 양육받고, 땅조차 그녀를 도와 물을 삼키는 장면은, 원수의 공격 한가운데서도 하나님의 보호가 창조 세계 전체를 통해 작동함을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">12장은 사실 요한계시록 전체의 "플래시백"에 가까워요. 이 시점의 사건들(그리스도의 탄생, 승천, 사탄의 패배)은 미래가 아니라 이미 일어난 그리스도 사건 전체를 하늘의 관점에서 다시 들려주는 거예요. 그래서 13장으로 넘어가는 짐승들의 등장이 왜 "지금" 벌어지는지 이 배경 설명이 먼저 필요했던 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>여자는 누구를 가리킬까 — 마리아인가, 이스라엘인가, 교회인가</div>
+        <div class="deep-body">가톨릭 전통은 종종 이 여자를 마리아 개인으로 읽지만, 본문의 폭넓은 상징(해·달·열두 별)은 창세기 37:9-10의 요셉의 꿈(이스라엘 열두 지파를 상징하는 해·달·별)을 직접 인용한다. 따라서 다수 개신교 학자는 이 여자를 <b class="hl-term">메시아를 낳은 언약 공동체, 곧 이스라엘(그리고 확장되어 교회)</b>을 대표하는 상징적 인물로 읽는다. 마리아가 그 안에 포함될 수는 있지만, 본문의 초점은 개인이 아니라 하나님의 백성 전체의 구속사적 역할에 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>용과 미가엘의 하늘 전쟁(7-9절)은 언제 일어난 사건인가</div>
+        <div class="deep-body">이 사건의 시점을 두고 창조 이전(사탄의 원초적 타락)으로 보는 견해와, 그리스도의 성육신·죽음·부활·승천 사건과 결부된 <b class="hl-term">십자가 승리의 결과로서 일어난 사건</b>으로 보는 견해가 있다. 문맥상 이 전쟁이 &#34;아이가 하나님 보좌 앞으로 올려진&#34; 직후(5-7절)에 배치된다는 점에서, 후자 — 곧 그리스도의 승천과 함께 사탄이 하늘의 참소자 지위에서 결정적으로 축출되었다는 해석 — 이 본문의 흐름에 더 부합한다는 평가가 많다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>일곱 머리 열 뿔의 용, 13장의 짐승과 무슨 관계일까</div>
+        <div class="deep-body">12장의 용과 13장에 등장할 바다에서 나온 짐승은 똑같이 "일곱 머리와 열 뿔"을 지닌 모습으로 묘사된다(12:3, 13:1). 이는 우연한 반복이 아니라, <b class="hl-term">용(사탄)이 짐승(그의 대리자, 세상 권력)에게 자기 능력과 보좌와 권세를 준다</b>(13:2)는 것을 시각적으로 미리 보여주는 문학적 장치다. 13장의 짐승은 독자적 존재가 아니라 용의 대행자로 등장한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch13">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 37c0-12 6.5-21 11-21s11 9 11 21"/><path d="M18 18l-4-8M30 18l4-8"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 13</div>
+      <h1>13장 · 바다에서 나온 짐승과 땅에서 나온 짐승</h1>
+      <div class="chapter-sub">요한계시록 13장 — 정치 권력과 거짓 종교의 결탁, 육백육십육</div>
+      <div class="ref-strip"><span class="ref-item">계 13:1–18</span><span class="ref-item">단 7장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">바다에서 올라온 짐승</div>
+          <div class="flow-body">요한은 바다에서 열 뿔과 일곱 머리를 가진 짐승이 올라오는 것을 본다. 이 짐승은 표범과 곰과 사자의 특징을 겸비한 모습으로(단 7장의 네 짐승이 하나로 합쳐진 형상), 용은 자기 능력과 보좌와 큰 권세를 이 짐승에게 준다. 그 머리 하나가 <b class="hl-insight has-insight" data-insight="13">죽게 되었던 상처가 나은</b> 것을 보고 온 땅이 놀라 짐승을 따르며, <b class="hl-quote">"누가 이 짐승과 같으냐 누가 능히 이와 더불어 싸우리요"</b>라며 용과 짐승에게 경배한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–10절</div>
+        <div>
+          <div class="flow-title">짐승에게 주어진 권세와 성도의 인내</div>
+          <div class="flow-body">짐승은 과장되고 신성 모독을 말하는 입을 받아 <b class="hl-term">마흔두 달</b> 동안 일할 권세를 받고, 하나님과 그 이름과 장막 곧 하늘에 사는 자들을 비방하며 성도들과 싸워 이길 권세와 각 족속과 백성과 방언과 나라를 다스리는 권세를 받는다. 창세 이후로 생명책에 이름이 기록되지 못한 자들은 짐승에게 경배하지만, 이 대목에서 <b class="hl-quote">"사로잡힐 자는 사로잡혀 갈 것이요 칼로 죽일 자는 자기도 마땅히 칼에 죽으리니 성도들의 인내와 믿음이 여기 있느니라"</b>는 권면이 놓인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–18절</div>
+        <div>
+          <div class="flow-title">땅에서 올라온 짐승과 육백육십육</div>
+          <div class="flow-body">두 번째 짐승이 어린양 같이 두 뿔을 가졌으나 용처럼 말하며 땅에서 올라온다. 이 짐승은 첫째 짐승의 모든 권세를 그 앞에서 행하며 땅과 그 가운데 사는 자들로 하여금 첫째 짐승에게 경배하게 하고, 불을 하늘에서 땅에 내리는 큰 이적으로 사람들을 미혹하여 짐승의 우상을 만들게 한다. 나아가 모든 자에게 우상에게 경배하지 않으면 죽임을 당하게 하고, 짐승의 표를 받지 않으면 매매를 못 하게 한다. 이 짐승의 수는 <b class="hl-term has-tip" data-tip="계 13:18에서 &#x27;사람의 수&#x27;라 밝혀진 짐승의 숫자. 게마트리아(문자에 숫자 값을 부여하는 고대 관습)로 특정 이름의 값을 나타내는 상징적 숫자로 이해된다.">육백육십육(666)</b>, 곧 <b class="hl-quote">"사람의 수"</b>라고 밝혀진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 짐승은 독자적 권력이 아니라 용에게서 위임받은 대리자다</div>
+        <div class="teach-body">12장의 용이 짐승에게 능력과 보좌와 권세를 "준다"(2절)는 것은, 정치적 폭압과 우상숭배를 강요하는 세상 권력의 배후에 궁극적으로 영적 세력이 있음을 드러낸다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 거짓 종교는 종종 어린양의 모습을 하고 나타난다</div>
+        <div class="teach-body">땅에서 올라온 둘째 짐승은 "어린양 같이 두 뿔"을 가졌다(11절). 거짓은 노골적인 악의 모습이 아니라 참된 것을 모방하는 형태로 가장 위험하게 다가온다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 경제적 압박은 우상숭배 강요의 실제적 도구다</div>
+        <div class="teach-body">표가 없으면 매매를 못 하게 한다는 구절은, 신앙의 타협을 강요하는 압박이 종종 생계와 경제라는 매우 실제적인 영역을 통해 가해진다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 성도의 승리는 저항이 아니라 인내로 정의된다</div>
+        <div class="teach-body">"성도들의 인내와 믿음이 여기 있느니라"는 짧은 구절이 짐승의 권세에 대한 신자의 응답 전체를 요약한다. 무력 저항이 아니라 끝까지 신실함을 지키는 것이 이 시대를 통과하는 방식이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 표면적 능력이 참됨을 보증하지 않는다</div>
+        <div class="teach-body">둘째 짐승은 실제로 놀라운 이적(불을 하늘에서 내림)을 행한다. 초자연적 능력의 유무가 아니라 그것이 어린양을 향한 참된 예배로 이끄는지가 진위를 가르는 기준이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">13장의 짐승은 다니엘 7장의 네 짐승(사자, 곰, 표범, 무섭고 강한 넷째 짐승)을 하나로 합쳐놓은 모습이에요. 다니엘서에서 네 짐승은 차례로 등장하는 네 제국이었는데, 계시록은 이걸 합쳐서 "모든 시대에 반복되는 하나님을 대적하는 세상 권력의 총화"로 그려낸 셈이죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>666은 특정 인물을 가리키는 암호인가</div>
+        <div class="deep-body">고대 게마트리아(문자에 숫자 값을 부여하는 관습) 방식으로 히브리어 &#39;네론 케사르&#39;(네로 황제)의 자음 값을 합하면 정확히 666이 나온다는 것이 가장 널리 지지받는 해석이다. 이는 요한계시록의 원독자들에게 이 숫자가 <b class="hl-term">황제숭배를 강요하며 그리스도인을 박해한 로마 황제(특히 네로)</b>를 가리키는, 당대에는 오히려 선명했던 암호였을 가능성을 강하게 뒷받침한다. 동시에 &#39;사람의 수&#39;(18절)라는 표현과 7(완전수)에서 하나 모자란 6이 세 번 반복된다는 점에서, 특정 인물을 넘어 <b class="hl-term">신적 완전함을 흉내 내지만 결코 도달하지 못하는 인간적 권력 전체</b>를 상징한다는 해석도 함께 받아들여진다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>짐승의 표는 문자적 표식인가 상징인가</div>
+        <div class="deep-body">이마나 손에 받는 표(16절)를 문자적 물리적 표식(고대 노예나 군인의 낙인, 상거래 인장 관습을 배경)으로 보는 견해와, 신명기 6:8(하나님의 말씀을 손과 이마에 매라는 명령)을 의도적으로 <b class="hl-term">패러디한 상징적 표현</b> — 곧 짐승 체제에 대한 전적인 충성을 나타내는 은유 — 으로 보는 견해가 있다. 어느 쪽으로 읽든 본문의 핵심은 물리적 형태가 아니라 <b class="hl-term">궁극적 충성이 어디에 있는가</b>라는 질문에 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch14">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 34a16 16 0 1 1 22-22"/><path d="M12 34l-4 6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 14</div>
+      <h1>14장 · 시온산의 어린양과 추수</h1>
+      <div class="chapter-sub">요한계시록 14장 — 144,000의 새 노래, 세 천사의 선포, 알곡과 포도의 추수</div>
+      <div class="ref-strip"><span class="ref-item">계 14:1–20</span><span class="ref-item">욜 3:13</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–5절</div>
+        <div>
+          <div class="flow-title">시온산의 144,000</div>
+          <div class="flow-body">어린양이 시온산에 서 계시고 그와 함께 이마에 어린양과 아버지의 이름을 쓴 144,000이 서 있다. 이들은 많은 물소리와 큰 우렛소리 같은 하늘의 새 노래를 배우는데, 땅에서 속량함을 받은 이 144,000 외에는 능히 이 노래를 배울 자가 없다. 이들은 여자와 더불어 더럽히지 아니한 <b class="hl-insight has-insight" data-insight="14">순결한 자</b>들이며, 어린양이 어디로 인도하든지 따라가는 자요 처음 익은 열매로 하나님과 어린양께 속한 자들이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6–13절</div>
+        <div>
+          <div class="flow-title">세 천사의 선포와 복 있는 죽음</div>
+          <div class="flow-body">첫째 천사는 영원한 복음을 가지고 <b class="hl-quote">"하나님을 두려워하며 그에게 영광을 돌리라 심판의 시간이 이르렀음이니"</b> 외치고, 둘째 천사는 <b class="hl-term">"무너졌도다 무너졌도다 큰 성 바벨론이여"</b>라고 앞으로 있을 심판을 미리 선포하며, 셋째 천사는 짐승과 그 우상에게 경배하고 표를 받는 자들에게 임할 하나님의 진노의 잔을 경고한다. 이어 <b class="hl-quote">"주 안에서 죽는 자들은 복이 있도다"</b>는 음성이 들리니, 그들이 수고를 그치고 쉬며 행한 일이 따른다는 성령의 확증이 주어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">14–20절</div>
+        <div>
+          <div class="flow-title">추수와 포도주 틀</div>
+          <div class="flow-body">흰 구름 위에 인자와 같은 이가 금 면류관을 쓰고 예리한 낫을 들고 앉아 계시며, 성전에서 나온 천사가 <b class="hl-term">"땅의 곡식이 다 익었으니 낫을 휘둘러 거두소서"</b> 외쳐 땅의 곡식이 거두어진다. 이어 또 다른 천사가 예리한 낫으로 땅의 포도송이를 거두어 하나님의 진노의 큰 포도주 틀에 던지니, 성 밖에서 그 틀이 밟혀 피가 말굴레에까지 닿아 <b class="hl-term">천육백 스다디온</b>에 퍼진다. 곡식의 추수(구원)와 포도의 추수(심판)라는 대조적인 두 이미지로 이 장이 마무리된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 순결함은 소극적 금지가 아니라 적극적 따름이다</div>
+        <div class="teach-body">144,000의 정체성은 "어린양이 어디로 인도하든지 따라가는" 삶으로 정의된다(4절). 신앙의 본질은 하지 말아야 할 목록이 아니라 그리스도를 향한 능동적 따름에 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 심판의 경고조차 복음이라는 이름으로 선포된다</div>
+        <div class="teach-body">첫째 천사가 전하는 것은 "영원한 복음"이며, 그 내용에는 하나님을 경외하라는 초청과 심판의 경고가 함께 담긴다. 참된 복음 선포는 심판을 생략하지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 바벨론의 멸망은 아직 일어나지 않았어도 이미 확정되어 있다</div>
+        <div class="teach-body">둘째 천사의 선포는 완료형("무너졌도다")으로 표현된다. 하나님의 계획 안에서 확정된 미래는 이미 일어난 과거처럼 선포될 수 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 죽음도 복이 될 수 있다</div>
+        <div class="teach-body">"주 안에서 죽는 자들은 복이 있도다"는 선언은 순교와 고난의 한복판에 있던 원독자들에게 실제적 위로였다. 그리스도 안에서의 죽음은 끝이 아니라 안식으로 들어가는 문이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 같은 추수가 구원과 심판 두 얼굴을 갖는다</div>
+        <div class="teach-body">곡식의 추수와 포도의 추수는 같은 낫으로 이루어지지만 결과는 상반된다. 하나님의 최종 심판은 모든 인류에게 동일하게 임하지만, 그 결과는 각자의 삶이 어디에 심겼는가에 따라 갈린다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">14장은 사실 앞으로 전개될 대접 재앙(15-16장) 전체를 미리 요약해서 보여주는 예고편 같은 장이에요. 바벨론의 멸망(18장), 짐승 숭배자에 대한 심판(16장), 최후의 추수(19-20장)가 여기서 압축적으로 한 번 먼저 선포되고, 이후 장들에서 하나씩 풀려나가는 구조예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"여자와 더불어 더럽히지 아니하고"(4절)는 문자적 독신을 요구하는가</div>
+        <div class="deep-body">결혼과 성 자체를 부정적으로 보는 본문으로 오독되기 쉽지만, 이는 구약 예언서에서 <b class="hl-term">우상숭배를 &#34;영적 음행&#34;으로 비유하는 관용어</b>(호세아, 예레미야 등)의 연장으로 읽는 것이 문헌적으로 정확하다. 짐승 숭배와 타협하지 않은 신자들의 신앙적 정결함을 신부의 순결에 비유한 상징적 표현이지, 결혼과 독신에 대한 윤리적 교훈으로 의도된 본문이 아니다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>천육백 스다디온에 퍼지는 피, 문자적 수치일까</div>
+        <div class="deep-body">스다디온은 고대 거리 단위(약 185m)로, 1,600 스다디온은 약 296km에 해당한다. 이 숫자는 <b class="hl-term">40(시험과 심판의 완결을 나타내는 성경적 숫자)의 자승(40×40)</b>으로 이루어져 있어, 실측 거리라기보다 <b class="hl-term">최종 심판의 철저함과 완전함</b>을 극적으로 표현하는 상징적 수치로 이해하는 것이 일반적이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch15">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 16h22v13a11 11 0 0 1-22 0Z"/><path d="M13 16l-2-4M35 16l2-4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 15</div>
+      <h1>15장 · 일곱 재앙을 가진 일곱 천사</h1>
+      <div class="chapter-sub">요한계시록 15장 — 대접 재앙 직전의 하늘 예배</div>
+      <div class="ref-strip"><span class="ref-item">계 15:1–8</span><span class="ref-item">출 15장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">유리 바다 위의 승리자들</div>
+          <div class="flow-body">하늘에 크고 이상한 다른 이적, 곧 <b class="hl-term">마지막 재앙</b>을 가진 일곱 천사가 나타난다 — 이 재앙들을 마치면 하나님의 진노가 그친다. 짐승과 그 우상과 그 이름의 수를 이긴 자들이 <b class="hl-insight has-insight" data-insight="15">불이 섞인 유리 바다</b> 가에 서서 하나님의 거문고를 가지고 <b class="hl-quote">"모세의 노래, 어린양의 노래"</b>를 부른다 — <b class="hl-quote">"주 하나님 곧 전능하신 이시여 하시는 일이 크고 놀라우시도다 만국의 왕이시여 주의 길이 의롭고 참되시도다"</b>.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–8절</div>
+        <div>
+          <div class="flow-title">증거 장막의 성전이 열리다</div>
+          <div class="flow-body">하늘에 있는 증거 장막의 성전이 열리고, 그 안에서 일곱 재앙을 가진 일곱 천사가 맑고 빛난 세마포 옷을 입고 금 띠를 띠고 나온다. 네 생물 중 하나가 세세토록 살아 계신 하나님의 진노를 가득 담은 <b class="hl-term">금 대접 일곱</b>을 그 일곱 천사에게 준다. 하나님의 영광과 능력으로 인한 연기가 성전에 가득 차서, 일곱 재앙이 끝나기까지는 아무도 성전에 들어갈 수 없게 된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 승리자의 노래가 최후의 재앙보다 먼저 온다</div>
+        <div class="teach-body">가장 무거운 재앙(대접)이 시작되기 직전, 본문은 먼저 짐승을 이긴 자들의 승리의 노래를 들려준다. 심판의 서사 앞에 언제나 구원받은 자의 예배가 놓인다는 요한계시록의 반복되는 문학적 원칙이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 모세의 노래와 어린양의 노래는 하나다</div>
+        <div class="teach-body">출애굽의 구원(모세의 노래, 출 15장)과 그리스도를 통한 구원(어린양의 노래)이 같은 노래로 함께 불린다. 구약과 신약의 구원 역사가 결국 하나의 연속된 구속 이야기임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 하나님의 진노에는 끝이 있다</div>
+        <div class="teach-body">"이 재앙들을 마치면 하나님의 진노가 그친다"(1절)는 표현은, 심판이 영원히 지속되는 것이 아니라 하나님이 정하신 분명한 완결점을 향해 나아가고 있음을 확증한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 하나님의 영광 앞에서는 침묵이 있다</div>
+        <div class="teach-body">연기가 가득 차 아무도 성전에 들어갈 수 없다는 묘사(8절)는 출애굽기 40:34-35와 열왕기상 8:10-11의 성전 봉헌 장면을 연상시킨다. 하나님의 압도적 임재 앞에서는 인간의 접근조차 잠시 멈춘다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 만국이 결국 하나님께 나아올 것을 노래한다</div>
+        <div class="teach-body">승리자의 노래는 "주의 이름을 두려워하지 않을 자가 누구리이까 오직 주만 거룩하시니이다 만국이 와서 주께 경배하리이다"(4절)라고 선언하며, 심판의 목적이 궁극적으로 만국의 경배로 귀결됨을 노래한다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">15장은 짧지만 요한계시록 구조상 아주 중요한 장이에요. 마지막 재앙 시리즈(대접)가 시작되기 전 마지막으로 삽입되는 하늘 예배 장면이거든요. 앞으로 다가올 16장의 강렬한 재앙들을 견디며 읽으려면, 이 15장의 승리의 노래를 먼저 마음에 새겨두는 게 중요해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"불이 섞인 유리 바다"(2절)는 무엇을 상징할까</div>
+        <div class="deep-body">4장의 유리 바다(수정 같이 맑음)와 달리 여기서는 불이 섞여 있다. 이는 <b class="hl-term">하나님의 거룩한 심판</b>이 이 바다 이미지에 더해졌음을 시사한다. 유리 바다가 성전의 놋 바다(왕상 7:23, 정결 의식용)를 반영한다면, 여기 섞인 불은 그 정결이 심판을 통과한 정결, 곧 <b class="hl-term">환난을 이겨낸 자들의 승리</b>와 연결된 이미지로 읽힌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>왜 마지막 재앙(대접)만 유독 "하나님의 진노"로 명명될까</div>
+        <div class="deep-body">인 재앙과 나팔 재앙에도 심판적 성격이 있지만, 오직 대접 재앙만이 반복해서 명시적으로 "하나님의 진노"(1, 7절)라 불린다. 이는 대접 재앙이 앞선 두 시리즈보다 <b class="hl-term">한층 강화되고 집중된 최종적 심판</b>임을 나타내며, 인·나팔 재앙이 부분적(삼분의 일)이었던 것과 달리 대접 재앙에서는 그 제한이 사라지는 것과도 연결된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch16">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 16h26l-5 3-16 0Z"/><path d="M18 22l2 6M24 22l0 8M30 22l-2 6"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 16</div>
+      <h1>16장 · 일곱 대접의 재앙</h1>
+      <div class="chapter-sub">요한계시록 16장 — 하나님의 진노가 남김없이 쏟아지다</div>
+      <div class="ref-strip"><span class="ref-item">계 16:1–21</span><span class="ref-item">출 7-11장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–7절</div>
+        <div>
+          <div class="flow-title">첫째~셋째 대접</div>
+          <div class="flow-body">큰 음성이 일곱 천사에게 하나님의 진노의 대접을 땅에 쏟으라 명한다. 첫째 대접은 짐승의 표를 받은 자들에게 악하고 독한 종기를, 둘째는 바다를 죽은 자의 피같이, 셋째는 강과 물 근원을 피로 만든다. 물을 관리하는 천사가 <b class="hl-quote">"전에도 계셨고 지금도 계신 거룩하신 이여 이렇게 심판하시니 의로우시도다 그들이 성도들과 선지자들의 피를 흘렸으므로 그들에게 피를 마시게 하신 것이 합당하니이다"</b>라고 이 심판의 정당함을 노래한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">8–11절</div>
+        <div>
+          <div class="flow-title">넷째·다섯째 대접</div>
+          <div class="flow-body">넷째 대접은 해에 쏟아져 사람들을 불로 태우나, 사람들은 회개는커녕 오히려 <b class="hl-insight has-insight" data-insight="16">하나님의 이름을 훼방</b>한다. 다섯째 대접은 짐승의 왕좌에 쏟아져 그 나라가 곧 어두워지고 사람들은 아파서 혀를 깨물면서도 여전히 하늘의 하나님을 비방할 뿐, 그 행위를 회개하지 아니한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–16절</div>
+        <div>
+          <div class="flow-title">여섯째 대접 — 아마겟돈의 준비</div>
+          <div class="flow-body">여섯째 대접은 큰 강 유브라데에 쏟아져 물이 말라 동방의 왕들의 길이 예비되고, 용과 짐승과 거짓 선지자의 입에서 개구리 같은 세 더러운 영이 나와 이적을 행하며 온 천하 왕들을 미혹해 <b class="hl-term">전능하신 이의 큰 날</b>의 전쟁을 위해 모은다. 그 사이 <b class="hl-quote">"보라 내가 도둑 같이 오리니 누구든지 깨어 자기 옷을 지켜 벌거벗고 다니지 아니하며 자기의 부끄러움을 보이지 아니하는 자는 복이 있도다"</b>라는 경고가 삽입된다. 왕들은 히브리어로 <b class="hl-term">아마겟돈</b>이라는 곳에 모인다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">17–21절</div>
+        <div>
+          <div class="flow-title">일곱째 대접 — "되었다"</div>
+          <div class="flow-body">일곱째 천사가 대접을 공기 가운데 쏟으매 성전 보좌에서 <b class="hl-quote">"되었다"</b>는 큰 음성이 난다. 번개와 음성과 우렛소리와 함께 유례없는 큰 지진이 일어나 큰 성이 세 갈래로 갈라지고 만국의 성들도 무너지며, <b class="hl-term">큰 성 바벨론</b>이 하나님 앞에 기억되어 그 맹렬한 진노의 포도주 잔을 받는다. 각 섬도 없어지고 산악도 간 데 없으며, 한 달란트나 되는 큰 우박이 하늘로부터 사람들에게 내리나 사람들은 이 재앙으로 인하여 하나님을 비방할 뿐이었다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 하나님의 심판은 정확한 응보의 원리를 따른다</div>
+        <div class="teach-body">"그들이 성도들의 피를 흘렸으므로 피를 마시게 하신 것이 합당하다"(6절)는 선언은, 하나님의 심판이 자의적 폭력이 아니라 죄에 상응하는 정확한 정의임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 극심한 고통도 회개를 보장하지 않는다</div>
+        <div class="teach-body">종기, 불, 어둠, 고통 속에서도 사람들은 회개 대신 하나님을 비방한다(9, 11, 21절). 심판의 강도가 아니라 마음의 완악함이 회개 여부를 결정한다는 요한계시록의 반복되는 냉정한 통찰이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 재림의 경고가 재앙 한가운데 삽입된다</div>
+        <div class="teach-body">전쟁 준비가 한창인 여섯째 대접 중간에 갑자기 "내가 도둑 같이 오리니 깨어 있으라"는 경고가 끼어든다(15절). 종말의 혼란 속에서도 신자에게 요구되는 것은 두려움이 아니라 깨어 있음이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ "되었다"는 선언은 완결된 성취를 뜻한다</div>
+        <div class="teach-body">일곱째 대접의 "되었다"(헬라어 게고넨)는 21:6의 "이루었도다"와 짝을 이루며, 하나님의 심판 계획이 남김없이 완성되었음을 선언한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 큰 성 바벨론이 "기억되었다"</div>
+        <div class="teach-body">바벨론이 하나님 앞에 "기억되어" 심판받는다는 표현(19절)은, 세상 권력이 아무리 오래 번성해도 하나님의 기억과 심판을 결코 벗어날 수 없음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">16장의 일곱 대접은 8-9장의 일곱 나팔과 거의 같은 순서(땅·바다·물·해·어둠·강·최종 지진)로 진행돼요. 다만 나팔은 "삼분의 일"이라는 제한이 있었는데, 대접에는 그 제한이 사라져요. 같은 재앙이 훨씬 강화되고 집중된 최종판으로 다시 오는 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>아마겟돈은 실제 지리적 장소인가</div>
+        <div class="deep-body">헬라어 하르마게돈은 히브리어 &#39;하르 므깃도&#39;(므깃도 산)에서 온 것으로 널리 이해된다. 므깃도는 구약 역사에서 드보라와 바락의 승리(삿 5장), 요시야 왕의 전사(왕하 23:29) 등 <b class="hl-term">이스라엘 역사상 중요한 전투와 비극이 반복된 전략적 요충지</b>였다. 다만 므깃도 인근에는 큰 산이 없어 &#34;산&#34;이라는 표현이 문자적으로 딱 들어맞지 않는다는 점에서, 다수 학자는 이를 실제 좌표라기보다 <b class="hl-term">하나님을 대적하는 모든 세력이 최종적으로 패배할 상징적 결전장</b>을 가리키는 지명으로 이해한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>일곱 나팔과 일곱 대접의 관계 — 왜 이렇게 비슷할까</div>
+        <div class="deep-body">두 시리즈 모두 땅·바다·물·천체·어둠(왕좌)·유브라데·최종 지진이라는 거의 동일한 순서를 따른다. 이 평행 구조는 두 시리즈가 서로 다른 별개의 사건이 아니라, <b class="hl-term">같은 하나님의 심판을 강도를 더해 두 번 그려낸 문학적 장치</b>라는 견해를 강하게 뒷받침한다. 나팔이 경고적·부분적(삼분의 일) 심판이라면, 대접은 그 경고에 반응하지 않은 세상에 임하는 <b class="hl-term">최종적·전면적 심판</b>으로 이해하는 것이 본문의 흐름에 자연스럽다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch17">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 10h16l-2.5 16a5.5 5.5 0 0 1-11 0Z"/><path d="M24 26v12M17 40h14"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 17</div>
+      <h1>17장 · 큰 음녀 바벨론의 정체</h1>
+      <div class="chapter-sub">요한계시록 17장 — 짐승을 탄 음녀와 그 심판의 예고</div>
+      <div class="ref-strip"><span class="ref-item">계 17:1–18</span><span class="ref-item">렘 51장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–6절</div>
+        <div>
+          <div class="flow-title">짐승을 탄 큰 음녀</div>
+          <div class="flow-body">일곱 대접 천사 중 하나가 요한을 이끌어 <b class="hl-term">많은 물 위에 앉은 큰 음녀</b>가 받을 심판을 보여준다. 땅의 임금들이 그와 더불어 음행하였고 땅에 사는 자들도 그 음행의 포도주에 취하였다. 성령으로 광야에 이끌린 요한은 붉은 빛 짐승을 탄 여자를 보는데, 자주빛과 붉은빛 옷을 입고 금과 보석과 진주로 꾸미고 손에 가증한 것과 음행의 더러운 것들이 가득한 <b class="hl-insight has-insight" data-insight="17">금 잔</b>을 들었으며 이마에는 <b class="hl-quote">"비밀이라, 큰 바벨론이라, 땅의 음녀들과 가증한 것들의 어미라"</b>는 이름이 쓰여 있다. 요한은 이 여자가 성도들의 피와 예수의 증인들의 피에 취한 것을 보고 크게 놀란다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–14절</div>
+        <div>
+          <div class="flow-title">짐승의 정체와 일곱 왕</div>
+          <div class="flow-body">천사는 짐승이 전에 있었다가 지금은 없으나 장차 무저갱으로부터 올라와 멸망으로 들어갈 자라고 설명한다. 일곱 머리는 여자가 앉은 <b class="hl-term">일곱 산</b>이요 또한 <b class="hl-term">일곱 왕</b>이니, 다섯은 망하였고 하나는 있고 다른 하나는 아직 이르지 아니하였다. 열 뿔은 아직 나라를 얻지 못한 열 왕으로 짐승과 함께 <b class="hl-term">한동안</b> 왕처럼 권세를 받아 어린양과 싸우려 하나, <b class="hl-quote">"어린양은 만주의 주시요 만왕의 왕이시므로 그들을 이기실 터이요 또 그와 함께 있는 자들 곧 부르심을 받고 택하심을 받은 진실한 자들도 이기리로다"</b>는 승리가 미리 선언된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15–18절</div>
+        <div>
+          <div class="flow-title">짐승이 음녀를 미워하다</div>
+          <div class="flow-body">음녀가 앉은 많은 물은 백성과 무리와 열국과 방언들이며, 놀랍게도 짐승과 열 뿔은 오히려 음녀를 미워하여 망하게 하고 벌거벗게 하며 그 살을 먹고 불로 살라 버린다. 이는 하나님이 자기 뜻대로 할 마음을 그들에게 주사 한 뜻을 이루게 하시고 그 나라를 짐승에게 주게 하신 것이니, 하나님의 말씀이 응하기까지다. 그 여자는 곧 땅의 왕들을 다스리는 <b class="hl-term">큰 성</b>이라는 정체가 마지막으로 밝혀진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 화려함이 곧 참됨을 뜻하지 않는다</div>
+        <div class="teach-body">음녀는 자주빛과 금과 보석으로 화려하게 치장했지만 그 잔 안에는 가증한 것이 가득했다(4절). 겉으로 드러나는 매력과 번영이 그 실체의 정당함을 보증하지 않는다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 세상 권력과 상업 체제는 서로 결탁하되 결코 신실하지 않다</div>
+        <div class="teach-body">음녀는 짐승 위에 올라타 있지만, 결국 그 짐승에게 미움받고 파멸당한다(16절). 악한 세력들 사이의 동맹은 궁극적 신의가 아니라 이용과 배신으로 끝난다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 하나님은 원수들의 계획조차 자신의 뜻을 이루는 도구로 사용하신다</div>
+        <div class="teach-body">짐승과 열 왕이 음녀를 미워해 파괴하는 것조차 "하나님이 자기 뜻대로 할 마음을 그들에게 주셨다"(17절)는 설명이 붙는다. 인간과 악한 세력의 자유로운 선택조차 하나님의 궁극적 주권 아래 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 어린양의 승리는 이미 확정된 결론으로 선포된다</div>
+        <div class="teach-body">전쟁이 벌어지기도 전에 "어린양이 그들을 이기실 터이요"라는 미래형 확언이 주어진다. 요한계시록의 전쟁 서사들은 결과가 불확실한 서스펜스가 아니라, 이미 정해진 승리를 향해 가는 확증된 과정이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 부르심과 택하심과 진실함이 승리자의 조건이다</div>
+        <div class="teach-body">어린양과 함께 이기는 자들은 "부르심을 받고 택하심을 받은 진실한 자들"(14절)로 묘사된다. 승리는 인간의 능력이 아니라 그리스도께 속한 정체성과 끝까지 지킨 진실함에서 비롯된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">음녀와 신부(어린양의 아내, 19장·21장)가 요한계시록 전체에서 의도적으로 대조되고 있다는 걸 알면 훨씬 입체적으로 읽혀요. 한쪽은 화려하게 꾸민 창녀이고 다른 쪽은 순결하게 단장한 신부죠. 결국 이 책은 독자에게 "너는 어느 쪽에 속할 것인가"를 묻고 있는 셈이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>큰 음녀 바벨론은 로마인가, 다른 무엇인가</div>
+        <div class="deep-body">"일곱 산"(9절) 위에 앉았다는 묘사는 고대에 &#34;일곱 언덕의 도시&#34;로 널리 알려졌던 <b class="hl-term">로마</b>를 강하게 암시한다. 다수 학자는 &#39;바벨론&#39;이 실제 고대 바벨론이 아니라, 요한 당시 그리스도인들을 박해하고 우상숭배적 상업·정치 체제로 온 세상을 미혹하던 <b class="hl-term">로마 제국의 암호명</b>으로 사용되었다고 본다(베드로전서 5:13도 로마를 "바벨론"으로 지칭하는 초대교회의 관습을 보여준다). 동시에 이 이름이 로마에 국한되지 않고, 시대마다 반복해서 나타나는 <b class="hl-term">하나님을 대적하는 세계 체제 전체</b>를 상징하는 확장된 의미로 읽히기도 한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"다섯은 망하였고 하나는 있고"(10절)의 일곱 왕은 누구를 가리킬까</div>
+        <div class="deep-body">이 구절을 로마 황제들의 실제 순서와 맞추려는 시도가 다양하게 있어 왔으나(아우구스투스부터 세는 방식 등), 학자들 사이에 합의된 단일한 명단은 없다. 오히려 <b class="hl-term">일곱이라는 완전수 자체가 &#34;완결된 일련의 통치 권력 전체&#34;를 상징</b>하며, 그 중 특정 시점(요한이 글을 쓰던 &#34;하나는 있고&#34;의 시점)에 서서 지나간 권력들과 다가올 마지막 권력을 조망하는 문학적 장치로 이해하는 것이 더 안전한 해석으로 여겨진다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch18">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 40V13h18v27"/><path d="M15 40h18"/><path d="M20 20l4 4-4 4"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 18</div>
+      <h1>18장 · 바벨론의 멸망</h1>
+      <div class="chapter-sub">요한계시록 18장 — 큰 성이 무너지고, 애곡과 상인들의 통곡</div>
+      <div class="ref-strip"><span class="ref-item">계 18:1–24</span><span class="ref-item">겔 27장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–8절</div>
+        <div>
+          <div class="flow-title">바벨론 멸망의 선포</div>
+          <div class="flow-body">큰 권세를 가진 천사가 하늘에서 내려와 <b class="hl-quote">"무너졌도다 무너졌도다 큰 성 바벨론이여"</b> 외친다. 바벨론은 귀신의 처소요 각종 더러운 영의 소굴이 되었고, 만국이 그 음행의 진노의 포도주를 마셨으며 땅의 왕들과 상인들이 그 사치의 세력으로 치부하였다. 이어 하늘로부터 <b class="hl-quote">"내 백성아 거기서 나와 그의 죄에 참여하지 말고 그가 받을 재앙들을 받지 말라"</b>는 부르심이 들리고, 그의 죄가 하늘에 사무쳤으니 하나님이 그 불의한 일을 기억하사 준 그대로 갑절로 갚아 주시겠다는 선언이 이어진다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9–19절</div>
+        <div>
+          <div class="flow-title">삼중 애곡 — 왕들, 상인들, 선원들</div>
+          <div class="flow-body">바벨론과 함께 사치하던 <b class="hl-term">땅의 왕들</b>이 그 불붙는 연기를 보고 울고 애통한다. 이어 <b class="hl-insight has-insight" data-insight="18">땅의 상인들</b>이 이제 그 상품(금·은·보석·비단·향품·짐승·노예와 사람의 영혼까지)을 사는 자가 없으므로 통곡하며, 마지막으로 <b class="hl-term">선장들과 선원들</b>이 "이 큰 성과 같은 성이 없다"며 티끌을 머리에 뿌리고 통곡한다. 세 부류 모두 자신의 손실을 슬퍼할 뿐, 바벨론이 지은 죄를 애통해하는 자는 아무도 없다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">20–24절</div>
+        <div>
+          <div class="flow-title">하늘의 기쁨과 맷돌 심판</div>
+          <div class="flow-body">땅의 애곡과 대조적으로 <b class="hl-quote">"하늘과 성도들과 사도들과 선지자들이여 그로 말미암아 즐거워하라 하나님이 너희를 위하여 그에게 심판을 행하셨음이라"</b>는 부름이 들린다. 한 힘센 천사가 큰 맷돌 같은 돌을 들어 바다에 던지며 <b class="hl-quote">"큰 성 바벨론이 이같이 비참하게 던져져 결코 다시 보이지 아니하리로다"</b> 선언하고, 거문고 타는 자와 나팔 부는 자의 소리, 등불 빛과 신랑 신부의 음성까지 다시는 그 성에서 들리지 않을 것이라는 완전한 침묵과 소멸이 선포된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 하나님의 백성은 타락한 체제에서 "나와야" 한다</div>
+        <div class="teach-body">"내 백성아 거기서 나오라"(4절)는 부르심은 물리적 이주가 아니라, 세상의 우상숭배적 가치 체계에 동참하지 않는 영적 결별을 요구한다. 세상 안에 있되 세상에 속하지 않는 긴장이 여기 압축되어 있다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 슬픔의 대상이 무엇인지가 그 사람의 우선순위를 드러낸다</div>
+        <div class="teach-body">왕들, 상인들, 선원들 모두 바벨론의 죄가 아니라 자신의 경제적 손실을 슬퍼한다(11, 15, 19절). 무엇을 잃었을 때 진짜로 슬퍼하는가가 그 사람이 진정 무엇을 의지해 왔는지를 드러낸다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 상품 목록에 "사람의 영혼"까지 포함된다</div>
+        <div class="teach-body">바벨론이 거래하던 상품 목록의 마지막에 "종들과 사람의 영혼들"(13절)이 등장한다. 인간을 상품화하는 체제가 도달하는 궁극적 타락의 지점을 냉정하게 폭로한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 세상의 슬픔과 하늘의 기쁨이 정면으로 대조된다</div>
+        <div class="teach-body">같은 사건을 두고 땅은 애곡하고 하늘은 즐거워한다(20절). 이 대조는 무엇을 향해 서 있는가에 따라 같은 사건이 전혀 다르게 경험된다는 것을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 화려한 번영도 갑작스럽게 끝날 수 있다</div>
+        <div class="teach-body">"한 시간에 그 심판이 이르렀다"는 표현이 두 차례(10, 17, 19절 부근) 반복된다. 견고해 보이는 체제도 하나님의 심판 앞에서는 순식간에 무너질 수 있다는 경고다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">18장의 애곡 장면은 에스겔 27장에서 두로의 멸망을 슬퍼하는 상인들의 애가를 거의 그대로 본떠 쓴 거예요. 구조와 표현까지 매우 유사하죠. 요한은 새로운 문학 형식을 창작한 게 아니라, 구약 예언자들의 익숙한 심판 애가 양식을 가져다가 바벨론(로마)에 적용한 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>상인들의 애곡(11-13절)을 어떻게 읽어야 할까</div>
+        <div class="deep-body">이 목록은 단순한 사치품 나열이 아니라, 로마 제국의 실제 국제 무역로를 따라 정교하게 구성된 상품 목록으로 알려져 있다. 요한은 로마의 경제적 번영이 <b class="hl-term">착취와 우상숭배 위에 세워진 체제</b>임을 폭로하고 있다. 오늘날 이 본문은 단순히 고대 로마에 대한 심판으로 그치지 않고, 인간을 상품화하고 소비를 우상화하는 모든 시대의 경제 체제에 대한 경고로 확장해서 적용되곤 한다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>맷돌을 바다에 던지는 상징적 행동(21절)의 배경</div>
+        <div class="deep-body">이는 예레미야 51:63-64에서 예레미야가 바벨론 심판의 두루마리를 돌에 매어 유브라데 강에 던지며 "바벨론이 이같이 가라앉고 다시 일어나지 못하리니"라고 선언한 예언자적 상징 행동을 직접적으로 반영한다. 요한은 예레미야의 이 극적인 몸짓을 그대로 재현함으로써, 옛 바벨론에 대한 심판의 확실성을 새 바벨론(로마 및 그것이 상징하는 세상 체제)에 대해서도 <b class="hl-term">동일하게 확실하고 되돌릴 수 없다</b>는 것으로 확증한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch19">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l2 6 6-2-2 6 6 2-6 2 2 6-6-2-2 6-2-6-6 2 2-6-6-2 6-2-2-6 6 2Z"/><path d="M24 32v9"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 19</div>
+      <h1>19장 · 어린양의 혼인잔치와 백마 탄 자</h1>
+      <div class="chapter-sub">요한계시록 19장 — 하늘의 할렐루야와 만왕의 왕의 출현</div>
+      <div class="ref-strip"><span class="ref-item">계 19:1–21</span><span class="ref-item">시 45편</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–10절</div>
+        <div>
+          <div class="flow-title">할렐루야와 어린양의 혼인잔치</div>
+          <div class="flow-body">하늘에 허다한 무리의 큰 음성이 <b class="hl-quote">"할렐루야 구원과 영광과 능력이 우리 하나님께 있도다"</b> 외치며 음녀를 심판하신 하나님을 찬양한다. 이십사 장로와 네 생물이 엎드려 화답하고, 보좌에서 <b class="hl-quote">"하나님의 종들 곧 그를 경외하는 너희들아 무론대소하고 다 우리 하나님께 찬송하라"</b>는 음성이 이어진다. 마침내 <b class="hl-insight has-insight" data-insight="19">어린양의 혼인 기약</b>이 이르러 그 아내가 자신을 준비하였으니, 그에게 빛나고 깨끗한 세마포 옷 입도록 허락하셨는데 이 세마포는 성도들의 옳은 행실이다. 요한이 이를 전한 천사에게 경배하려 하자 천사는 <b class="hl-quote">"나는 너와 함께 예수의 증언을 받은 네 형제들과 같이 된 종이니 오직 하나님께 경배하라"</b>며 만류한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–16절</div>
+        <div>
+          <div class="flow-title">백마 탄 자, 만왕의 왕</div>
+          <div class="flow-body">하늘이 열리고 백마와 그 위에 탄 자가 나타나니 그 이름은 <b class="hl-term">충신과 진실</b>이라, 공의로 심판하며 싸우신다. 그의 눈은 불꽃 같고 머리에 많은 관을 썼으며 그 옷은 피 뿌린 것이요 그 이름은 <b class="hl-quote">하나님의 말씀</b>이라 일컬어진다. 하늘의 군대들이 희고 깨끗한 세마포를 입고 그를 따르며, 그 입에서는 만국을 치는 예리한 검이 나오고 친히 그들을 철장으로 다스리며 하나님의 진노의 포도주 틀을 밟으신다. 그 옷과 다리에 <b class="hl-quote">"만왕의 왕이요 만주의 주"</b>라는 이름이 쓰여 있다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">17–21절</div>
+        <div>
+          <div class="flow-title">큰 잔치의 예고와 짐승의 최후</div>
+          <div class="flow-body">한 천사가 해에 서서 공중에 나는 모든 새에게 <b class="hl-term">하나님의 큰 잔치</b>에 모여 왕들과 장군들과 말들과 그 위에 탄 자들과 모든 자유인과 종들, 작은 자든지 큰 자든지 그 살을 먹으라 외친다. 짐승과 땅의 왕들과 그 군대들이 백마 탄 자와 그의 군대를 대적해 전쟁을 일으키려 하나, 짐승과 거짓 선지자가 잡혀 산 채로 유황불 붙는 못에 던져지고 그 나머지는 백마 탄 자의 입에서 나오는 검에 죽으니 모든 새가 그 살로 배부르게 된다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 음녀의 심판과 신부의 준비가 나란히 놓인다</div>
+        <div class="teach-body">18장의 바벨론(음녀)의 멸망과 19장의 어린양의 아내(신부)의 준비가 곧바로 이어진다. 거짓 체제의 심판과 참된 공동체의 완성이 요한계시록에서 늘 짝을 이뤄 등장한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 신부의 옷은 성도의 옳은 행실로 설명된다</div>
+        <div class="teach-body">"세마포는 성도들의 옳은 행실이로다"(8절)라는 설명은, 구원이 전적으로 은혜이면서도(7:14, 어린양의 피로 씻음) 동시에 신자의 삶 속 실제적 순종과 무관하지 않다는 균형을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 예배의 대상은 오직 하나님뿐이다</div>
+        <div class="teach-body">요한이 천사에게 경배하려 하자 즉각적으로 제지당한다(10절). 아무리 위대한 천사적 존재라도 결코 예배의 대상이 될 수 없다는 것을 이 짧은 장면이 분명히 한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 그리스도의 이름은 여러 겹으로 계시된다</div>
+        <div class="teach-body">"충신과 진실", "하나님의 말씀", "만왕의 왕이요 만주의 주" — 이 장 안에서만 그리스도의 정체성이 세 겹으로 선포된다. 어느 한 칭호도 그분의 전체를 다 담아내지 못한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 최종 전쟁은 사실상 전쟁이라 부르기 어려울 만큼 일방적이다</div>
+        <div class="teach-body">짐승의 군대가 실제로 "전쟁을 일으키려" 시도하지만(19절), 실제 전투 장면 묘사 없이 곧바로 심판이 집행된다. 그리스도를 대적하는 세력의 최후는 대등한 싸움이 아니라 이미 결정된 심판의 집행일 뿐이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">19장의 백마 탄 자를 보고 "그리스도가 폭력적으로 변했다"고 오해하기 쉬운데, 자세히 보면 그분의 입에서 나오는 건 칼이 아니라 "말씀"이라는 검이에요(15절, 히브리서 4:12과 연결). 이건 물리적 전쟁이라기보다, 진리의 말씀 앞에서 거짓과 악이 무너지는 모습을 극적인 전쟁 이미지로 그려낸 거라고 보는 게 더 정확해요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>백마 탄 자는 왜 "피 뿌린 옷"을 입고 등장할까(13절)</div>
+        <div class="deep-body">이 피가 원수의 피(전쟁의 결과)인지, 그리스도 자신의 피(십자가의 희생)인지를 두고 논쟁이 있다. 전투 장면 이전에 이미 옷이 피에 젖어 있다는 점, 그리고 이사야 63:1-3(에돔을 심판하시는 이의 옷이 포도즙으로 붉게 물듦)과의 연결을 고려하면 전자(심판의 피)로 보는 견해가 전통적이다. 그러나 5장의 &#34;죽임을 당한 어린양&#34; 이미지와의 연속성을 중시하는 학자들은, 이 피가 <b class="hl-term">그리스도 자신의 십자가 희생</b>을 상기시키는 것이며, 그분의 승리가 여전히 십자가에 근거하고 있음을 보여준다고 해석한다. 본문이 명시적으로 결론짓지 않는 만큼 두 해석 모두 여지를 지닌다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"하나님의 큰 잔치"(17절)와 어린양의 혼인잔치(9절), 왜 나란히 등장할까</div>
+        <div class="deep-body">한 장 안에 &#39;혼인잔치로의 초대&#39;(참된 신부를 향한 복된 초청)와 &#39;새들의 잔치로의 초대&#39;(짐승을 따르던 자들을 향한 심판의 잔치)라는 두 개의 대조적인 잔치가 배치된다. 이는 에스겔 39:17-20의 곡 심판 예언을 반영하는 동시에, <b class="hl-term">모든 사람이 결국 둘 중 하나의 잔치에 참여하게 된다</b>는 요한계시록 전체의 이분법적 결론을 극적으로 제시하는 문학적 대구다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch20">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="13" y="10" width="22" height="27" rx="2"/><path d="M24 10v27M13 17h11M13 23h11M13 29h11"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 20</div>
+      <h1>20장 · 천년왕국과 백보좌 심판</h1>
+      <div class="chapter-sub">요한계시록 20장 — 용의 결박, 첫째 부활, 최후의 심판</div>
+      <div class="ref-strip"><span class="ref-item">계 20:1–15</span><span class="ref-item">단 12:2</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–3절</div>
+        <div>
+          <div class="flow-title">용이 무저갱에 결박되다</div>
+          <div class="flow-body">한 천사가 무저갱의 열쇠와 큰 쇠사슬을 가지고 내려와 <b class="hl-term">옛 뱀 곧 마귀요 사탄</b>을 잡아 <b class="hl-insight has-insight" data-insight="20">천 년</b> 동안 결박하여 무저갱에 던져 넣고 그 위에 인봉하니, 이는 그가 천 년이 차도록 다시는 만국을 미혹하지 못하게 하려는 것이다. 그 후에는 반드시 잠깐 놓이게 되리라는 유보가 함께 붙는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">4–6절</div>
+        <div>
+          <div class="flow-title">천 년 동안 왕 노릇 하는 자들</div>
+          <div class="flow-body">요한은 보좌들과 그 위에 앉은 심판하는 권세를 받은 자들을 보며, 예수의 증거와 하나님의 말씀 때문에 목 베임을 당한 자들의 영혼, 짐승과 그 우상에게 경배하지 않고 표를 받지 않은 자들이 살아서 그리스도와 더불어 <b class="hl-term">천 년 동안 왕 노릇</b> 하는 것을 본다. 이것이 <b class="hl-term">첫째 부활</b>이며, 이 부활에 참여하는 자는 복이 있고 거룩하니 둘째 사망이 그들을 다스리는 권세가 없고 도리어 그들이 하나님과 그리스도의 제사장이 되어 왕 노릇 하리라.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">7–10절</div>
+        <div>
+          <div class="flow-title">사탄의 마지막 미혹과 최종 패배</div>
+          <div class="flow-body">천 년이 차매 사탄이 그 옥에서 놓여 나와 땅의 사방 백성 곧 <b class="hl-term has-tip" data-tip="에스겔 38-39장에 등장하는 하나님을 대적하는 종말론적 열방 연합군의 상징적 이름. 계시록에서는 사탄의 최후 미혹에 동원되는 모든 대적 세력을 총칭한다.">곡과 마곡</b>을 미혹하여 전쟁을 위해 모으니 그 수가 바다의 모래 같다. 그들이 지면에 널리 퍼져 성도들의 진과 사랑하시는 성을 두르나, 하늘에서 불이 내려와 그들을 태워 버리고 그들을 미혹하던 마귀는 불과 유황 못에 던져져 짐승과 거짓 선지자가 있는 곳에서 세세토록 밤낮 괴로움을 받는다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–15절</div>
+        <div>
+          <div class="flow-title">크고 흰 보좌의 심판</div>
+          <div class="flow-body">요한은 크고 흰 보좌와 그 위에 앉으신 이를 보니 땅과 하늘이 그 앞에서 피하여 간 데 없다. 죽은 자들이 무론대소하고 보좌 앞에 서고 <b class="hl-term">책들</b>이 펴지며 또 다른 <b class="hl-term">생명책</b>이 펴져, 죽은 자들이 자기 행위를 따라 책들에 기록된 대로 심판을 받는다. 바다와 사망과 음부도 그 가운데 죽은 자들을 내주어 각각 자기의 행위대로 심판을 받으며, 사망과 음부도 불못에 던져지니 이것이 <b class="hl-term">둘째 사망</b>이라. 누구든지 생명책에 기록되지 못한 자는 불못에 던져진다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 결박에도 정해진 시간과 목적이 있다</div>
+        <div class="teach-body">사탄의 결박은 영원한 소멸이 아니라 "천 년이 차도록"이라는 한정된 기간이다. 하나님의 심판 계획은 즉흥적 폭력이 아니라 정확한 시간표를 따라 단계적으로 진행된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 신실한 죽음이 통치의 자리로 이어진다</div>
+        <div class="teach-body">목 베임을 당한 자들, 짐승에게 경배하지 않은 자들이 바로 그리스도와 함께 왕 노릇 하는 자들로 그려진다(4절). 세상이 패배로 여겼던 순교가 하나님 나라에서는 통치의 영예로 뒤바뀐다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 오래 억눌렸던 원수도 결국 완전히 종식된다</div>
+        <div class="teach-body">사탄은 마지막으로 한 번 더 놓여나 미혹하지만 이번에는 전쟁조차 벌어지지 못하고 하늘의 불로 즉시 진압된다(9절). 악의 마지막 저항은 요란하지만 무력하다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 심판은 "행위대로" 이루어진다</div>
+        <div class="teach-body">11-15절에서 "행위대로"라는 표현이 반복된다. 최후 심판은 임의적이지 않고 각 사람의 실제 삶에 대한 정확하고 공정한 평가에 근거한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 두 종류의 책이 함께 펼쳐진다</div>
+        <div class="teach-body">행위가 기록된 "책들"과 이름이 기록된 "생명책"이 함께 등장한다(12절). 심판은 행위에 대한 정확한 평가(책들)와 함께, 궁극적으로는 그리스도께 속했는가(생명책)라는 은혜의 질문으로 완성된다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">20장은 요한계시록에서 신학적으로 가장 논쟁이 많은 장이에요. "천 년"을 어떻게 이해하느냐에 따라 무천년설·전천년설·후천년설이라는 서로 다른 큰 신학적 전통이 갈리거든요. 어느 견해를 택하든, 이 장의 핵심 메시지 — 악의 최종 패배와 하나님의 공정한 심판 — 는 변하지 않는다는 걸 붙들고 읽으면 좋아요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>천 년 왕국을 어떻게 이해해야 할까 — 세 가지 큰 흐름</div>
+        <div class="deep-body">①<b class="hl-term">전천년설</b>은 그리스도의 재림 이후 문자적 천 년의 지상 통치가 있고 그 후 최종 심판이 온다고 본다. ②<b class="hl-term">무천년설</b>은 천 년을 문자적 기간이 아니라 그리스도의 초림부터 재림까지 교회 시대 전체를 상징하는 수로 보며, 4절의 왕 노릇을 죽은 성도들이 하늘에서 그리스도와 함께 누리는 현재적 통치로 이해한다. ③<b class="hl-term">후천년설</b>은 복음의 점진적 확산을 통해 세상이 실질적으로 그리스도의 통치 아래 놓이는 황금기가 재림 전에 온다고 본다. 세 견해 모두 진지한 성경 신학자들이 지지해 온 전통이며, 이 책 전체의 다른 어떤 주제보다도 신실한 그리스도인들 사이에 폭넓은 견해차가 존재하는 영역임을 겸손히 인정할 필요가 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"첫째 부활"(5-6절)은 영적 부활인가 육체적 부활인가</div>
+        <div class="deep-body">무천년설은 이를 죽은 성도의 영혼이 하늘에서 그리스도와 함께 다스리는 <b class="hl-term">중간 상태의 영적 실재</b>로 읽는다. 전천년설은 이를 문자적·육체적 부활로 보아, 신자들이 실제로 부활한 몸으로 그리스도와 함께 지상에서 다스린다고 이해한다. 두 해석 모두 "산 자"(4절, 조에산타스)라는 표현의 해석에 근거를 두며, 이는 4절만으로는 확정적으로 결론 내리기 어려운 본문임을 보여준다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">3</span>곡과 마곡이 에스겔 38-39장과 여기서 왜 다르게 등장할까</div>
+        <div class="deep-body">에스겔서에서 곡과 마곡의 전쟁은 이스라엘 회복 이후 벌어지는 단일한 사건으로 그려지지만, 계시록 20장에서는 이것이 천 년이 지난 후 벌어지는 <b class="hl-term">역사의 최종 국면</b>으로 재배치된다. 이는 요한계시록이 구약의 예언 이미지를 문자 그대로 재현하기보다, 그 이미지를 빌려와 <b class="hl-term">모든 시대에 반복되는 하나님을 대적하는 세력의 최종적이고 완전한 패배</b>라는 새로운 신학적 의미로 재구성해 사용하는 대표적 사례로 이해된다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch21">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 39V20l16-12 16 12v19"/><path d="M16 39V26h16v13"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 21</div>
+      <h1>21장 · 새 하늘과 새 땅</h1>
+      <div class="chapter-sub">요한계시록 21장 — 새 예루살렘이 하늘에서 내려오다</div>
+      <div class="ref-strip"><span class="ref-item">계 21:1–27</span><span class="ref-item">사 65:17</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–8절</div>
+        <div>
+          <div class="flow-title">새 하늘과 새 땅, 만물을 새롭게 하시는 이</div>
+          <div class="flow-body">처음 하늘과 처음 땅이 없어지고 바다도 다시 있지 않은 <b class="hl-term">새 하늘과 새 땅</b>이 나타난다. 거룩한 성 새 예루살렘이 신부가 남편을 위하여 단장한 것 같이 하늘에서 하나님께로부터 내려온다. 보좌에서 큰 음성이 <b class="hl-quote">"보라 하나님의 장막이 사람들과 함께 있으매 하나님이 그들과 함께 계시리니 그들은 하나님의 백성이 되고 하나님은 친히 그들과 함께 계셔서 모든 눈물을 그 눈에서 닦아 주시니 다시는 사망이 없고 애통하는 것이나 곡하는 것이나 아픈 것이 다시 있지 아니하리니 처음 것들이 다 지나갔음이러라"</b>라고 선포한다. 보좌에 앉으신 이는 <b class="hl-insight has-insight" data-insight="21">"보라 내가 만물을 새롭게 하노라"</b> 말씀하시며 자신이 알파와 오메가, 처음과 마지막이심을 다시 확증하시고, 이기는 자에게는 이 모든 것을 상속하게 하지만 두려워하는 자들과 믿지 아니하는 자들 등은 불과 유황으로 타는 못에 던져질 것이라 경고하신다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">9–14절</div>
+        <div>
+          <div class="flow-title">신부, 새 예루살렘의 외관</div>
+          <div class="flow-body">일곱 대접 천사 중 하나가 요한을 이끌어 <b class="hl-term">어린양의 아내 되리라</b>고 예비된 신부, 곧 하나님의 영광을 지니고 벽옥과 수정 같이 맑은 광채를 내는 거룩한 성 예루살렘을 보여준다. 성은 크고 높은 성곽과 열두 문을 가졌는데 그 위에 이스라엘 열두 지파의 이름이, 성곽의 열두 기초석 위에는 어린양의 열두 사도의 이름이 쓰여 있어 구약과 신약, 이스라엘과 교회가 하나의 건축물로 통합된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">15–21절</div>
+        <div>
+          <div class="flow-title">측량된 성의 완전한 형태</div>
+          <div class="flow-body">천사가 금 갈대 자로 성과 그 문들과 성곽을 측량하니 그 성은 네모가 반듯하여 길이와 너비와 높이가 <b class="hl-term">각각 만 이천 스다디온</b>으로 같으며, 성곽은 백사십사 규빗이다. 성곽은 벽옥이요 성은 정금이며 맑은 유리 같고, 성곽의 열두 기초석은 각종 보석으로 꾸며져 있고 열두 문은 각각 한 개의 진주로 되어 있으며 성의 길은 맑은 유리 같은 정금이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">22–27절</div>
+        <div>
+          <div class="flow-title">성전 없는 성과 만국의 영광</div>
+          <div class="flow-body">요한은 그 성 안에서 성전을 보지 못하는데, 이는 주 하나님 곧 전능하신 이와 어린양이 그 성전이시기 때문이다. 성은 해나 달의 비침이 쓸데없으니 하나님의 영광이 비치고 어린양이 그 등불이 되심이라. 만국이 그 빛 가운데로 다니고 땅의 왕들이 자기 영광을 가지고 그리로 들어오며, 성문들은 <b class="hl-quote">"낮에 도무지 닫지 아니하리니 거기에는 밤이 없음이라"</b>는 항구적 개방성을 지닌다. 그러나 무엇이든지 속된 것이나 가증한 일 또는 거짓말하는 자는 결코 그리로 들어오지 못하고 오직 어린양의 생명책에 기록된 자들만 들어온다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 종말의 소망은 탈출이 아니라 회복이다</div>
+        <div class="teach-body">이 장은 인간이 하늘로 들려 올라가는 게 아니라, 새 예루살렘이 땅으로 "내려오는" 그림을 그린다(2절). 성경적 종말론의 방향은 땅을 벗어나는 것이 아니라 하나님이 새롭게 하신 땅으로 임재하시는 것이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② "하나님이 그들과 함께 계신다"는 것이 궁극적 복이다</div>
+        <div class="teach-body">모든 눈물이 씻기고 사망과 애통이 사라진다는 약속의 근거는 다른 무엇도 아닌 "하나님이 친히 그들과 함께 계셔서"(3절)라는 임재 자체다. 최종적 회복의 본질은 물질적 풍요가 아니라 관계의 회복이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 구약과 신약이 하나의 성전에 새겨진다</div>
+        <div class="teach-body">열두 문에 이스라엘 지파의 이름, 열두 기초석에 사도들의 이름이 함께 새겨진다(12-14절). 새 예루살렘은 신구약을 아우르는 구속사 전체의 완성된 건축물이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 완전한 정육면체 형태가 지성소를 연상시킨다</div>
+        <div class="teach-body">길이·너비·높이가 같은 정육면체 구조(16절)는 솔로몬 성전 지성소의 형태(왕상 6:20)와 일치한다. 온 성이 곧 하나님이 임재하시는 지성소가 된다는 것을 건축적으로 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 하나님의 영광이 온 세상의 빛이 된다</div>
+        <div class="teach-body">해와 달이 필요 없다는 선언(23절)은 창조의 원래 빛(창 1:3)이 궁극적으로 하나님 자신의 영광으로 대체되는 것을 보여주며, 이는 창세기의 창조가 계시록의 새 창조로 완결되는 성경 전체의 큰 원을 닫는다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">흔히 "천국에 간다"고 말할 때 우리가 무의식적으로 그리는 그림은 영혼이 하늘 어딘가로 붕 떠올라 가는 모습이죠. 그런데 성경이 실제로 그리는 마지막 그림은 정반대예요 — 하늘의 성이 땅으로 내려오는 거예요. 성경적 소망은 땅을 버리고 떠나는 게 아니라, 하나님이 이 땅에 완전히 임재하시고 만물을 새롭게 하시는 거예요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>만 이천 스다디온의 정육면체 도시, 문자적 크기일까</div>
+        <div class="deep-body">만 이천 스다디온은 약 2,220km에 달하는 어마어마한 크기로, 실제 도시 규모로 보기에는 지나치게 방대하다. 12(완전수)×1000(큰 배수)이라는 구조 자체가 <b class="hl-term">헤아릴 수 없이 완전하고 충분한 공간</b>을 나타내는 상징적 수치임을 시사한다. 문자적 건축 도면이 아니라, 하나님의 백성 전체를 위한 공간이 결코 부족하지 않다는 것을 극적으로 표현하는 상징 언어로 읽는 것이 일반적이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"성전을 보지 못하였으니"(22절), 그렇다면 예배는 사라지는가</div>
+        <div class="deep-body">오히려 정반대다. 성전이 사라지는 것은 예배의 종식이 아니라 완성이다. 구약의 성전은 하나님의 임재를 매개하는 <b class="hl-term">한정된 장소이자 상징</b>이었는데, 새 예루살렘에서는 하나님과 어린양이 직접, 매개 없이 온 성의 중심이 되신다. 성전이라는 상징이 필요했던 이유(하나님과 인간 사이의 거리와 죄로 인한 분리) 자체가 사라졌기에, 상징은 실체 앞에서 자연스럽게 물러나는 것이다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<section class="chapter" id="ch22">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 41V23"/><ellipse cx="24" cy="17" rx="9" ry="7"/><path d="M8 41h32"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">REVELATION 22</div>
+      <h1>22장 · 생명수 강과 마지막 초청</h1>
+      <div class="chapter-sub">요한계시록 22장 — 생명나무, 재림의 확증, 그리고 마지막 초청</div>
+      <div class="ref-strip"><span class="ref-item">계 22:1–21</span><span class="ref-item">겔 47장 · 창 2-3장</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장의 흐름을 단락별로 정리한다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–5절</div>
+        <div>
+          <div class="flow-title">생명수의 강과 생명나무</div>
+          <div class="flow-body">천사는 요한에게 수정 같이 맑은 <b class="hl-term">생명수의 강</b>을 보여주는데, 이는 하나님과 어린양의 보좌로부터 나와 성 중앙 길 가운데로 흐른다. 강 좌우에는 <b class="hl-insight has-insight" data-insight="22">생명나무</b>가 있어 열두 가지 실과를 맺되 달마다 그 실과를 맺고 그 잎사귀들은 만국을 치료하기 위한 것이다. 다시는 저주가 없으며 하나님과 어린양의 보좌가 그 안에 있으니 종들이 그를 섬기며 그의 얼굴을 볼 것이요, <b class="hl-quote">"그들이 세세토록 왕 노릇 하리로다"</b>라는 선언으로 창세기 3장에서 닫혔던 생명나무로의 길이 마침내 온전히 다시 열린다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6–11절</div>
+        <div>
+          <div class="flow-title">이 말씀은 신실하고 참되다</div>
+          <div class="flow-body">천사는 이 말씀이 신실하고 참되며, 주 하나님이 그 종들에게 반드시 속히 일어날 일을 보이시려고 자기 천사를 보내셨다고 확증한다. 그리스도께서 친히 <b class="hl-quote">"보라 내가 속히 오리니 이 두루마리의 예언의 말씀을 지키는 자는 복이 있으리라"</b> 선포하시며, 요한이 다시 천사에게 경배하려 하다가 재차 제지당한다. 봉인하지 말고 오히려 이 두루마리의 예언의 말씀을 개방하라는 명령이 다니엘서와 대조적으로 주어지니, 때가 가까웠기 때문이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">12–17절</div>
+        <div>
+          <div class="flow-title">내가 속히 오리니 — 상 주심과 신부의 초청</div>
+          <div class="flow-body">그리스도는 <b class="hl-quote">"보라 내가 속히 오리니 내가 줄 상이 내게 있어 각 사람에게 그가 행한 대로 갚아 주리라"</b> 다시 한 번 확언하시며 자신이 알파와 오메가, 처음과 마지막이심을 선포하신다. 두루마기를 빠는 자들의 복이 선언되고, 개들과 복술가들과 음행하는 자들과 살인자들과 우상 숭배자들은 성 밖에 남는다. 성령과 신부가 함께 <b class="hl-quote">"오라"</b> 말하고, 듣는 자도 오라 할 것이요, 목마른 자도 올 것이요 원하는 자는 값없이 생명수를 받으라는 마지막 초청이 온 세상을 향해 열린다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">18–21절</div>
+        <div>
+          <div class="flow-title">책의 봉인과 마지막 축도</div>
+          <div class="flow-body">요한은 이 예언의 말씀에 더하거나 제하는 자에게 임할 엄중한 경고를 전한 후, 그리스도의 마지막 확증 <b class="hl-quote">"내가 진실로 속히 오리라"</b>에 <b class="hl-term has-tip" data-tip="아람어로 &#x27;오시옵소서&#x27;라는 뜻. 초대교회가 재림을 사모하며 예배 중에 외쳤던 기도의 외침으로, 고린도전서 16:22에도 등장한다.">아멘 주 예수여 오시옵소서</b>라는 자신의 응답으로 화답한다. 신약 전체 중에서도 가장 오래되고 절박한 이 기도로 마무리되며, 마지막 절은 <b class="hl-quote">"주 예수의 은혜가 모든 자들에게 있을지어다"</b>라는 축도로 요한계시록 전체를 닫는다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 창세기의 상실이 계시록에서 완전히 회복된다</div>
+        <div class="teach-body">창세기 3장에서 인류가 생명나무 길에서 쫓겨나며 첫 이야기가 끝났다면, 요한계시록 22장은 그 생명나무 길이 다시 활짝 열리는 것으로 성경 전체를 닫는다. 성경은 처음과 끝이 정확히 대응하는 하나의 완결된 이야기다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 잎사귀는 치료를 위한 것이지 정죄를 위한 것이 아니다</div>
+        <div class="teach-body">생명나무의 잎사귀가 "만국을 치료하기 위한 것"(2절)이라는 표현은, 새 창조의 목적이 심판받은 자들을 향한 계속된 벌이 아니라 만물의 근원적 회복과 치유임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 이 책은 봉하지 말고 열어 두라는 명령을 받는다</div>
+        <div class="teach-body">다니엘서가 "마지막 때까지 봉함하라"(단 12:4) 명령받은 것과 정반대로, 요한계시록은 "봉인하지 말라"(10절) 명령받는다. 종말이 가까웠다는 것 자체가 이 계시를 감출 것이 아니라 널리 알려야 할 이유가 된다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 초청은 마지막까지 열려 있다</div>
+        <div class="teach-body">성령과 신부, 그리고 듣는 모든 자가 함께 "오라"고 외치며 목마른 자와 원하는 자 모두에게 값없이 생명수가 주어진다(17절). 심판의 경고로 가득했던 이 책의 마지막 목소리는 결국 활짝 열린 초청이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 이 책 전체가 하나의 기도로 응답된다</div>
+        <div class="teach-body">요한은 그리스도의 재림 약속에 대해 신학적 논평이 아니라 "아멘 주 예수여 오시옵소서"라는 기도로 응답한다. 요한계시록을 읽는 참된 반응은 궁극적으로 이해가 아니라 이 갈망의 기도에 함께 참여하는 것이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">요한계시록의 진짜 마지막 말은 무서운 심판의 장면이 아니라 "아멘 주 예수여 오시옵소서"라는 기도예요. 이 책 전체를 관통하는 짐승과 재앙, 심판의 이미지들에 압도되기 쉽지만, 정작 이 모든 계시를 받은 요한 자신의 최종 반응은 두려움이 아니라 갈망이었다는 게 참 인상적이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>생명수와 생명나무는 오직 미래의 소망일 뿐인가</div>
+        <div class="deep-body">에스겔 47:1-12의 성전에서 흘러나오는 강 환상을 배경으로 하는 이 이미지는 분명 종말론적 완성을 가리키지만, 요한복음 4:14(그리스도께서 주시는 물은 영생하도록 솟아나는 샘물이 됨)과 7:38(성령을 생수의 강에 비유)에서 이미 예수님이 이 생명수의 실재를 현재적으로 약속하셨다는 점도 함께 고려할 필요가 있다. 즉 22장의 완전한 강은 미래의 완성이지만, 그리스도인은 <b class="hl-term">지금 이미 그 생명수의 첫 맛을 누리는 자</b>로 이해된다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"내가 속히 오리라"는 약속, 2천 년이 지나도록 왜 아직인가</div>
+        <div class="deep-body">이 질문은 베드로후서 3:8-9에서 이미 정면으로 다루어진다 — "주께는 하루가 천 년 같고 천 년이 하루 같다", 그리고 주께서 "아무도 멸망하지 아니하고 다 회개하기에 이르기를 원하시므로 오래 참으신다." "속히"(헬라어 타퀴)라는 표현은 시간의 길이를 재는 인간의 시계가 아니라, <b class="hl-term">일단 시작되면 지체 없이 신속하게 완결될 하나님의 방식</b>을 가리키는 것으로 이해하는 것이 성경 전체의 다른 본문들과 조화를 이룬다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<div class="bottom-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">📑 목차 가기</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">⌃ 처음으로</a>
+  <a role="button" tabindex="0" class="primary" id="backHomeBtn" onclick="if(typeof goBackHome==='function'){goBackHome();}else if(typeof backToHome==='function'){backToHome();}else{window.location.href='/';}">🏠 자료실로 가기</a>
+</div>
+
+<div class="church-footer">기독교한국침례회 은혜교회</div>
+
+
+<script>
+var INSIGHTS_DATA = [{"title": "일곱 촛대 사이의 '인자'는 왜 이렇게 무섭게 묘사될까", "body": "12-16절의 묘사는 사실 한 사람의 실제 외모를 그린 초상화가 아니에요. 흰 머리(단 7:9, 옛적부터 항상 계신 이), 불꽃 같은 눈과 빛나는 발(단 10:6), 많은 물소리 같은 음성(겔 1:24) — 전부 다니엘과 에스겔의 신적 환상 이미지에서 온 조각들이에요.\n\n중요한 건, 다니엘 7장에서 '옛적부터 항상 계신 이'(하나님)에게 붙던 흰 머리 이미지가 여기서는 '인자 같은 이'(그리스도)에게 그대로 적용된다는 점이에요. 이건 우연이 아니라, 그리스도가 하나님과 동등한 신적 영광을 지니셨다는 은근하지만 분명한 선언이에요.\n\n결국 이 무서운 묘사는 공포를 주려는 게 아니라, 로마 황제의 위엄과는 비교도 안 되는 참 주권자의 영광을 소아시아 교회들에게 확증해 주려는 거예요."}, {"title": "'사망과 음부의 열쇠'를 가지셨다는 게 무슨 뜻일까", "body": "고대 세계에서 '열쇠를 가진 자'는 출입을 결정하는 권한자를 뜻했어요. 사망과 음부(하데스, 죽은 자들의 영역)의 열쇠를 가지셨다는 건, 그리스도가 죽음이 사람을 가두는 마지막 감옥이 아니라 그분이 여닫으실 수 있는 문으로 만드셨다는 뜻이에요.\n\n이 선언 바로 앞에 '내가 전에 죽었었노라 볼지어다 이제 세세토록 살아 있어'라는 말씀이 붙어 있어요. 즉 이 권세는 십자가와 부활을 통해 획득된 권세예요. 죽음을 몸소 통과하신 분만이 죽음의 열쇠를 가지실 수 있는 거죠.\n\n박해와 순교의 위협 앞에 있던 원독자들에게, 이 선언은 추상적 신학이 아니라 '죽음이 너희의 끝이 아니다'라는 실제적 위로였을 거예요."}, {"title": "서머나의 '자칭 유대인이라 하는 자들'은 진짜 유대인 아닐까", "body": "이 표현이 유대인 전체를 비방하는 말로 오해되기 쉬운데, 문맥을 보면 그런 뜻이 아니에요. 서머나 교회는 실제로 지역 유대인 회당으로부터 로마 당국에 밀고당하는 등 실질적 박해를 받고 있었어요.\n\n'자칭 유대인'이라는 표현은 민족적 정체성이 아니라, 하나님의 참 백성이라는 자부심을 가지고 있으면서도 정작 메시아이신 예수를 배척하고 그분의 몸 된 교회를 핍박하는 태도를 겨냥해요. 로마서 2:28-29에서 바울이 '표면적 유대인이 유대인이 아니요'라고 한 논리와 같은 맥락이에요.\n\n즉 이건 유대 민족에 대한 반감이 아니라, 혈통과 제도가 아니라 그리스도를 향한 신실함이야말로 참 하나님 백성의 표지라는 신학적 선언이에요."}, {"title": "빌라델비아의 '열린 문'은 구체적으로 무엇을 가리킬까", "body": "'열린 문'이라는 표현이 정확히 무엇을 뜻하는지는 논쟁이 있어요. 어떤 학자는 선교와 전도의 기회로, 어떤 학자는 하나님 나라로 들어가는 종말론적 입구로 봐요.\n\n하지만 바로 이어지는 문맥(9절, '사탄의 회당의 자들이 와서 네 발 앞에 절하게 하리라')을 보면, 이건 빌라델비아 교회가 유대 회당으로부터 배척받아 사실상 '닫힌 문' 취급을 받던 상황과 정반대되는 약속으로 읽는 게 자연스러워요. 사람들이 닫아버린 문을, 그리스도께서는 '능히 닫을 사람이 없다'고 다시 열어주신 거죠.\n\n작은 능력을 가진 이 교회에게 그리스도는 사람이 막을 수 없는 하나님의 인정을 약속하신 셈이에요. 오늘날에도 사람들에게 배척당하는 자리가 곧 하나님 앞에서 닫힌 문은 아니라는 위로로 읽을 수 있어요."}, {"title": "이십사라는 숫자, 왜 하필 24일까", "body": "성경에서 12는 하나님 백성 전체를 상징하는 숫자예요 — 구약의 12지파, 신약의 12사도. 24는 정확히 12의 두 배죠.\n\n그래서 다수 학자들은 이십사 장로가 구약 이스라엘(12지파)과 신약 교회(12사도) 두 시대의 하나님 백성을 하나로 합쳐 대표하는 상징적 숫자라고 봐요. 즉 구약과 신약을 아우르는 구속사 전체의 완성된 백성을 그려낸 숫자인 셈이에요.\n\n참고로 역대상 24장을 보면 다윗이 제사장 직무를 24반차로 나눈 전례도 있어서, 이 숫자가 완전한 예배 공동체를 가리키는 유대적 배경과도 자연스럽게 연결돼요."}, {"title": "어린양이 정말 '죽임을 당한 것 같다'면서 왜 '서 있다'고 할까", "body": "6절 헬라어를 자세히 보면 정말 흥미로운 긴장이 있어요. '죽임을 당한 것 같은'(에스파그메논)이라는 표현과 '서 있다'(헤스테코스)는 동사가 같은 문장에 나란히 나와요. 죽임당한 흔적(아마도 목에 벤 자국)을 지닌 채로, 그럼에도 살아서 서 있는 모습이에요.\n\n이건 문법적 모순이 아니라 정확히 그리스도의 부활을 그림으로 압축한 표현이에요. 십자가의 죽음이 지워지지 않은 채로, 동시에 부활의 생명으로 서 계신 분. 상처는 사라지지 않았지만 죽음은 이기셨다는 뜻이죠.\n\n요한복음 20장에서 부활하신 예수님이 도마에게 못자국 난 손을 보여주신 장면과도 정확히 겹쳐요. 영광은 상처를 지우는 게 아니라, 상처를 이기고 서는 것임을 보여주는 이미지예요."}, {"title": "청황색 말의 '사망'이 '땅의 짐승들'까지 동원한다는 게 이상하지 않을까", "body": "8절 헬라어를 보면 '검과 흉년과 사망과 땅의 짐승들로써' 죽인다고 되어 있어요. 짐승이 왜 여기 낀 걸까 싶은데, 사실 이건 레위기 26:22과 에스겔 14:21의 언약적 저주 목록을 그대로 가져온 거예요.\n\n에스겔 14:21은 '내가 나의 네 가지 중한 벌 곧 칼과 기근과 사나운 짐승과 전염병을 예루살렘에 함께 내려'라고 말하는데, 이건 원래 언약을 어긴 이스라엘에게 임할 심판 목록이었어요.\n\n요한계시록이 이 익숙한 심판 공식을 그대로 재사용한다는 건, 이 재앙들이 낯선 새 재앙이 아니라 구약에서부터 죄에 대한 하나님의 심판으로 이미 선포되어 온 것들이라는 걸 보여줘요. 세상은 이미 여러 차례 이런 경고를 받아온 셈이에요."}, {"title": "144,000 지파 목록에서 왜 '단' 지파가 빠졌을까", "body": "이건 성경 학자들 사이에서도 오래된 궁금증이에요. 창세기나 민수기의 표준 지파 목록에는 항상 단 지파가 포함되는데, 계시록 7장 목록에는 단이 빠지고 대신 요셉과 므낫세가 따로 언급돼요.\n\n가장 널리 받아들여지는 설명은, 단 지파가 구약에서 우상숭배와 깊이 연관된 지파였다는 전승 때문이라는 거예요. 사사기 18장에서 단 지파는 자체적으로 우상을 세우고, 열왕기상 12장에서는 여로보암이 금송아지를 세운 곳 중 하나가 단이었어요. 유대 전통 일부에서는 단 지파에서 적그리스도가 나올 것이라는 전설까지 있었죠.\n\n다만 이건 확정된 답이 아니라 유력한 추정이에요. 어느 쪽이든 분명한 건, 이 목록이 정확한 인구조사가 아니라 상징적으로 편집된 목록이라는 점 자체가 144,000을 문자적 숫자로 읽기보다 상징으로 읽어야 할 근거가 된다는 거예요."}, {"title": "반 시간의 침묵, 왜 하필 '반 시간'일까", "body": "요한계시록 전체에서 시간의 길이가 이렇게 구체적으로 명시되는 경우는 드물어요. '반 시간'이라는 표현이 왜 나왔는지 확실한 답은 없지만, 유력한 설명 하나는 유대교 성전 전통과 관련이 있어요.\n\n제사장이 성소에 들어가 분향할 때, 백성들은 밖에서 조용히 기도하며 기다렸다고 해요(누가복음 1:10, 사가랴가 분향할 때 백성이 밖에서 기도한 장면 참고). 이 침묵은 그 성전 예배의 긴장된 기다림의 순간을 하늘의 장면으로 옮겨온 것일 수 있어요.\n\n또 다른 설명은 문학적 효과예요 — 온갖 소리와 찬양으로 가득했던 4-7장 다음에 오는 이 완전한 침묵이, 이제 곧 터질 나팔 재앙의 무게를 극적으로 고조시키는 정지 화면 역할을 한다는 거죠. 두 설명 모두 본문에 근거가 있어 어느 쪽이 맞다고 단정하기는 어렵습니다."}, {"title": "'아볼루온(멸망자)'이라는 왕이 이끄는 황충인데 왜 사람을 안 죽일까", "body": "5절을 보면 황충은 사람을 다섯 달 동안 괴롭힐 권세는 받았지만 죽이는 것은 허락되지 않았어요. '멸망자'라는 이름의 왕이 이끄는 무리치고는 이상하게 제한적이죠.\n\n이건 우연이 아니라 이 재앙의 목적을 보여주는 핵심 단서예요. 6절을 보면 사람들이 '죽기를 구하여도 죽음이 그들을 피한다'고 해요. 즉 이 재앙의 목표는 즉각적인 파멸이 아니라, 극심한 고통을 통해 사람들이 자기 삶의 방향을 돌아보고 회개하도록 만드는 데 있는 거예요.\n\n하지만 20-21절에서 보듯 이 목적은 결국 좌절돼요. 사람들은 고통을 받고도 회개하지 않죠. 이건 재앙 자체보다 훨씬 더 무거운 진단이에요 — 인간의 완악함은 웬만한 고통으로는 깨지지 않을 만큼 깊다는 거예요."}, {"title": "일곱 우레의 내용은 왜 영영 비밀로 남을까", "body": "성경 독자로서는 궁금할 수밖에 없는 대목이에요. 요한이 분명히 그 소리를 들었고 기록하려 했는데, 하늘의 음성이 정확히 그 순간에 '기록하지 말라'고 막아요.\n\n다니엘 12:4, 9을 보면 비슷한 장면이 있어요. 다니엘도 '마지막 때까지 이 말을 간수하고 봉함하라'는 명령을 받죠. 즉 이건 요한계시록만의 독특한 장치가 아니라, 묵시문학 전통에서 종종 등장하는 '감추어진 계시'라는 관습이에요.\n\n신학적으로 이건 중요한 겸손을 가르쳐줘요 — 하나님은 우리가 알아야 할 모든 것을 다 알려주지 않으신다는 거예요. 신명기 29:29의 '오묘한 일은 하나님께 속하였다'는 원리가 계시록에도 그대로 적용되는 거죠. 우리는 계시된 것으로 충분히 순종할 수 있고, 감추어진 것까지 다 알아야 믿을 수 있는 건 아니에요."}, {"title": "'사흘 반'이라는 시간, 왜 이렇게 짧고 구체적일까", "body": "두 증인의 시체가 방치되는 시간이 정확히 사흘 반이라는 건 우연이 아니에요. 예수님이 무덤에 계셨던 시간과 의도적으로 병행되도록 짜인 숫자라고 보는 게 자연스러워요.\n\n동시에 사흘 반은 두 증인이 예언했던 1,260일(3년 반)의 축소판이기도 해요. 큰 숫자(3년 반의 고난)와 작은 숫자(사흘 반의 죽음)가 같은 비율로 짝을 이루는 거죠. 마치 '고난의 시간이 아무리 길어 보여도, 결국 짧게 끝나는 죽음의 시간처럼 지나갈 것이다'라는 메시지를 숫자 자체로 전하는 것 같아요.\n\n그리고 결정적으로, 예수님의 부활이 '사흘 만에'였다면 이들은 '사흘 반'이라는 점도 흥미로워요. 두 증인의 부활이 그리스도의 부활을 그대로 복제하는 게 아니라, 그것을 따르는 자들의 부활이라는 걸 미묘하게 구별해서 보여주는 것일 수 있어요."}, {"title": "사탄이 이미 '쫓겨났다'면서 왜 지금도 세상에서 활동하는 것처럼 보일까", "body": "이 질문은 신학적으로 아주 중요해요. 12:9-10에서 사탄은 이미 하늘에서 완전히 쫓겨났다고 선언되는데, 12:12은 동시에 '땅과 바다는 화 있을진저'라고 경고해요. 승리 선언과 위험 경고가 한 문단 안에 함께 있는 거죠.\n\n이건 모순이 아니라 신약 전체가 공유하는 '이미와 아직'의 구조예요. 사탄의 결정적 패배는 그리스도의 십자가와 부활, 승천을 통해 법적으로 이미 확정되었어요(요한복음 12:31, '이 세상 임금이 쫓겨나리라'). 하지만 그 판결의 최종 집행(완전한 활동 정지)은 그리스도의 재림 때까지 아직 남아 있는 거예요.\n\n비유하자면, 전쟁의 승패를 결정짓는 결정적 전투는 이미 끝났지만, 패잔병들의 국지적 저항은 종전 선언 이후에도 한동안 계속되는 것과 비슷해요. 그래서 사탄은 '이미 패배가 확정된' 동시에 '아직 얼마간의 시간 동안 분노하며 활동하는' 이중적 상태에 있는 거예요."}, {"title": "'죽게 되었던 상처가 나은' 짐승, 이게 왜 그렇게 사람들을 놀라게 했을까", "body": "3절의 이 표현은 사실 5장의 '죽임을 당하신 어린양'을 의도적으로 비틀어 놓은 것처럼 보여요. 그리스도는 실제로 죽으셨다가 부활하셔서 참된 생명의 능력을 보여주셨는데, 짐승은 그 부활을 흉내 낸 가짜 회복을 보여주는 거죠.\n\n실제 역사적 배경으로는 '네로 재래(Nero Redivivus)' 전설이 유력하게 거론돼요. 네로 황제가 자살한 후, 그가 실은 죽지 않았고 언젠가 돌아올 것이라는 민간 전설이 로마 제국 전역에 실제로 퍼져 있었어요. 요한 당대 독자들에게는 이 표현이 매우 구체적이고 시사적으로 들렸을 거예요.\n\n결국 이 장면의 핵심은, 짐승이 어린양의 부활을 겉모습만 흉내 내어 사람들을 미혹한다는 데 있어요. 진짜와 가짜를 구별하는 눈이 왜 중요한지를 이 한 구절이 강하게 경고하는 셈이에요."}, {"title": "피가 '말굴레에까지 닿는다'는 표현, 지나치게 잔혹하지 않을까", "body": "이 이미지가 충격적으로 느껴지는 게 당연해요. 하지만 여기서 중요한 건 이 포도주 틀 심판 장면이 이사야 63:1-6의 '에돔을 심판하시는 하나님' 환상을 그대로 가져온 것이라는 점이에요. 이사야에서도 하나님은 원수의 피가 옷에 튄 것 같은 모습으로 등장하시죠.\n\n구약의 포도주 틀 이미지는 원래 실제 포도를 밟아 즙을 짜내는 익숙한 농업 장면에서 온 은유예요. 포도가 밟혀 붉은 즙이 흘러나오는 모습을, 하나님의 심판이 얼마나 철저하고 압도적인지를 표현하는 시적 과장법으로 사용한 거예요.\n\n즉 이건 실제 유혈 사태를 예언하는 문자적 예측이라기보다, 하나님을 끝까지 대적하는 세력에 대한 심판이 얼마나 완전하고 되돌릴 수 없는지를 강렬한 시적 이미지로 전달하는 예언 문학의 관습적 표현으로 읽는 것이 본문의 취지에 더 가까워요."}, {"title": "'모세의 노래'인데 왜 가사 내용은 정작 출애굽기 15장과 다를까", "body": "이 노래의 이름을 듣고 출애굽기 15장의 홍해 찬양을 기대하며 읽으면 조금 의아할 수 있어요. 실제 가사(3-4절)는 출애굽 사건을 직접 언급하지 않고, 오히려 시편과 예레미야, 이사야의 여러 구절을 엮어 만든 새로운 찬양이거든요.\n\n하지만 이건 실수가 아니라 의도적인 신학적 선언이에요. '모세의 노래'이면서 동시에 '어린양의 노래'라고 부름으로써, 요한은 홍해에서 애굽 군대로부터 건짐받은 구원과 그리스도의 피로 짐승의 세력에서 건짐받은 구원이 <b>본질적으로 같은 한 가지 구원 이야기</b>임을 보여주는 거예요.\n\n즉 출애굽은 예표였고, 그리스도의 구속이 그 예표의 완성이라는 거죠. 그래서 노래의 제목은 두 개지만 실제로는 하나의 노래, 하나의 구원을 찬양하고 있는 셈이에요."}, {"title": "사람들이 '하나님의 이름을 훼방'하는데도 왜 굳이 그 반응을 이렇게 반복해서 기록할까", "body": "9절, 11절, 21절에서 거의 똑같은 표현이 세 번이나 반복돼요 — 재앙을 받고도 회개하지 않고 오히려 하나님을 비방한다는 거예요. 이게 왜 이렇게 집요하게 반복될까요?\n\n이건 단순히 사람들의 완악함을 강조하려는 게 아니라, 신학적으로 아주 중요한 지점을 짚는 거예요. 계시록 전체에서 심판의 목적은 언제나 회개를 향해 열려 있어요(9:20-21, 14:6-7의 '회개하라'는 초청 참고). 그런데 그 열린 초청 앞에서 인간이 반복해서 등을 돌린다는 걸 세 번이나 보여줌으로써, 최종 심판이 임할 때 그것이 하나님의 성급함이나 무자비함 때문이 아니라 인간의 끝까지 완악한 거절 때문이라는 걸 명확히 하는 거예요.\n\n즉 이 반복은 심판의 정당성을 확증하는 장치예요 — 하나님은 마지막 순간까지 회개의 문을 열어 두셨지만, 사람들이 스스로 그 문을 계속 닫았다는 것을요."}, {"title": "짐승이 자기가 태우고 다니던 음녀를 왜 스스로 파괴할까", "body": "16절의 이 장면은 처음 읽으면 좀 뜬금없게 느껴질 수 있어요. 짐승이 음녀를 등에 태우고 함께 세상을 미혹하다가, 갑자기 그 음녀를 미워하고 벌거벗기고 불살라 버린다니, 협력자끼리 왜 이러나 싶죠.\n\n하지만 이건 사실 정치 권력과 상업·경제 체제 사이의 오래된 긴장 관계를 정확히 짚어낸 통찰이에요. 요한 당시로 보면, 로마의 정치 권력(짐승)과 화려한 상업·무역 체제(음녀, 18장에서 더 자세히 다뤄짐)는 서로를 필요로 하면서도 결국 서로를 이용하는 관계였어요. 정치 권력은 언제든 필요하면 자신을 지탱해주던 경제 체제조차 가차없이 무너뜨릴 수 있다는 거죠.\n\n신학적으로 더 깊이 보면, 이건 악한 세력들 사이에는 진정한 신의가 없다는 걸 보여줘요. 하나님을 대적하는 동맹은 결국 자기 파괴적이에요. 그리고 17절이 밝히듯, 이 자기 파괴조차 하나님의 주권적 계획 안에서 일어나는 일이에요 — 악은 결국 스스로를 무너뜨리는 방식으로 심판받는다는 거죠."}, {"title": "바벨론의 죄 때문에 슬퍼하는 사람이 정말 단 한 명도 없을까", "body": "18장을 끝까지 읽어보면 정말 그래요. 왕들도, 상인들도, 선원들도 전부 자신의 손해만 슬퍼하고, 바벨론이 실제로 저지른 죄(성도들의 피를 흘린 것, 5절과 24절)에 대해 애통해하는 사람은 단 한 명도 등장하지 않아요.\n\n이건 우연한 생략이 아니라 매우 날카로운 신학적 관찰이에요. 죄의 결과(경제적 붕괴)에 대한 슬픔과 죄 자체에 대한 진짜 회개는 전혀 다른 거라는 걸 보여주는 거죠. 사람들은 얼마든지 결과 앞에서 눈물을 흘릴 수 있지만, 그게 곧 죄에 대한 참된 통회는 아니라는 거예요.\n\n반면 24절은 정반대의 진실을 조용히 드러내요 — '선지자들과 성도들과 및 땅 위에서 죽임을 당한 모든 자의 피가 이 성 중에서 발견되었느니라.' 세상이 잃어버린 상품을 슬퍼하는 동안, 정작 그 성이 진짜로 지은 죄(무고한 피를 흘린 것)는 아무도 애도하지 않는다는 대조가 이 장 전체의 가장 무거운 진실이에요."}, {"title": "백마 탄 자의 이름이 '아무도 모르는 이름'(12절)이라면서 왜 바로 뒤에 이름이 나열될까", "body": "12절은 '자기밖에 아는 자가 없는 이름을 가졌고'라고 하는데, 바로 다음 구절들에서 '하나님의 말씀'(13절), '만왕의 왕이요 만주의 주'(16절)라는 이름이 버젓이 나와요. 언뜻 모순처럼 보이죠.\n\n하지만 이건 계시록 특유의 문학적 기법이에요. '아무도 모르는 이름'이란, 그리스도의 존재와 본질 전체가 그 어떤 이름이나 칭호로도 완전히 담아낼 수 없다는 뜻에 가까워요. 우리에게 계시된 이름들(충신과 진실, 하나님의 말씀, 만왕의 왕)은 그분의 여러 측면을 보여주는 창문일 뿐, 그분의 존재 전체를 소진시키는 정의가 아니라는 거죠.\n\n이건 인간의 언어가 하나님을 온전히 담아낼 수 없다는 신학적 겸손을 보여줘요. 우리는 계시된 만큼 그분을 알고 예배할 수 있지만, 그분에게는 언제나 우리의 이해를 넘어서는 신비의 여백이 남아 있다는 거예요."}, {"title": "어느 천년설이 맞는지 결론을 안 내려주는 게 답답하지 않을까", "body": "이 질문에 명확한 정답을 원하는 마음은 충분히 이해가 돼요. 하지만 이건 이 자료가 회피하는 게 아니라, 실제로 교회사 전체에 걸쳐 신실하고 학식 있는 신학자들이 성경에 대한 깊은 존중 위에서 서로 다른 결론에 이른 영역이에요.\n\n초대교회 일부에는 전천년설적 흐름이 있었고, 어거스틴 이후로는 무천년설이 오랫동안 주류를 이뤘으며, 근대에는 후천년설과 세대주의적 전천년설도 큰 흐름을 이뤘어요. 각 입장 모두 나름의 성경적 근거와 정합적인 해석 체계를 가지고 있어요.\n\n중요한 건, 이 논쟁이 복음의 핵심(그리스도의 죽음과 부활을 통한 구원)에 관한 문제가 아니라 종말론의 세부 시간표에 관한 이차적 논쟁이라는 점이에요. 어느 입장을 취하든 신실한 그리스도인일 수 있고, 이 장의 핵심 메시지 — 사탄은 결국 완전히 패배하며 하나님의 심판은 공정하다 — 는 모든 입장에서 동일하게 확언돼요. 세부 시간표에 대한 겸손한 불확실성이 오히려 건강한 신앙의 태도일 수 있어요."}, {"title": "'땅의 왕들이 자기 영광을 가지고 들어온다'(24절)는 표현, 짐승과 결탁했던 그 왕들 아닐까", "body": "이 구절이 혼란스럽게 느껴질 수 있어요. 17-19장에서 짐승과 함께 음녀를 따르며 어린양을 대적하다가 심판받은 게 바로 '땅의 왕들'이었는데, 21장에서는 그 '땅의 왕들'이 새 예루살렘으로 자기 영광을 가지고 들어온다니 모순처럼 보이죠.\n\n이걸 이해하는 몇 가지 방법이 있어요. 하나는 이 표현이 이사야 60:3(&#34;열방은 네 빛으로, 왕들은 비치는 네 광명으로 나아오리라&#34;)을 그대로 인용한 것으로, 특정 개인들의 구원 여부를 말하는 게 아니라 <b>만국이 결국 하나님을 경배하게 될 것</b>이라는 예언적 비전의 성취를 상징적으로 그린다는 거예요.\n\n또 다른 이해는, 이것이 세상 문명이 이루어낸 참되고 선한 것들(정의로운 통치, 아름다운 문화와 성취)이 정화되어 새 창조 속으로 편입된다는 뜻이라는 거예요. 즉 세상 자체가 완전히 폐기되는 게 아니라, 그 안의 참된 영광은 걸러져 하나님의 도성을 풍성하게 한다는 거죠. 어느 쪽으로 읽든, 이 구절은 하나님의 최종 계획이 단지 소수의 구원이 아니라 만국을 향한 우주적 회복이라는 것을 보여줘요."}, {"title": "'책에 더하거나 제하지 말라'는 경고(18-19절), 성경 전체에 대한 경고일까", "body": "이 구절이 종종 성경 66권 전체에 아무것도 더하거나 빼면 안 된다는 원칙으로 확대 적용되곤 하는데, 엄밀히 말하면 이 경고의 문법적 대상은 '이 두루마리의 예언의 말씀' 곧 요한계시록 이 책 자체예요.\n\n사실 이런 경고 문구는 요한계시록만의 독특한 표현이 아니라, 신명기 4:2와 12:32에서 이미 등장했던 고대 근동의 전형적인 <b>계약 문서 봉인 관용구</b>예요. 중요한 법적·언약적 문서의 끝에 이런 경고를 붙여 그 문서의 완전성과 권위를 보호하는 게 당시의 일반적인 관습이었어요.\n\n그렇다고 이 원칙이 요한계시록에만 국한되어야 한다는 뜻은 아니에요. 오히려 이 구절은 성경 전체가 하나님의 계시로서 지니는 완결성과 충분성이라는 원리를, 정경의 마지막 책 끝자락에서 상징적으로 확증하는 역할을 한다고 이해하는 신학자들이 많아요. 다만 그 직접적 적용 범위가 무엇인지는 정확히 알고 읽는 게 본문에 더 충실한 독법이에요."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  var closeBtn = e.target.closest('.insight-close');
+  var overlay = document.getElementById('insightOverlay');
+  if(closeBtn || e.target === overlay){
+    overlay.classList.remove('open');
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn2 = document.createElement('span');
+    closeBtn2.className = 'tip-close';
+    closeBtn2.textContent = '\u2715';
+    tip.appendChild(closeBtn2);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+
+</body></html>

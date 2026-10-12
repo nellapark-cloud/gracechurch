@@ -1,0 +1,11 @@
+{
+  "name": "로마서",
+  "en": "Romans",
+  "last": 16,
+  "orig": "헬라어",
+  "out_dir": "content/bible-by-book/new-testament/romans-detailed",
+  "base": "https://sejonggrace.com/content/bible-by-book/new-testament/romans-detailed/",
+  "og": "https://sejonggrace.com/content/bible-by-book/new-testament/romans-chapters/og-romans-1200.jpg",
+  "overview_href": "../romans-chapters/0. 로마서 한눈에 보기.html",
+  "overview_label": "로마서 한눈에 보기"
+}

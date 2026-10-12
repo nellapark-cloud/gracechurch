@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>베드로후서 연구</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#5c2a35;
+  --navy-soft:#7a4552;
+  --gold:#b0793e;
+  --gold-soft:#cc9a5f;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e6d9d2;
+  --white:#ffffff;
+  --insight:#4fa3d1;
+}
+
+body{
+  margin:0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+b, strong{ font-weight:700; }
+.wrap{ max-width: 720px; margin: 0 auto; background: var(--white); min-height: 100vh; }
+
+/* ===== TOP BAR (sticky, solid bg - no blur, no fixed) ===== */
+.top-bar{
+  position: sticky; top: 0; z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 4vw;
+  display: flex; align-items: center; justify-content: flex-start; gap: 10px;
+}
+.top-bar .tb-title{
+  font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
+}
+/* ===== BOTTOM NAV (floating circular icon buttons, bottom-right, stacked) ===== */
+.bottom-nav{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.bottom-nav button{
+  width: 46px; height: 46px; border-radius: 50%; border: none;
+  background: var(--navy); color: var(--gold-soft);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: transform 0.15s, background 0.15s;
+}
+.bottom-nav button svg{ width: 20px; height: 20px; }
+.bottom-nav button:active{ background: var(--navy-soft); transform: scale(0.94); }
+.bottom-nav-spacer{ height: 0; }
+
+/* ===== COVER (gradient + pearl sheen) ===== */
+.cover{
+  position: relative;
+  overflow: hidden;
+  padding: 70px 7vw 50px;
+  color: var(--white);
+  text-align: center;
+}
+.cover::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.14) 22%, rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 15% 92%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%);
+  pointer-events:none;
+}
+.cover-inner{ position:relative; z-index:1; }
+.cover .eyebrow{
+  font-size: 11px; letter-spacing: 0.24em; color: var(--gold-soft);
+  font-weight: 700; text-transform: uppercase; margin-bottom: 20px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 32px; font-weight: 700; margin: 0 0 14px; letter-spacing: -0.01em;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.18);
+}
+.cover .cover-sub{ font-size: 14px; color:#f0e2e5; margin-bottom: 30px; line-height:1.7; }
+
+/* pearl divider: gold line + glossy pearl bead */
+.pearl-divider{ display:flex; align-items:center; justify-content:center; gap:9px; margin: 0 auto 30px; }
+.pearl-divider .pl-line{ width:34px; height:1.5px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+.pearl-divider .pl-line.r{ background: linear-gradient(90deg, var(--gold-soft), transparent); }
+.pearl-divider .pl-bead{
+  width:11px; height:11px; border-radius:50%; flex-shrink:0;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #f4eee2 26%, #d8c9b0 55%, #a9906f 100%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25), inset 0 0 2px rgba(255,255,255,0.6);
+}
+
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13px; color: var(--gold-soft); letter-spacing:0.04em;
+}
+.cover .cover-note{ margin-top: 40px; font-size: 12px; color:#e0c7cb; }
+
+/* ===== INTRO ===== */
+.intro-page{ padding: 34px 6vw 10px; }
+.page-label{ font-size: 11px; letter-spacing:0.2em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 6px;
+}
+.intro-lead{ font-size:15px; color:var(--ink-soft); margin-bottom: 26px; line-height:1.75; }
+.intro-block{ margin-bottom: 24px; }
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 16px; color: var(--navy-soft); font-weight:700; margin:0 0 10px;
+  padding-left: 10px; border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{ margin: 0 0 10px; text-align:left; font-size:15px; line-height:1.8; }
+.intro-block b{ color: var(--navy-soft); }
+.intro-outline{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+.intro-outline .oi{ background: var(--cream-deep); border-radius:8px; padding:14px 16px; border-top:3px solid var(--gold-soft); }
+.intro-outline .oi .oi-tag{ font-size:11px; color:var(--gold); font-weight:700; letter-spacing:0.05em; margin-bottom:5px; }
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight:700; color:var(--navy); font-size:14.5px; margin-bottom:4px;
+}
+.intro-outline .oi .oi-body{ font-size:13px; color:var(--ink-soft); line-height:1.65; }
+
+/* ===== TOC ===== */
+.toc-page{ padding: 34px 6vw 20px; }
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 20px;
+}
+.toc-item{
+  display:flex; flex-wrap:wrap; align-items:baseline; color:var(--ink);
+  padding: 14px 0; border-bottom:1px solid var(--line); cursor:pointer;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:14px; font-weight:700; color:var(--gold); width:26px; flex-shrink:0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:16px; font-weight:600; color:var(--navy);
+}
+.toc-sub{ font-size:12.5px; color:var(--ink-soft); margin-left:26px; flex-basis:100%; margin-top:3px; }
+
+/* ===== CHAPTER ===== */
+.chapter{ padding: 8px 6vw 10px; }
+.chapter-head{
+  margin: 18px 0 20px; padding-bottom:14px; border-bottom:2px solid var(--navy);
+  display:flex; align-items:flex-start; gap:12px;
+}
+.chapter-icon-badge{
+  flex-shrink:0; width:42px; height:42px; border-radius:50%;
+  background: var(--navy); color: var(--gold-soft);
+  display:flex; align-items:center; justify-content:center;
+}
+.chapter-icon-badge svg{ width:22px; height:22px; }
+.chapter-eyebrow{ font-size:11px; letter-spacing:0.16em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:4px; }
+.chapter-head h2.chtitle{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:20px; font-weight:700; color:var(--navy); margin:0 0 4px;
+}
+.chapter-head .chapter-sub{ font-size:13px; color:var(--ink-soft); }
+.ref-strip{ display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.ref-item{ font-size:11.5px; color:var(--navy-soft); padding:2px 9px; background:var(--cream-deep); border-radius:10px; }
+
+section.sub{ margin-bottom: 30px; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14px; color:var(--gold); font-weight:700; }
+h3.sech{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:18px; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:13px; margin:0 0 14px; }
+
+/* flow */
+.flow-item{ padding: 12px 0; border-top:1px solid var(--line); }
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:13px; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:16px; margin:2px 0 6px; }
+.flow-body{ color:var(--ink); font-size:15px; line-height:1.8; text-align:left; }
+
+/* teaching cards */
+.teach-card{
+  background: var(--cream-deep); border-radius:12px; padding:16px 17px; margin-bottom:14px;
+  border-left: 4px solid var(--gold-soft);
+}
+.teach-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; border-radius:50%; background:var(--navy); color:var(--gold-soft);
+  font-size:12px; font-weight:700; margin-right:8px;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--navy); font-size:16px; }
+.teach-body{ color:var(--ink); font-size:15px; line-height:1.8; margin-top:8px; text-align:left; }
+
+.speech-bubble{
+  display:flex; gap:10px; align-items:flex-start;
+  background: var(--white); border:1px solid var(--line); border-radius:12px;
+  padding:13px 15px; margin-top:10px;
+}
+.sb-avatar{
+  width:28px; height:28px; min-width:28px; border-radius:50%;
+  background: var(--navy); color:var(--gold-soft);
+  display:flex; align-items:center; justify-content:center; font-size:13px;
+}
+.sb-text{ font-size:14px; color:var(--navy-soft); line-height:1.75; }
+.sb-text b{ color:var(--navy); }
+
+/* deep questions */
+.deep-wrap{ background: var(--navy); border-radius:14px; padding:18px 17px 8px; color:var(--white); }
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h3.sech{ color:var(--white); }
+.deep-wrap .sec-desc{ color:#d9c3c8; }
+.deep-item{ margin-bottom:18px; }
+.deep-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--white); font-size:16px; margin-bottom:8px; display:flex; gap:8px; }
+.deep-num{
+  flex-shrink:0; width:22px; height:22px; border-radius:50%;
+  background: var(--gold-soft); color:var(--navy);
+  display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;
+}
+.deep-body{ font-size:14.5px; color:#e9dde0; line-height:1.8; text-align:left; padding-left:30px; }
+.verse-box{
+  margin: 10px 0 4px 30px; background: rgba(255,255,255,0.07);
+  border-left:2px solid var(--gold-soft); padding:10px 13px; border-radius:0 8px 8px 0;
+}
+.verse-ref{ font-size:11.5px; color:var(--gold-soft); margin-bottom:4px; font-weight:700; }
+.verse-text{ font-size:14.5px; color:#f0e4e6; line-height:1.7; }
+
+/* highlight terms */
+b.hl-term{ background:#f1dfba; color:#7a5220; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-quote{ background:#f2dcd3; color:#9a4632; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-greek{ background:#d7ebe6; color:#235f56; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-insight{ background:#d7ebf7; color:#1c5f85; padding:1px 4px; border-radius:3px; font-weight:700; cursor:pointer; }
+b.hl-insight:after{ content:"\25C6"; font-size:0.55em; margin-left:2px; vertical-align:super; opacity:0.85; }
+
+.deep-body b.hl-term, .verse-text b.hl-term{ background: rgba(216,176,115,0.28); color:#f3dfb8; }
+.deep-body b.hl-quote, .verse-text b.hl-quote{ background: rgba(224,122,105,0.26); color:#f0b8a8; }
+.deep-body b.hl-greek, .verse-text b.hl-greek{ background: rgba(110,196,188,0.26); color:#a9e6dd; }
+.deep-body b.hl-insight, .verse-text b.hl-insight{ background: rgba(120,190,230,0.28); color:#bfe3f8; }
+
+/* ===== INSIGHT POPUP MODAL ===== */
+#insightOverlay{
+  display:none; position:fixed; inset:0; z-index:800;
+  background: rgba(40,20,25,0.55); align-items:center; justify-content:center; padding:20px;
+}
+#insightOverlay.open{ display:flex; }
+#insightCard{
+  background: var(--white); max-width:440px; width:100%; max-height:78vh; overflow-y:auto;
+  border-radius:14px; padding:22px 20px 18px; box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  position:relative; border-top:5px solid var(--insight);
+}
+#insightCard .insight-eyebrow{ font-size:11px; letter-spacing:0.12em; color:var(--insight); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+#insightCard h4{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif; font-size:17px; color:var(--navy);
+  font-weight:700; margin:0 0 12px; line-height:1.4;
+}
+#insightCard .insight-body{ font-size:14px; line-height:1.82; color:var(--ink); white-space:pre-line; }
+#insightCard .insight-close{
+  position:absolute; top:12px; right:14px; width:26px; height:26px; border-radius:50%;
+  background: var(--cream-deep); color:var(--navy-soft);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:14px;
+}
+#insightCard .insight-close:active{ background: var(--line); }
+
+/* ===== TERM TOOLTIP ===== */
+#termTip{
+  display:none; position:absolute; z-index:500; max-width:260px;
+  background: var(--white); color:var(--ink); font-size:13px; line-height:1.6;
+  padding:11px 14px; border-radius:10px; border-top:4px solid var(--gold);
+  box-shadow:0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip .tip-close{
+  position:absolute; top:5px; right:8px; width:18px; height:18px; border-radius:50%;
+  background: var(--cream-deep); display:flex; align-items:center; justify-content:center;
+  color:var(--navy-soft); font-size:11px; cursor:pointer;
+}
+b.has-tip{ cursor:pointer; }
+
+.footer-brand{
+  text-align:center; padding: 26px 6vw 6px; font-size:12px; color:var(--ink-soft);
+}
+
+@media print{
+  .top-bar, .bottom-nav, #insightOverlay, #termTip{ display:none !important; }
+}
+</style>
+</head><body>
+<div class="wrap">
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">&#10005;</div><div class="insight-eyebrow">&#128172; 더 알아보기</div><h4 id="insightTitle"></h4><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="top-bar">
+  <div class="tb-title" onclick="goTo('top')">📖 베드로후서 연구</div>
+</div>
+
+<div class="cover" style="background: linear-gradient(150deg, #3d1f1a 0%, #6b3428 100%);">
+  <div class="cover-inner">
+    <div class="eyebrow">BIBLE STUDY · 2 PETER</div>
+    <h1>베드로후서 연구</h1>
+    <div class="cover-sub">거짓 교사들에 대한 경고와 재림의 소망 — 은혜와 지식 안에서 자람</div>
+    <div class="pearl-divider"><span class="pl-line"></span><span class="pl-bead"></span><span class="pl-line r"></span></div>
+    <div class="cover-range">벧후 1:1 – 3:18 · 구조 · 교훈 · 심화 질문</div>
+    <div class="cover-note">전 3장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>베드로후서 연구 서론</h1>
+  <p class="intro-lead">거짓 가르침을 분별하고, 주의 날을 소망하며 은혜와 지식 안에서 자라가라.</p>
+  <div class="intro-block"><h3>저자와 기록 시기</h3><p>베드로후서는 '예수 그리스도의 종이며 사도인 시몬 베드로'의 유언과 같은 마지막 편지로 소개된다(1:1, 14). 이 편지의 저작권 문제는 신약학에서 활발히 논의되는 주제로, 베드로전서와의 문체 차이 등을 근거로 저작권에 의문을 제기하는 견해와, 초대교회의 오랜 전통을 근거로 <b class='hl-term'>사도 베드로</b>의 저작을 지지하는 견해가 공존한다. 저작이 사실이라면 기록 시기는 베드로의 순교(AD 64-68년경) 직전으로 추정된다.</p></div><div class="intro-block"><h3>수신자와 정황</h3><p>구체적인 수신 교회는 명시되지 않지만, 베드로전서와 유사한 소아시아 지역 교회들을 향한 것으로 추정된다. 배경에는 <b class='hl-term'>거짓 교사들의 등장</b>과 <b class='hl-term'>재림 지연에 대한 조롱</b>이라는 두 가지 위협이 자리한다. 특히 2장은 유다서와 매우 유사한 내용으로 거짓 교사들의 정체와 결말을 다룬다.</p></div><div class="intro-block"><h3>문체적 특징</h3><p>베드로전서보다 <b class='hl-term'>더 격정적이고 논쟁적인 어조</b>를 지니며, 구약의 심판 사례와 자연 이미지(물 없는 샘, 안개, 개와 돼지의 속담 등)를 풍부하게 활용한다. 유다서와의 밀접한 문학적 유사성이 2장 전체에 걸쳐 뚜렷하게 나타난다.</p></div><div class="intro-block"><h3>핵심 신학 주제</h3><p>베드로후서는 <b class='hl-term'>참된 지식과 거짓 가르침의 분별</b>, <b class='hl-term'>심판의 확실성</b>, 그리고 <b class='hl-term'>재림에 대한 소망</b>이라는 세 축을 중심으로 전개된다. 특히 3장의 재림 지연에 대한 답변은 신약성경에서 종말론적 소망과 하나님의 인내를 함께 다루는 중요한 본문으로 꼽힌다.</p></div>
+  <div class="intro-outline"><div class="oi"><div class="oi-tag">PART 1</div><div class="oi-title">참된 지식으로의 부름 (1장)</div><div class="oi-body">신성한 성품에 참여함, 성품의 사다리, 사도적 증언의 확실성</div></div><div class="oi"><div class="oi-tag">PART 2</div><div class="oi-title">거짓 교사들에 대한 경고 (2장)</div><div class="oi-body">구약의 심판 선례, 거짓 교사들의 특징과 결말</div></div><div class="oi"><div class="oi-tag">PART 3</div><div class="oi-title">재림의 소망 (3장)</div><div class="oi-body">조롱하는 자들에 대한 답변, 주의 날, 은혜와 지식 안에서 자람</div></div></div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-item" onclick="goTo('ch1')"><span class="toc-num">01</span><span class="toc-title">신성한 성품에 참여함</span><span class="toc-sub">은혜와 지식 안에서 자람과 사도적 증언의 확실성</span></div><div class="toc-item" onclick="goTo('ch2')"><span class="toc-num">02</span><span class="toc-title">거짓 선지자들과 거짓 교사들</span><span class="toc-sub">심판의 확실성과 거짓 가르침의 위험</span></div><div class="toc-item" onclick="goTo('ch3')"><span class="toc-num">03</span><span class="toc-title">주의 날과 새 하늘 새 땅</span><span class="toc-sub">조롱하는 자들에 대한 답변과 거룩한 삶으로의 부름</span></div>
+</div>
+
+<div class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 1</div>
+      <h2 class="chtitle">신성한 성품에 참여함</h2>
+      <div class="chapter-sub">은혜와 지식 안에서 자람과 사도적 증언의 확실성</div>
+      <div class="ref-strip"><span class="ref-item">벧후 1:1-21</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-4절</div><div class="flow-title">보배롭고 지극히 큰 약속</div><div class="flow-body">베드로는 하나님의 능력이 생명과 경건에 속한 모든 것을 우리에게 주셨다고 선언하며, 이 약속으로 말미암아 <b class="hl-insight" data-insight="0">신성한 성품에 참여하는 자</b>가 되게 하려 하셨다고 밝힌다.</div></div><div class="flow-item"><div class="flow-range">5-11절</div><div class="flow-title">믿음에 덕을 더하라</div><div class="flow-body">베드로는 믿음에 덕을, 덕에 지식을, 지식에 절제를, 절제에 인내를, 인내에 경건을, 경건에 형제 우애를, 형제 우애에 사랑을 더하라는 <b class='hl-term'>성품의 사다리</b>를 제시하며, 이런 것이 있고 풍성한즉 게으르지 않고 열매 없는 자가 되지 않게 한다고 격려한다.</div></div><div class="flow-item"><div class="flow-range">12-21절</div><div class="flow-title">사도적 증언의 확실성</div><div class="flow-body">베드로는 자신이 곧 장막을 벗어날 것을 알기에 이 편지로 항상 기억하게 하려 한다고 밝히며, 자신이 교묘히 만든 이야기를 따른 것이 아니라 <b class='hl-term'>변화산에서 직접 목격한 그의 위엄</b>을 증언한 것이라 강조한다. 예언의 말씀은 사람의 뜻으로 낸 것이 아니요 성령의 감동하심을 받은 사람들이 하나님께 받아 말한 것이라는 성경관이 선포된다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>성화는 단계적이고 축적되는 과정이다</div><div class="teach-body">5-7절의 성품의 사다리는 성화가 한순간의 사건이 아니라, 하나씩 더해가는 지속적이고 의도적인 성장의 과정임을 보여준다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">이 목록을 보면 성화가 마치 근육을 기르는 것과 비슷하다는 생각이 들어요. 한 번에 완성되는 게 아니라 하나씩 차곡차곡 쌓아가는 거죠. 오늘 믿음에 덕을 더하고, 내일은 그 덕에 지식을 더하고요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>게으름은 열매 없음으로 이어진다</div><div class="teach-body">8절은 이런 성품들이 풍성할 때 게으르지 않고 열매 없는 자가 되지 않는다고 말한다. 영적 성장에 대한 무관심은 실제적 열매의 결핍으로 나타난다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>사도적 증언은 신화가 아니라 목격담이다</div><div class="teach-body">베드로는 자신의 증언이 '교묘히 만든 이야기'가 아니라 변화산에서의 실제 목격에 근거한다고 강조하며, 이는 복음의 역사적 신빙성을 옹호하는 중요한 근거가 된다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>성경의 기원은 인간의 창작이 아니라 성령의 감동이다</div><div class="teach-body">21절의 선언은 성경 영감론의 핵심 근거 본문 중 하나로, 예언자들이 자신의 뜻이 아니라 성령의 인도하심을 따라 말했음을 명시한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>신성한 성품에 참여함이라는 표현의 신학적 위치</div><div class="deep-body"><b class="hl-insight" data-insight="0">신성한 성품에 참여하는 자가 된다는 선언</b>은 헬라 철학적 언어와 유사해 보이지만, 문맥상 존재론적 융합이 아니라 도덕적·성품적 변화(성화)를 가리키는 것으로 이해하는 것이 정통적 해석이다. 이는 동방 정교회의 '신화(theosis)' 교리와의 관계에서도 흥미로운 논의 주제가 된다.</div><div class="verse-box"><div class="verse-ref">벧후 1:4</div><div class="verse-text">이로써 그 보배롭고 지극히 큰 약속을 우리에게 주사 이 약속으로 말미암아 너희가 정욕 때문에 세상에서 썩어질 것을 피하여 신성한 성품에 참여하는 자가 되게 하려 하셨느니라</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 2</div>
+      <h2 class="chtitle">거짓 선지자들과 거짓 교사들</h2>
+      <div class="chapter-sub">심판의 확실성과 거짓 가르침의 위험</div>
+      <div class="ref-strip"><span class="ref-item">벧후 2:1-22</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-3절</div><div class="flow-title">거짓 교사들의 등장 예고</div><div class="flow-body">백성 가운데 거짓 선지자들이 있었던 것처럼 신자들 가운데도 거짓 교사들이 은밀히 들어와 멸망하게 할 이단을 몰래 끌어들여 자기들을 사신 주를 부인하고 임박한 멸망을 스스로 취하리라고 경고한다.</div></div><div class="flow-item"><div class="flow-range">4-10절</div><div class="flow-title">구약의 심판 선례</div><div class="flow-body"><b class="hl-insight" data-insight="1">타락한 천사들, 노아 시대의 홍수, 소돔과 고모라</b>라는 세 가지 심판의 선례가 제시되며, 이는 주께서 경건한 자는 시험에서 건지실 줄 아시고 불의한 자는 형벌 아래 두어 심판 날까지 지키실 줄 아신다는 원리를 확증한다.</div></div><div class="flow-item"><div class="flow-range">11-22절</div><div class="flow-title">거짓 교사들의 특징과 결말</div><div class="flow-body">거짓 교사들은 이성 없는 짐승처럼 본능으로 아는 것으로 멸망하며, 발람의 어그러진 길을 좇는다. 그들은 '물 없는 샘, 광풍에 밀려가는 안개'와 같아서, '개가 그 토하였던 것에 돌아가고 돼지가 씻었다가 더러운 구덩이에 도로 누웠다'는 속담으로 그들의 배교를 경고한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>경건한 자를 건지시고 불의한 자를 지키시는 하나님의 이중적 신실하심</div><div class="teach-body">9절은 심판의 확실성이 동시에 경건한 자에 대한 확실한 구원의 근거가 됨을 보여준다. 하나님의 공의는 두려움의 대상이자 소망의 근거다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">이 구절이 참 균형 잡혀 있다고 생각해요. 심판을 경고하면서도 동시에 '경건한 자는 건지신다'는 확신을 함께 주니까요. 하나님의 공의는 무서운 것만이 아니라 의로운 자에게는 오히려 안전망이 되는 거죠.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>거짓 가르침의 위험은 은밀함에 있다</div><div class="teach-body">1절 '은밀히 들어와'라는 표현은 거짓 가르침이 대개 공개적 도전이 아니라 조용히 스며드는 방식으로 확산됨을 경고한다. 분별력이 요구되는 이유다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>한때 알았던 진리를 저버리는 것의 위험성</div><div class="teach-body">20-22절은 그리스도를 앎으로 세상의 더러움을 피했다가 다시 얽매이는 자의 상태가 처음보다 더 나쁘다고 경고하며, 이는 배교의 심각성을 엄중하게 다룬다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>탐심이 거짓 가르침의 뿌리인 경우가 많다</div><div class="teach-body">3절은 거짓 교사들이 '지은 말을 가지고 너희로 이득을 삼는다'고 지적하며, 물질적 탐욕이 거짓 교리의 배후에 있는 경우가 흔함을 보여준다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>베드로후서 2장과 유다서의 문학적 관계</div><div class="deep-body"><b class="hl-insight" data-insight="1">놀라운 유사성</b>을 어떻게 설명할지는 신약학의 오랜 논쟁거리지만, 어느 쪽이 먼저인지와 무관하게 두 본문 모두 각자의 목회적 맥락에서 성령의 감동으로 기록된 하나님의 말씀이라는 점은 변함이 없다.</div><div class="verse-box"><div class="verse-ref">벧후 2:17</div><div class="verse-text">이 사람들은 물 없는 샘이요 광풍에 밀려가는 안개니 그들을 위하여 캄캄한 어둠이 예비되어 있나니</div></div></div>
+    </div>
+  </section>
+</div><div class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 3</div>
+      <h2 class="chtitle">주의 날과 새 하늘 새 땅</h2>
+      <div class="chapter-sub">조롱하는 자들에 대한 답변과 거룩한 삶으로의 부름</div>
+      <div class="ref-strip"><span class="ref-item">벧후 3:1-18</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-7절</div><div class="flow-title">조롱하는 자들의 등장</div><div class="flow-body">말세에 조롱하는 자들이 나타나 정욕을 따라 행하며 재림의 약속을 의심할 것이라 경고하며, 이들은 하나님의 말씀으로 옛적에 하늘과 땅이 지어졌고 물로 심판받았음을 잊고자 한다고 지적한다.</div></div><div class="flow-item"><div class="flow-range">8-13절</div><div class="flow-title">주의 날이 도둑같이 오리니</div><div class="flow-body"><b class="hl-insight" data-insight="2">하루가 천 년 같고 천 년이 하루 같다</b>는 말씀과 함께, 주의 약속이 더딘 것이 아니라 오래 참으심임을 강조한다. 주의 날은 도둑같이 임하여 하늘이 큰 소리로 떠나가고 물질이 뜨거운 불에 풀어지�리니, 우리는 새 하늘과 새 땅을 바라보며 거룩한 행실과 경건함으로 살아야 한다.</div></div><div class="flow-item"><div class="flow-range">14-18절</div><div class="flow-title">은혜와 지식에서 자라가라</div><div class="flow-body">베드로는 바울의 편지들도 언급하며 그 안에 알기 어려운 것이 있어 무식한 자들과 굳세지 못한 자들이 억지로 풀다가 스스로 멸망에 이른다고 경고하고, '우리 주 곧 구주 예수 그리스도의 은혜와 그를 아는 지식에서 자라 가라'는 권면으로 편지를 맺는다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>지연은 무관심이 아니라 자비다</div><div class="teach-body">재림의 더딤을 향한 조롱에 대해 베드로는 그것이 오히려 하나님의 오래 참으심, 곧 더 많은 사람의 구원을 향한 자비임을 밝힌다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">기다림이 길어질 때 우리는 종종 '왜 안 오시지'라고 묻게 되잖아요. 그런데 베드로는 그 질문의 방향을 완전히 바꿔줘요 — 지연이 무관심이 아니라 자비라는 거죠. 우리에게 더 많은 시간을 주고 계신 거예요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>도둑같이 임하는 주의 날은 예측이 아니라 준비를 요구한다</div><div class="teach-body">10절의 비유는 재림의 정확한 시점을 계산하려는 시도보다, 항상 준비된 삶을 사는 것이 신자에게 요구되는 태도임을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>새 하늘과 새 땅에 대한 소망이 오늘의 거룩함을 이끈다</div><div class="teach-body">종말의 소망은 현실 도피가 아니라, 지금 이곳에서 거룩하고 경건하게 살아가도록 이끄는 동력이 되어야 한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>성경 해석에는 겸손과 신중함이 필요하다</div><div class="teach-body">16절은 바울 서신을 포함한 성경 본문이 오용될 수 있음을 경고하며, 성급하고 자의적인 해석의 위험성을 상기시킨다. 이는 오늘날에도 여전히 유효한 해석학적 경고다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>천 년과 하루의 비유가 예언 계산에 남용되는 문제</div><div class="deep-body"><b class="hl-insight" data-insight="2">시간에 대한 하나님의 관점</b>을 상징적 연대 계산의 도구로 사용하는 해석은 본문의 원래 의도(재림 지연에 대한 조롱에 답하는 목회적 위로)에서 벗어난 오용에 가깝다는 것이 다수 학자의 견해다. 본문의 핵심은 계산이 아니라 하나님의 인내와 자비에 있다.</div><div class="verse-box"><div class="verse-ref">벧후 3:8-9</div><div class="verse-text">사랑하는 자들아 주께는 하루가 천 년 같고 천 년이 하루 같다는 이 한 가지를 잊지 말라 주의 약속은 어떤 이들이 더디다고 생각하는 것 같이 더딘 것이 아니라 오직 너희를 대하여 오래 참으사 아무도 멸망하지 아니하고 다 회개하기에 이르기를 원하시느니라</div></div></div>
+    </div>
+  </section>
+</div>
+
+<div class="bottom-nav-spacer"></div>
+<div class="bottom-nav">
+  <button onclick="goTo('toc')" title="목차로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg></button>
+  <button onclick="goTo('top')" title="처음으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}" title="자료실로 가기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+</div>
+<div class="footer-brand">기독교한국침례회 은혜교회</div>
+</div>
+<script>
+var INSIGHTS_DATA = [{"title": "'신성한 성품에 참여하는 자'라는 표현이 그리스 철학과 만나는 지점", "body": "1:4절은 '이 영광과 덕으로써 그 보배롭고 지극히 큰 약속을 우리에게 주사 이 약속으로 말미암아 너희가 정욕 때문에 세상에서 썩어질 것을 피하여 신성한 성품에 참여하는 자가 되게 하려 하셨느니라'라고 말해요. '신성한 성품에 참여함(데이아스 코이노노이 퓌세오스, θείας κοινωνοὶ φύσεως)'이라는 표현은 신약성경 전체에서 매우 독특하고 대담한 표현이에요.\n\n이 언어는 당시 헬라 철학, 특히 인간이 신적 본성과 하나가 될 수 있다고 믿었던 여러 사상적 흐름과 언어적으로 유사해 보일 수 있어요. 그래서 어떤 학자들은 베드로가 헬라 철학의 개념을 의도적으로 차용해 헬라 문화권 독자들에게 다가가려 했다고 봐요.\n\n하지만 베드로가 말하는 '신성한 성품에 참여함'은 헬라 철학의 범신론적 융합(인간이 신과 존재론적으로 동일해짐)과는 근본적으로 달라요. 문맥을 보면 이는 '정욕으로 인한 세상의 썩어짐을 피하는 것'과 병렬되는, <b>도덕적·성품적 변화</b>를 가리키는 것으로 이해하는 것이 문맥에 맞아요. 즉 신자가 하나님과 존재론적으로 동일해진다는 뜻이 아니라, 그리스도와의 연합을 통해 하나님의 거룩한 성품(사랑, 의, 인내 등)을 점점 더 닮아가게 된다는, 신약성경 전체가 가르치는 성화의 언어를 더 강렬하게 표현한 것으로 보는 게 정통적인 해석이에요."}, {"title": "베드로후서 2장과 유다서의 놀라운 문학적 유사성", "body": "베드로후서 2장을 유다서와 나란히 놓고 읽어보면, 놀라울 정도로 유사한 표현과 논증 순서를 발견할 수 있어요 — 타락한 천사들, 소돔과 고모라, 발람의 예, '물 없는 샘' 같은 이미지, 심지어 문장 구조까지 상당 부분 겹치죠.\n\n이 유사성을 어떻게 설명할지에 대해서는 신약학에서 오랫동안 논쟁이 있었어요. 대표적인 세 가지 견해는 (1) 베드로후서가 유다서를 인용했다는 견해, (2) 유다서가 베드로후서를 인용했다는 견해, (3) 두 저자가 공통의 초대교회 전승이나 자료를 각자 활용했다는 견해예요.\n\n오늘날 다수 학자들은 베드로후서가 유다서를 알고 활용했을 가능성에 무게를 두는 경향이 있지만, 확정적인 결론은 없어요. 중요한 점은, 두 편지가 비슷한 자료를 사용했든 서로를 참고했든, 이것이 성경의 영감성을 훼손하지 않는다는 거예요 — 누가복음과 마태복음이 공통 자료를 활용하면서도 각자 성령의 감동으로 기록된 것처럼, 베드로후서와 유다서도 각각의 목회적 상황에 맞게 하나님이 주신 메시지를 전달하고 있는 거죠."}, {"title": "'주께는 하루가 천 년 같고 천 년이 하루 같다'는 말씀의 의도", "body": "3:8절 '주께는 하루가 천 년 같고 천 년이 하루 같다'는 시편 90:4의 인용이에요. 이 구절은 종종 예언 해석에서 상징적 숫자 계산의 도구로 오용되기도 하지만, 문맥을 보면 그 원래 의도는 전혀 다른 데 있어요.\n\n이 구절 바로 앞에는 조롱하는 자들이 '주께서 강림하신다는 약속이 어디 있느냐 조상들이 잔 후로부터 만물이 처음 창조될 때와 같이 그냥 있다'고 비웃는 장면이 나와요(3-4절). 즉 사람들은 예수님의 재림 약속이 지연되는 것을 근거로 그 약속 자체를 의심하고 조롱하고 있었던 거예요.\n\n베드로의 대답은 시간에 대한 하나님의 관점이 인간과 근본적으로 다르다는 점을 상기시키는 거예요. 인간에게는 길게 느껴지는 지연이, 영원하신 하나님께는 전혀 지연이 아니라는 거죠. 그리고 곧이어 9절에서 결정적인 이유를 제시해요 — '주의 약속은 어떤 이들이 더디다고 생각하는 것 같이 더딘 것이 아니라 오직 너희를 대하여 오래 참으사 아무도 멸망하지 아니하고 다 회개하기에 이르기를 원하시느니라.' 즉 재림의 '지연'은 하나님의 무능이나 무관심이 아니라, 더 많은 사람이 회개할 기회를 주시려는 인내와 자비의 표현이라는 거예요."}];
+
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){
+    var bar = document.querySelector('.top-bar');
+    var barH = bar ? bar.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - barH - 10;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+}
+
+document.addEventListener('click', function(e){
+  var closeBtn = e.target.closest('.insight-close');
+  if(closeBtn){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  var insTerm = e.target.closest('.hl-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    return;
+  }
+  if(e.target.id === 'insightOverlay'){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  var tip = document.getElementById('termTip');
+  var tipCloseBtn = e.target.closest('.tip-close');
+  if(tipCloseBtn){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var cb = document.createElement('span');
+    cb.className = 'tip-close';
+    cb.textContent = '\u2715';
+    tip.appendChild(cb);
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 260;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+  } else if(tip && !e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

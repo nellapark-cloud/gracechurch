@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>유다서 연구</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+:root{
+  --cream:#faf6ef;
+  --cream-deep:#f2ebdd;
+  --navy:#5c2a35;
+  --navy-soft:#7a4552;
+  --gold:#b0793e;
+  --gold-soft:#cc9a5f;
+  --ink:#2c2a25;
+  --ink-soft:#6b6459;
+  --line:#e6d9d2;
+  --white:#ffffff;
+  --insight:#4fa3d1;
+}
+
+body{
+  margin:0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 16px;
+  line-height: 1.85;
+  word-break: keep-all;
+}
+b, strong{ font-weight:700; }
+.wrap{ max-width: 720px; margin: 0 auto; background: var(--white); min-height: 100vh; }
+
+/* ===== TOP BAR (sticky, solid bg - no blur, no fixed) ===== */
+.top-bar{
+  position: sticky; top: 0; z-index: 50;
+  background: var(--cream);
+  border-bottom: 1px solid var(--line);
+  padding: 12px 4vw;
+  display: flex; align-items: center; justify-content: flex-start; gap: 10px;
+}
+.top-bar .tb-title{
+  font-weight: 700; color: var(--navy); font-size: 14px; cursor: pointer;
+}
+/* ===== BOTTOM NAV (floating circular icon buttons, bottom-right, stacked) ===== */
+.bottom-nav{
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 60;
+  display: flex; flex-direction: column; gap: 10px;
+}
+.bottom-nav button{
+  width: 46px; height: 46px; border-radius: 50%; border: none;
+  background: var(--navy); color: var(--gold-soft);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  padding: 0;
+  transition: transform 0.15s, background 0.15s;
+}
+.bottom-nav button svg{ width: 20px; height: 20px; }
+.bottom-nav button:active{ background: var(--navy-soft); transform: scale(0.94); }
+.bottom-nav-spacer{ height: 0; }
+
+/* ===== COVER (gradient + pearl sheen) ===== */
+.cover{
+  position: relative;
+  overflow: hidden;
+  padding: 70px 7vw 50px;
+  color: var(--white);
+  text-align: center;
+}
+.cover::before{
+  content:"";
+  position:absolute; inset:0; z-index:0;
+  background:
+    radial-gradient(circle at 78% 12%, rgba(255,255,255,0.38) 0%, rgba(255,255,255,0.14) 22%, rgba(255,255,255,0) 46%),
+    radial-gradient(circle at 15% 92%, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0) 40%);
+  pointer-events:none;
+}
+.cover-inner{ position:relative; z-index:1; }
+.cover .eyebrow{
+  font-size: 11px; letter-spacing: 0.24em; color: var(--gold-soft);
+  font-weight: 700; text-transform: uppercase; margin-bottom: 20px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 32px; font-weight: 700; margin: 0 0 14px; letter-spacing: -0.01em;
+  text-shadow: 0 1px 12px rgba(0,0,0,0.18);
+}
+.cover .cover-sub{ font-size: 14px; color:#f0e2e5; margin-bottom: 30px; line-height:1.7; }
+
+/* pearl divider: gold line + glossy pearl bead */
+.pearl-divider{ display:flex; align-items:center; justify-content:center; gap:9px; margin: 0 auto 30px; }
+.pearl-divider .pl-line{ width:34px; height:1.5px; background: linear-gradient(90deg, transparent, var(--gold-soft)); }
+.pearl-divider .pl-line.r{ background: linear-gradient(90deg, var(--gold-soft), transparent); }
+.pearl-divider .pl-bead{
+  width:11px; height:11px; border-radius:50%; flex-shrink:0;
+  background: radial-gradient(circle at 32% 28%, #ffffff 0%, #f4eee2 26%, #d8c9b0 55%, #a9906f 100%);
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25), inset 0 0 2px rgba(255,255,255,0.6);
+}
+
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13px; color: var(--gold-soft); letter-spacing:0.04em;
+}
+.cover .cover-note{ margin-top: 40px; font-size: 12px; color:#e0c7cb; }
+
+/* ===== INTRO ===== */
+.intro-page{ padding: 34px 6vw 10px; }
+.page-label{ font-size: 11px; letter-spacing:0.2em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 6px;
+}
+.intro-lead{ font-size:15px; color:var(--ink-soft); margin-bottom: 26px; line-height:1.75; }
+.intro-block{ margin-bottom: 24px; }
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 16px; color: var(--navy-soft); font-weight:700; margin:0 0 10px;
+  padding-left: 10px; border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{ margin: 0 0 10px; text-align:left; font-size:15px; line-height:1.8; }
+.intro-block b{ color: var(--navy-soft); }
+.intro-outline{ display:flex; flex-direction:column; gap:10px; margin-top:10px; }
+.intro-outline .oi{ background: var(--cream-deep); border-radius:8px; padding:14px 16px; border-top:3px solid var(--gold-soft); }
+.intro-outline .oi .oi-tag{ font-size:11px; color:var(--gold); font-weight:700; letter-spacing:0.05em; margin-bottom:5px; }
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight:700; color:var(--navy); font-size:14.5px; margin-bottom:4px;
+}
+.intro-outline .oi .oi-body{ font-size:13px; color:var(--ink-soft); line-height:1.65; }
+
+/* ===== TOC ===== */
+.toc-page{ padding: 34px 6vw 20px; }
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 25px; color: var(--navy); font-weight:700; margin:0 0 20px;
+}
+.toc-item{
+  display:flex; flex-wrap:wrap; align-items:baseline; color:var(--ink);
+  padding: 14px 0; border-bottom:1px solid var(--line); cursor:pointer;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:14px; font-weight:700; color:var(--gold); width:26px; flex-shrink:0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:16px; font-weight:600; color:var(--navy);
+}
+.toc-sub{ font-size:12.5px; color:var(--ink-soft); margin-left:26px; flex-basis:100%; margin-top:3px; }
+
+/* ===== CHAPTER ===== */
+.chapter{ padding: 8px 6vw 10px; }
+.chapter-head{
+  margin: 18px 0 20px; padding-bottom:14px; border-bottom:2px solid var(--navy);
+  display:flex; align-items:flex-start; gap:12px;
+}
+.chapter-icon-badge{
+  flex-shrink:0; width:42px; height:42px; border-radius:50%;
+  background: var(--navy); color: var(--gold-soft);
+  display:flex; align-items:center; justify-content:center;
+}
+.chapter-icon-badge svg{ width:22px; height:22px; }
+.chapter-eyebrow{ font-size:11px; letter-spacing:0.16em; color:var(--gold); font-weight:700; text-transform:uppercase; margin-bottom:4px; }
+.chapter-head h2.chtitle{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size:20px; font-weight:700; color:var(--navy); margin:0 0 4px;
+}
+.chapter-head .chapter-sub{ font-size:13px; color:var(--ink-soft); }
+.ref-strip{ display:flex; gap:6px; flex-wrap:wrap; margin-top:8px; }
+.ref-item{ font-size:11.5px; color:var(--navy-soft); padding:2px 9px; background:var(--cream-deep); border-radius:10px; }
+
+section.sub{ margin-bottom: 30px; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14px; color:var(--gold); font-weight:700; }
+h3.sech{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:18px; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:13px; margin:0 0 14px; }
+
+/* flow */
+.flow-item{ padding: 12px 0; border-top:1px solid var(--line); }
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:13px; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:16px; margin:2px 0 6px; }
+.flow-body{ color:var(--ink); font-size:15px; line-height:1.8; text-align:left; }
+
+/* teaching cards */
+.teach-card{
+  background: var(--cream-deep); border-radius:12px; padding:16px 17px; margin-bottom:14px;
+  border-left: 4px solid var(--gold-soft);
+}
+.teach-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:24px; height:24px; border-radius:50%; background:var(--navy); color:var(--gold-soft);
+  font-size:12px; font-weight:700; margin-right:8px;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--navy); font-size:16px; }
+.teach-body{ color:var(--ink); font-size:15px; line-height:1.8; margin-top:8px; text-align:left; }
+
+.speech-bubble{
+  display:flex; gap:10px; align-items:flex-start;
+  background: var(--white); border:1px solid var(--line); border-radius:12px;
+  padding:13px 15px; margin-top:10px;
+}
+.sb-avatar{
+  width:28px; height:28px; min-width:28px; border-radius:50%;
+  background: var(--navy); color:var(--gold-soft);
+  display:flex; align-items:center; justify-content:center; font-size:13px;
+}
+.sb-text{ font-size:14px; color:var(--navy-soft); line-height:1.75; }
+.sb-text b{ color:var(--navy); }
+
+/* deep questions */
+.deep-wrap{ background: var(--navy); border-radius:14px; padding:18px 17px 8px; color:var(--white); }
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h3.sech{ color:var(--white); }
+.deep-wrap .sec-desc{ color:#d9c3c8; }
+.deep-item{ margin-bottom:18px; }
+.deep-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-weight:700; color:var(--white); font-size:16px; margin-bottom:8px; display:flex; gap:8px; }
+.deep-num{
+  flex-shrink:0; width:22px; height:22px; border-radius:50%;
+  background: var(--gold-soft); color:var(--navy);
+  display:flex; align-items:center; justify-content:center; font-size:12px; font-weight:700;
+}
+.deep-body{ font-size:14.5px; color:#e9dde0; line-height:1.8; text-align:left; padding-left:30px; }
+.verse-box{
+  margin: 10px 0 4px 30px; background: rgba(255,255,255,0.07);
+  border-left:2px solid var(--gold-soft); padding:10px 13px; border-radius:0 8px 8px 0;
+}
+.verse-ref{ font-size:11.5px; color:var(--gold-soft); margin-bottom:4px; font-weight:700; }
+.verse-text{ font-size:14.5px; color:#f0e4e6; line-height:1.7; }
+
+/* highlight terms */
+b.hl-term{ background:#f1dfba; color:#7a5220; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-quote{ background:#f2dcd3; color:#9a4632; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-greek{ background:#d7ebe6; color:#235f56; padding:1px 4px; border-radius:3px; font-weight:700; }
+b.hl-insight{ background:#d7ebf7; color:#1c5f85; padding:1px 4px; border-radius:3px; font-weight:700; cursor:pointer; }
+b.hl-insight:after{ content:"\25C6"; font-size:0.55em; margin-left:2px; vertical-align:super; opacity:0.85; }
+
+.deep-body b.hl-term, .verse-text b.hl-term{ background: rgba(216,176,115,0.28); color:#f3dfb8; }
+.deep-body b.hl-quote, .verse-text b.hl-quote{ background: rgba(224,122,105,0.26); color:#f0b8a8; }
+.deep-body b.hl-greek, .verse-text b.hl-greek{ background: rgba(110,196,188,0.26); color:#a9e6dd; }
+.deep-body b.hl-insight, .verse-text b.hl-insight{ background: rgba(120,190,230,0.28); color:#bfe3f8; }
+
+/* ===== INSIGHT POPUP MODAL ===== */
+#insightOverlay{
+  display:none; position:fixed; inset:0; z-index:800;
+  background: rgba(40,20,25,0.55); align-items:center; justify-content:center; padding:20px;
+}
+#insightOverlay.open{ display:flex; }
+#insightCard{
+  background: var(--white); max-width:440px; width:100%; max-height:78vh; overflow-y:auto;
+  border-radius:14px; padding:22px 20px 18px; box-shadow:0 20px 60px rgba(0,0,0,0.4);
+  position:relative; border-top:5px solid var(--insight);
+}
+#insightCard .insight-eyebrow{ font-size:11px; letter-spacing:0.12em; color:var(--insight); font-weight:700; text-transform:uppercase; margin-bottom:8px; }
+#insightCard h4{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif; font-size:17px; color:var(--navy);
+  font-weight:700; margin:0 0 12px; line-height:1.4;
+}
+#insightCard .insight-body{ font-size:14px; line-height:1.82; color:var(--ink); white-space:pre-line; }
+#insightCard .insight-close{
+  position:absolute; top:12px; right:14px; width:26px; height:26px; border-radius:50%;
+  background: var(--cream-deep); color:var(--navy-soft);
+  display:flex; align-items:center; justify-content:center; cursor:pointer; font-size:14px;
+}
+#insightCard .insight-close:active{ background: var(--line); }
+
+/* ===== TERM TOOLTIP ===== */
+#termTip{
+  display:none; position:absolute; z-index:500; max-width:260px;
+  background: var(--white); color:var(--ink); font-size:13px; line-height:1.6;
+  padding:11px 14px; border-radius:10px; border-top:4px solid var(--gold);
+  box-shadow:0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip .tip-close{
+  position:absolute; top:5px; right:8px; width:18px; height:18px; border-radius:50%;
+  background: var(--cream-deep); display:flex; align-items:center; justify-content:center;
+  color:var(--navy-soft); font-size:11px; cursor:pointer;
+}
+b.has-tip{ cursor:pointer; }
+
+.footer-brand{
+  text-align:center; padding: 26px 6vw 6px; font-size:12px; color:var(--ink-soft);
+}
+
+@media print{
+  .top-bar, .bottom-nav, #insightOverlay, #termTip{ display:none !important; }
+}
+</style>
+</head><body>
+<div class="wrap">
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">&#10005;</div><div class="insight-eyebrow">&#128172; 더 알아보기</div><h4 id="insightTitle"></h4><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="top-bar">
+  <div class="tb-title" onclick="goTo('top')">📖 유다서 연구</div>
+</div>
+
+<div class="cover" style="background: linear-gradient(150deg, #2b1116 0%, #5c2233 100%);">
+  <div class="cover-inner">
+    <div class="eyebrow">BIBLE STUDY · JUDE</div>
+    <h1>유다서 연구</h1>
+    <div class="cover-sub">믿음의 도를 위하여 힘써 싸우라 — 짧지만 강렬한 경고와 송영</div>
+    <div class="pearl-divider"><span class="pl-line"></span><span class="pl-bead"></span><span class="pl-line r"></span></div>
+    <div class="cover-range">유 1:1-25 · 구조 · 교훈 · 심화 질문</div>
+    <div class="cover-note">전 1장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+  </div>
+</div>
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>유다서 연구 서론</h1>
+  <p class="intro-lead">은밀히 들어온 거짓 가르침에 맞서, 단번에 주신 믿음의 도를 지키라.</p>
+  <div class="intro-block"><h3>저자와 기록 시기</h3><p>유다서는 자신을 '예수 그리스도의 종이요 야고보의 형제'라 소개하는 <b class='hl-term'>유다</b>의 기록이다. 여기 언급된 야고보가 예루살렘 교회의 지도자였던 주의 형제 야고보라면, 이 유다 역시 <b class='hl-term'>예수님의 육신의 형제</b>(마 13:55) 중 한 명일 가능성이 높다. 기록 시기는 베드로후서와의 밀접한 문학적 유사성(특히 2장)을 고려할 때 <b class='hl-term'>AD 65–80년경</b>으로 추정된다.</p></div><div class="intro-block"><h3>수신자와 정황</h3><p>구체적인 수신 교회는 명시되지 않으나, 유다가 다급하게 편지의 방향을 바꾸었다고 밝힌 것(3절)에서 알 수 있듯, <b class='hl-term'>은밀히 들어온 거짓 교사들</b>이 하나님의 은혜를 방탕함으로 바꾸며 성도들을 위협하는 구체적이고 긴급한 상황이 배경이다. 이들은 도덕률 폐기론적(하나님의 은혜를 핑계로 방종한 삶을 정당화하는) 경향을 보였던 것으로 추정된다.</p></div><div class="intro-block"><h3>문체적 특징</h3><p>짧은 분량에도 불구하고 <b class='hl-term'>정교한 삼중 구조</b>(구약의 세 심판 선례, 가인·발람·고라의 세 유형, 거짓 교사를 묘사하는 여섯 개의 자연 이미지)를 촘촘히 사용하는 매우 수사적이고 응축된 문체를 지닌다. 정경 밖 유대 문헌(에녹서, 모세의 승천서로 추정되는 전승)을 인용하는 독특한 특징도 있다.</p></div><div class="intro-block"><h3>핵심 신학 주제</h3><p>유다서의 핵심은 <b class='hl-term'>단번에 주신 믿음의 도</b>를 위하여 힘써 싸우라는 부름과, 거짓 가르침에 맞서는 최선의 방어가 논쟁이 아니라 <b class='hl-term'>견고한 영적 훈련과 분별 있는 사랑</b>이라는 가르침이다. 편지는 심판의 엄중한 경고로 시작하지만, 결국 하나님의 능하신 보호를 찬양하는 장엄한 송영으로 마무리된다.</p></div>
+  <div class="intro-outline"><div class="oi"><div class="oi-tag">PART 1</div><div class="oi-title">경고의 근거 (1-16절)</div><div class="oi-body">편지를 쓴 이유, 구약의 심판 선례, 거짓 교사들의 정체와 특징</div></div><div class="oi"><div class="oi-tag">PART 2</div><div class="oi-title">권면과 송영 (17-25절)</div><div class="oi-body">성도를 향한 실천적 권면, 분별 있는 긍휼, 하나님을 향한 송영</div></div></div>
+</div>
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-item" onclick="goTo('ch1')"><span class="toc-num">01</span><span class="toc-title">믿음의 도를 위하여 힘써 싸우라</span><span class="toc-sub">거짓 교사들에 대한 경고와 하나님의 능하신 보호</span></div>
+</div>
+
+<div class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h11a3 3 0 0 1 3 3v13H7a3 3 0 0 1-3-3V4z"/><line x1="8" y1="9" x2="14" y2="9"/></svg></div>
+    <div>
+      <div class="chapter-eyebrow">CHAPTER 1</div>
+      <h2 class="chtitle">믿음의 도를 위하여 힘써 싸우라</h2>
+      <div class="chapter-sub">거짓 교사들에 대한 경고와 하나님의 능하신 보호</div>
+      <div class="ref-strip"><span class="ref-item">유 1:1-25</span></div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h3 class="sech">본문 구조와 핵심 내용</h3></div>
+    <p class="sec-desc">본문의 흐름을 단락별로 따라간다.</p>
+    <div class="flow-item"><div class="flow-range">1-4절</div><div class="flow-title">편지의 목적 — 힘써 싸우라는 권면</div><div class="flow-body"><b class="hl-insight" data-insight="0">예수 그리스도의 종 유다</b>는 '부르심을 받은 자, 하나님 아버지 안에서 사랑을 얻고 예수 그리스도를 위하여 지키심을 받은 자'들에게 편지한다. 원래는 구원에 관해 쓰려 했으나, 은밀히 들어온 <b class='hl-term'>경건하지 않은 자들</b> 때문에 '성도에게 단번에 주신 믿음의 도를 위하여 힘써 싸우라'는 편지를 쓰게 되었다고 밝힌다. 이들은 하나님의 은혜를 방탕한 것으로 바꾸고 예수 그리스도를 부인하는 자들이다.</div></div><div class="flow-item"><div class="flow-range">5-7절</div><div class="flow-title">세 가지 심판의 선례</div><div class="flow-body">유다는 구약의 세 가지 심판 사례를 든다 — 애굽에서 구원받았으나 후에 믿지 않은 백성들을 멸하신 일, 자기 지위를 지키지 않고 자기 처소를 떠난 <b class='hl-term'>천사들</b>을 어둠에 가두신 일, 그리고 음란과 부자연한 정욕을 따라간 소돔과 고모라가 영원한 불의 형벌을 받은 일이다. 이는 거짓 교사들에게 임할 심판의 확실성을 예시한다.</div></div><div class="flow-item"><div class="flow-range">8-10절</div><div class="flow-title">미가엘과 마귀의 대조</div><div class="flow-body"><b class="hl-insight" data-insight="2">천사장 미가엘과 마귀의 다툼</b> 이야기를 통해, 강력한 천사장조차 감히 훼방하는 판결을 내리지 않고 심판을 하나님께 맡겼음을 보여준다. 반면 거짓 교사들은 육체를 더럽히고 권위를 업신여기며 <b class='hl-term'>영광 있는 자들을 비방</b>하니, 이는 짐승처럼 본능으로 아는 것으로 자신을 멸망시키는 것과 같다.</div></div><div class="flow-item"><div class="flow-range">11-13절</div><div class="flow-title">가인, 발람, 고라 — 세 가지 유형의 죄</div><div class="flow-body">거짓 교사들은 <b class='hl-term'>가인의 길</b>(형제를 미워함), <b class='hl-term'>발람의 어그러진 길</b>(삯을 위해 진리를 팔아넘김), <b class='hl-term'>고라의 패역</b>(하나님이 세우신 권위에 대한 반역)을 따라간다. 이들은 사랑의 잔치에 암초요, 자기 몸만 기르는 목자요, 바람에 밀려가는 물 없는 구름이요, 죽고 또 죽어 뿌리까지 뽑힌 열매 없는 나무요, 자기 수치의 거품을 뿜는 바다 물결이요, 영원히 예비된 캄캄한 흑암으로 가는 유리하는 별이다.</div></div><div class="flow-item"><div class="flow-range">14-16절</div><div class="flow-title">에녹의 예언</div><div class="flow-body"><b class="hl-insight" data-insight="1">아담의 칠대 손 에녹</b>의 예언이 인용된다 — 주께서 그 거룩한 자 수만 명과 함께 임하셔서 모든 사람을 심판하시고, 경건하지 않은 자들의 모든 경건하지 않은 일과 완악한 말을 정죄하실 것이다. 이들은 원망하는 자, 불만을 토하는 자, 정욕대로 행하는 자, 입으로 자랑하는 말을 하며 이익을 위하여 아첨하는 자들이다.</div></div><div class="flow-item"><div class="flow-range">17-23절</div><div class="flow-title">성도를 향한 실천적 권면</div><div class="flow-body">반면 사랑하는 자들에게는 사도들의 미리 한 말을 기억하고, <b class='hl-term'>지극히 거룩한 믿음 위에 자신을 세우며</b>, 성령으로 기도하고, 하나님의 사랑 안에서 자신을 지키며, 영생에 이르도록 예수 그리스도의 긍휼을 기다리라고 권면한다. 의심하는 자를 긍휼히 여기고, 불에서 끌어내듯 어떤 자를 구원하고, 또 어떤 자를 두려움으로 긍휼히 여기되 그 육체로 더럽힌 옷까지도 미워하며 긍휼히 여기라고 세밀하게 구분하여 가르친다.</div></div><div class="flow-item"><div class="flow-range">24-25절</div><div class="flow-title">송영 — 능히 지키실 이에게</div><div class="flow-body">편지는 신약성경에서 가장 장엄한 송영 중 하나로 마무리된다 — '너희를 능히 보호하사 거침이 없게 하시고 그 영광 앞에 흠이 없이 기쁨으로 서게 하실 이 곧 우리 구주 홀로 하나이신 하나님께 우리 주 예수 그리스도로 말미암아 영광과 위엄과 권력과 권세가 영원 전부터 이제와 영원토록 있을지어다 아멘.'</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h3 class="sech">신학적·목회적 교훈</h3></div>
+    <p class="sec-desc">본문에서 오늘의 신앙과 삶으로 이어지는 핵심 통찰.</p>
+    <div class="teach-card"><div class="teach-title"><span class="teach-num">1</span>본래 쓰려던 편지와 실제로 써야 했던 편지</div><div class="teach-body">3절에서 유다는 '우리가 일반으로 받은 구원에 관하여' 쓰려 했으나, 급박한 상황 때문에 경고의 편지를 써야 했다고 고백한다. 때로 목회적 필요는 우리가 원래 하고 싶었던 일을 미루고 더 시급한 일에 응답하도록 요구한다.</div><div class="speech-bubble"><div class="sb-avatar">&#128172;</div><div class="sb-text">유다가 원래 하고 싶었던 건 아마 구원의 풍성함을 노래하는 훈훈한 편지였을 거예요. 그런데 갑자기 방향을 틀어 날 선 경고의 편지를 써야 했죠. 사랑은 때로 하고 싶은 말이 아니라 지금 꼭 필요한 말을 하는 거라는 걸 유다서 첫머리부터 배우게 돼요.</div></div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">2</span>역사 속 심판의 선례는 오늘의 경고다</div><div class="teach-body">애굽, 타락한 천사들, 소돔과 고모라라는 세 가지 사례는 모두 '한때 특권이나 좋은 위치에 있었으나 스스로 그것을 저버린' 존재들이다. 은혜를 받았다는 사실 자체가 심판을 면제해주지 않는다는 엄중한 경고다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">3</span>거짓 교사의 특징은 자기중심성이다</div><div class="teach-body">12절의 이미지들 — 자기 몸만 기르는 목자, 열매 없는 나무, 자기 수치의 거품을 뿜는 물결 — 은 하나같이 겉만 화려하고 실속과 유익이 없는 존재를 그린다. 참된 지도자는 자신이 아니라 양떼를 위해 존재한다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">4</span>믿음 위에 자신을 세운다는 것의 실천적 의미</div><div class="teach-body">20-21절의 권면 — 믿음 위에 세우고, 성령으로 기도하고, 하나님의 사랑 안에 자신을 지키고, 긍휼을 기다리는 것 — 은 거짓 가르침에 대한 최선의 방어가 논쟁이 아니라 견고한 영적 훈련임을 보여준다.</div></div><div class="teach-card"><div class="teach-title"><span class="teach-num">5</span>긍휼의 세 단계 — 분별 있는 사랑의 실천</div><div class="teach-body">22-23절은 모든 사람을 같은 방식으로 대하지 말라고 가르친다. 의심하는 자에게는 긍휼을, 위험에 처한 자에게는 적극적 구조를, 더 깊이 물든 자에게는 신중한 경계와 함께하는 긍휼을 — 사랑은 획일적이지 않고 상황을 분별하는 지혜를 요구한다.</div></div>
+  </section>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h3 class="sech">깊이 생각해볼 문제</h3></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item"><div class="deep-title"><span class="deep-num">1</span>에녹서 인용이 정경론에 던지는 질문</div><div class="deep-body"><b class="hl-insight" data-insight="1">아담의 칠대 손 에녹의 예언 인용</b>은 유다서가 정경 밖 문헌을 인용한 사례로 오랫동안 논의되어 왔다. 인용 자체가 그 출처 문헌 전체의 영감성을 의미하지 않는다는 것이 일반적 해석이지만, 이 문제는 성경의 영감과 정경화 과정을 이해하는 데 중요한 사례 연구로 남아 있다.</div><div class="verse-box"><div class="verse-ref">유 1:14-15</div><div class="verse-text">아담의 칠대 손 에녹이 이 사람들에 대하여도 예언하여 이르되 보라 주께서 그 거룩한 자 수만 명과 함께 임하셨나니 이는 못 사람을 심판하사 경건하지 않은 모든 자가 경건하지 않게 행한 모든 경건하지 않은 일과 또 경건하지 않은 죄인들이 주를 거슬러 한 모든 완악한 말로 말미암아 그들을 정죄하려 하심이라</div></div></div><div class="deep-item"><div class="deep-title"><span class="deep-num">2</span>모세의 승천서 전승과 미가엘 이야기의 출처 문제</div><div class="deep-body"><b class="hl-insight" data-insight="2">천사장 미가엘과 마귀의 변론</b>이 어떤 문헌에서 유래했는지는 현재 남아 있는 사본의 소실로 완전히 확정할 수 없다. 그러나 유다가 이 일화를 통해 전달하려는 메시지 — 심판은 인간이나 천사가 아니라 하나님께 속한다는 것 — 는 본문 전체의 논지 안에서 명확하다.</div><div class="verse-box"><div class="verse-ref">유 1:9</div><div class="verse-text">천사장 미가엘이 모세의 시체에 관하여 마귀와 다투어 변론할 때에 감히 비방하는 판결을 내리지 못하고 다만 말하되 주께서 너를 꾸짖으시기를 원하노라 하였거늘</div></div></div>
+    </div>
+  </section>
+</div>
+
+<div class="bottom-nav-spacer"></div>
+<div class="bottom-nav">
+  <button onclick="goTo('toc')" title="목차로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg></button>
+  <button onclick="goTo('top')" title="처음으로"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg></button>
+  <button onclick="if(window.goBackHome){goBackHome();}else if(window.backToHome){backToHome();}else{window.location.href='/';}" title="자료실로 가기"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg></button>
+</div>
+<div class="footer-brand">기독교한국침례회 은혜교회</div>
+</div>
+<script>
+var INSIGHTS_DATA = [{"title": "유다가 '예수 그리스도의 종이요 야고보의 형제'라고만 소개하는 이유", "body": "유다서 저자는 자신을 '예수 그리스도의 종이요 야고보의 형제인 유다'라고 소개해요(1절). 신약성경에는 유다라는 이름이 여럿 등장하는데, 여기 언급된 '야고보'가 예루살렘 교회 지도자였던 주의 형제 야고보(갈 1:19, 행 15장)를 가리킨다면, 이 유다 역시 예수님의 육신의 형제 중 한 명(마 13:55, 막 6:3)일 가능성이 높아요.\n\n흥미로운 건 유다가 자신을 '예수의 형제'라고 소개하지 않고 굳이 '예수 그리스도의 종'이라고 소개한다는 점이에요. 혈연적 특권을 내세울 수도 있었을 텐데, 오히려 종 됨을 앞세운 거죠. 이는 야고보서 저자(야고보) 역시 자신을 '하나님과 주 예수 그리스도의 종'이라고만 소개하는 것과 같은 패턴이에요(약 1:1).\n\n예수님의 형제들이 부활 이전에는 그분을 믿지 않았다는 것(요 7:5)을 생각하면, 이 겸손한 자기소개는 더욱 의미심장해요. 혈통이 아니라 부활하신 주께 대한 신앙으로 정체성을 재정의한 사람들의 고백인 셈이죠."}, {"title": "에녹서 인용 — 정경 밖의 책을 인용한 것이 문제가 되지 않는가", "body": "14-15절에서 유다는 '아담의 칠대 손 에녹'의 예언을 직접 인용해요. 그런데 이 인용문은 오늘날 <b>에녹1서(1 Enoch)</b>라고 불리는, 구약 정경에 포함되지 않은 유대 묵시문학 작품 1장 9절과 거의 일치해요.\n\n이것이 문제가 되는 이유는, 정경 밖의 책을 인용했다는 사실이 그 책 전체를 '영감된 것'으로 인정한다는 뜻인지에 대한 질문 때문이에요. 하지만 이는 지나친 해석이에요. 바울도 사도행전 17:28에서 헬라 시인의 시구를 인용하고, 디도서 1:12에서 크레타 시인의 말을 인용하지만, 그렇다고 그 시 전체가 영감되었다고 말하는 것은 아니거든요.\n\n성경 저자가 특정 진술을 인용할 때, 그 진술 자체가 참되고 유용하다고 인정하는 것이지, 출처가 된 문서 전체를 정경화하는 것은 아니라는 게 일반적으로 받아들여지는 설명이에요. 유다는 성령의 감동으로 이 특정한 예언적 진술이 참되다고 확증하며 사용한 것으로 이해할 수 있어요."}, {"title": "미가엘과 마귀의 다툼 — 어디서 온 이야기인가", "body": "9절은 매우 낯선 장면을 전해요. '천사장 미가엘이 모세의 시체에 관하여 마귀와 다투어 변론할 때에 감히 훼방하는 판결을 내리지 못하고 다만 말하되 주께서 너를 꾸짖으시기를 원하노라 하였거늘.' 이 이야기는 구약 어디에도 직접적으로 기록되어 있지 않아요.\n\n초대교회 전승에 따르면 이 사건은 <b>'모세의 승천(Assumption of Moses / Testament of Moses)'</b>이라는 유대 묵시문학 작품에서 유래한 것으로 알려져 있는데, 현재 남아 있는 사본에는 이 부분이 소실되어 정확한 원문 대조는 불가능해요. 오리게네스 같은 교부들이 이 전승을 언급한 기록이 남아 있을 뿐이죠.\n\n에녹서 인용과 마찬가지로, 유다가 이 이야기를 인용한다고 해서 그 출처 문서 전체를 영감된 정경으로 인정하는 것은 아니에요. 다만 이 특정 일화를 통해, 유다는 강력한 천사장조차 마귀를 향해 '감히 훼방하는 판결'을 내리지 않고 오직 하나님께 그 심판을 맡겼다는 겸손의 모범을 보여주려는 거예요 — 이는 뒤이어 나오는, 감히 '영광 있는 자들'을 비방하는 거짓 교사들에 대한 날카로운 대조가 됩니다(8-10절)."}];
+
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){
+    var bar = document.querySelector('.top-bar');
+    var barH = bar ? bar.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - barH - 10;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+}
+
+document.addEventListener('click', function(e){
+  var closeBtn = e.target.closest('.insight-close');
+  if(closeBtn){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  var insTerm = e.target.closest('.hl-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    return;
+  }
+  if(e.target.id === 'insightOverlay'){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  var tip = document.getElementById('termTip');
+  var tipCloseBtn = e.target.closest('.tip-close');
+  if(tipCloseBtn){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var cb = document.createElement('span');
+    cb.className = 'tip-close';
+    cb.textContent = '\u2715';
+    tip.appendChild(cb);
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 260;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+  } else if(tip && !e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

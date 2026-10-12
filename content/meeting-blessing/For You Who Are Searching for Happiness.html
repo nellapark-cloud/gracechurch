@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<title>The Blessing of Encounter — For You Who Are Searching for Happiness</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-panel:#F4F1E9;
+    --bg-card:#FFFFFF;
+    --text:#141310;
+    --text-soft:#2E2B24;
+    --text-faint:#6B665A;
+    --accent:#B8791E;
+    --accent-deep:#8F5D14;
+    --accent-soft:#D9A94B;
+    --violet:#5C46CC;
+    --violet-soft:#8571E0;
+    --gold:#B8791E;
+    --line:rgba(20,19,16,0.14);
+    --line-soft:rgba(20,19,16,0.09);
+  }
+
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  html{ font-size:100%; color-scheme:light !important; background:#FFFFFF !important; }
+  body{
+    font-family:'Noto Sans KR', sans-serif;
+    background:#FFFFFF !important;
+    color:var(--text-soft);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .bg-layer{
+    position:fixed; inset:0; width:100vw; height:100vh;
+    background:#FFFFFF !important; z-index:-10; pointer-events:none;
+  }
+  h1,h2,h3,.serif{ font-family:'Noto Serif KR', serif; }
+
+  .font-ctrl{
+    position:fixed; right:22px; bottom:22px; z-index:100;
+    display:flex; align-items:center; gap:2px;
+    background:var(--bg-card); border:1px solid var(--line);
+    border-radius:30px; padding:6px; box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  }
+  .font-ctrl button{
+    width:36px; height:36px; border-radius:50%; border:none; cursor:pointer;
+    background:transparent; color:var(--text); font-family:'Noto Sans KR', sans-serif;
+    display:flex; align-items:center; justify-content:center; transition:background .2s ease;
+  }
+  .font-ctrl button:hover{ background:rgba(20,19,16,0.08); }
+  .font-ctrl button:active{ background:rgba(20,19,16,0.15); }
+  .font-ctrl .dec{ font-size:0.75rem; font-weight:700; }
+  .font-ctrl .inc{ font-size:1.05rem; font-weight:700; }
+  .font-ctrl .label{ font-size:0.65rem; color:var(--text-faint); letter-spacing:.05em; padding:0 4px; min-width:40px; text-align:center; }
+  @media (max-width:600px){ .font-ctrl{ right:14px; bottom:14px; } }
+
+  .progress-rail{ position:fixed; top:0; left:0; width:100%; height:3px; background:rgba(255,255,255,0.12); z-index:100; }
+  .progress-fill{ height:100%; width:0%; background:linear-gradient(90deg,var(--violet),var(--accent)); transition:width .1s linear; }
+
+  .side-nav{
+    position:fixed; left:26px; top:50%; transform:translateY(-50%);
+    display:flex; flex-direction:column; gap:16px; z-index:90;
+  }
+  .side-nav button{
+    width:8px; height:8px; border-radius:50%; border:1px solid var(--text-faint);
+    background:var(--text-faint); opacity:0.35; cursor:pointer; padding:0; transition:all .3s ease;
+  }
+  .side-nav button.active{ background:var(--violet); border-color:var(--violet); opacity:1; transform:scale(1.5); }
+  @media (max-width:980px){ .side-nav{ display:none; } }
+
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .9s ease, transform .9s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} html{scroll-behavior:auto;} }
+
+  section.block{ padding:100px 24px; position:relative; }
+  .wrap{ max-width:700px; margin:0 auto; }
+
+  .chip{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--bg-panel); border:1px solid var(--line);
+    color:var(--violet); font-size:0.7rem; font-weight:700;
+    letter-spacing:.14em; text-transform:uppercase;
+    padding:8px 18px 8px 8px; border-radius:30px; margin-bottom:28px;
+  }
+  .chip .n{
+    width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--violet));
+    color:#FFFFFF; display:flex; align-items:center; justify-content:center;
+    font-family:'Noto Serif KR', serif; font-weight:800; font-size:0.75rem;
+  }
+
+  h2.title{ font-size:clamp(1.6rem,4.2vw,2.5rem); font-weight:800; color:var(--text); line-height:1.35; letter-spacing:-.01em; margin-bottom:8px; }
+  h3.sub{ font-family:'Noto Serif KR', serif; font-size:clamp(1.05rem,2.2vw,1.25rem); font-weight:700; color:var(--gold); margin:42px 0 16px; }
+  p.deck{ font-size:1.05rem; font-weight:500; color:var(--text); margin:24px 0 6px; line-height:1.8; }
+  p{ font-size:0.94rem; color:var(--text-soft); font-weight:400; margin-bottom:22px; }
+  p strong{ color:var(--text); font-weight:700; }
+
+  .dropcap:first-letter{ float:left; font-family:'Noto Serif KR', serif; font-size:3.1rem; font-weight:400; color:var(--accent); line-height:.7; padding:6px 8px 0 0; }
+
+  .case-grid{ display:flex; flex-direction:column; gap:14px; margin:34px 0 10px; }
+  .case{ background:var(--bg-card); border-radius:14px; padding:26px 28px; position:relative; overflow:hidden; }
+  .case::before{ content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:linear-gradient(180deg,var(--accent),var(--violet)); }
+  .case .who{ font-family:'Noto Serif KR', serif; font-weight:700; color:var(--text); font-size:0.94rem; margin-bottom:8px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .case .who .badge{ font-size:0.65rem; letter-spacing:.04em; color:#FFFFFF; background:var(--violet); padding:3px 10px; border-radius:20px; font-family:'Noto Sans KR',sans-serif; font-weight:700; }
+  .case p{ font-size:0.91rem; margin-bottom:0; }
+
+  .verse{ margin:44px 0; background:linear-gradient(135deg, rgba(233,178,78,0.12), rgba(139,124,240,0.08)); border-radius:16px; padding:36px 34px; position:relative; }
+  .verse .mark{ position:absolute; top:14px; left:22px; font-family:'Noto Serif KR', serif; font-size:4.2rem; color:var(--accent); opacity:.4; line-height:1; }
+  .verse p{ font-family:'Noto Serif KR', serif; font-size:1.08rem; color:var(--text); font-weight:600; margin:20px 0 10px; position:relative; z-index:1; }
+  .verse cite{ font-size:0.76rem; color:var(--violet); font-style:normal; letter-spacing:.04em; }
+
+  .block.panel{ background:var(--bg-panel); }
+
+  .reaction-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:32px 0 10px; }
+  .reaction{ background:var(--bg-card); border-radius:14px; padding:22px 22px 20px; border-top:2px solid var(--violet); }
+  .reaction .t{ font-family:'Noto Serif KR', serif; font-weight:700; color:var(--text); font-size:0.91rem; margin-bottom:8px; }
+  .reaction p{ font-size:0.82rem; margin-bottom:0; color:var(--text-faint); }
+  @media (max-width:600px){ .reaction-grid{ grid-template-columns:1fr; } }
+
+  .faq-list{ margin-top:28px; display:flex; flex-direction:column; gap:12px; }
+  .faq-item{ background:var(--bg-card); border-radius:14px; overflow:hidden; border:1px solid transparent; transition:border-color .3s ease; }
+  .faq-item.open{ border-color:var(--line); }
+  .faq-q{ width:100%; text-align:left; background:none; border:none; cursor:pointer; padding:20px 22px; display:flex; align-items:center; gap:16px; font-family:'Noto Serif KR', serif; font-size:0.92rem; font-weight:700; color:var(--text); }
+  .faq-q .idx{ flex:none; width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,var(--violet),var(--accent)); color:#FFFFFF; display:flex; align-items:center; justify-content:center; font-family:'Noto Sans KR',sans-serif; font-size:0.76rem; font-weight:800; }
+  .faq-q .chev{ margin-left:auto; flex:none; color:var(--accent); transition:transform .3s ease; font-size:0.82rem; }
+  .faq-item.open .faq-q .chev{ transform:rotate(180deg); }
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height .45s ease; }
+  .faq-a-inner{ padding:0 22px 24px 68px; }
+  .faq-a-inner p{ font-size:0.85rem; margin-bottom:13px; }
+  .faq-a-inner p:last-child{ margin-bottom:0; }
+
+  .life-grid{ display:flex; flex-direction:column; gap:0; margin-top:28px; }
+  .life-row{ display:grid; grid-template-columns:120px 1fr; gap:24px; padding:22px 0; border-top:1px solid var(--line-soft); }
+  .life-row:last-child{ border-bottom:1px solid var(--line-soft); }
+  .life-row .when{ font-family:'Noto Serif KR', serif; color:var(--violet); font-weight:700; font-size:0.85rem; padding-top:2px; }
+  .life-row p{ margin-bottom:0; font-size:0.88rem; }
+  @media (max-width:560px){ .life-row{ grid-template-columns:1fr; gap:6px; } }
+
+  .step-grid{ display:flex; flex-direction:column; gap:12px; margin:32px 0 10px; }
+  .step{ display:grid; grid-template-columns:48px 1fr; gap:20px; padding:22px 24px; background:var(--bg-card); border-radius:14px; }
+  .step .n{ font-family:'Noto Serif KR', serif; font-weight:800; color:var(--accent); font-size:1.3rem; }
+  .step .t{ font-family:'Noto Serif KR', serif; font-weight:700; font-size:0.97rem; color:var(--text); margin-bottom:6px; }
+  .step p{ margin-bottom:0; font-size:0.88rem; }
+
+  .hero{ position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:100px 24px 60px; overflow:hidden; }
+  .hero::before{
+    content:''; position:absolute; inset:0;
+    background:
+      radial-gradient(ellipse 70% 50% at 30% 12%, rgba(233,178,78,0.18), transparent 60%),
+      radial-gradient(ellipse 60% 45% at 78% 82%, rgba(139,124,240,0.16), transparent 60%);
+  }
+  .hero-content{ position:relative; z-index:2; text-align:center; max-width:640px; }
+  .hero-content .chip{ margin:0 auto 30px; }
+  .hero-title{ font-family:'Noto Serif KR', serif; font-size:clamp(2rem,7vw,3.6rem); font-weight:900; letter-spacing:-.01em; color:var(--text); line-height:1.2; margin-bottom:18px; }
+  .hero-title .accent-word{
+    background:linear-gradient(90deg,var(--accent),var(--violet-soft));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .hero-underline{ width:80px; height:2px; margin:0 auto 26px; background:linear-gradient(90deg,var(--accent),var(--violet)); border-radius:3px; }
+  .hero-subtitle{ font-family:'Noto Sans KR', sans-serif; font-size:clamp(0.78rem,1.6vw,0.92rem); font-weight:600; letter-spacing:.14em; text-transform:uppercase; color:var(--gold); margin-bottom:14px; }
+  .hero p.lead{ font-size:clamp(0.88rem,1.8vw,1rem); color:var(--text-soft); font-weight:400; max-width:480px; margin:0 auto; line-height:1.85; }
+  .scroll-cue{ position:absolute; bottom:32px; left:50%; transform:translateX(-50%); font-size:0.65rem; letter-spacing:.24em; color:var(--accent); display:flex; flex-direction:column; align-items:center; gap:8px; z-index:2; }
+  .scroll-cue .bar{ width:1px; height:34px; background:linear-gradient(180deg,var(--accent),transparent); animation:cue 2s ease-in-out infinite; }
+  @keyframes cue{0%,100%{opacity:.25;}50%{opacity:1;}}
+
+  .invite{ background:linear-gradient(180deg,var(--bg-panel),var(--bg)); padding:120px 24px; text-align:center; }
+  .invite .chip{ margin:0 auto 26px; }
+  .invite h2.title{ color:var(--text); }
+  .invite p{ color:var(--text-soft); font-size:0.94rem; }
+  .prayer-box{ margin:38px auto 0; max-width:480px; padding:32px 30px; border-radius:16px; background:linear-gradient(135deg, rgba(233,178,78,0.13), rgba(139,124,240,0.09)); text-align:left; }
+  .prayer-box .tag2{ font-size:0.7rem; letter-spacing:.16em; color:var(--gold); text-transform:uppercase; font-weight:700; margin-bottom:14px; }
+  .prayer-box p{ font-family:'Noto Serif KR', serif; font-size:0.91rem; color:var(--text); font-weight:400; line-height:1.95; margin-bottom:0; }
+
+  footer{ background:var(--bg); border-top:1px solid var(--line-soft); padding:42px 24px 48px; text-align:center; }
+  footer .brand{ font-family:'Noto Serif KR', serif; color:var(--accent-deep); font-size:0.88rem; font-weight:700; margin-bottom:8px; }
+  footer p{ font-size:0.74rem; color:var(--text-faint); line-height:1.9; }
+
+  .illus{ width:168px; height:168px; margin:38px auto 10px; display:block; }
+  .illus svg{ width:100%; height:100%; display:block; }
+  .illus.large{ width:220px; height:220px; }
+  @media (max-width:520px){ .illus{ width:136px; height:136px; } .illus.large{ width:180px; height:180px; } }
+
+  .vref{
+    color:var(--violet); border-bottom:1.5px dotted var(--violet-soft);
+    cursor:pointer; font-weight:600; transition:color .2s ease, border-color .2s ease;
+  }
+  .vref:hover{ color:var(--accent); border-color:var(--accent-soft); }
+  span.badge.vref{ border-bottom:none; }
+  .cite-tag{
+    display:inline;
+    font-size:0.92em; font-weight:600; color:var(--violet);
+    background:none; padding:0; border-radius:0;
+    font-family:inherit; margin:0;
+    border-bottom:1.5px dotted var(--violet-soft) !important;
+    cursor:pointer;
+  }
+  .cite-tag:hover{ color:var(--accent); border-color:var(--accent-soft) !important; }
+
+  .vpop-overlay{
+    position:fixed; inset:0; background:rgba(20,19,16,0.4); z-index:300;
+    display:none; align-items:flex-end; justify-content:center;
+  }
+  .vpop-overlay.show{ display:flex; }
+  .vpop{
+    background:var(--bg-card); width:100%; max-width:460px;
+    border-radius:20px 20px 0 0; padding:30px 26px 36px;
+    box-shadow:0 -14px 44px rgba(0,0,0,0.22); position:relative;
+    animation:vpopUp .25s ease;
+  }
+  @keyframes vpopUp{ from{ transform:translateY(24px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+  .vpop .close{ position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.3rem; color:var(--text-faint); cursor:pointer; line-height:1; }
+  .vpop .ref{ font-family:'Noto Serif KR',serif; font-weight:700; color:var(--violet); font-size:0.85rem; letter-spacing:.02em; margin-bottom:14px; padding-right:24px; }
+  .vpop .txt{ font-family:'Noto Serif KR',serif; font-size:1rem; line-height:1.8; color:var(--text); font-weight:500; }
+  @media (min-width:640px){ .vpop{ margin-bottom:40px; border-radius:20px; } .vpop-overlay{ align-items:center; } }
+
+  .toc-grid{ display:flex; flex-direction:column; gap:2px; margin-top:30px; }
+  .toc-item{
+    display:flex; align-items:center; gap:18px;
+    padding:16px 6px; border-bottom:1px solid var(--line-soft);
+    text-decoration:none; color:var(--text-soft); transition:padding-left .25s ease, color .25s ease;
+  }
+  .toc-item:hover{ padding-left:10px; color:var(--text); }
+  .toc-item .tn{
+    flex:none; width:34px; font-family:'Noto Serif KR', serif; font-weight:700;
+    font-size:0.95rem; background:linear-gradient(135deg,var(--accent),var(--violet));
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+  }
+  .toc-item .tt{ font-family:'Noto Serif KR', serif; font-size:0.92rem; font-weight:600; }
+
+  .toc-btn{
+    position:fixed; left:22px; bottom:22px; z-index:100;
+    display:flex; align-items:center; gap:8px;
+    background:var(--bg-card); border:1px solid var(--line);
+    color:var(--text); font-family:'Noto Sans KR', sans-serif; font-size:0.78rem; font-weight:700;
+    padding:11px 18px; border-radius:30px; cursor:pointer;
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+  }
+  .toc-btn svg{ width:14px; height:14px; flex:none; }
+  @media (max-width:980px){ .toc-btn{ left:14px; bottom:14px; } }
+  @media (max-width:600px){ .toc-btn span{ display:none; } .toc-btn{ padding:12px; } }
+
+  .back-btn{
+    position:fixed; left:22px; top:22px; z-index:100;
+    display:flex; align-items:center; gap:8px;
+    background:var(--bg-card); border:1px solid var(--line);
+    color:var(--text); font-family:'Noto Sans KR', sans-serif; font-size:0.78rem; font-weight:700;
+    padding:11px 18px; border-radius:30px; cursor:pointer;
+    box-shadow:0 8px 24px rgba(20,19,16,0.12); text-decoration:none;
+  }
+  .back-btn svg{ width:14px; height:14px; flex:none; }
+  .back-btn:hover{ background:var(--bg-panel); }
+  @media (max-width:600px){ .back-btn span{ display:none; } .back-btn{ padding:12px; } }
+</style>
+</head>
+<body style="background:#FFFFFF;">
+<div class="bg-layer" style="background:#FFFFFF;"></div>
+
+<button class="back-btn" onclick="history.length > 1 ? history.back() : window.close()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  <span>Back to Archive</span>
+</button>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+<nav class="side-nav" id="sideNav"></nav>
+
+<div class="font-ctrl">
+  <button class="dec" id="fontDec" aria-label="Smaller text">A</button>
+  <span class="label" id="fontLabel">Normal</span>
+  <button class="inc" id="fontInc" aria-label="Larger text">A</button>
+</div>
+
+<button class="toc-btn" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg>
+  <span>Contents</span>
+</button>
+
+<!-- HERO -->
+<section class="hero" data-chapter="0">
+  <div class="hero-content">
+    <div class="chip"><span class="n"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF"><path d="M12 2 L14 9 L21 11 L14 13 L12 20 L10 13 L3 11 L10 9 Z"/></svg></span>A Story for Those Seeking a Blessed, Abundant Life</div>
+    <div class="hero-subtitle">The Blessing of Encounter</div>
+    <h1 class="hero-title">For You Who Are<br><span class="accent-word">Searching</span> for Happiness</h1>
+    <div class="hero-underline"></div>
+    <div class="illus large" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="145" r="36" fill="var(--accent)" opacity="0.95"/>
+        <g stroke="var(--accent-soft)" stroke-width="2" stroke-linecap="round">
+          <line x1="100" y1="88" x2="100" y2="74"/>
+          <line x1="66" y1="99" x2="55" y2="88"/>
+          <line x1="134" y1="99" x2="145" y2="88"/>
+          <line x1="52" y1="122" x2="36" y2="118"/>
+          <line x1="148" y1="122" x2="164" y2="118"/>
+        </g>
+        <path d="M0 162 Q50 120 100 150 T200 142 L200 200 L0 200 Z" fill="var(--violet-soft)" opacity="0.55"/>
+        <path d="M0 186 Q70 146 120 178 T200 170 L200 200 L0 200 Z" fill="var(--violet)" opacity="0.95"/>
+      </svg>
+    </div>
+    <p class="lead">This is not a piece meant to be skimmed. It was written slowly and specifically, for everyone who has ever stood before life's hardest questions, and for anyone who wants an honest answer to them.</p>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
+</section>
+
+<!-- TOC -->
+<section class="block panel" data-chapter="toc" id="toc">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">目</span>TABLE OF CONTENTS</div>
+    <h2 class="title">Table of Contents</h2>
+    <p class="deck">This piece has 14 chapters in all. Reading them in order is ideal, but if you'd rather jump to a chapter that catches your eye, tap it below.</p>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch1"><span class="tn">01</span><span class="tt">People Standing Before the Question</span></a>
+      <a class="toc-item" href="#ch2"><span class="tn">02</span><span class="tt">Four Obstacles to Encountering God</span></a>
+      <a class="toc-item" href="#ch3"><span class="tn">03</span><span class="tt">What Does It Really Mean to Encounter God</span></a>
+      <a class="toc-item" href="#ch4"><span class="tn">04</span><span class="tt">Can Doubt and Faith Coexist</span></a>
+      <a class="toc-item" href="#ch5"><span class="tn">05</span><span class="tt">The Answer to Life That Encounter Brings</span></a>
+      <a class="toc-item" href="#ch6"><span class="tn">06</span><span class="tt">True Happiness, Joy, and Freedom</span></a>
+      <a class="toc-item" href="#ch7"><span class="tn">07</span><span class="tt">The Secret of True Abundance</span></a>
+      <a class="toc-item" href="#ch8"><span class="tn">08</span><span class="tt">Why It's Hard to Do Alone</span></a>
+      <a class="toc-item" href="#ch9"><span class="tn">09</span><span class="tt">Honest Reactions People Have</span></a>
+      <a class="toc-item" href="#ch10"><span class="tn">10</span><span class="tt">How Can We Know God Exists</span></a>
+      <a class="toc-item" href="#ch11"><span class="tn">11</span><span class="tt">Approaching It Logically</span></a>
+      <a class="toc-item" href="#ch12"><span class="tn">12</span><span class="tt">What Changes After Encountering God</span></a>
+      <a class="toc-item" href="#ch13"><span class="tn">13</span><span class="tt">If You'd Like to Learn More</span></a>
+      <a class="toc-item" href="#ch14"><span class="tn">14</span><span class="tt">Now, It's Time to Begin Your Own Encounter</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CH1 -->
+<section class="block" data-chapter="1" id="ch1">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">1</span>THE QUESTION</div>
+    <h2 class="title">People Standing Before the Question</h2>
+    <p class="deck dropcap">People arrive at the same question wearing very different faces. Lives that look nothing alike on the surface still end up, in the quiet of early morning, reaching the same thirst. Here are seven stories that resemble real ones.</p>
+
+    <div class="case-grid">
+      <div class="case"><div class="who">K, a Successful Entrepreneur <span class="badge">Emptiness</span></div>
+        <p>Thirty-seven years old, he has reached a position most people envy. He has most of what he once wanted, yet lately, right before sleep, an unexplainable hollowness rises up. "I thought I'd be happy once I had all this. Why isn't there anything after it?" For the first time, he admits his achievements were never the answer.</p></div>
+      <div class="case"><div class="who">A Woman Who Lost Someone <span class="badge">Why</span></div>
+        <p>After suddenly losing her mother, she can't escape the question "why." Why does this happen to someone who lived a good life — does goodness even exist in this world? Words of comfort brought no comfort; what she needed wasn't an answer, but someone to simply stay with her.</p></div>
+      <div class="case"><div class="who">A Skeptical Graduate Student <span class="badge">Reason in Conflict</span></div>
+        <p>Majoring in physics, he had long dismissed the idea of God as irrational. But as he studied how precisely the universe's constants are tuned to make life possible, a question settled into a corner of his mind for the first time: "Is this really just chance?"</p></div>
+      <div class="case"><div class="who">An Exhausted Young Adult <span class="badge">Comparison and Burnout</span></div>
+        <p>Twenty-six, she starts every day comparing her life to other people's on social media. No matter how hard she works, she still feels like it's never enough — an anxiety that her very existence wobbles unless she's recognized. She has forgotten what she's even striving for anymore.</p></div>
+      <div class="case"><div class="who">Jimin (not her real name), a High Schooler <span class="badge">Teen · Identity</span></div>
+        <p>A junior in high school, her whole mood for the day hinges on a single number on a test result. Caught between her parents' expectations and comparisons with friends, she keeps thinking, "Am I only okay when my grades are good?" Everyone online seems to be doing fine while she alone falls behind — an anxiety that visits her every night. Young as she is, Jimin already stands before the very same question adults ask: "Why do I have to keep earning the right to be okay?"</p></div>
+      <div class="case"><div class="who">A Manager Nearing Retirement <span class="badge">Emptiness</span></div>
+        <p>After thirty years at the same company, he's suddenly afraid as retirement approaches. Once the title that explained who he was disappears, who exactly is he? For the first time, he watches the identity he built on achievement begin to crumble at the threshold of retirement.</p></div>
+      <div class="case"><div class="who">Someone Who Practiced Faith Out of Habit <span class="badge">Formal Faith</span></div>
+        <p>He has gone to church since childhood, but it was only ever habit and culture — he has no memory of actually meeting God personally. He has recently realized his faith was made of nothing but knowledge and routine, and has begun asking again what it truly means to "know" God.</p></div>
+    </div>
+
+    <p style="margin-top:28px;">These seven people differ in age, background, and the shape of their struggle. Yet all of them arrive at the same place — a thirst that <strong>more possessions or more knowledge cannot satisfy</strong>. And interestingly, those who were honest before that thirst all tell the same story: the answer came not through information, but through an <strong>encounter</strong>.</p>
+  </div>
+</section>
+
+<!-- CH2 -->
+<section class="block panel" data-chapter="2" id="ch2">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">2</span>OBSTACLES</div>
+    <h2 class="title">Four Obstacles to Encountering God</h2>
+    <p class="deck">Before diving in, let's first name the places where many people, without realizing it, stop short in front of this encounter.</p>
+
+    <h3 class="sub">Self-Sufficiency — "I don't lack anything"</h3>
+    <p>Paradoxically, the more smoothly life is going, the easier it is to drift from this encounter. If you don't feel a need, you don't go looking. But self-sufficiency is often an illusion that hasn't yet been tested by collapse.</p>
+
+    <h3 class="sub">Past Wounds — "I've been let down by the church, or by believers"</h3>
+    <p>Many people close their hearts not because of faith itself, but because of wounds inflicted by people who claimed to represent it. That wound is real and valid. But a person's disappointment and the truth about God are two separate matters that need to be distinguished.</p>
+
+    <h3 class="sub">Intellectual Pride — "I can't accept this logically"</h3>
+    <p>The more rational someone considers themselves, the more likely they are to dismiss faith as emotional and illogical before even examining it. But as we'll see later, faith doesn't oppose reason — it's an area that can be supported by careful argument.</p>
+
+    <h3 class="sub">Fear — "If I believe, my life will have to change"</h3>
+    <p>This may be the most honest obstacle of all. Many people think that the moment they accept faith, they'll have to give up the freedom and enjoyment they currently have. But as we'll see, what people who have actually experienced this encounter report is the opposite — not loss, but a deeper freedom.</p>
+
+    <p>If even one of these four obstacles weighs on your mind, that isn't a flaw — it's actually an honest starting point.</p>
+  </div>
+</section>
+
+<!-- CH3 -->
+<section class="block" data-chapter="3" id="ch3">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">3</span>ENCOUNTER</div>
+    <h2 class="title">What Does It Really Mean to Encounter God</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M60 170 L60 60 Q60 30 100 30 Q140 30 140 60 L140 170" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="170" x2="140" y2="170" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="126" cy="118" r="3.5" fill="var(--violet)"/>
+        <circle cx="100" cy="95" r="34" fill="var(--accent)" opacity="0.16"/>
+        <circle cx="100" cy="95" r="10" fill="var(--accent)" opacity="0.7"/>
+        <path d="M100 55 L100 40 M132 70 L144 60 M132 120 L144 130 M68 70 L56 60 M68 120 L56 130" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p class="deck">We need to look more closely at what the word "encounter" actually means. Many people mistake faith for a religious system — a list of rules to keep and facts to memorize. But the encounter the Bible describes is fundamentally different from that.</p>
+
+    <h3 class="sub">Religion vs. Relationship</h3>
+    <p>Most religious systems share a structure in which the human being tries to reach a divine being through their own effort, discipline, and good works — keeping rules strictly, accumulating good deeds and merit, purifying oneself through austerity, making pilgrimages toward what is sacred. The methods differ, but the direction is the same: a ladder reaching from the lacking human upward toward the divine.</p>
+    <p>The picture the Bible paints is the exact opposite. In Genesis, when Adam and Eve sinned and hid, it was God, not them, who moved first. <span class="cite-tag vref" data-ref="Genesis 3:9" data-txt="And the LORD God called unto Adam, and said unto him, Where art thou?">Genesis 3:9</span> "Where are you?" — God came looking first. In the story of the prodigal son in Luke 15, the father sees his son while he is still far off and runs to embrace him. <span class="cite-tag vref" data-ref="Luke 15:20" data-txt="But when he was yet a great way off, his father saw him, and had compassion, and ran, and fell on his neck, and kissed him.">Luke 15:20</span> Romans summarizes this structure: "While we were still sinners, Christ died for us." <span class="cite-tag vref" data-ref="Romans 5:8" data-txt="But God commendeth his love toward us, in that, while we were yet sinners, Christ died for us.">Romans 5:8</span> He didn't come after we became worthy — he came to us exactly as we were, unworthy.</p>
+    <p>That's why Ephesians calls salvation "not of works... it is the gift of God." <span class="cite-tag vref" data-ref="Ephesians 2:8-9" data-txt="For by grace are ye saved through faith; and that not of yourselves: it is the gift of God: Not of works, lest any man should boast.">Ephesians 2:8-9</span> Not a story of humanity climbing up, but <strong>an event of God coming down to humanity first</strong> — this single difference in order fundamentally separates religion from encounter.</p>
+
+    <h3 class="sub">Two Meanings of "Knowing"</h3>
+    <p>Hebrew has a word for "to know" — yada (יָדַע). This word goes beyond acquiring information; it means to know through full relationship and experience. To "know" God isn't knowledge <em>about</em> God, but a knowing that comes from an actual relationship with him.</p>
+
+    <h3 class="sub">Three Steps of Encountering God</h3>
+    <p>This encounter usually unfolds in three steps. The first is <strong>acknowledgment</strong> — accepting that there is a thirst you cannot satisfy by your own strength. The second is <strong>turning</strong> — laying down the answers you've been clinging to and changing direction. The third is <strong>receiving</strong> — taking hold of the hand God extends. These three steps happen in order, and sometimes all at once.</p>
+
+    <h3 class="sub">Encounters Throughout History</h3>
+    <p>Scripture and church history are filled with stories of people whose lives were utterly changed by this encounter.</p>
+
+    <div class="case-grid">
+      <div class="case"><div class="who">Moses <span class="badge vref" data-ref="Exodus 3:4" data-txt="And when the LORD saw that he turned aside to see, God called unto him out of the midst of the bush, and said, Moses, Moses. And he said, Here am I.">Exodus 3</span></div>
+        <p>On an ordinary day tending sheep in the wilderness, he hears God's voice from a burning bush. A fugitive up to that point, he goes on after this encounter to live a completely different life leading a nation.</p></div>
+      <div class="case"><div class="who">The Woman at the Well <span class="badge vref" data-ref="John 4:29" data-txt="Come, see a man, which told me all things that ever I did: is not this the Christ?">John 4</span></div>
+        <p>Avoiding the stares of others, she comes alone at midday to draw water and meets Jesus at the well. Before his gaze — one that knows her whole past yet doesn't condemn her — she runs straight to town to tell everyone.</p></div>
+      <div class="case"><div class="who">Zacchaeus <span class="badge vref" data-ref="Luke 19:5" data-txt="And when Jesus came to the place, he looked up, and saw him, and said unto him, Zacchaeus, make haste, and come down; for to day I must abide at thy house.">Luke 19</span></div>
+        <p>Shunned by the townspeople for his profession, he even climbs a tree just to see Jesus. The moment Jesus calls him by name first, he sets down, then and there, the way of life he's lived his whole life.</p></div>
+      <div class="case"><div class="who">The Apostle Paul <span class="badge vref" data-ref="Acts 9:4" data-txt="And he fell to the earth, and heard a voice saying unto him, Saul, Saul, why persecutest thou me?">Acts 9</span></div>
+        <p>On the road to Damascus, where he was going to persecute believers, he encounters a light and a voice. He goes on to preach the very gospel he once persecuted.</p></div>
+      <div class="case"><div class="who">Augustine <span class="badge">Confessions, 4th Century</span></div>
+        <p>A young philosopher living a dissolute life is utterly transformed in a garden in Milan, hearing children's voices and opening a passage of Scripture by what seemed like chance.</p></div>
+      <div class="case"><div class="who">C.S. Lewis <span class="badge">20th-Century Writer</span></div>
+        <p>Once a committed atheist, he meets a moment of surrender he never wanted, alone in a room at Oxford. He would later call himself "the most reluctant convert in all England."</p></div>
+    </div>
+
+    <p style="margin-top:28px;">A shepherd, a shunned woman, a despised tax collector, a persecutor of the faith, a dissolute philosopher, an obstinate atheist — what they share isn't specialness, but ordinariness, or even resistance. What changed them wasn't resolve or effort, but <strong>a single encounter</strong>.</p>
+  </div>
+</section>
+
+<!-- CH4 -->
+<section class="block panel" data-chapter="4" id="ch4">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">4</span>DOUBT</div>
+    <h2 class="title">Can Doubt and Faith Coexist</h2>
+    <p class="deck">Many people think you need perfect certainty before you can believe. But the stories of biblical figures paint an entirely different picture.</p>
+
+    <h3 class="sub">Doubting Thomas</h3>
+    <p><span class="cite-tag vref" data-ref="John 20:25" data-txt="The other disciples therefore said unto him, We have seen the Lord. But he said unto them, Except I shall see in his hands the print of the nails, and put my finger into the print of the nails, and thrust my hand into his side, I will not believe.">John 20:25</span> When he heard the news of the resurrection, the disciple Thomas declared he wouldn't believe until he saw and touched the nail marks himself. Jesus doesn't rebuke him for it — he comes to him directly and lets him touch his hand. Doubt isn't treated as the opposite of faith, but as part of the journey toward it.</p>
+
+    <h3 class="sub">John the Baptist's Question From Prison</h3>
+    <p><span class="cite-tag vref" data-ref="Matthew 11:3" data-txt="Art thou he that should come, or do we look for another?">Matthew 11:3</span> Even John the Baptist, who boldly proclaimed Jesus as the coming Messiah, sends messengers from prison to ask, "Are you really the one who is to come?" Scripture records, without hiding it, that even a confident person can waver in the face of suffering.</p>
+
+    <h3 class="sub">Habakkuk's Protest</h3>
+    <p><span class="cite-tag vref" data-ref="Habakkuk 1:3" data-txt="Why dost thou shew me iniquity, and cause me to behold grievance? for spoiling and violence are before me: and there are that raise up strife and contention.">Habakkuk 1:3</span> The Old Testament prophet Habakkuk openly protests to God: "Why do you make me look at injustice? Why do you tolerate wrongdoing?" He keeps asking, refusing to give up until he gets an answer. Scripture never treats this kind of questioning faith as something to be ashamed of.</p>
+
+    <p>Faith isn't a state with no doubt at all — it's continuing to face God even while carrying doubt. It doesn't begin after reaching 100 percent certainty; it begins with the first step taken while still carrying uncertainty.</p>
+  </div>
+</section>
+
+<!-- CH5 -->
+<section class="block" data-chapter="5" id="ch5">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">5</span>THE ANSWER</div>
+    <h2 class="title">The Answer to Life That Encounter Brings</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="62" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="100" cy="100" r="4" fill="var(--accent)"/>
+        <line x1="100" y1="30" x2="100" y2="44" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="100" y1="156" x2="100" y2="170" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="30" y1="100" x2="44" y2="100" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="156" y1="100" x2="170" y2="100" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <path d="M100 100 L88 128 L100 118 L112 128 Z" fill="var(--violet)"/>
+        <path d="M100 100 L112 72 L100 82 L88 72 Z" fill="var(--accent-soft)"/>
+      </svg>
+    </div>
+    <p class="deck">The change that comes to someone who encounters God begins not with circumstances, but with <strong>the way they see themselves</strong>. This change can be understood across three layers.</p>
+
+    <h3 class="sub">Identity — Who Am I</h3>
+    <p>Many people measure their worth by achievement, appearance, or others' approval. Test scores, salary, follower counts, how fast you get promoted — these yardsticks lift you up one day and drag you down the next. But this standard always wavers. Someone who has encountered God gains an entirely different standard — I am not here by accident, but <strong>made to be loved</strong>. As the psalmist sings, "I am fearfully and wonderfully made." <span class="cite-tag vref" data-ref="Psalm 139:14" data-txt="I will praise thee; for I am fearfully and wonderfully made: marvellous are thy works; and that my soul knoweth right well.">Psalm 139:14</span> No matter how performance rises and falls, this root of identity doesn't shake.</p>
+
+    <h3 class="sub">Purpose — Why Do I Live</h3>
+    <p>A life without purpose is like rowing a boat with no direction — no matter how hard you row, without a destination, all that diligence ends in exhausting waste. Within a relationship with God, a person comes to see that their work, relationships, and time are part of a larger story. This doesn't mean everyone must become a pastor or missionary. An honest day's work, patience toward your children, a small kindness to a neighbor — all these ordinary moments become a portion uniquely entrusted to you, carrying a weight that is anything but accidental.</p>
+
+    <h3 class="sub">Direction — Where Am I Going</h3>
+    <p>Many people race toward the next stage of life — the next semester, the next promotion, the next house — without ever thinking about the final destination. It's like driving with the navigation on but no destination entered. Someone who has encountered God faces the future with hope instead of a vague anxiety about what comes after death. Each choice today is no longer just a scattered day, but a step accumulating toward a clear destination.</p>
+
+    <div class="verse"><span class="mark">"</span><p>I am come that they might have life, and that they might have it more abundantly.</p><cite class="vref" data-ref="John 10:10" data-txt="The thief cometh not, but for to steal, and to kill, and to destroy: I am come that they might have life, and that they might have it more abundantly.">John 10:10</cite></div>
+    <p>Here, "life" doesn't mean mere existence. It means a life with identity, purpose, and direction restored — and, above all of that, a life anchored in relationship with God.</p>
+  </div>
+</section>
+
+<!-- CH6 -->
+<section class="block panel" data-chapter="6" id="ch6">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">6</span>HAPPINESS, JOY & FREEDOM</div>
+    <h2 class="title">True Happiness, Joy, and Freedom</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M40 130 Q70 90 100 108 Q130 90 160 130" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 100 Q80 70 100 88 Q120 70 140 100" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+        <path d="M80 70 Q92 54 100 66 Q108 54 120 70" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="deck">In the end, human beings are creatures that pursue happiness. College, careers, romance, even faith — for many people these are just other names for the longing to be happy. So the real question is this: what is true happiness?</p>
+
+    <h3 class="sub">The One Destination Every Human Heads Toward</h3>
+    <p>The ancient philosopher Aristotle observed that every human action has its own reason, but if you keep tracing those reasons back, they all converge on a single point: happiness. We earn money, build relationships, and take care of our health — ultimately, all for the sake of being happy. Happiness isn't a means to something else; it is, in itself, the final end humans pursue.</p>
+
+    <h3 class="sub">Pleasure and Happiness Are Not the Same</h3>
+    <p>The problem is that many people confuse happiness with momentary pleasure. Good food, likes on a post, a promotion, a new purchase — these certainly bring enjoyment. But that enjoyment is brief and soon demands a bigger hit. This is why, like K the entrepreneur from Chapter 1, getting everything you wanted still leaves you empty again afterward. Momentary pleasure is like pouring water into a bucket with a hole in the bottom — no matter how much you pour in, it never fills.</p>
+
+    <h3 class="sub">Where Unshakable Happiness Comes From</h3>
+    <p>True happiness isn't given by circumstances — it comes from a state of the heart that holds steady regardless of circumstances. And Scripture clearly points to where the root of this unshakable happiness lies: in relationship with God. This is exactly the substance of the joy and freedom we're about to explore.</p>
+
+    <h3 class="sub">Freedom From Perfectionism</h3>
+    <p>The feeling that a single mistake could collapse your entire existence usually rests on a belief that you must be perfect to be loved. Grace overturns that formula.</p>
+
+    <h3 class="sub">Freedom From the Need for Approval</h3>
+    <p>A life where your mood for the whole day depends on someone else's reaction is, in the end, a life handed over into other people's hands.</p>
+
+    <h3 class="sub">Freedom From Comparison</h3>
+    <p>One of the great illnesses of the social-media age is endless comparison. Once you know each person was made as a distinct being, the person next to you stops being your measuring stick.</p>
+
+    <h3 class="sub">Freedom From Fear</h3>
+    <p>Fear of death and a vague anxiety about the future are among the most fundamental burdens humans carry. Within relationship with God, this fear doesn't disappear entirely, but it no longer rules your life.</p>
+
+    <div class="verse"><span class="mark">"</span><p>Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.</p><cite class="vref" data-ref="Galatians 5:1" data-txt="Stand fast therefore in the liberty wherewith Christ hath made us free, and be not entangled again with the yoke of bondage.">Galatians 5:1</cite></div>
+    <p>This freedom isn't escapism. A steadiness that doesn't collapse in failure and isn't bound up in success — this is the real, practical change that encountering God brings.</p>
+  </div>
+</section>
+
+<!-- CH7 -->
+<section class="block" data-chapter="7" id="ch7">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">7</span>ABUNDANCE</div>
+    <h2 class="title">The Secret of True Abundance</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M70 100 L74 150 Q75 160 90 160 L110 160 Q125 160 126 150 L130 100" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="100" cy="100" rx="30" ry="9" stroke="var(--accent)" stroke-width="2"/>
+        <path d="M85 92 Q88 76 100 80 Q112 68 118 84" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+        <path d="M78 84 Q80 70 92 72" stroke="var(--violet-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+      </svg>
+    </div>
+    <p class="deck">The apostle Paul writes this letter from prison: "I know both how to be abased, and I know how to abound: every where and in all things I am instructed both to be full and to be hungry." <span class="cite-tag vref" data-ref="Philippians 4:12" data-txt="I know both how to be abased, and I know how to abound: every where and in all things I am instructed both to be full and to be hungry, both to abound and to suffer need.">Philippians 4:12</span></p>
+
+    <h3 class="sub">The Weight of the Word "Learned"</h3>
+    <p>Paul uses language here that originally referred to secrets handed down in mystery religions. He uses it to describe the principle of contentment he discovered in Christ.</p>
+
+    <h3 class="sub">An Easy Misunderstanding — This Isn't a Promise of Material Success</h3>
+    <p>Faith is sometimes mistaken for a guarantee of material prosperity and success. But Paul made this confession from prison, in need. True abundance isn't found in circumstances — it's found in <strong>a heart that stays steady regardless of circumstances</strong>.</p>
+
+    <h3 class="sub">Abundance in Relationship</h3>
+    <p>Another face of true abundance is relationship. Someone reconciled to God finds, without even trying, more generosity and a greater capacity for deep connection with others.</p>
+
+    <div class="verse"><span class="mark">"</span><p>I can do all things through Christ which strengtheneth me.</p><cite class="vref" data-ref="Philippians 4:12-13" data-txt="I know both how to be abased, and I know how to abound... I can do all things through Christ which strengtheneth me.">Philippians 4:13</cite></div>
+    <p>True abundance is the confidence that you are already filled within your relationship with God. It's not a mindset you achieve through effort — it's a gift given through encountering God.</p>
+  </div>
+</section>
+
+<!-- CH8 -->
+<section class="block panel" data-chapter="8" id="ch8">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">8</span>COMMUNITY</div>
+    <h2 class="title">Why It's Hard to Do Alone</h2>
+    <p class="deck">This encounter begins as an intensely personal event, but oddly enough, it never stays that way.</p>
+
+    <h3 class="sub">Faith Is Personal, But Not Private</h3>
+    <p>Many people treat faith as a secret matter just between "me and God." But every story of encounter in Scripture consistently leads to community.</p>
+
+    <h3 class="sub">What Only Becomes Visible Together</h3>
+    <p>It's hard to see your own blind spots alone. When you have people walking alongside you, you learn through each other's shortcomings and are restored through each other's comfort.</p>
+
+    <h3 class="sub">Remembering It's a Gathering of Imperfect People</h3>
+    <p>Community is not a collection of finished people — it's a gathering of imperfect people moving forward together. You may end up disappointed. But please don't give up on the encounter itself because of that imperfection.</p>
+  </div>
+</section>
+
+<!-- CH9 -->
+<section class="block" data-chapter="9" id="ch9">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">9</span>REACTIONS</div>
+    <h2 class="title">Honest Reactions People Have</h2>
+    <p class="deck">Reading this far may have stirred up some reaction in you. Whatever it is, there's no need to feel embarrassed about it.</p>
+
+    <div class="reaction-grid">
+      <div class="reaction"><div class="t">"This sounds too good to be true"</div><p>It's natural for this to sound overly idealistic. But being a good story doesn't make it untrue.</p></div>
+      <div class="reaction"><div class="t">"I've been let down by the church"</div><p>A completely valid feeling. It's worth distinguishing the essence of faith from the shortcomings of the people who practice it.</p></div>
+      <div class="reaction"><div class="t">"I'm just not a religious person"</div><p>What's being discussed here isn't a particular religious culture, but an encounter with one Person: God. It's not a matter of temperament — it's a matter of relationship.</p></div>
+      <div class="reaction"><div class="t">"If I believe, I feel like I'd have to give something up"</div><p>What people who've actually experienced this encounter report is the opposite — not loss, but a confession of having gained real freedom.</p></div>
+      <div class="reaction"><div class="t">"It just doesn't feel like the right time"</div><p>Looking at the encounters in Scripture, there was never a perfect moment. That encounter tends to arrive precisely when someone is least prepared.</p></div>
+    </div>
+
+    <p style="margin-top:28px;">None of these reactions are the wrong thing to feel. In fact, facing these questions honestly is the most important next step on this journey.</p>
+  </div>
+</section>
+
+<!-- CH10 -->
+<section class="block panel" data-chapter="10" id="ch10">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">10</span>DOES GOD EXIST</div>
+    <h2 class="title">How Can We Know God Exists</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <line x1="100" y1="35" x2="100" y2="150" stroke="var(--text-faint)" stroke-width="2"/>
+        <line x1="52" y1="68" x2="148" y2="68" stroke="var(--text-faint)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="52" y1="68" x2="38" y2="108" stroke="var(--violet)" stroke-width="1.5"/>
+        <line x1="52" y1="68" x2="70" y2="108" stroke="var(--violet)" stroke-width="1.5"/>
+        <path d="M34 108 Q52 130 74 108" stroke="var(--violet)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <line x1="148" y1="68" x2="130" y2="108" stroke="var(--accent)" stroke-width="1.5"/>
+        <line x1="148" y1="68" x2="162" y2="108" stroke="var(--accent)" stroke-width="1.5"/>
+        <path d="M126 108 Q148 130 166 108" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M82 150 L100 168 L118 150 Z" fill="var(--text-faint)" opacity="0.35"/>
+        <circle cx="100" cy="35" r="5" fill="var(--text-faint)"/>
+      </svg>
+    </div>
+    <p class="deck">This is one of humanity's oldest questions. Rather than settling on one side in advance, let's look honestly at how different fields have approached this question — the voices in favor, and the voices of doubt, together.</p>
+
+    <h3 class="sub">The Philosophical Approach — Why Is There Something Rather Than Nothing</h3>
+    <p><strong>The case for:</strong> Everything we experience has a beginning, and whatever begins has a cause. If the universe also had a beginning, that leads to the conclusion that a cause outside the universe is needed. This is called the <span class="cite-tag vref" data-ref="What is the cosmological argument?" data-txt="A philosophical argument asking why something exists rather than nothing at all. It extends our everyday experience — that every effect has a cause — to the beginning of the universe itself, concluding that a cause outside the universe is needed.">cosmological argument</span>.</p>
+    <p><strong>The skeptical response:</strong> Some philosophers and scientists respond that time and causality themselves are concepts that only apply within the universe, so asking about "a cause before the universe" may not even be a coherent question. They also suggest the universe could have arisen without a cause through <span class="cite-tag vref" data-ref="What is a quantum fluctuation?" data-txt="A concept from quantum mechanics describing tiny, momentary bursts of energy that appear and disappear even in what looks like a total vacuum. Some scientists suggest the whole universe could have arisen from such a fluctuation by chance. Critics point out that a fluctuation still requires some quantum field or physical law to already exist, so it's hard to call it arising from absolute nothing.">quantum fluctuations</span>. This debate continues among philosophers today.</p>
+
+    <h3 class="sub">The Scientific Approach — Why Is the Universe So Finely Tuned</h3>
+    <p><strong>The case for:</strong> Gravity, electromagnetism, and other <span class="cite-tag vref" data-ref="What are physical constants?" data-txt="Values like the strength of gravity or the speed of light that stay the same throughout the universe. Scientists note that if these values had been even slightly different, stars, atoms, and life itself could never have formed.">physical constants</span> of the universe are set within an extremely narrow range that allows life to exist. Some see this precision as evidence of intelligent design.</p>
+    <p><strong>The skeptical response:</strong> Other scientists propose the <span class="cite-tag vref" data-ref="What is the multiverse hypothesis?" data-txt="The hypothesis that countless universes may exist besides our own, each with different physical laws and constants. It hasn't been directly observed or confirmed experimentally — it remains a theoretical possibility.">multiverse hypothesis</span> — countless universes with different physical constants than ours — and we simply happen to live in the one where life is possible. This hypothesis, however, has not yet been directly confirmed by observation or experiment.</p>
+
+    <h3 class="sub">The Moral Approach — Where Does Right and Wrong Come From</h3>
+    <p><strong>The case for:</strong> Cruelty and betrayal are seen as universally wrong across cultures. Some see this universal moral sense as pointing to a transcendent source that can't be explained by physical laws alone.</p>
+    <p><strong>The skeptical response:</strong> <span class="cite-tag vref" data-ref="What is evolutionary biology?" data-txt="The study of how living things have changed over time through natural selection. Here, it refers to the view that human moral feelings and cooperative instincts developed naturally because they were advantageous for survival and reproduction.">Evolutionary biology</span> explains that cooperation and altruism simply developed as instincts through natural selection because they raised a group's chances of survival. Morality, on this view, is a product of evolution, not a divine command.</p>
+
+    <h3 class="sub">The Psychological Approach — Is Faith Projection or Discovery</h3>
+    <p><strong>The skeptical argument:</strong> Freud explained belief in God as a psychological wish-fulfillment — projecting a father figure onto the sky because humans crave security.</p>
+    <p><strong>The case for:</strong> C.S. Lewis, by contrast, interprets this longing differently. Just as hunger exists because food actually exists, the universal human longing for transcendence may exist precisely because there's a real object to satisfy it. This argument alone doesn't settle whether the longing itself is projection or discovery.</p>
+
+    <h3 class="sub">The Historical Approach — Did the Resurrection Actually Happen</h3>
+    <p><strong>The case for:</strong> The empty tomb, consistent testimony from multiple witnesses, the fact that the disciples later staked their lives on proclaiming this event, and the explosive spread of the early church across the Roman Empire are all presented as circumstantial evidence for the historicity of the resurrection.</p>
+    <p><strong>The skeptical response:</strong> Some scholars propose alternatives such as mass hallucination among the disciples, theft of the body, or gradual legendary embellishment. Each of these alternative explanations, however, carries its own difficulties, and the debate continues among historians.</p>
+
+    <h3 class="sub">So Where Does the Bible's Authority Come From</h3>
+    <p>If all the approaches above point toward God's existence, why do Christians place such overwhelming authority specifically on this book, the Bible? Traditionally, a few grounds are offered.</p>
+    <p><strong>Self-testimony:</strong> Scripture claims to be written by the inspiration of God. <span class="cite-tag vref" data-ref="2 Timothy 3:16" data-txt="All scripture is given by inspiration of God, and is profitable for doctrine, for reproof, for correction, for instruction in righteousness.">2 Timothy 3:16</span> <span class="cite-tag vref" data-ref="2 Peter 1:21" data-txt="For the prophecy came not in old time by the will of man: but holy men of God spake as they were moved by the Holy Ghost.">2 Peter 1:21</span> Of course, some point out that a book claiming its own authority doesn't automatically prove that authority.</p>
+    <p><strong>Historical reliability and unity:</strong> New Testament manuscripts have an unmatched volume of evidence and closeness to the events among ancient documents. It's also considered remarkable that some 40 authors, writing across 1,500 years, in different languages and continents, still tell a single unified story of creation, fall, redemption, and restoration.</p>
+    <p><strong>Its life-changing power:</strong> The countless testimonies of people whose lives were completely transformed by reading this book — like Augustine and C.S. Lewis in Chapter 3 — are offered as experiential evidence.</p>
+    <p>Honestly, though, Islam makes similar claims about the Qur'an, and Hindu tradition makes similar claims about the Vedas. So these grounds are persuasive to someone already inside that tradition, but from outside it, a separate argument is still needed for "why this book, rather than other scriptures." At that point, the ultimate ground Christians hold onto isn't the excellence of the text itself, but the <strong>historical event of Christ's resurrection</strong> discussed above. The Bible's authority ultimately rests on whether the event it testifies to is actually true.</p>
+
+    <h3 class="sub">So What Does the Bible Say</h3>
+    <p>Interestingly, the Bible says God's existence was never actually hidden. <span class="cite-tag vref" data-ref="Romans 1:20" data-txt="For the invisible things of him from the creation of the world are clearly seen, being understood by the things that are made, even his eternal power and Godhead; so that they are without excuse.">Romans 1:20</span> God's eternal power and divine nature are already clearly displayed through creation itself. The psalmist sings the same thing: <span class="cite-tag vref" data-ref="Psalm 19:1" data-txt="The heavens declare the glory of God; and the firmament sheweth his handywork.">Psalm 19:1</span> "The heavens declare the glory of God."</p>
+    <p>But one important point needs to be made here. No matter how sophisticated, all the arguments above can carry you to the conclusion that "God probably exists" — but as we discussed in Chapter 3, they cannot carry you to the place of <strong>personally knowing God</strong>. Evidence can only lead you to the door; opening it isn't a matter of argument, but of encounter. So the next step of this whole intellectual journey remains open — toward encountering God.</p>
+  </div>
+</section>
+
+<!-- CH11 -->
+<section class="block panel" data-chapter="11" id="ch11">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">11</span>REASON</div>
+    <h2 class="title">Approaching It Logically</h2>
+    <p class="deck">Apart from emotion, for those who need their mind convinced before their heart can move, let's go a little deeper. Tap each of the twelve questions below to open it.</p>
+
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">1</span><span>Does it actually make logical sense that God exists?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The universe had a beginning. And that whatever begins must have a cause is one of the most basic ways we understand the world.</p>
+          <p>The <span class="cite-tag vref" data-ref="What are physical constants?" data-txt="Values like the strength of gravity or the speed of light that stay the same throughout the universe. Scientists note that if these values had been even slightly different, stars, atoms, and life itself could never have formed.">physical constants</span> that make up the universe are tuned with extraordinary precision to make life possible. Which explanation is simpler and more natural — chance, or intelligent design — is worth thinking about.</p>
+          <p>Human beings have a universal sense of right and wrong. This moral reality may itself be pointing to something that physical laws alone cannot explain.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">2</span><span>If a good God exists, why is there suffering in the world?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>This is the heaviest and most legitimate question of all. God isn't someone who explains suffering from a distance — he's someone who entered directly into suffering on the cross.</p>
+          <p>Love requires freedom. God gave humanity the freedom to choose, and much of the world's suffering is the result of that freedom being misused.</p>
+          <p>Scripture says suffering isn't the end. The hope that even suffering we can't explain now can lead to restoration and meaning someday is at the core of faith.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">3</span><span>How can I trust the Bible? Isn't it just an old story?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Among ancient documents, the New Testament has an overwhelming amount of manuscript evidence and unusually close proximity between the events and their being written down.</p>
+          <p>The Gospel writers didn't flatter themselves. The fact that the first witnesses of the resurrection were women, who had no social standing as witnesses at the time, is grounds for seeing this as <strong>an honest record that doesn't hide inconvenient facts</strong>.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">4</span><span>What's different about this from other religions? Isn't it all the same path in the end?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Many religious structures consist of human effort to reach up to God. Christianity is the exact opposite — <strong>a story of God coming down to humanity</strong>.</p>
+          <p>Not being loved because you're worthy, but being accepted without worthiness because you were already loved — this difference in order fundamentally sets Christianity apart.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">5</span><span>Aren't churchgoers actually hypocritical?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>That experience can genuinely happen. The church isn't a gathering of finished people — it's still a gathering of imperfect people.</p>
+          <p>The standard of faith isn't how complete believers are, but Jesus Christ. Just as a rude doctor doesn't make medicine itself false.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">6</span><span>Hasn't science already disproven faith?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Science is a tool for explaining "how," while faith is a question about "why." They don't fundamentally conflict.</p>
+          <p>A great many outstanding scientists throughout history have been people of faith, and often the more precisely people discover the universe's order, the more it leads them toward faith rather than away from it.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">7</span><span>How can I believe in something like miracles?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>If you assume from the start that miracles are impossible, no evidence will ever change your mind. But if a being outside the universe who made the universe actually exists, it would be entirely natural for that being to intervene in a special way within its order.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">8</span><span>If God exists, why is he silent?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>If God proved himself overwhelmingly, that wouldn't be love — it would be coercion. Love always leaves room to be refused.</p>
+          <p>Scripture says God has already revealed himself — through the order of nature, the human conscience, and above all through Jesus Christ. What feels like silence may simply be us looking in a different direction.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">9</span><span>Isn't faith just a psychological comfort in the end?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>The fact that faith brings comfort doesn't prove that faith is false. Whether a belief is comforting and whether it's true are two different questions.</p>
+          <p>The faith Scripture describes isn't simply comforting — it demands repentance and self-denial. If the goal were mere comfort, it wouldn't include such uncomfortable demands.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">10</span><span>Isn't it arrogant to claim Jesus is the only way?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>Whatever truth claim you consider, if it's true, competing claims can't also be true. This is simply the logical nature of any truth claim.</p>
+          <p>The heart of this claim isn't superiority, but grace. It's closer to "I couldn't find the answer myself, so I took hold of the one who came to me" than "I am better than you."</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">11</span><span>Is there really judgment and hell after death?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>If the injustices of the world simply vanished with no resolution at all, that would actually be a more unjust universe. Judgment is ultimately tied to the hope that justice will be realized.</p>
+          <p>At the same time, God isn't someone who wants judgment — he's someone who wants everyone to return. The door is still open.</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">12</span><span>If I'm not completely certain, does that mean I can't believe?</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>No. Thomas, John the Baptist, and Habakkuk all moved forward asking questions without complete certainty. Faith is the first step taken with direction set, even while carrying uncertainty.</p>
+        </div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CH12 -->
+<section class="block" data-chapter="12" id="ch12">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">12</span>AFTERWARD</div>
+    <h2 class="title">What Changes After Encountering God</h2>
+    <p class="deck">All of this may sound abstract, so let's get more concrete about what actually changes in everyday life.</p>
+
+    <div class="life-grid">
+      <div class="life-row"><div class="when">In the morning</div><p>The reason you get up isn't a to-do list, but the fact that someone loves you today, too.</p></div>
+      <div class="life-row"><div class="when">At work</div><p>You find room to handle your work honestly, freed from the pressure that its outcome defines your worth.</p></div>
+      <div class="life-row"><div class="when">With money</div><p>Realizing that possessions aren't the source of security, room opens up for a giving heart instead of a grasping one.</p></div>
+      <div class="life-row"><div class="when">When you fail</div><p>One mistake no longer collapses your entire existence. Failure becomes an event that passes, not an identity.</p></div>
+      <div class="life-row"><div class="when">In relationships</div><p>You move from striving to be loved, to loving others as you are — because you're already loved.</p></div>
+      <div class="life-row"><div class="when">In conflict</div><p>Instead of fighting to prove who's right, the desire to restore the relationship starts to move first.</p></div>
+      <div class="life-row"><div class="when">In loss</div><p>The grief doesn't disappear, but you no longer carry it alone. Hope stands beside the grief.</p></div>
+      <div class="life-row"><div class="when">Facing death</div><p>The assurance that it's a continuation, not an end, makes you live not more casually, but more seriously.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CH13 -->
+<section class="block panel" data-chapter="13" id="ch13">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">13</span>NEXT STEP</div>
+    <h2 class="title">If You'd Like to Learn More</h2>
+    <p class="deck">If you've read this far, a curiosity about the next step may have already begun stirring. There's no need for a dramatic beginning.</p>
+
+    <div class="step-grid">
+      <div class="step"><div class="n">1</div><div><div class="t">Read the Gospel of John from start to finish</div><p>Among the four Gospels, John introduces who Jesus is in the most personal way.</p></div></div>
+      <div class="step"><div class="n">2</div><div><div class="t">Try a short, unpolished prayer</div><p>No perfect words or formality needed. Simply telling him what you honestly feel today is enough.</p></div></div>
+      <div class="step"><div class="n">3</div><div><div class="t">Have an easy conversation with someone who believes</div><p>Rather than searching for answers alone, sharing your questions with someone further along the journey helps enormously.</p></div></div>
+      <div class="step"><div class="n">4</div><div><div class="t">Visit a nearby worship community once</div><p>It's fine to just sit and observe with no pressure. That alone can be a beginning.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Invitation -->
+<section class="invite" data-chapter="14" id="ch14">
+  <div class="wrap reveal">
+    <div class="chip" style="margin:0 auto 26px;"><span class="n">14</span>INVITATION</div>
+    <div class="illus large" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="70" fill="var(--accent)" opacity="0.06"/>
+        <path d="M60 175 L60 55 Q60 25 100 25 Q140 25 140 55 L140 175" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="175" x2="140" y2="175" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="126" cy="118" r="3.5" fill="var(--accent)"/>
+        <path d="M100 175 L100 60" stroke="var(--violet)" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.6"/>
+        <circle cx="100" cy="90" r="8" fill="var(--violet-soft)" opacity="0.9"/>
+      </svg>
+    </div>
+    <h2 class="title">Now, It's Time to Begin Your Own Encounter</h2>
+    <p>I hope this piece doesn't end as mere information. Everything explored so far has had one purpose — for you to experience that encounter yourself.</p>
+    <p>No grand preparation or perfect understanding is needed. Moses, the woman at the well, Zacchaeus, Paul, Augustine, and C.S. Lewis all met that encounter with no preparation at all. Right here, right now, you might quietly put the following into your own words.</p>
+    <div class="prayer-box">
+      <div class="tag2">One Step — A Quiet Prayer</div>
+      <p>God, I still don't fully understand,<br>
+      but I invite you into the questions of my life.<br>
+      I lay down my own attempts to find the answer,<br>
+      and I ask for an encounter with you.<br>
+      Come to me, and let me know true joy and freedom,<br>
+      and the secret of true abundance.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">Grace Church</div>
+  <p>Korea Baptist Convention · Senior Pastor Dong-jun Park<br>Please feel free to share this piece with anyone you think it might help.</p>
+</footer>
+
+<div class="vpop-overlay" id="vpopOverlay">
+  <div class="vpop">
+    <button class="close" id="vpopClose" aria-label="Close">×</button>
+    <div class="ref" id="vpopRef"></div>
+    <div class="txt" id="vpopTxt"></div>
+  </div>
+</div>
+
+<script>
+  function toggleFaq(btn){
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>{
+      if(el !== item){ el.classList.remove('open'); el.querySelector('.faq-a').style.maxHeight = null; }
+    });
+    if(isOpen){ item.classList.remove('open'); answer.style.maxHeight = null; }
+    else{ item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, { threshold:0.1 });
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const fontSteps = [
+    { pct:87.5,  label:'Small' },
+    { pct:100,   label:'Normal' },
+    { pct:112.5, label:'Large' },
+    { pct:125,   label:'X-Large' }
+  ];
+  let fontIdx = 1;
+  const fontLabel = document.getElementById('fontLabel');
+  function applyFontSize(){
+    document.documentElement.style.fontSize = fontSteps[fontIdx].pct + '%';
+    fontLabel.textContent = fontSteps[fontIdx].label;
+  }
+  document.getElementById('fontInc').addEventListener('click', ()=>{
+    fontIdx = Math.min(fontIdx + 1, fontSteps.length - 1);
+    applyFontSize();
+  });
+  document.getElementById('fontDec').addEventListener('click', ()=>{
+    fontIdx = Math.max(fontIdx - 1, 0);
+    applyFontSize();
+  });
+
+  window.addEventListener('scroll', ()=>{
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+  });
+
+  const sections = Array.from(document.querySelectorAll('[data-chapter]'));
+  const nav = document.getElementById('sideNav');
+  sections.forEach(sec=>{
+    const btn = document.createElement('button');
+    btn.dataset.target = sec.id || 'top';
+    btn.addEventListener('click', ()=> sec.scrollIntoView({behavior:'smooth'}));
+    nav.appendChild(btn);
+  });
+  const navBtns = Array.from(nav.querySelectorAll('button'));
+  const navIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        navBtns.forEach(b=>b.classList.remove('active'));
+        const idx = sections.indexOf(e.target);
+        if(navBtns[idx]) navBtns[idx].classList.add('active');
+      }
+    });
+  }, { threshold:0.5 });
+  sections.forEach(s=>navIo.observe(s));
+
+  const vpopOverlay = document.getElementById('vpopOverlay');
+  const vpopRef = document.getElementById('vpopRef');
+  const vpopTxt = document.getElementById('vpopTxt');
+  function openVerse(ref, txt){
+    vpopRef.textContent = ref;
+    vpopTxt.textContent = txt;
+    vpopOverlay.classList.add('show');
+  }
+  document.querySelectorAll('.vref').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      openVerse(el.dataset.ref || '', el.dataset.txt || '');
+    });
+  });
+  document.getElementById('vpopClose').addEventListener('click', ()=> vpopOverlay.classList.remove('show'));
+  vpopOverlay.addEventListener('click', (e)=>{ if(e.target === vpopOverlay) vpopOverlay.classList.remove('show'); });
+</script>
+
+</body>
+</html>

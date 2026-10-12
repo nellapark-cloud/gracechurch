@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>데살로니가후서 연구 — 전권 합본</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+@page {
+  size: A4;
+  margin: 20mm 15mm 18mm 15mm;
+  @bottom-center {
+    content: counter(page);
+    font-family: "Noto Sans CJK KR";
+    font-size: 9pt;
+    color: #9a8a80;
+  }
+}
+@page :first {
+  margin: 0;
+  @bottom-center { content: ''; }
+}
+@page toc {
+  @bottom-center { content: ''; }
+}
+
+*{ box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+.quick-nav{ display: none; }
+.floating-nav{ display: none; }
+
+:root{
+  --cream:#f7f1e6;
+  --cream-deep:#ede2cd;
+  --navy:#5c2a35;
+  --navy-soft:#7a3f4a;
+  --gold:#b0793e;
+  --gold-soft:#d1a468;
+  --ink:#2c2620;
+  --ink-soft:#6b6055;
+  --line:#e0d3ba;
+  --white:#ffffff;
+}
+
+body{
+  margin:0;
+  background:var(--white);
+  color:var(--ink);
+  font-family:"Noto Sans CJK KR","Noto Sans KR","Malgun Gothic","Apple SD Gothic Neo",sans-serif;
+  font-size: 10.3pt;
+  line-height: 1.75;
+}
+
+b, strong { font-weight: 700; }
+
+/* ===== COVER ===== */
+.cover{
+  break-after: page;
+  height: 297mm;
+  background: var(--navy);
+  color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20mm;
+}
+.cover .eyebrow{
+  font-size: 11pt;
+  letter-spacing: 0.28em;
+  color: var(--gold-soft);
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: 22px;
+}
+.cover h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 42pt;
+  font-weight: 700;
+  margin: 0 0 16px;
+  letter-spacing: -0.01em;
+}
+.cover .cover-sub{
+  font-size: 13pt;
+  color: #e2ccd0;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+.cover .cover-line{
+  width: 60px;
+  height: 2px;
+  background: var(--gold-soft);
+  margin: 0 auto 40px;
+}
+.cover .cover-range{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 12pt;
+  color: var(--gold-soft);
+  letter-spacing: 0.05em;
+}
+.cover .cover-note{
+  margin-top: 60px;
+  font-size: 9.5pt;
+  color: #b8949a;
+}
+
+/* ===== INTRO ===== */
+.intro-page{
+  break-after: page;
+  padding-top: 4mm;
+}
+.page-label{
+  font-size: 10pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.intro-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 4mm;
+}
+.intro-page .intro-lead{
+  font-size: 11pt;
+  color: var(--ink-soft);
+  margin-bottom: 8mm;
+  line-height: 1.7;
+}
+.intro-block{
+  margin-bottom: 7mm;
+  break-inside: avoid;
+}
+.intro-block h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 13pt;
+  color: var(--navy-soft);
+  font-weight: 700;
+  margin: 0 0 3mm;
+  padding-left: 10px;
+  border-left: 3px solid var(--gold-soft);
+}
+.intro-block p{
+  margin: 0 0 2.5mm;
+  text-align: justify;
+  word-break: keep-all;
+}
+.intro-block b{ color: var(--navy-soft); }
+
+.intro-outline{
+  display: flex;
+  gap: 4mm;
+  margin-top: 3mm;
+}
+.intro-outline .oi{
+  flex: 1;
+  background: var(--cream-deep);
+  border-radius: 5px;
+  padding: 4mm 4.5mm;
+  border-top: 3px solid var(--gold-soft);
+}
+.intro-outline .oi .oi-tag{
+  font-size: 8.5pt;
+  color: var(--gold);
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-bottom: 2mm;
+}
+.intro-outline .oi .oi-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 10.5pt;
+  margin-bottom: 1.5mm;
+}
+.intro-outline .oi .oi-body{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  line-height: 1.6;
+}
+
+/* ===== TOC ===== */
+.toc-page{
+  page: toc;
+  break-after: page;
+}
+.toc-page h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 22pt;
+  color: var(--navy);
+  font-weight: 700;
+  margin: 0 0 10mm;
+}
+.toc-list{
+  display: block;
+}
+.toc-item{
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: var(--ink);
+  padding: 3.2mm 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.toc-num{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--gold);
+  width: 16mm;
+  flex-shrink: 0;
+}
+.toc-title{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 11.5pt;
+  font-weight: 600;
+  color: var(--navy);
+  flex-shrink: 0;
+}
+.toc-sub{
+  font-size: 9pt;
+  color: var(--ink-soft);
+  margin-left: 6px;
+  flex-shrink: 1;
+}
+.toc-fill{
+  flex: 1;
+  border-bottom: 1px dotted var(--ink-soft);
+  margin: 0 3mm 1.5mm;
+  opacity: 0.5;
+}
+.toc-page-num{
+  font-size: 10pt;
+  color: var(--navy-soft);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+.toc-page-num::after{
+  content: target-counter(attr(href), page);
+}
+
+/* ===== CHAPTER (reused component styles, print-tuned) ===== */
+.chapter{
+  break-before: page;
+}
+.chapter-head{
+  margin-bottom: 6mm;
+  padding-bottom: 4mm;
+  border-bottom: 2px solid var(--navy);
+  display: flex;
+  align-items: flex-start;
+  gap: 4mm;
+}
+.chapter-icon-badge{
+  flex-shrink: 0;
+  width: 13mm; height: 13mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+}
+.chapter-icon-badge .chapter-icon{ width: 60%; height: 60%; }
+.chapter-head-text{ flex: 1; min-width: 0; }
+.chapter-eyebrow{
+  font-size: 9pt;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 2mm;
+}
+.chapter-head h1{
+  font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif;
+  font-size: 19pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin: 0 0 2mm;
+}
+.chapter-head .chapter-sub{
+  font-size: 9.5pt;
+  color: var(--ink-soft);
+}
+.chapter-head .ref-strip{
+  display:flex; gap: 6px; flex-wrap: wrap; margin-top: 3mm;
+}
+.chapter-head .ref-item{
+  font-size: 8pt;
+  color: var(--navy-soft);
+  padding: 2px 8px;
+  background: var(--cream-deep);
+  border-radius: 10px;
+}
+
+section.sub{ margin-bottom: 6mm; }
+.sec-head{ display:flex; align-items:baseline; gap:8px; margin-bottom:2mm; }
+.sec-num{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9.5pt; color:var(--gold); font-weight:700; }
+h2{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:14pt; color:var(--navy); font-weight:700; margin:0; }
+.sec-desc{ color:var(--ink-soft); font-size:9pt; margin:0 0 3.5mm; }
+
+.flow{ display:flex; flex-direction:column; }
+.flow-item{
+  display:grid; grid-template-columns: 22mm 1fr; gap: 4mm;
+  padding: 3mm 0; border-top:1px solid var(--line);
+  break-inside: avoid;
+}
+.flow-item:last-child{ border-bottom:1px solid var(--line); }
+.flow-range{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:9pt; color:var(--gold); font-weight:700; }
+.flow-title{ font-weight:700; color:var(--navy); font-size:10.3pt; margin-bottom:1.5mm; }
+.flow-body{ color:var(--ink); font-size: 9.6pt; line-height:1.7; text-align:justify; word-break: keep-all; }
+.flow-body b{ color:var(--navy-soft); font-weight:600; }
+
+.teach-grid{ display:flex; flex-direction:column; gap: 3mm; }
+.teach-card{
+  background: var(--cream); border:1px solid var(--line); border-left:3px solid var(--gold-soft);
+  border-radius:4px; padding: 3.5mm 4mm; break-inside: avoid;
+}
+.teach-title{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt; font-weight:700; color:var(--navy); margin-bottom:1.5mm; }
+.teach-body{ font-size:9.6pt; color:var(--ink); text-align:justify; word-break: keep-all; }
+
+.deep-wrap{
+  background: var(--navy); border-radius:6px; padding: 5mm 5.5mm; margin-top: 2mm;
+}
+.deep-wrap .sec-num{ color: var(--gold-soft); }
+.deep-wrap h2{ color: var(--white); }
+.deep-wrap .sec-desc{ color:#d8c2c6; }
+.deep-item{ padding: 3.5mm 0; border-top:1px solid rgba(255,255,255,0.14); break-inside: avoid; }
+.deep-item:first-of-type{ margin-top: 2mm; }
+.deep-num{
+  display:inline-flex; align-items:center; justify-content:center;
+  width:5.5mm; height:5.5mm; border:1px solid var(--gold-soft); color:var(--gold-soft);
+  border-radius:50%; font-size:8.5pt; font-weight:700; margin-right: 2mm;
+}
+.deep-title{
+  display:flex; align-items:center; font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10.6pt;
+  font-weight:700; color:var(--white); margin-bottom: 2.5mm;
+}
+.deep-body{ font-size:9.6pt; color:#e6d4d8; padding-left: 7.5mm; text-align:justify; word-break: keep-all; }
+.deep-body b{ color: var(--gold-soft); font-weight:600; }
+.view-list{ padding-left:7.5mm; margin-top: 2.5mm; display:flex; flex-direction:column; gap: 2mm; }
+.view{ background: rgba(255,255,255,0.07); border-radius:4px; padding: 2mm 3mm; font-size:8.8pt; color:#e2ccd0; }
+.view b{ color: var(--gold-soft); }
+
+.verse-box{
+  margin: 3mm 0 3mm 7.5mm; background: rgba(209,164,104,0.1); border:1px solid rgba(209,164,104,0.35);
+  border-radius:5px; padding: 3mm 3.5mm; break-inside: avoid;
+}
+.verse-ref{ font-size:8pt; color:var(--gold-soft); font-weight:700; margin-bottom:1.5mm; }
+.verse-text{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; color:var(--white); line-height:1.7; }
+.verse-text .hinge{ color:var(--gold-soft); font-weight:700; background:rgba(209,164,104,0.2); padding:0 4px; border-radius:3px; }
+.greek-tag{
+  display:inline-block; font-size:7.5pt; color:var(--navy); background:var(--gold-soft);
+  padding:1px 6px; border-radius:8px; font-weight:700; margin-left:4px;
+}
+
+.split-table{
+  margin: 3mm 0 3mm 7.5mm; display:grid; grid-template-columns: 1fr 1fr;
+  border:1px solid rgba(255,255,255,0.18); border-radius:5px; overflow:hidden; break-inside: avoid;
+}
+.split-col{ padding: 3mm 3.2mm; }
+.split-col.a{ background: rgba(209,164,104,0.12); border-right:1px solid rgba(255,255,255,0.18); }
+.split-col.b{ background: rgba(255,255,255,0.05); }
+.split-label{ font-size:7.5pt; font-weight:700; margin-bottom:1.5mm; }
+.split-col.a .split-label{ color: var(--gold-soft); }
+.split-col.b .split-label{ color:#c99aa3; }
+.split-event{ font-family:"Noto Serif CJK KR","Noto Serif KR","Batang",serif; font-size:10pt; font-weight:700; color:var(--white); margin-bottom:1mm; }
+.split-detail{ font-size:8.4pt; color:#e2ccd0; line-height:1.6; }
+.split-verse{ font-size:7.5pt; color:var(--gold-soft); margin-top:1.5mm; }
+
+.hinge-note{
+  margin: 3mm 0 1mm 7.5mm; font-size:9pt; color:#e2ccd0; background:rgba(255,255,255,0.06);
+  border-left:2px solid var(--gold-soft); padding: 2.5mm 3.5mm; border-radius:0 4px 4px 0; break-inside: avoid;
+}
+.hinge-note b{ color: var(--gold-soft); }
+
+/* ===== SPEECH BUBBLE (supplementary explanation) ===== */
+.speech-bubble{
+  display: flex;
+  gap: 3mm;
+  align-items: flex-start;
+  background: var(--cream-deep);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 4mm 5mm;
+  margin: 5mm 0 2mm;
+  break-inside: avoid;
+}
+.speech-bubble .sb-avatar{
+  width: 8mm; height: 8mm; min-width: 8mm;
+  border-radius: 50%;
+  background: var(--navy);
+  color: var(--gold-soft);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 10pt;
+}
+.speech-bubble .sb-text{
+  font-size: 9.3pt;
+  color: var(--navy-soft);
+  line-height: 1.7;
+}
+.speech-bubble .sb-text b{ color: var(--navy); }
+
+/* ===== HIGHLIGHTER EMPHASIS — full-coverage, category-colored ===== */
+/* hl-quote  = 성경 본문 직접 인용구 (테라코타)   */
+/* hl-greek  = 헬라어·원어 표현 (틸)              */
+/* hl-term   = 핵심 개념·신학 용어 (골드, 기본값)  */
+
+/* light backgrounds: flow/teach/intro/speech-bubble */
+.flow-body b.hl-term, .teach-body b.hl-term, .intro-block p b.hl-term, .sb-text b.hl-term{
+  background: #f1dfba; color: #7a5220; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-quote, .teach-body b.hl-quote, .intro-block p b.hl-quote, .sb-text b.hl-quote{
+  background: #f2dcd3; color: #9a4632; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.flow-body b.hl-greek, .teach-body b.hl-greek, .intro-block p b.hl-greek, .sb-text b.hl-greek{
+  background: #d7ebe6; color: #235f56; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* dark background: deep-wrap (verse-box, hinge-note, view, deep-body) */
+.deep-body b.hl-term, .verse-text b.hl-term, .hinge-note b.hl-term, .view b.hl-term{
+  background: rgba(209,164,104,0.28); color: #f3dfb8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-quote, .verse-text b.hl-quote, .hinge-note b.hl-quote, .view b.hl-quote{
+  background: rgba(224,122,105,0.26); color: #f0b8a8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-greek, .verse-text b.hl-greek, .hinge-note b.hl-greek, .view b.hl-greek{
+  background: rgba(110,196,188,0.26); color: #a9e6dd; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+
+/* hl-insight = 더 깊은 설명이 필요한 구절 (하늘색), 클릭 시 팝업 */
+.flow-body b.hl-insight, .teach-body b.hl-insight, .intro-block p b.hl-insight, .sb-text b.hl-insight{
+  background: #d7ebf7; color: #1c5f85; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+.deep-body b.hl-insight, .verse-text b.hl-insight, .hinge-note b.hl-insight, .view b.hl-insight{
+  background: rgba(120,190,230,0.28); color: #bfe3f8; padding: 1px 4px; border-radius: 3px; font-weight: 700;
+  text-decoration: underline; text-underline-offset: 2px; text-decoration-thickness: 1.5px;
+}
+b.has-insight{ cursor: pointer; }
+b.has-insight:after{
+  content: "\25C6"; font-size: 0.55em; margin-left: 2px; vertical-align: super; opacity: 0.85;
+}
+
+/* clickable (has a glossary tip) */
+b.has-tip{ cursor: pointer; }
+b.has-tip:after{
+  content: "ⓘ"; font-size: 0.65em; margin-left: 2px; vertical-align: super;
+  opacity: 0.75;
+}
+
+/* ===== TERM TOOLTIP BUBBLE (screen only) ===== */
+#termTip{
+  display: none;
+  position: absolute;
+  z-index: 500;
+  max-width: 280px;
+  background: var(--white);
+  color: var(--ink);
+  font-size: 13px;
+  line-height: 1.65;
+  padding: 12px 15px;
+  border-radius: 10px;
+  border-top: 4px solid var(--gold);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.22);
+}
+#termTip::before{
+  content: "";
+  position: absolute;
+  top: -5px; left: 16px;
+  width: 12px; height: 12px;
+  background: var(--white);
+  box-shadow: -2px -2px 3px rgba(0,0,0,0.04);
+  transform: rotate(45deg);
+}
+#termTip .tip-close{
+  position: absolute; top: 6px; right: 9px;
+  width: 20px; height: 20px; border-radius: 50%;
+  background: var(--cream-deep);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--navy-soft); font-size: 12px; cursor: pointer;
+}
+#termTip .tip-close:hover{ background: var(--line); }
+
+/* ===== INSIGHT POPUP (memo-style modal) — screen only ===== */
+#insightOverlay{
+  display: none;
+  position: fixed; inset: 0; z-index: 800;
+  background: rgba(92,42,53,0.55);
+  align-items: center; justify-content: center;
+  padding: 24px;
+}
+#insightOverlay.open{ display: flex; }
+#insightCard{
+  background: var(--white);
+  max-width: 480px; width: 100%;
+  max-height: 80vh; overflow-y: auto;
+  border-radius: 14px;
+  padding: 26px 26px 22px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+  position: relative;
+  border-top: 5px solid #4fa3d1;
+}
+#insightCard .insight-eyebrow{
+  font-size: 11px; letter-spacing: 0.14em; color: #4fa3d1; font-weight: 700;
+  text-transform: uppercase; margin-bottom: 8px;
+}
+#insightCard h3{
+  font-family:"Noto Serif CJK KR","Noto Serif KR",serif;
+  font-size: 18px; color: var(--navy); font-weight: 700; margin: 0 0 12px; line-height: 1.4;
+}
+#insightCard .insight-body{
+  font-size: 14.5px; line-height: 1.85; color: var(--ink); white-space: pre-line;
+}
+#insightCard .insight-close{
+  position: absolute; top: 14px; right: 16px;
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--cream-deep); color: var(--navy-soft);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; font-size: 15px;
+}
+#insightCard .insight-close:hover{ background: var(--line); }
+
+/* ===== SCREEN-ONLY RESPONSIVE + READABILITY OVERRIDES ===== */
+/* The rules above are tuned for A4 print (mm units, fixed page height).
+   On screen — especially narrow/mobile windows — those fixed widths can
+   overflow, and print-sized fonts read small. These rules make the same
+   document maximally readable on any screen size without touching what
+   actually gets printed. */
+html{ background:#ddd; scroll-behavior: smooth; }
+  body{
+    max-width: 880px;
+    margin: 0 auto;
+    background: var(--white);
+    box-shadow: 0 0 24px rgba(0,0,0,0.12);
+    font-size: 16px;
+    line-height: 1.85;
+  }
+  .cover{ height: auto; min-height: 60vh; padding: 60px 24px; }
+  .cover h1{ font-size: 34pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0 4vw; }
+
+  .intro-page h1, .toc-page h1{ font-size: 24px; }
+  .intro-lead{ font-size: 15px; }
+  .intro-block h3{ font-size: 16px; }
+  .intro-block p{ font-size: 15.5px; line-height: 1.85; }
+  .intro-outline{ flex-wrap: wrap; }
+  .intro-outline .oi{ flex: 1 1 220px; }
+  .intro-outline .oi-title{ font-size: 13px; }
+  .intro-outline .oi-body{ font-size: 12.5px; }
+
+  .toc-item{ flex-wrap: wrap; padding: 4mm 0; }
+  .toc-title{ white-space: normal; font-size: 15px; }
+  .toc-sub{ flex-basis: 100%; margin-left: 16mm; font-size: 12.5px; }
+  .toc-fill{ display: none; }
+  .toc-num{ font-size: 13px; }
+  .toc-page-num{ font-size: 13px; }
+
+  .chapter-eyebrow{ font-size: 11px; }
+  .chapter-head h1{ font-size: 25px; }
+  .chapter-head .chapter-sub{ font-size: 13.5px; }
+  .chapter-head .ref-item{ font-size: 11px; }
+
+  h2{ font-size: 19px; }
+  .sec-num{ font-size: 13px; }
+  .sec-desc{ font-size: 13.5px; }
+
+  .flow-item{ grid-template-columns: 1fr; gap: 1.5mm; }
+  .flow-range{ font-size: 12.5px; }
+  .flow-title{ font-size: 16px; }
+  .flow-body{ font-size: 15px; line-height: 1.8; }
+
+  .teach-title{ font-size: 16px; }
+  .teach-body{ font-size: 15px; line-height: 1.8; }
+  .teach-card{ padding: 4mm 5mm; }
+
+  .deep-title{ font-size: 16px; }
+  .deep-body{ font-size: 15px; line-height: 1.8; }
+  .view{ font-size: 13px; }
+
+  .split-table{ grid-template-columns: 1fr; }
+  .split-col.a{ border-right:none; border-bottom:1px solid rgba(255,255,255,0.18); }
+  .split-event{ font-size: 15px; }
+  .split-detail{ font-size: 13px; }
+
+  .verse-text{ font-size: 16px; }
+  .verse-ref{ font-size: 11.5px; }
+
+  .hinge-note{ font-size: 13.5px; }
+
+  .sb-text{ font-size: 14.5px; }
+
+  .verse-box, .split-table, .hinge-note{ margin-left: 0; }
+  .deep-body, .view-list{ padding-left: 0; }
+  * { min-width: 0; }
+
+  /* quick chapter-jump nav */
+  .quick-nav{
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(247,241,230,0.96);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
+    padding: 10px 4vw;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    font-size: 13px;
+  }
+  .quick-nav .qn-title{
+    font-weight: 700; color: var(--navy); white-space: nowrap;
+    text-decoration: none;
+  }
+  .quick-nav .qn-toc-link{
+    color: var(--navy-soft); text-decoration: none; font-size: 13px;
+    padding: 5px 12px; border: 1px solid var(--line); border-radius: 14px;
+    white-space: nowrap;
+  }
+  .quick-nav .qn-toc-link:hover{ background: var(--cream-deep); }
+
+  .floating-nav{
+    position: fixed; right: 18px; bottom: 18px; z-index: 100;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .floating-nav a{
+    width: 46px; height: 46px; border-radius: 50%;
+    background: var(--navy); color: var(--gold-soft); font-size: 18px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.28); cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    text-decoration: none;
+    transition: transform 0.15s, background 0.15s;
+  }
+  .floating-nav a:hover{ background: var(--navy-soft); transform: scale(1.06); }
+  .floating-nav a:active{ transform: scale(0.96); }
+
+@media (max-width: 640px){
+  body{ box-shadow:none; }
+  .cover h1{ font-size: 26pt; }
+  .intro-page h1, .toc-page h1{ font-size: 20px; }
+  .chapter-head h1{ font-size: 21px; }
+  .quick-nav{ padding: 8px 3.5vw; }
+}
+
+/* Screen-friendly rules above are now the default (baseline) so that any
+   viewer — including ones that don't evaluate @media correctly — shows a
+   clean, readable layout. Printing restores the compact A4-tuned look. */
+@media print{
+  html{ background: var(--white); }
+  body{
+    max-width: none; margin: 0; box-shadow: none;
+    font-size: 10.3pt; line-height: 1.75;
+  }
+  .cover{ height: 297mm; padding: 0 20mm; }
+  .cover h1{ font-size: 42pt; }
+  .intro-page, .toc-page, .chapter{ padding: 0; }
+  .quick-nav, .floating-nav, #insightOverlay, #termTip{ display: none !important; }
+}
+</style>
+
+</head><body>
+<div id="top"></div>
+<div id="termTip"></div>
+<div id="insightOverlay"><div id="insightCard"><div class="insight-close">✕</div><div class="insight-eyebrow">💬 더 알아보기</div><h3 id="insightTitle"></h3><div class="insight-body" id="insightBody"></div></div></div>
+
+<div class="quick-nav">
+  <a class="qn-title" role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')">📖 데살로니가후서 연구</a>
+  <a class="qn-toc-link" role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')">목차 ▾</a>
+</div>
+
+
+<style>
+.church-footer{ text-align:center; padding: 14px 4vw 34px; font-size: 12px; color: var(--ink-soft); letter-spacing: 0.04em; }
+@media print{ .church-footer{ padding: 6mm 0 0; font-size: 8.5pt; } }
+</style>
+
+
+<div class="cover">
+  <div class="eyebrow">은혜교회 성경공부 시리즈 · 2 THESSALONIANS</div>
+  <h1>데살로니가후서 연구</h1>
+  <div class="cover-sub">흔들리지 말고 굳게 서라 — 전체 3장 성경 연구</div>
+  <div class="cover-line"></div>
+  <div><span class="cover-range">살후 1:1 – 3:18</span>&nbsp;&nbsp;·&nbsp;&nbsp;<span class="cover-range">구조 · 교훈 · 심화 질문</span></div>
+  <div class="cover-note">전 3장 · 구조 · 신학적·목회적 교훈 · 심화 질문</div>
+</div>
+
+
+<div class="intro-page">
+  <div class="page-label">Introduction</div>
+  <h1>데살로니가후서 전체 서론</h1>
+  <p class="intro-lead">종말론적 혼란 속에서, 흔들리지 말고 굳게 서라는 부탁.</p>
+
+  <div class="intro-block">
+    <h3>저자와 기록 시기</h3>
+    <p>사도 <b class="hl-term">바울</b>이 데살로니가전서를 보낸 지 얼마 지나지 않아(대체로 <b class="hl-term">AD 51–52년경</b>) 기록한 것으로 전통적으로 이해된다. 이 서신은 전서에서 다룬 재림에 대한 가르침이 일부 왜곡되어 교회 안에 혼란과 불안을 일으키고 있다는 소식을 듣고 쓰인 것으로 보인다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>수신자와 정황</h3>
+    <p>데살로니가교회는 여전히 <b class="hl-term">박해</b> 속에 있었고, 동시에 "주의 날이 이미 이르렀다"는 잘못된 가르침(바울의 이름을 사칭한 편지까지 포함하여)으로 인해 심각한 혼란을 겪고 있었다. 어떤 이들은 이런 임박한 종말 의식 때문에 일상적 노동을 그만두고 무위도식하는 문제까지 발생하고 있었다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>문체적 특징</h3>
+    <p>데살로니가전서보다 더 <b class="hl-term">교정적이고 단호한 어조</b>를 띤다. 종말론적 오해에 대한 명확한 신학적 반박(2장), 그리고 게으름 문제에 대한 실제적이고 단호한 지침(3장)이 두드러지며, 동시에 박해받는 교회를 향한 깊은 위로와 격려도 함께 담겨 있다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>핵심 신학 주제</h3>
+    <p>박해 중의 인내와 하나님의 <b class="hl-term">공의로운 심판</b>, 주의 날에 앞서 나타날 <b class="hl-term">불법의 사람</b>과 배교, 그리고 흔들리지 않고 전통(사도적 가르침)을 굳게 지키는 삶이 핵심 주제를 이룬다. 마지막 장의 게으름에 대한 경고는 종말론적 기대가 실제 삶의 질서를 무너뜨려서는 안 된다는 실천적 균형을 제시한다.</p>
+  </div>
+
+  <div class="intro-block">
+    <h3>전체 구조 개관</h3>
+    <div class="intro-outline">
+      <div class="oi">
+        <div class="oi-tag">1장</div>
+        <div class="oi-title">박해와 하나님의 공의</div>
+        <div class="oi-body">박해 중의 신실함에 대한 감사, 장차 있을 하나님의 공의로운 심판.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">2장</div>
+        <div class="oi-title">주의 날에 대한 오해 정정</div>
+        <div class="oi-body">불법의 사람의 나타남, 배교, 굳게 서서 전통을 지키라는 권면.</div>
+      </div>
+      <div class="oi">
+        <div class="oi-tag">3장</div>
+        <div class="oi-title">질서 있는 공동체의 삶</div>
+        <div class="oi-body">게으른 자들에 대한 경고, 조용히 일하는 삶, 마지막 인사.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="intro-block">
+    <h3>이 책의 사용법</h3>
+    <p>각 장은 동일한 세 부분으로 구성된다. <b class="hl-term">①본문 구조와 핵심 내용</b>은 해당 장을 몇 개의 단락으로 나누어 흐름을 요약하고, <b class="hl-term">②신학적·목회적 교훈</b>은 본문에서 오늘의 신앙과 삶으로 이어지는 다섯 가지 통찰을 제시하며, <b class="hl-term">③깊이 생각해볼 문제</b>는 역사적 정황, 해석사적 논쟁, 원어 배경 등 확정적 답보다 함께 씨름할 가치가 있는 지점들을 다룬다.</p>
+  </div>
+</div>
+
+
+<div class="toc-page" id="toc">
+  <div class="page-label">Contents</div>
+  <h1>목차</h1>
+  <div class="toc-list">
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch1')" onkeydown="if(event.key==='Enter')goTo(event,'ch1')">
+      <span class="toc-num">01</span>
+      <span class="toc-title">박해 중의 인내와 하나님의 공의</span>
+      <span class="toc-sub">박해 중 인내에 대한 감사, 장차 있을 심판</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch1"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch2')" onkeydown="if(event.key==='Enter')goTo(event,'ch2')">
+      <span class="toc-num">02</span>
+      <span class="toc-title">불법의 사람이 나타나기 전에는</span>
+      <span class="toc-sub">주의 날 오해 정정, 배교와 불법의 사람</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch2"></span>
+    </a>
+    <a class="toc-item" role="button" tabindex="0" onclick="goTo(event,'ch3')" onkeydown="if(event.key==='Enter')goTo(event,'ch3')">
+      <span class="toc-num">03</span>
+      <span class="toc-title">일하기 싫거든 먹지도 말라</span>
+      <span class="toc-sub">게으른 자들에 대한 경고, 마지막 인사</span>
+      <span class="toc-fill"></span>
+      <span class="toc-page-num" href="#ch3"></span>
+    </a>
+  </div>
+</div>
+
+
+<section class="chapter" id="ch1">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 6l6 12 13 2-9 9 2 13-12-6-12 6 2-13-9-9 13-2Z"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 THESSALONIANS 1</div>
+      <h1>1장 · 박해 중의 인내와 하나님의 공의</h1>
+      <div class="chapter-sub">데살로니가후서 1장 — 인사, 박해 중의 인내에 대한 감사, 장차 있을 하나님의 심판</div>
+      <div class="ref-strip">
+        <span class="ref-item">살후 1:1–12</span>
+      <span class="ref-item">박해 중의 신실함과 종말론적 공의</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–4절</div>
+        <div>
+          <div class="flow-title">박해 중에도 자라나는 믿음</div>
+          <div class="flow-body">바울은 데살로니가 교인들의 믿음이 더욱 자라고 사랑이 풍성해짐을 항상 하나님께 감사한다고 전하며, 그들이 견디고 있는 모든 박해와 환난 중에서의 <b class="hl-term">인내와 믿음</b>을 하나님의 여러 교회에 자랑한다고 말한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">5–10절</div>
+        <div>
+          <div class="flow-title">하나님의 공의로운 심판</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="0">이는 하나님의 공의로운 심판의 표니 너희로 하여금 하나님의 나라에 합당한 자로 여기심을 얻게 하려 함이라</b>는 소망이 제시된다. 환난을 받게 하는 자들에게는 환난으로 갚으시고 환난받는 자들에게는 안식으로 갚으시는 것이 하나님의 공의이니, 주 예수께서 강림하실 때 하나님을 모르는 자들과 복음에 복종하지 않는 자들에게 형벌을 내리시리라.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–12절</div>
+        <div>
+          <div class="flow-title">합당한 자로 여기심을 위한 기도</div>
+          <div class="flow-body">바울은 하나님이 그들을 부르심에 합당한 자로 여기시고 모든 선을 기뻐함과 믿음의 역사를 능력으로 이루게 하시기를 항상 기도한다고 전하며, 이는 우리 하나님과 주 예수 그리스도의 은혜대로 주 예수의 이름이 그들 가운데서 영광을 받으시게 하려 함이다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 박해 중의 인내와 믿음은 성장의 증거가 된다</div>
+        <div class="teach-body">데살로니가 교인들의 믿음이 박해 가운데서도 더욱 자라난다는 것은, 시련이 오히려 신앙 성숙의 계기가 될 수 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 지금의 부당함은 하나님의 공의 안에서 반드시 해결된다</div>
+        <div class="teach-body">박해자에게는 심판을, 박해받는 자에게는 안식을 주시겠다는 약속은, 정의가 결국 완성될 것이라는 궁극적 소망을 제공한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 고난은 하나님 나라에 합당한 자로 준비되는 과정이다</div>
+        <div class="teach-body">고난 자체가 목적이 아니라, 그것을 통해 하나님 나라에 합당한 성품과 신실함이 형성되어 간다는 관점을 제시한다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 하나님을 향한 기도는 능력 있는 삶의 실현을 구한다</div>
+        <div class="teach-body">단지 고난에서 벗어나기를 구하는 것이 아니라, 선을 기뻐함과 믿음의 역사가 능력으로 이루어지기를 기도하는 것이 성숙한 중보기도의 모범이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 궁극적 목적은 그리스도의 영광이다</div>
+        <div class="teach-body">모든 신앙적 성장과 인내의 최종 목적은 개인의 안녕이 아니라 "주 예수의 이름이 영광을 받으시게 하려 함"이라는 하나님 중심적 방향성이다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">박해받는 사람들에게 '이건 하나님의 공의로운 심판의 표'라고 말하는 게 처음엔 낯설게 들릴 수 있어요. 하지만 이건 지금의 고난이 영원히 방치되지 않는다는, 결국 정의가 이루어질 거라는 약속이에요.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>이 서신이 다루는 박해는 구체적으로 어떤 상황이었을까</div>
+        <div class="deep-body">본문은 구체적 박해의 성격을 상세히 밝히지 않지만, 사도행전 17장의 데살로니가 소요 사건 이후로도 지속된 <b class="hl-term">사회적·경제적 압박</b>(유대인 공동체와 이교도 이웃들로부터의 배척, 경제적 불이익 등)으로 추정된다. 로마 제국 차원의 조직적 박해(네로 박해 등)보다는 지역 공동체 수준의 지속적 압력이었을 가능성이 높다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"영원한 멸망의 형벌"(9절)에 대한 신학적 논의</div>
+        <div class="deep-body">이 구절은 최후 심판의 성격(영원한 의식적 형벌인지, 영원한 소멸인지)에 대한 신학적 논쟁에서 자주 인용된다. 전통적 견해(영벌설)와 소수 견해(조건적 불멸설·소멸설) 사이의 논쟁은 복음주의 신학 안에서도 계속되고 있으며, 본문 자체의 일차적 강조점은 형벌의 정확한 메커니즘보다 <b class="hl-term">하나님과 그의 능력의 영광으로부터 영원히 분리됨</b>이라는 실존적 상실에 있다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch2">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M24 8c-6 4-6 10 0 16-6 6-6 12 0 16"/><path d="M24 8c6 4 6 10 0 16 6 6 6 12 0 16"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 THESSALONIANS 2</div>
+      <h1>2장 · 불법의 사람이 나타나기 전에는</h1>
+      <div class="chapter-sub">데살로니가후서 2장 — 주의 날에 대한 오해 정정, 불법의 사람의 나타남, 굳게 서라</div>
+      <div class="ref-strip">
+        <span class="ref-item">살후 2:1–17</span>
+      <span class="ref-item">주의 날의 전조와 굳게 서는 믿음</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–5절</div>
+        <div>
+          <div class="flow-title">주의 날이 이미 이르렀다는 오해</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="1">주의 날이 이르렀다고 하여 쉬 흔들리거나 두려워하지 말라</b>고 권하며, 어떤 방법으로도 이 거짓 소문에 미혹되지 말라고 경고한다. 먼저 배교하는 일이 있고 <b class="hl-term">불법의 사람</b> 곧 멸망의 아들이 나타나 하나님이라 불리는 모든 것 위에 자기를 높이고 하나님의 성전에 앉아 자기를 하나님이라 내세우기까지는 그 날이 이르지 아니한다고 설명한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6–12절</div>
+        <div>
+          <div class="flow-title">막는 자와 불법의 사람의 정체</div>
+          <div class="flow-body">지금은 <b class="hl-term">막는 것</b>이 있어 그의 때가 이르기까지 나타나지 못하게 하고 있으나, 불법의 비밀이 이미 활동하고 있다고 말한다. 그 불법한 자가 나타날 때 사탄의 활동을 따라 모든 능력과 표적과 거짓 기적과 불의의 모든 속임으로 멸망하는 자들에게 임하리니, 이는 그들이 진리의 사랑을 받지 아니하여 구원함을 받지 못하기 때문이다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">13–17절</div>
+        <div>
+          <div class="flow-title">굳게 서서 지키라</div>
+          <div class="flow-body">바울은 하나님이 처음부터 그들을 택하사 성령의 거룩하게 하심과 진리를 믿음으로 구원을 받게 하셨다고 감사하며, 그러므로 <b class="hl-quote">"굳건하게 서서 말로나 우리의 편지로 가르침을 받은 전통을 지키라"</b>고 권한다. 우리 주 예수 그리스도와 우리를 사랑하시고 영원한 위로와 좋은 소망을 은혜로 주신 하나님 아버지께서 그들의 마음을 위로하시고 모든 선한 일과 말에 굳건하게 하시기를 기도한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 종말론적 혼란에는 감정적 안심보다 구체적 근거가 필요하다</div>
+        <div class="teach-body">바울이 아직 일어나지 않은 전조를 논리적으로 제시하는 방식은, 혼란스러운 소문 앞에서 침착하고 근거 있는 분별이 필요함을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 악은 활동하고 있으나 아직 제한되어 있다</div>
+        <div class="teach-body">불법의 비밀이 이미 활동하되 아직 막는 것에 의해 저지되고 있다는 것은, 하나님의 주권이 악의 확산에도 여전히 한계를 두고 계심을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 진리를 사랑하지 않는 것이 결국 미혹당하는 근본 원인이다</div>
+        <div class="teach-body">거짓 기적과 속임에 넘어가는 것은 지식의 부족이 아니라 진리에 대한 사랑의 결여에서 비롯된다는 통찰이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 구원은 처음부터 하나님의 택하심과 성령의 거룩하게 하심에 근거한다</div>
+        <div class="teach-body">구원의 과정 전체(택하심, 거룩하게 하심, 믿음)가 하나님의 주도로 이루어진다는 것은, 구원의 확실성이 인간의 노력이 아니라 하나님의 신실하심에 있음을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 전통(가르침)을 굳게 지키는 것이 흔들리지 않는 길이다</div>
+        <div class="teach-body">말로나 편지로 받은 사도적 가르침을 굳게 지키라는 권면은, 견고한 신앙이 새로운 것을 좇기보다 이미 받은 진리 위에 서는 데서 나옴을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">거짓 소문이나 가짜 편지로까지 혼란이 퍼졌다는 걸 보면, 초대교회도 오늘날의 가짜뉴스 문제와 크게 다르지 않았던 것 같아요. 바울의 답은 감정적 위로만이 아니라, 차분하고 근거 있는 분별을 요청하는 거였죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"막는 자"(6-7절)의 정체에 대한 다양한 견해</div>
+        <div class="deep-body">이 구절은 신약에서 가장 난해한 구절 중 하나로 꼽힌다. 로마 제국(그 질서 유지 기능), 성령, 복음 전파 자체, 천사적 존재 등 다양한 해석이 제시되어 왔으나 어느 것도 확정적이지 않다. 바울이 데살로니가 교인들에게 구두로 이미 설명했다고 언급하는 것(5절, "내가 너희와 함께 있을 때에 이 일을 너희에게 말한 것을 기억하지 못하느냐")을 보면, 이는 서신 수신자들에게는 익숙했으나 오늘날의 독자에게는 소실된 배경 정보였을 가능성이 있다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"불법의 사람"이 요한계시록의 짐승, 다니엘서의 작은 뿔과 같은 존재인가</div>
+        <div class="deep-body">많은 학자들은 이 인물을 다니엘 7-11장의 종말론적 대적자, 요한계시록 13장의 짐승과 연결되는 <b class="hl-term">동일한 신학적 계열의 인물</b>로 이해한다. 구체적으로 이 인물이 특정 역사적 인물(로마 황제 등)을 가리키는지, 아니면 미래에 등장할 순전히 종말론적 존재인지에 대해서는 다양한 해석 전통(과거주의, 미래주의, 역사주의 등)이 존재하며 학자들 사이에 합의가 없다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+<section class="chapter" id="ch3">
+  <div class="chapter-head">
+    <div class="chapter-icon-badge"><svg class="chapter-icon" viewBox="0 0 48 48" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 34c0-10 5-18 10-18s10 8 10 18"/><path d="M10 40h28"/><path d="M18 22a6 6 0 0 1 12 0"/></svg></div>
+    <div class="chapter-head-text">
+      <div class="chapter-eyebrow">2 THESSALONIANS 3</div>
+      <h1>3장 · 일하기 싫거든 먹지도 말라</h1>
+      <div class="chapter-sub">데살로니가후서 3장 — 기도 부탁, 게으른 자들에 대한 경고, 마지막 인사</div>
+      <div class="ref-strip">
+        <span class="ref-item">살후 3:1–18</span>
+      <span class="ref-item">질서 있는 공동체의 삶</span>
+      
+      </div>
+    </div>
+  </div>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">01</span><h2>본문 구조와 핵심 내용</h2></div>
+    <p class="sec-desc">전체 장은 몇 단락으로 흐른다.</p>
+    <div class="flow">
+      <div class="flow-item">
+        <div class="flow-range">1–5절</div>
+        <div>
+          <div class="flow-title">기도를 부탁하며 신실하신 주를 확신함</div>
+          <div class="flow-body">바울은 주의 말씀이 퍼져나가 영광스럽게 되고 부당하고 악한 사람들에게서 건짐을 받도록 기도해 달라고 부탁한다. <b class="hl-quote">"주는 미쁘사 너희를 굳건하게 하시고 악한 자에게서 지키시리라"</b>는 확신과 함께, 주께서 그들의 마음을 인도하사 하나님의 사랑과 그리스도의 인내에 이르게 하시기를 구한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">6–10절</div>
+        <div>
+          <div class="flow-title">게으른 자들에 대한 경고</div>
+          <div class="flow-body"><b class="hl-insight has-insight" data-insight="2">누구든지 일하기 싫거든 먹지도 말라</b>는 원칙을 상기시키며, 게으르게 행하여 도무지 일하지 아니하고 일을 만들기만 하는 자들을 경계하라고 명한다. 바울 자신도 데살로니가에 있을 때 누구에게도 폐를 끼치지 않으려고 수고하고 애써 일하며 지냈다는 것을 본으로 제시한다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">11–15절</div>
+        <div>
+          <div class="flow-title">조용히 일하며 선을 행하라</div>
+          <div class="flow-body">조용히 일하여 자기 양식을 먹으라 권하며, 형제들에게는 선을 행하다가 낙심하지 말라고 격려한다. 이 편지의 말을 순종하지 않는 자를 지켜보고 사귀지 말되 원수와 같이 여기지 말고 형제 같이 권하라는 균형 잡힌 권징의 원리가 제시된다.</div>
+        </div>
+      </div>
+      <div class="flow-item">
+        <div class="flow-range">16–18절</div>
+        <div>
+          <div class="flow-title">평강의 하나님과 마지막 인사</div>
+          <div class="flow-body">평강의 주께서 친히 온갖 일에 어떤 방식으로든지 그들에게 평강을 주시기를 구하며, 바울은 자기 손으로 직접 문안하여 이것이 자신의 모든 편지의 표시라고 밝힌다. 은혜의 축도로 서신을 마무리한다.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sub">
+    <div class="sec-head"><span class="sec-num">02</span><h2>신학적·목회적 교훈</h2></div>
+    <p class="sec-desc">본문에서 끌어낼 수 있는 다섯 가지 교훈.</p>
+    <div class="teach-grid">
+      <div class="teach-card">
+        <div class="teach-title">① 게으름에 대한 경계는 처벌이 아니라 공동체 질서를 위한 것이다</div>
+        <div class="teach-body">일하기 싫어하는 자에 대한 원칙은 잔인함이 아니라, 상호 책임과 건강한 공동체 삶을 지키기 위한 실제적 지혜다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">② 지도자의 본이 권면보다 앞서야 한다</div>
+        <div class="teach-body">바울이 자신의 자비량 노동을 먼저 언급한 후 게으름을 경계하는 것은, 요구하기 전에 스스로 본을 보이는 것이 참된 권위의 기초임을 보여준다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">③ 선을 행하다 낙심하는 것도 경계해야 할 위험이다</div>
+        <div class="teach-body">게으름과 함께 언급되는 "낙심하지 말라"는 권면은, 신실하게 수고하는 사람들도 지치고 좌절할 수 있음을 인식하는 목회적 세심함이다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">④ 권징은 정죄가 아니라 회복을 지향해야 한다</div>
+        <div class="teach-body">순종하지 않는 자를 사귀지 말되 원수처럼 대하지 말고 형제처럼 권하라는 균형은, 교회의 권징이 언제나 관계 회복을 목표로 함을 재확인시킨다.</div>
+      </div>
+      <div class="teach-card">
+        <div class="teach-title">⑤ 평강은 모든 상황 속에서 하나님이 친히 주시는 선물이다</div>
+        <div class="teach-body">"온갖 일에 어떤 방식으로든지" 평강을 주시기를 구하는 기도는, 하나님의 평강이 특정 조건에 제한되지 않음을 보여준다.</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="speech-bubble">
+    <div class="sb-avatar">&#10077;</div>
+    <div class="sb-text">바울이 매 편지 끝에 자기 손으로 직접 인사말을 썼다는 걸 밝히는 이 대목, 위조 편지가 실제로 문제가 되었던 데살로니가교회의 상황을 다시 한번 떠올리게 해요. 진짜와 가짜를 구별하려는 세심한 배려였던 거죠.</div>
+  </div>
+
+  <section class="sub">
+    <div class="deep-wrap">
+      <div class="sec-head"><span class="sec-num">03</span><h2>깊이 생각해볼 문제</h2></div>
+      <p class="sec-desc">확정적 답보다 함께 씨름할 가치가 있는 지점들.</p>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">1</span>"일하기 싫거든 먹지도 말라"는 원칙이 사회복지 정책 논의에 인용되는 방식</div>
+        <div class="deep-body">이 구절은 종종 복지 정책 논쟁에서 인용되지만, 본문의 일차적 맥락은 국가 정책이 아니라 <b class="hl-term">교회 공동체 내부의 자발적 상호 책임</b>을 다루고 있다는 점을 기억해야 한다. 일할 능력이 없는 자(과부, 병자 등)에 대한 돌봄은 디모데전서 5장 등 다른 본문에서 오히려 적극적으로 명령되고 있으므로, 이 구절을 일할 수 없는 취약 계층에 대한 배제의 근거로 사용하는 것은 본문의 오용이다.</div>
+      </div>
+      <div class="deep-item">
+        <div class="deep-title"><span class="deep-num">2</span>"자기 손으로 문안함"(17절)이 서신의 진위 확인 장치였다는 점</div>
+        <div class="deep-body">이는 2:2에서 언급된 가짜 편지 문제에 대한 직접적 대응으로 보인다. 대필자를 통해 서신 본문을 구술하고 마지막 인사만 직접 서명하는 것은 고대 서신의 일반적 관행이었으며, 바울은 이를 자신의 모든 편지에서 <b class="hl-term">진위를 확인하는 표식</b>으로 삼겠다고 명시한다.</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+
+
+<div class="floating-nav">
+  <a role="button" tabindex="0" onclick="goTo(event,'toc')" onkeydown="if(event.key==='Enter')goTo(event,'toc')" title="목차로">📑</a>
+  <a role="button" tabindex="0" onclick="goTo(event,'top')" onkeydown="if(event.key==='Enter')goTo(event,'top')" title="처음으로">⌃</a>
+</div>
+
+<div class="church-footer">기독교한국침례회 은혜교회</div>
+
+<script>
+var INSIGHTS_DATA = [{"title": "박해받는 사람들에게 '하나님의 공의로운 심판의 표'라고 말하는 게 왜 위로가 될까", "body": "1장 5절에서 바울은 데살로니가 교인들이 겪고 있는 박해와 환난에 대해 이렇게 말해요 — '이는 하나님의 공의로운 심판의 표니 너희로 하여금 하나님의 나라에 합당한 자로 여기심을 얻게 하려 함이라.' 언뜻 이상하게 들릴 수 있어요 — 박해를 당하는 게 어떻게 '심판의 표'이자 위로가 될 수 있을까요?\n\n문맥을 보면 답이 나와요. 바울은 이 고난을 최종 결말이 아니라 하나님의 공의가 완성되는 과정의 일부로 설명해요. 6-7절에서 이렇게 이어지죠 — '너희로 환난을 받게 하는 자들에게는 환난으로 갚으시고 환난을 받는 너희에게는 우리와 함께 안식으로 갚으시는 것이 하나님의 공의시니.' 즉 지금 그들이 부당하게 겪고 있는 고난은 영원히 방치되는 게 아니라, 하나님이 반드시 바로잡으실 거라는 확신이에요 — 박해하는 자에게는 심판을, 박해받는 자에게는 안식을 주실 거라는 거죠.\n\n그러니까 '심판의 표'라는 표현은 그들이 지금 벌 받고 있다는 뜻이 아니라, 오히려 정반대예요 — 그들이 부당하게 고난받고 있다는 사실 자체가, 장차 하나님이 이 불의를 바로잡으실 것이라는 증거로 제시되는 거예요. 지금의 고난이 하나님 나라에 합당한 자로 여기심을 받는 과정이라는 이 관점은, 당장의 고통을 없애주지는 않지만 그 고통에 궁극적 의미와 방향을 부여해줘요 — 이 모든 부당함이 결코 그냥 넘어가지 않고, 하나님의 공의로운 심판 안에서 반드시 해결될 거라는 거죠."}, {"title": "주의 날이 이미 이르렀다는 소문에, 바울은 왜 이렇게까지 강하게 반박할까", "body": "2장 2절에서 바울은 상당히 다급한 어조로 말해요 — '영으로나 또는 말로나 우리에게서 받았다 하는 편지로나 주의 날이 이르렀다고 하여 쉬 흔들리거나 두려워하거나 하지 말아야 한다.' 심지어 자신의 이름을 도용한 가짜 편지까지 돌아다녔을 가능성을 언급할 만큼, 이 문제를 매우 심각하게 다뤄요.\n\n왜 이렇게 강하게 반응했을까요? 데살로니가전서에서 이미 재림에 대한 소망을 가르쳤던 바울로서는, 그 가르침이 '주의 날이 이미 와버렸다'는 식으로 왜곡되어 교인들을 혼란과 공포에 빠뜨리는 걸 두고 볼 수 없었던 거예요. 만약 주의 날이 이미 지나갔다면, 그건 곧 자신들이 그 심판에서 제외되었거나 뭔가 잘못되었다는 두려움으로 이어질 수 있었겠죠.\n\n바울의 반박 방식이 흥미로워요 — 그는 단순히 '아니다'라고 부인하는 데 그치지 않고, 아직 일어나지 않은 구체적 전조들을 제시해요(3-4절). 먼저 배교하는 일이 있고 <b>불법의 사람</b>(적그리스도로 흔히 이해되는 인물)이 나타나 하나님이라 하는 모든 것 위에 자기를 높이고 하나님의 성전에 앉아 자기를 하나님이라 내세우는 일이 있어야 한다는 거예요. 즉 주의 날에 앞서 반드시 일어나야 할 명백한 사건들이 아직 일어나지 않았으니, 지금은 그 날이 아니라는 논리적 반박이죠. 이건 종말론적 혼란 앞에서 감정적 안심보다, 구체적이고 검증 가능한 신학적 근거를 제시하는 바울의 목회적 지혜를 보여주는 대목이에요."}, {"title": "게으른 자에게 밥을 주지 말라는 게 너무 가혹한 것 아닐까", "body": "3장 10절에서 바울은 상당히 단호한 원칙을 제시해요 — '우리가 너희와 함께 있을 때에 누구든지 일하기 싫거든 먹지도 말라 하였더니.' 그리고 이어서 이런 자들을 향해 '조용히 일하여 자기 양식을 먹으라'고 명해요. 언뜻 냉정하고 가혹한 규칙처럼 들릴 수 있어요 — 굶주림으로 사람을 압박하는 것 같으니까요.\n\n하지만 문맥을 보면 이건 무자비한 처벌이 아니라 특정 문제 상황에 대한 실제적 대응이었어요. 11절에서 바울은 구체적으로 지적해요 — '우리가 들은즉 너희 가운데 게으르게 행하여 도무지 일하지 아니하고 일을 만들기만 하는 자들이 있다 함이라.' 데살로니가교회 안에 재림이 임박했다는 잘못된 확신 때문인지, 일상적 노동을 그만두고 다른 사람들의 삶에 참견하며 무위도식하는 사람들이 실제로 있었던 것 같아요.\n\n바울의 해법은 처벌이 아니라 공동체 전체의 건강을 지키는 것이었어요. 그는 자신의 사례를 먼저 제시하죠(7-9절) — 사도인 자신도 데살로니가에 있을 때 누구에게도 폐를 끼치지 않으려고 수고하고 애써 일하며 지냈다고요. 즉 이건 '일하지 못하는 사람'에 대한 처벌이 아니라, '일할 수 있음에도 일하지 않으려는' 특정 태도에 대한 경고예요. 그리고 13절에서 바울은 곧바로 덧붙여요 — '형제들아 너희는 선을 행하다가 낙심하지 말라.' 즉 이 원칙은 게으름을 방치하지 않으면서도, 여전히 선을 행하는 사람들을 향한 격려와 함께 균형을 이루고 있는 거예요. 공동체의 질서와 상호 책임을 지키기 위한 실제적 지혜였던 거죠."}];
+
+function goTo(e, id){
+  if(e) e.preventDefault();
+  var el = document.getElementById(id);
+  if(el){
+    var nav = document.querySelector('.quick-nav');
+    var navH = nav ? nav.offsetHeight : 0;
+    var top = el.getBoundingClientRect().top + window.pageYOffset - navH - 12;
+    window.scrollTo({top: top, behavior:'smooth'});
+  }
+  return false;
+}
+
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('termTip');
+  var insTerm = e.target.closest('.has-insight');
+  if(insTerm){
+    var idx = insTerm.getAttribute('data-insight');
+    var data = INSIGHTS_DATA[idx];
+    if(data){
+      document.getElementById('insightTitle').textContent = data.title;
+      document.getElementById('insightBody').textContent = data.body;
+      document.getElementById('insightOverlay').classList.add('open');
+    }
+    e.stopPropagation();
+    return;
+  }
+  if(e.target.id === 'insightOverlay' || e.target.closest('.insight-close')){
+    document.getElementById('insightOverlay').classList.remove('open');
+    return;
+  }
+  if(e.target.closest('#insightCard')){ return; }
+
+  if(!tip) return;
+  if(e.target.closest('.tip-close')){
+    tip.style.display = 'none';
+    return;
+  }
+  var term = e.target.closest('.has-tip');
+  if(term){
+    tip.textContent = term.getAttribute('data-tip');
+    var closeBtn = document.createElement('span');
+    closeBtn.className = 'tip-close';
+    closeBtn.textContent = '✕';
+    tip.appendChild(closeBtn);
+
+    var rect = term.getBoundingClientRect();
+    var tipWidth = 280;
+    var left = rect.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - tipWidth - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (rect.bottom + window.pageYOffset + 10) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#termTip')){
+    tip.style.display = 'none';
+  }
+});
+
+document.addEventListener('keydown', function(e){
+  if(e.key === 'Escape'){
+    var ov = document.getElementById('insightOverlay');
+    if(ov) ov.classList.remove('open');
+  }
+});
+</script>
+
+<script src="/assets/back-home.js"></script>
+</body>
+</html>

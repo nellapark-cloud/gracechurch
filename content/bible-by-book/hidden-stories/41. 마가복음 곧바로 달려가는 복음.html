@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>마가복음, 곧바로 달려가는 복음 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="잠시도 멈추지 않고 달려가던 이야기가 십자가 앞에서 비로소 멈춰 선다">
+<meta property="og:title" content="마가복음, 곧바로 달려가는 복음">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 09</div>
+  <h1>마가복음,<br><em>곧바로</em><br>달려가는 복음</h1>
+  <p class="sub">잠시도 멈추지 않고 달려가던 이야기가<br>십자가 앞에서 비로소 멈춰 선다</p>
+  <div class="ref">마가복음 1–16장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>마가복음은 네 복음서 가운데 가장 짧아요. 동방박사도, 목자들도, 족보도 없어요. 첫 절에서 "복음의 시작"을 알리자마자 침례 요한이 나오고, 몇 줄 뒤에 벌써 예수님이 침례를 받으세요. 숨 돌릴 틈이 없어요. 한 자리에 앉아 한 시간 남짓이면 다 읽을 수 있을 정도예요.</p>
+    <p>그런데 짧다고 가볍게 넘기면 아까운 책이에요. 마가는 <mark>같은 단어를 책의 처음과 끝에 몰래 심어 두고</mark>, 이야기 두 개를 샌드위치처럼 겹쳐 놓고, 예수님이 쓰시던 아람어를 그대로 남겨 두었어요. 그 흔적을 따라가다 보면 결국 한 곳에 이르러요. <span class="hl">섬기러 오셔서 목숨을 내어 주신 예수님</span>이요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>마가복음은 어떤 책일까?</h2>
+    <p>가장 짧고, 가장 빠르고, 가장 생생한 복음서</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>마가복음에도 저자 이름은 적혀 있지 않지만, 초대교회는 한결같이 이 책을 <mark>마가 요한</mark>이 쓴 복음서로 전해 왔어요. 사도행전에 여러 번 나오는 바로 그 사람이에요. 많은 학자들은 마가복음을 네 복음서 가운데 <span class="hl">가장 먼저 기록된 책</span>으로 보고, 60년대 무렵 로마에서 박해를 겪던 성도들을 위해 쓴 것으로 봐요. 그래서인지 유대 풍습을 따로 설명해 주고(7:3-4), 아람어를 번역해 주고, 로마 사람들이 쓰던 말을 자주 섞어 써요.</p>
+    <div class="debate sans"><div><b>마가는 누구일까?</b>예루살렘 성도들이 모여 기도하던 집이 "마가라 하는 요한의 어머니 마리아의 집"이었어요(행 12:12). 바나바의 생질이었고(골 4:10), 바울의 첫 전도여행에 따라나섰다가 중간에 돌아갔어요(행 13:13).</div><div><b>베드로의 통역자</b>베드로는 편지에서 그를 "내 아들 마가"라고 불러요(벧전 5:13). 초대교회는 마가가 베드로 곁에서 들은 이야기를 이 복음서에 담았다고 전해요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 2세기 초 파피아스는 "마가는 베드로의 통역자가 되어, 기억한 것을 순서대로는 아니지만 정확하게 기록했다"고 전했어요(유세비우스 『교회사』 3.39). 기록 장소와 연대는 학자들 사이에 논의가 있어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">마가복음의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">"곧"이라는 말</div><div class="mini-b">"곧, 즉시"라는 뜻의 헬라어 "유튀스"가 마흔 번 넘게 나와요. 장면이 끊임없이 다음 장면으로 달려가요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">가장 짧은 복음서</div><div class="mini-b">16장뿐이에요. 탄생 이야기 없이, 곧장 예수님의 사역으로 들어가요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">예수님의 표정이 보이는 책</div><div class="mini-b">노하심으로 둘러보시고(3:5), 부자 청년을 보시고 사랑하시고(10:21), 배 고물에서 베개를 베고 주무시는(4:38) 모습은 마가만 기록했어요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">말씀보다 발걸음</div><div class="mini-b">긴 설교보다 행하신 일이 많이 나와요. 예수님은 가르치시면서도 끊임없이 움직이시는 분으로 그려져요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">숨기지 않는 제자들의 실패</div><div class="mini-b">제자들이 깨닫지 못하고, 다투고, 도망가는 모습이 그대로 적혀 있어요. 그래서 오히려 더 믿음직한 책이에요.</div></div></div></div>
+
+  <div class="target"><p>마가복음의 핵심은 한 절에 담겨 있어요. <span class="hl">"인자가 온 것은 섬김을 받으려 함이 아니라 도리어 섬기려 하고 자기 목숨을 많은 사람의 대속물로 주려 함이니라"</span>(10:45). 책은 "하나님의 아들 예수 그리스도 복음의 시작"(1:1)으로 열고, 십자가 앞에서 "이 사람은 진실로 하나님의 아들이었도다"(15:39)라는 고백으로 정점에 이르러요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>찢어진 하늘부터 끝나지 않은 결말까지, 마가가 숨겨 둔 이야기들</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>찢어진 하늘</button><button class="chip" onclick="goTo('s2')"><b>2</b>열두 해와 열두 살</button><button class="chip" onclick="goTo('s3')"><b>3</b>예수님의 목소리</button><button class="chip" onclick="goTo('s4')"><b>4</b>베드로의 복음</button><button class="chip" onclick="goTo('s5')"><b>5</b>도망친 청년</button><button class="chip" onclick="goTo('s6')"><b>6</b>시몬의 두 아들</button><button class="chip" onclick="goTo('s7')"><b>7</b>무서워함이더라</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>하늘이 찢어지고,<br>휘장이 찢어지다</h2><div class="refs">마가복음 1:9-11 · 15:37-39 · 이사야 64:1</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">책의 시작 (1:10-11)</div>하늘이 갈라지고, 하나님이 "너는 내 사랑하는 아들"이라고 말씀하세요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">책의 끝 (15:38-39)</div>성소 휘장이 찢어지고, 로마 백부장이 "진실로 하나님의 아들"이라고 고백해요.</div></div><p>예수님이 침례를 받고 물에서 올라오실 때 "하늘이 갈라짐"을 보셨어요(1:10). 마태와 누가는 여기서 하늘이 "열렸다"고 쓰는데, 마가만 훨씬 거친 단어를 써요. 헬라어 <span class="heb" data-tip="스키조(schizō) — 찢다, 쪼개다. 마가복음에서는 하늘이 갈라질 때(1:10)와 성소 휘장이 찢어질 때(15:38) 똑같이 이 동사를 썼다.">스키조</span>, 곧 <mark>"찢다"</mark>라는 말이에요.</p>
+        <p>이 단어가 마가복음 마지막 부분에 딱 한 번 더 나와요. 예수님이 큰 소리를 지르고 숨지실 때, "성소 휘장이 위로부터 아래까지 찢어져 둘이 되니라"(15:38). 하나님이 하늘을 찢고 내려오셔서 시작된 이야기가, 하나님과 사람 사이를 가로막던 휘장이 찢어지는 것으로 완성되는 거예요. 그것도 <span class="hl">위에서부터 아래로</span>, 하나님 쪽에서 찢으셨어요.</p>
+        <p>그리고 두 장면 모두 "하나님의 아들"이라는 말이 뒤따라요. 처음엔 하늘에서 들린 하나님의 음성이었고, 마지막엔 예수님을 처형한 로마 군인의 입에서 나왔어요. 마가복음에서 <mark>예수님을 "하나님의 아들"이라고 처음 고백한 사람</mark>이 제자가 아니라 이방인 백부장이었다는 게 참 놀라워요.</p>
+        <p>이사야 선지자는 오래전에 이렇게 기도했어요. "원하건대 주는 하늘을 가르고 강림하시고"(사 64:1). 마가는 그 기도가 예수님 안에서 응답되었다고 조용히 말하고 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>하늘을 찢고 내려오시고 휘장을 찢어 길을 여신 하나님 덕분에, 오늘 내가 담대히 하나님께 나아갈 수 있음을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>열두 해 앓은 여인과<br>열두 살 소녀</h2><div class="refs">마가복음 5:21-43</div></div></div>
+    <div class="scene-body"><p>마가는 이야기 하나를 시작해 놓고, 중간에 다른 이야기를 끼워 넣은 다음, 다시 처음 이야기로 돌아오는 방식을 즐겨 써요. <mark>샌드위치 같은 구성</mark>이에요. 5장이 대표적이에요.</p>
+        <div class="steps">
+          <div><b>빵</b>회당장 야이로가 죽어 가는 딸을 살려 달라고 엎드려요(5:22-24).</div>
+          <div class="last"><b>속</b>가는 길에 혈루증 앓던 여인이 예수님의 옷에 손을 대요(5:25-34).</div>
+          <div><b>빵</b>딸이 죽었다는 소식이 오고, 예수님은 소녀를 살리세요(5:35-43).</div>
+        </div>
+        <p>두 이야기를 겹쳐 보면 숨은 연결이 보여요. 여인은 <span class="hl">열두 해</span>를 앓았고(5:25), 소녀의 나이는 <span class="hl">열두 살</span>이었어요(5:42). 소녀가 태어나 자라는 동안, 여인은 그 세월을 병과 싸우며 보낸 거예요. 한 사람은 회당장의 딸로 존경받는 집안이고, 다른 한 사람은 율법상 부정한 사람이라 사람들 사이에 섞이지도 못했어요(레 15:25).</p>
+        <p>마가는 여인이 "많은 의사에게 많은 괴로움을 받았고 가진 것도 다 허비하였으되 … 도리어 더 중하여졌다"고 솔직하게 써요(5:26). 그런데 의사였던 누가는 같은 장면을 쓰면서 이 부분을 훨씬 부드럽게 줄였어요(눅 8:43). 동료 의사들 체면을 생각했을까요? 😄</p>
+        <p>예수님은 부정한 여인의 손길을 피하지 않으셨고, 죽은 소녀의 손을 잡으셨어요. 둘 다 율법으로는 사람을 부정하게 만드는 접촉이에요. 그런데 <mark>부정이 예수님께 옮겨 간 게 아니라, 예수님의 생명이 그들에게 흘러갔어요.</mark> 그리고 사람들 앞에 숨어 있던 여인을 예수님은 "딸아"라고 부르셨어요(5:34). 그날 예수님은 딸 둘을 찾으신 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>아무도 가까이하지 않던 사람을 "딸아" 하고 부르신 예수님이, 오래 지친 나도 그렇게 부르고 계심을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>예수님의 목소리와<br>로마의 동전 한 닢</h2><div class="refs">마가복음 3:17 · 5:41 · 7:34 · 12:42 · 14:36 · 15:34</div></div></div>
+    <div class="scene-body"><p>신약성경은 헬라어로 기록됐어요. 그런데 예수님이 평소에 쓰신 말은 아람어였어요. 마가복음에는 그 <mark>아람어가 번역되지 않은 채 그대로 남은 곳</mark>이 유난히 많아요. 마치 예수님의 목소리를 녹음해 둔 것처럼요.</p>
+        <div class="wp">
+          <div><span class="pl">보아너게</span> — "우레의 아들"(3:17). 야고보와 요한에게 붙여 주신 별명이에요. 성격이 얼마나 급했으면요. 😄</div>
+          <div><span class="pl">달리다굼</span> — "소녀야 일어나라"(5:41). 엄마가 아침에 아이를 깨우듯 부르신 말이에요.</div>
+          <div><span class="pl">에바다</span> — "열리라"(7:34). 듣지 못하는 사람의 귀를 여실 때 하신 말씀이에요.</div>
+          <div><span class="pl">아빠</span> — "아빠 아버지여"(14:36). 겟세마네 기도예요. 복음서 가운데 이 단어를 남긴 곳은 마가복음뿐이에요.</div>
+          <div><span class="pl">엘로이 엘로이 라마 사박다니</span> — "나의 하나님, 나의 하나님, 어찌하여 나를 버리셨나이까"(15:34). 시편 22편 1절이에요.</div>
+        </div>
+        <p>반대로, 로마 사람들에게 익숙한 라틴어도 곳곳에 섞여 있어요. 가난한 과부가 넣은 헌금을 설명하면서 마가는 "두 렙돈 <span class="hl">곧 한 고드란트</span>"라고 덧붙여요(12:42). 렙돈은 유대 땅의 가장 작은 동전이고, 고드란트는 로마 동전(쿼드란스)이에요. 로마 독자들에게 "여러분 돈으로 치면 이 정도예요" 하고 환산해 준 거예요.</p>
+        <p>그래서 마가복음을 읽으면 두 목소리가 함께 들려요. 갈릴리 시골에서 아람어로 말씀하시던 예수님의 목소리, 그리고 그 말씀을 로마의 성도들에게 한 마디 한 마디 풀어 주던 마가의 목소리요. 복음은 처음부터 <mark>번역되어 온 세상으로 건너가도록</mark> 만들어진 이야기였어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>"달리다굼", "에바다" 하고 부르시던 그 음성이 오늘 내 이름을 부르시며 일으키고 여신다는 것을 믿습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>베드로가 자기 실수를<br>빼지 않고 들려준 복음</h2><div class="refs">마가복음 8:27-33 · 14:30, 66-72 · 16:7</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">마태복음의 베드로</div>고백 뒤에 "네가 복이 있도다 … 이 반석 위에"라는 칭찬이 나오고(마 16:17-18), 물 위를 걸은 이야기도 있어요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">마가복음의 베드로</div>칭찬은 빠지고 곧바로 "사탄아 내 뒤로 물러가라"는 꾸중이 나와요(8:33). 물 위를 걸은 이야기도 없어요.</div></div><p>초대교회가 전한 대로 마가가 베드로의 설교를 바탕으로 이 책을 썼다면, 참 재미있는 일이 생겨요. 베드로가 칭찬받은 장면은 빠지고, <mark>꾸중 듣고 실패한 장면은 고스란히 남아 있거든요.</mark> 베드로가 설교할 때마다 자기 자랑은 빼고 자기 실수만 이야기했던 걸까요?</p>
+        <p>마가복음에만 있는 작은 숫자 하나가 있어요. 예수님은 "닭이 <span class="hl">두 번</span> 울기 전에 네가 세 번 나를 부인하리라"고 하셨어요(14:30). 다른 복음서들은 그냥 "닭 울기 전에"라고 써요. 마가복음에서는 베드로가 첫 번째 부인한 뒤 닭이 한 번 울었는데도(14:68) 멈추지 못하고, 두 번째 닭 울음소리를 듣고서야 무너져 울어요(14:72). 이 부끄러운 이야기를 이렇게 자세히 아는 사람은 베드로 자신밖에 없어요.</p>
+        <p>그런데 마가는 이 실패로 이야기를 끝내지 않아요. 빈 무덤에서 천사는 여인들에게 이렇게 말해요. "가서 그의 제자들과 <mark>베드로에게</mark> 이르기를 예수께서 너희보다 먼저 갈릴리로 가시나니"(16:7). 베드로도 제자인데 왜 이름을 따로 불렀을까요? 세 번 부인하고 자기는 이제 제자 자격이 없다고 생각했을 한 사람을, 부활하신 예수님이 콕 집어 부르신 거예요. 이 이름도 마가복음에만 있어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 마가복음이 베드로의 증언을 바탕으로 했다는 것은 파피아스 이후의 초대교회 전승이에요. 마가가 어떤 이유로 어떤 장면을 넣고 뺐는지는 본문만으로 확정할 수는 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>주님을 부인한 것 같은 날에도, 부활하신 예수님이 내 이름을 따로 불러 다시 부르신다는 것을 기억합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>모든 것을 버렸던 제자들,<br>결국 예수님을 버리다</h2><div class="refs">마가복음 10:28 · 14:50-52 · 15:46</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">10:28</div>"보소서 우리가 모든 것을 <b>버리고</b> 주를 따랐나이다"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">14:50</div>"제자들이 다 예수를 <b>버리고</b> 도망하니라"</div></div><p>두 구절의 "버리다"는 헬라어로 <span class="heb" data-tip="아피에미(aphiēmi) — 놓다, 버리다, 떠나다. 10:28에서 베드로가 '모든 것을 버렸다'고 할 때와 14:50에서 제자들이 '예수를 버렸다'고 할 때 같은 동사가 쓰였다.">아피에미</span>, <mark>같은 단어</mark>예요. 예수님을 따르려고 배와 그물과 가족을 버렸다고 자랑하던 제자들이, 정작 예수님이 잡히시던 밤에는 예수님을 버리고 도망쳤어요. 마가는 같은 단어로 그 아이러니를 조용히 보여 줘요.</p>
+        <p>그리고 바로 뒤에 복음서 전체에서 가장 이상한 두 절이 나와요. "한 청년이 벗은 몸에 베 홑이불을 두르고 예수를 따라가다가 무리에게 잡히매 <span class="hl">베 홑이불을 버리고 벗은 몸으로 도망하니라</span>"(14:51-52). 이름도 없고, 앞뒤 설명도 없어요. 마태도 누가도 요한도 이 장면은 빼 버렸어요. 마가만 적었어요.</p>
+        <p>여기서 "베 홑이불"은 헬라어로 <span class="heb" data-tip="신돈(sindōn) — 고운 베, 아마포. 14:51-52의 '베 홑이불'과 15:46에서 예수님의 시신을 싼 '세마포'가 같은 단어다.">신돈</span>이에요. 이 단어가 마가복음에 한 번 더 나와요. 아리마대 요셉이 예수님의 시신을 쌀 때 사 온 "세마포"(15:46)예요. 청년은 그 천을 버리고 달아났지만, 예수님은 끝까지 그 천에 싸여 무덤까지 가셨어요. <mark>모두가 버리고 떠난 길을 예수님 혼자 끝까지 걸어가신 거예요.</mark></p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 이 청년이 마가 자신이라는 추측이 오래전부터 있어 왔어요. 이름을 밝히지 않은 것이 일종의 "서명"이라는 거예요. 그럴듯하지만 본문에 근거가 있는 것은 아니어서, 어디까지나 추정으로 보아야 해요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>"모든 것을 버렸다"고 말하던 내가 쉽게 주님을 떠나는 사람임을 인정하고, 끝까지 나를 버리지 않으신 예수님을 붙듭니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>십자가를 대신 진 사람,<br>그의 두 아들 이름</h2><div class="refs">마가복음 15:21 · 로마서 16:13 · 사도행전 11:20</div></div></div>
+    <div class="scene-body"><p>로마 군인들은 지나가던 한 사람을 붙잡아 억지로 예수님의 십자가를 지게 했어요. 네 복음서 가운데 세 곳에 나오는 장면인데, 마가만 이 사람을 이렇게 소개해요. "<mark>알렉산더와 루포의 아버지인</mark> 구레네 사람 시몬"(15:21).</p>
+        <p>생각해 보면 이상하죠. 십자가를 진 사람은 시몬인데, 왜 굳이 아들들 이름까지 적었을까요? 가장 자연스러운 설명은 이거예요. <span class="hl">마가복음을 처음 읽던 성도들이 그 두 아들을 알고 있었다</span>는 거예요. "여러분 아시죠? 알렉산더와 루포, 그 형제의 아버지 말이에요" 하는 식으로요.</p>
+        <p>그리고 마가복음이 기록된 곳으로 여겨지는 로마에 보낸 편지에서, 바울은 이렇게 인사해요. "주 안에서 택하심을 입은 <mark>루포</mark>와 그 어머니에게 문안하라 그의 어머니는 곧 내 어머니니라"(롬 16:13). 바울에게 어머니처럼 대해 준 여인이 있었는데, 그 아들 이름이 루포였어요. 억지로 십자가를 졌던 한 사람의 가족이, 훗날 로마 교회의 귀한 일꾼이 되었을지도 몰라요.</p>
+        <p>구레네는 북아프리카(오늘날 리비아)의 도시예요. 오순절에 성령 강림을 본 사람들 가운데 구레네 사람들이 있었고(행 2:10), 안디옥에서 처음으로 헬라인들에게 예수님을 전한 사람들 가운데도 구레네 사람들이 있었어요(행 11:20). 억지로 진 십자가가 한 가족을, 그리고 교회의 역사를 바꿔 놓았을지도 몰라요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 로마서 16장의 루포가 마가복음의 루포와 같은 사람인지는 확정할 수 없어요. 또 1941년 예루살렘 기드론 골짜기에서 구레네 출신 유대인 가족의 무덤이 발견되었는데, 그 안의 유골함 하나에 "시몬의 아들 알렉산드로스"라는 이름이 새겨져 있었어요. 흥미로운 발견이지만, 같은 인물인지는 알 수 없어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>원치 않게 지게 된 오늘의 짐도, 예수님 곁에서 지는 짐이라면 하나님이 복된 이야기로 바꾸실 수 있음을 믿습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>"무서워함이더라",<br>이상하게 끝나는 책</h2><div class="refs">마가복음 16:1-8</div></div></div>
+    <div class="scene-body"><p>마가복음 16장 8절은 이렇게 끝나요. "여자들이 몹시 놀라 떨며 나와 무덤에서 도망하고 아무에게 아무 말도 하지 못하니 <mark>그들이 무서워함이더라</mark>." 부활의 소식을 들었는데, 기뻐 뛰어가 전하는 장면이 아니라 무서워 입을 다무는 장면이에요.</p>
+        <p>그런데 우리 성경을 펴 보면 그 뒤에 9절부터 20절까지가 이어져 있어요. 여기에 숨은 이야기가 있어요. 지금 남아 있는 가장 오래된 온전한 성경 사본 두 권, 4세기의 <span class="hl">시내산 사본과 바티칸 사본</span>에는 마가복음이 8절에서 끝나요. 9-20절은 그보다 뒤의 사본들에 들어 있어요. 그래서 우리말 성경 가운데에도 이 부분에 괄호나 설명을 달아 둔 번역들이 있어요.</p>
+        <p>만약 마가복음이 정말 8절에서 끝났다면, 그건 실수가 아니라 <mark>일부러 열어 둔 결말</mark>일 수도 있어요. 제자들은 도망쳤고, 여인들은 두려워 입을 닫았어요. 그러면 이 소식은 누가 전하죠? 책을 덮는 독자에게 질문이 넘어오는 거예요. "이제 당신은 이 소식을 어떻게 하겠습니까?"</p>
+        <p>그리고 그 바로 앞 절에는 이미 약속이 있어요. "그가 너희보다 먼저 갈릴리로 가시나니 … 거기서 뵈오리라"(16:7). 사람들은 두려워 멈춰 섰지만, <span class="hl">부활하신 예수님은 벌써 앞서 가고 계셨어요.</span> 마가복음의 마지막 "곧"은 예수님의 발걸음이었던 거예요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 마가복음이 원래 16:8에서 끝났는지, 원래 있던 결말이 사라진 것인지는 학자들 사이에 오랫동안 논의되어 온 문제예요. 어느 쪽이든 부활의 사실과 그 뒤 제자들의 이야기는 다른 복음서와 사도행전이 분명히 증언하고 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>두려워 입을 다물고 있던 부활의 소식을, 나보다 앞서 가시는 예수님을 믿고 오늘 한 사람에게 전합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">도망친 사람들에게<br>먼저 찾아가시는 예수님</div>
+    <p>마가복음에는 도망친 사람이 많아요. 예수님을 버리고 흩어진 제자들, 옷까지 버리고 달아난 청년, 무덤에서 떨며 뛰어나온 여인들. 그리고 이 책을 쓴 마가 자신도 한때 전도여행 도중에 돌아가 버린 사람이었어요. 그 일로 바울과 바나바가 크게 다투고 갈라서기까지 했어요(행 15:37-39).</p><p>그런데 세월이 흐른 뒤, 바울은 감옥에서 이렇게 부탁해요. "마가를 데리고 오라 그가 나의 일에 유익하니라"(딤후 4:11). 도망쳤던 사람이 다시 쓰임 받았어요. 섬기러 오신 예수님이 먼저 찾아와 주셨기 때문이에요. 그 은혜가 이 짧은 책 한 권에 가득 담겨 있어요.</p>
+    <div class="q">"인자가 온 것은 섬김을 받으려 함이 아니라<br>도리어 섬기려 하고 자기 목숨을<br>많은 사람의 대속물로 주려 함이니라" (10:45)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>경력증명서 - 은혜교회</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;700&display=swap');
+
+  :root{
+    --navy:#1c2b45;
+    --navy-deep:#12192b;
+    --cream:#f7f3ea;
+    --gold:#b08d4f;
+    --gold-soft:#dcc79a;
+    --line:#c9beaa;
+    --ink:#2a2a28;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    background:#e9e4d6;
+    font-family:'Noto Sans KR', sans-serif;
+    color:var(--ink);
+    padding:32px 16px;
+  }
+  .toolbar{
+    max-width:820px;
+    margin:0 auto 20px;
+    display:flex;
+    gap:10px;
+    justify-content:flex-end;
+  }
+  .toolbar button{
+    font-family:'Noto Sans KR', sans-serif;
+    font-size:14px;
+    padding:10px 18px;
+    border-radius:6px;
+    border:1px solid var(--navy);
+    background:var(--navy);
+    color:var(--cream);
+    cursor:pointer;
+  }
+  .toolbar button:hover{opacity:0.85;}
+
+  .sheet{
+    width:210mm;
+    min-height:297mm;
+    margin:0 auto;
+    background:#fffdf8;
+    border:1px solid var(--line);
+    box-shadow:0 6px 24px rgba(20,20,10,0.15);
+    padding:20mm 20mm 16mm;
+  }
+  .doc-no{
+    text-align:right;
+    font-size:12px;
+    color:#8a8060;
+  }
+  .doc-no input{
+    border:none;
+    border-bottom:1px dotted #999;
+    background:transparent;
+    font-size:12px;
+    width:140px;
+    text-align:right;
+    font-family:'Noto Sans KR',sans-serif;
+    color:#8a8060;
+  }
+  h1{
+    font-family:'Noto Serif KR', serif;
+    text-align:center;
+    font-size:30px;
+    letter-spacing:0.4em;
+    margin:6px 0 4px;
+    color:var(--navy-deep);
+  }
+  .subtitle{
+    text-align:center;
+    font-size:13px;
+    color:var(--gold);
+    letter-spacing:0.2em;
+    margin-bottom:32px;
+  }
+  .rule{
+    height:2px;
+    background:linear-gradient(90deg, transparent, var(--gold-soft), var(--gold), var(--gold-soft), transparent);
+    margin-bottom:32px;
+  }
+
+  table.info{
+    width:100%;
+    border-collapse:collapse;
+    margin-bottom:8px;
+    font-size:14px;
+  }
+  table.info th{
+    width:110px;
+    background:var(--cream);
+    border:1px solid var(--line);
+    padding:10px 12px;
+    text-align:left;
+    font-weight:600;
+    color:var(--navy-deep);
+    font-family:'Noto Serif KR', serif;
+    font-size:13px;
+  }
+  table.info td{
+    border:1px solid var(--line);
+    padding:10px 12px;
+  }
+  table.info td input, table.info td textarea{
+    width:100%;
+    border:none;
+    background:transparent;
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:14px;
+    color:var(--ink);
+    outline:none;
+  }
+  table.info td textarea{resize:vertical; min-height:20px;}
+
+  .section-label{
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    color:var(--navy-deep);
+    margin:28px 0 10px;
+    padding-bottom:6px;
+    border-bottom:1px solid var(--gold-soft);
+    letter-spacing:0.05em;
+  }
+
+  .body-text{
+    font-size:14.5px;
+    line-height:2;
+    padding:6px 4px;
+    min-height:80px;
+    border:1px dashed var(--line);
+    background:#fffefb;
+    outline:none;
+  }
+
+  .notice{
+    font-size:11.5px;
+    color:#8a8060;
+    margin-top:18px;
+    line-height:1.7;
+  }
+
+  .issue-block{
+    margin-top:44px;
+    text-align:center;
+  }
+  .issue-date{
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    margin-bottom:28px;
+  }
+  .issue-date input{
+    border:none;
+    border-bottom:1px dotted #999;
+    background:transparent;
+    text-align:center;
+    font-family:'Noto Serif KR', serif;
+    font-size:15px;
+    width:50px;
+  }
+  .org-block{
+    font-family:'Noto Serif KR', serif;
+    font-size:17px;
+    color:var(--navy-deep);
+    line-height:2;
+  }
+  .org-block .org-name{
+    font-size:19px;
+    font-weight:600;
+    letter-spacing:0.05em;
+  }
+  .seal-note{
+    font-size:11px;
+    color:#8a8060;
+    letter-spacing:0.15em;
+    margin-top:6px;
+  }
+
+  @media print{
+    html, body{background:#fff; padding:0; margin:0; width:210mm; height:297mm;}
+    .toolbar{display:none;}
+    .sheet{
+      box-shadow:none; border:none; margin:0;
+      width:210mm; height:297mm; min-height:0;
+      padding:20mm 20mm 16mm;
+      page-break-after:avoid;
+    }
+    input, textarea, .body-text{border:none !important;}
+    @page{size:A4; margin:0;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="toolbar">
+    <button onclick="window.print()">인쇄 / PDF 저장</button>
+  </div>
+
+  <div class="sheet">
+    <div class="doc-no">문서번호&nbsp;<input type="text" placeholder="예: 2026-경력-001"></div>
+
+    <h1>경 력 증 명 서</h1>
+    <div class="subtitle">CERTIFICATE OF EMPLOYMENT</div>
+    <div class="rule"></div>
+
+    <div class="section-label">1. 인적사항</div>
+    <table class="info">
+      <tr><th>성&nbsp;명</th><td><input type="text" placeholder="성명"></td>
+          <th>생년월일</th><td><input type="text" placeholder="0000.00.00"></td></tr>
+      <tr><th>주&nbsp;소</th><td colspan="3"><input type="text" placeholder="주소"></td></tr>
+    </table>
+
+    <div class="section-label">2. 재직 사항</div>
+    <table class="info">
+      <tr><th>소속기관</th><td>기독교한국침례회 은혜교회</td>
+          <th>직&nbsp;분</th><td><input type="text" placeholder="예: 전도사, 부목사"></td></tr>
+      <tr><th>재직기간</th><td colspan="3"><input type="text" placeholder="0000년 00월 00일 ~ 0000년 00월 00일 (총 0년 0개월)"></td></tr>
+      <tr><th>담당업무</th><td colspan="3"><input type="text" placeholder="예: 청소년부 담당, 심방 및 목회 행정"></td></tr>
+    </table>
+
+    <div class="section-label">3. 증명 내용</div>
+    <div class="body-text" contenteditable="true">
+      위 사람은 상기 기간 동안 본 교회에서 성실히 사역하였음을 증명합니다.
+    </div>
+
+    <p class="notice">
+      ※ 본 증명서는 발급 목적 외 용도로 사용할 수 없으며, 기재 내용은 사실과 다름이 없음을 확인합니다.
+    </p>
+
+    <div class="issue-block">
+      <div class="issue-date"><input type="text" placeholder="2026">년 <input type="text" placeholder="1">월 <input type="text" placeholder="1">일</div>
+      <div class="org-block">
+        <div class="org-name">기독교한국침례회 은혜교회</div>
+        <div>담임목사&nbsp;&nbsp;박&nbsp;동&nbsp;준&nbsp;&nbsp;(인)</div>
+      </div>
+      <div class="seal-note">GRACE CHURCH · 대전광역시 유성구</div>
+    </div>
+  </div>
+
+</body>
+</html>

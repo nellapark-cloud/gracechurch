@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Believer's Discipleship Guide | Grace Church</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=Noto+Sans+KR:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#182848;
+    --navy-2:#24365f;
+    --navy-soft:#eef1f7;
+    --cream:#faf6ec;
+    --cream-2:#f2ead6;
+    --gold:#c9a961;
+    --gold-dark:#a3823f;
+    --ink:#2b2b2b;
+    --ink-soft:#5c5c5c;
+    --line:#e3dac2;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:'Noto Serif KR', serif;
+    background:var(--cream);
+    color:var(--ink);
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+  }
+  .ui{font-family:'Noto Sans KR', sans-serif;}
+  section{max-width:760px;margin:0 auto;padding:70px 28px;}
+  h1,h2,h3{font-family:'Noto Serif KR', serif; font-weight:700; color:var(--navy);}
+
+  .cover{
+    min-height:100vh;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;
+    background:
+      radial-gradient(circle at 30% 20%, rgba(201,169,97,0.18), transparent 55%),
+      linear-gradient(160deg, var(--navy) 0%, #0e1a33 100%);
+    color:var(--cream);
+    padding:60px 28px;
+    max-width:none;
+  }
+  .cover .eyebrow{
+    font-family:'Noto Sans KR',sans-serif;
+    letter-spacing:.35em;
+    font-size:12px;
+    color:var(--gold);
+    margin-bottom:22px;
+    text-transform:uppercase;
+  }
+  .cover h1{
+    color:#fff;
+    font-size:clamp(30px,6vw,48px);
+    margin:0 0 18px;
+    letter-spacing:-0.01em;
+  }
+  .cover .sub{
+    font-size:18px;
+    color:#dfe4f0;
+    margin-bottom:46px;
+    font-weight:400;
+  }
+  .cover .sub b{color:var(--gold);font-weight:600;}
+  .cover .badge{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:13px;
+    color:#b9c2d6;
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-top:22px;
+    margin-top:10px;
+  }
+  .cover .weeks-row{
+    display:flex;gap:8px;margin-top:38px;flex-wrap:wrap;justify-content:center;
+  }
+  .cover .weeks-row span{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:12px;color:var(--navy);
+    background:var(--gold);
+    padding:6px 12px;border-radius:20px;
+    font-weight:600;
+  }
+
+  .intro{background:var(--cream);}
+  .intro .card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:32px 30px;
+    margin-bottom:20px;
+  }
+  .intro .card h3{
+    font-size:17px;margin:0 0 12px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .intro .card p{color:var(--ink-soft);font-size:15.5px;margin:0 0 8px;}
+  .intro .card p:last-child{margin-bottom:0;}
+  .intro .card.gold{border:1px solid var(--gold-dark);background:var(--cream-2);}
+  .intro .card.gold h3{color:var(--gold-dark);}
+
+  .toc{background:var(--navy-soft);}
+  .toc h2{text-align:center;font-size:26px;margin-bottom:36px;}
+  .toc-list{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px;}
+  .toc-list a{
+    display:flex;align-items:center;gap:16px;
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:12px;
+    padding:16px 20px;
+    text-decoration:none;
+    color:var(--ink);
+    transition:.2s;
+  }
+  .toc-list a:hover{border-color:var(--gold);transform:translateX(4px);}
+  .toc-num{
+    font-family:'Noto Sans KR',sans-serif;
+    font-weight:700;color:var(--gold-dark);
+    font-size:13px;
+    background:var(--cream-2);
+    width:44px;height:44px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    flex-shrink:0;
+  }
+  .toc-txt b{display:block;font-size:16.5px;color:var(--navy);}
+  .toc-txt span{font-family:'Noto Sans KR',sans-serif;font-size:13px;color:var(--ink-soft);}
+
+  .week{background:var(--cream);border-top:1px solid var(--line);}
+  .week-head{display:flex;align-items:center;gap:18px;margin-bottom:8px;}
+  .week-badge{
+    font-family:'Noto Sans KR',sans-serif;
+    background:var(--navy);color:var(--gold);
+    font-weight:700;font-size:14px;
+    padding:10px 16px;border-radius:10px;
+    letter-spacing:.05em;
+    flex-shrink:0;
+  }
+  .week h2{font-size:26px;margin:0;}
+  .week .week-sub{
+    font-family:'Noto Sans KR',sans-serif;
+    color:var(--ink-soft);font-size:14.5px;
+    margin:0 0 30px 78px;
+  }
+  .week p.lead{font-size:16.5px;color:var(--ink);}
+
+  .block-title{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:13px;font-weight:700;color:var(--navy);
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    margin:38px 0 14px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .block-title::before{content:"";width:18px;height:2px;background:var(--gold);display:inline-block;}
+
+  .verse-card{
+    background:#fff;
+    border:1px solid var(--line);
+    border-left:4px solid var(--gold);
+    border-radius:10px;
+    padding:20px 22px;
+    margin-bottom:14px;
+    font-size:16px;
+    font-style:italic;
+  }
+  .verse-card .ref{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:12.5px;color:var(--ink-soft);
+    margin-top:10px;
+    font-style:normal;
+  }
+  .blank{
+    display:inline-block;
+    min-width:64px;
+    text-align:center;
+    background:var(--cream-2);
+    border:1px dashed var(--gold-dark);
+    border-radius:6px;
+    padding:1px 8px;
+    color:transparent;
+    cursor:pointer;
+    font-weight:700;
+    transition:.15s;
+    user-select:none;
+    font-style:normal;
+  }
+  .blank.revealed{color:var(--navy);background:#fbf3de;border-style:solid;}
+  .blank:active{transform:scale(0.97);}
+  .blank-hint{font-family:'Noto Sans KR',sans-serif;font-size:12px;color:var(--gold-dark);}
+
+  .qa-box{background:var(--navy);color:var(--cream);border-radius:var(--radius);padding:26px 26px;margin-top:8px;}
+  .qa-box .block-title{color:var(--gold);margin-top:0;}
+  .qa-box .block-title::before{background:var(--gold);}
+  .qa-list{list-style:none;padding:0;margin:0;counter-reset:qa;}
+  .qa-list li{
+    counter-increment:qa;
+    display:flex;gap:12px;
+    padding:12px 0;
+    border-top:1px solid rgba(255,255,255,0.12);
+    font-size:15.5px;
+  }
+  .qa-list li:first-child{border-top:none;}
+  .qa-list li::before{
+    content:counter(qa);
+    font-family:'Noto Sans KR',sans-serif;
+    font-weight:700;color:var(--navy);
+    background:var(--gold);
+    width:24px;height:24px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:12.5px;flex-shrink:0;margin-top:2px;
+  }
+
+  .apply-box{margin-top:24px;background:var(--cream-2);border-radius:10px;padding:20px 22px;font-size:15px;color:var(--ink-soft);}
+  .apply-box b{color:var(--navy);}
+
+  .pray-box{margin-top:24px;background:var(--navy-soft);border:1px dashed var(--gold-dark);border-radius:var(--radius);padding:22px 24px;}
+  .pray-box .block-title{margin-top:0;}
+  .pray-box p{margin:0;color:var(--ink);font-size:15px;}
+
+  .video-section{background:var(--navy-soft);border-top:1px solid var(--line);}
+  .video-section h2{text-align:center;font-size:24px;margin-bottom:10px;}
+  .video-section .sub-note{text-align:center;color:var(--ink-soft);font-size:14.5px;font-family:'Noto Sans KR',sans-serif;margin-bottom:32px;}
+  .video-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .video-item{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .video-item .frame-wrap{position:relative;padding-bottom:56.25%;height:0;}
+  .video-item .frame-wrap iframe{position:absolute;top:0;left:0;width:100%;height:100%;border:0;}
+  .video-item .label{font-family:'Noto Sans KR',sans-serif;font-weight:600;font-size:14.5px;color:var(--navy);padding:12px 14px;}
+  @media(max-width:600px){.video-grid{grid-template-columns:1fr;}}
+
+  .closing{
+    background:linear-gradient(160deg, var(--navy) 0%, #0e1a33 100%);
+    color:var(--cream);
+    text-align:center;
+  }
+  .closing h2{color:#fff;font-size:26px;}
+  .closing p{color:#dfe4f0;font-size:15.5px;}
+  .closing .sig{
+    font-family:'Noto Sans KR',sans-serif;
+    color:#b9c2d6;font-size:13px;
+    margin-top:40px;
+    border-top:1px solid rgba(255,255,255,0.18);
+    padding-top:20px;
+  }
+
+  .float-nav{
+    position:fixed;right:18px;bottom:18px;
+    display:flex;flex-direction:column;gap:10px;
+    z-index:50;
+    opacity:0;pointer-events:none;
+    transition:.25s;
+  }
+  .float-nav.show{opacity:1;pointer-events:auto;}
+  .float-nav a{
+    font-family:'Noto Sans KR',sans-serif;
+    font-size:12.5px;font-weight:600;
+    background:var(--navy);color:var(--gold);
+    border:1px solid var(--gold-dark);
+    border-radius:24px;
+    padding:10px 16px;
+    text-decoration:none;
+    box-shadow:0 4px 14px rgba(0,0,0,0.25);
+  }
+
+  @media(max-width:600px){
+    section{padding:52px 20px;}
+    .week .week-sub{margin-left:0;margin-top:6px;}
+    .week-head{flex-wrap:wrap;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Cover -->
+<section class="cover" id="top">
+  <div class="eyebrow ui">The Korea Baptist Convention · Grace Church</div>
+  <h1>New Believer's Discipleship Guide</h1>
+  <div class="sub">From a new life, into a <b>full life</b>, and a life of <b>joy</b></div>
+  <div class="weeks-row">
+    <span>8-Week Course</span><span>One-on-One Mentoring</span>
+  </div>
+  <div class="badge ui">Grace Church New Believer's Discipleship Guide</div>
+</section>
+
+<!-- Intro -->
+<section class="intro" id="intro">
+  <h2 style="text-align:center;margin-bottom:32px;">Before We Begin</h2>
+
+  <div class="card">
+    <h3>🤝 How This Works</h3>
+    <p>This guide is meant to be used one-on-one — a new believer sitting down with a shepherd (mentor) once a week for eight weeks. Think of it less as a lecture and more as a time to open the Word together and simply talk.</p>
+  </div>
+
+  <div class="card">
+    <h3>✏️ About the Blanks</h3>
+    <p>Throughout the text you'll see faded blanks like <span class="blank">this</span>. Read the passage aloud together, pause at the blank, guess the word out loud, then tap it to reveal the answer. It isn't a test — it's just a way to slow down and let the words sink in.</p>
+  </div>
+
+  <div class="card">
+    <h3>💬 Sharing Together</h3>
+    <p>Each week closes with "Let's Talk" questions. There are no right answers — if the mentor shares honestly first, it's usually much easier for the new believer to open up too.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌱 The Shape of the 8 Weeks</h3>
+    <p>Week 1 begins with salvation, then moves through God the Father, Jesus Christ, and the Holy Spirit, before turning to humanity and sin, Scripture, and the church. Week 8 circles back to "life in Christ" — so when you finish, it's worth remembering Week 1 together again.</p>
+  </div>
+</section>
+
+<!-- Why you matter -->
+<section class="intro" id="worth">
+  <h2 style="text-align:center;margin-bottom:32px;">One Thing Before We Start</h2>
+  <p class="lead" style="margin-bottom:28px;">Before we dive into the eight weeks, there's one thing we want you to hear first: how deeply valuable you are.</p>
+
+  <div class="card">
+    <h3>🧾 Crumpled or torn, the value never changes</h3>
+    <p>Imagine someone takes a hundred-dollar bill, crumples it in their fist, stomps on it, even tears it in half. Take it to a bank, and it's still worth a hundred dollars. No matter what shape the paper is in, the value printed on it never changes.</p>
+    <p>There may have been seasons when your life felt crumpled, wounded, even torn apart. But none of that has diminished your worth by a single cent. You are, right now, exactly as valuable as the day you were made.</p>
+  </div>
+
+  <div class="card">
+    <h3>🌱 You were born against staggering odds</h3>
+    <p>Long before you ever drew a breath, a single life was conceived out of an almost unthinkable number of possibilities. The odds involved are usually estimated in the hundreds of millions to one — the kind of number that no one would even call a "fair contest." Most people would give up before trying, or never even hope to beat it.</p>
+    <p>And yet you did. That wasn't chance. Out of countless possibilities, you were chosen.</p>
+  </div>
+
+  <div class="card gold">
+    <h3>✝️ But most of all — you are worth Jesus</h3>
+    <p>The true value of anything is measured by what someone was willing to pay for it. To have you, God didn't pay with money or jewels — he gave his one and only Son, Jesus Christ.</p>
+    <p>In other words, you are worth Jesus. There is no greater proof of your worth than that. Everything we'll talk about over the next eight weeks starts from this: God's heart toward someone this precious — you.</p>
+  </div>
+
+  <p class="lead" style="text-align:center;margin-top:8px;">Hold onto these three things, and let's take the first step together.</p>
+</section>
+
+<!-- Table of Contents -->
+<section class="toc" id="toc">
+  <h2>8-Week Course Overview</h2>
+  <ul class="toc-list ui">
+    <li><a href="#week1"><span class="toc-num">1</span><span class="toc-txt"><b>A New Beginning</b><span>Assurance of salvation and new life</span></span></a></li>
+    <li><a href="#week2"><span class="toc-num">2</span><span class="toc-txt"><b>God the Father</b><span>The One who made you and loves you</span></span></a></li>
+    <li><a href="#week3"><span class="toc-num">3</span><span class="toc-txt"><b>Jesus Christ</b><span>The One who came, died, and rose for you</span></span></a></li>
+    <li><a href="#week4"><span class="toc-num">4</span><span class="toc-txt"><b>The Holy Spirit</b><span>The One walking with you now</span></span></a></li>
+    <li><a href="#week5"><span class="toc-num">5</span><span class="toc-txt"><b>Humanity and Sin</b><span>Who am I, and what is sin?</span></span></a></li>
+    <li><a href="#week6"><span class="toc-num">6</span><span class="toc-txt"><b>Scripture</b><span>God's word, a lamp for life</span></span></a></li>
+    <li><a href="#week7"><span class="toc-num">7</span><span class="toc-txt"><b>The Church</b><span>Growing together in community</span></span></a></li>
+    <li><a href="#week8"><span class="toc-num">8</span><span class="toc-txt"><b>Life in Christ</b><span>New life, full life, a life of joy</span></span></a></li>
+  </ul>
+</section>
+
+<!-- ============ Week 1 ============ -->
+<section class="week" id="week1">
+  <div class="week-head"><span class="week-badge ui">Week 1</span><h2>A New Beginning</h2></div>
+  <p class="week-sub ui">Assurance of salvation and new life</p>
+
+  <p class="lead">Everyone reaches a point in life where they change direction. Coming to faith in Jesus is like that. It isn't simply "deciding to be a better person" — it's turning away from a life cut off from God by sin, and receiving an entirely new life through Jesus Christ. Today we'll look at why we need salvation in the first place, what this new beginning really is, and why it's called a "gift."</p>
+
+  <div class="block-title">Why Do We Need Salvation?</div>
+  <p class="lead">The word "salvation" assumes someone is in danger. Scripture tells us that sin has cut people off from God, and that on our own, we can't fix that. This isn't about how "bad" any one of us is — it's a condition shared by everyone apart from God. That's why salvation isn't something we achieve; it's something God accomplished by reaching toward us first.</p>
+
+  <div class="verse-card">
+    For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have <span class="blank">eternal life</span>.
+    <div class="ref ui">John 3:16</div>
+  </div>
+  <div class="verse-card">
+    He saved us, not because of righteous things we had done, but because of his mercy. He saved us through the washing of <span class="blank">rebirth</span> and renewal by the Holy Spirit.
+    <div class="ref ui">Titus 3:5</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — Admitting we need salvation isn't something to be ashamed of; it's an honest starting point. Just as we can only be treated once we admit we're sick, accepting God's help begins with accepting our true condition.
+  </div>
+
+  <div class="block-title">Reading Together</div>
+
+  <div class="verse-card">
+    For he has rescued us from the dominion of <span class="blank">darkness</span> and brought us into the kingdom of the Son he loves.
+    <div class="ref ui">Colossians 1:13</div>
+  </div>
+  <div class="verse-card">
+    Therefore, if anyone is in Christ, the <span class="blank">new</span> creation has come: The old has gone, the new is here!
+    <div class="ref ui">2 Corinthians 5:17</div>
+  </div>
+  <div class="verse-card">
+    For it is by grace you have been saved, through <span class="blank">faith</span>—and this is not from yourselves, it is the <span class="blank">gift</span> of God.
+    <div class="ref ui">Ephesians 2:8</div>
+  </div>
+  <div class="verse-card">
+    For it is with your heart that you believe and are justified, and it is with your mouth that you <span class="blank">profess</span> your faith and are saved.
+    <div class="ref ui">Romans 10:10</div>
+  </div>
+  <p class="blank-hint ui">👆 Tap each blank to reveal the answer</p>
+
+  <div class="block-title">Is Salvation an Event, or a Journey?</div>
+  <p class="lead">Salvation begins in a moment, but it doesn't end there. Becoming "a new creation" isn't a finished state — it's the beginning of a life that keeps growing. Just as the moment of birth and the whole lifetime that follows belong to the same life, this new life that began today will keep growing over the next eight weeks, and long after.</p>
+
+  <div class="apply-box">
+    <b>At Grace Church</b> — Whenever your assurance of salvation wavers, come back to what we read today. Assurance isn't a feeling; it rests on God's promise.
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">Let's Talk</div>
+    <ul class="qa-list">
+      <li>What has changed in your life since coming to faith in Jesus?</li>
+      <li>What does the phrase "new creation" mean to you personally?</li>
+      <li>Why does it matter that salvation is a gift, not something we earned?</li>
+      <li>Was there a moment when you first sensed you needed saving?</li>
+      <li>What might it look like, or what has it looked like, for you to "profess your faith" out loud?</li>
+      <li>How would you like your faith to grow over these eight weeks?</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">Pray This</div>
+    <p>Try praying something like this:<br><br>"God, I admit I was a sinner. I believe in Jesus. Thank you for loving me enough to save me. Help me live this new life."<br><br>You can pray it just as it is, or put it in your own words.</p>
+  </div>
+</section>
+
+<!-- ============ Week 2 ============ -->
+<section class="week" id="week2">
+  <div class="week-head"><span class="week-badge ui">Week 2</span><h2>God the Father</h2></div>
+  <p class="week-sub ui">The One who made you and loves you</p>
+
+  <p class="lead">The God we believe in isn't someone who made the world and then stepped back to watch from a distance. Scripture introduces God both as the Creator of everything that exists, and as a "Father" who knows and loves each one of us personally. Today we'll look at who God is, and what kind of relationship we have with him.</p>
+
+  <div class="block-title">How Can We Know God Exists?</div>
+  <p class="lead">Faith isn't a blind leap in the dark. There are traces all around us — and within us — that point toward God's existence. Let's think through four of them together.</p>
+
+  <div class="verse-card">
+    <b>① There's a compass inside us.</b><br>
+    Wherever you go in the world, people know that lying is wrong and that the vulnerable deserve care. No one has to teach this from scratch — everyone already carries this moral sense (conscience). Doesn't that suggest someone placed that standard there in the first place?<br><br>
+    ...they show that the requirements of the law are written on their hearts, their <span class="blank">consciences</span> also bearing witness.
+    <div class="ref ui">Romans 2:15</div>
+  </div>
+
+  <div class="verse-card">
+    <b>② The sky itself speaks.</b><br>
+    Looking at the stars at night, or the intricate order of nature, which feels like the more reasonable explanation — "it all happened by accident," or "someone made this"? Scripture says creation itself already points to God.<br><br>
+    The heavens declare the <span class="blank">glory</span> of God; the skies proclaim the work of his hands.
+    <div class="ref ui">Psalm 19:1</div>
+  </div>
+
+  <div class="verse-card">
+    <b>③ There's a longing nothing else can fill.</b><br>
+    No matter how much we gain, there's always a deeper thirst left in the human heart. Scripture explains why: God has set eternity in the human heart. That thirst nothing in this world can satisfy may itself be a trace of the fact that we were made for God.<br><br>
+    He has also set <span class="blank">eternity</span> in the human heart.
+    <div class="ref ui">Ecclesiastes 3:11</div>
+  </div>
+
+  <div class="verse-card">
+    <b>④ Even our thinking and experience already point toward him.</b><br>
+    Go a little deeper, and there's something beyond any single "proof" like creation or conscience. Our very ability to seek truth, to be moved by beauty, to judge right from wrong — all of it already assumes that some order and meaning exist in the world. We don't invent that order; we only discover it. Scripture says that every moment we breathe, think, and live is already happening within God.<br><br>
+    For since the creation of the world God's invisible qualities — his eternal power and <span class="blank">divine nature</span> — have been clearly seen, being understood from what has been made.
+    <div class="ref ui">Romans 1:20</div>
+    <br>
+    'For in him we <span class="blank">live and move</span> and have our being.'
+    <div class="ref ui">Acts 17:28</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — None of these four "prove" God's existence the way a math equation would. But if we honestly follow where the world, our own hearts, and even the way we think and experience life are pointing, "God exists" turns out to be the explanation that makes the most sense.
+  </div>
+
+  <div class="block-title">Reading Together</div>
+
+  <div class="verse-card">
+    In the beginning God <span class="blank">created</span> the heavens and the earth.
+    <div class="ref ui">Genesis 1:1</div>
+  </div>
+  <div class="verse-card">
+    Whoever does not love does not know God, because God is <span class="blank">love</span>.
+    <div class="ref ui">1 John 4:8</div>
+  </div>
+  <div class="verse-card">
+    This, then, is how you should pray: 'Our <span class="blank">Father</span> in heaven, hallowed be your name.'
+    <div class="ref ui">Matthew 6:9</div>
+  </div>
+  <div class="verse-card">
+    I praise you because I am <span class="blank">fearfully and wonderfully</span> made; your works are wonderful, I know that full well.
+    <div class="ref ui">Psalm 139:14</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — "Father" is a word of closeness, not distance. God doesn't treat us like defendants in a courtroom; he holds us the way a parent holds a child.
+  </div>
+
+  <div class="block-title">Why Does God Care About Us at All?</div>
+  <p class="lead">It seems strange, at first, that the One who made the entire universe would care about a single life like yours. Scripture says the opposite: it's precisely because God is so great that he's able to attend to the smallest details with such care.</p>
+
+  <div class="verse-card">
+    The Lord is my shepherd, I lack <span class="blank">nothing</span>.
+    <div class="ref ui">Psalm 23:1</div>
+  </div>
+  <div class="verse-card">
+    If you, then, though you are evil, know how to give good gifts to your children, how much more will your Father in heaven give <span class="blank">good gifts</span> to those who ask him!
+    <div class="ref ui">Matthew 7:11</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — A shepherd checks on every single sheep; a parent notices exactly what a child needs. God pays attention to the very specific details of your life in just that way.
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">Let's Talk</div>
+    <ul class="qa-list">
+      <li>Of conscience, the sky, our longing, or our reasoning — which spoke to you most?</li>
+      <li>What feeling does it give you to call God "Father"?</li>
+      <li>How does it comfort you to know that God made you and knows you?</li>
+      <li>Have you had any misconceptions about God up to now?</li>
+      <li>Between "shepherd" and "father," which image feels closer to where you are right now?</li>
+      <li>Is there a "good gift" you most want to ask God for?</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">Pray This</div>
+    <p>Try praying something like this:<br><br>"Father in heaven, thank you for making me and always caring for me. Today I bring you the worries and needs on my heart."<br><br>Then bring whatever is actually on your mind to him, in your own words.</p>
+  </div>
+</section>
+
+<!-- ============ Week 3 ============ -->
+<section class="week" id="week3">
+  <div class="week-head"><span class="week-badge ui">Week 3</span><h2>Jesus Christ</h2></div>
+  <p class="week-sub ui">The One who came, died, and rose for you</p>
+
+  <p class="lead">Jesus wasn't merely a great teacher or a good man — he was God who became human. On the cross, he paid the price for our sin in our place, and three days later he rose again, defeating death itself. Today we'll look at who Jesus is, and why the cross and the resurrection are the turning point of everything.</p>
+
+  <div class="block-title">Reading Together</div>
+
+  <div class="verse-card">
+    The Word became flesh and made his dwelling among us. We have seen his glory, the glory of the one and only Son, who came from the Father, full of grace and <span class="blank">truth</span>.
+    <div class="ref ui">John 1:14</div>
+  </div>
+  <div class="verse-card">
+    But God demonstrates his own love for us in this: While we were still sinners, Christ <span class="blank">died</span> for us.
+    <div class="ref ui">Romans 5:8</div>
+  </div>
+  <div class="verse-card">
+    For what I received I passed on to you as of first importance: that Christ died for our sins according to the Scriptures, that he was buried, that he was raised on the <span class="blank">third day</span> according to the Scriptures.
+    <div class="ref ui">1 Corinthians 15:3-4</div>
+  </div>
+  <div class="verse-card">
+    And being found in appearance as a man, he humbled himself by becoming obedient to death — even death on a <span class="blank">cross</span>!
+    <div class="ref ui">Philippians 2:8</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — The cross wasn't a tragic accident that happened to Jesus. It's the moment he carried the punishment that was ours to bear. And the resurrection is the proof that carrying it wasn't in vain.
+  </div>
+
+  <div class="block-title">Why Is Jesus the Only Savior?</div>
+  <p class="lead">The world has many great teachers and many good ideas. So why does Christianity say Jesus alone is the way? Because Jesus wasn't just someone who taught good things — he was, and is, the only One who was fully God and fully human, and who personally paid a debt none of us could ever repay. No one else could be both fully God and fully human.</p>
+
+  <div class="verse-card">
+    Jesus answered, 'I am the way and the truth and the <span class="blank">life</span>. No one comes to the Father except through me.'
+    <div class="ref ui">John 14:6</div>
+  </div>
+  <div class="verse-card">
+    For in Christ all the fullness of the <span class="blank">Deity</span> lives in bodily form.
+    <div class="ref ui">Colossians 2:9</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — Other religions and philosophies show us a path — "live this way." Jesus said, "I myself am the way." He isn't a method; he's a person.
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">Let's Talk</div>
+    <ul class="qa-list">
+      <li>Why does it feel remarkable that God, being God, became human?</li>
+      <li>Has there been a moment when it truly sank in that Jesus died for you?</li>
+      <li>What real hope does the resurrection give your life today?</li>
+      <li>How did it first strike you to hear that "Jesus is the only way"?</li>
+      <li>What first drew you to Jesus, or what has intrigued you most about him?</li>
+      <li>What about Jesus' character or life stands out to you the most?</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">Pray This</div>
+    <p>Try praying something like this:<br><br>"Jesus, thank you for coming for me, dying on the cross, and rising again. I don't fully understand it all yet, but I want to keep getting to know you."<br><br>It's alright if it doesn't feel real yet — that honest place is exactly where prayer can begin.</p>
+  </div>
+</section>
+
+<!-- ============ Week 4 ============ -->
+<section class="week" id="week4">
+  <div class="week-head"><span class="week-badge ui">Week 4</span><h2>The Holy Spirit</h2></div>
+  <p class="week-sub ui">The One walking with you now</p>
+
+  <p class="lead">Believing in Jesus doesn't mean we're left on our own. God sent the Holy Spirit, who is with us — in us — right now, comforting us, guiding us, and growing his character within us. Today we'll look at who the Spirit is, and what it means to live in step with him.</p>
+
+  <div class="block-title">Reading Together</div>
+
+  <div class="verse-card">
+    And I will ask the Father, and he will give you another <span class="blank">advocate</span> to help you and be with you forever.
+    <div class="ref ui">John 14:16</div>
+  </div>
+  <div class="verse-card">
+    But the fruit of the Spirit is love, joy, peace, forbearance, kindness, goodness, faithfulness, gentleness and <span class="blank">self-control</span>.
+    <div class="ref ui">Galatians 5:22-23</div>
+  </div>
+  <div class="verse-card">
+    But you will receive power when the Holy Spirit comes on you; and you will be my <span class="blank">witnesses</span>... to the ends of the earth.
+    <div class="ref ui">Acts 1:8</div>
+  </div>
+  <div class="verse-card">
+    In the same way, the Spirit helps us in our weakness... the Spirit himself intercedes for us through <span class="blank">wordless groans</span>.
+    <div class="ref ui">Romans 8:26</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — The fruit of the Spirit isn't something we manufacture by sheer effort. It's what naturally grows in a life that walks together with the Spirit.
+  </div>
+
+  <div class="block-title">How Can We Walk With the Spirit?</div>
+  <p class="lead">The Spirit isn't distant — he actually dwells within everyone who believes. That means your whole body and life become the place where he lives. He also guides us into things we could never work out on our own — even discerning truth and the path ahead.</p>
+
+  <div class="verse-card">
+    Do you not know that your bodies are <span class="blank">temples</span> of the Holy Spirit, who is in you?
+    <div class="ref ui">1 Corinthians 6:19</div>
+  </div>
+  <div class="verse-card">
+    But when he, the Spirit of truth, comes, he will guide you into all the <span class="blank">truth</span>.
+    <div class="ref ui">John 16:13</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — If your body is where the Spirit lives, then even the small choices of daily life — what you watch, hear, and say — become part of walking with him.
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">Let's Talk</div>
+    <ul class="qa-list">
+      <li>Have you sensed the Holy Spirit's presence with you in a real moment?</li>
+      <li>Which fruit of the Spirit do you most need in your life right now?</li>
+      <li>What does depending on the Spirit look like in practice?</li>
+      <li>What does it mean to you that your body is "a temple of the Holy Spirit"?</li>
+      <li>Have you ever sought the Spirit's guidance before an important decision?</li>
+      <li>Is there a habit you'd like to change this week to walk closer with the Spirit?</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">Pray This</div>
+    <p>Try praying something like this:<br><br>"Holy Spirit, thank you for living in me. This week, help me especially with ______."<br><br>Fill in the blank with whatever you need most right now — patience, courage, peace, anything at all.</p>
+  </div>
+</section>
+
+<!-- Reference Videos (Weeks 1-4) -->
+<section class="video-section" id="videos-1-4">
+  <h2>For Further Reflection</h2>
+  <p class="sub-note">Here are a few short videos from the YouTube channel BibleProject that revisit what we've covered so far — God, Jesus, the Holy Spirit, and being made in God's image. Watch them together whenever you have time.</p>
+  <div class="video-grid">
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/btWZh_moadk?start=4" title="God" allowfullscreen></iframe></div>
+      <div class="label">God</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/Vap2I3oPXu4" title="Son of Man / Jesus" allowfullscreen></iframe></div>
+      <div class="label">Son of Man / Jesus</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/FpVcnXuU4M4" title="Holy Spirit" allowfullscreen></iframe></div>
+      <div class="label">Holy Spirit</div>
+    </div>
+    <div class="video-item">
+      <div class="frame-wrap"><iframe src="https://www.youtube.com/embed/px76fFQQXQ4" title="Image of God" allowfullscreen></iframe></div>
+      <div class="label">Image of God</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ Week 5 ============ -->
+<section class="week" id="week5">
+  <div class="week-head"><span class="week-badge ui">Week 5</span><h2>Humanity and Sin</h2></div>
+  <p class="week-sub ui">Who am I, and what is sin?</p>
+
+  <p class="lead">Scripture holds two things together about people: an extraordinarily high view, and a brutally honest diagnosis. We're made in the image of God — noble, valuable — and yet we carry the problem of sin, our attempt to put ourselves at the center instead of God. Sin isn't just a list of bad behaviors; it's a broken relationship with God. Today, let's look at ourselves through Scripture's eyes.</p>
+
+  <div class="block-title">Reading Together</div>
+
+  <div class="verse-card">
+    So God <span class="blank">created</span> mankind in his own image, in the image of God he created them; male and female he created them.
+    <div class="ref ui">Genesis 1:27</div>
+  </div>
+  <div class="verse-card">
+    For all have sinned and fall short of the <span class="blank">glory</span> of God.
+    <div class="ref ui">Romans 3:23</div>
+  </div>
+  <div class="verse-card">
+    For the wages of sin is <span class="blank">death</span>, but the gift of God is <span class="blank">eternal life</span> in Christ Jesus our Lord.
+    <div class="ref ui">Romans 6:23</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — A person is not "worthless" — we are "made noble, but lost." Admitting sin isn't self-hatred; it's the first honest step back toward God.
+  </div>
+
+  <div class="block-title">Why Does Admitting Sin Set Us Free?</div>
+  <p class="lead">Most people instinctively try to hide or deny their sin. Scripture takes the opposite path: admitting our sin honestly is exactly what opens the door to freedom from it. What we hide keeps a grip on us; what we openly bring into the light can actually be forgiven and washed clean.</p>
+
+  <div class="verse-card">
+    Surely I was sinful at <span class="blank">birth</span>, sinful from the time my mother conceived me.
+    <div class="ref ui">Psalm 51:5</div>
+  </div>
+  <div class="verse-card">
+    If we <span class="blank">confess</span> our sins, he is faithful and just and will forgive us our sins and purify us from all unrighteousness.
+    <div class="ref ui">1 John 1:9</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — David hid his sin for a long time before finally admitting it honestly (Psalm 51) — and only then did restoration begin. Honesty, not hiding, is where healing starts.
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">Let's Talk</div>
+    <ul class="qa-list">
+      <li>Why does it matter that we're made "in the image of God"?</li>
+      <li>What changes when we understand sin as "broken relationship with God" rather than just "bad behavior"?</li>
+      <li>Only share what feels comfortable — is there a habit or struggle you'd like us to pray about together?</li>
+      <li>Have you ever felt lighter after finally being honest about something you'd been hiding?</li>
+      <li>Does confessing sin to God feel like a burden, or a relief? Why?</li>
+      <li>How is being honest before God different from being honest with people?</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">Pray This</div>
+    <p>Try praying something like this:<br><br>"God, I honestly bring you ______. Thank you for forgiving me and making me clean."<br><br>If it's hard to say out loud, it's okay to pray it quietly in your heart instead.</p>
+  </div>
+</section>
+
+<!-- ============ Week 6 ============ -->
+<section class="week" id="week6">
+  <div class="week-head"><span class="week-badge ui">Week 6</span><h2>Scripture</h2></div>
+  <p class="week-sub ui">God's word, a lamp for life</p>
+
+  <p class="lead">The Bible isn't a book people invented about God — it's God's own word, given through people he inspired. That's why reading it isn't like reading old stories; it's a lamp that lights up today's path. Today we'll look at what the Bible is, and how to begin reading it well.</p>
+
+  <div class="block-title">Reading Together</div>
+
+  <div class="verse-card">
+    All Scripture is God-breathed and is <span class="blank">useful</span> for teaching, rebuking, correcting and training in righteousness.
+    <div class="ref ui">2 Timothy 3:16</div>
+  </div>
+  <div class="verse-card">
+    Your word is a <span class="blank">lamp</span> for my feet, a light on my path.
+    <div class="ref ui">Psalm 119:105</div>
+  </div>
+  <div class="verse-card">
+    For the word of God is alive and active. Sharper than any double-edged sword, it penetrates even to dividing soul and spirit... it judges the <span class="blank">thoughts</span> and attitudes of the heart.
+    <div class="ref ui">Hebrews 4:12</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — The point of reading Scripture isn't accumulating knowledge, but knowing God more and holding your own life up to his light. Starting with just a few minutes a day is more than enough.
+  </div>
+
+  <div class="block-title">How Should We Read the Bible?</div>
+  <p class="lead">Scripture wasn't written from human imagination — it's God's word, carried along by the Holy Spirit through people he chose. So reading it isn't just reading good literature; it's meeting Jesus, the very source of the Word. New readers often find it easier to start somewhere accessible — like John's Gospel or the Psalms — rather than beginning at Genesis and reading straight through.</p>
+
+  <div class="verse-card">
+    You study the Scriptures diligently because you think that in them you have <span class="blank">eternal life</span>. These are the very Scriptures that testify about me.
+    <div class="ref ui">John 5:39</div>
+  </div>
+  <div class="verse-card">
+    For prophecy never had its origin in the human will, but prophets... spoke from God as they were carried along by the <span class="blank">Holy Spirit</span>.
+    <div class="ref ui">2 Peter 1:21</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — Every story in Scripture ultimately points to Jesus — the promises of Genesis, the prayers of the Psalms, the hope of the prophets, all fulfilled in him. So a good question to ask as you read is: "How does this passage connect to Jesus?"
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">Let's Talk</div>
+    <ul class="qa-list">
+      <li>Has Scripture ever actually served as a "lamp" guiding your path?</li>
+      <li>Have you ever felt lost about how to even start reading the Bible?</li>
+      <li>Let's make a small plan together for reading Scripture this week.</li>
+      <li>What difference does it make to you that Scripture is God's word, not human opinion?</li>
+      <li>Is there a passage that has stayed with you so far?</li>
+      <li>What time or method of reading do you think would suit you best?</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">Pray This</div>
+    <p>Try praying something like this:<br><br>"God, I want to know you more through your word. Help me build a habit of drawing near to Scripture this week."</p>
+  </div>
+</section>
+
+<!-- ============ Week 7 ============ -->
+<section class="week" id="week7">
+  <div class="week-head"><span class="week-badge ui">Week 7</span><h2>The Church</h2></div>
+  <p class="week-sub ui">Growing together in community</p>
+
+  <p class="lead">Faith isn't a marathon you run alone. Scripture calls the church "the body of Christ" — just as a body only works when every part is connected, we only grow fully when we're connected to a community. At Grace Church, that community takes shape in something called a "mokjang" — a small home group. Today we'll look at what the church is, and why that kind of community matters.</p>
+
+  <div class="block-title">Reading Together</div>
+
+  <div class="verse-card">
+    Now you are the <span class="blank">body</span> of Christ, and each one of you is a part of it.
+    <div class="ref ui">1 Corinthians 12:27</div>
+  </div>
+  <div class="verse-card">
+    ...not giving up meeting together, as some are in the habit of doing, but <span class="blank">encouraging</span> one another — and all the more as you see the Day approaching.
+    <div class="ref ui">Hebrews 10:25</div>
+  </div>
+  <div class="verse-card">
+    They devoted themselves to the apostles' teaching and to <span class="blank">fellowship</span>, to the breaking of bread and to prayer.
+    <div class="ref ui">Acts 2:42</div>
+  </div>
+
+  <div class="apply-box">
+    <b>At Grace Church</b> — Believers gather in mokjang groups of around twelve, sharing life and growing in the Word together. Each mokjang has a shepherd who helps that community grow well — a steady companion along the way.
+  </div>
+
+  <div class="block-title">Why Does a Small Group Matter?</div>
+  <p class="lead">Simply sitting together in a large sanctuary makes it hard to really know one another's lives. That's why, from the earliest church until today, faith communities have always relied on smaller gatherings to actually care for one another. In a mokjang, each person uses their own gifts and role to build up the others — calling each other by name, sharing real life together.</p>
+
+  <div class="verse-card">
+    From him the whole body... grows and builds itself up in <span class="blank">love</span>, as each part does its work.
+    <div class="ref ui">Ephesians 4:16</div>
+  </div>
+  <div class="verse-card">
+    For where two or three gather in my <span class="blank">name</span>, there am I with them.
+    <div class="ref ui">Matthew 18:20</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — A mokjang isn't a gathering of perfect people. It's a group of people who know each other's weaknesses and still choose to grow together — which makes patience and love toward one another a real part of spiritual training.
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">Let's Talk</div>
+    <ul class="qa-list">
+      <li>What's different about living out your faith alone versus within community?</li>
+      <li>Why do you think a mokjang (small group) matters for you personally?</li>
+      <li>Is there anything you're looking forward to, or a little nervous about, in church community?</li>
+      <li>Has there been a time when "people showing up for you" gave you real strength?</li>
+      <li>What role do you think you could play in helping others in a mokjang?</li>
+      <li>What feels the most unfamiliar or awkward about joining a mokjang for the first time?</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">Pray This</div>
+    <p>Try praying something like this:<br><br>"God, I pray for the mokjang community I'll soon be part of. Help us grow together in good relationships."</p>
+  </div>
+</section>
+
+<!-- ============ Week 8 ============ -->
+<section class="week" id="week8">
+  <div class="week-head"><span class="week-badge ui">Week 8</span><h2>Life in Christ</h2></div>
+  <p class="week-sub ui">New life, full life, a life of joy</p>
+
+  <p class="lead">In Week 1, we said a "new life" had begun. But that new life doesn't stop there. Jesus said he came to give us life "to the full" — and that fullness ultimately overflows into joy. Today, as we close this 8-week journey, let's look together at how this new life grows into a full life, and a life of joy.</p>
+
+  <div class="block-title">Reading Together</div>
+
+  <div class="verse-card">
+    The thief comes only to steal and kill and destroy; I have come that they may have life, and have it to the <span class="blank">full</span>.
+    <div class="ref ui">John 10:10</div>
+  </div>
+  <div class="verse-card">
+    I have been crucified with Christ and I no longer live, but <span class="blank">Christ</span> lives in me.
+    <div class="ref ui">Galatians 2:20</div>
+  </div>
+  <div class="verse-card">
+    I am the vine; you are the branches. If you <span class="blank">remain</span> in me and I in you, you will bear much fruit; apart from me you can do nothing.
+    <div class="ref ui">John 15:5-6</div>
+  </div>
+  <div class="verse-card">
+    Rejoice in the Lord always. I will say it again: <span class="blank">Rejoice!</span>
+    <div class="ref ui">Philippians 4:4</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — "The full life" isn't material abundance — it's a life rooted in Christ, lived together with him. And a life like that carries a joy that goes beyond circumstances.
+  </div>
+
+  <div class="block-title">How Does the Full Life Keep Going?</div>
+  <p class="lead">The full life isn't finished by one decision — it continues through choices we keep making, day after day. When our minds keep being renewed to God's way instead of the world's, and when gratitude, joy, and prayer become the rhythm of daily life, the full life stops being a special event and simply becomes ordinary life.</p>
+
+  <div class="verse-card">
+    Do not conform to the pattern of this world, but be <span class="blank">transformed</span> by the renewing of your mind.
+    <div class="ref ui">Romans 12:2</div>
+  </div>
+  <div class="verse-card">
+    Rejoice always, pray continually, give <span class="blank">thanks</span> in all circumstances; for this is God's will for you in Christ Jesus.
+    <div class="ref ui">1 Thessalonians 5:16-18</div>
+  </div>
+
+  <div class="apply-box">
+    <b>Something to consider</b> — Joy, prayer, and gratitude aren't emotions we force ourselves to produce — they're the natural rhythm that flows out of a life rooted in Christ.
+  </div>
+
+  <div class="qa-box">
+    <div class="block-title">Let's Talk</div>
+    <ul class="qa-list">
+      <li>What do you think the "full life" really means, if not material wealth?</li>
+      <li>What has changed in your faith over these eight weeks?</li>
+      <li>How do you want to keep growing within your mokjang community?</li>
+      <li>Which topic or verse from these eight weeks has stayed with you the most?</li>
+      <li>What might it look like, in practice, to let your mind "be renewed"?</li>
+      <li>What kind of relationship would you like to keep with your shepherd going forward?</li>
+    </ul>
+  </div>
+
+  <div class="pray-box">
+    <div class="block-title ui">Pray This</div>
+    <p>Try praying something like this:<br><br>"God, thank you for walking with me these past eight weeks. Help me keep living the new life, the full life, the life of joy that continues from here."</p>
+  </div>
+</section>
+
+<!-- Closing -->
+<section class="closing">
+  <h2>This Is Just the Beginning</h2>
+  <p>You've walked through eight weeks together. But this isn't a finish line — it's a new beginning. The new life that started in Week 1 will keep growing now within your mokjang community. As you continue meeting with your shepherd, and keep growing through the Word, prayer, and fellowship, we pray you'll walk further into the full life, the life of joy.</p>
+  <div class="sig ui">The Korea Baptist Convention, Grace Church · New Believer's Discipleship Guide</div>
+</section>
+
+<div class="float-nav ui" id="floatNav">
+  <a href="#toc">📖 Contents</a>
+  <a href="#top">⬆ Top</a>
+</div>
+
+<script>
+  document.querySelectorAll('.blank').forEach(el=>{
+    el.addEventListener('click',()=>{
+      el.classList.toggle('revealed');
+    });
+  });
+
+  const floatNav = document.getElementById('floatNav');
+  const introEl = document.getElementById('intro');
+  window.addEventListener('scroll', ()=>{
+    if(window.scrollY > introEl.offsetTop - 200){
+      floatNav.classList.add('show');
+    } else {
+      floatNav.classList.remove('show');
+    }
+  });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#FFFFFF">
+<title>相遇的祝福 — 献给正在寻找幸福的你</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFFFF;
+    --bg-panel:#F4F1E9;
+    --bg-card:#FFFFFF;
+    --text:#141310;
+    --text-soft:#2E2B24;
+    --text-faint:#6B665A;
+    --accent:#B8791E;
+    --accent-deep:#8F5D14;
+    --accent-soft:#D9A94B;
+    --violet:#5C46CC;
+    --violet-soft:#8571E0;
+    --gold:#B8791E;
+    --line:rgba(20,19,16,0.14);
+    --line-soft:rgba(20,19,16,0.09);
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  html{ font-size:100%; color-scheme:light !important; background:#FFFFFF !important; }
+  body{
+    font-family:'Noto Sans SC', sans-serif;
+    background:#FFFFFF !important;
+    color:var(--text-soft);
+    line-height:1.95;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  .bg-layer{ position:fixed; inset:0; width:100vw; height:100vh; background:#FFFFFF !important; z-index:-10; pointer-events:none; }
+  h1,h2,h3,.serif{ font-family:'Noto Serif SC', serif; }
+
+  .font-ctrl{ position:fixed; right:22px; bottom:22px; z-index:100; display:flex; align-items:center; gap:2px; background:var(--bg-card); border:1px solid var(--line); border-radius:30px; padding:6px; box-shadow:0 8px 24px rgba(0,0,0,0.4); }
+  .font-ctrl button{ width:36px; height:36px; border-radius:50%; border:none; cursor:pointer; background:transparent; color:var(--text); font-family:'Noto Sans SC', sans-serif; display:flex; align-items:center; justify-content:center; transition:background .2s ease; }
+  .font-ctrl button:hover{ background:rgba(20,19,16,0.08); }
+  .font-ctrl button:active{ background:rgba(20,19,16,0.15); }
+  .font-ctrl .dec{ font-size:0.75rem; font-weight:700; }
+  .font-ctrl .inc{ font-size:1.05rem; font-weight:700; }
+  .font-ctrl .label{ font-size:0.65rem; color:var(--text-faint); letter-spacing:.05em; padding:0 4px; min-width:40px; text-align:center; }
+  @media (max-width:600px){ .font-ctrl{ right:14px; bottom:14px; } }
+
+  .progress-rail{ position:fixed; top:0; left:0; width:100%; height:3px; background:rgba(255,255,255,0.12); z-index:100; }
+  .progress-fill{ height:100%; width:0%; background:linear-gradient(90deg,var(--violet),var(--accent)); transition:width .1s linear; }
+
+  .side-nav{ position:fixed; left:26px; top:50%; transform:translateY(-50%); display:flex; flex-direction:column; gap:16px; z-index:90; }
+  .side-nav button{ width:8px; height:8px; border-radius:50%; border:1px solid var(--text-faint); background:var(--text-faint); opacity:0.35; cursor:pointer; padding:0; transition:all .3s ease; }
+  .side-nav button.active{ background:var(--violet); border-color:var(--violet); opacity:1; transform:scale(1.5); }
+  @media (max-width:980px){ .side-nav{ display:none; } }
+
+  .reveal{ opacity:0; transform:translateY(22px); transition:opacity .9s ease, transform .9s ease; }
+  .reveal.in{ opacity:1; transform:translateY(0); }
+  @media (prefers-reduced-motion: reduce){ .reveal{opacity:1;transform:none;transition:none;} html{scroll-behavior:auto;} }
+
+  section.block{ padding:100px 24px; position:relative; }
+  .wrap{ max-width:700px; margin:0 auto; }
+
+  .chip{ display:inline-flex; align-items:center; gap:10px; background:var(--bg-panel); border:1px solid var(--line); color:var(--violet); font-size:0.7rem; font-weight:700; letter-spacing:.08em; padding:8px 18px 8px 8px; border-radius:30px; margin-bottom:28px; }
+  .chip .n{ width:26px; height:26px; border-radius:50%; background:linear-gradient(135deg,var(--accent),var(--violet)); color:#FFFFFF; display:flex; align-items:center; justify-content:center; font-family:'Noto Serif SC', serif; font-weight:800; font-size:0.75rem; }
+
+  h2.title{ font-size:clamp(1.55rem,4.2vw,2.4rem); font-weight:800; color:var(--text); line-height:1.5; letter-spacing:0; margin-bottom:8px; }
+  h3.sub{ font-family:'Noto Serif SC', serif; font-size:clamp(1.05rem,2.2vw,1.25rem); font-weight:700; color:var(--gold); margin:42px 0 16px; }
+  p.deck{ font-size:1.02rem; font-weight:500; color:var(--text); margin:24px 0 6px; line-height:1.9; }
+  p{ font-size:0.94rem; color:var(--text-soft); font-weight:400; margin-bottom:22px; }
+  p strong{ color:var(--text); font-weight:700; }
+
+  .dropcap:first-letter{ float:left; font-family:'Noto Serif SC', serif; font-size:3rem; font-weight:400; color:var(--accent); line-height:.75; padding:6px 8px 0 0; }
+
+  .case-grid{ display:flex; flex-direction:column; gap:14px; margin:34px 0 10px; }
+  .case{ background:var(--bg-card); border-radius:14px; padding:26px 28px; position:relative; overflow:hidden; }
+  .case::before{ content:''; position:absolute; left:0; top:0; bottom:0; width:4px; background:linear-gradient(180deg,var(--accent),var(--violet)); }
+  .case .who{ font-family:'Noto Serif SC', serif; font-weight:700; color:var(--text); font-size:0.94rem; margin-bottom:8px; display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+  .case .who .badge{ font-size:0.65rem; letter-spacing:.02em; color:#FFFFFF; background:var(--violet); padding:3px 10px; border-radius:20px; font-family:'Noto Sans SC',sans-serif; font-weight:700; }
+  .case p{ font-size:0.91rem; margin-bottom:0; }
+
+  .verse{ margin:44px 0; background:linear-gradient(135deg, rgba(233,178,78,0.12), rgba(139,124,240,0.08)); border-radius:16px; padding:36px 34px; position:relative; }
+  .verse .mark{ position:absolute; top:14px; left:22px; font-family:'Noto Serif SC', serif; font-size:4.2rem; color:var(--accent); opacity:.4; line-height:1; }
+  .verse p{ font-family:'Noto Serif SC', serif; font-size:1.06rem; color:var(--text); font-weight:600; margin:20px 0 10px; position:relative; z-index:1; }
+  .verse cite{ font-size:0.76rem; color:var(--violet); font-style:normal; letter-spacing:.02em; }
+
+  .block.panel{ background:var(--bg-panel); }
+
+  .reaction-grid{ display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:32px 0 10px; }
+  .reaction{ background:var(--bg-card); border-radius:14px; padding:22px 22px 20px; border-top:2px solid var(--violet); }
+  .reaction .t{ font-family:'Noto Serif SC', serif; font-weight:700; color:var(--text); font-size:0.91rem; margin-bottom:8px; }
+  .reaction p{ font-size:0.82rem; margin-bottom:0; color:var(--text-faint); }
+  @media (max-width:600px){ .reaction-grid{ grid-template-columns:1fr; } }
+
+  .faq-list{ margin-top:28px; display:flex; flex-direction:column; gap:12px; }
+  .faq-item{ background:var(--bg-card); border-radius:14px; overflow:hidden; border:1px solid transparent; transition:border-color .3s ease; }
+  .faq-item.open{ border-color:var(--line); }
+  .faq-q{ width:100%; text-align:left; background:none; border:none; cursor:pointer; padding:20px 22px; display:flex; align-items:center; gap:16px; font-family:'Noto Serif SC', serif; font-size:0.92rem; font-weight:700; color:var(--text); }
+  .faq-q .idx{ flex:none; width:30px; height:30px; border-radius:8px; background:linear-gradient(135deg,var(--violet),var(--accent)); color:#FFFFFF; display:flex; align-items:center; justify-content:center; font-family:'Noto Sans SC',sans-serif; font-size:0.76rem; font-weight:800; }
+  .faq-q .chev{ margin-left:auto; flex:none; color:var(--accent); transition:transform .3s ease; font-size:0.82rem; }
+  .faq-item.open .faq-q .chev{ transform:rotate(180deg); }
+  .faq-a{ max-height:0; overflow:hidden; transition:max-height .45s ease; }
+  .faq-a-inner{ padding:0 22px 24px 68px; }
+  .faq-a-inner p{ font-size:0.85rem; margin-bottom:13px; }
+  .faq-a-inner p:last-child{ margin-bottom:0; }
+
+  .life-grid{ display:flex; flex-direction:column; gap:0; margin-top:28px; }
+  .life-row{ display:grid; grid-template-columns:120px 1fr; gap:24px; padding:22px 0; border-top:1px solid var(--line-soft); }
+  .life-row:last-child{ border-bottom:1px solid var(--line-soft); }
+  .life-row .when{ font-family:'Noto Serif SC', serif; color:var(--violet); font-weight:700; font-size:0.85rem; padding-top:2px; }
+  .life-row p{ margin-bottom:0; font-size:0.88rem; }
+  @media (max-width:560px){ .life-row{ grid-template-columns:1fr; gap:6px; } }
+
+  .step-grid{ display:flex; flex-direction:column; gap:12px; margin:32px 0 10px; }
+  .step{ display:grid; grid-template-columns:48px 1fr; gap:20px; padding:22px 24px; background:var(--bg-card); border-radius:14px; }
+  .step .n{ font-family:'Noto Serif SC', serif; font-weight:800; color:var(--accent); font-size:1.3rem; }
+  .step .t{ font-family:'Noto Serif SC', serif; font-weight:700; font-size:0.97rem; color:var(--text); margin-bottom:6px; }
+  .step p{ margin-bottom:0; font-size:0.88rem; }
+
+  .hero{ position:relative; min-height:100vh; display:flex; align-items:center; justify-content:center; padding:100px 24px 60px; overflow:hidden; }
+  .hero::before{ content:''; position:absolute; inset:0; background: radial-gradient(ellipse 70% 50% at 30% 12%, rgba(233,178,78,0.18), transparent 60%), radial-gradient(ellipse 60% 45% at 78% 82%, rgba(139,124,240,0.16), transparent 60%); }
+  .hero-content{ position:relative; z-index:2; text-align:center; max-width:640px; }
+  .hero-content .chip{ margin:0 auto 30px; }
+  .hero-title{ font-family:'Noto Serif SC', serif; font-size:clamp(2rem,7vw,3.5rem); font-weight:900; letter-spacing:0; color:var(--text); line-height:1.5; margin-bottom:18px; }
+  .hero-title .accent-word{ background:linear-gradient(90deg,var(--accent),var(--violet-soft)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .hero-underline{ width:80px; height:2px; margin:0 auto 26px; background:linear-gradient(90deg,var(--accent),var(--violet)); border-radius:3px; }
+  .hero-subtitle{ font-family:'Noto Sans SC', sans-serif; font-size:clamp(0.78rem,1.6vw,0.92rem); font-weight:600; letter-spacing:.1em; color:var(--gold); margin-bottom:14px; }
+  .hero p.lead{ font-size:clamp(0.88rem,1.8vw,1rem); color:var(--text-soft); font-weight:400; max-width:480px; margin:0 auto; line-height:1.95; }
+  .scroll-cue{ position:absolute; bottom:32px; left:50%; transform:translateX(-50%); font-size:0.65rem; letter-spacing:.24em; color:var(--accent); display:flex; flex-direction:column; align-items:center; gap:8px; z-index:2; }
+  .scroll-cue .bar{ width:1px; height:34px; background:linear-gradient(180deg,var(--accent),transparent); animation:cue 2s ease-in-out infinite; }
+  @keyframes cue{0%,100%{opacity:.25;}50%{opacity:1;}}
+
+  .invite{ background:linear-gradient(180deg,var(--bg-panel),var(--bg)); padding:120px 24px; text-align:center; }
+  .invite .chip{ margin:0 auto 26px; }
+  .invite h2.title{ color:var(--text); }
+  .invite p{ color:var(--text-soft); font-size:0.94rem; }
+  .prayer-box{ margin:38px auto 0; max-width:480px; padding:32px 30px; border-radius:16px; background:linear-gradient(135deg, rgba(233,178,78,0.13), rgba(139,124,240,0.09)); text-align:left; }
+  .prayer-box .tag2{ font-size:0.7rem; letter-spacing:.1em; color:var(--gold); font-weight:700; margin-bottom:14px; }
+  .prayer-box p{ font-family:'Noto Serif SC', serif; font-size:0.92rem; color:var(--text); font-weight:400; line-height:2.05; margin-bottom:0; }
+
+  footer{ background:var(--bg); border-top:1px solid var(--line-soft); padding:42px 24px 48px; text-align:center; }
+  footer .brand{ font-family:'Noto Serif SC', serif; color:var(--accent-deep); font-size:0.88rem; font-weight:700; margin-bottom:8px; }
+  footer p{ font-size:0.74rem; color:var(--text-faint); line-height:2; }
+
+  .illus{ width:168px; height:168px; margin:38px auto 10px; display:block; }
+  .illus svg{ width:100%; height:100%; display:block; }
+  .illus.large{ width:220px; height:220px; }
+  @media (max-width:520px){ .illus{ width:136px; height:136px; } .illus.large{ width:180px; height:180px; } }
+
+  .vref{ color:var(--violet); border-bottom:1.5px dotted var(--violet-soft); cursor:pointer; font-weight:600; transition:color .2s ease, border-color .2s ease; }
+  .vref:hover{ color:var(--accent); border-color:var(--accent-soft); }
+  span.badge.vref{ border-bottom:none; }
+  .cite-tag{ display:inline; font-size:0.92em; font-weight:600; color:var(--violet); background:none; padding:0; border-radius:0; font-family:inherit; margin:0; border-bottom:1.5px dotted var(--violet-soft) !important; cursor:pointer; }
+  .cite-tag:hover{ color:var(--accent); border-color:var(--accent-soft) !important; }
+
+  .vpop-overlay{ position:fixed; inset:0; background:rgba(20,19,16,0.4); z-index:300; display:none; align-items:flex-end; justify-content:center; }
+  .vpop-overlay.show{ display:flex; }
+  .vpop{ background:var(--bg-card); width:100%; max-width:460px; border-radius:20px 20px 0 0; padding:30px 26px 36px; box-shadow:0 -14px 44px rgba(0,0,0,0.22); position:relative; animation:vpopUp .25s ease; }
+  @keyframes vpopUp{ from{ transform:translateY(24px); opacity:0; } to{ transform:translateY(0); opacity:1; } }
+  .vpop .close{ position:absolute; top:16px; right:18px; background:none; border:none; font-size:1.3rem; color:var(--text-faint); cursor:pointer; line-height:1; }
+  .vpop .ref{ font-family:'Noto Serif SC',serif; font-weight:700; color:var(--violet); font-size:0.85rem; margin-bottom:14px; padding-right:24px; }
+  .vpop .txt{ font-family:'Noto Serif SC',serif; font-size:1rem; line-height:1.95; color:var(--text); font-weight:500; }
+  @media (min-width:640px){ .vpop{ margin-bottom:40px; border-radius:20px; } .vpop-overlay{ align-items:center; } }
+
+  .toc-grid{ display:flex; flex-direction:column; gap:2px; margin-top:30px; }
+  .toc-item{ display:flex; align-items:center; gap:18px; padding:16px 6px; border-bottom:1px solid var(--line-soft); text-decoration:none; color:var(--text-soft); transition:padding-left .25s ease, color .25s ease; }
+  .toc-item:hover{ padding-left:10px; color:var(--text); }
+  .toc-item .tn{ flex:none; width:34px; font-family:'Noto Serif SC', serif; font-weight:700; font-size:0.95rem; background:linear-gradient(135deg,var(--accent),var(--violet)); -webkit-background-clip:text; background-clip:text; color:transparent; }
+  .toc-item .tt{ font-family:'Noto Serif SC', serif; font-size:0.92rem; font-weight:600; }
+
+  .toc-btn{ position:fixed; left:22px; bottom:22px; z-index:100; display:flex; align-items:center; gap:8px; background:var(--bg-card); border:1px solid var(--line); color:var(--text); font-family:'Noto Sans SC', sans-serif; font-size:0.78rem; font-weight:700; padding:11px 18px; border-radius:30px; cursor:pointer; box-shadow:0 8px 24px rgba(0,0,0,0.4); }
+  .toc-btn svg{ width:14px; height:14px; flex:none; }
+  @media (max-width:980px){ .toc-btn{ left:14px; bottom:14px; } }
+  @media (max-width:600px){ .toc-btn span{ display:none; } .toc-btn{ padding:12px; } }
+
+  .back-btn{ position:fixed; left:22px; top:22px; z-index:100; display:flex; align-items:center; gap:8px; background:var(--bg-card); border:1px solid var(--line); color:var(--text); font-family:'Noto Sans SC', sans-serif; font-size:0.78rem; font-weight:700; padding:11px 18px; border-radius:30px; cursor:pointer; box-shadow:0 8px 24px rgba(20,19,16,0.12); text-decoration:none; }
+  .back-btn svg{ width:14px; height:14px; flex:none; }
+  .back-btn:hover{ background:var(--bg-panel); }
+  @media (max-width:600px){ .back-btn span{ display:none; } .back-btn{ padding:12px; } }
+</style>
+</head>
+<body style="background:#FFFFFF;">
+<div class="bg-layer" style="background:#FFFFFF;"></div>
+
+<button class="back-btn" onclick="history.length > 1 ? history.back() : window.close()">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+  <span>返回资料室</span>
+</button>
+
+<div class="progress-rail"><div class="progress-fill" id="progressFill"></div></div>
+<nav class="side-nav" id="sideNav"></nav>
+
+<div class="font-ctrl">
+  <button class="dec" id="fontDec" aria-label="缩小字体">字</button>
+  <span class="label" id="fontLabel">正常</span>
+  <button class="inc" id="fontInc" aria-label="放大字体">字</button>
+</div>
+
+<button class="toc-btn" onclick="document.getElementById('toc').scrollIntoView({behavior:'smooth'})">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></svg>
+  <span>目录</span>
+</button>
+
+<!-- HERO -->
+<section class="hero" data-chapter="0">
+  <div class="hero-content">
+    <div class="chip"><span class="n"><svg viewBox="0 0 24 24" width="14" height="14" fill="#FFFFFF"><path d="M12 2 L14 9 L21 11 L14 13 L12 20 L10 13 L3 11 L10 9 Z"/></svg></span>献给正在寻找幸福丰盛人生之人的故事</div>
+    <div class="hero-subtitle">相遇的祝福</div>
+    <h1 class="hero-title">献给正在寻找<br><span class="accent-word">幸福</span>的你</h1>
+    <div class="hero-underline"></div>
+    <div class="illus large" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="145" r="36" fill="var(--accent)" opacity="0.95"/>
+        <g stroke="var(--accent-soft)" stroke-width="2" stroke-linecap="round">
+          <line x1="100" y1="88" x2="100" y2="74"/>
+          <line x1="66" y1="99" x2="55" y2="88"/>
+          <line x1="134" y1="99" x2="145" y2="88"/>
+          <line x1="52" y1="122" x2="36" y2="118"/>
+          <line x1="148" y1="122" x2="164" y2="118"/>
+        </g>
+        <path d="M0 162 Q50 120 100 150 T200 142 L200 200 L0 200 Z" fill="var(--violet-soft)" opacity="0.55"/>
+        <path d="M0 186 Q70 146 120 178 T200 170 L200 200 L0 200 Z" fill="var(--violet)" opacity="0.95"/>
+      </svg>
+    </div>
+    <p class="lead">这不是一篇随手翻阅的文章。它是为每一个曾经站在人生问题面前的人，也为想要诚实回答这个问题的人，用心写下的一段更深入、更具体的文字。</p>
+  </div>
+  <div class="scroll-cue"><span>SCROLL</span><span class="bar"></span></div>
+</section>
+
+<!-- TOC -->
+<section class="block panel" data-chapter="toc" id="toc">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">目</span>目录</div>
+    <h2 class="title">目录</h2>
+    <p class="deck">全文共十四章。建议您从头开始按顺序阅读，如果想直接查看某一章，也可以点击直接跳转。</p>
+    <div class="toc-grid">
+      <a class="toc-item" href="#ch1"><span class="tn">01</span><span class="tt">站在问题面前的人们</span></a>
+      <a class="toc-item" href="#ch2"><span class="tn">02</span><span class="tt">阻碍与神相遇的四大障碍</span></a>
+      <a class="toc-item" href="#ch3"><span class="tn">03</span><span class="tt">与神相遇究竟意味着什么</span></a>
+      <a class="toc-item" href="#ch4"><span class="tn">04</span><span class="tt">怀疑与信仰能否并存</span></a>
+      <a class="toc-item" href="#ch5"><span class="tn">05</span><span class="tt">与神相遇带来的人生答案</span></a>
+      <a class="toc-item" href="#ch6"><span class="tn">06</span><span class="tt">真正的幸福，以及喜乐与自由</span></a>
+      <a class="toc-item" href="#ch7"><span class="tn">07</span><span class="tt">真正丰盛的秘诀</span></a>
+      <a class="toc-item" href="#ch8"><span class="tn">08</span><span class="tt">为何独自一人很难</span></a>
+      <a class="toc-item" href="#ch9"><span class="tn">09</span><span class="tt">人们真实的反应</span></a>
+      <a class="toc-item" href="#ch10"><span class="tn">10</span><span class="tt">我们如何能知道神的存在</span></a>
+      <a class="toc-item" href="#ch11"><span class="tn">11</span><span class="tt">从逻辑上靠近</span></a>
+      <a class="toc-item" href="#ch12"><span class="tn">12</span><span class="tt">与神相遇之后，会有什么改变</span></a>
+      <a class="toc-item" href="#ch13"><span class="tn">13</span><span class="tt">如果您想了解更多</span></a>
+      <a class="toc-item" href="#ch14"><span class="tn">14</span><span class="tt">现在，是时候开始你的相遇了</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- CH1 -->
+<section class="block" data-chapter="1" id="ch1">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">1</span>THE QUESTION</div>
+    <h2 class="title">站在问题面前的人们</h2>
+    <p class="deck dropcap">每个人都以不同的面貌，站在同一个问题面前。表面上看起来截然不同的人生，到了寂静的凌晨，最终都会抵达同样的渴望。以下介绍七个贴近真实的故事。</p>
+
+    <div class="case-grid">
+      <div class="case"><div class="who">成功的企业家K先生 <span class="badge">空虚感</span></div>
+        <p>三十七岁，他已经站在许多人羡慕的位置上。想要的东西大多都已经拥有，但最近，每晚入睡前都会涌上一种说不清的空虚。"我以为拥有这一切就会幸福，为什么后面什么都没有了呢？"他第一次承认，自己的成就并不是答案。</p></div>
+      <div class="case"><div class="who">经历丧失的她 <span class="badge">为什么</span></div>
+        <p>母亲突然离世后，她无法摆脱"为什么"这个问题。为什么这种事会发生在一个善良的人身上，世上真的存在善良吗？安慰的话语并没有带来安慰，她需要的不是答案，而是一个愿意陪在身边的人。</p></div>
+      <div class="case"><div class="who">怀疑一切的研究生 <span class="badge">理性的挣扎</span></div>
+        <p>主修物理学的他，长期以来一直认为神的概念不合理。然而，当他了解到宇宙常数被极度精密地调校到恰好能让生命存在时，"这真的只是偶然吗"这个问题第一次在他心中扎根。</p></div>
+      <div class="case"><div class="who">疲惫的年轻人 <span class="badge">比较与倦怠</span></div>
+        <p>二十六岁，她每天都以社交媒体上别人的生活作为一天的开始，与自己比较。无论多么努力，总觉得还不够；一种不被认可就仿佛存在本身都会动摇的不安。她甚至忘记了自己究竟是为了什么而如此拼命。</p></div>
+      <div class="case"><div class="who">高中生智敏(化名) <span class="badge">青少年 · 身份认同</span></div>
+        <p>高二学生，成绩单上的一个数字就能决定她一整天的心情。在父母的期待与朋友间的比较中，她总是想："只有成绩好的时候，我才是一个还不错的人吗？"社交媒体上的朋友们似乎都过得很好，只有自己被落下的不安每晚都会来袭。虽然年纪还小，智敏已经和成年人一样，站在了"为什么我必须这样努力才能成为一个还不错的人"这个问题面前。</p></div>
+      <div class="case"><div class="who">即将退休的部长 <span class="badge">虚无感</span></div>
+        <p>三十年奉献给同一家公司的他，在退休临近时忽然感到害怕。那个曾经定义自己的职位头衔一旦消失，自己究竟是谁？他第一次目睹自己靠成就建立起来的身份认同，在退休这道门槛前开始崩塌。</p></div>
+      <div class="case"><div class="who">形式化信仰生活的人 <span class="badge">形式化信仰</span></div>
+        <p>他从小就上教会，但那只是习惯与文化，他没有真正与神有过人格性相遇的记忆。他最近意识到，自己的信仰只是由知识和习惯构成的，于是重新开始追问，真正"认识"神究竟意味着什么。</p></div>
+    </div>
+
+    <p style="margin-top:28px;">这七个人年龄不同、背景不同，困境的样貌也各不相同。然而他们最终都抵达了同一个地方 — 一种<strong>无法靠拥有更多或知道更多来填满的渴望</strong>。有趣的是，那些在这份渴望面前诚实的人，都讲述着同一个故事：答案不是来自信息，而是来自某种<strong>相遇</strong>。</p>
+  </div>
+</section>
+
+<!-- CH2 -->
+<section class="block panel" data-chapter="2" id="ch2">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">2</span>OBSTACLES</div>
+    <h2 class="title">阻碍与神相遇的四大障碍</h2>
+    <p class="deck">在正式展开之前，我们先来看看许多人在这场相遇面前，不知不觉停下脚步的地方。</p>
+
+    <h3 class="sub">自我满足感 — "我什么都不缺"</h3>
+    <p>矛盾的是，人生越顺遂的人，反而越容易远离这场相遇。感觉不到需要，就不会去寻找。然而自我满足感，往往是尚未经历崩塌之前的一种错觉。</p>
+
+    <h3 class="sub">过去的伤痛 — "我曾对教会或信徒感到失望"</h3>
+    <p>许多人关上心门，并非因为信仰本身，而是因为被打着信仰旗号的人所伤害。这份伤痛是真实且正当的。但人的失望与关于神的真理，是需要区分开来的两件事。</p>
+
+    <h3 class="sub">知识上的骄傲 — "我在逻辑上无法接受这个"</h3>
+    <p>越是自认为理性的人，越容易未经审视就把信仰当作情绪化、不合逻辑的东西而提前划清界限。但正如后面会看到的，信仰并不与理性对立，反而是一个可以被严谨论证支撑的领域。</p>
+
+    <h3 class="sub">恐惧 — "如果相信了，我的生活就必须改变"</h3>
+    <p>这或许是最诚实的一种障碍。许多人认为，一旦接受信仰，就必须放弃目前所享有的自由与快乐。但实际经历过这场相遇的人异口同声地说的却是相反的事 — 不是失去，而是获得了更深的自由。</p>
+
+    <p>如果这四种障碍中有任何一个让您心里有所触动，那并不是错误，反而是一个诚实的出发点。</p>
+  </div>
+</section>
+
+<!-- CH3 -->
+<section class="block" data-chapter="3" id="ch3">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">3</span>ENCOUNTER</div>
+    <h2 class="title">与神相遇究竟意味着什么</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M60 170 L60 60 Q60 30 100 30 Q140 30 140 60 L140 170" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="170" x2="140" y2="170" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="126" cy="118" r="3.5" fill="var(--violet)"/>
+        <circle cx="100" cy="95" r="34" fill="var(--accent)" opacity="0.16"/>
+        <circle cx="100" cy="95" r="10" fill="var(--accent)" opacity="0.7"/>
+        <path d="M100 55 L100 40 M132 70 L144 60 M132 120 L144 130 M68 70 L56 60 M68 120 L56 130" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <p class="deck">我们需要更准确地审视"相遇"这个词。许多人把信仰误解为一种宗教体系 — 一份需要遵守的规则和需要背诵的知识清单。但圣经所说的相遇，与此有着根本性的不同。</p>
+
+    <h3 class="sub">宗教与关系的区别</h3>
+    <p>大多数宗教体系都有一个共同结构：人类试图通过自己的努力、修行、善行接近神圣的存在。严格遵守戒律，积累善行与功德，通过苦行或修炼来洁净自己，踏上朝圣之路靠近圣地。方式各不相同，但方向是一致的 — 这是一种人从下往上、从匮乏走向神圣的阶梯结构。</p>
+    <p>然而，圣经所描绘的图景恰恰相反。在创世记中，当亚当和夏娃犯罪并躲藏起来时，先采取行动的不是他们，而是神。<span class="cite-tag vref" data-ref="创世记 3:9" data-txt="耶和华神呼唤那人，对他说：你在哪里？">创世记 3:9</span> "你在哪里？"是神先来寻找。在路加福音第十五章浪子的故事中，父亲在儿子还远远地时候就看见了他，动了慈心，跑去拥抱他。<span class="cite-tag vref" data-ref="路加福音 15:20" data-txt="相离还远，他父亲看见，就动了慈心，跑去抱着他的颈项，连连与他亲嘴。">路加福音 15:20</span> 罗马书这样总结这个结构 — "我们还作罪人的时候，基督就为我们死。"<span class="cite-tag vref" data-ref="罗马书 5:8" data-txt="惟有基督在我们还作罪人的时候为我们死，神的爱就在此向我们显明了。">罗马书 5:8</span> 神不是等我们够资格才靠近，而是在我们毫无资格的状态下就主动靠近了我们。</p>
+    <p>因此以弗所书称救恩"不是出于行为，乃是神所赐的"。<span class="cite-tag vref" data-ref="以弗所书 2:8-9" data-txt="你们得救是本乎恩，也因着信；这并不是出于自己，乃是神所赐的；也不是出于行为，免得有人自夸。">以弗所书 2:8-9</span> 这不是人向上攀爬的故事，而是<strong>神先向人靠近的事件</strong> — 正是这一顺序上的差别，从根本上把宗教与相遇区分开来。</p>
+
+    <h3 class="sub">"认识"的两种含义</h3>
+    <p>希伯来语中有一个词是"雅达"（יָדַע），意为"认识"。这个词超越了单纯获取信息的层面，指的是全然投入关系、亲身经历的一种认识。"认识"神，不是关于神的知识，而是与神建立真实关系而来的认识。</p>
+
+    <h3 class="sub">与神相遇的三个步骤</h3>
+    <p>这场相遇通常由三个步骤组成。第一是<strong>承认</strong> — 接受自己无法靠自身力量填满的渴望确实存在。第二是<strong>转向</strong> — 放下至今为止自己紧握的答案，改变方向。第三是<strong>接受</strong> — 握住神伸出的手。这三个步骤按顺序发生，有时也会同时发生。</p>
+
+    <h3 class="sub">历史中的相遇</h3>
+    <p>圣经与教会历史中，反复出现因这场相遇而人生彻底改变的故事。</p>
+
+    <div class="case-grid">
+      <div class="case"><div class="who">摩西 <span class="badge vref" data-ref="出埃及记 3:4" data-txt="耶和华神见他转过去看，就从荆棘里呼叫说：摩西！摩西！他说：我在这里。">出埃及记第3章</span></div>
+        <p>在旷野放羊的一个平凡日子，他在燃烧的荆棘前听见了神的声音。曾是逃亡者的他，在这场相遇之后，成为带领一个民族的人，人生彻底改变。</p></div>
+      <div class="case"><div class="who">撒玛利亚妇人 <span class="badge vref" data-ref="约翰福音 4:29" data-txt="你们来看，有一个人将我素来所行的一切事都给我说出来了，莫非这就是基督吗？">约翰福音第4章</span></div>
+        <p>为躲避众人的目光，她在正午独自前来打水，却在井边遇见了耶稣。在那道知道她全部过去却不定她罪的目光前，她立刻跑回城里，将这场相遇传开。</p></div>
+      <div class="case"><div class="who">撒该 <span class="badge vref" data-ref="路加福音 19:5" data-txt="耶稣到了那里，抬头一看，对他说：撒该，快下来！今天我必住在你家里。">路加福音第19章</span></div>
+        <p>因职业遭到镇上人排斥的他，甚至爬上树只为看一眼耶稣。耶稣先呼叫他的名字的那一刻，他当场放下了自己一直以来的生活方式。</p></div>
+      <div class="case"><div class="who">使徒保罗 <span class="badge vref" data-ref="使徒行传 9:4" data-txt="他就仆倒在地，听见有声音对他说：扫罗！扫罗！你为什么逼迫我？">使徒行传第9章</span></div>
+        <p>在前往大马士革逼迫信徒的路上，他遇见了光与声音。此后，他成了传扬自己曾经逼迫的那个福音的人。</p></div>
+      <div class="case"><div class="who">奥古斯丁 <span class="badge">《忏悔录》，四世纪</span></div>
+        <p>过着放荡生活的年轻哲学家，在米兰的一座花园里，听见孩子们的歌声，偶然翻开一段圣经经文，从此彻底成为另一个人。</p></div>
+      <div class="case"><div class="who">C.S.路易斯 <span class="badge">二十世纪文学家</span></div>
+        <p>曾经彻底的无神论者，在牛津的一间房间里，迎来了他自己都不曾想要的降服时刻。他后来将自己形容为"全英格兰最不情愿的皈依者"。</p></div>
+    </div>
+
+    <p style="margin-top:28px;">牧羊人、被排斥的女子、被憎恨的税吏、曾经逼迫信仰的人、放荡的哲学家、顽固的无神论者 — 他们的共同点不是特别，而恰恰是平凡，甚至是抗拒。改变他们的不是决心或努力，而是<strong>一次相遇</strong>。</p>
+  </div>
+</section>
+
+<!-- CH4 -->
+<section class="block panel" data-chapter="4" id="ch4">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">4</span>DOUBT</div>
+    <h2 class="title">怀疑与信仰能否并存</h2>
+    <p class="deck">许多人认为必须要有完全的确信才能相信。但圣经中人物的故事，呈现出截然不同的图景。</p>
+
+    <h3 class="sub">多疑的多马</h3>
+    <p><span class="cite-tag vref" data-ref="约翰福音 20:25" data-txt="那些门徒就对他说：我们已经看见主了。多马却说：我非看见他手上的钉痕，用指头探入那钉痕，又用手探入他的肋旁，我总不信。">约翰福音 20:25</span> 听到耶稣复活的消息时，门徒多马宣称，除非亲眼看见并亲手摸到钉痕，否则他绝不相信。耶稣并没有责备多马，反而亲自前去，让他触摸自己的手。怀疑并不是信仰的反面，而是被当作通往信仰之路的一部分。</p>
+
+    <h3 class="sub">狱中施洗约翰的提问</h3>
+    <p><span class="cite-tag vref" data-ref="马太福音 11:3" data-txt="问他说：那将要来的是你吗？还是我们等候别人呢？">马太福音 11:3</span> 就连曾大胆宣告耶稣就是那将要来的弥赛亚的施洗约翰，在被囚于监狱之后，也派人前去问："你真的是那要来的一位吗？"圣经毫不掩饰地如实记录了，即便是曾经充满确信的人，在苦难面前也会动摇。</p>
+
+    <h3 class="sub">哈巴谷的抗议</h3>
+    <p><span class="cite-tag vref" data-ref="哈巴谷书 1:3" data-txt="你为何使我看见罪孽？你为何看着奸恶而不理呢？毁灭和强暴在我面前，纷争和相斗也起来了。">哈巴谷书 1:3</span> 旧约先知哈巴谷向神直言抗议："你为何让我看见罪孽，为何让我目睹不义？"他不放弃，持续追问直到得到答案。圣经从未把这种带着疑问的信仰视为羞耻。</p>
+
+    <p>信仰不是完全没有怀疑的状态，而是即使怀抱怀疑，依然持续朝向神的方向。信仰不是在具备百分之百的确信之后才开始的旅程，而是即便怀抱不确定，也踏出第一步。</p>
+  </div>
+</section>
+
+<!-- CH5 -->
+<section class="block" data-chapter="5" id="ch5">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">5</span>THE ANSWER</div>
+    <h2 class="title">与神相遇带来的人生答案</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="62" stroke="var(--accent)" stroke-width="1.5" opacity="0.6"/>
+        <circle cx="100" cy="100" r="4" fill="var(--accent)"/>
+        <line x1="100" y1="30" x2="100" y2="44" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="100" y1="156" x2="100" y2="170" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="30" y1="100" x2="44" y2="100" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <line x1="156" y1="100" x2="170" y2="100" stroke="var(--text-faint)" stroke-width="1.5"/>
+        <path d="M100 100 L88 128 L100 118 L112 128 Z" fill="var(--violet)"/>
+        <path d="M100 100 L112 72 L100 82 L88 72 Z" fill="var(--accent-soft)"/>
+      </svg>
+    </div>
+    <p class="deck">与神相遇的人所迎来的改变，不是从环境开始，而是从<strong>看待自己的眼光</strong>开始。这种改变大致可分为三个层面来看。</p>
+
+    <h3 class="sub">身份认同 — 我是谁</h3>
+    <p>许多人用成就、外貌、他人的认可来衡量自己的价值。考试成绩、年薪、粉丝数、晋升速度 — 这些标准今天能把你捧上高处，明天也能把你摔到谷底。但这样的标准永远在动摇。与神相遇的人会获得一个截然不同的标准 — 我不是偶然存在的，而是<strong>被造来被爱的存在</strong>。正如诗篇作者所唱："我受造奇妙可畏。"<span class="cite-tag vref" data-ref="诗篇 139:14" data-txt="我要称谢你，因我受造奇妙可畏。你的作为奇妙，这是我心深知道的。">诗篇 139:14</span> 无论表现如何起伏，这份身份认同的根基不会动摇。</p>
+
+    <h3 class="sub">目的 — 我为何而活</h3>
+    <p>没有目的的人生，就像划着没有方向的船 — 无论多么勤奋地划桨，没有目的地，那份勤奋最终也只是徒劳的消耗。在与神的关系中，人会明白，自己的工作、关系与时间都是一个更大故事的一部分。这并不意味着一定要成为牧师或宣教士。在职场上诚实地度过一天，对孩子的耐心，对邻居的一点善意 — 所有这些平凡的时刻，都成为交托给每个人独特的一份，承载着并非偶然的分量。</p>
+
+    <h3 class="sub">方向 — 我要往哪里去</h3>
+    <p>许多人朝着人生的下一个阶段 — 下个学期、下次升职、下一套房子 — 拼命奔跑，却从未真正思考过最终的目的地。这就像打开导航却没有输入目的地一样。与神相遇的人，不再以对死后的模糊不安面对未来，而是以盼望来面对。今天的每一个选择，不再只是散落的一天，而是朝着明确目的地累积的脚步。</p>
+
+    <div class="verse"><span class="mark">"</span><p>我来了，是要叫羊得生命，并且得的更丰盛。</p><cite class="vref" data-ref="约翰福音 10:10" data-txt="盗贼来，无非要偷窃、杀害、毁坏；我来了，是要叫羊得生命，并且得的更丰盛。">约翰福音 10:10</cite></div>
+    <p>这里的"生命"不仅仅指活着这件事。它意味着身份认同、目的与方向都得以恢复的人生，以及在这一切之上，与神建立关系的人生。</p>
+  </div>
+</section>
+
+<!-- CH6 -->
+<section class="block panel" data-chapter="6" id="ch6">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">6</span>HAPPINESS, JOY & FREEDOM</div>
+    <h2 class="title">真正的幸福，以及喜乐与自由</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M40 130 Q70 90 100 108 Q130 90 160 130" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <path d="M60 100 Q80 70 100 88 Q120 70 140 100" stroke="var(--violet)" stroke-width="2" stroke-linecap="round" opacity="0.75"/>
+        <path d="M80 70 Q92 54 100 66 Q108 54 120 70" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+      </svg>
+    </div>
+    <p class="deck">归根结底，人类是追求幸福的存在。升学、就业、恋爱，甚至信仰，对许多人来说，都只是"想要幸福"这份渴望的另一个名字。那么真正的问题就是这个 — 什么才是真正的幸福？</p>
+
+    <h3 class="sub">所有人共同奔向的唯一目的地</h3>
+    <p>古代哲学家亚里士多德认为，人类的每一个行动都各有理由，但若一路追溯这些理由，最终都会汇聚到同一个点 — 那就是幸福。赚钱的理由，建立关系的理由，照顾健康的理由，归根结底都是为了幸福。幸福不是通往其他事物的手段，而是人类所追求的最终目的本身。</p>
+
+    <h3 class="sub">快感与幸福并不相同</h3>
+    <p>问题在于，许多人把幸福与瞬间的快感混淆了。美味的食物、点赞数、升职、新买的东西 — 这些确实会带来愉悦。但这种愉悦短暂，很快就会要求更大的刺激。正如第一章中的企业家K先生那样，即便得到了想要的一切，之后仍会再度陷入空虚，原因就在这里。瞬间的快感，就像往破了底的桶里不断倒水，永远填不满。</p>
+
+    <h3 class="sub">不动摇的幸福从何而来</h3>
+    <p>真正的幸福不是环境所给予的，而是来自一种不受环境左右、始终如一的心境。而圣经明确指出，这份不动摇的幸福的根源在哪里 — 就在与神的关系中。这正是接下来要谈的喜乐与自由的实质。</p>
+
+    <h3 class="sub">从完美主义中得自由</h3>
+    <p>一个错误就仿佛能让整个存在崩塌的感觉，其根源通常是"必须完美才能被爱"这样的信念。恩典颠覆了这个公式。</p>
+
+    <h3 class="sub">从渴求认可中得自由</h3>
+    <p>一整天的心情被他人的一个反应所左右的人生，说到底，是把自己交到了他人手中的人生。</p>
+
+    <h3 class="sub">从比较意识中得自由</h3>
+    <p>社交媒体时代最大的病症之一，就是无止境的比较。当你明白每个人都是作为独特的存在被造时，身边的人就不再是衡量自己的标准。</p>
+
+    <h3 class="sub">从恐惧中得自由</h3>
+    <p>对死亡的恐惧、对未来的模糊不安，是人类背负的最根本的重担之一。在与神的关系中，这种恐惧不会完全消失，但不再能主宰你的人生。</p>
+
+    <div class="verse"><span class="mark">"</span><p>基督释放了我们，叫我们得以自由；所以要站立得稳，不要再被奴仆的轭挟制。</p><cite class="vref" data-ref="加拉太书 5:1" data-txt="基督释放了我们，叫我们得以自由，所以要站立得稳，不要再被奴仆的轭挟制。">加拉太书 5:1</cite></div>
+    <p>这份自由不是逃避现实。失败了不会崩溃，成功了也不被束缚的那份坚定 — 这正是与神相遇所带来的真实改变。</p>
+  </div>
+</section>
+
+<!-- CH7 -->
+<section class="block" data-chapter="7" id="ch7">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">7</span>ABUNDANCE</div>
+    <h2 class="title">真正丰盛的秘诀</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <path d="M70 100 L74 150 Q75 160 90 160 L110 160 Q125 160 126 150 L130 100" stroke="var(--violet)" stroke-width="2" stroke-linecap="round"/>
+        <ellipse cx="100" cy="100" rx="30" ry="9" stroke="var(--accent)" stroke-width="2"/>
+        <path d="M85 92 Q88 76 100 80 Q112 68 118 84" stroke="var(--accent-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.8"/>
+        <path d="M78 84 Q80 70 92 72" stroke="var(--violet-soft)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+      </svg>
+    </div>
+    <p class="deck">使徒保罗在狱中写下这样一封信："我知道怎样处卑贱，也知道怎样处丰富；或饱足，或饥饿，都随事随在，我都得了秘诀。"<span class="cite-tag vref" data-ref="腓立比书 4:12" data-txt="我知道怎样处卑贱，也知道怎样处丰富；或饱足，或饥饿，或有余，或缺乏，随事随在，我都得了秘诀。">腓立比书 4:12</span></p>
+
+    <h3 class="sub">"秘诀"这个词的分量</h3>
+    <p>这里的"秘诀"一词，原本是指秘密宗教中口耳相传的奥秘。保罗用这个词，来说明他在基督里所发现的知足的原则。</p>
+
+    <h3 class="sub">一个容易被误解的地方 — 这并非物质成功的应许</h3>
+    <p>有时信仰会被误解为物质丰盛与成功的保证。但保罗正是在狱中、在匮乏之中说出这番告白的。真正的丰盛不在于环境，而在于<strong>不受环境左右、始终如一的心境</strong>。</p>
+
+    <h3 class="sub">关系的丰盛</h3>
+    <p>真正丰盛的另一面，是关系。与神和好的人，会在不知不觉中变得对他人更加宽厚，也获得了与人更深连结的余裕。</p>
+
+    <div class="verse"><span class="mark">"</span><p>我靠着那加给我力量的，凡事都能做。</p><cite class="vref" data-ref="腓立比书 4:12-13" data-txt="我知道怎样处卑贱，也知道怎样处丰富……我靠着那加给我力量的，凡事都能做。">腓立比书 4:13</cite></div>
+    <p>真正的丰盛，是一种在与神的关系中已经被充满的确信。这不是靠努力获得的心态，而是通过与神相遇所赐下的礼物。</p>
+  </div>
+</section>
+
+<!-- CH8 -->
+<section class="block panel" data-chapter="8" id="ch8">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">8</span>COMMUNITY</div>
+    <h2 class="title">为何独自一人很难</h2>
+    <p class="deck">这场相遇始于一件极为私人的事件，但奇妙的是，它从不会只停留在个人身上。</p>
+
+    <h3 class="sub">信仰是个人的，但不是私密的</h3>
+    <p>许多人把信仰当作"我与神"之间的秘密事务。但圣经中每一个相遇的故事，最终都通向了群体。</p>
+
+    <h3 class="sub">唯有同行才能看见的事物</h3>
+    <p>一个人很难看见自己的盲点。当身边有同行的人时，我们能透过彼此的不足彼此学习，也能透过彼此的安慰得到恢复。</p>
+
+    <h3 class="sub">记住这是一群不完美之人的聚集</h3>
+    <p>群体不是一群已经完成的人的集合，而是一群不完美的人一同前行的聚集。您可能会因此感到失望。但请不要因为这份不完美，而放弃这场相遇本身。</p>
+  </div>
+</section>
+
+<!-- CH9 -->
+<section class="block" data-chapter="9" id="ch9">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">9</span>REACTIONS</div>
+    <h2 class="title">人们真实的反应</h2>
+    <p class="deck">读到这里，您的心中可能已经泛起了某种反应。无论那是什么，都不需要感到不好意思。</p>
+
+    <div class="reaction-grid">
+      <div class="reaction"><div class="t">"这个故事太美好了，让人难以相信"</div><p>听起来过于理想化，这是很自然的反应。但故事美好，并不代表它不真实。</p></div>
+      <div class="reaction"><div class="t">"我曾对教会感到失望"</div><p>这是非常正当的情绪。信仰的本质，与实践信仰之人的不足，是需要分开来看的。</p></div>
+      <div class="reaction"><div class="t">"我不是适合宗教的人"</div><p>这里所讲的，不是某种特定的宗教文化，而是与神这一位格的相遇。这不是性情的问题，而是关系的问题。</p></div>
+      <div class="reaction"><div class="t">"如果我相信了，好像必须放弃些什么"</div><p>实际经历过这场相遇的人，异口同声传达的却是相反的事 — 不是放弃，而是获得真正自由的告白。</p></div>
+      <div class="reaction"><div class="t">"现在似乎还不是时候"</div><p>看看圣经中相遇的故事就会发现，从来不存在完美的时刻。那场相遇，往往正是在最没有准备好的瞬间到来。</p></div>
+    </div>
+
+    <p style="margin-top:28px;">这些反应，没有一个是错误的感受。诚实地面对这些疑问，恰恰是这段旅程中最重要的下一步。</p>
+  </div>
+</section>
+
+<!-- CH10 -->
+<section class="block panel" data-chapter="10" id="ch10">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">10</span>DOES GOD EXIST</div>
+    <h2 class="title">我们如何能知道神的存在</h2>
+    <div class="illus" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <line x1="100" y1="35" x2="100" y2="150" stroke="var(--text-faint)" stroke-width="2"/>
+        <line x1="52" y1="68" x2="148" y2="68" stroke="var(--text-faint)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="52" y1="68" x2="38" y2="108" stroke="var(--violet)" stroke-width="1.5"/>
+        <line x1="52" y1="68" x2="70" y2="108" stroke="var(--violet)" stroke-width="1.5"/>
+        <path d="M34 108 Q52 130 74 108" stroke="var(--violet)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <line x1="148" y1="68" x2="130" y2="108" stroke="var(--accent)" stroke-width="1.5"/>
+        <line x1="148" y1="68" x2="162" y2="108" stroke="var(--accent)" stroke-width="1.5"/>
+        <path d="M126 108 Q148 130 166 108" stroke="var(--accent)" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M82 150 L100 168 L118 150 Z" fill="var(--text-faint)" opacity="0.35"/>
+        <circle cx="100" cy="35" r="5" fill="var(--text-faint)"/>
+      </svg>
+    </div>
+    <p class="deck">这是人类历史上最古老的问题之一。与其提前预设某一方的结论，不如先诚实地看看各个领域是如何看待这个问题的 — 支持的声音，也包括怀疑的声音。</p>
+
+    <h3 class="sub">哲学的进路 — 为何是"有"而不是"无"</h3>
+    <p><strong>支持的论证：</strong>我们所经历的一切都有开端，而凡有开端的事物必有原因。若宇宙也有开端，便可推出宇宙需要一个宇宙之外的原因，这被称为<span class="cite-tag vref" data-ref="什么是宇宙论论证？" data-txt="一种探讨为何存在某物而非空无一物的哲学论证。它将我们日常经验中'凡结果必有原因'的原则，延伸应用到整个宇宙的起源，得出宇宙需要一个宇宙之外的原因这一结论。">宇宙论论证</span>。</p>
+    <p><strong>怀疑的回应：</strong>对此，一些哲学家和科学家反驳说，时间与因果律本身只在宇宙内部才成立，因此追问"宇宙之前的原因"这个问题本身可能就不成立。他们也提出，宇宙也许是无原因地从<span class="cite-tag vref" data-ref="什么是量子涨落？" data-txt="量子力学中的一个概念，指即使在看似完全真空的空间里，微观世界中也会出现能量瞬间产生又消失的微小波动。一些科学家认为，整个宇宙也可能是从这种微观涨落中偶然产生的。但也有反驳指出，这种涨落的发生仍需要某种量子场或物理定律预先存在，因此很难说它是从'绝对的无'中产生的。">量子涨落</span>中产生的。这场争论至今仍在哲学家之间持续。</p>
+
+    <h3 class="sub">科学的进路 — 为何宇宙如此精密</h3>
+    <p><strong>支持的论证：</strong>引力、电磁力等宇宙的<span class="cite-tag vref" data-ref="什么是物理常数？" data-txt="像引力强度或光速这样，在整个宇宙中始终保持不变的数值。科学家指出，如果这些数值哪怕稍有不同，恒星、原子乃至生命本身都无法形成。">物理常数</span>，被精确调校在一个极其狭窄、恰好能让生命存在的范围内。有人将这种精密性视为智慧设计的证据。</p>
+    <p><strong>怀疑的回应：</strong>另一些科学家提出<span class="cite-tag vref" data-ref="什么是多重宇宙假说？" data-txt="一种假说，认为除了我们所在的宇宙之外，可能还存在无数个拥有不同物理定律和物理常数的宇宙。这一假说至今尚未被直接观测或实验证实，仍只是一种理论上的可能性。">多重宇宙假说</span> — 存在无数个物理常数各不相同的宇宙，我们只是恰好生活在生命得以存在的那一个。不过，这一假说目前还没有被观测或实验直接验证。</p>
+
+    <h3 class="sub">道德的进路 — 是非对错从何而来</h3>
+    <p><strong>支持的论证：</strong>残忍与背叛，在跨文化的范围内都被普遍视为错误。有人认为，这种普遍的道德感本身，正指向一个无法仅靠物理定律解释的超越性根源。</p>
+    <p><strong>怀疑的回应：</strong><span class="cite-tag vref" data-ref="什么是进化生物学？" data-txt="研究生物如何通过自然选择在漫长时间中演变的学科。这里指的是这样一种观点：人类的道德情感与合作本能，之所以自然发展出来，是因为它们有利于生存与繁衍。">进化生物学</span>解释说，合作与利他行为之所以通过自然选择发展成为本能，是因为它们提高了群体的生存概率。道德并非神的命令，而是进化的产物。</p>
+
+    <h3 class="sub">心理学的进路 — 信仰是投射，还是发现</h3>
+    <p><strong>怀疑的论证：</strong>弗洛伊德将对神的信仰解释为一种心理上的愿望满足 — 把父亲的形象投射到天空之上。他认为，人类因渴望安全感而创造出了神。</p>
+    <p><strong>支持的回应：</strong>与此相对，C.S.路易斯从另一个方向解读这种渴望。正如饥饿感的存在，是因为食物确实存在，人类内心普遍存在的对超越的渴望，或许也正是因为存在一个能够满足这种渴望的真实对象。这个渴望本身究竟是投射还是发现，单凭这个论证无法得出最终结论。</p>
+
+    <h3 class="sub">历史的进路 — 复活是否真实发生过</h3>
+    <p><strong>支持的论证：</strong>空坟墓、多位目击者一致的见证、门徒此后不惜性命传扬这一事件的事实，以及初代教会在整个罗马帝国境内爆炸性的扩展，都被视为支持复活事件历史真实性的间接证据。</p>
+    <p><strong>怀疑的回应：</strong>一些学者提出，门徒可能出现集体幻觉、遗体可能被盗，或者传说可能经历了逐渐的加工润色。但这些替代性解释各自也都存在难以说明的地方，历史学家之间的争论至今仍在继续。</p>
+
+    <h3 class="sub">那么圣经的权威从何而来</h3>
+    <p>如果以上所有的进路都指向神的存在，那么基督徒为何特别赋予圣经这本书如此压倒性的权威呢？传统上有几个理由被提出。</p>
+    <p><strong>自我见证：</strong>圣经宣称自己是受神的默示所写成的。<span class="cite-tag vref" data-ref="提摩太后书 3:16" data-txt="圣经都是神所默示的，于教训、督责、使人归正、教导人学义都是有益的。">提摩太后书 3:16</span> <span class="cite-tag vref" data-ref="彼得后书 1:21" data-txt="因为预言从来没有出于人意的，乃是人被圣灵感动，说出神的话来。">彼得后书 1:21</span> 当然，也有人指出，一本书宣称自己有权威，并不能立刻证明这份权威是真实的。</p>
+    <p><strong>历史可靠性与统一性：</strong>新约的抄本，在古代文献中拥有数量与时间接近度上无与伦比的证据。此外，大约四十位作者跨越一千五百年，用不同的语言、在不同的大陆写作，却依然共同讲述着创造、堕落、救赎与复兴这一个连贯的故事，这一点也被视为令人惊叹之处。</p>
+    <p><strong>改变生命的力量：</strong>无数因阅读这本书而人生彻底改变的见证 — 如第三章提到的奥古斯丁与C.S.路易斯 — 也被作为经验性的证据提出。</p>
+    <p>不过，坦白地说，伊斯兰教对古兰经，印度教传统对吠陀经，也都提出过类似结构的主张。因此，这些理由对已经身处那个传统之中的人来说是有说服力的，但从传统之外来看，仍需要另外的论证来说明"为什么是这本书，而不是其他经典"。在这一点上，基督徒所持守的最终依据，与其说是文本本身的卓越，不如说是前面提到的<strong>基督复活这一历史事件</strong>。圣经的权威，归根结底取决于它所见证的那件事是否真实。</p>
+
+    <h3 class="sub">那么圣经又是怎么说的呢</h3>
+    <p>有趣的是，圣经说神的存在从一开始就并非隐藏的。<span class="cite-tag vref" data-ref="罗马书 1:20" data-txt="自从造天地以来，神的永能和神性是明明可知的，虽是眼不能见，但藉着所造之物就可以晓得，叫人无可推诿。">罗马书 1:20</span> 神永恒的大能与神性，早已透过被造的世界本身清楚显明。诗篇的作者也这样唱道：<span class="cite-tag vref" data-ref="诗篇 19:1" data-txt="诸天述说神的荣耀，穹苍传扬他的手段。">诗篇 19:1</span> "诸天述说神的荣耀。"</p>
+    <p>不过，这里有一点很重要，需要指出。以上所有的论证，无论多么精密，最多只能把人带到"神很可能存在"这个结论，却无法把人带到第三章所讨论的那个<strong>人格性地"认识"神</strong>的地方。证据只能把人引到门前，而打开那扇门的，不是论证，而是相遇。因此，这整段智性旅程的下一步，依然向着与神相遇敞开着。</p>
+  </div>
+</section>
+
+<!-- CH11 -->
+<section class="block panel" data-chapter="11" id="ch11">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">11</span>REASON</div>
+    <h2 class="title">从逻辑上靠近</h2>
+    <p class="deck">除了情感之外，对于需要理性上先说服自己、内心才能被触动的朋友，我们再深入一点。请逐一点开下面十二个问题。</p>
+
+    <div class="faq-list">
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">1</span><span>神的存在在逻辑上说得通吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>宇宙是有开端的。凡有开端的事物都必须有原因，这是我们理解世界最基本的方式。</p>
+          <p>构成宇宙的<span class="cite-tag vref" data-ref="什么是物理常数？" data-txt="像引力强度或光速这样，在整个宇宙中始终保持不变的数值。科学家指出，如果这些数值哪怕稍有不同，恒星、原子乃至生命本身都无法形成。">物理常数</span>，被极其精密地调校到足以让生命存在的程度。用偶然来解释，还是用智慧设计来解释，<strong>哪一种更简单、更自然</strong>，这一点值得思考。</p>
+          <p>人类拥有对是非对错的普遍感知。这种道德实在感本身，或许正指向某种仅靠物理定律无法解释的东西。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">2</span><span>如果有一位良善的神，世上为何会有苦难？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>这是最沉重也最正当的问题。神不是那种远远地解释苦难的存在，而是在十字架上亲自进入苦难之中的那一位。</p>
+          <p>爱以自由为前提。神赐给人类选择的自由，世上许多苦难，正是这份自由被滥用的结果。</p>
+          <p>圣经说苦难并非终点。相信如今无法解释的苦难，有朝一日也能通向恢复与意义，这份盼望正是信仰的核心。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">3</span><span>我该如何相信圣经？这不就是古老的故事吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>在古代文献中，新约在抄本数量与成书时间的接近度上，拥有压倒性丰富的资料。</p>
+          <p>福音书的作者们并没有美化自己。最先目击复活的人，是当时在社会上没有作证资格的女性，这一事实成为<strong>这份记录并不掩盖不利事实、是诚实记载</strong>的有力依据。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">4</span><span>这和其他宗教有什么不同？归根结底不都是殊途同归吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>许多宗教的结构，都是由人努力接近神所构成的。而基督教恰恰相反，是<strong>神向人降临的故事</strong>。</p>
+          <p>不是因为够资格才被爱，而是因为已经被爱，所以即使不够资格也被接纳 — 正是这一顺序上的差异，从根本上区分了基督教。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">5</span><span>上教会的人反而更虚伪，不是吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>这种经历确实可能发生。因为教会不是一群已经完美的人的聚集，而依然是一群不完美之人的聚集。</p>
+          <p>信仰的标准不是信徒的完美程度，而是耶稣基督。就像一位医生态度不好，也不代表医学本身是假的。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">6</span><span>科学不是已经反证了信仰吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>科学是解释"如何"的工具，信仰则是探讨"为何"的问题。两者本质上并不冲突。</p>
+          <p>历史上许多杰出的科学家都是有信仰的人，而且往往越是精密地发现宇宙的秩序，反而越容易通向信仰。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">7</span><span>像神迹这样的事，要怎么相信？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>如果一开始就预设神迹是不可能的，那么无论看到什么证据都不会相信。但如果宇宙之外确实存在一位创造宇宙的存在，那么这位存在以特殊方式介入宇宙秩序，反而是十分自然的事。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">8</span><span>如果神存在，为何祂沉默不语？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>如果神以压倒性的方式证明自己，那就不是爱，而是强迫了。爱总是留有被拒绝的余地。</p>
+          <p>圣经说，神已经透过自然的秩序、人的良心，尤其是透过耶稣基督，将自己显明出来了。看似沉默的感觉，也许只是我们看向了别的方向。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">9</span><span>信仰归根结底不就是一种心理安慰吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>信仰带来安慰，这个事实并不能证明信仰是假的。一个信念是否带来安慰，与这个信念是否为真，是两个不同的问题。</p>
+          <p>圣经所描绘的信仰，并不仅仅是安逸的安慰，还要求悔改与舍己。如果目的只是单纯的安慰，就不会包含这些如此不舒适的要求。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">10</span><span>宣称耶稣是唯一的道路，不觉得很傲慢吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>任何一个真理主张，如果它是真的，那么与之相矛盾的主张就不可能同时为真。这是一切真理主张共有的逻辑性质。</p>
+          <p>这个主张的核心不是优越感，而是恩典。与其说是"我比你更好"，不如说更接近于"我靠自己找不到答案，于是抓住了那位主动靠近我的人"这样的告白。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">11</span><span>死后真的有审判和地狱吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>如果世上的不义就这样毫无了结地消失，那反而是一个更不公正的宇宙。审判，从根本上说，与正义终将实现的盼望紧密相连。</p>
+          <p>与此同时，神并不是一位渴望审判的神，而是一位盼望所有人归回的神。那扇门至今仍然敞开着。</p>
+        </div></div></div>
+
+      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)"><span class="idx">12</span><span>如果没有完全的确信，就不能相信吗？</span><span class="chev">▾</span></button>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p>并非如此。多马、施洗约翰、哈巴谷，都是在没有完全确信的情况下，一边提问一边前行的。信仰是即便怀抱不确定，也已定好方向、迈出的第一步。</p>
+        </div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CH12 -->
+<section class="block" data-chapter="12" id="ch12">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">12</span>AFTERWARD</div>
+    <h2 class="title">与神相遇之后，会有什么改变</h2>
+    <p class="deck">这一切听起来可能都比较抽象，所以让我们更具体地谈谈日常生活中究竟会发生什么改变。</p>
+
+    <div class="life-grid">
+      <div class="life-row"><div class="when">在早晨</div><p>起床的理由不再是今天要完成的待办清单，而是"今天也有一位爱我的神"这个事实。</p></div>
+      <div class="life-row"><div class="when">工作时</div><p>从"工作成果等于自身价值"的压力中解脱出来，从而有余裕诚实地承担被交托的工作。</p></div>
+      <div class="life-row"><div class="when">面对金钱时</div><p>明白拥有并非安全感的来源，于是紧握的心变成了愿意分享的余裕。</p></div>
+      <div class="life-row"><div class="when">失败时</div><p>一个失误不会让整个存在崩塌。失败不再是身份认同，而只是一件会过去的事。</p></div>
+      <div class="life-row"><div class="when">在关系中</div><p>从努力争取被爱的位置，转向因为已经被爱，所以能够如实去爱人的位置。</p></div>
+      <div class="life-row"><div class="when">发生冲突时</div><p>与其争论谁对谁错，想要修复关系的心会率先动起来。</p></div>
+      <div class="life-row"><div class="when">面对丧失时</div><p>悲伤不会消失，但你不再独自承受它。盼望这个词，会与悲伤并肩而立。</p></div>
+      <div class="life-row"><div class="when">面对死亡时</div><p>那种"这不是终点，而是延续"的确信，不会让人生活得更随意，反而活得更加认真。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CH13 -->
+<section class="block panel" data-chapter="13" id="ch13">
+  <div class="wrap reveal">
+    <div class="chip"><span class="n">13</span>NEXT STEP</div>
+    <h2 class="title">如果您想了解更多</h2>
+    <p class="deck">如果您读到这里，心中或许已经开始萌生对下一步的好奇。不需要什么盛大的开始。</p>
+
+    <div class="step-grid">
+      <div class="step"><div class="n">1</div><div><div class="t">从头到尾读一遍约翰福音</div><p>在新约四福音书中，约翰福音是以最具人格性的方式介绍耶稣是谁的一卷书。</p></div></div>
+      <div class="step"><div class="n">2</div><div><div class="t">试着做一段简短、不加修饰的祷告</div><p>不需要完美的语言或形式。将今天真实的感受如实说出来就足够了。</p></div></div>
+      <div class="step"><div class="n">3</div><div><div class="t">和一位信徒轻松地聊聊</div><p>与其独自寻找答案，不如与已经走在信仰道路上的人分享自己的疑问，这会带来很大的帮助。</p></div></div>
+      <div class="step"><div class="n">4</div><div><div class="t">找机会去附近的敬拜群体看看</div><p>不必有任何压力，只是作为旁观者坐着也没关系。那本身就可以是一个开始。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Invitation -->
+<section class="invite" data-chapter="14" id="ch14">
+  <div class="wrap reveal">
+    <div class="chip" style="margin:0 auto 26px;"><span class="n">14</span>INVITATION</div>
+    <div class="illus large" aria-hidden="true">
+      <svg viewBox="0 0 200 200" fill="none">
+        <circle cx="100" cy="100" r="70" fill="var(--accent)" opacity="0.06"/>
+        <path d="M60 175 L60 55 Q60 25 100 25 Q140 25 140 55 L140 175" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <line x1="60" y1="175" x2="140" y2="175" stroke="var(--accent)" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="126" cy="118" r="3.5" fill="var(--accent)"/>
+        <path d="M100 175 L100 60" stroke="var(--violet)" stroke-width="1.5" stroke-dasharray="3 5" opacity="0.6"/>
+        <circle cx="100" cy="90" r="8" fill="var(--violet-soft)" opacity="0.9"/>
+      </svg>
+    </div>
+    <h2 class="title">现在，是时候开始你的相遇了</h2>
+    <p>我希望这篇文字不会只停留在知识层面。至此为止所讲的一切故事，目的只有一个 — 让您亲自经历那场相遇。</p>
+    <p>不需要盛大的准备，也不需要完全的理解。摩西、撒玛利亚妇人、撒该、保罗、奥古斯丁、C.S.路易斯，都是毫无准备地迎来了那场相遇。此刻，在这里，您也可以安静地把接下来的话，用自己的语言说出来。</p>
+    <div class="prayer-box">
+      <div class="tag2">迈出一步，一段安静的祷告</div>
+      <p>神啊，我还不太明白，<br>
+      但我邀请你来到我人生的问题面前。<br>
+      我放下至今为止靠自己寻找答案的努力，<br>
+      我祈求与你相遇。<br>
+      求你来到我这里，让我认识真正的喜乐与自由，<br>
+      以及丰盛的秘诀。</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="brand">恩惠教会</div>
+  <p>大韩基督教韩国浸信会 · 主任牧师 朴东俊<br>欢迎您将这篇文字自由分享给任何愿意阅读的人。</p>
+</footer>
+
+<div class="vpop-overlay" id="vpopOverlay">
+  <div class="vpop">
+    <button class="close" id="vpopClose" aria-label="关闭">×</button>
+    <div class="ref" id="vpopRef"></div>
+    <div class="txt" id="vpopTxt"></div>
+  </div>
+</div>
+
+<script>
+  function toggleFaq(btn){
+    const item = btn.closest('.faq-item');
+    const answer = item.querySelector('.faq-a');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el=>{
+      if(el !== item){ el.classList.remove('open'); el.querySelector('.faq-a').style.maxHeight = null; }
+    });
+    if(isOpen){ item.classList.remove('open'); answer.style.maxHeight = null; }
+    else{ item.classList.add('open'); answer.style.maxHeight = answer.scrollHeight + 'px'; }
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); } });
+  }, { threshold:0.1 });
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  const fontSteps = [
+    { pct:87.5,  label:'小' },
+    { pct:100,   label:'正常' },
+    { pct:112.5, label:'大' },
+    { pct:125,   label:'特大' }
+  ];
+  let fontIdx = 1;
+  const fontLabel = document.getElementById('fontLabel');
+  function applyFontSize(){
+    document.documentElement.style.fontSize = fontSteps[fontIdx].pct + '%';
+    fontLabel.textContent = fontSteps[fontIdx].label;
+  }
+  document.getElementById('fontInc').addEventListener('click', ()=>{
+    fontIdx = Math.min(fontIdx + 1, fontSteps.length - 1);
+    applyFontSize();
+  });
+  document.getElementById('fontDec').addEventListener('click', ()=>{
+    fontIdx = Math.max(fontIdx - 1, 0);
+    applyFontSize();
+  });
+
+  window.addEventListener('scroll', ()=>{
+    const h = document.documentElement;
+    const pct = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+    document.getElementById('progressFill').style.width = pct + '%';
+  });
+
+  const sections = Array.from(document.querySelectorAll('[data-chapter]'));
+  const nav = document.getElementById('sideNav');
+  sections.forEach(sec=>{
+    const btn = document.createElement('button');
+    btn.dataset.target = sec.id || 'top';
+    btn.addEventListener('click', ()=> sec.scrollIntoView({behavior:'smooth'}));
+    nav.appendChild(btn);
+  });
+  const navBtns = Array.from(nav.querySelectorAll('button'));
+  const navIo = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){
+        navBtns.forEach(b=>b.classList.remove('active'));
+        const idx = sections.indexOf(e.target);
+        if(navBtns[idx]) navBtns[idx].classList.add('active');
+      }
+    });
+  }, { threshold:0.5 });
+  sections.forEach(s=>navIo.observe(s));
+
+  const vpopOverlay = document.getElementById('vpopOverlay');
+  const vpopRef = document.getElementById('vpopRef');
+  const vpopTxt = document.getElementById('vpopTxt');
+  function openVerse(ref, txt){
+    vpopRef.textContent = ref;
+    vpopTxt.textContent = txt;
+    vpopOverlay.classList.add('show');
+  }
+  document.querySelectorAll('.vref').forEach(el=>{
+    el.addEventListener('click', (e)=>{
+      e.stopPropagation();
+      openVerse(el.dataset.ref || '', el.dataset.txt || '');
+    });
+  });
+  document.getElementById('vpopClose').addEventListener('click', ()=> vpopOverlay.classList.remove('show'));
+  vpopOverlay.addEventListener('click', (e)=>{ if(e.target === vpopOverlay) vpopOverlay.classList.remove('show'); });
+</script>
+
+</body>
+</html>

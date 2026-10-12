@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>좋은 하브루타 체크 리스트</title>
+<meta name="description" content="준비·질문·대화·마무리 4단계로 하브루타 모임을 스스로 점검합니다 · 기독교한국침례회 은혜교회">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="은혜교회 — 말씀 코이노니아">
+<meta property="og:title" content="좋은 하브루타 체크 리스트">
+<meta property="og:description" content="준비·질문·대화·마무리 4단계로 하브루타 모임을 스스로 점검합니다 · 기독교한국침례회 은혜교회">
+<meta property="og:image" content="https://sejonggrace.com/assets/og-habruta-v3.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://sejonggrace.com/content/bible-study/%EC%A2%8B%EC%9D%80%20%ED%95%98%EB%B8%8C%EB%A3%A8%ED%83%80%20%EC%B2%B4%ED%81%AC%20%EB%A6%AC%EC%8A%A4%ED%8A%B8.html">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="좋은 하브루타 체크 리스트">
+<meta name="twitter:description" content="준비·질문·대화·마무리 4단계로 하브루타 모임을 스스로 점검합니다 · 기독교한국침례회 은혜교회">
+<meta name="twitter:image" content="https://sejonggrace.com/assets/og-habruta-v3.jpg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700;900&family=Noto+Sans+KR:wght@400;500;700&display=swap">
+<style>
+/* Layout: 한 줄 세로 흐름 — 머리말 → 진행 막대(상단 고정) → 단계별 점검 → 결과 */
+:root{
+  --bg:#f7f6f2; --card:#ffffff; --fg:#1d2433; --muted:#636b7a; --line:#e3e1d9;
+  --navy:#1f3354; --gold:#b08a3e; --gold-soft:#f3ead6; --ok:#2f7a55; --warn:#a8642a;
+  --serif:"Noto Serif KR","Nanum Myeongjo",serif;
+  --sans:"Noto Sans KR","Apple SD Gothic Neo","Malgun Gothic",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#12161f; --card:#1a2030; --fg:#e8e6df; --muted:#9aa1ae; --line:#2b3346;
+  --navy:#a9bde0; --gold:#d6b26a; --gold-soft:#2c2718; --ok:#6cc596; --warn:#e0a46a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#12161f; --card:#1a2030; --fg:#e8e6df; --muted:#9aa1ae; --line:#2b3346;
+  --navy:#a9bde0; --gold:#d6b26a; --gold-soft:#2c2718; --ok:#6cc596; --warn:#e0a46a; color-scheme:dark}
+
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:15.5px;line-height:1.7;margin:0}
+.wrap{max-width:720px;margin:0 auto;padding-inline:18px;padding-block:40px 64px}
+header .eyebrow{font-size:12.5px;letter-spacing:.14em;color:var(--gold);font-weight:700}
+h1{font-family:var(--serif);font-weight:900;font-size:clamp(28px,6vw,38px);line-height:1.25;margin:.3em 0 .4em;color:var(--navy);text-wrap:balance}
+.lead{color:var(--muted);margin:0;max-width:60ch}
+.verse{margin:22px 0 0;padding:14px 18px;border-left:3px solid var(--gold);background:var(--gold-soft);border-radius:0 8px 8px 0;font-family:var(--serif);font-size:15px}
+.verse small{display:block;color:var(--muted);font-family:var(--sans);font-size:12.5px;margin-top:4px}
+
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;margin-top:28px;border-bottom:1px solid var(--line)}
+.bar-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:13.5px}
+.bar-row b{font-variant-numeric:tabular-nums;color:var(--navy)}
+.track{height:6px;background:var(--line);border-radius:6px;margin-top:8px;overflow:hidden}
+.fill{height:100%;width:0;background:var(--gold);transition:width .35s ease}
+
+section{margin-top:40px}
+.sec-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.step{font-family:var(--serif);font-weight:900;color:var(--gold);font-size:15px}
+h2{font-family:var(--serif);font-size:22px;margin:0;color:var(--navy)}
+.sec-count{margin-left:auto;font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.sec-desc{color:var(--muted);margin:6px 0 14px;font-size:14.5px}
+
+ul.items{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.item label{display:flex;gap:14px;align-items:flex-start;padding:14px 16px;background:var(--card);border:1px solid var(--line);border-radius:10px;cursor:pointer;transition:border-color .2s,background .2s}
+.item label:hover{border-color:var(--gold)}
+.item input{position:absolute;opacity:0;pointer-events:none}
+.box{flex:none;width:22px;height:22px;border:2px solid var(--muted);border-radius:6px;margin-top:2px;display:grid;place-items:center;transition:all .2s}
+.box svg{width:13px;height:13px;opacity:0;transition:opacity .15s}
+.item input:checked + label{border-color:var(--gold);background:var(--gold-soft)}
+.item input:checked + label .box{background:var(--gold);border-color:var(--gold)}
+.item input:checked + label .box svg{opacity:1}
+.item input:focus-visible + label{outline:2px solid var(--navy);outline-offset:2px}
+.txt{min-width:0}
+.txt strong{display:block;font-weight:700;font-size:15.5px}
+.txt span{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+
+.warn-box{margin-top:44px;padding:20px 20px 16px;border:1px dashed var(--warn);border-radius:12px}
+.warn-box h3{margin:0 0 8px;font-family:var(--serif);font-size:18px;color:var(--warn)}
+.warn-box ul{margin:0;padding-left:1.2em;color:var(--fg);font-size:14.5px}
+.warn-box li{margin:4px 0}
+
+.result{margin-top:44px;padding:26px 22px;background:var(--card);border:1px solid var(--line);border-radius:14px;text-align:center}
+.score{font-family:var(--serif);font-weight:900;font-size:44px;color:var(--navy);font-variant-numeric:tabular-nums;line-height:1.1}
+.score small{font-size:18px;color:var(--muted);font-weight:700}
+.verdict{font-family:var(--serif);font-size:19px;font-weight:700;margin:10px 0 4px}
+.verdict-sub{color:var(--muted);font-size:14.5px;margin:0 auto;max-width:48ch}
+.missed{text-align:left;margin:18px auto 0;max-width:520px;font-size:14px}
+.missed p{margin:0 0 6px;font-weight:700;color:var(--warn)}
+.missed ul{margin:0;padding-left:1.2em;color:var(--fg)}
+button.reset{margin-top:20px;font:inherit;font-size:14px;padding:9px 20px;border-radius:999px;border:1px solid var(--line);background:transparent;color:var(--muted);cursor:pointer}
+button.reset:hover{border-color:var(--gold);color:var(--fg)}
+button.reset:focus-visible{outline:2px solid var(--navy);outline-offset:2px}
+
+footer{margin-top:48px;text-align:center;font-size:12.5px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="eyebrow">HAVRUTA · CHECKLIST</div>
+    <h1>좋은 하브루타 체크 리스트</h1>
+    <p class="lead">우리는 하브루타를 제대로 했을까요? 모임을 마친 뒤 짝과 함께, 또는 인도자가 혼자 하나씩 눌러 보세요. 점수를 매기려는 게 아니라 다음 모임을 더 깊게 하기 위한 점검입니다.</p>
+    <div class="verse">"철이 철을 날카롭게 하는 것 같이 사람이 그의 친구의 얼굴을 빛나게 하느니라"<small>잠언 27:17</small></div>
+  </header>
+
+  <div class="bar" aria-live="polite">
+    <div class="bar-row"><span>점검 진행</span><b id="barText">0 / 0</b></div>
+    <div class="track"><div class="fill" id="barFill"></div></div>
+  </div>
+
+  <main id="sections"></main>
+
+  <div class="warn-box">
+    <h3>이런 모습이 보였다면 다시 점검해 보세요</h3>
+    <ul>
+      <li>돌아가며 읽고 "느낀 점" 한마디씩 하고 끝났다</li>
+      <li>한 사람이 대부분 말하고, 짝은 듣기만 했다</li>
+      <li>누가 맞는지 이기려는 토론이 되었다</li>
+      <li>본문을 떠나 각자 경험담만 이어졌다</li>
+      <li>인도자가 처음부터 정답을 알려주었다</li>
+    </ul>
+  </div>
+
+  <div class="result" id="result">
+    <div class="score"><span id="pct">0</span><small>%</small></div>
+    <div class="verdict" id="verdict">점검을 시작해 보세요</div>
+    <p class="verdict-sub" id="verdictSub">항목을 누르면 결과가 바로 바뀝니다.</p>
+    <div class="missed" id="missed" hidden></div>
+    <button class="reset" id="reset" type="button">처음부터 다시 점검하기</button>
+  </div>
+
+  <footer>기독교한국침례회 은혜교회 · 성경공부</footer>
+</div>
+
+<script>
+const DATA = [
+  { step:"준비", title:"모임 전에", desc:"좋은 하브루타는 시작 전에 절반이 결정됩니다.", items:[
+    ["본문을 짧게 잡았다","3~5절, 또는 한 장면 정도로 충분합니다."],
+    ["두 사람씩 짝을 지었다","셋 이상이면 한 사람은 듣기만 하게 됩니다."],
+    ["짝 토론 시간을 30분 이상 확보했다","전체 모임은 약 60분이면 알맞습니다."],
+    ["규칙을 먼저 안내했다","질문하기, 끝까지 듣기, 본문으로 돌아가기."]
+  ]},
+  { step:"질문", title:"질문으로 열었나요", desc:"하브루타는 대답보다 질문에서 시작합니다.", items:[
+    ["각자 본문에서 질문을 먼저 찾았다","답보다 질문을 먼저 꺼냈습니다."],
+    ["'왜'와 '어떻게'를 물었다","무엇을 했나보다 왜 그랬을까를 물었습니다."],
+    ["단어와 접속사 하나에 머물러 보았다","'그러므로', '그러나' 같은 작은 말에서 질문이 깊어집니다."],
+    ["질문에 질문으로 되물어 보았다","\"그렇게 생각한 근거는 뭐예요?\""]
+  ]},
+  { step:"대화", title:"짝과 함께 씨름했나요", desc:"짝은 경쟁자가 아니라 나를 가르쳐 주는 동역자입니다.", items:[
+    ["두 사람이 비슷하게 말했다","한쪽이 대화를 독점하지 않았습니다."],
+    ["짝의 말을 요약해서 되돌려 주었다","\"그러니까 ○○라는 말씀이죠?\""],
+    ["다른 의견도 존중하며 들었다","의견이 갈리는 것은 실패가 아닙니다."],
+    ["주장의 근거를 본문에서 찾았다","경험담보다 말씀으로 돌아갔습니다."],
+    ["서둘러 결론을 내리지 않았다","답을 덮지 않고 함께 기다렸습니다."]
+  ]},
+  { step:"마무리", title:"잘 마쳤나요", desc:"정답으로 닫지 않고, 배움을 붙잡고 질문을 열어둔 채 마칩니다.", items:[
+    ["오늘 배운 것을 한 문장으로 나눴다","\"오늘 내가 새롭게 본 것은 ○○입니다.\""],
+    ["아직 남은 질문을 기록했다","다음 모임의 출발점이 됩니다."],
+    ["인도자가 말씀의 중심으로 모아 주었다","누가 맞았는지가 아니라 그리스도께로 모았습니다."],
+    ["이번 주 실천할 한 가지를 정했다","짝이 다음 모임에 물어봐 주기로 했습니다."],
+    ["짝을 위해 축복하며 기도했다","\"○○님 덕분에 오늘 더 깊이 배웠습니다.\""]
+  ]}
+];
+
+const KEY = "habruta-checklist-v1";
+let saved = {};
+try { saved = JSON.parse(localStorage.getItem(KEY) || "{}"); } catch(e) { saved = {}; }
+
+const check = '<svg viewBox="0 0 16 16" fill="none"><path d="M3 8.5l3.2 3L13 4.5" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>';
+const root = document.getElementById("sections");
+let total = 0;
+
+DATA.forEach((sec, si) => {
+  const s = document.createElement("section");
+  s.innerHTML = `<div class="sec-head"><span class="step">${si+1}단계</span><h2>${sec.title}</h2><span class="sec-count" id="c${si}"></span></div><p class="sec-desc">${sec.desc}</p>`;
+  const ul = document.createElement("ul"); ul.className = "items";
+  sec.items.forEach((it, ii) => {
+    const id = `q${si}-${ii}`; total++;
+    const li = document.createElement("li"); li.className = "item";
+    li.innerHTML = `<input type="checkbox" id="${id}" data-sec="${si}"${saved[id] ? " checked" : ""}><label for="${id}"><span class="box">${check}</span><span class="txt"><strong>${it[0]}</strong><span>${it[1]}</span></span></label>`;
+    ul.appendChild(li);
+  });
+  s.appendChild(ul); root.appendChild(s);
+});
+
+function update(){
+  const boxes = [...document.querySelectorAll('.item input')];
+  const done = boxes.filter(b => b.checked).length;
+  const state = {}; boxes.forEach(b => { if (b.checked) state[b.id] = 1; });
+  try { localStorage.setItem(KEY, JSON.stringify(state)); } catch(e) {}
+
+  document.getElementById("barText").textContent = `${done} / ${total}`;
+  const pct = Math.round(done / total * 100);
+  document.getElementById("barFill").style.width = pct + "%";
+  document.getElementById("pct").textContent = pct;
+
+  DATA.forEach((sec, si) => {
+    const n = boxes.filter(b => b.dataset.sec == si && b.checked).length;
+    document.getElementById("c" + si).textContent = `${n} / ${sec.items.length}`;
+  });
+
+  let v, sub;
+  if (done === 0) { v = "점검을 시작해 보세요"; sub = "항목을 누르면 결과가 바로 바뀝니다."; }
+  else if (pct >= 90) { v = "말씀 앞에서 함께 씨름한 하브루타였습니다"; sub = "이 흐름을 그대로 이어가 보세요. 남겨 둔 질문이 다음 모임을 더 풍성하게 할 거예요."; }
+  else if (pct >= 70) { v = "좋은 하브루타였습니다"; sub = "아래 놓친 항목 한두 가지만 다음 모임에서 더 신경 써 보세요."; }
+  else if (pct >= 40) { v = "하브루타의 모양은 갖추었습니다"; sub = "질문과 대화 단계를 조금 더 천천히 가져가 보세요. 본문을 더 짧게 잡는 것도 도움이 됩니다."; }
+  else { v = "처음은 누구나 어색합니다"; sub = "다음엔 본문을 3절 이내로 줄이고, 질문 찾기부터 천천히 시작해 보세요."; }
+  document.getElementById("verdict").textContent = v;
+  document.getElementById("verdictSub").textContent = sub;
+
+  const missed = document.getElementById("missed");
+  const miss = boxes.filter(b => !b.checked).map(b => b.nextElementSibling.querySelector("strong").textContent);
+  if (done > 0 && miss.length && miss.length <= 6) {
+    missed.innerHTML = "<p>다음 모임에서 챙길 것</p><ul>" + miss.map(m => `<li>${m}</li>`).join("") + "</ul>";
+    missed.hidden = false;
+  } else missed.hidden = true;
+}
+
+root.addEventListener("change", update);
+document.getElementById("reset").addEventListener("click", () => {
+  document.querySelectorAll('.item input').forEach(b => b.checked = false);
+  update(); window.scrollTo({top:0, behavior:"smooth"});
+});
+update();
+</script>
+
+</body>
+</html>

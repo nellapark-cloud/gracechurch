@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>베드로전서, 바벨론에서 보낸 편지 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="세 번 넘어졌던 어부 베드로가 흩어진 나그네들에게 보낸 산 소망의 편지에 숨은 이야기">
+<meta property="og:title" content="베드로전서, 바벨론에서 보낸 편지">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 26</div>
+  <h1>베드로전서,<br><em>바벨론</em>에서<br>보낸 편지</h1>
+  <p class="sub">세 번 넘어졌던 어부가<br>흩어진 나그네들에게 건넨 “산 소망”</p>
+  <div class="ref">베드로전서 1–5장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>베드로전서를 쓴 사람은 갈릴리 어부 시몬이에요. 예수님이 “반석”이라는 이름을 붙여 주셨지만, 복음서 속 베드로는 반석보다 물결 쪽에 더 가까웠어요. 😄 물 위를 걷다 빠지고, 십자가를 말씀하시는 주님을 말리다 꾸중을 듣고, 겟세마네에서 졸고, 대제사장 집 뜰에서 세 번이나 주님을 모른다고 했어요. 그런 베드로가 인생의 끝자락에 이 편지를 써요.</p><p>그래서 베드로전서는 읽을수록 재밌어요. 편지 곳곳에 복음서의 베드로가 숨어 있거든요. 주님을 말리던 사람이 고난받는 종을 노래하고, 잠들었던 사람이 “깨어라” 하고, 발 씻기를 거절하던 사람이 “허리를 동이라” 해요. 넘어졌던 사람을 일으켜 세우신 주님의 은혜가 한 줄 한 줄에 배어 있는 편지 속으로 들어가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>베드로전서는 어떤 책일까?</h2>
+    <p>고난 속 나그네들에게 보낸 “산 소망” 편지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>베드로는 예루살렘 교회의 첫 지도자였고, 나중에는 아내와 함께 여러 지역을 다니며 복음을 전했어요(고전 9:5). 이 편지는 “본도, 갈라디아, 갑바도기아, 아시아와 비두니아에 흩어진 나그네”(1:1), 곧 오늘날 튀르키예 북부와 중부의 넓은 지역에 사는 성도들에게 보낸 거예요. “전에 알지 못할 때에 따르던 너희 사욕”(1:14)이라는 말처럼 이방인 출신 성도가 많았어요. 이들은 믿음 때문에 이웃에게 비방을 받으며 어려움을 겪고 있었어요(2:12; 4:4, 12). 편지를 쓴 곳은 “바벨론”(5:13), 시기는 베드로가 순교하기 전인 60년대 중반 무렵으로 봐요.</p>
+    <div class="debate sans"><div><b>이름의 뜻</b>예수님은 시몬을 처음 만나신 날 “게바”라는 이름을 주셨어요(요 1:42). 아람어 게바, 헬라어 페트로스, 둘 다 “돌, 반석”이라는 뜻이에요. 흔들리던 사람에게 먼저 “반석”이라는 이름을 주신 거예요.</div><div><b>실루아노의 손</b>“내가 신실한 형제로 아는 실루아노로 말미암아 너희에게 간단히 써서”(5:12). 실루아노는 바울과 함께 다닌 실라와 같은 사람으로 봐요(행 15:40; 살전 1:1). 공회가 “학문 없는 범인”(행 4:13)이라 했던 어부의 편지가 매끄러운 헬라어로 쓰인 데는 그의 도움이 있었을 거예요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ “실루아노로 말미암아”가 받아 적은 사람을 뜻하는지, 편지를 전달한 사람을 뜻하는지는 견해가 나뉘어요. 초대교회는 일찍부터 이 편지를 베드로의 편지로 받아들였고, 오늘날 일부 학자들은 다른 견해를 내기도 해요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">베드로전서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">고난의 편지</div><div class="mini-b">“고난을 받다”라는 동사가 열두 번 나와요. 신약에서 이 동사가 가장 많이 나오는 책이에요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">나그네의 정체성</div><div class="mini-b">성도를 “흩어진 나그네”(1:1), “거류민과 나그네”(2:11)라고 불러요. 이 땅은 잠시 머무는 곳이에요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">구약이 가득</div><div class="mini-b">이사야, 시편, 출애굽기, 호세아, 잠언… 다섯 장 안에 구약 인용과 암시가 빼곡해요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">산 소망</div><div class="mini-b">부활하신 예수님 때문에 우리 소망은 죽은 소망이 아니라 “산 소망”(1:3)이에요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">은혜로 맺는 편지</div><div class="mini-b">편지 전체를 “이것이 하나님의 참된 은혜”(5:12)라는 한 마디로 묶어요.</div></div></div></div>
+
+  <div class="target"><p>베드로전서의 중심에는 이 찬송이 있어요. <span class="hl">“찬송하리로다 … 하나님이 그 많으신 긍휼대로 예수 그리스도를 죽은 자 가운데서 부활하게 하심으로 말미암아 우리를 거듭나게 하사 산 소망이 있게 하시며”</span>(1:3). 고난이 끝났기 때문에 소망이 있는 게 아니에요. 고난 한가운데서도 <mark>죽음을 이기신 예수님</mark>이 살아 계시기 때문에 소망이 살아 있어요. 그래서 베드로는 “너희는 이 은혜에 굳게 서라”(5:12)며 편지를 맺어요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>주님을 말리던 제자부터 바벨론에서 온 문안까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>그리 마옵소서</button><button class="chip" onclick="goTo('s2')"><b>2</b>반석과 산 돌</button><button class="chip" onclick="goTo('s3')"><b>3</b>구부려 보다</button><button class="chip" onclick="goTo('s4')"><b>4</b>로암미</button><button class="chip" onclick="goTo('s5')"><b>5</b>여덟 사람</button><button class="chip" onclick="goTo('s6')"><b>6</b>앞치마</button><button class="chip" onclick="goTo('s7')"><b>7</b>깨어라</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>“그리 마옵소서” 하던 제자가<br>고난받는 종을 노래하다</h2><div class="refs">베드로전서 2:21-25 · 마태복음 16:21-23 · 요한복음 18:10 · 이사야 53:5-9</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">가이사랴 빌립보에서</div>“주여 <b>그리 마옵소서</b> 이 일이 결코 주께 미치지 아니하리이다”(마 16:22)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">베드로전서</div>“친히 <b>나무에 달려</b> 그 몸으로 우리 죄를 담당하셨으니”(2:24)</div></div><p>예수님이 처음으로 십자가를 말씀하셨을 때 베드로는 주님을 붙들고 항변했어요. “주여 그리 마옵소서”(마 16:22). 메시아가 고난을 받는다는 건 상상도 못 했거든요. 그러다 “사탄아 내 뒤로 물러가라”는 꾸중까지 들었어요. 체포되시던 밤에는 칼을 빼서 대제사장 종의 귀를 베기도 했어요(요 18:10). 😄 어떻게든 주님의 고난을 막아 보려던 사람이에요.</p><p>그 베드로가 이렇게 써요. “욕을 당하시되 맞대어 욕하지 아니하시고 고난을 당하시되 위협하지 아니하시고 오직 공의로 심판하시는 자에게 부탁하시며”(2:23). 칼을 휘두르던 제자가, 칼을 들지 않으신 주님을 그리고 있어요. 이어지는 구절들은 이사야 53장을 따라가요. “그 입에 거짓도 없으시며”(사 53:9), “그가 채찍에 맞음으로 너희는 나음을 얻었나니”(사 53:5), “양과 같이 길을 잃었더니”(사 53:6). 베드로는 이제 알았어요. 고난은 메시아의 실패가 아니라 <mark>하나님의 구원 계획</mark>이었어요.</p><p>2:21의 “본”이라는 단어도 재밌어요. <span class="heb" data-tip="휘포그람모스(hypogrammos) — 아이들이 글씨를 배울 때 밑에 대고 따라 쓰던 본글씨. 신약에서 여기 한 번 나온다.">휘포그람모스</span>는 아이들이 글씨를 배울 때 따라 쓰던 본글씨예요. 아이가 선생님 글씨 위에 한 획 한 획 따라 쓰듯, 주님의 발자취를 따라가라는 거예요. 멋진 글씨를 우리가 새로 만드는 게 아니라, 주님이 먼저 써 주신 선 위를 따라가는 거예요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>고난을 피하고만 싶을 때, 나를 위해 채찍에 맞으신 주님을 바라보며 그 발자취를 따라갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>“반석”이라 불린 사람이<br>“산 돌”을 가리키다</h2><div class="refs">베드로전서 2:4-8 · 요한복음 1:42 · 시편 118:22 · 사도행전 4:11 · 마태복음 21:42</div></div></div>
+    <div class="scene-body"><p>베드로라는 이름은 “돌”이에요. 그런데 이 편지에서 베드로는 자기 이름 이야기를 한 마디도 안 해요. 대신 다른 돌을 가리켜요. “사람에게는 버린 바가 되었으나 하나님께는 택하심을 입은 보배로운 산 돌이신 예수께 나아가”(2:4). 진짜 반석은 자기가 아니라 예수님이라는 거예요. 😄 이름 자랑할 좋은 기회를 스스로 내려놓은 셈이에요.</p><p>베드로는 돌에 관한 구약 말씀 세 곳을 엮어요. 시온에 두신 “보배로운 모퉁잇돌”(2:6; 사 28:16), “건축자들이 버린 그 돌이 머릿돌이 되고”(2:7; 시 118:22), “부딪치는 돌과 걸려 넘어지게 하는 바위”(2:8; 사 8:14)예요. 이 가운데 시편 118:22은 베드로에게 특별한 구절이었어요. 성전 미문의 못 걷는 사람을 일으킨 뒤 공회 앞에 섰을 때, 베드로는 바로 이 말씀으로 외쳤거든요. “이 예수는 너희 건축자들의 버린 돌로서 집 모퉁이의 머릿돌이 되신 분이라”(행 4:11). 그리고 이 말씀은 원래 예수님이 먼저 자신에 대해 쓰신 말씀이에요(마 21:42).</p><p>그리고 놀라운 한 마디가 붙어요. “너희도 산 돌 같이 신령한 집으로 세워지고”(2:5). 예수님이 산 돌이시니, 그분께 붙은 사람들도 산 돌이 돼요. 돌 하나하나는 작고 보잘것없어도, 모퉁잇돌에 맞춰 쌓이면 하나님이 거하시는 집이 돼요. 교회는 <mark>살아 계신 모퉁잇돌 위에 쌓인 돌들</mark>이에요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 마태복음 16:18의 “이 반석”이 베드로 자신인지, 베드로의 신앙고백인지, 그리스도 자신인지는 교회사 속에서 오래 논의되어 왔어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 이름이나 자리보다, 버림받으셨으나 머릿돌이 되신 예수님께 나아가 그분 위에 세워집니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>빈 무덤을 구부려 보던 베드로,<br>천사들도 구부려 보는 복음</h2><div class="refs">베드로전서 1:10-12 · 누가복음 24:12 · 요한복음 20:5, 11</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">부활 아침</div>“베드로는 일어나 무덤에 달려가서 <b>구부려 들여다보니</b> 세마포만 보이는지라”(눅 24:12)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">베드로전서</div>“이것은 <b>천사들도 살펴보기를</b> 원하는 것이니라”(1:12)</div></div><p>1장에서 베드로는 복음이 얼마나 귀한지 말하면서 두 부류를 불러와요. 먼저 선지자들이에요. 그들은 그리스도의 고난과 영광을 예언하면서도 그 일이 언제, 어떻게 이뤄질지 몰라 부지런히 “연구하고 부지런히 살폈”어요(1:10-11). 그다음은 천사들이에요. “이것은 천사들도 살펴보기를 원하는 것이니라”(1:12).</p><p>여기 “살펴보다”는 <span class="heb" data-tip="파라큅토(parakyptō) — 몸을 숙여 들여다보다. 누가복음 24:12, 요한복음 20:5, 11에서 빈 무덤을 들여다보는 장면에 같은 단어가 쓰였다.">파라큅토</span>예요. 허리를 굽혀 고개를 쑥 들이미는 모습이에요. 이 단어가 복음서 어디에 나오는지 아세요? 부활 아침, 여자들의 말을 듣고 무덤으로 달려간 베드로가 “구부려 들여다보니 세마포만 보이는지라”(눅 24:12)에 나와요. 😄 베드로는 그날 몸을 숙이고 빈 무덤을 들여다보던 자기 모습을 기억하고 있었을지도 몰라요.</p><p>그날 베드로는 “그 된 일을 놀랍게 여기며” 집으로 돌아갔어요. 이제 베드로는 그 놀라움이 자기만의 것이 아니라고 말해요. 하늘의 천사들조차 몸을 숙이고 들여다보고 싶어 하는 이야기, 그게 바로 <mark>죽음을 이기신 예수님의 복음</mark>이에요. 그리고 그 복음이 흩어진 나그네 성도들에게, 또 오늘 우리에게 전해졌어요(1:12).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 같은 단어가 쓰였다는 것은 사실이지만, 베드로가 이 단어를 쓰며 빈 무덤 장면을 떠올렸는지는 본문이 말하지 않아요. 묵상으로 이어 본 연결이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>천사들도 들여다보고 싶어 하는 복음을 내가 들었음을 기억하며, 오늘 그 은혜 앞에 새삼 놀랍니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>“내 백성이 아니라”던 이름이<br>“하나님의 백성”으로 바뀌다</h2><div class="refs">베드로전서 2:9-10 · 호세아 1:6-9 · 2:23 · 출애굽기 19:5-6</div></div></div>
+    <div class="scene-body"><div class="steps"><div><b>호 1:6</b>딸의 이름 “로루하마” — 긍휼히 여김을 받지 못한 자</div><div><b>호 1:9</b>아들의 이름 “로암미” — 내 백성이 아니다</div><div><b>호 2:23</b>“내 백성 아니었던 자에게 … 너는 내 백성이라”</div><div class="last"><b>벧전 2:10</b>“전에는 백성이 아니더니 이제는 하나님의 백성이요”</div></div><p>호세아 선지자는 하나님의 명령으로 자녀들에게 참 슬픈 이름을 붙였어요. 딸은 “로루하마”, 곧 “긍휼히 여김을 받지 못한 자”, 아들은 “로암미”, 곧 “내 백성이 아니다”예요. 😄 동네에서 이름 불릴 때마다 난감했을 거예요. 하나님을 떠난 이스라엘의 모습을 이름으로 보여 주신 거예요. 그런데 호세아서는 거기서 끝나지 않아요. 하나님은 언젠가 그 이름을 뒤집겠다고 약속하셨어요(호 2:23).</p><p>베드로는 바로 그 약속을 흩어진 성도들에게 적용해요. “너희가 전에는 백성이 아니더니 이제는 하나님의 백성이요 전에는 긍휼을 얻지 못하였더니 이제는 긍휼을 얻은 자니라”(2:10). 이스라엘도 아니던 사람들, 하나님을 알지도 못하던 이방인들이 “하나님의 백성”이라는 새 이름을 얻었어요.</p><p>바로 앞 절은 더 놀라워요. “너희는 택하신 족속이요 왕 같은 제사장들이요 거룩한 나라요 그의 소유가 된 백성이니”(2:9). 시내산에서 하나님이 출애굽한 이스라엘에게 주신 칭호예요(출 19:5-6). 그 칭호를 흩어진 이방 성도들에게 그대로 입혀 주신 거예요. 이유도 분명해요. “너희를 어두운 데서 불러 내어 그의 기이한 빛에 들어가게 하신 이의 아름다운 덕을 선포하게 하려 하심이라”(2:9). 새 이름은 <mark>나를 불러내신 하나님을 자랑하라</mark>고 주신 이름이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>“내 백성이 아니라”던 나를 “하나님의 백성”이라 불러 주신 긍휼을 기억하며, 나를 불러내신 하나님의 덕을 선포합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>방주의 여덟 사람과<br>물을 통과하는 침례</h2><div class="refs">베드로전서 3:18-22 · 창세기 7:13 · 로마서 6:4</div></div></div>
+    <div class="scene-body"><p>3장 끝에서 베드로는 노아 이야기를 꺼내요. 방주에서 물로 말미암아 구원을 받은 사람이 “겨우 여덟 명”(3:20)이었대요. 노아와 아내, 세 아들 셈·함·야벳과 세 며느리, 모두 여덟 명이에요(창 7:13). 온 세상이 물에 잠겼는데, 방주에 들어간 사람들은 그 물을 지나 새 세상으로 나왔어요.</p><p>그리고 베드로는 바로 이어서 말해요. “물은 예수 그리스도께서 부활하심으로 말미암아 이제 너희를 구원하는 표니 곧 침례라”(3:21). 노아의 식구들이 물을 통과해 새 땅에 섰듯이, 침례를 받는 사람도 물에 잠겼다가 올라와요. 😄 우리 침례교회가 물에 푹 잠기는 침례를 소중히 여기는 이유가 여기 그림처럼 담겨 있어요. 옛사람은 물속에 장사되고, 부활하신 주님과 함께 새 생명으로 올라오는 거예요(롬 6:4).</p><p>그런데 베드로는 곧바로 선을 그어요. 침례는 “육체의 더러운 것을 제하여 버림이 아니요 선한 양심이 하나님을 향하여 찾아가는 것”(3:21)이래요. 물 자체에 구원하는 힘이 있는 게 아니에요. 노아를 살린 것이 물이 아니라 방주였듯이, 우리를 살리는 분은 <mark>부활하신 예수 그리스도</mark>예요. 침례는 그분께 나아간다는 고백이에요.</p><p>“여덟”이라는 숫자에도 이야기가 있어요. 예수님은 안식일 다음 날, 곧 한 주의 첫날에 부활하셨어요. 초대교회는 이날을 새 창조가 시작된 “여덟째 날”이라고 부르기도 했어요. 2세기 순교자 유스티누스는 방주의 여덟 사람을 바로 이 부활의 “여덟째 날”과 연결해 설명했어요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 3:19의 “옥에 있는 영들에게 선포하시니라”는 신약에서 가장 해석하기 어려운 구절 가운데 하나로 꼽혀요. 그리스도께서 노아를 통해 그 시대 사람들에게 전파하셨다는 견해, 부활하신 뒤 악한 영들에게 승리를 선포하셨다는 견해 등이 있어요. 유스티누스의 해석은 『트리포와의 대화』에 나와요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나를 살린 것은 물이 아니라 부활하신 주님이심을 기억하며, 침례 때 드린 고백대로 오늘도 주님께 나아갑니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>발 씻기를 거절하던 제자가<br>“허리를 동이라” 하다</h2><div class="refs">베드로전서 5:1-5 · 요한복음 13:4-8 · 21:15-17</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">마지막 만찬</div>“<b>내 발을 절대 씻기지</b> 못하시리이다”(요 13:8)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">베드로전서</div>“다 서로 <b>겸손으로 허리를 동이라</b>”(5:5)</div></div><p>5장에서 베드로는 교회 장로들에게 부탁해요. 그런데 자기소개가 참 겸손해요. “나는 함께 장로 된 자요 그리스도의 고난의 증인이요”(5:1). 수제자라고도, 사도들의 대표라고도 하지 않아요. 그저 “함께 장로 된 자”예요. 그리고 주님의 고난을 지켜본 증인이라고 해요. 그 고난의 밤에 자기가 무슨 일을 했는지 가장 잘 아는 사람이 말이에요.</p><p>그리고 부탁해요. “너희 중에 있는 하나님의 양 무리를 치되”(5:2). 이 말을 들으면 갈릴리 바닷가의 아침이 떠올라요. 부활하신 주님은 세 번 주님을 부인했던 베드로에게 세 번 물으셨어요. “네가 나를 사랑하느냐.” 그리고 세 번 맡기셨어요. “내 양을 먹이라”(요 21:15-17). 이제 베드로가 그 부탁을 다른 목자들에게 전하고 있어요. 그러면서 진짜 목자는 따로 계시다고 해요. “목자장이 나타나실 때에”(5:4). 양은 목자들의 것이 아니라 <mark>목자장 되신 예수님의 양</mark>이에요.</p><p>5절의 “겸손으로 허리를 동이라”에도 그림이 숨어 있어요. “동이라”는 <span class="heb" data-tip="엥콤보오마이(enkomboomai) — 매듭을 지어 묶다. 종들이 일할 때 옷 위에 묶던 앞치마(엥콤보마)와 같은 뿌리의 말. 신약에서 여기 한 번 나온다.">엥콤보오마이</span>예요. 종이 일할 때 두르던 앞치마를 질끈 매는 모습이에요. 😄 “겸손이라는 앞치마를 두르라”는 거예요. 마지막 만찬 때 예수님은 수건을 허리에 두르시고 제자들의 발을 씻기셨어요. 그때 “내 발을 절대 씻기지 못하시리이다”(요 13:8)라고 버티던 사람이 베드로였어요. 이제 그 베드로가 성도들에게 앞치마를 두르라고 해요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 베드로가 이 단어를 쓰며 요한복음 13장의 장면을 떠올렸다고 보는 해석이 있지만, 본문이 직접 그렇게 말하지는 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>목자장 되신 예수님이 먼저 허리를 굽혀 나를 섬기셨음을 기억하며, 오늘 겸손의 앞치마를 두르고 이웃을 섬깁니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>잠들었던 제자가 “깨어라” 하고,<br>바벨론에서 문안하다</h2><div class="refs">베드로전서 5:8-13 · 마태복음 26:40-41 · 누가복음 22:31-32 · 사도행전 12:12 · 15:37-39</div></div></div>
+    <div class="scene-body"><p>“근신하라 깨어라 너희 대적 마귀가 우는 사자 같이 두루 다니며 삼킬 자를 찾나니”(5:8). 이 말을 누가 하는지 생각하면 웃음이 나요. 😄 겟세마네 동산에서 예수님이 “시험에 들지 않게 깨어 기도하라”(마 26:41) 하셨는데 거듭 잠들었던 사람, 바로 베드로예요. 그리고 그 밤에 시험에 넘어졌어요. 깨어 있지 않으면 어떻게 되는지 몸으로 배운 사람이 “깨어라” 하고 있어요.</p><p>그 밤에 예수님이 베드로에게 하신 말씀이 있어요. “내가 너를 위하여 네 믿음이 떨어지지 않기를 기도하였노니 너는 돌이킨 후에 네 형제를 굳게 하라”(눅 22:32). 이제 5:10을 보세요. 하나님이 “잠깐 고난을 당한 너희를 친히 온전하게 하시며 굳건하게 하시며 강하게 하시며 터를 견고하게 하시리라.” 여기 “굳건하게 하다”가 <span class="heb" data-tip="스테리조(stērizō) — 굳게 세우다, 튼튼하게 하다. 누가복음 22:32의 ‘굳게 하라’와 베드로전서 5:10의 ‘굳건하게 하시며’가 같은 동사다.">스테리조</span>예요. 예수님이 “형제를 굳게 하라” 하실 때 쓰신 바로 그 동사예요. 베드로는 지금 주님이 맡기신 일을 하고 있어요. 그런데 굳게 세우시는 분은 베드로가 아니라 <mark>“친히” 일하시는 하나님</mark>이세요.</p><p>편지 끝에는 두 이름이 나와요. “택하심을 함께 받은 바벨론에 있는 교회가 너희에게 문안하고 내 아들 마가도 그러하니라”(5:13). 바벨론은 이미 수백 년 전에 무너진 제국의 수도예요. 요한계시록처럼(계 17:5; 18:2) 하나님을 대적하는 세상 권력의 중심, 곧 로마를 가리키는 말로 많이 봐요. 그리고 “내 아들 마가”는 첫 선교 여행 중에 돌아가 버려서 바울과 바나바가 크게 다투게 만들었던 그 마가예요(행 13:13; 15:37-39). 베드로가 감옥에서 풀려나 찾아간 집도 마가의 어머니 마리아의 집이었어요(행 12:12). 넘어졌던 베드로가 넘어졌던 마가를 “아들”이라고 불러요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ “바벨론”이 로마를 가리킨다는 것은 다수 견해이고, 메소포타미아의 바벨론으로 보는 견해도 있어요. 마가가 베드로의 통역자로서 들은 것을 기록했다는 이야기는 2세기 초 파피아스가 전하고 교회사가 유세비우스의 『교회사』에 인용된 전승이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>잠들고 넘어졌던 베드로를 친히 굳게 세우신 하나님이 나도 굳건하게 하심을 믿고, 오늘 깨어 기도합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">넘어졌던 “반석”이<br>산 돌이신 주님을 가리키다</div>
+    <p>베드로전서는 한 번도 흔들리지 않은 사람이 쓴 편지가 아니에요. 물에 빠지고, 주님을 말리고, 잠들고, 세 번 부인했던 사람이 쓴 편지예요. 그래서 고난 속에 흔들리는 성도들에게 “깨어라”, “굳게 서라”고 말할 수 있었어요. 자기를 붙들어 주신 분이 누구신지 알았으니까요.</p><p>베드로는 편지 전체를 이 한 마디로 묶어요. “이것이 하나님의 참된 은혜임을 증언하노라 너희는 이 은혜에 굳게 서라”(5:12). 우리를 거듭나게 하시고, 산 소망을 주시고, 친히 굳게 세우시는 분은 <mark>모든 은혜의 하나님</mark>이세요. 나그네 길이 고단해도, 우리에게는 부활하신 예수님이라는 산 소망이 있어요.</p>
+    <div class="q">“예수 그리스도를 죽은 자 가운데서 부활하게 하심으로 말미암아<br>우리를 거듭나게 하사 산 소망이 있게 하시며” (1:3)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>롯과 사라</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;500;600;700;900&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+
+  :root{
+    --ink: #262220;
+    --sub: #6b6560;
+    --bg: #FBFAF7;
+    --line: #E4E0D8;
+    --accent: #9C4A2E;
+  }
+
+  *{ box-sizing:border-box; margin:0; padding:0; }
+
+  html,body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Noto Serif KR', serif;
+  }
+
+  .wrap{
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 64px 24px 100px;
+  }
+
+  header{
+    margin-bottom: 48px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 32px;
+  }
+
+  .eyebrow{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    color: var(--accent);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+  }
+
+  h1{
+    font-size: 40px;
+    font-weight: 900;
+    letter-spacing: -0.01em;
+    line-height:1.2;
+    margin-bottom: 8px;
+  }
+
+  .subtitle{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 16px;
+    color: var(--sub);
+  }
+
+  .refs{
+    margin-top: 14px;
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    letter-spacing: 0.03em;
+    color: var(--sub);
+    background: rgba(156,74,46,0.07);
+    display: inline-block;
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  .part-tag{
+    display:inline-block;
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: #fff;
+    background: var(--accent);
+    padding: 4px 12px;
+    border-radius: 3px;
+    margin-top: 52px;
+    margin-bottom: 4px;
+  }
+
+  h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 30px;
+    margin-bottom: 14px;
+  }
+
+  h2 .num{
+    color: var(--accent);
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-weight: 400;
+    margin-right: 8px;
+    font-size: 17px;
+  }
+
+  p{
+    font-size: 16px;
+    line-height: 1.9;
+    color: #3a3532;
+    margin-bottom: 16px;
+  }
+
+  ul{
+    margin: 0 0 16px 0;
+    padding-left: 20px;
+  }
+
+  li{
+    font-size: 16px;
+    line-height: 1.85;
+    color: #3a3532;
+    margin-bottom: 10px;
+  }
+
+  strong{
+    color: var(--ink);
+    font-weight: 600;
+    background: linear-gradient(to bottom, transparent 65%, rgba(156,74,46,0.08) 65%);
+  }
+
+  .note{
+    font-family: 'EB Garamond', serif;
+    font-style: italic;
+    font-size: 14.5px;
+    color: var(--sub);
+    border-left: 2px solid var(--line);
+    padding: 4px 0 4px 16px;
+    margin: 20px 0;
+  }
+
+  .divider-full{
+    height:1px;
+    background: var(--line);
+    margin: 56px 0 0;
+  }
+
+  footer{
+    margin-top: 56px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-family: 'EB Garamond', serif;
+    font-size: 13px;
+    color: var(--sub);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @media (max-width: 480px){
+    .wrap{ padding: 40px 20px 70px; }
+    h1{ font-size: 32px; }
+  }
+
+  /* --- 용어 팝업 --- */
+  .term{
+    position: relative;
+    color: var(--accent);
+    font-weight: 600;
+    font-style: normal;
+    border-bottom: 1px dotted var(--accent);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  .popover{
+    display: none;
+    position: absolute;
+    left: 50%;
+    bottom: calc(100% + 10px);
+    transform: translateX(-50%);
+    width: 270px;
+    max-width: 78vw;
+    background: var(--ink);
+    color: #f2ede4;
+    font-family: 'Noto Serif KR', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 13.5px;
+    line-height: 1.65;
+    padding: 14px 16px;
+    border-radius: 6px;
+    box-shadow: 0 12px 28px rgba(0,0,0,0.28);
+    z-index: 20;
+    white-space: normal;
+    text-align: left;
+  }
+
+  .popover .ptitle{
+    display:block;
+    font-weight: 700;
+    font-size: 12.5px;
+    letter-spacing: 0.04em;
+    color: #d99a7c;
+    margin-bottom: 5px;
+  }
+
+  .popover::after{
+    content:"";
+    position:absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 6px solid transparent;
+    border-top-color: var(--ink);
+  }
+
+  .term.open .popover{ display:block; }
+
+  @media (max-width: 480px){
+    .popover{
+      position: fixed;
+      left: 5vw;
+      right: 5vw;
+      bottom: auto;
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+      max-width: none;
+    }
+    .popover::after{ display:none; }
+    .term.open::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 19;
+    }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="eyebrow">성경인물묵상</div>
+    <h1>롯과 사라</h1>
+    <div class="subtitle">아브라함과 처음부터 함께한 두 인물</div>
+    <div class="refs">등장 성구 · 창세기 11–19장(롯) · 창세기 11–23장(사라) · 벧후 2:7 · 히 11:11 · 벧전 3:6</div>
+  </header>
+
+  <div class="part-tag">PART 1 — 롯</div>
+
+  <h2><span class="num">01</span>배경과 선택</h2>
+  <p>롯은 아브라함의 조카로, 일찍 아버지 하란을 여읜 뒤 할아버지 데라, 삼촌 아브람과 함께 우르를 떠나 하란을 거쳐 가나안까지 동행한다(11:27-31). 두 집안의 가축이 늘어 목초지가 부족해지자, 아브람은 다투지 않기 위해 롯에게 먼저 땅을 고르게 한다. 롯은 요단 온 지역, 곧 물이 넉넉한 <span class="term" tabindex="0">소돔<span class="popover"><span class="ptitle">소돔과 고모라 (Sodom and Gomorrah)</span>사해 인근에 있었던 것으로 추정되는 도시들. 본문은 소돔 사람들을 "여호와 앞에 악하며 큰 죄인"(13:13)이라 서술하며, 이후 18-19장에서 그 죄악상(특히 나그네에 대한 폭력적 성적 학대 시도)이 구체적으로 묘사된 뒤 유황과 불로 완전히 멸망한다.</span></span> 땅을 선택한다(13:10-11) — 눈에 보이는 풍요를 좇은 선택이었지만, 본문은 이미 "소돔 사람은 악하여 여호와 앞에 큰 죄인이었더라"(13:13)고 복선을 깔아둔다.</p>
+
+  <h2><span class="num">02</span>전쟁과 구출</h2>
+  <p>14장에서 소돔이 주변 왕들의 연합 전쟁에 휘말려 함락되고 롯도 사로잡히자, 아브라함은 사병을 이끌고 그를 구출해온다. 혈연에 대한 아브라함의 책임감을 보여주는 동시에, 롯이 스스로 택한 땅에서 벗어나지 못하고 있음을 보여주는 장면이기도 하다.</p>
+
+  <h2><span class="num">03</span>소돔의 멸망과 롯의 탈출</h2>
+  <p>하나님이 소돔과 고모라를 멸하기로 하시자, 아브라함은 "의인 오십 명이 있어도 멸하시겠나이까"라며 중보하고, 결국 하나님은 열 명을 기준으로도 그리하지 않겠다 응답하신다(18:22-33). 두 천사가 롯의 집에 이르렀을 때 소돔 사람들이 그들을 겁탈하려 몰려들자, 롯은 나그네를 보호하려 애쓰지만 도시 전체의 타락은 이미 되돌릴 수 없는 지경이었다. 천사들은 롯과 그 가족을 급히 이끌어 성 밖으로 피신시키며 "뒤를 돌아보지 말라" 경고하지만, 롯의 아내는 뒤돌아보다 소금 기둥이 된다(19:26).</p>
+
+  <h2><span class="num">04</span>이후의 삶</h2>
+  <p>아내를 잃고 두 딸과 산에 숨어 살게 된 롯은, 술에 취한 상태에서 딸들과의 근친 관계를 통해 모압과 암몬 족속의 조상이 되는 아들들을 얻는다(19:30-38) — 훗날 이스라엘과 복잡한 관계를 맺게 될 두 민족의 기원이다. 흥미롭게도 신약 베드로후서 2:7-8은 롯을 "그 무법한 자들의 음란한 행실로 말미암아 고통 당하는 의로운 자"로 회고하며, 그의 내적 고뇌를 긍정적으로 평가한다.</p>
+
+  <div class="divider-full"></div>
+  <div class="part-tag">PART 2 — 사라</div>
+
+  <h2><span class="num">01</span>이름과 자리</h2>
+  <p>사라는 처음 '사래(שָׂרַי)'라는 이름으로 등장하며, 아브람과 함께 우르를 떠나는 순간부터 이야기에 함께한다(11:29-31). 창세기 17:15에서 하나님은 그녀의 이름을 '사라(שָׂרָה, 열국의 어머니, 공주)'로 바꾸시는데, 이는 같은 장에서 아브람이 아브라함으로 개명되는 것과 짝을 이룬다 — 언약이 두 사람 모두의 정체성을 새롭게 한다는 상징이다.</p>
+
+  <h2><span class="num">02</span>두 차례의 위기</h2>
+  <p>아브라함은 이집트(12장)와 그랄(20장)에서 각각 사라를 "내 누이"라 속여 자신의 안전을 도모한다. 두 왕(바로, 아비멜렉)이 사라를 취하려 하지만, 하나님이 직접 개입해 재앙을 내리거나 꿈으로 경고하시며 사라를 보호하신다. 본문은 아브라함의 두려움과 그로 인한 아내의 위기를 가감 없이 드러내면서도, 하나님이 언약의 어머니가 될 여인을 스스로 지키신다는 점을 강조한다.</p>
+
+  <h2><span class="num">03</span>불임과 하갈</h2>
+  <p>사라는 오랫동안 자녀를 낳지 못했고, 당대 관습에 따라 여종 하갈을 아브람에게 주어 대신 후사를 얻게 한다(16장). 그러나 하갈이 임신하자 둘 사이에 갈등이 생기고, 사라는 하갈을 학대해 그녀가 광야로 도망하는 지경에 이른다. 인간적인 방법으로 약속을 앞당기려 한 이 선택은 이후 이스마엘과 이삭 후손 간의 오랜 긴장의 기원이 된다.</p>
+
+  <h2><span class="num">04</span>웃음과 이삭</h2>
+  <p>세 나그네(하나님의 현현)가 아브라함에게 찾아와 사라가 아들을 낳으리라 예고하자, 장막 뒤에서 듣던 사라는 "내가 노쇠하였고 내 주인도 늙었으니 내게 무슨 즐거움이 있으리요" 하며 속으로 웃는다(18:12). 하나님이 "네가 왜 웃었느냐" 물으시자 사라는 두려워 부인하지만, 이듬해 정말 아들이 태어나고 그 이름은 '웃음'을 뜻하는 이삭이 된다 — 불신의 웃음이 훗날 기쁨의 웃음으로 되돌아오는 구조다.</p>
+
+  <h2><span class="num">05</span>죽음과 매장</h2>
+  <p>사라는 127세에 헤브론에서 죽고, 아브라함은 헷 족속에게서 <span class="term" tabindex="0">막벨라 굴<span class="popover"><span class="ptitle">막벨라 굴 (창 23장)</span>아브라함이 사라를 장사하기 위해 헷 족속 에브론에게서 은 사백 세겔을 주고 정식으로 매입한 매장지. 성경에서 아브라함이 가나안 땅에서 소유한 것으로 명시된 유일한 부동산이며, 이후 아브라함·이삭·리브가·야곱·레아도 이곳에 묻힌다.</span></span>을 값을 치르고 사서 그녀를 장사한다(23장). 이는 아브라함이 약속의 땅에서 실제로 소유한 유일한 땅으로 기록되며, 언약의 땅에 대한 첫 번째 실질적 지분이라는 상징성을 지닌다.</p>
+
+  <h2><span class="num">06</span>신학적 의미</h2>
+  <p>롯과 사라는 둘 다 아브라함과 가장 가까이 있었던 인물이지만, 신앙의 궤적은 대비된다. 롯은 눈에 보이는 풍요를 따라갔다가 겨우 구원받는 인물로("불에서 꺼낸 그슬린 나무"와 같은 이미지로 후대에 자주 비유됨), 사라는 인간적인 조급함(하갈 사건)과 불신의 웃음을 거치면서도 결국 히브리서 11:11에서 "믿음으로 잉태하는 힘을 얻었다"고 평가받는 인물로 기억된다. 베드로전서 3:6은 사라를 아브라함에게 순종한 믿음의 여인의 모범으로 언급하기도 한다.</p>
+
+  <p class="note">다음엔 이삭이나 이스마엘, 혹은 하갈의 이야기를 더 깊이 다뤄볼 수 있다.</p>
+
+  <footer>
+    <span>GENESIS STUDY</span>
+    <span>לוט ושרה</span>
+  </footer>
+
+</div>
+
+<script>
+  document.querySelectorAll('.term').forEach(term => {
+    term.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const wasOpen = term.classList.contains('open');
+      document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+      if (!wasOpen) term.classList.add('open');
+    });
+    term.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); term.click(); }
+    });
+  });
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.term.open').forEach(t => t.classList.remove('open'));
+  });
+</script>
+</body>
+</html>

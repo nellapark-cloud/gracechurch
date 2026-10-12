@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빌립보서, 감옥에서 부른 기쁨의 노래 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="쇠사슬에 묶인 채 '기뻐하라'고 열여섯 번 말한 바울의 편지에 숨은 이야기">
+<meta property="og:title" content="빌립보서, 감옥에서 부른 기쁨의 노래">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 16</div>
+  <h1>빌립보서,<br>감옥에서 부른<br><em>기쁨</em>의 노래</h1>
+  <p class="sub">쇠사슬에 묶인 사도가<br>"기뻐하라"고 거듭 말한 편지</p>
+  <div class="ref">빌립보서 1–4장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>빌립보서는 감옥에서 쓴 편지예요. 바울은 군인에게 사슬로 묶여 있었고, 재판 결과에 따라 살 수도 죽을 수도 있는 처지였어요. 그런데 이 짧은 네 장짜리 편지에 "기쁨"과 "기뻐하다"라는 말이 <mark>열여섯 번</mark>이나 나와요. 감옥에서 쓴 편지가 바울의 편지 가운데 가장 밝은 편지라니, 참 신기하죠.</p>
+    <p>그 밝은 편지 속에 재밌는 이야기들이 숨어 있어요. 유럽 첫 교회를 이룬 세 사람, 쇠사슬 덕분에 복음을 듣게 된 황제의 경호대, 이사야서에서 가져온 초대교회의 찬송, 로마 식민지 사람들의 자부심, 목숨을 걸고 판돈처럼 던진 한 사람, 그리고 이름과 달리 사이가 나빴던 두 여인까지요. 그 흔적을 따라가면 한 분이 보여요. <span class="hl">자기를 비워 종의 형체를 가지신 그리스도 예수</span>예요(2:7).</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>빌립보서는 어떤 책일까?</h2>
+    <p>유럽의 첫 교회에 보낸 감사와 기쁨의 편지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>빌립보는 바울이 2차 전도여행 때 마게도냐 사람의 환상을 보고 건너가 세운 유럽의 첫 교회예요(행 16:9-40). 그 뒤로 빌립보 교회는 바울을 계속 후원했어요. 바울이 감옥에 갇혔다는 소식을 듣자 에바브로디도 편에 선물을 보냈고(4:18), 바울은 그 고마움을 담아 이 편지를 썼어요. 로마에 갇혀 있던 주후 60–62년 무렵으로 보는 경우가 많아요.</p>
+    <div class="debate sans"><div><b>"빌립보"라는 이름</b>알렉산더 대왕의 아버지인 마게도냐 왕 필립포스 2세가 주전 356년 무렵 이 도시를 새로 세우고 자기 이름을 붙였어요.</div><div><b>로마의 식민지</b>주전 42년 이곳에서 로마 내전의 큰 전투가 벌어진 뒤, 로마는 제대 군인들을 이주시켜 도시를 "로마의 식민지"로 만들었어요(행 16:12).</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 바울이 이 편지를 쓴 감옥이 로마인지, 에베소나 가이사랴인지는 학자들 사이에 의견이 나뉘어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">빌립보서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">기쁨의 편지</div><div class="mini-b">"주 안에서 항상 기뻐하라 내가 다시 말하노니 기뻐하라"(4:4). 슬픈 상황 속에서 기쁨을 가장 많이 말한 편지예요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">감옥에서 쓴 편지</div><div class="mini-b">"나의 매임이 그리스도 안에서 모든 시위대 안과 그 밖의 모든 사람에게 나타났으니"(1:13). 에베소서, 골로새서, 빌레몬서와 함께 옥중서신이라 불러요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">초대교회의 찬송</div><div class="mini-b">2장 6–11절은 그리스도께서 낮아지시고 높아지신 이야기를 노래처럼 담고 있어요. 신약에서 가장 아름다운 그리스도 찬가 가운데 하나예요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">선물에 대한 감사 편지</div><div class="mini-b">4장 10–20절은 빌립보 교회가 보낸 후원에 대한 감사예요. 바울은 그 선물을 "받으실 만한 향기로운 제물"이라고 불러요(4:18).</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">책망이 거의 없는 편지</div><div class="mini-b">잘못을 꾸짖는 대목이 거의 없어요. 굳이 꼽자면 서로 다투던 두 여인에게 한마음을 품으라고 권한 것 정도예요(4:2).</div></div></div></div>
+
+  <div class="target"><p>빌립보서의 중심에는 이 고백이 있어요. <span class="hl">"이는 내게 사는 것이 그리스도니 죽는 것도 유익함이라"</span>(1:21). 바울의 기쁨은 형편이 좋아서 생긴 기쁨이 아니었어요. 살든지 죽든지 그리스도가 전부였기 때문에 생긴 기쁨이에요. 그리고 바울은 그 그리스도의 마음을 우리에게도 권해요. <mark>"너희 안에 이 마음을 품으라 곧 그리스도 예수의 마음이니"</mark>(2:5).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>한밤의 찬송부터 두 여인의 화해까지, 기쁨의 편지에 숨은 이야기들</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>유럽 첫 교회의 세 사람</button><button class="chip" onclick="goTo('s2')"><b>2</b>사슬 끝의 청중</button><button class="chip" onclick="goTo('s3')"><b>3</b>이사야서에서 온 찬송</button><button class="chip" onclick="goTo('s4')"><b>4</b>하늘의 식민지</button><button class="chip" onclick="goTo('s5')"><b>5</b>바울의 장부 정리</button><button class="chip" onclick="goTo('s6')"><b>6</b>목숨을 건 사람</button><button class="chip" onclick="goTo('s7')"><b>7</b>좋은 길과 좋은 만남</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>유럽 첫 교회를 이룬<br>전혀 다른 세 사람</h2><div class="refs">사도행전 16:12-34 · 빌립보서 1:3-5</div></div></div>
+    <div class="scene-body"><p>빌립보에 도착한 바울은 안식일에 "기도할 곳이 있을까 하여 문 밖 강가에" 나갔어요(행 16:13). 회당을 찾아가던 평소와 달랐죠. 유대인이 적어서 이 도시에 회당이 없었던 것으로 보여요. 그 강가에서 처음 만난 사람이 "두아디라 시에 있는 <span class="hl">자색 옷감 장사</span>" 루디아였어요(16:14). 자주색 옷감은 아주 비싼 물건이었으니, 루디아는 꽤 넉넉한 사업가였을 거예요.</p>
+        <p>두 번째 사람은 거리에서 만난 "점치는 귀신 들린 여종"이었어요(16:16). 주인들에게 큰돈을 벌어다 주던, 사람 취급도 제대로 못 받던 소녀였죠. 바울이 예수 그리스도의 이름으로 귀신을 쫓아내자, 돈줄이 끊긴 주인들이 바울과 실라를 붙잡아 매를 때리고 감옥에 가뒀어요.</p>
+        <p>그리고 세 번째 사람이 그 감옥의 간수예요. "한밤중에 바울과 실라가 기도하고 하나님을 찬송하매 죄수들이 듣더라"(16:25). 지진으로 옥문이 열리자 자결하려던 간수에게 바울이 외쳤어요. "주 예수를 믿으라 그리하면 너와 네 집이 구원을 받으리라"(16:31). 부유한 사업가, 버림받은 여종, 로마 제국의 공무원. <mark>이렇게 다른 세 사람</mark>이 유럽 첫 교회의 첫 식구였어요. 그러니 바울이 감옥에서 이 교회를 떠올릴 때마다 기쁨이 넘친 것도 당연해요(빌 1:3-4).</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 빌립보에 회당이 없었다는 것은 "기도할 곳"을 강가에서 찾았다는 본문을 보고 추정하는 거예요. 여종이 그 뒤 교회의 식구가 되었는지는 성경에 나오지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나와 전혀 다른 사람들을 한 식탁에 모으시는 예수님을 찬양하며, 우리 교회의 다양한 얼굴들을 감사로 바라봅니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>도망갈 수 없는 청중,<br>황제의 경호대</h2><div class="refs">빌립보서 1:12-18 · 4:22 · 사도행전 28:16, 30-31</div></div></div>
+    <div class="scene-body"><p>로마에서 바울은 셋집에 머물면서도 늘 군인 한 명에게 사슬로 묶여 있었어요(행 28:16, 20). 그런데 바울은 감옥 이야기를 이렇게 시작해요. "나의 당한 일이 도리어 <mark>복음 전파에 진전</mark>이 된 줄을 너희가 알기를 원하노라"(1:12).</p>
+        <p>어떻게요? "나의 매임이 그리스도 안에서 모든 <span class="heb" data-tip="프라이토리온(praitōrion) — 황제를 지키는 근위대, 또는 총독의 관저. 로마에서는 황제 근위대를 가리킨다고 보는 경우가 많다.">시위대</span> 안과 그 밖의 모든 사람에게 나타났으니"(1:13). 바울을 지키는 군인은 몇 시간마다 교대했어요. 그러니 날마다 새로운 군인이 바울 옆에 사슬로 묶여서, 바울이 손님들과 나누는 복음 이야기를 몇 시간이고 들어야 했어요. 😄 <span class="hl">도망갈 수 없는 청중</span>이었던 거예요.</p>
+        <p>그 결과는 편지 끝 인사에서 드러나요. "모든 성도가 너희에게 문안하되 특히 <mark>가이사의 집 사람들</mark> 중 몇이니라"(4:22). 황제의 집안에서 일하는 사람들 가운데 예수님을 믿는 사람이 생긴 거예요. 로마를 다스리던 황제의 바로 곁에서, 쇠사슬에 묶인 사람이 전한 복음이 자라고 있었어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ "가이사의 집 사람들"은 황제의 가족이 아니라 황제의 집안 일을 맡은 노예와 해방 노예, 관리들을 가리키는 말로 봐요. 군인들이 교대로 묶였다는 설명은 당시 관행을 바탕으로 한 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 발을 묶는 형편이 도리어 복음의 통로가 될 수 있음을 믿고, 오늘 내 곁에 앉은 사람에게 그리스도를 보여 줍니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>이사야서에서 가져온<br>초대교회의 찬송</h2><div class="refs">빌립보서 2:5-11 · 이사야 45:22-23 · 창세기 3:5</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">첫 사람 아담</div>"하나님과 같이 되어"(창 3:5) 하는 말에 <b>움켜쥐려다</b> 떨어졌어요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">그리스도 예수</div>하나님과 동등하시지만 <b>움켜쥐지 않으시고</b> 자기를 비우셨어요.</div></div><p>2장 6–11절은 리듬이 있는 노래처럼 짜여 있어요. 그래서 많은 학자들이 초대교회가 예배 때 부르던 찬송을 바울이 옮겨 적었거나, 바울이 찬송처럼 지었다고 봐요. 모양은 <mark>V자</mark>예요. 하나님의 본체이신 분이 → 자기를 비워 종이 되시고 → 사람이 되시고 → 죽기까지 복종하시고 → 가장 낮은 십자가까지 내려가셨어요. 그리고 거기서부터 하나님이 "지극히 높여" 올리셨어요(2:9).</p>
+        <p>"하나님과 동등됨을 취할 것으로 여기지 아니하시고"(2:6)라는 말은 창세기의 아담을 떠올리게 해요. 아담은 하나님과 같아지려고 열매를 움켜쥐었다가 모든 것을 잃었어요. 그런데 참으로 하나님과 동등하신 예수님은 그 자리를 붙잡지 않으시고 <span class="hl">"<span class="heb" data-tip="에케노센(ekenōsen) — 비우다. 여기서 신학 용어 '케노시스(자기 비움)'가 나왔다.">자기를 비워</span>"</span> 내려오셨어요(2:7).</p>
+        <p>노래의 마지막 줄에는 숨은 구약 인용이 있어요. "모든 무릎을 예수의 이름에 꿇게 하시고 모든 입으로 예수 그리스도를 주라 시인하여"(2:10-11). 이건 이사야 45장의 말씀이에요. 거기서 하나님은 "나는 하나님이라 다른 이가 없느니라… <mark>모든 무릎이 내게 꿇겠고</mark> 모든 혀가 맹세하리라"(사 45:22-23) 하셨어요. 오직 여호와 하나님께만 드리던 이 고백을, 초대교회는 예수님께 드렸어요. 예수님이 바로 그 하나님이시라는 고백이에요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 2:6-11이 바울 이전부터 있던 찬송인지, 바울이 직접 지은 것인지는 학자들 사이에 의견이 나뉘어요. 아담과의 대조도 많은 주석가들이 따르는 해석이지만 본문이 직접 아담을 언급하지는 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>움켜쥐려는 마음 대신 자기를 비우신 예수님의 마음을 품고, 그분 앞에 무릎 꿇는 자리로 오늘 내려갑니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>로마 식민지 사람들에게<br>말한 하늘 시민권</h2><div class="refs">빌립보서 1:27 · 3:20-21 · 사도행전 16:20-21, 37-39</div></div></div>
+    <div class="scene-body"><p>빌립보 사람들은 자기들이 로마 시민이라는 걸 무척 자랑스러워했어요. 로마에서 멀리 떨어진 마게도냐 땅에 있었지만, 도시는 로마법을 따르고 로마식으로 다스려졌거든요. 바울을 고발할 때도 사람들은 "<span class="hl">로마 사람인 우리</span>"(행 16:21)이라고 외쳤어요. 그런데 나중에 알고 보니 매 맞고 갇힌 바울도 로마 시민이었어요. 관리들이 그 사실을 듣고 두려워서 직접 찾아와 달래며 내보냈죠(행 16:37-39). 😄</p>
+        <p>바울은 그 자부심을 알고 이렇게 써요. "그러나 우리의 <span class="heb" data-tip="폴리튜마(politeuma) — 시민 공동체, 시민권, 본국. 해외에 사는 사람들이 자기 본국과 이어진 공동체를 가리킬 때도 쓰였다.">시민권</span>은 하늘에 있는지라"(3:20). 빌립보가 로마에서 멀리 떨어진 로마의 식민지였던 것처럼, 교회는 이 땅에 세워진 <mark>하늘나라의 식민지</mark>라는 거예요. 몸은 빌립보에 살지만, 본국은 하늘이에요.</p>
+        <p>그래서 바울은 앞에서 이렇게 권했어요. "오직 너희는 그리스도의 복음에 합당하게 <span class="heb" data-tip="폴리튜에스테(politeuesthe) — 시민으로서 살아가다. 3:20의 '시민권'과 같은 뿌리의 말이다.">생활하라</span>"(1:27). 원어로는 "시민답게 살라"는 뜻이에요. 로마 시민이 로마법을 따라 살듯이, 하늘 시민은 하늘 왕의 법을 따라 살아요. 그리고 그 본국에서 오실 분을 기다려요. "거기로부터 구원하는 자 곧 <span class="hl">주 예수 그리스도</span>를 기다리노니"(3:20).</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>이 땅에 살지만 내 본국은 하늘임을 기억하며, 오실 주 예수님께 어울리는 시민답게 오늘을 삽니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>바울의 장부 정리,<br>이익 칸과 손해 칸</h2><div class="refs">빌립보서 3:4-14 · 4:15-18</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">바울의 옛 이익 칸</div>할례, 이스라엘 족속, 베냐민 지파, 히브리인 중의 히브리인, 바리새인, 열심, 흠 없는 의. <b>일곱 줄</b>의 자랑.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">그리스도를 만난 뒤</div>모두 <b>손해 칸</b>으로 옮기고, 한 줄만 남겼어요. <b>"그리스도를 얻고"</b></div></div><p>3장에서 바울은 자기 이력서를 꺼내요. "나는 팔일 만에 할례를 받고 이스라엘 족속이요 베냐민 지파요 히브리인 중의 히브리인이요 율법으로는 바리새인이요 열심으로는 교회를 박해하고 율법의 의로는 흠이 없는 자라"(3:5-6). 유대인 사회에서라면 누구나 부러워할 경력이에요. 베냐민 지파는 이스라엘의 첫 왕 사울이 나온 지파인데, 바울의 원래 이름도 사울이었어요.</p>
+        <p>그런데 바울은 이걸 <mark>장부 정리</mark>하듯 말해요. "무엇이든지 내게 <span class="heb" data-tip="케르도스(kerdos) — 이익, 벌이. 장사에서 남는 이문을 말할 때 쓰던 말.">유익하던 것</span>을 내가 그리스도를 위하여 다 <span class="heb" data-tip="제미아(zēmia) — 손해, 손실. 사도행전 27장의 풍랑 때 배와 짐이 입은 '손해'에도 쓰였다.">해로</span> 여길뿐더러"(3:7). 이익 칸에 적혀 있던 것을 전부 손해 칸으로 옮긴 거예요. 그리고 한 걸음 더 나가요. "모든 것을 잃어버리고 <span class="heb" data-tip="스퀴발라(skybala) — 쓰레기, 거름, 개에게 던지는 찌꺼기. 꽤 거친 말이다.">배설물</span>로 여김은 그리스도를 얻고"(3:8). 여기 쓰인 단어는 꽤 거친 말이에요. 😄 점잖은 바울이 이런 단어까지 쓴 걸 보면, 예수님을 아는 것이 그만큼 비교할 수 없이 귀했던 거예요.</p>
+        <p>재밌게도 편지 끝에서도 바울은 장부 말투를 써요. 빌립보 교회만이 "주고 받는 내 일에" 참여했다고 하고(4:15), 자기가 바라는 건 선물이 아니라 "너희에게 유익하도록 풍성한 열매"라고 해요(4:17). 너희가 드린 것이 하나님의 장부에 <span class="hl">너희 앞으로 쌓이고 있다</span>는 거예요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 4:15-17을 당시 상거래 장부의 말투로 읽는 것은 여러 주석가들의 해석이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 장부의 이익 칸에 무엇을 적어 두고 붙잡고 있는지 돌아보고, 그리스도를 아는 것을 가장 귀한 것으로 삼습니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>목숨을 판돈처럼 던진<br>에바브로디도</h2><div class="refs">빌립보서 2:25-30 · 4:18</div></div></div>
+    <div class="scene-body"><p>빌립보 교회가 바울에게 선물을 전하려고 보낸 사람이 에바브로디도예요. 이름에 재밌는 뿌리가 있어요. "에바브로디도"는 그리스 신화의 사랑의 여신 <span class="hl">아프로디테</span>에서 나온 이름이에요. 아마 믿지 않는 가정에서 태어나 흔한 이름을 받았을 거예요. 그런 그가 이제는 바울이 "나의 형제요 함께 수고하고 함께 군사 된 자"(2:25)라고 부르는 사람이 됐어요.</p>
+        <p>그런데 에바브로디도는 바울을 섬기다가 큰 병에 걸렸어요. "그가 병들어 죽게 되었으나 하나님이 그를 긍휼히 여기셨고"(2:27). 바울은 그를 이렇게 칭찬해요. "그리스도의 일을 위하여 죽기에 이르러도 자기 목숨을 <span class="heb" data-tip="파라볼류사메노스(paraboleusamenos) — 위험에 걸다, 판돈을 걸다. 주사위 놀이에서 돈을 거는 모습에서 나온 말.">돌보지 아니한</span> 것은"(2:30). 이 말은 원래 <mark>노름판에서 판돈을 거는 것</mark>을 가리키던 말이에요. 에바브로디도는 자기 목숨을 판돈처럼 복음에 걸었던 거예요.</p>
+        <p>그리고 에바브로디도에게는 따뜻한 마음도 있었어요. 자기가 아프다는 소식을 듣고 고향 교회가 걱정할까 봐 오히려 "심히 근심"했거든요(2:26). 😄 죽을 뻔한 사람이 남 걱정을 하고 있었던 거예요. 바울은 그를 "주 안에서 모든 기쁨으로 그를 영접하고 또 이와 같은 자들을 존귀히 여기라"(2:29) 하며 돌려보내요. 이 편지를 빌립보까지 들고 간 사람도 에바브로디도였을 거예요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 훗날 알렉산드리아 교회에서 전염병 환자와 죽은 이들을 돌보던 사람들을 "파라볼라노이"라고 불렀는데, 이 이름이 2:30의 이 단어와 관련이 있다고 보는 설명이 있어요. 두 말의 관계는 확실하지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>안전한 자리만 찾기보다, 그리스도의 일을 위해 내 시간과 마음을 기꺼이 거는 사람이 되기를 구합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>이름과 달리<br>사이가 나빴던 두 여인</h2><div class="refs">빌립보서 2:2-5 · 4:1-7</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">유오디아</div>이름의 뜻은 <b>"좋은 길"</b>, 순탄한 길이라는 뜻이에요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">순두게</div>이름의 뜻은 <b>"좋은 만남"</b>, 행운이라는 뜻이에요.</div></div><p>칭찬이 가득한 빌립보서에도 딱 한 군데 걱정이 나와요. "내가 유오디아를 권하고 순두게를 권하노니 주 안에서 같은 마음을 품으라"(4:2). 이름의 뜻을 알면 웃음이 나요. <mark>"좋은 길"과 "좋은 만남"</mark>이 서로 사이가 틀어진 거예요. 😄 이름대로라면 참 잘 어울렸을 두 사람인데 말이에요.</p>
+        <p>그런데 바울은 두 사람을 깎아내리지 않아요. 오히려 "복음에 나와 함께 힘쓰던 저 여인들"이라고, "그 이름들이 <span class="hl">생명책에</span> 있느니라"(4:3)라고 불러요. 빌립보 교회는 강가에서 여인들과 함께 시작된 교회였어요(행 16:13). 이 두 사람도 교회를 세우는 데 앞장선 일꾼이었을 거예요. 일을 열심히 하는 사람끼리 부딪치는 건 그때나 지금이나 같나 봐요.</p>
+        <p>숨은 연결고리는 "같은 마음을 품으라"는 말이에요. 이건 2장에서 이미 쓴 동사예요. "너희 안에 이 <span class="heb" data-tip="프로네오(phroneō) — 생각하다, 마음을 품다. 빌립보서에서 열 번 나오는 중요한 단어다.">마음을 품으라</span> 곧 그리스도 예수의 마음이니"(2:5). 두 사람이 서로 같은 마음이 되는 길은, 서로의 의견을 억지로 맞추는 게 아니라 <mark>둘 다 그리스도의 마음을 품는 것</mark>이에요. 자기를 비우신 예수님을 바라볼 때, 좋은 길과 좋은 만남이 다시 이름값을 하게 돼요. 그리고 바로 다음 절이 이어져요. "주 안에서 항상 기뻐하라"(4:4).</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 이름의 뜻은 어원을 풀이한 것이고, 두 사람이 무엇 때문에 다퉜는지는 성경에 나오지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>서운한 사람과 억지로 의견을 맞추기보다, 둘 다 자기를 비우신 그리스도의 마음을 품도록 먼저 무릎 꿇습니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">쇠사슬도 막지 못한 기쁨,<br>그 기쁨의 이름은 그리스도</div>
+    <p>빌립보서는 감옥에서 쓴 편지인데도 가장 밝은 편지예요. 한밤의 감옥에서 찬송하던 바울은 몇 해 뒤 또 다른 감옥에서 "기뻐하라"고 써요. 군인에게 묶여 있어도, 경쟁자들이 시기로 복음을 전해도, 죽을지 살지 몰라도, 바울은 기뻐할 이유를 놓치지 않아요.</p><p>그 비밀은 4장에 있어요. "어떠한 형편에든지 나는 자족하기를 배웠노니"(4:11). 많은 사람이 좋아하는 "내게 능력 주시는 자 안에서 내가 모든 것을 할 수 있느니라"(4:13)는 사실 이 말 바로 뒤에 나와요. 무엇이든 해낼 수 있다는 뜻이기 전에, <mark>배부를 때도 배고플 때도 그리스도 한 분이면 충분하다</mark>는 고백이에요. 바울의 기쁨은 형편에서 오지 않았어요. 기쁨의 이름은 그리스도였어요.</p>
+    <div class="q">"주 안에서 항상 기뻐하라<br>내가 다시 말하노니 기뻐하라" (4:4)</div>
+  </section>
+
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

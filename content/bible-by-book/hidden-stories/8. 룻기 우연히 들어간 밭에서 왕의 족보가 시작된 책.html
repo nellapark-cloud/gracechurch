@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>룻기, 우연히 들어간 밭에서 왕의 족보가 시작된 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="이삭 줍던 이방 여인이 다윗의 족보에 오르기까지, 룻기에 숨은 이야기">
+<meta property="og:title" content="룻기, 우연히 들어간 밭에서 왕의 족보가 시작된 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 40</div>
+  <h1>룻기,<br>우연히 들어간 밭에서<br>왕의 <em>족보</em>가 시작된 책</h1>
+  <p class="sub">사사들이 다스리던 어두운 시대,<br>이삭 줍던 이방 여인의 발걸음이 다윗에게 닿았다</p>
+  <div class="ref">룻기 1–4장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>사사기를 읽고 룻기를 펴면 공기가 달라져요. 칼과 피 대신 보리밭과 타작마당, 성문 앞 어르신들이 나와요. 전쟁 영웅도, 기적도, 하늘에서 들리는 음성도 없어요. 그런데 이 네 장짜리 짧은 이야기가 다윗 왕으로, 그리고 예수님의 족보로 이어져요. 사사기의 마지막 문장이 “왕이 없으므로”였는데, 룻기의 마지막 단어가 “다윗”이에요. 😄</p><p>룻기에서 하나님은 거의 말씀하지 않으세요. 대신 “우연히”, “마침”처럼 보이는 일들 속에 조용히 일하세요. 떡집에 떨어진 떡, “기쁨”에서 “쓴맛”으로 이름을 바꾼 여인, 우연히 들어간 밭, 같은 단어로 엮인 “날개”와 “옷자락”, 이름 없이 “아무개”로 남은 친척, 신발 한 짝으로 맺은 계약, 그리고 라합의 아들 보아스까지 따라가 볼게요.</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>룻기는 어떤 책일까?</h2>
+    <p>모든 것을 잃은 두 여인에게 하나님이 다시 채워 주신 이야기</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>룻기는 “사사들이 치리하던 때에”(1:1) 일어난 이야기예요. 베들레헴에 흉년이 들자 엘리멜렉과 나오미 부부는 두 아들을 데리고 모압 땅으로 가요. 그런데 거기서 남편과 두 아들이 모두 세상을 떠나요. 남은 것은 나오미와 모압 출신 두 며느리뿐이었어요. 나오미가 고향으로 돌아가려 하자 며느리 룻은 끝까지 시어머니를 따라가요. 베들레헴에서 룻은 이삭을 줍다가 시아버지의 친족 보아스를 만나고, 보아스는 “기업 무를 자”가 되어 룻과 결혼해요. 그리고 그들의 아들 오벳이 다윗의 할아버지가 돼요. 모두 네 장, 85절짜리 짧은 책이에요.</p>
+    <div class="debate sans"><div><b>이름들의 뜻</b>엘리멜렉은 “나의 하나님은 왕”, 나오미는 “기쁨, 즐거움”, 오벳은 “섬기는 자”라는 뜻이에요. 왕이 없던 시대에 “하나님은 왕”이라는 이름의 집안 이야기로 시작해서 왕의 할아버지 이야기로 끝나요.</div><div><b>성경 안의 자리</b>우리 성경에서는 사사기 다음이지만, 히브리어 성경의 여러 사본(예: 레닌그라드 사본)에서는 잠언 바로 다음에 놓여요. 잠언 31장 “현숙한 여인”의 노래 다음에, 실제로 “현숙한 여자”라고 불린 룻의 이야기가 이어지는 거예요(3:11).</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 룻기의 저자는 알려져 있지 않아요. 유대 전통(탈무드)은 사무엘이 기록했다고 전해요. 또 유대인들은 지금도 보리와 밀 추수를 기념하는 칠칠절(오순절)에 회당에서 룻기를 읽어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">룻기의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">여인이 주인공인 책</div><div class="mini-b">구약에서 여인의 이름이 제목이 된 책은 룻기와 에스더 두 권이에요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">헤세드, 변함없는 사랑</div><div class="mini-b">“선대”, “은혜”, “인애”로 옮긴 같은 단어가 룻과 보아스와 하나님에게 모두 쓰여요(1:8; 2:20; 3:10).</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">조용히 일하시는 하나님</div><div class="mini-b">기적은 없지만 “우연히”와 “마침” 속에 하나님의 손길이 있어요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">빈손에서 채움으로</div><div class="mini-b">“비어 돌아왔다”던 나오미의 품에 손자가 안기는 장면으로 끝나요(1:21; 4:16).</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">다윗을 향하는 족보</div><div class="mini-b">마지막 다섯 절은 족보예요. 베레스에서 시작해 다윗으로 끝나요(4:18-22).</div></div></div></div>
+
+  <div class="target"><p>룻기의 중심에는 룻의 이 고백이 있어요. <span class="hl">“어머니의 백성이 나의 백성이 되고 어머니의 하나님이 나의 하나님이 되시리니”</span>(1:16). 이방 여인이 이스라엘의 하나님을 자기 하나님으로 고백한 순간이에요. 그리고 그 여인을 품은 “기업 무를 자” 보아스의 이야기는, 마태복음 1장의 족보를 지나 <mark>우리의 참 기업 무를 자 예수 그리스도</mark>께로 이어져요.</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>떡이 떨어진 떡집부터 다윗의 이름까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>떡집의 흉년</button><button class="chip" onclick="goTo('s2')"><b>2</b>나를 마라라</button><button class="chip" onclick="goTo('s3')"><b>3</b>우연히, 마침</button><button class="chip" onclick="goTo('s4')"><b>4</b>날개 아래</button><button class="chip" onclick="goTo('s5')"><b>5</b>기업 무를 자</button><button class="chip" onclick="goTo('s6')"><b>6</b>아무개 씨</button><button class="chip" onclick="goTo('s7')"><b>7</b>라합의 아들</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>“떡집”에 떡이 떨어졌고,<br>“영원히 못 들어온다”던 모압에서 며느리가 왔다</h2><div class="refs">룻기 1:1-6, 16-17 · 창세기 19:36-37 · 신명기 23:3 · 미가 5:2 · 요한복음 6:35</div></div></div>
+    <div class="scene-body"><p>룻기의 첫 장면은 아이러니로 시작해요. 히브리어로 <span class="heb" data-tip="베트 레헴(bet lehem) — ‘떡집, 빵의 집’. 다윗의 고향이자, 미가 5:2가 예언한 대로 예수님이 태어나신 곳이다.">베들레헴</span>은 “떡집”이라는 뜻이에요. 그런데 그 떡집에 흉년이 들었어요(1:1). 빵집에 빵이 떨어진 거예요. 😄 엘리멜렉 가족은 먹을 것을 찾아 요단 건너 모압으로 떠나요. 그리고 십 년쯤 뒤, 나오미는 “여호와께서 자기 백성을 돌보시사 그들에게 양식을 주셨다”는 소식을 듣고 돌아와요(1:6).</p><p>나오미 곁에는 모압 여인 룻이 있었어요. 그런데 모압은 이스라엘과 사연이 깊은 나라예요. 모압 족속은 롯과 그의 딸 사이에서 시작되었고(창 19:36-37), 출애굽 때 이스라엘에게 떡과 물을 주지 않고 발람을 불러 저주하려 했어요. 그래서 율법에는 이런 말씀이 있어요. “암몬 사람과 모압 사람은 여호와의 총회에 들어오지 못하리니 그들에게 속한 자는 십 대뿐 아니라 영원히 여호와의 총회에 들어오지 못하리라”(신 23:3). 문 앞에 “출입 금지”가 붙어 있던 민족의 딸이 그 문을 두드린 거예요.</p><p>룻은 돌아가라는 시어머니에게 말해요. “어머니께서 가시는 곳에 나도 가고 어머니께서 머무시는 곳에서 나도 머물겠나이다 어머니의 백성이 나의 백성이 되고 어머니의 하나님이 나의 하나님이 되시리니”(1:16). 율법은 문을 막았지만, 하나님은 하나님을 붙드는 사람을 받아 주셨어요. 그리고 흉년이 들었던 그 “떡집”에서 훗날 한 아기가 태어나요(미 5:2; 마 2:1). 그 아기가 자라서 말씀하세요. <mark>“나는 생명의 떡이니”</mark>(요 6:35).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 신명기 23:3과 룻의 이야기가 어떻게 함께 설 수 있는지는 유대 랍비들 사이에서도 오래 논의된 주제예요. 랍비들 가운데는 이 금지가 남자에게만 해당한다고 본 해석도 있어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>“나는 들어갈 자격이 없다”고 느낄 때, 하나님을 붙드는 사람을 받아 주시는 은혜와 생명의 떡이신 예수님을 기억합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>“나를 마라라 부르라, 비어 돌아왔다”,<br>그런데 보아스는 “빈손으로 가지 말라”고 했다</h2><div class="refs">룻기 1:19-21 · 3:15-17 · 4:14-17 · 출애굽기 15:23-25</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">나오미의 고백</div>“여호와께서 내게 <b>비어</b> 돌아오게 하셨느니라”(1:21)</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">보아스의 말</div>“<b>빈 손으로</b> 네 시어머니에게 가지 말라”(3:17)</div></div><p>나오미가 십 년 만에 돌아오자 온 성읍이 떠들썩해요. “이이가 나오미냐.” 그러자 나오미가 대답해요. “나를 나오미라 부르지 말고 나를 마라라 부르라 이는 전능자가 나를 심히 괴롭게 하셨음이니라”(1:20). “나오미”는 “기쁨”이고 <span class="heb" data-tip="마라(mara) — ‘쓰다, 괴롭다’. 출애굽기 15:23에서 물이 써서 마시지 못했던 샘의 이름 ‘마라’와 같은 뿌리다.">마라</span>는 “쓰다”예요. 출애굽 때 백성이 물이 써서 마시지 못했던 그 “마라”예요(출 15:23). 나오미는 자기 이름을 “쓴 물”로 바꿔 달라고 한 거예요. 그리고 덧붙여요. “내가 풍족하게 나갔더니 여호와께서 내게 비어 돌아오게 하셨느니라”(1:21).</p><p>그런데 이 “비어”라는 단어가 3장에서 다시 나와요. 타작마당에서 밤을 보낸 룻이 돌아갈 때, 보아스가 룻의 겉옷에 보리를 여섯 번 되어 담아 주며 말해요. 룻은 그 말을 그대로 나오미에게 전해요. “빈 손으로 네 시어머니에게 가지 말라”(3:17). 히브리어로 1:21의 “비어”와 3:17의 “빈 손으로”는 같은 단어 “레캄”이에요. 나오미는 “하나님이 나를 비게 하셨다”고 했는데, 하나님은 보아스를 통해 “너를 빈손으로 두지 않겠다”고 대답하신 거예요.</p><p>이야기의 마지막 장면에서 나오미는 손자 오벳을 품에 안아요. 베들레헴 여인들이 이렇게 축복해요. “이는 네 생명의 회복자이며 네 노년의 봉양자라 곧 너를 사랑하며 일곱 아들보다 귀한 너의 며느리가 낳은 자로다”(4:15). 출애굽의 마라에서 나뭇가지 하나로 쓴 물을 달게 하신 하나님이(출 15:25), 쓴맛만 남았다던 나오미의 인생을 다시 달게 하셨어요. 우리의 쓴 인생을 달게 하시려고 <mark>나무에 달리신 분</mark>이 계셔요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>“하나님이 나를 비게 하셨다”고 느끼는 때에도, 나를 빈손으로 두지 않으시는 하나님이 이미 일하고 계심을 믿습니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>“우연히” 그 밭에 이르렀고,<br>“마침” 보아스가 왔다</h2><div class="refs">룻기 2:1-4, 17 · 레위기 19:9-10 · 23:22 · 로마서 8:28</div></div></div>
+    <div class="scene-body"><p>룻은 먹을 것을 구하러 이삭을 주우러 나가요. 레위기에 가난한 사람과 나그네를 위해 밭 모퉁이와 떨어진 이삭을 남겨 두라는 법이 있었기 때문이에요(레 19:9-10; 23:22). 그리고 성경은 이렇게 적어요. “우연히 엘리멜렉의 친족 보아스에게 속한 밭에 이르렀더라”(2:3). 히브리어로 직역하면 “그녀의 우연이 우연히 맞닥뜨렸다”처럼, 우연이라는 말을 두 번 겹쳐 써요. 바로 다음 절은 “마침”으로 시작해요. “마침 보아스가 베들레헴에서부터 와서”(2:4). 😄</p><p>이야기꾼이 일부러 “우연”을 강조하며 살짝 웃고 있는 것 같아요. 룻기는 하나님이 하늘에서 음성을 들려주시거나 기적을 일으키시는 장면이 없어요. 대신 굶주린 이방 여인이 마침 그 밭에 들어가고, 그 밭 주인이 마침 그 시간에 와서, 마침 그 여인을 눈여겨봐요. 그 “우연들”을 모아 보면, 하나님이 보이지 않는 손으로 길을 내고 계셨다는 것이 드러나요.</p><p>보아스는 일꾼들에게 룻이 곡식 단 사이에서도 줍게 하고, 일부러 이삭을 조금씩 뽑아 흘려 주라고 해요(2:15-16). 그날 저녁 룻이 떨어 보니 보리가 “한 에바”쯤 되었어요(2:17). 약 22리터, 무게로는 13~15kg쯤 되는 양이에요. 이삭 줍는 하루 벌이로는 엄청난 양이었어요. 레위기의 작은 규정 하나가 한 여인을 살리고, 그 만남이 다윗과 예수님의 족보를 열었어요. 바울의 말처럼 <mark>하나님은 모든 것이 합력하여 선을 이루게 하세요</mark>(롬 8:28).</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 에바의 부피는 학자마다 조금씩 다르게 추정해요. 여기서는 약 22리터로 보고, 보리의 무게를 리터당 0.6~0.7kg 정도로 계산했어요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 내게 일어난 “우연”과 “마침” 속에서 보이지 않게 길을 내시는 하나님의 손길을 찾아봅니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>보아스가 빈 “날개”의 축복을<br>룻은 보아스의 “옷자락”으로 돌려주었다</h2><div class="refs">룻기 2:12 · 3:7-11 · 에스겔 16:8 · 마태복음 23:37</div></div></div>
+    <div class="scene-body"><p>처음 만난 날 보아스는 룻을 이렇게 축복해요. “여호와께서 네가 행한 일에 보답하시기를 원하며 이스라엘의 하나님 여호와께서 그의 날개 아래에 보호를 받으러 온 네게 온전한 상 주시기를 원하노라”(2:12). 하나님의 날개 아래로 피한 여인이라는 아름다운 표현이에요. 그런데 보아스는 이 기도가 자기에게 돌아올 줄은 몰랐을 거예요. 😄</p><p>3장에서 나오미의 계획에 따라 룻은 한밤중 타작마당에서 잠든 보아스의 발치에 눕고, 깨어난 보아스에게 말해요. “당신의 옷자락을 펴 당신의 여종을 덮으소서 이는 당신이 기업을 무를 자가 됨이니이다”(3:9). 여기서 “옷자락”으로 옮긴 히브리어 <span class="heb" data-tip="카나프(kanaph) — ‘날개’ 또는 ‘옷자락, 옷의 끝자락’. 룻기 2:12의 ‘그의 날개 아래’와 3:9의 ‘당신의 옷자락’에 같은 단어가 쓰였다.">카나프</span>는 2:12의 “날개”와 같은 단어예요. 룻은 이렇게 말한 셈이에요. “하나님의 날개 아래 보호받기를 빌어 주셨지요? 그 날개가 되어 주세요.” 보아스의 기도에 대한 응답이 보아스 자신이었던 거예요.</p><p>옷자락을 펴서 덮는다는 것은 고대 근동에서 결혼과 보호를 약속하는 표현이었어요. 에스겔서에서 하나님은 버려진 아기 같던 이스라엘에게 “내 옷으로 너를 덮어”(겔 16:8) 언약을 맺었다고 말씀하세요. 보아스는 룻을 “현숙한 여자”라고 부르며 그 부탁을 받아들여요(3:11). 그리고 훗날 예수님이 예루살렘을 바라보며 우셨어요. “암탉이 그 새끼를 날개 아래에 모음 같이 내가 네 자녀를 모으려 한 일이 몇 번이더냐”(마 23:37). <mark>우리를 날개 아래 품으시는 분은 예수님</mark>이세요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>누군가를 위해 드린 기도에 내가 응답이 될 수 있음을 기억하고, 나를 날개 아래 품으시는 예수님께 피합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>기업 무를 자의 세 가지 조건,<br>친족이어야 하고, 값을 치를 수 있어야 하고, 원해야 했다</h2><div class="refs">룻기 2:20 · 3:12-13 · 4:1-10 · 레위기 25:25 · 히브리서 2:14-17 · 베드로전서 1:18-19</div></div></div>
+    <div class="scene-body"><p>룻기의 핵심 단어는 <span class="heb" data-tip="고엘(goel) — ‘기업 무를 자, 무르는 자, 구속자’. 가난 때문에 판 땅을 되사 주고, 종이 된 친족을 값을 치르고 풀어 주고, 대가 끊긴 집안의 이름을 이어 주는 가까운 친족을 말한다. 이사야서에서는 하나님을 ‘너의 구속자’라고 부를 때 같은 단어를 쓴다.">고엘</span>, “기업 무를 자”예요. 룻기에서만 스무 번 넘게 이 말과 그 동사가 나와요. 레위기에 따르면 누군가 가난해서 땅을 팔면 “그에게 가까운 기업 무를 자가 와서 그의 형제가 판 것을 무를 것”(레 25:25)이라고 했어요. 가까운 친족이 값을 치르고 그 땅을 집안으로 되찾아 주는 제도예요.</p><p>그런데 기업 무를 자가 되려면 조건이 있었어요. 첫째, 가까운 친족이어야 했어요. 아무나 대신 무를 수 없었어요. 둘째, 값을 치를 능력이 있어야 했어요. 보아스는 “유력한 자”(2:1)였어요. 셋째, 스스로 원해야 했어요. 의무로 강요할 수 없었거든요. 보아스는 이 세 가지를 다 갖췄고, 무엇보다 기꺼이 나섰어요. 그는 여호와의 살아 계심으로 맹세하며 기업 무를 자의 책임을 지겠다고 약속해요(3:13).</p><p>신약은 예수님이 바로 이 세 조건을 이루셨다고 말해요. 우리와 같은 혈과 육을 입으셔서 우리의 형제가 되셨고(히 2:14-17), 은이나 금이 아니라 “흠 없고 점 없는 어린 양 같은 그리스도의 보배로운 피”로 값을 치르셨고(벧전 1:18-19), 누가 억지로 시켜서가 아니라 스스로 목숨을 버리셨어요(요 10:18). 보아스가 룻을 위해 했던 일을, <mark>예수님은 우리 모두를 위해 하셨어요</mark>.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>나의 형제가 되시고, 값을 치르시고, 기꺼이 나를 되찾으신 기업 무를 자 예수님께 감사합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>자기 기업을 지키려던 친척은<br>이름 없이 “아무개”로 남았다</h2><div class="refs">룻기 4:1-12 · 신명기 25:5-10</div></div></div>
+    <div class="scene-body"><p>보아스보다 더 가까운 기업 무를 자가 한 사람 있었어요. 보아스는 아침 일찍 성문에 올라가 앉아 있다가, 마침 그 사람이 지나가자 불러요. 그런데 성경은 그의 이름을 적지 않아요. 보아스가 부른 말이 “아무개여 이리로 와서 앉으라”(4:1)예요. 히브리어 “펠로니 알모니”는 우리말로 “거시기”나 “아무개 씨” 정도의 말이에요. 😄 성경은 일부러 그의 이름을 빼 버린 거예요.</p><p>보아스가 엘리멜렉의 땅을 무르라고 하자, 아무개 씨는 처음엔 “내가 무르리라”(4:4) 하고 선뜻 나서요. 땅이 생기는 일이니까요. 그런데 그 땅을 무르면 룻과 결혼해서 죽은 자의 이름을 이어 주어야 한다는 말을 듣자 금세 물러나요. “나는 내 기업에 손해가 있을까 하여 나를 위하여 무르지 못하노니”(4:6). 자기 기업에 손해가 갈까 봐, 자기 이름이 흐려질까 봐 물러난 거예요. 그는 신을 벗어 보아스에게 건네며 권리를 넘겨요(4:7-8). 신명기에서는 형제의 이름을 이어 주기를 거부한 사람의 신을 벗기는 부끄러운 예식도 있었어요(신 25:9-10).</p><p>여기 깊은 아이러니가 있어요. 자기 이름과 기업을 지키려던 사람은 성경에서 이름조차 남지 않았어요. 반면 손해를 감수하고 죽은 자의 이름을 세워 주려 한 보아스는(4:10), 다윗의 족보와 마태복음 1장 예수님의 족보에 이름을 남겼어요. 예수님은 말씀하셨어요. “누구든지 제 목숨을 구원하고자 하면 잃을 것이요 누구든지 나를 위하여 제 목숨을 잃으면 찾으리라”(마 16:25). 그리고 그 말씀대로, <mark>자기를 비우신 예수님께 하나님은 모든 이름 위에 뛰어난 이름을 주셨어요</mark>(빌 2:9).</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내 이름과 손해를 먼저 계산하는 “아무개”가 아니라, 다른 사람을 세우려 기꺼이 손해를 감수하는 사람이 되기를 구합니다.</div>
+    </div>
+  </article>
+
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>이방 여인을 품은 보아스,<br>그의 어머니는 여리고의 라합이었다</h2><div class="refs">룻기 4:13-22 · 마태복음 1:3-6 · 여호수아 2:1 · 6:25 · 에베소서 2:12-13</div></div></div>
+    <div class="scene-body"><p>룻기의 마지막은 족보예요. “베레스의 계보는 이러하니라”로 시작해서 “이새는 다윗을 낳았더라”로 끝나요(4:18-22). 그런데 마태복음 1장이 이 족보에 숨은 이름 하나를 더 알려 줘요. “살몬은 라합에게서 보아스를 낳고 보아스는 룻에게서 오벳을 낳고”(마 1:5). 보아스의 어머니가 여리고의 기생 라합이었다는 거예요. 창문에 붉은 줄을 매달았던 그 이방 여인이요.</p><p>그러고 나니 룻기가 다르게 읽혀요. 밭에서 처음 본 모압 여인에게 보아스가 유난히 따뜻했던 이유가 짐작이 돼요. 그도 이방 여인의 아들로 베들레헴에서 자랐을 테니까요. 보아스는 룻을 “이방 여인”이라고 낮게 보지 않고, 시어머니를 섬긴 그녀의 이야기를 이미 다 들었다며 하나님의 상을 빌어 줬어요(2:11-12). 마태복음 1장의 족보에는 다말, 라합, 룻, 그리고 “우리야의 아내”까지, 사연 많은 여인들의 이름이 나란히 들어 있어요(마 1:3-6).</p><p>사사들이 다스리던 어두운 시대, 모두가 자기 소견에 옳은 대로 살던 때에, 하나님은 베들레헴의 한 보리밭에서 조용히 왕의 족보를 이어 가고 계셨어요. 그리고 그 족보의 끝에서, 이스라엘 밖에 있던 사람들, 약속의 언약들에 대해 외인이던 사람들을 <mark>그리스도의 피로 가까워지게 하신 분</mark>(엡 2:12-13)이 태어나셨어요. 바로 그 떡집, 베들레헴에서요.</p><p class="note sans" style="margin:10px 0 0;padding:0;">※ 보아스의 어머니가 라합이라는 내용은 마태복음 1:5에만 나와요. 여호수아 시대와 다윗 시대 사이의 세대 수가 적어서, 족보 중간의 몇 세대가 생략되었을 수 있다고 보는 학자들이 많아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 받은 은혜를 기억하며 나보다 낯선 사람을 따뜻하게 품고, 그런 사람들의 이름으로 족보를 엮으신 예수님을 찬양합니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">아무도 기억하지 않던 이방 여인이<br>왕의 족보에 이름을 올렸다</div>
+    <p>룻기는 사사기와 같은 시대의 이야기예요. 사사기가 나라 전체가 무너지는 큰 그림을 보여 준다면, 룻기는 그 시대 한 시골 마을 보리밭의 작은 그림을 보여 줘요. 그런데 그 작은 그림 속에 큰 이야기가 숨어 있었어요. 흉년, 죽음, 빈손, 쓴맛으로 시작한 이야기가 추수, 결혼, 아기, 다윗으로 끝나요. 하나님은 큰 소리로 말씀하지 않으셨지만, 한 번도 그 자리를 떠나지 않으셨어요.</p><p>유대인들은 칠칠절, 곧 오순절에 룻기를 읽어요. 보리 추수에서 밀 추수까지 이어지는 이야기이기 때문이에요. 그리고 신약의 오순절에, 여러 나라에서 온 사람들이 성령을 받고 한 교회가 되었어요(행 2:5-11). 모압 여인 룻이 이스라엘 하나님의 백성이 된 것처럼, 이제는 <mark>누구든지 예수 그리스도를 믿는 사람</mark>이 하나님의 날개 아래 들어갈 수 있어요.</p>
+    <div class="q">“어머니의 백성이 나의 백성이 되고<br>어머니의 하나님이<br>나의 하나님이 되시리니” (1:16)</div>
+  </section>
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

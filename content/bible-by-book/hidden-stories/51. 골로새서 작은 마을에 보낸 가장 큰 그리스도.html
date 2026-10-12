@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>골로새서, 작은 마을에 보낸 가장 큰 그리스도 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="한 번도 가 보지 못한 작은 도시의 교회에, 만물보다 크신 그리스도를 전한 편지에 숨은 이야기">
+<meta property="og:title" content="골로새서, 작은 마을에 보낸 가장 큰 그리스도">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+:root{
+  --bg:#f7f9fb;
+  --card:#ffffff;
+  --ink:#1b2530;
+  --ink-soft:#5a6875;
+  --line:#e3e9ef;
+  --sea:#1f5f86;
+  --sea-soft:#e3f0f8;
+  --coral:#e2604a;
+  --coral-soft:#fde9e4;
+  --gold:#c98f2e;
+  --gold-soft:#fbf1dc;
+}
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{
+  background:var(--bg); color:var(--ink);
+  font-family:"Noto Serif KR","Noto Serif CJK KR",serif;
+  font-size:16px; line-height:1.85; -webkit-text-size-adjust:100%;
+  word-break:keep-all;
+}
+.sans{ font-family:"Pretendard","Pretendard Variable",-apple-system,"Apple SD Gothic Neo",sans-serif; }
+
+/* ===== HERO: 파스텔 펄 그라데이션 ===== */
+.hero{
+  position:relative; overflow:hidden;
+  padding:72px 22px 60px; text-align:center;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(186,222,245,0.95), transparent 55%),
+    radial-gradient(circle at 85% 18%, rgba(255,214,204,0.85), transparent 50%),
+    radial-gradient(circle at 70% 90%, rgba(253,236,196,0.9), transparent 55%),
+    radial-gradient(circle at 12% 88%, rgba(214,236,228,0.9), transparent 55%),
+    linear-gradient(160deg,#eef6fb 0%,#fdf4f0 55%,#fbf6ea 100%);
+}
+.hero .series{ font-size:12.5px; font-weight:700; letter-spacing:0.18em; color:var(--sea); margin-bottom:18px; }
+.hero h1{ font-size:34px; line-height:1.3; font-weight:800; margin:0 0 14px; letter-spacing:-0.02em; color:#12202c; }
+.hero h1 em{ font-style:normal; color:var(--coral); }
+.hero .sub{ font-size:15px; color:#44525e; max-width:420px; margin:0 auto; line-height:1.7; }
+.hero .ref{ display:inline-block; margin-top:22px; font-size:12.5px; font-weight:600; color:var(--sea); background:rgba(255,255,255,0.7); border:1px solid rgba(31,95,134,0.18); padding:6px 14px; border-radius:20px; }
+
+.wrap{ max-width:640px; margin:0 auto; padding:0 18px 90px; }
+
+/* ===== 여는 글 ===== */
+.opening{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:24px 22px; margin:-26px 0 26px; position:relative; box-shadow:0 10px 30px rgba(20,40,60,0.06); }
+.opening p{ margin:0 0 12px; }
+.opening p:last-child{ margin:0; }
+.label{ font-size:12px; font-weight:800; letter-spacing:0.14em; color:var(--gold); margin-bottom:10px; }
+
+/* ===== 목차 칩 ===== */
+.chips{ display:flex; flex-wrap:wrap; gap:8px; margin:0 0 30px; justify-content:center; }
+.chip{ font-size:13px; font-weight:600; color:var(--sea); background:var(--sea-soft); padding:7px 12px; border-radius:18px; text-decoration:none; cursor:pointer; border:none; }
+.chip b{ color:var(--coral); margin-right:4px; }
+
+/* ===== 장면 카드 ===== */
+.scene{ background:var(--card); border:1px solid var(--line); border-radius:18px; padding:0; margin-bottom:22px; overflow:hidden; box-shadow:0 6px 20px rgba(20,40,60,0.05); scroll-margin-top:14px; }
+.scene-head{ display:flex; gap:14px; align-items:flex-start; padding:22px 20px 16px; border-bottom:1px dashed var(--line); }
+.num{ flex-shrink:0; width:42px; height:42px; border-radius:12px; background:linear-gradient(145deg,#2a7bab,#1f5f86); color:#fff; font-size:19px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+.scene h2{ font-size:19px; font-weight:800; line-height:1.45; margin:0 0 6px; letter-spacing:-0.01em; }
+.scene .refs{ font-size:12.5px; color:var(--ink-soft); font-weight:500; }
+.scene-body{ padding:18px 20px 20px; }
+.scene-body p{ margin:0 0 12px; }
+
+/* 대조 박스 */
+.vs{ display:grid; grid-template-columns:1fr auto 1fr; gap:8px; align-items:stretch; margin:4px 0 16px; }
+.vs-side{ border-radius:12px; padding:12px 12px; font-size:13.5px; line-height:1.55; }
+.vs-side .who{ font-size:11.5px; font-weight:800; letter-spacing:0.06em; margin-bottom:4px; }
+.vs-a{ background:var(--sea-soft); color:#173f58; }
+.vs-a .who{ color:var(--sea); }
+.vs-b{ background:var(--coral-soft); color:#6b2618; }
+.vs-b .who{ color:var(--coral); }
+.vs-mid{ display:flex; align-items:center; font-size:12px; font-weight:800; color:#9aa7b3; }
+
+/* 강조 */
+mark{ background:linear-gradient(transparent 58%, #ffe1a6 58%); color:inherit; padding:0 1px; }
+.hl{ font-weight:700; color:var(--sea); }
+.heb{ font-family:"Pretendard",sans-serif; font-weight:700; color:#235f56; background:#dcefe9; padding:1px 6px; border-radius:5px; cursor:pointer; border-bottom:1.5px dashed #6aa99b; }
+.smile{ font-style:normal; }
+
+/* 돌아보기 */
+.reflect{ margin-top:14px; background:var(--gold-soft); border-radius:12px; padding:13px 15px; font-size:14.5px; color:#5b4214; line-height:1.7; }
+.reflect .rl{ font-size:11.5px; font-weight:800; letter-spacing:0.12em; color:var(--gold); margin-bottom:3px; }
+
+/* ===== 맺는 글 ===== */
+.closing{ margin-top:34px; border-radius:20px; padding:30px 22px; text-align:center;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(186,222,245,0.8), transparent 55%),
+    radial-gradient(circle at 85% 80%, rgba(255,214,204,0.7), transparent 55%),
+    linear-gradient(160deg,#f1f8fc,#fdf5f1);
+  border:1px solid #e2ecf2; }
+.closing .big{ font-size:21px; font-weight:800; line-height:1.55; margin:6px 0 14px; color:#12202c; letter-spacing:-0.01em; }
+.closing p{ margin:0 0 10px; font-size:15px; color:#3c4a56; }
+.closing .q{ margin-top:16px; font-size:16px; font-weight:700; color:var(--coral); }
+
+.note{ font-size:12.5px; color:var(--ink-soft); margin-top:22px; padding:0 4px; line-height:1.7; }
+
+footer{ text-align:center; padding:36px 0 10px; font-size:12px; letter-spacing:0.08em; color:#8a97a3; }
+footer .line{ width:36px; height:2px; background:var(--gold); margin:0 auto 14px; opacity:0.7; }
+
+/* 툴팁 */
+#tip{ display:none; position:absolute; z-index:500; max-width:280px; background:#fff; color:var(--ink); font-size:13.5px; line-height:1.65; padding:12px 15px; border-radius:12px; border-top:4px solid #2e8b7a; box-shadow:0 8px 26px rgba(0,0,0,0.18); font-family:"Pretendard",sans-serif; }
+
+/* 플로팅 버튼 */
+.floating{ position:fixed; right:14px; bottom:16px; z-index:400; display:flex; flex-direction:column; gap:8px; align-items:flex-end; }
+.floating button{ font-family:"Pretendard",sans-serif; display:flex; align-items:center; gap:6px; background:rgba(255,255,255,0.92); color:var(--sea); border:1px solid #cfe0ea; border-radius:24px; padding:9px 14px; font-size:12.5px; font-weight:700; box-shadow:0 4px 16px rgba(20,40,60,0.15); cursor:pointer; backdrop-filter:blur(6px); }
+
+
+/* 1부·2부 구분 */
+.part{ text-align:center; margin:38px 0 20px; }
+.part .pno{ display:inline-block; font-size:12px; font-weight:800; letter-spacing:0.16em; color:#fff; background:linear-gradient(145deg,#e97a64,#e2604a); padding:5px 13px; border-radius:14px; margin-bottom:10px; }
+.part h2{ font-size:22px; font-weight:800; margin:0 0 6px; letter-spacing:-0.01em; }
+.part p{ margin:0; font-size:14px; color:var(--ink-soft); }
+.debate{ display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:14px 0 4px; }
+.debate div{ background:var(--bg); border:1px solid var(--line); border-radius:12px; padding:12px 13px; font-size:13.5px; line-height:1.6; }
+.debate b{ display:block; font-size:12px; color:var(--sea); margin-bottom:3px; letter-spacing:0.04em; }
+.mini{ display:flex; flex-direction:column; gap:10px; }
+.mini-item{ display:flex; gap:12px; background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 15px; }
+.mini-no{ flex-shrink:0; width:28px; height:28px; border-radius:50%; background:var(--coral-soft); color:var(--coral); font-weight:800; font-size:13.5px; display:flex; align-items:center; justify-content:center; font-family:"Pretendard",sans-serif; }
+.mini-t{ font-family:"Pretendard",sans-serif; font-weight:800; font-size:15.5px; margin-bottom:3px; }
+.mini-b{ font-size:14.5px; color:#34424e; line-height:1.7; }
+.target{ margin-top:16px; background:var(--card); border:1px solid var(--line); border-left:4px solid var(--coral); border-radius:12px; padding:16px 17px; font-size:15px; }
+.target p{ margin:0 0 8px; } .target p:last-child{ margin:0; }
+@media (max-width:420px){ .debate{ grid-template-columns:1fr; } }
+@media (max-width:420px){
+  .hero h1{ font-size:29px; }
+  .vs{ grid-template-columns:1fr; }
+  .vs-mid{ justify-content:center; }
+}
+@media print{ .floating{ display:none; } .scene{ break-inside:avoid; } }
+
+.steps{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.steps div{ font-family:"Pretendard",sans-serif; font-size:14px; background:var(--bg); border:1px solid var(--line); border-radius:10px; padding:8px 12px; }
+.steps div b{ color:var(--coral); margin-right:6px; }
+.steps div.last{ background:var(--sea-soft); border-color:#cfe0ea; color:#173f58; font-weight:700; }
+.wp{ display:flex; flex-direction:column; gap:6px; margin:6px 0 14px; }
+.wp div{ font-size:14.5px; background:var(--bg); border-radius:10px; padding:9px 12px; line-height:1.6; }
+.wp .pl{ font-family:"Pretendard",sans-serif; font-weight:800; color:var(--sea); }
+.quote{ padding-left:14px; border-left:3px solid #cfe0ea; color:#3c4a56; margin:0 0 12px; }
+</style>
+</head>
+<body>
+<div id="top"></div>
+
+<div id="tip"></div>
+
+<div class="floating sans">
+  <button onclick="goTo('top')">&#8593; 처음으로</button>
+  <button onclick="goBackHomeSafe()">&#127968; 자료실로 가기</button>
+</div>
+
+<header class="hero sans">
+  <div class="series">성경의 숨은 재밌는 이야기 · 17</div>
+  <h1>골로새서,<br>작은 마을에 보낸<br><em>가장 큰</em> 그리스도</h1>
+  <p class="sub">바울이 한 번도 가 보지 못한 교회에<br>"그리스도가 전부"라고 써 보낸 편지</p>
+  <div class="ref">골로새서 1–4장</div>
+</header>
+
+<main class="wrap">
+  <section class="opening">
+    <div class="label sans">여는 글</div>
+    <p>골로새는 바울 시대에 이미 한물간 작은 도시였어요. 19세기 영국의 성서학자 라이트풋은 골로새를 두고 "바울이 편지를 보낸 곳 가운데 가장 보잘것없는 도시"라고 했을 정도예요. 게다가 바울은 이 교회에 한 번도 가 본 적이 없었어요. 그런데 이 작은 교회에 보낸 네 장짜리 편지에, 신약 성경에서 <mark>그리스도를 가장 크게 그린 말씀</mark>이 들어 있어요.</p>
+    <p>그 편지 속에 재밌는 이야기들이 숨어 있어요. 무릎으로 싸운 개척자, 시편에서 가져온 "장자"라는 말, 십자가에 못 박힌 빚 문서, 나중에 이 지역에서 벌어진 천사 숭배의 역설, 인사말 속에 숨은 두 동역자의 엇갈린 운명, 그리고 옆 동네와 돌려 읽은 편지까지요. 그 흔적을 따라가면 한 분이 보여요. <span class="hl">만물보다 먼저 계시고 만물이 그 안에 함께 선 그리스도</span>예요(1:17).</p>
+  </section>
+
+  <div class="part sans" id="part1">
+    <div class="pno">1부</div>
+    <h2>골로새서는 어떤 책일까?</h2>
+    <p>가 보지 못한 교회에 보낸 그리스도 중심의 편지</p>
+  </div>
+
+  <section class="opening" style="margin-top:0;">
+    <p>골로새는 지금의 튀르키예 서남부, 루커스 강 골짜기에 있던 도시예요. 가까이에 라오디게아와 히에라볼리가 있었어요(4:13). 옛날에는 큰 도시였지만 바울 시대에는 이웃 라오디게아에 밀려 작은 도시가 되었어요. 이 교회는 바울이 에베소에서 사역할 때 복음을 들은 골로새 사람 에바브라가 세웠어요(1:7). 바울은 감옥에서 에바브라에게 교회 소식을 듣고, 헛된 가르침에 흔들리지 말라고 이 편지를 썼어요. 로마에 갇혀 있던 주후 60–62년 무렵으로 보는 경우가 많아요.</p>
+    <div class="debate sans"><div><b>사라진 도시</b>주전 5세기 역사가 헤로도토스는 골로새를 "큰 도시"라 불렀어요. 하지만 지금은 도시가 사라지고, 튀르키예 호나즈 마을 근처에 흙 언덕만 남아 있어요.</div><div><b>함께 간 편지들</b>두기고와 오네시모가 이 편지를 들고 갔어요(4:7-9). 같은 때에 빌레몬서와 에베소서도 함께 전해진 것으로 봐요. 에베소서와 내용이 닮은 곳이 많아요.</div></div>
+    <p class="note sans" style="margin:12px 0 0;padding:0;">※ 골로새서를 바울이 직접 쓴 것인지에 대해 의문을 제기하는 학자들도 있지만, 교회는 처음부터 바울의 편지로 받아 왔어요. 로마의 역사가 타키투스는 주후 60년 무렵 라오디게아가 큰 지진으로 무너졌다고 기록했는데, 골로새도 그때 피해를 입었다고 보는 학자들이 있어요.</p>
+  </section>
+
+  <div class="label sans" style="margin:6px 4px 12px;">골로새서의 큰 특징 다섯 가지</div>
+  <div class="mini"><div class="mini-item"><div class="mini-no">1</div><div><div class="mini-t sans">가 보지 못한 교회</div><div class="mini-b">"내 육신의 얼굴을 보지 못한 자들을 위하여 얼마나 힘쓰는지"(2:1). 바울이 직접 세우지 않은 교회에 보낸 편지예요.</div></div></div><div class="mini-item"><div class="mini-no">2</div><div><div class="mini-t sans">그리스도 찬가</div><div class="mini-b">1장 15–20절은 창조와 구원 모두의 중심에 계신 그리스도를 노래해요. 신약에서 그리스도를 가장 높이 그린 말씀 가운데 하나예요.</div></div></div><div class="mini-item"><div class="mini-no">3</div><div><div class="mini-t sans">헛된 철학에 대한 경고</div><div class="mini-b">"누가 철학과 헛된 속임수로 너희를 사로잡을까 주의하라"(2:8). 먹고 마시는 규칙, 절기, 천사 숭배를 내세우던 가르침을 경계해요.</div></div></div><div class="mini-item"><div class="mini-no">4</div><div><div class="mini-t sans">위의 것을 찾으라</div><div class="mini-b">"위의 것을 생각하고 땅의 것을 생각하지 말라"(3:2). 그리스도와 함께 살아난 사람의 새로운 삶을 옷을 갈아입는 모습으로 그려요.</div></div></div><div class="mini-item"><div class="mini-no">5</div><div><div class="mini-t sans">친필 인사</div><div class="mini-b">"나 바울은 친필로 문안하노니 내가 매인 것을 생각하라"(4:18). 쇠사슬에 묶인 손으로 마지막 인사를 직접 써요.</div></div></div></div>
+
+  <div class="target"><p>골로새서의 중심에는 이 말씀이 있어요. <span class="hl">"그 안에는 신성의 모든 충만이 육체로 거하시고 너희도 그 안에서 충만하여졌으니"</span>(2:9-10). 그리스도께 무엇을 더 보태야 완전해지는 게 아니에요. 그리스도 한 분 안에 이미 모든 것이 있어요. 그래서 바울은 이렇게 말해요. <mark>"오직 그리스도는 만유시요 만유 안에 계시니라"</mark>(3:11).</p></div>
+
+  <div class="part sans" id="part2">
+    <div class="pno">2부</div>
+    <h2>더 깊이 숨은 7가지 장면</h2>
+    <p>무릎으로 싸운 개척자부터 옆 동네와 돌려 읽은 편지까지</p>
+  </div>
+
+  <nav class="chips sans" id="scenes"><button class="chip" onclick="goTo('s1')"><b>1</b>무릎으로 싸운 개척자</button><button class="chip" onclick="goTo('s2')"><b>2</b>만물보다 먼저</button><button class="chip" onclick="goTo('s3')"><b>3</b>십자가에 박힌 빚 문서</button><button class="chip" onclick="goTo('s4')"><b>4</b>천사 숭배의 역설</button><button class="chip" onclick="goTo('s5')"><b>5</b>옷을 갈아입다</button><button class="chip" onclick="goTo('s6')"><b>6</b>인사말 속 두 사람</button><button class="chip" onclick="goTo('s7')"><b>7</b>돌려 읽은 편지</button></nav>
+
+  <article class="scene" id="s1">
+    <div class="scene-head sans"><div class="num">1</div><div><h2>무릎으로 씨름한<br>개척자 에바브라</h2><div class="refs">골로새서 1:7-8 · 4:12-13 · 빌레몬서 1:23</div></div></div>
+    <div class="scene-body"><p>골로새 교회를 세운 사람은 바울이 아니라 에바브라예요. 골로새 출신인 그는 아마 에베소에서 바울에게 복음을 듣고 고향으로 돌아가 교회를 세운 것 같아요. 바울이 에베소에서 두 해 동안 가르치는 사이 "아시아에 사는 자는 유대인이나 헬라인이나 다 주의 말씀을 듣더라"(행 19:10)고 했는데, 에바브라가 그 열매 가운데 하나였을 거예요. 바울은 그를 "우리와 함께 종 된 사랑하는 에바브라… 그리스도의 신실한 일꾼"(1:7)이라고 불러요.</p>
+        <p>그런데 에바브라는 교회에 헛된 가르침이 들어오자 멀리 로마의 감옥까지 바울을 찾아갔어요. 그리고 어느새 그 자신도 "나와 함께 갇힌 자"가 되었어요(몬 1:23). 감옥에서 에바브라가 한 일은 기도였어요. "그가 항상 너희를 위하여 <span class="heb" data-tip="아고니조마이(agōnizomai) — 경기장에서 싸우다, 씨름하다. 영어 agony(몸부림치는 고통)의 뿌리.">애써 기도하여</span>"(4:12). 이 "애쓰다"는 원래 <mark>경기장에서 레슬링 선수가 씨름하는 모습</mark>을 가리키던 말이에요. 영어 agony의 뿌리이기도 해요.</p>
+        <p>에바브라는 고향 골로새만이 아니라 "라오디게아에 있는 자들과 히에라볼리에 있는 자들을 위하여"(4:13)도 수고했어요. 몸은 감옥에 있어도 무릎으로는 루커스 골짜기의 세 교회를 품고 있었던 거예요. 😄 바울의 편지는 이름을 남겼지만, 그 편지가 쓰이게 한 사람은 <span class="hl">조용히 무릎 꿇은 개척자</span>였어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 에바브라가 에베소에서 바울을 통해 복음을 들었다는 것은 본문을 바탕으로 한 추정이에요. "에바브라"는 빌립보서의 "에바브로디도"를 줄인 형태의 이름이지만, 두 사람은 다른 인물로 보는 것이 일반적이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>보이는 자리의 일보다 먼저, 내가 품은 사람들을 위해 무릎으로 씨름하는 기도를 드립니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s2">
+    <div class="scene-head sans"><div class="num">2</div><div><h2>시편에서 가져온<br>"먼저 나신 이"</h2><div class="refs">골로새서 1:15-20 · 시편 89:27</div></div></div>
+    <div class="scene-body"><p>1장 15–20절은 그리스도를 이렇게 노래해요. "그는 보이지 아니하는 하나님의 형상이시요 모든 피조물보다 <span class="heb" data-tip="프로토토코스(prōtotokos) — 처음 난 자, 장자. 태어난 순서뿐 아니라 상속권과 으뜸 되는 지위를 가리키기도 한다.">먼저 나신 이</span>시니"(1:15). 여기서 "먼저 나신 이"는 "맏아들", 곧 <mark>장자</mark>라는 뜻이에요.</p>
+        <p>이 말에는 구약의 뿌리가 있어요. 하나님은 다윗의 왕통을 두고 이렇게 약속하셨어요. "내가 또 그를 <span class="hl">장자</span>로 삼고 세상 왕들에게 지존자가 되게 하며"(시 89:27). 여기서 장자는 가장 먼저 태어난 아이라는 뜻보다 모든 왕 위에 서는 으뜸의 자리를 뜻해요. 그러니 "모든 피조물보다 먼저 나신 이"는 예수님이 첫 번째로 만들어진 피조물이라는 뜻이 아니라, <mark>모든 피조물 위에 계신 상속자</mark>라는 뜻이에요. 바로 다음 절이 그걸 분명히 해요. "만물이 그에게서 창조되되… 다 그로 말미암고 그를 위하여 창조되었고"(1:16).</p>
+        <p>교회사에서도 이 구절은 중요한 싸움터였어요. 4세기의 아리우스는 이 구절을 들어 "아들도 하나님이 처음 만드신 존재"라고 주장했어요. 교회는 주후 325년 니케아 공의회에서 그리스도께서 <span class="hl">창조되지 않으시고 나셨으며, 아버지와 본질이 같으신 참 하나님</span>이라고 고백했어요. 그리고 1장 17절은 그리스도가 지금도 하시는 일을 말해요. "만물이 그 안에 <span class="heb" data-tip="쉬네스테켄(synestēken) — 함께 모여 서 있다, 하나로 붙들려 있다.">함께 섰느니라</span>". 온 세상이 흩어지지 않고 서 있는 건, 그분이 붙들고 계시기 때문이에요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>예수님을 내 삶의 여러 좋은 것 가운데 하나로 두지 않고, 만물을 지으시고 지금도 붙드시는 으뜸으로 모십니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s3">
+    <div class="scene-head sans"><div class="num">3</div><div><h2>십자가에 못 박힌<br>우리의 빚 문서</h2><div class="refs">골로새서 2:13-15 · 요한복음 19:19 · 고린도후서 2:14</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">빌라도가 붙인 패</div>"나사렛 예수 <b>유대인의 왕</b>"(요 19:19). 예수님의 죄목이라며 십자가 위에 붙였어요.</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">하나님이 붙이신 문서</div>우리를 거스르던 <b>빚 문서</b>를 지우시고 그 십자가에 못 박으셨어요(골 2:14).</div></div><p>2장 14절은 이렇게 말해요. "우리를 거스르고 불리하게 하는 법조문으로 쓴 <span class="heb" data-tip="케이로그라폰(cheirographon) — 손으로 쓴 문서. 빚진 사람이 직접 서명한 차용증을 가리킬 때 흔히 쓰였다.">증서</span>를 지우시고 제하여 버리사 십자가에 못 박으시고". 여기서 "증서"는 원래 <mark>빚진 사람이 자기 손으로 써서 서명한 차용증</mark>을 가리키는 말이에요. "내가 이만큼 빚졌습니다" 하고 내 손으로 쓴 문서예요.</p>
+        <p>그 시대 문서는 파피루스에 잉크로 썼어요. 잉크가 마르기 전이나 지우개로 문지르듯 닦아 내면 글자가 지워졌죠. "지우시고"라는 말이 바로 그렇게 글씨를 닦아 없애는 말이에요. 그리고 하나님은 그 빚 문서를 십자가에 못 박으셨어요. 로마 사람들은 십자가 위에 죄인의 죄목을 적은 패를 붙였어요. 예수님의 십자가에도 "나사렛 예수 유대인의 왕"이라는 패가 붙었죠. 그런데 하나님이 보시기에 그 십자가에 붙은 진짜 문서는 <span class="hl">우리의 빚 목록</span>이었어요. 예수님이 우리 빚을 대신 지고 달리신 거예요.</p>
+        <p>그리고 15절이 이어져요. "통치자들과 권세들을 무력화하여 드러내어 구경거리로 삼으시고 십자가로 그들을 <span class="heb" data-tip="트리암뷰사스(thriambeusas) — 개선 행렬로 끌고 가다. 고린도후서 2:14의 '이기게 하시고'와 같은 단어.">이기셨느니라</span>". 이 "이기셨다"는 고린도후서 2장에서 본 로마 <mark>개선 행렬</mark>의 단어예요. 세상이 보기엔 십자가가 패배였지만, 하나님은 그 십자가를 개선 행렬로 바꾸셨어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 십자가 위의 죄패와 2:14의 "빚 문서"를 연결하는 것은 여러 설교자와 주석가들이 즐겨 쓰는 해석이에요. 본문이 직접 죄패를 언급하지는 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>내가 갚을 수 없던 빚 문서가 이미 지워져 십자가에 못 박혔음을 믿고, 그 은혜 앞에 감사합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s4">
+    <div class="scene-head sans"><div class="num">4</div><div><h2>"천사 숭배를 조심하라"<br>그 지역에 벌어진 일</h2><div class="refs">골로새서 2:16-23</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">그림자</div>먹고 마시는 규칙, 절기, 초하루, 안식일</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">몸</div>"몸은 <b>그리스도</b>의 것이니라"(2:17)</div></div><p>골로새 교회를 흔들던 가르침은 여러 가지가 뒤섞여 있었어요. 먹고 마시는 규칙, 절기와 초하루, 그리고 "꾸며낸 겸손과 <span class="hl">천사 숭배</span>"(2:18)까지요. 바울은 그들의 구호를 그대로 옮겨 적어요. "붙잡지도 말고 맛보지도 말고 만지지도 말라"(2:21). 😄 금지 조항만 세 개가 연달아 나와요. 그러고는 한마디로 정리해요. 그건 다 사람의 규칙일 뿐, 육체의 욕심을 막는 데는 아무 힘이 없다고요(2:22-23).</p>
+        <p>바울은 이 모든 것을 <mark>그림자와 몸</mark>에 빗대요. "이것들은 장래 일의 그림자이나 몸은 그리스도의 것이니라"(2:17). 저 멀리서 누군가 걸어올 때 그림자가 먼저 보이잖아요. 그런데 그 사람이 눈앞에 왔는데도 계속 바닥의 그림자만 붙잡고 있으면 이상하죠. 절기와 규칙은 오실 그리스도를 미리 보여 준 그림자였어요. 이제 몸이신 분이 오셨어요.</p>
+        <p>그런데 역사에는 씁쓸한 뒷이야기가 있어요. 바울이 천사 숭배를 경고한 이 루커스 골짜기에서, 몇백 년 뒤 천사를 섬기는 풍습이 크게 번졌어요. 4세기에 바로 옆 도시에서 열린 <span class="hl">라오디게아 회의</span>는 교회를 떠나 천사의 이름을 부르는 모임을 금지했어요. 5세기의 교부 테오도레토스는 골로새서 2장을 풀이하면서, 그 지역에 천사장 미가엘에게 기도하는 곳들이 있다고 기록했어요. 골로새 근처 호나즈에는 미가엘에게 바친 유명한 교회까지 세워졌어요. 바울의 경고가 얼마나 필요했는지 보여 주는 이야기예요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 골로새 교회를 흔든 가르침이 정확히 무엇이었는지는 학자들 사이에 여러 의견이 있어요. 라오디게아 회의의 연대는 대략 4세기 중후반으로 봐요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>눈에 보이는 규칙과 신비한 체험을 붙잡기보다, 그림자가 가리키던 몸이신 그리스도를 붙듭니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s5">
+    <div class="scene-head sans"><div class="num">5</div><div><h2>옛 옷을 벗고<br>새 옷을 입는 사람</h2><div class="refs">골로새서 2:12 · 3:1-14</div></div></div>
+    <div class="scene-body"><p>3장에서 바울은 그리스도인의 삶을 <mark>옷 갈아입기</mark>로 그려요. "옛 사람과 그 행위를 벗어 버리고 새 사람을 입었으니"(3:9-10). 분냄과 악의와 비방은 벗어 버리고, "긍휼과 자비와 겸손과 온유와 오래 참음을 옷 입고"(3:12), 그 위에 "사랑을 더하라 이는 온전하게 매는 띠니라"(3:14). 옷을 다 입고 마지막에 허리띠를 매듯, 사랑이 모든 것을 하나로 묶어 준다는 거예요.</p>
+        <p>이 그림은 침례와 이어져 있어요. 바울은 앞에서 이렇게 말했어요. "너희가 침례로 그리스도와 함께 장사되고 또 죽은 자들 가운데서 그를 일으키신 하나님의 역사를 믿음으로 말미암아 그 안에서 함께 일으키심을 받았느니라"(2:12). 초대교회 기록에는 침례를 받는 사람이 입던 옷을 벗고 물에 들어갔다가, 나와서 새 옷을 입었다는 내용이 나와요. 옛 사람을 벗고 새 사람을 입는다는 말이 눈으로 보이는 예식이 된 거예요.</p>
+        <p>그리고 그 새 옷을 입은 사람들이 모인 곳을 이렇게 말해요. "거기에는 헬라인이나 유대인이나 할례파나 무할례파나 야만인이나 <span class="heb" data-tip="스구디아(Scythia) — 흑해 북쪽의 유목민. 당시 그리스·로마 사람들은 이들을 야만인 중에서도 가장 거친 사람들로 여겼다.">스구디아인</span>이나 종이나 자유인이 차별이 있을 수 없나니"(3:11). 스구디아 사람은 당시 사람들이 <span class="hl">야만인 중의 야만인</span>으로 여기던 사람들이에요. 그런 사람도 똑같은 새 옷을 입고 한 식탁에 앉아요. "오직 그리스도는 만유시요 만유 안에 계시니라".</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 침례 때 옷을 벗고 새 옷을 입는 모습은 주로 3세기 이후의 교회 기록에 나와요. 바울 시대에도 그랬는지는 확실하지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>침례 때 벗어 버린 옛 옷을 다시 꺼내 입지 않았는지 돌아보고, 오늘도 그리스도의 옷을 입고 사랑의 띠를 맵니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s6">
+    <div class="scene-head sans"><div class="num">6</div><div><h2>인사말에 나란히 선<br>누가와 데마</h2><div class="refs">골로새서 4:7-14 · 디모데후서 4:10-11 · 사도행전 15:37-39</div></div></div>
+    <div class="scene-body"><div class="vs sans"><div class="vs-side vs-a"><div class="who">골로새서 4:14</div>"사랑을 받는 의사 <b>누가</b>와 또 <b>데마</b>가 너희에게 문안하느니라"</div><div class="vs-mid">VS</div><div class="vs-side vs-b"><div class="who">디모데후서 4:10-11</div>"<b>데마</b>는 이 세상을 사랑하여 나를 버리고… <b>누가</b>만 나와 함께 있느니라"</div></div><p>편지 끝 인사말은 그냥 지나치기 쉬운데, 골로새서의 인사말에는 인생 드라마가 숨어 있어요. 먼저 오네시모가 나와요. "신실하고 사랑을 받는 형제 오네시모를 함께 보내노니 그는 너희에게서 온 사람이라"(4:9). 그는 골로새 사람 빌레몬의 집에서 도망쳤던 종이었어요. 그런데 이제 바울은 그를 <mark>"신실하고 사랑을 받는 형제"</mark>라고 부르며 교회 앞에 세워요.</p>
+        <p>다음은 마가예요. "바나바의 생질 마가"(4:10). 마가는 1차 전도여행 도중에 돌아가 버려서, 2차 전도여행 때는 바울과 바나바가 마가 문제로 크게 다투고 갈라섰어요(행 15:37-39). 그런 마가를 바울이 이제 동역자로 소개하고, 훗날에는 "그가 나의 일에 유익하니라"(딤후 4:11)고까지 말해요. 한 번 넘어진 사람을 다시 세우시는 은혜예요. 그리고 "유스도라 하는 예수"(4:11)도 나와요. 이름이 <span class="hl">예수</span>인 동역자예요. 😄 당시 유대인 사이에서 흔한 이름이었거든요.</p>
+        <p>그리고 마지막에 두 사람이 나란히 나와요. "사랑을 받는 의사 누가와 또 데마"(4:14). 같은 감옥 곁에서 같은 인사를 보낸 두 사람이에요. 그런데 몇 해 뒤, 바울의 마지막 편지에는 이렇게 적혀 있어요. "데마는 이 세상을 사랑하여 나를 버리고… <mark>누가만 나와 함께 있느니라</mark>"(딤후 4:10-11). 한때 나란히 서 있던 두 사람의 길이 이렇게 갈렸어요.</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ 오네시모가 빌레몬의 종이었다는 것은 빌레몬서를 바탕으로 한 것이에요. 누가와 데마가 골로새서를 쓸 때 정확히 어디에 있었는지는 성경이 자세히 말하지 않아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>오늘 믿음의 자리에 나란히 서 있다는 것에 안주하지 않고, 끝까지 주님 곁에 남는 사람이 되도록 은혜를 구합니다.</div>
+    </div>
+  </article>
+  <article class="scene" id="s7">
+    <div class="scene-head sans"><div class="num">7</div><div><h2>옆 동네 교회와<br>돌려 읽은 편지</h2><div class="refs">골로새서 4:15-18 · 요한계시록 3:14-22</div></div></div>
+    <div class="scene-body"><p>편지 끝에 바울은 이런 부탁을 해요. "이 편지를 너희에게서 읽은 후에 라오디게아인의 교회에서도 읽게 하고 또 <mark>라오디게아로부터 오는 편지</mark>를 너희도 읽으라"(4:16). 교회들이 사도의 편지를 서로 돌려 읽었다는 거예요. 이렇게 돌려 읽고 베껴 쓰던 편지들이 모여서, 우리가 지금 손에 든 신약 성경이 되었어요.</p>
+        <p>그런데 "라오디게아로부터 오는 편지"는 어디 갔을까요? 지금 우리 성경에는 그런 제목의 편지가 없어요. 잃어버린 편지라고 보기도 하고, 여러 교회에 돌리던 에베소서가 바로 그 편지라고 보기도 해요. 중세에는 누군가 <span class="hl">"라오디게아인에게 보낸 편지"</span>라는 짧은 라틴어 편지를 지어내서 돌리기도 했는데, 교회는 그것을 바울의 편지로 받아들이지 않았어요.</p>
+        <p>그리고 라오디게아 교회는 30여 년 뒤 성경에 한 번 더 나와요. 요한계시록에서 부활하신 주님은 이 교회를 "네가 차지도 아니하고 뜨겁지도 아니하도다"(계 3:15)라고 책망하셨어요. 부유한 도시에서 "부족한 것이 없다"고 말하던 교회였어요(3:17). 골로새서가 그렇게 "그리스도가 전부"라고 외쳤던 이웃 교회가, 그리스도 없이도 넉넉하다고 여기게 된 거예요. 그래도 주님은 그 교회를 버리지 않으셨어요. <mark>"볼지어다 내가 문 밖에 서서 두드리노니"</mark>(3:20).</p>
+        <p class="note sans" style="margin:10px 0 0;padding:0;">※ "라오디게아로부터 오는 편지"가 무엇인지는 알 수 없어요. 에베소서라는 견해는 여러 학자들의 추정이에요. 요한계시록의 기록 연대는 주후 90년대로 보는 경우가 많아요.</p>
+      <div class="reflect sans"><div class="rl">돌아보기</div>넉넉하다는 생각에 그리스도를 문 밖에 세워 두지 않았는지 돌아보고, 두드리시는 주님께 오늘 문을 엽니다.</div>
+    </div>
+  </article>
+
+  <section class="closing sans">
+    <div class="label">맺는 글</div>
+    <div class="big">가장 작은 도시에 보낸<br>가장 큰 그리스도</div>
+    <p>골로새서는 이름도 잘 알려지지 않은 작은 도시의, 바울이 얼굴도 본 적 없는 교회에 보낸 편지예요. 그런데 그 작은 교회에게 바울은 우주보다 크신 그리스도를 전해요. 만물을 지으신 분, 지금도 붙들고 계신 분, 우리의 빚 문서를 십자가에 못 박으신 분, 교회의 머리이신 분이에요.</p><p>헛된 가르침은 늘 "그리스도만으로는 부족하다"고 속삭여요. 규칙을 더하고, 체험을 더하고, 특별한 지식을 더해야 한다고요. 골로새서의 대답은 분명해요. <mark>그리스도 안에 이미 충만하다</mark>는 거예요. 교회가 작아도, 형편이 초라해도, 우리가 붙든 분이 가장 크신 분이에요.</p>
+    <div class="q">"그는 만물보다 먼저 계시고<br>만물이 그 안에 함께 섰느니라" (1:17)</div>
+  </section>
+
+
+  <p class="note sans">※ 본문 인용은 개역개정을 기준으로 했습니다.</p>
+
+  <footer class="sans">
+    <div class="line"></div>
+    기독교한국침례회 은혜교회 · 담임목사 박동준
+  </footer>
+</main>
+
+<script>
+function goTo(id){
+  var el = document.getElementById(id);
+  if(el){ window.scrollTo({ top: el.getBoundingClientRect().top + window.pageYOffset - 12, behavior:'smooth' }); }
+}
+function goBackHomeSafe(){
+  if(typeof goBackHome === 'function'){ goBackHome(); }
+  else if(typeof backToHome === 'function'){ backToHome(); }
+  else{ window.location.href = '/'; }
+}
+document.addEventListener('click', function(e){
+  var tip = document.getElementById('tip');
+  var t = e.target.closest('[data-tip]');
+  if(t){
+    tip.textContent = t.getAttribute('data-tip');
+    var r = t.getBoundingClientRect(), w = 280;
+    var left = r.left + window.pageXOffset;
+    var maxLeft = window.pageXOffset + document.documentElement.clientWidth - w - 12;
+    if(left > maxLeft) left = Math.max(12, maxLeft);
+    tip.style.left = left + 'px';
+    tip.style.top = (r.bottom + window.pageYOffset + 8) + 'px';
+    tip.style.display = 'block';
+    e.stopPropagation();
+  } else if(!e.target.closest('#tip')){
+    tip.style.display = 'none';
+  }
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
