@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>레위기, 오경 한가운데 숨겨 둔 십자가의 설계도 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="모세오경 한가운데 놓인 레위기가 성경 66권 안에서 어떤 자리와 역할을 하는지, 시내산에서 오순절까지 깊이 따라가는 이야기">
+<meta property="og:title" content="레위기, 오경 한가운데 숨겨 둔 십자가의 설계도">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800;900&family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<style>
+/* 레이아웃: 하나의 긴 읽기 칼럼. 바깥뜰 → 성소 → 지성소 → 다시 세상으로, 성막을 걸어 들어가듯 9개 마당으로 진행 */
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --fg:#23262f; --muted:#6a6d78; --line:#e6e2d9;
+  --navy:#1f2f55; --gold:#b58a3c; --gold-soft:#f4ead6; --rose:#c25b5b; --rose-soft:#f8e6e3;
+  --sky:#e6eef9; --mint:#e4f2ec; --lilac:#ede7f6;
+  --hero-a:#f6e9ef; --hero-b:#e5eefb; --hero-c:#f3f0e1;
+  --display:"Pretendard","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+  --ui:"Pretendard","Noto Sans KR",system-ui,sans-serif;
+}
+:root{color-scheme:light}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{word-break:keep-all;-webkit-text-size-adjust:100%;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.9;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:740px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;line-height:1.35;margin:0}
+p{margin:0}
+.stack{display:flex;flex-direction:column;gap:18px}
+
+.hero{margin:16px auto 0;max-width:900px;border-radius:28px;padding:56px 26px 44px;
+  background:radial-gradient(120% 90% at 10% 0%,var(--hero-a),transparent 60%),
+             radial-gradient(100% 80% at 100% 20%,var(--hero-b),transparent 60%),
+             radial-gradient(90% 90% at 50% 110%,var(--hero-c),transparent 60%),var(--surface);
+  text-align:center}
+.hero .eyebrow{font-family:var(--ui);font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:700}
+.hero h1{font-size:clamp(34px,8vw,58px);font-weight:900;color:var(--navy);margin-top:14px;letter-spacing:-.02em}
+.hero .sub{font-size:18px;color:var(--muted);margin-top:16px;max-width:31em;margin-inline:auto}
+.heb{font-family:var(--body);font-size:44px;color:var(--gold);margin-top:22px;direction:rtl}
+.heb small{display:block;font-size:13px;font-family:var(--ui);color:var(--muted);direction:ltr;margin-top:2px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:640px;margin:28px auto 0}
+.facts div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 8px;min-width:0}
+.facts b{display:block;font-family:var(--display);font-size:21px;color:var(--navy);font-variant-numeric:tabular-nums}
+.facts span{font-family:var(--ui);font-size:12px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+@media (max-width:560px){.facts{grid-template-columns:repeat(2,1fr)}}
+
+.toc{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:24px auto 0;max-width:820px;padding:10px 0}
+.toc a{font-family:var(--ui);font-size:13px;text-decoration:none;color:var(--navy);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.toc a:hover,.toc a:focus-visible{border-color:var(--gold);outline:none}
+
+section{padding-top:76px;scroll-margin-top:16px}
+.kicker{font-family:var(--ui);font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.12em}
+section h2{font-size:clamp(25px,5.6vw,34px);font-weight:800;color:var(--navy);margin:8px 0 22px;letter-spacing:-.01em}
+h3.sub{font-size:20px;color:var(--navy);margin-top:14px}
+mark{background:linear-gradient(transparent 58%,var(--gold-soft) 58%);color:inherit;padding:0 2px}
+strong{color:var(--navy)}
+.verse{border-left:3px solid var(--gold);padding:6px 0 6px 18px;font-size:17.5px}
+.verse cite{display:block;font-family:var(--ui);font-style:normal;font-size:13px;color:var(--muted);margin-top:4px}
+.smile{font-family:var(--ui);font-size:15px;color:var(--rose)}
+
+.note{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.note .tag{font-family:var(--ui);font-size:12.5px;font-weight:800;color:var(--rose);letter-spacing:.08em;display:block;margin-bottom:6px}
+.note.gold{background:var(--gold-soft);border-color:transparent}
+
+details.deep{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:0 22px}
+details.deep summary{cursor:pointer;font-family:var(--ui);font-weight:800;color:var(--navy);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.deep summary::-webkit-details-marker{display:none}
+details.deep summary::after{content:"＋";color:var(--gold)}
+details.deep[open] summary::after{content:"－"}
+details.deep summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+details.deep .in{padding-bottom:20px;display:flex;flex-direction:column;gap:14px;font-size:16px}
+
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 14px 14px;overflow-x:auto}
+.figure svg{display:block;width:100%;height:auto;min-width:340px}
+.figcap{font-family:var(--ui);font-size:13.5px;color:var(--muted);text-align:center;margin-top:10px}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;line-height:1.6}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-family:var(--ui);font-size:13px;color:var(--muted);font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td b{font-family:var(--display);color:var(--navy)}
+
+.words{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.word{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-width:0}
+.word .h{font-family:var(--body);font-size:24px;color:var(--gold);direction:rtl;text-align:left}
+.word .k{font-family:var(--display);font-weight:800;color:var(--navy);font-size:16px}
+.word .d{font-size:14.5px;line-height:1.65;margin-top:4px}
+
+.offerings{display:grid;grid-template-columns:1fr;gap:14px}
+.off{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.off header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.off .nm{font-family:var(--display);font-weight:900;font-size:22px;color:var(--navy)}
+.off .hb{font-family:var(--ui);font-size:13px;color:var(--gold);font-weight:700}
+.off .ref{font-family:var(--ui);font-size:12.5px;color:var(--muted);margin-left:auto}
+.off .meta{display:flex;flex-wrap:wrap;gap:6px}
+.off .meta span{font-family:var(--ui);font-size:12.5px;background:var(--sky);border-radius:999px;padding:3px 10px}
+.off p{font-size:16px;line-height:1.8}
+.off .christ{background:var(--gold-soft);border-radius:14px;padding:12px 14px;font-size:15.5px}
+.off button{align-self:flex-start;font-family:var(--ui);font-size:13px;font-weight:700;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:999px;padding:5px 14px;cursor:pointer}
+.off button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:0;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:16px;color:var(--surface);background:var(--navy);border-radius:50%;width:32px;height:32px;display:grid;place-items:center;margin-top:3px}
+.steps li div{min-width:0;font-size:16px;line-height:1.8}
+.steps li b{font-family:var(--display);color:var(--navy)}
+
+.thread .row{display:grid;grid-template-columns:100px 1fr;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.thread .row:last-child{border-bottom:0}
+.thread .bk{font-family:var(--display);font-weight:800;color:var(--gold);font-size:15px;padding-top:3px}
+.thread .bk small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.thread .tx{font-size:16px;line-height:1.8;min-width:0}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair>div{border-radius:16px;padding:16px 18px;font-size:15.5px;line-height:1.75;min-width:0}
+.pair .a{background:var(--rose-soft)} .pair .b{background:var(--mint)}
+.pair h3{font-size:15px;margin-bottom:6px;color:var(--navy)}
+@media (max-width:540px){.pair{grid-template-columns:1fr}.thread .row{grid-template-columns:1fr;gap:4px}}
+
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.qs div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;min-width:0}
+.qs b{display:block;font-family:var(--display);font-size:17px;color:var(--navy);margin-bottom:6px}
+.qs p{font-size:15px;line-height:1.75}
+
+/* 특별 해설 블록 */
+.spotlight{margin-top:10px;border-radius:26px;padding:32px 24px;border:2px solid var(--gold);
+  background:radial-gradient(110% 80% at 0% 0%,var(--hero-a),transparent 60%),radial-gradient(110% 80% at 100% 100%,var(--hero-b),transparent 60%),var(--surface);
+  display:flex;flex-direction:column;gap:18px;scroll-margin-top:70px}
+.spotlight .badge{align-self:flex-start;font-family:var(--ui);font-size:12.5px;font-weight:800;letter-spacing:.1em;color:var(--surface);background:var(--gold);border-radius:999px;padding:5px 14px}
+.spotlight h3.big{font-size:clamp(23px,5.4vw,31px);font-weight:900;color:var(--navy);letter-spacing:-.01em}
+.spotlight h4{font-size:18px;color:var(--navy);margin-top:6px}
+.spotlight .tablewrap{background:var(--surface)}
+.points{display:flex;flex-direction:column;gap:12px}
+.point{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.point .t{font-family:var(--display);font-weight:900;font-size:18px;color:var(--navy);display:flex;gap:10px;align-items:baseline}
+.point .t span{font-family:var(--display);color:var(--gold);font-size:15px;flex:none}
+.point p{font-size:16px;line-height:1.85}
+.punch{background:var(--navy);color:var(--surface);border-radius:18px;padding:22px;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(18px,4.2vw,22px);line-height:1.55}
+.punch small{display:block;font-weight:400;font-size:13px;opacity:.85;margin-top:8px;font-family:var(--ui)}
+.finale{margin-top:80px;border-radius:26px;padding:44px 26px;text-align:center;
+  background:radial-gradient(100% 100% at 0% 0%,var(--hero-b),transparent 60%),radial-gradient(100% 100% at 100% 100%,var(--hero-a),transparent 60%),var(--surface)}
+.finale h2{font-size:clamp(24px,5.4vw,32px);color:var(--navy);font-weight:900}
+.finale p{margin-top:16px;max-width:34em;margin-inline:auto}
+footer{font-family:var(--ui);font-size:12.5px;color:var(--muted);text-align:center;margin-top:36px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">성경의 숨은 재밌는 이야기 · 깊이 읽기</div>
+  <h1>레위기,<br>오경 한가운데 숨겨 둔<br>십자가의 설계도</h1>
+  <p class="sub">콩팥과 기름 꺼풀 너머에 숨어 있는 하나님의 마음, 그리고 성경 66권을 꿰뚫는 한 줄기 이야기</p>
+  <div class="heb">וַיִּקְרָא<small>와이크라 · “그리고 그가 부르셨다”</small></div>
+  <div class="facts">
+    <div><b>27장</b><span>모세오경 셋째 책</span></div>
+    <div><b>약 한 달</b><span>시내산 회막에서 주신 말씀</span></div>
+    <div><b>16장</b><span>책의 심장 · 대속죄일</span></div>
+    <div><b>19:18</b><span>예수님이 인용하신 이웃 사랑</span></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <a href="#s1">들어가며</a><a href="#s2">위치와 구조</a><a href="#s3">한 달의 이야기</a><a href="#s4">작은 에덴</a><a href="#s5">다섯 제사</a><a href="#s6">제사장</a><a href="#s7">정결법</a><a href="#s8">대속죄일</a><a href="#s9">거룩한 삶</a><a href="#pentecost">★ 오순절</a><a href="#s10">66권의 실</a><a href="#s11">읽는 법</a>
+</nav>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section id="s1" class="stack">
+  <div><div class="kicker">들어가며</div><h2>솔직히, 레위기는 지루하죠</h2></div>
+  <p>새해마다 성경 일독을 결심합니다. 창세기는 드라마처럼 술술 읽히고, 출애굽기도 열 가지 재앙과 홍해 장면까지는 손에 땀을 쥐게 해요. 그런데 출애굽기 후반부 성막 치수에서 한 번 휘청하고, 레위기 1장에서 결정타를 맞습니다. 소를 잡아 가죽을 벗기고, 각을 뜨고, 내장과 정강이는 물로 씻고, 두 콩팥과 그 위의 기름과 간에 덮인 꺼풀까지… <span class="smile">😄 “내가 지금 성경을 읽는 건지, 정육점 견습생 교본을 읽는 건지.”</span></p>
+  <p>그래서 많은 분들의 일독이 <mark>레위기에서 조용히 멈춥니다.</mark> 그런데 성경 역사를 보면 정반대 풍경이 하나 있어요.</p>
+  <div class="note"><span class="tag">알고 계셨어요?</span>고대 유대 공동체에서는 아이들이 성경을 처음 배울 때 창세기가 아니라 <strong>레위기부터</strong> 시작했다고 전해집니다. 랍비들의 설명은 이랬어요. “제사는 순전한 것이고 아이들도 순전하니, 순전한 아이들이 먼저 순전한 것을 배우게 하라.” 우리가 제일 먼저 건너뛰는 책을, 그들은 제일 먼저 가르쳤습니다.</div>
+  <p>왜 그랬을까요? 레위기는 성경 전체가 붙들고 있는 가장 근본적인 질문을 정면으로 다루기 때문이에요. <strong>“거룩하신 하나님과 죄 많은 사람이 어떻게 한 지붕 아래 살 수 있을까?”</strong> 이 질문에 대한 답을 모르면 십자가도, 교회도, 천국도 반쪽만 보입니다.</p>
+
+  <h3 class="sub">레위기를 여는 다섯 개의 열쇠 단어</h3>
+  <p>레위기를 히브리어 단어 몇 개만 알고 읽어도 풍경이 확 달라집니다.</p>
+  <div class="words">
+    <div class="word"><div class="h">קָרְבָּן</div><div class="k">코르반 · 예물</div><div class="d">“가까이 오다(카라브)”에서 나온 말. 제사는 본래 <strong>하나님께 가까이 가는 일</strong>이었어요(레 1:2).</div></div>
+    <div class="word"><div class="h">קָדוֹשׁ</div><div class="k">카도쉬 · 거룩</div><div class="d">기본 뜻은 “구별됨”. 하나님만의 것으로 따로 떼어 놓은 상태예요. 레위기의 대표 단어입니다.</div></div>
+    <div class="word"><div class="h">כִּפֶּר</div><div class="k">키페르 · 속죄하다</div><div class="d">흔히 “덮다” 또는 “값을 치르다”로 설명됩니다. ‘대속죄일’은 ‘욤 키푸르’, 덮음의 날이에요.</div></div>
+    <div class="word"><div class="h">טָמֵא</div><div class="k">타메 · 부정함</div><div class="d">‘죄’와 같은 말이 아니에요. 하나님 앞에 나아갈 수 없는 <strong>상태</strong>를 말합니다. 반대말은 타호르(정결).</div></div>
+    <div class="word"><div class="h">חֻקָּה</div><div class="k">후카 · 규례</div><div class="d">“새기다”라는 뜻에서 나온 말. 마음과 삶에 새겨 넣어야 할 하나님의 질서예요.</div></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section id="s2" class="stack">
+  <div><div class="kicker">첫째 마당 · 위치와 구조</div><h2>모세오경의 정중앙, 그 중앙의 중앙</h2></div>
+  <p>모세오경 다섯 권을 나란히 놓으면 데칼코마니 같은 대칭이 보입니다. 창세기와 신명기는 둘 다 <strong>약속의 땅을 바라보며</strong> 끝나고(창 50:24, 신 34:4), 출애굽기와 민수기는 둘 다 <strong>광야를 걷는 이야기</strong>예요. 출애굽기는 시내산을 향해 가고, 민수기는 시내산에서 떠납니다. 만나, 반석의 물, 원망, 아말렉·발람 같은 적의 공격이 양쪽에 짝을 이루며 나와요. 그리고 그 정중앙에, 이스라엘이 한 걸음도 움직이지 않는 책이 있습니다. <mark>레위기입니다.</mark></p>
+  <div class="figure" role="img" aria-label="모세오경 대칭 구조도">
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+      <g fill="none" stroke="var(--line)" stroke-width="2"><path d="M70 120 Q320 -10 570 120"/><path d="M190 120 Q320 40 450 120"/></g>
+      <g font-size="12" fill="var(--muted)" text-anchor="middle"><text x="320" y="38">약속의 땅을 바라보며 끝남</text><text x="320" y="78">광야 여정 · 시내산으로 / 시내산에서</text></g>
+      <rect x="20" y="130" width="100" height="120" rx="14" fill="var(--sky)"/>
+      <rect x="140" y="130" width="100" height="120" rx="14" fill="var(--mint)"/>
+      <rect x="260" y="112" width="120" height="156" rx="16" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+      <rect x="400" y="130" width="100" height="120" rx="14" fill="var(--mint)"/>
+      <rect x="520" y="130" width="100" height="120" rx="14" fill="var(--sky)"/>
+      <g text-anchor="middle" font-weight="800" fill="var(--navy)">
+        <text x="70" y="186" font-size="20">창세기</text><text x="190" y="186" font-size="20">출애굽기</text>
+        <text x="320" y="180" font-size="24" fill="var(--gold)">레위기</text>
+        <text x="450" y="186" font-size="20">민수기</text><text x="570" y="186" font-size="20">신명기</text>
+      </g>
+      <g text-anchor="middle" font-size="12" fill="var(--muted)">
+        <text x="70" y="212">에덴에서 쫓겨남</text><text x="190" y="212">구원과 성막</text>
+        <text x="320" y="206" fill="var(--fg)">이동 없음</text><text x="320" y="224" fill="var(--fg)">하나님 앞에 머묾</text>
+        <text x="450" y="212">성막 중심 행진</text><text x="570" y="212">땅 앞의 언약 갱신</text>
+      </g>
+      <text x="320" y="290" text-anchor="middle" font-size="13" fill="var(--gold)" font-weight="700">이야기가 멈추는 곳에서 하나님이 말씀하신다</text>
+    </svg>
+  </div>
+  <p>이제 레위기 안으로 한 번 더 줌인해 볼게요. 27장을 크게 나누면 이렇습니다.</p>
+  <div class="figure" role="img" aria-label="레위기 27장 구조 막대">
+    <svg viewBox="0 0 640 170" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+      <rect x="20" y="40" width="155.6" height="50" rx="8" fill="var(--sky)"/>
+      <rect x="175.6" y="40" width="66.7" height="50" fill="var(--lilac)"/>
+      <rect x="242.3" y="40" width="111.1" height="50" fill="var(--mint)"/>
+      <rect x="353.4" y="30" width="22.2" height="70" fill="var(--gold)"/>
+      <rect x="375.6" y="40" width="244.4" height="50" rx="8" fill="var(--rose-soft)"/>
+      <g font-size="12" fill="var(--muted)" text-anchor="middle">
+        <text x="97.8" y="24">1–7장</text><text x="209" y="24">8–10장</text><text x="297.8" y="24">11–15장</text><text x="364.5" y="20" fill="var(--gold)" font-weight="800">16장</text><text x="497.8" y="24">17–27장</text>
+      </g>
+      <g font-size="14" font-weight="800" fill="var(--navy)" text-anchor="middle">
+        <text x="97.8" y="70">제사</text><text x="209" y="70">제사장</text><text x="297.8" y="70">정결</text><text x="497.8" y="70">거룩한 삶</text>
+      </g>
+      <g font-size="12" fill="var(--fg)" text-anchor="middle">
+        <text x="97.8" y="118">어떻게 나아가나</text><text x="209" y="118">누가 섬기나</text><text x="297.8" y="118">무엇이 막나</text><text x="364.5" y="140" fill="var(--gold)" font-weight="700">속죄</text><text x="497.8" y="118">나아간 뒤 어떻게 사나</text>
+      </g>
+      <path d="M20 152 L353 152" stroke="var(--line)" stroke-width="2"/><path d="M376 152 L620 152" stroke="var(--line)" stroke-width="2"/>
+      <text x="186" y="166" font-size="11" fill="var(--muted)" text-anchor="middle">하나님께 가는 길</text>
+      <text x="498" y="166" font-size="11" fill="var(--muted)" text-anchor="middle">하나님과 함께 사는 길</text>
+    </svg>
+  </div>
+  <p class="figcap">막대 길이는 장 수에 비례합니다</p>
+  <p>앞부분 1~15장은 <strong>“어떻게 하나님 앞에 나아갈 수 있는가”</strong>, 뒷부분 17~27장은 <strong>“나아간 사람이 어떻게 살아야 하는가”</strong>를 다룹니다. 학자들은 17~26장을 따로 ‘성결법전’이라고 부르기도 해요. “거룩하라”는 말이 반복해서 터져 나오는 단락이거든요. 그리고 두 부분을 잇는 경첩, 바로 그 자리에 <mark>16장 대속죄일</mark>이 있습니다.</p>
+  <div class="note gold"><span class="tag">한 문장 요약</span>모세오경의 중심은 레위기, 레위기의 중심은 속죄. 모세가 다섯 권에 걸쳐 가장 깊숙한 곳에 넣어 둔 메시지는 이것입니다. <strong>“죄인이 거룩하신 하나님께 다시 나아갈 길이 있다.”</strong></div>
+</section>
+
+<!-- 3 -->
+<section id="s3" class="stack">
+  <div><div class="kicker">둘째 마당 · 이야기의 연결</div><h2>단 한 달 동안 주신 말씀</h2></div>
+  <p>레위기를 ‘시대를 초월한 규칙 모음’으로만 읽으면 따분해요. 레위기는 아주 구체적인 시간, 구체적인 장소에서 벌어진 사건입니다. 날짜를 맞춰 보면 깜짝 놀라실 거예요.</p>
+  <div class="figure" role="img" aria-label="출애굽부터 시내산 출발까지 연대표">
+    <svg viewBox="0 0 660 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+      <line x1="30" y1="90" x2="630" y2="90" stroke="var(--line)" stroke-width="3"/>
+      <rect x="380" y="74" width="150" height="32" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+      <text x="455" y="95" text-anchor="middle" font-size="14" font-weight="800" fill="var(--gold)">레위기 · 약 한 달</text>
+      <g fill="var(--navy)"><circle cx="50" cy="90" r="7"/><circle cx="190" cy="90" r="7"/><circle cx="380" cy="90" r="7"/><circle cx="530" cy="90" r="7"/><circle cx="610" cy="90" r="7"/></g>
+      <g font-size="13" font-weight="800" fill="var(--navy)" text-anchor="middle">
+        <text x="50" y="58">출애굽</text><text x="190" y="58">시내산 도착</text><text x="380" y="40">성막 세움</text><text x="530" y="40">인구 조사 명령</text><text x="610" y="140">시내산 출발</text>
+      </g>
+      <g font-size="11.5" fill="var(--muted)" text-anchor="middle">
+        <text x="50" y="128">1년 1월 15일</text><text x="50" y="144">민 33:3</text>
+        <text x="190" y="128">1년 3월</text><text x="190" y="144">출 19:1</text>
+        <text x="380" y="58">2년 1월 1일 · 출 40:17</text>
+        <text x="530" y="58">2년 2월 1일 · 민 1:1</text>
+        <text x="610" y="158">2년 2월 20일 · 민 10:11</text>
+      </g>
+      <text x="285" y="184" text-anchor="middle" font-size="12" fill="var(--fg)">시내산 체류 약 11개월 · 레위기는 그 마지막 한 달</text>
+    </svg>
+  </div>
+  <p>출애굽기 40장 17절, 성막이 세워진 날은 <strong>출애굽 둘째 해 첫째 달 초하루</strong>입니다. 그리고 민수기 1장 1절은 <strong>둘째 해 둘째 달 초하루</strong>에 시작해요. 그러니까 레위기 27장 전체가 <mark>대략 한 달 사이에</mark> 시내산 회막에서 주어진 말씀이라는 뜻입니다. 1년에 걸친 신학 강좌가 아니라, 하나님이 이사 오신 첫 달의 ‘입주 안내’였던 셈이에요.</p>
+
+  <h3 class="sub">출애굽기는 ‘문제’로 끝난다</h3>
+  <p>출애굽기 마지막 장면을 다시 보세요. 40장에 걸쳐 백성이 금과 은과 실을 바쳐 정성껏 성막을 지었습니다. 드디어 완공 날, 하나님의 영광이 내려와요.</p>
+  <p class="verse">구름이 회막에 덮이고 여호와의 영광이 성막에 충만하매 모세가 회막에 들어갈 수 없었으니<cite>출애굽기 40:34–35</cite></p>
+  <p>해피엔딩 같지만 사실은 반전입니다. 하나님이 오셨는데, <strong>하나님과 얼굴을 맞대고 말하던 모세조차</strong>(출 33:11) 들어가지 못해요. 하나님은 백성 한가운데 계신데, 아무도 그분께 다가갈 수 없습니다. <span class="smile">😄 집들이를 했더니 집주인이 먼저 들어가 앉으셨는데, 손님들은 전부 현관 밖에서 서성이는 상황이랄까요.</span></p>
+  <p>그런데 이게 왜 문제일까요? 출애굽기 32장의 <strong>금송아지 사건</strong>을 기억해 보세요. 시내산 아래서 이스라엘은 하나님과 언약을 맺은 지 40일도 안 되어 우상을 만들었습니다. 하나님은 “내가 너희와 함께 올라가지 아니하리니… 길에서 너희를 진멸할까 염려함이니라”(출 33:3)고 하셨어요. 거룩하신 분이 죄인 가운데 계시면 그 거룩함이 오히려 사람을 태워 버린다는 겁니다. 그러니 성막이 완성되었다고 끝이 아니에요. <mark>“이제 어떻게 함께 살 것인가”</mark>라는 숙제가 남은 겁니다.</p>
+  <p>그리고 레위기 첫 절이 바로 이어집니다.</p>
+  <p class="verse">여호와께서 회막에서 모세를 <strong>부르시고</strong> 그에게 일러 이르시되 너는 이스라엘 자손에게 말하여 이르라 너희 중에 누구든지 여호와께 예물을 드리려거든…<cite>레위기 1:1–2</cite></p>
+  <p>들어가지 못하던 모세를 <strong>하나님이 먼저 부르십니다.</strong> 레위기의 히브리어 제목 ‘와이크라’가 바로 이 첫 단어예요. 그리고 처음 하시는 말씀이 “예물(코르반)을 드리려거든”, 곧 “가까이 오려거든”입니다. 레위기 전체는 <strong>“이렇게 하면 너희가 내게 가까이 올 수 있다”</strong>는 하나님의 초대장이에요.</p>
+  <div class="note"><span class="tag">작은 글자 하나</span>히브리어 성경 사본에서 레위기 1:1의 ‘와이크라(ויקרא)’ 맨 끝 글자 알렙(א)은 일부러 <strong>작게</strong> 쓰여 있습니다. 유대 전통은 이것을 모세의 겸손으로 설명해요. ‘알렙’을 빼면 ‘와이카르’, 곧 “우연히 만났다”는 뜻이 되는데, 모세는 하나님이 자신을 특별히 부르셨다는 사실을 드러내기 부끄러워 글자를 작게 썼다는 이야기입니다. 부르심은 자랑이 아니라 은혜라는 뜻이겠지요.</div>
+  <p>그러면 민수기 첫 절은 어떨까요? “여호와께서 시내 광야 <strong>회막에서</strong> 모세에게 말씀하여”(민 1:1). 출애굽기 끝에서는 <em>밖에</em> 서 있던 모세가, 레위기를 지나고 나니 <em>안에서</em> 말씀을 듣고 있어요. 그래서 레위기는 <mark>바깥에서 안으로 들어가는 다리</mark>입니다. 이 다리를 건너야 이스라엘은 비로소 하나님을 모시고 광야로 행진할 수 있었어요.</p>
+</section>
+
+<!-- 4 -->
+<section id="s4" class="stack">
+  <div><div class="kicker">셋째 마당 · 큰 그림</div><h2>성막은 작은 에덴이었다</h2></div>
+  <p>창세기 3장 마지막 절에서 사람은 에덴의 <strong>동쪽</strong>으로 쫓겨났고, 동산 입구는 <strong>그룹(케루빔)</strong>과 두루 도는 불칼이 지켰습니다(창 3:24). 그런데 성막을 자세히 보면, 에덴을 떠올리게 하는 장치가 곳곳에 숨어 있어요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>에덴 동산 (창 2–3장)</th><th>성막 (출애굽기·레위기)</th></tr></thead>
+    <tbody>
+      <tr><td>입구가 <b>동쪽</b>, 사람은 동쪽으로 쫓겨남 (3:24)</td><td>성막 문이 <b>동쪽</b>을 향함 (출 27:13–16)</td></tr>
+      <tr><td><b>그룹</b>이 생명나무 가는 길을 지킴</td><td>지성소 휘장에 <b>그룹</b>을 수놓고, 언약궤 위에 금 그룹 둘 (출 26:31, 25:18)</td></tr>
+      <tr><td>동산 가운데 <b>생명나무</b></td><td>살구꽃·가지 모양의 <b>등잔대</b>, 빛나는 한 그루 나무 (출 25:31–36)</td></tr>
+      <tr><td>그 땅의 <b>금</b>과 <b>호마노</b> (2:12)</td><td>성막 기구는 순금, 대제사장 어깨에 <b>호마노</b> 두 개 (출 28:9)</td></tr>
+      <tr><td>아담에게 동산을 “<b>경작하며 지키게</b>” 하심 (2:15)</td><td>레위인이 회막을 “<b>지키며 일하게</b>” 하심. 같은 히브리어 동사 아바드·샤마르 (민 3:7–8)</td></tr>
+      <tr><td>하나님이 동산을 <b>거니심</b> (3:8)</td><td>“내가 너희 중에 <b>행하여</b>” 같은 동사 할라크 (레 26:12)</td></tr>
+    </tbody>
+  </table></div>
+  <p>아담은 동산의 첫 제사장이었던 셈이에요. 그가 잃어버린 자리, 하나님과 함께 걷던 그 자리를 하나님이 성막이라는 형태로 <mark>광야 한복판에 다시 세워 주신 겁니다.</mark></p>
+
+  <h3 class="sub">거룩의 동심원</h3>
+  <p>성막은 바깥에서 안으로 갈수록 점점 더 거룩해지는 구조예요. 재료도 바깥은 놋, 안은 금, 지성소는 순금. 들어갈 수 있는 사람도 점점 줄어듭니다.</p>
+  <div class="figure" role="img" aria-label="거룩의 동심원 도표">
+    <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+      <rect x="10" y="10" width="620" height="280" rx="22" fill="var(--bg)" stroke="var(--line)" stroke-dasharray="6 6"/>
+      <rect x="60" y="40" width="520" height="220" rx="18" fill="var(--sky)"/>
+      <rect x="130" y="72" width="380" height="156" rx="14" fill="var(--mint)"/>
+      <rect x="200" y="100" width="240" height="100" rx="12" fill="var(--lilac)"/>
+      <rect x="265" y="122" width="110" height="56" rx="10" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+      <g text-anchor="middle" font-weight="800" fill="var(--navy)">
+        <text x="320" y="148" font-size="14" fill="var(--gold)">지성소</text>
+        <text x="320" y="116" font-size="13">성소</text>
+        <text x="320" y="90" font-size="13">성막 뜰</text>
+        <text x="320" y="58" font-size="13">이스라엘 진</text>
+        <text x="320" y="282" font-size="13" fill="var(--muted)">진 밖 · 부정한 자가 머무는 곳</text>
+      </g>
+      <g text-anchor="middle" font-size="11" fill="var(--fg)">
+        <text x="320" y="166">대제사장 · 1년 1번</text>
+        <text x="320" y="192">제사장</text>
+        <text x="320" y="220">제물을 가져온 백성</text>
+        <text x="320" y="250">언약 백성 모두</text>
+      </g>
+    </svg>
+  </div>
+  <p>이 구조가 레위기를 읽는 지도예요. 레위기의 모든 규정은 결국 <strong>“누가, 언제, 어떤 상태로, 어디까지 들어갈 수 있는가”</strong>를 다룹니다. 그리고 레위기에서 가장 무서운 형벌이 무엇인지 아세요? “백성 중에서 <strong>끊어지리라</strong>”(레 7:20 등)입니다. 하나님 임재의 동심원 바깥으로 밀려나는 것, 그게 레위기가 말하는 가장 큰 비극이에요. 에덴에서 쫓겨난 것과 같은 일이 반복되는 거니까요.</p>
+  <p>반대로 레위기의 목표는 한 사람이라도 더 <mark>안쪽으로, 하나님 얼굴 가까이로</mark> 데려가는 겁니다. 그 길에는 조건이 있어요. 죄와 죽음을 지닌 채로는 생명이신 하나님 앞에 설 수 없습니다. 그래서 <strong>피(제사)</strong>가 필요하고, <strong>정결</strong>이 필요하고, <strong>중보자(제사장)</strong>가 필요해요. 레위기 1~15장이 정확히 이 세 가지를 순서대로 다룹니다.</p>
+</section>
+
+<!-- 5 -->
+<section id="s5" class="stack">
+  <div><div class="kicker">넷째 마당 · 1–7장</div><h2>다섯 제사, 다섯 장의 예수님 사진</h2></div>
+  <p>콩팥과 기름 꺼풀이 지루한 이유는 그게 <strong>무엇을 보여 주는지</strong> 몰라서예요. 다섯 제사는 하나님께 나아가는 다섯 가지 다른 각도입니다. 먼저 모든 제사에 공통으로 흐르는 두 가지 원리를 짚고 갈게요.</p>
+  <div class="pair">
+    <div class="b"><h3>① 안수 · 사마크</h3>제물을 드리는 사람이 직접 짐승 머리에 손을 얹고 누릅니다(레 1:4). “이 짐승이 나를 대신합니다”라는 고백이에요. 그리고 <strong>잡는 것도 본인</strong>이 했습니다(1:5). 내 죄의 값이 무엇인지 손으로 느끼게 하신 거죠.</div>
+    <div class="a"><h3>② 피는 생명</h3>“육체의 생명은 피에 있음이라 내가 이 피를 너희에게 주어 제단에 뿌려 너희의 생명을 위하여 속죄하게 하였나니”(레 17:11). 죄의 값은 죽음이고, <strong>생명이 생명을 대신</strong>합니다.</div>
+  </div>
+  <p>이제 다섯 제사를 하나씩 볼게요. 각 카드의 버튼을 누르면 그 제사가 예수님 안에서 어떻게 이루어졌는지 펼쳐집니다.</p>
+
+  <div class="offerings" id="offerings">
+    <article class="off">
+      <header><span class="nm">번제</span><span class="hb">올라 · “올라가는 것”</span><span class="ref">레 1장; 6:8–13</span></header>
+      <div class="meta"><span>소 · 양/염소 · 비둘기</span><span>전부 태움</span><span>자원하는 제사</span></div>
+      <p>가죽만 빼고 제물 <strong>전체를 불살라</strong> 연기로 올려 드립니다. 그래서 이름이 ‘올라가는 것’이에요. 나를 위해 남기는 부분이 하나도 없는 <mark>전적인 헌신</mark>의 제사입니다. 제단의 불은 꺼지지 않게 계속 피워야 했어요(6:13).</p>
+      <p>눈여겨볼 점이 있습니다. 소가 없으면 양이나 염소, 그것도 없으면 <strong>산비둘기나 집비둘기</strong>를 드리게 하셨어요(1:14). 하나님께 나아가는 길이 부자에게만 열려 있지 않도록 하신 겁니다.</p>
+      <div class="christ" hidden>예수님은 아버지 뜻에 자신을 <strong>남김없이</strong> 드리셨습니다. “그리스도께서 우리를 사랑하신 것 같이… 자신을 버리사 향기로운 제물과 희생제물로 하나님께 드리셨느니라”(엡 5:2). 그리고 이제 우리도 “몸을 산 제물로” 드리라고 부르십니다(롬 12:1). 번제는 오늘 우리의 예배가 무엇인지 알려 주는 그림이에요.</div>
+      <button type="button" aria-expanded="false">예수님에게서는? ▸</button>
+    </article>
+
+    <article class="off">
+      <header><span class="nm">소제</span><span class="hb">민하 · “선물”</span><span class="ref">레 2장; 6:14–23</span></header>
+      <div class="meta"><span>고운 가루 · 기름 · 유향</span><span>피 없는 제사</span><span>소금 필수</span></div>
+      <p>다섯 제사 중 유일하게 <strong>피가 없는</strong> 제사입니다. 고운 가루에 기름을 붓고 유향을 얹어 드리는데, 한 줌만 태우고 나머지는 제사장의 몫이 돼요. 땀 흘려 일군 <mark>일상의 열매를 드리는 감사</mark>입니다.</p>
+      <p>두 가지 금지와 한 가지 필수가 있어요. <strong>누룩과 꿀은 넣지 말라</strong>(2:11). 둘 다 발효와 부패를 일으키거든요. 대신 <strong>소금은 반드시 넣으라</strong>, “네 하나님의 언약의 소금”이니까(2:13). 소금은 썩지 않게 지켜 주니, 변하지 않는 언약의 상징이었습니다.</p>
+      <div class="christ" hidden>누룩 없는 고운 가루처럼, 예수님은 <strong>죄 없는 삶</strong>을 사셨습니다(히 4:15). 기름부음 받은 분(그리스도)이시고, 스스로를 “생명의 떡”이라 하셨지요(요 6:35). 그리고 우리에게 “너희는 세상의 소금”이라 하셨어요(마 5:13). 언약의 소금이 이제 우리 삶에 뿌려진 겁니다.</div>
+      <button type="button" aria-expanded="false">예수님에게서는? ▸</button>
+    </article>
+
+    <article class="off">
+      <header><span class="nm">화목제</span><span class="hb">쉘라밈 · “샬롬의 제사”</span><span class="ref">레 3장; 7:11–36</span></header>
+      <div class="meta"><span>소 · 양 · 염소</span><span>함께 먹는 잔치</span><span>감사 · 서원 · 자원</span></div>
+      <p>‘평화(샬롬)’에서 이름이 왔어요. 기름과 콩팥은 하나님께 태워 드리고, 가슴과 오른쪽 넓적다리는 제사장이, <strong>나머지 고기는 드린 사람과 가족이 먹습니다.</strong> 하나님, 제사장, 예배자가 <mark>한 식탁에 앉는 잔치</mark>예요. 다섯 제사 중 일반 백성이 고기를 먹을 수 있는 유일한 제사입니다.</p>
+      <p>재밌는 규정이 있어요. 감사로 드린 화목제 고기는 <strong>그날 다 먹어야</strong> 하고, 서원이나 자원으로 드린 것도 이튿날까지만 먹을 수 있습니다(7:15–16). 소 한 마리를 하루 이틀 만에 한 가족이 다 먹을 수 있을까요? 불가능하죠. <strong>결국 이웃을 불러 나눠 먹을 수밖에</strong> 없습니다. <span class="smile">😄 하나님의 냉장고 금지 정책이 동네 잔치를 만든 거예요.</span></p>
+      <div class="christ" hidden>“그는 우리의 <strong>화평</strong>이신지라 둘로 하나를 만드사 원수 된 것 곧 중간에 막힌 담을 허시고”(엡 2:14). 예수님 안에서 하나님과 우리 사이의 평화, 사람과 사람 사이의 평화가 함께 이루어졌습니다. 주님의 만찬은 바로 이 화목제의 식탁을 잇는 자리예요. 함께 떡을 떼고, 함께 나눕니다.</div>
+      <button type="button" aria-expanded="false">예수님에게서는? ▸</button>
+    </article>
+
+    <article class="off">
+      <header><span class="nm">속죄제</span><span class="hb">하타트 · “죄 / 정화”</span><span class="ref">레 4:1–5:13; 6:24–30</span></header>
+      <div class="meta"><span>신분별로 제물이 다름</span><span>부지중에 지은 죄</span><span>의무 제사</span></div>
+      <p>“부지중에”, 곧 <strong>모르고 지은 죄</strong>를 위한 제사입니다(4:2). 몰라서 지은 죄도 죄라는 것, 그래도 하나님이 길을 열어 두셨다는 것을 함께 알려 줘요.</p>
+      <p>가장 흥미로운 건 <strong>누가 죄를 지었느냐에 따라 제물이 다르다</strong>는 점입니다.</p>
+      <div class="tablewrap"><table>
+        <thead><tr><th>죄를 지은 사람</th><th>제물</th><th>피를 뿌리는 곳</th></tr></thead>
+        <tbody>
+          <tr><td><b>기름부음 받은 제사장</b></td><td>수송아지</td><td>성소 안 휘장 앞 일곱 번, 분향단 뿔</td></tr>
+          <tr><td><b>온 회중</b></td><td>수송아지</td><td>성소 안 휘장 앞 일곱 번, 분향단 뿔</td></tr>
+          <tr><td><b>족장(지도자)</b></td><td>숫염소</td><td>바깥뜰 번제단 뿔</td></tr>
+          <tr><td><b>평민</b></td><td>암염소 또는 어린 암양</td><td>바깥뜰 번제단 뿔</td></tr>
+          <tr><td><b>가난한 사람</b></td><td>비둘기 두 마리 (5:7)</td><td>제단 곁</td></tr>
+          <tr><td><b>더 가난한 사람</b></td><td>고운 가루 에바 10분의 1 · 약 2.2리터 (5:11)</td><td>한 줌을 제단에</td></tr>
+        </tbody>
+      </table></div>
+      <p>지도자일수록 <mark>더 비싼 제물, 더 안쪽까지</mark> 피를 가져가야 했어요. 영향력이 클수록 죄가 공동체에 끼치는 오염도 깊다는 뜻입니다. 동시에 밀가루 한 되밖에 없는 사람에게도 길이 막히지 않았어요. 그리고 제사장과 회중을 위한 수송아지는 고기를 먹지 않고 <strong>진 밖으로 가져가 통째로 불살랐습니다</strong>(4:12, 21).</p>
+      <div class="christ" hidden>히브리서 기자는 바로 이 장면을 짚습니다. “죄를 위한 짐승의 피는 대제사장이 가지고 성소에 들어가고 그 육체는 영문 밖에서 불사름이라 그러므로 예수도 자기 피로써 백성을 거룩하게 하려고 <strong>성문 밖에서</strong> 고난을 받으셨느니라”(히 13:11–12). 골고다가 예루살렘 성 밖에 있었던 것이 우연이 아니었어요. 그리고 예수님은 십자가에서 “아버지 저들을 사하여 주옵소서 <strong>자기들이 하는 것을 알지 못함이니이다</strong>”(눅 23:34)라고 기도하셨습니다. 부지중의 죄를 위한 속죄제의 기도였지요.</div>
+      <button type="button" aria-expanded="false">예수님에게서는? ▸</button>
+    </article>
+
+    <article class="off">
+      <header><span class="nm">속건제</span><span class="hb">아샴 · “배상”</span><span class="ref">레 5:14–6:7; 7:1–10</span></header>
+      <div class="meta"><span>흠 없는 숫양</span><span>원금 + 5분의 1</span><span>손해를 끼친 죄</span></div>
+      <p>하나님의 성물이나 이웃의 재산에 <strong>손해를 끼친</strong> 죄를 위한 제사예요. 남의 물건을 맡았다가 속이거나, 주운 물건을 모른 척하거나, 거짓 맹세를 한 경우가 나옵니다(6:2–3).</p>
+      <p>핵심은 순서예요. 먼저 <strong>피해자에게 원래 것을 갚고, 거기에 5분의 1을 더해서</strong> 돌려준 다음에야 제단에 숫양을 가져옵니다(6:4–6). 100만 원어치를 손해 끼쳤다면 120만 원을 갚는 거예요. 레위기는 <mark>“하나님께만 회개하면 끝”이라고 말하지 않습니다.</mark> 용서는 관계의 회복과 손해의 회복까지 가야 한다는 거죠. 삭개오가 “누구의 것을 속여 빼앗은 일이 있으면 네 갑절이나 갚겠나이다”(눅 19:8)라고 한 건 이 정신을 훌쩍 넘어선 고백이었어요.</p>
+      <div class="christ" hidden>이사야 53장 10절, “그의 영혼을 <strong>속건제물</strong>로 드리기에 이르면”에서 ‘속건제물’이 바로 이 ‘아샴’입니다. 고난받는 종이 우리 죄의 빚을 대신 갚는 속건제가 되신다는 예언이에요. 그리고 예수님은 빚을 겨우 메우신 게 아니라 <strong>넘치게</strong> 갚으셨습니다. “죄가 더한 곳에 은혜가 더욱 넘쳤나니”(롬 5:20).</div>
+      <button type="button" aria-expanded="false">예수님에게서는? ▸</button>
+    </article>
+  </div>
+
+  <details class="deep">
+    <summary>더 깊이 · 순서에 숨은 복음</summary>
+    <div class="in">
+      <p>1~5장에서 하나님이 말씀하시는 순서는 <strong>번제 → 소제 → 화목제 → 속죄제 → 속건제</strong>입니다. 하나님 쪽에서 가장 기뻐하시는 것, 곧 “전부를 드리는 헌신”부터 말씀하세요.</p>
+      <p>그런데 실제로 제사를 드리는 장면(레 9장)에서는 순서가 바뀝니다. <strong>속죄제가 먼저, 그다음 번제, 그다음 화목제</strong>(9:8–22). 죄가 해결되어야(속죄제) 헌신이 가능하고(번제), 헌신한 사람이 하나님과 한 식탁에 앉습니다(화목제).</p>
+      <p>복음의 순서가 정확히 이래요. 먼저 십자가의 용서, 그다음 드려지는 삶, 그리고 하나님과의 교제와 기쁨. 우리가 먼저 헌신해서 용서를 얻는 게 아니라, 용서받은 사람이 헌신하는 겁니다.</p>
+    </div>
+  </details>
+
+  <details class="deep">
+    <summary>더 깊이 · 마리아의 비둘기 두 마리</summary>
+    <div class="in">
+      <p>레위기 12장은 출산한 여인의 정결 예식을 다룹니다. 원래는 1년 된 어린양을 번제로, 비둘기 하나를 속죄제로 드려야 하지만 “그의 힘이 어린양에 미치지 못하거든” <strong>비둘기 두 마리</strong>로 대신할 수 있었어요(12:8).</p>
+      <p>누가복음 2장 24절에서 마리아와 요셉은 아기 예수를 성전에 데려가 바로 이 <strong>비둘기 두 마리</strong>를 드립니다. 레위기를 아는 사람은 이 짧은 구절에서 알아차려요. 하나님의 아들이 어린양 한 마리 살 형편도 안 되는 가난한 집에서 태어나셨다는 것. 그리고 어린양을 드리지 못한 그 집에, <strong>진짜 어린양</strong>이 안겨 있었다는 것을요(요 1:29).</p>
+    </div>
+  </details>
+</section>
+
+<!-- 6 -->
+<section id="s6" class="stack">
+  <div><div class="kicker">다섯째 마당 · 8–10장</div><h2>가장 기쁜 날과 가장 슬픈 날이 붙어 있다</h2></div>
+  <p>제사를 누가 드릴까요? 8~10장은 아론과 그 아들들이 제사장으로 세워지는 이야기입니다. 이 단락은 레위기에서 거의 유일하게 <strong>‘사건’</strong>이 벌어지는 곳이라, 드라마처럼 읽혀요.</p>
+
+  <h3 class="sub">8장 · 귀와 손과 발에 바른 피</h3>
+  <p>7일간의 위임식 중에 모세는 숫양의 피를 아론의 <strong>오른쪽 귓부리, 오른손 엄지손가락, 오른발 엄지발가락</strong>에 바릅니다(8:23–24). 왜 하필 거기일까요? 하나님 말씀을 <mark>듣는 귀</mark>, 하나님 일을 하는 <mark>손</mark>, 하나님 길을 걷는 <mark>발</mark>. 머리끝부터 발끝까지, 몸 전체가 하나님께 속했다는 표시였어요. 흥미롭게도 똑같은 예식이 나병에서 나은 사람의 정결 예식에도 나옵니다(14:14). 가장 거룩한 제사장과 가장 부정했던 사람이 <strong>같은 방식으로</strong> 회복되는 거예요.</p>
+
+  <h3 class="sub">9장 · 하늘에서 불이 내려오다</h3>
+  <p>위임식 여드레째, 아론이 처음으로 직접 제사를 드립니다. 그리고 레위기에서 가장 극적인 장면이 펼쳐져요.</p>
+  <p class="verse">불이 여호와 앞에서 나와 제단 위의 번제물과 기름을 사른지라 온 백성이 이를 보고 소리 지르며 엎드렸더라<cite>레위기 9:24</cite></p>
+  <p>출애굽기 끝에서 성막을 채웠던 영광이 드디어 백성 앞에 나타난 겁니다. 하나님이 이 제사를 받으셨다는 확증이었어요. 시내산 아래서 금송아지를 섬겼던 그 백성이, 이제 하나님 앞에 엎드려 환호합니다.</p>
+
+  <h3 class="sub">10장 · 바로 다음 날의 비극</h3>
+  <p>그런데 장이 바뀌자마자 분위기가 반전됩니다. 아론의 두 아들 <strong>나답과 아비후</strong>가 각자 향로에 불을 담아 “여호와께서 명령하시지 아니하신 <strong>다른 불</strong>”을 드립니다(10:1). 그리고 9장에서 제물을 삼켰던 바로 그 불이 여호와 앞에서 나와 그들을 삼켜요(10:2).</p>
+  <p>왜 이렇게까지 하셨을까요? 하나님은 말씀하십니다. “나는 나를 가까이하는 자 중에서 내가 <strong>거룩함</strong>을 나타내겠고 온 백성 앞에서 내 <strong>영광</strong>을 나타내리라.” 그리고 성경은 한 줄을 덧붙여요. “<strong>아론이 잠잠하니</strong>”(10:3). 아버지가 하루아침에 두 아들을 잃었는데, 아무 말도 하지 못합니다.</p>
+  <p>바로 뒤에 하나님은 제사장들이 회막에 들어갈 때 <strong>포도주나 독주를 마시지 말라</strong>고 명하세요(10:9). 그래서 많은 해석자들은 나답과 아비후가 술에 취한 채 들어갔을 가능성을 짚습니다. 확실한 건 하나예요. 하나님께 가까이 가는 길은 내 마음대로 만드는 길이 아니라 <mark>하나님이 열어 주신 길</mark>이어야 한다는 것.</p>
+  <div class="note"><span class="tag">이 장면이 오늘 말하는 것</span>거룩함은 장식품이 아니라 불입니다. 불은 추운 사람을 살리기도 하고, 함부로 다루는 사람을 태우기도 해요. 9장의 불과 10장의 불은 <strong>같은 불</strong>입니다. 그래서 레위기는 우리가 하나님께 나아갈 때 “내 방식”이 아니라 “그분이 정하신 길”을 따라야 한다고 말해요. 신약은 그 길이 누구인지 분명히 말합니다. “내가 곧 길이요”(요 14:6).</div>
+</section>
+
+<!-- 7 -->
+<section id="s7" class="stack">
+  <div><div class="kicker">여섯째 마당 · 11–15장</div><h2>돼지고기, 피부병, 곰팡이가 왜 성경에?</h2></div>
+  <p>정결법은 레위기에서 가장 난해한 부분이죠. 돼지는 먹으면 안 되고, 새우도 안 되고, 피부에 이상한 점이 생기면 제사장에게 보여야 하고, 심지어 집 벽에 핀 곰팡이까지 제사장이 검사하러 옵니다. <span class="smile">😄 이스라엘 제사장은 예배 인도자이면서 영양사, 피부과 의사, 주택 위생 점검관까지 겸했던 거예요.</span></p>
+  <p>하나씩 열쇠를 찾아볼게요.</p>
+
+  <h3 class="sub">열쇠 1 · 부정은 대부분 ‘죽음’과 연결되어 있다</h3>
+  <p>레위기에서 사람을 부정하게 만드는 것들을 모아 보면 공통점이 보여요. <strong>시체</strong>를 만지는 것, <strong>피의 유출</strong>(생명이 몸 밖으로 빠져나가는 것), 살이 썩어 들어가는 듯한 <strong>악성 피부병</strong>, 곰팡이처럼 집을 <strong>부패</strong>시키는 것. 전부 <mark>죽음의 그림자</mark>예요.</p>
+  <p>그러니 ‘부정함’은 곧 ‘죄’가 아닙니다. 출산한 여인도, 장례를 치른 가족도 부정해져요. 그건 죄가 아니라 <strong>죽음이 들어온 세상에서 사는 인간의 상태</strong>입니다. 하나님은 생명 그 자체이시니, 죽음의 흔적을 지닌 채로는 그분 앞에 나아갈 수 없다는 것을 몸으로 배우게 하신 거예요. 그리고 정해진 기간과 절차를 거치면 반드시 <strong>정결해질 수 있는 길</strong>도 함께 주셨습니다.</p>
+
+  <h3 class="sub">열쇠 2 · 음식법은 ‘구별된 백성’의 식탁</h3>
+  <p>먹을 수 있는 짐승은 <strong>굽이 갈라지고 새김질하는 것</strong>(11:3), 물고기는 <strong>지느러미와 비늘이 있는 것</strong>(11:9)이었어요. 왜 이런 기준일까요? 위생 때문이라는 설명도 있지만 그것만으로는 다 설명이 안 됩니다.</p>
+  <p>인류학자 메리 더글라스는 흥미로운 해석을 내놓았어요. 창세기 1장에서 하나님이 하늘·땅·물을 나누고 각각에 맞는 생물을 채우셨는데, 그 범주에 <strong>온전히 들어맞는 것</strong>은 정결하고, 경계에 걸쳐 있거나 섞인 것(비늘 없이 물에 사는 것, 땅을 기어 다니는 것 등)은 부정하다는 거예요. 정결법이 매일 식탁에서 <mark>창조의 질서</mark>를 떠올리게 했다는 겁니다.</p>
+  <p>그리고 레위기 스스로 이유를 말합니다. “나는 너희를 애굽 땅에서 인도하여 낸 여호와라 내가 거룩하니 너희도 거룩할지어다”(11:45). 이스라엘은 하루 세 번 밥을 먹을 때마다 “우리는 하나님께 속한 구별된 백성”이라는 걸 기억했어요. 거룩은 성전에서만이 아니라 <strong>식탁에서부터</strong> 시작됐습니다.</p>
+
+  <h3 class="sub">열쇠 3 · 나병 환자의 외침과 두 마리 새</h3>
+  <p>13장의 ‘나병’(히브리어 차라아트)은 오늘날의 한센병과 꼭 같은 병은 아니고, 피부와 옷과 벽에 생기는 여러 증상을 아우르는 말이에요. 진단을 받은 사람은 옷을 찢고, 머리를 풀고, 윗입술을 가린 채 <strong>“부정하다, 부정하다”</strong> 외치며 <strong>진 밖에서</strong> 혼자 살아야 했습니다(13:45–46). 하나님의 임재로부터, 공동체로부터, 가족으로부터 끊어진 삶이었어요.</p>
+  <p>그런데 14장에 이 사람이 나았을 때의 예식이 나옵니다. 새 두 마리를 가져와 <strong>한 마리는 흐르는 물 위에서 잡고</strong>, 살아 있는 다른 한 마리를 그 피에 적셔 <strong>들판으로 날려 보내요</strong>(14:4–7). 한 생명은 죽고, 다른 생명은 죽은 생명의 피를 묻힌 채 자유롭게 날아갑니다. <mark>죽음과 부활의 그림</mark>이 이렇게 오래전부터 그려져 있었어요.</p>
+
+  <h3 class="sub">그리고 예수님이 오셨을 때</h3>
+  <div class="pair">
+    <div class="a"><h3>레위기의 법칙</h3>부정한 것을 만지면 <strong>내가 부정해진다.</strong> 부정은 전염되고, 거룩은 조심스럽게 지켜야 하는 것이었습니다(레 5:2–3; 15:7, 19).</div>
+    <div class="b"><h3>예수님의 손길</h3>예수님이 나병 환자에게 <strong>손을 내밀어 만지시자</strong> 오히려 그가 깨끗해졌습니다(막 1:41). <strong>거룩이 거꾸로 전염되기 시작한 겁니다.</strong></div>
+  </div>
+  <p>마가복음 5장을 레위기의 눈으로 읽으면 소름이 돋아요. 이 한 장에 레위기가 말하는 <strong>가장 심각한 부정 세 가지</strong>가 차례로 등장합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>마가복음 5장</th><th>레위기적 부정</th><th>예수님이 하신 일</th></tr></thead>
+    <tbody>
+      <tr><td><b>거라사의 귀신 들린 사람</b> (1–20절)</td><td>무덤 사이에 살고(시체), 이방 땅, 근처에 돼지 떼</td><td>더러운 영을 쫓아내시고 그를 온전하게 하심</td></tr>
+      <tr><td><b>혈루증 여인</b> (25–34절)</td><td>12년 동안 피의 유출 (레 15:25)</td><td>옷자락을 만지자 부정이 옮지 않고 <strong>그녀가 나음</strong></td></tr>
+      <tr><td><b>야이로의 딸</b> (35–43절)</td><td>시체 (민 19:11)</td><td>손을 잡으시자 소녀가 <strong>살아남</strong></td></tr>
+    </tbody>
+  </table></div>
+  <p>레위기를 모르고 읽으면 “아, 병을 고치셨구나” 하고 지나갑니다. 레위기를 알고 읽으면 깨닫게 돼요. 예수님은 율법을 어기신 게 아니라, <mark>율법이 그토록 가리키던 생명 자체로 오셔서</mark> 죽음을 거꾸로 밀어내신 거예요. 그리고 베드로가 환상 중에 “하나님이 깨끗하게 하신 것을 네가 속되다 하지 말라”는 음성을 들었을 때(행 10:15), 음식의 구별을 넘어 <strong>이방인에게도 복음의 문</strong>이 열렸습니다.</p>
+</section>
+
+<!-- 8 -->
+<section id="s8" class="stack">
+  <div><div class="kicker">일곱째 마당 · 16장 · 레위기의 심장</div><h2>대속죄일, 일 년에 단 하루 열리는 문</h2></div>
+  <p>16장은 이렇게 시작합니다. “아론의 두 아들이 여호와 앞에 나아가다가 죽은 후에”(16:1). 10장의 비극을 잊지 말라는 거예요. 그리고 곧바로 “아무 때나 휘장 안 지성소에 들어가지 말라 그리하여 죽지 않도록 하라”(16:2). 그런데 동시에 이 장은, <strong>들어갈 수 있는 단 하루</strong>를 알려 줍니다. 일곱째 달 열흘날, 대속죄일이에요.</p>
+  <p>그날의 순서를 따라가 보세요. 순서 하나하나에 의미가 있습니다.</p>
+  <ol class="steps">
+    <li><div><b>화려한 옷을 벗다</b> · 대제사장은 금과 보석으로 장식한 예복 대신 <strong>흰 세마포 옷</strong>만 입습니다(16:4). 영광을 내려놓고 가장 낮은 모습으로 들어가요.</div></li>
+    <li><div><b>자기를 위한 속죄제</b> · 먼저 <strong>자신과 집안을 위해</strong> 수송아지를 잡습니다(16:6, 11). 백성을 위해 중보하는 사람도 자기 죄가 먼저 해결되어야 했어요.</div></li>
+    <li><div><b>향 연기로 덮다</b> · 핀 숯과 향을 들고 휘장 안으로 들어가 향 연기로 <strong>속죄소를 가립니다</strong>. “그리하면 그가 죽지 아니할 것이며”(16:12–13). 하나님 얼굴을 직접 볼 수 없을 만큼 그 자리는 거룩했어요.</div></li>
+    <li><div><b>피를 일곱 번</b> · 수송아지의 피를 속죄소 위와 앞에 <strong>일곱 번</strong> 뿌립니다(16:14). 일곱은 완전함의 숫자예요.</div></li>
+    <li><div><b>두 염소의 제비뽑기</b> · 염소 두 마리 중 제비를 뽑아 하나는 <strong>여호와께</strong>, 하나는 <strong>아사셀을 위해</strong> 정합니다(16:8). 여호와께 뽑힌 염소는 백성의 속죄제물로 잡아 그 피를 지성소에 뿌려요(16:15).</div></li>
+    <li><div><b>모든 죄를 고백하다</b> · 대제사장이 살아 있는 염소 머리에 <strong>두 손을 얹고</strong> 이스라엘의 모든 불의와 죄를 고백하며 그 죄를 염소 머리에 둡니다(16:21).</div></li>
+    <li><div><b>광야로 떠나보내다</b> · 그 염소는 미리 정한 사람의 손에 이끌려 <strong>광야 접근하기 어려운 땅</strong>으로 보내집니다. 죄를 짊어지고, 다시는 돌아오지 않아요(16:22).</div></li>
+    <li><div><b>온 백성이 스스로 괴롭게 하다</b> · 이날 백성은 일하지 않고 “스스로 괴롭게”(금식) 합니다(16:29–31). 축제가 아니라 깊은 회개의 날이었어요. 오늘날 유대인들은 이날을 ‘욤 키푸르’라 부르며 지금도 가장 거룩한 날로 지킵니다.</div></li>
+  </ol>
+  <div class="pair">
+    <div class="b"><h3>여호와께 드려진 염소</h3>죄의 <strong>값을 치름</strong>. 생명이 대신 죽어 하나님 앞에서 죄가 덮입니다.</div>
+    <div class="a"><h3>광야로 떠난 염소</h3>죄를 <strong>멀리 치워 버림</strong>. “동이 서에서 먼 것 같이 우리의 죄과를 우리에게서 멀리 옮기셨으며”(시 103:12).</div>
+  </div>
+  <p>왜 두 마리일까요? 한 마리로는 다 보여 줄 수 없기 때문이에요. 용서에는 두 면이 있습니다. 하나님 앞에서 <strong>죄의 값이 치러지는 것</strong>, 그리고 내 삶에서 <strong>죄가 치워지는 것</strong>. 대속죄일은 이 둘을 한날에 보여 주었어요.</p>
+  <details class="deep">
+    <summary>더 깊이 · ‘아사셀’은 무슨 뜻일까?</summary>
+    <div class="in">
+      <p>‘아사셀’은 성경에서 레위기 16장에만 나오는 낱말이라 뜻이 분명하지 않습니다. 해석은 크게 세 가지예요. ① “떠나가는 염소”(옛 영어 성경의 ‘scapegoat’가 여기서 나왔어요), ② 염소를 보내는 “험한 낭떠러지나 황무지”라는 장소 이름, ③ 광야에 산다고 여겨진 악한 존재의 이름.</p>
+      <p>어느 쪽이든 중요한 건 방향입니다. 죄는 하나님의 임재가 있는 진 한가운데에서 <strong>사람이 살 수 없는 광야로</strong>, 다시는 돌아올 수 없는 곳으로 보내졌어요. 염소는 하나님께 바쳐지는 제물이 아니라, 죄를 멀리 실어 나르는 운반자였습니다.</p>
+    </div>
+  </details>
+  <h3 class="sub">히브리서가 다시 쓴 대속죄일</h3>
+  <p>히브리서 9~10장은 대속죄일을 장면 그대로 따라가며 예수님과 비교합니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>레위기 16장의 대제사장</th><th>대제사장 예수님 (히브리서)</th></tr></thead>
+    <tbody>
+      <tr><td><b>자기 죄</b></td><td>자기 죄를 위해 먼저 속죄해야 함</td><td>죄가 없으셔서 그럴 필요가 없음 (7:26–27)</td></tr>
+      <tr><td><b>어떤 피</b></td><td>염소와 송아지의 피</td><td><strong>자기 피</strong> (9:12)</td></tr>
+      <tr><td><b>몇 번</b></td><td>해마다 반복</td><td><strong>단번에</strong>, 영원히 (9:12, 26; 10:10)</td></tr>
+      <tr><td><b>어디로</b></td><td>손으로 지은 지성소</td><td>하늘 그 자체 (9:24)</td></tr>
+      <tr><td><b>누가 들어가나</b></td><td>대제사장 혼자</td><td>우리도 <strong>담력을 얻어</strong> 들어감 (10:19–20)</td></tr>
+    </tbody>
+  </table></div>
+  <p>그리고 바울은 로마서 3장 25절에서 예수님을 하나님께서 세우신 <strong>‘화목제물’</strong>이라 부릅니다. 이 헬라어 ‘힐라스테리온’은 구약 헬라어 번역에서 레위기 16장의 <mark>속죄소(언약궤의 덮개)</mark>를 가리키던 단어예요. 대속죄일에 피가 뿌려지던 바로 그 자리, 그게 예수님이라는 겁니다.</p>
+</section>
+
+<!-- 9 -->
+<section id="s9" class="stack">
+  <div><div class="kicker">여덟째 마당 · 17–27장</div><h2>거룩은 성전이 아니라 부엌과 밭에서</h2></div>
+  <p>대속죄일을 지나면 레위기의 분위기가 바뀝니다. 이제 질문은 “어떻게 들어가나”가 아니라 <strong>“들어간 사람은 어떻게 사나”</strong>예요. 이 단락의 주제 문장이 이것입니다.</p>
+  <p class="verse">너는 이스라엘 자손의 온 회중에게 말하여 이르라 너희는 거룩하라 이는 나 여호와 너희 하나님이 거룩함이니라<cite>레위기 19:2</cite></p>
+  <p>그리고 이 단락 내내 하나님은 문장 끝에 도장을 찍듯 반복하세요. <strong>“나는 여호와이니라.”</strong> 특히 19장에서는 거의 한두 절마다 나옵니다. 왜 이렇게 해야 하는지에 대한 최종 근거가 늘 같아요. “내가 누구인지 알기 때문에.”</p>
+
+  <h3 class="sub">19장 · 거룩의 생활 목록</h3>
+  <p>“거룩하라”는 장엄한 선언 바로 다음에 무엇이 나오는지 보세요. 신비한 체험이 아니라 아주 구체적인 생활입니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>구절</th><th>거룩은 이런 모습</th></tr></thead>
+    <tbody>
+      <tr><td><b>19:9–10</b></td><td>밭 모퉁이까지 다 거두지 말고, 떨어진 이삭과 포도는 <strong>가난한 사람과 나그네</strong>를 위해 남겨 두라. 룻이 보아스의 밭에서 이삭을 주운 게 바로 이 법 덕분이었어요.</td></tr>
+      <tr><td><b>19:13</b></td><td>품꾼의 삯을 <strong>다음 날 아침까지 미루지 말라.</strong> 하루 벌어 하루 먹는 사람에게 하룻밤은 굶주림이니까요.</td></tr>
+      <tr><td><b>19:14</b></td><td>귀먹은 사람을 저주하지 말고 맹인 앞에 장애물을 두지 말라. <strong>보지 못하고 듣지 못한다고 해도 하나님은 보신다</strong>는 거예요.</td></tr>
+      <tr><td><b>19:18</b></td><td>원수를 갚지 말며 원망하지 말고, <strong>네 이웃 사랑하기를 네 자신과 같이 사랑하라.</strong></td></tr>
+      <tr><td><b>19:32</b></td><td>센 머리 앞에서 <strong>일어서고</strong> 노인의 얼굴을 공경하라.</td></tr>
+      <tr><td><b>19:33–34</b></td><td>거류민을 학대하지 말고 <strong>자기같이 사랑하라.</strong> 너희도 애굽 땅에서 나그네였느니라.</td></tr>
+      <tr><td><b>19:35–36</b></td><td>재판과 길이와 무게와 양을 속이지 말고 <strong>공평한 저울</strong>을 쓰라.</td></tr>
+    </tbody>
+  </table></div>
+  <p>거룩은 <mark>월급날을 지키는 일</mark>이고, 저울 눈금을 속이지 않는 일이며, 어르신이 들어오시면 자리에서 일어나는 일이었어요. 그리고 이 목록 한가운데에 예수님이 “둘째 큰 계명”으로 인용하신 말씀(마 22:39)이 있습니다. 많은 분들이 “네 이웃을 네 몸과 같이 사랑하라”가 신약의 말씀인 줄 아시는데, <strong>원래 레위기 말씀</strong>이에요. 게다가 레위기는 이웃뿐 아니라 <strong>나그네(외국인)</strong>까지 자기같이 사랑하라고 말합니다(19:34). 예수님이 선한 사마리아인 비유로 “누가 내 이웃이냐”에 답하신 것도 이 말씀 위에서였어요(눅 10:25–37).</p>
+
+  <h3 class="sub">23장 · 이스라엘의 달력, 예수님의 달력</h3>
+  <p>23장은 이스라엘의 절기를 정리합니다. 이스라엘은 1년 내내 이 절기를 따라 살면서 <strong>구원의 이야기를 몸으로 다시 살았어요.</strong> 그런데 신약을 펴 보면 놀라운 일이 보입니다.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>절기 (레 23장)</th><th>이스라엘에게</th><th>신약에서</th></tr></thead>
+    <tbody>
+      <tr><td><b>유월절</b> 1월 14일</td><td>어린양의 피로 죽음이 넘어감</td><td>“우리의 유월절 양 곧 그리스도께서 희생되셨느니라” (고전 5:7) · 실제로 유월절에 십자가</td></tr>
+      <tr><td><b>무교절</b> 1월 15일부터 7일</td><td>누룩 없는 떡, 서둘러 떠난 출애굽</td><td>“누룩 없는 떡으로” 순전하게 살라 (고전 5:8)</td></tr>
+      <tr><td><b>초실절</b> 안식일 이튿날</td><td>첫 이삭 한 단을 흔들어 드림</td><td>안식일 이튿날 부활, “잠자는 자들의 <strong>첫 열매</strong>” (고전 15:20)</td></tr>
+      <tr><td><b>칠칠절</b> 50일째</td><td>밀 추수의 감사</td><td>오순절(‘50’) 성령 강림, 3천 명의 첫 추수 (행 2장)</td></tr>
+      <tr><td><b>나팔절</b> 7월 1일</td><td>나팔 소리로 거룩한 모임</td><td>많은 해석자들이 재림의 나팔과 연결 (살전 4:16)</td></tr>
+      <tr><td><b>속죄일</b> 7월 10일</td><td>온 민족의 죄가 덮임</td><td>대제사장 예수님의 단번의 속죄 (히 9장)</td></tr>
+      <tr><td><b>초막절</b> 7월 15일부터 7일</td><td>광야에서 장막에 살던 것을 기억</td><td>“말씀이 육신이 되어 우리 가운데 <strong>장막을 치시매</strong>” (요 1:14) · 하나님의 장막이 사람들과 함께 (계 21:3)</td></tr>
+    </tbody>
+  </table></div>
+  <p>봄 절기 네 개는 예수님의 십자가·장사·부활·성령 강림에서 <mark>날짜까지 맞아떨어지며</mark> 이루어졌어요. 그래서 많은 성도들이 가을 절기는 주님이 다시 오실 때 완성될 것을 기대하며 바라봅니다. 레위기의 달력은 사실 <strong>구원의 시간표</strong>였던 거예요.</p>
+
+  <aside class="spotlight" id="pentecost" aria-labelledby="pentecost-title">
+    <span class="badge">특별 해설 · 꼭 붙들어야 할 이야기</span>
+    <h3 class="big" id="pentecost-title">시내산과 오순절,<br>같은 계절에 주어진 두 선물</h3>
+    <p>칠칠절은 유월절에서 일곱 주를 센 다음 날, 곧 <strong>50일째</strong> 지키는 절기예요(레 23:15–16). 헬라어로 ‘50번째’라는 뜻의 말이 바로 <strong>오순절(펜테코스테)</strong>입니다. 그런데 이 날짜에는 레위기가 직접 말하지 않는 깊은 연결이 하나 숨어 있어요. <mark>모세가 시내산에서 율법을 받은 때</mark>입니다.</p>
+
+    <h4>날짜가 겹친다</h4>
+    <p>이스라엘은 첫째 달 14일 유월절 밤에 애굽을 떠났고, “셋째 달 곧 그때에” 시내 광야에 도착했습니다(출 19:1). 그리고 며칠 뒤 산 위에 하나님이 강림하셔서 율법을 주셨어요(출 19:10–16). 날수를 세어 보면 <strong>유월절로부터 약 50일 무렵</strong>입니다. 그래서 유대 전통은 오래전부터 칠칠절을 추수 감사의 날이자 <strong>“율법을 받은 날”</strong>로 기념해 왔어요.</p>
+    <div class="figure" role="img" aria-label="출애굽과 예수님 사건의 50일 비교">
+      <svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans KR, sans-serif">
+        <text x="20" y="34" font-size="13" font-weight="800" fill="var(--navy)">출애굽</text>
+        <line x1="90" y1="50" x2="610" y2="50" stroke="var(--line)" stroke-width="3"/>
+        <circle cx="110" cy="50" r="8" fill="var(--rose)"/><circle cx="590" cy="50" r="10" fill="var(--gold)"/>
+        <text x="110" y="80" text-anchor="middle" font-size="12" fill="var(--fg)">유월절 어린양</text>
+        <text x="590" y="80" text-anchor="middle" font-size="12" font-weight="800" fill="var(--gold)">시내산 · 율법</text>
+        <text x="350" y="40" text-anchor="middle" font-size="12" fill="var(--muted)">약 50일</text>
+        <text x="20" y="124" font-size="13" font-weight="800" fill="var(--navy)">복음</text>
+        <line x1="90" y1="140" x2="610" y2="140" stroke="var(--line)" stroke-width="3"/>
+        <circle cx="110" cy="140" r="8" fill="var(--rose)"/><circle cx="150" cy="140" r="6" fill="var(--navy)"/><circle cx="515" cy="140" r="6" fill="var(--navy)"/><circle cx="590" cy="140" r="10" fill="var(--gold)"/>
+        <text x="110" y="170" text-anchor="middle" font-size="12" fill="var(--fg)">십자가</text>
+        <text x="160" y="190" text-anchor="middle" font-size="11" fill="var(--muted)">부활</text>
+        <text x="515" y="170" text-anchor="middle" font-size="11" fill="var(--muted)">승천 (40일)</text>
+        <text x="590" y="190" text-anchor="middle" font-size="12" font-weight="800" fill="var(--gold)">오순절 · 성령</text>
+        <text x="350" y="130" text-anchor="middle" font-size="12" fill="var(--muted)">50일째</text>
+      </svg>
+    </div>
+    <p>예수님은 유월절에 <strong>참 어린양</strong>으로 십자가에 달리셨고, 사흘 만에 부활하신 뒤 40일 동안 제자들에게 보이시고 승천하셨어요(행 1:3). 그리고 열흘 뒤, 바로 그 <strong>50일째 오순절</strong>에 성령이 오셨습니다(행 2:1). 첫 출애굽은 유월절 어린양에서 시작해 시내산의 율법으로 이어졌고, 새 출애굽은 십자가의 어린양에서 시작해 <mark>다락방의 성령</mark>으로 이어진 거예요.</p>
+    <p style="font-size:14.5px;color:var(--muted)">※ 레위기 23장은 칠칠절을 밀 추수 절기로만 소개합니다. 이 날을 율법 받은 날로 기념하는 전통은 후대 유대 문헌에서 분명해지지만, 출애굽기의 날짜가 바로 그 계절을 가리키고 있어요.</p>
+
+    <h4>두 장면을 나란히 놓으면</h4>
+    <div class="tablewrap"><table>
+      <thead><tr><th></th><th>시내산 (출 19–20, 32장)</th><th>오순절 (행 2장)</th></tr></thead>
+      <tbody>
+        <tr><td><b>소리</b></td><td>우레와 번개, 크고 긴 나팔 소리 (출 19:16)</td><td>하늘로부터 <strong>급하고 강한 바람</strong> 같은 소리 (행 2:2)</td></tr>
+        <tr><td><b>불</b></td><td>여호와께서 <strong>불 가운데서</strong> 산 위에 강림 (19:18)</td><td>불의 혀처럼 갈라져 <strong>각 사람 위에</strong> 임함 (2:3)</td></tr>
+        <tr><td><b>무엇을</b></td><td>하나님이 손가락으로 쓰신 <strong>돌판</strong> (31:18)</td><td>사람 안에 오신 <strong>성령</strong> (2:4)</td></tr>
+        <tr><td><b>거리</b></td><td>산 주위에 경계를 정하고, 백성은 <strong>멀리 서서</strong> 떨었음 (19:12; 20:18)</td><td>불이 사람들 <strong>머리 위에</strong> 내려앉음</td></tr>
+        <tr><td><b>누가</b></td><td>모세 한 사람만 산 위로 (19:20)</td><td>“그들이 <strong>다</strong> 성령의 충만함을 받고” (2:4)</td></tr>
+        <tr><td><b>결과</b></td><td>금송아지 사건으로 백성 중 <strong>삼천 명가량이 죽음</strong> (32:28)</td><td>베드로의 설교 후 <strong>삼천 명이 구원받음</strong> (2:41)</td></tr>
+      </tbody>
+    </table></div>
+    <p>마지막 줄을 보세요. 율법이 주어진 직후 금송아지 사건으로 <strong>삼천 명</strong>이 죽었고, 성령이 오신 날 <strong>삼천 명</strong>이 살아났습니다. 바울의 말이 그대로 떠오르지요. “<strong>율법 조문은 죽이는 것이요 영은 살리는 것이니라</strong>”(고후 3:6). 유대 전통에는 시내산에서 하나님의 음성이 세상 모든 민족의 언어로 나뉘어 들렸다는 이야기도 전해지는데, 오순절에 각 나라 사람이 자기 언어로 하나님의 큰일을 들은 장면(행 2:6–11)과 겹쳐 보여요.</p>
+
+    <h4>그렇다면 성령이 오신 것의 진정한 의미는?</h4>
+    <div class="points">
+      <div class="point">
+        <div class="t"><span>하나</span>돌판에서 마음판으로</div>
+        <p>율법은 거룩하고 선했어요(롬 7:12). 문제는 율법이 <strong>바깥에 쓰여 있었다</strong>는 겁니다. 이스라엘은 “여호와의 모든 말씀을 우리가 준행하리이다”(출 24:3)라고 대답했지만, 40일도 지나지 않아 금송아지 앞에 절했어요. 무엇이 옳은지 아는 것과 그것을 행할 힘이 있는 것은 다른 문제였습니다.</p>
+        <p>그래서 하나님은 선지자들을 통해 약속하셨어요. “내가 나의 법을 그들의 속에 두며 <strong>그들의 마음에 기록하여</strong>”(렘 31:33). “새 영을 너희 속에 두고… 나의 영을 너희 속에 두어 너희로 내 율례를 행하게 하리니”(겔 36:26–27). 오순절은 이 약속이 이루어진 날이에요. 바울은 성도를 가리켜 “먹으로 쓴 것이 아니요 오직 살아 계신 하나님의 영으로 쓴 것이며 또 돌판에 쓴 것이 아니요 <strong>육의 마음판에 쓴 것</strong>”이라고 말합니다(고후 3:3).</p>
+        <p>그러니 성령은 율법을 지워 버리신 분이 아니라, 율법이 바라던 삶을 <mark>우리 안에서 이루어 가시는 분</mark>이에요(롬 8:4). 바깥에서 “하라” 하던 명령이, 이제 안에서 “하고 싶다”는 소원과 힘으로 바뀝니다(빌 2:13).</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>둘</span>산 위의 불이 사람 위의 불로</div>
+        <p>이 페이지가 처음부터 따라온 질문을 기억하시나요? <strong>“거룩하신 하나님이 어떻게 죄인과 함께 사실 수 있을까?”</strong> 출애굽기 끝에서 영광이 성막을 채우자 모세도 들어가지 못했고(출 40:35), 레위기 9장에서 하늘의 불이 제단에 내려왔지만 그 불은 지성소 안, 제단 위에만 머물렀어요.</p>
+        <p>그런데 오순절에는 그 불이 <strong>각 사람의 머리 위에</strong> 내려앉습니다. 성막을 채웠던 영광이 이제 사람을 채우는 거예요. 그래서 바울은 이렇게 말합니다. “너희 몸은 너희가 하나님께로부터 받은 바 너희 가운데 계신 <strong>성령의 전</strong>인 줄을 알지 못하느냐”(고전 6:19). 레위기가 길고 긴 규례로 준비했던 그 일, 하나님이 백성 가운데 사시는 일이 <mark>가장 가까운 방식으로</mark> 이루어진 겁니다. 하나님은 이제 우리 곁이 아니라 우리 안에 사세요.</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>셋</span>한 사람의 산에서 모든 사람의 부르심으로</div>
+        <p>시내산에서는 모세 한 사람만 올라갔고, 백성이 산에 손을 대면 죽는다는 경고까지 있었어요(출 19:12). 레위기에서도 지성소에는 대제사장 한 사람만 일 년에 한 번 들어갔습니다. 하나님께 가까이 가는 일은 <strong>소수의 특권</strong>이었어요.</p>
+        <p>그런데 모세에게는 오래된 소원이 하나 있었습니다. “여호와께서 그의 영을 그의 <strong>모든 백성</strong>에게 주사 다 선지자가 되게 하시기를 원하노라”(민 11:29). 요엘은 그날이 올 것을 예언했고(욜 2:28), 베드로는 오순절에 바로 그 말씀을 인용하며 선포했어요. “내가 내 영을 <strong>모든 육체</strong>에게 부어 주리니”(행 2:17). 아들과 딸, 젊은이와 노인, 남종과 여종까지. 모세의 소원이 1,400년쯤 지나 이루어진 거예요. 모든 성도가 하나님 앞에 직접 나아가는 <mark>왕 같은 제사장</mark>이 된 겁니다(벧전 2:9).</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>넷</span>첫 열매의 날</div>
+        <p>칠칠절의 원래 의미는 <strong>밀 추수의 첫 열매</strong>를 하나님께 드리는 감사였어요(레 23:17). 그날 성령이 오시고 삼천 명이 돌아왔으니, 교회는 하나님이 거두신 <strong>첫 추수</strong>였던 셈입니다. 그리고 첫 열매는 언제나 앞으로 올 더 큰 추수를 약속하지요. 성령이 우리에게 오신 것은 끝이 아니라, 온 세상을 향한 추수의 <strong>시작</strong>이었어요(행 1:8).</p>
+      </div>
+    </div>
+    <div class="punch">오순절은 율법이 폐지된 날이 아니라,<br>율법이 드디어 사람의 마음에 도착한 날입니다.<small>돌판에 새겨진 하나님의 뜻이, 성령으로 우리 마음에 새겨진 날</small></div>
+  </aside>
+
+  <h3 class="sub">25장 · 희년, 50년마다 리셋되는 세상</h3>
+  <p>안식년을 일곱 번 지나 49년이 차면, 50년째 해는 <strong>희년</strong>입니다. 이 해에는 빚이 탕감되고, 가난 때문에 팔았던 땅이 원래 가족에게 돌아가고, 종으로 팔렸던 사람이 자유를 얻어 집으로 돌아가요(25:10). 그리고 이 해는 <strong>대속죄일에 뿔나팔을 불며</strong> 시작됩니다(25:9). 하나님과의 관계가 회복되는 바로 그날, 사회도 다시 출발하는 거예요.</p>
+  <p>그 근거가 놀랍습니다. “토지를 영구히 팔지 말 것은 토지는 <strong>다 내 것임이니라</strong> 너희는 거류민이요 동거하는 자로서 나와 함께 있느니라”(25:23). 땅도 사람도 결국 하나님의 것이니, 어떤 사람도 다른 사람을 영원히 소유할 수 없다는 겁니다.</p>
+  <p>그리고 25장에는 또 하나의 중요한 제도가 있어요. 가난해서 땅을 판 사람이 있으면 <strong>가장 가까운 친척이 대신 값을 치르고 되찾아 주는</strong> 제도, ‘기업 무를 자(고엘)’입니다(25:25). 룻기의 보아스가 바로 이 고엘이었고, 성경은 그 계보에서 다윗이, 그리고 마침내 <mark>우리의 참된 고엘이신 예수님</mark>이 나신다고 말해요. 예수님은 나사렛 회당에서 첫 설교를 하시며 이사야서를 펴서 “포로 된 자에게 자유를… 주의 은혜의 해를 전파하게 하려 하심이라”를 읽으시고 선포하셨습니다. “이 글이 오늘 너희 귀에 응하였느니라”(눅 4:18–21). <strong>희년이 한 사람 안에서 시작된 겁니다.</strong></p>
+
+  <h3 class="sub">26–27장 · 경고 끝에 숨겨 둔 약속</h3>
+  <p>26장은 순종하면 받을 복과 불순종하면 겪을 징계를 길게 늘어놓습니다. 무섭게 읽히는 장이에요. 그런데 그 징계의 맨 끝에 하나님은 이렇게 덧붙이십니다.</p>
+  <p class="verse">그런즉 그들이 그들의 원수들의 땅에 있을 때에 내가 그들을 내버리지 아니하며 미워하지 아니하며 아주 멸하지 아니하고 그들과 맺은 나의 언약을 폐하지 아니하리니<cite>레위기 26:44</cite></p>
+  <p>가장 어두운 경고 끝에도 하나님은 문을 닫지 않으세요. 그리고 27장은 <strong>서원</strong>, 곧 자원해서 자신이나 소유를 하나님께 드리겠다고 약속하는 법으로 책을 마칩니다. 사람을 드리겠다고 서원한 경우 그 값을 은으로 정했는데, 20~60세 남자는 은 50세겔이었어요(27:3). 은 1세겔이 약 11.4g이니 은 약 570g, 오늘날 은 시세로 대략 백만 원 남짓의 금액입니다(시세에 따라 달라져요). 레위기는 이렇게 <mark>억지가 아닌 자원하는 헌신</mark>으로 끝납니다. 율법의 책이 사랑의 응답으로 마무리되는 거예요.</p>
+</section>
+
+<!-- 10 -->
+<section id="s10" class="stack">
+  <div><div class="kicker">아홉째 마당 · 성경 66권 전체</div><h2>레위기에서 요한계시록까지 이어진 한 줄기 실</h2></div>
+  <p>레위기 26장 11~12절에 레위기 전체의 목표가 담겨 있습니다. “내가 <strong>내 성막을 너희 중에 세우리니</strong> 내 마음이 너희를 싫어하지 아니할 것이며 나는 너희 중에 행하여 너희의 하나님이 되고 너희는 나의 백성이 될 것이니라.” 이 약속이 성경 끝까지 어떻게 흘러가는지 따라가 볼게요.</p>
+  <div class="note thread">
+    <div class="row"><div class="bk">창세기<small>잃음</small></div><div class="tx">하나님이 동산을 <strong>거니시던</strong>(창 3:8) 자리에서 사람이 동쪽으로 쫓겨납니다. 그룹이 길을 막아요.</div></div>
+    <div class="row"><div class="bk">출애굽기<small>오심</small></div><div class="tx">“내가 그들 중에 거할 성소를 그들이 나를 위하여 짓되”(출 25:8). 하나님이 광야로 이사 오십니다. 그러나 아무도 들어가지 못해요(40:35).</div></div>
+    <div class="row"><div class="bk">레위기<small>길</small></div><div class="tx">“너희 중에 <strong>행하리라</strong>”(26:12). 에덴의 동사(할라크)로 다시 약속하십니다. 제사·제사장·정결·속죄라는 길을 통해서요.</div></div>
+    <div class="row"><div class="bk">이사야<small>예언</small></div><div class="tx">고난받는 종이 “<strong>속건제물</strong>”로 드려지고(사 53:10), “우리는 다 양 같아서 그릇 행하여… 여호와께서는 우리 모두의 죄악을 그에게 담당시키셨도다”(53:6). 레위기의 제물이 한 사람의 얼굴을 갖기 시작해요.</div></div>
+    <div class="row"><div class="bk">요한복음<small>성육신</small></div><div class="tx">“말씀이 육신이 되어 우리 가운데 <strong>거하시매</strong>”(요 1:14). ‘거하다’의 헬라어 원뜻은 ‘장막을 치다’입니다. 침례 요한은 그분을 보고 외쳤어요. “보라 세상 죄를 지고 가는 <strong>하나님의 어린양</strong>이로다”(1:29). 예수님은 걸어 다니는 성막, 살아 있는 제물로 오셨습니다. 예수님은 또 “이 성전을 헐라 내가 사흘 동안에 일으키리라”(2:19) 하시며 자기 몸을 성전이라 하셨어요.</div></div>
+    <div class="row"><div class="bk">마가복음<small>만지심</small></div><div class="tx">나병 환자, 혈루증 여인, 죽은 소녀를 <strong>만지셔서</strong> 살리십니다(1:41; 5장). 부정이 옮지 않고 생명이 옮겨 가요.</div></div>
+    <div class="row"><div class="bk">마태복음<small>찢김</small></div><div class="tx">예수님이 숨지실 때 “성소 휘장이 <strong>위로부터 아래까지</strong> 찢어져 둘이 되고”(마 27:51). 그룹이 수놓인, 에덴을 막던 그 휘장이 하나님 쪽에서부터 찢어진 거예요.</div></div>
+    <div class="row"><div class="bk">로마서<small>속죄소</small></div><div class="tx">하나님이 예수님을 “<strong>화목제물</strong>(힐라스테리온 = 속죄소)로 세우셨으니”(롬 3:25). 그리고 이제 우리 몸을 “산 제물”로 드리라 하십니다(12:1).</div></div>
+    <div class="row"><div class="bk">히브리서<small>해설서</small></div><div class="tx">신약의 ‘레위기 해설서’. 예수님은 대제사장이자 제물로, 대속죄일을 <strong>단번에</strong> 완성하셨습니다. “그러므로 형제들아 우리가 예수의 피를 힘입어 성소에 들어갈 담력을 얻었나니 그 길은 우리를 위하여 휘장 가운데로 열어 놓으신 새로운 살 길이요”(히 10:19–20).</div></div>
+    <div class="row"><div class="bk">베드로전서<small>제사장 나라</small></div><div class="tx">“내가 거룩하니 너희도 거룩할지어다”(벧전 1:16, 레 11:44 인용). 그리고 “너희는 택하신 족속이요 <strong>왕 같은 제사장</strong>들이요”(2:9). 레위 지파만 제사장이던 시대가 끝나고, 이제 모든 성도가 하나님 앞에 직접 나아가는 제사장이 됐어요. 침례교가 소중히 여기는 <strong>만인제사장</strong>의 뿌리가 바로 여기 있습니다.</div></div>
+    <div class="row"><div class="bk">요한계시록<small>완성</small></div><div class="tx">“보라 하나님의 <strong>장막이 사람들과 함께</strong> 있으매 하나님이 그들과 함께 계시리니 그들은 하나님의 백성이 되고”(계 21:3). 레위기 26:12의 약속이 거의 그대로 이루어집니다. 그리고 새 예루살렘은 길이와 너비와 높이가 같은 <strong>정육면체</strong>예요(21:16). 솔로몬 성전의 지성소도 정육면체였습니다(왕상 6:20). <mark>온 세상이 지성소가 되는 겁니다.</mark> “성 안에서 내가 성전을 보지 못하였으니 이는 주 하나님 곧 전능하신 이와 및 어린양이 그 성전이심이라”(21:22). 그리고 그 성 가운데 다시 <strong>생명나무</strong>가 있어요(22:2). 에덴의 문이 완전히 열린 겁니다.</div></div>
+  </div>
+</section>
+
+<!-- 11 -->
+<section id="s11" class="stack">
+  <div><div class="kicker">나가며 · 실천</div><h2>레위기를 읽을 때 붙들 세 가지 질문</h2></div>
+  <p>이제 레위기를 다시 펴실 때, 어떤 장을 읽든 이 세 가지 질문을 붙들고 읽어 보세요. 지루하던 규정들이 하나씩 말을 걸어오기 시작할 거예요.</p>
+  <div class="qs">
+    <div><b>① 이 규정은 무엇을 막고 있나?</b><p>죄, 죽음, 부패, 불의. 하나님 앞에 나아가지 못하게 막는 것이 무엇인지 찾아보세요.</p></div>
+    <div><b>② 이 길은 누구를 가리키나?</b><p>제물, 피, 제사장, 휘장, 절기. 그 그림자 끝에 서 계신 예수님을 찾아보세요.</p></div>
+    <div><b>③ 오늘 내 식탁과 일터에선?</b><p>밭 모퉁이, 품꾼의 삯, 공평한 저울. 오늘 내 일상에서 거룩이 어떤 모습이어야 할지 물어보세요.</p></div>
+  </div>
+  <details class="deep">
+    <summary>4주 레위기 읽기 길잡이</summary>
+    <div class="in">
+      <div class="tablewrap"><table>
+        <thead><tr><th>주</th><th>범위</th><th>붙들 질문</th></tr></thead>
+        <tbody>
+          <tr><td><b>1주</b></td><td>1–7장 · 다섯 제사</td><td>나는 하나님께 무엇을, 어떤 마음으로 드리고 있나?</td></tr>
+          <tr><td><b>2주</b></td><td>8–15장 · 제사장과 정결</td><td>나를 하나님에게서 멀어지게 하는 ‘부정’은 무엇인가?</td></tr>
+          <tr><td><b>3주</b></td><td>16–20장 · 속죄일과 거룩한 삶</td><td>단번의 속죄를 받은 사람으로서 오늘 어떻게 살까?</td></tr>
+          <tr><td><b>4주</b></td><td>21–27장 · 절기, 희년, 언약</td><td>내 시간표와 소유는 누구의 것인가?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </details>
+</section>
+
+<div class="finale">
+  <h2>그래서, 레위기는 어떤 책인가</h2>
+  <p>레위기는 규칙의 책이 아니라 <strong>초대의 책</strong>입니다. “거룩한 내가 어떻게 너희와 함께 살 수 있는지 알려 주마.” 출애굽기가 하나님을 백성 <em>가운데</em> 모셔 왔다면, 레위기는 백성이 하나님 <em>앞으로</em> 나아가는 길을 엽니다. 그리고 민수기에서 그들은 그 하나님을 모시고 행진을 시작해요.</p>
+  <p>그 길의 모든 제물, 모든 피, 모든 제사장, 모든 절기는 한 분을 가리키고 있었습니다. 레위기를 읽는다는 건 십자가를 <mark>가장 자세한 설계도로 미리 보는 일</mark>이에요. 이제 콩팥과 기름 꺼풀 앞에서도, 그 너머에 서 계신 하나님의 어린양이 보이실 거예요.</p>
+  <p class="verse" style="text-align:left;max-width:30em;margin:22px auto 0">그러므로 우리는 긍휼하심을 받고 때를 따라 돕는 은혜를 얻기 위하여 은혜의 보좌 앞에 담대히 나아갈 것이니라<cite>히브리서 4:16</cite></p>
+</div>
+
+<footer>기독교한국침례회 은혜교회 · 담임목사 박동준</footer>
+</main>
+
+<script>
+document.querySelectorAll('#offerings .off').forEach(function(card){
+  var btn=card.querySelector('button'), c=card.querySelector('.christ');
+  btn.addEventListener('click',function(){
+    var open=c.hidden; c.hidden=!open;
+    btn.setAttribute('aria-expanded',String(open));
+    btn.textContent=open?'접기 ▴':'예수님에게서는? ▸';
+  });
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
