@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>요한계시록, 사자라 들었는데 어린양이 보였다 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="짐승과 666보다 더 큰 이름, 죽임당하신 어린양을 중심으로 읽는 요한계시록의 숨은 이야기">
+<meta property="og:title" content="요한계시록, 사자라 들었는데 어린양이 보였다">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800;900&family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<style>
+/* 레이아웃: 하나의 긴 읽기 칼럼. 바깥뜰 → 성소 → 지성소 → 다시 세상으로, 성막을 걸어 들어가듯 9개 마당으로 진행 */
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --fg:#23262f; --muted:#6a6d78; --line:#e6e2d9;
+  --navy:#1f2f55; --gold:#b58a3c; --gold-soft:#f4ead6; --rose:#c25b5b; --rose-soft:#f8e6e3;
+  --sky:#e6eef9; --mint:#e4f2ec; --lilac:#ede7f6;
+  --hero-a:#f6e9ef; --hero-b:#e5eefb; --hero-c:#f3f0e1;
+  --display:"Pretendard","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+  --ui:"Pretendard","Noto Sans KR",system-ui,sans-serif;
+}
+:root{color-scheme:light}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{word-break:keep-all;-webkit-text-size-adjust:100%;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.9;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:740px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;line-height:1.35;margin:0}
+p{margin:0}
+.stack{display:flex;flex-direction:column;gap:18px}
+
+.hero{margin:16px auto 0;max-width:900px;border-radius:28px;padding:56px 26px 44px;
+  background:radial-gradient(120% 90% at 10% 0%,var(--hero-a),transparent 60%),
+             radial-gradient(100% 80% at 100% 20%,var(--hero-b),transparent 60%),
+             radial-gradient(90% 90% at 50% 110%,var(--hero-c),transparent 60%),var(--surface);
+  text-align:center}
+.hero .eyebrow{font-family:var(--ui);font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:700}
+.hero h1{font-size:clamp(34px,8vw,58px);font-weight:900;color:var(--navy);margin-top:14px;letter-spacing:-.02em}
+.hero .sub{font-size:18px;color:var(--muted);margin-top:16px;max-width:31em;margin-inline:auto}
+.heb{font-family:var(--body);font-size:44px;color:var(--gold);margin-top:22px;direction:rtl}
+.heb small{display:block;font-size:13px;font-family:var(--ui);color:var(--muted);direction:ltr;margin-top:2px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:640px;margin:28px auto 0}
+.facts div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 8px;min-width:0}
+.facts b{display:block;font-family:var(--display);font-size:21px;color:var(--navy);font-variant-numeric:tabular-nums}
+.facts span{font-family:var(--ui);font-size:12px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+@media (max-width:560px){.facts{grid-template-columns:repeat(2,1fr)}}
+
+.toc{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:24px auto 0;max-width:820px;padding:10px 0}
+.toc a{font-family:var(--ui);font-size:13px;text-decoration:none;color:var(--navy);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.toc a:hover,.toc a:focus-visible{border-color:var(--gold);outline:none}
+
+section{padding-top:76px;scroll-margin-top:16px}
+.kicker{font-family:var(--ui);font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.12em}
+section h2{font-size:clamp(25px,5.6vw,34px);font-weight:800;color:var(--navy);margin:8px 0 22px;letter-spacing:-.01em}
+h3.sub{font-size:20px;color:var(--navy);margin-top:14px}
+mark{background:linear-gradient(transparent 58%,var(--gold-soft) 58%);color:inherit;padding:0 2px}
+strong{color:var(--navy)}
+.verse{border-left:3px solid var(--gold);padding:6px 0 6px 18px;font-size:17.5px}
+.verse cite{display:block;font-family:var(--ui);font-style:normal;font-size:13px;color:var(--muted);margin-top:4px}
+.smile{font-family:var(--ui);font-size:15px;color:var(--rose)}
+
+.note{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.note .tag{font-family:var(--ui);font-size:12.5px;font-weight:800;color:var(--rose);letter-spacing:.08em;display:block;margin-bottom:6px}
+.note.gold{background:var(--gold-soft);border-color:transparent}
+
+details.deep{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:0 22px}
+details.deep summary{cursor:pointer;font-family:var(--ui);font-weight:800;color:var(--navy);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.deep summary::-webkit-details-marker{display:none}
+details.deep summary::after{content:"＋";color:var(--gold)}
+details.deep[open] summary::after{content:"－"}
+details.deep summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+details.deep .in{padding-bottom:20px;display:flex;flex-direction:column;gap:14px;font-size:16px}
+
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 14px 14px;overflow-x:auto}
+.figure svg{display:block;width:100%;height:auto;min-width:340px}
+.figcap{font-family:var(--ui);font-size:13.5px;color:var(--muted);text-align:center;margin-top:10px}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;line-height:1.6}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-family:var(--ui);font-size:13px;color:var(--muted);font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td b{font-family:var(--display);color:var(--navy)}
+
+.words{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.word{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-width:0}
+.word .h{font-family:var(--body);font-size:24px;color:var(--gold);direction:rtl;text-align:left}
+.word .k{font-family:var(--display);font-weight:800;color:var(--navy);font-size:16px}
+.word .d{font-size:14.5px;line-height:1.65;margin-top:4px}
+
+.offerings{display:grid;grid-template-columns:1fr;gap:14px}
+.off{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.off header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.off .nm{font-family:var(--display);font-weight:900;font-size:22px;color:var(--navy)}
+.off .hb{font-family:var(--ui);font-size:13px;color:var(--gold);font-weight:700}
+.off .ref{font-family:var(--ui);font-size:12.5px;color:var(--muted);margin-left:auto}
+.off .meta{display:flex;flex-wrap:wrap;gap:6px}
+.off .meta span{font-family:var(--ui);font-size:12.5px;background:var(--sky);border-radius:999px;padding:3px 10px}
+.off p{font-size:16px;line-height:1.8}
+.off .christ{background:var(--gold-soft);border-radius:14px;padding:12px 14px;font-size:15.5px}
+.off button{align-self:flex-start;font-family:var(--ui);font-size:13px;font-weight:700;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:999px;padding:5px 14px;cursor:pointer}
+.off button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:0;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:16px;color:var(--surface);background:var(--navy);border-radius:50%;width:32px;height:32px;display:grid;place-items:center;margin-top:3px}
+.steps li div{min-width:0;font-size:16px;line-height:1.8}
+.steps li b{font-family:var(--display);color:var(--navy)}
+
+.thread .row{display:grid;grid-template-columns:100px 1fr;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.thread .row:last-child{border-bottom:0}
+.thread .bk{font-family:var(--display);font-weight:800;color:var(--gold);font-size:15px;padding-top:3px}
+.thread .bk small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.thread .tx{font-size:16px;line-height:1.8;min-width:0}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair>div{border-radius:16px;padding:16px 18px;font-size:15.5px;line-height:1.75;min-width:0}
+.pair .a{background:var(--rose-soft)} .pair .b{background:var(--mint)}
+.pair h3{font-size:15px;margin-bottom:6px;color:var(--navy)}
+@media (max-width:540px){.pair{grid-template-columns:1fr}.thread .row{grid-template-columns:1fr;gap:4px}}
+
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.qs div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;min-width:0}
+.qs b{display:block;font-family:var(--display);font-size:17px;color:var(--navy);margin-bottom:6px}
+.qs p{font-size:15px;line-height:1.75}
+
+/* 특별 해설 블록 */
+.spotlight{margin-top:10px;border-radius:26px;padding:32px 24px;border:2px solid var(--gold);
+  background:radial-gradient(110% 80% at 0% 0%,var(--hero-a),transparent 60%),radial-gradient(110% 80% at 100% 100%,var(--hero-b),transparent 60%),var(--surface);
+  display:flex;flex-direction:column;gap:18px;scroll-margin-top:70px}
+.spotlight .badge{align-self:flex-start;font-family:var(--ui);font-size:12.5px;font-weight:800;letter-spacing:.1em;color:var(--surface);background:var(--gold);border-radius:999px;padding:5px 14px}
+.spotlight h3.big{font-size:clamp(23px,5.4vw,31px);font-weight:900;color:var(--navy);letter-spacing:-.01em}
+.spotlight h4{font-size:18px;color:var(--navy);margin-top:6px}
+.spotlight .tablewrap{background:var(--surface)}
+.points{display:flex;flex-direction:column;gap:12px}
+.point{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.point .t{font-family:var(--display);font-weight:900;font-size:18px;color:var(--navy);display:flex;gap:10px;align-items:baseline}
+.point .t span{font-family:var(--display);color:var(--gold);font-size:15px;flex:none}
+.point p{font-size:16px;line-height:1.85}
+.punch{background:var(--navy);color:var(--surface);border-radius:18px;padding:22px;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(18px,4.2vw,22px);line-height:1.55}
+.punch small{display:block;font-weight:400;font-size:13px;opacity:.85;margin-top:8px;font-family:var(--ui)}
+.finale{margin-top:80px;border-radius:26px;padding:44px 26px;text-align:center;
+  background:radial-gradient(100% 100% at 0% 0%,var(--hero-b),transparent 60%),radial-gradient(100% 100% at 100% 100%,var(--hero-a),transparent 60%),var(--surface)}
+.finale h2{font-size:clamp(24px,5.4vw,32px);color:var(--navy);font-weight:900}
+.finale p{margin-top:16px;max-width:34em;margin-inline:auto}
+footer{font-family:var(--ui);font-size:12.5px;color:var(--muted);text-align:center;margin-top:36px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">성경의 숨은 재밌는 이야기 · 묵시문학 깊이 읽기</div>
+  <h1>요한계시록,<br>사자라 들었는데<br>어린양이 보였다</h1>
+  <p class="sub">짐승과 용과 666 때문에 무섭기만 했던 책. 그런데 이 책의 주인공은 처음부터 끝까지 죽임당하신 어린양이에요</p>
+  <div class="heb" style="direction:ltr">Ἀποκάλυψις<small>아포칼립시스 · “덮개를 벗기다”</small></div>
+  <div class="facts">
+    <div><b>22장</b><span>성경의 마지막 책</span></div>
+    <div><b>일곱 교회</b><span>실제 주소가 있는 편지</span></div>
+    <div><b>일곱 번</b><span>“복이 있다”는 선언</span></div>
+    <div><b>5:6</b><span>죽임당한 어린양</span></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <a href="#r1">들어가며</a><a href="#r2">세 가지 장르</a><a href="#r3">구조</a><a href="#r4">인자와 일곱 교회</a><a href="#spot">★ 어린양</a><a href="#r5">숫자 읽기</a><a href="#r6">새 출애굽</a><a href="#r7">두 도시</a><a href="#r8">레위기의 완성</a><a href="#r9">처음과 마지막</a><a href="#r10">읽는 법</a>
+</nav>
+
+<main class="wrap">
+
+<section id="r1" class="stack">
+  <div><div class="kicker">들어가며</div><h2>가장 무서워하는 책, 가장 복된 책</h2></div>
+  <p>요한계시록 하면 어떤 장면이 떠오르세요? 일곱 머리 열 뿔 달린 짐승, 피로 변한 바다, 이마에 찍힌 666, 아마겟돈. 그리고 “이 숫자가 바로 누구다”, “그날이 바로 언제다” 하는 수많은 주장들. <span class="smile">😄 그래서 많은 분들에게 요한계시록은 ‘펼치면 무서운 책’ 혹은 ‘이상한 사람들이 좋아하는 책’이 되어 버렸어요.</span></p>
+  <p>그런데 요한계시록은 첫 장에서 이렇게 약속합니다. “이 예언의 말씀을 읽는 자와 듣는 자들과 그 가운데에 기록한 것을 지키는 자는 <strong>복이 있나니</strong>”(1:3). 성경 66권 중에서 읽기만 해도 복이 있다고 스스로 말하는 책은 이 책뿐이에요. 그리고 이 “복이 있다”는 선언이 책 전체에 <strong>정확히 일곱 번</strong> 나옵니다(1:3; 14:13; 16:15; 19:9; 20:6; 22:7; 22:14).</p>
+  <p>요한계시록의 첫 단어를 보세요. “예수 그리스도의 <strong>계시</strong>라.” 이 책은 미래 사건의 시간표이기 전에 <mark>예수 그리스도를 드러내는 책</mark>이에요. 짐승도 용도 바벨론도 나오지만, 주인공은 처음부터 끝까지 한 분입니다.</p>
+</section>
+
+<section id="r2" class="stack">
+  <div><div class="kicker">첫째 마당 · 장르와 열쇠 단어</div><h2>세 겹으로 된 책</h2></div>
+  <p>요한계시록은 처음 다섯 절 안에 자기가 어떤 책인지 세 번 말해요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>장르</th><th>본문</th><th>읽는 법</th></tr></thead>
+    <tbody>
+      <tr><td><b>묵시</b></td><td>“예수 그리스도의 계시(아포칼립시스)라” (1:1)</td><td>상징과 환상으로 하늘의 현실을 보여 줘요. 다니엘과 에스겔, 스가랴의 언어를 이어받았어요. 문자 그대로가 아니라 <strong>그림으로</strong> 읽어야 해요.</td></tr>
+      <tr><td><b>예언</b></td><td>“이 예언의 말씀을 읽는 자와 듣는 자들” (1:3)</td><td>미래를 말하지만 그보다 먼저 <strong>지금 어떻게 살 것인가</strong>를 촉구해요. 구약 선지자들처럼 회개와 신실함을 부르는 말씀이에요.</td></tr>
+      <tr><td><b>편지</b></td><td>“요한은 아시아에 있는 일곱 교회에 편지하노니” (1:4)</td><td>1세기 실제 교회들에게 보낸 편지예요. 그래서 <strong>그들이 처음 읽었을 때 무슨 뜻이었을까</strong>를 먼저 물어야 해요.</td></tr>
+    </tbody>
+  </table></div>
+  <p>요한은 지금 튀르키예 서해안 앞바다의 작은 섬 <strong>밧모</strong>에 있었어요. “하나님의 말씀과 예수의 증언으로 말미암아”(1:9), 곧 신앙 때문에 유배당한 거예요. 초대 교회의 이레나이우스는 이 책이 로마 황제 도미티아누스 통치 말기(1세기 말, 주후 95년경)에 기록되었다고 전해요(주후 70년 이전으로 보는 학자들도 있어요). 황제를 “주님이시며 신”으로 부르라는 압력이 커지던 때, 작은 교회들은 선택의 기로에 서 있었어요.</p>
+  <h3 class="sub">요한계시록을 여는 다섯 개의 열쇠 단어</h3>
+  <div class="words">
+    <div class="word"><div class="h" style="direction:ltr">ἀρνίον</div><div class="k">아르니온 · 어린양</div><div class="d">작고 여린 어린양. 이 책에서 스무 번이 훨씬 넘게 그리스도를 부르는 이름이에요. 요한계시록의 진짜 주인공이에요.</div></div>
+    <div class="word"><div class="h" style="direction:ltr">νικάω</div><div class="k">니카오 · 이기다</div><div class="d">일곱 교회 편지마다 “이기는 그에게는”이라는 약속이 있어요. 그런데 이 책이 말하는 승리의 방식은 세상과 정반대예요.</div></div>
+    <div class="word"><div class="h" style="direction:ltr">μαρτυρία</div><div class="k">마르튀리아 · 증언</div><div class="d">“증언”이라는 뜻인데, 증언하다 목숨을 잃는 사람이 많아지면서 훗날 “순교(martyr)”라는 말이 여기서 나왔어요.</div></div>
+    <div class="word"><div class="h" style="direction:ltr">θρόνος</div><div class="k">트로노스 · 보좌</div><div class="d">이 책에서 수십 번 나오는 단어. 로마 황제의 보좌가 세상을 다스리는 것처럼 보일 때, 진짜 보좌가 어디 있는지 보여 줘요.</div></div>
+    <div class="word"><div class="h" style="direction:ltr">ἔρχομαι</div><div class="k">에르코마이 · 오다</div><div class="d">“내가 속히 오리라.” 그리고 교회의 대답, “주 예수여 오시옵소서.” 책의 마지막 대화예요(22:20).</div></div>
+  </div>
+</section>
+
+<section id="r3" class="stack">
+  <div><div class="kicker">둘째 마당 · 구조</div><h2>일곱, 일곱, 일곱, 그리고 새 하늘</h2></div>
+  <p>요한계시록은 숫자 7로 짜인 책이에요. 일곱 교회, 일곱 인, 일곱 나팔, 일곱 대접. 그 사이사이에 하늘의 예배와 하나님 백성의 이야기가 끼어 있어요.</p>
+  <div class="figure" role="img" aria-label="요한계시록 구조">
+    <svg viewBox="0 0 660 230" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, Noto Sans KR, sans-serif">
+      <g font-size="11" fill="var(--muted)" text-anchor="middle">
+        <text x="40" y="26">1장</text><text x="110" y="26">2–3장</text><text x="190" y="26">4–5장</text><text x="265" y="26">6–7장</text><text x="340" y="26">8–11장</text><text x="415" y="26">12–14장</text><text x="490" y="26">15–16장</text><text x="560" y="26">17–20장</text><text x="625" y="26">21–22장</text>
+      </g>
+      <rect x="15" y="36" width="50" height="70" rx="8" fill="var(--sky)"/>
+      <rect x="75" y="36" width="70" height="70" rx="8" fill="var(--sky)"/>
+      <rect x="155" y="30" width="70" height="82" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+      <rect x="235" y="36" width="60" height="70" rx="8" fill="var(--rose-soft)"/>
+      <rect x="305" y="36" width="70" height="70" rx="8" fill="var(--rose-soft)"/>
+      <rect x="385" y="36" width="60" height="70" rx="8" fill="var(--lilac)"/>
+      <rect x="455" y="36" width="70" height="70" rx="8" fill="var(--rose-soft)"/>
+      <rect x="535" y="36" width="50" height="70" rx="8" fill="var(--lilac)"/>
+      <rect x="595" y="30" width="60" height="82" rx="8" fill="var(--mint)" stroke="var(--navy)" stroke-width="1.5"/>
+      <g font-size="12.5" font-weight="800" fill="var(--navy)" text-anchor="middle">
+        <text x="40" y="76">인자</text><text x="110" y="70">일곱</text><text x="110" y="86">교회</text><text x="190" y="70">보좌와</text><text x="190" y="86">어린양</text>
+        <text x="265" y="70">일곱</text><text x="265" y="86">인</text><text x="340" y="70">일곱</text><text x="340" y="86">나팔</text>
+        <text x="415" y="70">용과</text><text x="415" y="86">두 짐승</text><text x="490" y="70">일곱</text><text x="490" y="86">대접</text>
+        <text x="560" y="70">바벨론</text><text x="560" y="86">멸망</text><text x="625" y="70">새 하늘</text><text x="625" y="86">새 땅</text>
+      </g>
+      <path d="M265 130 Q340 175 490 130" fill="none" stroke="var(--rose)" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="378" y="182" text-anchor="middle" font-size="11.5" fill="var(--rose)" font-weight="700">점점 커지는 심판 · 같은 이야기를 다른 각도로 반복</text>
+      <text x="190" y="132" text-anchor="middle" font-size="11.5" fill="var(--gold)" font-weight="700">모든 것의 열쇠</text>
+      <text x="330" y="218" text-anchor="middle" font-size="12" fill="var(--fg)">땅의 혼란 → 하늘의 보좌 → 심판과 보호 → 새 창조</text>
+    </svg>
+  </div>
+  <p>재밌는 점이 있어요. 여섯째 인과 일곱째 인 사이(7장), 여섯째 나팔과 일곱째 나팔 사이(10–11장)에 꼭 <strong>쉬어 가는 장면</strong>이 끼어 있어요. 심판이 쏟아지기 직전에 카메라가 멈추고, 하나님이 자기 백성의 이마에 인을 치시고 보호하시는 모습을 보여 줍니다. 심판 한가운데에서도 <mark>하나님은 자기 백성을 잊지 않으신다</mark>는 거예요.</p>
+  <p>그리고 많은 학자들은 일곱 인, 일곱 나팔, 일곱 대접이 시간 순서대로 하나씩 이어지는 사건이라기보다, <strong>같은 시대를 점점 더 크게, 다른 각도로 반복해서 보여 주는 것</strong>이라고 봐요. 인 재앙은 땅의 4분의 1, 나팔 재앙은 3분의 1, 대접 재앙은 전체에 미치거든요(6:8; 8:7–12; 16장). 그리고 셋 다 끝에 번개, 음성, 우렛소리, 지진이 나오며 마지막에 이르러요(8:5; 11:19; 16:18).</p>
+</section>
+
+<section id="r4" class="stack">
+  <div><div class="kicker">셋째 마당 · 1–3장</div><h2>촛대 사이를 거니시는 분과 일곱 교회</h2></div>
+  <p>밧모섬에서 요한은 뒤에서 나팔 같은 큰 음성을 듣고 돌아봅니다. 일곱 금 촛대 사이에 <strong>인자 같은 이</strong>가 서 계셨어요(1:12–13). 다니엘 7장의 그 인자예요. 그런데 이분의 모습이 놀라워요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>요한계시록 1장의 모습</th><th>구약에서 어디서 본 모습인가</th></tr></thead>
+    <tbody>
+      <tr><td><b>발에 끌리는 옷, 가슴에 금띠</b> (1:13)</td><td>대제사장의 옷 (출 28:4; 39:29)</td></tr>
+      <tr><td><b>머리와 털이 흰 양털 같고 눈 같으며</b> (1:14)</td><td>다니엘 7:9의 “옛적부터 항상 계신 이”</td></tr>
+      <tr><td><b>음성이 많은 물소리와 같으며</b> (1:15)</td><td>에스겔 43:2, 동쪽에서 돌아오는 하나님의 영광</td></tr>
+      <tr><td><b>입에서 좌우에 날선 검이 나오고</b> (1:16)</td><td>이사야 49:2, 하나님의 종의 입을 날카로운 칼같이</td></tr>
+      <tr><td><b>일곱 금 촛대 사이를 거니시는</b> (2:1)</td><td>레위기 26:12, “내가 너희 중에 <strong>행하여</strong>” · 성소의 등잔대를 돌보는 제사장</td></tr>
+    </tbody>
+  </table></div>
+  <p>예수님은 대제사장이시면서, 옛적부터 계신 하나님이시고, 돌아온 영광이세요. 그리고 그분은 하늘 멀리 계시지 않고 <mark>교회들 사이를 거니고 계셨어요.</mark> 요한이 그 앞에 죽은 사람처럼 엎드리자, 그분은 오른손을 얹으시며 말씀하세요. “두려워하지 말라 나는 처음이요 마지막이니 곧 살아 있는 자라 내가 전에 죽었었노라 볼지어다 이제 세세토록 살아 있어 사망과 음부의 열쇠를 가졌노니”(1:17–18).</p>
+  <h3 class="sub">2–3장 · 진짜 주소가 있는 일곱 통의 편지</h3>
+  <p>일곱 교회는 상상 속 교회가 아니라 실제 도시에 있던 교회들이에요. 그리고 각 편지에는 그 도시 사람만 알아듣는 이야기가 숨어 있어요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>교회</th><th>예수님의 말씀</th><th>도시의 숨은 이야기</th></tr></thead>
+    <tbody>
+      <tr><td><b>에베소</b> (2:1–7)</td><td>수고와 인내는 칭찬, 그러나 “<strong>처음 사랑을 버렸느니라</strong>”</td><td>세계 7대 불가사의인 아데미 신전이 있던 대도시. 바울이 3년 가까이 머물렀던 곳이에요(행 20:31). 진리를 지키느라 사랑을 잃어버린 교회였어요.</td></tr>
+      <tr><td><b>서머나</b> (2:8–11)</td><td>책망이 없음. “<strong>죽도록 충성하라</strong> 그리하면 내가 생명의 관을 네게 주리라”</td><td>언덕 위 건물들이 왕관처럼 둘러싸 “서머나의 면류관”이라 불렸어요. 훗날 이 교회의 감독 폴리캅은 86세에 순교하며 “86년 동안 그분을 섬겼는데 그분은 한 번도 나를 해하지 않으셨다”고 고백했다고 전해져요.</td></tr>
+      <tr><td><b>버가모</b> (2:12–17)</td><td>“<strong>사탄의 권좌</strong>가 있는 데라”</td><td>언덕 위 거대한 제우스 제단과 황제 숭배 신전이 있던 수도. 양피지(파치먼트)라는 말이 이 도시 이름에서 나왔어요. 이기는 자에게 “흰 돌” 위에 새 이름을 써 주신다는 약속이 있어요.</td></tr>
+      <tr><td><b>두아디라</b> (2:18–29)</td><td>사랑과 섬김은 자라지만 “<strong>이세벨</strong>을 용납함”</td><td>염색과 직물 같은 상인 조합(길드)이 강한 도시. 조합 잔치에는 우상 제물이 나왔어요. 바울에게 복음을 듣고 침례받은 자색 옷감 장수 루디아가 이 도시 출신이에요(행 16:14).</td></tr>
+      <tr><td><b>사데</b> (3:1–6)</td><td>“<strong>살았다 하는 이름은 가졌으나 죽은 자</strong>로다 … 일깨라 … 도둑같이 이르리니”</td><td>절벽 위의 난공불락 요새 도시였는데, 경계를 소홀히 한 밤에 적이 절벽을 기어올라 와서 역사 속에서 두 번이나 함락됐어요. “깨어 있으라”는 말이 이 도시 사람들에게는 뼈아팠을 거예요.</td></tr>
+      <tr><td><b>빌라델비아</b> (3:7–13)</td><td>책망이 없음. “<strong>열린 문</strong>을 두었으되 능히 닫을 사람이 없으리라”</td><td>지진이 잦아 사람들이 툭하면 성 밖으로 피신했던 도시예요. 그런 곳에 “성전의 <strong>기둥</strong>이 되게 하리니 그가 결코 다시 나가지 아니하리라”는 약속이 주어졌어요.</td></tr>
+      <tr><td><b>라오디게아</b> (3:14–22)</td><td>“<strong>차지도 아니하고 뜨겁지도 아니하고</strong> 미지근하여” · “나는 부자라 … 부족한 것이 없다”</td><td>근처 히에라볼리에는 치료하는 온천이, 골로새에는 시원한 냉수가 있었는데, 라오디게아는 먼 곳에서 수도관으로 물을 끌어와 <strong>미지근하고 석회가 섞인</strong> 물을 마셨어요. 은행과 검은 양모, 유명한 안약으로 부유했던 도시라 “흰 옷을 사서 입고 안약을 사서 눈에 바르라”(3:18)는 말씀이 날카롭게 꽂혀요. 주후 60년 큰 지진 뒤에 로마의 원조를 거절하고 스스로 재건했다는 기록도 있어요.</td></tr>
+    </tbody>
+  </table></div>
+  <p>그리고 가장 미지근한 교회에게 주신 말씀이 가장 따뜻해요. “볼지어다 내가 <strong>문 밖에 서서 두드리노니</strong> 누구든지 내 음성을 듣고 문을 열면 내가 그에게로 들어가 그와 더불어 먹고 그는 나와 더불어 먹으리라”(3:20). 주님은 교회 바깥에서 문을 두드리고 계셨어요.</p>
+</section>
+
+<section class="stack">
+  <div><div class="kicker">넷째 마당 · 4–5장</div><h2>열린 문 너머의 보좌</h2></div>
+  <p>3장이 “문 밖에서 두드리는” 예수님으로 끝나자, 4장은 “<strong>하늘에 열린 문</strong>”으로 시작해요(4:1). 요한은 하늘로 올라가 보좌를 봅니다. 무지개가 보좌를 둘러 있고, 24장로가 둘러앉아 있고, 보좌 앞에는 유리 바다가 있고, 에스겔이 보았던 네 생물(사자, 송아지, 사람, 독수리)이 밤낮 쉬지 않고 외쳐요. “거룩하다 거룩하다 거룩하다 주 하나님 곧 전능하신 이여”(4:8). 이사야 6장의 스랍들이 부르던 바로 그 노래예요.</p>
+  <p>왜 이 장면이 일곱 교회 바로 다음에 나올까요? 박해받는 교회는 로마 황제의 보좌가 세상을 다스린다고 느꼈어요. 하나님은 커튼을 걷고 보여 주세요. <mark>진짜 보좌는 하늘에 있고, 그 보좌는 한 번도 비어 본 적이 없다.</mark></p>
+
+  <aside class="spotlight" id="spot" aria-labelledby="lamb-title">
+    <span class="badge">특별 해설 · 요한계시록의 심장</span>
+    <h3 class="big" id="lamb-title">사자라고 들었는데,<br>돌아보니 어린양이었다</h3>
+    <p>5장에서 보좌에 앉으신 분의 오른손에 두루마리가 들려 있어요. 안팎으로 글이 쓰이고 <strong>일곱 인으로 봉해진</strong> 두루마리예요(5:1). 하나님의 역사 계획, 심판과 구원의 결말이 담긴 책입니다. 다니엘에게 “봉하라” 하셨던 바로 그 책이에요(단 12:4). 천사가 외쳐요. “누가 그 두루마리를 펴며 그 인을 떼기에 합당하냐.” 그런데 하늘에도 땅에도 땅 아래에도 아무도 없었어요. 요한은 <strong>크게 울었습니다</strong>(5:4).</p>
+    <p>그때 장로 하나가 말해요.</p>
+    <p class="verse">울지 말라 유다 지파의 사자 다윗의 뿌리가 이겼으니 그 두루마리와 그 일곱 인을 떼시리라 하더라<cite>요한계시록 5:5</cite></p>
+    <p>요한은 고개를 듭니다. 용맹한 사자가 포효하며 서 있을 줄 알았겠죠. 그런데 그가 본 것은 이것이었어요.</p>
+    <p class="verse">내가 또 보니 보좌와 네 생물과 장로들 사이에 일찍이 죽임을 당한 것 같은 어린양이 서 있는데 일곱 뿔과 일곱 눈이 있으니 이 눈들은 온 땅에 보내심을 받은 하나님의 일곱 영이더라<cite>요한계시록 5:6</cite></p>
+    <p>귀로는 <strong>사자</strong>를 들었는데, 눈으로는 <strong>어린양</strong>을 봤어요. 요한계시록 전체를 여는 열쇠가 바로 이 장면입니다.</p>
+    <div class="points">
+      <div class="point">
+        <div class="t"><span>하나</span>들은 것과 본 것은 같은 분이다</div>
+        <p>사자와 어린양은 서로 다른 두 존재가 아니에요. 장로가 “사자가 이겼다”고 말한 그분이, 실제로는 죽임당한 어린양의 모습으로 서 계셨어요. 구약이 약속한 승리하는 왕(창 49:9–10, 유다의 사자)이 <mark>십자가에서 죽임당하는 방식으로 이기셨다</mark>는 거예요. 하나님의 능력은 짓밟는 힘이 아니라 내어 주는 사랑으로 나타났습니다.</p>
+        <p>요한계시록은 이 패턴을 7장에서 한 번 더 보여 줘요. 요한은 인 맞은 자의 수가 이스라엘 열두 지파에서 <strong>144,000</strong>이라고 “듣습니다”(7:4). 그런데 돌아보니 그가 “본” 것은 “<strong>각 나라와 족속과 백성과 방언에서</strong> 아무도 능히 셀 수 없는 큰 무리”였어요(7:9). 들은 숫자와 본 무리가 같은 하나님의 백성이에요. 이스라엘에게 주신 약속이 온 세상으로 넓어져 이루어진 겁니다.</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>둘</span>죽임당한 채로, 그러나 서 계신다</div>
+        <p>어린양은 “죽임을 당한 것 같은” 모습으로 <strong>서 있어요</strong>. 죽임당한 상처가 그대로 있는데, 누워 있지 않고 서 있습니다. 십자가와 부활이 한 장면에 겹쳐 있는 거예요. 부활하신 예수님이 도마에게 못 자국과 창 자국을 보여 주셨던 것처럼(요 20:27), 영광의 보좌 한가운데에서도 주님은 상처를 지우지 않으셨어요. <strong>그 상처가 그분의 영광</strong>이기 때문이에요.</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>셋</span>일곱 뿔과 일곱 눈</div>
+        <p>묵시문학의 약속을 기억하시죠? 뿔은 힘, 7은 완전함. 일곱 뿔은 <strong>완전한 능력</strong>이에요. 일곱 눈은 “온 땅에 보내심을 받은 하나님의 일곱 영”, 곧 온 세상을 보시는 <strong>성령</strong>이에요(스가랴 4:10의 “온 세상에 두루 다니는 여호와의 눈”). 가장 약해 보이는 어린양이 사실은 가장 강하고 모든 것을 아시는 분이에요. 다니엘서의 짐승들은 뿔을 휘두르며 짓밟았지만, 어린양의 일곱 뿔은 자기 피로 사람들을 사는 데 쓰였어요.</p>
+        <p>그래서 하늘의 새 노래가 터져 나와요. “두루마리를 가지시고 그 인봉을 떼기에 합당하시도다 일찍이 <strong>죽임을 당하사 각 족속과 방언과 백성과 나라 가운데에서 사람들을 피로 사서</strong> 하나님께 드리시고”(5:9). 그리고 천천만만의 천사가 외칩니다. “죽임을 당하신 어린양은 능력과 부와 지혜와 힘과 존귀와 영광과 찬송을 받으시기에 합당하도다”(5:12).</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>넷</span>어린양이 이긴 방식으로 성도도 이긴다</div>
+        <p>이 장면이 박해받는 일곱 교회에게 왜 그렇게 중요했을까요? 일곱 편지마다 “<strong>이기는 그에게는</strong>” 약속이 있었잖아요. 그런데 어떻게 이기라는 걸까요? 칼을 들고 로마에 맞서라는 걸까요? 요한계시록 12장이 답해요. “또 우리 형제들이 <strong>어린양의 피와 자기들이 증언하는 말씀</strong>으로써 그를 이겼으니 그들은 죽기까지 자기들의 생명을 아끼지 아니하였도다”(12:11).</p>
+        <p>어린양이 죽임당하심으로 이기셨듯, 성도들도 끝까지 신실하게 증언함으로 이겨요. 짐승이 칼과 경제와 선전으로 세상을 휘어잡을 때, 성도들은 그것을 따라 하지 않습니다. 그들은 “<strong>어린양이 어디로 인도하든지 따라가는 자</strong>”(14:4)예요. 그리고 마지막에 “그들이 어린양과 더불어 싸우려니와 <strong>어린양은 만주의 주시요 만왕의 왕이시므로</strong> 그들을 이기실 터이요”(17:14). 승리는 이미 정해져 있어요.</p>
+      </div>
+    </div>
+    <div class="punch">하나님은 사자처럼 짓밟아서가 아니라<br>어린양처럼 죽임당하심으로 이기셨습니다.<small>그래서 이 책의 모든 짐승과 용보다 더 큰 이름은 “어린양”입니다</small></div>
+  </aside>
+</section>
+
+<section id="r5" class="stack">
+  <div><div class="kicker">다섯째 마당 · 숫자 읽기</div><h2>숫자는 계산기보다 그림으로</h2></div>
+  <p>요한계시록을 어렵게 만드는 주범이 숫자죠. 하지만 1세기 유대인과 그리스도인에게 숫자는 계산보다 <strong>의미를 담는 그릇</strong>이었어요. 기본 뜻을 알면 훨씬 덜 무서워져요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>숫자</th><th>뜻</th><th>예</th></tr></thead>
+    <tbody>
+      <tr><td><b>7</b></td><td>완전함, 하나님의 충만함</td><td>일곱 교회(온 교회), 일곱 영(성령의 충만), 일곱 인·나팔·대접</td></tr>
+      <tr><td><b>4</b></td><td>온 세상, 땅의 사방</td><td>네 생물, 땅 네 모퉁이의 네 천사(7:1)</td></tr>
+      <tr><td><b>12</b></td><td>하나님의 백성</td><td>이스라엘 열두 지파와 열두 사도, 새 예루살렘의 열두 문과 열두 기초석(21:12–14)</td></tr>
+      <tr><td><b>144,000</b></td><td>12×12×1,000 · 하나님 백성의 완전한 충만</td><td>바로 뒤에 “셀 수 없는 큰 무리”로 보임(7:4, 9)</td></tr>
+      <tr><td><b>3½</b></td><td>한정된 고난의 기간 · 7의 절반, 끝이 정해진 시간</td><td>“한 때 두 때 반 때”(12:14, 단 7:25), 42달(11:2; 13:5), 1,260일(11:3; 12:6). 모두 같은 기간이에요</td></tr>
+      <tr><td><b>1,000</b></td><td>아주 길고 충만한 기간, 큰 수</td><td>천 년(20:2–7)</td></tr>
+      <tr><td><b>666</b></td><td>“사람의 수”(13:18) · 7에 이르지 못하고 6을 세 번 반복한 불완전함</td><td>아래에서 자세히</td></tr>
+    </tbody>
+  </table></div>
+  <details class="deep">
+    <summary>더 깊이 · 666은 누구일까?</summary>
+    <div class="in">
+      <p>히브리어와 헬라어는 알파벳 글자마다 숫잣값이 있어서, 이름의 글자를 더해 숫자로 바꾸는 놀이(게마트리아)가 흔했어요. 그래서 요한은 “<strong>지혜가 여기 있으니</strong> 총명한 자는 그 짐승의 수를 세어 보라”(13:18)고 말해요. 첫 독자들은 셈을 할 수 있었다는 뜻이에요.</p>
+      <p>가장 널리 알려진 해석은 ‘<strong>네로 황제</strong>’예요. 헬라어 “네론 카이사르”를 히브리 글자로 옮겨 숫잣값을 더하면 666이 나와요. 그런데 흥미롭게도 요한계시록의 몇몇 고대 사본에는 666 대신 <strong>616</strong>이라고 적혀 있어요. 라틴어식 이름 “네로 카이사르”(끝의 ‘ㄴ’ 소리가 빠짐)로 계산하면 616이 나오거든요. 필사자들이 이 숫자를 네로로 이해했다는 흔적일 수 있어요.</p>
+      <p>네로는 그리스도인을 처음으로 대대적으로 박해한 황제였고, 그가 죽은 뒤에도 “네로가 다시 살아 돌아온다”는 소문이 돌았어요. 요한계시록의 짐승이 “죽게 된 상처가 나았다”(13:3)는 묘사와 겹쳐요. 그래서 많은 학자들은 666이 네로 한 사람을 맞히는 암호라기보다, <mark>네로처럼 하나님을 대신하려 하고 성도를 짓밟는 모든 권력의 이름</mark>이라고 봐요.</p>
+      <p>그러니 666을 바코드나 칩, 특정 인물에 끼워 맞추며 두려워할 필요는 없어요. 요한계시록이 정말 묻는 질문은 이거예요. “너의 이마와 손, 곧 생각과 행동은 누구에게 속해 있느냐?” 짐승의 표와 대조되는 것은 어린양과 아버지의 <strong>이름이 이마에 쓰인</strong> 사람들이에요(14:1).</p>
+    </div>
+  </details>
+  <details class="deep">
+    <summary>더 깊이 · 요한계시록을 읽는 네 가지 큰 관점</summary>
+    <div class="in">
+      <p><strong>① 과거주의</strong> · 대부분의 내용이 1세기(예루살렘 멸망, 로마 제국)에 이미 이루어졌다고 봐요.</p>
+      <p><strong>② 역사주의</strong> · 교회 역사 전체가 차례로 예언되어 있다고 봐요. 종교개혁자들 중에 이 관점을 가진 사람이 많았어요.</p>
+      <p><strong>③ 미래주의</strong> · 4장 이후 대부분이 아직 오지 않은 마지막 때의 사건이라고 봐요.</p>
+      <p><strong>④ 이상주의(영적 해석)</strong> · 특정 사건보다 모든 시대에 반복되는 선과 악의 싸움, 그리스도의 승리를 그린다고 봐요.</p>
+      <p>천년왕국(20장)에 대해서도 <strong>전천년설</strong>(예수님이 천 년 전에 재림), <strong>후천년설</strong>(복음이 퍼진 천 년 후 재림), <strong>무천년설</strong>(천 년은 지금 교회 시대를 상징)이 있어요. 침례교 안에서도 여러 견해가 함께 있어요. 오늘날 많은 성경학자들은 이 관점들의 장점을 함께 살려 읽기를 권해요. 1세기 교회에게 실제로 주신 말씀이면서, 모든 시대 교회에게 주신 말씀이고, 마지막 완성을 바라보게 하는 말씀이라는 거예요. 어떤 관점이든 모두 동의하는 핵심은 하나예요. <strong>예수님이 다시 오시고, 어린양이 이기신다.</strong></p>
+    </div>
+  </details>
+</section>
+
+<section id="r6" class="stack">
+  <div><div class="kicker">여섯째 마당 · 8–16장</div><h2>재앙들은 새 출애굽의 소리였다</h2></div>
+  <p>나팔과 대접 재앙을 읽으면 무섭기만 하죠. 그런데 구약을 아는 사람에게는 이 재앙들이 아주 익숙해요. <strong>출애굽기의 열 가지 재앙</strong>이 그대로 다시 나오거든요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>요한계시록의 재앙</th><th>출애굽기의 재앙</th></tr></thead>
+    <tbody>
+      <tr><td>물이 <b>피</b>가 됨 (8:8; 16:3–4)</td><td>나일강이 피로 변함 (출 7:20)</td></tr>
+      <tr><td><b>우박</b>과 불 (8:7; 16:21)</td><td>우박과 불 (출 9:23–24)</td></tr>
+      <tr><td><b>흑암</b> (8:12; 16:10)</td><td>사흘 동안의 흑암 (출 10:21–23)</td></tr>
+      <tr><td><b>메뚜기</b> (9:3)</td><td>메뚜기 (출 10:12–15)</td></tr>
+      <tr><td>악하고 독한 <b>종기</b> (16:2)</td><td>악성 종기 (출 9:10)</td></tr>
+      <tr><td><b>개구리</b> 같은 더러운 영 셋 (16:13)</td><td>개구리 (출 8:6)</td></tr>
+    </tbody>
+  </table></div>
+  <p>왜 그럴까요? 하나님이 바로의 압제에서 이스라엘을 해방하셨듯, <mark>짐승의 압제에서 자기 백성을 해방하시는 새 출애굽</mark>을 보여 주시는 거예요. 그래서 대접 재앙 직전, 짐승을 이긴 사람들이 유리 바닷가에 서서 노래합니다. 홍해를 건넌 이스라엘처럼요. 그런데 그 노래의 이름이 “하나님의 종 <strong>모세의 노래, 어린양의 노래</strong>”예요(15:3). 첫 출애굽에 유월절 어린양이 있었듯, 새 출애굽의 중심에도 어린양이 계셔요.</p>
+  <p>그리고 이 재앙들에도 공통된 목적이 있어요. 바로가 끝내 마음을 완악하게 했듯이, 재앙을 겪은 사람들이 “그 행위를 회개하지 아니하더라”(9:20–21; 16:9, 11)는 말이 반복돼요. 재앙은 단순한 형벌이 아니라 <strong>돌이키라는 마지막 나팔 소리</strong>였어요.</p>
+</section>
+
+<section id="r7" class="stack">
+  <div><div class="kicker">일곱째 마당 · 17–22장</div><h2>두 여자, 두 도시</h2></div>
+  <p>요한계시록 후반부는 두 도시의 이야기예요. 그리고 요한은 이 둘을 일부러 짝으로 보여 줘요. 17장에서 일곱 대접을 가진 천사 중 하나가 와서 “이리로 오라 많은 물 위에 앉은 <strong>큰 음녀</strong>가 받을 심판을 네게 보이리라”(17:1) 하는데, 21장에서 똑같이 일곱 대접을 가진 천사 중 하나가 와서 “이리 오라 내가 <strong>신부 곧 어린양의 아내</strong>를 네게 보이리라”(21:9) 해요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th></th><th>큰 성 바벨론 (17–18장)</th><th>새 예루살렘 (21–22장)</th></tr></thead>
+    <tbody>
+      <tr><td><b>모습</b></td><td>자주색과 붉은빛 옷에 금과 보석과 진주로 꾸민 음녀</td><td>남편을 위하여 단장한 신부, 하나님의 영광이 있어 보석처럼 빛남</td></tr>
+      <tr><td><b>옷</b></td><td>사치와 음행의 옷</td><td>빛나고 깨끗한 세마포, “이 세마포는 성도들의 옳은 행실이로다”(19:8)</td></tr>
+      <tr><td><b>함께하는 자</b></td><td>짐승을 탐</td><td>어린양의 아내</td></tr>
+      <tr><td><b>마시는 것</b></td><td>성도들의 피에 취함 (17:6)</td><td>생명수 샘물을 값없이 줌 (21:6)</td></tr>
+      <tr><td><b>상인과 열방</b></td><td>땅의 상인들이 그 사치로 부자가 됐다가 울며 애통함 (18:11)</td><td>땅의 왕들이 자기 영광을 가지고 그리로 들어옴 (21:24)</td></tr>
+      <tr><td><b>결말</b></td><td>“무너졌도다 무너졌도다 큰 성 바벨론이여” (18:2)</td><td>“다시 저주가 없으며” 세세토록 왕 노릇 함 (22:3–5)</td></tr>
+    </tbody>
+  </table></div>
+  <p>1세기 독자들에게 바벨론은 분명히 <strong>로마</strong>였어요. 일곱 언덕 위에 세워진 도시(17:9), 땅의 왕들을 다스리는 큰 성(17:18). 베드로도 로마를 “바벨론”이라고 불렀어요(벧전 5:13). 18장의 상인들이 애통하며 읊는 상품 목록에는 금, 은, 보석, 비단, 향료, 포도주, 말과 수레, 그리고 마지막에 “<strong>종들과 사람의 영혼들</strong>”(18:13)이 나와요. 사람까지 상품으로 사고팔던 경제 체제였던 거예요.</p>
+  <p>바벨론은 시대마다 이름을 바꿔 다시 나타나요. 하나님 없이도 풍요롭고, 사람을 상품으로 쓰고, 성도를 짓밟는 모든 체제가 바벨론이에요. 그래서 하늘에서 이런 음성이 들립니다. “내 백성아 거기서 나와 그의 죄에 참여하지 말고”(18:4). 요한계시록의 질문은 결국 이거예요. <mark>너는 어느 도시의 시민으로 살고 있느냐?</mark></p>
+  <p>그리고 19장에서 바벨론의 몰락 직후, 하늘에서 큰 무리가 “할렐루야”를 외쳐요. 신약에서 “할렐루야”라는 말이 나오는 곳은 이 장(19:1–6)뿐이에요. 그리고 이렇게 선포합니다. “<strong>어린양의 혼인 잔치</strong>에 청함을 받은 자들은 복이 있도다”(19:9). 음녀의 잔치가 끝나고, 신부의 잔치가 시작되는 거예요.</p>
+</section>
+
+<section id="r8" class="stack">
+  <div><div class="kicker">여덟째 마당 · 레위기에서 계시록까지</div><h2>레위기가 꿈꾸던 것이 다 이루어지다</h2></div>
+  <p>레위기를 함께 읽으셨다면 요한계시록에서 놀라운 장면들을 보실 수 있어요. 레위기가 길고 긴 규례로 준비했던 모든 것이 여기서 완성되거든요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>레위기와 성막</th><th>요한계시록의 완성</th></tr></thead>
+    <tbody>
+      <tr><td><b>대제사장의 옷과 금띠</b></td><td>대제사장의 옷을 입으신 인자 (1:13)</td></tr>
+      <tr><td><b>성소의 금 등잔대</b>를 돌보는 제사장</td><td>일곱 금 촛대 사이를 거니시는 예수님 (2:1)</td></tr>
+      <tr><td><b>분향단의 향</b> (출 30:7–8)</td><td>금향로의 향연, “성도의 기도들” (5:8; 8:3–4)</td></tr>
+      <tr><td><b>지성소 안의 언약궤</b> · 대제사장만 1년에 한 번</td><td>하늘의 성전이 열리고 언약궤가 보임 (11:19)</td></tr>
+      <tr><td><b>영광이 가득해 모세도 들어가지 못한 회막</b> (출 40:35)</td><td>“성전에 연기가 가득 차매 일곱 재앙이 마치기까지는 성전에 능히 들어갈 자가 없더라” (15:8) · 그러나 마지막에는 모든 성도가 들어감</td></tr>
+      <tr><td><b>정육면체 지성소</b> (왕상 6:20)</td><td>길이·너비·높이가 같은 새 예루살렘, 각 변 12,000스다디온 (약 2,200km) (21:16) · <strong>온 성이 지성소</strong></td></tr>
+      <tr><td><b>성전 안에 거하시는 하나님</b></td><td>“성 안에서 내가 성전을 보지 못하였으니 이는 주 하나님 곧 전능하신 이와 및 어린양이 그 성전이심이라” (21:22)</td></tr>
+      <tr><td><b>대제사장 이마의 금패 “여호와께 성결”</b> (출 28:36–38)</td><td>“그의 얼굴을 볼 터이요 <strong>그의 이름도 그들의 이마에</strong> 있으리라” (22:4)</td></tr>
+      <tr><td><b>“나는 너희 중에 행하여 너희의 하나님이 되고 너희는 나의 백성이 될 것이니라”</b> (레 26:12)</td><td>“하나님이 그들과 함께 계시리니 그들은 하나님의 백성이 되고 하나님은 친히 그들과 함께 계셔서” (21:3)</td></tr>
+    </tbody>
+  </table></div>
+  <p>이 마지막 두 줄을 천천히 보세요. 레위기 시대에 하나님의 이름을 이마에 달고 하나님 얼굴 앞, 지성소에 들어갈 수 있는 사람은 <strong>대제사장 단 한 명, 1년에 단 하루</strong>였어요. 그런데 새 예루살렘에서는 하나님의 모든 종들이 이마에 그분의 이름을 달고 <mark>날마다, 영원히 그 얼굴을 봅니다.</mark> 모든 성도가 대제사장이 되는 거예요. 그리고 거기에는 더 이상 성전이 없어요. 성전이 필요 없을 만큼 하나님과 어린양이 모든 것을 채우시니까요.</p>
+</section>
+
+<section id="r9" class="stack">
+  <div><div class="kicker">아홉째 마당 · 성경 66권 전체</div><h2>창세기 첫 장과 요한계시록 마지막 장</h2></div>
+  <p>성경의 첫 세 장과 마지막 두 장을 나란히 놓으면 놀라운 일이 벌어져요. 처음에 잃어버린 모든 것이 마지막에 돌아옵니다. 아니, 더 크게 돌아와요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>창세기 1–3장</th><th>요한계시록 21–22장</th></tr></thead>
+    <tbody>
+      <tr><td>태초에 하나님이 <b>천지를 창조</b>하시니라 (1:1)</td><td>내가 <b>새 하늘과 새 땅</b>을 보니 (21:1)</td></tr>
+      <tr><td>깊음 위에 흑암, 혼돈의 <b>바다</b> (1:2)</td><td>바다도 다시 있지 않더라 (21:1) · 짐승이 올라오던 곳이 사라짐</td></tr>
+      <tr><td>낮과 <b>밤</b>, 해와 달 (1:5, 16)</td><td>다시 밤이 없겠고 등불과 햇빛이 쓸데없으니 하나님이 그들에게 비치심이라 (22:5)</td></tr>
+      <tr><td>동산에서 흘러나온 <b>강</b> (2:10)</td><td>하나님과 어린양의 보좌로부터 흘러나오는 생명수의 강 (22:1)</td></tr>
+      <tr><td><b>생명나무</b>에 이르는 길을 그룹이 막음 (3:24)</td><td>강 좌우에 생명나무, 열두 가지 열매를 맺되 달마다 그 열매를 맺고 그 잎사귀들은 만국을 치료하기 위하여 있더라 (22:2)</td></tr>
+      <tr><td>땅이 <b>저주</b>를 받음 (3:17)</td><td>다시 저주가 없으며 (22:3)</td></tr>
+      <tr><td>하나님의 낯을 피하여 숨음, 동산에서 <b>쫓겨남</b> (3:8, 23)</td><td>그의 <b>얼굴을 볼 터이요</b> (22:4)</td></tr>
+      <tr><td>죽음이 들어옴 (3:19)</td><td>다시 사망이 없고 애통하는 것이나 곡하는 것이나 아픈 것이 다시 있지 아니하리니 (21:4)</td></tr>
+    </tbody>
+  </table></div>
+  <p>그런데 한 가지 다른 점이 있어요. 창세기는 <strong>동산</strong>에서 시작하지만 요한계시록은 <strong>도시</strong>로 끝나요. 하나님은 에덴으로 시간을 되돌리시는 게 아니라, 인류의 역사와 문화까지 거룩하게 하셔서 더 크고 아름다운 정원 도시로 완성하세요. 열방이 “자기 영광과 존귀를 가지고” 그 성에 들어오거든요(21:24–26).</p>
+  <div class="note thread">
+    <div class="row"><div class="bk">레위기<small>장막</small></div><div class="tx">“내가 내 성막을 너희 중에 세우리니”(레 26:11). 요한계시록 21:3에서 “하나님의 장막이 사람들과 함께” 있어요.</div></div>
+    <div class="row"><div class="bk">에스겔<small>강과 성</small></div><div class="tx">성전에서 흘러나온 강, 달마다 열매 맺는 나무와 치료하는 잎사귀(겔 47:12), 여호와 삼마(48:35). 그대로 계시록 22장으로 흘러와요.</div></div>
+    <div class="row"><div class="bk">다니엘<small>인자와 짐승</small></div><div class="tx">구름 타고 오시는 인자(1:7, 13), 네 짐승이 합쳐진 짐승(13:2), 봉하라던 책이 봉하지 말라는 책으로(22:10).</div></div>
+    <div class="row"><div class="bk">스가랴<small>찔린 분</small></div><div class="tx">“그를 찌른 자들도 볼 것이요”(1:7), 두 감람나무(11:4), 네 병거와 말들(6장), 모든 것이 거룩해지는 날.</div></div>
+    <div class="row"><div class="bk">이사야<small>새 하늘</small></div><div class="tx">“보라 내가 새 하늘과 새 땅을 창조하나니”(사 65:17), “그들의 눈에서 모든 눈물을 씻어 주시니”(사 25:8 → 계 21:4).</div></div>
+    <div class="row"><div class="bk">요한복음<small>어린양</small></div><div class="tx">“보라 세상 죄를 지고 가는 하나님의 어린양이로다”(요 1:29). 같은 요한이 마지막 책에서 보좌 한가운데의 어린양을 봐요.</div></div>
+  </div>
+</section>
+
+<section id="r10" class="stack">
+  <div><div class="kicker">나가며 · 실천</div><h2>요한계시록을 읽을 때 붙들 세 가지 질문</h2></div>
+  <div class="qs">
+    <div><b>① 이 장면에서 어린양은 어디 계신가?</b><p>짐승과 재앙이 몰아쳐도 보좌와 어린양을 먼저 찾으세요. 그분이 중심에 계시면 무서운 장면도 위로가 돼요.</p></div>
+    <div><b>② 나는 어느 도시의 시민으로 살고 있나?</b><p>바벨론의 풍요와 편리함 속에서도 “거기서 나오라”는 음성을 듣고 있나요? 내 이마와 손은 누구의 이름을 달고 있나요?</p></div>
+    <div><b>③ 일곱 교회 중 오늘 나의 교회는?</b><p>처음 사랑을 잃은 에베소, 죽도록 충성한 서머나, 미지근한 라오디게아. 지금 주님이 우리 교회 문 앞에서 무엇을 말씀하시나요?</p></div>
+  </div>
+  <details class="deep">
+    <summary>3주 요한계시록 읽기 길잡이</summary>
+    <div class="in">
+      <div class="tablewrap"><table>
+        <thead><tr><th>주</th><th>범위</th><th>붙들 질문</th></tr></thead>
+        <tbody>
+          <tr><td><b>1주</b></td><td>1–5장</td><td>교회들 사이를 거니시는 주님, 보좌와 어린양은 나에게 어떤 위로인가?</td></tr>
+          <tr><td><b>2주</b></td><td>6–16장</td><td>심판 한가운데에서 하나님은 자기 백성을 어떻게 보호하시나? (7장, 10–11장, 14장 쉼표 장면에 주목)</td></tr>
+          <tr><td><b>3주</b></td><td>17–22장</td><td>바벨론을 떠나 새 예루살렘을 바라본다는 건 오늘 어떤 삶일까?</td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:14.5px;color:var(--muted)">요한계시록은 원래 교회 예배 때 한 번에 소리 내어 읽도록 쓰인 편지예요(1:3). 한 번쯤은 처음부터 끝까지 소리 내어 읽어 보세요. 1시간 남짓이면 충분해요. 세부 내용보다 큰 흐름과 감정이 먼저 들어올 거예요.</p>
+    </div>
+  </details>
+</section>
+
+<div class="finale">
+  <h2>그래서, 요한계시록은 어떤 책인가</h2>
+  <p>요한계시록은 미래를 맞히는 공포의 책이 아니라 <strong>박해받는 교회에게 하늘의 커튼을 걷어 보여 준 위로의 책</strong>입니다. 황제의 보좌가 세상을 쥐고 흔드는 것 같을 때, 진짜 보좌에는 하나님이 앉아 계시고 그 한가운데 죽임당하신 어린양이 서 계세요.</p>
+  <p>짐승은 칼로 이기려 하지만 어린양은 십자가로 이기셨고, 성도들은 끝까지 신실한 증언으로 이깁니다. 그리고 마지막에, 창세기에서 잃어버린 생명나무가 돌아오고, 하나님이 우리 눈의 모든 눈물을 씻기시고, 우리는 그분의 얼굴을 보게 될 거예요. 그래서 성경의 마지막 기도는 두려움이 아니라 <mark>기다림의 고백</mark>입니다.</p>
+  <p class="verse" style="text-align:left;max-width:30em;margin:22px auto 0">이것들을 증언하신 이가 이르시되 내가 진실로 속히 오리라 하시거늘 아멘 주 예수여 오시옵소서<cite>요한계시록 22:20</cite></p>
+</div>
+
+<footer>기독교한국침례회 은혜교회 · 담임목사 박동준</footer>
+</main>
+
+<script>
+document.querySelectorAll('.off').forEach(function(card){
+  var btn=card.querySelector('button'), c=card.querySelector('.christ');
+  if(!btn||!c) return;
+  btn.addEventListener('click',function(){
+    var open=c.hidden; c.hidden=!open;
+    btn.setAttribute('aria-expanded',String(open));
+    btn.textContent=open?'접기 ▴':btn.getAttribute('data-label');
+  });
+  btn.setAttribute('data-label',btn.textContent);
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

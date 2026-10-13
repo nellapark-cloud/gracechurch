@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>스가랴, 여덟 밤의 환상과 나귀 탄 왕 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="멈춰 선 성전 공사장에 주신 여덟 환상과 500년 뒤 고난주간을 미리 그린 스가랴서의 숨은 이야기">
+<meta property="og:title" content="스가랴, 여덟 밤의 환상과 나귀 탄 왕">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800;900&family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<style>
+/* 레이아웃: 하나의 긴 읽기 칼럼. 바깥뜰 → 성소 → 지성소 → 다시 세상으로, 성막을 걸어 들어가듯 9개 마당으로 진행 */
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --fg:#23262f; --muted:#6a6d78; --line:#e6e2d9;
+  --navy:#1f2f55; --gold:#b58a3c; --gold-soft:#f4ead6; --rose:#c25b5b; --rose-soft:#f8e6e3;
+  --sky:#e6eef9; --mint:#e4f2ec; --lilac:#ede7f6;
+  --hero-a:#f6e9ef; --hero-b:#e5eefb; --hero-c:#f3f0e1;
+  --display:"Pretendard","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+  --ui:"Pretendard","Noto Sans KR",system-ui,sans-serif;
+}
+:root{color-scheme:light}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{word-break:keep-all;-webkit-text-size-adjust:100%;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.9;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:740px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;line-height:1.35;margin:0}
+p{margin:0}
+.stack{display:flex;flex-direction:column;gap:18px}
+
+.hero{margin:16px auto 0;max-width:900px;border-radius:28px;padding:56px 26px 44px;
+  background:radial-gradient(120% 90% at 10% 0%,var(--hero-a),transparent 60%),
+             radial-gradient(100% 80% at 100% 20%,var(--hero-b),transparent 60%),
+             radial-gradient(90% 90% at 50% 110%,var(--hero-c),transparent 60%),var(--surface);
+  text-align:center}
+.hero .eyebrow{font-family:var(--ui);font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:700}
+.hero h1{font-size:clamp(34px,8vw,58px);font-weight:900;color:var(--navy);margin-top:14px;letter-spacing:-.02em}
+.hero .sub{font-size:18px;color:var(--muted);margin-top:16px;max-width:31em;margin-inline:auto}
+.heb{font-family:var(--body);font-size:44px;color:var(--gold);margin-top:22px;direction:rtl}
+.heb small{display:block;font-size:13px;font-family:var(--ui);color:var(--muted);direction:ltr;margin-top:2px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:640px;margin:28px auto 0}
+.facts div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 8px;min-width:0}
+.facts b{display:block;font-family:var(--display);font-size:21px;color:var(--navy);font-variant-numeric:tabular-nums}
+.facts span{font-family:var(--ui);font-size:12px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+@media (max-width:560px){.facts{grid-template-columns:repeat(2,1fr)}}
+
+.toc{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:24px auto 0;max-width:820px;padding:10px 0}
+.toc a{font-family:var(--ui);font-size:13px;text-decoration:none;color:var(--navy);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.toc a:hover,.toc a:focus-visible{border-color:var(--gold);outline:none}
+
+section{padding-top:76px;scroll-margin-top:16px}
+.kicker{font-family:var(--ui);font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.12em}
+section h2{font-size:clamp(25px,5.6vw,34px);font-weight:800;color:var(--navy);margin:8px 0 22px;letter-spacing:-.01em}
+h3.sub{font-size:20px;color:var(--navy);margin-top:14px}
+mark{background:linear-gradient(transparent 58%,var(--gold-soft) 58%);color:inherit;padding:0 2px}
+strong{color:var(--navy)}
+.verse{border-left:3px solid var(--gold);padding:6px 0 6px 18px;font-size:17.5px}
+.verse cite{display:block;font-family:var(--ui);font-style:normal;font-size:13px;color:var(--muted);margin-top:4px}
+.smile{font-family:var(--ui);font-size:15px;color:var(--rose)}
+
+.note{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.note .tag{font-family:var(--ui);font-size:12.5px;font-weight:800;color:var(--rose);letter-spacing:.08em;display:block;margin-bottom:6px}
+.note.gold{background:var(--gold-soft);border-color:transparent}
+
+details.deep{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:0 22px}
+details.deep summary{cursor:pointer;font-family:var(--ui);font-weight:800;color:var(--navy);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.deep summary::-webkit-details-marker{display:none}
+details.deep summary::after{content:"＋";color:var(--gold)}
+details.deep[open] summary::after{content:"－"}
+details.deep summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+details.deep .in{padding-bottom:20px;display:flex;flex-direction:column;gap:14px;font-size:16px}
+
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 14px 14px;overflow-x:auto}
+.figure svg{display:block;width:100%;height:auto;min-width:340px}
+.figcap{font-family:var(--ui);font-size:13.5px;color:var(--muted);text-align:center;margin-top:10px}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;line-height:1.6}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-family:var(--ui);font-size:13px;color:var(--muted);font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td b{font-family:var(--display);color:var(--navy)}
+
+.words{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.word{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-width:0}
+.word .h{font-family:var(--body);font-size:24px;color:var(--gold);direction:rtl;text-align:left}
+.word .k{font-family:var(--display);font-weight:800;color:var(--navy);font-size:16px}
+.word .d{font-size:14.5px;line-height:1.65;margin-top:4px}
+
+.offerings{display:grid;grid-template-columns:1fr;gap:14px}
+.off{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.off header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.off .nm{font-family:var(--display);font-weight:900;font-size:22px;color:var(--navy)}
+.off .hb{font-family:var(--ui);font-size:13px;color:var(--gold);font-weight:700}
+.off .ref{font-family:var(--ui);font-size:12.5px;color:var(--muted);margin-left:auto}
+.off .meta{display:flex;flex-wrap:wrap;gap:6px}
+.off .meta span{font-family:var(--ui);font-size:12.5px;background:var(--sky);border-radius:999px;padding:3px 10px}
+.off p{font-size:16px;line-height:1.8}
+.off .christ{background:var(--gold-soft);border-radius:14px;padding:12px 14px;font-size:15.5px}
+.off button{align-self:flex-start;font-family:var(--ui);font-size:13px;font-weight:700;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:999px;padding:5px 14px;cursor:pointer}
+.off button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:0;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:16px;color:var(--surface);background:var(--navy);border-radius:50%;width:32px;height:32px;display:grid;place-items:center;margin-top:3px}
+.steps li div{min-width:0;font-size:16px;line-height:1.8}
+.steps li b{font-family:var(--display);color:var(--navy)}
+
+.thread .row{display:grid;grid-template-columns:100px 1fr;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.thread .row:last-child{border-bottom:0}
+.thread .bk{font-family:var(--display);font-weight:800;color:var(--gold);font-size:15px;padding-top:3px}
+.thread .bk small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.thread .tx{font-size:16px;line-height:1.8;min-width:0}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair>div{border-radius:16px;padding:16px 18px;font-size:15.5px;line-height:1.75;min-width:0}
+.pair .a{background:var(--rose-soft)} .pair .b{background:var(--mint)}
+.pair h3{font-size:15px;margin-bottom:6px;color:var(--navy)}
+@media (max-width:540px){.pair{grid-template-columns:1fr}.thread .row{grid-template-columns:1fr;gap:4px}}
+
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.qs div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;min-width:0}
+.qs b{display:block;font-family:var(--display);font-size:17px;color:var(--navy);margin-bottom:6px}
+.qs p{font-size:15px;line-height:1.75}
+
+/* 특별 해설 블록 */
+.spotlight{margin-top:10px;border-radius:26px;padding:32px 24px;border:2px solid var(--gold);
+  background:radial-gradient(110% 80% at 0% 0%,var(--hero-a),transparent 60%),radial-gradient(110% 80% at 100% 100%,var(--hero-b),transparent 60%),var(--surface);
+  display:flex;flex-direction:column;gap:18px;scroll-margin-top:70px}
+.spotlight .badge{align-self:flex-start;font-family:var(--ui);font-size:12.5px;font-weight:800;letter-spacing:.1em;color:var(--surface);background:var(--gold);border-radius:999px;padding:5px 14px}
+.spotlight h3.big{font-size:clamp(23px,5.4vw,31px);font-weight:900;color:var(--navy);letter-spacing:-.01em}
+.spotlight h4{font-size:18px;color:var(--navy);margin-top:6px}
+.spotlight .tablewrap{background:var(--surface)}
+.points{display:flex;flex-direction:column;gap:12px}
+.point{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.point .t{font-family:var(--display);font-weight:900;font-size:18px;color:var(--navy);display:flex;gap:10px;align-items:baseline}
+.point .t span{font-family:var(--display);color:var(--gold);font-size:15px;flex:none}
+.point p{font-size:16px;line-height:1.85}
+.punch{background:var(--navy);color:var(--surface);border-radius:18px;padding:22px;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(18px,4.2vw,22px);line-height:1.55}
+.punch small{display:block;font-weight:400;font-size:13px;opacity:.85;margin-top:8px;font-family:var(--ui)}
+.finale{margin-top:80px;border-radius:26px;padding:44px 26px;text-align:center;
+  background:radial-gradient(100% 100% at 0% 0%,var(--hero-b),transparent 60%),radial-gradient(100% 100% at 100% 100%,var(--hero-a),transparent 60%),var(--surface)}
+.finale h2{font-size:clamp(24px,5.4vw,32px);color:var(--navy);font-weight:900}
+.finale p{margin-top:16px;max-width:34em;margin-inline:auto}
+footer{font-family:var(--ui);font-size:12.5px;color:var(--muted);text-align:center;margin-top:36px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">성경의 숨은 재밌는 이야기 · 묵시문학 깊이 읽기</div>
+  <h1>스가랴,<br>여덟 밤의 환상과<br>나귀 탄 왕</h1>
+  <p class="sub">날아다니는 두루마리, 바구니 속 여인, 네 병거. 낯선 환상 뒤에 500년 뒤의 고난주간이 숨어 있는 책</p>
+  <div class="heb">זְכַרְיָה<small>즈카르야 · “여호와께서 기억하신다”</small></div>
+  <div class="facts">
+    <div><b>14장</b><span>환상 · 질문 · 두 개의 경고</span></div>
+    <div><b>주전 520년</b><span>멈춰 선 성전 공사 현장</span></div>
+    <div><b>하룻밤</b><span>여덟 개의 환상</span></div>
+    <div><b>9:9</b><span>나귀 새끼를 타신 왕</span></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <a href="#z1">들어가며</a><a href="#z2">열쇠 단어</a><a href="#z3">여덟 밤 환상</a><a href="#z4">더러운 옷</a><a href="#z5">등잔대와 두 감람나무</a><a href="#z6">금식 질문</a><a href="#spot">★ 고난주간</a><a href="#z7">여호와께 성결</a><a href="#z8">66권의 실</a><a href="#z9">읽는 법</a>
+</nav>
+
+<main class="wrap">
+
+<section id="z1" class="stack">
+  <div><div class="kicker">들어가며</div><h2>16년째 멈춰 선 공사장에 온 환상</h2></div>
+  <p>스가랴서는 소선지서 중에서 가장 길고, 가장 어렵다고 소문난 책이에요. 붉은 말 탄 사람이 화석류 나무 사이에 서 있고, 뿔 넷과 대장장이 넷이 나오고, 길이 9m짜리 두루마리가 하늘을 날아다니고, 곡식 바구니 안에 여인이 앉아 있어요. <span class="smile">😄 처음 읽으면 “선지자님, 어젯밤에 뭘 드셨어요?” 하고 묻고 싶어져요.</span></p>
+  <p>그런데 배경을 알면 이 환상들이 갑자기 또렷해집니다. 바벨론 포로에서 돌아온 백성은 감격 속에 성전 기초를 놓았어요(스 3:10–11). 그런데 주변 사람들의 방해로 공사가 멈췄고(스 4:24), 그렇게 <strong>16년쯤</strong>이 흘렀습니다. 다들 자기 집 짓느라 바빴고(학 1:4), 공사장에는 잡초만 무성했어요. 그때, 다리오 왕 제2년(주전 520년)에 하나님이 두 선지자를 보내세요. 노장 학개와 젊은 스가랴예요(스 5:1).</p>
+  <p>학개가 “일어나 지으라!” 하고 등을 떠밀었다면, 스가랴는 <mark>하늘의 커튼을 걷어 보여 주며</mark> 이렇게 말했어요. “하나님이 아직 너희를 잊지 않으셨다. 그리고 이 작은 공사장 너머에 훨씬 큰 그림이 있다.”</p>
+  <div class="note"><span class="tag">이름에 담긴 설교</span>1:1에서 선지자는 “잇도의 손자 베레갸의 아들 스가랴”로 소개돼요. 세 이름을 이어 읽으면 재밌는 문장이 됩니다. 스가랴는 “여호와께서 <strong>기억하신다</strong>”, 베레갸는 “여호와께서 <strong>복 주신다</strong>”, 잇도는 “<strong>정한 때</strong>”라는 뜻으로 풀이되곤 해요. “하나님이 기억하시고, 복 주시되, 정한 때에.” 포로에서 돌아와 지친 백성에게 선지자의 이름 자체가 첫 번째 메시지였어요.</div>
+</section>
+
+<section id="z2" class="stack">
+  <div><div class="kicker">첫째 마당 · 열쇠 단어</div><h2>스가랴서를 여는 다섯 개의 단어</h2></div>
+  <div class="words">
+    <div class="word"><div class="h">זָכַר</div><div class="k">자카르 · 기억하다</div><div class="d">선지자의 이름이자 책의 첫 위로. 하나님은 70년의 포로 생활 동안에도 백성을 잊지 않으셨어요.</div></div>
+    <div class="word"><div class="h">צֶמַח</div><div class="k">체마흐 · 싹</div><div class="d">잘린 그루터기에서 돋는 새순. 다윗 왕가에서 나올 메시아의 이름이에요(3:8; 6:12; 렘 23:5).</div></div>
+    <div class="word"><div class="h">מַלְאַךְ</div><div class="k">말아크 · 천사, 사자</div><div class="d">“보냄 받은 자”. 스가랴의 환상마다 안내하는 천사가 함께 다니며 뜻을 풀어 줘요. 묵시문학의 대표 특징이에요.</div></div>
+    <div class="word"><div class="h">שָּׂטָן</div><div class="k">사탄 · 대적자, 고소자</div><div class="d">원뜻은 “맞서는 자”. 3장에서 대제사장을 고소하는 자로 나타나요. 요한계시록에서는 “밤낮 참소하던 자”로 불려요(계 12:10).</div></div>
+    <div class="word"><div class="h">קֹדֶשׁ</div><div class="k">코데쉬 · 성결</div><div class="d">“거룩”. 레위기의 핵심 단어가 스가랴서 마지막 절들에서 놀라운 방식으로 완성돼요(14:20–21).</div></div>
+  </div>
+  <div class="note gold"><span class="tag">스가랴서의 큰 흐름</span>1–6장은 <strong>하룻밤의 여덟 환상</strong>과 대제사장의 면류관, 7–8장은 <strong>금식에 관한 질문과 대답</strong>, 9–14장은 두 개의 큰 “경고(맛사)”로 이루어진 <strong>먼 미래의 예언</strong>이에요. 앞부분은 성전 재건이라는 당장의 현실을 붙들고, 뒷부분은 메시아의 오심과 마지막 날까지 시야를 넓혀요.</div>
+</section>
+
+<section id="z3" class="stack">
+  <div><div class="kicker">둘째 마당 · 1–6장</div><h2>하룻밤에 본 여덟 장면, 거울처럼 짜인 구조</h2></div>
+  <p>스밧월(열한째 달) 24일 밤(1:7), 스가랴는 여덟 개의 환상을 연달아 봅니다. 이 환상들은 그냥 나열된 게 아니라 거울처럼 짝을 이루며 한가운데를 향해 모여들어요.</p>
+  <div class="figure" role="img" aria-label="스가랴 여덟 환상의 거울 구조">
+    <svg viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, Noto Sans KR, sans-serif">
+      <rect x="20" y="20" width="600" height="58" rx="14" fill="var(--sky)"/>
+      <rect x="70" y="92" width="500" height="58" rx="14" fill="var(--mint)"/>
+      <rect x="120" y="164" width="400" height="58" rx="14" fill="var(--lilac)"/>
+      <rect x="170" y="236" width="300" height="70" rx="14" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+      <g font-size="14" font-weight="800" fill="var(--navy)">
+        <text x="36" y="46">① 말 탄 자들</text><text x="604" y="46" text-anchor="end">⑧ 네 병거</text>
+        <text x="86" y="118">② 네 뿔과 대장장이</text><text x="554" y="118" text-anchor="end">⑦ 바구니 속 여인</text>
+        <text x="136" y="190">③ 측량줄</text><text x="504" y="190" text-anchor="end">⑥ 날아가는 두루마리</text>
+        <text x="186" y="262">④ 대제사장 여호수아</text><text x="454" y="262" text-anchor="end">⑤ 등잔대</text>
+      </g>
+      <g font-size="11.5" fill="var(--muted)" text-anchor="middle">
+        <text x="320" y="64">온 땅을 두루 다니는 하나님의 사자들</text>
+        <text x="320" y="136">열방의 심판 · 악을 바벨론으로 옮김</text>
+        <text x="320" y="208">예루살렘을 재고 · 죄를 재다</text>
+        <text x="320" y="292" fill="var(--fg)">제사장과 왕, 기름 부음 받은 두 사람</text>
+      </g>
+    </svg>
+  </div>
+  <div class="tablewrap"><table>
+    <thead><tr><th>환상</th><th>본 것</th><th>메시지</th></tr></thead>
+    <tbody>
+      <tr><td><b>① 1:7–17</b></td><td>골짜기 화석류 나무 사이의 붉은 말 탄 사람과 뒤따르는 말들</td><td>세상은 평안한데 예루살렘만 폐허. 천사가 “언제까지니이까” 묻자 하나님이 답하세요. “내가 예루살렘을 위하여 크게 질투하며 … 불쌍히 여겨 예루살렘에 돌아왔은즉”(1:14–16)</td></tr>
+      <tr><td><b>② 1:18–21</b></td><td>네 뿔과 대장장이 넷</td><td>유다를 흩은 열방의 “뿔(힘)”을 하나님이 깨뜨리실 장인들을 보내세요</td></tr>
+      <tr><td><b>③ 2:1–13</b></td><td>측량줄을 든 사람</td><td>예루살렘은 사람이 너무 많아 <strong>성벽 없는 성읍</strong>이 될 것. “내가 불로 둘러싼 성곽이 되며 그 가운데에서 영광이 되리라”(2:5). 그리고 “너희를 범하는 자는 <strong>그의 눈동자를 범하는 것</strong>이라”(2:8)</td></tr>
+      <tr><td><b>④ 3:1–10</b></td><td>더러운 옷을 입은 대제사장과 고소하는 사탄</td><td>죄를 벗기고 새 옷을 입히심 (아래에서 자세히)</td></tr>
+      <tr><td><b>⑤ 4:1–14</b></td><td>순금 등잔대와 두 감람나무</td><td>“힘으로 되지 아니하며 능력으로 되지 아니하고 <strong>오직 나의 영으로</strong>”(4:6)</td></tr>
+      <tr><td><b>⑥ 5:1–4</b></td><td>길이 20규빗(약 9m), 너비 10규빗(약 4.5m)의 날아가는 두루마리</td><td>도둑질하는 자와 거짓 맹세하는 자를 찾아가는 저주. 십계명 두 돌판의 앞뒤를 대표하는 두 계명이에요. 그 크기는 솔로몬 성전 현관과 같아요(왕상 6:3)</td></tr>
+      <tr><td><b>⑦ 5:5–11</b></td><td>에바(약 22리터 곡식 바구니) 속에 앉은 여인 “악”, 납 뚜껑으로 덮어 학의 날개를 단 두 여인이 시날 땅으로 옮김</td><td>죄를 땅에서 들어 <strong>바벨론으로 멀리 보내 버림</strong></td></tr>
+      <tr><td><b>⑧ 6:1–8</b></td><td>두 놋 산 사이에서 나오는 네 병거</td><td>온 땅에 하나님의 다스림이 미침. 북쪽(바벨론)에서 하나님의 영이 쉬심</td></tr>
+    </tbody>
+  </table></div>
+  <details class="deep">
+    <summary>더 깊이 · 바구니 속 여인과 대속죄일의 염소</summary>
+    <div class="in">
+      <p>일곱째 환상은 정말 기이하죠. 곡식을 재는 바구니(에바)에 여인이 앉아 있는데, 천사가 “이는 악이라” 하고 여인을 바구니 속으로 밀어 넣고 무거운 납 뚜껑을 덮어 버려요. 그러자 학 같은 날개를 가진 두 여인이 바람을 타고 와서 그 바구니를 하늘과 땅 사이로 들고 시날 땅, 곧 바벨론으로 날아갑니다(5:5–11). <span class="smile">😄 죄를 택배 상자에 담아 테이프로 꽁꽁 싸서 반송하는 장면 같아요.</span></p>
+      <p>레위기를 읽은 분이라면 이 장면에서 대속죄일의 <strong>아사셀 염소</strong>가 떠오를 거예요. 대제사장이 백성의 모든 죄를 고백하며 염소 머리에 두고, 그 염소를 사람이 살지 않는 광야로 멀리 보냈죠(레 16:21–22). 스가랴의 환상은 같은 메시지를 새 방식으로 말해요. 하나님은 죄를 덮으실 뿐 아니라, <mark>죄를 그분의 백성이 사는 땅에서 들어 멀리 옮겨 버리십니다.</mark> 그리고 바로 앞 넷째 환상에서 하나님은 “내가 이 땅의 죄악을 <strong>하루에</strong> 제거하리라”(3:9) 약속하셨어요.</p>
+    </div>
+  </details>
+</section>
+
+<section id="z4" class="stack">
+  <div><div class="kicker">셋째 마당 · 3장</div><h2>고소당한 대제사장, 새 옷을 입다</h2></div>
+  <p>여덟 환상의 한가운데, 넷째 환상은 법정 장면이에요. 하늘 법정에 대제사장 여호수아가 서 있고, 그의 오른쪽에는 <strong>사탄이 서서 그를 고소</strong>합니다(3:1). 그런데 여호수아는 <strong>더러운 옷</strong>을 입고 있었어요(3:3).</p>
+  <p>레위기를 아는 사람에게 이건 충격적인 장면이에요. 대제사장은 가장 정결해야 하는 사람이잖아요. 대속죄일에는 몸을 씻고 흰 세마포 옷을 입어야 했어요(레 16:4). 그런데 백성을 대표하는 대제사장이 오물투성이 옷을 입고 서 있습니다. 포로 생활에서 돌아온 백성 전체의 모습이었어요. 사탄의 고소는 틀린 말이 아니었던 거예요.</p>
+  <p>그때 여호와께서 사탄을 꾸짖으세요. “여호와께서 너를 책망하노라 … <strong>이는 불에서 꺼낸 그슬린 나무가 아니냐</strong>”(3:2). 하마터면 다 타 버릴 뻔했던 나무, 하나님이 불 속에서 손을 넣어 건져 낸 나무라는 거예요. 그리고 명령이 내려집니다.</p>
+  <p class="verse">그 더러운 옷을 벗기라 하시고 또 여호수아에게 이르시되 내가 네 죄악을 제거하여 버렸으니 네게 아름다운 옷을 입히리라 하시기로 내가 말하되 정결한 관을 그의 머리에 씌우소서 하매<cite>스가랴 3:4–5</cite></p>
+  <p>재밌는 건 5절이에요. 옷을 갈아입히는 걸 보던 스가랴가 <strong>참지 못하고 끼어들어요</strong>. “관도 씌워 주세요!” 대제사장의 관에는 “여호와께 성결”이라는 금패가 붙어 있었죠(출 28:36–38). <span class="smile">😄 감동한 나머지 하늘 법정에서 선지자가 의견을 내 버린 거예요.</span> 그리고 하나님은 그 요청대로 해 주십니다.</p>
+  <p>이 장면은 복음의 그림 그 자체예요. 우리는 스스로 옷을 갈아입지 못해요. 고소자의 말은 사실이고, 우리 옷은 더럽습니다. 그러나 하나님이 <mark>더러운 옷을 벗기시고 의의 옷을 입히세요.</mark> 바울은 이것을 “그리스도로 옷 입었느니라”(갈 3:27)고 말하고, 요한계시록은 “밤낮 우리 하나님 앞에서 그들을 참소하던 자가 쫓겨났고 … 어린양의 피와 자기들이 증언하는 말씀으로써 그를 이겼으니”(계 12:10–11)라고 노래해요.</p>
+  <p>그리고 이 장면 끝에 하나님은 이렇게 덧붙이세요. “내가 내 종 <strong>싹</strong>을 나게 하리라 … 내가 이 땅의 죄악을 <strong>하루에</strong> 제거하리라”(3:8–9). 대제사장 여호수아는 더 큰 대제사장, 단 하루 만에 온 땅의 죄를 없애실 분을 가리키는 표징이었어요(3:8). 그분이 바로 히브리서가 말하는 “단번에” 드리신 대제사장이세요(히 7:27).</p>
+</section>
+
+<section id="z5" class="stack">
+  <div><div class="kicker">넷째 마당 · 4장, 6장</div><h2>힘으로도 능력으로도 아니고</h2></div>
+  <p>다섯째 환상에서 스가랴는 순금 등잔대를 봐요. 위에는 기름 그릇이 있고 일곱 등잔과 일곱 관이 연결되어 있는데, 좌우에 <strong>감람나무 두 그루</strong>가 서서 기름을 직접 흘려보내고 있어요(4:2–3, 12). 사람이 기름을 부을 필요가 없는 등잔대예요. 성막에서는 제사장이 매일 기름을 채워야 했는데(레 24:2–4), 이 등잔대는 살아 있는 나무에서 기름이 끊임없이 흘러요.</p>
+  <p>그리고 성전 공사를 책임진 총독 스룹바벨에게 주신 말씀이 바로 그 유명한 구절입니다.</p>
+  <p class="verse">이는 힘으로 되지 아니하며 능력으로 되지 아니하고 오직 나의 영으로 되느니라 만군의 여호와의 말씀이니라 큰 산아 네가 무엇이냐 네가 스룹바벨 앞에서 평지가 되리라<cite>스가랴 4:6–7</cite></p>
+  <p>16년 동안 멈춰 있던 공사, 그 앞을 가로막은 “큰 산” 같은 반대와 낙심. 하나님은 그 산이 평지가 될 거라고 하세요. 그리고 “스룹바벨의 손이 이 성전의 기초를 놓았은즉 <strong>그의 손이 또한 그 일을 마치리라</strong>”(4:9). 실제로 성전은 4년 뒤인 다리오 6년(주전 516년)에 완공됐어요(스 6:15).</p>
+  <div class="note"><span class="tag">작은 일의 날을 멸시하지 말라</span>새로 짓는 성전은 솔로몬 성전에 비하면 초라했어요. 옛 성전을 기억하는 노인들은 기초를 보고 대성통곡했을 정도였죠(스 3:12). 그때 하나님이 말씀하세요. “<strong>작은 일의 날이라고 멸시하는 자가 누구냐</strong>”(4:10). 개척 교회, 작은 공동체, 보잘것없어 보이는 시작. 하나님은 크기가 아니라 그 안에 흐르는 성령의 기름을 보세요.</div>
+  <p>두 감람나무는 누구일까요? 천사는 “이는 기름 부음 받은 자 둘이니 온 세상의 주 앞에 서 있는 자니라”(4:14)고 말해요. 당시로 보면 <strong>대제사장 여호수아(제사장)</strong>와 <strong>총독 스룹바벨(다윗의 후손, 왕의 계보)</strong>이에요. 그리고 6장에서 놀라운 일이 벌어집니다. 하나님은 은과 금으로 면류관을 만들어 <strong>대제사장 여호수아의 머리에</strong> 씌우라 하세요(6:11). 왕관은 원래 왕의 것인데 말이에요.</p>
+  <p class="verse">보라 싹이라 이름하는 사람이 자기 곳에서 돋아나서 여호와의 전을 건축하리라 … 영광도 얻고 그 자리에 앉아서 다스릴 것이요 또 제사장이 자기 자리에 있으리니 이 둘 사이에 평화의 의논이 있으리라<cite>스가랴 6:12–13</cite></p>
+  <p>이스라엘에서 왕과 제사장은 엄격히 나뉘어 있었어요. 웃시야 왕이 성소에 들어가 분향하다가 나병에 걸린 일도 있었죠(대하 26:16–21). 그런데 스가랴는 <mark>왕이면서 제사장인 한 분</mark>을 바라봅니다. 히브리서는 이분을 “멜기세덱의 반차를 따르는 영원한 대제사장”(히 6:20; 7:1–3), 곧 왕이자 제사장이신 예수님으로 소개해요. 그리고 요한계시록에서 두 감람나무와 두 촛대는 마지막 때 성령의 능력으로 증언하는 하나님의 두 증인으로 다시 나타납니다(계 11:4).</p>
+</section>
+
+<section id="z6" class="stack">
+  <div><div class="kicker">다섯째 마당 · 7–8장</div><h2>금식을 계속해야 하나요?</h2></div>
+  <p>2년 뒤, 벧엘 사람들이 제사장들에게 질문을 들고 와요. “우리가 여러 해 동안 행한 대로 <strong>오월 중에 울며 근신하리이까</strong>”(7:3). 다섯째 달은 바벨론이 성전을 불태운 달이었어요(왕하 25:8–9). 70년 동안 그날이 되면 금식하며 울었는데, 이제 성전을 다시 짓고 있으니 계속해야 하느냐는 질문이었죠.</p>
+  <p>하나님의 대답은 날카로워요. “너희가 칠십 년 동안 오월과 칠월에 금식하고 애통하였거니와 그 금식이 <strong>나를 위하여, 나를 위하여</strong> 한 것이냐”(7:5). 그리고 진짜 원하시는 것을 말씀하세요. “너희는 진실한 재판을 행하며 서로 인애와 긍휼을 베풀며 과부와 고아와 나그네와 궁핍한 자를 압제하지 말며”(7:9–10). 레위기 19장이 말하던 거룩한 일상 그대로예요.</p>
+  <p>그리고 8장에서 하나님은 회복된 예루살렘의 풍경을 그려 주시는데, 이 장면이 참 정겨워요.</p>
+  <p class="verse">예루살렘 길거리에 늙은 남자들과 늙은 여자들이 다시 앉을 것이라 다 나이가 많으므로 저마다 손에 지팡이를 잡을 것이요 그 성읍 거리에 소년과 소녀들이 가득하여 거기에서 뛰놀리라<cite>스가랴 8:4–5</cite></p>
+  <p>거창한 군대나 화려한 궁전이 아니에요. 어르신들이 지팡이를 짚고 햇볕 아래 앉아 계시고, 아이들이 골목에서 뛰어노는 동네. <mark>하나님이 그리신 회복의 모습은 이렇게 평범하고 따뜻한 장면</mark>이었어요. 그리고 금식에 대한 최종 대답이 나옵니다. “넷째 달의 금식과 다섯째 달의 금식과 일곱째 달의 금식과 열째 달의 금식이 변하여 유다 족속에게 <strong>기쁨과 즐거움과 희락의 절기들</strong>이 되리니”(8:19). 슬픔의 날들이 잔칫날로 바뀐다는 거예요.</p>
+  <p>8장의 마지막 절은 더 놀라워요. “그날에는 말이 다른 이방 백성 열 명이 유다 사람 하나의 옷자락을 잡을 것이라 즉 잡고 말하기를 <strong>하나님이 너희와 함께하심을 들었나니 우리가 너희와 함께 가려 하노라</strong> 하리라”(8:23). 작고 초라한 공동체에게, 하나님은 온 세상 사람들이 찾아올 미래를 보여 주셨어요.</p>
+</section>
+
+<section class="stack">
+  <aside class="spotlight" id="spot" aria-labelledby="passion-title">
+    <span class="badge">특별 해설 · 스가랴서의 심장</span>
+    <h3 class="big" id="passion-title">고난주간을<br>500년 전에 쓴 책</h3>
+    <p>9~14장으로 넘어가면 시야가 확 넓어져요. 그리고 신약을 아는 사람이라면 깜짝 놀랄 장면들이 연달아 나옵니다. 복음서 기자들이 예수님의 마지막 일주일을 기록할 때, 스가랴서를 계속 펼쳐 들었어요.</p>
+    <div class="tablewrap"><table>
+      <thead><tr><th>스가랴</th><th>예언</th><th>고난주간에 이루어진 일</th></tr></thead>
+      <tbody>
+        <tr><td><b>9:9</b></td><td>겸손하여서 <strong>나귀 새끼</strong>를 타고 오시는 왕</td><td>예루살렘 입성, 종려주일 (마 21:4–5; 요 12:14–15)</td></tr>
+        <tr><td><b>9:11</b></td><td>“<strong>언약의 피</strong>로 말미암아 내가 네 갇힌 자들을 물 없는 구덩이에서 놓았나니”</td><td>마지막 만찬, “이것은 죄 사함을 얻게 하려고 많은 사람을 위하여 흘리는 바 나의 피 곧 언약의 피니라” (마 26:28)</td></tr>
+        <tr><td><b>11:12</b></td><td>목자의 품삯으로 매긴 <strong>은 삼십</strong></td><td>유다가 예수님을 넘겨주고 받은 값 (마 26:15)</td></tr>
+        <tr><td><b>11:13</b></td><td>그 은을 여호와의 전에서 <strong>토기장이</strong>에게 던짐</td><td>유다가 은을 성소에 던지고, 그 돈으로 토기장이의 밭을 삼 (마 27:3–10)</td></tr>
+        <tr><td><b>13:7</b></td><td>“<strong>목자를 치면 양이 흩어지려니와</strong>”</td><td>감람산으로 가시며 예수님이 직접 인용, 제자들이 다 도망침 (마 26:31, 56)</td></tr>
+        <tr><td><b>12:10</b></td><td>“그들이 그 <strong>찌른 바</strong> 그를 바라보고 … 애통하기를”</td><td>병사가 창으로 옆구리를 찌름, “그들이 그 찌른 자를 보리라” (요 19:34–37)</td></tr>
+        <tr><td><b>13:1</b></td><td>“죄와 더러움을 씻는 <strong>샘</strong>이 … 열리리라”</td><td>찔린 옆구리에서 흘러나온 피와 물 (요 19:34)</td></tr>
+        <tr><td><b>14:4</b></td><td>“그의 발이 … <strong>감람산</strong>에 서실 것이요”</td><td>감람산에서 승천하시고, “올라가심을 본 그대로 오시리라” (행 1:11–12)</td></tr>
+      </tbody>
+    </table></div>
+    <p>이 장면들을 하나로 꿰면 무엇이 보일까요?</p>
+    <div class="points">
+      <div class="point">
+        <div class="t"><span>하나</span>군마 대신 나귀를 타신 왕</div>
+        <p>고대의 왕은 전쟁에서 이기고 돌아올 때 군마를 타고 입성했어요. 그런데 스가랴의 왕은 “겸손하여서 나귀를 타시나니 나귀의 작은 것 곧 나귀 새끼”예요(9:9). 바로 다음 절이 그 이유를 알려 줍니다. “내가 에브라임의 <strong>병거와 예루살렘의 말을 끊겠고</strong> 전쟁하는 활도 끊어지며 그가 이방 사람에게 <strong>화평을 전할 것</strong>이요”(9:10). 이 왕은 칼로 이기는 왕이 아니라 평화로 다스리는 왕이에요. 종려주일에 사람들은 “호산나” 하고 외쳤지만, 많은 이들이 기대한 건 로마를 몰아낼 군마 탄 왕이었어요. 예수님은 일부러 나귀 새끼를 고르셨습니다.</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>둘</span>은 삼십, 종의 몸값으로 매겨진 하나님</div>
+        <p>11장에서 선지자는 목자 역할을 맡았다가 품삯을 요구하는데, 사람들이 <strong>은 삼십</strong>을 달아 줘요(11:12). 이 금액에는 뼈아픈 의미가 있어요. 율법에서 소가 남의 종을 받아 죽게 했을 때 주인에게 물어 주는 값이 은 삼십 세겔이었거든요(출 21:32). 은 1세겔이 약 11.4g이니 은 약 340g, 오늘날 은 시세로 수십만 원 정도의 돈이에요. <strong>종 한 사람 목숨값</strong>이었습니다.</p>
+        <p>그리고 하나님이 하시는 말씀이 충격적이에요. “그들이 <strong>나를</strong> 헤아린 바 그 삯을 토기장이에게 던지라”(11:13). 사람들이 목자를 값 매긴 것이 곧 <mark>하나님 자신을 은 삼십으로 매긴 것</mark>이라는 거예요. 500년 뒤, 대제사장들은 정확히 그 금액에 예수님을 사들였습니다. 마태는 이 장면을 기록하며 토기장이와 밭을 사는 일이 나오는 예레미야의 말씀(렘 18–19장; 32장)과 스가랴를 함께 묶어 “선지자 예레미야를 통하여 하신 말씀”이라고 인용해요(마 27:9–10).</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>셋</span>“그들이 찌른 나를 바라보고”</div>
+        <p>12장 10절은 우리말 성경에 “그 찌른 바 그를 바라보고”로 번역되어 있지만, 히브리어 원문을 그대로 옮기면 <strong>“그들이 찌른 나를 바라보고”</strong>예요. 이 절에서 말하는 분은 하나님 자신이세요. 찔리는 분이 하나님이시라는 거예요. 유대인 독자들에게도 오랫동안 어려운 구절이었어요. 하나님이 어떻게 찔리실 수 있을까요?</p>
+        <p>요한은 십자가 곁에서 그 답을 봤습니다. 병사 하나가 창으로 예수님의 옆구리를 찌르자 피와 물이 나왔고, 요한은 이렇게 증언해요. “또 다른 성경에 그들이 그 <strong>찌른 자를 보리라</strong> 하였느니라”(요 19:34–37). 그리고 스가랴 13장 1절이 바로 이어집니다. “그날에 죄와 더러움을 씻는 <strong>샘</strong>이 다윗의 족속과 예루살렘 주민을 위하여 열리리라.” 찔린 그 자리에서 씻음의 샘이 열린 거예요.</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>넷</span>목자를 치신 분은 하나님이셨다</div>
+        <p>13장 7절을 보면 칼을 부르시는 분이 하나님이에요. “칼아 깨어서 <strong>내 목자, 내 짝 된 자</strong>를 치라 만군의 여호와의 말씀이니라 목자를 치면 양이 흩어지려니와.” ‘내 짝 된 자’는 “나와 가장 가까운 자, 나와 동등한 자”라는 뜻이에요. 하나님이 자기와 가장 가까운 목자를 치신다는 거예요.</p>
+        <p>최후의 만찬을 마치고 감람산으로 걸어가시던 밤, 예수님은 이 구절을 직접 인용하셨어요. “오늘 밤에 너희가 다 나를 버리리라 기록된 바 <strong>내가 목자를 치리니</strong> 양의 떼가 흩어지리라 하였느니라”(마 26:31). 이사야도 같은 말을 해요. “여호와께서 그에게 상함을 받게 하시기를 원하사”(사 53:10). 십자가는 사람의 음모였지만, 그보다 깊은 곳에서는 양들을 살리기 위해 <mark>하나님이 스스로 목자를 내어 주신 사건</mark>이었어요.</p>
+      </div>
+    </div>
+    <div class="punch">만군의 여호와가 은 삼십에 팔리고,<br>창에 찔리고, 목자로 맞으셨습니다.<small>그 찔린 자리에서 죄와 더러움을 씻는 샘이 열렸습니다</small></div>
+  </aside>
+</section>
+
+<section id="z7" class="stack">
+  <div><div class="kicker">여섯째 마당 · 14장</div><h2>말 방울에도, 부엌 솥에도 “여호와께 성결”</h2></div>
+  <p>스가랴서의 마지막 장은 하나님이 오시는 날을 그려요. 그날 주의 발이 감람산에 서시고 산이 동서로 갈라지며(14:4), “저녁때에 빛이 있으리로다”(14:7). 그리고 에스겔 47장처럼 <strong>예루살렘에서 생수가 솟아나</strong> 절반은 동해(사해)로, 절반은 서해(지중해)로 흐르는데, 여름에도 겨울에도 마르지 않아요(14:8). “여호와께서 천하의 왕이 되시리니 그날에는 여호와께서 홀로 한 분이실 것이요 그의 이름이 홀로 하나이실 것이라”(14:9).</p>
+  <p>그리고 열방에서 살아남은 자들이 해마다 예루살렘에 올라와 <strong>초막절</strong>을 지킵니다(14:16). 이스라엘만의 절기가 온 세상의 잔치가 되는 거예요. 레위기 23장에서 함께 본, 하나님이 백성 가운데 장막을 치시는 그 절기예요.</p>
+  <p>그런데 스가랴서의 마지막 두 절은 레위기를 읽은 사람에게 정말 특별한 장면이에요.</p>
+  <p class="verse">그날에는 말 방울에까지 여호와께 성결이라 기록될 것이라 여호와의 전에 있는 모든 솥이 제단 앞 주발과 다름이 없을 것이니 예루살렘과 유다의 모든 솥이 만군의 여호와의 성물이 될 것인즉<cite>스가랴 14:20–21</cite></p>
+  <p>“여호와께 성결.” 이 문구가 원래 어디에 새겨져 있었는지 기억하시나요? <strong>대제사장의 관 앞 순금 패</strong>예요(출 28:36). 온 이스라엘에서 단 한 사람, 대제사장의 이마에만 새겨졌던 글자였어요. 그런데 그날에는 그 글자가 <strong>말 목에 단 방울</strong>에까지 새겨집니다. 전쟁과 장사에 쓰던 짐승의 방울에요. 그리고 성전 제단 앞의 거룩한 주발과 <strong>집집마다 부엌의 솥</strong>이 똑같이 거룩해져요.</p>
+  <div class="pair">
+    <div class="a"><h3>레위기의 세상</h3>거룩한 것과 속된 것, 정결한 것과 부정한 것이 엄격히 나뉘어 있었어요(레 10:10). 거룩은 성막 안쪽 깊은 곳에, 대제사장의 이마에 있었어요.</div>
+    <div class="b"><h3>스가랴가 본 그날</h3>거룩이 성전 담을 넘어 거리로, 마구간으로, 부엌으로 흘러넘쳐요. <strong>온 세상이 지성소가 되고 모든 그릇이 성물</strong>이 됩니다.</div>
+  </div>
+  <p>레위기가 “너희는 거룩하라” 명하며 시작한 여정이 여기서 완성되는 거예요. 거룩을 지키기 위해 구분하던 세상에서, 하나님의 거룩이 모든 것을 채우는 세상으로. 그리고 신약은 그 일이 이미 시작되었다고 말합니다. “그런즉 너희가 먹든지 마시든지 무엇을 하든지 다 하나님의 영광을 위하여 하라”(고전 10:31). 성령이 거하시는 성도의 삶에서는 <mark>부엌의 냄비도, 출근길 자동차 열쇠도 “여호와께 성결”</mark>이에요.</p>
+  <div class="note"><span class="tag">마지막 문장의 장사꾼</span>14:21의 마지막 구절은 “그날에는 만군의 여호와의 전에 <strong>가나안 사람</strong>이 다시 있지 아니하리라”예요. 히브리어 ‘가나안 사람’에는 “장사꾼, 상인”이라는 뜻도 있어서(잠 31:24, 호 12:7 등) 많은 번역과 주석이 “성전에 다시는 장사꾼이 없으리라”로 읽어요. 예수님이 성전에서 장사하는 사람들의 상을 엎으시며 “내 아버지의 집으로 <strong>장사하는 집</strong>을 만들지 말라”(요 2:16) 하셨을 때, 많은 사람들이 스가랴서의 이 마지막 문장을 떠올렸을 거예요.</div>
+</section>
+
+<section id="z8" class="stack">
+  <div><div class="kicker">일곱째 마당 · 성경 66권 전체</div><h2>스가랴에서 요한계시록까지 이어진 실</h2></div>
+  <div class="note thread">
+    <div class="row"><div class="bk">출애굽기<small>성결 패</small></div><div class="tx">대제사장의 관 앞 순금 패에 “여호와께 성결”(출 28:36). 스가랴 14장에서 그 글자가 온 세상으로 퍼져요. 그리고 종 한 사람의 목숨값 은 삼십(출 21:32).</div></div>
+    <div class="row"><div class="bk">레위기<small>등잔과 염소</small></div><div class="tx">매일 기름을 채우던 성소의 등잔(레 24:2–4)과 죄를 지고 광야로 간 염소(16:21–22). 스가랴의 등잔대와 바구니 속 여인이 그 그림을 새롭게 그려요.</div></div>
+    <div class="row"><div class="bk">학개·에스라<small>공사 현장</small></div><div class="tx">같은 해, 같은 공사장에서 함께 외친 두 선지자(스 5:1; 6:14). 성전은 주전 516년에 완공됐어요.</div></div>
+    <div class="row"><div class="bk">마태복음<small>고난주간</small></div><div class="tx">나귀 탄 입성(21:5), 언약의 피(26:28), 은 삼십(26:15), 흩어지는 양(26:31), 토기장이의 밭(27:9–10). 마태는 스가랴서를 들고 십자가로 걸어가요.</div></div>
+    <div class="row"><div class="bk">요한복음<small>찔림과 샘</small></div><div class="tx">“그들이 그 찌른 자를 보리라”(요 19:37). 그리고 초막절에 외치신 생수의 강(7:37–38)은 스가랴 14장의 초막절과 생수를 떠올리게 해요.</div></div>
+    <div class="row"><div class="bk">사도행전<small>감람산</small></div><div class="tx">감람산에서 승천하신 예수님, “올라가심을 본 그대로 오시리라”(행 1:11–12). 주의 발이 감람산에 서시는 날(슥 14:4)을 바라봐요.</div></div>
+    <div class="row"><div class="bk">히브리서<small>왕이자 제사장</small></div><div class="tx">멜기세덱의 반차를 따르는 왕이요 제사장(히 7:1–3). 스가랴 6장에서 대제사장의 머리에 씌운 왕관의 의미가 완성돼요.</div></div>
+    <div class="row"><div class="bk">요한계시록<small>완성</small></div><div class="tx">말 탄 자들(계 6:2–8), 두 감람나무와 두 촛대(11:4), 밤낮 참소하던 자의 패배(12:10), 그리고 “볼지어다 그가 구름을 타고 오시리라 각인의 눈이 그를 보겠고 <strong>그를 찌른 자들도 볼 것이요</strong>”(1:7). 다니엘의 구름과 스가랴의 찔림이 한 문장에서 만나요. 그리고 새 예루살렘에서는 생명수 강이 흐르고 모든 것이 거룩해집니다(22:1–3).</div></div>
+  </div>
+</section>
+
+<section id="z9" class="stack">
+  <div><div class="kicker">나가며 · 실천</div><h2>스가랴서를 읽을 때 붙들 세 가지 질문</h2></div>
+  <div class="qs">
+    <div><b>① 내가 멈춰 둔 공사는 무엇인가?</b><p>16년 동안 기초만 놓고 손을 놓았던 성전처럼, 하나님이 시작하게 하셨는데 멈춰 둔 일은 무엇인가요? “오직 나의 영으로”라는 말씀이 오늘 그 앞에 섭니다.</p></div>
+    <div><b>② 나는 어떤 옷을 입고 서 있나?</b><p>고소하는 목소리가 들릴 때, 내 힘으로 옷을 빨려고 애쓰나요, 아니면 하나님이 입혀 주시는 새 옷을 받아들이나요?</p></div>
+    <div><b>③ 내 부엌에도 “여호와께 성결”이 쓰여 있나?</b><p>예배당에서만이 아니라 식탁과 일터와 출근길에서, 오늘 내 평범한 하루가 하나님께 드려지고 있나요?</p></div>
+  </div>
+  <details class="deep">
+    <summary>2주 스가랴 읽기 길잡이</summary>
+    <div class="in">
+      <div class="tablewrap"><table>
+        <thead><tr><th>날</th><th>범위</th><th>붙들 질문</th></tr></thead>
+        <tbody>
+          <tr><td><b>1–4일</b></td><td>1–3장</td><td>하나님은 나를 어떻게 기억하고 계시나?</td></tr>
+          <tr><td><b>5–7일</b></td><td>4–6장</td><td>내 앞의 “큰 산”을 평지로 만드는 힘은 어디서 오나?</td></tr>
+          <tr><td><b>8–9일</b></td><td>7–8장</td><td>내 신앙의 습관은 정말 “하나님을 위한” 것인가?</td></tr>
+          <tr><td><b>10–12일</b></td><td>9–13장</td><td>고난주간의 예수님을 스가랴서 안에서 찾아보기</td></tr>
+          <tr><td><b>13–14일</b></td><td>14장</td><td>모든 것이 거룩해지는 날을 오늘 어떻게 미리 살까?</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </details>
+</section>
+
+<div class="finale">
+  <h2>그래서, 스가랴서는 어떤 책인가</h2>
+  <p>스가랴서는 기이한 환상의 책이 아니라 <strong>멈춰 선 공사장에 하늘을 보여 준 책</strong>입니다. 초라한 기초 앞에서 울던 사람들에게, 하나님은 더러운 옷을 벗기시는 법정과 끊임없이 기름이 흐르는 등잔대와 나귀를 타고 오시는 왕을 보여 주셨어요.</p>
+  <p>그리고 그 왕은 은 삼십에 팔리고, 창에 찔리고, 목자로 맞으셨습니다. 그 찔린 자리에서 열린 샘이 오늘 우리를 씻고, 언젠가 온 세상의 말 방울과 부엌 솥까지 거룩하게 할 거예요. <mark>하나님은 기억하시고, 복 주시되, 정한 때에 이루십니다.</mark></p>
+  <p class="verse" style="text-align:left;max-width:30em;margin:22px auto 0">시온의 딸아 크게 기뻐할지어다 예루살렘의 딸아 즐거이 부를지어다 보라 네 왕이 네게 임하시나니 그는 공의로우시며 구원을 베푸시며 겸손하여서 나귀를 타시나니<cite>스가랴 9:9</cite></p>
+</div>
+
+<footer>기독교한국침례회 은혜교회 · 담임목사 박동준</footer>
+</main>
+
+<script>
+document.querySelectorAll('.off').forEach(function(card){
+  var btn=card.querySelector('button'), c=card.querySelector('.christ');
+  if(!btn||!c) return;
+  btn.addEventListener('click',function(){
+    var open=c.hidden; c.hidden=!open;
+    btn.setAttribute('aria-expanded',String(open));
+    btn.textContent=open?'접기 ▴':btn.getAttribute('data-label');
+  });
+  btn.setAttribute('data-label',btn.textContent);
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>

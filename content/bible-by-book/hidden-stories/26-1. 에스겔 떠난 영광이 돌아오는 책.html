@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>에스겔, 떠난 영광이 돌아오는 책 — 성경의 숨은 재밌는 이야기</title>
+<meta name="description" content="성전을 떠난 하나님의 영광이 동쪽에서 돌아오기까지, 여호와 삼마로 끝나는 에스겔서의 숨은 이야기">
+<meta property="og:title" content="에스겔, 떠난 영광이 돌아오는 책">
+<meta property="og:description" content="성경의 숨은 재밌는 이야기 · 은혜교회">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;600;800;900&family=Noto+Serif+KR:wght@400;600;700&display=swap">
+<style>
+/* 레이아웃: 하나의 긴 읽기 칼럼. 바깥뜰 → 성소 → 지성소 → 다시 세상으로, 성막을 걸어 들어가듯 9개 마당으로 진행 */
+:root{
+  --bg:#fbfaf7; --surface:#ffffff; --fg:#23262f; --muted:#6a6d78; --line:#e6e2d9;
+  --navy:#1f2f55; --gold:#b58a3c; --gold-soft:#f4ead6; --rose:#c25b5b; --rose-soft:#f8e6e3;
+  --sky:#e6eef9; --mint:#e4f2ec; --lilac:#ede7f6;
+  --hero-a:#f6e9ef; --hero-b:#e5eefb; --hero-c:#f3f0e1;
+  --display:"Pretendard","Noto Sans KR",system-ui,sans-serif;
+  --body:"Noto Serif KR","Nanum Myeongjo",Georgia,serif;
+  --ui:"Pretendard","Noto Sans KR",system-ui,sans-serif;
+}
+:root{color-scheme:light}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{word-break:keep-all;-webkit-text-size-adjust:100%;background:var(--bg);color:var(--fg);font-family:var(--body);font-size:17px;line-height:1.9;padding-inline:16px;padding-block:0 64px}
+.wrap{max-width:740px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--display);text-wrap:balance;line-height:1.35;margin:0}
+p{margin:0}
+.stack{display:flex;flex-direction:column;gap:18px}
+
+.hero{margin:16px auto 0;max-width:900px;border-radius:28px;padding:56px 26px 44px;
+  background:radial-gradient(120% 90% at 10% 0%,var(--hero-a),transparent 60%),
+             radial-gradient(100% 80% at 100% 20%,var(--hero-b),transparent 60%),
+             radial-gradient(90% 90% at 50% 110%,var(--hero-c),transparent 60%),var(--surface);
+  text-align:center}
+.hero .eyebrow{font-family:var(--ui);font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:700}
+.hero h1{font-size:clamp(34px,8vw,58px);font-weight:900;color:var(--navy);margin-top:14px;letter-spacing:-.02em}
+.hero .sub{font-size:18px;color:var(--muted);margin-top:16px;max-width:31em;margin-inline:auto}
+.heb{font-family:var(--body);font-size:44px;color:var(--gold);margin-top:22px;direction:rtl}
+.heb small{display:block;font-size:13px;font-family:var(--ui);color:var(--muted);direction:ltr;margin-top:2px}
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;max-width:640px;margin:28px auto 0}
+.facts div{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:12px 8px;min-width:0}
+.facts b{display:block;font-family:var(--display);font-size:21px;color:var(--navy);font-variant-numeric:tabular-nums}
+.facts span{font-family:var(--ui);font-size:12px;color:var(--muted);line-height:1.4;display:block;margin-top:2px}
+@media (max-width:560px){.facts{grid-template-columns:repeat(2,1fr)}}
+
+.toc{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin:24px auto 0;max-width:820px;padding:10px 0}
+.toc a{font-family:var(--ui);font-size:13px;text-decoration:none;color:var(--navy);background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:5px 12px}
+.toc a:hover,.toc a:focus-visible{border-color:var(--gold);outline:none}
+
+section{padding-top:76px;scroll-margin-top:16px}
+.kicker{font-family:var(--ui);font-size:13px;font-weight:800;color:var(--gold);letter-spacing:.12em}
+section h2{font-size:clamp(25px,5.6vw,34px);font-weight:800;color:var(--navy);margin:8px 0 22px;letter-spacing:-.01em}
+h3.sub{font-size:20px;color:var(--navy);margin-top:14px}
+mark{background:linear-gradient(transparent 58%,var(--gold-soft) 58%);color:inherit;padding:0 2px}
+strong{color:var(--navy)}
+.verse{border-left:3px solid var(--gold);padding:6px 0 6px 18px;font-size:17.5px}
+.verse cite{display:block;font-family:var(--ui);font-style:normal;font-size:13px;color:var(--muted);margin-top:4px}
+.smile{font-family:var(--ui);font-size:15px;color:var(--rose)}
+
+.note{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:20px 22px}
+.note .tag{font-family:var(--ui);font-size:12.5px;font-weight:800;color:var(--rose);letter-spacing:.08em;display:block;margin-bottom:6px}
+.note.gold{background:var(--gold-soft);border-color:transparent}
+
+details.deep{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:0 22px}
+details.deep summary{cursor:pointer;font-family:var(--ui);font-weight:800;color:var(--navy);padding:16px 0;list-style:none;display:flex;justify-content:space-between;gap:12px}
+details.deep summary::-webkit-details-marker{display:none}
+details.deep summary::after{content:"＋";color:var(--gold)}
+details.deep[open] summary::after{content:"－"}
+details.deep summary:focus-visible{outline:2px solid var(--gold);outline-offset:2px;border-radius:6px}
+details.deep .in{padding-bottom:20px;display:flex;flex-direction:column;gap:14px;font-size:16px}
+
+.figure{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 14px 14px;overflow-x:auto}
+.figure svg{display:block;width:100%;height:auto;min-width:340px}
+.figcap{font-family:var(--ui);font-size:13.5px;color:var(--muted);text-align:center;margin-top:10px}
+
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:16px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:15px;line-height:1.6}
+th,td{padding:11px 14px;text-align:left;vertical-align:top;border-bottom:1px solid var(--line)}
+th{font-family:var(--ui);font-size:13px;color:var(--muted);font-weight:700;background:var(--bg)}
+tr:last-child td{border-bottom:0}
+td b{font-family:var(--display);color:var(--navy)}
+
+.words{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px}
+.word{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px 16px;min-width:0}
+.word .h{font-family:var(--body);font-size:24px;color:var(--gold);direction:rtl;text-align:left}
+.word .k{font-family:var(--display);font-weight:800;color:var(--navy);font-size:16px}
+.word .d{font-size:14.5px;line-height:1.65;margin-top:4px}
+
+.offerings{display:grid;grid-template-columns:1fr;gap:14px}
+.off{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:20px 22px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.off header{display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 12px}
+.off .nm{font-family:var(--display);font-weight:900;font-size:22px;color:var(--navy)}
+.off .hb{font-family:var(--ui);font-size:13px;color:var(--gold);font-weight:700}
+.off .ref{font-family:var(--ui);font-size:12.5px;color:var(--muted);margin-left:auto}
+.off .meta{display:flex;flex-wrap:wrap;gap:6px}
+.off .meta span{font-family:var(--ui);font-size:12.5px;background:var(--sky);border-radius:999px;padding:3px 10px}
+.off p{font-size:16px;line-height:1.8}
+.off .christ{background:var(--gold-soft);border-radius:14px;padding:12px 14px;font-size:15.5px}
+.off button{align-self:flex-start;font-family:var(--ui);font-size:13px;font-weight:700;color:var(--gold);background:none;border:1px solid var(--gold);border-radius:999px;padding:5px 14px;cursor:pointer}
+.off button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:0;margin:0;padding:0;list-style:none}
+.steps li{counter-increment:s;display:grid;grid-template-columns:40px 1fr;gap:14px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);font-family:var(--display);font-weight:900;font-size:16px;color:var(--surface);background:var(--navy);border-radius:50%;width:32px;height:32px;display:grid;place-items:center;margin-top:3px}
+.steps li div{min-width:0;font-size:16px;line-height:1.8}
+.steps li b{font-family:var(--display);color:var(--navy)}
+
+.thread .row{display:grid;grid-template-columns:100px 1fr;gap:16px;padding:14px 0;border-bottom:1px dashed var(--line)}
+.thread .row:last-child{border-bottom:0}
+.thread .bk{font-family:var(--display);font-weight:800;color:var(--gold);font-size:15px;padding-top:3px}
+.thread .bk small{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.thread .tx{font-size:16px;line-height:1.8;min-width:0}
+
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.pair>div{border-radius:16px;padding:16px 18px;font-size:15.5px;line-height:1.75;min-width:0}
+.pair .a{background:var(--rose-soft)} .pair .b{background:var(--mint)}
+.pair h3{font-size:15px;margin-bottom:6px;color:var(--navy)}
+@media (max-width:540px){.pair{grid-template-columns:1fr}.thread .row{grid-template-columns:1fr;gap:4px}}
+
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.qs div{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px;min-width:0}
+.qs b{display:block;font-family:var(--display);font-size:17px;color:var(--navy);margin-bottom:6px}
+.qs p{font-size:15px;line-height:1.75}
+
+/* 특별 해설 블록 */
+.spotlight{margin-top:10px;border-radius:26px;padding:32px 24px;border:2px solid var(--gold);
+  background:radial-gradient(110% 80% at 0% 0%,var(--hero-a),transparent 60%),radial-gradient(110% 80% at 100% 100%,var(--hero-b),transparent 60%),var(--surface);
+  display:flex;flex-direction:column;gap:18px;scroll-margin-top:70px}
+.spotlight .badge{align-self:flex-start;font-family:var(--ui);font-size:12.5px;font-weight:800;letter-spacing:.1em;color:var(--surface);background:var(--gold);border-radius:999px;padding:5px 14px}
+.spotlight h3.big{font-size:clamp(23px,5.4vw,31px);font-weight:900;color:var(--navy);letter-spacing:-.01em}
+.spotlight h4{font-size:18px;color:var(--navy);margin-top:6px}
+.spotlight .tablewrap{background:var(--surface)}
+.points{display:flex;flex-direction:column;gap:12px}
+.point{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.point .t{font-family:var(--display);font-weight:900;font-size:18px;color:var(--navy);display:flex;gap:10px;align-items:baseline}
+.point .t span{font-family:var(--display);color:var(--gold);font-size:15px;flex:none}
+.point p{font-size:16px;line-height:1.85}
+.punch{background:var(--navy);color:var(--surface);border-radius:18px;padding:22px;text-align:center;font-family:var(--display);font-weight:800;font-size:clamp(18px,4.2vw,22px);line-height:1.55}
+.punch small{display:block;font-weight:400;font-size:13px;opacity:.85;margin-top:8px;font-family:var(--ui)}
+.finale{margin-top:80px;border-radius:26px;padding:44px 26px;text-align:center;
+  background:radial-gradient(100% 100% at 0% 0%,var(--hero-b),transparent 60%),radial-gradient(100% 100% at 100% 100%,var(--hero-a),transparent 60%),var(--surface)}
+.finale h2{font-size:clamp(24px,5.4vw,32px);color:var(--navy);font-weight:900}
+.finale p{margin-top:16px;max-width:34em;margin-inline:auto}
+footer{font-family:var(--ui);font-size:12.5px;color:var(--muted);text-align:center;margin-top:36px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="eyebrow">성경의 숨은 재밌는 이야기 · 묵시문학 깊이 읽기</div>
+  <h1>에스겔,<br>떠난 영광이<br>돌아오는 책</h1>
+  <p class="sub">바퀴 안의 바퀴, 눈 가득한 생물, 390일 동안 옆으로 누운 선지자. 가장 기이한 책에 담긴 가장 따뜻한 마지막 한 마디</p>
+  <div class="heb">יְחֶזְקֵאל<small>예헤즈켈 · “하나님이 강하게 하신다”</small></div>
+  <div class="facts">
+    <div><b>48장</b><span>심판 · 열방 · 회복</span></div>
+    <div><b>서른 살</b><span>성전 대신 포로지로 간 제사장</span></div>
+    <div><b>90여 번</b><span>하나님이 부르신 이름 “인자야”</span></div>
+    <div><b>48:35</b><span>여호와 삼마</span></div>
+  </div>
+</header>
+
+<nav class="toc" aria-label="목차">
+  <a href="#e1">들어가며</a><a href="#e2">열쇠 단어</a><a href="#e3">구조</a><a href="#e4">보좌 환상</a><a href="#e5">몸으로 쓴 설교</a><a href="#e6">성전의 가증한 것</a><a href="#spot">★ 영광의 여정</a><a href="#e7">피투성이라도 살라</a><a href="#e8">마른 뼈</a><a href="#e9">새 성전과 생수</a><a href="#e10">66권의 실</a><a href="#e11">읽는 법</a>
+</nav>
+
+<main class="wrap">
+
+<section id="e1" class="stack">
+  <div><div class="kicker">들어가며</div><h2>성경에서 가장 이상한 선지자</h2></div>
+  <p>에스겔서를 펼치면 첫 장부터 정신이 없어요. 북쪽에서 폭풍이 몰려오고, 불 속에서 얼굴이 넷 달린 생물 넷이 나타나고, 그 곁에 바퀴 안에 또 바퀴가 있는데 테두리에는 눈이 가득합니다. 그다음에는 선지자가 두루마리를 받아먹고, 390일 동안 왼쪽으로 누워 있고, 머리털을 칼로 밀어 저울에 달아요. <span class="smile">😄 요즘 같으면 동네에 “저 사람 좀 이상하다”는 소문이 금방 났을 거예요.</span></p>
+  <p>그런데 이 기이한 책이 마지막에 남기는 말은 성경에서 가장 따뜻한 한 마디예요. <strong>“여호와 삼마”</strong>, 곧 <mark>“여호와께서 거기 계시다”</mark>(48:35). 48장 전체가 이 한 문장을 향해 걸어갑니다.</p>
+  <p>에스겔은 제사장이었어요(1:3). 제사장은 서른 살이 되면 성전 봉사를 시작하는데(민 4:3), 에스겔이 하나님을 처음 본 해가 바로 “서른째 해”였습니다(1:1). 원래대로라면 그해 예루살렘 성전에서 첫 제사를 드리고 있어야 했어요. 그런데 그는 바벨론 그발 강가의 포로민 가운데 앉아 있었습니다. 성전에 가지 못한 제사장. 바로 그 사람에게 하나님이 <strong>성전 밖에서</strong> 나타나셨어요.</p>
+</section>
+
+<section id="e2" class="stack">
+  <div><div class="kicker">첫째 마당 · 열쇠 단어</div><h2>에스겔서를 여는 다섯 개의 단어</h2></div>
+  <div class="words">
+    <div class="word"><div class="h">כָּבוֹד</div><div class="k">카보드 · 영광</div><div class="d">원래 뜻은 “무거움”. 하나님의 존재가 가진 압도적인 무게예요. 에스겔서는 이 영광이 떠나고 돌아오는 이야기입니다.</div></div>
+    <div class="word"><div class="h">רוּחַ</div><div class="k">루아흐 · 영 / 바람 / 숨</div><div class="d">한 단어에 세 뜻이 들어 있어요. 37장 마른 뼈 이야기에서 이 단어로 놀라운 말놀이가 펼쳐집니다.</div></div>
+    <div class="word"><div class="h">בֶּן־אָדָם</div><div class="k">벤 아담 · 인자</div><div class="d">“사람의 아들”. 하나님은 에스겔을 90여 번 이렇게 부르세요. 엄청난 영광 앞에 선 연약한 사람이라는 뜻이에요.</div></div>
+    <div class="word"><div class="h">צֹפֶה</div><div class="k">초페 · 파수꾼</div><div class="d">성벽 위에서 적이 오는지 지켜보고 나팔을 부는 사람. 에스겔의 사명이었어요(3:17; 33:7).</div></div>
+    <div class="word"><div class="h">יָדַע</div><div class="k">야다 · 알다</div><div class="d">“너희가 나를 여호와인 줄 알리라.” 에스겔서에 수십 번 되풀이되는 후렴이에요. 심판도 회복도 결국 하나님을 알게 하려는 거예요.</div></div>
+  </div>
+  <div class="note gold"><span class="tag">에스겔이 묵시문학인 이유</span>에스겔서 전체가 묵시문학은 아니에요. 대부분은 예언서의 말씀이에요. 하지만 1장의 보좌 환상, 37장의 마른 뼈, 38–39장의 곡과 마곡, 40–48장의 새 성전 환상은 다니엘서와 요한계시록으로 이어지는 <strong>묵시문학의 뿌리</strong>예요. 상징과 환상, 천사 같은 안내자, 하늘의 시선으로 본 역사라는 묵시의 특징이 여기서 처음 뚜렷하게 나타나요. 요한계시록에는 에스겔서를 떠올리게 하는 장면이 아주 많습니다.</div>
+</section>
+
+<section id="e3" class="stack">
+  <div><div class="kicker">둘째 마당 · 구조</div><h2>한 통의 소식이 책을 둘로 나눈다</h2></div>
+  <p>에스겔서는 크게 세 부분이에요.</p>
+  <div class="figure" role="img" aria-label="에스겔서 구조">
+    <svg viewBox="0 0 640 180" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, Noto Sans KR, sans-serif">
+      <rect x="20" y="50" width="300" height="56" rx="10" fill="var(--rose-soft)"/>
+      <rect x="320" y="50" width="100" height="56" fill="var(--lilac)"/>
+      <rect x="420" y="50" width="200" height="56" rx="10" fill="var(--mint)"/>
+      <rect x="415" y="36" width="10" height="84" fill="var(--gold)"/>
+      <g font-size="12" fill="var(--muted)" text-anchor="middle"><text x="170" y="38">1–24장</text><text x="370" y="38">25–32장</text><text x="520" y="38">33–48장</text></g>
+      <g font-size="15" font-weight="800" fill="var(--navy)" text-anchor="middle"><text x="170" y="84">예루살렘 심판</text><text x="370" y="84">열방</text><text x="520" y="84">회복</text></g>
+      <g font-size="12" fill="var(--fg)" text-anchor="middle"><text x="170" y="130">“무너질 것이다”</text><text x="370" y="130">일곱 나라 심판</text><text x="520" y="130">“다시 살 것이다”</text></g>
+      <text x="420" y="162" text-anchor="middle" font-size="12" font-weight="700" fill="var(--gold)">33:21 “성이 함락되었다”</text>
+    </svg>
+  </div>
+  <p>1~24장에서 에스겔은 포로민들에게 끈질기게 외칩니다. “예루살렘은 무너진다.” 그런데 사람들은 믿지 않았어요. 거짓 선지자들은 곧 돌아갈 거라고 장담했거든요. 그러다 33장 21절, 예루살렘에서 도망쳐 온 사람이 소식을 전합니다. “<strong>성이 함락되었다.</strong>” 그 순간부터 에스겔의 메시지가 완전히 바뀌어요. 심판을 외치던 입이 이제 <mark>회복과 소망</mark>을 노래합니다.</p>
+  <div class="note"><span class="tag">말을 잃은 선지자</span>하나님은 처음에 에스겔의 혀를 입천장에 붙게 하셔서 말을 못 하게 하셨어요. 하나님이 주시는 말씀을 전할 때만 입이 열렸죠(3:26–27). 그리고 “그날에” 입이 열리리라 하셨는데(24:27), 그날이 바로 예루살렘 함락 소식이 온 날이었습니다. “내 입이 열리기로 내가 다시는 잠잠하지 아니하였노라”(33:22). 심판의 말 외에는 아무 말도 할 수 없던 수년이 지나고, 이제 위로의 말이 터져 나오기 시작한 거예요.</div>
+</section>
+
+<section id="e4" class="stack">
+  <div><div class="kicker">셋째 마당 · 1–3장</div><h2>바퀴 달린 보좌, 하나님은 포로지에도 계셨다</h2></div>
+  <p>1장의 환상은 성경에서 가장 묘사하기 어려운 장면이에요. 에스겔 자신도 쩔쩔맵니다. 마지막 절을 보세요. “사방 광채의 모양은 비 오는 날 구름에 있는 무지개 같으니 이는 <strong>여호와의 영광의 형상의 모양</strong>이라”(1:28). 영광 그 자체도 아니고, 영광의 형상도 아니고, 영광의 형상의 모양. 에스겔은 계속 “같더라”, “모양이라”를 붙이며 한 겹씩 거리를 둡니다. 직접 말하기엔 너무 거룩해서요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>환상 속 요소</th><th>무엇을 말하나</th></tr></thead>
+    <tbody>
+      <tr><td><b>네 생물</b> · 각각 얼굴이 넷 (사람, 사자, 소, 독수리) (1:10)</td><td>사람은 지혜, 사자는 들짐승의 왕, 소는 가축의 으뜸, 독수리는 새의 왕. 온 피조물 중 가장 뛰어난 것들이 하나님을 섬기는 모습이에요. 10장에서 이들이 <strong>그룹</strong>, 곧 언약궤 위와 성막 휘장의 그룹임이 밝혀져요(10:20).</td></tr>
+      <tr><td><b>바퀴 안의 바퀴</b> · 사방으로 돌이키지 않고 가며 (1:16–17)</td><td>방향을 틀 필요 없이 어디로든 움직이는 바퀴. <mark>하나님의 보좌는 예루살렘에 묶여 있지 않다</mark>는 뜻이에요. 바벨론까지 오실 수 있는 보좌입니다.</td></tr>
+      <tr><td><b>테두리에 가득한 눈</b> (1:18)</td><td>모든 것을 보시는 하나님. 포로민들이 “하나님이 우리를 잊으셨다”고 느낄 때, 하나님은 다 보고 계셨어요.</td></tr>
+      <tr><td><b>보좌 위의 사람 모양</b> (1:26)</td><td>보좌 위에 앉으신 분이 <strong>사람의 모양</strong>을 하고 계셨어요. 다니엘의 인자, 그리고 사람이 되신 하나님의 아들을 미리 비추는 장면이에요.</td></tr>
+    </tbody>
+  </table></div>
+  <p>교회는 오래전부터 네 생물의 네 얼굴을 네 복음서에 빗대어 왔어요(사람은 마태, 사자는 마가, 소는 누가, 독수리는 요한 등으로 짝짓는 방식은 교부마다 조금씩 달라요). 그리고 이 네 생물은 요한계시록 4장 보좌 둘레에 다시 나타납니다(계 4:7).</p>
+  <p>3장에서 하나님은 에스겔에게 두루마리를 주시며 먹으라 하세요. 안팎에 “애가와 애곡과 재앙”이 가득 적힌 두루마리였는데, 먹어 보니 <strong>입에서 꿀같이 달았어요</strong>(2:10; 3:3). 쓴 소식이지만 하나님의 말씀 자체는 달다는 거예요. 요한도 똑같이 두루마리를 먹는데, 입에는 달고 배에는 썼다고 합니다(계 10:9–10).</p>
+</section>
+
+<section id="e5" class="stack">
+  <div><div class="kicker">넷째 마당 · 4–5장, 12장, 24장</div><h2>몸으로 쓴 설교</h2></div>
+  <p>에스겔은 말로만 설교하지 않았어요. 하나님은 그에게 <strong>몸으로 연기하는 설교</strong>를 시키셨습니다. 사람들이 말을 듣지 않으니 눈으로 보게 하신 거예요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>상징 행위</th><th>의미</th></tr></thead>
+    <tbody>
+      <tr><td><b>벽돌에 예루살렘을 그리고 포위 모형을 만듦</b> (4:1–3)</td><td>장난감 공성전 같은 모형으로 다가올 포위를 보여 줌</td></tr>
+      <tr><td><b>왼쪽으로 390일, 오른쪽으로 40일 누움</b> (4:4–6)</td><td>하루를 일 년으로 쳐서 이스라엘과 유다의 죄의 햇수를 짊어짐. 1년 2개월이 넘는 동안 매일 옆으로 누워 있었어요</td></tr>
+      <tr><td><b>잡곡 떡을 달아 먹음</b> (4:9–11)</td><td>포위된 성의 배급 식량. 하루 떡 20세겔(약 230g), 물 6분의 1힌(약 0.6리터)</td></tr>
+      <tr><td><b>머리털과 수염을 칼로 밀어 셋으로 나눔</b> (5:1–4)</td><td>3분의 1은 불에 태우고, 3분의 1은 칼로 치고, 3분의 1은 바람에 흩음. 성 안 백성의 운명이었어요. 그런데 옷자락에 몇 가닥을 싸 두게 하셨어요(5:3). 남은 자가 있다는 표시였습니다.</td></tr>
+      <tr><td><b>밤에 짐을 싸서 벽을 뚫고 나감</b> (12:3–7)</td><td>포로로 끌려갈 왕과 백성의 모습. 실제로 시드기야 왕이 밤에 성벽 틈으로 도망치다 잡혔어요(왕하 25:4)</td></tr>
+      <tr><td><b>아내가 죽어도 울지 않음</b> (24:15–24)</td><td>“네 눈에 기뻐하는 것”을 거두어 가실 때 슬퍼하지 말라. 백성이 눈의 기쁨인 성전을 잃을 때 너무 큰 충격에 울지도 못할 것을 보여 줌. 에스겔서에서 가장 가슴 아픈 장면이에요</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><span class="tag">레위기를 아는 선지자의 항의</span>4장에서 하나님은 에스겔에게 사람의 똥을 연료로 떡을 구우라고 하세요. 이방 땅에서 부정한 음식을 먹게 될 것을 보여 주시려고요. 그때 에스겔이 처음으로 반대합니다. “주 여호와여 나는 영혼을 더럽힌 일이 없었나이다 <strong>어려서부터 지금까지</strong> 스스로 죽은 것이나 짐승에게 찢긴 것을 먹지 아니하였고 가증한 고기를 입에 넣지 아니하였나이다”(4:14). 레위기 정결법(레 11장; 17:15)을 평생 지켜 온 제사장다운 항의예요. 그러자 하나님은 쇠똥으로 바꿔 주십니다(4:15). <span class="smile">😄 하나님과 선지자 사이에 오간, 성경에서 가장 구수한 협상이에요.</span> 참고로 4:9의 잡곡 떡 재료(밀, 보리, 콩, 팥, 조, 귀리)는 오늘날 ‘에스겔 빵’이라는 이름의 건강빵으로 팔리기도 해요.</div>
+</section>
+
+<section id="e6" class="stack">
+  <div><div class="kicker">다섯째 마당 · 8–11장</div><h2>성전 안에 숨겨진 네 가지 가증한 것</h2></div>
+  <p>8장에서 에스겔은 머리털 한 모숨을 잡혀 영으로 예루살렘 성전까지 끌려갑니다(8:3). 그리고 하나님은 한 단계씩 더 깊은 곳으로 데려가며 보여 주세요. “네가 또 이보다 더 큰 가증한 일을 보리라.”</p>
+  <ol class="steps">
+    <li><div><b>성전 북문의 질투의 우상</b> · 하나님의 질투를 일으키는 우상이 성전 입구에 서 있었어요(8:5).</div></li>
+    <li><div><b>벽에 그린 짐승 그림 앞의 장로 70명</b> · 담벼락 구멍을 파고 들어가 보니 온갖 곤충과 가증한 짐승 그림 앞에서 이스라엘 장로 70명이 향을 피우고 있었어요. “여호와께서 우리를 보지 아니하시며 이 땅을 버리셨다” 하면서요(8:10–12). 레위기가 부정하다고 한 그 짐승들을 섬기고 있었던 거예요.</div></li>
+    <li><div><b>담무스를 위해 우는 여인들</b> · 성전 북문에서 여인들이 메소포타미아의 풍요의 신 담무스의 죽음을 애도하고 있었어요(8:14).</div></li>
+    <li><div><b>성전을 등지고 해에게 절하는 25명</b> · 성전 안뜰, 성소 문과 제단 사이에서 25명이 <strong>성전을 등지고 동쪽 태양에 절하고</strong> 있었어요(8:16). 하나님께 문자 그대로 등을 돌린 겁니다.</div></li>
+  </ol>
+  <p>그리고 9장에서 심판이 시작돼요. 그런데 심판 전에 먼저 하나님은 가는 베옷을 입은 사람에게 명하십니다. “예루살렘 성읍 중에 돌아다니며 그 가운데에서 행하는 모든 가증한 일로 말미암아 <strong>탄식하며 우는 자들의 이마에 표를 그리라</strong>”(9:4). 이 ‘표’는 히브리어 마지막 글자 <strong>‘타브(ת)’</strong>인데, 고대 히브리 문자에서 이 글자는 X나 + 모양이었어요. 초대 교회의 몇몇 교부들은 여기서 십자가를 보기도 했습니다. 이 장면은 요한계시록에서 하나님의 종들 이마에 인을 치는 장면으로 이어져요(계 7:3).</p>
+</section>
+
+<section class="stack">
+  <aside class="spotlight" id="spot" aria-labelledby="glory-title">
+    <span class="badge">특별 해설 · 에스겔서의 심장</span>
+    <h3 class="big" id="glory-title">영광은 동쪽으로 떠났다가<br>동쪽에서 돌아왔다</h3>
+    <p>에스겔서 전체를 꿰는 가장 중요한 실은 <strong>하나님의 영광이 움직이는 길</strong>이에요. 레위기에서 함께 본 것처럼, 성막과 성전은 하나님이 백성 가운데 거하시는 곳이었죠. 그 영광이 떠난다는 건 이스라엘에게 가장 끔찍한 일이었어요. 에스겔은 그 장면을 한 걸음씩 지켜봅니다.</p>
+    <div class="figure" role="img" aria-label="하나님의 영광이 떠나고 돌아오는 경로">
+      <svg viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" font-family="Pretendard, Noto Sans KR, sans-serif">
+        <text x="40" y="22" font-size="12" fill="var(--muted)">서쪽</text><text x="600" y="22" font-size="12" fill="var(--muted)" text-anchor="end">동쪽</text>
+        <rect x="30" y="40" width="330" height="120" rx="14" fill="var(--sky)"/>
+        <rect x="45" y="70" width="80" height="60" rx="8" fill="var(--gold-soft)" stroke="var(--gold)" stroke-width="2"/>
+        <text x="85" y="104" text-anchor="middle" font-size="13" font-weight="800" fill="var(--navy)">지성소</text>
+        <text x="195" y="60" text-anchor="middle" font-size="13" font-weight="800" fill="var(--navy)">성전</text>
+        <rect x="350" y="80" width="22" height="40" fill="var(--navy)"/>
+        <text x="361" y="142" text-anchor="middle" font-size="11" fill="var(--navy)" font-weight="700">동문</text>
+        <path d="M480 160 Q540 60 600 160 Z" fill="var(--mint)"/>
+        <text x="540" y="150" text-anchor="middle" font-size="12" font-weight="800" fill="var(--navy)">동쪽 산</text>
+        <g fill="none" stroke="var(--rose)" stroke-width="3" stroke-dasharray="7 5">
+          <path d="M125 92 L200 92"/><path d="M215 92 L345 92"/><path d="M375 92 Q450 60 520 100"/>
+        </g>
+        <g fill="var(--rose)"><circle cx="125" cy="92" r="5"/><circle cx="208" cy="92" r="5"/><circle cx="361" cy="92" r="5"/><circle cx="525" cy="104" r="6"/></g>
+        <g font-size="11" fill="var(--rose)" font-weight="700" text-anchor="middle">
+          <text x="165" y="84">① 9:3; 10:4</text><text x="290" y="84">② 10:18–19</text><text x="455" y="56">③ 11:23</text>
+        </g>
+        <path d="M600 210 L120 210" stroke="var(--gold)" stroke-width="4" fill="none"/>
+        <path d="M130 200 L112 210 L130 220 Z" fill="var(--gold)"/>
+        <text x="360" y="200" text-anchor="middle" font-size="12" font-weight="800" fill="var(--gold)">④ 43:1–5 · 동쪽에서 돌아와 동문으로 들어가 성전에 가득</text>
+        <text x="360" y="244" text-anchor="middle" font-size="12" fill="var(--fg)">떠남 (8–11장) → 포로민과 함께 계심 (11:16) → 돌아옴 (43장)</text>
+      </svg>
+    </div>
+    <p>① 영광이 지성소의 그룹에서 떠올라 <strong>성전 문지방</strong>으로 옮겨 가고(9:3; 10:4), ② 문지방을 떠나 <strong>동문</strong>에 머물고(10:18–19), ③ 마침내 성읍을 떠나 <strong>성읍 동쪽 산</strong>에 머뭅니다(11:23). 예루살렘 동쪽의 산, 곧 감람산이에요. 마치 차마 발걸음을 떼지 못하는 사람처럼, 영광은 한 번에 떠나지 않고 멈칫멈칫 머물다 떠나요. 그리고 19년쯤 뒤 새 성전 환상에서, ④ 영광이 <strong>동쪽에서</strong> 많은 물소리 같은 소리와 함께 돌아와 동문으로 들어가 성전을 가득 채웁니다(43:1–5).</p>
+    <h4>이 여정이 우리에게 말하는 것</h4>
+    <div class="points">
+      <div class="point">
+        <div class="t"><span>하나</span>떠나신 하나님은 포로지에 계셨다</div>
+        <p>영광이 성전을 떠나는 바로 그 장면 한가운데에, 하나님은 포로민들을 향해 이런 약속을 하세요. “내가 비록 그들을 멀리 이방인 가운데로 쫓아내어 여러 나라에 흩었으나 그들이 도달한 나라들에서 <strong>내가 잠깐 그들에게 성소가 되리라</strong>”(11:16). 1장에서 바퀴 달린 보좌가 바벨론 그발 강가에 나타났던 이유가 이거예요. 하나님은 성전을 버리셨지만 백성을 버리지는 않으셨어요. <mark>성전이 무너진 곳에서 하나님 자신이 성소가 되셨습니다.</mark></p>
+      </div>
+      <div class="point">
+        <div class="t"><span>둘</span>영광이 떠난 이유는 거룩함 때문이었다</div>
+        <p>8장의 네 가지 가증한 것을 기억하시죠? 레위기에서 함께 본 질문, “거룩하신 하나님이 어떻게 죄인 가운데 사실 수 있을까?”의 정반대 상황이에요. 백성이 성전 안에서 짐승을 섬기고 하나님께 등을 돌리자, 하나님은 그 성전에 더 머무실 수 없었어요. 사무엘 시대 엘리의 며느리가 아이를 낳으며 지은 이름 <strong>이가봇</strong>(“영광이 떠났다”, 삼상 4:21)이 성전 규모로 다시 일어난 셈이에요.</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>셋</span>같은 길을 걸으신 예수님</div>
+        <p>이제 마태복음 24장을 보세요. “예수께서 <strong>성전에서 나와서</strong> 가실 때에 … 예수께서 <strong>감람산 위에 앉으셨을 때에</strong>”(마 24:1–3). 예수님은 성전이 무너질 것을 예언하시며 성전을 떠나 동쪽 감람산으로 가셨어요. 에스겔이 본 영광의 길과 똑같은 길이에요. 그리고 십자가와 부활 뒤에, 예수님은 바로 그 <strong>감람산에서 승천</strong>하셨고(행 1:9–12), 천사들은 “올라가심을 본 그대로 오시리라”고 말했어요(행 1:11). 스가랴는 그날 주의 발이 감람산에 서실 것이라고 예언합니다(슥 14:4). 동쪽으로 떠난 영광은 반드시 동쪽에서 돌아와요.</p>
+      </div>
+      <div class="point">
+        <div class="t"><span>넷</span>여호와 삼마, 그리고 임마누엘</div>
+        <p>에스겔서의 마지막 절은 새 예루살렘 성읍의 이름을 알려 줘요. “그날 후로는 그 성읍의 이름을 <strong>여호와삼마</strong>라 하리라”(48:35). 여호와께서 거기 계시다. 떠나셨던 하나님이 다시는 떠나지 않으시는 곳이에요. 신약은 그 이름을 다른 말로 부릅니다. “<strong>임마누엘</strong> 하리라 이를 번역한즉 하나님이 우리와 함께 계시다 함이라”(마 1:23). 그리고 요한계시록은 마지막에 이렇게 선포해요. “보라 하나님의 장막이 사람들과 함께 있으매 <strong>하나님이 그들과 함께 계시리니</strong>”(계 21:3). 그리고 오순절에 오신 성령으로, 하나님은 이제 우리 안에 “거기 계십니다”(고전 3:16).</p>
+      </div>
+    </div>
+    <div class="punch">떠나신 영광은 포기가 아니라<br>돌아올 길을 준비하신 것이었습니다.<small>여호와 삼마 · 여호와께서 거기 계시다</small></div>
+  </aside>
+</section>
+
+<section id="e7" class="stack">
+  <div><div class="kicker">여섯째 마당 · 16–18장, 34장</div><h2>“피투성이라도 살라”</h2></div>
+  <p>16장은 성경에서 가장 충격적인 비유 중 하나예요. 하나님은 예루살렘을 <strong>태어나자마자 들판에 버려진 여자 아기</strong>로 그리십니다. 탯줄도 자르지 않고, 물로 씻지도 않고, 소금을 문지르지도 않고, 강보로 싸지도 않은 채 버려진 아기(16:4–5). 그때 하나님이 지나가시다가 피투성이로 발버둥 치는 아기를 보시고 말씀하세요.</p>
+  <p class="verse">내가 네 곁으로 지나갈 때에 네가 피투성이가 되어 발짓하는 것을 보고 네게 이르기를 너는 피투성이라도 살아 있으라 다시 이르기를 너는 피투성이라도 살아 있으라 하고<cite>에스겔 16:6</cite></p>
+  <p>“피투성이라도 살라.” 한국 교회 성도들에게 오래 사랑받아 온 말씀이에요. 하나님은 그 아기를 씻기고, 기름을 바르고, 수놓은 옷을 입히고, 왕비처럼 세워 주셨어요. 그런데 아기는 자라서 그 은혜를 잊고 다른 신들을 따라갔습니다. 16장은 그 배신을 아프게 고발하지만, 끝에서는 다시 이렇게 말해요. “내가 너와 세운 <strong>영원한 언약</strong>을 세우리라 … 내가 네 모든 행한 일을 용서한 후에”(16:60–63). 버려진 아기를 처음 살리신 은혜가, 배신한 아내를 다시 품는 은혜로 끝나요.</p>
+  <h3 class="sub">18장 · “아버지가 신 포도를 먹었으므로”</h3>
+  <p>포로민들 사이에 유행하던 속담이 있었어요. “아버지가 신 포도를 먹었으므로 아들의 이가 시다”(18:2). 조상들이 죄를 지어서 우리가 벌을 받는다는 체념이죠. 하나님은 이 속담을 다시는 쓰지 말라고 하세요. 한 사람 한 사람이 하나님 앞에 직접 서 있다는 거예요(18:4, 20). 그리고 이 장은 하나님의 마음을 드러내는 한 문장으로 끝납니다. “죽을 자가 죽는 것도 <strong>내가 기뻐하지 아니하노니</strong> 너희는 스스로 돌이키고 살지니라”(18:32). 심판을 선포하는 선지서 한가운데에서 들리는 하나님의 진심이에요.</p>
+  <h3 class="sub">34장 · 나쁜 목자들과 한 목자</h3>
+  <p>34장에서 하나님은 양을 잡아먹고 살진 것만 챙기던 이스라엘의 지도자들을 꾸짖으세요. 그리고 약속하십니다. “<strong>내가 내 양을 찾고 찾되</strong> … 잃어버린 자를 내가 찾으며 쫓기는 자를 내가 돌아오게 하며 상한 자를 내가 싸매 주며”(34:11, 16). “내가 <strong>한 목자</strong>를 그들 위에 세워 먹이게 하리니 그는 내 종 다윗이라”(34:23). 예수님이 “나는 선한 목자라”(요 10:11) 하시고, 잃은 양 한 마리를 찾아 나서는 목자 비유(눅 15:4–7)를 말씀하셨을 때, 유대인 청중은 이 에스겔 34장을 떠올렸을 거예요.</p>
+</section>
+
+<section id="e8" class="stack">
+  <div><div class="kicker">일곱째 마당 · 36–37장</div><h2>마른 뼈 골짜기에 분 바람</h2></div>
+  <p>36장에서 하나님은 예레미야처럼 “새 언약”을 약속하세요. 그런데 에스겔은 더 구체적이에요.</p>
+  <p class="verse">맑은 물을 너희에게 뿌려서 너희로 정결하게 하되 … 또 새 영을 너희 속에 두고 새 마음을 너희에게 주되 너희 육신에서 굳은 마음을 제거하고 부드러운 마음을 줄 것이며 또 내 영을 너희 속에 두어 너희로 내 율례를 행하게 하리니<cite>에스겔 36:25–27</cite></p>
+  <p>돌처럼 굳은 마음을 꺼내고 살처럼 부드러운 마음을 넣어 주시겠다는 거예요. 그리고 하나님의 영을 사람 <strong>속에</strong> 두시겠다는 약속. 오순절에 이루어질 바로 그 약속입니다.</p>
+  <p>그리고 37장, 에스겔서에서 가장 유명한 장면이 이어져요. 하나님은 에스겔을 <strong>마른 뼈가 가득한 골짜기</strong>로 데려가 물으세요. “인자야 이 뼈들이 능히 살 수 있겠느냐.” 에스겔의 대답이 참 정직합니다. “주 여호와여 <strong>주께서 아시나이다</strong>”(37:3). 사람이 보기엔 불가능하지만, 하나님은 아신다는 거예요.</p>
+  <p>에스겔이 말씀을 대언하자 뼈들이 덜그럭거리며 서로 맞붙고, 힘줄과 살이 오르고 가죽이 덮입니다. 그런데 아직 그 속에 숨이 없어요(37:7–8). 그때 하나님이 말씀하세요. “<strong>생기</strong>에게 대언하라 … 생기야 사방에서부터 와서 이 죽음을 당한 자에게 불어서 살아나게 하라”(37:9).</p>
+  <div class="note gold"><span class="tag">한 단어로 쓴 세 가지 기적</span>37장 1~14절에서 ‘루아흐’라는 한 단어가 열 번 가까이 나오는데, 우리말 성경은 문맥에 따라 다르게 번역했어요. 여호와의 <strong>영</strong>이 에스겔을 데려가고(1절), 뼈들에게 <strong>생기(숨)</strong>가 들어가고(5, 10절), <strong>사방의 바람</strong>이 불어오고(9절), 마지막에 하나님이 “내가 또 <strong>내 영</strong>을 너희 속에 두어 너희가 살아나게 하고”(14절) 약속하세요. 바람, 숨, 영이 모두 같은 단어예요. 히브리어로 읽는 사람은 이 장면에서 한 줄기 하나님의 바람이 골짜기를 휩쓸고, 뼈들의 콧구멍으로 들어가고, 백성의 마음에 머무는 것을 한꺼번에 봤을 거예요. 창세기 2장에서 흙으로 지은 사람의 코에 생기를 불어넣으셨던 그 장면이(창 2:7) 민족 전체에게 다시 일어나는 겁니다. 예수님이 부활 후 제자들을 향해 “숨을 내쉬며 이르시되 성령을 받으라”(요 20:22) 하신 장면도 이 말씀을 떠올리게 해요.</div>
+  <p>그리고 37장 뒷부분에서 하나님은 에스겔에게 막대기 두 개를 가져오라 하세요. 하나에는 “유다”, 하나에는 “요셉(에브라임)”이라고 쓰고 <strong>손에서 하나가 되게</strong> 하라고요(37:16–17). 수백 년 동안 남과 북으로 갈라져 있던 나라가 한 왕 아래 다시 하나 된다는 약속이에요(37:22). 그리고 이 장은 레위기 26장의 약속을 그대로 되풀이하며 끝나요. “내 처소가 그들 가운데에 있을 것이며 나는 그들의 하나님이 되고 그들은 나의 백성이 되리라”(37:27).</p>
+</section>
+
+<section id="e9" class="stack">
+  <div><div class="kicker">여덟째 마당 · 38–48장</div><h2>곡과 마곡, 그리고 성전에서 흘러나온 강</h2></div>
+  <h3 class="sub">38–39장 · 곡과 마곡</h3>
+  <p>회복된 이스라엘을 향해 북쪽 먼 곳에서 “마곡 땅에 있는 곡”이 큰 군대를 이끌고 쳐들어옵니다. 그러나 하나님이 직접 싸우셔서 그들을 멸하세요. 이 장면은 특정 나라를 맞히라는 퍼즐이 아니에요. <strong>회복된 하나님의 백성을 무너뜨리려는 마지막 세력</strong>이 있어도, 하나님이 끝내 지키신다는 그림이에요. 요한계시록은 이 이름을 그대로 가져와 마지막 전쟁을 그립니다(계 20:8).</p>
+  <h3 class="sub">40–48장 · 측량되는 새 성전</h3>
+  <p>예루살렘이 함락된 지 14년째, 포로 생활 25년째 되는 해에(40:1) 에스겔은 높은 산 위로 이끌려 가서 새 성전을 봅니다. 놋같이 빛나는 사람이 측량 장대를 들고 문 하나, 방 하나, 벽 두께까지 하나하나 재요. <span class="smile">😄 다시 레위기와 출애굽기의 성막 치수표가 나오는 느낌이죠.</span> 그런데 이 치수들은 메시지예요. 무너진 성전을 보고 절망한 사람들에게 하나님이 “<strong>내가 이미 다 설계해 두었다</strong>”고 보여 주시는 거예요.</p>
+  <p>영광이 돌아온 뒤 하나님은 동문을 닫으라고 하세요. “이 문은 닫고 다시 열지 못할지니 … 이스라엘 하나님 여호와가 그리로 들어왔음이라”(44:2). 오늘날에도 예루살렘 성전산 동쪽 성벽의 ‘황금문’은 수백 년째 돌로 막혀 있어요. 많은 사람들이 이 말씀과 연결해서 바라보는 곳이에요.</p>
+  <h3 class="sub">47장 · 점점 깊어지는 강</h3>
+  <p>그리고 에스겔서에서 가장 아름다운 장면이 펼쳐져요. 성전 문지방 밑에서 물이 흘러나와 동쪽으로 흐릅니다. 안내자가 천 척을 잴 때마다 에스겔을 물로 건너게 하는데, 물이 점점 깊어져요.</p>
+  <div class="tablewrap"><table>
+    <thead><tr><th>측량</th><th>거리 (1척 ≈ 45cm)</th><th>물의 깊이</th></tr></thead>
+    <tbody>
+      <tr><td><b>첫 천 척</b></td><td>약 450m</td><td>발목 (47:3)</td></tr>
+      <tr><td><b>두 번째 천 척</b></td><td>약 900m</td><td>무릎 (47:4)</td></tr>
+      <tr><td><b>세 번째 천 척</b></td><td>약 1.35km</td><td>허리 (47:4)</td></tr>
+      <tr><td><b>네 번째 천 척</b></td><td>약 1.8km</td><td>헤엄쳐야 건널 강 (47:5)</td></tr>
+    </tbody>
+  </table></div>
+  <p>보통 강은 지류가 합쳐져야 깊어지는데, 이 강은 아무것도 보태지지 않았는데 저절로 깊어져요. 하나님의 은혜는 흘러갈수록 더 깊어진다는 거예요. 그리고 이 강이 흘러가는 곳은 <strong>사해</strong>, 소금이 너무 많아 물고기 한 마리 살 수 없는 죽음의 바다예요. 그런데 이 물이 들어가자 바닷물이 되살아나고, “이 강물이 이르는 곳마다 <strong>모든 것이 살 것이며</strong>” 고기가 심히 많아져서 엔게디에서 에네글라임까지 어부들이 그물을 칩니다(47:8–10). 사해에서 고기잡이를 하는 장면, 상상만 해도 웃음이 나요.</p>
+  <p>강 좌우에는 과일나무가 자라는데 잎사귀가 시들지 않고 <strong>달마다 새 열매</strong>를 맺으며, 그 열매는 먹을 만하고 그 잎사귀는 약 재료가 된다고 해요(47:12). 요한계시록 22장의 생명수 강과 생명나무가 이 장면을 그대로 이어받습니다(계 22:1–2). 그리고 예수님은 초막절 마지막 날 이렇게 외치셨어요. “나를 믿는 자는 성경에 이름과 같이 그 배에서 <strong>생수의 강</strong>이 흘러나오리라”(요 7:38). 이제 성전이신 예수님, 그리고 성령이 거하시는 성도들에게서 그 강이 흘러나와요.</p>
+  <div class="note"><span class="tag">남겨 둔 소금</span>47장 11절에는 작은 디테일이 하나 있어요. 강물이 사해를 살리지만 “진펄과 개펄은 되살아나지 못하고 <strong>소금 땅이 될 것</strong>이며.” 왜 다 살리지 않으실까요? 레위기 2장 13절을 기억하시나요? 모든 소제에는 “언약의 소금”을 쳐야 했어요. 새 성전에서도 제사에 쓸 소금이 필요했던 거예요. 하나님은 생명을 넘치게 주시면서도 언약의 소금은 남겨 두셨습니다.</div>
+</section>
+
+<section id="e10" class="stack">
+  <div><div class="kicker">아홉째 마당 · 성경 66권 전체</div><h2>에스겔에서 요한계시록까지 이어진 실</h2></div>
+  <div class="note thread">
+    <div class="row"><div class="bk">창세기<small>숨</small></div><div class="tx">흙으로 지은 사람의 코에 생기를 불어넣으심(창 2:7). 마른 뼈에 생기가 들어가는 37장의 배경이에요.</div></div>
+    <div class="row"><div class="bk">레위기<small>약속</small></div><div class="tx">“내가 내 성막을 너희 중에 세우리니 … 나는 너희의 하나님이 되고”(레 26:11–12). 에스겔 37:27이 이 약속을 거의 그대로 되풀이해요.</div></div>
+    <div class="row"><div class="bk">사무엘상<small>이가봇</small></div><div class="tx">언약궤를 빼앗긴 날 “영광이 이스라엘에서 떠났다”(삼상 4:21). 에스겔은 성전 전체에서 영광이 떠나는 것을 봐요.</div></div>
+    <div class="row"><div class="bk">요한복음<small>성전과 생수</small></div><div class="tx">“말씀이 육신이 되어 우리 가운데 거하시매 우리가 그의 <strong>영광</strong>을 보니”(요 1:14). 떠났던 영광이 사람의 몸으로 돌아왔어요. 예수님은 선한 목자이시고(10:11), 생수의 강을 약속하세요(7:38). 그리고 부활 후 제자들에게 숨을 내쉬며 성령을 주십니다(20:22).</div></div>
+    <div class="row"><div class="bk">마태복음<small>감람산</small></div><div class="tx">성전을 떠나 감람산에 앉으신 예수님(마 24:1–3). 에스겔 11장 영광의 길과 같은 길이에요.</div></div>
+    <div class="row"><div class="bk">사도행전<small>오순절</small></div><div class="tx">“급하고 강한 <strong>바람</strong> 같은 소리”와 함께 성령이 오심(행 2:2). 마른 뼈 골짜기의 바람이 다락방에 불어온 거예요. 굳은 마음을 꺼내고 새 영을 주시겠다는 에스겔 36장의 약속이 이루어졌어요.</div></div>
+    <div class="row"><div class="bk">고린도전서<small>성전</small></div><div class="tx">“너희는 너희가 하나님의 성전인 것과 하나님의 성령이 너희 안에 계시는 것을 알지 못하느냐”(고전 3:16). 이제 영광이 거하시는 곳은 성도들이에요.</div></div>
+    <div class="row"><div class="bk">요한계시록<small>완성</small></div><div class="tx">네 생물과 보좌(계 4장), 두루마리를 먹음(10장), 이마의 인(7:3), 곡과 마곡(20:8), 측량되는 성(21:15), 생명수 강과 달마다 열매 맺는 나무, 치료하는 잎사귀(22:1–2). 그리고 “하나님이 그들과 함께 계시리니”(21:3). 에스겔의 여호와 삼마가 온 세상에서 이루어집니다.</div></div>
+  </div>
+</section>
+
+<section id="e11" class="stack">
+  <div><div class="kicker">나가며 · 실천</div><h2>에스겔서를 읽을 때 붙들 세 가지 질문</h2></div>
+  <div class="qs">
+    <div><b>① 내 삶의 성전 안에 숨은 우상은?</b><p>장로들은 담벼락 구멍 안쪽, 아무도 보지 않는 곳에서 짐승 그림에 절했어요. 내 마음 깊은 방에는 무엇이 걸려 있나요?</p></div>
+    <div><b>② 내가 “주께서 아시나이다”라고 맡겨야 할 마른 뼈는?</b><p>사람의 눈엔 끝난 것처럼 보이는 관계, 꿈, 공동체. 하나님의 바람이 불어야 살아날 골짜기는 어디인가요?</p></div>
+    <div><b>③ 나를 통해 어떤 강이 흐르고 있나?</b><p>성전에서 흘러나온 강은 사해까지 살렸어요. 성령이 거하시는 내 삶에서 오늘 누가 살아나고 있나요?</p></div>
+  </div>
+  <details class="deep">
+    <summary>3주 에스겔 읽기 길잡이</summary>
+    <div class="in">
+      <div class="tablewrap"><table>
+        <thead><tr><th>주</th><th>범위</th><th>붙들 질문</th></tr></thead>
+        <tbody>
+          <tr><td><b>1주</b></td><td>1–3장, 8–11장, 16장, 18장</td><td>하나님은 왜 떠나셨고, 그럼에도 어디에 계셨나?</td></tr>
+          <tr><td><b>2주</b></td><td>33–37장</td><td>무너진 뒤에 하나님은 어떤 말씀으로 다시 일으키시나?</td></tr>
+          <tr><td><b>3주</b></td><td>40장, 43장, 47–48장</td><td>영광이 돌아온 곳에서는 무엇이 살아나나?</td></tr>
+        </tbody>
+      </table></div>
+      <p style="font-size:14.5px;color:var(--muted)">처음 읽을 때는 이렇게 핵심 장 중심으로 읽고, 두 번째에 나머지 장(열방 심판 25–32장, 곡과 마곡 38–39장 등)을 채워 넣으면 길을 잃지 않아요.</p>
+    </div>
+  </details>
+</section>
+
+<div class="finale">
+  <h2>그래서, 에스겔서는 어떤 책인가</h2>
+  <p>에스겔서는 기이한 환상의 책이 아니라 <strong>하나님이 떠나신 것 같은 자리에서 쓴 책</strong>입니다. 성전은 무너졌고, 백성은 포로가 되었고, 선지자는 말을 잃었어요. 그러나 바로 그 강가에 바퀴 달린 보좌가 나타났고, 마른 뼈 골짜기에 바람이 불었고, 죽음의 바다에 생수가 흘러들었습니다.</p>
+  <p>떠나셨던 영광은 동쪽에서 돌아왔고, 마침내 사람의 몸을 입고 우리 가운데 오셨어요. 그리고 오늘 성령으로 우리 안에 계십니다. 그러니 어떤 폐허 위에서도 우리는 이 이름을 부를 수 있어요. <mark>여호와 삼마, 여호와께서 여기 계시다.</mark></p>
+  <p class="verse" style="text-align:left;max-width:30em;margin:22px auto 0">그 사방의 합계는 만 팔천 척이라 그날 후로는 그 성읍의 이름을 여호와삼마라 하리라<cite>에스겔 48:35</cite></p>
+</div>
+
+<footer>기독교한국침례회 은혜교회 · 담임목사 박동준</footer>
+</main>
+
+<script>
+document.querySelectorAll('.off').forEach(function(card){
+  var btn=card.querySelector('button'), c=card.querySelector('.christ');
+  if(!btn||!c) return;
+  btn.addEventListener('click',function(){
+    var open=c.hidden; c.hidden=!open;
+    btn.setAttribute('aria-expanded',String(open));
+    btn.textContent=open?'접기 ▴':btn.getAttribute('data-label');
+  });
+  btn.setAttribute('data-label',btn.textContent);
+});
+</script>
+<script src="/assets/back-home.js"></script>
+</body></html>
