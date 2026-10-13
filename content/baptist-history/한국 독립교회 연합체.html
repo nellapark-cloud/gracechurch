@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>한국 독립교회 연합체</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<style>
+/* 레이아웃: 한 줄 읽기 폭의 단일 칼럼, 단체별 명함형 블록 + 비교표 */
+:root{
+  --bg:#faf7f0; --surface:#ffffff; --fg:#2a2d35; --muted:#6b7080;
+  --line:#e7e1d3; --accent:#1d2b4f; --accent-soft:#f3e7cc; --gold:#b8923a;
+  --serif:"Noto Serif KR",Georgia,serif;
+  --sans:"Pretendard",-apple-system,"Apple SD Gothic Neo",sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;word-break:keep-all;background:var(--bg);color:var(--fg);font-family:var(--sans);font-size:16px;line-height:1.75}
+.wrap{max-width:720px;margin:0 auto;padding-inline:20px;padding-block:48px 72px;display:flex;flex-direction:column;gap:48px}
+h1,h2,h3{font-family:var(--serif);text-wrap:balance;margin:0;line-height:1.35}
+h1{font-size:clamp(1.8rem,5vw,2.4rem)}
+h2{font-size:1.35rem;padding-bottom:10px;border-bottom:1px solid var(--line)}
+h3{font-size:1.2rem}
+p{margin:0}
+.eyebrow{font-size:.78rem;letter-spacing:.12em;color:var(--gold);font-weight:700}
+.lead{color:var(--muted);margin-top:14px}
+section{display:flex;flex-direction:column;gap:20px}
+.org{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:16px}
+.names{display:flex;flex-direction:column;gap:4px}
+.abbr{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.82rem;background:var(--accent-soft);color:var(--accent);padding:3px 10px;border-radius:999px;font-weight:500}
+.en{font-size:.88rem;color:var(--muted)}
+dl{margin:0;display:grid;grid-template-columns:5.5em 1fr;gap:8px 14px;font-size:.95rem}
+dt{color:var(--muted)}
+dd{margin:0;min-width:0}
+ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.table-box{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:540px;font-size:.92rem}
+th,td{text-align:left;padding:12px 14px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-weight:700;color:var(--muted);font-size:.82rem;background:var(--accent-soft)}
+tr:last-child td{border-bottom:0}
+td:first-child{color:var(--muted);white-space:nowrap}
+.terms{display:grid;gap:14px}
+.term{display:grid;grid-template-columns:7em 1fr;gap:14px}
+.term b{font-family:var(--serif);color:var(--accent)}
+.note{font-size:.85rem;color:var(--muted);border-top:1px solid var(--line);padding-top:16px}
+@media (max-width:480px){.term{grid-template-columns:1fr;gap:2px} dl{grid-template-columns:1fr;gap:2px} dt{margin-top:8px}}
+</style>
+</head>
+<body><div class="wrap">
+  <header>
+    <div class="eyebrow">교단 밖의 교회들</div>
+    <h1 style="margin-top:8px">한국 독립교회 연합체</h1>
+    <p class="lead">교단 총회에 속하지 않고 개교회 자율을 지키면서도, 목사 안수와 교회 가입을 위해 함께 모인 대표적인 세 연합체를 정리했습니다.</p>
+  </header>
+
+  <section>
+    <h2>먼저, 용어부터</h2>
+    <div class="terms">
+      <div class="term"><b>독립교회</b><p>특정 교단(총회·노회·연회)에 소속되지 않고 스스로 운영하는 교회.</p></div>
+      <div class="term"><b>연합회</b><p>독립교회들이 느슨하게 모인 협의체. 교단처럼 치리하지 않고 안수와 신분 보장 등을 돕습니다.</p></div>
+      <div class="term"><b>독립교단</b><p>독립교회 연합체를 흔히 부르는 말. 공식 분류명은 아니며, KUPA처럼 스스로 '교단'이라 칭하는 곳도 있습니다.</p></div>
+      <div class="term"><b>초교파</b><p>특정 교파에 묶이지 않는다는 뜻. 독립교회 연합체는 대부분 초교파 성격입니다.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>세 연합체</h2>
+
+    <article class="org">
+      <div class="names">
+        <div class="abbr"><span class="chip">카이캄</span><span class="chip">KAICAM</span><span class="chip">한독선연</span></div>
+        <h3>한국독립교회선교단체연합회</h3>
+        <span class="en">Korea Association of Independent Churches and Missions · 사단법인</span>
+      </div>
+      <dl>
+        <dt>설립</dt><dd>1998년 3월 창립총회 (1997년 가칭 모임), 2003년 사단법인</dd>
+        <dt>주축</dt><dd>김상복 목사(할렐루야교회), 김준곤 목사(CCC), 박조준 목사(갈보리교회)</dd>
+        <dt>신학</dt><dd>복음주의, 목회 철학은 '자유'</dd>
+        <dt>연계 학교</dt><dd>횃불트리니티신학대학원대학교</dd>
+        <dt>규모</dt><dd>교회 약 3,000곳, 선교단체 약 400곳 (2021년 무렵 보도 기준)</dd>
+      </dl>
+      <ul>
+        <li>목회자 정년이 없고 상회비는 교회 형편에 따라 자율</li>
+        <li>교회 재산이 총회 유지재단에 묶이지 않음</li>
+        <li>장로·권사 추대 여부도 개교회 자율</li>
+      </ul>
+    </article>
+
+    <article class="org">
+      <div class="names">
+        <div class="abbr"><span class="chip">국독연</span><span class="chip">WAIC · 웨이크</span></div>
+        <h3>국제독립교회연합회</h3>
+        <span class="en">영문 약칭 WAIC, '웨이크'로 읽음 (연계 신학교도 웨이크신학원) · 흔히 '국독연'으로 부름</span>
+      </div>
+      <dl>
+        <dt>설립</dt><dd>자료에 따라 1995년, 또는 카이캄에서 나온 2005년으로 기록</dd>
+        <dt>설립자</dt><dd>박조준 목사 (전 영락교회 담임, 갈보리교회 원로, 카이캄 초대회장)</dd>
+        <dt>연계 학교</dt><dd>웨이크신학원</dd>
+      </dl>
+      <ul>
+        <li>목회자가 교단 정치에서 벗어나 자기 목회 철학을 펼치도록 지원하는 것이 목표</li>
+        <li>카이캄과 뿌리가 같고, 함께 기존 교단 밖 목사 안수 기관으로 꼽힘</li>
+      </ul>
+    </article>
+
+    <article class="org">
+      <div class="names">
+        <div class="abbr"><span class="chip">KUPA · 쿠파</span><span class="chip">미래연합</span></div>
+        <h3>한국개신교미래연합총회</h3>
+        <span class="en">Korea United Protestant Association, '쿠파'로 읽음 (공식 표기는 확인되지 않아 기사에선 주로 영문 그대로 씀) · 정식 명칭 '대한예수교독립교단 한국개신교미래연합총회'</span>
+      </div>
+      <dl>
+        <dt>설립</dt><dd>2017년, 카이캄에서 분리</dd>
+        <dt>법인</dt><dd>사단법인 한국개신교미래연합</dd>
+      </dl>
+      <ul>
+        <li>정관에 스스로 '기독교 교단'이라 명시하고, 이름에 '총회'를 씀</li>
+        <li>교단 업무(목사 안수, 교회 가입)와 법인 사업을 나눠 운영한다고 밝힘</li>
+      </ul>
+    </article>
+  </section>
+
+  <section>
+    <h2>한눈에 비교</h2>
+    <div class="table-box">
+      <table>
+        <thead><tr><th></th><th>카이캄</th><th>국독연</th><th>KUPA</th></tr></thead>
+        <tbody>
+          <tr><td>우리말 이름</td><td>한국독립교회선교단체연합회</td><td>국제독립교회연합회</td><td>한국개신교미래연합총회</td></tr>
+          <tr><td>약칭</td><td>카이캄, 한독선연</td><td>국독연, WAIC</td><td>KUPA</td></tr>
+          <tr><td>읽는 법</td><td>카이캄</td><td>웨이크</td><td>쿠파</td></tr>
+          <tr><td>설립</td><td>1998</td><td>1995 또는 2005</td><td>2017</td></tr>
+          <tr><td>성격</td><td>연합회</td><td>연합회</td><td>스스로 '교단'</td></tr>
+          <tr><td>관계</td><td>원조 격</td><td>카이캄 초대회장이 설립</td><td>카이캄에서 분리</td></tr>
+          <tr><td>연계 학교</td><td>횃불트리니티</td><td>웨이크신학원</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <p class="note">출처: 위키백과·나무위키 '한국독립교회선교단체연합회'·'초교파', 국민일보 카이캄 인터뷰, 크리스천투데이 KUPA 기사, 각 단체 홈페이지. 회장·규모·안수 요건은 바뀔 수 있으니 실제 가입이나 안수 문의는 각 단체에 직접 확인하세요.</p>
+</div>
+</body>
+</html>
