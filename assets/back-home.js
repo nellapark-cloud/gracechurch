@@ -206,6 +206,23 @@
 
   document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSheet(); });
 
+  // 페이지 안의 목차 링크(#로 시작하는 링크)를 눌러도 방문 기록이 쌓이지 않게 합니다.
+  // 이렇게 해야 글을 읽다가 뒤로가기를 한 번만 눌러도 자료실의 클릭했던 자리로 돌아가요.
+  document.addEventListener('click', function (e) {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    var a = e.target.closest && e.target.closest('a[href^="#"]');
+    if (!a || a.target || a.closest('#gc-toc-sheet')) return;
+    var id = a.getAttribute('href').slice(1);
+    if (!id) return;
+    try { id = decodeURIComponent(id); } catch (err) {}
+    var el = document.getElementById(id) || document.getElementsByName(id)[0];
+    if (!el) return;
+    e.preventDefault();
+    var d = el.closest('details');
+    while (d) { d.open = true; d = d.parentElement && d.parentElement.closest('details'); }
+    goTo(el);
+  });
+
   function run() { hideOtherButtons(); addButton(); }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', run);
   else run();
