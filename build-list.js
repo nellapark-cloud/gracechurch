@@ -12,6 +12,7 @@ const categories = [
   { key: 'common_questions', dir: 'content/common-questions' },
   { key: 'meeting_blessing', dir: 'content/meeting-blessing' },
   { key: 'bible_by_book-old', dir: 'content/bible-by-book/old-testament' },
+  { key: 'judges_detailed', dir: 'content/bible-by-book/old-testament/judges-detailed' },
   { key: 'bible_by_book-new', dir: 'content/bible-by-book/new-testament' },
   { key: 'romans_chapters', dir: 'content/bible-by-book/new-testament/romans-chapters' },
   { key: 'romans_detailed', dir: 'content/bible-by-book/new-testament/romans-detailed' },

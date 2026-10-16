@@ -11,6 +11,7 @@ sejonggrace.com의 "로마서 세부 강해"(절별 상세 강해) 페이지를 
 - `data/romans/` — 로마서 1–16장 원본 데이터 (7장은 손으로 만든 페이지라 데이터 파일이 없음)
 - `data/revelation/` — 요한계시록 원본 데이터
 - `data/ephesians/` — 에베소서 1–6장 원본 데이터 (전체 흐름 링크는 에베소서 장별 강해로 연결)
+- `data/judges/` — 사사기 원본 데이터 (구약, 원문 노트는 히브리어. 전체 흐름 링크는 구약 사사기 성경공부 페이지)
 
 ## 새 책 시작하기 (예: 요한계시록)
 1. `data/revelation/book.json`을 만든다 (`data/romans/book.json` 참고)
