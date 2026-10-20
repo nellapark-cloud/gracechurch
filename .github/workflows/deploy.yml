@@ -18,10 +18,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          # 검색용 사이트맵에 자료별 수정 날짜를 넣으려고 전체 기록을 받아옴
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 20
       - run: node build-list.js
+      # 네이버·다음·구글 검색 최적화 (사이트맵·RSS·robots.txt, 첫 화면 목록 미리 채우기)
+      - run: node build-seo.js
       # 링크 미리보기(OG) 이미지가 없는 페이지에 기본 이미지를 자동으로 넣음
       - run: node add-default-og.js
       # 모든 콘텐츠 페이지에 공통 "목차" 버튼을 넣고, 다른 떠 있는 버튼은 숨김
