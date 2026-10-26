@@ -746,8 +746,143 @@
   }
   .doclist a.is-returned{ background: rgba(184,147,90,0.16); transition: background .6s ease; border-radius: 6px; }
 </style>
+
+<style id="home-theme">
+/* ===== 홈페이지와 같은 하늘색 파스텔 톤 (2026-10) ===== */
+:root{
+  --navy:#0F1B3D; --navy-deep:#1D3A5C; --cream:#F3F9FE; --cream-warm:#EAF4FC;
+  --gold:#3A9AD9; --gold-light:#9ED3F5; --ink:#0F1B3D; --muted:#5A6788; --rule:#DCEBF6;
+  --rail-w:0px;
+}
+html{scroll-padding-top:100px}
+body{background:#F3F9FE;color:#0F1B3D;font-family:Pretendard,'Noto Sans KR',system-ui,sans-serif}
+h1,h2,h3,.serif,.doclist .title,details.doc-group summary,.room__num,footer .fname{font-family:Pretendard,'Noto Sans KR',system-ui,sans-serif !important}
+:focus-visible{outline-color:#1F7AB8}
+/* 헤더 (홈페이지와 동일) */
+.burger{display:none}.mnav{display:none}
+.if-menuOpen{display:none}.if-menuClosed{display:contents}
+#site-header.open .if-menuClosed{display:none}
+#site-header.open #burger .if-menuOpen{display:contents}
+@media (max-width:900px){.gnav{display:none !important}.burger{display:flex !important}.mnav{display:flex !important}#site-header.open .if-menuOpen{display:block}#site-header.open #burger .if-menuOpen{display:contents}}
+#site-header a{text-decoration:none;color:inherit}
+/* 왼쪽 세로 메뉴 대신 위쪽 메뉴 */
+.rail{display:none !important}
+main,footer{margin-left:0 !important}
+.hero__home,.hero__caption{display:none !important}
+/* 첫 부분 */
+.hero{min-height:auto !important;margin-top:-80px;padding:140px max(24px,calc((100% - 1200px)/2)) 56px !important;
+  background:radial-gradient(60% 80% at 85% 10%,#D6ECFA 0%,rgba(214,236,250,0) 70%),linear-gradient(180deg,#EEF7FE 0%,#F3F9FE 100%) !important}
+.hero__eyebrow{align-self:flex-start;display:inline-block;background:#FFFFFF;color:#1F7AB8 !important;-webkit-text-fill-color:#1F7AB8 !important;
+  border-radius:999px;padding:5px 14px;font-size:12px !important;font-weight:800 !important;letter-spacing:.16em !important;box-shadow:0 4px 12px rgba(30,80,120,.08);background-clip:padding-box !important}
+.hero__denom{color:#5A6788 !important}
+.hero h1{color:#0F1B3D !important;font-weight:900 !important;letter-spacing:-.035em !important}
+.hero__deco path,.hero__deco ellipse,.hero__deco line,.hero__deco rect{stroke:#7CC4F2 !important}
+.hero__declaration{border-left-color:#7CC4F2 !important;color:#3B4868 !important}
+.hero__youtube{background:#FFFFFF !important;border:1px solid #D3E8F6 !important;border-radius:12px !important;color:#1F7AB8 !important;box-shadow:0 6px 16px rgba(30,80,120,.06)}
+.hero__index a{background:#FFFFFF !important;border:1px solid #DDEDF8 !important;border-radius:14px !important;box-shadow:0 4px 14px rgba(30,80,120,.05);color:#0F1B3D !important}
+.hero__index a:hover{background:#E6F4FD !important}
+.hero__index .num{color:#3A9AD9 !important;font-family:Pretendard,'Noto Sans KR',sans-serif !important;font-weight:800}
+.hero__index .cnt{color:#5A6788 !important}
+.hero__index a.featured{background:#E6F4FD !important;border-color:#BFE3FA !important}
+.hero__index a.featured-alt{background:#F6EEF6 !important;border-color:#E6CFE4 !important}
+.hero__index a.featured-teal{background:#E8F6F4 !important;border-color:#C6E8E1 !important}
+.badge,.badge-lg{background:#7CC4F2 !important;color:#0F2A4A !important}
+.badge-alt,.badge-lg-alt{background:#E6CFE4 !important;color:#4A2A48 !important}
+.badge-teal,.badge-lg-teal{background:#C6E8E1 !important;color:#1F4A42 !important}
+.badge-dot{background:#7CC4F2 !important}
+/* 자료 칸 = 흰 카드 */
+.room{max-width:1200px;margin:20px auto !important;padding:40px !important;background:#FFFFFF !important;border:1px solid #E3F0F9 !important;
+  border-radius:20px;box-shadow:0 8px 22px rgba(30,80,120,.06);scroll-margin-top:100px !important}
+@media (max-width:1248px){.room{margin:16px 24px !important}}
+@media (max-width:600px){.room{margin:12px 12px !important;padding:24px 18px !important;border-radius:16px}}
+.room:nth-of-type(even){background:#FFFFFF !important}
+.room--feature{background:linear-gradient(180deg,#E8F4FD 0%,#FFFFFF 70%) !important;border-color:#CFE6F7 !important}
+.room--feature-alt{background:linear-gradient(180deg,#F7EFF7 0%,#FFFFFF 70%) !important;border-color:#EADAE9 !important}
+.room--feature-teal{background:linear-gradient(180deg,#EAF7F4 0%,#FFFFFF 70%) !important;border-color:#D3ECE6 !important}
+.room .room__title,.room--feature .room__title,.room--feature-alt .room__title,.room--feature-teal .room__title{color:#0F1B3D !important;font-weight:800 !important;letter-spacing:-.02em}
+.room .room__desc,.room--feature .room__desc,.room--feature-alt .room__desc,.room--feature-teal .room__desc{color:#5A6788 !important}
+.room__num,.room--feature .room__num{color:#7CC4F2 !important;font-weight:900 !important}
+.room__head{margin-bottom:1.6rem !important}
+.subhead{color:#1F7AB8 !important}
+/* 자료 목록 = 둥근 칸 */
+.doclist,.room--feature .doclist,.room--feature-alt .doclist,.room--feature-teal .doclist,details.doc-group .doclist{border-top:0 !important;row-gap:8px !important;column-gap:10px !important;padding:4px 0 !important}
+.doclist li,.room--feature .doclist li,.room--feature-alt .doclist li,.room--feature-teal .doclist li{border-bottom:0 !important}
+.doclist a{background:#F3F9FE;border:1px solid #E3F0F9;border-radius:12px;padding:.85rem 1rem !important;transition:background .2s ease,border-color .2s ease}
+.doclist a:hover,.room--feature .doclist a:hover,.room--feature-alt .doclist a:hover,.room--feature-teal .doclist a:hover{background:#E6F4FD !important;border-color:#BFE3FA;padding-left:1rem !important}
+.doclist .title,.room--feature .doclist .title,.room--feature-alt .doclist .title,.room--feature-teal .doclist .title{color:#0F1B3D !important;font-weight:600 !important;font-size:.98rem !important}
+.doclist .tag,.room--feature .doclist .tag,.room--feature-alt .doclist .tag,.room--feature-teal .doclist .tag{color:#1F7AB8 !important;font-weight:700 !important}
+.doclist .meta,.room--feature .doclist .meta,.room--feature-alt .doclist .meta,.room--feature-teal .doclist .meta{color:#5A6788 !important}
+.doclist li.doclist__own .title,.room--feature .doclist li.doclist__own .title{color:#1F7AB8 !important}
+.doclist__empty,.room--feature .doclist__empty,.room--feature-alt .doclist__empty,.room--feature-teal .doclist__empty{color:#5A6788 !important}
+.doclist a.is-returned{background:#D6ECFA !important}
+/* 펼쳐 보는 묶음 */
+details.doc-group{border:1px solid #E3F0F9 !important;border-radius:14px;margin:0 0 10px;background:#FFFFFF;padding:0 12px}
+details.doc-group:last-of-type{border-bottom:1px solid #E3F0F9 !important}
+details.doc-group summary{color:#0F1B3D !important;font-weight:700 !important}
+details.doc-group summary::after{color:#3A9AD9 !important}
+details.doc-group .doc-group--nested{border:1px solid #E3F0F9 !important;border-radius:12px;background:#F7FBFE;margin:.4rem 0 .8rem !important}
+details.doc-group--nested.doc-group--accent summary{color:#1F7AB8 !important}
+/* 담임목사 칸 */
+.admin-gate__input:focus{border-color:#7CC4F2 !important}
+.admin-gate__btn{background:#7CC4F2 !important;color:#0F2A4A !important;border-radius:10px !important}
+/* 떠 있는 버튼 */
+.float-nav a{background:#7CC4F2 !important;color:#0F2A4A !important;box-shadow:0 6px 16px rgba(124,196,242,.45) !important}
+.float-nav a:hover{background:#5DB4EC !important}
+/* 아래쪽 */
+footer{background:#1D3A5C !important;color:#C9D9EA !important;padding:44px max(24px,calc((100% - 1200px)/2)) !important;margin-top:40px}
+footer .fname{color:#FFFFFF !important;font-weight:800 !important}
+footer p{color:#C9D9EA !important}
+footer .fgold{color:#9ED3F5 !important}
+</style>
 </head>
 <body>
+<header id="site-header" style="position: sticky; top: 0; z-index: 50; padding: 12px 16px 0">
+<div style="max-width: 1200px; margin: 0 auto; border-radius: 16px; background: rgba(255,255,255,0.96); box-shadow: 0 8px 24px rgba(30,80,120,0.10); border: 1px solid #DDEDF8">
+<div style="padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; min-height: 68px">
+<a href="index.html" style="display: flex; align-items: center; gap: 10px">
+<svg aria-hidden="true" width="30" height="30" viewBox="0 0 32 32" fill="none" stroke="#3A9AD9" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 28V14L16 5l12 9v14z"></path><path d="M16 13v12M12 17h8"></path></svg>
+<span style="display: flex; flex-direction: column; line-height: 1.2"><span style="font-weight: 800; font-size: 19px; letter-spacing: -0.02em">은혜교회</span><span style="font-size: 10px; font-weight: 700; letter-spacing: 0.14em; color: #5A6788">GRACE BAPTIST CHURCH</span></span>
+</a>
+<button type="button" class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false" style="width: 44px; height: 44px; align-items: center; justify-content: center; border: 1px solid #D3E8F6; border-radius: 12px; background: #FFFFFF; cursor: pointer; padding: 0">
+<span class="if-menuOpen"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F1B3D" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>
+<span class="if-menuClosed"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0F1B3D" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span>
+</button>
+<nav class="gnav" aria-label="주 메뉴" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px 26px; font-size: 14px; font-weight: 500; color: #3B4868">
+<a href="index.html" style="padding: 12px 0">홈</a>
+<a href="index.html#ministry" style="padding: 12px 0">예배 · 사역</a>
+<a href="index.html#mokjang" style="padding: 12px 0">목장</a>
+<a href="index.html#serve" style="padding: 12px 0">섬김</a>
+<a href="index.html#events" style="padding: 12px 0">일정</a>
+<a href="index.html#partner" style="padding: 12px 0">협력 사역</a>
+<a href="#top" aria-current="page" style="padding: 12px 0; color: #1F7AB8; font-weight: 700; border-bottom: 2px solid #7CC4F2">자료실</a>
+<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" aria-label="실시간 예배" style="width: 40px; height: 40px; border-radius: 50%; background: #E6F4FD; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#3A9AD9"><path d="M8 5.5v13l11-6.5z"></path></svg></a>
+<a href="index.html#visit" style="display: inline-flex; align-items: center; min-height: 42px; padding: 0 20px; border-radius: 10px; background: #7CC4F2; color: #0F2A4A; font-weight: 700; font-size: 14px; box-shadow: 0 6px 14px rgba(124,196,242,0.35)">처음 방문하기</a>
+</nav>
+</div>
+<div class="if-menuOpen">
+<nav class="mnav" aria-label="모바일 메뉴" style="flex-direction: column; padding: 0 20px 18px; border-top: 1px solid #DDEDF8">
+
+<a href="index.html#worship" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">예배 안내<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="index.html#ministry" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">예배 · 사역<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="index.html#mokjang" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">목장<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="index.html#serve" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">섬김 · 한 사람 한 자리<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="index.html#events" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">일정<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="https://www.youtube.com/@sjgrace" target="_blank" rel="noopener" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">설교 · 유튜브<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="index.html#partner" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">협력 사역<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="#top" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">자료실<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="index.html#visit" data-close-menu style="display: flex; align-items: center; justify-content: center; min-height: 50px; margin-top: 14px; border-radius: 10px; background: #7CC4F2; color: #0F2A4A; font-weight: 700; font-size: 15px">처음 방문하기</a>
+</nav>
+</div>
+</div>
+</header>
 <a id="top"></a>
 
 <nav class="rail" aria-label="자료실 관 이동">
@@ -818,7 +953,7 @@
       <a href="#room-0b" class="featured featured-alt"><span class="badge badge-alt">인생 질문</span><span class="lbl">행복을 묻는 그대에게</span><span class="cnt">보기</span></a>
       <a href="#room-0" class="featured"><span class="badge">먼저 읽기</span><span class="lbl">은혜교회의 신앙철학</span><span class="cnt">보기</span></a>
       <a href="#room-0c" class="featured featured-teal"><span class="badge badge-teal">신앙 Q&amp;A</span><span class="lbl">기독교인의 흔한 고민</span><span class="cnt">보기</span></a>
-      <a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener" class="featured featured-gw"><span class="badge badge-gw">찬양팀</span><span class="lbl">그레이스 워십 <span class="lbl-script" aria-hidden="true">Grace Worship</span></span><span class="cnt">바로가기 ↗</span></a>
+      <a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener" class="featured featured-gw"><span class="badge badge-gw">찬양팀</span><span class="lbl">그레이스워십 <span class="lbl-script" aria-hidden="true">Grace Worship</span></span><span class="cnt">바로가기 ↗</span></a>
       <a href="#room-1"><span class="num">I</span><span class="lbl">성경공부</span><span class="cnt">보기</span></a>
       <a href="#room-2"><span class="num">II</span><span class="lbl">새가족 자료</span><span class="cnt">보기</span></a>
       <a href="#room-3"><span class="num">III</span><span class="lbl">목장 자료</span><span class="cnt">보기</span></a>
@@ -1046,7 +1181,7 @@
     <a class="gw-link" href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener">
       <span class="gw-link__logo" aria-hidden="true">Grace Worship</span>
       <span class="gw-link__text">
-        <span class="gw-link__title">그레이스 워십 찬양팀 소개 페이지</span>
+        <span class="gw-link__title">그레이스워십 찬양팀 소개 페이지</span>
         <span class="gw-link__sub">함께 찬양하는 사람들 · 사역 · 찬양 영상</span>
       </span>
       <span class="gw-link__arrow" aria-hidden="true">→</span>
@@ -1334,5 +1469,20 @@
   });
 </script>
 
+
+<script>
+(function(){
+  var header = document.getElementById('site-header');
+  var burger = document.getElementById('burger');
+  if (!header || !burger) return;
+  function setMenu(open){
+    header.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  burger.addEventListener('click', function(){ setMenu(!header.classList.contains('open')); });
+  document.querySelectorAll('[data-close-menu]').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+})();
+</script>
 </body>
 </html>
