@@ -76,6 +76,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </button>
 <nav class="gnav" aria-label="주 메뉴" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px 26px; font-size: 14px; font-weight: 500; color: #3B4868">
 <a href="#top" style="padding: 12px 0; color: #1F7AB8; font-weight: 700; border-bottom: 2px solid #7CC4F2">홈</a>
+<a href="#about" style="padding: 12px 0">교회 소개</a>
 <a href="#ministry" style="padding: 12px 0">예배 · 사역</a>
 <a href="#mokjang" style="padding: 12px 0">목장</a>
 <a href="#serve" style="padding: 12px 0">섬김</a>
@@ -88,6 +89,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </div>
 <div class="if-menuOpen">
 <nav class="mnav" aria-label="모바일 메뉴" style="flex-direction: column; padding: 0 20px 18px; border-top: 1px solid #DDEDF8">
+
+<a href="#about" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">교회 소개<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
 <a href="#worship" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">예배 안내<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
@@ -177,7 +180,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 
 <!-- 소중히 여기는 것 -->
-<section style="padding: 32px 24px">
+<section id="about" style="padding: 32px 24px">
 <div style="max-width: 1200px; margin: 0 auto; border-radius: 20px; background: linear-gradient(180deg, #E3F2FC 0%, #EEF7FD 100%); padding: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
 <div style="flex: 1 1 100%; min-width: 0; display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">WHO WE ARE · G.R.A.C.E</span>
@@ -672,6 +675,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px">Church · 교회 안</span>
+<a href="#about" style="padding: 3px 0">교회 소개</a>
 <a href="#worship" style="padding: 3px 0">예배 안내</a>
 <a href="#mokjang" style="padding: 3px 0">목장</a>
 <a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener" style="padding: 3px 0">그레이스워십 (예배팀)</a>
