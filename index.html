@@ -20,7 +20,7 @@
 <style>
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 *{box-sizing:border-box}
-body{margin:0;background:#F3F9FE}
+body{margin:0;background:#F3F9FE;word-break:keep-all;overflow-wrap:break-word}
 a{color:inherit;text-decoration:none}
 .burger{display:none}
 .mnav{display:none}
@@ -173,39 +173,50 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <!-- 소중히 여기는 것 -->
 <section style="padding: 32px 24px">
 <div style="max-width: 1200px; margin: 0 auto; border-radius: 20px; background: linear-gradient(180deg, #E3F2FC 0%, #EEF7FD 100%); padding: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
-<div style="flex: 1 1 260px; min-width: 0; display: flex; flex-direction: column; gap: 8px">
-<span style="font-size: 12px; font-weight: 700; letter-spacing: 0.1em; color: #5A6788">WHO WE ARE</span>
-<h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3">말씀 위에 서고,<br>함께 걸어가는 교회</h2>
-<span style="font-size: 14px; color: #3B4868">2014년 4월 20일 첫 예배부터 지금까지. 하나님이 시작하셨고, 하나님이 인도하십니다.</span>
+<div style="flex: 1 1 100%; min-width: 0; display: flex; flex-direction: column; gap: 8px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">WHO WE ARE · G.R.A.C.E</span>
+<h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3">은혜(GRACE)로<br>세워지는 교회</h2>
+<span style="font-size: 14px; color: #3B4868; max-width: 640px">2014년 4월 20일 첫 예배부터 지금까지, 우리를 세운 것은 오직 하나님의 은혜였어요. 그 은혜로 살아가는 은혜교회의 정신을 다섯 글자에 담았습니다.</span>
 <span style="display: inline-flex; align-items: center; gap: 10px; margin-top: 4px">
 <img src="assets/home/pastor.jpg" alt="담임목사 박동준" style="width: 36px; height: 36px; border-radius: 50%; object-fit: cover; object-position: center 20%; background: #FFFFFF">
 <span style="font-size: 13px; color: #3B4868">담임목사 <b style="color: #0F1B3D">박동준</b></span>
 </span>
 </div>
-<div style="flex: 3 1 600px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px">
+<div style="flex: 3 1 640px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px">
 
 <div style="border-radius: 16px; padding: 22px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
-<span style="width: 52px; height: 52px; border-radius: 50%; background: #7CC4F2; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 14px rgba(124,196,242,0.35)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h7a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H2zM22 5h-7a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H22z"></path></svg></span>
-<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">Word-Centered</span><span style="font-size: 15px; font-weight: 700">말씀 중심</span>
-<span style="font-size: 12px; color: #5A6788; line-height: 1.5">하나님과 예수 그리스도가 중심이 되는 예배</span>
+<span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: #7CC4F2; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; box-shadow: 0 6px 14px rgba(124,196,242,0.35)">G</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">God-Centered</span><span style="font-size: 15px; font-weight: 700">하나님 중심</span>
+<span style="font-size: 12px; color: #5A6788; line-height: 1.5">우리가 아니라 하나님과 예수 그리스도가 중심인 예배와 삶</span>
+<span style="font-size: 11px; font-weight: 700; color: #1F7AB8; margin-top: 2px">골 1:18</span>
 </div>
 
 <div style="border-radius: 16px; padding: 22px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
-<span style="width: 52px; height: 52px; border-radius: 50%; background: #7CC4F2; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 14px rgba(124,196,242,0.35)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M10 20a6 6 0 0 1 12 0"></path></svg></span>
-<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">Community</span><span style="font-size: 15px; font-weight: 700">목장 공동체</span>
-<span style="font-size: 12px; color: #5A6788; line-height: 1.5">삶을 나누고 서로 돌보는 작은 교회</span>
+<span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: #7CC4F2; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; box-shadow: 0 6px 14px rgba(124,196,242,0.35)">R</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">Rooted in the Word</span><span style="font-size: 15px; font-weight: 700">말씀에 뿌리내림</span>
+<span style="font-size: 12px; color: #5A6788; line-height: 1.5">성경을 함께 읽고 배우며 말씀 위에 서는 교회</span>
+<span style="font-size: 11px; font-weight: 700; color: #1F7AB8; margin-top: 2px">골 2:7</span>
 </div>
 
 <div style="border-radius: 16px; padding: 22px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
-<span style="width: 52px; height: 52px; border-radius: 50%; background: #7CC4F2; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 14px rgba(124,196,242,0.35)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V11M12 11c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"></path></svg></span>
-<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">Every Member Serves</span><span style="font-size: 15px; font-weight: 700">한 사람, 한 자리</span>
-<span style="font-size: 12px; color: #5A6788; line-height: 1.5">모든 성도가 은사대로 섬기는 교회</span>
+<span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: #7CC4F2; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; box-shadow: 0 6px 14px rgba(124,196,242,0.35)">A</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">Abiding Together</span><span style="font-size: 15px; font-weight: 700">함께 머무는 공동체</span>
+<span style="font-size: 12px; color: #5A6788; line-height: 1.5">목장에서 삶을 나누고 서로를 돌보는 작은 교회</span>
+<span style="font-size: 11px; font-weight: 700; color: #1F7AB8; margin-top: 2px">행 2:46</span>
 </div>
 
 <div style="border-radius: 16px; padding: 22px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
-<span style="width: 52px; height: 52px; border-radius: 50%; background: #7CC4F2; display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 14px rgba(124,196,242,0.35)"><svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"></path></svg></span>
-<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">Together in the Region</span><span style="font-size: 15px; font-weight: 700">지역과 함께</span>
-<span style="font-size: 12px; color: #5A6788; line-height: 1.5">이웃 교회들과 중부권 문화사역 협력</span>
+<span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: #7CC4F2; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; box-shadow: 0 6px 14px rgba(124,196,242,0.35)">C</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">Called to Serve</span><span style="font-size: 15px; font-weight: 700">부르심대로 섬김</span>
+<span style="font-size: 12px; color: #5A6788; line-height: 1.5">모든 성도가 받은 은사대로 한 자리씩 섬기는 교회</span>
+<span style="font-size: 11px; font-weight: 700; color: #1F7AB8; margin-top: 2px">벧전 4:10</span>
+</div>
+
+<div style="border-radius: 16px; padding: 22px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: center; gap: 8px; text-align: center">
+<span aria-hidden="true" style="width: 56px; height: 56px; border-radius: 50%; background: #7CC4F2; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; box-shadow: 0 6px 14px rgba(124,196,242,0.35)">E</span>
+<span style="font-size: 11px; font-weight: 800; letter-spacing: 0.1em; color: #1F7AB8">Extending Grace</span><span style="font-size: 15px; font-weight: 700">은혜를 흘려보냄</span>
+<span style="font-size: 12px; color: #5A6788; line-height: 1.5">받은 은혜를 이웃과 지역, 중부권에 나누는 교회</span>
+<span style="font-size: 11px; font-weight: 700; color: #1F7AB8; margin-top: 2px">마 10:8</span>
 </div>
 
 </div>
