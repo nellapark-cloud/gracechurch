@@ -6,7 +6,8 @@
 //  1) sitemap.xml  — 공개 자료 페이지 전체 주소 목록 (검색 사이트 제출용)
 //  2) rss.xml      — 최근 올린 자료 50개 (네이버 서치어드바이저 제출용)
 //  3) robots.txt   — 검색 로봇 안내문 + 담임목사자료실 수집 금지
-//  4) 첫 화면(index.html) — 자료 목록을 HTML에 미리 써 넣기
+//  4) 자료실(archive.html) — 자료 목록을 HTML에 미리 써 넣기
+//     첫 화면(index.html)은 교회 홈페이지 — 검색용 대표 주소·소유 확인 코드만 넣음
 //     (지금은 화면이 열린 뒤에 목록을 불러오기 때문에, 검색 로봇 눈에는 "불러오는 중..."만 보였어요)
 //  5) 각 자료 페이지 — 대표 주소(canonical), 요약(description), 제목에 "은혜교회" 붙이기
 //  6) 담임목사자료실(content/admin-*) 페이지 — 검색 결과에 절대 나오지 않도록 noindex
@@ -133,7 +134,9 @@ for (const name of fs.readdirSync('content')) {
 }
 
 // ---------- 첫 화면: 목록 미리 써 넣기 + 검색용 정보 ----------
-let index = fs.readFileSync('index.html', 'utf8');
+// 자료실은 2026-10부터 첫 화면이 아니라 archive.html 하위 페이지입니다.
+const ARCHIVE = 'archive.html';
+let index = fs.readFileSync(ARCHIVE, 'utf8');
 let prerendered = 0;
 for (const [key, items] of Object.entries(manifest)) {
   if (isPrivateKey(key) || !items || !items.length) continue;
@@ -178,7 +181,7 @@ const ld = {
       '@type': 'WebSite',
       '@id': SITE + '/#website',
       name: SITE_NAME,
-      url: SITE + '/',
+      url: SITE + '/' + ARCHIVE,
       inLanguage: 'ko',
       publisher: { '@id': SITE + '/#church' },
     },
@@ -191,24 +194,42 @@ if (config.naverVerification) verify.push('<meta name="naver-site-verification" 
 if (config.googleVerification) verify.push('<meta name="google-site-verification" content="' + esc(config.googleVerification) + '">');
 
 const homeTags = [
-  '<link rel="canonical" href="' + SITE + '/">',
+  '<link rel="canonical" href="' + SITE + '/' + ARCHIVE + '">',
   '<meta name="keywords" content="' + esc(keywords) + '">',
   '<meta name="robots" content="index, follow">',
   '<meta property="og:site_name" content="' + esc(SITE_NAME) + '">',
   '<meta property="og:locale" content="ko_KR">',
   '<link rel="alternate" type="application/rss+xml" title="' + esc(SITE_NAME) + ' 새 자료" href="' + SITE + '/rss.xml">',
   '<link rel="sitemap" type="application/xml" href="' + SITE + '/sitemap.xml">',
-  ...verify,
   '<script type="application/ld+json">' + JSON.stringify(ld) + '</script>',
 ];
 index = index.replace(/<meta name="description" content="[^"]*">/, '<meta name="description" content="' + esc(homeDesc) + '">');
 if (config.homeTitle) index = index.replace(/<title>[^<]*<\/title>/, '<title>' + esc(config.homeTitle) + '</title>');
 index = injectHead(index, '\n<!-- 검색 최적화 (배포 시 자동 추가) -->\n' + homeTags.join('\n') + '\n');
-fs.writeFileSync('index.html', index);
+fs.writeFileSync(ARCHIVE, index);
+
+// ---------- 첫 화면(교회 홈페이지): 검색 사이트 소유 확인 코드 + 사이트 정보 ----------
+// 교회 정보(Church)는 index.html 안에 직접 들어 있어서, 여기서는 WebSite 정보만 덧붙임
+let home = fs.readFileSync('index.html', 'utf8');
+const siteLd = { '@context': 'https://schema.org', '@type': 'WebSite', '@id': SITE + '/#home', name: CHURCH, url: SITE + '/', inLanguage: 'ko', publisher: { '@id': SITE + '/#church' } };
+const homePageTags = [
+  '<link rel="canonical" href="' + SITE + '/">',
+  '<meta name="robots" content="index, follow">',
+  '<meta property="og:site_name" content="' + esc(CHURCH) + '">',
+  '<meta property="og:locale" content="ko_KR">',
+  '<link rel="alternate" type="application/rss+xml" title="' + esc(SITE_NAME) + ' 새 자료" href="' + SITE + '/rss.xml">',
+  ...verify,
+  '<script type="application/ld+json">' + JSON.stringify(siteLd) + '</script>',
+];
+home = injectHead(home, '\n<!-- 검색 최적화 (배포 시 자동 추가) -->\n' + homePageTags.join('\n') + '\n');
+fs.writeFileSync('index.html', home);
 
 // ---------- sitemap.xml ----------
-const homeDate = publicDocs.reduce((a, d) => (d.date > a ? d.date : a), lastmod['index.html'] || '');
-const urls = [{ loc: SITE + '/', date: homeDate || today, pr: '1.0', freq: 'daily' }]
+const archiveDate = publicDocs.reduce((a, d) => (d.date > a ? d.date : a), lastmod[ARCHIVE] || '');
+const urls = [
+  { loc: SITE + '/', date: lastmod['index.html'] || today, pr: '1.0', freq: 'weekly' },
+  { loc: SITE + '/' + ARCHIVE, date: archiveDate || today, pr: '0.9', freq: 'daily' },
+]
   .concat(publicDocs.map((d) => ({ loc: urlOf(d.file), date: d.date, pr: '0.7', freq: 'monthly' })));
 fs.writeFileSync('sitemap.xml',
   '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
@@ -224,7 +245,7 @@ const rssItems = recent.map((d) => {
   return '  <item>\n    <title>' + esc(d.title) + '</title>\n    <link>' + esc(urlOf(d.file)) + '</link>\n    <guid isPermaLink="true">' + esc(urlOf(d.file)) + '</guid>\n    <description>' + esc(desc) + '</description>\n    <pubDate>' + rfc(d.date) + '</pubDate>\n  </item>';
 }).join('\n');
 fs.writeFileSync('rss.xml',
-  '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n<channel>\n  <title>' + esc(SITE_NAME) + '</title>\n  <link>' + SITE + '/</link>\n  <description>' + esc(homeDesc) + '</description>\n  <language>ko</language>\n  <lastBuildDate>' + rfc(today) + '</lastBuildDate>\n' + rssItems + '\n</channel>\n</rss>\n');
+  '<?xml version="1.0" encoding="UTF-8"?>\n<rss version="2.0">\n<channel>\n  <title>' + esc(SITE_NAME) + '</title>\n  <link>' + SITE + '/' + ARCHIVE + '</link>\n  <description>' + esc(homeDesc) + '</description>\n  <language>ko</language>\n  <lastBuildDate>' + rfc(today) + '</lastBuildDate>\n' + rssItems + '\n</channel>\n</rss>\n');
 
 // ---------- robots.txt ----------
 const robots = [
@@ -241,4 +262,4 @@ const robots = [
 if (config.daumRobots) robots.push('', config.daumRobots.trim());
 fs.writeFileSync('robots.txt', robots.join('\n') + '\n');
 
-console.log('검색 최적화 완료 — 공개 자료 ' + touched + '쪽, 첫 화면 목록 ' + prerendered + '칸 미리 채움, 비공개 noindex ' + hidden + '쪽, sitemap ' + urls.length + '개 주소');
+console.log('검색 최적화 완료 — 공개 자료 ' + touched + '쪽, 자료실 목록 ' + prerendered + '칸 미리 채움, 비공개 noindex ' + hidden + '쪽, sitemap ' + urls.length + '개 주소');
