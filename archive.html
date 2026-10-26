@@ -858,6 +858,54 @@ footer{background:#1D3A5C !important;color:#C9D9EA !important;padding:44px max(2
 footer .fname{color:#FFFFFF !important;font-weight:800 !important;font-size:19px !important}
 footer p{color:#C9D9EA !important}
 footer .fgold{color:#C9D9EA !important}
+
+/* 칸 목록: 앞의 3칸이 한 줄, 성경공부부터 다음 줄 */
+.hero__index{grid-template-columns:repeat(30,minmax(0,1fr)) !important}
+.hero__index a{grid-column:span 6 !important}
+.hero__index a.featured{grid-column:span 10 !important}
+@media (max-width:1000px){.hero__index{grid-template-columns:repeat(6,minmax(0,1fr)) !important}.hero__index a{grid-column:span 2 !important}.hero__index a.featured{grid-column:span 6 !important}}
+@media (max-width:600px){.hero__index a,.hero__index a.featured{grid-column:1 / -1 !important}}
+/* 아래 자료 칸은 위 버튼을 누른 칸 하나만 보여 줌 */
+.room{display:none !important}
+.room.is-open{display:block !important}
+.hero{padding-bottom:72px !important}
+.room-back{display:inline-flex;align-items:center;gap:6px;min-height:40px;padding:0 14px;margin:0 0 18px;border-radius:999px;border:1px solid #D3E8F6;background:#FFFFFF;color:#1F7AB8;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit}
+.room-back:hover{border-color:#7CC4F2}
+
+/* 하위 페이지 모드 */
+body.room-mode .hero{display:none !important}
+body.room-mode .room.is-open{padding-top:56px !important;min-height:70vh}
+body.room-mode #btn-toc{display:none !important}
+.room-back{text-decoration:none}
+
+/* ===== 톤 단계: 홈(연한 파스텔) < 자료실(한 톤 진하게) < 하위 페이지(더 진하게) ===== */
+body{background:#E2EFFA !important}
+.hero{background:radial-gradient(50% 70% at 88% 0%,#B9DAF3 0%,rgba(185,218,243,0) 70%),linear-gradient(180deg,#D6E9F8 0%,#E2EFFA 100%) !important}
+.hero__eyebrow{color:#1E6FAE !important;-webkit-text-fill-color:#1E6FAE !important}
+.hero h1 .accent{color:#1E6FAE !important}
+.hero__index a,.hero__index a.featured,.hero__index a.featured-alt,.hero__index a.featured-teal{border-color:#CFE2F2 !important}
+.hero__index a:hover{border-color:#4FA3DD !important}
+.hero__index .num,.hero__index .badge{background:#CFE5F7 !important;color:#1E6FAE !important}
+.hero__index .cnt::after{color:#4FA3DD !important}
+.hero__youtube{border-color:#C7DFF2 !important;color:#1E6FAE !important}
+.float-nav a{color:#1E6FAE !important;border-color:#C7DFF2 !important}
+footer{background:#17324F !important}
+/* 하위 페이지: 더 진하게 */
+body.room-mode{background:#CFE3F4 !important}
+body.room-mode .room__head{margin:0 0 20px !important;padding:28px 28px 26px;border-radius:20px;
+  background:linear-gradient(135deg,#3A8BC9 0%,#2569A6 100%);box-shadow:0 12px 28px rgba(30,90,150,.22)}
+body.room-mode .room__num,body.room-mode .badge-lg,body.room-mode .badge-lg-alt,body.room-mode .badge-lg-teal{color:#CFE6F8 !important}
+body.room-mode .room .room__title,body.room-mode .room--feature .room__title,body.room-mode .room--feature-alt .room__title,body.room-mode .room--feature-teal .room__title{color:#FFFFFF !important}
+body.room-mode .room .room__desc,body.room-mode .room--feature .room__desc,body.room-mode .room--feature-alt .room__desc,body.room-mode .room--feature-teal .room__desc{color:#DCEBF8 !important}
+body.room-mode details.doc-group{border-color:#C2DAEE !important}
+body.room-mode details.doc-group summary::after{color:#2569A6 !important}
+body.room-mode .doclist .tag{background:#CFE5F7 !important;color:#1E6FAE !important}
+body.room-mode .doclist a{border-color:#C9DDEE}
+body.room-mode .doclist a:hover{border-color:#3A8BC9 !important}
+body.room-mode .doclist li.doclist__own .title{color:#1E6FAE !important}
+body.room-mode .room-back{border-color:#B8D5EC;color:#1E6FAE}
+body.room-mode footer{background:#122A44 !important}
+.hero__index a.is-current{border-color:#7CC4F2 !important;background:#E6F4FD !important}
 </style>
 </head>
 <body>
@@ -967,18 +1015,17 @@ footer .fgold{color:#C9D9EA !important}
       </div>
     </div>
     <p class="hero__declaration">책별 성경공부와 강해, 묵상, 새가족·목장 자료까지. 누구나 로그인 없이 읽고 내려받을 수 있어요.</p>
-    <a href="https://www.youtube.com/@sjgrace" target="_blank" rel="noopener" class="hero__youtube">
+    <a href="https://www.youtube.com/@sjgrace/shorts" target="_blank" rel="noopener" class="hero__youtube">
       <span class="hero__youtube-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12Z"/></svg>
       </span>
-      <span>유튜브 영상 보기</span>
+      <span>말씀해설 쇼츠영상</span>
     </a>
 
     <div class="hero__index" id="toc">
       <a href="#room-0b" class="featured featured-alt"><span class="badge badge-alt">인생 질문</span><span class="lbl">행복을 묻는 그대에게</span><span class="cnt">보기</span></a>
       <a href="#room-0" class="featured"><span class="badge">먼저 읽기</span><span class="lbl">은혜교회의 신앙철학</span><span class="cnt">보기</span></a>
       <a href="#room-0c" class="featured featured-teal"><span class="badge badge-teal">신앙 Q&amp;A</span><span class="lbl">기독교인의 흔한 고민</span><span class="cnt">보기</span></a>
-      <a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener" class="featured featured-gw"><span class="badge badge-gw">찬양팀</span><span class="lbl">그레이스워십 <span class="lbl-script" aria-hidden="true">Grace Worship</span></span><span class="cnt">바로가기 ↗</span></a>
       <a href="#room-1"><span class="num">I</span><span class="lbl">성경공부</span><span class="cnt">보기</span></a>
       <a href="#room-2"><span class="num">II</span><span class="lbl">새가족 자료</span><span class="cnt">보기</span></a>
       <a href="#room-3"><span class="num">III</span><span class="lbl">목장 자료</span><span class="cnt">보기</span></a>
@@ -1275,6 +1322,32 @@ footer .fgold{color:#C9D9EA !important}
   <p>이 자료실의 모든 문헌은 은혜교회 성도와 이웃을 위해 열려 있습니다.</p>
 </footer>
 
+<script>
+// 자료실 하위 페이지: archive.html?room=room-1 처럼 열면 그 칸 하나만 보여 줍니다.
+(function(){
+  var rooms = Array.prototype.slice.call(document.querySelectorAll('.room'));
+  var params = new URLSearchParams(location.search);
+  var current = params.get('room');
+  if (!current && /^#room-/.test(location.hash)) current = location.hash.slice(1);  // 예전 주소(#room-1)도 지원
+  // 위 칸 버튼은 각 하위 페이지로 이동
+  document.querySelectorAll('.hero__index a[href^="#room-"]').forEach(function(a){
+    a.setAttribute('href', 'archive.html?room=' + a.getAttribute('href').slice(1));
+  });
+  window.__openRoom = function(id){
+    rooms.forEach(function(r){ r.classList.toggle('is-open', r.id === id); });
+  };
+  if (current && document.getElementById(current)) {
+    document.body.classList.add('room-mode');
+    window.__openRoom(current);
+    var room = document.getElementById(current);
+    var title = room.querySelector('.room__title');
+    if (title) document.title = title.textContent.trim() + ' | 은혜교회 자료실';
+    var back = document.createElement('a');
+    back.href = 'archive.html'; back.className = 'room-back'; back.textContent = '← 전체 자료 목록';
+    room.insertBefore(back, room.firstChild);
+  }
+})();
+</script>
 <nav class="float-nav" aria-label="빠른 이동">
   <a href="#toc" id="btn-toc" title="목차 보기"><span class="icon">≡</span><span class="label">목차</span></a>
   <a href="#top" id="btn-top" title="처음으로"><span class="icon">↑</span><span class="label">처음</span></a>
@@ -1301,6 +1374,7 @@ footer .fgold{color:#C9D9EA !important}
       const target = document.getElementById(id);
       if (!target) return;
       e.preventDefault();
+      if (window.__openRoom) window.__openRoom(id);
       target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
@@ -1390,6 +1464,8 @@ footer .fgold{color:#C9D9EA !important}
   function placeAt(state) {
     const link = findLink(state.href);
     if (link) {
+      const room = link.closest('.room');
+      if (room && window.__openRoom) window.__openRoom(room.id);
       // 링크를 감싼 접힌 목록이 있으면 모두 펼침
       let d = link.closest('details');
       while (d) { d.open = true; d = d.parentElement && d.parentElement.closest('details'); }
