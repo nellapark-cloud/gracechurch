@@ -21,12 +21,13 @@
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 *{box-sizing:border-box}
 body{margin:0;background:#F3F9FE;word-break:keep-all;overflow-wrap:break-word}
-.grace-inner{transition:transform .6s ease;transform-style:preserve-3d}
+.grace-inner{transition:transform .7s cubic-bezier(.2,.8,.25,1);transform-style:preserve-3d}
 .grace-card.is-flipped .grace-inner{transform:rotateY(180deg)}
+@media (hover:hover) and (pointer:fine){.grace-card:hover .grace-inner{transform:translateY(-4px) rotateY(-16deg)}.grace-card.is-flipped:hover .grace-inner{transform:translateY(-4px) rotateY(164deg)}.grace-card:hover .grace-face{box-shadow:0 14px 28px rgba(30,80,120,0.14) !important}}
 .grace-face{-webkit-backface-visibility:hidden;backface-visibility:hidden}
 .grace-back{transform:rotateY(180deg)}
 .grace-card:focus-visible{outline:2px solid #1F7AB8;outline-offset:3px;border-radius:16px}
-@media (prefers-reduced-motion: reduce){.grace-inner{transition:none}}
+@media (prefers-reduced-motion: reduce){.grace-inner{transition:none}.grace-card:hover .grace-inner{transform:none}.grace-card.is-flipped:hover .grace-inner{transform:rotateY(180deg)}}
 a{color:inherit;text-decoration:none}
 .burger{display:none}
 .mnav{display:none}
