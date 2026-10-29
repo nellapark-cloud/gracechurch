@@ -49,6 +49,22 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .if-submitted{display:none}
 #serve.sent .if-submitted{display:contents}
 #serve.sent .if-notSubmitted{display:none}
+.story-line{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative}
+.story-line::before{content:"";position:absolute;left:36px;right:36px;top:36px;height:2px;background:linear-gradient(90deg,#7CC4F2 0%,#7CC4F2 70%,#D3E8F6 70%)}
+.story-step{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 18px 22px;border-radius:16px;background:#FFFFFF;border:1px solid #E3EDF6}
+.story-dot{width:32px;height:32px;border-radius:50%;background:#7CC4F2;color:#FFFFFF;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;box-shadow:0 0 0 5px #FFFFFF}
+.story-season{font-size:11px;font-weight:800;letter-spacing:.14em;color:#1F7AB8}
+.story-title{font-size:17px;font-weight:800;color:#0F1B3D}
+.story-place{font-size:12px;font-weight:700;color:#3A9AD9}
+.story-desc{font-size:13px;line-height:1.6;color:#5A6788;word-break:keep-all}
+.story-next{background:#F3F9FE;border:1.5px dashed #9ED3F5}
+.story-next .story-dot{background:#FFFFFF;color:#3A9AD9;border:1.5px dashed #7CC4F2;box-shadow:0 0 0 5px #F3F9FE}
+@media (max-width:900px){
+ .story-line{grid-template-columns:1fr;gap:10px}
+ .story-line::before{left:35px;right:auto;top:36px;bottom:36px;width:2px;height:auto;background:linear-gradient(180deg,#7CC4F2 0%,#7CC4F2 75%,#D3E8F6 75%)}
+ .story-step{padding:18px 18px 18px 64px}
+ .story-dot{position:absolute;left:19px;top:18px;margin:0}
+}
 .serve-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
 @media (max-width:900px){.serve-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .serve-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:118px;padding:18px 16px;border-radius:16px;border:1px solid #E3EDF6;background:#FFFFFF;color:#0F1B3D;text-align:left;cursor:pointer;font-family:inherit;transition:border-color .2s ease,background .2s ease,transform .2s ease}
@@ -285,6 +301,47 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </button>
 
 </div>
+</div>
+</section>
+
+<!-- 교회 이야기 -->
+<section id="story" style="padding: 40px 24px 24px">
+<div style="max-width: 1200px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">OUR STORY</span>
+<h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em">은혜로 이어진 네 번의 시즌</h2>
+<span style="font-size: 14px; color: #3B4868">자리를 내어 준 손길들을 따라, 하나님이 한 걸음씩 인도하셨어요.</span>
+</div>
+<ol class="story-line">
+<li class="story-step">
+<span class="story-dot" aria-hidden="true">1</span>
+<span class="story-season">SEASON 1</span>
+<span class="story-title">함께 나눈 오후</span>
+<span class="story-place">세종시 장군면</span>
+<span class="story-desc">세종베다니교회의 배려로 오후 시간 예배당을 함께 쓰며 첫 예배를 드렸어요.</span>
+</li>
+<li class="story-step">
+<span class="story-dot" aria-hidden="true">2</span>
+<span class="story-season">SEASON 2</span>
+<span class="story-title">가정에서 드린 예배</span>
+<span class="story-place">한 성도 가정</span>
+<span class="story-desc">개척 6개월, 네다섯 가정이 함께하게 되었고 한 성도 부부의 헌신으로 그 집에서 예배가 이어졌어요.</span>
+</li>
+<li class="story-step">
+<span class="story-dot" aria-hidden="true">3</span>
+<span class="story-season">SEASON 3</span>
+<span class="story-title">지금 이 자리</span>
+<span class="story-place">대전 유성구 안산동</span>
+<span class="story-desc">다시 6개월 뒤, 첫 예배를 드렸던 세종베다니교회 공간의 주인이신 장로님 부부의 헌신으로 지금의 자리에서 예배드리고 있어요.</span>
+</li>
+<li class="story-step story-next">
+<span class="story-dot" aria-hidden="true">4</span>
+<span class="story-season">SEASON 4 · COMING</span>
+<span class="story-title">다시, 세종으로</span>
+<span class="story-place">세종</span>
+<span class="story-desc">세종에서 시작될 시즌 4의 인도하심을 기다리며 함께 기도하고 있어요.</span>
+</li>
+</ol>
 </div>
 </section>
 
