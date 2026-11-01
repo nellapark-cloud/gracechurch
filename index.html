@@ -49,6 +49,9 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .if-submitted{display:none}
 #serve.sent .if-submitted{display:contents}
 #serve.sent .if-notSubmitted{display:none}
+.story-confess{margin:18px 0 0;padding:22px 24px;border-radius:16px;background:linear-gradient(135deg,#E3F2FC 0%,#EEF7FD 100%);text-align:center;font-size:16px;line-height:1.75;color:#1F2E4D;word-break:keep-all}
+.story-confess b{color:#1F7AB8;font-weight:900}
+.story-confess .sc-mark{display:block;font-size:34px;line-height:.8;color:#7CC4F2;font-weight:900}
 .story-line{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative}
 .story-line::before{content:"";position:absolute;left:36px;right:36px;top:36px;height:2px;background:linear-gradient(90deg,#7CC4F2 0%,#7CC4F2 70%,#D3E8F6 70%)}
 .story-step{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 18px 22px;border-radius:16px;background:#FFFFFF;border:1px solid #E3EDF6}
@@ -103,7 +106,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </button>
 <nav class="gnav" aria-label="주 메뉴" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px 26px; font-size: 14px; font-weight: 500; color: #3B4868">
 <a href="#top" style="padding: 12px 0; color: #1F7AB8; font-weight: 700; border-bottom: 2px solid #7CC4F2">홈</a>
-<a href="#about" style="padding: 12px 0">교회 소개</a>
+<a href="#story" style="padding: 12px 0">교회 소개</a>
 <a href="#ministry" style="padding: 12px 0">예배 · 사역</a>
 <a href="#mokjang" style="padding: 12px 0">목장</a>
 <a href="#serve" style="padding: 12px 0">섬김</a>
@@ -117,7 +120,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <div class="if-menuOpen">
 <nav class="mnav" aria-label="모바일 메뉴" style="flex-direction: column; padding: 0 20px 18px; border-top: 1px solid #DDEDF8">
 
-<a href="#about" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">교회 소개<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<a href="#story" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">교회 소개<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
 <a href="#worship" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">예배 안내<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
@@ -207,6 +210,48 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 
 <!-- 소중히 여기는 것 -->
+<!-- 교회 이야기 -->
+<section id="story" style="padding: 40px 24px 8px">
+<div style="max-width: 1200px; margin: 0 auto">
+<div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px">
+<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">교회 소개 · OUR STORY</span>
+<h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em">은혜로 이어진 네 번의 시즌</h2>
+<span style="font-size: 14px; color: #3B4868">지금까지 우리가 원하는 대로 된 것은 하나도 없었어요. 하나님이 먼저 예비하시고, 한 걸음씩 인도하셨어요.</span>
+</div>
+<ol class="story-line">
+<li class="story-step">
+<span class="story-dot" aria-hidden="true">1</span>
+<span class="story-season">SEASON 1</span>
+<span class="story-title">함께 나눈 오후</span>
+<span class="story-place">세종 장군면</span>
+<span class="story-desc">세종베다니교회가 예배하는 공간을 오후에 배려받아, 은혜교회의 첫 예배가 시작되었어요.</span>
+</li>
+<li class="story-step">
+<span class="story-dot" aria-hidden="true">2</span>
+<span class="story-season">SEASON 2</span>
+<span class="story-title">가정에서 드린 예배</span>
+<span class="story-place">공주시 · 성도 가정</span>
+<span class="story-desc">공주시에 사는 한 성도 가정이 헌신하여, 그 가정집에서 예배를 드렸어요.</span>
+</li>
+<li class="story-step">
+<span class="story-dot" aria-hidden="true">3</span>
+<span class="story-season">SEASON 3</span>
+<span class="story-title">지금 이 자리</span>
+<span class="story-place">대전 유성구 · 주택</span>
+<span class="story-desc">유성구의 한 주택에서, 주인이신 장로님 부부의 배려로 공간을 사용하며 예배하고 있어요.</span>
+</li>
+<li class="story-step story-next">
+<span class="story-dot" aria-hidden="true">4</span>
+<span class="story-season">SEASON 4 · COMING</span>
+<span class="story-title">다시, 세종으로</span>
+<span class="story-place">세종 · 새로운 터전</span>
+<span class="story-desc">이제 들어갈 세종의 새로운 터전, 하나님의 인도하심을 기다리며 함께 기도하고 있어요.</span>
+</li>
+</ol>
+<p class="story-confess"><span class="sc-mark" aria-hidden="true">“</span>예비하심과 인도하심, 그것이 우리 교회가 걸어온 길이었습니다.<br>그래서 우리는 그 길을 <b>은혜</b>라고 고백합니다.</p>
+</div>
+</section>
+
 <section id="about" style="padding: 32px 24px">
 <div style="max-width: 1200px; margin: 0 auto; border-radius: 20px; background: linear-gradient(180deg, #E3F2FC 0%, #EEF7FD 100%); padding: 28px; display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
 <div style="flex: 1 1 100%; min-width: 0; display: flex; flex-direction: column; gap: 8px">
@@ -301,47 +346,6 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </button>
 
 </div>
-</div>
-</section>
-
-<!-- 교회 이야기 -->
-<section id="story" style="padding: 40px 24px 24px">
-<div style="max-width: 1200px; margin: 0 auto">
-<div style="display: flex; flex-direction: column; gap: 8px; margin-bottom: 22px">
-<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">OUR STORY</span>
-<h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em">은혜로 이어진 네 번의 시즌</h2>
-<span style="font-size: 14px; color: #3B4868">자리를 내어 준 손길들을 따라, 하나님이 한 걸음씩 인도하셨어요.</span>
-</div>
-<ol class="story-line">
-<li class="story-step">
-<span class="story-dot" aria-hidden="true">1</span>
-<span class="story-season">SEASON 1</span>
-<span class="story-title">함께 나눈 오후</span>
-<span class="story-place">세종 장군면</span>
-<span class="story-desc">세종베다니교회가 예배하는 공간을 오후에 배려받아, 은혜교회의 첫 예배가 시작되었어요.</span>
-</li>
-<li class="story-step">
-<span class="story-dot" aria-hidden="true">2</span>
-<span class="story-season">SEASON 2</span>
-<span class="story-title">가정에서 드린 예배</span>
-<span class="story-place">공주시 · 성도 가정</span>
-<span class="story-desc">공주시에 사는 한 성도 가정이 헌신하여, 그 가정집에서 예배를 드렸어요.</span>
-</li>
-<li class="story-step">
-<span class="story-dot" aria-hidden="true">3</span>
-<span class="story-season">SEASON 3</span>
-<span class="story-title">지금 이 자리</span>
-<span class="story-place">대전 유성구 · 주택</span>
-<span class="story-desc">유성구의 한 주택에서, 주인이신 장로님 부부의 배려로 공간을 사용하며 예배하고 있어요.</span>
-</li>
-<li class="story-step story-next">
-<span class="story-dot" aria-hidden="true">4</span>
-<span class="story-season">SEASON 4 · COMING</span>
-<span class="story-title">다시, 세종으로</span>
-<span class="story-place">세종 · 새로운 터전</span>
-<span class="story-desc">이제 들어갈 세종의 새로운 터전, 하나님의 인도하심을 기다리며 함께 기도하고 있어요.</span>
-</li>
-</ol>
 </div>
 </section>
 
@@ -642,7 +646,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px">Church · 교회 안</span>
-<a href="#about" style="padding: 3px 0">교회 소개</a>
+<a href="#story" style="padding: 3px 0">교회 소개</a>
 <a href="#worship" style="padding: 3px 0">예배 안내</a>
 <a href="#mokjang" style="padding: 3px 0">목장</a>
 <a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener" style="padding: 3px 0">그레이스워십 (예배팀)</a>
