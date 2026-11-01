@@ -22,12 +22,12 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 *{box-sizing:border-box}
 body{margin:0;background:#F3F9FE;word-break:keep-all;overflow-wrap:break-word}
 /* GRACE 카드 머리: 사선 색면 + 세리프 이탤릭 글자 */
-.grace-front::before{content:"";position:absolute;left:0;right:0;top:0;height:104px;background:linear-gradient(120deg,#7CC4F2 0%,#3A9AD9 100%);clip-path:polygon(0 0,100% 0,100% 58%,0 100%)}
-.grace-front::after{content:"";position:absolute;left:0;right:0;top:0;height:104px;background:linear-gradient(120deg,rgba(255,255,255,.18),rgba(255,255,255,0) 60%);clip-path:polygon(0 0,100% 0,100% 30%,0 64%)}
+.grace-front::before{content:"";position:absolute;left:0;right:0;top:0;height:88px;background:linear-gradient(120deg,#7CC4F2 0%,#3A9AD9 100%)}
+.grace-front::after{content:none}
 .grace-letter{position:absolute;top:12px;left:18px;z-index:1;font-family:Montserrat,Pretendard,sans-serif;font-style:normal;font-weight:800;font-size:60px;line-height:1;letter-spacing:-.04em;color:#FFFFFF;text-shadow:0 6px 16px rgba(15,60,110,.25)}
 .grace-front .grace-word{font-family:Montserrat,Pretendard,sans-serif;font-weight:800;font-size:17px !important;letter-spacing:.06em !important;text-transform:uppercase}
 .grace-front>span:last-child{margin-top:auto}
-@media (max-width:600px){.grace-front{padding-top:92px !important}.grace-front::before,.grace-front::after{height:86px}.grace-letter{font-size:54px}}
+@media (max-width:600px){.grace-front{padding-top:92px !important}.grace-front::before{height:76px}.grace-letter{font-size:54px}}
 .grace-inner{transition:transform .6s ease;transform-style:preserve-3d}
 .grace-card.is-flipped .grace-inner{transform:rotateY(180deg)}
 .grace-face{-webkit-backface-visibility:hidden;backface-visibility:hidden}
@@ -322,7 +322,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="G God — 하나님 중심, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 112px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">G</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">God</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">하나님 중심</span>
@@ -338,7 +338,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="R Root — 말씀의 뿌리, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 112px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">R</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">Root</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">말씀의 뿌리</span>
@@ -354,7 +354,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="A Abide — 함께 머묾, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 112px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">A</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">Abide</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">함께 머묾</span>
@@ -370,7 +370,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="C Call — 부르심과 섬김, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 112px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">C</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">Call</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">부르심과 섬김</span>
@@ -386,7 +386,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="E Embrace — 이웃을 품음, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 112px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">E</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">Embrace</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">이웃을 품음</span>
