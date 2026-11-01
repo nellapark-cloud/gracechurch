@@ -907,8 +907,136 @@ body.room-mode .room-back{border-color:#B8D5EC;color:#1E6FAE}
 body.room-mode footer{background:#122A44 !important}
 .hero__index a.is-current{border-color:#7CC4F2 !important;background:#E6F4FD !important}
 </style>
+
+<style id="library-theme">
+/* ===== 자료실 = 도서관 톤 (홈페이지 파스텔과 구별) — 짙은 남색 + 종이색, 제목은 명조 ===== */
+:root{--ink:#0E1B2E;--ink2:#17283F;--paper:#F4F1EA;--paper2:#ECE7DC;--card:#FFFFFF;--hair:#E3DDD0;--txt:#1A2233;--mut:#6B6559;--acc:#7CC4F2;--acc-ink:#2C7DBE}
+html{scroll-padding-top:84px}
+body,body.room-mode{background:var(--paper) !important;color:var(--txt) !important}
+#site-header{display:none !important}
+/* 상단 바 */
+.lib-bar{position:sticky;top:0;z-index:60;background:var(--ink);color:#E9EEF5;border-bottom:1px solid rgba(255,255,255,.06)}
+.lib-bar__in{max-width:1200px;margin:0 auto;padding:0 24px;height:64px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.lib-brand{display:flex;align-items:center;gap:10px;color:#FFFFFF;text-decoration:none}
+.lib-brand__mark{width:34px;height:34px;border-radius:9px;background:var(--acc);color:var(--ink);display:flex;align-items:center;justify-content:center}
+.lib-brand__txt{display:flex;flex-direction:column;line-height:1.15}
+.lib-brand__txt b{font-family:'Noto Serif KR',serif;font-size:17px;font-weight:700;letter-spacing:-.01em}
+.lib-brand__txt small{font-size:10px;font-weight:700;letter-spacing:.2em;color:#8FA3BC}
+.lib-bar__nav{display:flex;align-items:center;gap:8px}
+.lib-bar__find,.lib-bar__home{display:inline-flex;align-items:center;gap:6px;min-height:38px;padding:0 14px;border-radius:999px;font-size:13px;font-weight:700;font-family:inherit;text-decoration:none;cursor:pointer}
+.lib-bar__find{background:rgba(255,255,255,.08);color:#E9EEF5;border:1px solid rgba(255,255,255,.14)}
+.lib-bar__find:hover{background:rgba(255,255,255,.14)}
+.lib-bar__home{background:#FFFFFF;color:var(--ink);border:0}
+.lib-bar__home:hover{background:#E6F4FD}
+@media (max-width:520px){.lib-bar__find span{display:none}.lib-brand__txt small{display:none}}
+/* 첫 부분 */
+.hero{margin-top:0 !important;padding:0 0 40px !important;background:var(--paper) !important}
+.lib-top{background:radial-gradient(60% 120% at 90% 0%,#21406A 0%,rgba(33,64,106,0) 60%),var(--ink);color:#FFFFFF;margin:0 0 36px}
+.lib-top__in{max-width:1200px;margin:0 auto;padding:56px 24px 48px}
+.hero__eyebrow{background:rgba(124,196,242,.14) !important;color:var(--acc) !important;-webkit-text-fill-color:var(--acc) !important;margin:0 0 16px !important}
+.hero h1{color:#FFFFFF !important;font-family:'Noto Serif KR',serif !important;font-weight:700 !important;font-size:clamp(30px,4vw,46px) !important;letter-spacing:-.02em !important;line-height:1.25 !important}
+.hero h1 .accent{color:var(--acc) !important}
+.hero__declaration{color:#B8C6D8 !important;max-width:560px}
+.hero__youtube{background:transparent !important;border:1px solid rgba(255,255,255,.2) !important;color:#E9EEF5 !important;margin:16px 0 0 !important;min-height:40px !important;font-size:13px !important}
+.hero__youtube:hover{background:rgba(255,255,255,.08) !important}
+/* 검색 */
+.lib-search{position:relative;max-width:720px;margin-top:6px}
+.lib-search__box{display:flex;align-items:center;gap:10px;height:58px;padding:0 16px;border-radius:14px;background:#FFFFFF;box-shadow:0 14px 34px rgba(0,0,0,.25);cursor:text}
+.lib-search__ic{flex:none;color:var(--acc-ink)}
+#lib-q{flex:1;min-width:0;height:100%;border:0;outline:0;background:transparent;font-size:16px;font-family:inherit;color:var(--txt)}
+#lib-q::placeholder{color:#9A9488}
+.lib-search__kbd{flex:none;font:700 12px/1 Pretendard,sans-serif;color:#9A9488;border:1px solid var(--hair);border-radius:6px;padding:4px 7px}
+@media (max-width:600px){.lib-search__kbd{display:none}.lib-search__box{height:52px}}
+.lib-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.lib-chips button{min-height:34px;padding:0 14px;border-radius:999px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.06);color:#DCE6F2;font-size:13px;font-weight:600;font-family:inherit;cursor:pointer}
+.lib-chips button:hover,.lib-chips button.on{background:var(--acc);border-color:var(--acc);color:var(--ink)}
+.lib-results{margin-top:14px;background:#FFFFFF;border-radius:14px;color:var(--txt);box-shadow:0 14px 34px rgba(0,0,0,.25);overflow:hidden}
+.lib-results__head{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;border-bottom:1px solid var(--hair);font-size:13px;color:var(--mut)}
+.lib-results__head b{color:var(--txt)}
+.lib-results__head button{border:0;background:none;color:var(--acc-ink);font-weight:700;font-size:13px;cursor:pointer;font-family:inherit}
+.lib-results ol{list-style:none;margin:0;padding:6px;max-height:420px;overflow:auto}
+.lib-results a{display:flex;flex-direction:column;gap:2px;padding:10px 12px;border-radius:10px;color:inherit;text-decoration:none}
+.lib-results a:hover,.lib-results a:focus-visible{background:#F4F1EA}
+.lib-results .t{font-size:15px;font-weight:600}
+.lib-results .t mark{background:#FFE9A8;color:inherit;border-radius:3px;padding:0 1px}
+.lib-results .w{font-size:12px;color:var(--mut)}
+.lib-results__empty{padding:22px 16px;font-size:14px;color:var(--mut)}
+.lib-stats{margin:18px 0 0 !important;min-height:1em;font-size:13px;color:#A9B8CB !important}
+.lib-stats b{color:#FFFFFF}
+/* 소제목 */
+.lib-h2{max-width:1200px;margin:0 auto 14px !important;padding:0 24px;display:flex;align-items:baseline;gap:10px;font-family:'Noto Serif KR',serif !important;font-size:22px !important;font-weight:700 !important;color:var(--txt) !important}
+.lib-h2 small{font-family:Pretendard,sans-serif;font-size:11px;font-weight:800;letter-spacing:.18em;color:var(--acc-ink)}
+/* 자료방 목록 */
+.hero__index{max-width:1200px !important;margin:0 auto !important;padding:0 24px !important;box-sizing:border-box}
+.hero__index a,.hero__index a.featured,.hero__index a.featured-alt,.hero__index a.featured-teal{background:var(--card) !important;border:1px solid var(--hair) !important;border-radius:12px !important;min-height:66px}
+.hero__index a:hover{border-color:var(--ink) !important;transform:translateY(-1px)}
+.hero__index .num{background:transparent !important;color:var(--acc-ink) !important;font-family:'Noto Serif KR',serif !important;font-size:15px !important;font-weight:700 !important;min-width:34px !important;padding:0 !important;border-right:1px solid var(--hair) !important;border-radius:0 !important;height:32px !important}
+.hero__index .lbl{color:var(--txt) !important}
+.hero__index .cnt{font-size:12px !important;color:var(--mut) !important;font-weight:600;white-space:nowrap}
+.hero__index .cnt::after{content:"" !important}
+.hero__index .cnt[data-n]::after{content:" ›" !important;color:var(--mut) !important;font-size:15px !important}
+/* 추천 3칸 = 짙은 카드 */
+.hero__index a.featured,.hero__index a.featured-alt,.hero__index a.featured-teal{background:var(--ink2) !important;border-color:var(--ink2) !important}
+.hero__index a.featured .lbl{color:#FFFFFF !important}
+.hero__index a.featured .badge{background:rgba(124,196,242,.16) !important;color:var(--acc) !important}
+.hero__index a.featured .cnt,.hero__index a.featured .cnt[data-n]::after{color:#8FA3BC !important}
+.hero__index a.featured:hover{border-color:var(--acc) !important}
+/* 최근 자료 */
+.lib-recent{margin-top:40px}
+.lib-recent__list{list-style:none;max-width:1200px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:10px;box-sizing:border-box}
+.lib-recent__list a{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--card);border:1px solid var(--hair);border-radius:12px;color:inherit;text-decoration:none;height:100%;box-sizing:border-box}
+.lib-recent__list a:hover{border-color:var(--ink)}
+.lib-recent__list .d{flex:none;width:46px;text-align:center;font-size:11px;font-weight:700;color:var(--mut);line-height:1.2}
+.lib-recent__list .d b{display:block;font-family:'Noto Serif KR',serif;font-size:18px;color:var(--txt)}
+.lib-recent__list .x{display:flex;flex-direction:column;min-width:0;border-left:1px solid var(--hair);padding-left:12px}
+.lib-recent__list .t{font-size:15px;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lib-recent__list .w{font-size:12px;color:var(--mut)}
+/* 하위 페이지(자료방) */
+body.room-mode .room.is-open{padding-top:32px !important}
+body.room-mode .room__head{background:var(--ink) !important;box-shadow:none !important;border-radius:16px !important}
+body.room-mode .room__num,body.room-mode .badge-lg,body.room-mode .badge-lg-alt,body.room-mode .badge-lg-teal{color:var(--acc) !important}
+body.room-mode .room .room__title,body.room-mode .room--feature .room__title,body.room-mode .room--feature-alt .room__title,body.room-mode .room--feature-teal .room__title{font-family:'Noto Serif KR',serif !important;font-weight:700 !important}
+body.room-mode .room .room__desc,body.room-mode .room--feature .room__desc,body.room-mode .room--feature-alt .room__desc,body.room-mode .room--feature-teal .room__desc{color:#B8C6D8 !important}
+.room-back{border-color:var(--hair) !important;color:var(--txt) !important;background:var(--card) !important}
+.room-back:hover{border-color:var(--ink) !important}
+details.doc-group,details.doc-group:last-of-type,body.room-mode details.doc-group{background:var(--card) !important;border-color:var(--hair) !important}
+details.doc-group summary{color:var(--txt) !important}
+details.doc-group summary::after{color:var(--acc-ink) !important}
+details.doc-group .doclist a,details.doc-group .doc-group--nested{background:#FAF8F3 !important;border-color:var(--hair) !important}
+details.doc-group .doc-group--nested .doclist a{background:#FFFFFF !important}
+.doclist a{border-color:var(--hair) !important;box-shadow:none !important;position:relative}
+.doclist a:hover{border-color:var(--ink) !important;background:#FFFFFF !important}
+.doclist .title{color:var(--txt) !important}
+.doclist .tag{background:#EFEBE2 !important;color:var(--mut) !important}
+.subhead{color:var(--acc-ink) !important}
+.gw-link,.admin-gate{background:var(--card) !important;border-color:var(--hair) !important}
+/* 떠 있는 버튼 */
+.float-nav a{background:var(--ink) !important;color:#FFFFFF !important;border:0 !important;box-shadow:0 8px 20px rgba(14,27,46,.25) !important}
+.float-nav a:hover{background:var(--ink2) !important}
+footer{background:var(--ink) !important;margin-top:56px}
+/* 자료방 카드: 번호 | 이름, 그 아래 편수 */
+.hero__index a,.hero__index a.featured,.hero__index a.featured-alt,.hero__index a.featured-teal{display:grid !important;grid-template-columns:auto 1fr;grid-template-rows:auto auto;column-gap:14px;row-gap:2px;align-items:center;align-content:center}
+.hero__index .num,.hero__index .badge{grid-row:1 / span 2}
+.hero__index .lbl{grid-column:2;line-height:1.35}
+.hero__index .cnt{grid-column:2;justify-self:start;text-align:left;margin:0 !important;font-size:12px !important}
+@media (max-width:600px){.hero__index{grid-template-columns:repeat(2,minmax(0,1fr)) !important;gap:8px !important}.hero__index a{grid-column:auto !important;padding:12px !important;column-gap:10px;min-height:60px}.hero__index a.featured{grid-column:1 / -1 !important}.hero__index .num{min-width:26px !important;font-size:13px !important}.hero__index .lbl{font-size:14px !important}}
+.hero__index .num{height:40px !important}
+footer{margin-top:56px}
+</style>
 </head>
 <body>
+<header class="lib-bar">
+  <div class="lib-bar__in">
+    <a class="lib-brand" href="archive.html" aria-label="은혜교회 자료실 처음으로">
+      <span class="lib-brand__mark" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2"/><path d="M8 7h7"/></svg></span>
+      <span class="lib-brand__txt"><b>은혜교회 자료실</b><small>GRACE LIBRARY</small></span>
+    </a>
+    <nav class="lib-bar__nav" aria-label="자료실 메뉴">
+      <button type="button" class="lib-bar__find" data-lib-focus aria-label="자료 찾기"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg><span>찾기</span></button>
+      <a class="lib-bar__home" href="index.html"><span aria-hidden="true">←</span> 교회 홈</a>
+    </nav>
+  </div>
+</header>
 <header id="site-header" style="position: sticky; top: 0; z-index: 50; padding: 12px 16px 0">
 <div style="max-width: 1200px; margin: 0 auto; border-radius: 16px; background: rgba(255,255,255,0.96); box-shadow: 0 8px 24px rgba(30,80,120,0.10); border: 1px solid #DDEDF8">
 <div style="padding: 0 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; min-height: 68px">
@@ -980,10 +1108,11 @@ body.room-mode footer{background:#122A44 !important}
 
   <section class="hero">
     <a class="hero__home" href="./">← 은혜교회 홈</a>
-    <p class="hero__eyebrow">RESOURCES · 은혜교회 자료실</p>
+    <div class="lib-top"><div class="lib-top__in">
+    <p class="hero__eyebrow">GRACE LIBRARY · 은혜교회 자료실</p>
     <p class="hero__denom">기독교한국침례회</p>
     <div class="hero__title-row">
-      <h1>말씀 위에 세워진 것들,<br><span class="accent">은혜교회 자료실</span></h1>
+      <h1>필요한 말씀 자료를<br><span class="accent">한곳에서 찾으세요</span></h1>
       <div class="hero__deco" aria-hidden="true">
         <svg viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
           <!-- shelf board -->
@@ -1017,12 +1146,32 @@ body.room-mode footer{background:#122A44 !important}
       </div>
     </div>
     <p class="hero__declaration">책별 성경공부와 강해, 묵상, 새가족·목장 자료까지. 누구나 로그인 없이 읽고 내려받을 수 있어요.</p>
+    <div class="lib-search" role="search">
+      <label class="lib-search__box">
+        <svg class="lib-search__ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="lib-q" type="search" autocomplete="off" placeholder="자료 제목으로 찾기 — 예: 로마서, 새가족, 요나" aria-label="자료 제목으로 찾기">
+        <kbd class="lib-search__kbd" aria-hidden="true">/</kbd>
+      </label>
+      <div class="lib-chips" aria-label="자주 찾는 자료">
+        <button type="button" data-q="로마서">로마서</button>
+        <button type="button" data-q="요한계시록">요한계시록</button>
+        <button type="button" data-q="사사기">사사기</button>
+        <button type="button" data-q="새가족">새가족</button>
+        <button type="button" data-q="침례">침례</button>
+        <button type="button" data-q="목자">목자</button>
+      </div>
+      <div id="lib-results" class="lib-results" hidden aria-live="polite"></div>
+    </div>
+    <p class="lib-stats" id="lib-stats"></p>
+
     <a href="https://www.youtube.com/@sjgrace/shorts" target="_blank" rel="noopener" class="hero__youtube">
       <span class="hero__youtube-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.5 12 3.5 12 3.5s-7.5 0-9.4.6A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.6 9.4.6 9.4.6s7.5 0 9.4-.6a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4L15.8 12Z"/></svg>
       </span>
       <span>말씀해설 쇼츠영상</span>
     </a>
+    </div></div>
+    <h2 class="lib-h2"><span>자료방</span><small>ROOMS</small></h2>
 
     <div class="hero__index" id="toc">
       <a href="#room-0b" class="featured featured-alt"><span class="badge badge-alt">인생 질문</span><span class="lbl">행복을 묻는 그대에게</span><span class="cnt">보기</span></a>
@@ -1038,6 +1187,10 @@ body.room-mode footer{background:#122A44 !important}
       <a href="#room-11"><span class="num">VIII</span><span class="lbl">예배팀 훈련 자료</span><span class="cnt">보기</span></a>
       <a href="#room-12"><span class="num">IX</span><span class="lbl">행사</span><span class="cnt">보기</span></a>
       <a href="#room-10"><span class="num">X</span><span class="lbl">담임목사자료실</span><span class="cnt">보기</span></a>
+    </div>
+    <div class="lib-recent" id="lib-recent" hidden>
+      <h2 class="lib-h2"><span>새로 올라온 자료</span><small>RECENT</small></h2>
+      <ol class="lib-recent__list" id="lib-recent-list"></ol>
     </div>
     <p class="hero__caption">배경이미지는, 이런 공간 하나 있으면 얼마나 좋을까 하는 생각에 AI로 만들어 본 것입니다
       <svg class="hero__caption-smile" viewBox="0 0 24 24" width="1em" height="1em" aria-hidden="true">
@@ -1595,5 +1748,108 @@ body.room-mode footer{background:#122A44 !important}
 })();
 </script>
 <script src="assets/live-check.js" defer></script>
+
+<script>
+/* 자료실: 제목 검색 · 자료방별 개수 · 새로 올라온 자료 */
+(function(){
+  var q = document.getElementById('lib-q'), box = document.getElementById('lib-results');
+  if (!q || !box) return;
+  function esc(s){ return String(s).replace(/[&<>"]/g, function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
+  function where(a){
+    var room = a.closest('.room'); if (!room) return '';
+    var parts = [];
+    var rt = room.querySelector('.room__title'); if (rt) parts.push(rt.textContent.trim());
+    var d = a.closest('details'), groups = [];
+    while (d) { var s = d.querySelector(':scope > summary'); if (s) groups.unshift((s.firstChild && s.firstChild.nodeType === 3 ? s.firstChild.textContent : s.textContent).replace(/\(\d+건\)/,'').trim()); d = d.parentElement && d.parentElement.closest('details'); }
+    return parts.concat(groups).join(' › ');
+  }
+  function label(a, title){
+    if (/^(\d+(-\d+)?\s*장?|index)$/i.test(title)) {
+      var d = a.closest('details'), s = d && d.querySelector(':scope > summary');
+      var g = s ? (s.firstChild && s.firstChild.nodeType === 3 ? s.firstChild.textContent : s.textContent).replace(/\(\d+건\)/,'').trim() : '';
+      if (g) return /index/i.test(title) ? g + ' · 안내' : g + ' ' + title.replace(/^(\d+(-\d+)?)$/, '$1편');
+    }
+    return title;
+  }
+  function allDocs(){
+    return Array.prototype.slice.call(document.querySelectorAll('.room:not(#room-10) .doclist a[href]'))
+      .filter(function(a){ var h = a.getAttribute('href'); return h && h !== '#'; });
+  }
+  function norm(s){ return (s || '').toLowerCase().replace(/\s+/g, ''); }
+  function run(){
+    var raw = q.value.trim();
+    document.querySelectorAll('.lib-chips button').forEach(function(b){ b.classList.toggle('on', b.getAttribute('data-q') === raw); });
+    if (!raw) { box.hidden = true; box.innerHTML = ''; return; }
+    var terms = raw.split(/\s+/).map(norm).filter(Boolean), seen = {}, hits = [];
+    allDocs().forEach(function(a){
+      var tEl = a.querySelector('.title'); var title = label(a, (tEl ? tEl.textContent : a.textContent).trim());
+      var w = where(a), hay = norm(title + ' ' + w), href = a.getAttribute('href');
+      if (seen[href]) return;
+      if (terms.every(function(x){ return hay.indexOf(x) > -1; })) { seen[href] = 1; hits.push({ a: a, title: title, w: w, inTitle: norm(title).indexOf(terms[0]) > -1 }); }
+    });
+    hits.sort(function(x, y){ return (y.inTitle - x.inTitle); });
+    var re = new RegExp('(' + raw.split(/\s+/).filter(Boolean).map(function(s){ return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'); }).join('|') + ')', 'gi');
+    var html = '<div class="lib-results__head"><span>“' + esc(raw) + '” 검색 결과 <b>' + hits.length + '건</b></span><button type="button" data-clear>지우기</button></div>';
+    if (!hits.length) html += '<div class="lib-results__empty">찾는 자료가 없어요. 다른 낱말로 찾아보거나 아래 자료방을 둘러보세요.</div>';
+    else html += '<ol>' + hits.slice(0, 60).map(function(h){
+      var a = h.a, attrs = '';
+      if (a.target) attrs += ' target="' + esc(a.target) + '" rel="noopener"';
+      if (a.hasAttribute('download')) attrs += ' download';
+      return '<li><a href="' + esc(a.getAttribute('href')) + '"' + attrs + '><span class="t">' + esc(h.title).replace(re, '<mark>$1</mark>') + '</span><span class="w">' + esc(h.w) + '</span></a></li>';
+    }).join('') + '</ol>';
+    box.innerHTML = html; box.hidden = false;
+  }
+  var timer; q.addEventListener('input', function(){ clearTimeout(timer); timer = setTimeout(run, 120); });
+  q.addEventListener('keydown', function(e){ if (e.key === 'Escape') { q.value = ''; run(); } });
+  box.addEventListener('click', function(e){ if (e.target.closest('[data-clear]')) { q.value = ''; run(); q.focus(); } });
+  document.querySelectorAll('.lib-chips button').forEach(function(b){ b.addEventListener('click', function(){ q.value = q.value.trim() === b.getAttribute('data-q') ? '' : b.getAttribute('data-q'); run(); }); });
+  function focusSearch(){
+    if (document.body.classList.contains('room-mode')) { location.href = 'archive.html#find'; return; }
+    setTimeout(function(){ window.scrollTo({ top: 0, behavior: 'smooth' }); q.focus(); }, 30);
+  }
+  document.querySelectorAll('[data-lib-focus]').forEach(function(b){ b.addEventListener('click', focusSearch); });
+  document.addEventListener('keydown', function(e){
+    if (e.key === '/' && !/input|textarea|select/i.test((document.activeElement || {}).tagName || '')) { e.preventDefault(); focusSearch(); }
+  });
+
+  if (location.hash === '#find') setTimeout(function(){ q.focus(); }, 200);
+
+  // 자료방별 개수와 전체 통계
+  function counts(){
+    var total = 0, rooms = 0;
+    document.querySelectorAll('.hero__index a').forEach(function(link){
+      var m = (link.getAttribute('href') || '').match(/(?:#|room=)(room-[\w-]+)/); if (!m) return;
+      var id = m[1], room = document.getElementById(id), cnt = link.querySelector('.cnt');
+      if (!room || !cnt) return;
+      if (id === 'room-10') { cnt.textContent = '목사님 전용'; cnt.setAttribute('data-n', ''); return; }
+      var n = room.querySelectorAll('.doclist a[href]:not([href="#"])').length;
+      if (n) { cnt.textContent = n + '편'; cnt.setAttribute('data-n', n); total += n; rooms++; }
+    });
+    var st = document.getElementById('lib-stats');
+    if (st && total) st.innerHTML = '공개 자료 <b>' + total.toLocaleString() + '편</b> · 자료방 <b>' + rooms + '곳</b> · 로그인 없이 누구나';
+    return total;
+  }
+  var tries = 0; (function tick(){ if (!counts() && tries++ < 20) setTimeout(tick, 300); else setTimeout(counts, 1500); })();
+
+  // 새로 올라온 자료 (rss.xml)
+  fetch('rss.xml', { cache: 'no-store' }).then(function(r){ if (!r.ok) throw 0; return r.text(); }).then(function(xml){
+    var doc = new DOMParser().parseFromString(xml, 'application/xml');
+    var items = Array.prototype.slice.call(doc.querySelectorAll('item')).slice(0, 6);
+    if (!items.length) return;
+    var byHref = {};
+    allDocs().forEach(function(a){ try { byHref[decodeURI(new URL(a.getAttribute('href'), location.href).pathname)] = a; } catch (e) {} });
+    var list = document.getElementById('lib-recent-list');
+    list.innerHTML = items.map(function(it){
+      var title = (it.querySelector('title') || {}).textContent || '', link = (it.querySelector('link') || {}).textContent || '#';
+      var pd = (it.querySelector('pubDate') || {}).textContent, d = pd ? new Date(pd) : null;
+      var path = ''; try { path = decodeURI(new URL(link).pathname); } catch (e) {}
+      var a = byHref[path], w = a ? where(a) : ''; if (a) title = label(a, title.trim());
+      var local = path ? path.replace(/^\//, '') : link;
+      return '<li><a href="' + esc(encodeURI(local)) + '"><span class="d">' + (d && !isNaN(d) ? (d.getMonth() + 1) + '월<b>' + d.getDate() + '</b>' : '') + '</span><span class="x"><span class="t">' + esc(title) + '</span><span class="w">' + esc(w) + '</span></span></a></li>';
+    }).join('');
+    document.getElementById('lib-recent').hidden = false;
+  }).catch(function(){});
+})();
+</script>
 </body>
 </html>
