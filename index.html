@@ -145,6 +145,49 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
   .svc-card{flex:1 1 100% !important;align-self:stretch !important}
 }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+/* 연혁(HISTORY) 버튼 + 팝업 */
+.history-open{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;margin:14px 0 0;padding:18px 22px;border:1px solid #D3E8F6;border-radius:16px;background:#FFFFFF;color:#0F1B3D;font-family:inherit;text-align:left;cursor:pointer;box-shadow:0 6px 18px rgba(30,80,120,.06);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.history-open:hover{transform:translateY(-2px);border-color:#9FD0F2;box-shadow:0 12px 26px rgba(30,80,120,.12)}
+.history-open:focus-visible{outline:2px solid #1F7AB8;outline-offset:3px}
+.ho-text{display:flex;flex-direction:column;gap:3px}
+.ho-label{font-size:11px;font-weight:800;letter-spacing:.16em;color:#1F7AB8}
+.ho-title{font-size:17px;font-weight:800;letter-spacing:-.01em}
+.ho-sub{font-size:13px;color:#5A6788}
+.ho-arrow{flex:0 0 40px;height:40px;border-radius:50%;background:#E6F4FD;color:#1F7AB8;display:flex;align-items:center;justify-content:center;transition:transform .2s ease}
+.history-open:hover .ho-arrow{transform:translateX(3px)}
+.history-dialog{width:min(760px,calc(100% - 32px));max-height:min(86vh,900px);padding:0;border:0;border-radius:22px;background:#F3F9FE;color:#0F1B3D;box-shadow:0 30px 80px rgba(15,40,70,.28);overflow:hidden;font-family:Pretendard,'Noto Sans KR',system-ui,sans-serif}
+.history-dialog[open]{display:flex;flex-direction:column;animation:hdIn .28s ease}
+.history-dialog::backdrop{background:rgba(15,32,58,.42);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+@keyframes hdIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.hd-head{flex-shrink:0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:26px 28px 14px;background:#FFFFFF}
+.hd-label{display:block;font-size:11px;font-weight:800;letter-spacing:.18em;color:#1F7AB8;margin-bottom:6px}
+.hd-title{margin:0;font-size:24px;font-weight:800;letter-spacing:-.02em}
+.hd-close{flex:0 0 40px;height:40px;border:0;border-radius:50%;background:#E6F4FD;color:#1F7AB8;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.hd-close:hover{background:#D3E8F6}
+.hd-years{flex-shrink:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0 28px 14px;background:#FFFFFF;border-bottom:1px solid #E3F0F9}
+.hd-years::-webkit-scrollbar{display:none}
+.hy-chip{flex:0 0 auto;padding:5px 11px;border-radius:999px;background:#EEF7FD;color:#1F7AB8;font-family:Montserrat,Pretendard,sans-serif;font-size:12.5px;font-weight:700;text-decoration:none}
+.hy-chip:hover,.hy-chip.on{background:#1F7AB8;color:#FFFFFF}
+.hd-body{flex:1 1 auto;min-height:0;position:relative;overflow-y:auto;overscroll-behavior:contain;padding:22px 28px 30px}
+.hd-desc{margin:0 0 26px;font-size:14px;line-height:1.75;color:#3B4868;word-break:keep-all}
+.hd-foot{margin:28px 0 0;font-size:12px;color:#7A8AA3;text-align:center}
+.history-dialog .timeline{position:relative;padding-left:34px}
+.history-dialog .timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#3A9AD9,rgba(124,196,242,.18))}
+.history-dialog .timeline-item{position:relative;padding-bottom:34px;scroll-margin-top:12px}
+.history-dialog .timeline-item:last-child{padding-bottom:0}
+.history-dialog .timeline-item::before{content:"";position:absolute;left:-34px;top:6px;width:12px;height:12px;border-radius:50%;background:#1F7AB8;box-shadow:0 0 0 5px rgba(124,196,242,.25)}
+.history-dialog .timeline-year{font-family:Montserrat,Pretendard,sans-serif;font-size:24px;font-weight:800;color:#1F7AB8;line-height:1;margin-bottom:12px}
+.history-dialog .timeline ul{list-style:none;margin:0;padding:0}
+.history-dialog .timeline li{display:flex;gap:14px;padding:4px 0;font-size:14.5px;line-height:1.7;word-break:keep-all}
+.history-dialog .tl-date{flex:0 0 44px;padding-top:2px;font-family:Montserrat,Pretendard,sans-serif;font-size:12px;font-weight:700;color:#3A9AD9}
+@media (max-width:600px){
+  .history-dialog{width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0}
+  .hd-head{padding:20px 18px 12px}.hd-years{padding:0 18px 12px}.hd-body{padding:20px 18px 28px}
+  .hd-title{font-size:21px}.history-open{padding:16px 18px}
+  .history-dialog .timeline{padding-left:26px}.history-dialog .timeline-item::before{left:-26px;width:10px;height:10px}
+  .history-dialog .timeline li{gap:10px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){.history-dialog[open]{animation:none}.history-open,.ho-arrow{transition:none}}
 </style>
 </head>
 <body>
@@ -172,7 +215,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <a href="#partner" style="padding: 12px 0">협력 사역</a>
 <a href="#visit" style="padding: 12px 0">오시는 길</a>
 <a href="archive.html" style="padding: 12px 0">자료실</a>
-<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" aria-label="실시간 예배" style="width: 40px; height: 40px; border-radius: 50%; background: #E6F4FD; display: flex; align-items: center; justify-content: center"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#3A9AD9"><path d="M8 5.5v13l11-6.5z"></path></svg></a>
+<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" aria-label="실시간 예배 (라이브)" style="height: 40px; padding: 0 15px 0 12px; border-radius: 999px; background: #E6F4FD; display: flex; align-items: center; justify-content: center; gap: 6px; color: #1F7AB8; font-size: 14px; font-weight: 800; white-space: nowrap"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#3A9AD9"><path d="M8 5.5v13l11-6.5z"></path></svg>라이브</a>
 <a href="#visit" style="display: inline-flex; align-items: center; min-height: 42px; padding: 0 20px; border-radius: 10px; background: #7CC4F2; color: #0F2A4A; font-weight: 700; font-size: 14px; box-shadow: 0 6px 14px rgba(124,196,242,0.35)">처음 방문하기</a>
 </nav>
 </div>
@@ -312,6 +355,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </li>
 </ol>
 <p class="story-confess"><span class="sc-mark" aria-hidden="true">“</span>예비하심과 인도하심, 그것이 우리 교회가 걸어온 길이었습니다.<br>그래서 우리는 그 길을 <b>은혜</b>라고 고백합니다.</p>
+<button type="button" class="history-open" data-history-open aria-haspopup="dialog">
+<span class="ho-text"><span class="ho-label">연혁 · HISTORY</span><span class="ho-title">은혜로 걸어온 시간들</span><span class="ho-sub">2014년 첫 예배부터 오늘까지, 주보에 담긴 발자취</span></span>
+<span class="ho-arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"></path></svg></span>
+</button>
 <hr class="intro-divider">
 <div class="intro-worship">
 <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">WORSHIP FIRST · 우리가 강조하는 것</span>
@@ -738,6 +785,44 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
     ['mouseleave','blur'].forEach(function(ev){ e.addEventListener(ev, function(){ on(id, false); }); });
     e.addEventListener('click', function(){ var c = document.querySelector('#mission li[data-m="' + id + '"]'); if (c && e.tagName.toLowerCase() === 'g') c.focus(); });
   });
+})();
+</script>
+<dialog id="historyDialog" class="history-dialog" aria-labelledby="historyTitle">
+<div class="hd-head">
+<div><span class="hd-label">연혁 · HISTORY</span><h2 id="historyTitle" class="hd-title">은혜로 걸어온 시간들</h2></div>
+<button type="button" class="hd-close" data-history-close aria-label="연혁 닫기"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"></path></svg></button>
+</div>
+<nav class="hd-years" aria-label="연도 바로가기"><a href="#hy-2014" class="hy-chip">2014</a><a href="#hy-2015" class="hy-chip">2015</a><a href="#hy-2016" class="hy-chip">2016</a><a href="#hy-2017" class="hy-chip">2017</a><a href="#hy-2018" class="hy-chip">2018</a><a href="#hy-2019" class="hy-chip">2019</a><a href="#hy-2020" class="hy-chip">2020</a><a href="#hy-2021" class="hy-chip">2021</a><a href="#hy-2022" class="hy-chip">2022</a><a href="#hy-2023" class="hy-chip">2023</a><a href="#hy-2024" class="hy-chip">2024</a><a href="#hy-2025" class="hy-chip">2025</a><a href="#hy-2026" class="hy-chip">2026</a></nav>
+<div class="hd-body" id="historyBody">
+<p class="hd-desc">2014년 부활주일 첫 예배부터 오늘까지, 우리가 원하는 대로가 아니라 하나님이 예비하신 길을 따라 걸어왔습니다.</p>
+<div class="timeline"><div class="timeline-item" id="hy-2014"><div class="timeline-year">2014</div><ul><li><span class="tl-date">4.20</span><span>부활주일, 은혜교회 첫 예배 — 세종베다니교회의 배려로 개척 (시즌 1)</span></li><li><span class="tl-date">5월</span><span>그레이스 패밀리 캠프(GFC)</span></li><li><span class="tl-date">6.27</span><span>동곡요양원 공연 자원봉사</span></li><li><span class="tl-date">7월</span><span>여름 교회학교 연합캠프</span></li><li><span class="tl-date">8월</span><span>제1회 그레이스 성경통독캠프 (문경)</span></li><li><span class="tl-date">9.14</span><span>세종베다니–은혜교회 연합 가을부흥회</span></li><li><span class="tl-date">10.12</span><span>새벽기도회 시작</span></li><li><span class="tl-date">10.26</span><span>세종베다니교회와 연합예배 · 분가 감사예배</span></li><li><span class="tl-date">11.1</span><span>시즌 2 첫 예배 — 성도 가정 ‘하은의 집’</span></li><li><span class="tl-date">11.9</span><span>바이블 루트 세미나</span></li><li><span class="tl-date">12.6</span><span>기독교한국침례회 대전유성지방회 가입예배</span></li><li><span class="tl-date">12.21</span><span>세종베다니교회와 성탄 연합예배</span></li><li><span class="tl-date">12.24</span><span>성탄전야 작은음악회</span></li><li><span class="tl-date">12.28</span><span>연탄 나르기 봉사 (공주 의당면)</span></li><li><span class="tl-date">12.31</span><span>송구영신예배와 윷놀이</span></li></ul></div><div class="timeline-item" id="hy-2015"><div class="timeline-year">2015</div><ul><li><span class="tl-date">1월</span><span>제2회 그레이스 성경통독캠프 (오산 세계성막복음센터)</span></li><li><span class="tl-date">2.8</span><span>복음 제자훈련 ‘PETER1315’ 시작 · 멕시코 선교사 초청 말씀</span></li><li><span class="tl-date">3월</span><span>시즌 3 — 대전 유성구 안산동 ‘작은 청지기의 집’에서 예배 시작</span></li><li><span class="tl-date">4.5</span><span>봄소풍</span></li><li><span class="tl-date">4.19</span><span>개척 1주년 감사 찬양예배 · 멕시코 신학교 건축 선교 후원</span></li><li><span class="tl-date">6월</span><span>남·여 목장과 주일 아동·학생·청년 목장 시작</span></li><li><span class="tl-date">7.25</span><span>은혜–세종베다니 연합 아동캠프</span></li><li><span class="tl-date">8.2</span><span>학생캠프</span></li><li><span class="tl-date">8.9</span><span>침례식</span></li><li><span class="tl-date">8.16</span><span>전교인 성경통독캠프</span></li><li><span class="tl-date">9.11</span><span>아동캠프 ‘파자마 데이’</span></li><li><span class="tl-date">12월</span><span>성탄 앞 특별새벽기도회 · 12.25 성탄예배</span></li></ul></div><div class="timeline-item" id="hy-2016"><div class="timeline-year">2016</div><ul><li><span class="tl-date">1.18</span><span>침례교 아동 연합캠프</span></li><li><span class="tl-date">1.23</span><span>제4회 그레이스 통독캠프 (고린도전후서 · 옥중서신)</span></li><li><span class="tl-date">3.21</span><span>온 가족이 함께하는 고난주간 특별새벽기도회 · 부활주일 이웃 나눔</span></li><li><span class="tl-date">4.24</span><span>창립 2주년 감사예배</span></li><li><span class="tl-date">5월</span><span>‘믿음의 가정’의 달 — 초청 특강과 GFC 주니어</span></li><li><span class="tl-date">7.15</span><span>유성지방 5교회 연합 어린이캠프</span></li><li><span class="tl-date">8.20</span><span>전교인 성경통독캠프 (출애굽기 · 신명기)</span></li><li><span class="tl-date">8.28</span><span>제1회 달란트 축제</span></li><li><span class="tl-date">9월</span><span>매월 첫 주 주의 만찬 시작 · 이웃을 돌아보는 ‘이삭줍기’</span></li><li><span class="tl-date">12.21</span><span>세종지역 연합 찬양집회</span></li></ul></div><div class="timeline-item" id="hy-2017"><div class="timeline-year">2017</div><ul><li><span class="tl-date">1.8</span><span>제2회 달란트 축제</span></li><li><span class="tl-date">1.25</span><span>국민안전처 신우회와 연합예배</span></li><li><span class="tl-date">2.19</span><span>제6회 전교인 성경통독캠프</span></li><li><span class="tl-date">4.10</span><span>고난주간 연합집회 (은혜 · 세종베다니 · 세종새누리)</span></li><li><span class="tl-date">4.16</span><span>부활주일 · 개척 3주년 감사주일 — ‘40일의 약속’</span></li><li><span class="tl-date">5.7</span><span>‘응답하라 그 때 그 시절’ 추억의 사진 콘테스트</span></li><li><span class="tl-date">5.21</span><span>그레이스 패밀리 캠프(GFC)</span></li><li><span class="tl-date">5.28</span><span>봄나들이 야외예배</span></li><li><span class="tl-date">7.16</span><span>제3회 달란트 축제 · 먹거리 · 아나바다</span></li><li><span class="tl-date">7.21</span><span>유치 · 초등 · 청소년 연합캠프</span></li><li><span class="tl-date">8.26</span><span>제7회 그레이스 성경통독캠프와 침례식</span></li><li><span class="tl-date">9월</span><span>후원해 온 멕시코 신학교 완공</span></li></ul></div><div class="timeline-item" id="hy-2018"><div class="timeline-year">2018</div><ul><li><span class="tl-date">1월</span><span>학생부 제1회 비전트립</span></li><li><span class="tl-date">2.4</span><span>제8회 전교인 성경통독캠프 (로마서 · 에베소서)</span></li><li><span class="tl-date">3.11</span><span>‘성경의 파노라마’ 양육 시작</span></li><li><span class="tl-date">3.26</span><span>고난주간 특별연합예배</span></li><li><span class="tl-date">4.15</span><span>창립 4주년 기념예배 · 달란트 축제와 아나바다 셰어링</span></li><li><span class="tl-date">5.27</span><span>야외예배</span></li><li><span class="tl-date">6.11</span><span>세종새누리교회와 대전유성지방회 월례회 공동 주최</span></li><li><span class="tl-date">7.20</span><span>유초등부 캠프 · 7.27 청소년부 캠프</span></li><li><span class="tl-date">8.25</span><span>제9회 전교인 성경통독캠프 (이사야)</span></li><li><span class="tl-date">9.12</span><span>은혜 · 세종새누리 · 세종베다니 연합 가을 찬양콘서트</span></li><li><span class="tl-date">10.29</span><span>선교지 우수리스크 방문</span></li><li><span class="tl-date">11.18</span><span>추수감사주일 · 권사 임직식 (김덕호 · 서영빈)</span></li></ul></div><div class="timeline-item" id="hy-2019"><div class="timeline-year">2019</div><ul><li><span class="tl-date">1.27</span><span>제10회 전교인 성경통독캠프 (요한복음)</span></li><li><span class="tl-date">1.28</span><span>학생부 겨울 비전트립</span></li><li><span class="tl-date">4.15</span><span>고난주간 연합예배</span></li><li><span class="tl-date">4.21</span><span>부활주일 · 창립 5주년 기념예배 — 감사헌금으로 산불 피해 교회 후원</span></li><li><span class="tl-date">5.26</span><span>제5회 그레이스 패밀리 캠프(GFC)</span></li><li><span class="tl-date">7.19</span><span>유초등 연합캠프 · 7.26 청소년 연합캠프</span></li><li><span class="tl-date">7.28</span><span>제11회 전교인 성경통독캠프</span></li><li><span class="tl-date">9.1</span><span>가을 양육 시작 (8주 과정)</span></li><li><span class="tl-date">9.25</span><span>형제교회 연합 가을음악회</span></li><li><span class="tl-date">11.17</span><span>척사대회 (윷놀이)</span></li><li><span class="tl-date">12.25</span><span>성탄감사 찬양예배 · 이웃 교회 성탄 후원</span></li></ul></div><div class="timeline-item" id="hy-2020"><div class="timeline-year">2020</div><ul><li><span class="tl-date">1월</span><span>특별 수요예배 — 주기도문 강해</span></li><li><span class="tl-date">1.19</span><span>제12회 전교인 성경통독캠프 (이사야)</span></li><li><span class="tl-date">2.10</span><span>대전유성지방회 월례회 공동 주최 (은혜 · 세종새누리)</span></li><li><span class="tl-date">2.23</span><span>코로나19로 온라인 예배 전환</span></li><li><span class="tl-date">4.6</span><span>고난주간 특별연합기도회 (온라인)</span></li><li><span class="tl-date">8.9</span><span>침례교 연합 청소년 온라인 캠프</span></li><li><span class="tl-date">12.31</span><span>송구영신예배</span></li></ul></div><div class="timeline-item" id="hy-2021"><div class="timeline-year">2021</div><ul><li><span class="tl-date">2월</span><span>‘그리스도의 생애’ · ‘청지기의 삶’ 양육</span></li><li><span class="tl-date">3.29</span><span>고난주간 특별새벽기도회 · 4.4 부활주일 찬양예배</span></li><li><span class="tl-date">4.18</span><span>창립 7주년 현장예배 — 침례신학대학교 신학생 후원</span></li><li><span class="tl-date">7.11</span><span>교육부 주관 세미나 ‘이슬람 신앙과 문화 이해하기’</span></li><li><span class="tl-date">9.29</span><span>수요예배 요한계시록 강해</span></li><li><span class="tl-date">11.21</span><span>추수감사주일</span></li><li><span class="tl-date">12.25</span><span>성탄감사예배</span></li></ul></div><div class="timeline-item" id="hy-2022"><div class="timeline-year">2022</div><ul><li><span class="tl-date">1월</span><span>매일 아침 PRS 가정예배</span></li><li><span class="tl-date">3월</span><span>집사 교육</span></li><li><span class="tl-date">4.11</span><span>고난주간 연합특별기도회 (은혜 · 세종베다니 · 세종새누리)</span></li><li><span class="tl-date">4.24</span><span>창립 8주년 예배</span></li><li><span class="tl-date">7.17</span><span>그레이스 패밀리 캠프(GFC)</span></li><li><span class="tl-date">8월</span><span>1부 예배(오전 10시)와 청소년부 예배 시작</span></li><li><span class="tl-date">11.20</span><span>추수감사주일 — 성도들이 가져온 과일과 채소로 장식</span></li><li><span class="tl-date">12.3</span><span>함께하는 성탄 장식</span></li></ul></div><div class="timeline-item" id="hy-2023"><div class="timeline-year">2023</div><ul><li><span class="tl-date">1.15</span><span>윷놀이 대회</span></li><li><span class="tl-date">3.24</span><span>옹달샘 집회</span></li><li><span class="tl-date">4.3</span><span>고난주간 연합기도회</span></li><li><span class="tl-date">4.16</span><span>창립 9주년 감사예배</span></li><li><span class="tl-date">5.7</span><span>교회학교가 준비한 어린이 · 어버이주일 예배</span></li><li><span class="tl-date">6.9</span><span>장년 연합 찬양집회</span></li><li><span class="tl-date">7.24</span><span>DFC 청소년 영성캠프</span></li><li><span class="tl-date">8.5</span><span>주일학교 여름캠프 ‘Way Maker’</span></li><li><span class="tl-date">8.27</span><span>침례식</span></li><li><span class="tl-date">10.13</span><span>연합 초청 찬양 전도집회</span></li><li><span class="tl-date">11.13</span><span>대전유성지방회 정기총회 (본교회)</span></li><li><span class="tl-date">11.19</span><span>추수감사주일 찬양예배</span></li></ul></div><div class="timeline-item" id="hy-2024"><div class="timeline-year">2024</div><ul><li><span class="tl-date">1.14</span><span>윷놀이 대회 · 1.15 청소년 오사카 비전트립</span></li><li><span class="tl-date">1.26</span><span>제2회 세종 옹달샘 청년 · 청소년 연합집회</span></li><li><span class="tl-date">3.2</span><span>청년 · 학생 · 아동부 단합대회</span></li><li><span class="tl-date">3월</span><span>금요기도회 시작 · 주일학교 원데이 찬양캠프</span></li><li><span class="tl-date">4.21</span><span>창립 10주년 · 권사 임직예배 (이혜정)</span></li><li><span class="tl-date">7.28</span><span>전교인 성경통독 ‘요한계시록’ · 초청 찬양예배</span></li><li><span class="tl-date">8.3</span><span>여름성경학교 · 8.4 침례식</span></li><li><span class="tl-date">8.5</span><span>청소년 캠프 · 8.10 예배팀 캠프</span></li><li><span class="tl-date">9.8</span><span>국악(가야금) 찬양예배 · 9.29 초청 찬양예배</span></li><li><span class="tl-date">11.17</span><span>추수감사주일 · 장로(안수집사) 안수식 (김덕호)</span></li><li><span class="tl-date">12.31</span><span>송구영신예배</span></li></ul></div><div class="timeline-item" id="hy-2025"><div class="timeline-year">2025</div><ul><li><span class="tl-date">1.4</span><span>청년 · 청소년(YNS) MT</span></li><li><span class="tl-date">1.24</span><span>옹달샘 청년 · 청소년 집회</span></li><li><span class="tl-date">2.16</span><span>전교인 친교의 시간</span></li><li><span class="tl-date">3.30</span><span>세종시 예배 공간 탐방</span></li><li><span class="tl-date">4.13</span><span>기븐미니스트리 오프닝 예배 (천안)</span></li><li><span class="tl-date">4.20</span><span>부활주일 · 창립 11주년 찬양예배 · 예배실 확장 공사</span></li><li><span class="tl-date">6.29</span><span>청장년 헌신예배 · 쉘위워십 천안</span></li><li><span class="tl-date">7.26</span><span>나성교회와 연합 여름성경학교</span></li><li><span class="tl-date">7.28</span><span>청소년 DFC 캠프 · 8.14 청년부 캠프</span></li><li><span class="tl-date">9.14</span><span>우크라이나 레나 전도사 간증</span></li><li><span class="tl-date">9.28</span><span>청년 연합예배 (은혜 · 반석샘물 · 희망교회)</span></li><li><span class="tl-date">10.12</span><span>전교인 교제의 날 · 대전유성지방회 월례회 (본교회)</span></li><li><span class="tl-date">11.16</span><span>추수감사예배 · 기븐미니스트리와 쉘위워십 천안</span></li><li><span class="tl-date">12.21</span><span>성탄주일 청년부 헌신예배 · 12.25 성탄감사예배</span></li></ul></div><div class="timeline-item" id="hy-2026"><div class="timeline-year">2026</div><ul><li><span class="tl-date">1.4</span><span>쉘위워십 MT (본교회)</span></li><li><span class="tl-date">1.16</span><span>제4회 세종 옹달샘 — 10개 교회 연합</span></li><li><span class="tl-date">2.22</span><span>이웃교회 청년 연합예배 (본교회)</span></li><li><span class="tl-date">3.30</span><span>고난주간 특별새벽묵상 · 4.5 부활주일 찬양감사예배</span></li><li><span class="tl-date">4.12</span><span>세종 이전을 준비하며 세종시 이웃교회에서 예배</span></li><li><span class="tl-date">4.19</span><span>창립 12주년 — 팝페라 가수 김선희 초청 감사예배</span></li><li><span class="tl-date">5.17</span><span>청장년 주관 야외예배</span></li><li><span class="tl-date">5.20</span><span>캄보디아 장성규 선교사 클라리넷 미니콘서트</span></li><li><span class="tl-date">7.24</span><span>청년부 MT (정선)</span></li><li><span class="tl-date">9.6</span><span>침례식</span></li><li><span class="tl-date">10.11</span><span>이웃교회 연합 윷놀이 대회 (반석 · 희망)</span></li><li><span class="tl-date">10.25</span><span>익산 푸른나무교회와 연합예배</span></li><li><span class="tl-date">11.15</span><span>추수감사주일 · 새가족 초청주일 (예정)</span></li><li><span class="tl-date">12.20</span><span>익산 푸른나무교회와 연합예배 · 성탄 파티 (예정)</span></li></ul></div></div>
+<p class="hd-foot">매주 주보의 교회 소식을 바탕으로 정리했어요.</p>
+</div>
+</dialog>
+<script>
+(function(){
+  var dlg=document.getElementById('historyDialog'),body=document.getElementById('historyBody');
+  if(!dlg)return;
+  var chips=dlg.querySelectorAll('.hy-chip'),last=null;
+  function open(e){
+    last=e&&e.currentTarget;
+    if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');
+    body.scrollTop=0;document.documentElement.style.overflow='hidden';mark();
+  }
+  function close(){if(dlg.open)dlg.close();}
+  dlg.addEventListener('close',function(){document.documentElement.style.overflow='';if(last)last.focus();});
+  document.querySelectorAll('[data-history-open]').forEach(function(b){b.addEventListener('click',open);});
+  dlg.querySelectorAll('[data-history-close]').forEach(function(b){b.addEventListener('click',close);});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)close();});
+  chips.forEach(function(c){c.addEventListener('click',function(e){
+    e.preventDefault();var t=document.getElementById(c.getAttribute('href').slice(1));
+    if(t)body.scrollTo({top:t.offsetTop-12,behavior:'smooth'});
+  });});
+  function mark(){
+    var cur=null;dlg.querySelectorAll('.timeline-item').forEach(function(it){if(it.offsetTop-40<=body.scrollTop)cur=it.id;});
+    chips.forEach(function(c){var on=c.getAttribute('href')==='#'+cur;c.classList.toggle('on',on);if(on&&c.scrollIntoView&&dlg.open)c.parentNode.scrollLeft=c.offsetLeft-c.parentNode.clientWidth/2+c.clientWidth/2;});
+  }
+  body.addEventListener('scroll',mark,{passive:true});
 })();
 </script>
 </body>
