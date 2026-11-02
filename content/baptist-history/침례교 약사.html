@@ -89,6 +89,19 @@ mark{background:linear-gradient(transparent 45%,var(--hl-y) 45%);color:inherit;p
 .legend span{display:inline-flex;align-items:center;gap:6px}
 .legend i{width:14px;height:10px;border-radius:3px;display:inline-block}
 
+/* eight beliefs, in prose */
+.beliefs{list-style:none;margin:0;padding:0;counter-reset:b}
+.beliefs li{counter-increment:b;position:relative;padding:22px 0 22px 52px;border-bottom:1px solid var(--line)}
+.beliefs li:first-child{border-top:1px solid var(--line)}
+.beliefs li::before{content:counter(b);position:absolute;left:0;top:24px;width:34px;height:34px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;background:var(--gold-soft);color:var(--gold);
+  font-family:"Pretendard",system-ui,sans-serif;font-weight:800;font-size:15px}
+.beliefs h3{font-size:19px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}
+.beliefs p{margin:0;color:var(--ink-soft)}
+.beliefs .ref{display:inline-block;margin-top:10px;font-family:"Pretendard",system-ui,sans-serif;font-size:13px;
+  font-weight:600;color:var(--muted);background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:2px 12px}
+@media (max-width:600px){.beliefs li{padding-left:46px}.beliefs li::before{width:30px;height:30px;font-size:14px}}
+
 /* related video */
 .video-wrap{margin-top:20px;padding:20px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
 .video-wrap video{display:block;width:100%;border-radius:12px;background:#000}
@@ -303,8 +316,56 @@ footer strong{color:var(--ink);font-weight:700}
   </div>
 </section>
 
+<section id="eight-beliefs">
+  <h2><span class="n">4</span>침례교의 8가지 핵심 신앙</h2>
+  <p class="sub">앞에서 짧게 본 여덟 가지를, 성경 말씀과 함께 조금 더 풀어 봅니다.</p>
+
+  <ol class="beliefs">
+    <li>
+      <h3>성경의 최종 권위</h3>
+      <p>침례교인은 어떤 신조나 교회의 전통보다 성경을 먼저 둡니다. 신앙고백서도 소중히 여기지만, 그것은 성경을 정리한 고백일 뿐 성경 위에 설 수 없습니다. <mark>무엇을 믿고 어떻게 살지 결정할 때 마지막으로 묻는 질문은 언제나 “성경은 무엇이라고 말하는가”입니다.</mark></p>
+      <span class="ref">딤후 3:16–17</span>
+    </li>
+    <li>
+      <h3>신자의 침례</h3>
+      <p>침례는 예수님을 구주로 믿고 고백한 사람이 받는 것입니다. 그래서 스스로 고백할 수 없는 아기에게는 침례를 베풀지 않습니다. 물에 완전히 잠겼다가 올라오는 <span class="term">침수례</span>는 <mark>옛사람은 그리스도와 함께 죽고, 새사람으로 다시 살아났다는 고백</mark>을 몸으로 보여 줍니다.</p>
+      <span class="ref">행 8:36–38 · 롬 6:3–4</span>
+    </li>
+    <li>
+      <h3>중생한 신자들의 교회</h3>
+      <p>교회는 건물이나 태어날 때부터 속하는 단체가 아니라, <mark>성령으로 거듭난 사람들이 자원하여 모인 공동체</mark>입니다. 누군가의 강요나 집안 전통이 아니라, 각자 하나님 앞에서 내린 믿음의 결단으로 교회의 한 지체가 됩니다.</p>
+      <span class="ref">요 3:3 · 행 2:41–47</span>
+    </li>
+    <li>
+      <h3>개교회 자치</h3>
+      <p>각 지역교회는 그리스도를 머리로 모신 온전한 교회입니다. 목회자 청빙, 예산, 직분자 선출 같은 중요한 일은 <span class="term">회중정치</span>에 따라 성도들이 함께 기도하며 결정합니다. 교단과 지방회는 서로 돕고 함께 선교하는 협력체이지, <mark>교회 위에서 다스리는 기관이 아닙니다.</mark></p>
+      <span class="ref">마 18:17 · 행 6:3–5</span>
+    </li>
+    <li>
+      <h3>만인제사장</h3>
+      <p>예수 그리스도께서 유일한 중보자가 되셨기에, 모든 신자는 <mark>사제나 다른 사람을 거치지 않고 하나님께 직접 나아갈 수 있습니다.</mark> 동시에 모든 신자는 서로를 위해 기도하고 섬기는 제사장으로 부름받았습니다. 목회자와 성도는 계급이 아니라 맡은 역할이 다를 뿐입니다.</p>
+      <span class="ref">딤전 2:5 · 벧전 2:9</span>
+    </li>
+    <li>
+      <h3>두 가지 직분</h3>
+      <p>신약성경이 말하는 교회의 직분은 말씀으로 양 떼를 돌보는 <span class="term">목사</span>(감독·장로)와 교회의 필요를 섬기는 <span class="term">집사</span>, 두 가지입니다. 우리 교회에서 부르는 장로와 권사는 다른 교단과의 교제와 이해를 위한 호칭으로, <mark>직분의 본질은 다스림이 아니라 섬김</mark>에 있습니다.</p>
+      <span class="ref">빌 1:1 · 딤전 3:1–13</span>
+    </li>
+    <li>
+      <h3>두 가지 규례</h3>
+      <p>주님이 직접 명하신 침례와 주의 만찬을 지킵니다. 이것은 그 자체로 은혜를 전해 주는 성례가 아니라, <mark>이미 받은 은혜에 순종으로 응답하고 주님의 십자가를 기념하는</mark> <span class="term">규례</span>입니다. 침례는 믿음의 시작을, 주의 만찬은 믿음의 걸음을 날마다 새롭게 합니다.</p>
+      <span class="ref">마 28:19–20 · 고전 11:23–26</span>
+    </li>
+    <li>
+      <h3>종교의 자유와 정교분리</h3>
+      <p>믿음은 강요될 수 없습니다. 그래서 침례교인은 국가가 사람의 양심과 신앙에 간섭해서는 안 되며, 교회도 국가의 힘을 빌려 신앙을 강요해서는 안 된다고 믿었습니다. 박해 속에서 지켜 낸 이 믿음은 <mark>오늘날 모든 사람이 누리는 신앙의 자유</mark>로 이어졌습니다.</p>
+      <span class="ref">마 22:21 · 갈 5:1</span>
+    </li>
+  </ol>
+</section>
+
 <section id="related-video">
-  <h2><span class="n">4</span>관련 영상</h2>
+  <h2><span class="n">5</span>관련 영상</h2>
   <p class="sub">침례교에 관해 함께 보면 좋은 영상입니다.</p>
 
   <div class="video-wrap">
