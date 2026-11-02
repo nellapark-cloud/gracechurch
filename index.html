@@ -22,12 +22,12 @@ html{scroll-behavior:smooth;scroll-padding-top:96px}
 *{box-sizing:border-box}
 body{margin:0;background:#F3F9FE;word-break:keep-all;overflow-wrap:break-word}
 /* GRACE 카드 머리: 사선 색면 + 세리프 이탤릭 글자 */
-.grace-front::before{content:"";position:absolute;left:0;right:0;top:0;height:88px;background:linear-gradient(120deg,#7CC4F2 0%,#3A9AD9 100%)}
+.grace-front::before{content:"";position:absolute;left:0;right:0;top:0;height:68px;background:#6BB8EC}
 .grace-front::after{content:none}
-.grace-letter{position:absolute;top:12px;left:18px;z-index:1;font-family:Montserrat,Pretendard,sans-serif;font-style:normal;font-weight:800;font-size:60px;line-height:1;letter-spacing:-.04em;color:#FFFFFF;text-shadow:0 6px 16px rgba(15,60,110,.25)}
+.grace-letter{position:absolute;top:11px;left:18px;z-index:1;font-family:Montserrat,Pretendard,sans-serif;font-style:normal;font-weight:800;font-size:46px;line-height:1;letter-spacing:-.04em;color:#FFFFFF;text-shadow:none}
 .grace-front .grace-word{font-family:Montserrat,Pretendard,sans-serif;font-weight:800;font-size:17px !important;letter-spacing:.06em !important;text-transform:uppercase}
 .grace-front>span:last-child{margin-top:auto}
-@media (max-width:600px){.grace-front{padding-top:92px !important}.grace-front::before{height:76px}.grace-letter{font-size:54px}}
+@media (max-width:600px){.grace-front{padding-top:80px !important}.grace-front::before{height:64px}.grace-letter{font-size:42px}.grace-card{height:240px !important}}
 .grace-inner{transition:transform .6s ease;transform-style:preserve-3d}
 .grace-card.is-flipped .grace-inner{transform:rotateY(180deg)}
 .grace-face{-webkit-backface-visibility:hidden;backface-visibility:hidden}
@@ -163,8 +163,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <a href="#top" style="padding: 12px 0; color: #1F7AB8; font-weight: 700; border-bottom: 2px solid #7CC4F2">홈</a>
 <a href="#story" style="padding: 12px 0">교회 소개</a>
 <a href="#ministry" style="padding: 12px 0">예배 · 사역</a>
-<a href="#mokjang" style="padding: 12px 0">목장</a>
-<a href="#serve" style="padding: 12px 0">섬김</a>
+<a href="#mokjang" style="padding: 12px 0">교회 내 그룹</a>
 <a href="#events" style="padding: 12px 0">일정</a>
 <a href="#mission" style="padding: 12px 0">선교</a>
 <a href="#partner" style="padding: 12px 0">협력 사역</a>
@@ -183,9 +182,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <a href="#ministry" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">예배 · 사역<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
-<a href="#mokjang" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">목장<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
-
-<a href="#serve" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">섬김 · 한 사람 한 자리<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<a href="#mokjang" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">교회 내 그룹<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
 <a href="#events" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">일정<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
@@ -336,80 +333,80 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </div>
 <div style="flex: 3 1 640px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px">
 
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="G God — 하나님 중심, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
+<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="G God — 하나님 중심, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">G</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">God</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">하나님 중심</span>
 <span style="font-size: 12px; color: #5A6788; line-height: 1.5">우리가 아니라 하나님과 예수 그리스도가 중심인 예배와 삶</span>
 <span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #1F7AB8">말씀 보기 ↻</span>
 </span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: linear-gradient(160deg, #2F86C4 0%, #1F6FA8 100%); box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
+<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #2A7FC0; box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
 <span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“그는 몸인 교회의 머리시라 그가 근본이시요 죽은 자들 가운데서 먼저 나신 이시니 이는 친히 만물의 으뜸이 되려 하심이요”</span>
 <span style="font-size: 12px; font-weight: 800; color: #CFE6F8">골로새서 1:18 · 개역개정</span>
 </span>
 </span>
 </button>
 
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="R Root — 말씀의 뿌리, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
+<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="R Root — 말씀의 뿌리, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">R</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">Root</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">말씀의 뿌리</span>
 <span style="font-size: 12px; color: #5A6788; line-height: 1.5">성경을 함께 읽고 배우며 말씀 위에 서는 교회</span>
 <span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #1F7AB8">말씀 보기 ↻</span>
 </span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: linear-gradient(160deg, #2F86C4 0%, #1F6FA8 100%); box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
+<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #2A7FC0; box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
 <span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“그 안에 뿌리를 박으며 세움을 받아 교훈을 받은 대로 믿음에 굳게 서서 감사함을 넘치게 하라”</span>
 <span style="font-size: 12px; font-weight: 800; color: #CFE6F8">골로새서 2:7 · 개역개정</span>
 </span>
 </span>
 </button>
 
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="A Abide — 함께 머묾, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
+<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="A Abide — 함께 머묾, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">A</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">Abide</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">함께 머묾</span>
 <span style="font-size: 12px; color: #5A6788; line-height: 1.5">목장에서 삶을 나누고 서로를 돌보는 작은 교회</span>
 <span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #1F7AB8">말씀 보기 ↻</span>
 </span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: linear-gradient(160deg, #2F86C4 0%, #1F6FA8 100%); box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
+<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #2A7FC0; box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
 <span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“날마다 마음을 같이하여 성전에 모이기를 힘쓰고 집에서 떡을 떼며 기쁨과 순전한 마음으로 음식을 먹고”</span>
 <span style="font-size: 12px; font-weight: 800; color: #CFE6F8">사도행전 2:46 · 개역개정</span>
 </span>
 </span>
 </button>
 
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="C Call — 부르심과 섬김, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
+<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="C Call — 부르심과 섬김, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">C</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">Call</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">부르심과 섬김</span>
 <span style="font-size: 12px; color: #5A6788; line-height: 1.5">모든 성도가 받은 은사대로 한 자리씩 섬기는 교회</span>
 <span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #1F7AB8">말씀 보기 ↻</span>
 </span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: linear-gradient(160deg, #2F86C4 0%, #1F6FA8 100%); box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
+<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #2A7FC0; box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
 <span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“각각 은사를 받은 대로 하나님의 여러 가지 은혜를 맡은 선한 청지기 같이 서로 봉사하라”</span>
 <span style="font-size: 12px; font-weight: 800; color: #CFE6F8">베드로전서 4:10 · 개역개정</span>
 </span>
 </span>
 </button>
 
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="E Embrace — 이웃을 품음, 눌러서 말씀 보기" style="display: block; width: 100%; height: 252px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
+<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="E Embrace — 이웃을 품음, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 104px 18px 16px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
+<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(30,80,120,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
 <span class="grace-letter" aria-hidden="true">E</span>
 <span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #1F7AB8">Embrace</span>
 <span style="font-size: 15px; font-weight: 700; color: #0F1B3D">이웃을 품음</span>
 <span style="font-size: 12px; color: #5A6788; line-height: 1.5">받은 은혜로 이웃과 지역을 품는 교회</span>
 <span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #1F7AB8">말씀 보기 ↻</span>
 </span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: linear-gradient(160deg, #2F86C4 0%, #1F6FA8 100%); box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
+<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #2A7FC0; box-shadow: 0 10px 22px rgba(31,111,168,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
 <span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“그러므로 그리스도께서 우리를 받아 하나님께 영광을 돌리심과 같이 너희도 서로 받으라”</span>
 <span style="font-size: 12px; font-weight: 800; color: #CFE6F8">로마서 15:7 · 개역개정</span>
 </span>
@@ -495,8 +492,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </section><section id="mokjang" style="padding: 48px 24px 24px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px">
 <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px">
-<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">SMALL GROUPS · MOKJANG</span>
-<h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em">목장으로 함께 걸어요</h2></span>
+<span style="display: flex; flex-direction: column; gap: 2px"><span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">GROUPS · 함께 걷는 공동체</span>
+<h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em">교회 내 그룹</h2></span>
 <span style="font-size: 14px; color: #5A6788">한 목장 12명 안팎 · 말씀 · 기도 · 식탁</span>
 </div>
 <div class="mok-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px">
@@ -536,86 +533,6 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <span style="display: flex; flex-direction: column; line-height: 1.35; min-width: 0"><span style="font-size: 15px; font-weight: 700">주일학교</span><span style="font-size: 12px; color: #5A6788">아이들이 말씀을 배워요</span></span>
 </div>
 
-</div>
-</div>
-</section>
-
-<!-- 섬김: 한 사람, 한 자리 -->
-<section id="serve" style="padding: 48px 24px 40px">
-<div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 20px">
-<div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: flex-end; gap: 12px 40px">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 6px">
-<span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #1F7AB8">ONE BODY · MANY PARTS</span>
-<h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em">한 사람, 한 자리</h2>
-<span style="font-size: 14px; color: #3B4868">모든 성도가 적어도 한 자리에서 섬겨요. 마음이 가는 분야를 눌러 골라 보세요.</span>
-</div>
-<span style="flex: 0 1 420px; min-width: 0; font-size: 13px; color: #3B4868; padding: 10px 14px; border-radius: 12px; background: #E3F2FC">“각각 은사를 받은 대로 … 선한 청지기 같이 서로 봉사하라” <b style="color: #1F7AB8">벧전 4:10</b></span>
-</div>
-<div class="serve-grid">
-<button type="button" class="role-chip serve-tile" data-label="예배 섬김" aria-pressed="false">
-<span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"></path></svg></span>
-<span class="st-name">예배 섬김</span>
-<span class="st-ex">그레이스워십(예배팀) · 대표기도 · 성경봉독</span>
-<span class="st-check" aria-hidden="true">✓</span>
-</button>
-<button type="button" class="role-chip serve-tile" data-label="말씀 · 양육" aria-pressed="false">
-<span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h7a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H2zM22 5h-7a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H22z"></path></svg></span>
-<span class="st-name">말씀 · 양육</span>
-<span class="st-ex">목자 · 새가족 일대일 양육 · 말씀통독 함께하기</span>
-<span class="st-check" aria-hidden="true">✓</span>
-</button>
-<button type="button" class="role-chip serve-tile" data-label="다음 세대" aria-pressed="false">
-<span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V11M12 11c0-4 3-6 7-6 0 4-3 6-7 6zM12 14c0-3-2.5-5-6-5 0 3 2.5 5 6 5z"></path></svg></span>
-<span class="st-name">다음 세대</span>
-<span class="st-ex">주일학교 교사 · 청소년 목장 섬김 · 아이 돌봄</span>
-<span class="st-check" aria-hidden="true">✓</span>
-</button>
-<button type="button" class="role-chip serve-tile" data-label="환영 · 돌봄" aria-pressed="false">
-<span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM16 11a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM2 20a6 6 0 0 1 12 0M10 20a6 6 0 0 1 12 0"></path></svg></span>
-<span class="st-name">환영 · 돌봄</span>
-<span class="st-ex">새가족 환영 · 심방 · 안부 전하기 · 중보기도</span>
-<span class="st-check" aria-hidden="true">✓</span>
-</button>
-<button type="button" class="role-chip serve-tile" data-label="식탁 · 환대" aria-pressed="false">
-<span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v8a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3M7 13v8M17 3c-2 0-3 2.5-3 6s1 4 3 4v8"></path></svg></span>
-<span class="st-name">식탁 · 환대</span>
-<span class="st-ex">주일 점심 · 다과 · 카페 · 정리 · 설거지</span>
-<span class="st-check" aria-hidden="true">✓</span>
-</button>
-<button type="button" class="role-chip serve-tile" data-label="공간 · 관리" aria-pressed="false">
-<span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 21V11l8-4 8 4v10M12 2v5M10 4h4M9 21v-5h6v5"></path></svg></span>
-<span class="st-name">공간 · 관리</span>
-<span class="st-ex">예배당 청소 · 주차 안내 · 시설 · 수리</span>
-<span class="st-check" aria-hidden="true">✓</span>
-</button>
-<button type="button" class="role-chip serve-tile" data-label="미디어 · 기록" aria-pressed="false">
-<span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h12v10H3zM15 10l6-3v10l-6-3"></path></svg></span>
-<span class="st-name">미디어 · 기록</span>
-<span class="st-ex">유튜브 송출 · 음향 · 자막 · 사진 · 영상</span>
-<span class="st-check" aria-hidden="true">✓</span>
-</button>
-<button type="button" class="role-chip serve-tile" data-label="행정 · 선교" aria-pressed="false">
-<span class="st-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zM3 12h18M12 3c2.5 2.5 3.8 5.5 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.5-3.8-9S9.5 5.5 12 3z"></path></svg></span>
-<span class="st-name">행정 · 선교</span>
-<span class="st-ex">헌금 집계 · 회계 · 행정 지원 · 선교지 기도 · 후원</span>
-<span class="st-check" aria-hidden="true">✓</span>
-</button>
-</div>
-<div style="position: sticky; bottom: 16px; z-index: 5; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 20px; padding: 14px 16px 14px 22px; border-radius: 14px; background: #FFFFFF; border: 1px solid #D3E8F6; box-shadow: 0 12px 30px rgba(30,80,120,0.14)">
-<span class="if-notSubmitted">
-<span style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; line-height: 1.45">
-<span id="pick-title" style="font-size: 15px; font-weight: 700">섬기고 싶은 자리를 골라 보세요</span>
-<span id="pick-list" style="font-size: 13px; color: #5A6788">처음이라도 괜찮아요. 하나만 골라도 충분해요.</span>
-</span>
-<button type="button" id="serve-submit" style="min-height: 46px; padding: 0 22px; border: 0; border-radius: 10px; background: #7CC4F2; color: #0F2A4A; font-weight: 700; font-size: 14px; font-family: inherit; cursor: pointer">섬김 신청하기</button>
-</span>
-<span class="if-submitted">
-<span style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; line-height: 1.45">
-<span style="font-size: 15px; font-weight: 700">감사합니다! 마음을 잘 받았어요.</span>
-<span style="font-size: 13px; color: #5A6788">담당 목자님이나 교역자가 곧 연락드려요. 처음엔 함께 해 보며 천천히 익혀 가면 돼요.</span>
-</span>
-<button type="button" id="serve-reset" style="min-height: 46px; padding: 0 20px; border: 1px solid #D3E8F6; border-radius: 10px; background: #FFFFFF; color: #0F1B3D; font-weight: 600; font-size: 14px; font-family: inherit; cursor: pointer">다시 고르기</button>
-</span>
 </div>
 </div>
 </section>
@@ -756,9 +673,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px">Church · 교회 안</span>
 <a href="#story" style="padding: 3px 0">교회 소개</a>
 <a href="#worship" style="padding: 3px 0">예배 안내</a>
-<a href="#mokjang" style="padding: 3px 0">목장</a>
+<a href="#mokjang" style="padding: 3px 0">교회 내 그룹</a>
 <a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener" style="padding: 3px 0">그레이스워십 (예배팀)</a>
-<a href="#serve" style="padding: 3px 0">섬김 · 한 사람 한 자리</a>
 <a href="#mission" style="padding: 3px 0">선교 · 중보기도</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
@@ -796,24 +712,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
   burger.addEventListener('click', function(){ setMenu(!header.classList.contains('open')); });
   document.querySelectorAll('[data-close-menu]').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
 
-  var serve = document.getElementById('serve');
-  var title = document.getElementById('pick-title');
-  var list = document.getElementById('pick-list');
-  var chips = Array.prototype.slice.call(document.querySelectorAll('.role-chip'));
-  function update(){
-    var picked = chips.filter(function(c){ return c.getAttribute('aria-pressed') === 'true'; }).map(function(c){ return c.getAttribute('data-label'); });
-    title.textContent = picked.length ? '선택한 자리 ' + picked.length + '곳' : '섬기고 싶은 자리를 골라 보세요';
-    list.textContent = picked.length ? picked.join(' · ') : '처음이라도 괜찮아요. 하나만 골라도 충분해요.';
-  }
-  chips.forEach(function(c){ c.addEventListener('click', function(){ c.setAttribute('aria-pressed', c.getAttribute('aria-pressed') === 'true' ? 'false' : 'true'); update(); }); });
   document.querySelectorAll('[data-flip]').forEach(function(b){
     b.addEventListener('click', function(){
       var on = b.classList.toggle('is-flipped');
       b.setAttribute('aria-pressed', on ? 'true' : 'false');
     });
   });
-  document.getElementById('serve-submit').addEventListener('click', function(){ serve.classList.add('sent'); });
-  document.getElementById('serve-reset').addEventListener('click', function(){ chips.forEach(function(c){ c.setAttribute('aria-pressed', 'false'); }); update(); serve.classList.remove('sent'); });
 })();
 </script>
 <script>
