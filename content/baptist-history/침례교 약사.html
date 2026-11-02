@@ -122,6 +122,40 @@ footer strong{color:var(--ink);font-weight:700}
   .tl li::after{left:45px}
   .year{font-size:15px}
 }
+
+/* high church / low church */
+.intro{margin:0 0 30px;color:var(--ink-soft)}
+.cmp{border-top:1px solid var(--line);margin:0 0 40px}
+.cmp-row{display:grid;grid-template-columns:96px 1fr 1fr;gap:20px;padding:16px 0;border-bottom:1px solid var(--line)}
+.cmp-row p{margin:0;color:var(--ink-soft);font-size:16px;line-height:1.75}
+.cmp-row .k{font-family:"Pretendard",system-ui,sans-serif;font-weight:700;color:var(--ink);font-size:16px}
+.cmp-head{padding:12px 0;font-family:"Pretendard",system-ui,sans-serif;font-size:14px;font-weight:700}
+.cmp-head .hi{color:var(--gold)}
+.cmp-head .lo{color:var(--hl-b-ink)}
+.cmp .lbl{display:none;font-family:"Pretendard",system-ui,sans-serif;font-size:12px;font-weight:700;margin-right:6px}
+.cmp .lbl.hi{color:var(--gold)} .cmp .lbl.lo{color:var(--hl-b-ink)}
+.spec{margin:0 0 40px;padding:26px 24px 22px;background:var(--paper);border:1px solid var(--line);border-radius:18px}
+.spec-ends{display:flex;justify-content:space-between;font-family:"Pretendard",system-ui,sans-serif;font-size:13px;font-weight:700;margin:0 0 10px}
+.spec-ends .hi{color:var(--gold)} .spec-ends .lo{color:var(--hl-b-ink)}
+.spec-bar{height:8px;border-radius:99px;background:linear-gradient(90deg,var(--gold),var(--gold-soft) 50%,var(--hl-b))}
+.spec-list{list-style:none;margin:16px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:10px;text-align:center;font-family:"Pretendard",system-ui,sans-serif}
+.spec-list li{font-size:14.5px;line-height:1.5;color:var(--ink-soft);padding:10px 6px;border-radius:12px}
+.spec-list li.on{background:var(--hl-b);color:var(--hl-b-ink);font-weight:700}
+.spec-list small{display:block;font-size:12px;color:var(--muted);font-weight:500;margin-top:2px}
+.spec-list li.on small{color:var(--hl-b-ink)}
+.spec p.s{margin:16px 0 0;color:var(--muted);font-size:13.5px;line-height:1.7;text-align:center}
+.callout{padding:24px 26px;background:var(--paper);border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:0 16px 16px 0}
+.callout h3{font-size:19px;font-weight:800;margin:0 0 10px;letter-spacing:-.01em}
+.callout p{margin:0;color:var(--ink-soft)}
+.callout p+p{margin-top:12px}
+@media (max-width:600px){
+  .cmp-head{display:none}
+  .cmp .lbl{display:inline-block}
+  .cmp-row{grid-template-columns:1fr;gap:6px}
+  .spec{padding:22px 18px 18px}
+  .spec-list{grid-template-columns:repeat(2,1fr)}
+  .callout{padding:22px 20px}
+}
 </style>
 </head>
 <body>
@@ -225,8 +259,52 @@ footer strong{color:var(--ink);font-weight:700}
   </div>
 </section>
 
+<section id="high-low">
+  <h2><span class="n">3</span>하이처치와 로우처치</h2>
+  <p class="sub">교회마다 예배 모습이 다른 이유, 그리고 침례교의 자리입니다.</p>
+
+  <p class="intro"><span class="term">하이처치</span>(고교회)와 <span class="term">로우처치</span>(저교회)는 17세기 말~18세기 초 영국 국교회 안에서 생겨난 말입니다. 처음에는 국교회 안의 두 성향을 가리켰지만, 오늘날에는 <mark>한 교회가 예전·성직·성례를 얼마나 무겁게 여기는가</mark>를 보여 주는 넓은 잣대로 쓰입니다.</p>
+
+  <div class="cmp" role="table" aria-label="하이처치와 로우처치 비교">
+    <div class="cmp-row cmp-head" role="row"><span role="columnheader"></span><span class="hi" role="columnheader">하이처치</span><span class="lo" role="columnheader">로우처치</span></div>
+    <div class="cmp-row" role="row"><span class="k" role="rowheader">예배</span>
+      <p role="cell"><span class="lbl hi">하이</span>정해진 예식서와 교회력을 따르는 예전 중심 예배</p>
+      <p role="cell"><span class="lbl lo">로우</span>순서가 자유롭고 설교가 중심인 말씀 중심 예배</p></div>
+    <div class="cmp-row" role="row"><span class="k" role="rowheader">성찬과 침례</span>
+      <p role="cell"><span class="lbl hi">하이</span>은혜를 전달하는 성례로 보며, 성찬을 예배의 정점으로 둠</p>
+      <p role="cell"><span class="lbl lo">로우</span>주님이 명하신 순종과 기념의 규례로 지킴</p></div>
+    <div class="cmp-row" role="row"><span class="k" role="rowheader">직분</span>
+      <p role="cell"><span class="lbl hi">하이</span>주교–사제–부제의 계층, 사도적 계승을 강조</p>
+      <p role="cell"><span class="lbl lo">로우</span>만인제사장, 성도들이 함께 결정하는 회중 중심</p></div>
+    <div class="cmp-row" role="row"><span class="k" role="rowheader">권위</span>
+      <p role="cell"><span class="lbl hi">하이</span>성경과 함께 교회의 전통을 무겁게 여김</p>
+      <p role="cell"><span class="lbl lo">로우</span>성경을 신앙과 삶의 최종 권위로 삼음</p></div>
+    <div class="cmp-row" role="row"><span class="k" role="rowheader">예배 공간</span>
+      <p role="cell"><span class="lbl hi">하이</span>제단, 십자가, 촛대, 제의(예복), 향</p>
+      <p role="cell"><span class="lbl lo">로우</span>강단과 말씀이 중심인 단순한 공간</p></div>
+  </div>
+
+  <div class="spec">
+    <div class="spec-ends"><span class="hi">← 하이처치</span><span class="lo">로우처치 →</span></div>
+    <div class="spec-bar" aria-hidden="true"></div>
+    <ul class="spec-list">
+      <li>로마가톨릭<small>정교회</small></li>
+      <li>성공회<small>루터교</small></li>
+      <li>장로교<small>감리교</small></li>
+      <li class="on">침례교<small>오순절·독립교회</small></li>
+    </ul>
+    <p class="s">같은 교단 안에서도 교회마다 차이가 있어, 대략적인 위치입니다.<br>성공회 안에도 고교회파와 저교회파가 함께 있습니다.</p>
+  </div>
+
+  <div class="callout">
+    <h3>침례교는 로우처치 쪽에 서 있습니다</h3>
+    <p>영국 국교회 안의 저교회파는 주교 제도와 기도서를 그대로 둔 채 말씀과 회심을 강조했습니다. 그러나 침례교의 뿌리인 분리주의자들은 한 걸음 더 나아가, <mark>국교회 밖으로 나와 국가와 주교에게 매이지 않는 교회</mark>를 세웠습니다. 그래서 침례교는 로우처치 가운데서도 <span class="term">자유교회</span> 전통에 속합니다.</p>
+    <p>여기서 ‘로우’는 예배를 가볍게 여긴다는 뜻이 아닙니다. <mark>형식보다 말씀을, 성직자의 중재보다 성도 한 사람의 믿음을 앞세운다</mark>는 뜻입니다.</p>
+  </div>
+</section>
+
 <section id="related-video">
-  <h2><span class="n">3</span>관련 영상</h2>
+  <h2><span class="n">4</span>관련 영상</h2>
   <p class="sub">침례교에 관해 함께 보면 좋은 영상입니다.</p>
 
   <div class="video-wrap">
