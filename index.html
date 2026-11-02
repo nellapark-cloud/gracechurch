@@ -188,6 +188,19 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
   .history-dialog .timeline li{gap:10px;font-size:14px}
 }
 @media (prefers-reduced-motion:reduce){.history-dialog[open]{animation:none}.history-open,.ho-arrow{transition:none}}
+/* 다음세대 배너 */
+.nextgen{padding:44px 24px 4px}
+.ng-inner{max-width:1200px;margin:0 auto;padding:36px 32px;border-radius:24px;background:linear-gradient(135deg,#FFFFFF 0%,#EAF6FE 100%);box-shadow:0 10px 30px rgba(30,80,120,.08);text-align:center}
+.ng-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.18em;color:#1F7AB8;margin-bottom:10px}
+.ng-title{margin:0 0 10px;font-size:clamp(24px,3.4vw,34px);font-weight:900;letter-spacing:-.03em;line-height:1.3;color:#0F1B3D;word-break:keep-all}
+.ng-title b{color:#1F7AB8;font-weight:900}
+.ng-sub{margin:0 auto 26px;max-width:640px;font-size:15px;line-height:1.75;color:#3B4868;word-break:keep-all}
+.ng-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:880px;margin:0 auto}
+.ng-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 10px 16px;border-radius:16px;background:#FFFFFF;border:1px solid #DCEEFA}
+.ng-ic{width:44px;height:44px;border-radius:50%;background:#E6F4FD;color:#1F7AB8;display:flex;align-items:center;justify-content:center}
+.ng-k{font-size:13px;color:#5A6788}
+.ng-t{font-size:17px;font-weight:800;color:#0F1B3D}
+@media (max-width:700px){.nextgen{padding:36px 16px 0}.ng-inner{padding:28px 18px}.ng-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 </style>
 </head>
 <body>
@@ -313,6 +326,16 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <!-- 예배와 사역 -->
 
+
+<!-- 다음세대 -->
+<section class="nextgen" aria-labelledby="nextgenTitle">
+<div class="ng-inner">
+<span class="ng-label">NEXT GENERATION · 다음세대</span>
+<h2 id="nextgenTitle" class="ng-title">은혜교회는 <b>다음세대</b>를 생각합니다</h2>
+<p class="ng-sub">꿈꾸는 아동, 열정의 청년, 지지하는 장년과 지혜의 실버가 함께합니다.</p>
+<div class="ng-grid"><div class="ng-card"><span class="ng-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="3.2"></circle><path d="M7 21v-3a5 5 0 0 1 10 0v3"></path><path d="M19 4l.6 1.4L21 6l-1.4.6L19 8l-.6-1.4L17 6l1.4-.6z"></path></svg></span><span class="ng-k">꿈꾸는</span><span class="ng-t">아동</span></div><div class="ng-card"><span class="ng-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c2.5 3 4 5.4 4 8a4 4 0 0 1-8 0c0-1.3.5-2.6 1.4-3.6.3 1.4 1 2.3 2 2.6-.4-2.4.2-4.8.6-7z"></path><path d="M8 21h8"></path></svg></span><span class="ng-k">열정의</span><span class="ng-t">청년</span></div><div class="ng-card"><span class="ng-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.3-7-9.5A4 4 0 0 1 12 8a4 4 0 0 1 7 2.5C19 15.7 12 20 12 20z"></path></svg></span><span class="ng-k">지지하는</span><span class="ng-t">장년</span></div><div class="ng-card"><span class="ng-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21V11"></path><path d="M12 11C12 7 9 5 5 5c0 4 3 6 7 6z"></path><path d="M12 13c0-3.5 2.6-5.5 7-5.5 0 3.6-3 5.5-7 5.5z"></path></svg></span><span class="ng-k">지혜의</span><span class="ng-t">실버</span></div></div>
+</div>
+</section>
 
 <!-- 소중히 여기는 것 -->
 <!-- 교회 이야기 -->
