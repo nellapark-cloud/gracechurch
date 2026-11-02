@@ -203,6 +203,22 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .ng-k{font-size:13px;color:#5A6788}
 .ng-t{font-size:17px;font-weight:800;color:#0F1B3D}
 @media (max-width:700px){.nextgen{padding:36px 16px 0}.ng-inner{padding:28px 18px}.ng-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* 후원 · 헌금 계좌 */
+.give{padding:0 24px 32px}
+.give-inner{max-width:1200px;margin:0 auto;border-radius:20px;background:#FFFFFF;box-shadow:0 8px 22px rgba(30,80,120,.07);padding:28px 30px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.give-text{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1 1 300px}
+.give-label{font-size:12px;font-weight:800;letter-spacing:.16em;color:#1F7AB8}
+.give-title{margin:0;font-size:22px;font-weight:800;letter-spacing:-.02em}
+.give-desc{font-size:13px;color:#5A6788;line-height:1.6}
+.give-acct{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 16px 14px 20px;border-radius:14px;background:#EEF7FD;border:1px solid #D3E8F6}
+.give-acct-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+.give-bank{font-size:12px;font-weight:700;color:#1F7AB8}
+.give-num{font-family:Montserrat,Pretendard,sans-serif;font-size:20px;font-weight:800;letter-spacing:.02em;color:#0F1B3D}
+.give-holder{font-size:12.5px;color:#3B4868}
+.give-copy{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 16px;border:0;border-radius:10px;background:#1F7AB8;color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.give-copy:hover{background:#176AA3}
+.give-copy.done{background:#2E9E6A}
+@media (max-width:600px){.give{padding:0 16px 28px}.give-inner{padding:24px 20px}.give-acct{width:100%;justify-content:space-between}.give-num{font-size:18px}}
 </style>
 </head>
 <body>
@@ -720,6 +736,21 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </div>
 </section>
 
+<!-- 후원 · 헌금 -->
+<section id="give" class="give" aria-labelledby="giveTitle">
+<div class="give-inner">
+<div class="give-text">
+<span class="give-label">OFFERING · 후원 · 헌금</span>
+<h2 id="giveTitle" class="give-title">후원 · 헌금 계좌</h2>
+<span class="give-desc">교회와 사역을 위한 후원과 온라인 헌금은 이 계좌로 드릴 수 있어요.</span>
+</div>
+<div class="give-acct">
+<span class="give-acct-info"><span class="give-bank">농협</span><span class="give-num">351-2233-6688-93</span><span class="give-holder">예금주 · 기독교한국침례회은혜교회</span></span>
+<button type="button" class="give-copy" data-copy="351-2233-6688-93" aria-label="계좌번호 복사"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg><span>계좌 복사</span></button>
+</div>
+</div>
+</section>
+
 <!-- 파란 초대 배너 -->
 <section style="padding: 16px 24px 56px">
 <div style="max-width: 980px; margin: 0 auto; border-radius: 18px; background: linear-gradient(90deg, #8ACFF5 0%, #A9DCF8 55%, #CBEBFC 100%); box-shadow: 0 14px 30px rgba(124,196,242,0.35); padding: 24px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 24px; color: #0F2A4A">
@@ -838,6 +869,16 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
   }
   body.addEventListener('scroll',mark,{passive:true});
 })();
+</script>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var v=b.getAttribute('data-copy'),t=b.querySelector('span');
+    function ok(){b.classList.add('done');t.textContent='복사됐어요';setTimeout(function(){b.classList.remove('done');t.textContent='계좌 복사';},1800);}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(v).then(ok,fallback);}else fallback();
+    function fallback(){var i=document.createElement('textarea');i.value=v;i.style.position='fixed';i.style.opacity='0';document.body.appendChild(i);i.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(i);}
+  });
+});
 </script>
 </body>
 </html>
