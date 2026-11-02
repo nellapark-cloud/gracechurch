@@ -256,11 +256,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 @media (max-width:820px){.kn-banner{grid-template-columns:1fr}.kn-banner img{min-height:0;aspect-ratio:16/9;height:auto}.kn-body{padding:22px 20px}}
 </style>
 <style id="nav-fit">
-.gnav a[style*="min-height: 42px"]{display:none !important}
-.gnav{gap:2px 20px !important}
-@media (max-width:1240px){.gnav{gap:2px 14px !important;font-size:13px !important}}
-@media (max-width:1060px){.gnav{gap:2px 10px !important;font-size:12.5px !important}}
-@media (max-width:960px){.gnav{gap:2px 8px !important;font-size:12px !important}}
+.gnav{gap:2px 22px !important}
+.gnav-sep{width:1px;height:18px;background:#D3E8F6;margin:0 -4px}
+.gnav-util{font-size:13px;color:#5A6788}
+@media (max-width:1240px){.gnav{gap:2px 16px !important;font-size:13.5px !important}.gnav-util{font-size:12.5px}}
+@media (max-width:1060px){.gnav{gap:2px 11px !important;font-size:13px !important}.gnav-util{font-size:12px}.gnav-live{padding:0 11px 0 9px !important;font-size:13px !important}}
+@media (max-width:960px){.gnav{gap:2px 8px !important;font-size:12.5px !important}}
 </style>
 </head>
 <body>
@@ -281,16 +282,17 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <nav class="gnav" aria-label="주 메뉴" style="display: flex; flex-wrap: wrap; align-items: center; gap: 2px 26px; font-size: 14px; font-weight: 500; color: #3B4868">
 <a href="index.html" style="padding: 12px 0">홈</a>
 <a href="about.html" style="padding: 12px 0">교회 소개</a>
-<a href="ministry.html" style="padding: 12px 0">예배 · 사역</a>
-<a href="groups.html" style="padding: 12px 0">교회 내 그룹</a>
-<a href="events.html" aria-current="page" style="padding: 12px 0; color: #1F7AB8; font-weight: 700; border-bottom: 2px solid #7CC4F2">일정</a>
+<a href="worship.html" style="padding: 12px 0">예배</a>
+<a href="ministry.html" style="padding: 12px 0">사역</a>
+<a href="education.html" style="padding: 12px 0">교육</a>
 <a href="mission.html" style="padding: 12px 0">선교</a>
-<a href="partner.html" style="padding: 12px 0">협력 사역</a>
-<a href="visit.html" style="padding: 12px 0">오시는 길</a>
-<a href="visit.html#give" style="padding: 12px 0">후원 · 헌금</a>
-<a href="archive.html" style="padding: 12px 0">자료실</a>
-<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" aria-label="실시간 예배 (라이브)" style="height: 40px; padding: 0 15px 0 12px; border-radius: 999px; background: #E6F4FD; display: flex; align-items: center; justify-content: center; gap: 6px; color: #1F7AB8; font-size: 14px; font-weight: 800; white-space: nowrap"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#3A9AD9"><path d="M8 5.5v13l11-6.5z"></path></svg>라이브</a>
-<a href="visit.html" style="display: inline-flex; align-items: center; min-height: 42px; padding: 0 20px; border-radius: 10px; background: #7CC4F2; color: #0F2A4A; font-weight: 700; font-size: 14px; box-shadow: 0 6px 14px rgba(124,196,242,0.35)">처음 방문하기</a>
+<a href="groups.html" style="padding: 12px 0">교제</a>
+<span class="gnav-sep" aria-hidden="true"></span>
+<a href="partner.html" class="gnav-util" style="padding: 12px 0">협력</a>
+<a href="give.html" class="gnav-util" style="padding: 12px 0">후원</a>
+<a href="visit.html" class="gnav-util" style="padding: 12px 0">오시는 길</a>
+<a href="archive.html" class="gnav-util" style="padding: 12px 0">자료실</a>
+<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" aria-label="실시간 예배 (라이브)" class="gnav-live" style="height: 40px; padding: 0 15px 0 12px; border-radius: 999px; background: #E6F4FD; display: flex; align-items: center; justify-content: center; gap: 6px; color: #1F7AB8; font-size: 14px; font-weight: 800; white-space: nowrap"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#3A9AD9"><path d="M8 5.5v13l11-6.5z"></path></svg>라이브</a>
 </nav>
 </div>
 <div class="if-menuOpen">
@@ -298,27 +300,27 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <a href="about.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">교회 소개<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
-<a href="index.html#worship" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">예배 안내<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<a href="worship.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">예배<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
-<a href="ministry.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">예배 · 사역<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<a href="ministry.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">사역<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
-<a href="groups.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">교회 내 그룹<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
-
-<a href="events.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">일정<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
-
-<a href="https://www.youtube.com/@sjgrace" target="_blank" rel="noopener" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">설교 · 유튜브<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<a href="education.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">교육<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
 <a href="mission.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">선교<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
-<a href="partner.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">협력 사역<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<a href="groups.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">교제<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
-<a href="visit.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">오시는 길<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<span class="mnav-sub" style="display: block; padding: 16px 0 4px; font-size: 11px; font-weight: 800; letter-spacing: .14em; color: #7F8BA8">MORE</span>
 
-<a href="visit.html#give" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">후원 · 헌금<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<a href="partner.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9; font-size: 15px; font-weight: 500">협력<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
-<a href="archive.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9">자료실<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+<a href="give.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9; font-size: 15px; font-weight: 500">후원<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
 
-<a href="visit.html" data-close-menu style="display: flex; align-items: center; justify-content: center; min-height: 50px; margin-top: 14px; border-radius: 10px; background: #7CC4F2; color: #0F2A4A; font-weight: 700; font-size: 15px">처음 방문하기</a>
+<a href="visit.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9; font-size: 15px; font-weight: 500">오시는 길<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="archive.html" data-close-menu style="display: flex; align-items: center; justify-content: space-between; min-height: 50px; font-size: 16px; font-weight: 600; border-bottom: 1px solid #E3F0F9; font-size: 15px; font-weight: 500">자료실<span aria-hidden="true" style="color: #1F7AB8">›</span></a>
+
+<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" data-close-menu style="display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; margin-top: 14px; border-radius: 10px; background: #7CC4F2; color: #0F2A4A; font-weight: 700; font-size: 15px"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="#0F2A4A"><path d="M8 5.5v13l11-6.5z"></path></svg>라이브 예배</a>
 </nav>
 </div>
 </div>
@@ -383,10 +385,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <div style="display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px">Church · 교회 안</span>
 <a href="about.html" style="padding: 3px 0">교회 소개</a>
-<a href="index.html#worship" style="padding: 3px 0">예배 안내</a>
-<a href="groups.html" style="padding: 3px 0">교회 내 그룹</a>
-<a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener" style="padding: 3px 0">그레이스워십 (예배팀)</a>
+<a href="worship.html" style="padding: 3px 0">예배</a>
+<a href="ministry.html" style="padding: 3px 0">사역</a>
+<a href="education.html" style="padding: 3px 0">교육</a>
 <a href="mission.html" style="padding: 3px 0">선교 · 중보기도</a>
+<a href="groups.html" style="padding: 3px 0">교제 · 교회 내 그룹</a>
+<a href="events.html" style="padding: 3px 0">일정</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 4px">
 <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px">Media · 말씀 미디어</span>
@@ -398,6 +402,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 6px">Partnership · 협력 사역</span>
 <a href="https://givenministry.com" target="_blank" rel="noopener" style="padding: 3px 0">기븐미니스트리</a>
 <a href="partner.html" style="padding: 3px 0">쉘위워십 JB</a>
+<a href="give.html" style="padding: 3px 0">후원 · 헌금</a>
 </div>
 <div style="display: flex; flex-direction: column; gap: 6px">
 <span style="font-size: 14px; font-weight: 700; color: #FFFFFF; margin-bottom: 4px">Visit · 오시는 길</span>
