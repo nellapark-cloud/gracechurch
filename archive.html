@@ -1851,5 +1851,16 @@ footer{margin-top:56px}
   }).catch(function(){});
 })();
 </script>
+<script>
+/* archive.html?room=room-1&open=bible_qt → 그 묶음을 펼치고 그 자리로 이동 */
+(function(){
+  var key = new URLSearchParams(location.search).get('open'); if (!key) return;
+  var list = document.getElementById('list-' + key); if (!list) return;
+  var d = list.closest('details'), first = null;
+  while (d) { d.open = true; first = d; d = d.parentElement && d.parentElement.closest('details'); }
+  var target = list.closest('details') || list;
+  setTimeout(function(){ window.scrollTo(0, target.getBoundingClientRect().top + window.pageYOffset - 84); }, 60);
+})();
+</script>
 </body>
 </html>
