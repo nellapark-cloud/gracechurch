@@ -19,6 +19,7 @@ const categories = [
   { key: 'revelation_detailed', dir: 'content/bible-by-book/new-testament/revelation-detailed' },
   { key: 'ephesians_chapters', dir: 'content/bible-by-book/new-testament/ephesians-chapters' },
   { key: 'ephesians_detailed', dir: 'content/bible-by-book/new-testament/ephesians-detailed' },
+  { key: 'philippians_detailed', dir: 'content/bible-by-book/new-testament/philippians-detailed' },
   { key: 'bible_by_person', dir: 'content/bible-by-book/bible-by-person' },
   { key: 'bible_hidden_stories', dir: 'content/bible-by-book/hidden-stories' },
   { key: 'bible_qt', dir: 'content/bible-by-book/qt' },
