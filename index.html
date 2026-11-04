@@ -274,9 +274,9 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <style id="ql-slide">
 .ql-track{display:contents}
 @media (max-width:700px){
- .ql-bar{flex-direction:column;align-items:stretch !important;gap:6px !important;padding:14px 0 12px !important;overflow:hidden}
+ .ql-bar{flex-direction:column;flex-wrap:nowrap !important;align-items:stretch !important;gap:6px !important;padding:14px 0 12px !important;overflow:hidden}
  .ql-bar>span{padding:0 18px}
- .ql-track{display:flex;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 18px 4px;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
+ .ql-track{display:flex;width:100%;min-width:0;gap:8px;overflow-x:auto;scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding:2px 18px 4px;-webkit-mask-image:linear-gradient(90deg,#000 88%,transparent);mask-image:linear-gradient(90deg,#000 88%,transparent)}
  .ql-track::-webkit-scrollbar{display:none}
  .ql-track>a{flex:0 0 auto;scroll-snap-align:start;padding:0 14px;border-radius:999px;background:#EEF7FD;border:1px solid #DDEDF8;font-size:14px !important;white-space:nowrap}
 }
