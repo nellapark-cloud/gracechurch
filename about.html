@@ -249,6 +249,31 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 @media (max-width:1060px){.gnav{gap:2px 11px !important;font-size:13px !important}.gnav-util{font-size:12px}.gnav-live{padding:0 11px 0 9px !important;font-size:13px !important}}
 @media (max-width:960px){.gnav{gap:2px 8px !important;font-size:12.5px !important}}
 </style>
+<style id="people-css">
+.pp-wrap{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
+.pp-label{font-size:12px;font-weight:800;letter-spacing:.16em;color:#1F7AB8}
+.pp-title{margin:6px 0 0;font-size:26px;font-weight:800;letter-spacing:-.02em;color:#0F1B3D}
+.pastor{display:grid;grid-template-columns:200px minmax(0,1fr);gap:28px;align-items:center;padding:28px;border-radius:20px;background:#FFFFFF;box-shadow:0 8px 22px rgba(30,80,120,.07)}
+.pastor-photo{width:200px;height:200px;border-radius:20px;object-fit:cover;object-position:center 20%;background:#E6F4FD}
+.pastor-body{display:flex;flex-direction:column;gap:8px;min-width:0}
+.pastor-role{font-size:12px;font-weight:800;letter-spacing:.12em;color:#1F7AB8}
+.pastor-name{margin:0;font-size:26px;font-weight:800;color:#0F1B3D}
+.pastor-name small{font-size:16px;font-weight:600;color:#5A6788;margin-left:2px}
+.pastor-msg{margin:4px 0 6px;font-size:15px;line-height:1.75;color:#3B4868;word-break:keep-all}
+.pastor-info{display:flex;flex-direction:column;border-top:1px solid #E6F0F8}
+.pastor-info div{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:9px 0;border-bottom:1px solid #E6F0F8;font-size:14px}
+.pastor-info b{color:#1F7AB8;font-weight:700}
+.pastor-info span{color:#1F2E4D;word-break:keep-all}
+.tm-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.tm-card{display:flex;flex-direction:column;gap:4px;padding:20px;border-radius:16px;background:#FFFFFF;border:1px solid #E3EDF6}
+.tm-ic{width:42px;height:42px;border-radius:12px;background:#E6F4FD;color:#1F7AB8;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.tm-role{font-size:12px;font-weight:800;color:#1F7AB8;letter-spacing:.04em}
+.tm-name{font-size:18px;font-weight:800;color:#0F1B3D}
+.tm-pending{font-size:14px;font-weight:600;color:#9AA6BF}
+.tm-desc{font-size:13px;color:#5A6788;line-height:1.6;word-break:keep-all}
+@media (max-width:900px){.tm-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:640px){.pastor{grid-template-columns:1fr;padding:22px 18px;gap:16px}.pastor-photo{width:120px;height:120px}.pastor-info div{grid-template-columns:72px 1fr}}
+</style>
 </head>
 <body>
 <div style="font-family: Pretendard, 'Noto Sans KR', system-ui, sans-serif; color: #0F1B3D; background: #F3F9FE; width: 100%; line-height: 1.6">
@@ -474,6 +499,35 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </section>
 
 
+
+<!-- 섬기는 사람들 -->
+<section id="people" style="padding: 8px 24px 48px">
+<div class="pp-wrap">
+<div class="pp-head">
+<span class="pp-label">PEOPLE · 섬기는 사람들</span>
+<h2 class="pp-title">함께 섬기는 사람들</h2>
+</div>
+<div class="pastor">
+<img src="assets/home/pastor.jpg" alt="담임목사 박동준" class="pastor-photo" loading="lazy">
+<div class="pastor-body">
+<span class="pastor-role">담임목사 · SENIOR PASTOR</span>
+<h3 class="pastor-name">박동준 <small>목사</small></h3>
+<p class="pastor-msg">“우리 교회의 유일한 머리와 주인은 오직 예수 그리스도이십니다. 예배로 삶의 질서를 세우고, 받은 은혜로 이웃과 다음세대를 품는 교회가 되기를 소망합니다.”</p>
+<div class="pastor-info">
+<div><b>학력</b><span>침례신학대학교 및 동 대학원 · 리버티신학대학원 설교학</span></div>
+<div><b>사역</b><span>기독교한국침례회 은혜교회 담임 · GIVEN MINISTRY 대표</span></div>
+<div><b>찬양 · 방송</b><span>CCM 보컬리스트 · 쉘위워십 프로듀싱 · 극동방송 · 유튜브 ‘더 그레이스’</span></div>
+</div>
+</div>
+</div>
+<div class="tm-grid">
+<div class="tm-card"><span class="tm-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path></svg></span><span class="tm-role">전도사</span><span class="tm-name">김지성</span><span class="tm-desc">예배 찬양 인도와 교회 사역을 함께 섬겨요</span></div>
+<div class="tm-card"><span class="tm-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M14.5 9.5c-.5-1-1.5-1.5-2.5-1.5-1.5 0-2.5.9-2.5 2s1 1.7 2.5 2 2.5.9 2.5 2-1 2-2.5 2c-1 0-2-.5-2.5-1.5M12 6.5v1.5M12 16v1.5"></path></svg></span><span class="tm-role">재정위원</span><span class="tm-name">김덕호 · 이지욱</span><span class="tm-desc">교회 재정과 운영을 투명하게 섬겨요</span></div>
+<div class="tm-card"><span class="tm-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg></span><span class="tm-role">새가족 담당</span><span class="tm-name tm-pending">소개 준비 중</span><span class="tm-desc">처음 오신 분을 맞이하고 정착을 도와요</span></div>
+<div class="tm-card"><span class="tm-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span class="tm-role">목자</span><span class="tm-name tm-pending">소개 준비 중</span><span class="tm-desc">목장을 이끌며 성도들의 삶을 돌봐요</span></div>
+</div>
+</div>
+</section>
 
 <!-- 푸터 -->
 <footer style="background: #1D3A5C; color: #C9D9EA; padding: 48px 24px 24px">
