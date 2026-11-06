@@ -1591,108 +1591,6 @@ footer{margin-top:56px}
     rooms.forEach(r => io.observe(r));
   }
 
-  // 목록에서 자료를 열람한 뒤 뒤로가기로 돌아오면, 클릭했던 바로 그 항목
-  // 자리로 돌아오도록 합니다. 픽셀 위치뿐 아니라 클릭한 링크 주소까지 저장해서,
-  // 글꼴·이미지 로딩으로 화면 높이가 조금 달라져도 정확히 그 항목을 찾아갑니다.
-  const RETURN_STATE_KEY = 'archiveReturnState';
-  if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
-
-  function saveReturnState(link) {
-    try {
-      const groups = document.querySelectorAll('details.doc-group');
-      const openFlags = Array.prototype.map.call(groups, (d) => d.open);
-      const rect = link.getBoundingClientRect();
-      sessionStorage.setItem(RETURN_STATE_KEY, JSON.stringify({
-        scrollY: window.scrollY,
-        openFlags,
-        href: link.getAttribute('href'),
-        linkTop: rect.top,
-      }));
-    } catch (e) {
-      // 세션 스토리지를 쓸 수 없는 환경이면 그냥 건너뜁니다.
-    }
-  }
-
-  document.addEventListener('click', (e) => {
-    const link = e.target.closest && e.target.closest('.doclist a');
-    if (link) saveReturnState(link);
-  });
-
-  function jumpTo(y) {
-    // 페이지 전체에 걸린 부드러운 스크롤을 잠시 끄고 즉시 이동
-    const html = document.documentElement;
-    const prev = html.style.scrollBehavior;
-    html.style.scrollBehavior = 'auto';
-    window.scrollTo(0, Math.max(0, y));
-    html.style.scrollBehavior = prev;
-  }
-
-  function findLink(href) {
-    if (!href) return null;
-    const links = document.querySelectorAll('.doclist a');
-    for (let i = 0; i < links.length; i++) {
-      if (links[i].getAttribute('href') === href) return links[i];
-    }
-    return null;
-  }
-
-  function placeAt(state) {
-    const link = findLink(state.href);
-    if (link) {
-      const room = link.closest('.room');
-      if (room && window.__openRoom) window.__openRoom(room.id);
-      // 링크를 감싼 접힌 목록이 있으면 모두 펼침
-      let d = link.closest('details');
-      while (d) { d.open = true; d = d.parentElement && d.parentElement.closest('details'); }
-      const top = link.getBoundingClientRect().top + window.scrollY;
-      const offset = typeof state.linkTop === 'number' ? state.linkTop : window.innerHeight / 3;
-      jumpTo(top - offset);
-      return link;
-    }
-    jumpTo(state.scrollY || 0);
-    return null;
-  }
-
-  function restoreReturnState() {
-    let raw;
-    try {
-      raw = sessionStorage.getItem(RETURN_STATE_KEY);
-      sessionStorage.removeItem(RETURN_STATE_KEY);
-    } catch (e) {
-      return;
-    }
-    if (!raw) return;
-    let state;
-    try {
-      state = JSON.parse(raw);
-    } catch (e) {
-      return;
-    }
-    const groups = document.querySelectorAll('details.doc-group');
-    (state.openFlags || []).forEach((open, i) => {
-      if (groups[i]) groups[i].open = open;
-    });
-    requestAnimationFrame(() => {
-      const link = placeAt(state);
-      if (link) {
-        link.classList.add('is-returned');
-        setTimeout(() => link.classList.remove('is-returned'), 1600);
-      }
-      // 글꼴·이미지가 늦게 로드되며 높이가 바뀌면 한 번 더 맞춰줌
-      const again = () => placeAt(state);
-      if (document.fonts && document.fonts.ready) document.fonts.ready.then(again);
-      if (document.readyState !== 'complete') window.addEventListener('load', again, { once: true });
-    });
-  }
-
-  // 브라우저가 페이지를 메모리에 보관해뒀다가 그대로 보여주는 경우엔
-  // 화면이 이미 그 자리이므로 저장값만 정리합니다.
-  window.addEventListener('pageshow', (e) => {
-    if (e.persisted) {
-      try { sessionStorage.removeItem(RETURN_STATE_KEY); } catch (err) {}
-    }
-  });
-
   // 자료 목록(data/manifest.json)을 불러와 각 관에 렌더링
   fetch('./data/manifest.json?v=' + Date.now(), { cache: 'no-store' })
     .then((res) => res.json())
@@ -1733,9 +1631,7 @@ footer{margin-top:56px}
         list.innerHTML = '<li class="doclist__empty">자료 목록을 불러오지 못했습니다.</li>';
       });
     })
-    .finally(() => {
-      restoreReturnState();
-    });
+    ;
 </script>
 
 <script>
@@ -1882,5 +1778,6 @@ footer{margin-top:56px}
   setTimeout(function(){ window.scrollTo(0, target.getBoundingClientRect().top + window.pageYOffset - 84); }, 60);
 })();
 </script>
+<script src="/assets/return-scroll.js"></script>
 </body>
 </html>

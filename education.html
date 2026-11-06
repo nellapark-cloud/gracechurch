@@ -620,5 +620,6 @@ document.querySelectorAll('[data-copy]').forEach(function(b){
 document.querySelectorAll('.kn-week').forEach(function(w){var d=new Date(w.dataset.date+'T00:00:00');var st=w.querySelector('.kn-state');
 if(d<t){w.classList.add('is-done');st.textContent='나눔 완료';}else if(!next){next=w;w.classList.add('is-next');st.textContent=(+d===+t)?'오늘 모임':'다음 모임';}});})();
 </script>
+<script src="/assets/return-scroll.js"></script>
 </body>
 </html>

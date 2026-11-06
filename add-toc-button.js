@@ -8,6 +8,8 @@ const fs = require('fs');
 const path = require('path');
 
 const TAG = '<script src="/assets/back-home.js"></script>';
+// 뒤로가기 했을 때 눌렀던 자리로 돌아오게 하는 스크립트
+const RS_TAG = '<script src="/assets/return-scroll.js"></script>';
 
 function walk(dir, out) {
   for (const name of fs.readdirSync(dir)) {
@@ -25,9 +27,12 @@ let changed = 0;
 for (const file of walk('content', [])) {
   let html;
   try { html = fs.readFileSync(file, 'utf8'); } catch (e) { continue; }
-  if (html.includes('/assets/back-home.js')) continue;
-  if (/<\/body>/i.test(html)) html = html.replace(/<\/body>(?![\s\S]*<\/body>)/i, TAG + '\n</body>');
-  else html += '\n' + TAG + '\n';
+  let add = '';
+  if (!html.includes('/assets/back-home.js')) add += TAG + '\n';
+  if (!html.includes('/assets/return-scroll.js')) add += RS_TAG + '\n';
+  if (!add) continue;
+  if (/<\/body>/i.test(html)) html = html.replace(/<\/body>(?![\s\S]*<\/body>)/i, add + '</body>');
+  else html += '\n' + add;
   fs.writeFileSync(file, html);
   changed++;
 }
