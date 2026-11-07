@@ -20,7 +20,7 @@
 <style>
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 *{box-sizing:border-box}
-body{margin:0;background:#F3F9FE;word-break:keep-all;overflow-wrap:break-word}
+body{margin:0;background:#F9F7F2;word-break:keep-all;overflow-wrap:break-word}
 /* GRACE 카드 머리: 사선 색면 + 세리프 이탤릭 글자 */
 .grace-front::before{content:"";position:absolute;left:0;right:0;top:0;height:68px;background:#6BB8EC}
 .grace-front::after{content:none}
@@ -95,7 +95,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .hero-img{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%);mask-image:linear-gradient(90deg,transparent 0%,#000 22%)}
 @media (max-width:700px){.hero-img{-webkit-mask-image:none;mask-image:none}}
 .hero-city{position:absolute;inset:-12px;background:url(assets/home/hero.jpg) 0% 35%/cover no-repeat;filter:blur(3px) saturate(1.15);opacity:.95;transform:scaleX(-1)}
-@media (min-width:701px){.hero-fade{background:linear-gradient(90deg,rgba(238,247,254,.18) 0,rgba(238,247,254,.18) calc(50% - 740px),rgba(238,247,254,.86) calc(50% - 590px),rgba(238,247,254,.9) calc(50% - 80px),rgba(238,247,254,.6) calc(50% + 40px),rgba(238,247,254,0) calc(50% + 160px)) !important}}
+@media (min-width:701px){.hero-fade{background:linear-gradient(90deg,rgba(249,247,242,.18) 0,rgba(249,247,242,.18) calc(50% - 740px),rgba(249,247,242,.86) calc(50% - 590px),rgba(249,247,242,.9) calc(50% - 80px),rgba(249,247,242,.6) calc(50% + 40px),rgba(249,247,242,0) calc(50% + 160px)) !important}}
 .mok-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
 @media (max-width:900px){.mok-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
 .ev-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
@@ -118,8 +118,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .story-title{font-size:17px;font-weight:800;color:#0F1B3D}
 .story-place{font-size:12px;font-weight:700;color:#3A9AD9}
 .story-desc{font-size:13px;line-height:1.6;color:#5A6788;word-break:keep-all}
-.story-next{background:#F3F9FE;border:1.5px dashed #9ED3F5}
-.story-next .story-dot{background:#FFFFFF;color:#3A9AD9;border:1.5px dashed #7CC4F2;box-shadow:0 0 0 5px #F3F9FE}
+.story-next{background:#F9F7F2;border:1.5px dashed #9ED3F5}
+.story-next .story-dot{background:#FFFFFF;color:#3A9AD9;border:1.5px dashed #7CC4F2;box-shadow:0 0 0 5px #F9F7F2}
 @media (max-width:900px){
  .story-line{grid-template-columns:1fr;gap:10px}
  .story-line::before{left:35px;right:auto;top:36px;bottom:36px;width:2px;height:auto;background:linear-gradient(180deg,#7CC4F2 0%,#7CC4F2 75%,#D3E8F6 75%)}
@@ -141,7 +141,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 /* 휴대폰에서 첫 화면 사진 */
 @media (max-width: 700px){
   .hero-img{width:100% !important;object-position:20% 30% !important}
-  .hero-fade{background:linear-gradient(180deg,rgba(238,247,254,0.92) 0%,rgba(238,247,254,0.80) 60%,rgba(238,247,254,0.55) 100%) !important}
+  .hero-fade{background:linear-gradient(180deg,rgba(249,247,242,0.92) 0%,rgba(249,247,242,0.80) 60%,rgba(249,247,242,0.55) 100%) !important}
   .svc-card{flex:1 1 100% !important;align-self:stretch !important}
 }
 @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
@@ -157,7 +157,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .ho-arrow svg{transition:transform .2s ease}
 .history-open:hover .ho-arrow{background:#176AA3}
 .history-open:hover .ho-arrow svg{transform:translateX(3px)}
-.history-dialog{width:min(760px,calc(100% - 32px));max-height:min(86vh,900px);padding:0;border:0;border-radius:22px;background:#F3F9FE;color:#0F1B3D;box-shadow:0 30px 80px rgba(15,40,70,.28);overflow:hidden;font-family:Pretendard,'Noto Sans KR',system-ui,sans-serif}
+.history-dialog{width:min(760px,calc(100% - 32px));max-height:min(86vh,900px);padding:0;border:0;border-radius:22px;background:#F9F7F2;color:#0F1B3D;box-shadow:0 30px 80px rgba(15,40,70,.28);overflow:hidden;font-family:Pretendard,'Noto Sans KR',system-ui,sans-serif}
 .history-dialog[open]{display:flex;flex-direction:column;animation:hdIn .28s ease}
 .history-dialog::backdrop{background:rgba(15,32,58,.42);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
 @keyframes hdIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
@@ -220,7 +220,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .give-copy.done{background:#2E9E6A}
 @media (max-width:600px){.give{padding:0 16px 28px}.give-inner{padding:24px 20px}.give-acct{width:100%;justify-content:space-between}.give-num{font-size:18px}}
 /* 하위 페이지 머리 + 둘러보기 */
-.page-hero{margin-top:-80px;padding:132px 24px 28px;background:linear-gradient(180deg,#D6ECFA 0%,#F3F9FE 100%)}
+.page-hero{margin-top:-80px;padding:132px 24px 28px;background:linear-gradient(180deg,#D6ECFA 0%,#F9F7F2 100%)}
 .ph-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
 .ph-label{font-size:12px;font-weight:800;letter-spacing:.18em;color:#1F7AB8}
 .ph-title{margin:0;font-size:clamp(30px,4.4vw,44px);font-weight:900;letter-spacing:-.03em;line-height:1.2;color:#0F1B3D}
@@ -250,14 +250,14 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 @media (max-width:960px){.gnav{gap:2px 8px !important;font-size:12.5px !important}}
 </style>
 <style id="hdr-scroll">
-#site-header::before{content:"";position:absolute;left:0;right:0;top:0;bottom:-10px;z-index:-1;background:rgba(243,249,254,.82);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid rgba(207,227,243,.9);opacity:0;transition:opacity .25s ease;pointer-events:none}
+#site-header::before{content:"";position:absolute;left:0;right:0;top:0;bottom:-10px;z-index:-1;background:rgba(249,247,242,.82);-webkit-backdrop-filter:blur(14px) saturate(1.3);backdrop-filter:blur(14px) saturate(1.3);border-bottom:1px solid rgba(207,227,243,.9);opacity:0;transition:opacity .25s ease;pointer-events:none}
 #site-header>div{transition:box-shadow .25s ease,border-color .25s ease,background .25s ease}
 #site-header.is-scrolled::before{opacity:1}
 #site-header.is-scrolled>div{background:#FFFFFF!important;border-color:#CFE3F3!important;box-shadow:0 10px 28px rgba(15,42,74,.14),0 2px 6px rgba(15,42,74,.06)!important}
 </style>
 </head>
 <body>
-<div style="font-family: Pretendard, 'Noto Sans KR', system-ui, sans-serif; color: #0F1B3D; background: #F3F9FE; width: 100%; line-height: 1.6">
+<div style="font-family: Pretendard, 'Noto Sans KR', system-ui, sans-serif; color: #0F1B3D; background: #F9F7F2; width: 100%; line-height: 1.6">
 
 <!-- 떠 있는 헤더 (상단 고정) -->
 <header id="site-header" style="position: sticky; top: 0; z-index: 50; padding: 12px 16px 0">
