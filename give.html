@@ -278,6 +278,18 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .gw-note{margin:0;font-size:13px;color:#5A6788;line-height:1.7}
 @media (max-width:980px){.gw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:600px){.gw{padding:4px 16px 36px}.gw-grid{grid-template-columns:1fr}.gw-title{font-size:22px}.gw-key{padding:22px 20px}.gw-key blockquote{font-size:16px}}
+.gu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.gu-item{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:16px;background:#FFFFFF;border:1px solid #E3EDF6}
+.gu-no{font-family:Montserrat,Pretendard,sans-serif;font-size:13px;font-weight:800;color:#3A9AD9}
+.gu-item b{font-size:17px;font-weight:800;color:#0F1B3D}
+.gu-item p{margin:0;font-size:13.5px;line-height:1.75;color:#3E4A66;word-break:keep-all;flex:1}
+.gu-from{align-self:flex-start;margin-top:4px;font-size:12px;color:#1F5F8F;background:#EEF7FD;border-radius:6px;padding:2px 8px}
+.gu-trust{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.gu-trust div{display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:16px;background:linear-gradient(135deg,#EEF7FD 0%,#DCEEFB 100%);border:1px solid #D3E8F6}
+.gu-trust b{font-size:15px;color:#0F2A4A}
+.gu-trust span{font-size:13.5px;line-height:1.7;color:#3E4A66;word-break:keep-all}
+@media (max-width:980px){.gu-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.gu-grid,.gu-trust{grid-template-columns:1fr}}
 .of-card{display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:14px;background:#FFFFFF;border:1px solid #E3EDF6}
 .of-card b{font-size:16px;color:#0F1B3D}
 .of-card span{font-size:13px;color:#5A6788}
@@ -443,6 +455,30 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </article>
 </div>
 <p class="gw-note">온라인으로 드릴 때는 입금자명에 이름과 헌금 종류를 함께 적어 주세요. (예: 홍길동 감사)<br>성경 본문은 개역개정판입니다.</p>
+</div>
+</section>
+
+<!-- 헌금은 어디에 쓰이나요 -->
+<section id="use" class="gw" aria-labelledby="guTitle">
+<div class="gw-inner">
+<div class="gw-head">
+<span class="give-label">USE · 헌금은 어디에 쓰이나요</span>
+<h2 id="guTitle" class="gw-title">드려진 헌금은<br>이렇게 쓰여요</h2>
+<p class="gw-desc">여러분이 드린 헌금은 예배와 말씀, 다음세대와 이웃을 섬기는 일에 쓰여요. 하나님께 드린 것이기에 한 푼도 가볍게 여기지 않고 맡겨진 청지기로서 정직하게 사용해요.</p>
+</div>
+<div class="gu-grid">
+<div class="gu-item"><span class="gu-no">01</span><b>예배와 말씀</b><p>주일 예배와 말씀코이노니아, 성경공부 자료 제작 등 말씀으로 성도를 세우는 사역에 쓰여요.</p><span class="gu-from">주일 · 십일조 · 감사</span></div>
+<div class="gu-item"><span class="gu-no">02</span><b>교회 공간과 운영</b><p>함께 모이는 예배당과 교제실을 지키고, 교회가 건강하게 운영되도록 필요한 살림을 감당해요.</p><span class="gu-from">주일 · 십일조</span></div>
+<div class="gu-item"><span class="gu-no">03</span><b>다음세대 교육</b><p>주일학교와 청소년, 새가족 양육과 직분자 교육처럼 믿음을 이어 가는 배움에 쓰여요.</p><span class="gu-from">주일 · 십일조</span></div>
+<div class="gu-item"><span class="gu-no">04</span><b>선교와 협력</b><p>선교사님과 복음 사역을 후원하고, 지역 교회들과 함께하는 연합 사역을 섬겨요.</p><span class="gu-from">선교 헌금</span></div>
+<div class="gu-item"><span class="gu-no">05</span><b>구제와 장학</b><p>어려움 가운데 있는 이웃과 성도를 돌보고, 배움의 길을 걷는 이들에게 장학금으로 힘을 보태요.</p><span class="gu-from">구제 · 장학 전용 계좌</span></div>
+<div class="gu-item"><span class="gu-no">06</span><b>청년비전</b><p>청년들이 믿음 안에서 꿈꾸고 자라도록 모임과 훈련, 비전 활동을 지원해요.</p><span class="gu-from">청년비전 전용 계좌</span></div>
+</div>
+<div class="gu-trust">
+<div><b>지정 헌금은 지정된 곳에만</b><span>구제·장학과 청년비전처럼 목적을 정해 드린 헌금은 전용 계좌로 따로 관리하고, 그 목적에만 사용해요.</span></div>
+<div><b>투명한 재정 관리</b><span>재정위원이 헌금의 수입과 지출을 정직하게 기록하고 관리해요. 쓰임이 궁금하시면 언제든 편하게 물어보세요.</span></div>
+</div>
+<p class="gw-note">바울도 성도들의 연보를 맡았을 때, 주 앞에서뿐 아니라 사람 앞에서도 깨끗하도록 조심했어요. (고린도후서 8:20-21)</p>
 </div>
 </section>
 
