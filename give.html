@@ -223,6 +223,15 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .give-copy:hover{background:#176AA3}
 .give-copy.done{background:#2E9E6A}
 @media (max-width:600px){.give{padding:0 16px 28px}.give-inner{padding:24px 20px}.give-accts{flex:1 1 100%}.give-acct{width:100%;justify-content:space-between}.give-num{font-size:18px}}
+/* 계좌 3열 배치 */
+.give-inner{flex-direction:column;align-items:stretch;justify-content:flex-start;gap:18px;padding:26px 28px}
+.give-text{flex:none;gap:4px}
+.give-accts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;flex:none}
+.give-accts .give-acct{flex-direction:column;align-items:stretch;gap:12px;padding:18px 18px 16px}
+.give-accts .give-copy{justify-content:center;width:100%;min-height:40px}
+.give-accts .give-num{font-size:19px}
+@media (max-width:900px){.give-accts{grid-template-columns:1fr}.give-accts .give-acct{flex-direction:row;align-items:center;justify-content:space-between}.give-accts .give-copy{width:auto}}
+@media (max-width:480px){.give-accts .give-acct{flex-direction:column;align-items:stretch}.give-accts .give-copy{width:100%}}
 /* 하위 페이지 머리 + 둘러보기 */
 .page-hero{margin-top:-80px;padding:132px 24px 28px;background:linear-gradient(180deg,#D6ECFA 0%,#F3F9FE 100%)}
 .ph-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
@@ -358,8 +367,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <section id="give" class="give" aria-labelledby="giveTitle">
 <div class="give-inner">
 <div class="give-text">
-<span class="give-label">OFFERING · 후원 · 헌금</span>
-<h2 id="giveTitle" class="give-title">후원 · 헌금 계좌</h2>
+<h2 id="giveTitle" class="give-title">계좌 안내</h2>
 <span class="give-desc">교회와 사역을 위한 후원과 온라인 헌금은 아래 계좌로 드릴 수 있어요. 구제·장학과 청년비전 후원은 각 전용 계좌로 보내 주세요.</span>
 </div>
 <div class="give-accts">
