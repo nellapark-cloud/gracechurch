@@ -246,6 +246,29 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 @media (max-width:600px){.page-hero{padding:118px 16px 22px}}
 </style>
 <style>
+.gw{padding:8px 24px 48px}
+.gw-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+.gw-head{display:flex;flex-direction:column;gap:8px;max-width:640px}
+.gw-title{margin:0;font-size:26px;font-weight:800;letter-spacing:-.02em;line-height:1.35;color:#0F1B3D}
+.gw-desc{margin:0;font-size:14px;color:#5A6788;line-height:1.8;word-break:keep-all}
+.gw-key{margin:0;padding:26px 30px;border-radius:20px;background:linear-gradient(135deg,#EEF7FD 0%,#DCEEFB 100%);border:1px solid #D3E8F6;display:flex;flex-direction:column;gap:10px}
+.gw-key blockquote{margin:0;font-size:18px;font-weight:700;line-height:1.7;color:#0F2A4A;word-break:keep-all}
+.gw-key figcaption{font-size:13px;font-weight:700;color:#1F7AB8}
+.gw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gw-card{display:flex;flex-direction:column;gap:10px;padding:22px 22px 20px;border-radius:18px;background:#FFFFFF;border:1px solid #E3EDF6;box-shadow:0 6px 18px rgba(30,80,120,.05)}
+.gw-top{display:flex;justify-content:space-between;align-items:center;gap:8px}
+.gw-tag{font-size:11px;font-weight:800;letter-spacing:.12em;color:#1F7AB8;background:#E6F4FD;border-radius:999px;padding:4px 10px}
+.gw-acct{font-size:12px;color:#7F8BA8}
+.gw-name{margin:0;font-size:19px;font-weight:800;color:#0F1B3D}
+.gw-q{margin:0;padding:12px 14px;border-left:3px solid #3A9AD9;background:#F6FAFE;border-radius:0 10px 10px 0;font-size:14px;font-weight:600;line-height:1.7;color:#0F2A4A;word-break:keep-all}
+.gw-q cite{display:block;margin-top:4px;font-style:normal;font-size:12px;font-weight:700;color:#1F7AB8}
+.gw-text{margin:0;font-size:13.5px;line-height:1.8;color:#3E4A66;word-break:keep-all;flex:1}
+.gw-refs{display:flex;flex-wrap:wrap;align-items:center;gap:6px;padding-top:10px;border-top:1px solid #EEF3F9}
+.gw-refs b{font-size:12px;color:#5A6788;margin-right:2px}
+.gw-refs span{font-size:12px;color:#1F5F8F;background:#EEF7FD;border-radius:6px;padding:2px 8px}
+.gw-note{margin:0;font-size:13px;color:#5A6788;line-height:1.7}
+@media (max-width:980px){.gw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.gw{padding:4px 16px 36px}.gw-grid{grid-template-columns:1fr}.gw-title{font-size:22px}.gw-key{padding:22px 20px}.gw-key blockquote{font-size:16px}}
 .of-card{display:flex;flex-direction:column;gap:4px;padding:18px 20px;border-radius:14px;background:#FFFFFF;border:1px solid #E3EDF6}
 .of-card b{font-size:16px;color:#0F1B3D}
 .of-card span{font-size:13px;color:#5A6788}
@@ -355,14 +378,64 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </div>
 </div>
 </section>
-<section style="padding: 0 24px 40px">
-<div style="max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px">
-<div class="of-card"><b>주일 헌금</b><span>주일 예배로 드리는 감사의 예물</span></div>
-<div class="of-card"><b>십일조</b><span>삶의 주인이 하나님이심을 고백해요</span></div>
-<div class="of-card"><b>감사 헌금</b><span>삶 속에서 받은 은혜에 감사하며</span></div>
-<div class="of-card"><b>선교 헌금</b><span>선교사님과 열방을 위한 후원</span></div>
+<!-- 헌금의 성경적 근거 -->
+<section id="word" class="gw" aria-labelledby="gwTitle">
+<div class="gw-inner">
+<div class="gw-head">
+<span class="give-label">WORD · 말씀 위에 드리는 헌금</span>
+<h2 id="gwTitle" class="gw-title">우리 교회 헌금과 후원은<br>이런 말씀에 근거해요</h2>
+<p class="gw-desc">은혜교회의 헌금은 정해진 의무나 회비가 아니에요. 받은 은혜에 대한 감사이자, 말씀이 가르치는 예배와 나눔에 기쁘게 참여하는 고백이에요.</p>
 </div>
-<p style="max-width: 1200px; margin: 14px auto 0; font-size: 13px; color: #5A6788">온라인으로 드릴 때는 입금자명에 이름과 헌금 종류를 함께 적어 주세요. (예: 홍길동 감사)</p>
+<figure class="gw-key">
+<blockquote>각각 그 마음에 정한 대로 할 것이요 인색함으로나 억지로 하지 말지니 하나님은 즐겨 내는 자를 사랑하시느니라</blockquote>
+<figcaption>고린도후서 9:7</figcaption>
+</figure>
+<div class="gw-grid">
+<article class="gw-card">
+<div class="gw-top"><span class="gw-tag">SUNDAY</span><span class="gw-acct">교회 · 헌금 계좌</span></div>
+<h3 class="gw-name">주일 헌금</h3>
+<p class="gw-q">“매주 첫날에 너희 각 사람이 수입에 따라 모아 두어서”<cite>고린도전서 16:2</cite></p>
+<p class="gw-text">초대교회는 주님이 부활하신 첫날마다 예배하며 정기적으로 예물을 모았어요. 주일 헌금은 한 주를 주님께 드리며 예배로 시작하는 고백이에요.</p>
+<div class="gw-refs"><b>함께 읽을 말씀</b><span>신 16:16-17</span><span>고후 9:7</span></div>
+</article>
+<article class="gw-card">
+<div class="gw-top"><span class="gw-tag">TITHE</span><span class="gw-acct">교회 · 헌금 계좌</span></div>
+<h3 class="gw-name">십일조</h3>
+<p class="gw-q">“너희의 온전한 십일조를 창고에 들여 나의 집에 양식이 있게 하고”<cite>말라기 3:10</cite></p>
+<p class="gw-text">아브라함과 야곱은 율법 이전부터 받은 것의 십분의 일을 드리며 삶의 주인이 하나님이심을 고백했어요. 십일조는 예배와 말씀 사역이 든든히 서도록 교회를 세우는 데 쓰여요.</p>
+<div class="gw-refs"><b>함께 읽을 말씀</b><span>창 14:20</span><span>창 28:22</span><span>레 27:30</span><span>마 23:23</span></div>
+</article>
+<article class="gw-card">
+<div class="gw-top"><span class="gw-tag">THANKS</span><span class="gw-acct">교회 · 헌금 계좌</span></div>
+<h3 class="gw-name">감사 헌금</h3>
+<p class="gw-q">“감사로 하나님께 제사를 드리며”<cite>시편 50:14</cite></p>
+<p class="gw-text">구약의 화목제 가운데에는 감사로 드리는 제사가 따로 있었어요. 돌아와 감사한 한 사람처럼, 삶에서 받은 은혜를 기억하고 표현하는 예물이에요.</p>
+<div class="gw-refs"><b>함께 읽을 말씀</b><span>레 7:12</span><span>시 116:12-14</span><span>눅 17:15-16</span></div>
+</article>
+<article class="gw-card">
+<div class="gw-top"><span class="gw-tag">MISSION</span><span class="gw-acct">교회 · 헌금 계좌</span></div>
+<h3 class="gw-name">선교 헌금</h3>
+<p class="gw-q">“보내심을 받지 아니하였으면 어찌 전파하리요”<cite>로마서 10:15</cite></p>
+<p class="gw-text">빌립보 교회는 바울의 복음 사역을 거듭 후원했고, 바울은 그 예물을 하나님이 기뻐 받으시는 향기로운 제물이라 불렀어요. 보내는 사람도 선교의 동역자예요.</p>
+<div class="gw-refs"><b>함께 읽을 말씀</b><span>빌 4:15-18</span><span>요삼 1:5-8</span></div>
+</article>
+<article class="gw-card">
+<div class="gw-top"><span class="gw-tag">RELIEF</span><span class="gw-acct">구제 · 장학 전용 계좌</span></div>
+<h3 class="gw-name">구제 · 장학</h3>
+<p class="gw-q">“네 형제 중 곤란한 자와 궁핍한 자에게 네 손을 펼지니라”<cite>신명기 15:11</cite></p>
+<p class="gw-text">이스라엘은 십일조로 객과 고아와 과부를 돌보았고, 초대교회는 서로 나누어 핍절한 사람이 없게 했어요. 장학은 다음 세대를 가르치고 세우라는 말씀을 따라 배움의 길을 돕는 나눔이에요.</p>
+<div class="gw-refs"><b>함께 읽을 말씀</b><span>신 14:28-29</span><span>행 4:34-35</span><span>갈 2:10</span><span>딤후 2:2</span></div>
+</article>
+<article class="gw-card">
+<div class="gw-top"><span class="gw-tag">YOUTH VISION</span><span class="gw-acct">청년비전 전용 계좌</span></div>
+<h3 class="gw-name">청년비전</h3>
+<p class="gw-q">“누구든지 네 연소함을 업신여기지 못하게 하고”<cite>디모데전서 4:12</cite></p>
+<p class="gw-text">하나님은 청년들이 환상을 보리라 약속하셨어요. 청년비전 후원은 하나님의 일을 다음 세대에 전하며, 청년들이 믿음 안에서 꿈꾸고 자라도록 돕는 투자예요.</p>
+<div class="gw-refs"><b>함께 읽을 말씀</b><span>욜 2:28</span><span>행 2:17</span><span>시 78:4-7</span></div>
+</article>
+</div>
+<p class="gw-note">온라인으로 드릴 때는 입금자명에 이름과 헌금 종류를 함께 적어 주세요. (예: 홍길동 감사)<br>성경 본문은 개역개정판입니다.</p>
+</div>
 </section>
 
 <!-- 푸터 -->
