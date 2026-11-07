@@ -212,13 +212,17 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .give-desc{font-size:13px;color:#5A6788;line-height:1.6}
 .give-acct{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 16px 14px 20px;border-radius:14px;background:#EEF7FD;border:1px solid #D3E8F6}
 .give-acct-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+.give-accts{display:flex;flex-direction:column;gap:10px;flex:0 1 420px;min-width:0}
+.give-accts .give-acct{justify-content:space-between}
+.give-purpose{font-size:14px;font-weight:800;color:#0F1B3D}
+.give-accts .give-bank{color:#5A6788;font-weight:600}
 .give-bank{font-size:12px;font-weight:700;color:#1F7AB8}
 .give-num{font-family:Montserrat,Pretendard,sans-serif;font-size:20px;font-weight:800;letter-spacing:.02em;color:#0F1B3D}
 .give-holder{font-size:12.5px;color:#3B4868}
 .give-copy{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 16px;border:0;border-radius:10px;background:#1F7AB8;color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
 .give-copy:hover{background:#176AA3}
 .give-copy.done{background:#2E9E6A}
-@media (max-width:600px){.give{padding:0 16px 28px}.give-inner{padding:24px 20px}.give-acct{width:100%;justify-content:space-between}.give-num{font-size:18px}}
+@media (max-width:600px){.give{padding:0 16px 28px}.give-inner{padding:24px 20px}.give-accts{flex:1 1 100%}.give-acct{width:100%;justify-content:space-between}.give-num{font-size:18px}}
 /* 하위 페이지 머리 + 둘러보기 */
 .page-hero{margin-top:-80px;padding:132px 24px 28px;background:linear-gradient(180deg,#D6ECFA 0%,#F3F9FE 100%)}
 .ph-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
@@ -333,11 +337,21 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <div class="give-text">
 <span class="give-label">OFFERING · 후원 · 헌금</span>
 <h2 id="giveTitle" class="give-title">후원 · 헌금 계좌</h2>
-<span class="give-desc">교회와 사역을 위한 후원과 온라인 헌금은 이 계좌로 드릴 수 있어요.</span>
+<span class="give-desc">교회와 사역을 위한 후원과 온라인 헌금은 아래 계좌로 드릴 수 있어요. 구제·장학과 청년비전 후원은 각 전용 계좌로 보내 주세요.</span>
+</div>
+<div class="give-accts">
+<div class="give-acct">
+<span class="give-acct-info"><span class="give-purpose">교회 · 헌금</span><span class="give-bank">농협</span><span class="give-num">351-2233-6688-93</span><span class="give-holder">예금주 · 기독교한국침례회은혜교회</span></span>
+<button type="button" class="give-copy" data-copy="351-2233-6688-93" aria-label="교회 · 헌금 계좌번호 복사"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg><span>계좌 복사</span></button>
 </div>
 <div class="give-acct">
-<span class="give-acct-info"><span class="give-bank">농협</span><span class="give-num">351-2233-6688-93</span><span class="give-holder">예금주 · 기독교한국침례회은혜교회</span></span>
-<button type="button" class="give-copy" data-copy="351-2233-6688-93" aria-label="계좌번호 복사"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg><span>계좌 복사</span></button>
+<span class="give-acct-info"><span class="give-purpose">구제 · 장학</span><span class="give-bank">농협</span><span class="give-num">351-0864-7030-13</span><span class="give-holder">예금주 · 기독교한국침례회은혜교회</span></span>
+<button type="button" class="give-copy" data-copy="351-0864-7030-13" aria-label="구제 · 장학 계좌번호 복사"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg><span>계좌 복사</span></button>
+</div>
+<div class="give-acct">
+<span class="give-acct-info"><span class="give-purpose">청년비전</span><span class="give-bank">농협</span><span class="give-num">351-0993-5925-83</span><span class="give-holder">예금주 · 기독교한국침례회은혜교회</span></span>
+<button type="button" class="give-copy" data-copy="351-0993-5925-83" aria-label="청년비전 계좌번호 복사"><svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"></rect><path d="M5 15V5a2 2 0 0 1 2-2h10"></path></svg><span>계좌 복사</span></button>
+</div>
 </div>
 </div>
 </section>
