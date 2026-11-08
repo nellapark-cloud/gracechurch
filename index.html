@@ -287,6 +287,29 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 #site-header.is-scrolled::before{opacity:1}
 #site-header.is-scrolled>div{background:#FFFFFF!important;border-color:#CFE3F3!important;box-shadow:0 10px 28px rgba(15,42,74,.14),0 2px 6px rgba(15,42,74,.06)!important}
 </style>
+<style id="hero-slider">
+.hs-track{display:flex;width:100%;will-change:transform}
+.hs-track.anim{transition:transform .9s cubic-bezier(.65,0,.35,1)}
+.hs-slide{position:relative;flex:0 0 100%;min-width:0;overflow:hidden}
+.hs-promo{display:block;background:#E9EEF3}
+.hs-promo-bg{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(18px) saturate(1.1);opacity:.9}
+.hs-promo img{position:absolute;left:0;right:0;top:80px;bottom:44px;width:100%;height:calc(100% - 124px);object-fit:contain;display:block;filter:drop-shadow(0 12px 28px rgba(15,27,61,.18))}
+.hs-dots{position:absolute;left:0;right:0;bottom:52px;display:flex;justify-content:center;gap:8px;z-index:3}
+.hs-dots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:rgba(15,27,61,.25);cursor:pointer;transition:width .3s ease,background .3s ease}
+.hs-dots button.on{width:26px;background:#1F7AB8}
+@media (max-width:700px){.hs-dots{bottom:46px}}
+.hs-cap{display:none}
+@media (max-width:700px){
+ .hs-promo{display:flex;flex-direction:column;align-items:stretch;padding:104px 20px 90px;gap:18px}
+ .hs-promo img{position:relative;inset:auto;top:auto;bottom:auto;height:auto;width:100%;border-radius:14px;object-fit:cover}
+ .hs-cap{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:16px;background:rgba(255,255,255,.92);box-shadow:0 10px 26px rgba(30,80,120,.14);color:#0F1B3D}
+ .hs-cap b{font-size:20px;font-weight:900;letter-spacing:-.02em}
+ .hs-cap span{font-size:15px;font-weight:700;color:#C2541C}
+ .hs-cap .hs-cap-d{font-size:14px;font-weight:500;color:#3B4868;line-height:1.6;word-break:keep-all}
+ .hs-cap .hs-cap-btn{align-self:flex-start;margin-top:6px;padding:9px 16px;border-radius:10px;background:#7CC4F2;color:#0F2A4A;font-size:14px;font-weight:800}
+}
+
+</style>
 </head>
 <body>
 <div style="font-family: Pretendard, 'Noto Sans KR', system-ui, sans-serif; color: #0F1B3D; background: #F9F7F2; width: 100%; line-height: 1.6">
@@ -352,6 +375,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 
 <!-- 히어로 -->
 <section id="top" style="position: relative; overflow: hidden; margin-top: -80px; background: #D6ECFA">
+<div class="hs-track" id="hs-track">
+<div class="hs-slide hs-main">
 <div class="hero-city" aria-hidden="true"></div>
 <img class="hero-img" src="assets/home/hero.jpg" fetchpriority="high" alt="도심 한가운데에서 성경을 품고 하늘을 바라보는 청년" style="position: absolute; top: 0; right: 0; width: 66%; height: 100%; object-fit: cover; object-position: 14% 30%">
 <div class="hero-fade" style="position: absolute; inset: 0; background: linear-gradient(90deg, rgba(249,247,242,0.62) 0%, rgba(249,247,242,0.86) 22%, rgba(249,247,242,0.94) 34%, rgba(249,247,242,0.75) 40%, rgba(249,247,242,0) 54%)"></div>
@@ -398,6 +423,14 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <a href="visit.html" style="display: inline-flex; align-items: center; min-height: 32px; font-size: 12px; font-weight: 700; color: #1F7AB8; margin-top: 4px">오시는 길 ›</a>
 </div>
 </div>
+</div>
+<a class="hs-slide hs-promo" href="events.html" aria-label="2026년 11월 15일 주일 오전 11시 추수감사주일 감사고백예배 — 일정 보기">
+<span class="hs-promo-bg" aria-hidden="true" style="background-image:url(assets/home/thanksgiving-2026-blur.jpg)"></span>
+<img src="assets/home/thanksgiving-2026.jpg" alt="추수감사주일 감사고백예배 · 2026년 11월 15일 주일 오전 11시 · 온 성도가 ‘나의 멋진 하나님’을 고백하는 찬양과 감사의 주일 예배" loading="lazy">
+<span class="hs-cap"><b>추수감사주일 감사고백예배</b><span>2026년 11월 15일 주일 오전 11시</span><span class="hs-cap-d">온 성도가 ‘나의 멋진 하나님’을 고백하는 찬양과 감사의 주일 예배</span><span class="hs-cap-btn">일정 보기 ›</span></span>
+</a>
+</div>
+<div class="hs-dots" role="tablist" aria-label="첫 화면 넘기기"><button type="button" class="on" aria-label="첫 번째 화면"></button><button type="button" aria-label="추수감사주일 안내"></button></div>
 </section>
 
 <!-- 바로가기 띠 -->
@@ -573,6 +606,49 @@ document.querySelectorAll('[data-copy]').forEach(function(b){
 (function(){var h=document.getElementById('site-header');if(!h)return;
 function f(){var y=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;h.classList.toggle('is-scrolled',y>8);}
 window.addEventListener('scroll',f,{passive:true});document.body.addEventListener('scroll',f,{passive:true});f();})();
+</script>
+<script>
+/* 첫 화면: 몇 초마다 옆으로 밀어내며 바뀌기 */
+(function(){
+  var track = document.getElementById('hs-track'); if (!track) return;
+  var dots = Array.prototype.slice.call(document.querySelectorAll('.hs-dots button'));
+  var slides = Array.prototype.slice.call(track.children); // 원래 순서
+  var cur = 0, busy = false, timer, DELAY = 6000;
+  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function mark(){ dots.forEach(function(d, i){ d.classList.toggle('on', i === cur); }); }
+  function go(next){
+    if (busy || next === cur) return;
+    busy = true;
+    // 다음 화면을 현재 화면 바로 오른쪽에 둔 뒤, 왼쪽으로 밀어낸다
+    track.appendChild(slides[next]);
+    track.insertBefore(slides[cur], slides[next]);
+    track.classList.remove('anim'); track.style.transform = 'translateX(0)';
+    void track.offsetWidth;
+    var done = function(){
+      track.removeEventListener('transitionend', done);
+      track.classList.remove('anim');
+      track.insertBefore(slides[next], track.firstChild);
+      track.style.transform = 'translateX(0)';
+      cur = next; mark(); busy = false;
+    };
+    if (reduce) { done(); return; }
+    track.classList.add('anim');
+    track.addEventListener('transitionend', done);
+    track.style.transform = 'translateX(-100%)';
+  }
+  function start(){ stop(); timer = setInterval(function(){ go((cur + 1) % slides.length); }, DELAY); }
+  function stop(){ clearInterval(timer); }
+  dots.forEach(function(d, i){ d.addEventListener('click', function(){ go(i); start(); }); });
+  var top = document.getElementById('top');
+  top.addEventListener('mouseenter', stop); top.addEventListener('mouseleave', start);
+  top.addEventListener('focusin', stop); top.addEventListener('focusout', start);
+  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
+  // 휴대폰: 손가락으로 밀기
+  var x0 = null;
+  top.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; stop(); }, { passive: true });
+  top.addEventListener('touchend', function(e){ if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 50) go((cur + 1) % slides.length); start(); });
+  start();
+})();
 </script>
 </body>
 </html>
