@@ -424,10 +424,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 </div>
 </div>
 </div>
-<a class="hs-slide hs-promo" href="events.html" aria-label="2026년 11월 15일 주일 오전 11시 추수감사주일 감사고백예배 — 일정 보기">
+<a class="hs-slide hs-promo" href="thanksgiving.html" aria-label="2026년 11월 15일 주일 오전 11시 추수감사주일 감사고백예배 — 고백 안내 보기">
 <span class="hs-promo-bg" aria-hidden="true" style="background-image:url(assets/home/thanksgiving-2026-blur.jpg)"></span>
 <img src="assets/home/thanksgiving-2026.jpg" alt="추수감사주일 감사고백예배 · 2026년 11월 15일 주일 오전 11시 · 온 성도가 ‘나의 멋진 하나님’을 고백하는 찬양과 감사의 주일 예배" loading="lazy">
-<span class="hs-cap"><b>추수감사주일 감사고백예배</b><span>2026년 11월 15일 주일 오전 11시</span><span class="hs-cap-d">온 성도가 ‘나의 멋진 하나님’을 고백하는 찬양과 감사의 주일 예배</span><span class="hs-cap-btn">일정 보기 ›</span></span>
+<span class="hs-cap"><b>추수감사주일 감사고백예배</b><span>2026년 11월 15일 주일 오전 11시</span><span class="hs-cap-d">온 성도가 ‘나의 멋진 하나님’을 고백하는 찬양과 감사의 주일 예배</span><span class="hs-cap-btn">고백 안내 보기 ›</span></span>
 </a>
 </div>
 <div class="hs-dots" role="tablist" aria-label="첫 화면 넘기기"><button type="button" class="on" aria-label="첫 번째 화면"></button><button type="button" aria-label="추수감사주일 안내"></button></div>
@@ -613,7 +613,7 @@ window.addEventListener('scroll',f,{passive:true});document.body.addEventListene
   var track = document.getElementById('hs-track'); if (!track) return;
   var dots = Array.prototype.slice.call(document.querySelectorAll('.hs-dots button'));
   var slides = Array.prototype.slice.call(track.children); // 원래 순서
-  var cur = 0, busy = false, timer, DELAY = 6000;
+  var cur = 0, busy = false, timer, DELAY = 5000;
   var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   function mark(){ dots.forEach(function(d, i){ d.classList.toggle('on', i === cur); }); }
   function go(next){
