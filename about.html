@@ -286,7 +286,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .tm-desc{font-size:13px;color:#5A6788;line-height:1.6;word-break:keep-all}
 .tm-name small{font-size:13px;font-weight:600;color:#5A6788;margin-left:2px}
 .tm-list{list-style:none;margin:6px 0 0;padding:0;display:flex;flex-direction:column}
-.tm-list li{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding:6px 0;border-top:1px solid #EEF3F9;font-size:13px}
+.tm-list li{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:6px 0;border-top:1px solid #EEF3F9;font-size:13px}
 .tm-list li span{color:#5A6788}
 .tm-list li b{font-weight:700;color:#0F1B3D;text-align:right;word-break:keep-all}
 .tm-list li b small{font-weight:500;color:#5A6788}
@@ -294,7 +294,20 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .tm-photo{width:48px;height:48px;border-radius:50%;object-fit:cover;object-position:center 30%;border:2px solid #E6F4FD;margin-bottom:2px;background:#fff}
 .tm-who{display:inline-flex;align-items:center;gap:6px}
 .tm-avatar{width:22px;height:22px;border-radius:50%;object-fit:cover;flex-shrink:0}
-@media (max-width:900px){.tm-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.tm-list li span{flex-shrink:0}
+.tm-list li b{min-width:0}
+.tm-who{flex-wrap:wrap;justify-content:flex-end}
+@media (max-width:900px){.tm-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.tm-wide{grid-column:1/-1}}
+@media (max-width:600px){
+.tm-grid{grid-template-columns:1fr;gap:8px}
+.tm-card{display:grid;grid-template-columns:44px minmax(0,1fr);column-gap:14px;row-gap:1px;padding:14px 16px;align-items:center}
+.tm-card>*{grid-column:2}
+.tm-ic,.tm-photo{grid-column:1;grid-row:1/span 3;align-self:start;margin:0;width:44px;height:44px}
+.tm-wide .tm-ic{grid-row:1/span 2}
+.tm-name{font-size:16px}
+.tm-desc{font-size:12.5px;line-height:1.5}
+.tm-list{grid-column:1/-1;margin-top:8px}
+}
 @media (max-width:640px){.pastor{grid-template-columns:1fr;padding:22px 18px;gap:16px}.pastor-photo{width:120px;height:120px}.pastor-info div{grid-template-columns:72px 1fr}}
 </style>
 <style id="hdr-scroll">
@@ -556,7 +569,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <div class="tm-card"><span class="tm-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13M9 18a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM21 16a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path></svg></span><span class="tm-role">전도사</span><span class="tm-name tm-pending">현재 공석</span><span class="tm-desc">함께 섬길 전도사님을 기도하며 기다려요</span></div>
 <div class="tm-card"><img src="assets/home/leejiwook.jpg" alt="재정위원 이지욱 집사" class="tm-photo" loading="lazy"><span class="tm-role">재정위원</span><span class="tm-name">이지욱 <small>집사</small></span><span class="tm-desc">교회 재정과 운영을 투명하게 섬겨요</span></div>
 <div class="tm-card"><span class="tm-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M19 8v6M22 11h-6"></path></svg></span><span class="tm-role">새가족 담당</span><span class="tm-name">이세라 <small>집사</small></span><span class="tm-desc">처음 오신 분을 맞이하고 정착을 도와요</span></div>
-<div class="tm-card"><span class="tm-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span class="tm-role">목자</span><span class="tm-desc">목장을 이끌며 성도들의 삶을 돌봐요</span><ul class="tm-list"><li><span>여자장년</span><b>곽상미</b></li><li><span>남자장년</span><b class="tm-pending">준비 중</b></li><li><span>청장년</span><b class="tm-who"><img src="assets/home/leejiwook.jpg" alt="" class="tm-avatar" loading="lazy">이지욱(이세라) <small>집사</small></b></li><li><span>청년</span><b>임도형(김사라)</b></li><li><span>아동 · 청소년</span><b>박영희 <small>사모</small></b></li></ul></div>
+<div class="tm-card tm-wide"><span class="tm-ic" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span><span class="tm-role">목자</span><span class="tm-desc">목장을 이끌며 성도들의 삶을 돌봐요</span><ul class="tm-list"><li><span>여자장년</span><b>곽상미</b></li><li><span>남자장년</span><b class="tm-pending">준비 중</b></li><li><span>청장년</span><b class="tm-who"><img src="assets/home/leejiwook.jpg" alt="" class="tm-avatar" loading="lazy">이지욱(이세라) <small>집사</small></b></li><li><span>청년</span><b>임도형(김사라)</b></li><li><span>아동 · 청소년</span><b>박영희 <small>사모</small></b></li></ul></div>
 </div>
 </div>
 </section>
