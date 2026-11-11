@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>은혜교회 주보 — 2026년 7월 19일</title>
+<title>은혜교회 주보 — 2026년 9월 27일</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&amp;family=Noto+Sans+KR:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -171,21 +171,16 @@
     text-align: right;
     letter-spacing: 0.02em;
   }
-  .order-item-sermon {
-    border-bottom: 1px solid var(--rule);
-    padding: 10px 0;
-  }
-  .order-item-sermon .order-item {
-    border-bottom: none;
-    padding: 0;
-  }
-  .order-sermon-title {
+  .sermon-note {
+    margin-top: 14px;
+    padding: 14px 18px;
+    background: var(--cream);
+    border-left: 3px solid var(--gold);
     font-family: 'Noto Serif KR', serif;
     font-size: 12px;
-    font-style: italic;
     color: var(--ink-light);
-    padding-left: 44px;
-    margin-top: 6px;
+    font-style: italic;
+    line-height: 1.7;
   }
 
   /* ── MAIN CONTENT ── */
@@ -222,24 +217,6 @@
     font-weight: 700;
     line-height: 1.5;
     color: var(--ink);
-  }
-  .sermon-preacher {
-    margin-top: 10px;
-    font-size: 11.5px;
-    color: var(--ink-muted);
-    letter-spacing: 0.04em;
-  }
-
-  .sermon-note {
-    margin-top: 20px;
-    padding: 16px 18px;
-    background: var(--cream);
-    border-left: 3px solid var(--gold);
-    font-family: 'Noto Serif KR', serif;
-    font-size: 12px;
-    color: var(--ink-light);
-    font-style: italic;
-    line-height: 1.8;
   }
 
   .sermon-point {
@@ -313,16 +290,6 @@
     font-family: 'Noto Serif KR', serif;
     font-size: 12px;
     line-height: 1.75;
-    color: var(--ink-light);
-  }
-
-  .moktjang-guide {
-    padding: 18px;
-    background: var(--warm);
-    border-radius: 2px;
-    font-family: 'Noto Serif KR', serif;
-    font-size: 12px;
-    line-height: 1.9;
     color: var(--ink-light);
   }
 
@@ -452,43 +419,6 @@
   tbody td:first-child { font-weight: 600; color: var(--ink); }
   tbody td:last-child { font-weight: 600; color: var(--accent); }
 
-  /* ── WORSHIP TEAM / SERVICE TIMES ── */
-  .info-section {
-    padding: 24px 52px;
-    border-bottom: 1px solid var(--rule);
-  }
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    gap: 0;
-    margin-top: 14px;
-    border: 1px solid var(--rule);
-    overflow: hidden;
-    border-radius: 2px;
-  }
-  .info-grid.times-grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  @media (max-width: 600px) {
-    .info-grid { grid-template-columns: repeat(3, 1fr); }
-    .info-grid.times-grid { grid-template-columns: repeat(2, 1fr); }
-  }
-  .info-cell {
-    padding: 10px 8px;
-    text-align: center;
-    border-right: 1px solid var(--rule);
-  }
-  .info-cell:last-child { border-right: none; }
-  .info-label { font-size: 10px; color: var(--ink-muted); margin-bottom: 4px; letter-spacing: 0.04em; }
-  .info-value { font-size: 12px; font-weight: 600; color: var(--ink); }
-  .info-header-row .info-cell {
-    background: var(--warm);
-    font-size: 9.5px;
-    font-weight: 600;
-    color: var(--ink-muted);
-    letter-spacing: 0.08em;
-  }
-
   /* ── DEPARTMENT ── */
   .dept-section {
     padding: 24px 52px;
@@ -527,12 +457,19 @@
     padding: 24px 52px;
     border-bottom: 1px solid var(--rule);
   }
+  .offering-scroll {
+    margin-top: 14px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
   .offering-table {
     width: 100%;
+    min-width: 560px;
     border-collapse: collapse;
     font-size: 11.5px;
-    margin-top: 14px;
   }
+  .offering-table th,
+  .offering-table td { white-space: nowrap; }
   .offering-table th {
     background: var(--warm);
     padding: 8px 12px;
@@ -585,17 +522,40 @@
   /* ── CLOSING ── */
   .closing-banner {
     background: var(--accent);
-    padding: 20px 52px;
+    padding: 16px 52px;
     display: flex;
-    flex-direction: column;
-    gap: 6px;
+    justify-content: space-between;
+    align-items: center;
     font-size: 10px;
-    color: rgba(255,255,255,0.55);
-    letter-spacing: 0.08em;
-    line-height: 1.8;
-    text-align: center;
+    color: rgba(255,255,255,0.45);
+    letter-spacing: 0.15em;
   }
-  .closing-banner span { color: rgba(255,255,255,0.85); }
+  .closing-banner span { color: rgba(255,255,255,0.7); }
+
+  /* ── SCHEDULE GRID ── */
+  .sched-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 28px;
+    margin-top: 14px;
+  }
+  .sched-grid table { margin-top: 0; }
+  .sched-grid td, .sched-grid th { padding-left: 6px; padding-right: 6px; }
+  @media (max-width: 700px) {
+    .sched-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    body { padding: 12px 8px; }
+    .header, .order-section, .notices-section, .mission-section,
+    .schedule-section, .dept-section, .offering-section,
+    .footer, .closing-banner { padding-left: 24px; padding-right: 24px; }
+    .col { padding: 28px 24px; }
+    .col:first-child { border-right: none; border-bottom: 1px solid var(--rule); }
+    .closing-banner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .footer-account { text-align: left; }
+  }
 
   /* Print */
   @media print {
@@ -614,12 +574,10 @@
         <strong>은혜교회</strong>
         Sejong Grace Church
       </div>
-<div class="issue-badge">
-        SINCE 20140420<br/>통권 600호
-      </div>
+<div class="issue-badge">SINCE 20140420<br/>통권 609호</div>
 </div>
 <div class="header-title">
-<div class="header-date">2026년 7월 19일 주일예배</div>
+<div class="header-date">2026년 9월 27일 주일예배</div>
 <div class="header-verse">보라, 새 일을 행하리라</div>
 <div class="header-ref">이사야 43:18–21</div>
 </div>
@@ -632,25 +590,22 @@
 <div class="order-item">
 <span class="order-num">01</span>
 <span class="order-title">성경통독</span>
-<span class="order-sub">잠언 30장</span>
+<span class="order-sub">전도서 8장</span>
 </div>
 <div class="order-item">
 <span class="order-num">02</span>
 <span class="order-title">예배기도</span>
-<span class="order-sub">곽상미</span>
+<span class="order-sub">김사라</span>
 </div>
 <div class="order-item">
 <span class="order-num">03</span>
 <span class="order-title">경배찬양</span>
 <span class="order-sub"></span>
 </div>
-<div class="order-item-sermon">
 <div class="order-item">
 <span class="order-num">04</span>
 <span class="order-title">말씀</span>
-<span class="order-sub">시편 121:1–8</span>
-</div>
-<div class="order-sermon-title">'너를 지키시는 이' (정용수 선교사)</div>
+<span class="order-sub">갈라디아서 5:18–25</span>
 </div>
 <div class="order-item">
 <span class="order-num">05</span>
@@ -658,6 +613,7 @@
 <span class="order-sub"></span>
 </div>
 </div>
+<div class="sermon-note">육체의 일이 아니라, 성령의 열매로 살아갑니다</div>
 </div>
 <!-- SERMON + MOKTJANG -->
 <div class="body-grid">
@@ -665,22 +621,49 @@
 <div class="col sermon-section">
 <div class="section-label">Sermon · 말씀</div>
 <div class="sermon-title-block">
-<div class="sermon-scripture">시편 121:1–8</div>
-<div class="sermon-main-title">너를 지키시는 이</div>
-<div class="sermon-preacher">정용수 선교사 (우수리스크)</div>
+<div class="sermon-scripture">갈라디아서 5:18–25</div>
+<div class="sermon-main-title">두 영</div>
 </div>
-<div class="sermon-note">오늘은 우수리스크에서 사역하시는 정용수 선교사님을 모시고 말씀을 듣습니다. 우리를 지키시는 하나님을 함께 바라봅니다.</div>
+<div class="sermon-point">
+<div class="point-header">
+<div class="point-num">1</div>
+<div class="point-title">그리스도인 안에서는 두 소욕이 날마다 줄다리기를 합니다</div>
+<div class="point-tag">줄다리기</div>
 </div>
+<div class="point-body">바울이 말하는 "육체"는 우리 몸이 아니라, 하나님을 떠나 내가 주인 되려는 옛 사람의 본성입니다. 그래서 육체의 일 목록에는 음행뿐 아니라 시기, 분쟁, 당 짓는 것처럼 마음과 관계의 죄가 함께 들어 있습니다. 17절은 이 육체의 소욕과 성령의 소욕이 서로 맞서 줄다리기를 한다고 말합니다. 이 싸움이 있다는 것은 실패의 증거가 아니라, 내 안에 반대편 줄을 잡고 계신 성령님이 계시다는 새 생명의 증거입니다. 어거스틴도 "주님, 순결을 주십시오. 그러나 지금은 말고요"라고 기도할 만큼 이 싸움을 치열하게 겪었습니다. 그런데 바울은 육체와 싸워 이겨야 성령을 따르게 된다고 하지 않고, 성령을 따라 걸으면 육체의 욕심을 결코 이루지 않을 것이라고 약속합니다. 어둠은 빗자루로 쓸어낼 수 없고 불을 켜야 물러가듯, 억지로 비워내는 것이 아니라 성령님을 따라갈 때 육체가 힘을 잃습니다.</div>
+</div><div class="sermon-point">
+<div class="point-header">
+<div class="point-num">2</div>
+<div class="point-title">육체는 '일'을 만들어내지만, 성령은 '열매'를 맺으십니다</div>
+<div class="point-tag">열매</div>
+</div>
+<div class="point-body">육체의 일 15가지 가운데 절반이 넘는 8가지가 원수 맺는 것, 분쟁, 시기, 분냄처럼 관계를 깨뜨리는 죄입니다. 서로 물고 먹던 갈라디아 교회처럼, 편을 가르고 뒤에서 수군거리는 것도 똑같은 육체의 일이라는 뜻입니다. 바울은 육체는 "일"을, 성령은 "열매"를 낸다고 대조하는데, 원어로 일은 복수형이고 열매는 단수형입니다. 일은 공장처럼 애써 만들어내는 것이지만, 열매는 나무가 뿌리를 박고 붙어 있을 때 때가 되면 맺히는 것입니다. 또 육체의 일은 제각각 흩어지고 쪼개지지만, 성령의 열매는 아홉 가지가 한 송이로 함께 맺힙니다. 사랑, 희락, 화평, 오래 참음, 자비, 양선, 충성, 온유, 절제는 바로 예수 그리스도의 얼굴입니다. 성령께서는 우리를 그저 착한 사람이 아니라 예수님을 닮은 사람으로 빚어 가시며, 이런 것을 금지할 법은 어디에도 없습니다.</div>
+</div><div class="sermon-point">
+<div class="point-header">
+<div class="point-num">3</div>
+<div class="point-title">십자가에 못 박힌 사람은 성령과 발맞추어 걸어갑니다</div>
+<div class="point-tag">발맞춤</div>
+</div>
+<div class="point-body">24절의 "못 박았느니라"는 이미 끝난 일을 말하는 시제로, 우리의 옛 사람은 예수님과 연합할 때 이미 십자가에 못 박혔습니다. 옛 사람은 아직 발버둥을 치지만 주인 자리에서는 이미 끌려 내려왔기에, 우리는 이미 이긴 싸움 안에서 싸우는 사람들입니다. 25절의 "행하다"는 군인들이 줄을 맞춰 행진하듯 발걸음을 맞춘다는 뜻의 단어입니다. 이인삼각 경기에서 앞서가도 넘어지고 뒤처져도 넘어지듯, 이기는 비결은 빨리 뛰는 것이 아니라 짝과 발을 맞추는 것입니다. 우리는 이미 성령으로 거듭나 그분과 묶여 있으니, 이제 남은 일은 내 걸음을 그분의 걸음에 맞추는 것입니다. 광야의 이스라엘이 구름기둥이 멈추면 멈추고 떠오르면 따라갔던 것처럼, 우리도 이 땅에 살지만 하늘의 방식을 따라 걷습니다. 화가 치밀거나 누군가를 흉보고 싶을 때 3초만 멈추고 "성령님, 지금 어느 쪽으로 걸을까요?" 하고 기도하는 것이 발맞춤의 첫걸음입니다.</div>
+</div></div>
 <!-- MOKTJANG -->
 <div class="col moktjang-section">
 <div class="section-label">목장나눔</div>
 <div class="moktjang-header">
-<div class="moktjang-title">목장나눔질문</div>
+<div class="moktjang-title">목장나눔 질문</div>
 </div>
-<div class="moktjang-guide">목자의 인도에 따라 질문과 나눔으로 모임을 인도해주세요.</div>
-<div class="closing-prayer">
+<div class="q-item">
+<div class="q-num">QUESTION 01</div>
+<div class="q-text">예수님을 믿고 나서 예전에는 아무렇지 않던 일이 마음에 걸리기 시작한 경험이 있다면, 그 "줄다리기"의 순간을 나눠 봅시다.</div>
+</div><div class="q-item">
+<div class="q-num">QUESTION 02</div>
+<div class="q-text">성령의 아홉 가지 열매 가운데 요즘 내 관계 속에서 가장 부족하다고 느끼는 열매는 무엇인지 나눠 봅시다.</div>
+</div><div class="q-item">
+<div class="q-num">QUESTION 03</div>
+<div class="q-text">이번 한 주 "잠깐 멈춤 기도"가 가장 필요할 것 같은 순간은 언제인지 나누고, 서로를 위해 기도해 줍시다.</div>
+</div><div class="closing-prayer">
 <div class="prayer-label">마침기도</div>
-<div class="prayer-text">말씀을 기억하며 대표자가 기도로 마무리 합니다.</div>
+<div class="prayer-text">사랑의 하나님 아버지, 우리 안에 여전히 육체와 성령의 줄다리기가 있음을 고백합니다. 이 싸움이 주께서 주신 새 생명의 증거임을 감사드립니다. 우리 힘으로 애쓰다 지치지 않고, 날마다 성령을 따라 걷게 하옵소서. 우리를 쪼개는 육체의 일이 아니라, 예수님을 닮은 성령의 열매가 우리 목장 안에 풍성히 맺히게 하옵소서. 이미 십자가에 못 박힌 옛 사람에게 끌려가지 않고, 한 걸음 한 걸음 성령님과 발을 맞추게 하옵소서. 예수 그리스도의 이름으로 기도드립니다. 아멘.</div>
 </div>
 </div>
 </div>
@@ -688,119 +671,36 @@
 <div class="notices-section">
 <div class="section-label">Church News · 교회소식</div>
 <div class="notice-grid">
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>오늘 설거지: <strong>청장년 목장</strong> (다음은 장년 목장)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>박채성 'CALL 2026' 비전트립을 잘 마쳤습니다</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>최은총 7월 11~21일 일본후쿠이 미션트립</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>7월 24–26일(금–주일) <strong>청년부 MT</strong>(강원도 정선)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>8월 30일 오후 2시, 이웃과 함께하는 <strong>심삼종 교수 초청연주회</strong>(장소: 더웨이교회)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>여름전교인성경통독캠프 9월 13일, 연합예배 및 통독(장소: 희망교회)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>다음 주일 <strong>주일학교 수영장</strong> 개장</div>
-</div>
-<div class="notice-highlight"><strong>7월 24일</strong> 각 부별 예배(청년부 외 각부서에 소정의 지원금을 지급합니다)</div>
-</div>
+<div class="notice-item"><div class="notice-dot"></div><div>오늘 설거지: <strong>청년 목장</strong> (다음 주 청장년 목장)</div></div><div class="notice-item"><div class="notice-dot"></div><div><strong>10월 11일(주일)</strong> 이웃교회연합체육대회(with 반석, 희망)</div></div><div class="notice-item"><div class="notice-dot"></div><div><strong>10월 25일(주일)</strong> 타지역교회연합예배(익산 푸른나무교회, 심민보 목사) — 은혜교회: 경배찬양 및 식사 / 푸른나무교회: 설교 및 특송</div></div></div>
 </div>
 
-
-<!-- SCHEDULE TABLE -->
+<!-- SCHEDULE -->
 <div class="schedule-section">
-<div class="section-label">Schedule · 예배기도순서</div>
+<div class="section-label">Schedule · 예배 및 섬김 일정</div>
+<div class="sched-grid">
 <table>
-<thead>
-<tr>
-<th>날짜</th>
-<th>기도순서</th>
-</tr>
-</thead>
+<thead><tr><th colspan="2">기도순서</th></tr></thead>
+<tbody><tr><td>10월 4일</td><td>조혜영</td></tr><tr><td>10월 11일</td><td>이지욱</td></tr><tr><td>10월 18일</td><td>이세라</td></tr><tr><td>10월 25일</td><td>곽상미</td></tr><tr><td>11월 1일</td><td>황정선</td></tr></tbody>
+</table>
+<table>
+<thead><tr><th>예배팀</th><th>담당자</th></tr></thead>
 <tbody>
-<tr>
-<td>7월 26일</td>
-<td>황정선</td>
-</tr>
-<tr>
-<td>8월 2일</td>
-<td>최은애</td>
-</tr>
-<tr>
-<td>8월 9일</td>
-<td>박채은</td>
-</tr>
-<tr>
-<td>8월 16일</td>
-<td>최은총</td>
-</tr>
-<tr>
-<td>8월 23일</td>
-<td>신수아</td>
-</tr>
+<tr><td>찬양인도</td><td>김지성</td></tr>
+<tr><td>키보드</td><td>박채은</td></tr>
+<tr><td>드럼</td><td>신수아</td></tr>
+<tr><td>기타</td><td>박채성(AG) / 임건후(BG)</td></tr>
+<tr><td>자막</td><td>박채경</td></tr>
 </tbody>
 </table>
-</div>
-<!-- WORSHIP TEAM -->
-<div class="info-section">
-<div class="section-label">Worship Team · 예배팀</div>
-<div class="info-grid">
-<div class="info-cell">
-<div class="info-label">찬양인도</div>
-<div class="info-value">김지성</div>
-</div>
-<div class="info-cell">
-<div class="info-label">키보드</div>
-<div class="info-value">박채은</div>
-</div>
-<div class="info-cell">
-<div class="info-label">드럼</div>
-<div class="info-value">신수아</div>
-</div>
-<div class="info-cell">
-<div class="info-label">기타</div>
-<div class="info-value">박채성·임건후</div>
-</div>
-<div class="info-cell">
-<div class="info-label">자막</div>
-<div class="info-value">박채경</div>
-</div>
-</div>
-</div>
-<!-- SERVICE TIMES -->
-<div class="info-section">
-<div class="section-label">Service Times · 예배시간</div>
-<div class="info-grid times-grid">
-<div class="info-cell">
-<div class="info-label">주일예배</div>
-<div class="info-value">오전 11시</div>
-</div>
-<div class="info-cell">
-<div class="info-label">수요말씀코이노니아</div>
-<div class="info-value">오후 7시</div>
-</div>
-<div class="info-cell">
-<div class="info-label">금요기도</div>
-<div class="info-value">오후 9시</div>
-</div>
-<div class="info-cell">
-<div class="info-label">말씀통독</div>
-<div class="info-value">오전 7시 (월–토)</div>
-</div>
+<table>
+<thead><tr><th>예배</th><th>시간</th></tr></thead>
+<tbody>
+<tr><td>주일예배</td><td>오전 11시</td></tr>
+<tr><td>수요말씀코이노니아</td><td>수요일 오후 7시</td></tr>
+<tr><td>금요기도</td><td>오후 9시</td></tr>
+<tr><td>말씀통독</td><td>오전 7시(월–토)</td></tr>
+</tbody>
+</table>
 </div>
 </div>
 <!-- DEPARTMENT -->
@@ -832,20 +732,20 @@
 <div class="dept-person">최은애</div>
 </div>
 <div class="dept-cell">
-<div class="dept-name">재정/운영</div>
+<div class="dept-name">재정부(운영위원)</div>
 <div class="dept-person">김덕호·이지욱</div>
 </div>
 </div>
 </div>
 
-
 <!-- FOOTER -->
 <div class="footer">
 <div class="footer-info">
-      담임목사 박동준<br/>
+      담임목사 박동준  /  장로 김덕호<br/>
       YouTube <a href="https://youtube.com/@sjgrace">@sjgrace</a>  |  
-      홈페이지 <a href="https://www.gracechapel.or.kr">www.gracechapel.or.kr</a>
-</div>
+      홈페이지 <a href="https://www.sejonggrace.com">www.sejonggrace.com</a><br/>
+      대전시 유성구 안금로 15번길 49-26
+    </div>
 <div class="footer-account">
       온라인 헌금계좌<br/>
 <strong>농협 351-2233-6688-93</strong><br/>
@@ -854,11 +754,9 @@
 </div>
 <!-- CLOSING BANNER -->
 <div class="closing-banner">
-<div>하나님이 시작하셨고, 하나님이 인도하시며, <span>하나님이 열매 맺으십니다</span></div>
-<div>걸어 온 모든 길이 우리교회에 주신 이름처럼 <span>'은혜'</span>입니다</div>
-<div>이제 세종으로 향한 새로운 역사, 광야에 길과 사막에 강을 내시는 주님의 역사를 <span>믿음의 눈으로 바라보며 함께 걸어갑시다</span></div>
+<span>하나님이 시작하셨고, 하나님이 인도하시며, 하나님이 열매 맺으십니다</span>
+<span>걸어 온 모든 길이 우리교회에 주신 이름처럼 '은혜'입니다. 이제 세종으로 향한 새로운 역사, 광야에 길과 사막에 강을 내시는 주님의 역사를 믿음의 눈으로 바라보며 함께 걸어갑시다</span>
 </div>
 </div>
-<script src="/assets/back-home.js"></script>
 </body>
 </html>

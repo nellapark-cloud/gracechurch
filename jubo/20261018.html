@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>은혜교회 주보 — 2026년 8월 16일</title>
+<title>은혜교회 주보 — 2026년 10월 18일</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&amp;family=Noto+Sans+KR:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -467,19 +467,9 @@
     min-width: 560px;
     border-collapse: collapse;
     font-size: 11.5px;
-    margin-top: 0;
   }
-  @media (max-width: 600px) {
-    .offering-scroll {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .offering-scroll::-webkit-scrollbar { display: none; }
-    .offering-scroll {
-      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 24px), transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 24px), transparent 100%);
-    }
-  }
+  .offering-table th,
+  .offering-table td { white-space: nowrap; }
   .offering-table th {
     background: var(--warm);
     padding: 8px 12px;
@@ -532,19 +522,40 @@
   /* ── CLOSING ── */
   .closing-banner {
     background: var(--accent);
-    padding: 20px 52px;
+    padding: 16px 52px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 6px;
-    text-align: center;
     font-size: 10px;
     color: rgba(255,255,255,0.45);
-    letter-spacing: 0.1em;
-    line-height: 1.8;
+    letter-spacing: 0.15em;
   }
   .closing-banner span { color: rgba(255,255,255,0.7); }
-  .closing-banner strong { color: var(--gold-light); font-weight: 600; }
+
+  /* ── SCHEDULE GRID ── */
+  .sched-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 28px;
+    margin-top: 14px;
+  }
+  .sched-grid table { margin-top: 0; }
+  .sched-grid td, .sched-grid th { padding-left: 6px; padding-right: 6px; }
+  @media (max-width: 700px) {
+    .sched-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    body { padding: 12px 8px; }
+    .header, .order-section, .notices-section, .mission-section,
+    .schedule-section, .dept-section, .offering-section,
+    .footer, .closing-banner { padding-left: 24px; padding-right: 24px; }
+    .col { padding: 28px 24px; }
+    .col:first-child { border-right: none; border-bottom: 1px solid var(--rule); }
+    .closing-banner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .footer-account { text-align: left; }
+  }
 
   /* Print */
   @media print {
@@ -563,12 +574,10 @@
         <strong>은혜교회</strong>
         Sejong Grace Church
       </div>
-<div class="issue-badge">
-        SINCE 20140420<br/>통권 603호
-      </div>
+<div class="issue-badge">SINCE 20140420<br/>통권 611호</div>
 </div>
 <div class="header-title">
-<div class="header-date">2026년 8월 16일 주일예배</div>
+<div class="header-date">2026년 10월 18일 주일예배</div>
 <div class="header-verse">보라, 새 일을 행하리라</div>
 <div class="header-ref">이사야 43:18–21</div>
 </div>
@@ -581,22 +590,22 @@
 <div class="order-item">
 <span class="order-num">01</span>
 <span class="order-title">성경통독</span>
-<span class="order-sub">전도서 2장</span>
+<span class="order-sub">전도서 10장</span>
 </div>
 <div class="order-item">
 <span class="order-num">02</span>
 <span class="order-title">예배기도</span>
-<span class="order-sub">최은총</span>
+<span class="order-sub">이지욱</span>
 </div>
 <div class="order-item">
 <span class="order-num">03</span>
 <span class="order-title">경배찬양</span>
-<span class="order-sub">청년 캠프 소감</span>
+<span class="order-sub"></span>
 </div>
 <div class="order-item">
 <span class="order-num">04</span>
 <span class="order-title">말씀</span>
-<span class="order-sub">요한복음 17:14–18 · 요한일서 2:15–17</span>
+<span class="order-sub">에베소서 2:1–3</span>
 </div>
 <div class="order-item">
 <span class="order-num">05</span>
@@ -604,7 +613,7 @@
 <span class="order-sub"></span>
 </div>
 </div>
-<div class="sermon-note">세상 속에 살지만, 세상에 속하지는 않습니다</div>
+<div class="sermon-note">거짓의 아비가 아니라, 살려서 품으시는 아버지를 닮아 갑니다</div>
 </div>
 <!-- SERMON + MOKTJANG -->
 <div class="body-grid">
@@ -612,40 +621,31 @@
 <div class="col sermon-section">
 <div class="section-label">Sermon · 말씀</div>
 <div class="sermon-title-block">
-<div class="sermon-scripture">요한복음 17:14–18 · 요한일서 2:15–17</div>
-<div class="sermon-main-title">두 세계</div>
+<div class="sermon-scripture">에베소서 2:1–3</div>
+<div class="sermon-main-title">두 아버지</div>
 </div>
 <div class="sermon-point">
 <div class="point-header">
 <div class="point-num">1</div>
-<div class="point-title">우리는 이미 어느 한 세계에 속해 살아가고 있습니다</div>
-<div class="point-tag">세상</div>
+<div class="point-title">거짓말로 키우는 아버지</div>
+<div class="point-tag">거짓</div>
 </div>
-<div class="point-body">
-          요한이 말하는 "세상"은 우리가 발 딛고 사는 이 땅이 아니라, 하나님을 밀어내고 스스로 중심이 된 가치 체계를 가리킵니다. 육신의 정욕과 안목의 정욕과 이생의 자랑, 이 세 가지로 움직이는 질서입니다. 이 구조는 창세기 3장, 하와가 선악과를 바라보던 장면에서 이미 등장했습니다. 하와도 선악과가 나빠 보여서 먹은 게 아니라, 자기 판단이 하나님 말씀보다 더 믿을 만하다고 생각했기 때문에 먹었습니다. 자연스럽고 합리적인 생각 자체는 문제가 아닙니다 — 그 생각이 하나님 말씀보다 앞서서 내 삶을 결정하기 시작할 때, 그때부터 문제가 됩니다. 우리가 어디에 속한 사람인가 하는 것은 단지 한 번의 믿음 선언이 아니라, 매일의 선택과 결정을 통해서 증명되는 것입니다.
-        </div>
-</div>
-<div class="sermon-point">
+<div class="point-body">자녀는 아버지를 닮습니다. 에베소서 2장은 예수님을 만나기 전 우리가 "불순종의 아들들"이었다고 말씀합니다. 그때 우리를 키운 아버지는 예수님이 "거짓의 아비"라고 부르신 사탄입니다(요 8:44). 사탄은 아무것도 창조할 수 없기에, 하나님이 지으신 사람을 훔쳐 거짓말로 키웁니다. 그 거짓말은 "하나님 없이도 너는 잘 살 수 있다"는 에덴의 속삭임과 같습니다. 오늘은 "돈이 있어야 안전하다", "인정받아야 가치 있다"는 그럴듯한 얼굴로 다가옵니다. 그 거짓말을 따라 산 결과는 숨은 쉬지만 하나님과 끊어진 상태, 곧 죽음이었습니다.</div>
+</div><div class="sermon-point">
 <div class="point-header">
 <div class="point-num">2</div>
-<div class="point-title">세상 속에 살지만 세상에 속하지는 않아야 합니다</div>
-<div class="point-tag">소속</div>
+<div class="point-title">부려먹고 버리는 아버지</div>
+<div class="point-tag">끌려다님</div>
 </div>
-<div class="point-body">
-          예수님은 제자들이 세상에서 떠나기를 구하지 않으시고, 동시에 세상에 속하지 않기를 기도하셨습니다. 우리가 발 딛는 자리는 세상이지만, 우리가 따르는 소속은 하나님 나라라는 뜻입니다. 초대교회 성도들은 로마 사회를 떠나지 않으면서도 로마 황제를 "주"라 부르기를 거부하며 이 자리를 지켰습니다. 배가 물 위에 떠 있어야 하듯, 우리가 세상 속에 사는 것은 하나님이 정하신 자리입니다. 문제는 세상의 질서가 우리 밖이 아니라 안으로 들어와 우리를 지배하게 되는 것입니다. C.S. 루이스는 이 세상 무엇으로도 채워지지 않는 갈망이야말로 우리가 다른 세계를 위해 지음받았다는 증거라고 말했습니다. 그러니 지금 무언가로도 채워지지 않는 허전함이 있다면, 그건 내가 잘못된 게 아니라 그 갈망을 세상 것으로 채우려 했기 때문일 수 있습니다 — 그 갈망은 하나님께 채워달라고 만들어진 자리입니다.
-        </div>
-</div>
-<div class="sermon-point">
+<div class="point-body">본문은 우리가 세상 풍조와 공중의 권세 잡은 자와 육체의 욕심을 "따라" 살았다고 말합니다. 주인으로 산 것 같았지만, 사실은 끌려다닌 인생이었습니다. 사탄은 "너는 남들보다 뒤떨어져 있다"는 불안을 심고, 그 불안을 동력 삼아 우리를 몰아갑니다. 뒤처지지 않으려고 세상이 달리는 쪽으로 달리다 보면, 어느새 더 세상적인 사람이 되어 있습니다. 그 교육이 노리는 목표는 남보다 높아져 내 이름을 드러내는 자랑, 곧 자기 영광입니다. 그리고 넘어지면 일으키지 않고 "너 같은 게 무슨 신자냐"며 고소합니다. 끝내 이 아비가 남기는 유산은 진노와 사망뿐이며, 다 쓰고 나면 자녀를 버립니다.</div>
+</div><div class="sermon-point">
 <div class="point-header">
 <div class="point-num">3</div>
-<div class="point-title">지나가는 것이 아니라 영원히 남는 것을 선택해야 합니다</div>
-<div class="point-tag">선택</div>
+<div class="point-title">살려서 품으시는 아버지</div>
+<div class="point-tag">긍휼</div>
 </div>
-<div class="point-body">
-          요한일서 2장 17절은 이 세상도 그 정욕도 지나가지만, 하나님의 뜻을 행하는 자는 영원히 거한다고 말합니다. 디트리히 본회퍼는 나치 치하 독일에서 세상 질서에 안전하게 머무는 것을 "값싼 은혜", 대가를 치르며 그리스도를 따르는 것을 "값비싼 은혜"라고 구분해 가르쳤습니다. 이후 그는 히틀러 정권에 맞서는 저항 운동에 가담했다가 체포되었고, 종전을 불과 몇 주 앞두고 처형당했습니다. 말로 가르친 것을 그대로 몸으로 살아내며, 어느 세계에 속할지를 목숨으로 증명한 것입니다. 우리 대부분은 그런 극적인 자리에 서지 않겠지만, 본질적으로 같은 질문이 훨씬 작은 모양으로 매일 우리 앞에 놓입니다. 오늘 내가 어느 세계의 질서를 따라 하루를 살아가느냐가, 결국 내 안에 무엇이 영원히 남을지를 결정합니다.
-        </div>
-</div>
-</div>
+<div class="point-body">"그러나 긍휼이 풍성하신 하나님이"(4절), 이 한마디에서 이야기가 완전히 뒤집힙니다. 하나님은 허물로 죽은 우리를 그리스도와 함께 살리시고, 종이 아니라 자녀로 입양하셨습니다(롬 8:15). 탕자를 향해 달려간 아버지처럼, 넘어진 우리를 고소하지 않고 달려와 안으십니다(눅 15:20). 하나님도 우리를 바로잡으시지만, 그것은 압박이 아니라 "너는 이미 내 자식이다"에서 출발하는 선하신 훈계입니다(히 12:10). 하나님은 자랑할 거리를 하나도 남기지 않으시고, 우리를 섬기는 사람으로 다시 빚으십니다(엡 2:9–10). 그리고 "내가 결코 너희를 버리지 아니하고 너희를 떠나지 아니하리라" 약속하셨습니다(히 13:5). 이미 사랑받는 자녀는 사랑받으려고 경쟁하지 않고, 아버지를 닮아 서로를 섬깁니다.</div>
+</div></div>
 <!-- MOKTJANG -->
 <div class="col moktjang-section">
 <div class="section-label">목장나눔</div>
@@ -654,19 +654,16 @@
 </div>
 <div class="q-item">
 <div class="q-num">QUESTION 01</div>
-<div class="q-text">이번 한 주, 나도 모르게 세상의 가치관을 "들이마시고" 있었던 순간이 있었다면 언제였나요?</div>
-</div>
-<div class="q-item">
+<div class="q-text">요즘 내 마음에 가장 자주 들리는, 그럴듯하지만 하나님 없는 속삭임은 무엇입니까?</div>
+</div><div class="q-item">
 <div class="q-num">QUESTION 02</div>
-<div class="q-text">요즘 내 삶에서, 세상 기준이 나도 모르게 내 판단과 선택에 스며들어 있다고 느껴지는 부분이 있다면 어디인가요?</div>
-</div>
-<div class="q-item">
+<div class="q-text">최근 남과 비교하며 마음이 무거웠던 순간이 있었다면, 그 비교가 나를 어느 쪽으로 몰고 갔는지 나눠 봅니다.</div>
+</div><div class="q-item">
 <div class="q-num">QUESTION 03</div>
-<div class="q-text">이번 주, 재정·관계·시간 중 한 가지 영역에서 "영원한 통장"에 저축하는 선택을 해본다면 무엇을 해보고 싶은가요?</div>
-</div>
-<div class="closing-prayer">
+<div class="q-text">하나님이 나를 버리지 않으시고 바로잡아 주셨던 경험, 또는 이번 주 내가 섬기고 싶은 한 사람을 나눠 봅니다.</div>
+</div><div class="closing-prayer">
 <div class="prayer-label">마침기도</div>
-<div class="prayer-text">하나님 아버지, 저희를 이 세상 가운데 보내신 주님의 뜻을 기억하게 하옵소서. 세상에서 도망치지 않게 하시고, 그러나 세상의 질서에 물들지도 않게 하옵소서. 육신의 정욕과 안목의 정욕과 이생의 자랑이 저희를 붙잡으려 할 때, 지나가는 것과 영원히 거하는 것을 분별하는 지혜를 주옵소서. 저희가 이 땅에서 사는 동안, 어느 세계에 속한 사람인지 매 순간 기억하게 하옵소서. 예수님의 이름으로 기도합니다. 아멘.</div>
+<div class="prayer-text">긍휼이 풍성하신 하나님 아버지, 허물과 죄로 죽어 있던 우리를 그리스도와 함께 살리시고 자녀로 삼아 주셔서 감사합니다. 거짓의 아비가 속삭이는 그럴듯한 말에 더 이상 끌려다니지 않게 하소서. 비교와 압박의 목소리 대신, 결코 버리지 않으시는 아버지의 음성을 듣게 하소서. 넘어질 때 고소하는 소리 앞에서 십자가를 붙들게 하시고, 내 이름을 높이려는 자랑을 내려놓고 서로를 섬기는 목장이 되게 하소서. 날마다 "아빠 아버지"라 부르며 아버지를 닮아가게 하옵소서. 예수 그리스도의 이름으로 기도합니다. 아멘.</div>
 </div>
 </div>
 </div>
@@ -674,93 +671,37 @@
 <div class="notices-section">
 <div class="section-label">Church News · 교회소식</div>
 <div class="notice-grid">
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>오늘 설거지: <strong>청년 목장</strong> (다음은 청장년 목장)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div><strong>8월 30일 오후 2시</strong>, 이웃과 함께하는 심삼종 교수 초청연주회 (장소: 더웨이교회)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>여름전교인성경통독캠프 <strong>9월 13일</strong>, 연합예배 및 통독 (장소: 희망교회)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div><strong>9월 6일 침례식</strong> (8월 23일 침례후보자 교육)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>담임목사휴가 (<strong>8월 16일~17일</strong>)</div>
-</div>
-</div>
+<div class="notice-item"><div class="notice-dot"></div><div>오늘 설거지: <strong>장년 목장</strong> (다음 주 청년 목장)</div></div><div class="notice-item"><div class="notice-dot"></div><div><strong>10월 25일(주일)</strong> 타지역교회연합예배(익산 푸른나무교회, 심민보 목사) — 은혜교회: 경배찬양 및 식사 / 푸른나무교회: 설교 및 특송</div></div><div class="notice-item"><div class="notice-dot"></div><div><strong>11월 15일</strong> 추수감사주일은 새가족초청주일로 보냅니다.</div></div><div class="notice-item"><div class="notice-dot"></div><div>기도와 섬김(봉사), 전도에 힘씁시다.</div></div></div>
 </div>
 
-
-<!-- SCHEDULE TABLE -->
+<!-- SCHEDULE -->
 <div class="schedule-section">
 <div class="section-label">Schedule · 예배 및 섬김 일정</div>
+<div class="sched-grid">
 <table>
-<thead>
-<tr>
-<th>날짜</th>
-<th>기도순서</th>
-<th>찬양인도</th>
-<th>키보드</th>
-<th>드럼</th>
-<th>기타</th>
-<th>예배시간</th>
-</tr>
-</thead>
+<thead><tr><th colspan="2">기도순서</th></tr></thead>
+<tbody><tr><td>10월 25일</td><td>이세라</td></tr><tr><td>11월 1일</td><td>곽상미</td></tr><tr><td>11월 8일</td><td>황정선</td></tr><tr><td>11월 15일</td><td>최은애</td></tr><tr><td>11월 22일</td><td>박영희</td></tr></tbody>
+</table>
+<table>
+<thead><tr><th>예배팀</th><th>담당자</th></tr></thead>
 <tbody>
-<tr>
-<td>8월 23일</td>
-<td>신수아</td>
-<td>김지성</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>주일예배 오전 11시</td>
-</tr>
-<tr>
-<td>8월 30일</td>
-<td>남지구</td>
-<td>—</td>
-<td>박채은</td>
-<td>—</td>
-<td>—</td>
-<td>수요말씀코이노니아 오후 7시</td>
-</tr>
-<tr>
-<td>9월 6일</td>
-<td>이성미</td>
-<td>—</td>
-<td>—</td>
-<td>신수아</td>
-<td>—</td>
-<td>금요기도 오후 9시</td>
-</tr>
-<tr>
-<td>9월 13일</td>
-<td>박채성</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>박채성(AG) / 임건후(BG)</td>
-<td>말씀통독 오전 7시(월–토)</td>
-</tr>
-<tr>
-<td>9월 20일</td>
-<td>임도형</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>자막: 박채경</td>
-<td>—</td>
-</tr>
+<tr><td>찬양인도</td><td>김지성</td></tr>
+<tr><td>키보드</td><td>박채은</td></tr>
+<tr><td>드럼</td><td>신수아</td></tr>
+<tr><td>기타</td><td>박채성(AG) / 임건후(BG)</td></tr>
+<tr><td>자막</td><td>박채경</td></tr>
 </tbody>
 </table>
+<table>
+<thead><tr><th>예배</th><th>시간</th></tr></thead>
+<tbody>
+<tr><td>주일예배</td><td>오전 11시</td></tr>
+<tr><td>수요말씀코이노니아</td><td>수요일 오후 7시</td></tr>
+<tr><td>금요기도</td><td>오후 9시</td></tr>
+<tr><td>말씀통독</td><td>오전 7시(월–토)</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 <!-- DEPARTMENT -->
 <div class="dept-section">
@@ -791,21 +732,20 @@
 <div class="dept-person">최은애</div>
 </div>
 <div class="dept-cell">
-<div class="dept-name">재정/운영</div>
+<div class="dept-name">재정부(운영위원)</div>
 <div class="dept-person">김덕호·이지욱</div>
 </div>
 </div>
 </div>
 
-
 <!-- FOOTER -->
 <div class="footer">
 <div class="footer-info">
-      담임목사 박동준<br/>
-      대전시 유성구 안금로 15번길 49-26<br/>
+      담임목사 박동준  /  장로 김덕호<br/>
       YouTube <a href="https://youtube.com/@sjgrace">@sjgrace</a>  |  
-      홈페이지 <a href="https://www.sejonggrace.com">www.sejonggrace.com</a>
-</div>
+      홈페이지 <a href="https://www.sejonggrace.com">www.sejonggrace.com</a><br/>
+      대전시 유성구 안금로 15번길 49-26
+    </div>
 <div class="footer-account">
       온라인 헌금계좌<br/>
 <strong>농협 351-2233-6688-93</strong><br/>
@@ -815,8 +755,7 @@
 <!-- CLOSING BANNER -->
 <div class="closing-banner">
 <span>하나님이 시작하셨고, 하나님이 인도하시며, 하나님이 열매 맺으십니다</span>
-<span>걸어 온 모든 길이 우리교회에 주신 이름처럼 <strong>'은혜'</strong>입니다</span>
-<span>이제 세종으로 향한 새로운 역사, 광야에 길과 사막에 강을 내시는 주님의 역사를 믿음의 눈으로 바라보며 함께 걸어갑시다</span>
+<span>걸어 온 모든 길이 우리교회에 주신 이름처럼 '은혜'입니다. 이제 세종으로 향한 새로운 역사, 광야에 길과 사막에 강을 내시는 주님의 역사를 믿음의 눈으로 바라보며 함께 걸어갑시다</span>
 </div>
 </div>
 </body>

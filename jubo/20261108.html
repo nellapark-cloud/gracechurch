@@ -4,7 +4,7 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>은혜교회 주보 — 2026년 8월 23일</title>
+<title>은혜교회 주보 — 2026년 11월 8일</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;600;700&amp;family=Noto+Sans+KR:wght@300;400;500&amp;family=Playfair+Display:ital,wght@0,700;1,400&amp;display=swap" rel="stylesheet"/>
 <style>
   :root {
@@ -467,19 +467,9 @@
     min-width: 560px;
     border-collapse: collapse;
     font-size: 11.5px;
-    margin-top: 0;
   }
-  @media (max-width: 600px) {
-    .offering-scroll {
-      -ms-overflow-style: none;
-      scrollbar-width: none;
-    }
-    .offering-scroll::-webkit-scrollbar { display: none; }
-    .offering-scroll {
-      -webkit-mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 24px), transparent 100%);
-      mask-image: linear-gradient(to right, transparent 0, #000 4px, #000 calc(100% - 24px), transparent 100%);
-    }
-  }
+  .offering-table th,
+  .offering-table td { white-space: nowrap; }
   .offering-table th {
     background: var(--warm);
     padding: 8px 12px;
@@ -532,19 +522,40 @@
   /* ── CLOSING ── */
   .closing-banner {
     background: var(--accent);
-    padding: 20px 52px;
+    padding: 16px 52px;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
-    gap: 6px;
-    text-align: center;
     font-size: 10px;
     color: rgba(255,255,255,0.45);
-    letter-spacing: 0.1em;
-    line-height: 1.8;
+    letter-spacing: 0.15em;
   }
   .closing-banner span { color: rgba(255,255,255,0.7); }
-  .closing-banner strong { color: var(--gold-light); font-weight: 600; }
+
+  /* ── SCHEDULE GRID ── */
+  .sched-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px 28px;
+    margin-top: 14px;
+  }
+  .sched-grid table { margin-top: 0; }
+  .sched-grid td, .sched-grid th { padding-left: 6px; padding-right: 6px; }
+  @media (max-width: 700px) {
+    .sched-grid { grid-template-columns: 1fr; }
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 600px) {
+    body { padding: 12px 8px; }
+    .header, .order-section, .notices-section, .mission-section,
+    .schedule-section, .dept-section, .offering-section,
+    .footer, .closing-banner { padding-left: 24px; padding-right: 24px; }
+    .col { padding: 28px 24px; }
+    .col:first-child { border-right: none; border-bottom: 1px solid var(--rule); }
+    .closing-banner { flex-direction: column; align-items: flex-start; gap: 8px; }
+    .footer-account { text-align: left; }
+  }
 
   /* Print */
   @media print {
@@ -563,12 +574,10 @@
         <strong>은혜교회</strong>
         Sejong Grace Church
       </div>
-<div class="issue-badge">
-        SINCE 20140420<br/>통권 604호
-      </div>
+<div class="issue-badge">SINCE 20140420<br/>통권 614호</div>
 </div>
 <div class="header-title">
-<div class="header-date">2026년 8월 23일 주일예배</div>
+<div class="header-date">2026년 11월 8일 주일예배</div>
 <div class="header-verse">보라, 새 일을 행하리라</div>
 <div class="header-ref">이사야 43:18–21</div>
 </div>
@@ -581,22 +590,22 @@
 <div class="order-item">
 <span class="order-num">01</span>
 <span class="order-title">성경통독</span>
-<span class="order-sub">전도서 3장</span>
+<span class="order-sub">시편 1편</span>
 </div>
 <div class="order-item">
 <span class="order-num">02</span>
 <span class="order-title">예배기도</span>
-<span class="order-sub">신수아</span>
+<span class="order-sub">황정선</span>
 </div>
 <div class="order-item">
 <span class="order-num">03</span>
 <span class="order-title">경배찬양</span>
-<span class="order-sub">청년 캠프 소감</span>
+<span class="order-sub"></span>
 </div>
 <div class="order-item">
 <span class="order-num">04</span>
 <span class="order-title">말씀</span>
-<span class="order-sub">에베소서 5:8–14</span>
+<span class="order-sub">마태복음 6:25–34</span>
 </div>
 <div class="order-item">
 <span class="order-num">05</span>
@@ -604,7 +613,7 @@
 <span class="order-sub"></span>
 </div>
 </div>
-<div class="sermon-note">빛의 자녀답게, 어둠과 손잡지 않습니다</div>
+<div class="sermon-note">무엇을 구하느냐가 무엇을 염려하는지를 정합니다</div>
 </div>
 <!-- SERMON + MOKTJANG -->
 <div class="body-grid">
@@ -612,40 +621,31 @@
 <div class="col sermon-section">
 <div class="section-label">Sermon · 말씀</div>
 <div class="sermon-title-block">
-<div class="sermon-scripture">에베소서 5:8–14</div>
-<div class="sermon-main-title">빛으로 삽시다</div>
+<div class="sermon-scripture">마태복음 6:25–34</div>
+<div class="sermon-main-title">먼저 그 나라와 의를 구하라</div>
 </div>
 <div class="sermon-point">
 <div class="point-header">
 <div class="point-num">1</div>
-<div class="point-title">우리는 빛을 가진 것이 아니라 빛 자체입니다</div>
-<div class="point-tag">존재</div>
+<div class="point-title">아버지를 보라</div>
+<div class="point-tag">아버지</div>
 </div>
-<div class="point-body">
-          8절에서 바울은 "너희가 빛을 가졌다"가 아니라 "너희가 빛이라"고 말합니다. 빛은 소유물이 아니라 우리의 새로운 존재 자체라는 뜻입니다. 9절이 말하는 빛의 열매인 착함과 의로움과 진실함은 혼자서는 확인할 수 없는, 관계 속에서만 드러나는 것들입니다. 등대가 자기 자신이 아니라 저 멀리 있는 배들을 위해 서 있듯이, 우리의 삶도 나를 위한 것이 아니라 공동체와 하나님 나라를 향해 흘러가야 합니다.
-        </div>
-</div>
-<div class="sermon-point">
+<div class="point-body">예수님은 염려하는 우리에게 먼저 "공중의 새를 보라, 들의 백합화를 생각하라"고 말씀하십니다. 염려하는 눈은 늘 내 문제에만 고정되어 있기 때문입니다. 새도 먹이시는 아버지께서 새보다 귀한 자녀를 잊으실 리 없습니다. 또 염려로는 키 한 자(약 45cm)도, 생명 한 시간도 더할 수 없습니다. 며칠 뒤 아궁이에 던져질 들풀도 솔로몬보다 아름답게 입히시는 하나님께서, 하물며 우리를 돌보지 않으시겠습니까? 염려가 커졌다는 것은 내 눈에 하나님이 작아졌다는 뜻입니다.</div>
+</div><div class="sermon-point">
 <div class="point-header">
 <div class="point-num">2</div>
-<div class="point-title">주를 기쁘시게 할 것이 무엇인지 시험하여 분별해야 합니다</div>
-<div class="point-tag">분별</div>
+<div class="point-title">구하는 것을 바꾸라</div>
+<div class="point-tag">방향</div>
 </div>
-<div class="point-body">
-          10절은 "주를 기쁘시게 할 것이 무엇인가 시험하여 보라"고 말합니다. "시험하다"는 헬라어로 금 세공업자가 순도를 검증할 때 쓰던 단어 도키마조로, 불에 넣어 진짜와 가짜를 가려내는 과정을 가리킵니다. 바울은 로마서 12장 2절에서도 같은 단어로 "이 세대를 본받지 말고 하나님의 뜻을 분별하라"고 말하는데, 분별한다는 것은 세상의 흐름을 그냥 따라가지 않고 멈춰 서서 "이게 정말 맞나" 물어보는 것입니다. 어둠의 일들은 대개 아무도 의문을 갖지 않고 습관처럼 이루어지지만, 빛의 자녀는 익숙해도 한 번 멈춰 서서 물어보는 사람입니다.
-        </div>
-</div>
-<div class="sermon-point">
+<div class="point-body">32절 "이방인들이 구하는 것"과 33절 "먼저 구하라"는 같은 뿌리에서 나온 말입니다. 예수님은 구하지 말라고 하지 않으시고, 구하는 방향을 바꾸라고 하십니다. 돈을 첫째로 구하면 돈 때문에, 사람의 인정을 첫째로 구하면 평판 때문에 염려하게 되기 때문입니다. 결국 무엇을 구하느냐가 무엇을 염려하는지를 정합니다. 그런데 아버지께서는 우리에게 무엇이 필요한지 이미 아십니다. 필요를 아시는 분이 계시기에, 우리는 그 필요를 붙들고 애타게 매달리지 않아도 됩니다.</div>
+</div><div class="sermon-point">
 <div class="point-header">
 <div class="point-num">3</div>
-<div class="point-title">어둠에 참여하지 않는 힘은 성령님께 있습니다</div>
-<div class="point-tag">성령</div>
+<div class="point-title">먼저 그의 나라를 구하라</div>
+<div class="point-tag">첫자리</div>
 </div>
-<div class="point-body">
-          11절은 어둠의 일에 "참여하지 말라"고 하는데, 이 단어는 헬라어로 "함께 몫을 나누다, 동업자가 되다"라는 뜻으로 은근슬쩍 지분을 갖거나 못 본 척 넘어가는 것까지 포함하는 경고입니다. 그런데 이 본문 바로 뒤 18절에서 바울은 "오직 성령으로 충만함을 받으라"고 이어가는데, 빛으로 사는 것과 성령충만은 사실상 같은 이야기입니다. 어둠에 참여하지 않는 힘은 내 의지력이 아니라 성령님께 운전대를 내어드리는 자리에서 나옵니다. 그리고 13–14절은 책망받는 것들이 빛으로 말미암아 드러난다고 말하는데, 이는 폭로가 아니라 정직하고 진실하게 사는 것 자체가 주변의 거짓을 부끄럽게 만드는 것이며, 이 원리는 나 자신에게도 똑같이 적용되어 말씀과 기도 앞에 정직하게 나아갈 때 내가 몰랐던 문제도 스스로에게 드러납니다.
-        </div>
-</div>
-</div>
+<div class="point-body">세상은 먹고사는 문제부터 해결하고, 여유가 생기면 그다음에 하나님을 찾으라고 말합니다. 매슬로우의 욕구 피라미드처럼 말입니다. 그런데 예수님은 그 순서를 뒤집어 "먼저 그의 나라와 그의 의를 구하라"고 하십니다. 내 가정과 일과 시간에 하나님이 왕이 되시기를 구할 때, 먹고 입는 것은 목적이 아니라 덤으로 더해집니다. 가족도 일도 나 자신도 첫자리에 오르면 감당할 수 없는 무게를 지게 되지만, 하나님이 첫자리에 계실 때 모든 것이 제자리를 찾습니다. 그래서 우리는 내일을 아버지께 맡기고 오늘을 살 수 있습니다.</div>
+</div></div>
 <!-- MOKTJANG -->
 <div class="col moktjang-section">
 <div class="section-label">목장나눔</div>
@@ -654,19 +654,16 @@
 </div>
 <div class="q-item">
 <div class="q-num">QUESTION 01</div>
-<div class="q-text">요즘 내가 내리는 결정들의 기준은 주로 무엇입니까? "나에게 좋은가"와 "이게 공동체와 하나님 나라에 흘러가는가" 중, 어느 쪽에 더 가까웠던 것 같습니까?</div>
-</div>
-<div class="q-item">
+<div class="q-text">지난 한 주 내 마음을 가장 오래 붙잡고 있던 걱정은 무엇이었습니까? 그 걱정 앞에서 하나님은 내 마음속에 얼마나 크게 계셨는지 돌아봅니다.</div>
+</div><div class="q-item">
 <div class="q-num">QUESTION 02</div>
-<div class="q-text">내 삶에서 "원래 다 이렇게 하니까" 하고 아무 질문 없이 지나가는 부분이 있다면 어디입니까? 그중 하나를 이번 주에 딱 붙잡고 "이게 정말 주님을 기쁘시게 하는 게 맞나" 시험해본다면, 무엇을 골라보고 싶습니까?</div>
-</div>
-<div class="q-item">
+<div class="q-text">요즘 내가 가장 애타게 구하고 있는 것은 무엇입니까? 그것이 내 염려와 어떻게 이어져 있는지 나눠 봅니다.</div>
+</div><div class="q-item">
 <div class="q-num">QUESTION 03</div>
-<div class="q-text">"내가 애써 노력해서 버텨야지"가 아니라 "성령님, 오늘 운전대는 당신이 잡아주세요"라고 기도해본 경험이 있다면 이야기해봅시다. 말씀과 기도 앞에 정직하게 나아갔을 때, 내가 몰랐거나 외면했던 내 안의 문제가 드러난 적이 있다면 나눠봅시다.</div>
-</div>
-<div class="closing-prayer">
+<div class="q-text">내 삶의 한 영역(가정, 직장, 돈, 시간)에서 이번 주 "먼저 하나님 나라를 구한다"는 것은 구체적으로 어떤 모습이겠습니까?</div>
+</div><div class="closing-prayer">
 <div class="prayer-label">마침기도</div>
-<div class="prayer-text">하나님 아버지, 우리를 어둠에서 불러내어 빛 되게 하신 은혜에 감사드립니다. 우리의 삶에서 나를 위해서가 아니라 공동체와 하나님 나라를 향해 흘러가는 삶을 살게 하소서. 익숙한 것을 그냥 따라가지 않고, 매 순간 주님을 기쁘시게 하는지 분별하는 마음을 주소서. 우리의 의지가 아니라 성령님께 운전대를 온전히 내어드리며, 어둠과 손잡지 않게 하소서. 예수님의 이름으로 기도합니다. 아멘.</div>
+<div class="prayer-text">하늘 아버지, 무엇을 먹을까, 무엇을 입을까, 내일은 어떻게 될까 염려하며 지낸 우리를 용서하여 주옵소서. 아버지께서 앉으셔야 할 자리에 다른 것을 앉혀 두고, 그것이 무너질까 두려워했습니다. 우리의 필요를 이미 아시는 아버지를 신뢰합니다. 이번 한 주, 먼저 아버지의 나라와 의를 구하게 하시고, 오늘 하루를 아버지 안에서 넉넉히 살게 하여 주옵소서. 예수 그리스도의 이름으로 기도합니다. 아멘.</div>
 </div>
 </div>
 </div>
@@ -674,93 +671,37 @@
 <div class="notices-section">
 <div class="section-label">Church News · 교회소식</div>
 <div class="notice-grid">
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>오늘 설거지: <strong>장년 목장</strong> (다음은 청년 목장)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div><strong>8월 30일 오후 2시</strong>, 이웃과 함께하는 심삼종 교수 초청연주회 (장소: 더웨이교회)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>여름전교인성경통독캠프 <strong>9월 13일</strong>, 연합예배 및 통독 (장소: 희망교회)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div><strong>9월 6일 침례식</strong> (조혜영 성도)</div>
-</div>
-<div class="notice-item">
-<div class="notice-dot"></div>
-<div>다음 주는 오후 행사 관계로 점심을 간단히 먹고 바로 출발합니다.</div>
-</div>
-</div>
+<div class="notice-item"><div class="notice-dot"></div><div>오늘 설거지: <strong>청장년 목장</strong> (다음 주 장년 목장)</div></div><div class="notice-item"><div class="notice-dot"></div><div><strong>11월 15일</strong> 추수감사주일입니다. 나의 감사고백(모든 성도) ‘나의 멋진 하나님’</div></div><div class="notice-item"><div class="notice-dot"></div><div>기도와 섬김(봉사), 전도에 힘씁시다.</div></div><div class="notice-item"><div class="notice-dot"></div><div><strong>오늘</strong> 예배 후 교회 공간에 대한 성도회의가 있습니다.</div></div><div class="notice-item"><div class="notice-dot"></div><div>교회 데스크에 ‘매일성경’이 있습니다. 필요한 분들은 가져가세요.</div></div><div class="notice-item"><div class="notice-dot"></div><div><strong>12월 20일(주일)</strong> 익산에서 푸른나무교회와 연합예배 및 성탄파티</div></div></div>
 </div>
 
-
-<!-- SCHEDULE TABLE -->
+<!-- SCHEDULE -->
 <div class="schedule-section">
 <div class="section-label">Schedule · 예배 및 섬김 일정</div>
+<div class="sched-grid">
 <table>
-<thead>
-<tr>
-<th>날짜</th>
-<th>기도순서</th>
-<th>찬양인도</th>
-<th>키보드</th>
-<th>드럼</th>
-<th>기타</th>
-<th>예배시간</th>
-</tr>
-</thead>
+<thead><tr><th colspan="2">기도순서</th></tr></thead>
+<tbody><tr><td>11월 15일</td><td>최은애</td></tr><tr><td>11월 22일</td><td>박영희</td></tr><tr><td>11월 29일</td><td>박채은</td></tr><tr><td>12월 6일</td><td>최은총</td></tr><tr><td>12월 13일</td><td>신수아</td></tr></tbody>
+</table>
+<table>
+<thead><tr><th>예배팀</th><th>담당자</th></tr></thead>
 <tbody>
-<tr>
-<td>8월 30일</td>
-<td>남지구</td>
-<td>김지성</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>주일예배 오전 11시</td>
-</tr>
-<tr>
-<td>9월 6일</td>
-<td>이성미</td>
-<td>—</td>
-<td>박채은</td>
-<td>—</td>
-<td>—</td>
-<td>수요말씀코이노니아 오후 7시</td>
-</tr>
-<tr>
-<td>9월 13일</td>
-<td>박채성</td>
-<td>—</td>
-<td>—</td>
-<td>신수아</td>
-<td>—</td>
-<td>금요기도 오후 9시</td>
-</tr>
-<tr>
-<td>9월 20일</td>
-<td>임도형</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>박채성(AG) / 임건후(BG)</td>
-<td>말씀통독 오전 7시(월–토)</td>
-</tr>
-<tr>
-<td>9월 27일</td>
-<td>김사라</td>
-<td>—</td>
-<td>—</td>
-<td>—</td>
-<td>자막: 박채경</td>
-<td>—</td>
-</tr>
+<tr><td>찬양인도</td><td>김지성</td></tr>
+<tr><td>키보드</td><td>박채은</td></tr>
+<tr><td>드럼</td><td>신수아</td></tr>
+<tr><td>기타</td><td>박채성(AG) / 임건후(BG)</td></tr>
+<tr><td>자막</td><td>박채경</td></tr>
 </tbody>
 </table>
+<table>
+<thead><tr><th>예배</th><th>시간</th></tr></thead>
+<tbody>
+<tr><td>주일예배</td><td>오전 11시</td></tr>
+<tr><td>수요말씀코이노니아</td><td>수요일 오후 7시</td></tr>
+<tr><td>금요기도</td><td>오후 9시</td></tr>
+<tr><td>말씀통독</td><td>오전 7시(월–토)</td></tr>
+</tbody>
+</table>
+</div>
 </div>
 <!-- DEPARTMENT -->
 <div class="dept-section">
@@ -791,21 +732,20 @@
 <div class="dept-person">최은애</div>
 </div>
 <div class="dept-cell">
-<div class="dept-name">재정/운영</div>
+<div class="dept-name">재정부(운영위원)</div>
 <div class="dept-person">김덕호·이지욱</div>
 </div>
 </div>
 </div>
 
-
 <!-- FOOTER -->
 <div class="footer">
 <div class="footer-info">
-      담임목사 박동준<br/>
-      대전시 유성구 안금로 15번길 49-26<br/>
+      담임목사 박동준  /  장로 김덕호<br/>
       YouTube <a href="https://youtube.com/@sjgrace">@sjgrace</a>  |  
-      홈페이지 <a href="https://www.sejonggrace.com">www.sejonggrace.com</a>
-</div>
+      홈페이지 <a href="https://www.sejonggrace.com">www.sejonggrace.com</a><br/>
+      대전시 유성구 안금로 15번길 49-26
+    </div>
 <div class="footer-account">
       온라인 헌금계좌<br/>
 <strong>농협 351-2233-6688-93</strong><br/>
@@ -815,8 +755,7 @@
 <!-- CLOSING BANNER -->
 <div class="closing-banner">
 <span>하나님이 시작하셨고, 하나님이 인도하시며, 하나님이 열매 맺으십니다</span>
-<span>걸어 온 모든 길이 우리교회에 주신 이름처럼 <strong>'은혜'</strong>입니다</span>
-<span>이제 세종으로 향한 새로운 역사, 광야에 길과 사막에 강을 내시는 주님의 역사를 믿음의 눈으로 바라보며 함께 걸어갑시다</span>
+<span>걸어 온 모든 길이 우리교회에 주신 이름처럼 '은혜'입니다. 이제 세종으로 향한 새로운 역사, 광야에 길과 사막에 강을 내시는 주님의 역사를 믿음의 눈으로 바라보며 함께 걸어갑시다</span>
 </div>
 </div>
 </body>
