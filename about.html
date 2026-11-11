@@ -27,7 +27,20 @@ body{margin:0;background:#F9F7F2;word-break:keep-all;overflow-wrap:break-word}
 .grace-letter{position:absolute;top:0;left:0;right:0;height:68px;z-index:1;display:flex;align-items:center;justify-content:center;font-family:Montserrat,Pretendard,sans-serif;font-style:normal;font-weight:300;font-size:46px;line-height:1;letter-spacing:0;color:#FFFFFF;text-shadow:none}
 .grace-front .grace-word{font-family:Montserrat,Pretendard,sans-serif;font-weight:800;font-size:17px !important;letter-spacing:.06em !important;text-transform:uppercase}
 .grace-front>span:last-child{margin-top:auto}
-@media (max-width:600px){.grace-front{padding-top:80px !important}.grace-front::before{height:64px}.grace-letter{font-size:40px;height:64px}.grace-card{height:240px !important}}
+@media (max-width:600px){
+.grace-grid{grid-template-columns:1fr !important;gap:8px !important}
+.grace-card{height:104px !important}
+.grace-front{padding:12px 14px 12px 82px !important;justify-content:center;gap:2px !important}
+.grace-front::before{top:0;bottom:0;right:auto;width:68px;height:auto}
+.grace-letter{right:auto;width:68px;height:100%;font-size:40px}
+.grace-front .grace-word{font-size:15px !important}
+.grace-front>span:nth-child(3){font-size:14px !important}
+.grace-front>span:nth-child(4){font-size:12px !important;line-height:1.45 !important}
+.grace-front>span:last-child{position:absolute;top:12px;right:14px;margin:0}
+.grace-back{padding:10px 16px !important;gap:4px !important}
+.grace-back>span:first-child{font-size:12px !important;line-height:1.55 !important}
+.grace-back>span:last-child{font-size:11px !important}
+}
 .grace-inner{transition:transform .6s ease;transform-style:preserve-3d}
 .grace-card.is-flipped .grace-inner{transform:rotateY(180deg)}
 .grace-face{-webkit-backface-visibility:hidden;backface-visibility:hidden}
@@ -430,7 +443,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <span style="font-size: 13px; color: #3B4868">담임목사 <b style="color: #0F1B3D">박동준</b></span>
 </span>
 </div>
-<div style="flex: 3 1 640px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px">
+<div class="grace-grid" style="flex: 3 1 640px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px">
 
 <button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="G God — 하나님 중심, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
 <span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
