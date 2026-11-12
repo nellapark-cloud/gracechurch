@@ -284,6 +284,12 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 .pastor-pair .pastor-msg{font-size:14px}
 .pastor-pair .pastor-info div{grid-template-columns:72px 1fr;font-size:13px;padding:8px 0}
 .pastor-info .tbd,.pastor-msg.tbd{color:#9AA6BF}
+.pastor-pair .pastor{row-gap:18px;align-content:start}
+.pastor-pair .pastor-body{align-self:center}
+.pastor-pair .pastor-info{grid-column:1/-1}
+.pastor-pair .pastor-info div{grid-template-columns:96px 1fr;line-height:1.65}
+.pastor-pair .pastor-info div:last-child{border-bottom:0;padding-bottom:0}
+@media (max-width:640px){.pastor-pair .pastor-info div{grid-template-columns:68px 1fr}}
 @media (max-width:900px){.pastor-pair{grid-template-columns:1fr}}
 @media (max-width:640px){.pastor-pair .pastor{grid-template-columns:1fr;padding:22px 18px;gap:14px}.pastor-pair .pastor-photo{width:110px;height:110px}}
 .tm-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
@@ -572,11 +578,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <span class="pastor-role">담임목사 · SENIOR PASTOR</span>
 <h3 class="pastor-name">박동준 <small>목사</small></h3>
 <p class="pastor-msg">“우리 교회의 유일한 머리와 주인은 오직 예수 그리스도이십니다. 예배로 삶의 질서를 세우고, 받은 은혜로 이웃과 다음세대를 품는 교회가 되기를 소망합니다.”</p>
-<div class="pastor-info">
-<div><b>학력</b><span>침례신학대학교 및 동 대학원 · 리버티신학대학원 STM 설교학</span></div>
-<div><b>사역</b><span>기독교한국침례회 은혜교회 담임 · GIVEN MINISTRY 대표</span></div>
-<div><b>찬양 · 방송</b><span>CCM 보컬리스트 · 쉘위워십 프로듀싱 · 극동방송 · 유튜브 ‘더 그레이스’</span></div>
 </div>
+<div class="pastor-info">
+<div><b>학력</b><span>침례신학대학교 및 동 대학원<br>리버티신학대학원 STM 설교학</span></div>
+<div><b>사역</b><span>기독교한국침례회 은혜교회 담임<br>GIVEN MINISTRY 대표</span></div>
+<div><b>찬양 · 방송</b><span>CCM 보컬리스트 · 쉘위워십 프로듀싱<br>극동방송 · 유튜브 ‘더 그레이스’</span></div>
 </div>
 </div>
 <div class="pastor">
@@ -585,10 +591,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #1F7AB8;outline-offset:2p
 <span class="pastor-role">전도사 · MINISTER</span>
 <h3 class="pastor-name">임도형 <small>전도사</small></h3>
 <p class="pastor-msg">“청년의 때에 만나는 예수 그리스도가 평생의 길이 됩니다. 말씀 앞에서 함께 묻고 고민하며, 청년들이 그리스도 안에서 자기 자리를 찾아가도록 곁에서 걷겠습니다.”</p>
-<div class="pastor-info">
-<div><b>학력</b><span>Epic Bible College &amp; Graduate School 졸업 · 침례신학대학원 신학과 졸업</span></div>
-<div><b>사역</b><span>청년부 담당</span></div>
 </div>
+<div class="pastor-info">
+<div><b>학력</b><span>Epic Bible College &amp; Graduate School 졸업<br>침례신학대학원 신학과 졸업</span></div>
+<div><b>사역</b><span>청년부 담당</span></div>
 </div>
 </div>
 </div>
