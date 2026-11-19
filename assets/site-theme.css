@@ -79,3 +79,14 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 .ft-links a{padding:8px 16px;border:1px solid rgba(159,227,245,.35);border-radius:999px;font-size:13px;color:#DDEFF7}
 .ft-links a:hover{background:rgba(159,227,245,.12);color:#FFFFFF}
 @media (max-width:700px){.ft.ft-simple{flex-direction:column;align-items:flex-start;padding:36px 20px 20px}}
+
+/* 페이지 머리: 첫 화면 사진을 워터마크처럼 */
+.page-hero{background:
+ radial-gradient(ellipse 50% 90% at 0% 100%,rgba(26,127,168,.30),transparent 60%),
+ linear-gradient(90deg,#041F33 0%,rgba(6,38,61,.97) 36%,rgba(11,59,92,.80) 60%,rgba(14,95,130,.70) 100%),
+ url(home/hero.jpg) right 26% / 64% auto no-repeat,
+ var(--ocean)!important}
+@media (max-width:700px){.page-hero{background:
+ linear-gradient(180deg,rgba(6,38,61,.80) 0%,rgba(11,59,92,.86) 100%),
+ url(home/hero.jpg) 100% 30% / auto 260% no-repeat,
+ var(--ocean)!important}}
