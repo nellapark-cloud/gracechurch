@@ -1,9 +1,9 @@
 /* 은혜교회 공통 테마 — 홈과 같은 톤 */
-:root{--ink:#2C3E5C;--ink-deep:#24344E;--gold:#8C9DB3;--gold-soft:#C9D1DC;--gold-text:#5B7089;--ivory:#F2F3F5;--line:#DDE1E7;--muted:#5B6478;--serif:'Noto Sans KR',Pretendard,sans-serif;--en:Montserrat,'Noto Sans KR',sans-serif}
+:root{--ink:#3E5677;--ink-deep:#34496A;--gold:#8C9DB3;--gold-soft:#C9D1DC;--gold-text:#5B7089;--ivory:#F2F3F5;--line:#DDE1E7;--muted:#5B6478;--serif:'Noto Sans KR',Pretendard,sans-serif;--en:Montserrat,'Noto Sans KR',sans-serif}
 /* 헤더 */
 #site-header{position:sticky;top:0;z-index:50;color:#FFFFFF}
-#site-header::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(36,52,78,.55),rgba(36,52,78,0));transition:background .25s ease,box-shadow .25s ease}
-#site-header.is-scrolled::before,#site-header.open::before{background:rgba(36,52,78,.96);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+#site-header::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(52,73,106,.55),rgba(52,73,106,0));transition:background .25s ease,box-shadow .25s ease}
+#site-header.is-scrolled::before,#site-header.open::before{background:rgba(52,73,106,.96);box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .hdr{max-width:1200px;margin:0 auto;padding:0 28px;min-height:76px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px}
 .logo{display:flex;flex-direction:column;line-height:1.25}
 .logo b{font-family:var(--serif);font-size:20px;font-weight:800;letter-spacing:-.02em}
