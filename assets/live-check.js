@@ -24,13 +24,13 @@
   var css =
     '#live-modal{position:fixed;inset:0;z-index:2147483600;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(15,27,61,.42)}' +
     '#live-modal.open{display:flex}' +
-    '#live-modal .lm-box{width:100%;max-width:380px;border-radius:20px;background:#FFFFFF;padding:28px 24px 22px;text-align:center;box-shadow:0 24px 60px rgba(15,27,61,.25);font-family:Pretendard,"Noto Sans KR",system-ui,sans-serif;color:#1B2433}' +
+    '#live-modal .lm-box{width:100%;max-width:380px;border-radius:20px;background:#FFFFFF;padding:28px 24px 22px;text-align:center;box-shadow:0 24px 60px rgba(15,27,61,.25);font-family:Pretendard,"Noto Sans KR",system-ui,sans-serif;color:#2C3E5C}' +
     '#live-modal .lm-icon{width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:#EEF0F3;display:flex;align-items:center;justify-content:center}' +
     '#live-modal h2{margin:0 0 8px;font-size:20px;font-weight:800;letter-spacing:-.02em}' +
     '#live-modal p{margin:0 0 18px;font-size:14px;line-height:1.6;color:#3F4A60;word-break:keep-all}' +
     '#live-modal .lm-btns{display:flex;flex-direction:column;gap:8px}' +
     '#live-modal .lm-btns a,#live-modal .lm-btns button{display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;font-family:inherit}' +
-    '#live-modal .lm-main{background:#8C9DB3;color:#1B2433;border:0}' +
+    '#live-modal .lm-main{background:#8C9DB3;color:#2C3E5C;border:0}' +
     '#live-modal .lm-sub{background:#FFFFFF;color:#5B7089;border:1px solid #DDE1E7}' +
     '#live-modal .lm-close{background:transparent;color:#5B6478;border:0;min-height:40px}';
 
