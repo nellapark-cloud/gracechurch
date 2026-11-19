@@ -19,7 +19,7 @@
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Church","@id":"https://sejonggrace.com/#church","name":"기독교한국침례회 은혜교회","alternateName":["은혜교회","Grace Baptist Church"],"url":"https://sejonggrace.com/","logo":"https://sejonggrace.com/assets/favicon.png","image":"https://sejonggrace.com/assets/home/hero.jpg","address":{"@type":"PostalAddress","streetAddress":"안금로15번길 49-26","addressLocality":"유성구","addressRegion":"대전광역시","addressCountry":"KR"},"sameAs":["https://www.youtube.com/@sjgrace"]}</script>
 <style>
 /* ===== 은혜교회 홈 — 아이보리 · 잉크네이비 · 골드 ===== */
-:root{--ink:#3E5677;--ink-deep:#34496A;--gold:#8C9DB3;--gold-soft:#C9D1DC;--gold-text:#5B7089;--ivory:#F2F3F5;--line:#DDE1E7;--muted:#5B6478;--serif:'Noto Sans KR',Pretendard,sans-serif;--en:Montserrat,'Noto Sans KR',sans-serif}
+:root{--ink:#0B3B5C;--ink-deep:#072B44;--gold:#4FB3D9;--gold-soft:#9FD8EA;--gold-text:#13789E;--ivory:#F2F6F9;--line:#D6E4EE;--muted:#5B6478;--serif:'Noto Sans KR',Pretendard,sans-serif;--en:Montserrat,'Noto Sans KR',sans-serif}
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 *{box-sizing:border-box}
 body{margin:0;background:var(--ivory);word-break:keep-all;overflow-wrap:break-word}
@@ -38,8 +38,8 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 
 /* 헤더 */
 #site-header{position:sticky;top:0;z-index:50;color:#FFFFFF}
-#site-header::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(52,73,106,.55),rgba(52,73,106,0));transition:background .25s ease,box-shadow .25s ease}
-#site-header.is-scrolled::before,#site-header.open::before{background:rgba(52,73,106,.96);box-shadow:0 8px 24px rgba(0,0,0,.18)}
+#site-header::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(7,43,68,.55),rgba(7,43,68,0));transition:background .25s ease,box-shadow .25s ease}
+#site-header.is-scrolled::before,#site-header.open::before{background:rgba(7,43,68,.96);box-shadow:0 8px 24px rgba(0,0,0,.18)}
 .hdr{max-width:1200px;margin:0 auto;padding:0 28px;min-height:76px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 24px}
 .logo{display:flex;flex-direction:column;line-height:1.25}
 .logo b{font-family:var(--serif);font-size:20px;font-weight:800;letter-spacing:-.02em}
@@ -76,11 +76,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .hs-main{min-height:720px;display:flex;align-items:center}
 /* 사진은 오른쪽 — 청년 얼굴 위에는 그늘·글씨가 겹치지 않게 */
 .hero-img{position:absolute;top:0;right:0;width:60%;height:100%;object-fit:cover;object-position:14% 30%;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 20%);mask-image:linear-gradient(90deg,transparent 0%,#000 20%)}
-.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(140,157,179,.12),transparent 55%)}
+.hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(79,179,217,.12),transparent 55%)}
 .hero-in{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:150px 28px 170px}
 .hero-txt{max-width:500px;display:flex;flex-direction:column;gap:22px}
 .hero-txt h1{margin:0;font-family:var(--serif);font-size:clamp(34px,4.2vw,54px);line-height:1.28;font-weight:800;letter-spacing:-.03em;color:#FFFFFF}
-.hero-txt h1 em{font-style:normal;color:#DCE6F2}
+.hero-txt h1 em{font-style:normal;color:#BFE7F5}
 .hero-txt p{margin:0;font-size:16px;line-height:1.85;color:#DCE0E8}
 .btns{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:50px;padding:0 24px;border-radius:4px;font-size:15px;font-weight:500}
@@ -91,13 +91,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 @media (max-width:700px){
  .hs-main{min-height:0;align-items:flex-end}
  .hero-img{width:100%;height:460px;object-position:24% 22%;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
- .hero-glow{background:linear-gradient(180deg,rgba(52,73,106,.3) 0,rgba(52,73,106,0) 110px)}
+ .hero-glow{background:linear-gradient(180deg,rgba(7,43,68,.3) 0,rgba(7,43,68,0) 110px)}
  .hero-in{padding:440px 20px 150px}
         }
 
 /* 예배 시간 */
 .svc{position:relative;z-index:4;margin-top:-72px}
-.svc-box{background:#FFFFFF;border-radius:6px;box-shadow:0 18px 50px rgba(62,86,119,.12);padding:26px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 36px}
+.svc-box{background:#FFFFFF;border-radius:6px;box-shadow:0 18px 50px rgba(11,59,92,.12);padding:26px 32px;display:flex;flex-wrap:wrap;align-items:center;gap:18px 36px}
 .svc-head b{display:block;margin-top:4px;font-family:var(--serif);font-size:20px}
 .svc-grid{flex:999 1 620px;min-width:0;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
 .svc-item{border-left:1px solid var(--line);padding-left:16px;display:flex;flex-direction:column}
@@ -143,7 +143,7 @@ a.svc-item:hover b{color:var(--gold-text)}
 /* 사진 카드 */
 .pc{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
 .pc a{background:#FFFFFF;border:1px solid var(--line);border-radius:6px;overflow:hidden;display:flex;flex-direction:column;transition:transform .2s ease,box-shadow .2s ease}
-.pc a:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(62,86,119,.1)}
+.pc a:hover{transform:translateY(-3px);box-shadow:0 14px 34px rgba(11,59,92,.1)}
 .pc img{width:100%;height:260px;object-fit:cover;display:block}
 .pc div{padding:24px 26px;display:flex;flex-direction:column;gap:8px}
 .pc small{font-size:13px;color:var(--gold-text)}
@@ -179,10 +179,39 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 @media (max-width:1000px){.ft{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:520px){.ft{grid-template-columns:1fr}}
 @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hs-track.anim{transition:none}}
+
+/* ===== 오션 블루 그라데이션 ===== */
+:root{--ocean:linear-gradient(135deg,#041F33 0%,#0B3B5C 42%,#0E5F82 78%,#1A7FA8 100%);--aqua-grad:linear-gradient(135deg,#9FE3F5 0%,#4FB3D9 55%,#2B8FBF 100%);--text-grad:linear-gradient(90deg,#0B3B5C 0%,#13789E 55%,#2BA3C9 100%)}
+#site-header.is-scrolled::before,#site-header.open::before{background:linear-gradient(90deg,rgba(4,31,51,.96),rgba(11,59,92,.96) 60%,rgba(14,95,130,.96))!important}
+.gnav .gnav-live{background:var(--aqua-grad)!important;color:#041F33!important;box-shadow:0 6px 18px rgba(79,179,217,.35)}
+.mnav .mnav-live{background:var(--aqua-grad)!important;color:#041F33!important}
+.page-hero{background:radial-gradient(ellipse 60% 90% at 88% 0%,rgba(79,179,217,.38),transparent 62%),radial-gradient(ellipse 50% 70% at 0% 100%,rgba(26,127,168,.35),transparent 60%),var(--ocean)!important}
+.page-hero::after{height:2px!important;background:linear-gradient(90deg,transparent,rgba(159,227,245,.8),transparent)!important}
+.page-hero .ph-label{color:#9FE3F5!important}
+footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.28),transparent 60%),linear-gradient(180deg,#072B44 0%,#041A2B 100%)!important}
+.ft h3{color:#9FE3F5}
+#top{background:radial-gradient(ellipse 55% 80% at 10% 30%,rgba(79,179,217,.22),transparent 60%),var(--ocean)!important}
+.hero-glow{background:radial-gradient(ellipse at 15% 40%,rgba(159,227,245,.14),transparent 55%)}
+.hero-txt h1 em{background:linear-gradient(90deg,#BFEFFF 0%,#7FD3EE 50%,#4FB3D9 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.btn-gold{background:#FFFFFF;color:#0B3B5C;box-shadow:0 10px 26px rgba(4,31,51,.35)}
+.btn-gold:hover{background:#E6F6FC}
+.svc-box{position:relative;overflow:hidden;box-shadow:0 22px 60px rgba(4,31,51,.18)}
+.svc-box::before{content:"";position:absolute;left:0;right:0;top:0;height:4px;background:var(--aqua-grad)}
+.h2 span[style],.vision p.v{}
+.ng-grid b,.mis b{background:var(--text-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mis i{background:var(--aqua-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mis a,.ql a,.pc a,.ng-grid div{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+.mis a:hover,.ql a:hover{border-color:#7FD3EE;box-shadow:0 14px 32px rgba(11,59,92,.12)}
+.vision{background:radial-gradient(ellipse 50% 90% at 100% 0%,rgba(79,179,217,.4),transparent 60%),radial-gradient(ellipse 40% 80% at 0% 100%,rgba(26,127,168,.35),transparent 60%),var(--ocean)!important;box-shadow:0 24px 60px rgba(4,31,51,.25)}
+.vision .bar{height:2px;width:56px;background:var(--aqua-grad)}
+.invite{background:var(--ocean)}
+.invite::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,31,51,.85) 0%,rgba(11,59,92,.55) 60%,rgba(26,127,168,.35) 100%);pointer-events:none}
+.invite-in{z-index:1}
+.ql svg,.pc small{color:#13789E}
 </style>
 </head>
 <body>
-<div style="font-family: 'Noto Sans KR', Pretendard, system-ui, sans-serif; color: #3E5677; background: #F2F3F5; width: 100%; line-height: 1.6">
+<div style="font-family: 'Noto Sans KR', Pretendard, system-ui, sans-serif; color: #0B3B5C; background: #F2F6F9; width: 100%; line-height: 1.6">
 
 <!-- 헤더 (상단 고정) -->
 <header id="site-header">
@@ -271,12 +300,12 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <div class="wrap">
 <p class="en" style="margin: 0 0 16px">QUICK LINKS</p>
 <div class="ql">
-<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B7089" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M6.3 6.3a8 8 0 0 0 0 11.4M17.7 6.3a8 8 0 0 1 0 11.4"></path></svg>실시간 예배</a>
-<a href="https://www.youtube.com/@sjgrace" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B7089" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M10 9l5 3-5 3z"></path></svg>유튜브</a>
-<a href="events.html"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B7089" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>일정</a>
-<a href="archive.html"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B7089" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h7a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H2zM22 5h-7a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H22z"></path></svg>자료실</a>
-<a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B7089" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l11-2v12"></path><circle cx="6" cy="18" r="3"></circle><circle cx="17" cy="16" r="3"></circle></svg>그레이스워십</a>
-<a href="https://givenministry.com" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#5B7089" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"></path></svg>기븐미니스트리</a>
+<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13789E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M6.3 6.3a8 8 0 0 0 0 11.4M17.7 6.3a8 8 0 0 1 0 11.4"></path></svg>실시간 예배</a>
+<a href="https://www.youtube.com/@sjgrace" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13789E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M10 9l5 3-5 3z"></path></svg>유튜브</a>
+<a href="events.html"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13789E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="2"></rect><path d="M3 10h18M8 3v4M16 3v4"></path></svg>일정</a>
+<a href="archive.html"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13789E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 5h7a3 3 0 0 1 3 3v12a2.5 2.5 0 0 0-2.5-2.5H2zM22 5h-7a3 3 0 0 0-3 3v12a2.5 2.5 0 0 1 2.5-2.5H22z"></path></svg>자료실</a>
+<a href="https://nellapark-cloud.github.io/grace-worship/" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13789E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V6l11-2v12"></path><circle cx="6" cy="18" r="3"></circle><circle cx="17" cy="16" r="3"></circle></svg>그레이스워십</a>
+<a href="https://givenministry.com" target="_blank" rel="noopener"><svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#13789E" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.5A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"></path></svg>기븐미니스트리</a>
 </div>
 </div>
 </section>
@@ -285,7 +314,7 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <section class="sec" aria-labelledby="nextgenTitle">
 <div class="wrap center">
 <span class="en">NEXT GENERATION · 다음세대</span>
-<h2 id="nextgenTitle" class="h2" style="margin-bottom: 10px">은혜교회는 <span style="color: #5B7089">다음세대</span>를 생각합니다</h2>
+<h2 id="nextgenTitle" class="h2" style="margin-bottom: 10px">은혜교회는 <span style="background:linear-gradient(90deg,#0E5F82,#2BA3C9);-webkit-background-clip:text;background-clip:text;color:transparent">다음세대</span>를 생각합니다</h2>
 <p class="ng-sub">꿈꾸는 아동, 열정의 청년,<br class="mbr"> 지지하는 장년과 지혜의 실버가 함께합니다.</p>
 <div class="ng-grid">
 <div><span>꿈꾸는</span><b>아동</b></div>
@@ -365,7 +394,7 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <div><h3>교회 안</h3><a href="about.html">교회 소개</a><a href="worship.html">예배</a><a href="ministry.html">사역</a><a href="education.html">교육</a><a href="mission.html">선교 · 중보기도</a><a href="groups.html">교제 · 교회 내 그룹</a><a href="events.html">일정</a></div>
 <div><h3>말씀 미디어</h3><a href="https://www.youtube.com/@sjgrace" target="_blank" rel="noopener">유튜브</a><a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener">실시간 예배</a><a href="bulletin.html">주보</a><a href="archive.html">자료실</a></div>
 <div><h3>커넥트 사역</h3><a href="todak.html">토닥 · 청소년 상담</a><a href="partner.html#thegrace">더 그레이스 방송</a><a href="https://givenministry.com" target="_blank" rel="noopener">기븐미니스트리</a><a href="partner.html">쉘위워십 JB</a><a href="give.html">후원 · 헌금</a></div>
-<div><h3>오시는 길</h3><span>대전 유성구 안금로15번길 49-26</span><span>주일예배 오전 11시</span><span>주차: 교회 앞 · 아트원주차장</span><a href="visit.html" style="color: #C9D1DC">오시는 길 자세히 ›</a></div>
+<div><h3>오시는 길</h3><span>대전 유성구 안금로15번길 49-26</span><span>주일예배 오전 11시</span><span>주차: 교회 앞 · 아트원주차장</span><a href="visit.html" style="color: #9FD8EA">오시는 길 자세히 ›</a></div>
 </div>
 <div class="ft-copy">© Grace Baptist Church · 은혜교회. All rights reserved.</div>
 </footer>
