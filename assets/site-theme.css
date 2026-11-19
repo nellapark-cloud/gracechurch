@@ -70,3 +70,12 @@ footer{margin-top:72px}
 .page-hero .ph-label{color:#9FE3F5!important}
 footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.28),transparent 60%),linear-gradient(180deg,#072B44 0%,#041A2B 100%)!important}
 .ft h3{color:#9FE3F5}
+
+/* 간결한 푸터 */
+.ft.ft-simple{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 48px;padding:44px 28px 24px}
+.ft-brand{display:flex;flex-direction:column;gap:4px}
+.ft-info{display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.7;color:#B9CCDA}
+.ft-links{display:flex;flex-direction:row!important;gap:10px}
+.ft-links a{padding:8px 16px;border:1px solid rgba(159,227,245,.35);border-radius:999px;font-size:13px;color:#DDEFF7}
+.ft-links a:hover{background:rgba(159,227,245,.12);color:#FFFFFF}
+@media (max-width:700px){.ft.ft-simple{flex-direction:column;align-items:flex-start;padding:36px 20px 20px}}
