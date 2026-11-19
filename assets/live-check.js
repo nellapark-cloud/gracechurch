@@ -24,14 +24,14 @@
   var css =
     '#live-modal{position:fixed;inset:0;z-index:2147483600;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(15,27,61,.42)}' +
     '#live-modal.open{display:flex}' +
-    '#live-modal .lm-box{width:100%;max-width:380px;border-radius:20px;background:#FFFFFF;padding:28px 24px 22px;text-align:center;box-shadow:0 24px 60px rgba(15,27,61,.25);font-family:Pretendard,"Noto Sans KR",system-ui,sans-serif;color:#14213D}' +
-    '#live-modal .lm-icon{width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:#F3EDE3;display:flex;align-items:center;justify-content:center}' +
+    '#live-modal .lm-box{width:100%;max-width:380px;border-radius:20px;background:#FFFFFF;padding:28px 24px 22px;text-align:center;box-shadow:0 24px 60px rgba(15,27,61,.25);font-family:Pretendard,"Noto Sans KR",system-ui,sans-serif;color:#1B2433}' +
+    '#live-modal .lm-icon{width:56px;height:56px;margin:0 auto 14px;border-radius:50%;background:#EEF0F3;display:flex;align-items:center;justify-content:center}' +
     '#live-modal h2{margin:0 0 8px;font-size:20px;font-weight:800;letter-spacing:-.02em}' +
     '#live-modal p{margin:0 0 18px;font-size:14px;line-height:1.6;color:#3F4A60;word-break:keep-all}' +
     '#live-modal .lm-btns{display:flex;flex-direction:column;gap:8px}' +
     '#live-modal .lm-btns a,#live-modal .lm-btns button{display:flex;align-items:center;justify-content:center;min-height:46px;border-radius:10px;font-size:14px;font-weight:700;text-decoration:none;cursor:pointer;font-family:inherit}' +
-    '#live-modal .lm-main{background:#C9A46B;color:#14213D;border:0}' +
-    '#live-modal .lm-sub{background:#FFFFFF;color:#7A5C30;border:1px solid #E6DFD3}' +
+    '#live-modal .lm-main{background:#8C9DB3;color:#1B2433;border:0}' +
+    '#live-modal .lm-sub{background:#FFFFFF;color:#5B7089;border:1px solid #DDE1E7}' +
     '#live-modal .lm-close{background:transparent;color:#5B6478;border:0;min-height:40px}';
 
   var modal;
@@ -45,7 +45,7 @@
     modal.setAttribute('aria-labelledby', 'live-modal-title');
     modal.innerHTML =
       '<div class="lm-box">' +
-        '<div class="lm-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#8A6A3B" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M10.5 9.5v5l4-2.5z" fill="#8A6A3B"></path></svg></div>' +
+        '<div class="lm-icon" aria-hidden="true"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#5B7089" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="3"></rect><path d="M10.5 9.5v5l4-2.5z" fill="#5B7089"></path></svg></div>' +
         '<h2 id="live-modal-title">지금은 방송시간이 아닙니다</h2>' +
         '<p>실시간 예배는 ' + times + '에 시작해요.<br>지난 예배는 다시 보기로 함께하실 수 있어요.</p>' +
         '<div class="lm-btns">' +
