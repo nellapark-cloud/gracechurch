@@ -28,6 +28,9 @@ button{font-family:inherit}
 img{max-width:100%}
 a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
 .wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.nw{white-space:nowrap}
+.mbr{display:none}
+@media (max-width:700px){.mbr{display:inline}.dsep{display:none}.wrap{padding:0 20px}.hero-txt .en{font-size:12px;letter-spacing:.14em;white-space:nowrap}}
 .en{font-family:var(--en);letter-spacing:.22em;font-size:14px;color:var(--gold-text)}
 .en-light{color:var(--gold-soft)}
 .h2{margin:8px 0 30px;font-family:var(--serif);font-size:clamp(25px,3vw,32px);font-weight:700;letter-spacing:-.02em;line-height:1.35;color:var(--ink)}
@@ -85,27 +88,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .btn-gold:hover{background:var(--gold-soft)}
 .btn-line{border:1px solid rgba(255,255,255,.55);color:#FFFFFF}
 .btn-line:hover{background:rgba(255,255,255,.08)}
-.hs-promo{display:block;background:var(--ink)}
-.hs-promo-bg{position:absolute;inset:-30px;background-size:cover;background-position:center;filter:blur(18px) brightness(.55);opacity:.95}
-.hs-promo img{position:absolute;left:0;right:0;top:96px;bottom:150px;width:100%;height:calc(100% - 246px);object-fit:contain;display:block;filter:drop-shadow(0 16px 36px rgba(0,0,0,.35))}
-.hs-cap{display:none}
-.hs-dots{position:absolute;left:0;right:0;bottom:104px;display:flex;justify-content:center;gap:8px;z-index:3}
-.hs-dots button{width:8px;height:8px;padding:0;border:0;border-radius:999px;background:rgba(255,255,255,.35);cursor:pointer;transition:width .3s ease,background .3s ease}
-.hs-dots button.on{width:26px;background:var(--gold)}
 @media (max-width:700px){
  .hs-main{min-height:0;align-items:flex-end}
  .hero-img{width:100%;height:460px;object-position:24% 22%;-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
  .hero-glow{background:linear-gradient(180deg,rgba(14,22,42,.3) 0,rgba(14,22,42,0) 110px)}
  .hero-in{padding:440px 20px 150px}
- .hs-promo{display:flex;flex-direction:column;align-items:stretch;padding:100px 20px 150px;gap:18px}
- .hs-promo img{position:relative;inset:auto;height:auto;width:100%;border-radius:6px;object-fit:cover}
- .hs-cap{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:6px;background:#FFFFFF;color:var(--ink)}
- .hs-cap b{font-family:var(--serif);font-size:20px}
- .hs-cap span{font-size:14px;color:var(--gold-text)}
- .hs-cap .hs-cap-d{color:var(--muted);line-height:1.6}
- .hs-cap .hs-cap-btn{align-self:flex-start;margin-top:6px;padding:9px 16px;border-radius:4px;background:var(--ink);color:#FFFFFF;font-weight:500}
- .hs-dots{bottom:100px}
-}
+        }
 
 /* 예배 시간 */
 .svc{position:relative;z-index:4;margin-top:-72px}
@@ -250,7 +238,7 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <div class="hero-txt">
 <span class="en en-light">WELCOME HOME · GRACE CHURCH</span>
 <h1>하나님을 바라보고,<br>예수를 따르고,<br>성령 안에서,<br><em>은혜로 살아갑니다.</em></h1>
-<p>우리 교회의 유일한 머리와 주인은 오직 예수 그리스도이십니다.<br>처음 오시는 분도 편안하게 오세요.</p>
+<p>우리 교회의 유일한 머리와 주인은<br class="mbr"> <span class="nw">오직 예수 그리스도</span>이십니다.<br>처음 오시는 분도 편안하게 오세요.</p>
 <div class="btns">
 <a href="ministry.html" class="btn btn-gold">예배 · 사역 둘러보기 <span aria-hidden="true">›</span></a>
 <a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" class="btn btn-line">실시간 예배</a>
@@ -258,13 +246,7 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 </div>
 </div>
 </div>
-<a class="hs-slide hs-promo" href="thanksgiving.html" aria-label="2026년 11월 15일 주일 오전 11시 추수감사주일 감사고백예배 — 고백 안내 보기">
-<span class="hs-promo-bg" aria-hidden="true" style="background-image:url(assets/home/thanksgiving-2026-blur.jpg)"></span>
-<img src="assets/home/thanksgiving-2026.jpg" alt="추수감사주일 감사고백예배 · 2026년 11월 15일 주일 오전 11시 · 온 성도가 ‘나의 멋진 하나님’을 고백하는 찬양과 감사의 주일 예배" loading="lazy">
-<span class="hs-cap"><b>추수감사주일 감사고백예배</b><span>2026년 11월 15일 주일 오전 11시</span><span class="hs-cap-d">온 성도가 ‘나의 멋진 하나님’을 고백하는 찬양과 감사의 주일 예배</span><span class="hs-cap-btn">고백 안내 보기 ›</span></span>
-</a>
 </div>
-<div class="hs-dots" role="tablist" aria-label="첫 화면 넘기기"><button type="button" class="on" aria-label="첫 번째 화면"></button><button type="button" aria-label="추수감사주일 안내"></button></div>
 </section>
 
 <!-- 예배 시간 -->
@@ -304,7 +286,7 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <div class="wrap center">
 <span class="en">NEXT GENERATION · 다음세대</span>
 <h2 id="nextgenTitle" class="h2" style="margin-bottom: 10px">은혜교회는 <span style="color: #7A5C30">다음세대</span>를 생각합니다</h2>
-<p class="ng-sub">꿈꾸는 아동, 열정의 청년, 지지하는 장년과 지혜의 실버가 함께합니다.</p>
+<p class="ng-sub">꿈꾸는 아동, 열정의 청년,<br class="mbr"> 지지하는 장년과 지혜의 실버가 함께합니다.</p>
 <div class="ng-grid">
 <div><span>꿈꾸는</span><b>아동</b></div>
 <div><span>열정의</span><b>청년</b></div>
@@ -319,9 +301,9 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <div class="wrap">
 <div class="vision">
 <span class="en en-light">VISION · 비전</span>
-<p class="v">예배로 세워지고, 은혜로 살아가며,<br>다음세대와 함께 세상을 품는 교회</p>
+<p class="v">예배로 세워지고,<br class="mbr"> 은혜로 살아가며,<br>다음세대와 함께<br class="mbr"> 세상을 품는 교회</p>
 <span class="bar" aria-hidden="true"></span>
-<p class="n">우리 삶의 주인은 오직 예수님, 우리는 그 삶을 맡은 청지기입니다.</p>
+<p class="n">우리 삶의 주인은 오직 예수님,<br class="mbr"> 우리는 그 삶을 맡은 청지기입니다.</p>
 </div>
 </div>
 </section>
@@ -330,7 +312,7 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <section id="mission" class="sec">
 <div class="wrap">
 <span class="en">MISSION · 사명</span>
-<h2 class="h2">우리가 함께 걷는 다섯 가지 길</h2>
+<h2 class="h2">우리가 함께 걷는<br class="mbr"> <span class="nw">다섯 가지 길</span></h2>
 <div class="mis">
 <a href="worship.html"><i>01</i><b>예배</b><span>주인 되신 하나님을 높이며, 예배로 삶의 질서를 세웁니다.</span></a>
 <a href="ministry.html"><i>02</i><b>사역</b><span>삶의 청지기로서 받은 은사대로 각자의 자리에서 섬깁니다.</span></a>
@@ -345,10 +327,10 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <section class="sec">
 <div class="wrap">
 <span class="en">GATHER &amp; CONNECT</span>
-<h2 class="h2">말씀으로 모이고, 세상으로 흘러갑니다</h2>
+<h2 class="h2">말씀으로 모이고,<br class="mbr"> <span class="nw">세상으로 흘러갑니다</span></h2>
 <div class="pc">
-<a href="education.html#koinonia"><img src="assets/home/koinonia.jpg" alt="말씀코이노니아 모임" loading="lazy"><div><small>교육 · 주중 말씀 모임</small><b>말씀코이노니아</b><span>화요일 저녁, 목요일 밤 — 한 장씩 함께 읽고 묻고 나누는 시간</span></div></a>
-<a href="partner.html"><img src="assets/home/given.jpg" alt="기븐미니스트리" loading="lazy"><div><small>커넥트 사역</small><b>기븐미니스트리 · 토닥 · 더 그레이스</b><span>문화사역, 청소년 상담, 방송, 쉘위워십 JB로 교회 밖과 이어집니다.</span></div></a>
+<a href="education.html#koinonia"><img src="assets/home/koinonia.jpg" alt="말씀코이노니아 모임" loading="lazy"><div><small>교육 · 주중 말씀 모임</small><b>말씀코이노니아</b><span>화요일 저녁, 목요일 밤 —<br class="mbr"> 한 장씩 함께 읽고 묻고 나누는 시간</span></div></a>
+<a href="partner.html"><img src="assets/home/given.jpg" alt="기븐미니스트리" loading="lazy"><div><small>커넥트 사역</small><b><span class="nw">기븐미니스트리 ·</span> <span class="nw">토닥 ·</span> <span class="nw">더 그레이스</span></b><span>문화사역, 청소년 상담, 방송, 쉘위워십 JB로 교회 밖과 이어집니다.</span></div></a>
 </div>
 </div>
 </section>
@@ -358,7 +340,7 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <div class="wrap">
 <div class="pastor">
 <img src="assets/home/pastor.jpg" alt="담임목사 박동준" loading="lazy">
-<div><small>담임목사</small><b>박동준</b><span>“지금까지 우리가 원하는 대로 된 것은 없었습니다. 하나님의 예비하심과 인도하심, 그것이 우리가 걸어온 길이고 은혜입니다.”</span></div>
+<div><small>담임목사</small><b>박동준</b><span>“지금까지 우리가 원하는 대로 된 것은 없었습니다.<br class="mbr"> 하나님의 예비하심과 인도하심,<br class="mbr"> 그것이 우리가 걸어온 길이고 은혜입니다.”</span></div>
 </div>
 </div>
 </section>
@@ -369,7 +351,7 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 <div class="invite">
 <img src="assets/home/hero.jpg" alt="" loading="lazy">
 <div class="invite-in">
-<div><span class="en en-light">SEE YOU THIS SUNDAY</span><b>이번 주일, 은혜교회에서 함께 예배해요</b><p>주일 오전 11시 · 처음 오셔도 편안한 자리가 준비되어 있어요.</p></div>
+<div><span class="en en-light">SEE YOU THIS SUNDAY</span><b>이번 주일, <span class="nw">은혜교회에서</span><br class="mbr"> 함께 예배해요</b><p>주일 오전 11시<span class="dsep"> · </span><br class="mbr">처음 오셔도 편안한 자리가 준비되어 있어요.</p></div>
 <a href="visit.html" class="btn btn-gold">처음 방문하기</a>
 </div>
 </div>
@@ -415,49 +397,6 @@ footer{margin-top:96px;background:var(--ink-deep);color:#AEB5C4}
 (function(){var h=document.getElementById('site-header');if(!h)return;
 function f(){var y=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;h.classList.toggle('is-scrolled',y>8);}
 window.addEventListener('scroll',f,{passive:true});document.body.addEventListener('scroll',f,{passive:true});f();})();
-</script>
-<script>
-/* 첫 화면: 몇 초마다 옆으로 밀어내며 바뀌기 */
-(function(){
-  var track = document.getElementById('hs-track'); if (!track) return;
-  var dots = Array.prototype.slice.call(document.querySelectorAll('.hs-dots button'));
-  var slides = Array.prototype.slice.call(track.children); // 원래 순서
-  var cur = 0, busy = false, timer, DELAY = 2000;
-  var reduce = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
-  function mark(){ dots.forEach(function(d, i){ d.classList.toggle('on', i === cur); }); }
-  function go(next){
-    if (busy || next === cur) return;
-    busy = true;
-    // 다음 화면을 현재 화면 바로 오른쪽에 둔 뒤, 왼쪽으로 밀어낸다
-    track.appendChild(slides[next]);
-    track.insertBefore(slides[cur], slides[next]);
-    track.classList.remove('anim'); track.style.transform = 'translateX(0)';
-    void track.offsetWidth;
-    var done = function(){
-      track.removeEventListener('transitionend', done);
-      track.classList.remove('anim');
-      track.insertBefore(slides[next], track.firstChild);
-      track.style.transform = 'translateX(0)';
-      cur = next; mark(); busy = false;
-    };
-    if (reduce) { done(); return; }
-    track.classList.add('anim');
-    track.addEventListener('transitionend', done);
-    track.style.transform = 'translateX(-100%)';
-  }
-  function start(){ stop(); timer = setInterval(function(){ go((cur + 1) % slides.length); }, DELAY); }
-  function stop(){ clearInterval(timer); }
-  dots.forEach(function(d, i){ d.addEventListener('click', function(){ go(i); start(); }); });
-  var top = document.getElementById('top');
-  top.addEventListener('mouseenter', stop); top.addEventListener('mouseleave', start);
-  top.addEventListener('focusin', stop); top.addEventListener('focusout', start);
-  document.addEventListener('visibilitychange', function(){ document.hidden ? stop() : start(); });
-  // 휴대폰: 손가락으로 밀기
-  var x0 = null;
-  top.addEventListener('touchstart', function(e){ x0 = e.touches[0].clientX; stop(); }, { passive: true });
-  top.addEventListener('touchend', function(e){ if (x0 === null) return; var dx = e.changedTouches[0].clientX - x0; x0 = null; if (Math.abs(dx) > 50) go((cur + 1) % slides.length); start(); });
-  start();
-})();
 </script>
 </body>
 </html>
