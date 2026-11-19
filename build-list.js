@@ -22,7 +22,7 @@ const categories = [
   { key: 'ephesians_detailed', dir: 'content/bible-by-book/new-testament/ephesians-detailed' },
   { key: 'philippians_detailed', dir: 'content/bible-by-book/new-testament/philippians-detailed' },
   { key: 'bible_by_person', dir: 'content/bible-by-book/bible-by-person' },
-  { key: 'bible_hidden_stories', dir: 'content/bible-by-book/hidden-stories' },
+  { key: 'bible_hidden_stories', dir: 'content/bible-by-book/hidden-stories', bookLabel: true },
   { key: 'bible_qt', dir: 'content/bible-by-book/qt' },
   { key: 'bible_history', dir: 'content/bible-by-book/bible-history' },
   { key: 'newcomers', dir: 'content/newcomers', pin: ['함께 걷는 믿음의 첫걸음'] },
@@ -135,8 +135,19 @@ function listDocs(dir, withFlags, pin, desc) {
 }
 
 const manifest = {};
-categories.forEach(({ key, dir, pin, desc }) => {
+// "1. 창세기 동산에서..." → "1. 창세기 | 동산에서..." 처럼 책 이름 뒤에 구분선을 넣어
+// 목록에서 어느 책의 이야기인지 한눈에 보이게 함 (파일 이름은 그대로 둠)
+function addBookLabel(title) {
+  const t = title.normalize('NFC');
+  if (t.includes('|')) return t;
+  return t.replace(/^(\d+(?:-\d+)?\.\s*)(\S+)\s+/, '$1$2 | ');
+}
+
+categories.forEach(({ key, dir, pin, desc, bookLabel }) => {
   manifest[key] = listDocs(dir, key === 'meeting_blessing', pin, desc);
+  if (bookLabel) {
+    manifest[key].forEach((it) => { it.title = addBookLabel(it.title); });
+  }
 });
 
 fs.mkdirSync(path.join(__dirname, 'data'), { recursive: true });
