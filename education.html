@@ -243,6 +243,11 @@ a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2p
 </style>
 <style>
 .kn-fold{border-radius:20px;background:#FFFFFF;box-shadow:0 8px 22px rgba(11,59,92,.08)}
+.kn-pair{max-width:1248px;margin:0 auto;padding:24px 24px 8px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;align-items:start;box-sizing:border-box}
+.kn-pair>section{padding:0!important;min-width:0}
+.kn-pair>section>div{max-width:none!important}
+.kn-pair>section:has(details[open]){grid-column:1/-1}
+@media (max-width:760px){.kn-pair{grid-template-columns:1fr}}
 .kn-sum{list-style:none;cursor:pointer;display:flex;align-items:center;gap:14px;padding:20px 24px;border-radius:20px}
 .kn-sum::-webkit-details-marker{display:none}
 .kn-sum-text{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
@@ -350,6 +355,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2p
 </div>
 </section>
 
+<div class="kn-pair">
 <section id="koinonia" style="padding: 24px 24px 8px">
 <div style="max-width: 1200px; margin: 0 auto">
 <details class="kn-fold">
@@ -536,6 +542,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2p
 </details>
 </div>
 </section>
+</div>
 <section id="education" style="padding: 24px 24px 48px">
 <div style="max-width: 1200px; margin: 0 auto; display: flex; flex-direction: column; gap: 22px">
 
