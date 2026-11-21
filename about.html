@@ -15,38 +15,12 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&amp;family=Noto+Serif+KR:wght@500&amp;family=Montserrat:wght@200;400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Church","@id":"https://sejonggrace.com/#church","name":"기독교한국침례회 은혜교회","alternateName":["은혜교회","Grace Baptist Church"],"url":"https://sejonggrace.com/","logo":"https://sejonggrace.com/assets/favicon.png","image":"https://sejonggrace.com/assets/home/hero.jpg","address":{"@type":"PostalAddress","streetAddress":"안금로15번길 49-26","addressLocality":"유성구","addressRegion":"대전광역시","addressCountry":"KR"},"sameAs":["https://www.youtube.com/@sjgrace"]}</script>
 <style>
 html{scroll-behavior:smooth;scroll-padding-top:96px}
 *{box-sizing:border-box}
 body{margin:0;background:#F2F6F9;word-break:keep-all;overflow-wrap:break-word}
-/* GRACE 카드 머리: 사선 색면 + 세리프 이탤릭 글자 */
-.grace-front::before{content:"";position:absolute;left:0;right:0;top:0;height:68px;background:#0B3B5C}
-.grace-front::after{content:none}
-.grace-letter{position:absolute;top:0;left:0;right:0;height:68px;z-index:1;display:flex;align-items:center;justify-content:center;font-family:Montserrat,Pretendard,sans-serif;font-style:normal;font-weight:300;font-size:46px;line-height:1;letter-spacing:0;color:#FFFFFF;text-shadow:none}
-.grace-front .grace-word{font-family:Montserrat,Pretendard,sans-serif;font-weight:800;font-size:17px !important;letter-spacing:.06em !important;text-transform:uppercase}
-.grace-front>span:last-child{margin-top:auto}
-@media (max-width:600px){
-.grace-grid{grid-template-columns:1fr !important;gap:8px !important}
-.grace-card{height:104px !important}
-.grace-front{padding:12px 14px 12px 82px !important;justify-content:center;gap:2px !important}
-.grace-front::before{top:0;bottom:0;right:auto;width:68px;height:auto}
-.grace-letter{right:auto;width:68px;height:100%;font-size:40px}
-.grace-front .grace-word{font-size:15px !important}
-.grace-front>span:nth-child(3){font-size:14px !important}
-.grace-front>span:nth-child(4){font-size:12px !important;line-height:1.45 !important}
-.grace-front>span:last-child{position:absolute;top:12px;right:14px;margin:0}
-.grace-back{padding:10px 16px !important;gap:4px !important}
-.grace-back>span:first-child{font-size:12px !important;line-height:1.55 !important}
-.grace-back>span:last-child{font-size:11px !important}
-}
-.grace-inner{transition:transform .6s ease;transform-style:preserve-3d}
-.grace-card.is-flipped .grace-inner{transform:rotateY(180deg)}
-.grace-face{-webkit-backface-visibility:hidden;backface-visibility:hidden}
-.grace-back{transform:rotateY(180deg)}
-.grace-card:focus-visible{outline:2px solid #13789E;outline-offset:3px;border-radius:16px}
-@media (prefers-reduced-motion: reduce){.grace-inner{transition:none}}
 a{color:inherit;text-decoration:none}
 .burger{display:none}
 .mnav{display:none}
@@ -253,6 +227,36 @@ a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2p
 @media (max-width:1000px){.ex-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:420px){.ex-card{padding:16px}.ex-go{top:14px;right:14px}}
 @media (max-width:600px){.page-hero{padding:118px 16px 22px}}
+/* GRACE 다섯 글자 */
+.wd{background:#FFFFFF;border:1px solid #D6E4EE;border-radius:16px;box-shadow:0 20px 50px rgba(11,59,92,.08);overflow:hidden}
+.wd-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-bottom:1px solid #D6E4EE}
+.wd-t{position:relative;border:0;background:transparent;padding:26px 0 22px;text-align:center;color:#0B3B5C;cursor:pointer;font-family:inherit}
+.wd-t+.wd-t{border-left:1px solid #EDF3F7}
+.wd-t b{display:block;font-family:Montserrat,'Noto Sans KR',sans-serif;font-size:96px;line-height:1;font-weight:200;letter-spacing:-.02em;color:#C9D8E2;transition:color .3s ease}
+.wd-t span{display:block;margin-top:10px;font-size:14px;font-weight:700;color:#8CA3B3;transition:color .3s ease}
+.wd-t::after{content:"";position:absolute;left:28%;right:28%;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#2B8FBF,#4FB3D9,#9FE3F5);transform:scaleX(0);transition:transform .35s ease}
+.wd-t:hover b{color:#8DB9D0}
+.wd-t.on b{background:linear-gradient(180deg,#0B3B5C,#2BA3C9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wd-t.on span{color:#0B3B5C}
+.wd-t.on::after{transform:scaleX(1)}
+.wd-t:focus-visible{outline:2px solid #4FB3D9;outline-offset:-4px}
+.wd-pan{display:grid;grid-template-columns:1fr 1.25fr;min-height:200px;animation:wdIn .45s ease}
+.wd-pan[hidden]{display:none}
+.wd-l{padding:34px 40px;border-right:1px solid #EDF3F7}
+.wd-l em{font-style:normal;font-family:Montserrat,'Noto Sans KR',sans-serif;font-size:14px;font-weight:600;letter-spacing:.04em;color:#13789E}
+.wd-l h3{margin:6px 0 10px;font-size:26px;font-weight:800;letter-spacing:-.02em;color:#0B3B5C}
+.wd-l p{margin:0;font-size:15px;line-height:1.75;color:#5B6478}
+.wd-r{position:relative;padding:34px 44px;background:linear-gradient(160deg,#F5FAFD,#E9F4FA);display:flex;flex-direction:column;justify-content:center}
+.wd-r::before{content:"\201C";position:absolute;left:24px;top:4px;font-family:'Noto Serif KR',serif;font-size:90px;line-height:1;color:rgba(79,179,217,.28)}
+.wd-r p{position:relative;margin:0;font-family:'Noto Serif KR',serif;font-size:18px;line-height:1.9;font-weight:500;color:#0B3B5C}
+.wd-r span{margin-top:14px;font-size:13px;font-weight:700;color:#13789E}
+@keyframes wdIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (max-width:760px){
+ .wd-t{padding:18px 0 14px}.wd-t b{font-size:46px}.wd-t span{font-size:11px;margin-top:6px;padding:0 2px;line-height:1.35}
+ .wd-pan{grid-template-columns:1fr}.wd-l{border-right:0;border-bottom:1px solid #EDF3F7;padding:24px}.wd-r{padding:30px 24px}
+ .wd-r{padding-top:52px}.wd-r::before{left:20px;top:6px;font-size:72px}.wd-r p{font-size:16.5px}
+}
+@media (prefers-reduced-motion:reduce){.wd-pan{animation:none}.wd-t b,.wd-t::after{transition:none}}
 </style>
 <style id="people-css">
 .pp-wrap{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:18px}
@@ -434,7 +438,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2p
 </div>
 </div>
 <hr class="intro-divider">
-<div id="about" class="intro-grace" style="display: flex; flex-wrap: wrap; align-items: center; gap: 24px">
+<div id="about" class="intro-grace" style="display: flex; flex-direction: column; gap: 28px">
 <div style="flex: 1 1 100%; min-width: 0; display: flex; flex-direction: column; gap: 8px">
 <span style="font-size: 12px; font-weight: 800; letter-spacing: 0.16em; color: #13789E">WHO WE ARE · G.R.A.C.E</span>
 <h2 style="margin: 0; font-size: 26px; font-weight: 800; letter-spacing: -0.02em; line-height: 1.3">은혜(GRACE)로<br>세워지는 교회</h2>
@@ -444,88 +448,19 @@ a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2p
 <span style="font-size: 13px; color: #3F4A60">담임목사 <b style="color: #0B3B5C">박동준</b></span>
 </span>
 </div>
-<div class="grace-grid" style="flex: 3 1 640px; min-width: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(128px, 1fr)); gap: 12px">
-
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="G God — 하나님 중심, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
-<span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(11,59,92,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
-<span class="grace-letter" aria-hidden="true">G</span>
-<span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #13789E">God</span>
-<span style="font-size: 15px; font-weight: 700; color: #0B3B5C">하나님 중심</span>
-<span style="font-size: 12px; color: #5B6478; line-height: 1.5">우리가 아니라 하나님과 예수 그리스도가 중심인 예배와 삶</span>
-<span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #13789E">말씀 보기 ↻</span>
-</span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #13789E; box-shadow: 0 10px 22px rgba(19,120,158,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
-<span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“그는 몸인 교회의 머리시라 그가 근본이시요 죽은 자들 가운데서 먼저 나신 이시니 이는 친히 만물의 으뜸이 되려 하심이요”</span>
-<span style="font-size: 12px; font-weight: 800; color: #D6E4EE">골로새서 1:18 · 개역개정</span>
-</span>
-</span>
-</button>
-
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="R Root — 말씀의 뿌리, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
-<span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(11,59,92,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
-<span class="grace-letter" aria-hidden="true">R</span>
-<span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #13789E">Root</span>
-<span style="font-size: 15px; font-weight: 700; color: #0B3B5C">말씀의 뿌리</span>
-<span style="font-size: 12px; color: #5B6478; line-height: 1.5">성경을 함께 읽고 배우며 말씀 위에 서는 교회</span>
-<span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #13789E">말씀 보기 ↻</span>
-</span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #13789E; box-shadow: 0 10px 22px rgba(19,120,158,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
-<span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“그 안에 뿌리를 박으며 세움을 받아 교훈을 받은 대로 믿음에 굳게 서서 감사함을 넘치게 하라”</span>
-<span style="font-size: 12px; font-weight: 800; color: #D6E4EE">골로새서 2:7 · 개역개정</span>
-</span>
-</span>
-</button>
-
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="A Abide — 함께 머묾, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
-<span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(11,59,92,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
-<span class="grace-letter" aria-hidden="true">A</span>
-<span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #13789E">Abide</span>
-<span style="font-size: 15px; font-weight: 700; color: #0B3B5C">함께 머묾</span>
-<span style="font-size: 12px; color: #5B6478; line-height: 1.5">목장에서 삶을 나누고 서로를 돌보는 작은 교회</span>
-<span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #13789E">말씀 보기 ↻</span>
-</span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #13789E; box-shadow: 0 10px 22px rgba(19,120,158,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
-<span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“날마다 마음을 같이하여 성전에 모이기를 힘쓰고 집에서 떡을 떼며 기쁨과 순전한 마음으로 음식을 먹고”</span>
-<span style="font-size: 12px; font-weight: 800; color: #D6E4EE">사도행전 2:46 · 개역개정</span>
-</span>
-</span>
-</button>
-
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="C Call — 부르심과 섬김, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
-<span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(11,59,92,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
-<span class="grace-letter" aria-hidden="true">C</span>
-<span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #13789E">Call</span>
-<span style="font-size: 15px; font-weight: 700; color: #0B3B5C">부르심과 섬김</span>
-<span style="font-size: 12px; color: #5B6478; line-height: 1.5">모든 성도가 받은 은사대로 한 자리씩 섬기는 교회</span>
-<span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #13789E">말씀 보기 ↻</span>
-</span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #13789E; box-shadow: 0 10px 22px rgba(19,120,158,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
-<span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“각각 은사를 받은 대로 하나님의 여러 가지 은혜를 맡은 선한 청지기 같이 서로 봉사하라”</span>
-<span style="font-size: 12px; font-weight: 800; color: #D6E4EE">베드로전서 4:10 · 개역개정</span>
-</span>
-</span>
-</button>
-
-<button type="button" class="grace-card" data-flip aria-pressed="false" aria-label="E Embrace — 이웃을 품음, 눌러서 말씀 보기" style="display: block; width: 100%; height: 208px; padding: 0; border: 0; background: transparent; cursor: pointer; font-family: inherit; color: inherit; perspective: 1000px">
-<span class="grace-inner" style="position: relative; display: block; width: 100%; height: 100%">
-<span class="grace-face grace-front" style="position: absolute; inset: 0; border-radius: 16px; padding: 82px 18px 14px; background: #FFFFFF; box-shadow: 0 6px 18px rgba(11,59,92,0.06); display: flex; flex-direction: column; align-items: flex-start; gap: 4px; text-align: left; overflow: hidden">
-<span class="grace-letter" aria-hidden="true">E</span>
-<span class="grace-word" style="font-size: 18px; font-weight: 900; letter-spacing: 0.02em; color: #13789E">Embrace</span>
-<span style="font-size: 15px; font-weight: 700; color: #0B3B5C">이웃을 품음</span>
-<span style="font-size: 12px; color: #5B6478; line-height: 1.5">받은 은혜로 이웃과 지역을 품는 교회</span>
-<span style="margin-top: auto; font-size: 11px; font-weight: 700; color: #13789E">말씀 보기 ↻</span>
-</span>
-<span class="grace-face grace-back" style="position: absolute; inset: 0; border-radius: 16px; padding: 22px 16px 16px; background: #13789E; box-shadow: 0 10px 22px rgba(19,120,158,0.25); color: #FFFFFF; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 12px; text-align: center">
-<span style="font-size: 13px; line-height: 1.75; word-break: keep-all">“그러므로 그리스도께서 우리를 받아 하나님께 영광을 돌리심과 같이 너희도 서로 받으라”</span>
-<span style="font-size: 12px; font-weight: 800; color: #D6E4EE">로마서 15:7 · 개역개정</span>
-</span>
-</span>
-</button>
-
+<div class="wd" data-wd="ab">
+<div class="wd-row" role="tablist" aria-label="GRACE 다섯 글자">
+<button type="button" class="wd-t on" role="tab" id="ab-tab-0" aria-controls="ab-pan-0" aria-selected="true" tabindex="0"><b>G</b><span>하나님 중심</span></button>
+<button type="button" class="wd-t" role="tab" id="ab-tab-1" aria-controls="ab-pan-1" aria-selected="false" tabindex="-1"><b>R</b><span>말씀의 뿌리</span></button>
+<button type="button" class="wd-t" role="tab" id="ab-tab-2" aria-controls="ab-pan-2" aria-selected="false" tabindex="-1"><b>A</b><span>함께 머묾</span></button>
+<button type="button" class="wd-t" role="tab" id="ab-tab-3" aria-controls="ab-pan-3" aria-selected="false" tabindex="-1"><b>C</b><span>부르심과 섬김</span></button>
+<button type="button" class="wd-t" role="tab" id="ab-tab-4" aria-controls="ab-pan-4" aria-selected="false" tabindex="-1"><b>E</b><span>이웃을 품음</span></button>
+</div>
+<div class="wd-pan" role="tabpanel" id="ab-pan-0" aria-labelledby="ab-tab-0"><div class="wd-l"><em>God</em><h3>하나님 중심</h3><p>우리가 아니라 하나님과 예수 그리스도가 중심인 예배와 삶</p></div><div class="wd-r"><p>그는 몸인 교회의 머리시라 그가 근본이시요 죽은 자들 가운데서 먼저 나신 이시니 이는 친히 만물의 으뜸이 되려 하심이요</p><span>골로새서 1:18 · 개역개정</span></div></div>
+<div class="wd-pan" role="tabpanel" id="ab-pan-1" aria-labelledby="ab-tab-1" hidden><div class="wd-l"><em>Root</em><h3>말씀의 뿌리</h3><p>성경을 함께 읽고 배우며 말씀 위에 서는 교회</p></div><div class="wd-r"><p>그 안에 뿌리를 박으며 세움을 받아 교훈을 받은 대로 믿음에 굳게 서서 감사함을 넘치게 하라</p><span>골로새서 2:7 · 개역개정</span></div></div>
+<div class="wd-pan" role="tabpanel" id="ab-pan-2" aria-labelledby="ab-tab-2" hidden><div class="wd-l"><em>Abide</em><h3>함께 머묾</h3><p>목장에서 삶을 나누고 서로를 돌보는 작은 교회</p></div><div class="wd-r"><p>날마다 마음을 같이하여 성전에 모이기를 힘쓰고 집에서 떡을 떼며 기쁨과 순전한 마음으로 음식을 먹고</p><span>사도행전 2:46 · 개역개정</span></div></div>
+<div class="wd-pan" role="tabpanel" id="ab-pan-3" aria-labelledby="ab-tab-3" hidden><div class="wd-l"><em>Call</em><h3>부르심과 섬김</h3><p>모든 성도가 받은 은사대로 한 자리씩 섬기는 교회</p></div><div class="wd-r"><p>각각 은사를 받은 대로 하나님의 여러 가지 은혜를 맡은 선한 청지기 같이 서로 봉사하라</p><span>베드로전서 4:10 · 개역개정</span></div></div>
+<div class="wd-pan" role="tabpanel" id="ab-pan-4" aria-labelledby="ab-tab-4" hidden><div class="wd-l"><em>Embrace</em><h3>이웃을 품음</h3><p>받은 은혜로 이웃과 지역을 품는 교회</p></div><div class="wd-r"><p>그러므로 그리스도께서 우리를 받아 하나님께 영광을 돌리심과 같이 너희도 서로 받으라</p><span>로마서 15:7 · 개역개정</span></div></div>
 </div>
 </div>
 </div>
@@ -673,6 +608,11 @@ document.querySelectorAll('[data-copy]').forEach(function(b){
 (function(){var h=document.getElementById('site-header');if(!h)return;
 function f(){var y=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;h.classList.toggle('is-scrolled',y>8);}
 window.addEventListener('scroll',f,{passive:true});document.body.addEventListener('scroll',f,{passive:true});f();})();
+</script>
+<script id="grace-tabs-js">
+(function(){document.querySelectorAll('.wd').forEach(function(w){var tabs=[].slice.call(w.querySelectorAll('.wd-t')),pans=[].slice.call(w.querySelectorAll('.wd-pan'));
+function show(i,focus){tabs.forEach(function(t,k){var on=k===i;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;pans[k].hidden=!on;});if(focus)tabs[i].focus();}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i)});t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();show((i+1)%tabs.length,true)}if(e.key==='ArrowLeft'){e.preventDefault();show((i+tabs.length-1)%tabs.length,true)}});});});})();
 </script>
 </body>
 </html>
