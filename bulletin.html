@@ -285,6 +285,26 @@ a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2p
 .jb-ts-d{display:block;font-size:13px;opacity:.85}
 .jb-ts-go{flex:0 0 auto;display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:999px;background:#fff;color:#0B3B5C;font-size:14px;font-weight:700;white-space:nowrap}
 @media (max-width:640px){.jb-to-sermons{flex-direction:column;align-items:stretch}.jb-ts-go{justify-content:center}}</style>
+<style id="jubo-cols-css">
+.jb-head,.jb-row{grid-template-columns:72px minmax(0,1fr) minmax(0,240px) 64px 16px !important}
+.jb-date{display:flex;flex-direction:column;line-height:1.15}
+.jb-date b{font-family:Montserrat,Pretendard,sans-serif;font-size:17px;font-weight:600;color:#13789E;font-variant-numeric:tabular-nums}
+.jb-date small{font-family:Montserrat,Pretendard,sans-serif;font-size:11px;color:#8C94A6}
+.jb-main{display:flex;flex-direction:column;gap:1px}
+.jb-title{font-size:15.5px;font-weight:600;color:#0B3B5C}
+.jb-note2{font-size:12.5px;color:#9A5B00}
+.jb-ref{font-size:13.5px;color:#3F4A60;padding-left:14px;border-left:2px solid #D6E4EE}
+.jb-no{font-size:12px;color:#8C94A6;text-align:right}
+@media (max-width:640px){
+.jb-row{grid-template-columns:52px minmax(0,1fr) 14px !important;grid-template-rows:auto auto;gap:2px 12px !important;align-items:start}
+.jb-date{grid-column:1;grid-row:1/3;padding-top:2px}
+.jb-main{grid-column:2;grid-row:1}
+.jb-ref{grid-column:2;grid-row:2;padding-left:0;border-left:0;font-size:13px;color:#5B6478}
+.jb-ref::before{content:"본문  ";color:#13789E;font-weight:600;font-size:12px}
+.jb-no{display:none}
+.jb-go{grid-column:3;grid-row:1/3;align-self:center}
+}
+</style>
 <link rel="stylesheet" href="assets/site-theme.css">
 </head>
 <body>
@@ -351,62 +371,73 @@ a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2p
 <label class="jb-search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C94A6" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><input id="jbSearch" type="search" placeholder="설교 제목·본문·날짜 검색" aria-label="주보 검색"></label>
 </div>
 <div class="jb-board">
-<div class="jb-head" aria-hidden="true"><span>통권</span><span>제목</span><span>날짜</span><span></span></div>
+<div class="jb-head" aria-hidden="true"><span>날짜</span><span>설교 제목</span><span>본문</span><span>통권</span><span></span></div>
 <ul class="jb-list" id="jbList">
 <li><a class="jb-row" href="jubo/20261115.html">
+<span class="jb-date"><b>11.15</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">이같이 말할지어다<span class="jb-new">NEW</span></span><span class="jb-note2">추수감사주일</span></span>
+<span class="jb-ref">시편 107:1–2</span>
 <span class="jb-no">제615호</span>
-<span class="jb-main"><span class="jb-title">11월 15일 주보 · 이같이 말할지어다<span class="jb-new">NEW</span></span><span class="jb-ref">시편 107:1–2 · 추수감사주일</span></span>
-<span class="jb-date">2026.11.15</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20261108.html">
+<span class="jb-date"><b>11.08</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">먼저 그 나라와 의를 구하라</span></span>
+<span class="jb-ref">마태복음 6:25–34</span>
 <span class="jb-no">제614호</span>
-<span class="jb-main"><span class="jb-title">11월 8일 주보 · 먼저 그 나라와 의를 구하라</span><span class="jb-ref">마태복음 6:25–34</span></span>
-<span class="jb-date">2026.11.08</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20261101.html">
+<span class="jb-date"><b>11.01</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">두 결말</span></span>
+<span class="jb-ref">마태복음 25:31–46 · 요한복음 5:24</span>
 <span class="jb-no">제613호</span>
-<span class="jb-main"><span class="jb-title">11월 1일 주보 · 두 결말</span><span class="jb-ref">마태복음 25:31–46 · 요한복음 5:24</span></span>
-<span class="jb-date">2026.11.01</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20261025.html">
+<span class="jb-date"><b>10.25</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">작아서 받는 사랑</span><span class="jb-note2">심민보 목사 (익산 푸른나무교회)</span></span>
+<span class="jb-ref">신명기 7:7–8</span>
 <span class="jb-no">제612호</span>
-<span class="jb-main"><span class="jb-title">10월 25일 주보 · 작아서 받는 사랑</span><span class="jb-ref">신명기 7:7–8 · 심민보 목사 (익산 푸른나무교회)</span></span>
-<span class="jb-date">2026.10.25</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20261018.html">
+<span class="jb-date"><b>10.18</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">두 아버지</span></span>
+<span class="jb-ref">에베소서 2:1–3</span>
 <span class="jb-no">제611호</span>
-<span class="jb-main"><span class="jb-title">10월 18일 주보 · 두 아버지</span><span class="jb-ref">에베소서 2:1–3</span></span>
-<span class="jb-date">2026.10.18</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20261004.html">
+<span class="jb-date"><b>10.04</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">두 소망</span></span>
+<span class="jb-ref">베드로전서 1:3–9 · 골로새서 3:1–4</span>
 <span class="jb-no">제610호</span>
-<span class="jb-main"><span class="jb-title">10월 4일 주보 · 두 소망</span><span class="jb-ref">베드로전서 1:3–9 · 골로새서 3:1–4</span></span>
-<span class="jb-date">2026.10.04</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20260927.html">
+<span class="jb-date"><b>9.27</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">두 영</span></span>
+<span class="jb-ref">갈라디아서 5:18–25</span>
 <span class="jb-no">제609호</span>
-<span class="jb-main"><span class="jb-title">9월 27일 주보 · 두 영</span><span class="jb-ref">갈라디아서 5:18–25</span></span>
-<span class="jb-date">2026.09.27</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20260920.html">
+<span class="jb-date"><b>9.20</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">두 지혜</span></span>
+<span class="jb-ref">고린도전서 1:18–25 · 야고보서 3:13–18</span>
 <span class="jb-no">제608호</span>
-<span class="jb-main"><span class="jb-title">9월 20일 주보 · 두 지혜</span><span class="jb-ref">고린도전서 1:18–25 · 야고보서 3:13–18</span></span>
-<span class="jb-date">2026.09.20</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20260913.html">
+<span class="jb-date"><b>9.13</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">두 주인</span></span>
+<span class="jb-ref">마태복음 6:24</span>
 <span class="jb-no">제607호</span>
-<span class="jb-main"><span class="jb-title">9월 13일 주보 · 두 주인</span><span class="jb-ref">마태복음 6:24</span></span>
-<span class="jb-date">2026.09.13</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20260906.html">
+<span class="jb-date"><b>9.06</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">두 밭 (열매를 맺는 밭과 그렇지 못한 밭)</span></span>
+<span class="jb-ref">마태복음 13:1–9, 18–23</span>
 <span class="jb-no">제606호</span>
-<span class="jb-main"><span class="jb-title">9월 6일 주보 · 두 밭 (열매를 맺는 밭과 그렇지 못한 밭)</span><span class="jb-ref">마태복음 13:1–9, 18–23</span></span>
-<span class="jb-date">2026.09.06</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 <li><a class="jb-row" href="jubo/20260830.html">
+<span class="jb-date"><b>8.30</b><small>2026</small></span>
+<span class="jb-main"><span class="jb-title">두 길</span></span>
+<span class="jb-ref">마태복음 7:13–14</span>
 <span class="jb-no">제605호</span>
-<span class="jb-main"><span class="jb-title">8월 30일 주보 · 두 길</span><span class="jb-ref">마태복음 7:13–14</span></span>
-<span class="jb-date">2026.08.30</span>
 <span class="jb-go" aria-hidden="true">›</span></a></li>
 </ul>
 <p class="jb-empty" id="jbEmpty">찾는 주보가 없어요.</p>
