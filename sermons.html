@@ -1,0 +1,653 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>설교 목록 | 은혜교회</title>
+<meta name="description" content="은혜교회 설교 목록 — 2014년 개척 예배부터 지금까지 주일 설교의 날짜·제목·본문을 검색해 보실 수 있어요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="설교 목록 | 은혜교회">
+<meta property="og:description" content="은혜교회 설교 목록 — 2014년 개척 예배부터 지금까지 주일 설교의 날짜·제목·본문을 검색해 보실 수 있어요.">
+<meta property="og:url" content="https://sejonggrace.com/sermons.html">
+<meta property="og:image" content="https://sejonggrace.com/assets/home/hero.jpg">
+<meta property="og:image:width" content="1536">
+<meta property="og:image:height" content="1024">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="assets/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Church","@id":"https://sejonggrace.com/#church","name":"기독교한국침례회 은혜교회","alternateName":["은혜교회","Grace Baptist Church"],"url":"https://sejonggrace.com/","logo":"https://sejonggrace.com/assets/favicon.png","image":"https://sejonggrace.com/assets/home/hero.jpg","address":{"@type":"PostalAddress","streetAddress":"안금로15번길 49-26","addressLocality":"유성구","addressRegion":"대전광역시","addressCountry":"KR"},"sameAs":["https://www.youtube.com/@sjgrace"]}</script>
+<style>
+html{scroll-behavior:smooth;scroll-padding-top:96px}
+*{box-sizing:border-box}
+body{margin:0;background:#F2F6F9;word-break:keep-all;overflow-wrap:break-word}
+/* GRACE 카드 머리: 사선 색면 + 세리프 이탤릭 글자 */
+.grace-front::before{content:"";position:absolute;left:0;right:0;top:0;height:68px;background:#0B3B5C}
+.grace-front::after{content:none}
+.grace-letter{position:absolute;top:0;left:0;right:0;height:68px;z-index:1;display:flex;align-items:center;justify-content:center;font-family:Montserrat,Pretendard,sans-serif;font-style:normal;font-weight:300;font-size:46px;line-height:1;letter-spacing:0;color:#FFFFFF;text-shadow:none}
+.grace-front .grace-word{font-family:Montserrat,Pretendard,sans-serif;font-weight:800;font-size:17px !important;letter-spacing:.06em !important;text-transform:uppercase}
+.grace-front>span:last-child{margin-top:auto}
+@media (max-width:600px){.grace-front{padding-top:80px !important}.grace-front::before{height:64px}.grace-letter{font-size:40px;height:64px}.grace-card{height:240px !important}}
+.grace-inner{transition:transform .6s ease;transform-style:preserve-3d}
+.grace-card.is-flipped .grace-inner{transform:rotateY(180deg)}
+.grace-face{-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.grace-back{transform:rotateY(180deg)}
+.grace-card:focus-visible{outline:2px solid #13789E;outline-offset:3px;border-radius:16px}
+@media (prefers-reduced-motion: reduce){.grace-inner{transition:none}}
+a{color:inherit;text-decoration:none}
+.burger{display:none}
+.mnav{display:none}
+@media (max-width: 900px){
+.gnav{display:none !important}
+.burger{display:flex !important}
+.mnav{display:flex !important}
+}
+button{font-family:inherit}
+img{max-width:100%}
+a:focus-visible,button:focus-visible{outline:2px solid #13789E;outline-offset:2px}
+/* 모바일 메뉴 열고 닫기 */
+.if-menuOpen{display:none}
+.if-menuClosed{display:contents}
+#site-header.open .if-menuClosed{display:none}
+@media (max-width: 900px){ #site-header.open .if-menuOpen{display:block} }
+#site-header.open #burger .if-menuOpen{display:contents}
+/* 섬김 신청 */
+.if-notSubmitted,.if-submitted{display:contents}
+.if-submitted{display:none}
+#serve.sent .if-submitted{display:contents}
+#serve.sent .if-notSubmitted{display:none}
+/* 선교 */
+.mission-wrap{display:grid;grid-template-columns:minmax(0,1.7fr) minmax(260px,1fr);gap:16px;align-items:stretch}
+@media (max-width:900px){.mission-wrap{grid-template-columns:1fr}}
+.mission-map{border-radius:20px;background:#FFFFFF;box-shadow:0 4px 14px rgba(11,59,92,.05);padding:16px;display:flex;align-items:center}
+.mission-map svg{width:100%;height:auto;display:block}
+.mm-land{fill:#E2ECF2}
+.mm-hl{fill:#9FD8EA}
+.mp{cursor:pointer}
+.mp-dot{fill:#13789E;stroke:#FFFFFF;stroke-width:2.5;transition:r .2s ease}
+.mp text{fill:#FFFFFF;font-size:13px;font-weight:800;font-family:Pretendard,sans-serif;pointer-events:none}
+.mp-pulse{fill:#4FB3D9;opacity:.5;transform-box:fill-box;transform-origin:center;animation:mpPulse 2.4s ease-out infinite}
+@keyframes mpPulse{0%{transform:scale(1);opacity:.55}100%{transform:scale(2.2);opacity:0}}
+.mp.on .mp-dot{r:17;fill:#0E5F82}
+.mission-list{list-style:none;margin:0;padding:0;display:grid;gap:10px;align-content:start}
+@media (max-width:900px){.mission-list{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}}
+.mc{display:flex;align-items:center;gap:12px;padding:14px 16px;border-radius:14px;background:#FFFFFF;border:1px solid #D6E4EE;cursor:default;transition:border-color .2s ease,background .2s ease;outline:none}
+.mc.on,.mc:focus-visible{border-color:#4FB3D9;background:#F8FBFD}
+.mc-n{flex:none;width:28px;height:28px;border-radius:50%;background:#13789E;color:#FFFFFF;font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center}
+.mc-b{display:flex;flex-direction:column;gap:2px;min-width:0}
+.mc-c{font-size:15px;font-weight:800;color:#0B3B5C;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+.mc-sub{font-size:11px;font-weight:700;color:#13789E;background:#E9F2F7;border-radius:6px;padding:2px 7px}
+.mc-p{font-size:13px;color:#5B6478}
+@media (prefers-reduced-motion:reduce){.mp-pulse{animation:none;opacity:0}}
+.iw-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:20px}
+@media (max-width:800px){.iw-grid{grid-template-columns:1fr}}
+.iw-card{position:relative;display:flex;flex-direction:column;gap:4px;padding:22px 20px;border-radius:16px;background:#FFFFFF;box-shadow:0 6px 18px rgba(11,59,92,.06)}
+.iw-ic{width:44px;height:44px;border-radius:12px;background:#4FB3D9;color:#FFFFFF;display:flex;align-items:center;justify-content:center;margin-bottom:10px}
+.iw-en{position:absolute;top:24px;right:20px;font-size:11px;font-weight:800;letter-spacing:.16em;color:#9FD8EA}
+.iw-k{font-size:13px;font-weight:800;color:#13789E}
+.iw-t{font-size:17px;font-weight:800;color:#0B3B5C;line-height:1.4;word-break:keep-all}
+.iw-d{font-size:13px;color:#5B6478;line-height:1.65;word-break:keep-all;margin-top:2px}
+@media (max-width:1200px){.gnav{gap:2px 18px !important}}
+@media (max-width:1100px){.gnav a[href="visit.html"][style*="min-height: 42px"]{display:none !important}.gnav{gap:2px 16px !important}}
+.story-since{display:inline-flex;flex-wrap:wrap;align-items:center;gap:6px;margin:2px 0 4px}
+.story-since>*{display:inline-flex;align-items:center;min-height:28px;padding:0 12px;border-radius:999px;font-size:12px;font-weight:700;background:#FFFFFF;color:#13789E}
+.story-since b{background:#13789E;color:#FFFFFF;letter-spacing:.06em;font-family:Montserrat,Pretendard,sans-serif;font-weight:800}
+.hero-img{-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 22%);mask-image:linear-gradient(90deg,transparent 0%,#000 22%)}
+@media (max-width:700px){.hero-img{-webkit-mask-image:none;mask-image:none}}
+.hero-city{position:absolute;inset:-12px;background:url(assets/home/hero.jpg) 0% 35%/cover no-repeat;filter:blur(3px) saturate(1.15);opacity:.95;transform:scaleX(-1)}
+@media (min-width:701px){.hero-fade{background:linear-gradient(90deg,rgba(242,246,249,.18) 0,rgba(242,246,249,.18) calc(50% - 740px),rgba(242,246,249,.86) calc(50% - 590px),rgba(242,246,249,.9) calc(50% - 80px),rgba(242,246,249,.6) calc(50% + 40px),rgba(242,246,249,0) calc(50% + 160px)) !important}}
+.mok-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+@media (max-width:900px){.mok-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+.ev-grid{grid-template-columns:repeat(3,minmax(0,1fr)) !important}
+@media (max-width:1100px){.ev-grid{grid-template-columns:repeat(2,minmax(0,1fr)) !important}}
+@media (max-width:600px){.ev-grid{grid-template-columns:1fr !important}}
+.intro-panel{max-width:1200px;margin:0 auto;border-radius:24px;background:linear-gradient(180deg,#EAF2F7 0%,#F4F8FB 100%);padding:36px 32px}
+@media (max-width:600px){.intro-panel{padding:26px 18px;border-radius:20px}}
+.intro-divider{border:0;height:1px;background:#CFDFEA;margin:36px 0 32px}
+.intro-panel .story-confess{background:#FFFFFF}
+.intro-panel .story-next{background:#F4F8FB}
+.intro-panel .story-next .story-dot{box-shadow:0 0 0 5px #F4F8FB}
+.story-confess{margin:18px 0 0;padding:22px 24px;border-radius:16px;background:linear-gradient(135deg,#EAF2F7 0%,#F4F8FB 100%);text-align:center;font-size:16px;line-height:1.75;color:#125273;word-break:keep-all}
+.story-confess b{color:#13789E;font-weight:900}
+.story-confess .sc-mark{display:block;font-size:34px;line-height:.8;color:#4FB3D9;font-weight:900}
+.story-line{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;position:relative}
+.story-line::before{content:"";position:absolute;left:36px;right:36px;top:36px;height:2px;background:linear-gradient(90deg,#4FB3D9 0%,#4FB3D9 70%,#D6E4EE 70%)}
+.story-step{position:relative;display:flex;flex-direction:column;gap:6px;padding:20px 18px 22px;border-radius:16px;background:#FFFFFF;border:1px solid #D6E4EE}
+.story-dot{width:32px;height:32px;border-radius:50%;background:#4FB3D9;color:#FFFFFF;font-weight:900;font-size:15px;display:flex;align-items:center;justify-content:center;margin-bottom:8px;box-shadow:0 0 0 5px #FFFFFF}
+.story-season{font-size:11px;font-weight:800;letter-spacing:.14em;color:#13789E}
+.story-title{font-size:17px;font-weight:800;color:#0B3B5C}
+.story-place{font-size:12px;font-weight:700;color:#13789E}
+.story-desc{font-size:13px;line-height:1.6;color:#5B6478;word-break:keep-all}
+.story-next{background:#F2F6F9;border:1.5px dashed #9FD8EA}
+.story-next .story-dot{background:#FFFFFF;color:#13789E;border:1.5px dashed #4FB3D9;box-shadow:0 0 0 5px #F2F6F9}
+@media (max-width:900px){
+ .story-line{grid-template-columns:1fr;gap:10px}
+ .story-line::before{left:35px;right:auto;top:36px;bottom:36px;width:2px;height:auto;background:linear-gradient(180deg,#4FB3D9 0%,#4FB3D9 75%,#D6E4EE 75%)}
+ .story-step{padding:18px 18px 18px 64px}
+ .story-dot{position:absolute;left:19px;top:18px;margin:0}
+}
+.serve-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.serve-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.serve-tile{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:6px;min-height:118px;padding:18px 16px;border-radius:16px;border:1px solid #D6E4EE;background:#FFFFFF;color:#0B3B5C;text-align:left;cursor:pointer;font-family:inherit;transition:border-color .2s ease,background .2s ease,transform .2s ease}
+.serve-tile:hover{border-color:#4FB3D9;transform:translateY(-1px)}
+.serve-tile .st-ic{width:40px;height:40px;border-radius:12px;background:#E9F2F7;color:#13789E;display:flex;align-items:center;justify-content:center}
+.serve-tile .st-name{font-size:16px;font-weight:800}
+.serve-tile .st-ex{font-size:12px;color:#5B6478;line-height:1.45}
+.serve-tile .st-check{position:absolute;top:14px;right:14px;width:24px;height:24px;border-radius:50%;border:1.5px solid #D6E4EE;color:transparent;font-size:13px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.role-chip.serve-tile[aria-pressed="true"]{background:#E9F2F7 !important;border-color:#4FB3D9 !important;color:#0B3B5C !important}
+.serve-tile[aria-pressed="true"] .st-ic{background:#4FB3D9;color:#FFFFFF}
+.serve-tile[aria-pressed="true"] .st-check{background:#13789E;border-color:#13789E;color:#FFFFFF}
+.role-chip[aria-pressed="true"]{background:#4FB3D9 !important;border-color:#4FB3D9 !important;color:#0B3B5C !important}
+/* 휴대폰에서 첫 화면 사진 */
+@media (max-width: 700px){
+  .hero-img{width:100% !important;object-position:20% 30% !important}
+  .hero-fade{background:linear-gradient(180deg,rgba(242,246,249,0.92) 0%,rgba(242,246,249,0.80) 60%,rgba(242,246,249,0.55) 100%) !important}
+  .svc-card{flex:1 1 100% !important;align-self:stretch !important}
+}
+@media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+/* 연혁(HISTORY) 버튼 + 팝업 */
+.history-open{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;margin:14px 0 0;padding:18px 22px;border:1px solid #D6E4EE;border-radius:16px;background:#FFFFFF;color:#0B3B5C;font-family:inherit;text-align:left;cursor:pointer;box-shadow:0 6px 18px rgba(11,59,92,.06);transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.history-open:hover{transform:translateY(-2px);border-color:#9FD8EA;box-shadow:0 12px 26px rgba(11,59,92,.12)}
+.history-open:focus-visible{outline:2px solid #13789E;outline-offset:3px}
+.ho-text{display:flex;flex-direction:column;gap:3px}
+.ho-label{font-size:11px;font-weight:800;letter-spacing:.16em;color:#13789E}
+.ho-title{font-size:17px;font-weight:800;letter-spacing:-.01em}
+.ho-sub{font-size:13px;color:#5B6478}
+.ho-arrow{flex:0 0 auto;height:40px;padding:0 14px 0 18px;border-radius:999px;background:#13789E;color:#FFFFFF;display:flex;align-items:center;gap:4px;font-size:14px;font-weight:800;white-space:nowrap;box-shadow:0 6px 14px rgba(19,120,158,.25);transition:background .2s ease}
+.ho-arrow svg{transition:transform .2s ease}
+.history-open:hover .ho-arrow{background:#0E5F82}
+.history-open:hover .ho-arrow svg{transform:translateX(3px)}
+.history-dialog{width:min(760px,calc(100% - 32px));max-height:min(86vh,900px);padding:0;border:0;border-radius:22px;background:#F2F6F9;color:#0B3B5C;box-shadow:0 30px 80px rgba(15,40,70,.28);overflow:hidden;font-family:Pretendard,'Noto Sans KR',system-ui,sans-serif}
+.history-dialog[open]{display:flex;flex-direction:column;animation:hdIn .28s ease}
+.history-dialog::backdrop{background:rgba(15,32,58,.42);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px)}
+@keyframes hdIn{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.hd-head{flex-shrink:0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:26px 28px 14px;background:#FFFFFF}
+.hd-label{display:block;font-size:11px;font-weight:800;letter-spacing:.18em;color:#13789E;margin-bottom:6px}
+.hd-title{margin:0;font-size:24px;font-weight:800;letter-spacing:-.02em}
+.hd-close{flex:0 0 40px;height:40px;border:0;border-radius:50%;background:#E9F2F7;color:#13789E;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.hd-close:hover{background:#D6E4EE}
+.hd-years{flex-shrink:0;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding:0 28px 14px;background:#FFFFFF;border-bottom:1px solid #E4EEF4}
+.hd-years::-webkit-scrollbar{display:none}
+.hy-chip{flex:0 0 auto;padding:5px 11px;border-radius:999px;background:#F4F8FB;color:#13789E;font-family:Montserrat,Pretendard,sans-serif;font-size:12.5px;font-weight:700;text-decoration:none}
+.hy-chip:hover,.hy-chip.on{background:#13789E;color:#FFFFFF}
+.hd-body{flex:1 1 auto;min-height:0;position:relative;overflow-y:auto;overscroll-behavior:contain;padding:22px 28px 30px}
+.hd-desc{margin:0 0 26px;font-size:14px;line-height:1.75;color:#3F4A60;word-break:keep-all}
+.hd-foot{margin:28px 0 0;font-size:12px;color:#8C94A6;text-align:center}
+.history-dialog .timeline{position:relative;padding-left:34px}
+.history-dialog .timeline::before{content:"";position:absolute;left:5px;top:8px;bottom:8px;width:2px;background:linear-gradient(180deg,#13789E,rgba(79,179,217,.18))}
+.history-dialog .timeline-item{position:relative;padding-bottom:34px;scroll-margin-top:12px}
+.history-dialog .timeline-item:last-child{padding-bottom:0}
+.history-dialog .timeline-item::before{content:"";position:absolute;left:-34px;top:6px;width:12px;height:12px;border-radius:50%;background:#13789E;box-shadow:0 0 0 5px rgba(79,179,217,.25)}
+.history-dialog .timeline-year{font-family:Montserrat,Pretendard,sans-serif;font-size:24px;font-weight:800;color:#13789E;line-height:1;margin-bottom:12px}
+.history-dialog .timeline ul{list-style:none;margin:0;padding:0}
+.history-dialog .timeline li{display:flex;gap:14px;padding:4px 0;font-size:14.5px;line-height:1.7;word-break:keep-all}
+.history-dialog .tl-date{flex:0 0 44px;padding-top:2px;font-family:Montserrat,Pretendard,sans-serif;font-size:12px;font-weight:700;color:#13789E}
+@media (max-width:600px){
+  .history-dialog{width:100%;max-width:100%;height:100%;max-height:100%;border-radius:0}
+  .hd-head{padding:20px 18px 12px}.hd-years{padding:0 18px 12px}.hd-body{padding:20px 18px 28px}
+  .hd-title{font-size:21px}.history-open{padding:16px 18px;flex-direction:column;align-items:stretch;gap:14px}.ho-arrow{justify-content:center;padding:0 18px}
+  .history-dialog .timeline{padding-left:26px}.history-dialog .timeline-item::before{left:-26px;width:10px;height:10px}
+  .history-dialog .timeline li{gap:10px;font-size:14px}
+}
+@media (prefers-reduced-motion:reduce){.history-dialog[open]{animation:none}.history-open,.ho-arrow{transition:none}}
+/* 다음세대 배너 */
+.nextgen{padding:44px 24px 4px}
+.ng-inner{max-width:1200px;margin:0 auto;padding:36px 32px;border-radius:24px;background:linear-gradient(135deg,#FFFFFF 0%,#EFF5F9 100%);box-shadow:0 10px 30px rgba(11,59,92,.08);text-align:center}
+.ng-label{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.18em;color:#13789E;margin-bottom:10px}
+.ng-title{margin:0 0 10px;font-size:clamp(24px,3.4vw,34px);font-weight:900;letter-spacing:-.03em;line-height:1.3;color:#0B3B5C;word-break:keep-all}
+.ng-title b{color:#13789E;font-weight:900}
+.ng-sub{margin:0 auto 26px;max-width:640px;font-size:15px;line-height:1.75;color:#3F4A60;word-break:keep-all}
+.ng-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;max-width:880px;margin:0 auto}
+.ng-card{display:flex;flex-direction:column;align-items:center;gap:6px;padding:18px 10px 16px;border-radius:16px;background:#FFFFFF;border:1px solid #DEEAF1}
+.ng-ic{width:44px;height:44px;border-radius:50%;background:#E9F2F7;color:#13789E;display:flex;align-items:center;justify-content:center}
+.ng-k{font-size:13px;color:#5B6478}
+.ng-t{font-size:17px;font-weight:800;color:#0B3B5C}
+@media (max-width:700px){.nextgen{padding:36px 16px 0}.ng-inner{padding:28px 18px}.ng-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* 후원 · 헌금 계좌 */
+.give{padding:0 24px 32px}
+.give-inner{max-width:1200px;margin:0 auto;border-radius:20px;background:#FFFFFF;box-shadow:0 8px 22px rgba(11,59,92,.07);padding:28px 30px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+.give-text{display:flex;flex-direction:column;gap:6px;min-width:0;flex:1 1 300px}
+.give-label{font-size:12px;font-weight:800;letter-spacing:.16em;color:#13789E}
+.give-title{margin:0;font-size:22px;font-weight:800;letter-spacing:-.02em}
+.give-desc{font-size:13px;color:#5B6478;line-height:1.6}
+.give-acct{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:14px 16px 14px 20px;border-radius:14px;background:#F4F8FB;border:1px solid #D6E4EE}
+.give-acct-info{display:flex;flex-direction:column;gap:2px;min-width:0}
+.give-bank{font-size:12px;font-weight:700;color:#13789E}
+.give-num{font-family:Montserrat,Pretendard,sans-serif;font-size:20px;font-weight:800;letter-spacing:.02em;color:#0B3B5C}
+.give-holder{font-size:12.5px;color:#3F4A60}
+.give-copy{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:0 16px;border:0;border-radius:10px;background:#13789E;color:#FFFFFF;font-family:inherit;font-size:14px;font-weight:700;cursor:pointer}
+.give-copy:hover{background:#0E5F82}
+.give-copy.done{background:#2E9E6A}
+@media (max-width:600px){.give{padding:0 16px 28px}.give-inner{padding:24px 20px}.give-acct{width:100%;justify-content:space-between}.give-num{font-size:18px}}
+/* 하위 페이지 머리 + 둘러보기 */
+.page-hero{margin-top:-80px;padding:132px 24px 28px;background:linear-gradient(180deg,#E2EDF4 0%,#F2F6F9 100%)}
+.ph-inner{max-width:1200px;margin:0 auto;display:flex;flex-direction:column;gap:8px}
+.ph-label{font-size:12px;font-weight:800;letter-spacing:.18em;color:#13789E}
+.ph-title{margin:0;font-size:clamp(30px,4.4vw,44px);font-weight:900;letter-spacing:-.03em;line-height:1.2;color:#0B3B5C}
+.ph-desc{margin:0;font-size:15px;color:#3F4A60;line-height:1.7;word-break:keep-all}
+.explore{padding:40px 24px 8px}
+.ex-inner{max-width:1200px;margin:0 auto}
+.ex-label{display:block;font-size:12px;font-weight:800;letter-spacing:.16em;color:#13789E;margin-bottom:6px}
+.ex-title{margin:0 0 20px;font-size:26px;font-weight:800;letter-spacing:-.02em}
+.ex-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.ex-card{position:relative;display:flex;flex-direction:column;gap:4px;padding:20px 20px 18px;border-radius:16px;background:#FFFFFF;box-shadow:0 4px 14px rgba(11,59,92,.06);border:1px solid transparent;color:#0B3B5C;text-decoration:none;transition:transform .2s ease,box-shadow .2s ease,border-color .2s ease}
+.ex-card:hover{transform:translateY(-3px);border-color:#9FD8EA;box-shadow:0 12px 26px rgba(11,59,92,.12)}
+.ex-card:focus-visible{outline:2px solid #13789E;outline-offset:3px}
+.ex-ic{width:44px;height:44px;border-radius:12px;background:#E9F2F7;color:#13789E;display:flex;align-items:center;justify-content:center;margin-bottom:8px}
+.ex-t{font-size:16px;font-weight:800}
+.ex-d{font-size:13px;color:#5B6478;line-height:1.5;word-break:keep-all}
+.ex-go{position:absolute;top:18px;right:18px;font-size:20px;font-weight:700;color:#4FB3D9}
+@media (max-width:1000px){.ex-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:420px){.ex-card{padding:16px}.ex-go{top:14px;right:14px}}
+@media (max-width:600px){.page-hero{padding:118px 16px 22px}}
+</style>
+<style>
+.svc-list{max-width:1200px;margin:0 auto;border-radius:20px;background:#FFFFFF;box-shadow:0 8px 22px rgba(11,59,92,.07);padding:4px 24px}
+.svc-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr);gap:12px;align-items:center;padding:11px 0;border-bottom:1px solid #E4EEF4}
+.svc-row:last-child{border-bottom:0}
+.svc-name{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 10px;font-size:15px;font-weight:600;color:#0B3B5C}
+.svc-name small{font-size:12.5px;font-weight:400;color:#8C94A6}
+.svc-time{font-size:15px;font-weight:600;color:#13789E}
+.svc-place{font-size:14px;color:#3F4A60}
+@media (max-width:640px){.svc-list{padding:2px 16px}.svc-row{grid-template-columns:1fr auto;gap:2px 12px;padding:10px 0}.svc-place{font-size:13px;color:#8C94A6}.svc-place{grid-column:1 / -1}}
+</style>
+<style id="jubo-board-css">
+.jb-wrap{max-width:1200px;margin:0 auto;padding:12px 24px 72px}
+.jb-tools{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px;margin:8px 0 14px}
+.jb-count{font-size:14px;color:#5B6478}.jb-count b{color:#13789E}
+.jb-search{position:relative;flex:0 1 300px}
+.jb-search input{width:100%;height:44px;padding:0 14px 0 40px;border:1px solid #CFDFEA;border-radius:12px;background:#fff;font:500 15px Pretendard,'Noto Sans KR',sans-serif;color:#0B3B5C;outline:none}
+.jb-search input:focus{border-color:#4FB3D9;box-shadow:0 0 0 3px rgba(79,179,217,.25)}
+.jb-search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%)}
+.jb-board{background:#fff;border:1px solid #D6E4EE;border-radius:16px;overflow:hidden;box-shadow:0 8px 24px rgba(11,59,92,.06)}
+.jb-head{display:grid;grid-template-columns:88px 1fr 110px 24px;gap:12px;padding:9px 20px;background:#F4F8FB;font-size:12px;font-weight:600;letter-spacing:.04em;color:#5B6478}
+.jb-list{list-style:none;margin:0;padding:0}
+.jb-list li+li{border-top:1px solid #E9F2F7}
+.jb-row{display:grid;grid-template-columns:88px 1fr 110px 24px;gap:12px;align-items:center;padding:11px 20px;color:inherit;text-decoration:none;transition:background .15s}
+.jb-row:hover,.jb-row:focus-visible{background:#F8FBFD}
+.jb-no{font-size:13px;font-weight:400;color:#8C94A6}
+.jb-main{display:flex;flex-wrap:wrap;align-items:baseline;gap:2px 12px;min-width:0}
+.jb-title{font-size:15px;font-weight:500;color:#0B3B5C;letter-spacing:-.01em;word-break:keep-all}
+.jb-ref{font-size:12.5px;color:#8C94A6}
+.jb-date{font-size:14px;color:#3F4A60;font-variant-numeric:tabular-nums}
+.jb-go{font-size:18px;color:#4FB3D9;text-align:right}
+.jb-new{display:inline-block;margin-left:8px;padding:1px 6px;border-radius:5px;background:#E9F2F7;color:#13789E;font-size:10px;font-weight:700;letter-spacing:.06em;vertical-align:2px}
+.jb-empty{display:none;padding:40px 22px;text-align:center;color:#8C94A6;font-size:15px}
+.jb-note{margin-top:14px;font-size:13px;color:#8C94A6;text-align:center}
+@media (max-width:640px){.jb-wrap{padding:8px 14px 56px}.jb-head{display:none}.jb-row{grid-template-columns:auto 1fr 18px;gap:2px 8px;padding:10px 14px}.jb-main{grid-column:1/3;grid-row:1}.jb-no{grid-column:1;grid-row:2;font-size:12px}.jb-date{grid-column:2;grid-row:2;font-size:12px;color:#8C94A6}.jb-go{grid-column:3;grid-row:1/3;align-self:center}.jb-search{flex:1 1 100%}}
+</style>
+<style id="sermon-list-css">
+.sm-wrap{max-width:1200px;margin:0 auto;padding:10px 24px 72px}
+.sm-stats{display:grid;grid-template-columns:repeat(3,minmax(0,.7fr)) minmax(0,1.6fr);gap:10px;margin:4px 0 16px}
+.sm-stat{display:flex;flex-direction:column;justify-content:center;gap:2px;padding:16px 18px;border-radius:16px;background:linear-gradient(135deg,#0B3B5C 0%,#13789E 100%);color:#fff;box-shadow:0 8px 22px rgba(11,59,92,.14)}
+.sm-stat b{font-family:Montserrat,Pretendard,sans-serif;font-size:28px;font-weight:700;line-height:1.1;letter-spacing:-.01em}
+.sm-stat>span{font-size:13px;opacity:.85}
+.sm-stat-books{background:#fff;color:#0B3B5C;border:1px solid #D6E4EE;box-shadow:0 6px 18px rgba(11,59,92,.06)}
+.sm-stat-k{font-size:12px;font-weight:700;letter-spacing:.06em;color:#13789E;opacity:1 !important}
+.sm-top{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.sm-top button{display:inline-flex;align-items:center;gap:5px;height:30px;padding:0 11px;border:1px solid #D6E4EE;border-radius:999px;background:#F4F8FB;color:#0B3B5C;font:500 13px Pretendard,'Noto Sans KR',sans-serif;cursor:pointer;transition:background .15s,border-color .15s}
+.sm-top button i{font-style:normal;font-size:11.5px;color:#13789E;font-family:Montserrat,Pretendard,sans-serif;font-weight:600}
+.sm-top button:hover,.sm-top button[aria-pressed="true"]{background:#E3F1F8;border-color:#4FB3D9}
+.sm-panel{position:sticky;top:76px;z-index:5;padding:14px 16px 12px;border-radius:18px;background:rgba(255,255,255,.94);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border:1px solid #D6E4EE;box-shadow:0 10px 26px rgba(11,59,92,.08)}
+.sm-row1{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.sm-search{position:relative;flex:1 1 320px}
+.sm-search input{width:100%;height:44px;padding:0 14px 0 40px;border:1px solid #CFDFEA;border-radius:12px;background:#fff;font:400 15px Pretendard,'Noto Sans KR',sans-serif;color:#0B3B5C;outline:none}
+.sm-search input:focus,.sm-select:focus{border-color:#4FB3D9;box-shadow:0 0 0 3px rgba(79,179,217,.25)}
+.sm-search svg{position:absolute;left:13px;top:50%;transform:translateY(-50%)}
+.sm-select{height:44px;padding:0 34px 0 14px;border:1px solid #CFDFEA;border-radius:12px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2313789E' stroke-width='2.5' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") no-repeat right 12px center;-webkit-appearance:none;appearance:none;font:400 15px Pretendard,'Noto Sans KR',sans-serif;color:#0B3B5C;outline:none;cursor:pointer}
+.sm-seg{display:inline-flex;padding:3px;border-radius:12px;background:#EEF4F8;gap:2px}
+.sm-seg button{height:38px;padding:0 13px;border:0;border-radius:9px;background:transparent;color:#5B6478;font:500 14px Pretendard,'Noto Sans KR',sans-serif;cursor:pointer;white-space:nowrap}
+.sm-seg button[aria-pressed="true"]{background:#fff;color:#0B3B5C;box-shadow:0 2px 6px rgba(11,59,92,.12)}
+.sm-years{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;margin-top:10px;padding-bottom:2px}
+.sm-years::-webkit-scrollbar{display:none}
+.sm-years button{flex:0 0 auto;height:30px;padding:0 12px;border:0;border-radius:999px;background:#F4F8FB;color:#13789E;font:600 13px Montserrat,Pretendard,sans-serif;cursor:pointer}
+.sm-years button small{font:400 11px Pretendard,sans-serif;color:#8C94A6;margin-left:4px}
+.sm-years button[aria-pressed="true"]{background:#13789E;color:#fff}
+.sm-years button[aria-pressed="true"] small{color:#CFE9F4}
+.sm-bar{display:flex;align-items:center;gap:10px;margin:18px 2px 10px;flex-wrap:wrap}
+.sm-count{font-size:14px;color:#5B6478}.sm-count b{color:#13789E;font-weight:700}
+.sm-active{display:flex;flex-wrap:wrap;gap:6px;flex:1 1 auto}
+.sm-chip{display:inline-flex;align-items:center;gap:6px;height:28px;padding:0 6px 0 11px;border-radius:999px;background:#E3F1F8;color:#0B3B5C;font-size:13px}
+.sm-chip button{width:20px;height:20px;border:0;border-radius:50%;background:#fff;color:#13789E;font-size:13px;line-height:1;cursor:pointer}
+.sm-sort{display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border:1px solid #D6E4EE;border-radius:10px;background:#fff;color:#0B3B5C;font:500 13px Pretendard,'Noto Sans KR',sans-serif;cursor:pointer;margin-left:auto}
+.sm-year{margin-top:18px}
+.sm-yh{position:sticky;top:var(--sm-panel-h,200px);z-index:3;display:flex;align-items:baseline;gap:10px;padding:8px 4px 6px;background:#F2F6F9}
+.sm-yh b{font-family:Montserrat,Pretendard,sans-serif;font-size:22px;font-weight:700;color:#0B3B5C;letter-spacing:-.01em}
+.sm-yh span{font-size:13px;color:#8C94A6}
+.sm-yh::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,#CFDFEA,transparent);align-self:center}
+.sm-box{background:#fff;border:1px solid #D6E4EE;border-radius:16px;overflow:hidden;box-shadow:0 6px 18px rgba(11,59,92,.05)}
+.sm-item{display:grid;grid-template-columns:72px minmax(0,1fr) auto;gap:14px;align-items:center;padding:10px 18px;border-top:1px solid #EDF3F7;transition:background .15s}
+.sm-item:first-child{border-top:0}
+.sm-item:hover{background:#F8FBFD}
+.sm-date{display:flex;align-items:baseline;gap:5px;font-family:Montserrat,Pretendard,sans-serif;font-size:14px;font-weight:500;color:#13789E;font-variant-numeric:tabular-nums}
+.sm-date small{font-family:Pretendard,'Noto Sans KR',sans-serif;font-size:11.5px;color:#8C94A6}
+.sm-main{display:flex;flex-wrap:wrap;align-items:baseline;gap:3px 12px;min-width:0}
+.sm-title{font-size:15.5px;font-weight:500;color:#0B3B5C;letter-spacing:-.01em;word-break:keep-all}
+.sm-ref{font-size:13px;color:#5B6478}
+.sm-tags{display:flex;align-items:center;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.sm-tag{display:inline-flex;align-items:center;height:24px;padding:0 9px;border-radius:7px;font-size:12px;white-space:nowrap}
+.sm-tag-guest{background:#FFF4E0;color:#9A5B00}
+.sm-tag-kind{background:#EEE9FB;color:#5B3FA8}
+.sm-jubo{display:inline-flex;align-items:center;gap:3px;height:26px;padding:0 10px;border-radius:8px;background:#13789E;color:#fff;font-size:12.5px;font-weight:500;white-space:nowrap}
+.sm-jubo:hover{background:#0E5F82}
+.sm-list mark{background:#FFF0B3;color:inherit;border-radius:3px;padding:0 1px}
+.sm-empty{display:none;margin:28px 0;padding:40px 20px;border-radius:16px;background:#fff;border:1px dashed #CFDFEA;text-align:center;color:#8C94A6;font-size:15px}
+.sm-more{display:none;margin:18px auto 0;height:44px;padding:0 28px;border:1px solid #CFDFEA;border-radius:12px;background:#fff;color:#13789E;font:600 14px Pretendard,'Noto Sans KR',sans-serif;cursor:pointer}
+.sm-more:hover{background:#F4F8FB}
+.sm-note{margin:18px 0 0;font-size:13px;color:#8C94A6;text-align:center}
+.jb-to-sermons{display:flex;align-items:center;justify-content:space-between;gap:16px;margin:4px 0 16px;padding:16px 20px;border-radius:16px;background:linear-gradient(135deg,#0B3B5C 0%,#13789E 100%);color:#fff;box-shadow:0 10px 24px rgba(11,59,92,.16);transition:transform .2s ease,box-shadow .2s ease}
+.jb-to-sermons:hover{transform:translateY(-2px);box-shadow:0 14px 30px rgba(11,59,92,.22)}
+.jb-ts-k{display:block;font-size:11px;font-weight:700;letter-spacing:.16em;color:#9FD8EA}
+.jb-ts-t{display:block;font-size:17px;font-weight:700}
+.jb-ts-d{display:block;font-size:13px;opacity:.85}
+.jb-ts-go{flex:0 0 auto;display:inline-flex;align-items:center;height:38px;padding:0 16px;border-radius:999px;background:#fff;color:#0B3B5C;font-size:14px;font-weight:700;white-space:nowrap}
+@media (max-width:900px){.sm-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.sm-stat-books{grid-column:1/-1}}
+@media (max-width:640px){
+.sm-wrap{padding:6px 14px 56px}
+.sm-stat{padding:12px 12px}.sm-stat b{font-size:22px}.sm-stat>span{font-size:12px}
+.sm-panel{top:64px;padding:10px 10px 8px;border-radius:14px}
+.sm-select{flex:1 1 auto}.sm-seg{flex:1 1 100%}.sm-seg button{flex:1}
+.sm-item{grid-template-columns:1fr auto;gap:4px 10px;padding:10px 14px}
+.sm-date{grid-column:1;grid-row:1;font-size:13px}
+.sm-main{grid-column:1/-1;grid-row:2}
+.sm-tags{grid-column:2;grid-row:1}
+.jb-to-sermons{flex-direction:column;align-items:stretch}.jb-ts-go{justify-content:center}
+}
+@media (prefers-reduced-motion:reduce){.jb-to-sermons{transition:none}}
+</style>
+<link rel="stylesheet" href="assets/site-theme.css">
+</head>
+<body>
+<div style="font-family: Pretendard, 'Noto Sans KR', system-ui, sans-serif; color: #0B3B5C; background: #F2F6F9; width: 100%; line-height: 1.6">
+
+<!-- 떠 있는 헤더 (상단 고정) -->
+<header id="site-header">
+<div class="hdr">
+<a href="index.html" class="logo"><b>은혜교회</b><small>GRACE BAPTIST CHURCH</small></a>
+<button type="button" class="burger" id="burger" aria-label="메뉴 열기" aria-expanded="false">
+<span class="if-menuOpen"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"></path></svg></span>
+<span class="if-menuClosed"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"></path></svg></span>
+</button>
+<nav class="gnav" aria-label="주 메뉴">
+<a href="index.html">홈</a>
+<a href="about.html">교회 소개</a>
+<a href="worship.html">예배</a>
+<a href="ministry.html">사역</a>
+<a href="education.html">교육</a>
+<a href="mission.html">선교</a>
+<a href="groups.html">교제</a>
+<span class="gnav-sep" aria-hidden="true"></span>
+<a href="partner.html" class="gnav-util">커넥트 사역</a>
+<a href="give.html" class="gnav-util">후원</a>
+<a href="visit.html" class="gnav-util">오시는 길</a>
+<a href="bulletin.html" aria-current="page" class="gnav-util">주보</a>
+<a href="archive.html" class="gnav-util">자료실</a>
+<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" aria-label="실시간 예배 (라이브)" class="gnav-live"><span class="live-dot" aria-hidden="true"></span>라이브</a>
+</nav>
+</div>
+<div class="if-menuOpen">
+<nav class="mnav" aria-label="모바일 메뉴">
+<a href="about.html" data-close-menu>교회 소개<span aria-hidden="true">›</span></a>
+<a href="worship.html" data-close-menu>예배<span aria-hidden="true">›</span></a>
+<a href="ministry.html" data-close-menu>사역<span aria-hidden="true">›</span></a>
+<a href="education.html" data-close-menu>교육<span aria-hidden="true">›</span></a>
+<a href="mission.html" data-close-menu>선교<span aria-hidden="true">›</span></a>
+<a href="groups.html" data-close-menu>교제<span aria-hidden="true">›</span></a>
+<span class="mnav-sub">MORE</span>
+<a href="partner.html" data-close-menu>커넥트 사역<span aria-hidden="true">›</span></a>
+<a href="give.html" data-close-menu>후원<span aria-hidden="true">›</span></a>
+<a href="visit.html" data-close-menu>오시는 길<span aria-hidden="true">›</span></a>
+<a href="bulletin.html" data-close-menu>주보<span aria-hidden="true">›</span></a>
+<a href="archive.html" data-close-menu>자료실<span aria-hidden="true">›</span></a>
+<a href="https://www.youtube.com/@sjgrace/live" target="_blank" rel="noopener" data-close-menu class="mnav-live"><span class="live-dot" aria-hidden="true"></span>라이브 예배</a>
+</nav>
+</div>
+</header>
+
+<!-- 페이지 머리 -->
+<section class="page-hero">
+<div class="ph-inner">
+<span class="ph-label">SERMONS · 설교 목록</span>
+<h1 class="ph-title">그동안 나눈 말씀</h1>
+<p class="ph-desc">2014년 개척 예배부터 지금까지, 주일마다 함께 들었던 말씀을 모았어요. 제목이나 본문, 날짜로 찾아보세요. <a href="bulletin.html" style="color:#9FD8EA;font-weight:600">이번 주 주보 보기 ›</a></p>
+</div>
+</section>
+
+<section class="sm-wrap" id="sermon-list">
+<div class="sm-stats" aria-label="설교 기록 요약">
+<div class="sm-stat"><b id="smTotal">0</b><span>편의 설교</span></div>
+<div class="sm-stat"><b>2014</b><span>개척 첫 예배부터</span></div>
+<div class="sm-stat"><b id="smYears">0</b><span>년의 말씀 기록</span></div>
+<div class="sm-stat sm-stat-books"><span class="sm-stat-k">가장 많이 나눈 말씀</span><span id="smTopBooks" class="sm-top"></span></div>
+</div>
+
+<div class="sm-panel">
+<div class="sm-row1">
+<label class="sm-search"><svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8C94A6" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-3.5-3.5"></path></svg><input id="smQ" type="search" placeholder="제목·본문·설교자·날짜로 검색 (예: 은혜, 로마서 8, 2019)" aria-label="설교 검색" autocomplete="off"></label>
+<select id="smBook" class="sm-select" aria-label="성경으로 찾기"><option value="">성경 전체</option></select>
+<div class="sm-seg" role="group" aria-label="설교자">
+<button type="button" data-who="" aria-pressed="true">전체</button>
+<button type="button" data-who="pastor" aria-pressed="false">담임목사</button>
+<button type="button" data-who="guest" aria-pressed="false">초청·특별</button>
+</div>
+</div>
+<div class="sm-years" id="smYearsBar" role="group" aria-label="연도"></div>
+</div>
+
+<div class="sm-bar">
+<span class="sm-count"><b id="smCount">0</b>편</span>
+<span class="sm-active" id="smActive"></span>
+<button type="button" class="sm-sort" id="smSort" aria-label="정렬 바꾸기">최신순 <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M7 4v16M3 16l4 4 4-4M17 20V4M13 8l4-4 4 4"></path></svg></button>
+</div>
+
+<div id="smList" class="sm-list" aria-live="polite"></div>
+<p class="sm-empty" id="smEmpty">찾는 설교가 없어요. 다른 낱말로 찾아보세요.</p>
+<button type="button" class="sm-more" id="smMore">더 보기</button>
+<p class="sm-note">2014년 4월 20일 개척 예배부터 주보에 실린 설교를 모았어요. 주보가 남아 있지 않은 몇 주는 빠져 있습니다.</p>
+</section>
+
+<script type="application/json" id="sermon-data">[{"d":"2014-04-20","t":"부활은","p":"사도행전 2:14-42","b":"사도행전"},{"d":"2014-04-27","t":"하나님의 애절함","p":"누가복음 15:1-7","b":"누가복음"},{"d":"2014-05-04","t":"가장 귀하고 복된 선물","p":"신명기 6:1-9","b":"신명기"},{"d":"2014-05-11","t":"약속에 이르는 첫 문을 열다","p":"에베소서 6:2-3","b":"에베소서"},{"d":"2014-05-18","t":"제자를 보호하고 사랑하는 스승","p":"요한복음 14:25-26","b":"요한복음"},{"d":"2014-05-25","t":"같이","p":"에베소서 4:1-16","b":"에베소서"},{"d":"2014-06-01","t":"다시, 다시 복음으로(1) - 그리스도인의 심장","p":"로마서 1:16-17","b":"로마서"},{"d":"2014-06-08","t":"다시, 다시 복음으로(2) - 그리스도인의 아이디","p":"사도행전 1:8","b":"사도행전"},{"d":"2014-06-15","t":"다시, 다시 복음으로(3) - 그리스도인의 열심","p":"에베소서 5:15-21","b":"에베소서"},{"d":"2014-06-22","t":"다시, 다시 복음으로(4) - 그리스도인의 아이템","p":"에베소서 6:10-20","b":"에베소서"},{"d":"2014-06-29","t":"다시, 다시 복음으로(5) - 그리스도인의 준비","p":"디모데후서 2:20-22","b":"디모데후서"},{"d":"2014-07-06","t":"목자의 음성을 듣는 교회","p":"요한복음 10:1-6","b":"요한복음","s":"남보현 목사 (세종베다니교회)"},{"d":"2014-07-13","t":"교회의 기초","p":"마태복음 16:16-19","b":"마태복음"},{"d":"2014-07-20","t":"교회의 기초 2","p":"마태복음 16:16-19","b":"마태복음"},{"d":"2014-07-27","t":"교회의 기초 3","p":"마태복음 16:16-19","b":"마태복음"},{"d":"2014-09-07","t":"값없이 얻은 가장 값진 열매","p":"로마서 3:23-24","b":"로마서"},{"d":"2014-09-21","t":"리더십의 환상 탈출","p":"마태복음 20:25-28","b":"마태복음"},{"d":"2014-09-28","t":"부흥의 오해 탈출","p":"하박국 3:2","b":"하박국"},{"d":"2014-10-05","t":"변질의 늪 탈출","p":"디모데전서 6:3-10","b":"디모데전서"},{"d":"2014-10-12","t":"다시 말씀 앞으로","p":"시편 119:105","b":"시편"},{"d":"2014-10-19","t":"청지기의 삶 다지기 충성","p":"누가복음 16:10-12","b":"누가복음"},{"d":"2014-11-02","t":"모든 것의 시작","p":"창세기 1:1","b":"창세기"},{"d":"2014-11-09","t":"완전한 창조와 완전한 사랑","p":"창세기 1,2","b":"창세기"},{"d":"2014-11-16","t":"은혜를 입은 자의 자리","p":"누가복음 17:17","b":"누가복음"},{"d":"2014-11-23","t":"인간은 실패했지만 하나님은 완성하십니다.","p":"창세기 3장","b":"창세기"},{"d":"2014-11-30","t":"(제목 미기재)","p":"창세기 5장","b":"창세기"},{"d":"2014-12-06","t":"은사와 열매를 함께 추구하십시오","p":"","b":"","s":"안진섭 목사 (지방회장)","k":"지방회 가입예배"},{"d":"2014-12-07","t":"하나님과 동행하는 삶을 삽시다","p":"창세기 5-6:8","b":"창세기"},{"d":"2014-12-14","t":"구원의 방주 예수 그리스도","p":"창세기 6:9-7","b":"창세기"},{"d":"2014-12-28","t":"하나님의 은혜와 노아의 예배","p":"창세기 8장","b":"창세기"},{"d":"2014-12-31","t":"교회인 우리가 힘써 지켜야 할 것","p":"에베소서 4:1-4","b":"에베소서","k":"송구영신예배"},{"d":"2015-01-04","t":"오직 주님만 바라 보아야 합니다.","p":"창세기 11장","b":"창세기"},{"d":"2015-01-11","t":"믿음이란(1)","p":"창세기 12장","b":"창세기"},{"d":"2015-01-18","t":"믿음이란(2)","p":"창세기 13장","b":"창세기"},{"d":"2015-01-25","t":"믿음이란(3)","p":"창세기 14장","b":"창세기"},{"d":"2015-02-01","t":"사도행전, 뜨거운 복음의 열전에 합류하다","p":"사도행전","b":"사도행전"},{"d":"2015-02-08","t":"증인의 삶을 삽시다","p":"마태복음 28:19-20","b":"마태복음"},{"d":"2015-02-15","t":"교회들에게(1)","p":"요한계시록 2-3장","b":"요한계시록"},{"d":"2015-02-22","t":"교회들에게(2)","p":"요한계시록 2-3장","b":"요한계시록"},{"d":"2015-03-01","t":"믿음이란(4)","p":"창세기 15장","b":"창세기"},{"d":"2015-03-08","t":"믿음이란(6) - 아브라함과 함께 떠나는 믿음의 여정","p":"창세기 16장","b":"창세기"},{"d":"2015-03-22","t":"믿음이란(7) - 아브라함과 함께 떠나는 믿음의 여정","p":"창세기 22장","b":"창세기"},{"d":"2015-03-29","t":"영적인 삶을 삽시다.","p":"로마서 8:12-17","b":"로마서"},{"d":"2015-04-05","t":"그리스도 안에서 함께함의 기쁨","p":"시편 133","b":"시편"},{"d":"2015-04-19","t":"남는 것은 사랑 밖에 없습니다","p":"고린도전서 13:1-13","b":"고린도전서"},{"d":"2015-04-26","t":"믿음의 징검다리","p":"창세기 24:1-27","b":"창세기"},{"d":"2015-05-03","t":"하나님의 나라가 이런 자의 것이니라","p":"누가복음 18:15-17","b":"누가복음"},{"d":"2015-05-10","t":"당연한 것임에도 상을 받는 일","p":"에베소서 6:1-3","b":"에베소서"},{"d":"2015-05-17","t":"제자입니까?","p":"누가복음 14:25-35","b":"누가복음"},{"d":"2015-05-24","t":"구원의 길, 진리는 오직 예수님입니다","p":"요한복음 14:6","b":"요한복음"},{"d":"2015-05-31","t":"생각하면 할수록 기뻐할 일","p":"야고보서 1:2-4","b":"야고보서"},{"d":"2015-06-07","t":"중심잡기","p":"야고보서 1:9-11","b":"야고보서"},{"d":"2015-06-14","t":"차별없는 사랑, 분별있는 사랑","p":"야고보서 2:1-13","b":"야고보서"},{"d":"2015-06-21","t":"살리는 믿음","p":"야고보서 2:14-26","b":"야고보서"},{"d":"2015-06-28","t":"성도의 말","p":"야고보서 3:1-12","b":"야고보서"},{"d":"2015-07-05","t":"누구와 같이 가고 있습니까?","p":"야고보서 4:1-10","b":"야고보서"},{"d":"2015-07-12","t":"하나님의 약속이기에 기다릴 수 있습니다","p":"야고보서 5:1-11","b":"야고보서"},{"d":"2015-07-19","t":"형통","p":"창세기 39:1-6","b":"창세기"},{"d":"2015-07-26","t":"시대를 보며 선교를 보다","p":"디모데전서 2:4","b":"디모데전서","s":"김성준 선교사"},{"d":"2015-08-02","t":"하나님의 심정으로","p":"마태복음 20:1-16","b":"마태복음","s":"김성준 선교사"},{"d":"2015-08-09","t":"예수님과 함께 하는 새로운 삶","p":"로마서 6:1-11","b":"로마서","s":"김성준 선교사"},{"d":"2015-08-16","t":"하나님의 열심","p":"이사야 1:1-9","b":"이사야"},{"d":"2015-08-23","t":"하나님이 이 땅에 오셨습니다","p":"요한복음 1:1-18","b":"요한복음"},{"d":"2015-08-30","t":"하나님이 이 땅에 오셨습니다(2)","p":"요한복음 1:4-18","b":"요한복음"},{"d":"2015-09-06","t":"주님의 집을 사모하는 열심","p":"요한복음 2:13-17","b":"요한복음"},{"d":"2015-09-13","t":"하나님의 사랑","p":"요한복음 3:16","b":"요한복음"},{"d":"2015-09-20","t":"그리스도인이라면","p":"빌립보서 4:4-7","b":"빌립보서"},{"d":"2015-10-04","t":"오직 하나님의 영광을 위하여","p":"고린도전서 10:31","b":"고린도전서"},{"d":"2015-10-11","t":"하룻길(1+1=-5)","p":"누가복음 2:41-51","b":"누가복음","s":"이한우 총장님"},{"d":"2015-10-18","t":"소중한 약속 십계명","p":"출애굽기 20:1-17","b":"출애굽기"},{"d":"2015-10-25","t":"하나님이 찾으시는 사람","p":"요한복음 4:1-26","b":"요한복음","s":"조숙현 권사님"},{"d":"2015-11-01","t":"산상수훈 중 ‘팔복’에 대하여","p":"마태복음 5:1-10","b":"마태복음","s":"이재성 장로님"},{"d":"2015-11-08","t":"지혜로운 삶","p":"에베소서 5:15-21","b":"에베소서"},{"d":"2015-11-15","t":"지혜로운 삶","p":"에베소서 5:15-21","b":"에베소서"},{"d":"2015-11-22","t":"심는대로 거둘 것입니다","p":"갈라디아서 6:1-18","b":"갈라디아서"},{"d":"2015-11-29","t":"좋은 땅이 되어야합니다","p":"마태복음 13:1-8, 18-23","b":"마태복음"},{"d":"2015-12-06","t":"그리스도 안에서 감사하는 삶","p":"골로새서 3:15-17","b":"골로새서"},{"d":"2015-12-13","t":"주님의 나라를 바라보며","p":"디모데후서 4:1-8","b":"디모데후서"},{"d":"2015-12-20","t":"우리가 즐거워 하는 이유","p":"로마서 5:1-11","b":"로마서"},{"d":"2015-12-25","t":"주님이 오셨습니다.","p":"누가복음 2:11","b":"누가복음","k":"성탄예배"},{"d":"2015-12-27","t":"구원의 주 예수","p":"마태복음 9:1-8","b":"마태복음"},{"d":"2015-12-31","t":"진짜가 됩시다","p":"요한복음 10:27","b":"요한복음","k":"송구영신예배"},{"d":"2016-01-03","t":"생명을 이을 순종","p":"창세기 6:9-22","b":"창세기"},{"d":"2016-01-10","t":"축복을 누릴 순종","p":"창세기 12:1-4","b":"창세기"},{"d":"2016-01-17","t":"하나님의 인도를 경험하기 위하여","p":"신명기 8:1-6","b":"신명기","s":"한필태 선교사"},{"d":"2016-01-24","t":"변함없기를 바랍니다","p":"마태복음 19:16-30","b":"마태복음"},{"d":"2016-01-31","t":"변함없기를 바랍니다","p":"마태복음 19:16-30","b":"마태복음"},{"d":"2016-02-07","t":"모든 사람이 믿을만한 증거","p":"사도행전 17:31","b":"사도행전"},{"d":"2016-02-14","t":"섬김의 사람들 -아비가일","p":"사무엘상 25:23-31","b":"사무엘상"},{"d":"2016-02-21","t":"섬김의 사람들 –다비다","p":"사도행전 9:36-43","b":"사도행전"},{"d":"2016-02-28","t":"온전한 섬김을 위해서","p":"사도행전 18:1-28","b":"사도행전"},{"d":"2016-03-06","t":"하나님의 복을 얻는 사람은","p":"창세기 25:27-34","b":"창세기"},{"d":"2016-03-13","t":"벧엘은","p":"창세기 28:10-22","b":"창세기"},{"d":"2016-03-20","t":"약속을 바라보는 삶","p":"창세기 32:13-32","b":"창세기"},{"d":"2016-03-27","t":"부활의 주님과 다시 시작하라","p":"누가복음 24:13-35","b":"누가복음"},{"d":"2016-04-03","t":"느헤미야처럼","p":"느헤미야 1:1-5","b":"느헤미야","s":"정용수 선교사"},{"d":"2016-04-10","t":"믿음의 여인 라합","p":"여호수아 2:1-14","b":"여호수아"},{"d":"2016-04-17","t":"다니엘","p":"다니엘 1:8-21","b":"다니엘"},{"d":"2016-04-24","t":"요셉의 축복으로 인도하소서","p":"창세기 49:22-26","b":"창세기"},{"d":"2016-05-01","t":"IT세상 속에 주시는 하나님의 비전","p":"잠언 1:7 / 잠언 2:6-9 / 요한일서 4:4","b":"잠언"},{"d":"2016-05-08","t":"하늘가정의 삶","p":"출애굽기 20:12","b":"출애굽기"},{"d":"2016-05-15","t":"하늘가정의 삶(2)","p":"고린도전서 13장","b":"고린도전서"},{"d":"2016-05-22","t":"대전환","p":"창세기 31:40-49","b":"창세기","s":"이대숙 목사"},{"d":"2016-05-29","t":"그리스도인의 사귐","p":"요한일서 1:1-10","b":"요한일서"},{"d":"2016-06-05","t":"아름다운 성품으로","p":"갈라디아서 5:13-26","b":"갈라디아서"},{"d":"2016-06-12","t":"진정한 주권자","p":"창세기 39:1-23","b":"창세기"},{"d":"2016-06-19","t":"진정한 주권자(2)","p":"창세기 41:37-45","b":"창세기"},{"d":"2016-06-26","t":"진정한 주권자(3)","p":"창세기 45:1-15","b":"창세기"},{"d":"2016-07-03","t":"고난은","p":"욥기 1:13-22","b":"욥기"},{"d":"2016-07-10","t":"영적 개혁, 변화의 삶을 원한다면","p":"역대하 34:29-33","b":"역대하"},{"d":"2016-07-17","t":"하나님이 당신을 세우셨습니다","p":"예레미야 1:4-10","b":"예레미야"},{"d":"2016-07-24","t":"결말을 바라보면 소망을 얻습니다.","p":"스바냐 3:14-20","b":"스바냐"},{"d":"2016-07-31","t":"충성된 사자","p":"잠언 25:13","b":"잠언","s":"강서기 목사"},{"d":"2016-08-07","t":"온전한 충성","p":"여호수아 14:6-15","b":"여호수아"},{"d":"2016-08-14","t":"깨어 있는 삶","p":"사무엘상 3:1-4","b":"사무엘상"},{"d":"2016-08-21","t":"하나님을 사랑하라","p":"신명기 6:4-9","b":"신명기"},{"d":"2016-08-28","t":"진정 변화를 원한다면","p":"누가복음 19:1-10","b":"누가복음"},{"d":"2016-09-04","t":"영적 거인","p":"사무엘상 17:1-54","b":"사무엘상"},{"d":"2016-09-11","t":"무엇이 달랐을까?","p":"사무엘상 26:1-12","b":"사무엘상"},{"d":"2016-09-18","t":"다윗의 삶을 통해 배우는 성도의 삶","p":"사무엘하 12:1-14","b":"사무엘하"},{"d":"2016-09-25","t":"그런데 어찌하여","p":"사무엘하 24:1-10","b":"사무엘하"},{"d":"2016-10-02","t":"생명의 떡이신 예수님","p":"요한복음 6:32-35","b":"요한복음"},{"d":"2016-10-09","t":"빛이신 예수님","p":"요한복음 1:9-13","b":"요한복음"},{"d":"2016-10-16","t":"주여 나도 은혜 받을 수 있습니까?","p":"룻기 4:18-22","b":"룻기"},{"d":"2016-10-23","t":"선한목자","p":"요한복음 10:11-18","b":"요한복음"},{"d":"2016-10-30","t":"성도의 고백(사도신경)","p":"에베소서 4:13","b":"에베소서"},{"d":"2016-11-06","t":"예수님께 소망을 두라","p":"요한복음 11:17-44","b":"요한복음"},{"d":"2016-11-13","t":"길과 진리와 생명이신 예수님","p":"요한복음 14:1-7","b":"요한복음"},{"d":"2016-11-20","t":"열매 맺는 제자의 삶을 삽시다","p":"요한복음 15:1-8","b":"요한복음"},{"d":"2016-11-27","t":"예수님을 믿게 하려고","p":"요한복음 20:24-29","b":"요한복음"},{"d":"2016-12-04","t":"메시야이신 예수님","p":"누가복음 2:8-14","b":"누가복음"},{"d":"2016-12-11","t":"예수님처럼 자라갑시다","p":"누가복음 2:41-52","b":"누가복음"},{"d":"2016-12-18","t":"십자가의 삶을 산다는 것은","p":"누가복음 23:33-43","b":"누가복음"},{"d":"2016-12-25","t":"우리에게까지 내려오신 사랑","p":"누가복음 2:11-12","b":"누가복음"},{"d":"2016-12-31","t":"새로운 삶","p":"고린도후서 5:17","b":"고린도후서","k":"송구영신예배"},{"d":"2017-01-01","t":"새롭게 하소서","p":"에베소서 4:21-24","b":"에베소서"},{"d":"2017-01-08","t":"새롭게 하소서(2) - 관계의 온전함을 회복하자","p":"요한복음 13:12-17","b":"요한복음"},{"d":"2017-01-15","t":"새롭게 하소서(3) - 묵상의 기쁨을 회복하자","p":"시편 119:96-98 / 요한복음 21:15-17","b":"시편"},{"d":"2017-01-22","t":"새롭게 하소서(4) - 구원의 확신을 회복하자","p":"고린도후서 13:5","b":"고린도후서"},{"d":"2017-01-25","t":"용서받은 죄인","p":"요한복음 21:15-17","b":"요한복음","k":"국민안전처 신우회 예배"},{"d":"2017-01-29","t":"새롭게 하소서(5) - 믿음의 본질을 회복하자","p":"누가복음 5","b":"누가복음"},{"d":"2017-02-05","t":"새롭게 하소서(6) - 기도의 성숙함을 이루자","p":"요한복음 15:7","b":"요한복음"},{"d":"2017-02-12","t":"새롭게 하소서(7) - 부르심(소명)","p":"베드로전서 2:9","b":"베드로전서","s":"김미경 목사"},{"d":"2017-02-19","t":"새롭게 하소서(8) - 교회의 하나됨","p":"고린도전서 12:12","b":"고린도전서"},{"d":"2017-02-22","t":"오직 강하고 담대하라","p":"여호수아 1:7-9","b":"여호수아","k":"국민안전처 신우회 예배"},{"d":"2017-02-26","t":"새롭게 하소서(9) - 말씀의 풍성함으로","p":"골로새서 3:16","b":"골로새서"},{"d":"2017-03-05","t":"새롭게 하소서(10) - 십자가의 사랑과 부활의 능력으로","p":"로마서 6:5","b":"로마서"},{"d":"2017-03-12","t":"죄인을 부르러 오신 예수님","p":"마가복음 2:13-17","b":"마가복음","s":"김환삼 선교사"},{"d":"2017-03-19","t":"초점 바로잡기(1) -행위에서 마음으로","p":"골로새서 2:16-19","b":"골로새서"},{"d":"2017-03-26","t":"초점 바로잡기(2) -특별함에서 분명함으로","p":"골로새서 2:16-19","b":"골로새서"},{"d":"2017-04-02","t":"사랑하니까 사랑이다","p":"요한복음 13:31-35","b":"요한복음"},{"d":"2017-04-09","t":"초점 바로잡기4 (신앙, 지식에서 체험으로)","p":"에베소서 4:11-15","b":"에베소서"},{"d":"2017-04-16","t":"초점 바로잡기5 (‘조의’에서 ‘조이’로)","p":"마태복음 28:6","b":"마태복음"},{"d":"2017-04-23","t":"초점 바로잡기6 (‘부활, 상상에서 현실’로)","p":"고린도전서 15:1-11","b":"고린도전서"},{"d":"2017-04-26","t":"영광된 삶","p":"요한복음 1:31-32","b":"요한복음","k":"국민안전처 신우회 예배"},{"d":"2017-04-30","t":"초점 바로잡기7 (우연에서 계획으로)","p":"요한복음 11:1-16","b":"요한복음"},{"d":"2017-05-07","t":"초점 바로잡기8 (빼기에서 더하기로)","p":"골로새서 3:18-21","b":"골로새서"},{"d":"2017-05-14","t":"초점 바로잡기9 (일에서 사람으로)","p":"마태복음 25:31-46","b":"마태복음"},{"d":"2017-05-21","t":"초점 바로잡기 10 (나의 저울에서 하나님의 저울로)","p":"사도행전 6:8-15, 54-60","b":"사도행전"},{"d":"2017-05-28","t":"쓰임받는 그릇","p":"디모데후서 2:20-22","b":"디모데후서"},{"d":"2017-06-04","t":"세상에서 가장 위대한 유산","p":"디모데후서 3:16-17","b":"디모데후서"},{"d":"2017-06-11","t":"위대한 신앙의 멘토들(1) 아브라함","p":"히브리서 11:8","b":"히브리서"},{"d":"2017-06-18","t":"위대한 신앙의 멘토들(2) 노아","p":"창세기 6:5-22","b":"창세기"},{"d":"2017-06-25","t":"위대한 신앙의 멘토들(3) 모세","p":"출애굽기 3:1-12","b":"출애굽기"},{"d":"2017-06-27","t":"나는 누구일까?","p":"열왕기상 22:15-28","b":"열왕기상","k":"국민안전처 신우회 예배"},{"d":"2017-07-02","t":"하나님과의 관계를 지키는 삶","p":"갈라디아서 4:1-11","b":"갈라디아서"},{"d":"2017-07-09","t":"위대한 신앙의 멘토들(4) 다니엘","p":"다니엘 6:10-23","b":"다니엘"},{"d":"2017-07-16","t":"위대한 신앙의 멘토들(5) 반면교사 사울","p":"사무엘상 13:1-14","b":"사무엘상"},{"d":"2017-07-23","t":"위대한 신앙의 멘토들(6) 엘리야","p":"열왕기상 17:1","b":"열왕기상"},{"d":"2017-07-30","t":"위대한 신앙의 멘토들(7) 바울","p":"빌립보서 3:13-14","b":"빌립보서"},{"d":"2017-08-06","t":"위대한 신앙의 멘토들(8) 빌레몬","p":"빌레몬서 1:8-22","b":"빌레몬서"},{"d":"2017-08-13","t":"위대한 신앙의 멘토들(9) 유두고(측면교사)","p":"사도행전 20:7-12","b":"사도행전"},{"d":"2017-08-20","t":"천상의 하모니","p":"고린도전서 12:4-11","b":"고린도전서"},{"d":"2017-08-27","t":"위대한 신앙의 멘토들(10) - 침례 요한","p":"요한복음 1:19-28","b":"요한복음"},{"d":"2017-09-03","t":"그리스도 안의 새생활","p":"고린도후서 5:11-19","b":"고린도후서"},{"d":"2017-09-10","t":"하나님 질문있습니다(1) - 어떻게 항상 기뻐하나요?","p":"데살로니가전서 5:16-18","b":"데살로니가전서"},{"d":"2017-09-17","t":"하나님 질문있습니다(2) - 왜 고난을 주십니까?","p":"욥기 42:1-6","b":"욥기"},{"d":"2017-09-24","t":"하나님 질문있습니다(3) - 나는 왜 이것 밖에 안되나요?","p":"요한복음 5:1-9","b":"요한복음"},{"d":"2017-10-01","t":"하나님 질문있습니다(4) - 왜 죄인인가요?","p":"로마서 3:23-24","b":"로마서"},{"d":"2017-10-08","t":"아브라함의 믿음과 언약","p":"창세기 15:6","b":"창세기"},{"d":"2017-10-15","t":"하나님 질문있습니다(5) - ‘성령님 제 안에 계시지요?’","p":"사도행전 1:8","b":"사도행전"},{"d":"2017-10-22","t":"하나님 질문있습니다(6) - ‘왜 불공평하십니까?’","p":"마태복음 25:14-30 / 마태복음 25:21","b":"마태복음"},{"d":"2017-10-29","t":"하나님 질문있습니다(7) - ‘죽음에 관하여’","p":"누가복음 12:13-21 / 누가복음 12:20","b":"누가복음"},{"d":"2017-11-05","t":"하나님 질문있습니다(8) - ‘회개에 관하여’","p":"사도행전 26:1-23","b":"사도행전"},{"d":"2017-11-12","t":"가장 작고 미약한 사람을 쓰시는 하나님","p":"사무엘상 9:18-27","b":"사무엘상","s":"이경국 목사"},{"d":"2017-11-19","t":"감사는 최고의 예배입니다.","p":"시편 50:23","b":"시편"},{"d":"2017-11-26","t":"칭의","p":"로마서 4:5","b":"로마서","s":"김미경 목사"},{"d":"2017-12-03","t":"하나님 질문있습니다(9) - '응답의 때에 관하여'","p":"시편 13:1-6","b":"시편"},{"d":"2017-12-10","t":"하나님 질문있습니다(10) - '무엇을 좋아하시나요?'","p":"사무엘상 15:17-23","b":"사무엘상"},{"d":"2017-12-17","t":"임마누엘","p":"마태복음 1:23","b":"마태복음"},{"d":"2017-12-24","t":"믿음과 순종으로 이뤄지는 역사","p":"마태복음 1:18-25","b":"마태복음"},{"d":"2017-12-24","t":"기쁨의 좋은 소식","p":"누가복음 2:8-14","b":"누가복음","k":"성탄예배"},{"d":"2017-12-31","t":"한 해를 맞이하는 우리의 자세","p":"창세기 39:19-23","b":"창세기","s":"한평강 선교사"},{"d":"2018-01-07","t":"자숙의 시간이 필요합니다","p":"예레미야 29:11","b":"예레미야"},{"d":"2018-01-14","t":"부르심","p":"로마서 1:1-7","b":"로마서"},{"d":"2018-01-21","t":"빚진 자로서","p":"로마서 1:8-15","b":"로마서"},{"d":"2018-01-28","t":"복음, 믿는 자를 구원하시는 하나님의 능력","p":"로마서 1:16-17","b":"로마서"},{"d":"2018-02-04","t":"삶의 복된 흔적","p":"사도행전 20:17-28","b":"사도행전","s":"고현묵 선교사"},{"d":"2018-02-11","t":"어리석음으로부터의 탈출","p":"로마서 1","b":"로마서"},{"d":"2018-02-18","t":"여호와를 신뢰하라","p":"잠언 3:5","b":"잠언","s":"정상철 선교사"},{"d":"2018-02-25","t":"하나님의 판단","p":"로마서 2:1-11","b":"로마서"},{"d":"2018-03-04","t":"어찌하여 이렇게 무서워하느냐","p":"마가복음 4:35-41","b":"마가복음"},{"d":"2018-03-11","t":"믿음으로 받는 구원(1)","p":"마가복음 3:22-26","b":"마가복음"},{"d":"2018-03-18","t":"믿음으로 받는 구원(2)","p":"로마서 4:1-25","b":"로마서"},{"d":"2018-03-25","t":"하나님과의 화목","p":"로마서 5:1-11","b":"로마서"},{"d":"2018-04-01","t":"예수님과 연합하여 하나님께 살아 있는자","p":"로마서 6:1-11","b":"로마서"},{"d":"2018-04-08","t":"은혜와 사랑, 감격으로 사는 새로운 삶","p":"로마서 7:1-6","b":"로마서"},{"d":"2018-04-15","t":"하나님의 영으로 인도함을 받는 사람","p":"로마서 8","b":"로마서"},{"d":"2018-04-22","t":"끊어질 수 없는 하나님의 사랑","p":"로마서 8","b":"로마서"},{"d":"2018-04-29","t":"하나님의 긍휼을 입은 사람들","p":"로마서 9","b":"로마서"},{"d":"2018-05-06","t":"자녀들에게, 부모들에게","p":"에베소서 6:1-4","b":"에베소서"},{"d":"2018-05-13","t":"구원에 이르는 길","p":"로마서 10:1-21","b":"로마서"},{"d":"2018-05-20","t":"치우치지 않는 신앙","p":"로마서 11:13-24","b":"로마서"},{"d":"2018-05-27","t":"우리가 해야 할 일과 각자의 은사","p":"로마서 12:1-8","b":"로마서"},{"d":"2018-06-03","t":"사랑에 빚진 자","p":"로마서 13:8-14","b":"로마서"},{"d":"2018-06-10","t":"하나님의 사업을 무너지게 하지 말라","p":"로마서 14:1-23","b":"로마서"},{"d":"2018-06-17","t":"하나님의 집 사람들","p":"히브리서 3:1-6","b":"히브리서"},{"d":"2018-06-24","t":"연보의 정신","p":"로마서 15:22-30","b":"로마서"},{"d":"2018-07-01","t":"교회와 선교는 결국 관계입니다","p":"로마서 16:1-27","b":"로마서"},{"d":"2018-07-08","t":"넘치는도다","p":"고린도후서 1:5","b":"고린도후서","s":"김성준 선교사"},{"d":"2018-07-15","t":"하나님의 이름(1) - 아도나이 ‘하나님은 내 삶의 주인이십니다’","p":"시편 16:1-11","b":"시편"},{"d":"2018-07-22","t":"하나님의 이름(2) - 여호와 치드케누 ‘하나님은 의로우신 분입니다’","p":"예레미야 23:5-6","b":"예레미야"},{"d":"2018-07-29","t":"하나님의 이름(3) - 여호와 삼마 ‘하나님은 그 곳에 계십니다’","p":"에스겔 48:35","b":"에스겔"},{"d":"2018-08-05","t":"하나님의 이름(4) - 여호와 로이 ‘하나님은 나의 목자이십니다’","p":"시편 23편","b":"시편"},{"d":"2018-08-12","t":"하나님의 이름(5) - 조 휘돌 ‘하나님은 영원한 생수이십니다.’","p":"요한복음 4:13-14","b":"요한복음"},{"d":"2018-08-19","t":"하나님의 이름(6) - 여호와 샬롬 ‘하나님은 우리의 평안이십니다.’","p":"사사기 6:11-24","b":"사사기"},{"d":"2018-08-26","t":"하나님의 이름(7) - 여호와 라파 ‘하나님은 치료자이십니다’","p":"출애굽기 15:22-26","b":"출애굽기"},{"d":"2018-09-02","t":"하나님의 이름(8) - 엘 샤다이 ‘하나님은 전능하신 분입니다’","p":"창세기 17:1-8","b":"창세기"},{"d":"2018-09-09","t":"하나님의 이름(9) - 여호와(야훼) ‘하나님은 스스로 계시는 분입니다’","p":"출애굽기 3:13-15","b":"출애굽기"},{"d":"2018-09-16","t":"하나님의 이름(10) - 나함 ‘하나님은 위로하시는 분입니다’","p":"이사야 61:1-3","b":"이사야"},{"d":"2018-09-23","t":"당신의 말은 힘을 가지고 있습니다.","p":"잠언 16:24","b":"잠언"},{"d":"2018-09-30","t":"과거에 매이지 않는 삶","p":"고린도후서 5:17","b":"고린도후서"},{"d":"2018-10-07","t":"무엇 때문에 신앙생활을 하십니까?","p":"히브리서 11:1-40","b":"히브리서"},{"d":"2018-10-14","t":"어떠한 신앙생활을 하십니까?","p":"고린도전서 1:26-31","b":"고린도전서"},{"d":"2018-10-21","t":"야곱의 인생전환점, 우리에게도 필요하지 않을까요?","p":"창세기 32:13-32","b":"창세기"},{"d":"2018-10-28","t":"견고한 터를 세워주시는 하나님","p":"베드로전서 5:7-11","b":"베드로전서"},{"d":"2018-11-04","t":"우리를 도우라","p":"사도행전 16:6-10","b":"사도행전","s":"우경식 선교사"},{"d":"2018-11-11","t":"이 시대를 사는 성도로서 나의 사명은 무엇일까?","p":"로마서 12:2","b":"로마서"},{"d":"2018-11-18","t":"주님의 열매를 거두는 제자의 첫걸음","p":"마가복음 1:16-18","b":"마가복음"},{"d":"2018-11-25","t":"기적이 만들어지는 시간","p":"마태복음 14:22-23","b":"마태복음"},{"d":"2018-12-02","t":"끝까지 사랑하신 예수님","p":"요한복음 13:1","b":"요한복음","s":"고의권 목사"},{"d":"2018-12-09","t":"골라서가 아닌 찾아서 사용하시는 하나님","p":"사무엘상 16:6-13","b":"사무엘상"},{"d":"2018-12-16","t":"하나님은 사랑이시라","p":"요한일서 4:7-21","b":"요한일서"},{"d":"2018-12-23","t":"하나님은 사랑이시라(2)","p":"요한일서 4:7-21","b":"요한일서"},{"d":"2018-12-30","t":"내려놓고 가야할 것들","p":"디모데후서 3:1-5","b":"디모데후서"},{"d":"2018-12-31","t":"용서할 수 있는 것이 복입니다","p":"마태복음 6:14-15","b":"마태복음","k":"송구영신예배"},{"d":"2019-01-06","t":"약속은 약속입니다","p":"신명기 26:16-19","b":"신명기"},{"d":"2019-01-13","t":"너를 지키시는 이","p":"시편 121편 1-8","b":"시편","s":"정용수 선교사"},{"d":"2019-01-20","t":"그리스도인의 명분을 가볍게 여기지 맙시다","p":"창세기 25:27-34","b":"창세기"},{"d":"2019-01-27","t":"주인이 힘이 있으면 종들도 힘이 있습니다.","p":"역대상 29:10-12","b":"역대상"},{"d":"2019-02-03","t":"역사 속에 나타난 하나님의 일하심","p":"마태복음 1:18-25","b":"마태복음"},{"d":"2019-02-10","t":"왕이신 예수님","p":"마태복음 2:1-12","b":"마태복음"},{"d":"2019-02-17","t":"회개의 선포","p":"마태복음 3:1-12","b":"마태복음"},{"d":"2019-02-24","t":"내 백성을 위로하라","p":"이사야 40:1","b":"이사야","s":"김미경 목사"},{"d":"2019-03-03","t":"자리를 들고 걷다","p":"요한복음 5:1-9","b":"요한복음"},{"d":"2019-03-10","t":"단지파 그들은 어디로 갔는가?","p":"요한계시록 7:1-8","b":"요한계시록"},{"d":"2019-03-17","t":"광야에서 껍질을 벗다","p":"신명기 8:1-10","b":"신명기"},{"d":"2019-03-24","t":"나는 너희의 하나님이 되겠고 너희는 내 백성이 되리라","p":"예레미야 7:23","b":"예레미야"},{"d":"2019-03-31","t":"여호와의 언약궤","p":"민수기 10:33-36","b":"민수기"},{"d":"2019-04-07","t":"성전의 터를 준비하시는 하나님","p":"역대상 21:1-27","b":"역대상"},{"d":"2019-04-14","t":"지금도 도우시는 하나님","p":"히브리서 4:14-16","b":"히브리서"},{"d":"2019-04-21","t":"증거 위에 세우신 믿음","p":"사도행전 17:30-31","b":"사도행전"},{"d":"2019-04-28","t":"야망인가 소명인가","p":"창세기 37:5-11","b":"창세기"},{"d":"2019-05-05","t":"어린이와 부모에게","p":"누가복음 18:15-17 / 에베소서 6:1-4","b":"누가복음"},{"d":"2019-05-12","t":"사랑했기 때문에","p":"사사기 16:4-6","b":"사사기","s":"정유수 목사"},{"d":"2019-05-19","t":"어쩌란 말인가요","p":"사무엘하 6:6-11","b":"사무엘하"},{"d":"2019-05-26","t":"합력하여 선을 이룹니다","p":"로마서 8:28","b":"로마서"},{"d":"2019-06-02","t":"완고함의 비극에서 신뢰함의 안식으로","p":"출애굽기 7:1-7","b":"출애굽기"},{"d":"2019-06-09","t":"기대","p":"이사야 54:2-5","b":"이사야","s":"정상철 선교사"},{"d":"2019-06-16","t":"대답할 수 있는 그리스도인(1) -삶의 목적","p":"마태복음 6:24-34","b":"마태복음"},{"d":"2019-06-23","t":"대답할 수 있는 그리스도인(2) -삶의 방식⓵","p":"호세아 10:12","b":"호세아"},{"d":"2019-06-30","t":"대답할 수 있는 그리스도인(3) -삶의 방식⓶- “화평케 하는 삶”","p":"마태복음 5:9","b":"마태복음"},{"d":"2019-07-07","t":"그래도 뿌려야겠죠!","p":"시편 126:5-6","b":"시편","s":"김환삼 선교사"},{"d":"2019-07-14","t":"대답할 수 있는 그리스도인(4) -삶의 방식⓷- “용서하는 삶”","p":"에베소서 4:32","b":"에베소서"},{"d":"2019-07-21","t":"대답할 수 있는 그리스도인(4) -삶의 방식⓸","p":"고린도전서 12:12-27","b":"고린도전서"},{"d":"2019-07-28","t":"대답할 수 있는 그리스도인(6) -삶의 방식⓹- “섬기는 삶”","p":"히브리서 13:1,2","b":"히브리서"},{"d":"2019-08-04","t":"대답할 수 있는 그리스도인(7) -삶의 방식⓺- “경작하는 삶”","p":"창세기 2:15","b":"창세기"},{"d":"2019-08-11","t":"대답할 수 있는 그리스도인(8) -삶의 방식⓻- “감사하는 삶”","p":"시편 50:23","b":"시편"},{"d":"2019-08-18","t":"대답할 수 있는 그리스도인(9) -삶의 방식⓼- “기도하는 삶”","p":"빌립보서 4:6-7","b":"빌립보서"},{"d":"2019-08-25","t":"대답할 수 있는 그리스도인(10) -삶의 방식⓽- “전하는 삶”","p":"고린도전서 1:18-25","b":"고린도전서"},{"d":"2019-09-01","t":"대답할 수 있는 그리스도인(11) -삶의 방식⓾- “경외하는 삶”","p":"출애굽기 1:8-22","b":"출애굽기"},{"d":"2019-09-08","t":"대답할 수 있는 그리스도인(12) -삶의 방식⑪- “가르치는 삶”","p":"마태복음 28:20","b":"마태복음"},{"d":"2019-09-15","t":"대답할 수 있는 그리스도인(13) -삶의 방식⑫- “충성하는 삶”","p":"고린도전서 4:1-2","b":"고린도전서"},{"d":"2019-09-22","t":"대답할 수 있는 그리스도인(14) -삶의 방식⑬- “따르는 삶”","p":"마가복음 1:16-20","b":"마가복음"},{"d":"2019-09-29","t":"대답할 수 있는 그리스도인(15) -삶의 방식⑭- “거룩한 삶”","p":"베드로전서 1:13-15","b":"베드로전서"},{"d":"2019-10-06","t":"대답할 수 있는 그리스도인(16) - 삶의 방식⑮ “분투의 삶”","p":"에베소서 6:10-20","b":"에베소서"},{"d":"2019-10-13","t":"대답할 수 있는 그리스도인(17) -삶의 방식⑯- “맡기는 삶”","p":"창세기 32:22-32","b":"창세기"},{"d":"2019-10-20","t":"대답할 수 있는 그리스도인(18) -삶의 방식⑰- “담대한 삶”","p":"신명기 31:1-8","b":"신명기"},{"d":"2019-10-27","t":"대답할 수 있는 그리스도인(19) -삶의 방식⑱- “온유한 삶”","p":"마태복음 5:5","b":"마태복음"},{"d":"2019-11-03","t":"대답할 수 있는 그리스도인(20) -삶의 방식⑲- “성공의 삶”","p":"마가복음 14:36","b":"마가복음"},{"d":"2019-11-10","t":"대답할 수 있는 그리스도인(21) -삶의 방식⑳- “새로운 삶”","p":"고린도후서 5:1-21","b":"고린도후서"},{"d":"2019-11-17","t":"감사하라","p":"시편 136편","b":"시편"},{"d":"2019-11-24","t":"어려움이 찾아올 때 우리가 기억해야 할 것","p":"시편 13편 1-6","b":"시편","s":"한필태 선교사"},{"d":"2019-12-01","t":"대답할 수 있는 그리스도인(22) - 삶의 방식㉑ “기다리는 삶”","p":"고린도전서 16:21-24","b":"고린도전서"},{"d":"2019-12-08","t":"대답할 수 있는 그리스도인(23) - 삶의 방식㉒ “은혜의 삶”","p":"신명기 8:1-6","b":"신명기"},{"d":"2019-12-15","t":"대답할 수 있는 그리스도인(24) - 삶의 방식㉓ “평안의 삶”","p":"마가복음 6:45-52","b":"마가복음"},{"d":"2019-12-22","t":"임마누엘","p":"마태복음 1:16-25","b":"마태복음"},{"d":"2019-12-24","t":"사막에서 시내가 흐를 것임이라","p":"이사야 35:1-10","b":"이사야","k":"성탄전야예배"},{"d":"2019-12-25","t":"왕이신 목자 예수","p":"마태복음 2:1-12","b":"마태복음","k":"성탄예배"},{"d":"2019-12-29","t":"치우치지 않는 삶","p":"여호수아 23:6","b":"여호수아"},{"d":"2020-01-05","t":"쉐마(1) - ‘여호와는 오직 유일하시다’","p":"신명기 6:4","b":"신명기"},{"d":"2020-01-12","t":"쉐마(2) - ‘네 하나님 여호와를 사랑하라’","p":"신명기 6:5","b":"신명기"},{"d":"2020-01-19","t":"쉐마(3) - ‘마음에 새기라’","p":"신명기 6:6","b":"신명기"},{"d":"2020-01-26","t":"쉐마(4) - ‘가르치고 강론하라’","p":"신명기 6:7","b":"신명기"},{"d":"2020-02-02","t":"쉐마(5) - ‘기호와 표로 삼고’","p":"신명기 6:8","b":"신명기"},{"d":"2020-02-09","t":"쉐마(6) - ‘집 문설주와 바깥문에 기록하라’","p":"신명기 6:9","b":"신명기"},{"d":"2020-02-16","t":"고통에 대하여(1)-‘어찌하여’","p":"하박국 1:1-4","b":"하박국"},{"d":"2020-02-23","t":"고통에 대하여(2)-‘옳으니이까’","p":"하박국 1:12-17","b":"하박국"},{"d":"2020-03-01","t":"하나님의 심판에 대하여","p":"하박국 1:12-17","b":"하박국"},{"d":"2020-03-08","t":"어떻게 대답하실는지 보리라","p":"하박국 2:1-3","b":"하박국"},{"d":"2020-03-15","t":"나로 나의 높은 곳을 다니게 하시네","p":"하박국 3:1-4","b":"하박국"},{"d":"2020-03-22","t":"돌아서라","p":"디모데후서 3:1-5","b":"디모데후서"},{"d":"2020-03-29","t":"돌아서라","p":"디모데후서 3:1-5","b":"디모데후서"},{"d":"2020-04-05","t":"오늘 너희에게 이루어졌다","p":"누가복음 4:16-21","b":"누가복음"},{"d":"2020-04-12","t":"부활의 의미","p":"고린도전서 15:1-11","b":"고린도전서"},{"d":"2020-04-19","t":"하나님의 딜레마","p":"요한복음 3:16","b":"요한복음"},{"d":"2020-04-26","t":"책임을 이행하리라","p":"룻기 3:7-14","b":"룻기"},{"d":"2020-05-03","t":"고아 같이 버려두지 아니하리라","p":"요한복음 14:18","b":"요한복음"},{"d":"2020-05-10","t":"아버지가 된다는 것","p":"고린도전서 4:15","b":"고린도전서"},{"d":"2020-06-14","t":"우리는 그가 만드신 바라","p":"에베소서 2:1-10","b":"에베소서"},{"d":"2020-06-21","t":"속사람을 능력으로 강건하게","p":"에베소서 3:14-21","b":"에베소서"},{"d":"2020-06-28","t":"그가 어떤 사람은","p":"에베소서 4:11-16","b":"에베소서"},{"d":"2020-07-05","t":"빛의 자녀들처럼 행하라","p":"에베소서 5:1-14","b":"에베소서"},{"d":"2020-07-12","t":"모든 일을 행한 후에 서기 위함이라","p":"에베소서 6:1-17","b":"에베소서"},{"d":"2020-07-19","t":"살든지 죽든지","p":"빌립보서 1:12-21","b":"빌립보서"},{"d":"2020-07-26","t":"너희 안에 이 마음을 품으라","p":"빌립보서 2:1-11","b":"빌립보서"},{"d":"2020-08-02","t":"오직 아직","p":"빌립보서 3:7-16","b":"빌립보서"},{"d":"2020-08-09","t":"주 안에서 기뻐하라","p":"빌립보서 4:4-9","b":"빌립보서"},{"d":"2020-08-16","t":"모든 것 위에 계신 하나님, 예수","p":"골로새서 1:15-20","b":"골로새서"},{"d":"2020-08-23","t":"거룩하고 흠이 없고 책망할 것이 없는 자","p":"골로새서 1:21-23","b":"골로새서"},{"d":"2020-08-30","t":"믿음에 굳게 서서","p":"골로새서 2:1-7","b":"골로새서"},{"d":"2020-09-06","t":"그리스도께서 너희 마음을 주장하게 하라","p":"골로새서 3:12-17","b":"골로새서"},{"d":"2020-09-13","t":"바울의 루틴","p":"골로새서 4:1-18","b":"골로새서"},{"d":"2020-09-20","t":"바울과 빌레몬에게 주어진 선하고 고귀한 사역","p":"빌레몬서 1:8-22","b":"빌레몬서"},{"d":"2020-09-27","t":"다른 복음은 없나니","p":"갈라디아서 1:6-10","b":"갈라디아서"},{"d":"2020-10-04","t":"내가 그리스도와 함께 십자가에 못박혔나니","p":"갈라디아서 2:20","b":"갈라디아서"},{"d":"2020-10-11","t":"아브라함과 함께 받은 복","p":"갈라디아서 3:6-9","b":"갈라디아서"},{"d":"2020-10-18","t":"다시 그들에게 종 노릇 하려 하느냐","p":"갈라디아서 4:8-11","b":"갈라디아서"},{"d":"2020-10-25","t":"다시는 종의 멍에를 메지 말라","p":"갈라디아서 5:1-6","b":"갈라디아서"},{"d":"2020-11-01","t":"자유의 종이 되십시오","p":"갈라디아서 5:13-24","b":"갈라디아서"},{"d":"2020-11-08","t":"자유의 종이 되십시오(2)","p":"갈라디아서 6:1-10","b":"갈라디아서"},{"d":"2020-11-15","t":"모든 믿는 자의 본","p":"데살로니가전서 1:2-3","b":"데살로니가전서"},{"d":"2020-11-22","t":"감사는 최고의 예배입니다","p":"시편 50:23","b":"시편"},{"d":"2020-11-29","t":"우리에게 자랑할 만한 것이 있다면","p":"데살로니가전서 2:17-20","b":"데살로니가전서"},{"d":"2020-12-06","t":"거룩함에 흠이 없게 하시기를","p":"데살로니가전서 3:11-13","b":"데살로니가전서"},{"d":"2020-12-13","t":"하나님의 뜻은 너희의 거룩함이라","p":"데살로니가전서 4:1-8","b":"데살로니가전서"},{"d":"2020-12-20","t":"낮에 속한 사람들","p":"데살로니가전서 5:1-11","b":"데살로니가전서"},{"d":"2020-12-25","t":"사랑하셔서","p":"요한복음 3:16","b":"요한복음","k":"성탄예배"},{"d":"2020-12-27","t":"항상 선을 따르라","p":"데살로니가전서 5:12-21","b":"데살로니가전서"},{"d":"2020-12-31","t":"주 예수 그리스도의 은혜와 하나님의 사랑과 성령의 교통하심이 너희 무리와 함께 있을지어다","p":"고린도후서 13:13","b":"고린도후서","k":"송구영신예배"},{"d":"2021-01-03","t":"안식으로 갚으시는 고난","p":"데살로니가후서 1:3-12","b":"데살로니가후서"},{"d":"2021-01-10","t":"전능자의 지지와 축복","p":"민수기 6:24-27","b":"민수기"},{"d":"2021-01-17","t":"미혹되지 말고 순리를 따르라","p":"데살로니가전서 2:1-17","b":"데살로니가전서"},{"d":"2021-01-24","t":"끝으로...원하노라","p":"데살로니가전서 3:1-5","b":"데살로니가전서"},{"d":"2021-01-31","t":"모세가 죽은 후에","p":"여호수아 1:1-6","b":"여호수아"},{"d":"2021-02-07","t":"극히 담대하여","p":"여호수아 1:7-9","b":"여호수아"},{"d":"2021-02-14","t":"차지하게 하시는 땅을 차지하기 위해","p":"여호수아 1:12-18","b":"여호수아"},{"d":"2021-02-21","t":"여호와께서 행한 일을","p":"여호수아 2:1-14","b":"여호수아"},{"d":"2021-02-28","t":"그 뒤를 따르라","p":"여호수아 3:1-6","b":"여호수아"},{"d":"2021-03-07","t":"보라 온 땅의 주의 언약궤가 너희 앞에서 요단을 건너가나니","p":"여호수아 3:7-13","b":"여호수아"},{"d":"2021-03-14","t":"가르치고 엮으시는 하나님","p":"여호수아 4:1-9","b":"여호수아"},{"d":"2021-03-21","t":"새롭게 하시는 하나님","p":"여호수아 5:1-12","b":"여호수아"},{"d":"2021-03-28","t":"참된 영광","p":"요한복음 12:20-26","b":"요한복음"},{"d":"2021-04-04","t":"살아 있는 자","p":"누가복음 24:1-12","b":"누가복음"},{"d":"2021-04-11","t":"그리하면 그 성벽이 무너져 내리리니","p":"여호수아 6:1-5","b":"여호수아"},{"d":"2021-04-18","t":"성벽이 무너져 내리니라","p":"여호수아 6:6-21","b":"여호수아"},{"d":"2021-04-25","t":"다시 여호와께로","p":"열왕기하 23:25","b":"열왕기하","s":"최원진 목사 (침례신학대학교 교수)"},{"d":"2021-05-02","t":"아골 골짜기에서 소망의 문으로","p":"여호수아 7:22-26","b":"여호수아"},{"d":"2021-05-09","t":"부모를 즐겁게 하라","p":"잠언 23:25","b":"잠언"},{"d":"2021-05-16","t":"어디에 서고 싶은가?","p":"여호수아 8:30-35","b":"여호수아"},{"d":"2021-05-23","t":"묻지 아니하고","p":"여호수아 9:14-21","b":"여호수아"},{"d":"2021-05-30","t":"우리에게 올라와 우리를 구하소서","p":"여호수아 10:6-15","b":"여호수아"},{"d":"2021-06-06","t":"보이는게 다가 아닙니다","p":"여호수아 11:1-5","b":"여호수아"},{"d":"2021-06-13","t":"이 산지를 내게 주소서","p":"여호수아 14:6-15","b":"여호수아"},{"d":"2021-06-20","t":"온전함과 진실함으로 그를 섬기라","p":"여호수아 24:14-15","b":"여호수아"},{"d":"2021-06-27","t":"태초에 말씀이 계시니라","p":"요한복음 1:1-5","b":"요한복음"},{"d":"2021-07-04","t":"은혜 위의 은혜이신 예수님","p":"요한복음 1:14-18","b":"요한복음"},{"d":"2021-07-11","t":"가나의 혼인잔치가 주는 의미","p":"요한복음 2:1-12","b":"요한복음"},{"d":"2021-07-18","t":"장사하는 집을 만들지 말라","p":"요한복음 2:13-22","b":"요한복음"},{"d":"2021-07-25","t":"생명으로 이끄는 관심사","p":"요한복음 3:1-8","b":"요한복음"},{"d":"2021-08-01","t":"그리스도인의 삶","p":"사도행전 11:26","b":"사도행전","s":"김환삼 선교사"},{"d":"2021-08-08","t":"내 삶의 우물","p":"요한복음 4:1-10","b":"요한복음"},{"d":"2021-08-15","t":"당신의 고향에서 환영받지 못하신 예수님","p":"요한복음 4:43-45","b":"요한복음"},{"d":"2021-08-22","t":"진정한 베데스다","p":"요한복음 5:1-9","b":"요한복음"},{"d":"2021-08-29","t":"보내신 이의 뜻대로","p":"요한복음 5:30","b":"요한복음"},{"d":"2021-09-05","t":"시험하고자 하심이라","p":"요한복음 6:1-15","b":"요한복음"},{"d":"2021-09-12","t":"예수님이 형제들에게","p":"요한복음 7:1-9","b":"요한복음"},{"d":"2021-09-19","t":"예수님이 여인에게","p":"요한복음 8:1-11","b":"요한복음"},{"d":"2021-09-26","t":"무엇이 죄며 무엇이 자유인가","p":"요한복음 8:30-41","b":"요한복음"},{"d":"2021-10-03","t":"밝은 눈으로 왔더라","p":"요한복음 9:1-12","b":"요한복음"},{"d":"2021-10-10","t":"우리의 행전","p":"사도행전 1:6-8","b":"사도행전","s":"고현묵 선교사"},{"d":"2021-10-17","t":"빼앗기지 않는 기쁨","p":"요한복음 10:27-30","b":"요한복음"},{"d":"2021-10-24","t":"믿게 하려","p":"요한복음 11:40-44","b":"요한복음"},{"d":"2021-10-31","t":"하나님이 귀하게 여기는 사람","p":"요한복음 12:20-26","b":"요한복음"},{"d":"2021-11-07","t":"하나님의 영광을 위해","p":"요한복음 12:27-33","b":"요한복음"},{"d":"2021-11-14","t":"서로 발을 씻어 주는 것이 옳으니라","p":"요한복음 13:12-17","b":"요한복음"},{"d":"2021-11-21","t":"하늘에서 너희의 상이 큼이라","p":"마태복음 5:1-12","b":"마태복음"},{"d":"2021-11-28","t":"하나님 아버지를 보았다","p":"요한복음 14:8-11","b":"요한복음"},{"d":"2021-12-05","t":"나를 믿는 자는 내가 하는 일을 그도 할 것이요","p":"요한복음 14:12-24","b":"요한복음"},{"d":"2021-12-12","t":"나는 포도나무요 아버지는 농부라","p":"요한복음 15:1-8","b":"요한복음"},{"d":"2021-12-19","t":"사랑의 기쁨","p":"요한복음 15:9-17","b":"요한복음"},{"d":"2021-12-24","t":"누구든지 하나님을 사랑하노라 하고","p":"요한일서 4:20","b":"요한일서","k":"성탄전야예배"},{"d":"2021-12-26","t":"그래도 주를 따라","p":"요한복음 15:22-25, 16","b":"요한복음"},{"d":"2021-12-31","t":"성령을 따라 행하라","p":"갈라디아서 5:16","b":"갈라디아서","k":"송구영신예배"},{"d":"2022-01-02","t":"새 포도주는 새 부대에","p":"마가복음 2:18-22","b":"마가복음"},{"d":"2022-01-09","t":"제자들을 모으신 예수님","p":"누가복음 6:12-16","b":"누가복음"},{"d":"2022-01-16","t":"나는 섬기는 자로 너희 중에 있노라","p":"누가복음 22:24-27","b":"누가복음"},{"d":"2022-01-23","t":"작은 믿음을 크게 보시는 하나님","p":"창세기 18:22-32","b":"창세기"},{"d":"2022-01-30","t":"세 겹 줄은 쉽게 끊어지지 않는다","p":"전도서 4:9-12","b":"전도서"},{"d":"2022-02-06","t":"거구가 아닌 거룩으로","p":"사무엘상 17:41-47","b":"사무엘상"},{"d":"2022-02-13","t":"하나님의 사랑을 이해하면 기쁨이 회복됩니다.","p":"마태복음 5:45","b":"마태복음"},{"d":"2022-02-20","t":"칭찬받는 종이 됩시다.","p":"마태복음 25:21","b":"마태복음"},{"d":"2022-02-27","t":"주님과 함께 깨어 있길 바랍니다.","p":"마태복음 26:36-46","b":"마태복음"},{"d":"2022-03-06","t":"그리스도인의 삶을 회복합시다","p":"로마서 12:1-21","b":"로마서"},{"d":"2022-03-13","t":"시련 앞에서 설 때","p":"시편 13편","b":"시편"},{"d":"2022-03-20","t":"시련 앞에서 설 때","p":"시편 13편","b":"시편"},{"d":"2022-03-27","t":"너희 지체를 의의 무기로 하나님께 드리라","p":"로마서 6:12-13","b":"로마서"},{"d":"2022-04-03","t":"먼저 안을 깨끗이 하라","p":"마태복음 23:25-28","b":"마태복음"},{"d":"2022-04-10","t":"불러내시는 하나님","p":"창세기 3:9","b":"창세기"},{"d":"2022-04-17","t":"너는 돌이킨 후에","p":"누가복음 22:31-34","b":"누가복음"},{"d":"2022-04-24","t":"그 여자가 행한 일","p":"마가복음 14:3-9","b":"마가복음"},{"d":"2022-05-01","t":"아이들을 데리고 오매","p":"마태복음 19:13-14","b":"마태복음"},{"d":"2022-05-08","t":"하나님이 좋아하시는 것","p":"사무엘상 15:22-23","b":"사무엘상"},{"d":"2022-05-15","t":"신앙의 딥러닝","p":"사도행전 17:11","b":"사도행전"},{"d":"2022-05-22","t":"사랑은 언제나","p":"고린도전서 13:4-7","b":"고린도전서"},{"d":"2022-05-29","t":"우크라이나를 위해 울어주세요","p":"예레미야 9:17-18","b":"예레미야"},{"d":"2022-06-05","t":"악을 선으로 이기라","p":"로마서 12:21","b":"로마서"},{"d":"2022-06-12","t":"영원하신 예수님과 성도의 삶","p":"히브리서 13:1-8","b":"히브리서","s":"고의권 선교사"},{"d":"2022-06-19","t":"마음 판에 새긴 진리","p":"잠언 3:3-5","b":"잠언"},{"d":"2022-06-26","t":"여호와는 나의 능력과 찬송, 나의 구원","p":"시편 118:5-14","b":"시편"},{"d":"2022-07-03","t":"우리 믿음의 기초","p":"로마서 10:9-13","b":"로마서"},{"d":"2022-07-10","t":"집에 있는 교회","p":"고린도전서 16:19","b":"고린도전서"},{"d":"2022-07-17","t":"예수님은 세상에 보내진 선물입니다","p":"로마서 6:23","b":"로마서"},{"d":"2022-07-24","t":"너를 시험하사 알려함이라","p":"신명기 8:1-8","b":"신명기"},{"d":"2022-07-31","t":"강력한 그리스도인","p":"빌립보서 4:12-13","b":"빌립보서"},{"d":"2022-08-07","t":"하나님의 위로","p":"시편 23편","b":"시편"},{"d":"2022-08-14","t":"여전히 하나님을 바랍니다","p":"시편 42편","b":"시편"},{"d":"2022-08-21","t":"내 영을 모든 육체에 부어 주리니","p":"사도행전 2:14-21","b":"사도행전"},{"d":"2022-08-28","t":"우리를 지으신 목적","p":"이사야 43:21","b":"이사야"},{"d":"2022-09-04","t":"하나님의 음성을 듣는 사람","p":"사무엘상 3:1-14","b":"사무엘상"},{"d":"2022-09-11","t":"(제목 미확인)","p":"사무엘상 4:1-11","b":"사무엘상"},{"d":"2022-09-18","t":"하나님의 자기 계시","p":"사무엘상 5:1-12","b":"사무엘상"},{"d":"2022-09-25","t":"삶을 바꾸는 회개","p":"사무엘상 7:1-14","b":"사무엘상"},{"d":"2022-10-02","t":"그런데도 원하십니까?","p":"사무엘상 8:10-18","b":"사무엘상"},{"d":"2022-10-09","t":"기도를 쉬지 않겠다","p":"사무엘상 12:20-25","b":"사무엘상"},{"d":"2022-10-16","t":"흔들리지 마십시오","p":"사무엘상 13:9-14","b":"사무엘상"},{"d":"2022-10-23","t":"당신의 골리앗은 무엇입니까","p":"사무엘상 17:41-47","b":"사무엘상"},{"d":"2022-10-30","t":"사울이 다윗을 주목하였더라","p":"사무엘상 18:5-9","b":"사무엘상"},{"d":"2022-11-06","t":"여호와께서...","p":"사무엘상 24:4-7","b":"사무엘상"},{"d":"2022-11-13","t":"여호와께 묻고자","p":"사무엘상 30:1-10","b":"사무엘상"},{"d":"2022-11-20","t":"감사로 제사 드리는 자가 됩시다","p":"시편 50:23","b":"시편"},{"d":"2022-11-27","t":"데살로니가교회에게","p":"데살로니가전서 1:1-10","b":"데살로니가전서"},{"d":"2022-12-04","t":"형제들아 굳건하게 서서","p":"데살로니가후서 2:13-17","b":"데살로니가후서"},{"d":"2022-12-11","t":"단호하고 결의 있는 신앙","p":"데살로니가전서 1:6-10","b":"데살로니가전서"},{"d":"2022-12-18","t":"하나님이 우리와 함께 계십니다","p":"마태복음 1:23","b":"마태복음"},{"d":"2022-12-25","t":"사랑의 확증","p":"로마서 5:8","b":"로마서"},{"d":"2023-01-01","t":"행함으로 확증된 믿음의 사람이 됩시다","p":"야고보서 2:22","b":"야고보서"},{"d":"2023-01-08","t":"시험으로 검증된 믿음의 사람이 됩시다","p":"야고보서 1:1-84","b":"야고보서"},{"d":"2023-01-15","t":"영적으로 균형 잡힌 믿음의 사람이 됩시다","p":"야고보서 1:9-11","b":"야고보서"},{"d":"2023-01-22","t":"유혹을 이기는 믿음의 사람이 됩시다","p":"야고보서 1:13-18","b":"야고보서"},{"d":"2023-01-29","t":"믿음을 행동으로 옮기는 삶","p":"야고보서 1:19-27","b":"야고보서","s":"최두호 전도사"},{"d":"2023-02-05","t":"혀를 다스리는 믿음의 사람이 됩시다","p":"야고보서 3:1-12","b":"야고보서"},{"d":"2023-02-12","t":"지혜를 선용하는 믿음의 사람이 됩시다","p":"야고보서 3:13-18","b":"야고보서"},{"d":"2023-02-19","t":"마음의 가지치기를 잘하는 믿음의 사람이 됩시다","p":"야고보서 4:1-10","b":"야고보서"},{"d":"2023-02-26","t":"우월감에 빠지지 않는 믿음의 사람이 됩시다","p":"야고보서 4:11-17","b":"야고보서"},{"d":"2023-03-05","t":"선한 일에 참여하는 믿음의 사람이 됩시다","p":"야고보서 5:1-6","b":"야고보서"},{"d":"2023-03-12","t":"인내의 결말을 보는 믿음의 사람이 됩시다","p":"야고보서 5:7-11","b":"야고보서"},{"d":"2023-03-19","t":"기도로 회복되는 믿음의 사람이 됩시다","p":"야고보서 5:13-18","b":"야고보서"},{"d":"2023-03-26","t":"내 백성들아 들을지어다","p":"시편 50편","b":"시편"},{"d":"2023-04-02","t":"필요인가? 사명인가?","p":"사도행전 16:6-10","b":"사도행전","s":"김환삼 선교사"},{"d":"2023-04-09","t":"믿고 침례를 받으면 구원을 얻을 것이요","p":"마가복음 16:9-20","b":"마가복음"},{"d":"2023-04-16","t":"지극히 작은 자를 택하시는 하나님","p":"신명기 7:7","b":"신명기"},{"d":"2023-04-23","t":"안식","p":"창세기 2:1-3","b":"창세기"},{"d":"2023-04-30","t":"타락","p":"창세기 3:1-7","b":"창세기"},{"d":"2023-05-07","t":"백문이 불여일견","p":"신명기 6:20-25","b":"신명기","s":"최두호 전도사"},{"d":"2023-05-14","t":"폭력의 시작","p":"창세기 4:1-7","b":"창세기"},{"d":"2023-05-21","t":"심판","p":"창세기 5:21-24","b":"창세기"},{"d":"2023-05-28","t":"노아는 여호와께 은혜를 입었더라","p":"창세기 6:8","b":"창세기"},{"d":"2023-06-04","t":"정결한 짐승은 암수 일곱씩","p":"창세기 7:1-5","b":"창세기"},{"d":"2023-06-11","t":"번제로 제단에 드렸더니","p":"창세기 8:20-22","b":"창세기"},{"d":"2023-06-18","t":"예수쟁이들의 나라","p":"사도행전 2:43-47","b":"사도행전","s":"신현대 목사"},{"d":"2023-06-25","t":"허물에 대하여","p":"창세기 9:18-27","b":"창세기"},{"d":"2023-07-02","t":"니므롯을 원하는 세대","p":"창세기 10:8-12","b":"창세기"},{"d":"2023-07-09","t":"사이에 선 그리스도인","p":"열왕기하 7:9","b":"열왕기하","s":"정용수 선교사"},{"d":"2023-07-16","t":"사람들이 건설하는 그 성읍과 탑","p":"창세기 11:1-9","b":"창세기"},{"d":"2023-07-23","t":"여호와의 말씀을 따라갔고","p":"창세기 12:1-4","b":"창세기"},{"d":"2023-07-30","t":"주님과 함께 걷는 열심","p":"마태복음 26:47-54","b":"마태복음","s":"최두호 전도사"},{"d":"2023-08-06","t":"사랑의 확증","p":"로마서 5:8","b":"로마서"},{"d":"2023-08-13","t":"믿음의 길에서 문제와 갈등을 만날 때","p":"창세기 13:1-18","b":"창세기"},{"d":"2023-08-20","t":"역사는 하나님의 주권 아래 있다","p":"창세기 14:1-20","b":"창세기"},{"d":"2023-08-27","t":"침례에 관하여","p":"베드로전서 3:21","b":"베드로전서"},{"d":"2023-09-03","t":"하나님의 큰 그림","p":"창세기 1:1-20","b":"창세기"},{"d":"2023-09-10","t":"가나안 땅에 거주한 지 십년 후","p":"창세기 16:1-3","b":"창세기"},{"d":"2023-09-17","t":"아, 하나님! 웃음을 주시는 분","p":"창세기 17:17-18","b":"창세기"},{"d":"2023-09-24","t":"영접하는 것이 믿음입니다.","p":"창세기 18:1-15","b":"창세기"},{"d":"2023-10-01","t":"여호와께서 자비를 더하심이었더라","p":"창세기 19:1-16","b":"창세기"},{"d":"2023-10-08","t":"결국은 하나님","p":"창세기 20:1-18","b":"창세기"},{"d":"2023-10-15","t":"말씀하신대로","p":"창세기 21:1-21","b":"창세기"},{"d":"2023-10-22","t":"나의 말을 준행하였음이니라","p":"창세기 22:1-18","b":"창세기"},{"d":"2023-10-29","t":"예수님을 붙잡아야 합니다.","p":"마가복음 5:25-34","b":"마가복음"},{"d":"2023-11-05","t":"소유지로 확정되었더라","p":"창세기 23:1-20","b":"창세기"},{"d":"2023-11-12","t":"돌아가지 아니하도록 하라","p":"창세기 24:1-9","b":"창세기"},{"d":"2023-11-19","t":"여호와께서 아니하시면 헛되다","p":"시편 127:1","b":"시편"},{"d":"2023-11-26","t":"장자의 명분을 팔다","p":"창세기 25:27-34","b":"창세기"},{"d":"2023-12-03","t":"두려워하지 마세요","p":"누가복음 5:33-36","b":"누가복음","s":"신현대 목사"},{"d":"2023-12-10","t":"두려워함이었더라","p":"창세기 26:1-7","b":"창세기"},{"d":"2023-12-17","t":"크게 떨며 이르되","p":"창세기 27:33","b":"창세기"},{"d":"2023-12-24","t":"하나님의 집, 하늘의 문","p":"창세기 28:10-19","b":"창세기"},{"d":"2023-12-25","t":"작은 콘서트와 말씀","p":"","b":"","k":"성탄예배"},{"d":"2023-12-31","t":"말씀 따라 성실한 삶","p":"창세기 45:7-8","b":"창세기","s":"최두호 전도사"},{"d":"2023-12-31","t":"젊은 교회 강한 교회","p":"전도서 4:12","b":"전도서","k":"송구영신예배"},{"d":"2024-01-07","t":"섬세하신 하나님","p":"창세기 29:31-35","b":"창세기"},{"d":"2024-01-14","t":"불행의 씨, 행복의 씨","p":"창세기 30:1-24","b":"창세기"},{"d":"2024-01-21","t":"파국과 동의 그리고 회항","p":"창세기 31:1-13","b":"창세기"},{"d":"2024-01-28","t":"브니엘, 이스라엘","p":"창세기 32:13-32","b":"창세기"},{"d":"2024-02-04","t":"제단을 향하여 나아가는 삶","p":"창세기 33:13-20","b":"창세기"},{"d":"2024-02-11","t":"이 좋은 편을 택함","p":"누가복음 10:38-42","b":"누가복음","s":"최두호 전도사"},{"d":"2024-02-18","t":"보이는 것으로부터 보아야 할 것으로","p":"창세기 34:1-31","b":"창세기"},{"d":"2024-02-25","t":"정결과 회복","p":"창세기 35:1-15","b":"창세기"},{"d":"2024-03-03","t":"사랑에 빚진 자","p":"사도행전 14:27","b":"사도행전","s":"송요한 선교사"},{"d":"2024-03-10","t":"에서의 족보","p":"창세기 36:1-19","b":"창세기"},{"d":"2024-03-17","t":"야곱의 가족사는 이러하니라","p":"창세기 37:1-11","b":"창세기"},{"d":"2024-03-24","t":"구덩이","p":"창세기 37:18-35","b":"창세기"},{"d":"2024-03-31","t":"그리스도께서 다시 살아나셨다","p":"고린도전서 15:12-19","b":"고린도전서"},{"d":"2024-04-07","t":"다말의 순종","p":"창세기 38:1-6","b":"창세기","s":"최두호 전도사"},{"d":"2024-04-14","t":"여호와께서 그와 함께 하심을 보며","p":"창세기 39:1-6","b":"창세기"},{"d":"2024-04-21","t":"나의 기쁨이요 면류관인 사랑하는 자들아","p":"빌립보서 4:1","b":"빌립보서"},{"d":"2024-04-28","t":"여호와께서 요셉과 함께 하시고","p":"창세기 40:1-23","b":"창세기"},{"d":"2024-05-05","t":"하나님의 나라에 적합한 사람","p":"누가복음 18:15-17","b":"누가복음"},{"d":"2024-05-12","t":"감옥에서 총리로","p":"창세기 41:41-43","b":"창세기"},{"d":"2024-05-19","t":"교회를 세우는 직분, 교사","p":"고린도전서 12:28","b":"고린도전서"},{"d":"2024-05-26","t":"남자와 여자 그리고 부부","p":"창세기 2:22-24","b":"창세기"},{"d":"2024-06-02","t":"그러면 살고 죽지 아니하리라","p":"창세기 42:1-4","b":"창세기"},{"d":"2024-06-09","t":"잃게 되면 잃으리로다","p":"창세기 43:1-14","b":"창세기"},{"d":"2024-06-16","t":"그 아이를 대신하여","p":"창세기 44:18-34","b":"창세기"},{"d":"2024-06-23","t":"먼저 보내셨나이다","p":"창세기 45:1-13","b":"창세기"},{"d":"2024-06-30","t":"끊이지 않는 하나님의 약속","p":"창세기 46:1-3","b":"창세기","s":"최두호 전도사"},{"d":"2024-07-07","t":"(제목 미기재)","p":"창세기 47:1-19","b":"창세기"},{"d":"2024-07-14","t":"야곱의 축복","p":"창세기 48:1-22","b":"창세기"},{"d":"2024-07-21","t":"야곱의 축복(2)","p":"창세기 49:1-33","b":"창세기"},{"d":"2024-07-28","t":"찬양과 나눔 (힐링남녀)","p":"","b":"","s":"힐링남녀 (초청 찬양팀)","k":"찬양예배"},{"d":"2024-08-04","t":"신앙의 교집합","p":"로마서 8:28","b":"로마서","s":"김성준 선교사"},{"d":"2024-08-11","t":"불신은 죄로부터","p":"창세기 50:15-21","b":"창세기"},{"d":"2024-08-18","t":"더욱 번성하여 퍼져가니","p":"출애굽기 1:1-14","b":"출애굽기"},{"d":"2024-08-25","t":"어떻게 되는지를 알려고","p":"출애굽기 2:1-10","b":"출애굽기"},{"d":"2024-09-01","t":"불러 이르시되","p":"출애굽기 3:1-12","b":"출애굽기"},{"d":"2024-09-08","t":"듣지 않고 듣지 않으면","p":"출애굽기 4:1-8","b":"출애굽기"},{"d":"2024-09-15","t":"순종하려 했더니 설상가상","p":"출애굽기 5:1-9","b":"출애굽기"},{"d":"2024-09-22","t":"나는 여호와라","p":"출애굽기 6:1-8","b":"출애굽기"},{"d":"2024-09-29","t":"영과 진리로 예배할 지니라","p":"요한복음 4:23-24","b":"요한복음","s":"나무엔 (찬양사역자)","k":"찬양예배"},{"d":"2024-10-06","t":"하나님의 재앙","p":"출애굽기 8:16-19","b":"출애굽기"},{"d":"2024-10-13","t":"세상이 여호와께 속한 줄을 알리이다","p":"출애굽기 9:13-30","b":"출애굽기"},{"d":"2024-10-20","t":"표징을 전하기 위함이라","p":"출애굽기 10:1-11","b":"출애굽기"},{"d":"2024-10-27","t":"처음 것의 죽음 예고","p":"출애굽기 11:1-10","b":"출애굽기"},{"d":"2024-11-03","t":"유월절의 제정","p":"출애굽기 12:1-20","b":"출애굽기"},{"d":"2024-11-10","t":"기억하고 따르라","p":"출애굽기 13:1-16","b":"출애굽기"},{"d":"2024-11-17","t":"하나님은 사랑이시라","p":"요한일서 4:16","b":"요한일서"},{"d":"2024-11-24","t":"두려워하지 말고 가만히 서서","p":"출애굽기 14:1-14","b":"출애굽기"},{"d":"2024-12-01","t":"구원받은 자들의 노래","p":"출애굽기 15:1-18","b":"출애굽기"},{"d":"2024-12-08","t":"내가 시험하리라","p":"출애굽기 16:1-12","b":"출애굽기"},{"d":"2024-12-15","t":"어찌하여 여호와를 시험하느냐","p":"출애굽기 17:1-16","b":"출애굽기"},{"d":"2024-12-22","t":"가정과 사역에 관하여","p":"출애굽기 17:1-16","b":"출애굽기"},{"d":"2024-12-25","t":"말씀대로 내게 이루어지이다","p":"누가복음 1:38","b":"누가복음","k":"성탄예배"},{"d":"2024-12-29","t":"우리는 그리스도의 지체","p":"고린도전서 12:23-27","b":"고린도전서","s":"최두호 전도사"},{"d":"2024-12-31","t":"함께 믿음으로(1)","p":"에베소서 2:20-22","b":"에베소서","k":"송구영신예배"},{"d":"2025-01-05","t":"함께 믿음으로(2)","p":"에베소서 2:20-22","b":"에베소서"},{"d":"2025-01-12","t":"함께 믿음으로(3)","p":"에베소서 2:20-22","b":"에베소서"},{"d":"2025-01-19","t":"함께 믿음으로(4)","p":"에베소서 2:20-22","b":"에베소서"},{"d":"2025-01-26","t":"함께 믿음으로(5)","p":"에베소서 2:20-22","b":"에베소서"},{"d":"2025-02-02","t":"모든 민족 중에 내 소유가 되겠고","p":"출애굽기 19:1-15","b":"출애굽기"},{"d":"2025-02-09","t":"이스라엘 백성에게 주어진 법","p":"출애굽기 20:1-17","b":"출애굽기"},{"d":"2025-02-16","t":"그를 딸 같이 대우할 것이요","p":"출애굽기 21:1-11","b":"출애굽기"},{"d":"2025-02-23","t":"너희도 애굽 땅에서 나그네였음이라","p":"출애굽기 22:1-27","b":"출애굽기"},{"d":"2025-03-02","t":"정의를 굽게 하지 말라","p":"출애굽기 23:1-12","b":"출애굽기"},{"d":"2025-03-09","t":"약속과 기쁨의 자리로 초대하시는 하나님","p":"출애굽기 24:1-11","b":"출애굽기"},{"d":"2025-03-16","t":"네게 보이는 모양대로 장막을 짓고","p":"출애굽기 25:1-9","b":"출애굽기"},{"d":"2025-03-23","t":"서로 연결하여","p":"출애굽기 26:1-6","b":"출애굽기"},{"d":"2025-03-30","t":"회복과 거룩, 임마누엘","p":"출애굽기 27:1-8","b":"출애굽기","s":"최두호 전도사"},{"d":"2025-04-06","t":"거룩한 옷, 영화롭고 아름답게","p":"출애굽기 28:1-8","b":"출애굽기"},{"d":"2025-04-13","t":"매일 아침과 저녁으로","p":"출애굽기 29:38-46","b":"출애굽기"},{"d":"2025-04-20","t":"어찌하여 살아 있는 자를 죽은 자 가운데서 찾느냐","p":"누가복음 24:1-12","b":"누가복음"},{"d":"2025-04-27","t":"이 향은 너희가 대대로 여호와 앞에 끊지 못할지며","p":"출애굽기 30:1-10","b":"출애굽기"},{"d":"2025-05-04","t":"하나님을 배우는 첫 학교, 가정","p":"에베소서 6:1-4","b":"에베소서"},{"d":"2025-05-11","t":"하나님의 영으로 충만하여","p":"출애굽기 31:1-17","b":"출애굽기"},{"d":"2025-05-18","t":"깨어진 언약, 이어지는 사랑","p":"출애굽기 32:1-14","b":"출애굽기"},{"d":"2025-05-25","t":"친구와 이야기함 같이","p":"출애굽기 33:1-23","b":"출애굽기"},{"d":"2025-06-01","t":"우리를 주의 기업으로 삼으소서","p":"출애굽기 34:1-24","b":"출애굽기"},{"d":"2025-06-08","t":"하나님이 기뻐하시는 예배","p":"출애굽기 35:1-35","b":"출애굽기"},{"d":"2025-06-15","t":"마음이 감동된 자들","p":"출애굽기 36:1-7","b":"출애굽기"},{"d":"2025-06-22","t":"말씀을 따르는 순종","p":"출애굽기 37:1-29","b":"출애굽기"},{"d":"2025-06-29","t":"이제는 눈으로 주를 뵈옵나이다","p":"욥기 42:5-6","b":"욥기"},{"d":"2025-07-06","t":"여호와의 명령대로 행한다","p":"출애굽기 38:1-23","b":"출애굽기","s":"최두호 전도사"},{"d":"2025-07-13","t":"끝까지","p":"출애굽기 39:43","b":"출애굽기"},{"d":"2025-07-20","t":"느헤미야의 본을 따라","p":"느헤미야 5:13-14","b":"느헤미야","s":"정용수 선교사"},{"d":"2025-07-27","t":"죽으면 죽으리라","p":"에스더 4:16","b":"에스더"},{"d":"2025-08-03","t":"하나님의 가득한 영광에 휩싸여 앞으로","p":"출애굽기 40:34-38","b":"출애굽기"},{"d":"2025-08-10","t":"하나님께 가까이 가려면","p":"레위기 1:1-9","b":"레위기"},{"d":"2025-08-17","t":"곡식으로 드리는 예물","p":"레위기 2:1-16","b":"레위기"},{"d":"2025-08-24","t":"셀렘, 화목의 예물","p":"레위기 3:1-17","b":"레위기"},{"d":"2025-08-31","t":"관계 회복의 제사, 속죄제","p":"레위기 4:1-12","b":"레위기","s":"최두호 전도사"},{"d":"2025-09-07","t":"내가 너를 안다","p":"레위기 5:1-19","b":"레위기"},{"d":"2025-09-14","t":"간증","p":"","b":"","s":"레나 전도사 (우크라이나)","k":"간증예배"},{"d":"2025-09-21","t":"하나님이 원하시는 성도의 자기관리","p":"레위기 6:8-30","b":"레위기"},{"d":"2025-09-28","t":"보폭 맞춰 걷기","p":"레위기 7:1-27","b":"레위기"},{"d":"2025-10-05","t":"나는 누구인가","p":"레위기 8:1-13","b":"레위기"},{"d":"2025-10-12","t":"어찌 그리 선하고 아름다운고","p":"시편 133:1","b":"시편"},{"d":"2025-10-19","t":"예배는 어떻게 드려야 할까","p":"레위기 9:1-24","b":"레위기"},{"d":"2025-10-26","t":"예배는 어떻게 드려야 할까","p":"레위기 10:1-20","b":"레위기"},{"d":"2025-11-02","t":"너희는 구별된 삶을 살아야 한다","p":"레위기 11:1-47","b":"레위기"},{"d":"2025-11-09","t":"생명의 기쁨 앞에서도 겸손히","p":"레위기 12:1-8","b":"레위기"},{"d":"2025-11-16","t":"감사는 새로운 삶의 숨결입니다","p":"골로새서 3:15-17","b":"골로새서"},{"d":"2025-11-23","t":"창조의 질서와 온전함이 거룩","p":"레위기 13:1-8","b":"레위기"},{"d":"2025-11-30","t":"은혜로 정결케 되었으니","p":"레위기 14:1-9","b":"레위기"},{"d":"2025-12-07","t":"몸에 유출병이 있으면","p":"레위기 15:1-12","b":"레위기"},{"d":"2025-12-14","t":"begin again","p":"레위기 16:1-34","b":"레위기"},{"d":"2025-12-21","t":"보고 듣고 나누고","p":"누가복음 2:6-39","b":"누가복음","s":"최두호 전도사"},{"d":"2025-12-25","t":"다윗의 동네에 구주가","p":"누가복음 2:11","b":"누가복음","k":"성탄예배"},{"d":"2025-12-28","t":"한 곳으로 통하는 예배","p":"레위기 17:1-9","b":"레위기"},{"d":"2025-12-31","t":"보라 내가 새 일을 행하리니","p":"이사야 43:18-21","b":"이사야","k":"송구영신예배"},{"d":"2026-01-04","t":"기초확립 1(기도) - 보이지 않는 주의 능력을 기대하라","p":"예레미야 33:3","b":"예레미야"},{"d":"2026-01-11","t":"기초확립 2(구원) - 흘러 떠내려가지 않도록","p":"히브리서 2:1-4","b":"히브리서"},{"d":"2026-01-18","t":"기초확립 3(청지기) - 다 여호와의 것이라","p":"시편 24:1","b":"시편"},{"d":"2026-01-25","t":"기초확립 4(순종) - 순종은 결국 타이밍","p":"출애굽기 12:11","b":"출애굽기"},{"d":"2026-02-01","t":"기초확립 5(말씀) - 말씀은 살아 있다","p":"히브리서 4:12","b":"히브리서"},{"d":"2026-02-08","t":"그 집에 있는 교회","p":"고린도전서 16:19","b":"고린도전서"},{"d":"2026-02-15","t":"자신을 비워","p":"빌립보서 2:5-11","b":"빌립보서"},{"d":"2026-02-22","t":"벧엘의 하나님","p":"창세기 28:10-15","b":"창세기","s":"신현대 목사"},{"d":"2026-03-01","t":"나를 따라오라","p":"마태복음 4:19","b":"마태복음"},{"d":"2026-03-08","t":"하나님 사랑의 빛깔","p":"에베소서 3:18-19 / 히브리서 12:6-11","b":"에베소서"},{"d":"2026-03-15","t":"그 선물 아직 포장지 안에 있습니까?","p":"고린도전서 12:4-6 / 로마서 12:6-8 / 에베소서 4:11-13","b":"고린도전서"},{"d":"2026-03-22","t":"예수를 깊이 생각하자","p":"히브리서 3:1","b":"히브리서"},{"d":"2026-03-29","t":"열매 맺는 제자가 됩시다","p":"갈라디아서 5:22-23","b":"갈라디아서"},{"d":"2026-04-05","t":"부활의 예수님과 함꼐 여는 환희의 아침","p":"요한복음 20:11-18","b":"요한복음"},{"d":"2026-04-12","t":"장벽, 나를 가두는 벽인가 나를 만드는 틀인가","p":"고린도후서 12:9-10 / 시편 119:105","b":"고린도후서"},{"d":"2026-04-19","t":"광야에 길을, 사막에 강을","p":"이사야 43:19","b":"이사야","k":"창립 12주년 감사예배"},{"d":"2026-04-26","t":"거룩한 백성의 거룩한 삶","p":"레위기 18:1-30","b":"레위기"},{"d":"2026-05-03","t":"거룩함은 성소 안에 머물지 않습니다","p":"레위기 19:1-37","b":"레위기"},{"d":"2026-05-10","t":"하나님의 자녀로서의 신분에 맞는 삶","p":"레위기 20:1-27","b":"레위기"},{"d":"2026-05-24","t":"거룩함의 무게를 아는 삶","p":"레위기 21:1-24","b":"레위기"},{"d":"2026-05-31","t":"고난을 통해 알게 된 욥의 신앙","p":"욥기 1:13-22","b":"욥기","s":"김환삼 선교사 (우크라이나)"},{"d":"2026-06-07","t":"아는 것으로는 아무 일도 일어나지 않습니다","p":"레위기 22:1-33","b":"레위기"},{"d":"2026-06-14","t":"기억하게 하시는 하나님","p":"레위기 23:1-44","b":"레위기"},{"d":"2026-06-21","t":"In and Out","p":"레위기 24:10-16","b":"레위기"},{"d":"2026-06-28","t":"신뢰","p":"시편 40:1-5","b":"시편"},{"d":"2026-07-05","t":"하나님이 채우십니다","p":"레위기 25:1-55","b":"레위기"},{"d":"2026-07-12","t":"순종과 회복","p":"레위기 26:1-46","b":"레위기"},{"d":"2026-07-19","t":"너를 지키시는 이","p":"시편 121:1-8","b":"시편","s":"정용수 선교사"},{"d":"2026-08-02","t":"약속","p":"레위기 27:1-34","b":"레위기"},{"d":"2026-08-09","t":"하나님의 형상으로 지음 받았습니다","p":"창세기 2:18-25","b":"창세기"},{"d":"2026-08-16","t":"두 세계","p":"요한복음 17:14-18 / 요한일서 2:15-17","b":"요한복음"},{"d":"2026-08-23","t":"빛으로 삽시다","p":"에베소서 5:8-14","b":"에베소서"},{"d":"2026-08-30","t":"두 길","p":"마태복음 7:13-14","b":"마태복음","j":1},{"d":"2026-09-06","t":"두 밭","p":"마태복음 13:1-9, 18-23","b":"마태복음","j":1},{"d":"2026-09-13","t":"두 주인","p":"마태복음 6:24","b":"마태복음","j":1},{"d":"2026-09-20","t":"두 지혜","p":"고린도전서 1:18-25 / 야고보서 3:13-18","b":"고린도전서","j":1},{"d":"2026-09-27","t":"두 영","p":"갈라디아서 5:18-25","b":"갈라디아서","j":1},{"d":"2026-10-04","t":"두 소망","p":"베드로전서 1:3-9 / 골로새서 3:1-4","b":"베드로전서","j":1},{"d":"2026-10-18","t":"두 아버지","p":"에베소서 2:1-3","b":"에베소서","j":1},{"d":"2026-10-25","t":"작아서 받는 사랑","p":"신명기 7:7-8","b":"신명기","s":"심민보 목사 (익산 푸른나무교회)","k":"연합예배","j":1},{"d":"2026-11-01","t":"두 결말","p":"마태복음 25:31-46 / 요한복음 5:24","b":"마태복음","j":1},{"d":"2026-11-08","t":"먼저 그 나라와 의를 구하라","p":"마태복음 6:25-34","b":"마태복음","j":1},{"d":"2026-11-15","t":"이같이 말할지어다","p":"시편 107:1-2","b":"시편","j":1},{"d":"2026-11-22","t":"사랑은 율법의 완성","p":"로마서 13:8-10","b":"로마서"}]</script>
+<script>
+(function(){
+  var DATA = JSON.parse(document.getElementById('sermon-data').textContent);
+  var WD = ['일','월','화','수','목','금','토'];
+  var BOOKS = "창세기 출애굽기 레위기 민수기 신명기 여호수아 사사기 룻기 사무엘상 사무엘하 열왕기상 열왕기하 역대상 역대하 에스라 느헤미야 에스더 욥기 시편 잠언 전도서 아가 이사야 예레미야 예레미야애가 에스겔 다니엘 호세아 요엘 아모스 오바댜 요나 미가 나훔 하박국 스바냐 학개 스가랴 말라기 마태복음 마가복음 누가복음 요한복음 사도행전 로마서 고린도전서 고린도후서 갈라디아서 에베소서 빌립보서 골로새서 데살로니가전서 데살로니가후서 디모데전서 디모데후서 디도서 빌레몬서 히브리서 야고보서 베드로전서 베드로후서 요한일서 요한이서 요한삼서 유다서 요한계시록".split(' ');
+  var NT_START = BOOKS.indexOf('마태복음');
+  var $ = function(id){ return document.getElementById(id); };
+  var st = { q:'', book:'', who:'', year:'', asc:false, shown:120 };
+
+  DATA.forEach(function(r){
+    var d = new Date(r.d + 'T00:00:00');
+    r.y = r.d.slice(0,4); r.m = +r.d.slice(5,7); r.dd = +r.d.slice(8,10); r.w = WD[d.getDay()];
+    r.h = [r.t, r.p, r.s||'박동준 목사 담임목사', r.k||'주일예배', r.d, r.d.replace(/-/g,'.'), r.d.replace(/-/g,''), r.y+'년', r.m+'월', r.m+'월 '+r.dd+'일'].join(' ').toLowerCase();
+  });
+
+  // 통계
+  var years = {}, books = {};
+  DATA.forEach(function(r){ years[r.y]=(years[r.y]||0)+1; if(r.b) books[r.b]=(books[r.b]||0)+1; });
+  $('smTotal').textContent = DATA.length;
+  var ys = Object.keys(years).sort();
+  $('smYears').textContent = ys.length;
+  var top = Object.keys(books).sort(function(a,b){return books[b]-books[a];}).slice(0,6);
+  $('smTopBooks').innerHTML = top.map(function(b){ return '<button type="button" data-top="'+b+'" aria-pressed="false">'+b+' <i>'+books[b]+'</i></button>'; }).join('');
+
+  // 성경 선택
+  var sel = $('smBook'), ot = document.createElement('optgroup'), nt = document.createElement('optgroup');
+  ot.label = '구약'; nt.label = '신약';
+  BOOKS.forEach(function(b,i){ if(!books[b]) return; var o=document.createElement('option'); o.value=b; o.textContent=b+' ('+books[b]+')'; (i<NT_START?ot:nt).appendChild(o); });
+  sel.appendChild(ot); sel.appendChild(nt);
+
+  // 연도 칩
+  var yb = $('smYearsBar');
+  yb.innerHTML = '<button type="button" data-year="" aria-pressed="true">전체</button>' +
+    ys.slice().reverse().map(function(y){ return '<button type="button" data-year="'+y+'" aria-pressed="false">'+y+'<small>'+years[y]+'</small></button>'; }).join('');
+
+  function esc(s){ return String(s).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];}); }
+  function hl(s, toks){
+    s = esc(s); if(!toks.length) return s;
+    var re = new RegExp('(' + toks.map(function(t){return esc(t).replace(/[.*+?^${}()|[\]\\]/g,'\\$&');}).join('|') + ')','gi');
+    return s.replace(re,'<mark>$1</mark>');
+  }
+
+  function filtered(){
+    var ql = st.q.toLowerCase().replace(/\s+/g,' ').trim();
+    var toks = ql ? [ql] : [];
+    if(ql.indexOf(' ')>-1 && !DATA.some(function(r){ return r.h.indexOf(ql)>-1; })) toks = ql.split(' ');
+    var res = DATA.filter(function(r){
+      if(st.year && r.y!==st.year) return false;
+      if(st.book && r.b!==st.book) return false;
+      if(st.who==='pastor' && r.s) return false;
+      if(st.who==='guest' && !r.s && !r.k) return false;
+      for(var i=0;i<toks.length;i++) if(r.h.indexOf(toks[i])<0) return false;
+      return true;
+    });
+    res.sort(function(a,b){ return st.asc ? (a.d<b.d?-1:a.d>b.d?1:0) : (a.d<b.d?1:a.d>b.d?-1:0); });
+    return { list:res, toks:toks };
+  }
+
+  function render(){
+    var f = filtered(), list = f.list, toks = f.toks, html = '', cur = null, groupCount = {};
+    list.forEach(function(r){ groupCount[r.y]=(groupCount[r.y]||0)+1; });
+    list.slice(0, st.shown).forEach(function(r){
+      if(r.y!==cur){ if(cur) html += '</div></div>'; cur=r.y; html += '<div class="sm-year"><div class="sm-yh"><b>'+r.y+'</b><span>'+groupCount[r.y]+'편</span></div><div class="sm-box">'; }
+      var tags = '';
+      if(r.k) tags += '<span class="sm-tag sm-tag-kind">'+esc(r.k)+'</span>';
+      if(r.s) tags += '<span class="sm-tag sm-tag-guest">'+hl(r.s,toks)+'</span>';
+      if(r.j) tags += '<a class="sm-jubo" href="jubo/'+r.d.replace(/-/g,'')+'.html">주보 ›</a>';
+      html += '<div class="sm-item"><span class="sm-date">'+String(r.m).padStart(2,'0')+'.'+String(r.dd).padStart(2,'0')+'<small>'+r.w+'</small></span>'+
+        '<span class="sm-main"><span class="sm-title">'+hl(r.t,toks)+'</span>'+(r.p?'<span class="sm-ref">'+hl(r.p,toks)+'</span>':'')+'</span>'+
+        '<span class="sm-tags">'+tags+'</span></div>';
+    });
+    if(cur) html += '</div></div>';
+    $('smList').innerHTML = html;
+    $('smCount').textContent = list.length;
+    $('smEmpty').style.display = list.length ? 'none' : 'block';
+    var more = $('smMore'); more.style.display = list.length > st.shown ? 'block' : 'none';
+    more.textContent = '더 보기 (' + (list.length - Math.min(st.shown, list.length)) + '편 남음)';
+    // 적용된 조건 칩
+    var chips = [];
+    if(st.year) chips.push(['year', st.year+'년']);
+    if(st.book) chips.push(['book', st.book]);
+    if(st.who) chips.push(['who', st.who==='pastor'?'담임목사 설교':'초청·특별 예배']);
+    $('smActive').innerHTML = chips.map(function(c){ return '<span class="sm-chip">'+c[1]+'<button type="button" data-clear="'+c[0]+'" aria-label="'+c[1]+' 조건 지우기">×</button></span>'; }).join('');
+    $('smSort').firstChild.nodeValue = st.asc ? '오래된순 ' : '최신순 ';
+    document.querySelectorAll('[data-top]').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-top')===st.book?'true':'false'); });
+    document.querySelectorAll('[data-year]').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-year')===st.year?'true':'false'); });
+    document.querySelectorAll('[data-who]').forEach(function(b){ b.setAttribute('aria-pressed', b.getAttribute('data-who')===st.who?'true':'false'); });
+    sel.value = st.book;
+  }
+
+  function reset(){ st.shown = 120; render(); }
+  var t; $('smQ').addEventListener('input', function(e){ clearTimeout(t); t=setTimeout(function(){ st.q=e.target.value.trim(); reset(); }, 120); });
+  sel.addEventListener('change', function(){ st.book = sel.value; reset(); });
+  document.addEventListener('click', function(e){
+    var b = e.target.closest('button'); if(!b) return;
+    if(b.hasAttribute('data-who')){ st.who = b.getAttribute('data-who'); reset(); }
+    else if(b.hasAttribute('data-year')){ st.year = b.getAttribute('data-year'); reset(); }
+    else if(b.hasAttribute('data-top')){ var k=b.getAttribute('data-top'); st.book = st.book===k?'':k; reset(); }
+    else if(b.hasAttribute('data-clear')){ st[b.getAttribute('data-clear')] = ''; reset(); }
+    else if(b.id==='smSort'){ st.asc = !st.asc; reset(); }
+    else if(b.id==='smMore'){ st.shown += 200; render(); }
+  });
+
+  // 연도 머리가 검색창 아래에 붙도록
+  var panel = document.querySelector('.sm-panel');
+  function setH(){ var top = parseFloat(getComputedStyle(panel).top)||0; document.documentElement.style.setProperty('--sm-panel-h', (top + panel.offsetHeight + 4) + 'px'); }
+  window.addEventListener('resize', setH); setH();
+
+  // 주소로 검색 (예: sermons.html?q=로마서)
+  var p = new URLSearchParams(location.search);
+  if(p.get('q')){ st.q = p.get('q'); $('smQ').value = st.q; }
+  if(p.get('book')) st.book = p.get('book');
+  if(p.get('year')) st.year = p.get('year');
+  render();
+})();
+</script>
+
+<footer>
+<div class="ft ft-simple">
+<div class="ft-brand"><span class="ft-name">은혜교회</span><span class="en en-light" style="font-size: 11px">GRACE BAPTIST CHURCH</span></div>
+<div class="ft-info"><span>기독교한국침례회 · 담임목사 박동준 · 전도사 임도형</span><span>대전 유성구 안금로15번길 49-26</span><span>주일예배 오전 11시 · 주차: 교회 앞, 아트원주차장</span></div>
+<div class="ft-links"><a href="visit.html">오시는 길</a><a href="https://www.youtube.com/@sjgrace" target="_blank" rel="noopener">유튜브</a></div>
+</div>
+<div class="ft-copy">© Grace Baptist Church · 은혜교회. All rights reserved.</div>
+</footer>
+
+</div>
+<script src="assets/live-check.js" defer></script>
+<script>
+(function(){
+  var header = document.getElementById('site-header');
+  var burger = document.getElementById('burger');
+  function setMenu(open){
+    header.classList.toggle('open', open);
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    burger.setAttribute('aria-label', open ? '메뉴 닫기' : '메뉴 열기');
+  }
+  burger.addEventListener('click', function(){ setMenu(!header.classList.contains('open')); });
+  document.querySelectorAll('[data-close-menu]').forEach(function(a){ a.addEventListener('click', function(){ setMenu(false); }); });
+
+  document.querySelectorAll('[data-flip]').forEach(function(b){
+    b.addEventListener('click', function(){
+      var on = b.classList.toggle('is-flipped');
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var els = document.querySelectorAll('#mission [data-m]');
+  function on(id, v){ els.forEach(function(e){ if (e.getAttribute('data-m') === id) e.classList.toggle('on', v); }); }
+  els.forEach(function(e){
+    var id = e.getAttribute('data-m');
+    ['mouseenter','focus'].forEach(function(ev){ e.addEventListener(ev, function(){ on(id, true); }); });
+    ['mouseleave','blur'].forEach(function(ev){ e.addEventListener(ev, function(){ on(id, false); }); });
+    e.addEventListener('click', function(){ var c = document.querySelector('#mission li[data-m="' + id + '"]'); if (c && e.tagName.toLowerCase() === 'g') c.focus(); });
+  });
+})();
+</script>
+<script>
+(function(){
+  var dlg=document.getElementById('historyDialog'),body=document.getElementById('historyBody');
+  if(!dlg)return;
+  var chips=dlg.querySelectorAll('.hy-chip'),last=null;
+  function open(e){
+    last=e&&e.currentTarget;
+    if(typeof dlg.showModal==='function')dlg.showModal();else dlg.setAttribute('open','');
+    body.scrollTop=0;document.documentElement.style.overflow='hidden';mark();
+  }
+  function close(){if(dlg.open)dlg.close();}
+  dlg.addEventListener('close',function(){document.documentElement.style.overflow='';if(last)last.focus();});
+  document.querySelectorAll('[data-history-open]').forEach(function(b){b.addEventListener('click',open);});
+  dlg.querySelectorAll('[data-history-close]').forEach(function(b){b.addEventListener('click',close);});
+  dlg.addEventListener('click',function(e){if(e.target===dlg)close();});
+  chips.forEach(function(c){c.addEventListener('click',function(e){
+    e.preventDefault();var t=document.getElementById(c.getAttribute('href').slice(1));
+    if(t)body.scrollTo({top:t.offsetTop-12,behavior:'smooth'});
+  });});
+  function mark(){
+    var cur=null;dlg.querySelectorAll('.timeline-item').forEach(function(it){if(it.offsetTop-40<=body.scrollTop)cur=it.id;});
+    chips.forEach(function(c){var on=c.getAttribute('href')==='#'+cur;c.classList.toggle('on',on);if(on&&c.scrollIntoView&&dlg.open)c.parentNode.scrollLeft=c.offsetLeft-c.parentNode.clientWidth/2+c.clientWidth/2;});
+  }
+  body.addEventListener('scroll',mark,{passive:true});
+})();
+</script>
+<script>
+document.querySelectorAll('[data-copy]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var v=b.getAttribute('data-copy'),t=b.querySelector('span');
+    function ok(){b.classList.add('done');t.textContent='복사됐어요';setTimeout(function(){b.classList.remove('done');t.textContent='계좌 복사';},1800);}
+    if(navigator.clipboard&&window.isSecureContext){navigator.clipboard.writeText(v).then(ok,fallback);}else fallback();
+    function fallback(){var i=document.createElement('textarea');i.value=v;i.style.position='fixed';i.style.opacity='0';document.body.appendChild(i);i.select();try{document.execCommand('copy');ok();}catch(e){}document.body.removeChild(i);}
+  });
+});
+</script>
+<script src="/assets/return-scroll.js"></script>
+<script id="hdr-scroll-js">
+(function(){var h=document.getElementById('site-header');if(!h)return;
+function f(){var y=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;h.classList.toggle('is-scrolled',y>8);}
+window.addEventListener('scroll',f,{passive:true});document.body.addEventListener('scroll',f,{passive:true});f();})();
+</script>
+</body>
+</html>
