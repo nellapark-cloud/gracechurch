@@ -220,6 +220,25 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 .ft-links a{padding:8px 16px;border:1px solid rgba(159,227,245,.35);border-radius:999px;font-size:13px;color:#DDEFF7}
 .ft-links a:hover{background:rgba(159,227,245,.12);color:#FFFFFF}
 @media (max-width:700px){.ft.ft-simple{flex-direction:column;align-items:flex-start;padding:36px 20px 20px}}
+/* 사명 GRACE 플립 카드 */
+.mis-card{display:block;width:100%;height:290px;padding:0;border:0;background:transparent;cursor:pointer;font-family:inherit;color:inherit;text-align:left;perspective:1000px}
+.mis-inner{position:relative;display:block;width:100%;height:100%;transition:transform .6s ease;transform-style:preserve-3d}
+.mis-card.is-flipped .mis-inner{transform:rotateY(180deg)}
+.mis-face{position:absolute;inset:0;border-radius:6px;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:flex;flex-direction:column}
+.mis-front{background:#FFFFFF;border:1px solid var(--line);padding:24px 22px 18px;gap:6px;transition:border-color .25s ease,box-shadow .25s ease}
+.mis-card:hover .mis-front{border-color:#7FD3EE;box-shadow:0 14px 32px rgba(11,59,92,.12)}
+.mis-front i{font-style:normal;font-family:var(--en);font-size:44px;line-height:1;font-weight:800;background:var(--aqua-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mis-front em{margin-top:8px;font-style:normal;font-family:var(--en);font-size:15px;font-weight:700;letter-spacing:.04em;color:#13789E}
+.mis-front b{font-family:var(--serif);font-size:21px;background:var(--text-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.mis-front span{font-size:14px;line-height:1.75;color:var(--muted)}
+.mis-front small{margin-top:auto;font-size:12px;font-weight:700;color:#13789E}
+.mis-back{transform:rotateY(180deg);background:var(--ocean);color:#FFFFFF;padding:22px 20px;align-items:center;justify-content:center;gap:14px;text-align:center;box-shadow:0 14px 32px rgba(4,31,51,.25)}
+.mis .mis-verse{font-size:14.5px;line-height:1.8;word-break:keep-all;color:#FFFFFF}
+.mis .mis-ref{font-size:12px;font-weight:700;color:#9FE3F5}
+.mis-card:focus-visible{outline:2px solid #13789E;outline-offset:3px}
+@media (max-width:1000px){.mis-card{height:270px}}
+@media (max-width:520px){.mis-card{height:244px}.mis-front i{font-size:38px}}
+@media (prefers-reduced-motion:reduce){.mis-inner{transition:none}}
 </style>
 </head>
 <body>
@@ -367,14 +386,39 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 <!-- 사명 -->
 <section id="mission" class="sec">
 <div class="wrap">
-<span class="en">MISSION · 사명</span>
+<span class="en">MISSION · G·R·A·C·E</span>
 <h2 class="h2">우리가 함께 걷는<br class="mbr"> <span class="nw">다섯 가지 길</span></h2>
 <div class="mis">
-<a href="worship.html"><i>01</i><b>예배</b><span>주인 되신 하나님을 높이며, 예배로 삶의 질서를 세웁니다.</span></a>
-<a href="ministry.html"><i>02</i><b>사역</b><span>삶의 청지기로서 받은 은사대로 각자의 자리에서 섬깁니다.</span></a>
-<a href="education.html"><i>03</i><b>교육</b><span>말씀 위에 뿌리내려 아동부터 실버까지 함께 자라갑니다.</span></a>
-<a href="mission.html"><i>04</i><b>선교</b><span>받은 은혜로 이웃과 열방을 품고 복음을 전합니다.</span></a>
-<a href="groups.html"><i>05</i><b>교제</b><span>목장과 공동체 안에서 서로의 삶을 돌보고 나눕니다.</span></a>
+<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="G Glorify — 예배, 눌러서 말씀 보기">
+<span class="mis-inner">
+<span class="mis-face mis-front"><i aria-hidden="true">G</i><em>Glorify</em><b>예배</b><span>주인 되신 하나님을 높이며, 예배로 삶의 질서를 세웁니다.</span><small>말씀 보기 ↻</small></span>
+<span class="mis-face mis-back"><span class="mis-verse">“여호와께 그의 이름에 합당한 영광을 돌리며 거룩한 옷을 입고 여호와께 예배할지어다”</span><span class="mis-ref">시편 29:2 · 개역개정</span></span>
+</span>
+</button>
+<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="R Root — 교육, 눌러서 말씀 보기">
+<span class="mis-inner">
+<span class="mis-face mis-front"><i aria-hidden="true">R</i><em>Root</em><b>교육</b><span>말씀 위에 뿌리내려 아동부터 실버까지 함께 자라갑니다.</span><small>말씀 보기 ↻</small></span>
+<span class="mis-face mis-back"><span class="mis-verse">“그 안에 뿌리를 박으며 세움을 받아 교훈을 받은 대로 믿음에 굳게 서서 감사함을 넘치게 하라”</span><span class="mis-ref">골로새서 2:7 · 개역개정</span></span>
+</span>
+</button>
+<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="A Act — 사역, 눌러서 말씀 보기">
+<span class="mis-inner">
+<span class="mis-face mis-front"><i aria-hidden="true">A</i><em>Act</em><b>사역</b><span>삶의 청지기로서 받은 은사대로 각자의 자리에서 섬깁니다.</span><small>말씀 보기 ↻</small></span>
+<span class="mis-face mis-back"><span class="mis-verse">“각각 은사를 받은 대로 하나님의 여러 가지 은혜를 맡은 선한 청지기 같이 서로 봉사하라”</span><span class="mis-ref">베드로전서 4:10 · 개역개정</span></span>
+</span>
+</button>
+<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="C Care — 교제, 눌러서 말씀 보기">
+<span class="mis-inner">
+<span class="mis-face mis-front"><i aria-hidden="true">C</i><em>Care</em><b>교제</b><span>목장과 공동체 안에서 서로의 삶을 돌보고 나눕니다.</span><small>말씀 보기 ↻</small></span>
+<span class="mis-face mis-back"><span class="mis-verse">“너희가 짐을 서로 지라 그리하여 그리스도의 법을 성취하라”</span><span class="mis-ref">갈라디아서 6:2 · 개역개정</span></span>
+</span>
+</button>
+<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="E Evangelize — 선교, 눌러서 말씀 보기">
+<span class="mis-inner">
+<span class="mis-face mis-front"><i aria-hidden="true">E</i><em>Evangelize</em><b>선교</b><span>받은 은혜로 이웃과 열방을 품고 복음을 전합니다.</span><small>말씀 보기 ↻</small></span>
+<span class="mis-face mis-back"><span class="mis-verse">“또 이르시되 너희는 온 천하에 다니며 만민에게 복음을 전파하라”</span><span class="mis-ref">마가복음 16:15 · 개역개정</span></span>
+</span>
+</button>
 </div>
 </div>
 </section>
