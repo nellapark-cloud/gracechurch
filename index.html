@@ -15,7 +15,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800;900&amp;family=Noto+Serif+KR:wght@500&amp;family=Montserrat:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Church","@id":"https://sejonggrace.com/#church","name":"기독교한국침례회 은혜교회","alternateName":["은혜교회","Grace Baptist Church"],"url":"https://sejonggrace.com/","logo":"https://sejonggrace.com/assets/favicon.png","image":"https://sejonggrace.com/assets/home/hero.jpg","address":{"@type":"PostalAddress","streetAddress":"안금로15번길 49-26","addressLocality":"유성구","addressRegion":"대전광역시","addressCountry":"KR"},"sameAs":["https://www.youtube.com/@sjgrace"]}</script>
 <style>
 /* ===== 은혜교회 홈 — 아이보리 · 잉크네이비 · 골드 ===== */
@@ -220,25 +220,41 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 .ft-links a{padding:8px 16px;border:1px solid rgba(159,227,245,.35);border-radius:999px;font-size:13px;color:#DDEFF7}
 .ft-links a:hover{background:rgba(159,227,245,.12);color:#FFFFFF}
 @media (max-width:700px){.ft.ft-simple{flex-direction:column;align-items:flex-start;padding:36px 20px 20px}}
-/* 사명 GRACE 플립 카드 */
-.mis-card{display:block;width:100%;height:290px;padding:0;border:0;background:transparent;cursor:pointer;font-family:inherit;color:inherit;text-align:left;perspective:1000px}
-.mis-inner{position:relative;display:block;width:100%;height:100%;transition:transform .6s ease;transform-style:preserve-3d}
-.mis-card.is-flipped .mis-inner{transform:rotateY(180deg)}
-.mis-face{position:absolute;inset:0;border-radius:6px;-webkit-backface-visibility:hidden;backface-visibility:hidden;display:flex;flex-direction:column}
-.mis-front{background:#FFFFFF;border:1px solid var(--line);padding:24px 22px 18px;gap:6px;transition:border-color .25s ease,box-shadow .25s ease}
-.mis-card:hover .mis-front{border-color:#7FD3EE;box-shadow:0 14px 32px rgba(11,59,92,.12)}
-.mis-front i{font-style:normal;font-family:var(--en);font-size:44px;line-height:1;font-weight:800;background:var(--aqua-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.mis-front em{margin-top:8px;font-style:normal;font-family:var(--en);font-size:15px;font-weight:700;letter-spacing:.04em;color:#13789E}
-.mis-front b{font-family:var(--serif);font-size:21px;background:var(--text-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.mis-front span{font-size:14px;line-height:1.75;color:var(--muted)}
-.mis-front small{margin-top:auto;font-size:12px;font-weight:700;color:#13789E}
-.mis-back{transform:rotateY(180deg);background:var(--ocean);color:#FFFFFF;padding:22px 20px;align-items:center;justify-content:center;gap:14px;text-align:center;box-shadow:0 14px 32px rgba(4,31,51,.25)}
-.mis .mis-verse{font-size:14.5px;line-height:1.8;word-break:keep-all;color:#FFFFFF}
-.mis .mis-ref{font-size:12px;font-weight:700;color:#9FE3F5}
-.mis-card:focus-visible{outline:2px solid #13789E;outline-offset:3px}
-@media (max-width:1000px){.mis-card{height:270px}}
-@media (max-width:520px){.mis-card{height:244px}.mis-front i{font-size:38px}}
-@media (prefers-reduced-motion:reduce){.mis-inner{transition:none}}
+/* 사명 — GRACE 다섯 길 */
+.g5-head{display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:12px 40px;margin-bottom:30px}
+.g5-head .h2{margin:0}
+.g5-head p{margin:0;max-width:400px;font-size:15px;line-height:1.75;color:var(--muted)}
+.g5-head p b{font-family:var(--en);font-weight:700;letter-spacing:.08em;color:#13789E}
+.g5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-radius:14px;background:#041F33;box-shadow:0 30px 70px rgba(4,31,51,.28)}
+.g5-col{position:relative;display:block;height:460px;padding:0;border:0;background:transparent;cursor:pointer;font-family:inherit;color:inherit;text-align:left;perspective:1400px}
+.g5-inner{position:relative;display:block;width:100%;height:100%;transition:transform .7s cubic-bezier(.65,0,.35,1);transform-style:preserve-3d}
+.g5-col.is-flipped .g5-inner{transform:rotateY(180deg)}
+.g5-face{position:absolute;inset:0;display:flex;flex-direction:column;overflow:hidden;-webkit-backface-visibility:hidden;backface-visibility:hidden}
+.g5-col:first-child .g5-face{border-radius:14px 0 0 14px}
+.g5-col:last-child .g5-face{border-radius:0 14px 14px 0}
+.g5-front{padding:30px 26px;background:radial-gradient(120% 70% at 50% 100%,rgba(43,163,201,.28),transparent 70%),linear-gradient(180deg,#072B44,#0B3B5C);border-left:1px solid rgba(159,227,245,.12);transition:background-color .3s ease}
+.g5-col:first-child .g5-front{border-left:0}
+.g5-front::after{content:"";position:absolute;inset:0;background:rgba(159,227,245,.06);opacity:0;transition:opacity .3s ease}
+.g5-col:hover .g5-front::after{opacity:1}
+.g5-hint{position:absolute;top:28px;right:24px;display:flex;align-items:center;gap:6px;font-size:12px;color:#9FE3F5;opacity:.75}
+.g5-en{font-family:var(--en);font-size:14px;font-weight:500;letter-spacing:.02em;color:#9FE3F5}
+.g5-ko{margin-top:6px;font-family:var(--serif);font-size:30px;font-weight:800;letter-spacing:-.02em;color:#FFFFFF}
+.g5-desc{margin-top:14px;max-width:15em;font-size:14px;line-height:1.75;color:rgba(220,236,245,.78)}
+.g5-letter{position:absolute;left:14px;bottom:-.2em;font-family:var(--en);font-size:clamp(150px,15vw,230px);line-height:1;font-weight:800;letter-spacing:-.04em;background:linear-gradient(180deg,#BFEFFF 0%,#4FB3D9 55%,rgba(43,143,191,.15) 100%);-webkit-background-clip:text;background-clip:text;color:transparent;pointer-events:none;transition:transform .5s ease}
+.g5-col:hover .g5-letter{transform:translateY(-8px)}
+.g5-back{transform:rotateY(180deg);padding:34px 26px;background:#FFFFFF;justify-content:center;gap:18px;border-left:1px solid #D6E4EE}
+.g5-mark{font-family:var(--en);font-size:44px;font-weight:800;line-height:1;background:var(--aqua-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.g5-verse{font-family:'Noto Serif KR',serif;font-size:16px;line-height:1.95;font-weight:500;color:#0B3B5C;word-break:keep-all}
+.g5-ref small{margin-left:6px;font-size:12px;font-weight:400;color:#5B6478}
+.g5-ref{padding-top:14px;border-top:1px solid #D6E4EE;font-size:13px;font-weight:700;color:#13789E}
+.g5-col:focus-visible{outline:2px solid #9FE3F5;outline-offset:-4px;z-index:1}
+@media (max-width:1000px){
+ .g5{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;scrollbar-width:none;border-radius:14px}
+ .g5::-webkit-scrollbar{display:none}
+ .g5-col{flex:0 0 min(300px,74vw);height:420px;scroll-snap-align:start}
+ .g5-letter{font-size:190px}
+}
+@media (prefers-reduced-motion:reduce){.g5-inner,.g5-letter{transition:none}}
 </style>
 </head>
 <body>
@@ -386,37 +402,39 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 <!-- 사명 -->
 <section id="mission" class="sec">
 <div class="wrap">
-<span class="en">MISSION · G·R·A·C·E</span>
+<div class="g5-head">
 <h2 class="h2">우리가 함께 걷는<br class="mbr"> <span class="nw">다섯 가지 길</span></h2>
-<div class="mis">
-<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="G Glorify — 예배, 눌러서 말씀 보기">
-<span class="mis-inner">
-<span class="mis-face mis-front"><i aria-hidden="true">G</i><em>Glorify</em><b>예배</b><span>주인 되신 하나님을 높이며, 예배로 삶의 질서를 세웁니다.</span><small>말씀 보기 ↻</small></span>
-<span class="mis-face mis-back"><span class="mis-verse">“여호와께 그의 이름에 합당한 영광을 돌리며 거룩한 옷을 입고 여호와께 예배할지어다”</span><span class="mis-ref">시편 29:2 · 개역개정</span></span>
+<p>다섯 길의 머리글자를 모으면 <b>GRACE</b>, <span class="nw">은혜가 됩니다.</span><br>길을 누르면 그 길의 말씀이 열립니다.</p>
+</div>
+<div class="g5" role="list">
+<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="예배(Glorify) — 눌러서 말씀 보기">
+<span class="g5-inner">
+<span class="g5-face g5-front"><span class="g5-hint" aria-hidden="true">말씀 보기<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span><span class="g5-en">Glorify</span><span class="g5-ko">예배</span><span class="g5-desc">주인 되신 하나님을 높이며, 예배로 삶의 질서를 세웁니다.</span><span class="g5-letter" aria-hidden="true">G</span></span>
+<span class="g5-face g5-back"><span class="g5-mark" aria-hidden="true">G</span><span class="g5-verse">여호와께 그의 이름에 합당한 영광을 돌리며 거룩한 옷을 입고 여호와께 예배할지어다</span><span class="g5-ref">시편 29:2 <small>개역개정</small></span></span>
 </span>
 </button>
-<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="R Root — 교육, 눌러서 말씀 보기">
-<span class="mis-inner">
-<span class="mis-face mis-front"><i aria-hidden="true">R</i><em>Root</em><b>교육</b><span>말씀 위에 뿌리내려 아동부터 실버까지 함께 자라갑니다.</span><small>말씀 보기 ↻</small></span>
-<span class="mis-face mis-back"><span class="mis-verse">“그 안에 뿌리를 박으며 세움을 받아 교훈을 받은 대로 믿음에 굳게 서서 감사함을 넘치게 하라”</span><span class="mis-ref">골로새서 2:7 · 개역개정</span></span>
+<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="교육(Root) — 눌러서 말씀 보기">
+<span class="g5-inner">
+<span class="g5-face g5-front"><span class="g5-hint" aria-hidden="true">말씀 보기<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span><span class="g5-en">Root</span><span class="g5-ko">교육</span><span class="g5-desc">말씀 위에 뿌리내려 아동부터 실버까지 함께 자라갑니다.</span><span class="g5-letter" aria-hidden="true">R</span></span>
+<span class="g5-face g5-back"><span class="g5-mark" aria-hidden="true">R</span><span class="g5-verse">그 안에 뿌리를 박으며 세움을 받아 교훈을 받은 대로 믿음에 굳게 서서 감사함을 넘치게 하라</span><span class="g5-ref">골로새서 2:7 <small>개역개정</small></span></span>
 </span>
 </button>
-<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="A Act — 사역, 눌러서 말씀 보기">
-<span class="mis-inner">
-<span class="mis-face mis-front"><i aria-hidden="true">A</i><em>Act</em><b>사역</b><span>삶의 청지기로서 받은 은사대로 각자의 자리에서 섬깁니다.</span><small>말씀 보기 ↻</small></span>
-<span class="mis-face mis-back"><span class="mis-verse">“각각 은사를 받은 대로 하나님의 여러 가지 은혜를 맡은 선한 청지기 같이 서로 봉사하라”</span><span class="mis-ref">베드로전서 4:10 · 개역개정</span></span>
+<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="사역(Act) — 눌러서 말씀 보기">
+<span class="g5-inner">
+<span class="g5-face g5-front"><span class="g5-hint" aria-hidden="true">말씀 보기<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span><span class="g5-en">Act</span><span class="g5-ko">사역</span><span class="g5-desc">삶의 청지기로서 받은 은사대로 각자의 자리에서 섬깁니다.</span><span class="g5-letter" aria-hidden="true">A</span></span>
+<span class="g5-face g5-back"><span class="g5-mark" aria-hidden="true">A</span><span class="g5-verse">각각 은사를 받은 대로 하나님의 여러 가지 은혜를 맡은 선한 청지기 같이 서로 봉사하라</span><span class="g5-ref">베드로전서 4:10 <small>개역개정</small></span></span>
 </span>
 </button>
-<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="C Care — 교제, 눌러서 말씀 보기">
-<span class="mis-inner">
-<span class="mis-face mis-front"><i aria-hidden="true">C</i><em>Care</em><b>교제</b><span>목장과 공동체 안에서 서로의 삶을 돌보고 나눕니다.</span><small>말씀 보기 ↻</small></span>
-<span class="mis-face mis-back"><span class="mis-verse">“너희가 짐을 서로 지라 그리하여 그리스도의 법을 성취하라”</span><span class="mis-ref">갈라디아서 6:2 · 개역개정</span></span>
+<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="교제(Care) — 눌러서 말씀 보기">
+<span class="g5-inner">
+<span class="g5-face g5-front"><span class="g5-hint" aria-hidden="true">말씀 보기<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span><span class="g5-en">Care</span><span class="g5-ko">교제</span><span class="g5-desc">목장과 공동체 안에서 서로의 삶을 돌보고 나눕니다.</span><span class="g5-letter" aria-hidden="true">C</span></span>
+<span class="g5-face g5-back"><span class="g5-mark" aria-hidden="true">C</span><span class="g5-verse">너희가 짐을 서로 지라 그리하여 그리스도의 법을 성취하라</span><span class="g5-ref">갈라디아서 6:2 <small>개역개정</small></span></span>
 </span>
 </button>
-<button type="button" class="mis-card" data-flip aria-pressed="false" aria-label="E Evangelize — 선교, 눌러서 말씀 보기">
-<span class="mis-inner">
-<span class="mis-face mis-front"><i aria-hidden="true">E</i><em>Evangelize</em><b>선교</b><span>받은 은혜로 이웃과 열방을 품고 복음을 전합니다.</span><small>말씀 보기 ↻</small></span>
-<span class="mis-face mis-back"><span class="mis-verse">“또 이르시되 너희는 온 천하에 다니며 만민에게 복음을 전파하라”</span><span class="mis-ref">마가복음 16:15 · 개역개정</span></span>
+<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="선교(Evangelize) — 눌러서 말씀 보기">
+<span class="g5-inner">
+<span class="g5-face g5-front"><span class="g5-hint" aria-hidden="true">말씀 보기<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span><span class="g5-en">Evangelize</span><span class="g5-ko">선교</span><span class="g5-desc">받은 은혜로 이웃과 열방을 품고 복음을 전합니다.</span><span class="g5-letter" aria-hidden="true">E</span></span>
+<span class="g5-face g5-back"><span class="g5-mark" aria-hidden="true">E</span><span class="g5-verse">또 이르시되 너희는 온 천하에 다니며 만민에게 복음을 전파하라</span><span class="g5-ref">마가복음 16:15 <small>개역개정</small></span></span>
 </span>
 </button>
 </div>
