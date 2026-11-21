@@ -225,52 +225,35 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 .g5-head .h2{margin:0}
 .g5-head p{margin:0;font-size:14.5px;line-height:1.7;color:var(--muted)}
 .g5-head p b{font-family:var(--en);font-weight:700;letter-spacing:.06em;color:#13789E}
-.g5{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));background:#FFFFFF;border:1px solid #D6E4EE;border-radius:12px;box-shadow:0 1px 2px rgba(11,59,92,.04),0 16px 40px rgba(11,59,92,.07)}
-.g5-col{position:relative;display:block;height:236px;padding:0;border:0;background:transparent;cursor:pointer;font-family:inherit;color:inherit;text-align:left;perspective:1200px}
-.g5-col+.g5-col::before{content:"";position:absolute;left:0;top:28px;bottom:28px;width:1px;background:#E3ECF2;z-index:2}
-.g5-inner{position:relative;display:block;width:100%;height:100%;transition:transform .65s cubic-bezier(.65,0,.35,1);transform-style:preserve-3d}
-.g5-col.is-flipped .g5-inner{transform:rotateY(180deg)}
-.g5-face{position:absolute;inset:0;display:flex;flex-direction:column;-webkit-backface-visibility:hidden;backface-visibility:hidden}
-.g5-col:first-child .g5-face{border-radius:11px 0 0 11px}
-.g5-col:last-child .g5-face{border-radius:0 11px 11px 0}
-.g5-front{padding:26px 24px 22px;background:#FFFFFF;transition:background-color .3s ease}
-.g5-front::after{content:"";position:absolute;left:24px;right:24px;top:0;height:2px;background:var(--aqua-grad);transform:scaleX(0);transform-origin:left;transition:transform .4s ease}
-.g5-col:hover .g5-front{background:#F7FBFD}
-.g5-col:hover .g5-front::after{transform:scaleX(1)}
-.g5-word{display:flex;align-items:baseline;line-height:1}
-.g5-cap{font-family:var(--en);font-size:52px;font-weight:300;letter-spacing:-.02em;background:var(--text-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
-.g5-rest{margin-left:1px;font-family:var(--en);font-size:15px;font-weight:500;letter-spacing:.02em;color:#4F8FB0}
-.g5-full{display:none}
-.g5-ko{margin-top:18px;font-size:19px;font-weight:700;letter-spacing:-.01em;color:#0B3B5C}
-.g5-desc{margin-top:8px;font-size:13.5px;line-height:1.7;color:#5B6478}
-.g5-hint{margin-top:auto;display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:500;color:#8CA3B3;transition:color .25s ease}
-.g5-col:hover .g5-hint{color:#13789E}
-.g5-back{transform:rotateY(180deg);padding:26px 24px 22px;background:linear-gradient(160deg,#072B44 0%,#0B3B5C 55%,#0E5F82 100%);color:#FFFFFF;justify-content:space-between}
-.g5-verse{font-family:'Noto Serif KR',serif;font-size:14.5px;line-height:1.9;font-weight:500;color:#F2F8FB;word-break:keep-all}
-.g5-ref{font-size:12.5px;font-weight:700;color:#9FE3F5}
-.g5-ref small{margin-left:5px;font-size:11.5px;font-weight:400;color:rgba(159,227,245,.6)}
-.g5-col:focus-visible{outline:2px solid #4FB3D9;outline-offset:-3px;z-index:3}
-@media (max-width:1100px){.g5-front,.g5-back{padding:24px 18px 20px}.g5-cap{font-size:44px}}
-@media (max-width:860px){
- .g5{grid-template-columns:1fr}
- .g5-col{height:auto;min-height:118px}
- .g5-col+.g5-col::before{left:22px;right:22px;top:0;bottom:auto;width:auto;height:1px}
- .g5-inner{min-height:118px}
- .g5-front{position:relative;display:grid;grid-template-columns:52px 1fr;grid-template-rows:auto auto;column-gap:16px;align-content:center;padding:20px 22px}
- .g5-word{grid-row:1 / 3;align-self:start}
- .g5-cap{font-size:46px}
- .g5-rest{display:none}
- .g5-ko{margin-top:2px;display:flex;align-items:baseline;gap:8px;font-size:17px}
- .g5-full{display:inline!important;font-family:var(--en);font-size:12.5px;font-weight:500;letter-spacing:.02em;color:#4F8FB0}
- .g5-desc{margin-top:4px;font-size:13px}
- .g5-hint{display:none}
- .g5-front::after{left:0;right:auto;top:20px;bottom:20px;width:2px;height:auto;transform:scaleY(0);transform-origin:top}
- .g5-col:hover .g5-front::after{transform:scaleY(1)}
- .g5-back{justify-content:center;gap:10px;padding:18px 22px}
- .g5-col:first-child .g5-face{border-radius:11px 11px 0 0}
- .g5-col:last-child .g5-face{border-radius:0 0 11px 11px}
+.wd{background:#FFFFFF;border:1px solid #D6E4EE;border-radius:16px;box-shadow:0 20px 50px rgba(11,59,92,.08);overflow:hidden}
+.wd-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-bottom:1px solid #D6E4EE}
+.wd-t{position:relative;border:0;background:transparent;padding:26px 0 22px;text-align:center;color:#0B3B5C;cursor:pointer;font-family:inherit}
+.wd-t+.wd-t{border-left:1px solid #EDF3F7}
+.wd-t b{display:block;font-family:var(--en);font-size:96px;line-height:1;font-weight:200;letter-spacing:-.02em;color:#C9D8E2;transition:color .3s ease}
+.wd-t span{display:block;margin-top:10px;font-size:14px;font-weight:700;color:#8CA3B3;transition:color .3s ease}
+.wd-t::after{content:"";position:absolute;left:28%;right:28%;bottom:-1px;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#2B8FBF,#4FB3D9,#9FE3F5);transform:scaleX(0);transition:transform .35s ease}
+.wd-t:hover b{color:#8DB9D0}
+.wd-t.on b{background:linear-gradient(180deg,#0B3B5C,#2BA3C9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.wd-t.on span{color:#0B3B5C}
+.wd-t.on::after{transform:scaleX(1)}
+.wd-t:focus-visible{outline:2px solid #4FB3D9;outline-offset:-4px}
+.wd-pan{display:grid;grid-template-columns:1fr 1.25fr;min-height:200px;animation:wdIn .45s ease}
+.wd-pan[hidden]{display:none}
+.wd-l{padding:34px 40px;border-right:1px solid #EDF3F7}
+.wd-l em{font-style:normal;font-family:var(--en);font-size:14px;font-weight:600;letter-spacing:.04em;color:#13789E}
+.wd-l h3{margin:6px 0 10px;font-size:26px;font-weight:800;letter-spacing:-.02em;color:#0B3B5C}
+.wd-l p{margin:0;font-size:15px;line-height:1.75;color:var(--muted)}
+.wd-r{position:relative;padding:34px 44px;background:linear-gradient(160deg,#F5FAFD,#E9F4FA);display:flex;flex-direction:column;justify-content:center}
+.wd-r::before{content:"\201C";position:absolute;left:24px;top:4px;font-family:'Noto Serif KR',serif;font-size:90px;line-height:1;color:rgba(79,179,217,.28)}
+.wd-r p{position:relative;margin:0;font-family:'Noto Serif KR',serif;font-size:18px;line-height:1.9;font-weight:500;color:#0B3B5C}
+.wd-r span{margin-top:14px;font-size:13px;font-weight:700;color:#13789E}
+@keyframes wdIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (max-width:760px){
+ .wd-t{padding:18px 0 14px}.wd-t b{font-size:46px}.wd-t span{font-size:12px;margin-top:6px}
+ .wd-pan{grid-template-columns:1fr}.wd-l{border-right:0;border-bottom:1px solid #EDF3F7;padding:24px}.wd-r{padding:30px 24px}
+ .wd-r{padding-top:52px}.wd-r::before{left:20px;top:6px;font-size:72px}.wd-r p{font-size:16.5px}
 }
-@media (prefers-reduced-motion:reduce){.g5-inner{transition:none}}
+@media (prefers-reduced-motion:reduce){.wd-pan{animation:none}.wd-t b,.wd-t::after{transition:none}}
 </style>
 </head>
 <body>
@@ -420,39 +403,21 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 <div class="wrap">
 <div class="g5-head">
 <h2 class="h2">우리가 함께 걷는<br class="mbr"> <span class="nw">다섯 가지 길</span></h2>
-<p>다섯 길의 머리글자를 모으면 <b>GRACE</b>, <span class="nw">은혜가 됩니다.</span><br>각 길을 누르면 말씀이 열립니다.</p>
+<p>다섯 길의 머리글자를 모으면 <b>GRACE</b>, <span class="nw">은혜가 됩니다.</span><br>글자를 누르면 그 길의 말씀이 열립니다.</p>
 </div>
-<div class="g5">
-<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="예배(Glorify) — 눌러서 말씀 보기">
-<span class="g5-inner">
-<span class="g5-face g5-front"><span class="g5-word"><span class="g5-cap">G</span><span class="g5-rest">lorify</span></span><span class="g5-ko">예배<span class="g5-full">Glorify</span></span><span class="g5-desc">주인 되신 하나님을 높이며, 예배로 삶의 질서를 세웁니다.</span><span class="g5-hint">말씀 보기 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span></span>
-<span class="g5-face g5-back"><span class="g5-verse">여호와께 그의 이름에 합당한 영광을 돌리며 거룩한 옷을 입고 여호와께 예배할지어다</span><span class="g5-ref">시편 29:2 <small>개역개정</small></span></span>
-</span>
-</button>
-<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="교육(Root) — 눌러서 말씀 보기">
-<span class="g5-inner">
-<span class="g5-face g5-front"><span class="g5-word"><span class="g5-cap">R</span><span class="g5-rest">oot</span></span><span class="g5-ko">교육<span class="g5-full">Root</span></span><span class="g5-desc">말씀 위에 뿌리내려 아동부터 실버까지 함께 자라갑니다.</span><span class="g5-hint">말씀 보기 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span></span>
-<span class="g5-face g5-back"><span class="g5-verse">그 안에 뿌리를 박으며 세움을 받아 교훈을 받은 대로 믿음에 굳게 서서 감사함을 넘치게 하라</span><span class="g5-ref">골로새서 2:7 <small>개역개정</small></span></span>
-</span>
-</button>
-<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="사역(Act) — 눌러서 말씀 보기">
-<span class="g5-inner">
-<span class="g5-face g5-front"><span class="g5-word"><span class="g5-cap">A</span><span class="g5-rest">ct</span></span><span class="g5-ko">사역<span class="g5-full">Act</span></span><span class="g5-desc">삶의 청지기로서 받은 은사대로 각자의 자리에서 섬깁니다.</span><span class="g5-hint">말씀 보기 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span></span>
-<span class="g5-face g5-back"><span class="g5-verse">각각 은사를 받은 대로 하나님의 여러 가지 은혜를 맡은 선한 청지기 같이 서로 봉사하라</span><span class="g5-ref">베드로전서 4:10 <small>개역개정</small></span></span>
-</span>
-</button>
-<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="교제(Care) — 눌러서 말씀 보기">
-<span class="g5-inner">
-<span class="g5-face g5-front"><span class="g5-word"><span class="g5-cap">C</span><span class="g5-rest">are</span></span><span class="g5-ko">교제<span class="g5-full">Care</span></span><span class="g5-desc">목장과 공동체 안에서 서로의 삶을 돌보고 나눕니다.</span><span class="g5-hint">말씀 보기 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span></span>
-<span class="g5-face g5-back"><span class="g5-verse">너희가 짐을 서로 지라 그리하여 그리스도의 법을 성취하라</span><span class="g5-ref">갈라디아서 6:2 <small>개역개정</small></span></span>
-</span>
-</button>
-<button type="button" class="g5-col" data-flip aria-pressed="false" aria-label="선교(Evangelize) — 눌러서 말씀 보기">
-<span class="g5-inner">
-<span class="g5-face g5-front"><span class="g5-word"><span class="g5-cap">E</span><span class="g5-rest">vangelize</span></span><span class="g5-ko">선교<span class="g5-full">Evangelize</span></span><span class="g5-desc">받은 은혜로 이웃과 열방을 품고 복음을 전합니다.</span><span class="g5-hint">말씀 보기 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5"/><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16"/><path d="M3 21v-5h5"/></svg></span></span>
-<span class="g5-face g5-back"><span class="g5-verse">또 이르시되 너희는 온 천하에 다니며 만민에게 복음을 전파하라</span><span class="g5-ref">마가복음 16:15 <small>개역개정</small></span></span>
-</span>
-</button>
+<div class="wd">
+<div class="wd-row" role="tablist" aria-label="GRACE 다섯 가지 길">
+<button type="button" class="wd-t on" role="tab" id="wd-tab-0" aria-controls="wd-pan-0" aria-selected="true" tabindex="0"><b>G</b><span>예배</span></button>
+<button type="button" class="wd-t" role="tab" id="wd-tab-1" aria-controls="wd-pan-1" aria-selected="false" tabindex="-1"><b>R</b><span>교육</span></button>
+<button type="button" class="wd-t" role="tab" id="wd-tab-2" aria-controls="wd-pan-2" aria-selected="false" tabindex="-1"><b>A</b><span>사역</span></button>
+<button type="button" class="wd-t" role="tab" id="wd-tab-3" aria-controls="wd-pan-3" aria-selected="false" tabindex="-1"><b>C</b><span>교제</span></button>
+<button type="button" class="wd-t" role="tab" id="wd-tab-4" aria-controls="wd-pan-4" aria-selected="false" tabindex="-1"><b>E</b><span>선교</span></button>
+</div>
+<div class="wd-pan" role="tabpanel" id="wd-pan-0" aria-labelledby="wd-tab-0"><div class="wd-l"><em>Glorify</em><h3>예배</h3><p>주인 되신 하나님을 높이며, 예배로 삶의 질서를 세웁니다.</p></div><div class="wd-r"><p>여호와께 그의 이름에 합당한 영광을 돌리며 거룩한 옷을 입고 여호와께 예배할지어다</p><span>시편 29:2 · 개역개정</span></div></div>
+<div class="wd-pan" role="tabpanel" id="wd-pan-1" aria-labelledby="wd-tab-1" hidden><div class="wd-l"><em>Root</em><h3>교육</h3><p>말씀 위에 뿌리내려 아동부터 실버까지 함께 자라갑니다.</p></div><div class="wd-r"><p>그 안에 뿌리를 박으며 세움을 받아 교훈을 받은 대로 믿음에 굳게 서서 감사함을 넘치게 하라</p><span>골로새서 2:7 · 개역개정</span></div></div>
+<div class="wd-pan" role="tabpanel" id="wd-pan-2" aria-labelledby="wd-tab-2" hidden><div class="wd-l"><em>Act</em><h3>사역</h3><p>삶의 청지기로서 받은 은사대로 각자의 자리에서 섬깁니다.</p></div><div class="wd-r"><p>각각 은사를 받은 대로 하나님의 여러 가지 은혜를 맡은 선한 청지기 같이 서로 봉사하라</p><span>베드로전서 4:10 · 개역개정</span></div></div>
+<div class="wd-pan" role="tabpanel" id="wd-pan-3" aria-labelledby="wd-tab-3" hidden><div class="wd-l"><em>Care</em><h3>교제</h3><p>목장과 공동체 안에서 서로의 삶을 돌보고 나눕니다.</p></div><div class="wd-r"><p>너희가 짐을 서로 지라 그리하여 그리스도의 법을 성취하라</p><span>갈라디아서 6:2 · 개역개정</span></div></div>
+<div class="wd-pan" role="tabpanel" id="wd-pan-4" aria-labelledby="wd-tab-4" hidden><div class="wd-l"><em>Evangelize</em><h3>선교</h3><p>받은 은혜로 이웃과 열방을 품고 복음을 전합니다.</p></div><div class="wd-r"><p>또 이르시되 너희는 온 천하에 다니며 만민에게 복음을 전파하라</p><span>마가복음 16:15 · 개역개정</span></div></div>
 </div>
 </div>
 </section>
@@ -525,6 +490,11 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 })();
 </script>
 <script src="/assets/return-scroll.js"></script>
+<script id="grace-tabs-js">
+(function(){var tabs=[].slice.call(document.querySelectorAll('.wd-t'));if(!tabs.length)return;
+function show(i,focus){tabs.forEach(function(t,k){var on=k===i;t.classList.toggle('on',on);t.setAttribute('aria-selected',on?'true':'false');t.tabIndex=on?0:-1;document.getElementById('wd-pan-'+k).hidden=!on;});if(focus)tabs[i].focus();}
+tabs.forEach(function(t,i){t.addEventListener('click',function(){show(i)});t.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();show((i+1)%tabs.length,true)}if(e.key==='ArrowLeft'){e.preventDefault();show((i+tabs.length-1)%tabs.length,true)}});});})();
+</script>
 <script id="hdr-scroll-js">
 (function(){var h=document.getElementById('site-header');if(!h)return;
 function f(){var y=window.pageYOffset||document.documentElement.scrollTop||document.body.scrollTop||0;h.classList.toggle('is-scrolled',y>8);}
