@@ -120,7 +120,7 @@ a.svc-item:hover b{color:var(--gold-text)}
 .ng-sub{margin:0;font-size:16px;color:var(--muted)}
 .ng-grid{margin-top:34px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1px;background:var(--line);border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .ng-grid > div{background:#FFFFFF;padding:0;text-align:center;overflow:hidden}
-.ng-art{display:block;width:100%;height:auto;aspect-ratio:3/2;transition:transform .5s ease}
+.ng-art{display:block;width:100%;height:auto;aspect-ratio:3/2;object-fit:cover;transition:transform .5s ease}
 .ng-grid > div:hover .ng-art{transform:scale(1.04)}
 .ng-txt{position:relative;padding:22px 16px 28px;background:#FFFFFF}
 .ng-grid span{display:block;font-size:14px;color:var(--gold-text)}
@@ -330,100 +330,23 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(26,127,168,.2
 <p class="ng-sub">꿈꾸는 아동, 열정의 청년,<br class="mbr"> 지지하는 장년과 지혜의 실버가 함께합니다.</p>
 <div class="ng-grid">
 
-<!-- 꿈꾸는 아동 : 별빛 아래 자라나는 새싹 -->
 <div>
-<svg class="ng-art" viewBox="0 0 240 160" role="img" aria-label="별빛 아래 자라나는 새싹">
-<defs>
-<linearGradient id="ngSky1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#1E3F6E"/><stop offset=".65" stop-color="#4F86BE"/><stop offset="1" stop-color="#9CC9EA"/></linearGradient>
-<radialGradient id="ngGlow1" cx=".5" cy=".38" r=".35"><stop offset="0" stop-color="#FFF6D8" stop-opacity=".55"/><stop offset="1" stop-color="#FFF6D8" stop-opacity="0"/></radialGradient>
-</defs>
-<rect width="240" height="160" fill="url(#ngSky1)"/>
-<rect width="240" height="160" fill="url(#ngGlow1)"/>
-<g fill="#FFFFFF">
-<circle cx="32" cy="26" r="1.4" opacity=".9"/><circle cx="58" cy="50" r="1" opacity=".7"/><circle cx="84" cy="20" r="1.2" opacity=".8"/>
-<circle cx="168" cy="28" r="1.3" opacity=".85"/><circle cx="196" cy="54" r="1" opacity=".7"/><circle cx="214" cy="22" r="1.5" opacity=".9"/>
-<circle cx="146" cy="14" r=".9" opacity=".6"/><circle cx="20" cy="70" r=".9" opacity=".6"/><circle cx="226" cy="84" r=".9" opacity=".6"/>
-</g>
-<path d="M120 40 Q120 60 136 60 Q120 60 120 80 Q120 60 104 60 Q120 60 120 40Z" fill="#FFF3C4"/>
-<path d="M54 36 Q54 42 59 42 Q54 42 54 48 Q54 42 49 42 Q54 42 54 36Z" fill="#FFF3C4" opacity=".8"/>
-<path d="M190 70 Q190 75 194 75 Q190 75 190 80 Q190 75 186 75 Q190 75 190 70Z" fill="#FFF3C4" opacity=".7"/>
-<path d="M0 138 Q60 122 120 132 T240 128 V160 H0Z" fill="#0B3B5C"/>
-<path d="M120 134 V104" stroke="#7FE0A8" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M120 112 C108 112 100 104 99 94 C110 94 118 100 120 112Z" fill="#7FE0A8"/>
-<path d="M120 106 C130 104 139 96 141 86 C129 86 121 94 120 106Z" fill="#A8F0C4"/>
-</svg>
+<img class="ng-art" src="assets/home/ng-child.jpg" alt="나무 그늘 아래에서 책을 읽는 아이" width="702" height="467" loading="lazy">
 <div class="ng-txt"><span>꿈꾸는</span><b>아동</b></div>
 </div>
 
-<!-- 열정의 청년 : 힘차게 떠오르는 해 -->
 <div>
-<svg class="ng-art" viewBox="0 0 240 160" role="img" aria-label="산 너머 힘차게 떠오르는 해">
-<defs>
-<linearGradient id="ngSky2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2B8FBF"/><stop offset=".55" stop-color="#8FD3EE"/><stop offset="1" stop-color="#FFE2B0"/></linearGradient>
-<radialGradient id="ngSun2" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#FFFBEA"/><stop offset=".6" stop-color="#FFE7A6"/><stop offset="1" stop-color="#FFD27A"/></radialGradient>
-</defs>
-<rect width="240" height="160" fill="url(#ngSky2)"/>
-<g stroke="#FFF6D8" stroke-width="2.4" stroke-linecap="round" opacity=".8">
-<path d="M120 58 V40"/><path d="M84 70 L72 58"/><path d="M156 70 L168 58"/><path d="M70 98 H54"/><path d="M170 98 H186"/>
-<path d="M100 62 L94 46"/><path d="M140 62 L146 46"/>
-</g>
-<circle cx="120" cy="104" r="34" fill="#FFF0C2" opacity=".45"/>
-<circle cx="120" cy="104" r="26" fill="url(#ngSun2)"/>
-<path d="M0 124 L46 96 L82 118 L128 86 L176 120 L206 102 L240 118 V160 H0Z" fill="#1A7FA8"/>
-<path d="M0 140 Q70 118 130 136 T240 132 V160 H0Z" fill="#0B3B5C"/>
-<path d="M60 40 q5 -4 10 0 q5 -4 10 0" stroke="#0B3B5C" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".6"/>
-<path d="M176 30 q4 -3 8 0 q4 -3 8 0" stroke="#0B3B5C" stroke-width="1.4" fill="none" stroke-linecap="round" opacity=".5"/>
-</svg>
+<img class="ng-art" src="assets/home/ng-youth.jpg" alt="햇살 아래 두 팔을 활짝 벌린 청년" width="702" height="467" loading="lazy">
 <div class="ng-txt"><span>열정의</span><b>청년</b></div>
 </div>
 
-<!-- 지지하는 장년 : 새싹을 품는 든든한 나무 -->
 <div>
-<svg class="ng-art" viewBox="0 0 240 160" role="img" aria-label="어린 새싹을 품어 주는 든든한 나무">
-<defs>
-<linearGradient id="ngSky3" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#BFE7F5"/><stop offset="1" stop-color="#EEF9FD"/></linearGradient>
-</defs>
-<rect width="240" height="160" fill="url(#ngSky3)"/>
-<circle cx="196" cy="34" r="12" fill="#FFFFFF" opacity=".8"/>
-<path d="M0 134 Q120 122 240 134 V160 H0Z" fill="#9FD8EA"/>
-<path d="M0 144 Q120 136 240 144 V160 H0Z" fill="#4FB3D9" opacity=".6"/>
-<path d="M112 136 C114 118 112 104 108 92 L132 92 C128 104 126 118 128 136 C122 134 118 134 112 136Z" fill="#0B3B5C"/>
-<path d="M112 134 C104 136 96 140 90 142 M128 134 C136 136 144 140 150 142" stroke="#0B3B5C" stroke-width="3" stroke-linecap="round" fill="none"/>
-<path d="M118 96 L104 80 M122 96 L138 78" stroke="#0B3B5C" stroke-width="4" stroke-linecap="round" fill="none"/>
-<circle cx="92" cy="70" r="24" fill="#1A7FA8"/>
-<circle cx="148" cy="68" r="26" fill="#1A7FA8"/>
-<circle cx="120" cy="50" r="30" fill="#2B8FBF"/>
-<circle cx="104" cy="44" r="16" fill="#4FB3D9" opacity=".7"/>
-<circle cx="140" cy="54" r="12" fill="#4FB3D9" opacity=".55"/>
-<path d="M164 136 V124" stroke="#2BA36B" stroke-width="2.4" stroke-linecap="round"/>
-<path d="M164 128 C158 128 154 124 154 118 C160 118 163 122 164 128Z" fill="#4CC48A"/>
-<path d="M164 125 C170 124 174 120 175 114 C169 114 165 118 164 125Z" fill="#7FE0A8"/>
-</svg>
+<img class="ng-art" src="assets/home/ng-adult.jpg" alt="산 정상에서 떠오르는 해를 바라보는 사람" width="702" height="467" loading="lazy">
 <div class="ng-txt"><span>지지하는</span><b>장년</b></div>
 </div>
 
-<!-- 지혜의 실버 : 길을 비추는 등대 -->
 <div>
-<svg class="ng-art" viewBox="0 0 240 160" role="img" aria-label="노을 진 바다에서 길을 비추는 등대">
-<defs>
-<linearGradient id="ngSky4" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0E5F82"/><stop offset=".55" stop-color="#7FB9D6"/><stop offset="1" stop-color="#F6CFA0"/></linearGradient>
-<linearGradient id="ngBeam4" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#FFF3C4" stop-opacity=".85"/><stop offset="1" stop-color="#FFF3C4" stop-opacity="0"/></linearGradient>
-</defs>
-<rect width="240" height="160" fill="url(#ngSky4)"/>
-<circle cx="56" cy="118" r="18" fill="#FFE2B0" opacity=".9"/>
-<path d="M156 58 L240 30 V86Z" fill="url(#ngBeam4)"/>
-<rect x="0" y="118" width="240" height="42" fill="#1A7FA8"/>
-<g stroke="#9FE3F5" stroke-width="1.4" stroke-linecap="round" opacity=".6">
-<path d="M20 130 H48"/><path d="M64 140 H92"/><path d="M30 150 H54"/><path d="M190 136 H220"/>
-</g>
-<path d="M126 124 Q150 108 182 124Z" fill="#0B3B5C"/>
-<path d="M146 112 L150 70 L162 70 L166 112Z" fill="#FFFFFF"/>
-<path d="M147.5 98 L164.5 98 L165.3 106 L146.7 106Z M149 84 L163 84 L163.6 91 L148.4 91Z" fill="#E5536B" opacity=".85"/>
-<rect x="148" y="60" width="16" height="10" rx="1.5" fill="#FFF3C4"/>
-<circle cx="156" cy="65" r="9" fill="#FFF3C4" opacity=".35"/>
-<path d="M146 60 L156 50 L166 60Z" fill="#0B3B5C"/>
-<rect x="144" y="70" width="24" height="3" rx="1" fill="#0B3B5C"/>
-</svg>
+<img class="ng-art" src="assets/home/ng-silver.jpg" alt="노을 진 바다의 등대 곁에 선 사람" width="702" height="467" loading="lazy">
 <div class="ng-txt"><span>지혜의</span><b>실버</b></div>
 </div>
 </div>
