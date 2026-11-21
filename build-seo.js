@@ -230,7 +230,7 @@ const urls = [
   { loc: SITE + '/', date: lastmod['index.html'] || today, pr: '1.0', freq: 'weekly' },
   { loc: SITE + '/' + ARCHIVE, date: archiveDate || today, pr: '0.9', freq: 'daily' },
 ]
-  .concat(['about.html', 'ministry.html', 'groups.html', 'events.html', 'mission.html', 'partner.html', 'visit.html', 'bulletin.html', 'sermons.html']
+  .concat(['about.html', 'ministry.html', 'groups.html', 'events.html', 'mission.html', 'partner.html', 'visit.html', 'bulletin.html']
     .map((f) => ({ loc: SITE + '/' + f, date: lastmod[f] || lastmod['index.html'] || today, pr: '0.8', freq: 'weekly' })))
   .concat(publicDocs.map((d) => ({ loc: urlOf(d.file), date: d.date, pr: '0.7', freq: 'monthly' })));
 fs.writeFileSync('sitemap.xml',
