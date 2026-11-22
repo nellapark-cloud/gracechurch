@@ -3,7 +3,7 @@
 //
 // 동작 방식
 // 1) 버튼을 누르면 은혜교회 유튜브 채널이 "지금 실제로 생방송 중인지" 확인합니다.
-//    - 생방송 중이면 → 그 방송 영상으로 바로 이동
+//    - 생방송 중이면 → 공식 채널 라이브(@sjgrace/live)로 바로 이동
 //    - 중계가 없으면 → "지금은 방송시간이 아닙니다" 안내 창 (다시 보기 버튼 포함)
 //    - 확인이 안 되면(인터넷 문제 등) → 유튜브 라이브 페이지로 이동할 수 있는 버튼 안내
 // 2) 정해진 예배 시간(SCHEDULE) 근처에는 페이지를 열 때 미리 확인해 두어서
@@ -46,7 +46,7 @@
     document.documentElement.classList.toggle('grace-on-air', status === 'live');
   }
   function fresh() { return state.status && Date.now() - state.at < CACHE_MS; }
-  function watchUrl() { return state.videoId ? 'https://www.youtube.com/watch?v=' + state.videoId : LIVE_URL; }
+  function watchUrl() { return LIVE_URL; } // 방송 중일 때도 항상 공식 채널(@sjgrace)의 라이브로 연결
   if (fresh() && state.status === 'live') document.documentElement.classList.add('grace-on-air');
 
   // ---------- 유튜브 생방송 확인 ----------
@@ -155,7 +155,7 @@
     },
     live: function () {
       return { icon: ICON_LIVE, title: '지금 실시간 예배 중입니다',
-        text: '아래 버튼을 누르면 유튜브 생방송으로 바로 연결됩니다.',
+        text: '아래 버튼을 누르면 은혜교회 공식 채널 라이브로 연결됩니다.',
         btns: link('lm-live', watchUrl(), '실시간 예배 보기') + CLOSE };
     },
     off: function () {
@@ -217,10 +217,7 @@
     if (!a || a.closest('#live-modal') || !isLiveLink(a)) return;
 
     if (fresh() && state.status === 'live') {
-      // 이미 생방송 확인됨 → 그 방송 영상으로 바로 이동
-      a.href = watchUrl();
-      setTimeout(function () { a.href = LIVE_URL; }, 0);
-      return;
+      return; // 이미 생방송 확인됨 → 공식 채널 라이브로 바로 이동
     }
     e.preventDefault();
     if (fresh()) return open(state.status);
