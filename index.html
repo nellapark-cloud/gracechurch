@@ -358,13 +358,13 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(10,104,204,.2
 </section>
 <div class="lq-modal" id="lqModal" hidden><div class="lq-box"><button type="button" class="lq-x" aria-label="닫기">×</button><div class="lq-frame" id="lqFrame"></div><div class="lq-nav"><button type="button" data-d="-1" aria-label="이전 질문">‹</button><span id="lqNow"></span><button type="button" data-d="1" aria-label="다음 질문">›</button></div></div></div>
 <style>
-.lq-band{position:relative;padding:44px 0 40px;margin-top:36px;background:radial-gradient(ellipse 70% 90% at 85% 0%,rgba(81,156,236,.28),transparent 60%),linear-gradient(180deg,#00244B 0%,#001B37 100%);color:#fff;overflow:hidden}
-.lq-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.lq-band{position:relative;z-index:1;padding:86px 0 30px;margin-top:-58px;background:radial-gradient(ellipse 70% 90% at 85% 0%,rgba(81,156,236,.28),transparent 60%),linear-gradient(180deg,#00244B 0%,#001B37 100%);color:#fff;overflow:hidden}
+.lq-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:14px}
 .lq-head h2{margin:6px 0 4px;font-size:24px;font-weight:800;letter-spacing:-.02em}
 .lq-head p{margin:0;color:rgba(255,255,255,.72);font-size:14px}
 .lq-yt{white-space:nowrap;font-size:14px;font-weight:600;color:#9CC6F5}
 .lq-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
-.lq-c{position:relative;display:block;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:pointer;background:#00172F;aspect-ratio:4/3;box-shadow:0 16px 36px rgba(0,0,0,.35);transition:transform .25s ease,box-shadow .25s ease;text-align:left;font:inherit;color:#fff}
+.lq-c{position:relative;display:block;padding:0;border:0;border-radius:14px;overflow:hidden;cursor:pointer;background:#00172F;aspect-ratio:16/10;box-shadow:0 16px 36px rgba(0,0,0,.35);transition:transform .25s ease,box-shadow .25s ease;text-align:left;font:inherit;color:#fff}
 .lq-c:hover{transform:translateY(-4px);box-shadow:0 22px 44px rgba(0,0,0,.45)}
 .lq-c img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 47%;transform:scale(1.02)}
 .lq-c::after{content:"";position:absolute;inset:0;border-radius:14px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
@@ -379,7 +379,7 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(10,104,204,.2
 .lq-x{position:absolute;top:-44px;right:0;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:24px;cursor:pointer}
 .lq-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:14px;color:#fff;font-size:14px}
 .lq-nav button{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:22px;cursor:pointer}
-@media (max-width:900px){.lq-band{padding:36px 0 32px}.lq-head{flex-direction:column;align-items:flex-start}.lq-head h2{font-size:21px}.lq-row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:58%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-right:-24px;padding-right:24px;scrollbar-width:none}.lq-row::-webkit-scrollbar{display:none}.lq-c{scroll-snap-align:start}}
+@media (max-width:900px){.lq-band{padding:76px 0 26px;margin-top:-50px}.lq-head{flex-direction:column;align-items:flex-start}.lq-head h2{font-size:21px}.lq-row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:58%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-right:-24px;padding-right:24px;scrollbar-width:none}.lq-row::-webkit-scrollbar{display:none}.lq-c{scroll-snap-align:start}}
 </style>
 <script>
 (function(){
