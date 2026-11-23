@@ -346,6 +346,52 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(10,104,204,.2
 </section>
 
 <!-- 빠른 링크 -->
+<!-- 인생질문 (쇼츠) -->
+<section id="lifeq" class="lq-band" aria-labelledby="lqTitle">
+<div class="wrap">
+<div class="lq-head">
+<div><span class="en en-light">LIFE QUESTIONS · 인생질문</span><h2 id="lqTitle">잠시 멈추어 묻습니다</h2><p>누구나 한 번쯤 마주하는 질문들, 1분이면 충분해요.</p></div>
+<a href="https://www.youtube.com/@sjgrace/shorts" target="_blank" rel="noopener" class="lq-yt">유튜브에서 보기 ›</a>
+</div>
+<div class="lq-row"><button type="button" class="lq-c" aria-label="인생질문 영상 보기" data-yt="bs3KptMsaHU" data-n="01"><img src="assets/lifeq/q01.jpg" alt="" loading="lazy"><span class="lq-play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></button><button type="button" class="lq-c" aria-label="인생질문 영상 보기" data-yt="cuf3b6Od1hQ" data-n="02"><img src="assets/lifeq/q02.jpg" alt="" loading="lazy"><span class="lq-play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></button><button type="button" class="lq-c" aria-label="인생질문 영상 보기" data-yt="7RX4cgOwGK0" data-n="03"><img src="assets/lifeq/q03.jpg" alt="" loading="lazy"><span class="lq-play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></button><button type="button" class="lq-c" aria-label="인생질문 영상 보기" data-yt="p98ez_kcT3o" data-n="04"><img src="assets/lifeq/q04.jpg" alt="" loading="lazy"><span class="lq-play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></button><button type="button" class="lq-c" aria-label="인생질문 영상 보기" data-yt="GILE2GIB72g" data-n="05"><img src="assets/lifeq/q05.jpg" alt="" loading="lazy"><span class="lq-play" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="currentColor"/></svg></span></button></div>
+</div>
+</section>
+<div class="lq-modal" id="lqModal" hidden><div class="lq-box"><button type="button" class="lq-x" aria-label="닫기">×</button><div class="lq-frame" id="lqFrame"></div><div class="lq-nav"><button type="button" data-d="-1" aria-label="이전 질문">‹</button><span id="lqNow"></span><button type="button" data-d="1" aria-label="다음 질문">›</button></div></div></div>
+<style>
+.lq-band{position:relative;padding:72px 0 64px;margin-top:40px;background:radial-gradient(ellipse 70% 90% at 85% 0%,rgba(81,156,236,.28),transparent 60%),linear-gradient(180deg,#00244B 0%,#001B37 100%);color:#fff;overflow:hidden}
+.lq-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:26px}
+.lq-head h2{margin:8px 0 6px;font-size:30px;font-weight:800;letter-spacing:-.02em}
+.lq-head p{margin:0;color:rgba(255,255,255,.72);font-size:15px}
+.lq-yt{white-space:nowrap;font-size:14px;font-weight:600;color:#9CC6F5}
+.lq-row{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+.lq-c{position:relative;display:block;padding:0;border:0;border-radius:16px;overflow:hidden;cursor:pointer;background:#00172F;aspect-ratio:9/16;box-shadow:0 16px 36px rgba(0,0,0,.35);transition:transform .25s ease,box-shadow .25s ease;text-align:left;font:inherit;color:#fff}
+.lq-c:hover{transform:translateY(-6px);box-shadow:0 22px 44px rgba(0,0,0,.45)}
+.lq-c img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transform:scale(1.02)}
+.lq-c::after{content:"";position:absolute;inset:0;border-radius:16px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.14)}
+.lq-play{position:absolute;z-index:2;left:50%;bottom:16%;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.92);color:#023265;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 16px rgba(0,0,0,.25)}
+.lq-t{position:absolute;z-index:2;left:14px;right:14px;bottom:14px;font-size:14px;font-weight:700;line-height:1.45;word-break:keep-all}
+.lq-t small{display:block;margin-bottom:4px;font-size:10.5px;font-weight:700;letter-spacing:.12em;color:#F4D9A8}
+.lq-modal{position:fixed;inset:0;z-index:200;background:rgba(0,14,30,.86);display:flex;align-items:center;justify-content:center;padding:20px}
+.lq-modal[hidden]{display:none}
+.lq-box{position:relative;width:min(380px,100%);}
+.lq-frame{width:100%;aspect-ratio:9/16;max-height:78vh;border-radius:18px;overflow:hidden;background:#000;margin:0 auto}
+.lq-frame iframe{width:100%;height:100%;border:0;display:block}
+.lq-x{position:absolute;top:-44px;right:0;width:38px;height:38px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:24px;cursor:pointer}
+.lq-nav{display:flex;align-items:center;justify-content:center;gap:18px;margin-top:14px;color:#fff;font-size:14px}
+.lq-nav button{width:40px;height:40px;border-radius:50%;border:0;background:rgba(255,255,255,.15);color:#fff;font-size:22px;cursor:pointer}
+@media (max-width:900px){.lq-band{padding:52px 0 48px}.lq-head{flex-direction:column;align-items:flex-start}.lq-head h2{font-size:24px}.lq-row{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:44%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-right:-24px;padding-right:24px;scrollbar-width:none}.lq-row::-webkit-scrollbar{display:none}.lq-c{scroll-snap-align:start}}
+</style>
+<script>
+(function(){
+var cs=[].slice.call(document.querySelectorAll('.lq-c')),m=document.getElementById('lqModal'),f=document.getElementById('lqFrame'),now=document.getElementById('lqNow'),i=0;
+function show(k){i=(k+cs.length)%cs.length;var c=cs[i];f.innerHTML='<iframe src="https://www.youtube.com/embed/'+c.dataset.yt+'?autoplay=1&playsinline=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="인생질문 '+c.dataset.n+'"></iframe>';now.textContent='인생질문 '+c.dataset.n+' / 0'+cs.length;}
+function close(){m.hidden=true;f.innerHTML='';document.body.style.overflow='';}
+cs.forEach(function(c,k){c.addEventListener('click',function(){m.hidden=false;document.body.style.overflow='hidden';show(k);});});
+m.addEventListener('click',function(e){if(e.target===m||e.target.classList.contains('lq-x'))close();var d=e.target.getAttribute('data-d');if(d)show(i+ +d);});
+document.addEventListener('keydown',function(e){if(m.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowRight')show(i+1);if(e.key==='ArrowLeft')show(i-1);});
+})();
+</script>
+
 <section style="padding-top: 56px">
 <div class="wrap">
 <p class="en" style="margin: 0 0 16px">QUICK LINKS</p>
@@ -424,18 +470,6 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(10,104,204,.2
 <div class="wd-pan" role="tabpanel" id="wd-pan-4" aria-labelledby="wd-tab-4" hidden><div class="wd-l"><em>Embrace</em><h3>이웃을 품음</h3><p>받은 은혜로 이웃과 지역을 품는 교회</p></div><div class="wd-r"><p>그러므로 그리스도께서 우리를 받아 하나님께 영광을 돌리심과 같이 너희도 서로 받으라</p><span>로마서 15:7 · 개역개정</span></div></div>
 </div>
 </div>
-</section>
-
-<!-- 인생질문 -->
-<section class="sec" id="lifeq">
-<div class="wrap">
-<span class="en">LIFE QUESTIONS</span>
-<h2 class="h2">잠시 멈추어<br class="mbr"> <span class="nw">묻습니다</span></h2>
-<p class="lq-sub">누구나 한 번쯤 마주하는 인생의 질문들, 1분 영상으로 건넵니다.</p>
-<div class="lq-strip"><a href="questions.html#q01" class="lq-i"><img src="assets/lifeq/q01.jpg" alt="인생질문 01 — 다 이루고 나면, 그다음은 뭔가요?" loading="lazy"></a><a href="questions.html#q02" class="lq-i"><img src="assets/lifeq/q02.jpg" alt="인생질문 02 — 당신이 사라진 100년 뒤, 무엇이 남을까요?" loading="lazy"></a><a href="questions.html#q03" class="lq-i"><img src="assets/lifeq/q03.jpg" alt="인생질문 03 — 가장 외로운 순간, 누구에게 전화하나요?" loading="lazy"></a><a href="questions.html#q04" class="lq-i"><img src="assets/lifeq/q04.jpg" alt="인생질문 04 — 당신은 왜 ‘옳은 것’을 원하나요?" loading="lazy"></a><a href="questions.html#q05" class="lq-i"><img src="assets/lifeq/q05.jpg" alt="인생질문 05 — 마지막 날, 무엇을 손에 쥐고 있을까요?" loading="lazy"></a></div>
-<a href="questions.html" class="lq-more">인생질문 전체 보기 ›</a>
-</div>
-<style>.lq-sub{margin:8px 0 18px;color:var(--muted);font-size:15px}.lq-strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}.lq-i{display:block;border-radius:14px;overflow:hidden;box-shadow:0 8px 22px rgba(2,50,101,.08);transition:transform .2s}.lq-i:hover{transform:translateY(-3px)}.lq-i img{display:block;width:100%;aspect-ratio:9/16;object-fit:cover}.lq-more{display:inline-block;margin-top:14px;font-size:14px;color:var(--gold-text);font-weight:600}@media (max-width:700px){.lq-strip{grid-auto-flow:column;grid-template-columns:none;grid-auto-columns:42%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.lq-i{scroll-snap-align:start}}</style>
 </section>
 
 <!-- 말씀 모임 · 커넥트 사역 -->
