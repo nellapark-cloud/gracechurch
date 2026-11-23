@@ -570,10 +570,15 @@ a:focus-visible,button:focus-visible{outline:2px solid #0360C2;outline-offset:2p
 #sundayschool .ss-meta em{font-style:normal;font-weight:700;color:#023265;margin-right:6px}
 #sundayschool .ss-cta{margin-left:auto;display:inline-flex;align-items:center;min-height:40px;padding:0 18px;border-radius:999px;background:#023265;color:#FFFFFF;font-size:14px;font-weight:700}
 @media (max-width:860px){#sundayschool .ss{grid-template-columns:1fr}#sundayschool .ss-img{min-height:220px}#sundayschool .ss-body{padding:24px 20px}#sundayschool .ss-pills{grid-template-columns:1fr}#sundayschool .ss-cta{margin-left:0}}
+#sundayschool .ss-img::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(180deg,transparent,rgba(0,36,75,.28));pointer-events:none}
+#sundayschool .ss-inset{position:absolute;z-index:2;right:22px;bottom:22px;margin:0;width:38%;max-width:220px;background:#FFFFFF;padding:8px 8px 10px;border-radius:16px;box-shadow:0 14px 32px rgba(0,27,55,.28);transform:rotate(-3deg)}
+#sundayschool .ss-inset img{position:static;display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;object-position:35% 60%;border-radius:10px}
+#sundayschool .ss-inset figcaption{margin-top:7px;text-align:center;font-size:12px;font-weight:700;color:#B8741A;letter-spacing:-.01em}
+@media (max-width:860px){#sundayschool .ss-img{min-height:260px}#sundayschool .ss-inset{width:42%;right:14px;bottom:-26px;padding:6px 6px 8px}#sundayschool .ss-inset figcaption{font-size:11px}#sundayschool .ss-body{padding-top:40px}#sundayschool .ss{overflow:visible}#sundayschool .ss-img{border-radius:24px 24px 0 0;overflow:visible}#sundayschool .ss-img>img{border-radius:24px 24px 0 0}}
 </style>
 <section id="sundayschool" style="padding: 24px 24px 8px">
 <div class="ss">
-<div class="ss-img"><img src="assets/home/sundayschool.jpg" alt="교회에서 환하게 웃는 주일학교 아이들" loading="lazy" style="object-position:55% 40%"></div>
+<div class="ss-img"><img src="assets/home/sundayschool.jpg" alt="교회에서 환하게 웃는 주일학교 아이들" loading="lazy" style="object-position:55% 40%"><figure class="ss-inset"><img src="assets/home/ng-child.jpg" alt="나무 아래에서 성경을 읽는 아이" loading="lazy"><figcaption>말씀 안에서 꿈꾸는 아이</figcaption></figure></div>
 <div class="ss-body">
 <span class="ss-tag">SUNDAY SCHOOL · 주일학교</span>
 <h2>꿈꾸는 아이들,<br>은혜교회 주일학교</h2>
