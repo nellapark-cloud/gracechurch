@@ -74,6 +74,7 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(10,104,204,.2
 /* 간결한 푸터 */
 .ft.ft-simple{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px 48px;padding:44px 28px 24px}
 .ft-brand{display:flex;flex-direction:column;gap:4px}
+.ft-info a{color:inherit;text-decoration:none}.ft-info a.ft-map:hover{color:#fff}.ft-info a.ft-map-k{margin-left:10px;font-size:12px;opacity:.75}.ft-info a.ft-map::after{content:" · 네이버지도";font-size:12px;opacity:.75}a[x-apple-data-detectors]{color:inherit!important;text-decoration:none!important}
 .ft-info{display:flex;flex-direction:column;gap:4px;font-size:13.5px;line-height:1.7;color:#B4C9DF}
 .ft-links{display:flex;flex-direction:row!important;gap:10px}
 .ft-links a{padding:8px 16px;border:1px solid rgba(149,200,255,.35);border-radius:999px;font-size:13px;color:#DAE9FA}
