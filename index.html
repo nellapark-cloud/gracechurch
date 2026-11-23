@@ -76,7 +76,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .hs-slide{position:relative;flex:0 0 100%;min-width:0;overflow:hidden}
 .hs-main{min-height:720px;display:flex;align-items:center}
 /* 사진은 오른쪽 — 청년 얼굴 위에는 그늘·글씨가 겹치지 않게 */
-.hero-img{--hr:calc(max(0px,(100% - 1200px) / 2) + 28px);position:absolute;top:0;right:var(--hr);width:calc(60% - var(--hr));height:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 20%);mask-image:linear-gradient(90deg,transparent 0%,#000 20%)}.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:14% 30%}.hero-img .ha-bg{transform-origin:70% 40%;animation:haBg 16s ease-in-out infinite alternate}.hero-img .ha-p{animation:haFloat 6s ease-in-out infinite;will-change:transform}@keyframes haBg{0%{transform:scale(1.05) translate(-1.2%,0)}100%{transform:scale(1.08) translate(1.2%,-.8%)}}@keyframes haFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-12px)}}@media (prefers-reduced-motion:reduce){.hero-img .ha-bg,.hero-img .ha-p{animation:none}}
+.hero-img,.hero-panel{--hr:calc(max(0px,(100% - 1200px) / 2) + 28px)}.hero-panel{position:absolute;top:0;bottom:0;left:var(--hr);right:var(--hr);background:linear-gradient(105deg,#0B2E63 0%,#123F86 30%,#1B57AE 52%,rgba(20,80,160,0) 80%);box-shadow:inset 1px 0 0 rgba(255,255,255,.14)}.hero-panel::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 55% at 0% 20%,rgba(120,190,255,.22),transparent 70%)}.hero-img{position:absolute;top:0;right:var(--hr);width:calc((100% - 2 * var(--hr)) * .66);height:100%;overflow:hidden;-webkit-mask-image:linear-gradient(90deg,transparent 0%,#000 26%);mask-image:linear-gradient(90deg,transparent 0%,#000 26%)}.hero-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:14% 30%}.hero-img .ha-bg{transform-origin:70% 40%;animation:haBg 28s ease-in-out infinite alternate}.hero-img .ha-p{transform-origin:50% 90%;animation:haFloat 16s ease-in-out infinite;will-change:transform}@keyframes haBg{0%{transform:scale(1.05) translate(-1%,0)}100%{transform:scale(1.08) translate(1%,-.6%)}}@keyframes haFloat{0%,100%{transform:translate(0,0) rotate(0)}20%{transform:translate(3px,-4px) rotate(.25deg)}40%{transform:translate(-2px,-6px) rotate(-.2deg)}60%{transform:translate(-4px,-2px) rotate(-.3deg)}80%{transform:translate(2px,-3px) rotate(.15deg)}}@media (prefers-reduced-motion:reduce){.hero-img .ha-bg,.hero-img .ha-p{animation:none}}@media (min-width:701px){.hero-txt{padding-left:36px}}
 .hero-glow{position:absolute;inset:0;background:radial-gradient(ellipse at 15% 40%,rgba(81,156,236,.12),transparent 55%)}
 .hero-in{position:relative;width:100%;max-width:1200px;margin:0 auto;padding:150px 28px 170px}
 .hero-txt{max-width:500px;display:flex;flex-direction:column;gap:22px}
@@ -91,7 +91,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold);outline-offse
 .btn-line:hover{background:rgba(255,255,255,.08)}
 @media (max-width:700px){
  .hs-main{min-height:0;align-items:flex-end}
- .hero-img{right:0;width:100%;height:460px;}.hero-img img{object-position:24% 22%}.hero-img{-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
+ .hero-panel{display:none}.hero-img{right:0;width:100%;height:460px;}.hero-img img{object-position:24% 22%}.hero-img{-webkit-mask-image:linear-gradient(180deg,#000 72%,transparent 100%);mask-image:linear-gradient(180deg,#000 72%,transparent 100%)}
  .hero-glow{background:linear-gradient(180deg,rgba(0,36,75,.3) 0,rgba(0,36,75,0) 110px)}
  .hero-in{padding:440px 20px 150px}
         }
@@ -312,7 +312,7 @@ footer{background:radial-gradient(ellipse 60% 120% at 100% 0%,rgba(10,104,204,.2
 <section id="top">
 <div class="hs-track" id="hs-track">
 <div class="hs-slide hs-main">
-<div class="hero-img"><img class="ha-bg" src="assets/home/hero-bg.jpg" fetchpriority="high" alt=""><img class="ha-p" src="assets/home/hero-person.webp" fetchpriority="high" alt="도심 한가운데에서 성경을 품고 하늘을 바라보는 청년"></div>
+<div class="hero-panel" aria-hidden="true"></div><div class="hero-img"><img class="ha-bg" src="assets/home/hero-bg.jpg" fetchpriority="high" alt=""><img class="ha-p" src="assets/home/hero-person.webp" fetchpriority="high" alt="도심 한가운데에서 성경을 품고 하늘을 바라보는 청년"></div>
 <div class="hero-glow" aria-hidden="true"></div>
 <div class="signwrap" aria-label="예수님이 답입니다. 예수님이 길입니다."><svg class="cord" viewBox="0 0 120 38" aria-hidden="true"><path d="M14 38 L60 6 L106 38" fill="none" stroke="#E7F0F9" stroke-width="1.8"/><circle cx="60" cy="6" r="4.5" fill="#FFFFFF" stroke="#519CEC" stroke-width="1.5"/></svg><div class="plate"><i class="l"></i><i class="r"></i><strong>예수님이 답입니다</strong><strong>예수님이 길입니다</strong><em>Jesus is the Answer · Jesus is the Way</em></div></div>
 <div class="hero-in">
