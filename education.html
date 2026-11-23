@@ -552,6 +552,7 @@ a:focus-visible,button:focus-visible{outline:2px solid #0360C2;outline-offset:2p
 <style>
 #sundayschool .ss{max-width:1200px;margin:0 auto;border-radius:24px;overflow:hidden;background:linear-gradient(135deg,#FFF8EC 0%,#FFFDF7 55%,#EEF6FF 100%);border:1px solid #F3E3C4;box-shadow:0 8px 22px rgba(2,50,101,.07);display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr)}
 #sundayschool .ss-img{position:relative;min-height:340px}
+@media (min-width:861px){#sundayschool .ss{overflow:visible}#sundayschool .ss-img>img{border-radius:24px 0 0 24px}#sundayschool .ss-img::after{border-radius:0 0 0 24px}}
 #sundayschool .ss-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 #sundayschool .ss-body{padding:34px 34px 30px;display:flex;flex-direction:column;gap:12px}
 #sundayschool .ss-tag{align-self:flex-start;font-size:11px;font-weight:800;letter-spacing:.14em;color:#B8741A;background:#FFEFD3;border-radius:999px;padding:5px 12px}
@@ -571,10 +572,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #0360C2;outline-offset:2p
 #sundayschool .ss-cta{margin-left:auto;display:inline-flex;align-items:center;min-height:40px;padding:0 18px;border-radius:999px;background:#023265;color:#FFFFFF;font-size:14px;font-weight:700}
 @media (max-width:860px){#sundayschool .ss{grid-template-columns:1fr}#sundayschool .ss-img{min-height:220px}#sundayschool .ss-body{padding:24px 20px}#sundayschool .ss-pills{grid-template-columns:1fr}#sundayschool .ss-cta{margin-left:0}}
 #sundayschool .ss-img::after{content:"";position:absolute;inset:auto 0 0 0;height:45%;background:linear-gradient(180deg,transparent,rgba(0,36,75,.28));pointer-events:none}
-#sundayschool .ss-inset{position:absolute;z-index:2;right:22px;bottom:22px;margin:0;width:38%;max-width:220px;background:#FFFFFF;padding:8px 8px 10px;border-radius:16px;box-shadow:0 14px 32px rgba(0,27,55,.28);transform:rotate(-3deg)}
+#sundayschool .ss-inset{position:absolute;z-index:2;left:18px;bottom:-34px;margin:0;width:30%;max-width:170px;background:#FFFFFF;padding:8px 8px 10px;border-radius:16px;box-shadow:0 14px 32px rgba(0,27,55,.28);transform:rotate(-4deg)}
 #sundayschool .ss-inset img{position:static;display:block;width:100%;aspect-ratio:4/3;height:auto;object-fit:cover;object-position:35% 60%;border-radius:10px}
 #sundayschool .ss-inset figcaption{margin-top:7px;text-align:center;font-size:12px;font-weight:700;color:#B8741A;letter-spacing:-.01em}
-@media (max-width:860px){#sundayschool .ss-img{min-height:260px}#sundayschool .ss-inset{width:42%;right:14px;bottom:-26px;padding:6px 6px 8px}#sundayschool .ss-inset figcaption{font-size:11px}#sundayschool .ss-body{padding-top:40px}#sundayschool .ss{overflow:visible}#sundayschool .ss-img{border-radius:24px 24px 0 0;overflow:visible}#sundayschool .ss-img>img{border-radius:24px 24px 0 0}}
+@media (max-width:860px){#sundayschool .ss-img{min-height:260px}#sundayschool .ss-inset{width:34%;left:auto;right:14px;bottom:-58px;padding:6px 6px 8px}#sundayschool .ss-inset figcaption{font-size:10.5px;white-space:nowrap;letter-spacing:-.03em}#sundayschool .ss-body{padding-top:22px}#sundayschool .ss-tag{white-space:nowrap;font-size:10px;letter-spacing:.1em}#sundayschool .ss-body h2{margin-top:30px}#sundayschool .ss{overflow:visible}#sundayschool .ss-img{border-radius:24px 24px 0 0;overflow:visible}#sundayschool .ss-img>img{border-radius:24px 24px 0 0}}
 </style>
 <section id="sundayschool" style="padding: 24px 24px 8px">
 <div class="ss">
