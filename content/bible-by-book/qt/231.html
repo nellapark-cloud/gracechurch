@@ -242,6 +242,11 @@
     text-align:center;
     background:var(--paper);
   }
+  .qt-vid{ margin:16px 18px 22px; padding:14px; border-radius:22px; background:rgba(255,255,255,.78); border:1px solid rgba(255,255,255,.9); box-shadow:0 10px 30px rgba(20,40,80,.08); scroll-margin-top:70px; }
+  .qt-vid .qv-label{ display:block; font-size:13px; font-weight:800; color:#0360C2; margin:2px 6px 10px; letter-spacing:.01em; }
+  .qt-vid .qv-frame{ position:relative; width:100%; aspect-ratio:16/9; border-radius:14px; overflow:hidden; background:#0b1a2b; }
+  .qt-vid .qv-frame iframe{ position:absolute; inset:0; width:100%; height:100%; border:0; }
+  .qt-vid .qv-note{ font-size:12.5px; color:#6b7385; margin:10px 6px 2px; line-height:1.5; }
 </style>
 </head>
 <body>
@@ -257,11 +262,18 @@
   </div>
 
   <nav class="chipnav">
+    <a href="#video">영상</a>
     <a href="#ch48">렘 48</a>
     <a href="#ch49">렘 49</a>
     <a href="#ps76">시 76</a>
     <a href="#meditation">묵상</a>
   </nav>
+
+  <div class="qt-vid" id="video">
+    <span class="qv-label">▶ 오늘의 통독 영상 · 렘48–49, 시76</span>
+    <div class="qv-frame"><iframe src="https://www.youtube-nocookie.com/embed/QViG3gZl2dM?rel=0" title="231일차 통독 영상" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen></iframe></div>
+    <p class="qv-note">공동체성경읽기(PRS) 365일 읽기 플랜 · 개역개정 · 영상과 함께 들으며 읽어요.</p>
+  </div>
 
   <div class="item" id="ch48">
     <div class="item-inner">
