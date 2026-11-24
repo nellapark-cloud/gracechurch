@@ -555,5 +555,14 @@ function f(){var y=window.pageYOffset||document.documentElement.scrollTop||docum
 window.addEventListener('scroll',f,{passive:true});document.body.addEventListener('scroll',f,{passive:true});f();})();
 </script>
 <script src="/assets/qt-today.js?v=3"></script>
+<style>.svc-off{display:inline-block;margin-top:3px;font-size:12px;font-weight:500;color:#B3261E}</style>
+<script id="svc-off-js">
+/* 교육 페이지 일정에서 휴강(data-off) 날짜를 읽어, 오늘이 휴강이면 예배 시간 칸 아래 작게 표시 */
+(function(){var t=new Date(Date.now()+9*36e5).toISOString().slice(0,10),dow=new Date(t+'T00:00:00Z').getUTCDay();
+var sel=dow===2?'a.svc-item[href="education.html#koinonia"]':dow===4?'a.svc-item[href="education.html#koinonia-thu"]':null;if(!sel)return;
+var el=document.querySelector(sel);if(!el||!window.fetch)return;
+fetch('education.html',{cache:'no-cache'}).then(function(r){return r.text()}).then(function(h){
+if(h.indexOf('data-date="'+t+'" data-off')<0)return;var s=document.createElement('small');s.className='svc-off';s.textContent='오늘은 휴강';el.appendChild(s);}).catch(function(){});})();
+</script>
 </body>
 </html>
