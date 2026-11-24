@@ -297,7 +297,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #0360C2;outline-offset:2p
 .kn-weeks--5{grid-template-columns:repeat(5,minmax(0,1fr))}
 .kn-week.is-off{background:#FAFAFB;border-style:dashed;border-color:#C9D3DE}.kn-week.is-off .kn-state{background:#8A94A6;color:#fff}.kn-week.is-off .kn-ref,.kn-week.is-off .kn-theme,.kn-week.is-off .kn-q{opacity:.55}
 .kn-off-note{font-size:12.5px;font-weight:600;color:#5B6478}
-@media (max-width:1100px){.kn-weeks--5{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:900px){.kn-weeks--5{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:6px}.kn-weeks--5 .kn-week{flex:0 0 74%;scroll-snap-align:center}}
+@keyframes knIn{from{opacity:0;transform:translateX(28px)}}.kn-week.kn-in{animation:knIn .5s ease both}
 @media (max-width:980px){.kn-weeks{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.kn-weeks{grid-template-columns:1fr}.kn-sched{padding:22px 18px}}
 @media (max-width:820px){.kn-banner{grid-template-columns:1fr}.kn-banner img{min-height:0;aspect-ratio:16/9;height:auto}.kn-body{padding:22px 20px}}
@@ -384,8 +385,14 @@ a:focus-visible,button:focus-visible{outline:2px solid #0360C2;outline-offset:2p
 </div>
 </div>
 <div class="kn-sched">
-<div class="kn-sched-head"><span class="kn-tag">SCHEDULE · 일정</span><h3>빌립보서 하브루타 일정</h3><p>본문을 미리 읽고, 질문을 마음에 품고 오세요. 짝과 나눌 이야기가 훨씬 깊어져요.</p></div>
-<ol class="kn-weeks kn-weeks--5">
+<div class="kn-sched-head"><span class="kn-tag">SCHEDULE · 일정</span><h3>빌립보서 → 골로새서 하브루타 일정</h3><p>본문을 미리 읽고, 질문을 마음에 품고 오세요. 짝과 나눌 이야기가 훨씬 깊어져요.</p></div>
+<ol class="kn-weeks kn-weeks--5 kn-track">
+<li class="kn-week" data-date="2026-11-03">
+<div class="kn-when"><b>11월 3일</b><span>화요일</span></div>
+<div class="kn-what">
+<div class="kn-ref"><span class="kn-state"></span>빌립보서 1:3-6</div>
+<div class="kn-theme">시작하신 이가 이루신다</div>
+<ul class="kn-q"><li>바울은 왜 빌립보 교회를 생각할 때마다 감사했을까요?</li>
 li>하나님이 내 안에서 시작하신 '착한 일'은 무엇일까요?</li></ul>
 <a class="kn-read" href="content/bible-by-book/new-testament/philippians-detailed/1%EC%9E%A5.html">1장 세부 강해 미리 읽기 →</a>
 </div>
@@ -432,11 +439,13 @@ li>하나님이 내 안에서 시작하신 '착한 일'은 무엇일까요?</li>
 <ul class="kn-q"><li>빌립보서 네 장 가운데 내 마음에 가장 오래 남은 한 구절은 무엇인가요?</li><li>빌립보서를 읽으며 달라진 나의 모습 한 가지를 나눠 주세요.</li></ul>
 </div>
 </li>
-</ol>
+<li class="kn-week" data-date="2026-12-15" data-off="1">
+<div class="kn-when"><b>12월 15일</b><span>화요일</span></div>
+<div class="kn-what">
+<div class="kn-ref"><span class="kn-state"></span>쉬어 가는 주</div>
+<div class="kn-off-note">한 주 쉬고, 다음 주부터 골로새서를 매주 한 장씩 함께 나눠요.</div>
 </div>
-<div class="kn-sched">
-<div class="kn-sched-head"><span class="kn-tag">NEXT · 다음 여정</span><h3>골로새서 하브루타 일정</h3><p>12월 15일은 한 주 쉬어 가요. 12월 22일부터 골로새서를 매주 한 장씩 함께 나눠요.</p></div>
-<ol class="kn-weeks">
+</li>
 <li class="kn-week" data-date="2026-12-22">
 <div class="kn-when"><b>12월 22일</b><span>화요일</span></div>
 <div class="kn-what">
@@ -738,7 +747,10 @@ document.querySelectorAll('[data-copy]').forEach(function(b){
 document.querySelectorAll('.kn-weeks').forEach(function(list){var next=null;
 list.querySelectorAll('.kn-week').forEach(function(w){var d=new Date(w.dataset.date+'T00:00:00');var st=w.querySelector('.kn-state');
 if(w.dataset.off){w.classList.add('is-off');st.textContent='휴강';}else if(d<t){w.classList.add('is-done');st.textContent='나눔 완료';}else if(!next){next=w;w.classList.add('is-next');st.textContent=(+d===+t)?'오늘 모임':'다음 모임';}});
-if(list.classList.contains('kn-weeks--5')){var ws=[].slice.call(list.querySelectorAll('.kn-week')),n=ws.length;ws.forEach(function(w){if(n>5&&new Date(w.dataset.date+'T00:00:00')<t){w.style.display='none';n--;}});}
+if(list.classList.contains('kn-weeks--5')){var ws=[].slice.call(list.querySelectorAll('.kn-week')),n=ws.length,cur=n-1;
+for(var k=0;k<n;k++){if(new Date(ws[k].dataset.date+'T00:00:00')>=t){cur=k;break;}}
+var st0=Math.max(0,Math.min(cur-2,n-5));ws.forEach(function(w,k){if(k<st0||k>=st0+5){w.style.display='none';}else{w.classList.add('kn-in');w.style.animationDelay=((k-st0)*70)+'ms';if(k===cur)w.classList.add('is-cur');}});
+if(window.innerWidth<=900&&ws[cur]){setTimeout(function(){list.scrollLeft=ws[cur].offsetLeft-(list.clientWidth-ws[cur].offsetWidth)/2;},60);}}
 var f=list.closest('.kn-fold'),tag=f&&f.querySelector('.kn-sum-next');
 if(tag&&next&&!tag.dataset.set){tag.dataset.set='1';var dd=new Date(next.dataset.date+'T00:00:00');tag.textContent=(+dd===+t?'오늘':(dd.getMonth()+1)+'/'+dd.getDate())+' · '+next.querySelector('.kn-ref').lastChild.textContent.trim();}});})();
 (function(){function openHash(){var id=location.hash.slice(1);if(!id)return;var el=document.getElementById(id);var f=el&&el.querySelector('.kn-fold');if(f&&!f.open){f.open=true;setTimeout(function(){el.scrollIntoView({block:'start'});},30);}}
