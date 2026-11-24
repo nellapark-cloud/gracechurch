@@ -295,6 +295,8 @@ a:focus-visible,button:focus-visible{outline:2px solid #0360C2;outline-offset:2p
 .kn-week.is-done{opacity:.6}.kn-week.is-done .kn-state{background:#E1E9F1;color:#5B6478}
 .kn-week.is-next{background:#E7F0F9;border-color:#519CEC;box-shadow:0 6px 18px rgba(3,96,194,.12)}.kn-week.is-next .kn-state{background:#0360C2;color:#fff}
 .kn-weeks--5{grid-template-columns:repeat(5,minmax(0,1fr))}
+.kn-week.is-off{background:#FAFAFB;border-style:dashed;border-color:#C9D3DE}.kn-week.is-off .kn-state{background:#8A94A6;color:#fff}.kn-week.is-off .kn-ref,.kn-week.is-off .kn-theme,.kn-week.is-off .kn-q{opacity:.55}
+.kn-off-note{font-size:12.5px;font-weight:600;color:#5B6478}
 @media (max-width:1100px){.kn-weeks--5{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media (max-width:980px){.kn-weeks{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media (max-width:560px){.kn-weeks{grid-template-columns:1fr}.kn-sched{padding:22px 18px}}
@@ -411,9 +413,10 @@ a:focus-visible,button:focus-visible{outline:2px solid #0360C2;outline-offset:2p
 <a class="kn-read" href="content/bible-by-book/new-testament/philippians-detailed/3%EC%9E%A5.html">3장 세부 강해 미리 읽기 →</a>
 </div>
 </li>
-<li class="kn-week" data-date="2026-11-24">
+<li class="kn-week" data-date="2026-11-24" data-off="1">
 <div class="kn-when"><b>11월 24일</b><span>화요일</span></div>
 <div class="kn-what">
+<div class="kn-off-note">이번 주 모임은 쉬어 갑니다</div>
 <div class="kn-ref"><span class="kn-state"></span>빌립보서 4:4-7</div>
 <div class="kn-theme">염려 대신 기도로</div>
 <ul class="kn-q"><li>감옥에 갇힌 바울은 어떻게 '항상 기뻐하라'고 말할 수 있었을까요?</li><li>요즘 나의 염려 한 가지를 기도로 바꾼다면 어떻게 말씀드릴 수 있을까요?</li></ul>
@@ -733,7 +736,7 @@ document.querySelectorAll('[data-copy]').forEach(function(b){
 (function(){var t=new Date();t.setHours(0,0,0,0);
 document.querySelectorAll('.kn-weeks').forEach(function(list){var next=null;
 list.querySelectorAll('.kn-week').forEach(function(w){var d=new Date(w.dataset.date+'T00:00:00');var st=w.querySelector('.kn-state');
-if(d<t){w.classList.add('is-done');st.textContent='나눔 완료';}else if(!next){next=w;w.classList.add('is-next');st.textContent=(+d===+t)?'오늘 모임':'다음 모임';}});
+if(w.dataset.off){w.classList.add('is-off');st.textContent='휴강';}else if(d<t){w.classList.add('is-done');st.textContent='나눔 완료';}else if(!next){next=w;w.classList.add('is-next');st.textContent=(+d===+t)?'오늘 모임':'다음 모임';}});
 var f=list.closest('.kn-fold'),tag=f&&f.querySelector('.kn-sum-next');
 if(tag&&next&&!tag.dataset.set){tag.dataset.set='1';var dd=new Date(next.dataset.date+'T00:00:00');tag.textContent=(+dd===+t?'오늘':(dd.getMonth()+1)+'/'+dd.getDate())+' · '+next.querySelector('.kn-ref').lastChild.textContent.trim();}});})();
 (function(){function openHash(){var id=location.hash.slice(1);if(!id)return;var el=document.getElementById(id);var f=el&&el.querySelector('.kn-fold');if(f&&!f.open){f.open=true;setTimeout(function(){el.scrollIntoView({block:'start'});},30);}}
