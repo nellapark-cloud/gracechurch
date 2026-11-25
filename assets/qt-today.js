@@ -10,5 +10,5 @@
   var done=day>365;
   var url=done?'/qt-finished.html':'/content/bible-by-book/qt/'+day+'.html';
   document.querySelectorAll('[data-qt-today]').forEach(function(a){a.setAttribute('href',url);});
-  document.querySelectorAll('[data-qt-day]').forEach(function(s){s.textContent=done?'올해 완주! 1월 1일 새 출발':day+'일차';});
+  document.querySelectorAll('[data-qt-day]').forEach(function(s){s.textContent=done?'올해 완주! 1월 1일 새 출발':'오늘 '+day+'일차';});
 })();
